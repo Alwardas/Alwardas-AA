@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy all files from the current directory (backend)
+# Copy source code
 COPY . .
 
 # Create dummy src/main.rs to build dependencies and cache them
