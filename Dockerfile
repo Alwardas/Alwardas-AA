@@ -10,8 +10,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the backend source code
-# We assume the build context is the PROJECT ROOT
 COPY backend/ /app/
+# Copy protos (needed for build.rs)
+COPY protos/ /protos/
 
 # Build the release
 RUN cargo build --release
