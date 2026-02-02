@@ -48,65 +48,72 @@ class _LoginScreenState extends State<LoginScreen> {
     final inputId = _loginIdController.text.trim();
     final inputPass = _passwordController.text.trim();
 
-    // Proceed directly to API login for ALL users including demo ones
-    // This ensures we get the real UUID from the database.
-
-      // Parse host from baseUrl to ensure consistency with user settings
-      final uri = Uri.parse(ApiConstants.baseUrl);
-      final grpcHost = uri.host;
-      final grpcPort = 50051; // Keep port fixed for now or parse if needed, but usually 50051
-
-      final channel = ClientChannel(
-        grpcHost,
-        port: grpcPort,
-        options: const ChannelOptions(
-          credentials: ChannelCredentials.insecure(),
-        ),
-      );
-
-      final stub = AuthServiceClient(channel);
-
       try {
-        final request = LoginRequest()
-          ..loginId = inputId
-          ..password = inputPass;
+        final uri = Uri.parse(ApiConstants.loginEndpoint);
+        debugPrint("Attempting login to: $uri");
 
-        final response = await stub.login(request);
+        final response = await http.post(
+          uri,
+          headers: {'Content-Type': 'application/json'},
+          body: jsonEncode({
+            'login_id': inputId,
+            'password': inputPass,
+          }),
+        );
 
-        if (response.success) {
-          final userData = {
-            'id': response.userId,
-            'full_name': response.userProfile.name,
-            'role': response.userProfile.role,
-            'login_id': response.userProfile.loginId,
-            'branch': response.userProfile.branch,
-            'year': response.userProfile.year,
-            'semester': response.userProfile.semester, 
-            'batch_no': response.userProfile.batchNo,
-          };
+        debugPrint("Login Response Status: ${response.statusCode}");
+        debugPrint("Login Response Body: ${response.body}");
 
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Login Successful')));
+        if (response.statusCode == 200) {
+          final data = jsonDecode(response.body);
+          
+          if (data['success'] == true) {
+            final userProfile = data['user_profile'];
+            
+            final userData = {
+              'id': data['user_id'],
+              'full_name': userProfile['name'],
+              'role': userProfile['role'],
+              'login_id': userProfile['login_id'],
+              'branch': userProfile['branch'],
+              'year': userProfile['year'],
+              'semester': userProfile['semester'], 
+              'batch_no': userProfile['batch_no'],
+            };
 
-          Widget dashboard = _getDashboardForRole(response.userProfile.role, userData);
-
-          if (mounted) {
-             await AuthService.saveUserSession(userData);
-             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => dashboard));
+            if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Login Successful')));
+              await AuthService.saveUserSession(userData);
+              Widget dashboard = _getDashboardForRole(userProfile['role'], userData);
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => dashboard));
+            }
+          } else {
+             if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(data['message'] ?? 'Login Failed')));
+             }
           }
         } else {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(response.message)));
+           if (mounted) {
+            String msg = 'Server Error: ${response.statusCode}';
+            try {
+               final errData = jsonDecode(response.body);
+               if (errData['message'] != null) msg = errData['message'];
+            } catch (_) {}
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+           }
         }
+
       } catch (e) {
         debugPrint("Login Error: $e");
         
         String errorMessage = 'Connection Error';
         String suggestion = 'Please check your internet connection.';
         
-        if (e.toString().contains('SocketException') || e.toString().contains('110') || e.toString().contains('111')) {
+        if (e.toString().contains('SocketException') || e.toString().contains('Connection refused')) {
            errorMessage = 'Server Not Reachable';
            suggestion = '1. Check if the Backend is running.\n'
-                        '2. different Networks? Ensure devices are on the same Wi-Fi.\n'
-                        '3. Firewall? Windows Firewall might be blocking. Allow port 3001 & 50051.\n'
+                        '2. Different Networks? Ensure devices are on the same Wi-Fi.\n'
+                        '3. Firewall? Windows Firewall might be blocking port 3001.\n'
                         '4. Wrong IP? Check Settings against PC IP.';
         }
 
@@ -119,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Text("The app could not connect to the server at '$grpcHost'."),
+                   Text("The app could not connect to the server at '${ApiConstants.baseUrl}'."),
                    const SizedBox(height: 10),
                    const Text("Suggestions:", style: TextStyle(fontWeight: FontWeight.bold)),
                    Text(suggestion),
@@ -142,7 +149,6 @@ class _LoginScreenState extends State<LoginScreen> {
           );
         }
       } finally {
-        await channel.shutdown();
         if (mounted) setState(() => _isLoading = false);
       }
     }
