@@ -9,9 +9,9 @@ RUN apt-get update && apt-get install -y \
     protobuf-compiler \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy the entire backend directory into the container
-# If the context is 'backend', this copies everything in backend/ to /app/
-COPY . /app/
+# Copy the backend source code
+# We assume the build context is the PROJECT ROOT
+COPY backend/ /app/
 
 # Build the release
 RUN cargo build --release
@@ -25,7 +25,5 @@ COPY --from=builder /app/migrations /app/migrations
 
 ENV PORT 3001
 EXPOSE 3001
-# We don't expose 5051 because Railway only allows 1 port
-# Login was switched to HTTP (port 3001) so we are good.
 
 CMD ["./backend"]
