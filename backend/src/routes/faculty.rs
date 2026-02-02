@@ -1,0 +1,644 @@
+use axum::{
+    extract::{State, Query},
+    Json,
+    http::StatusCode,
+};
+use sqlx::{Postgres, Row, QueryBuilder};
+use crate::models::*;
+use uuid::Uuid;
+use chrono::Utc;
+use std::collections::HashMap;
+
+// --- Faculty Profile ---
+
+pub async fn get_faculty_profile_handler(
+    State(state): State<AppState>,
+    Query(params): Query<ProfileQuery>,
+) -> Result<Json<FacultyProfileResponse>, StatusCode> {
+    let profile = sqlx::query_as::<Postgres, FacultyProfileResponse>(
+        "SELECT full_name, login_id as faculty_id, branch, email, phone_number, experience, dob FROM users WHERE id = $1"
+    )
+    .bind(params.user_id)
+    .fetch_optional(&state.pool)
+    .await
+    .map_err(|e| {
+         eprintln!("Faculty Profile Fetch Error: {:?}", e);
+         StatusCode::INTERNAL_SERVER_ERROR
+    })?;
+
+    match profile {
+        Some(p) => Ok(Json(p)),
+        None => Err(StatusCode::NOT_FOUND),
+    }
+}
+
+// --- Faculty Subjects ---
+
+pub async fn get_faculty_subjects_handler(
+    State(state): State<AppState>,
+    Query(params): Query<FacultyQueryParams>,
+) -> Result<Json<Vec<FacultySubjectResponse>>, StatusCode> {
+    let subjects = sqlx::query_as::<Postgres, FacultySubjectResponse>(
+        r#"
+        SELECT 
+            s.id, 
+            s.name, 
+            s.branch, 
+            s.semester, 
+            fs.status,
+            fs.subject_id,
+            COALESCE(
+                (
+                    SELECT CASE 
+                        WHEN COUNT(*) = 0 THEN 0 
+                        ELSE (COUNT(CASE WHEN completed = TRUE THEN 1 END) * 100 / COUNT(*))
+                    END
+                    FROM lesson_plan_items lpi 
+                    WHERE lpi.subject_id = s.id
+                ), 0
+            )::INTEGER as completion_percentage
+        FROM faculty_subjects fs
+        JOIN subjects s ON fs.subject_id = s.id
+        WHERE fs.user_id = $1
+        "#
+    )
+    .bind(params.user_id)
+    .fetch_all(&state.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Fetch Faculty Subjects Error: {:?}", e);
+        StatusCode::INTERNAL_SERVER_ERROR
+    })?;
+
+    Ok(Json(subjects))
+}
+
+pub async fn add_faculty_subject_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<AddFacultySubjectRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    sqlx::query(
+        r#"
+        INSERT INTO faculty_subjects (user_id, subject_id, subject_name, branch, status)
+        VALUES ($1, $2, $3, $4, 'PENDING') 
+        ON CONFLICT (user_id, subject_id) 
+        DO UPDATE SET status = 'PENDING' 
+        WHERE faculty_subjects.status != 'APPROVED'
+        "#
+    )
+    .bind(payload.user_id)
+    .bind(&payload.subject_id)
+    .bind(&payload.subject_name)
+    .bind(&payload.branch)
+    .execute(&state.pool)
+    .await
+    .map_err(|e| {
+         eprintln!("Add Subject Error: {:?}", e);
+         (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to add subject"})))
+    })?;
+
+    let msg = format!("Faculty requested subject: {}", payload.subject_name);
+    let _ = sqlx::query(
+        "INSERT INTO notifications (type, message, sender_id, branch, status, created_at) VALUES ($1, $2, $3, $4, 'UNREAD', NOW())"
+    )
+    .bind("SUBJECT_APPROVAL")
+    .bind(msg)
+    .bind(payload.user_id.to_string())
+    .bind(&payload.branch)
+    .execute(&state.pool)
+    .await;
+
+    Ok(StatusCode::OK)
+}
+
+pub async fn remove_faculty_subject_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<RemoveFacultySubjectRequest>,
+) -> Result<StatusCode, StatusCode> {
+    sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_id = $2")
+        .bind(payload.user_id)
+        .bind(payload.subject_id)
+        .execute(&state.pool)
+        .await
+        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+        
+    Ok(StatusCode::OK)
+}
+
+// --- Lesson Plan ---
+
+pub async fn mark_lesson_plan_complete_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<MarkCompleteRequest>,
+) -> Result<StatusCode, StatusCode> {
+    let now = if payload.completed { Some(Utc::now()) } else { None };
+
+    sqlx::query("UPDATE lesson_plan_items SET completed = $1, completed_date = $2 WHERE id = $3")
+        .bind(payload.completed)
+        .bind(now)
+        .bind(&payload.item_id)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Mark Complete Error: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })?;
+
+    Ok(StatusCode::OK)
+}
+
+pub async fn reply_to_feedback_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<ReplyFeedbackRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let update_res = sqlx::query(
+        "UPDATE lesson_plan_feedback SET reply = $1, replied_at = NOW(), replied_by = $2 WHERE id = $3 RETURNING user_id"
+    )
+    .bind(&payload.reply)
+    .bind(payload.faculty_id)
+    .bind(payload.feedback_id)
+    .fetch_optional(&state.pool)
+    .await
+    .map_err(|e| {
+         eprintln!("Reply Update Error: {:?}", e);
+         (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to save reply"})))
+    })?;
+
+    if let Some(row) = update_res {
+         let student_id: Uuid = row.get("user_id");
+         let msg = "Faculty replied to your comment.";
+         let _ = sqlx::query(
+            "INSERT INTO notifications (type, message, sender_id, recipient_id, status, created_at) VALUES ($1, $2, $3, $4, 'UNREAD', NOW())"
+         )
+         .bind("COMMENT_REPLY")
+         .bind(msg)
+         .bind(payload.faculty_id.to_string())
+         .bind(student_id.to_string())
+         .execute(&state.pool)
+         .await;
+         
+         Ok(StatusCode::OK)
+    } else {
+         Err((StatusCode::NOT_FOUND, Json(serde_json::json!({"error": "Feedback not found"}))))
+    }
+}
+
+// --- Students View ---
+
+pub async fn get_students_handler(
+    State(state): State<AppState>,
+    Query(params): Query<StudentsQuery>,
+) -> Result<Json<Vec<StudentBasicInfo>>, StatusCode> {
+    let normalized_branch = normalize_branch(&params.branch);
+    let year_pattern = format!("{}%", params.year.trim());
+
+    let students = sqlx::query_as::<Postgres, StudentBasicInfo>(
+        "SELECT login_id as student_id, full_name, branch, year FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 ORDER BY login_id ASC"
+    )
+    .bind(normalized_branch)
+    .bind(year_pattern)
+    .fetch_all(&state.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Fetch Students Error: {:?}", e);
+        StatusCode::INTERNAL_SERVER_ERROR
+    })?;
+
+    Ok(Json(students))
+}
+
+pub async fn get_faculty_by_branch_handler(
+    State(state): State<AppState>,
+    Query(params): Query<FacultyByBranchQuery>,
+) -> Result<Json<Vec<FacultyListDTO>>, StatusCode> {
+    let mut query_builder = QueryBuilder::new(
+        "SELECT id, full_name, login_id, email, phone_number, experience, branch, role FROM users WHERE role IN ('Faculty', 'HOD')"
+    );
+
+    if let Some(branch) = &params.branch {
+        if branch != "All" && !branch.is_empty() {
+            let normalized = normalize_branch(branch);
+            query_builder.push(" AND branch = ");
+            query_builder.push_bind(normalized);
+        }
+    }
+
+    query_builder.push(" ORDER BY CASE WHEN role = 'HOD' THEN 0 ELSE 1 END, full_name ASC");
+
+    let faculty_list = query_builder.build_query_as::<FacultyListDTO>()
+        .fetch_all(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Fetch Faculty Error: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })?;
+
+    Ok(Json(faculty_list))
+}
+
+// --- Attendance ---
+
+pub async fn submit_attendance_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<SubmitAttendanceRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let pool = state.pool.clone();
+    
+    let student_uuid = resolve_user_id(&payload.student_id, "Student", &pool).await?;
+    let faculty_uuid = resolve_user_id(&payload.faculty_id, "Faculty", &pool).await?;
+    
+    let date_str = payload.date.split('T').next().unwrap_or(&payload.date);
+    let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d")
+         .map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": format!("Invalid Date format, got: {}", payload.date)}))))?;
+
+    let student_row = sqlx::query("SELECT login_id, full_name, branch, year FROM users WHERE id = $1")
+        .bind(student_uuid)
+        .fetch_one(&state.pool)
+        .await
+        .map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to fetch student details"}))))?;
+
+    let faculty_name: String = sqlx::query_scalar("SELECT full_name FROM users WHERE id = $1")
+        .bind(faculty_uuid)
+        .fetch_one(&state.pool)
+        .await
+        .unwrap_or_else(|_| "Unknown Faculty".to_string());
+
+    let s_login: String = student_row.get("login_id");
+    let s_name: String = student_row.get("full_name");
+    let s_branch: Option<String> = student_row.get("branch");
+    let s_year: Option<String> = student_row.get("year");
+    
+    let session = payload.session.clone().unwrap_or_else(|| "MORNING".to_string());
+    let db_status = if payload.status.to_uppercase().starts_with('P') { "P" } else { "A" };
+
+    sqlx::query("INSERT INTO attendance (student_uuid, faculty_uuid, date, status, branch, year, session, student_name, student_login_id, faculty_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)")
+        .bind(student_uuid)
+        .bind(faculty_uuid)
+        .bind(date)
+        .bind(db_status)
+        .bind(s_branch.clone().unwrap_or_default())
+        .bind(s_year.unwrap_or_default())
+        .bind(&session)
+        .bind(s_name)
+        .bind(s_login)
+        .bind(faculty_name)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("Database Error: {}", e)}))))?;
+
+    let formatted_date = date.format("%d-%m-%Y").to_string();
+    let status_text = if db_status == "P" { "Present" } else { "Absent" };
+    let msg = format!("{} {} session marked as {}", formatted_date, session, status_text);
+    
+    let _ = sqlx::query("INSERT INTO notifications (type, message, sender_id, recipient_id, branch, status, created_at) VALUES ($1, $2, $3, $4, $5, 'UNREAD', NOW())")
+        .bind("ATTENDANCE")
+        .bind(&msg)
+        .bind(&payload.faculty_id) 
+        .bind(student_uuid.to_string())
+        .bind(s_branch.unwrap_or_default())
+        .execute(&state.pool)
+        .await;
+
+    Ok(StatusCode::OK)
+}
+
+pub async fn submit_attendance_batch_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<BatchAttendanceRequest>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    let faculty_id_str = payload.marked_by.clone();
+    
+    let faculty_row = sqlx::query("SELECT id, full_name FROM users WHERE login_id = $1")
+        .bind(&faculty_id_str)
+        .fetch_optional(&state.pool)
+        .await
+        .map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "DB Error resolving faculty"}))))?;
+    
+    let (faculty_uuid, faculty_name) = match faculty_row {
+        Some(row) => (row.get::<Uuid, _>("id"), row.get::<String, _>("full_name")),
+        None => return Err((StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": format!("Invalid Faculty ID: {}", faculty_id_str)}))))
+    };
+
+    let date_str = payload.date.split('T').next().unwrap_or(&payload.date);
+    let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d")
+         .map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid Date format"}))))?;
+
+    let session = payload.session.unwrap_or_else(|| "MORNING".to_string()).to_uppercase();
+    let student_login_ids: Vec<String> = payload.records.iter().map(|r| r.student_id.clone()).collect();
+
+    #[derive(sqlx::FromRow, Clone)]
+    struct StudentInfoLocal {
+        id: Uuid,
+        login_id: String,
+        full_name: String,
+        branch: Option<String>,
+        year: Option<String>,
+    }
+
+    let rows = sqlx::query_as::<_, StudentInfoLocal>("SELECT id, login_id, full_name, branch, year FROM users WHERE login_id = ANY($1) OR id::text = ANY($1)")
+        .bind(&student_login_ids)
+        .fetch_all(&state.pool)
+        .await
+        .map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Database error resolving students"}))))?;
+
+    let mut student_map: HashMap<String, StudentInfoLocal> = HashMap::new();
+    for row in rows {
+        student_map.insert(row.login_id.clone(), row.clone());
+        student_map.insert(row.id.to_string(), row);
+    }
+
+    let mut tx = state.pool.begin().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "DB Transaction Error"}))))?;
+    let mut uuids_to_clear = Vec::new();
+    let mut count = 0;
+    let mut errors = Vec::new();
+
+    for record in payload.records {
+        if let Some(info) = student_map.get(&record.student_id) {
+            let db_status = if record.status.to_uppercase().starts_with('P') { "P" } else { "A" };
+            uuids_to_clear.push(info.id);
+
+            sqlx::query("INSERT INTO attendance (student_uuid, faculty_uuid, date, status, branch, year, session, student_name, student_login_id, faculty_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)")
+                .bind(info.id)
+                .bind(faculty_uuid)
+                .bind(date)
+                .bind(db_status)
+                .bind(info.branch.clone().unwrap_or_default())
+                .bind(info.year.clone().unwrap_or_default())
+                .bind(&session)
+                .bind(&info.full_name)
+                .bind(&info.login_id)
+                .bind(&faculty_name)
+                .execute(&mut *tx)
+                .await.ok();
+
+            let formatted_date = date.format("%d-%m-%Y").to_string();
+            let status_text = if db_status == "P" { "Present" } else { "Absent" };
+            let msg = format!("{} {} session marked as {}", formatted_date, session, status_text);
+            
+            sqlx::query("INSERT INTO notifications (type, message, sender_id, recipient_id, status, branch, created_at) VALUES ($1, $2, $3, $4, 'UNREAD', $5, NOW())")
+                .bind("ATTENDANCE")
+                .bind(msg)
+                .bind(&faculty_id_str)
+                .bind(info.id.to_string())
+                .bind(info.branch.clone().unwrap_or_default())
+                .execute(&mut *tx)
+                .await.ok();
+            
+            count += 1;
+        } else {
+            errors.push(format!("Student ID not found: {}", record.student_id));
+        }
+    }
+
+    tx.commit().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "DB Commit Error"}))))?;
+
+    Ok(Json(serde_json::json!({"message": "Batch processed", "count": count, "errors": errors})))
+}
+
+pub async fn check_attendance_status_handler(
+    State(state): State<AppState>,
+    Query(params): Query<CheckAttendanceQuery>,
+) -> Result<Json<serde_json::Value>, StatusCode> {
+    let date_str = params.date.split('T').next().unwrap_or(&params.date);
+    let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d").map_err(|_| StatusCode::BAD_REQUEST)?;
+    
+    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM attendance WHERE branch = $1 AND year = $2 AND date = $3 AND session = $4")
+        .bind(params.branch.trim())
+        .bind(params.year.trim())
+        .bind(date)
+        .bind(params.session.trim().to_uppercase())
+        .fetch_one(&state.pool)
+        .await
+        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+
+    Ok(Json(serde_json::json!({"submitted": count > 0, "count": count})))
+}
+
+pub async fn get_class_attendance_record_handler(
+    State(state): State<AppState>,
+    Query(params): Query<ClassRecordQuery>,
+) -> Result<Json<ClassRecordResponse>, StatusCode> {
+    let date_str = params.date.split('T').next().unwrap_or(&params.date);
+    let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d").map_err(|_| StatusCode::BAD_REQUEST)?;
+    let session_upper = params.session.trim().to_uppercase();
+    
+    let meta_row: Option<(String,)> = sqlx::query_as("SELECT faculty_name FROM attendance WHERE branch=$1 AND year=$2 AND session=$3 AND date=$4 LIMIT 1")
+       .bind(normalize_branch(&params.branch))
+       .bind(params.year.trim())
+       .bind(&session_upper)
+       .bind(date)
+       .fetch_optional(&state.pool)
+       .await
+       .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+       
+    if let Some((marked_by,)) = meta_row {
+        let records = sqlx::query_as::<_, StudentAttendanceItem>(
+            "SELECT u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = $1 AND a.year = $2 AND a.session = $3 AND a.date = $4 ORDER BY u.login_id ASC"
+        )
+        .bind(normalize_branch(&params.branch))
+        .bind(params.year.trim())
+        .bind(&session_upper)
+        .bind(date)
+        .fetch_all(&state.pool)
+        .await
+        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+        
+        Ok(Json(ClassRecordResponse { marked: true, marked_by: Some(marked_by), students: records }))
+    } else {
+        let year_pattern = format!("{}%", params.year.trim());
+        let students = sqlx::query_as::<_, StudentAttendanceItem>(
+            "SELECT login_id as student_id, full_name, 'PENDING' as status FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 ORDER BY login_id ASC"
+        )
+         .bind(normalize_branch(&params.branch))
+         .bind(year_pattern)
+         .fetch_all(&state.pool)
+         .await
+         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+         
+         Ok(Json(ClassRecordResponse { marked: false, marked_by: None, students }))
+    }
+}
+
+pub async fn get_attendance_stats_handler(
+    State(state): State<AppState>,
+    Query(params): Query<AttendanceStatsQuery>,
+) -> Result<Json<AttendanceStatsResponse>, StatusCode> {
+    let date_str = params.date.split('T').next().unwrap_or(&params.date);
+    let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d").map_err(|_| StatusCode::BAD_REQUEST)?;
+    let normalized = normalize_branch(&params.branch);
+    
+    let total_students: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM users WHERE role = 'Student' AND branch = $1 AND is_approved = true")
+        .bind(&normalized)
+        .fetch_one(&state.pool)
+        .await
+        .unwrap_or(0);
+    
+    let total_present: i64;
+    let total_absent: i64;
+    
+    if let Some(sess) = &params.session {
+        let session_val = sess.trim().to_uppercase();
+        if session_val == "ALL" || session_val.is_empty() {
+            total_present = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND status = 'P'")
+                .bind(&normalized).bind(date).fetch_one(&state.pool).await.unwrap_or(0);
+            total_absent = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND status = 'A'")
+                .bind(&normalized).bind(date).fetch_one(&state.pool).await.unwrap_or(0);
+        } else {
+            total_present = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND session = $3 AND status = 'P'")
+                .bind(&normalized).bind(date).bind(&session_val).fetch_one(&state.pool).await.unwrap_or(0);
+            total_absent = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND session = $3 AND status = 'A'")
+                .bind(&normalized).bind(date).bind(&session_val).fetch_one(&state.pool).await.unwrap_or(0);
+        }
+    } else {
+        total_present = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND status = 'P'")
+            .bind(&normalized).bind(date).fetch_one(&state.pool).await.unwrap_or(0);
+        total_absent = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND status = 'A'")
+            .bind(&normalized).bind(date).fetch_one(&state.pool).await.unwrap_or(0);
+    }
+
+    Ok(Json(AttendanceStatsResponse { total_students, total_present, total_absent }))
+}
+
+// --- HOD Actions ---
+
+pub async fn approve_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<ApprovalRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let is_approved = payload.action == "APPROVE";
+    let mut tx = state.pool.begin().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to transaction"}))))?;
+
+    if is_approved {
+        sqlx::query("UPDATE users SET is_approved = TRUE WHERE login_id = $1").bind(&payload.sender_id).execute(&mut *tx).await.ok();
+        sqlx::query("UPDATE notifications SET status = 'ACCEPTED' WHERE id = $1").bind(payload.request_id).execute(&mut *tx).await.ok();
+    } else {
+        sqlx::query("UPDATE notifications SET status = 'REJECTED' WHERE id = $1").bind(payload.request_id).execute(&mut *tx).await.ok();
+    }
+    tx.commit().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to commit"}))))?;
+    Ok(StatusCode::OK)
+}
+
+pub async fn approve_subject_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<ApproveSubjectRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let is_approved = payload.action == "APPROVE";
+    let faculty_uuid = resolve_user_id(&payload.sender_id, "Faculty", &state.pool).await?;
+
+    if is_approved {
+        sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND status = 'PENDING'").bind(faculty_uuid).execute(&state.pool).await.ok();
+        sqlx::query("UPDATE notifications SET status = 'ACCEPTED' WHERE id = $1").bind(payload.notification_id).execute(&state.pool).await.ok();
+    } else {
+        sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND status = 'PENDING'").bind(faculty_uuid).execute(&state.pool).await.ok();
+        sqlx::query("UPDATE notifications SET status = 'REJECTED' WHERE id = $1").bind(payload.notification_id).execute(&state.pool).await.ok();
+    }
+    Ok(StatusCode::OK)
+}
+
+pub async fn approve_profile_change_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<ApproveProfileChangeRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let is_approved = payload.action == "APPROVE";
+    let user_uuid = resolve_user_id(&payload.sender_id, "User", &state.pool).await?;
+
+    if is_approved {
+        let row = sqlx::query("SELECT id, new_data FROM profile_update_requests WHERE user_id = $1 AND status = 'PENDING' ORDER BY created_at DESC LIMIT 1").bind(user_uuid).fetch_optional(&state.pool).await.ok().flatten();
+        if let Some(r) = row {
+             let request_id: Uuid = r.get("id");
+             let new_data: serde_json::Value = r.get("new_data");
+             let full_name = new_data["newFullName"].as_str().or(new_data["fullName"].as_str()).map(|s| s.to_string());
+             let phone = new_data["phoneNumber"].as_str().map(|s| s.to_string());
+             let email = new_data["email"].as_str().map(|s| s.to_string());
+             let exp = new_data["experience"].as_str().map(|s| s.to_string());
+             let dob_str = new_data["newDob"].as_str().or(new_data["dob"].as_str()).map(|s| s.to_string());
+             let login_id = new_data["newStudentId"].as_str().or(new_data["facultyId"].as_str()).map(|s| s.to_string());
+             let branch = new_data["newBranch"].as_str().or(new_data["branch"].as_str()).map(|s| s.to_string());
+             let year = new_data["newYear"].as_str().or(new_data["year"].as_str()).map(|s| s.to_string());
+             let semester = new_data["newSemester"].as_str().map(|s| s.to_string());
+             let batch_no = new_data["newBatchNo"].as_str().map(|s| s.to_string());
+
+             sqlx::query("UPDATE users SET full_name=COALESCE($1,full_name), phone_number=COALESCE($2,phone_number), email=COALESCE($3,email), experience=COALESCE($4,experience), dob=COALESCE($5::DATE,dob), login_id=COALESCE($6,login_id), branch=COALESCE($7,branch), year=COALESCE($8,year), semester=COALESCE($9,semester), batch_no=COALESCE($10,batch_no) WHERE id=$11")
+                .bind(full_name).bind(phone).bind(email).bind(exp).bind(dob_str).bind(login_id).bind(branch).bind(year).bind(semester).bind(batch_no).bind(user_uuid).execute(&state.pool).await.ok();
+             sqlx::query("UPDATE profile_update_requests SET status='APPROVED' WHERE id=$1").bind(request_id).execute(&state.pool).await.ok();
+             sqlx::query("UPDATE notifications SET status='ACCEPTED' WHERE id=$1").bind(payload.notification_id).execute(&state.pool).await.ok();
+        }
+    } else {
+        sqlx::query("UPDATE profile_update_requests SET status='REJECTED' WHERE user_id=$1 AND status='PENDING'").bind(user_uuid).execute(&state.pool).await.ok();
+        sqlx::query("UPDATE notifications SET status='REJECTED' WHERE id=$1").bind(payload.notification_id).execute(&state.pool).await.ok();
+    }
+    Ok(StatusCode::OK)
+}
+
+pub async fn approve_attendance_correction_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<ApproveAttendanceCorrectionData>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    let request_row: Option<(Uuid, serde_json::Value)> = sqlx::query_as("SELECT id, dates FROM attendance_correction_requests WHERE user_id = $1 AND status = 'PENDING' LIMIT 1").bind(payload.sender_id).fetch_optional(&state.pool).await.ok().flatten();
+    let (request_id, dates_val) = match request_row {
+        Some(r) => r,
+        None => return Err((StatusCode::NOT_FOUND, Json(serde_json::json!({"error": "No pending request found"})))),
+    };
+
+    #[derive(serde::Deserialize)]
+    struct LocalItem { date: String, session: String }
+    let items: Vec<LocalItem> = serde_json::from_value(dates_val).unwrap();
+
+    if payload.action == "APPROVE" {
+        for item in items {
+             let parsed_date = chrono::NaiveDate::parse_from_str(&item.date, "%Y-%m-%d").unwrap_or_default();
+             sqlx::query("UPDATE attendance SET status = 'P' WHERE student_uuid = $1 AND date = $2 AND session = $3").bind(payload.sender_id).bind(parsed_date).bind(&item.session).execute(&state.pool).await.ok();
+        }
+        sqlx::query("UPDATE attendance_correction_requests SET status = 'APPROVED' WHERE id = $1").bind(request_id).execute(&state.pool).await.ok();
+        sqlx::query("INSERT INTO notifications (type, message, sender_id, recipient_id, status, created_at) VALUES ($1, $2, $3, $4, 'UNREAD', NOW())").bind("ATTENDANCE_CORRECTION_RESULT").bind("Your attendance correction request has been APPROVED.").bind("SYSTEM").bind(payload.sender_id.to_string()).execute(&state.pool).await.ok();
+    } else {
+        sqlx::query("UPDATE attendance_correction_requests SET status = 'REJECTED' WHERE id = $1").bind(request_id).execute(&state.pool).await.ok();
+        sqlx::query("INSERT INTO notifications (type, message, sender_id, recipient_id, status, created_at) VALUES ($1, $2, $3, $4, 'UNREAD', NOW())").bind("ATTENDANCE_CORRECTION_RESULT").bind("Your attendance correction request has been REJECTED.").bind("SYSTEM").bind(payload.sender_id.to_string()).execute(&state.pool).await.ok();
+    }
+    
+    if let Some(nid) = payload.notification_id {
+         sqlx::query("UPDATE notifications SET status = 'ACCEPTED' WHERE id = $1").bind(nid).execute(&state.pool).await.ok();
+    }
+    Ok(Json(serde_json::json!({"message": "Processed successfully"})))
+}
+
+// --- Timetable ---
+
+pub async fn get_timetable_handler(
+    State(state): State<AppState>,
+    Query(params): Query<GetTimetableQuery>,
+) -> Result<Json<Vec<TimetableEntry>>, StatusCode> {
+    let section = params.section.unwrap_or_else(|| "A".to_string());
+    let entries = sqlx::query_as::<_, TimetableEntry>("SELECT * FROM timetables WHERE branch = $1 AND year = $2 AND section = $3 ORDER BY day, period_number")
+    .bind(normalize_branch(&params.branch)).bind(params.year).bind(section).fetch_all(&state.pool).await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+    Ok(Json(entries))
+}
+
+pub async fn assign_class_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<AssignClassRequest>,
+) -> Result<Json<TimetableEntry>, StatusCode> {
+    let entry_type = payload.entry_type.unwrap_or_else(|| "class".to_string());
+    let entry = sqlx::query_as::<_, TimetableEntry>("INSERT INTO timetables (branch, year, section, day, period_number, start_time, end_time, subject_name, type) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) ON CONFLICT (branch, year, section, day, period_number) DO UPDATE SET subject_name = EXCLUDED.subject_name, start_time = EXCLUDED.start_time, end_time = EXCLUDED.end_time, type = EXCLUDED.type RETURNING *")
+    .bind(normalize_branch(&payload.branch)).bind(payload.year).bind(payload.section).bind(payload.day).bind(payload.period_number).bind(payload.start_time).bind(payload.end_time).bind(payload.subject_name).bind(entry_type).fetch_one(&state.pool).await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+    Ok(Json(entry))
+}
+
+pub async fn clear_class_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<ClearClassRequest>,
+) -> Result<StatusCode, StatusCode> {
+    sqlx::query("DELETE FROM timetables WHERE id = $1").bind(payload.id).execute(&state.pool).await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+    Ok(StatusCode::OK)
+}
+
+// --- Helpers ---
+
+async fn resolve_user_id(id_str: &str, role_hint: &str, pool: &sqlx::PgPool) -> Result<Uuid, (StatusCode, Json<serde_json::Value>)> {
+    if let Ok(uuid) = Uuid::parse_str(id_str) { return Ok(uuid); }
+    let row = sqlx::query("SELECT id FROM users WHERE login_id = $1").bind(id_str).fetch_optional(pool).await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("DB error resolving {}", role_hint)}))))?;
+    match row {
+        Some(r) => Ok(r.get("id")),
+        None => Err((StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": format!("Invalid {} ID: {}", role_hint, id_str)}))))
+    }
+}

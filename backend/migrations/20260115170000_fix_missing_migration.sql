@@ -1,0 +1,2 @@
+-- This file was recreated to satisfy sqlx migration check for missing version 20260115170000
+-- If you know what this migration was supposed to do, please replace this content.

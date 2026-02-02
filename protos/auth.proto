@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package auth;
+
+service AuthService {
+  rpc Login (LoginRequest) returns (LoginResponse);
+  rpc Signup (SignupRequest) returns (SignupResponse);
+}
+
+message LoginRequest {
+  string login_id = 1;
+  string password = 2;
+  string role = 3; 
+}
+
+message LoginResponse {
+  string token = 1;
+  string user_id = 2;
+  bool success = 3;
+  string message = 4;
+  UserProfile user_profile = 5;
+}
+
+message SignupRequest {
+  string full_name = 1;
+  string login_id = 2;
+  string password = 3;
+  string branch = 4;
+  string year = 5;
+  // Add other fields as needed matching the database
+}
+
+message SignupResponse {
+  bool success = 1;
+  string message = 2;
+  string user_id = 3;
+}
+
+message UserProfile {
+  string name = 1;
+  string role = 2;
+  string branch = 3;
+  string year = 4;
+  string semester = 5;
+  string batch_no = 6;
+  string login_id = 7;
+}

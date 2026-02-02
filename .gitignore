@@ -1,0 +1,30 @@
+# General
+.DS_Store
+.history
+.vscode/
+
+# Environment variables (CRITICAL)
+**/.env
+**/.env.*
+
+# Rust / Backend
+backend/target/
+backend/Cargo.lock
+
+# Flutter / Frontend
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.pub-cache/
+frontend/.pub/
+frontend/build/
+frontend/*.iml
+frontend/.idea/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Protos
+# Keep protos, but ignore generated ones if they are in the build folders

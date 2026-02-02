@@ -1,0 +1,2 @@
+ALTER TABLE users ADD COLUMN experience TEXT;
+ALTER TABLE users ADD COLUMN email TEXT;
