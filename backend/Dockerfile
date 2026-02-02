@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y \
     protobuf-compiler \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy manifests
-COPY Cargo.toml Cargo.lock ./
+# Copy all files from the current directory (backend)
+COPY . .
 
 # Create dummy src/main.rs to build dependencies and cache them
 # We need to handle the build logic carefully because we have unique build.rs
