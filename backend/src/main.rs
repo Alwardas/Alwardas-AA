@@ -124,9 +124,9 @@ async fn main() {
         .with_state(AppState { pool });
 
     use axum::response::IntoResponse;
-    use hyper::body::Incoming;
+    use http_body_util::BodyExt;
 
-    let multiplex_service = tower::service_fn(move |req: axum::http::Request<Incoming>| {
+    let multiplex_service = tower::service_fn(move |req: axum::http::Request<axum::body::Body>| {
         let mut grpc_service = grpc_service.clone();
         let mut app = app.clone();
         
@@ -136,9 +136,11 @@ async fn main() {
                 .unwrap_or(false);
 
             if is_grpc {
-                // Tonic needs Request<Body>
+                // Tonic 0.12 expects a specific boxed body type.
+                // We convert the Axum body into a boxed unsync body.
                 let (parts, body) = req.into_parts();
-                let req = axum::http::Request::from_parts(parts, Body::new(body));
+                let body = body.map_err(|e| tonic::Status::internal(e.to_string())).boxed_unsync();
+                let req = axum::http::Request::from_parts(parts, body);
                 
                 match grpc_service.call(req).await {
                     Ok(resp) => Ok::<_, std::convert::Infallible>(resp.into_response()),
@@ -150,7 +152,6 @@ async fn main() {
                     }
                 }
             } else {
-                // Axum handles Request<Incoming>
                 match app.call(req).await {
                     Ok(resp) => Ok::<_, std::convert::Infallible>(resp.into_response()),
                     Err(e) => {
