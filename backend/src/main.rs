@@ -28,8 +28,12 @@ use axum::body::Body;
 
 #[tokio::main]
 async fn main() {
-    let port = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
-    println!("DEBUG: Starting application...");
+    // Initialize tracing (simple subscriber)
+    tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::DEBUG)
+        .init();
+
+    println!("DEBUG: Starting application with Tracing...");
     let port_str = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
     println!("DEBUG: PORT env var is: '{}'", port_str);
     
@@ -38,10 +42,10 @@ async fn main() {
 
     let port = port_str.parse::<u16>().expect("Invalid PORT env var");
     
-    // Bind to IPv6 "any" (::) to support modern cloud networking
-    let addr = std::net::SocketAddr::from(([0, 0, 0, 0, 0, 0, 0, 0], port));
+    // Revert to 0.0.0.0 (IPv4) - explicit IPv4 is usually safer for Railway internal networks
+    let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port));
 
-    println!("🚀 Server listening on {} (IPv6)", addr);
+    println!("🚀 Server listening on {} (IPv4)", addr);
     
     // Bind EARLY
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
@@ -168,7 +172,8 @@ async fn main() {
                 }
             }
         }) */
-            .layer(CorsLayer::permissive());
+            .layer(CorsLayer::permissive())
+            .layer(TraceLayer::new_for_http());
 
     println!("✅ Server initialization complete. Entering accept loop...");
     axum::serve(listener, app).await.unwrap();
