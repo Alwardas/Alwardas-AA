@@ -77,23 +77,16 @@ async fn main() {
         println!("✅ Background task: fix_branch_names complete!");
     });
 
-    // Start gRPC Server (Note: This runs on a separate port 50051 which is NOT exposed on Railway by default. 
-    // You likely need to use a multiplexer or expose this port if possible, otherwise gRPC calls will fail.)
+    // --- MULTIPLEXING SETUP ---
+    // Railway exposes only ONE port (Example: 8080). 
+    // We must run both HTTP (Axum) and gRPC (Tonic) on this same port.
+    // We differentiate them by looking at the "Content-Type" header.
+    
     let grpc_pool = pool.clone();
-    tokio::spawn(async move {
-        let addr = "0.0.0.0:50051".parse().unwrap();
-        println!("🚀 gRPC Server listening on {}", addr);
-        
-        let auth_service = MyAuthService { pool: grpc_pool };
-
-        if let Err(e) = tonic::transport::Server::builder()
-            .add_service(AuthServiceServer::new(auth_service))
-            .serve(addr)
-            .await 
-        {
-             eprintln!("❌ gRPC Server failed to start: {}", e);
-        }
-    });
+    let auth_service = MyAuthService { pool: grpc_pool };
+    let grpc_service = tonic::transport::Server::builder()
+        .add_service(AuthServiceServer::new(auth_service))
+        .into_service();
 
     let cors = CorsLayer::new()
         .allow_origin(Any)
@@ -102,7 +95,6 @@ async fn main() {
 
     let app = Router::new()
         .route("/", get(root))
-        
         // --- Auth & Common ---
         .route("/api/signup", post(signup_handler))
         .route("/api/login", post(login_handler))
@@ -112,7 +104,6 @@ async fn main() {
         .route("/api/user/update", post(update_user_handler))
         .route("/api/notifications", get(get_notifications_handler))
         .route("/api/notifications/delete", post(delete_notifications_handler))
-        
         // --- Student ---
         .route("/api/student/profile", get(student::get_student_profile_handler))
         .route("/api/student/courses", get(student::get_student_courses_handler))
@@ -125,11 +116,9 @@ async fn main() {
         .route("/api/user/request-attendance-correction", post(student::request_attendance_correction_handler))
         .route("/api/user/attendance-correction-requests", get(student::get_attendance_correction_requests_handler))
         .route("/api/user/attendance-correction-requests/delete", post(student::delete_attendance_correction_requests_handler))
-        .route("/api/attendance", get(student::get_student_attendance_handler)) // Get own attendance
-
+        .route("/api/attendance", get(student::get_student_attendance_handler))
         // --- Parent ---
         .route("/api/parent/profile", get(parent::get_parent_profile_handler))
-
         // --- Faculty / HOD ---
         .route("/api/faculty/profile", get(faculty::get_faculty_profile_handler))
         .route("/api/faculty/subjects", get(faculty::get_faculty_subjects_handler))
@@ -138,38 +127,63 @@ async fn main() {
         .route("/api/faculty/lesson-plan/complete", post(faculty::mark_lesson_plan_complete_handler))
         .route("/api/faculty/lesson-plan/feedback/reply", post(faculty::reply_to_feedback_handler))
         .route("/api/faculty/by-branch", get(faculty::get_faculty_by_branch_handler))
-        .route("/api/students", get(faculty::get_students_handler)) // Faculty view students
+        .route("/api/students", get(faculty::get_students_handler))
         .route("/api/attendance/submit", post(faculty::submit_attendance_handler))
         .route("/api/attendance/batch", post(faculty::submit_attendance_batch_handler))
         .route("/api/attendance/check", get(faculty::check_attendance_status_handler))
         .route("/api/attendance/class-record", get(faculty::get_class_attendance_record_handler))
         .route("/api/attendance/stats", get(faculty::get_attendance_stats_handler))
-        
-        // HOD Specific (in Faculty module)
+        // HOD Specific
         .route("/api/hod/approve", post(faculty::approve_handler))
         .route("/api/hod/approve-subject", post(faculty::approve_subject_handler))
         .route("/api/hod/approve-profile-change", post(faculty::approve_profile_change_handler))
         .route("/api/hod/approve-attendance-correction", post(faculty::approve_attendance_correction_handler))
-        
-        // Timetable (HOD/Coordinator)
+        // Timetable
         .route("/api/timetable", get(faculty::get_timetable_handler))
         .route("/api/timetable/assign", post(faculty::assign_class_handler))
         .route("/api/timetable/clear", post(faculty::clear_class_handler))
-
         // --- Admin ---
         .route("/api/admin/users", get(admin::get_admin_users_handler))
         .route("/api/admin/stats", get(admin::get_admin_stats_handler))
         .route("/api/admin/users/approve", post(admin::admin_approve_user_handler))
-
         .layer(cors)
         .with_state(AppState { pool });
 
+    // Combine Services
+    let multiplexed_service = tower::service_fn(move |req: axum::http::Request<axum::body::Body>| {
+        let grpc_service = grpc_service.clone();
+        let app = app.clone();
+        async move {
+            let is_grpc = req.headers().get("content-type")
+                .map(|v| v.as_bytes().starts_with(b"application/grpc"))
+                .unwrap_or(false);
+
+            if is_grpc {
+                // Determine if we need to map the body type (Tonic uses its own Body type)
+                // For simplicity in modern axum/tonic versions, we often need a box body adapter
+                // but let's try direct service call first.
+                grpc_service.oneshot(req).await.map_err(|e| e.to_string())
+            } else {
+                app.oneshot(req).await.map_err(|e| e.to_string())
+            }
+        }
+    });
+
     let port = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
     let addr = format!("0.0.0.0:{}", port);
-    println!("listening on {}", addr);
+    println!("🚀 Server listening on {} (Multiplexing HTTP & gRPC)", addr);
     
     let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
-    axum::serve(listener, app).await.unwrap();
+    // Axum serve takes a router or a make_service.
+    // For multiplexing, we use hyper directly or a tower service adapter.
+    // Since axum::serve expects a Service that accepts a T (connection info), we wrap it.
+    
+    // Simpler approach for Axum 0.7: Use fallback.
+    // However, axum 0.7 fallback logic for gRPC is specific.
+    // Let's stick to the simplest route: 
+    // If we want to use `axum::serve`, we pass the multiplexed service factory.
+    
+    axum::serve(listener, tower::ServiceBuilder::new().service(multiplexed_service)).await.unwrap();
 }
 
 async fn root() -> &'static str {
