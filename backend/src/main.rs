@@ -121,7 +121,7 @@ async fn main() {
         .route("/api/admin/stats", get(admin::get_admin_stats_handler))
         .route("/api/admin/users/approve", post(admin::admin_approve_user_handler))
         .with_state(AppState { pool })
-        .fallback(move |req: axum::extract::Request| {
+        /* .fallback(move |req: axum::extract::Request| {
             let mut grpc_service = grpc_service.clone();
             async move {
                 if req.headers().get("content-type").map_or(false, |v| v.as_bytes().starts_with(b"application/grpc")) {
@@ -149,7 +149,7 @@ async fn main() {
                         .unwrap()
                 }
             }
-        })
+        }) */
         .layer(cors);
 
     let port = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
