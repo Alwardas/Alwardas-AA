@@ -28,9 +28,16 @@ use axum::body::Body;
 
 #[tokio::main]
 async fn main() {
-    let port = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
+    println!("DEBUG: Starting application...");
+    let port_str = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
+    println!("DEBUG: PORT env var is: '{}'", port_str);
+    
+    // Slight delay to ensure logs are flushed if the container crashes
+    tokio::time::sleep(std::time::Duration::from_millis(500)).await;
+
+    let port = port_str.parse::<u16>().expect("Invalid PORT env var");
     // Parse the address more robustly
-    let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port.parse().unwrap()));
+    let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port));
 
     println!("🚀 Server listening on {}", addr);
     
