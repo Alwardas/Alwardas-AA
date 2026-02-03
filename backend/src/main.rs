@@ -28,21 +28,15 @@ use axum::body::Body;
 
 #[tokio::main]
 async fn main() {
-    println!("DEBUG: Starting application...");
-    let port_str = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
-    println!("DEBUG: PORT env var is: '{}'", port_str);
+    let port = std::env::var("PORT")
+        .unwrap_or_else(|_| "3001".to_string())
+        .parse::<u16>()
+        .expect("Invalid PORT");
     
-    // Slight delay to ensure logs are flushed
-    tokio::time::sleep(std::time::Duration::from_millis(500)).await;
-
-    let port = port_str.parse::<u16>().expect("Invalid PORT env var");
-    
-    // Explicit 0.0.0.0 (IPv4) binding
     let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port));
-
-    println!("🚀 Server listening on {} (IPv4)", addr);
+    println!("🚀 Server listening on {}", addr);
     
-    // Bind EARLY
+    // Bind early to ensure Railway sees the port open
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
 
     dotenv().ok();
@@ -52,8 +46,7 @@ async fn main() {
         .expect("Failed to parse DATABASE_URL")
         .statement_cache_capacity(0);
 
-    println!("DEBUG: Connection Options (Host/DB): {}:{}", options.get_host(), options.get_database().unwrap_or("none"));
-    println!("DEBUG: Connecting to database...");
+
     
     let pool = PgPoolOptions::new()
         .max_connections(5)
@@ -64,8 +57,7 @@ async fn main() {
 
     println!("✅ Successfully connected to the database!");
 
-    // --- MIGRATIONS ---
-    println!("DEBUG: Running database migrations...");
+    // Run migrations
     match sqlx::migrate!("./migrations").run(&pool).await {
         Ok(_) => println!("✅ Migrations complete!"),
         Err(e) => {
@@ -168,13 +160,9 @@ async fn main() {
                 }
             }
         })
-        .layer(CorsLayer::permissive())
-            .layer(axum::middleware::map_request(|req: Request| async move {
-                println!("DEBUG: Received request: method={} uri={}", req.method(), req.uri());
-                req
-            }));
+        .layer(CorsLayer::permissive());
 
-    println!("✅ Server initialization complete. Entering accept loop...");
+    println!("✅ Server ready");
     axum::serve(listener, app).await.unwrap();
 }
 
@@ -187,8 +175,6 @@ async fn health_check() -> &'static str {
 }
 
 async fn fix_branch_names(pool: &Pool<Postgres>) {
-    println!("DEBUG: Running fix_branch_names migration...");
-    
     let updates = vec![
         ("CME", "Computer Engineering"),
         ("CM", "Computer Engineering"),
