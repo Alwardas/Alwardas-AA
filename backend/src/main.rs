@@ -93,6 +93,7 @@ async fn main() {
 
     let app = Router::new()
         .route("/", get(root))
+        .route("/health", get(health_check))
         .route("/api/signup", post(signup_handler))
         .route("/api/login", post(login_handler))
         .route("/api/auth/check", get(check_user_existence_handler))
@@ -150,6 +151,10 @@ async fn main() {
 
 async fn root() -> &'static str {
     "Alwardas Backend Running!"
+}
+
+async fn health_check() -> &'static str {
+    "OK"
 }
 
 async fn fix_branch_names(pool: &Pool<Postgres>) {
