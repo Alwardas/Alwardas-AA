@@ -150,21 +150,39 @@ async fn main() {
         .with_state(AppState { pool });
 
     // Combine Services
+    // We must return a Result<Response<Body>, Infallible> to satisfy axum::serve
     let multiplexed_service = tower::service_fn(move |req: axum::http::Request<axum::body::Body>| {
-        let grpc_service = grpc_service.clone();
-        let app = app.clone();
+        let mut grpc_service = grpc_service.clone();
+        let mut app = app.clone();
+        
         async move {
             let is_grpc = req.headers().get("content-type")
                 .map(|v| v.as_bytes().starts_with(b"application/grpc"))
                 .unwrap_or(false);
 
             if is_grpc {
-                // Determine if we need to map the body type (Tonic uses its own Body type)
-                // For simplicity in modern axum/tonic versions, we often need a box body adapter
-                // but let's try direct service call first.
-                grpc_service.oneshot(req).await.map_err(|e| e.to_string())
+                match grpc_service.call(req).await {
+                    Ok(res) => {
+                        // Map Tonic body to Axum Body
+                        let (parts, body) = res.into_parts();
+                        let body = axum::body::Body::new(body);
+                        Ok::<_, std::convert::Infallible>(axum::http::Response::from_parts(parts, body))
+                    },
+                    Err(_) => {
+                        let mut res = axum::http::Response::new(axum::body::Body::empty());
+                        *res.status_mut() = axum::http::StatusCode::INTERNAL_SERVER_ERROR;
+                        Ok(res)
+                    }
+                }
             } else {
-                app.oneshot(req).await.map_err(|e| e.to_string())
+                match app.call(req).await {
+                    Ok(res) => Ok(res), // Axum Router already returns Response<Body>
+                    Err(_) => {
+                        let mut res = axum::http::Response::new(axum::body::Body::empty());
+                        *res.status_mut() = axum::http::StatusCode::INTERNAL_SERVER_ERROR;
+                        Ok(res)
+                    }
+                }
             }
         }
     });
