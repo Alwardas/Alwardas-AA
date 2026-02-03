@@ -60,6 +60,7 @@ async fn main() {
     let _ = sqlx::query("DELETE FROM _sqlx_migrations").execute(&pool).await;
     let _ = sqlx::query("DROP TABLE IF EXISTS attendance CASCADE").execute(&pool).await;
     let _ = sqlx::query("DROP TABLE IF EXISTS attendance_correction_requests CASCADE").execute(&pool).await;
+    let _ = sqlx::query("DROP TABLE IF EXISTS timetables CASCADE").execute(&pool).await;
 
     println!("DEBUG: Running migrations...");
     sqlx::migrate!("./migrations")

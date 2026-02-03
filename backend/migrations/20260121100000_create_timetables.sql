@@ -13,4 +13,4 @@ CREATE TABLE IF NOT EXISTS timetables (
     updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE UNIQUE INDEX idx_timetables_slot ON timetables(branch, year, section, day, period_number);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_timetables_slot ON timetables(branch, year, section, day, period_number);
