@@ -136,8 +136,10 @@ async fn main() {
                 .unwrap_or(false);
 
             if is_grpc {
-                // Convert Incoming body to Axum Body for Tonic
-                let req = req.map(Body::new);
+                // Tonic needs Request<Body>
+                let (parts, body) = req.into_parts();
+                let req = axum::http::Request::from_parts(parts, Body::new(body));
+                
                 match grpc_service.call(req).await {
                     Ok(resp) => Ok::<_, std::convert::Infallible>(resp.into_response()),
                     Err(_) => {
@@ -148,7 +150,7 @@ async fn main() {
                     }
                 }
             } else {
-                // Axum Router handles Incoming body directly
+                // Axum handles Request<Incoming>
                 match app.call(req).await {
                     Ok(resp) => Ok::<_, std::convert::Infallible>(resp.into_response()),
                     Err(e) => {
