@@ -150,16 +150,17 @@ async fn main() {
                 }
             }
         }) */
-        .layer(cors);
+        /* .layer(cors); */
+        .layer(CorsLayer::permissive());
 
     let port = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
-    let addr = format!("0.0.0.0:{}", port);
+    // Parse the address more robustly
+    let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port.parse().unwrap()));
     
-    println!("🚀 Server preparing to listen on {}...", addr);
-    let listener = tokio::net::TcpListener::bind(&addr).await.expect("Failed to bind to port");
-    println!("✅ Bound to {} successfully! Starting serve...", addr);
+    println!("🚀 Server listening on {}", addr);
     
-    axum::serve(listener, app).await.expect("Server runtime crash");
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
+    axum::serve(listener, app).await.unwrap();
 }
 
 async fn root() -> &'static str {
