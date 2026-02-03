@@ -34,54 +34,34 @@ async fn main() {
         .expect("Failed to parse DATABASE_URL")
         .statement_cache_capacity(0);
 
-    println!("DEBUG: Connection Options: {:?}", options);
+    println!("DEBUG: Connection Options (Host/DB): {}:{}", options.get_host(), options.get_database().unwrap_or("none"));
 
-    let pool = loop {
-        match PgPoolOptions::new()
-            .max_connections(5)
-            .acquire_timeout(std::time::Duration::from_secs(3))
-            .connect_with(options.clone())
-            .await 
-        {
-            Ok(pool) => {
-                println!("✅ Successfully connected to the database!");
-                break pool;
-            }
-            Err(e) => {
-                eprintln!("⚠️ Failed to connect to DB: {}. Retrying in 5 seconds...", e);
-                tokio::time::sleep(std::time::Duration::from_secs(5)).await;
-            }
-        }
-    };
-
-    // NUCLEAR FIX: Clear ALL migration history.
-    // The database is in a confused state with multiple mismatches.
-    // We drop problematic tables so they are recreated fresh by the migrations.
-    let _ = sqlx::query("DELETE FROM _sqlx_migrations").execute(&pool).await;
-    let _ = sqlx::query("DROP TABLE IF EXISTS attendance CASCADE").execute(&pool).await;
-    let _ = sqlx::query("DROP TABLE IF EXISTS attendance_correction_requests CASCADE").execute(&pool).await;
-    let _ = sqlx::query("DROP TABLE IF EXISTS timetables CASCADE").execute(&pool).await;
-
-    println!("DEBUG: Running migrations...");
-    sqlx::migrate!("./migrations")
-        .run(&pool)
+    println!("DEBUG: Connecting to database...");
+    let pool = PgPoolOptions::new()
+        .max_connections(5)
+        .acquire_timeout(std::time::Duration::from_secs(10))
+        .connect_with(options.clone())
         .await
-        .expect("Failed to run migrations");
-    println!("✅ Migrations complete!");
+        .expect("❌ CRITICAL: Failed to connect to the database. Please check your DATABASE_URL in Railway variables.");
 
-    // Fix Branch Names (Run in background to avoid blocking startup)
+    println!("✅ Successfully connected to the database!");
+
+    // --- MIGRATIONS ---
+    println!("DEBUG: Running database migrations...");
+    match sqlx::migrate!("./migrations").run(&pool).await {
+        Ok(_) => println!("✅ Migrations complete!"),
+        Err(e) => {
+            eprintln!("⚠️ Migration warning: {}. The app will try to continue.", e);
+        }
+    }
+
+    // Fix Branch Names (Run in background)
     let fix_pool = pool.clone();
     tokio::spawn(async move {
-        println!("DEBUG: Starting background task: fix_branch_names...");
         fix_branch_names(&fix_pool).await;
-        println!("✅ Background task: fix_branch_names complete!");
     });
 
     // --- MULTIPLEXING SETUP ---
-    // Railway exposes only ONE port (Example: 8080). 
-    // We must run both HTTP (Axum) and gRPC (Tonic) on this same port.
-    // We differentiate them by looking at the "Content-Type" header.
-    
     let grpc_pool = pool.clone();
     let auth_service = MyAuthService { pool: grpc_pool };
     let grpc_service = tonic::transport::Server::builder()
@@ -95,7 +75,6 @@ async fn main() {
 
     let app = Router::new()
         .route("/", get(root))
-        // --- Auth & Common ---
         .route("/api/signup", post(signup_handler))
         .route("/api/login", post(login_handler))
         .route("/api/auth/check", get(check_user_existence_handler))
@@ -104,7 +83,6 @@ async fn main() {
         .route("/api/user/update", post(update_user_handler))
         .route("/api/notifications", get(get_notifications_handler))
         .route("/api/notifications/delete", post(delete_notifications_handler))
-        // --- Student ---
         .route("/api/student/profile", get(student::get_student_profile_handler))
         .route("/api/student/courses", get(student::get_student_courses_handler))
         .route("/api/student/lesson-plan", get(student::get_student_lesson_plan_handler))
@@ -117,9 +95,7 @@ async fn main() {
         .route("/api/user/attendance-correction-requests", get(student::get_attendance_correction_requests_handler))
         .route("/api/user/attendance-correction-requests/delete", post(student::delete_attendance_correction_requests_handler))
         .route("/api/attendance", get(student::get_student_attendance_handler))
-        // --- Parent ---
         .route("/api/parent/profile", get(parent::get_parent_profile_handler))
-        // --- Faculty / HOD ---
         .route("/api/faculty/profile", get(faculty::get_faculty_profile_handler))
         .route("/api/faculty/subjects", get(faculty::get_faculty_subjects_handler))
         .route("/api/faculty/subjects", post(faculty::add_faculty_subject_handler))
@@ -133,56 +109,39 @@ async fn main() {
         .route("/api/attendance/check", get(faculty::check_attendance_status_handler))
         .route("/api/attendance/class-record", get(faculty::get_class_attendance_record_handler))
         .route("/api/attendance/stats", get(faculty::get_attendance_stats_handler))
-        // HOD Specific
         .route("/api/hod/approve", post(faculty::approve_handler))
         .route("/api/hod/approve-subject", post(faculty::approve_subject_handler))
         .route("/api/hod/approve-profile-change", post(faculty::approve_profile_change_handler))
         .route("/api/hod/approve-attendance-correction", post(faculty::approve_attendance_correction_handler))
-        // Timetable
         .route("/api/timetable", get(faculty::get_timetable_handler))
         .route("/api/timetable/assign", post(faculty::assign_class_handler))
         .route("/api/timetable/clear", post(faculty::clear_class_handler))
-        // --- Admin ---
         .route("/api/admin/users", get(admin::get_admin_users_handler))
         .route("/api/admin/stats", get(admin::get_admin_stats_handler))
         .route("/api/admin/users/approve", post(admin::admin_approve_user_handler))
         .layer(cors)
         .with_state(AppState { pool });
 
-    // Combine Services
-    // We must return a Result<Response<Body>, Infallible> to satisfy axum::serve
-    let multiplexed_service = tower::service_fn(move |req: axum::http::Request<axum::body::Body>| {
+    let multiplex_service = tower::service_fn(move |req: axum::http::Request<axum::body::Incoming>| {
         let mut grpc_service = grpc_service.clone();
         let mut app = app.clone();
-        
         async move {
             let is_grpc = req.headers().get("content-type")
                 .map(|v| v.as_bytes().starts_with(b"application/grpc"))
                 .unwrap_or(false);
 
+            // Convert axum::body::Incoming to axum::body::Body
+            let (parts, body) = req.into_parts();
+            let req = axum::http::Request::from_parts(parts, axum::body::Body::new(body));
+
             if is_grpc {
-                match grpc_service.call(req).await {
-                    Ok(res) => {
-                        // Map Tonic body to Axum Body
-                        let (parts, body) = res.into_parts();
-                        let body = axum::body::Body::new(body);
-                        Ok::<_, std::convert::Infallible>(axum::http::Response::from_parts(parts, body))
-                    },
-                    Err(_) => {
-                        let mut res = axum::http::Response::new(axum::body::Body::empty());
-                        *res.status_mut() = axum::http::StatusCode::INTERNAL_SERVER_ERROR;
-                        Ok(res)
-                    }
-                }
+                use tower::Service;
+                grpc_service.call(req).await.map(|resp| {
+                    resp.map(axum::body::Body::new)
+                }).map_err(|e| e.to_string())
             } else {
-                match app.call(req).await {
-                    Ok(res) => Ok(res), // Axum Router already returns Response<Body>
-                    Err(_) => {
-                        let mut res = axum::http::Response::new(axum::body::Body::empty());
-                        *res.status_mut() = axum::http::StatusCode::INTERNAL_SERVER_ERROR;
-                        Ok(res)
-                    }
-                }
+                use tower::Service;
+                app.call(req).await.map_err(|e| e.to_string())
             }
         }
     });
@@ -192,16 +151,7 @@ async fn main() {
     println!("🚀 Server listening on {} (Multiplexing HTTP & gRPC)", addr);
     
     let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
-    // Axum serve takes a router or a make_service.
-    // For multiplexing, we use hyper directly or a tower service adapter.
-    // Since axum::serve expects a Service that accepts a T (connection info), we wrap it.
-    
-    // Simpler approach for Axum 0.7: Use fallback.
-    // However, axum 0.7 fallback logic for gRPC is specific.
-    // Let's stick to the simplest route: 
-    // If we want to use `axum::serve`, we pass the multiplexed service factory.
-    
-    axum::serve(listener, tower::ServiceBuilder::new().service(multiplexed_service)).await.unwrap();
+    axum::serve(listener, tower::make::Shared::new(multiplex_service)).await.unwrap();
 }
 
 async fn root() -> &'static str {

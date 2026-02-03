@@ -28,3 +28,7 @@ Desktop.ini
 
 # Protos
 # Keep protos, but ignore generated ones if they are in the build folders
+
+# Python / Virtual Environment
+.venv/
+
