@@ -28,12 +28,7 @@ use axum::body::Body;
 
 #[tokio::main]
 async fn main() {
-    // Initialize tracing (simple subscriber)
-    tracing_subscriber::fmt()
-        .with_max_level(tracing::Level::DEBUG)
-        .init();
-
-    println!("DEBUG: Starting application with Tracing...");
+    println!("DEBUG: Starting application...");
     let port_str = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
     println!("DEBUG: PORT env var is: '{}'", port_str);
     
@@ -42,7 +37,7 @@ async fn main() {
 
     let port = port_str.parse::<u16>().expect("Invalid PORT env var");
     
-    // Revert to 0.0.0.0 (IPv4) - explicit IPv4 is usually safer for Railway internal networks
+    // Explicit 0.0.0.0 (IPv4) binding
     let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port));
 
     println!("🚀 Server listening on {} (IPv4)", addr);
@@ -51,6 +46,13 @@ async fn main() {
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
 
     dotenv().ok();
+    // ... DB connection ... (lines 41+ are preserved by context match?)
+    // Note: I can't rely on '...' here, so I must match exact target. 
+    // Wait, allow me to use a smaller chunk for part 1 and another for part 2.
+    // I can't issue two REPLACE calls in parallel on the same file in one turn easily if they overlap or I am not careful.
+    // I will do TWO separate REPLACE calls sequentially if needed, but I can use "MultiReplace" if available.
+    // I see "multi_replace_file_content" tool available! I should use that!
+}
     let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
     let options = PgConnectOptions::from_str(&database_url)
@@ -143,37 +145,11 @@ async fn main() {
         .route("/api/admin/stats", get(admin::get_admin_stats_handler))
         .route("/api/admin/users/approve", post(admin::admin_approve_user_handler))
         .with_state(AppState { pool })
-        /* .fallback(move |req: axum::extract::Request| {
-            let mut grpc_service = grpc_service.clone();
-            async move {
-                if req.headers().get("content-type").map_or(false, |v| v.as_bytes().starts_with(b"application/grpc")) {
-                    use http_body_util::BodyExt;
-                    let (parts, body) = req.into_parts();
-                    let body = body.map_err(|e| tonic::Status::internal(e.to_string())).boxed_unsync();
-                    let req = axum::http::Request::from_parts(parts, body);
-                    
-                    use axum::response::IntoResponse;
-                    match grpc_service.call(req).await {
-                        Ok(resp) => resp.into_response(),
-                        Err(e) => {
-                            eprintln!("DEBUG: gRPC Error: {:?}", e);
-                            axum::http::Response::builder()
-                                .status(axum::http::StatusCode::INTERNAL_SERVER_ERROR)
-                                .body(Body::empty())
-                                .unwrap()
-                        }
-                    }
-                } else {
-                    println!("DEBUG: 404 Not Found: {} {}", req.method(), req.uri());
-                    axum::http::Response::builder()
-                        .status(axum::http::StatusCode::NOT_FOUND)
-                        .body(Body::from("Route Not Found"))
-                        .unwrap()
-                }
-            }
-        }) */
             .layer(CorsLayer::permissive())
-            .layer(TraceLayer::new_for_http());
+            .layer(axum::middleware::map_request(|req: Request| async move {
+                println!("DEBUG: Received request: method={} uri={}", req.method(), req.uri());
+                req
+            }));
 
     println!("✅ Server initialization complete. Entering accept loop...");
     axum::serve(listener, app).await.unwrap();
