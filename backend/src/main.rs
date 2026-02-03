@@ -22,8 +22,7 @@ use models::AppState;
 mod routes;
 use routes::*;
 
-use tower::{Service, ServiceExt};
-use axum::extract::Request;
+use tower::Service;
 use axum::body::Body;
 
 #[tokio::main]
@@ -125,7 +124,7 @@ async fn main() {
 
     use axum::response::IntoResponse;
     use http_body_util::BodyExt;
-
+    
     let multiplex_service = tower::service_fn(move |req: axum::http::Request<axum::body::Body>| {
         let mut grpc_service = grpc_service.clone();
         let mut app = app.clone();
@@ -136,10 +135,12 @@ async fn main() {
                 .unwrap_or(false);
 
             if is_grpc {
-                // Tonic 0.12 expects a specific boxed body type.
-                // We convert the Axum body into a boxed unsync body.
+                // Manually convert axum::body::Body to the type Tonic expects:
+                // Request<UnsyncBoxBody<Bytes, Status>>
                 let (parts, body) = req.into_parts();
-                let body = body.map_err(|e| tonic::Status::internal(e.to_string())).boxed_unsync();
+                let body = body
+                    .map_err(|e| tonic::Status::internal(e.to_string()))
+                    .boxed_unsync();
                 let req = axum::http::Request::from_parts(parts, body);
                 
                 match grpc_service.call(req).await {
