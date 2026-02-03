@@ -14,13 +14,9 @@ Future<void> main() async {
   // Performance: Increase image cache limit (100MB) for smoother asset loading
   PaintingBinding.instance.imageCache.maximumSize = 100 * 1024 * 1024;
   
-  // Load saved Base URL
+  // Hard reset API URL to production to clear any legacy local IPs stored in device cache
   final prefs = await SharedPreferences.getInstance();
-  final savedUrl = prefs.getString('api_base_url');
-  if (savedUrl != null && savedUrl.isNotEmpty) {
-    ApiConstants.baseUrl = savedUrl;
-    print("Loaded custom API URL: $savedUrl");
-  }
+  await prefs.remove('api_base_url');
 
   runApp(
     ChangeNotifierProvider(

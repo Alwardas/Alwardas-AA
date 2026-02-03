@@ -54,16 +54,23 @@ async fn main() {
         }
     };
 
-    // Run migrations automatically
+    println!("DEBUG: Running migrations...");
     sqlx::migrate!("./migrations")
         .run(&pool)
         .await
         .expect("Failed to run migrations");
+    println!("✅ Migrations complete!");
 
-    // Fix Branch Names (Migration)
-    fix_branch_names(&pool).await;
+    // Fix Branch Names (Run in background to avoid blocking startup)
+    let fix_pool = pool.clone();
+    tokio::spawn(async move {
+        println!("DEBUG: Starting background task: fix_branch_names...");
+        fix_branch_names(&fix_pool).await;
+        println!("✅ Background task: fix_branch_names complete!");
+    });
 
-    // Start gRPC Server
+    // Start gRPC Server (Note: This runs on a separate port 50051 which is NOT exposed on Railway by default. 
+    // You likely need to use a multiplexer or expose this port if possible, otherwise gRPC calls will fail.)
     let grpc_pool = pool.clone();
     tokio::spawn(async move {
         let addr = "0.0.0.0:50051".parse().unwrap();
@@ -71,11 +78,13 @@ async fn main() {
         
         let auth_service = MyAuthService { pool: grpc_pool };
 
-        tonic::transport::Server::builder()
+        if let Err(e) = tonic::transport::Server::builder()
             .add_service(AuthServiceServer::new(auth_service))
             .serve(addr)
-            .await
-            .expect("Failed to start gRPC server");
+            .await 
+        {
+             eprintln!("❌ gRPC Server failed to start: {}", e);
+        }
     });
 
     let cors = CorsLayer::new()

@@ -67,25 +67,52 @@ class _LoginScreenState extends State<LoginScreen> {
         if (response.statusCode == 200) {
           final data = jsonDecode(response.body);
           
-          if (data['success'] == true) {
-            final userProfile = data['user_profile'];
-            
-            final userData = {
-              'id': data['user_id'],
-              'full_name': userProfile['name'],
-              'role': userProfile['role'],
-              'login_id': userProfile['login_id'],
-              'branch': userProfile['branch'],
-              'year': userProfile['year'],
-              'semester': userProfile['semester'], 
-              'batch_no': userProfile['batch_no'],
-            };
+          // Debug backend response
+          debugPrint("Parsed Data Keys: ${data.keys.toList()}");
+
+          // Backend returns: { "id": "uuid", "message": "Login Successful", "role": "Student", "fullName": "Name", "loginId": "ID", ... }
+          // It does NOT return { "success": true, "user_profile": ... }
+          
+          final String? message = data['message'];
+          final bool isSuccess = message != null && message.toLowerCase().contains('success');
+          
+          if (isSuccess || data['id'] != null) {
+             // Extract fields directly from top-level JSON
+             // Note: Rust structs use camelCase in JSON if annotated, or snake_case if default.
+             // Checking models.rs: AuthResponse fields are default pub fields. 
+             // BUT `signup_handler` returns Json(AuthResponse { ... }). Default serde is snake_case unless `rename_all` is used.
+             // Looking at models.rs: AuthResponse doesn't have `#[serde(rename_all = "camelCase")]`.
+             // So keys are likely: "full_name", "login_id", "batch_no".
+             
+             final userData = {
+              'id': data['id'],
+              'full_name': data['full_name'], // Expect snake_case from Rust default
+              'role': data['role'],
+              'login_id': data['login_id'],
+              'branch': data['branch'],
+              'year': data['year'],
+              'semester': data['semester'], 
+              'batch_no': data['batch_no'],
+             };
+
+             debugPrint("DEBUG: UserData constructed: $userData");
 
             if (mounted) {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Login Successful')));
+              debugPrint("DEBUG: Login Successful. Saving session...");
               await AuthService.saveUserSession(userData);
-              Widget dashboard = _getDashboardForRole(userProfile['role'], userData);
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => dashboard));
+              
+              debugPrint("DEBUG: Session saved. Role obtained: ${userData['role']}");
+              
+              Widget dashboard = _getDashboardForRole(userData['role'], userData);
+              debugPrint("DEBUG: Dashboard widget created: $dashboard");
+              
+              try {
+                await Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => dashboard));
+                debugPrint("DEBUG: Navigation pushed.");
+              } catch (navError) {
+                debugPrint("DEBUG: Navigation Error: $navError");
+              }
             }
           } else {
              if (mounted) {
@@ -137,111 +164,34 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               actions: [
                 TextButton(onPressed: () => Navigator.pop(context), child: const Text("OK")),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    _showServerConfigDialog();
-                  }, 
-                  child: const Text("Change IP Settings")
-                ),
               ],
             ),
           );
         }
       } finally {
+        // Only stop loading if we are still mounted and NOT navigating away
+        // (If we successfully pushed replacement, mounted might still be true momentarily, but we don't want to rebuild)
         if (mounted) setState(() => _isLoading = false);
       }
     }
 
-  void _showServerConfigDialog() {
-    final TextEditingController urlController = TextEditingController(text: ApiConstants.baseUrl);
+  Widget _getDashboardForRole(String? role, Map<String, dynamic> userData) {
+    debugPrint("Getting dashboard for role: '$role'");
+    final normalizedRole = role?.trim() ?? '';
     
-    showDialog(
-      context: context, 
-      builder: (context) => AlertDialog(
-        title: const Text("Server Configuration"),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text("Enter the full API Base URL (e.g. http://192.168.1.5:3001)"),
-            const SizedBox(height: 10),
-            TextField(
-              controller: urlController,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: "http://ip:port",
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () async {
-               // Reset to code defaults (useful if IP changed)
-               final prefs = await SharedPreferences.getInstance();
-               await prefs.remove('api_base_url');
-               
-               setState(() {
-                 // Force reload from constants (which we update in code)
-                 // You might need to reload the app completely or just re-assign here:
-                 // ApiConstants.baseUrl = 'http://172.25.82.167:3001'; // Hard to know dynamic value here without reflection
-                 // Better to just tell user to restart or manually clear
-                 ApiConstants.baseUrl = 'http://172.25.82.167:3001'; // Fallback
-               });
-               
-               if (mounted) {
-                   Navigator.pop(context);
-                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Reset to Default. Please Restart App.")));
-               }
-            },
-            child: const Text("Reset Default"),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context), 
-            child: const Text("Cancel"),
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              String newUrl = urlController.text.trim();
-              if (newUrl.isNotEmpty) {
-                 // Remove trailing slash if present
-                 if (newUrl.endsWith('/')) {
-                   newUrl = newUrl.substring(0, newUrl.length - 1);
-                 }
+    // Case-insensitive match or direct match
+    if (normalizedRole.toLowerCase() == 'student') return StudentDashboard(userData: userData);
+    if (normalizedRole.toLowerCase() == 'parent') return ParentDashboard(userData: userData);
+    if (normalizedRole.toLowerCase() == 'faculty') return FacultyDashboard(userData: userData);
+    if (normalizedRole.toLowerCase() == 'hod') return HodDashboard(userData: userData);
+    if (normalizedRole.toLowerCase() == 'principal') return PrincipalDashboard(userData: userData);
+    if (normalizedRole.toLowerCase() == 'admin') return AdminDashboard(userData: userData);
+    if (normalizedRole.toLowerCase() == 'coordinator') return CoordinatorDashboard(userData: userData);
 
-                 // Save to prefs
-                 final prefs = await SharedPreferences.getInstance();
-                 await prefs.setString('api_base_url', newUrl);
-                 
-                 // Update runtime constants
-                 setState(() {
-                   ApiConstants.baseUrl = newUrl;
-                 });
-                 
-                 if (mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Server URL updated to: $newUrl")));
-                    Navigator.pop(context);
-                 }
-              }
-            }, 
-            child: const Text("Save"),
-          ),
-        ],
-      ),
+    return Scaffold(
+      appBar: AppBar(title: const Text("Unknown Role")),
+      body: Center(child: Text("Unknown Role: '$role'")),
     );
-  }
-
-  Widget _getDashboardForRole(String role, Map<String, dynamic> userData) {
-    switch (role) {
-      case 'Student': return StudentDashboard(userData: userData);
-      case 'Parent': return ParentDashboard(userData: userData);
-      case 'Faculty': return FacultyDashboard(userData: userData); // Ensure this exists or placeholder
-      case 'HOD': return HodDashboard(userData: userData);
-      case 'Principal': return PrincipalDashboard(userData: userData); // Ensure this exists or placeholder
-      case 'Admin': return AdminDashboard(userData: userData);
-      case 'Coordinator': return CoordinatorDashboard(userData: userData);
-      default: return Scaffold(body: Center(child: Text("Unknown Role: $role")));
-    }
   }
 
   @override
@@ -270,18 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           
-          // Settings Button (Top Right)
-          Positioned(
-            top: 40,
-            right: 20,
-            child: SafeArea(
-              child: IconButton(
-                icon: const Icon(Icons.settings, color: Colors.white70),
-                onPressed: _showServerConfigDialog,
-                tooltip: "Change Server URL",
-              ),
-            ),
-          ),
+
           
           // 2. Scrollable Content (Logo + Card)
           Padding(
@@ -334,37 +273,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           ),
 
-          // Server Info (Bottom Center)
-          Positioned(
-            bottom: 20,
-            left: 0,
-            right: 0,
-            child: SafeArea(
-              child: Center(
-                child: GestureDetector(
-                  onTap: _showServerConfigDialog,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(Icons.dns, color: Colors.white70, size: 14),
-                        const SizedBox(width: 6),
-                        Text(
-                          "Server: ${ApiConstants.baseUrl}",
-                          style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+
         ],
       ),
     );
