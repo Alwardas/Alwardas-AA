@@ -1,0 +1,14 @@
+# Ignore git itself
+.git
+.gitignore
+
+# Ignore Frontend (Huge!)
+frontend/
+
+# Ignore Target folders (Huge!)
+target/
+backend/target/
+
+# Ignore other non-backend files
+monitor_apk.ps1
+README.md
