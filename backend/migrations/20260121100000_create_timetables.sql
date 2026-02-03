@@ -1,4 +1,4 @@
-CREATE TABLE timetables (
+CREATE TABLE IF NOT EXISTS timetables (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     branch VARCHAR(100) NOT NULL,
     year VARCHAR(50) NOT NULL,
