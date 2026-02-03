@@ -32,3 +32,6 @@ Desktop.ini
 # Python / Virtual Environment
 .venv/
 
+# Android / Gradle distribution
+frontend/android/gradle/wrapper/gradle-*.zip
+frontend/android/gradle/wrapper/*.jar

@@ -18,6 +18,8 @@ windows-sys = "0.52.0"
 bcrypt = "0.17.1"
 tonic = "0.12"
 prost = "0.13"
-
+tower = { version = "0.4", features = ["full"] }
+tower-service = "0.3"
+hyper = "1.0"
 [build-dependencies]
 tonic-build = "0.12"

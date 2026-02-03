@@ -21,9 +21,10 @@ use models::AppState;
 
 mod routes;
 use routes::*;
-// Need to explicitly use submodules if I want to refer to them as routes::admin or admin
-// routes::* brings routes::admin into scope as `admin` IF `routes/mod.rs` has `pub mod admin;`
-// It seems I need to rely on `routes::*` exposing `admin`, `faculty` modules.
+
+use tower::{Service, ServiceExt};
+use axum::extract::Request;
+use axum::body::Body;
 
 #[tokio::main]
 async fn main() {
@@ -122,26 +123,28 @@ async fn main() {
         .layer(cors)
         .with_state(AppState { pool });
 
+    use axum::response::IntoResponse;
     let multiplex_service = tower::service_fn(move |req: axum::http::Request<axum::body::Incoming>| {
         let mut grpc_service = grpc_service.clone();
         let mut app = app.clone();
+        
         async move {
             let is_grpc = req.headers().get("content-type")
                 .map(|v| v.as_bytes().starts_with(b"application/grpc"))
                 .unwrap_or(false);
 
-            // Convert axum::body::Incoming to axum::body::Body
-            let (parts, body) = req.into_parts();
-            let req = axum::http::Request::from_parts(parts, axum::body::Body::new(body));
-
             if is_grpc {
-                use tower::Service;
-                grpc_service.call(req).await.map(|resp| {
-                    resp.map(axum::body::Body::new)
-                }).map_err(|e| e.to_string())
+                // Tonic expects Request<Body> or similar. We need to convert Incoming to Body.
+                let (parts, body) = req.into_parts();
+                let req = axum::http::Request::from_parts(parts, Body::new(body));
+                
+                grpc_service.call(req).await
+                    .map(|resp| resp.into_response())
+                    .map_err(|e| e.to_string())
             } else {
-                use tower::Service;
-                app.call(req).await.map_err(|e| e.to_string())
+                app.call(req).await
+                    .map(|resp| resp.into_response())
+                    .map_err(|e| e.to_string())
             }
         }
     });
