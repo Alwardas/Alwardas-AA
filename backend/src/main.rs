@@ -46,13 +46,6 @@ async fn main() {
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
 
     dotenv().ok();
-    // ... DB connection ... (lines 41+ are preserved by context match?)
-    // Note: I can't rely on '...' here, so I must match exact target. 
-    // Wait, allow me to use a smaller chunk for part 1 and another for part 2.
-    // I can't issue two REPLACE calls in parallel on the same file in one turn easily if they overlap or I am not careful.
-    // I will do TWO separate REPLACE calls sequentially if needed, but I can use "MultiReplace" if available.
-    // I see "multi_replace_file_content" tool available! I should use that!
-}
     let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
     let options = PgConnectOptions::from_str(&database_url)
