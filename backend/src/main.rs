@@ -134,17 +134,30 @@ async fn main() {
                 .unwrap_or(false);
 
             if is_grpc {
-                // Tonic expects Request<Body> or similar. We need to convert Incoming to Body.
                 let (parts, body) = req.into_parts();
                 let req = axum::http::Request::from_parts(parts, Body::new(body));
                 
-                grpc_service.call(req).await
-                    .map(|resp| resp.into_response())
-                    .map_err(|e| e.to_string())
+                match grpc_service.call(req).await {
+                    Ok(resp) => Ok::<_, std::convert::Infallible>(resp.into_response()),
+                    Err(_) => {
+                        // Return a 500 error if gRPC service fails
+                        Ok(axum::http::Response::builder()
+                            .status(axum::http::StatusCode::INTERNAL_SERVER_ERROR)
+                            .body(Body::empty())
+                            .unwrap())
+                    }
+                }
             } else {
-                app.call(req).await
-                    .map(|resp| resp.into_response())
-                    .map_err(|e| e.to_string())
+                match app.call(req).await {
+                    Ok(resp) => Ok::<_, std::convert::Infallible>(resp.into_response()),
+                    Err(e) => {
+                        // Return a 500 error if Axum app fails
+                        Ok(axum::http::Response::builder()
+                            .status(axum::http::StatusCode::INTERNAL_SERVER_ERROR)
+                            .body(Body::from(format!("Internal Server Error: {}", e)))
+                            .unwrap())
+                    }
+                }
             }
         }
     });
