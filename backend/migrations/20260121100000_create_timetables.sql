@@ -13,4 +13,5 @@ CREATE TABLE IF NOT EXISTS timetables (
     updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+DROP INDEX IF EXISTS idx_timetables_slot;
 CREATE UNIQUE INDEX IF NOT EXISTS idx_timetables_slot ON timetables(branch, year, section, day, period_number);
