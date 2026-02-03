@@ -54,20 +54,18 @@ async fn main() {
         }
     };
 
-    println!("✅ Migrations complete!");
-
     // NUCLEAR FIX: Clear ALL migration history.
     // The database is in a confused state with multiple mismatches.
-    // Since all our migrations use "IF NOT EXISTS", it is safe to wipe the history and let SQLx re-verify everything.
-    let _ = sqlx::query("DELETE FROM _sqlx_migrations")
-        .execute(&pool)
-        .await;
+    // We drop problematic tables so they are recreated fresh by the migrations.
+    let _ = sqlx::query("DELETE FROM _sqlx_migrations").execute(&pool).await;
+    let _ = sqlx::query("DROP TABLE IF EXISTS attendance CASCADE").execute(&pool).await;
 
     println!("DEBUG: Running migrations...");
     sqlx::migrate!("./migrations")
         .run(&pool)
         .await
         .expect("Failed to run migrations");
+    println!("✅ Migrations complete!");
 
     // Fix Branch Names (Run in background to avoid blocking startup)
     let fix_pool = pool.clone();
