@@ -139,7 +139,36 @@ async fn main() {
         .route("/api/admin/stats", get(admin::get_admin_stats_handler))
         .route("/api/admin/users/approve", post(admin::admin_approve_user_handler))
         .with_state(AppState { pool })
-            .layer(CorsLayer::permissive())
+        .fallback(move |req: axum::extract::Request| {
+            let mut grpc_service = grpc_service.clone();
+            async move {
+                if req.headers().get("content-type").map_or(false, |v| v.as_bytes().starts_with(b"application/grpc")) {
+                    use http_body_util::BodyExt;
+                    let (parts, body) = req.into_parts();
+                    let body = body.map_err(|e| tonic::Status::internal(e.to_string())).boxed_unsync();
+                    let req = axum::http::Request::from_parts(parts, body);
+                    
+                    use axum::response::IntoResponse;
+                    match grpc_service.call(req).await {
+                        Ok(resp) => resp.into_response(),
+                        Err(e) => {
+                            eprintln!("DEBUG: gRPC Error: {:?}", e);
+                            axum::http::Response::builder()
+                                .status(axum::http::StatusCode::INTERNAL_SERVER_ERROR)
+                                .body(Body::empty())
+                                .unwrap()
+                        }
+                    }
+                } else {
+                    println!("DEBUG: 404 Not Found: {} {}", req.method(), req.uri());
+                    axum::http::Response::builder()
+                        .status(axum::http::StatusCode::NOT_FOUND)
+                        .body(Body::from("Route Not Found"))
+                        .unwrap()
+                }
+            }
+        })
+        .layer(CorsLayer::permissive())
             .layer(axum::middleware::map_request(|req: Request| async move {
                 println!("DEBUG: Received request: method={} uri={}", req.method(), req.uri());
                 req
