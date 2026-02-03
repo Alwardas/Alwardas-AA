@@ -28,6 +28,15 @@ use axum::body::Body;
 
 #[tokio::main]
 async fn main() {
+    let port = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
+    // Parse the address more robustly
+    let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port.parse().unwrap()));
+
+    println!("🚀 Server listening on {}", addr);
+    
+    // Bind EARLY to ensure Railway sees the port open
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
+
     dotenv().ok();
     let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
@@ -36,11 +45,11 @@ async fn main() {
         .statement_cache_capacity(0);
 
     println!("DEBUG: Connection Options (Host/DB): {}:{}", options.get_host(), options.get_database().unwrap_or("none"));
-
     println!("DEBUG: Connecting to database...");
+    
     let pool = PgPoolOptions::new()
         .max_connections(5)
-        .acquire_timeout(std::time::Duration::from_secs(10))
+        .acquire_timeout(std::time::Duration::from_secs(5)) // Reduced timeout
         .connect_with(options.clone())
         .await
         .expect("❌ CRITICAL: Failed to connect to the database. Please check your DATABASE_URL in Railway variables.");
@@ -150,16 +159,8 @@ async fn main() {
                 }
             }
         }) */
-        /* .layer(cors); */
-        .layer(CorsLayer::permissive());
+            .layer(CorsLayer::permissive());
 
-    let port = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
-    // Parse the address more robustly
-    let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port.parse().unwrap()));
-    
-    println!("🚀 Server listening on {}", addr);
-    
-    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
 
