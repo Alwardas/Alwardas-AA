@@ -119,59 +119,49 @@ async fn main() {
         .route("/api/admin/users", get(admin::get_admin_users_handler))
         .route("/api/admin/stats", get(admin::get_admin_stats_handler))
         .route("/api/admin/users/approve", post(admin::admin_approve_user_handler))
-        .layer(cors)
-        .with_state(AppState { pool });
+        .with_state(AppState { pool })
+        .fallback(move |req: axum::http::Request<axum::body::Body>| {
+            let mut grpc_service = grpc_service.clone();
+            async move {
+                let is_grpc = req.headers().get("content-type")
+                    .map(|v| v.as_bytes().starts_with(b"application/grpc"))
+                    .unwrap_or(false);
 
-    use axum::response::IntoResponse;
-    use http_body_util::BodyExt;
-    
-    let multiplex_service = tower::service_fn(move |req: axum::http::Request<axum::body::Body>| {
-        let mut grpc_service = grpc_service.clone();
-        let mut app = app.clone();
-        
-        async move {
-            let is_grpc = req.headers().get("content-type")
-                .map(|v| v.as_bytes().starts_with(b"application/grpc"))
-                .unwrap_or(false);
-
-            if is_grpc {
-                // Manually convert axum::body::Body to the type Tonic expects:
-                // Request<UnsyncBoxBody<Bytes, Status>>
-                let (parts, body) = req.into_parts();
-                let body = body
-                    .map_err(|e| tonic::Status::internal(e.to_string()))
-                    .boxed_unsync();
-                let req = axum::http::Request::from_parts(parts, body);
-                
-                match grpc_service.call(req).await {
-                    Ok(resp) => Ok::<_, std::convert::Infallible>(resp.into_response()),
-                    Err(_) => {
-                        Ok(axum::http::Response::builder()
-                            .status(axum::http::StatusCode::INTERNAL_SERVER_ERROR)
-                            .body(Body::empty())
-                            .unwrap())
+                if is_grpc {
+                    use http_body_util::BodyExt;
+                    let (parts, body) = req.into_parts();
+                    let body = body
+                        .map_err(|e| tonic::Status::internal(e.to_string()))
+                        .boxed_unsync();
+                    let req = axum::http::Request::from_parts(parts, body);
+                    
+                    use axum::response::IntoResponse;
+                    match grpc_service.call(req).await {
+                        Ok(resp) => resp.into_response(),
+                        Err(e) => {
+                            eprintln!("gRPC error: {:?}", e);
+                            axum::http::Response::builder()
+                                .status(axum::http::StatusCode::INTERNAL_SERVER_ERROR)
+                                .body(Body::empty())
+                                .unwrap()
+                        }
                     }
-                }
-            } else {
-                match app.call(req).await {
-                    Ok(resp) => Ok::<_, std::convert::Infallible>(resp.into_response()),
-                    Err(e) => {
-                        Ok(axum::http::Response::builder()
-                            .status(axum::http::StatusCode::INTERNAL_SERVER_ERROR)
-                            .body(Body::from(format!("Internal Server Error: {}", e)))
-                            .unwrap())
-                    }
+                } else {
+                    axum::http::Response::builder()
+                        .status(axum::http::StatusCode::NOT_FOUND)
+                        .body(Body::from("Not Found"))
+                        .unwrap()
                 }
             }
-        }
-    });
+        })
+        .layer(cors);
 
     let port = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
     let addr = format!("0.0.0.0:{}", port);
-    println!("🚀 Server listening on {} (Multiplexing HTTP & gRPC)", addr);
+    println!("🚀 Server listening on {} (HTTP + gRPC Fallback)", addr);
     
     let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
-    axum::serve(listener, tower::make::Shared::new(multiplex_service)).await.unwrap();
+    axum::serve(listener, app).await.unwrap();
 }
 
 async fn root() -> &'static str {
