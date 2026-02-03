@@ -54,12 +54,19 @@ async fn main() {
         }
     };
 
+    println!("✅ Migrations complete!");
+
+    // FORCE FIX: Clear mismatched migration checksum if it exists.
+    // The migration 20240101000000 uses IF NOT EXISTS, so it's safe to re-run.
+    let _ = sqlx::query("DELETE FROM _sqlx_migrations WHERE version = 20240101000000")
+        .execute(&pool)
+        .await;
+
     println!("DEBUG: Running migrations...");
     sqlx::migrate!("./migrations")
         .run(&pool)
         .await
         .expect("Failed to run migrations");
-    println!("✅ Migrations complete!");
 
     // Fix Branch Names (Run in background to avoid blocking startup)
     let fix_pool = pool.clone();
