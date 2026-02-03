@@ -24,7 +24,4 @@ RUN apt-get update && apt-get install -y ca-certificates libssl-dev && rm -rf /v
 COPY --from=builder /app/target/release/backend /app/backend
 COPY --from=builder /app/migrations /app/migrations
 
-ENV PORT 3001
-EXPOSE 3001
-
-CMD ["./backend"]
+CMD ["/app/backend"]
