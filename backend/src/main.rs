@@ -36,10 +36,15 @@ async fn main() {
     tokio::time::sleep(std::time::Duration::from_millis(500)).await;
 
     let port = port_str.parse::<u16>().expect("Invalid PORT env var");
-    // Parse the address more robustly
-    let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port));
+    
+    // Bind to IPv6 "any" (::), which usually covers IPv4 as well in dual-stack environments.
+    // Railway likely uses IPv6 internally or expects purely IPv6 binding.
+    let addr = std::net::SocketAddr::from((
+        [0, 0, 0, 0, 0, 0, 0, 0], 
+        port
+    ));
 
-    println!("🚀 Server listening on {}", addr);
+    println!("🚀 Server listening on {} (IPv6)", addr);
     
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
 
