@@ -124,7 +124,9 @@ async fn main() {
         .with_state(AppState { pool });
 
     use axum::response::IntoResponse;
-    let multiplex_service = tower::service_fn(move |req: axum::http::Request<axum::body::Incoming>| {
+    use hyper::body::Incoming;
+
+    let multiplex_service = tower::service_fn(move |req: axum::http::Request<Incoming>| {
         let mut grpc_service = grpc_service.clone();
         let mut app = app.clone();
         
@@ -134,13 +136,11 @@ async fn main() {
                 .unwrap_or(false);
 
             if is_grpc {
-                let (parts, body) = req.into_parts();
-                let req = axum::http::Request::from_parts(parts, Body::new(body));
-                
+                // Convert Incoming body to Axum Body for Tonic
+                let req = req.map(Body::new);
                 match grpc_service.call(req).await {
                     Ok(resp) => Ok::<_, std::convert::Infallible>(resp.into_response()),
                     Err(_) => {
-                        // Return a 500 error if gRPC service fails
                         Ok(axum::http::Response::builder()
                             .status(axum::http::StatusCode::INTERNAL_SERVER_ERROR)
                             .body(Body::empty())
@@ -148,10 +148,10 @@ async fn main() {
                     }
                 }
             } else {
+                // Axum Router handles Incoming body directly
                 match app.call(req).await {
                     Ok(resp) => Ok::<_, std::convert::Infallible>(resp.into_response()),
                     Err(e) => {
-                        // Return a 500 error if Axum app fails
                         Ok(axum::http::Response::builder()
                             .status(axum::http::StatusCode::INTERNAL_SERVER_ERROR)
                             .body(Body::from(format!("Internal Server Error: {}", e)))
