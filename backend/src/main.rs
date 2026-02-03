@@ -23,6 +23,7 @@ mod routes;
 use routes::*;
 
 use tower::Service;
+use axum::extract::Request;
 use axum::body::Body;
 
 #[tokio::main]
@@ -120,26 +121,20 @@ async fn main() {
         .route("/api/admin/stats", get(admin::get_admin_stats_handler))
         .route("/api/admin/users/approve", post(admin::admin_approve_user_handler))
         .with_state(AppState { pool })
-        .fallback(move |req: axum::http::Request<axum::body::Body>| {
+        .fallback(move |req: axum::extract::Request| {
             let mut grpc_service = grpc_service.clone();
             async move {
-                let is_grpc = req.headers().get("content-type")
-                    .map(|v| v.as_bytes().starts_with(b"application/grpc"))
-                    .unwrap_or(false);
-
-                if is_grpc {
+                if req.headers().get("content-type").map_or(false, |v| v.as_bytes().starts_with(b"application/grpc")) {
                     use http_body_util::BodyExt;
                     let (parts, body) = req.into_parts();
-                    let body = body
-                        .map_err(|e| tonic::Status::internal(e.to_string()))
-                        .boxed_unsync();
+                    let body = body.map_err(|e| tonic::Status::internal(e.to_string())).boxed_unsync();
                     let req = axum::http::Request::from_parts(parts, body);
                     
                     use axum::response::IntoResponse;
                     match grpc_service.call(req).await {
                         Ok(resp) => resp.into_response(),
                         Err(e) => {
-                            eprintln!("gRPC error: {:?}", e);
+                            eprintln!("DEBUG: gRPC Error: {:?}", e);
                             axum::http::Response::builder()
                                 .status(axum::http::StatusCode::INTERNAL_SERVER_ERROR)
                                 .body(Body::empty())
@@ -147,9 +142,10 @@ async fn main() {
                         }
                     }
                 } else {
+                    println!("DEBUG: 404 Not Found: {} {}", req.method(), req.uri());
                     axum::http::Response::builder()
                         .status(axum::http::StatusCode::NOT_FOUND)
-                        .body(Body::from("Not Found"))
+                        .body(Body::from("Route Not Found"))
                         .unwrap()
                 }
             }
@@ -158,10 +154,12 @@ async fn main() {
 
     let port = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
     let addr = format!("0.0.0.0:{}", port);
-    println!("🚀 Server listening on {} (HTTP + gRPC Fallback)", addr);
     
-    let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
-    axum::serve(listener, app).await.unwrap();
+    println!("🚀 Server preparing to listen on {}...", addr);
+    let listener = tokio::net::TcpListener::bind(&addr).await.expect("Failed to bind to port");
+    println!("✅ Bound to {} successfully! Starting serve...", addr);
+    
+    axum::serve(listener, app).await.expect("Server runtime crash");
 }
 
 async fn root() -> &'static str {
