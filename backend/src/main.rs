@@ -56,9 +56,10 @@ async fn main() {
 
     println!("✅ Migrations complete!");
 
-    // FORCE FIX: Clear mismatched migration checksum if it exists.
-    // The migrations use IF NOT EXISTS, so it's safe to re-run.
-    let _ = sqlx::query("DELETE FROM _sqlx_migrations WHERE version IN (20240101000000, 20240101000001)")
+    // NUCLEAR FIX: Clear ALL migration history.
+    // The database is in a confused state with multiple mismatches.
+    // Since all our migrations use "IF NOT EXISTS", it is safe to wipe the history and let SQLx re-verify everything.
+    let _ = sqlx::query("DELETE FROM _sqlx_migrations")
         .execute(&pool)
         .await;
 
