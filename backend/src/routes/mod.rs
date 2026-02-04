@@ -150,26 +150,26 @@ pub async fn signup_handler(
             // Create notification for HOD if approval is needed
             if !is_approved {
                 let msg = format!("New {} signup request: {} ({})", payload.role, payload.full_name, payload.login_id);
-                let mut query_builder = sqlx::query(
+                let query_builder = sqlx::query(
                     "INSERT INTO notifications (type, message, sender_id, branch, status, recipient_id) VALUES ($1, $2, $3, $4, $5, $6)"
                 )
                 .bind("USER_APPROVAL")
                 .bind(msg)
                 .bind(&payload.login_id);
 
-                if payload.role == "HOD" {
+                let query = if payload.role == "HOD" {
                     // Send to Principal
-                    query_builder.bind(None::<String>).bind("UNREAD").bind(Some("PRINCIPAL_RECIPIENT"));
+                    query_builder.bind(None::<String>).bind("UNREAD").bind(Some("PRINCIPAL_RECIPIENT"))
                 } else if payload.role == "Principal" {
                     // Send to Admin
-                    query_builder.bind(None::<String>).bind("UNREAD").bind(Some("ADMIN_RECIPIENT"));
+                    query_builder.bind(None::<String>).bind("UNREAD").bind(Some("ADMIN_RECIPIENT"))
                 } else if payload.role == "Student" || payload.role == "Faculty" || payload.role == "Parent" {
-                    query_builder.bind(&payload.branch).bind("UNREAD").bind(None::<String>);
+                    query_builder.bind(&payload.branch).bind("UNREAD").bind(None::<String>)
                 } else {
-                    query_builder.bind(None::<String>).bind("UNREAD").bind(None::<String>);
-                }
+                    query_builder.bind(None::<String>).bind("UNREAD").bind(None::<String>)
+                };
                 
-                query_builder.execute(&state.pool).await.ok();
+                query.execute(&state.pool).await.ok();
             }
 
             let msg = if is_approved {

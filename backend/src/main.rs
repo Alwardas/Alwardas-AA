@@ -23,7 +23,6 @@ mod routes;
 use routes::*;
 
 use tower::Service;
-use axum::extract::Request;
 use axum::body::Body;
 
 #[tokio::main]

@@ -2,8 +2,7 @@ use axum::{
     extract::{State, Json},
     http::StatusCode,
 };
-use sqlx::Postgres;
-use uuid::Uuid;
+use sqlx;
 use crate::models::{AppState, AdminApprovalRequest};
 
 pub async fn principal_approve_hod_handler(
