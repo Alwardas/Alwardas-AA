@@ -226,11 +226,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-        // Only stop loading if we are still mounted and NOT navigating away
-        // (If we successfully pushed replacement, mounted might still be true momentarily, but we don't want to rebuild)
-        if (mounted) setState(() => _isLoading = false);
-      }
-    }
 
   Widget _getDashboardForRole(String? role, Map<String, dynamic> userData) {
     debugPrint("Getting dashboard for role: '$role'");
