@@ -363,143 +363,26 @@ class _AdminUsersScreenState extends State<AdminUsersScreen> {
       itemCount: _users.length,
       separatorBuilder: (_, __) => const SizedBox(height: 12),
       itemBuilder: (context, index) {
-        final user = _users[index];
-        final role = user['role'] as String?;
-        final isApproved = user['is_approved'] == true;
-        final isStudent = role == 'Student';
-        
-        return InkWell(
-          onTap: isStudent ? () {
-             Navigator.push(
-               context,
-               MaterialPageRoute(
-                 builder: (context) => StudentDetailsScreen(
-                   userId: user['id'],
-                   userName: user['full_name'] ?? 'Student',
-                 ),
-               ),
-             ).then((_) {
-                // Refresh list on return
-                 _fetchUsers(query: _searchController.text.isNotEmpty ? _searchController.text : null);
-             });
-          } : null,
-          borderRadius: BorderRadius.circular(16),
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10, offset: const Offset(0, 4))
-              ]
-            ),
-            child: Row(
-              children: [
-                if (!isStudent) // Keep Avatar for others
-                  Padding(
-                    padding: const EdgeInsets.only(right: 15),
-                    child: CircleAvatar(
-                      backgroundColor: _getRoleColor(role).withOpacity(0.1),
-                      child: Text(
-                        (user['full_name'] ?? 'U')[0].toUpperCase(),
-                        style: GoogleFonts.poppins(color: _getRoleColor(role), fontWeight: FontWeight.bold),
-                      ),
+        return _UserListItem(
+          user: _users[index],
+          textColor: textColor,
+          cardColor: cardColor,
+          subTextColor: subTextColor,
+          roleColor: _getRoleColor(_users[index]['role'] as String?),
+          onAction: (action) => _handleUserAction(_users[index], action),
+          onTap: () {
+             if (_users[index]['role'] == 'Student') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => StudentDetailsScreen(
+                      userId: _users[index]['id'],
+                      userName: _users[index]['full_name'] ?? 'Student',
                     ),
                   ),
-                
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        user['full_name'] ?? 'Unknown',
-                        style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 16),
-                      ),
-                      const SizedBox(height: 4),
-                      if (isStudent)
-                        Text(
-                            user['login_id'] ?? '',
-                            style: GoogleFonts.poppins(fontSize: 12, color: subTextColor, fontWeight: FontWeight.w500),
-                        )
-                      else ...[
-                         // Old layout for others
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                                decoration: BoxDecoration(
-                                  color: _getRoleColor(role).withOpacity(0.1),
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Text(
-                                  role?.toUpperCase() ?? 'UNKNOWN',
-                                  style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: _getRoleColor(role)),
-                                ),
-                              ),
-                              if (user['branch'] != null) ...[
-                                const SizedBox(width: 8),
-                                Text(
-                                  "•  ${user['branch']}",
-                                  style: GoogleFonts.poppins(fontSize: 11, color: subTextColor),
-                                ),
-                              ]
-                            ],
-                          ),
-                          const SizedBox(height: 2),
-                          Text(
-                              user['login_id'] ?? '',
-                              style: GoogleFonts.poppins(fontSize: 11, color: subTextColor),
-                          ),
-                      ]
-                    ],
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    if (!isApproved)
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 5),
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: Colors.orange.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(8),
-                          border: Border.all(color: Colors.orange.withOpacity(0.3))
-                        ),
-                        child: Text("Pending", style: GoogleFonts.poppins(fontSize: 10, color: Colors.orange, fontWeight: FontWeight.w600)),
-                      ),
-                    PopupMenuButton<String>(
-                      icon: Icon(Icons.more_vert, color: subTextColor),
-                      onSelected: (action) => _handleUserAction(user, action),
-                      itemBuilder: (context) => [
-                        if (!isApproved)
-                          PopupMenuItem(
-                            value: 'APPROVE',
-                            child: Row(
-                              children: [
-                                const Icon(Icons.check_circle, color: Colors.green, size: 20),
-                                const SizedBox(width: 8),
-                                Text("Approve", style: GoogleFonts.poppins(color: textColor)),
-                              ],
-                            ),
-                          ),
-                        PopupMenuItem(
-                          value: 'DELETE',
-                          child: Row(
-                            children: [
-                              const Icon(Icons.delete, color: Colors.red, size: 20),
-                              const SizedBox(width: 8),
-                              Text("Delete", style: GoogleFonts.poppins(color: textColor)),
-                            ],
-                          ),
-                        ),
-                      ]
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
+                ).then((_) => _fetchUsers(query: _searchController.text));
+             }
+          },
         );
       },
     );
@@ -530,9 +413,9 @@ class _AdminUsersScreenState extends State<AdminUsersScreen> {
        decoration: BoxDecoration(
          color: cardColor,
          borderRadius: BorderRadius.circular(20),
-         border: Border.all(color: Colors.blueAccent.withOpacity(0.3)),
+         border: Border.all(color: const Color(0xFF2563eb).withOpacity(0.1)),
          boxShadow: [
-           BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 5))
+           BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 5))
          ]
        ),
        child: Column(
@@ -541,15 +424,16 @@ class _AdminUsersScreenState extends State<AdminUsersScreen> {
            if (icon != null)
               Padding(
                 padding: const EdgeInsets.only(bottom: 10),
-                child: Icon(icon, size: 30, color: Colors.blueAccent),
+                child: Icon(icon, size: 30, color: const Color(0xFF2563eb)),
               ),
            Text(
              title.toUpperCase(),
              textAlign: TextAlign.center,
-             style: GoogleFonts.poppins(
-               fontSize: 18, 
+             style: TextStyle(
+               fontSize: 14, 
                fontWeight: FontWeight.bold, 
-               color: textColor
+               color: textColor,
+               letterSpacing: 0.5,
              ),
            ),
          ],
@@ -566,3 +450,151 @@ class _AdminUsersScreenState extends State<AdminUsersScreen> {
     }
   }
 }
+
+class _UserListItem extends StatelessWidget {
+  final Map<String, dynamic> user;
+  final Color textColor;
+  final Color cardColor;
+  final Color subTextColor;
+  final Color roleColor;
+  final VoidCallback onTap;
+  final Function(String) onAction;
+
+  const _UserListItem({
+    required this.user,
+    required this.textColor,
+    required this.cardColor,
+    required this.subTextColor,
+    required this.roleColor,
+    required this.onTap,
+    required this.onAction,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final role = user['role'] as String?;
+    final isApproved = user['is_approved'] == true;
+    final isStudent = role == 'Student';
+
+    return InkWell(
+      onTap: isStudent ? onTap : null,
+      borderRadius: BorderRadius.circular(16),
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 8, offset: const Offset(0, 4))
+          ]
+        ),
+        child: Row(
+          children: [
+            if (!isStudent) 
+              Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: CircleAvatar(
+                  backgroundColor: roleColor.withOpacity(0.1),
+                  child: Text(
+                    (user['full_name'] ?? 'U')[0].toUpperCase(),
+                    style: TextStyle(color: roleColor, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    user['full_name'] ?? 'Unknown',
+                    style: TextStyle(fontWeight: FontWeight.bold, color: textColor, fontSize: 16),
+                  ),
+                  const SizedBox(height: 4),
+                  if (isStudent)
+                    Text(
+                        user['login_id'] ?? '',
+                        style: TextStyle(fontSize: 12, color: subTextColor, fontWeight: FontWeight.w500),
+                    )
+                  else ...[
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: roleColor.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Text(
+                              role?.toUpperCase() ?? 'UNKNOWN',
+                              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: roleColor),
+                            ),
+                          ),
+                          if (user['branch'] != null) ...[
+                            const SizedBox(width: 8),
+                            Text(
+                              "•  ${user['branch']}",
+                              style: TextStyle(fontSize: 11, color: subTextColor),
+                            ),
+                          ]
+                        ],
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                          user['login_id'] ?? '',
+                          style: TextStyle(fontSize: 11, color: subTextColor),
+                      ),
+                  ]
+                ],
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                if (!isApproved)
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 5),
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.orange.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.orange.withOpacity(0.3))
+                    ),
+                    child: const Text("Pending", style: TextStyle(fontSize: 10, color: Colors.orange, fontWeight: FontWeight.w600)),
+                  ),
+                PopupMenuButton<String>(
+                  icon: Icon(Icons.more_vert, color: subTextColor),
+                  onSelected: onAction,
+                  itemBuilder: (context) => [
+                    if (!isApproved)
+                      PopupMenuItem(
+                        value: 'APPROVE',
+                        child: Row(
+                          children: [
+                            const Icon(Icons.check_circle, color: Colors.green, size: 20),
+                            const SizedBox(width: 8),
+                            Text("Approve", style: TextStyle(color: textColor)),
+                          ],
+                        ),
+                      ),
+                    PopupMenuItem(
+                      value: 'DELETE',
+                      child: Row(
+                        children: [
+                          const Icon(Icons.delete, color: Colors.red, size: 20),
+                          const SizedBox(width: 8),
+                          Text("Delete", style: TextStyle(color: textColor)),
+                        ],
+                      ),
+                    ),
+                  ]
+                )
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+

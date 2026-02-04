@@ -26,7 +26,6 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
 
   Future<void> _fetchRequests() async {
     try {
-      // Fetch unapproved HODs
       final response = await http.get(
         Uri.parse('${ApiConstants.baseUrl}/api/admin/users?role=HOD&is_approved=false'),
       );
@@ -39,7 +38,6 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
         }
       }
     } catch (e) {
-      print("Error fetching requests: $e");
       if (mounted) setState(() => _loading = false);
     }
   }
@@ -48,11 +46,8 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
     try {
       final response = await http.post(
         Uri.parse('${ApiConstants.baseUrl}/api/principal/approve-hod'),
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode({
-          'user_id': userId,
-          'action': action,
-        }),
+        headers: const {'Content-Type': 'application/json'},
+        body: json.encode({'user_id': userId, 'action': action}),
       );
 
       if (response.statusCode == 200) {
@@ -86,53 +81,94 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text("Approval Requests", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+        title: Text("Approval Requests", style: TextStyle(fontWeight: FontWeight.bold, color: textColor)),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
       ),
-      body: Container(
-        decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
-        child: SafeArea(
-          child: _loading 
-          ? const Center(child: CircularProgressIndicator())
-          : _requests.isEmpty 
-          ? Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.check_circle_outline, size: 80, color: tint.withOpacity(0.5)),
-                  const SizedBox(height: 20),
-                  Text("All Caught Up!", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
-                  Text("No pending HOD requests.", style: GoogleFonts.poppins(color: subTextColor)),
-                ],
-              ),
-            )
-          : RefreshIndicator(
-              onRefresh: _fetchRequests,
-              child: ListView.builder(
-                padding: const EdgeInsets.all(20),
-                itemCount: _requests.length,
-                itemBuilder: (ctx, index) {
-                  final r = _requests[index];
-                  return _buildRequestCard(r, cardColor, textColor, subTextColor, tint, iconBg);
-                },
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: RepaintBoundary(
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight),
+                ),
               ),
             ),
-        ),
+          ),
+          SafeArea(
+            child: _loading 
+            ? const Center(child: CircularProgressIndicator())
+            : _requests.isEmpty 
+            ? Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.check_circle_outline, size: 80, color: tint.withOpacity(0.5)),
+                    const SizedBox(height: 20),
+                    Text("All Caught Up!", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
+                    Text("No pending HOD requests.", style: TextStyle(color: subTextColor)),
+                  ],
+                ),
+              )
+            : RefreshIndicator(
+                onRefresh: _fetchRequests,
+                child: ListView.builder(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  itemCount: _requests.length,
+                  itemBuilder: (ctx, index) {
+                    final r = _requests[index];
+                    return _RequestCard(
+                      r: r,
+                      cardColor: cardColor,
+                      textColor: textColor,
+                      subTextColor: subTextColor,
+                      tint: tint,
+                      iconBg: iconBg,
+                      onAction: _handleAction,
+                    );
+                  },
+                ),
+              ),
+          ),
+        ],
       ),
     );
   }
+}
 
-  Widget _buildRequestCard(dynamic r, Color cardColor, Color textColor, Color subTextColor, Color tint, Color iconBg) {
+class _RequestCard extends StatelessWidget {
+  final dynamic r;
+  final Color cardColor;
+  final Color textColor;
+  final Color subTextColor;
+  final Color tint;
+  final Color iconBg;
+  final Function(String, String) onAction;
+
+  const _RequestCard({
+    required this.r,
+    required this.cardColor,
+    required this.textColor,
+    required this.subTextColor,
+    required this.tint,
+    required this.iconBg,
+    required this.onAction,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: cardColor,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: iconBg),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 5))],
+        border: Border.all(color: iconBg.withOpacity(0.2)),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12, offset: const Offset(0, 6)),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -149,25 +185,27 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(r['full_name'] ?? 'Unknown', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
-                    Text("HOD - ${r['branch'] ?? 'N/A'}", style: GoogleFonts.poppins(fontSize: 12, color: tint, fontWeight: FontWeight.bold)),
+                    Text(r['full_name'] ?? 'Unknown', 
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
+                    Text("HOD - ${r['branch'] ?? 'N/A'}", 
+                      style: TextStyle(fontSize: 12, color: tint, fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
-              Text(r['login_id'] ?? '', style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
+              Text(r['login_id'] ?? '', style: TextStyle(fontSize: 12, color: subTextColor)),
             ],
           ),
           const SizedBox(height: 15),
           Text(
             "New HOD account request for ${r['branch'] ?? 'administration'}. Approval required to enable login access.",
-            style: GoogleFonts.poppins(fontSize: 14, color: subTextColor),
+            style: TextStyle(fontSize: 14, color: subTextColor),
           ),
           const SizedBox(height: 20),
           Row(
             children: [
               Expanded(
                 child: OutlinedButton(
-                  onPressed: () => _handleAction(r['id'], 'REJECT'),
+                  onPressed: () => onAction(r['id'], 'REJECT'),
                   style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.red,
                     side: const BorderSide(color: Colors.red),
@@ -180,7 +218,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
               const SizedBox(width: 15),
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () => _handleAction(r['id'], 'APPROVE'),
+                  onPressed: () => onAction(r['id'], 'APPROVE'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     foregroundColor: Colors.white,
@@ -198,4 +236,5 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
     );
   }
 }
+
 
