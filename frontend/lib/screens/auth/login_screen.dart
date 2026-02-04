@@ -126,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
             if (response.statusCode == 401) {
               title = 'Access Denied';
-              msg = 'Invalid Login ID or password.';
+              msg = 'Invalid ID or Password. Please try again.';
             }
 
             try {
@@ -139,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   title = 'Account Pending';
                   msg = 'Your account is currently waiting for approval from the institution.';
                 } else if (response.statusCode != 401) {
-                  msg = serverMsg;
+                  msg = 'We encountered an error. Please contact administration if the problem persists.';
                 }
               }
             } catch (_) {}
@@ -151,11 +151,12 @@ class _LoginScreenState extends State<LoginScreen> {
       } catch (e) {
         debugPrint("Login Error: $e");
         
-        String title = 'Connection Failed';
-        String errorMessage = 'We couldn\'t connect to the system. Please check your internet connection and try again.';
+        String title = 'No Internet Connection';
+        String errorMessage = 'Please check your internet connection and try again.';
         
-        if (e.toString().contains('SocketException') || e.toString().contains('Connection refused')) {
-           errorMessage = 'Check your connection. The system might be temporarily unavailable.';
+        if (e.toString().contains('SocketException') || e.toString().contains('Connection refused') || e.toString().contains('HandshakeException')) {
+           title = 'No Internet Connection';
+           errorMessage = 'It seems you are offline. Please connect to a network and try again.';
         }
 
         if (mounted) {
