@@ -20,6 +20,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("Faculty Demo", "Faculty", "faculty", "123", Some("CSE"), None),
         ("HOD Demo", "HOD", "hod", "123", Some("CSE"), None),
         ("Principal Demo", "Principal", "principal", "123", None, None),
+        ("Coordinator Demo", "Coordinator", "coordinator", "123", None, None),
         ("Admin Demo", "Admin", "admin", "123", None, None),
     ];
 
