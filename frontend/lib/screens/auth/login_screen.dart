@@ -120,32 +120,42 @@ class _LoginScreenState extends State<LoginScreen> {
              }
           }
         } else {
-           if (mounted) {
-            String msg = 'The server returned an error (${response.statusCode})';
-            String title = 'Server Error';
-            
+          if (mounted) {
+            String title = 'Login Failed';
+            String msg = 'Something went wrong. Please try again.';
+
+            if (response.statusCode == 401) {
+              title = 'Access Denied';
+              msg = 'Invalid Login ID or password.';
+            }
+
             try {
-               final errData = jsonDecode(response.body);
-               if (errData['message'] != null) {
-                 msg = errData['message'];
-                 if (msg.toLowerCase().contains('pending') || msg.toLowerCase().contains('approved')) {
-                   title = 'Account Pending';
-                 }
-               }
+              final errData = jsonDecode(response.body);
+              if (errData['message'] != null) {
+                String serverMsg = errData['message'];
+                if (serverMsg.toLowerCase().contains('pending') ||
+                    serverMsg.toLowerCase().contains('approved') ||
+                    serverMsg.toLowerCase().contains('activated')) {
+                  title = 'Account Pending';
+                  msg = 'Your account is currently waiting for approval from the institution.';
+                } else if (response.statusCode != 401) {
+                  msg = serverMsg;
+                }
+              }
             } catch (_) {}
-            
+
             _showPopupResponse(title: title, message: msg, isError: true);
-           }
+          }
         }
 
       } catch (e) {
         debugPrint("Login Error: $e");
         
         String title = 'Connection Failed';
-        String errorMessage = 'We couldn\'t reach the campus server.';
+        String errorMessage = 'We couldn\'t connect to the system. Please check your internet connection and try again.';
         
         if (e.toString().contains('SocketException') || e.toString().contains('Connection refused')) {
-           errorMessage = '1. Check your internet connection.\n2. Ensure you are on the college network if required.\n3. The backend might be offline.';
+           errorMessage = 'Check your connection. The system might be temporarily unavailable.';
         }
 
         if (mounted) {
