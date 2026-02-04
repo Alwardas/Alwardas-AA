@@ -70,7 +70,7 @@ pub async fn get_admin_stats_handler(
     State(state): State<AppState>,
 ) -> Result<Json<AdminStats>, StatusCode> {
     let total_users: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM users").fetch_one(&state.pool).await.unwrap_or(0);
-    let pending_approvals: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM users WHERE is_approved = FALSE").fetch_one(&state.pool).await.unwrap_or(0);
+    let pending_approvals: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM users WHERE is_approved = FALSE AND role = 'Coordinator'").fetch_one(&state.pool).await.unwrap_or(0);
     let total_students: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM users WHERE role = 'Student'").fetch_one(&state.pool).await.unwrap_or(0);
     let total_faculty: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM users WHERE role = 'Faculty'").fetch_one(&state.pool).await.unwrap_or(0);
 

@@ -289,8 +289,8 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                       Expanded(
                         child: _buildQuickAccessCard(
                           Icons.inbox_outlined,
-                          'Requests',
-                          'Approve/Reject',
+                          'HOD Requests',
+                          'Approve HODs',
                           cardColor,
                           const Color(0xFFf1c40f).withOpacity(0.2), 
                           const Color(0xFFf1c40f),

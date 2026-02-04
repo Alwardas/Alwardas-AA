@@ -7,6 +7,7 @@ import '../../../core/theme/app_theme.dart';
 import '../../auth/login_screen.dart';
 import 'coordinator_events_screen.dart';
 import 'coordinator_activities_screen.dart';
+import 'coordinator_requests_screen.dart';
 
 class CoordinatorDashboard extends StatelessWidget {
   final Map<String, dynamic> userData;
@@ -142,6 +143,8 @@ class CoordinatorDashboard extends StatelessWidget {
           Navigator.push(context, MaterialPageRoute(builder: (ctx) => const CoordinatorEventsScreen()));
         } else if (item['title'] == 'Student Activities') {
           Navigator.push(context, MaterialPageRoute(builder: (ctx) => const CoordinatorActivitiesScreen()));
+        } else if (item['title'] == 'Approvals') {
+          Navigator.push(context, MaterialPageRoute(builder: (ctx) => const CoordinatorRequestsScreen()));
         } else {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Opening ${item['title']}...")));
         }

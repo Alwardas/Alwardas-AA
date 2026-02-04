@@ -289,7 +289,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                         ),
                       ),
                       const SizedBox(width: 15),
-                      Expanded(
+                       Expanded(
                         child: _buildQuickAccessCard(
                           Icons.person_outline,
                           'Profile',
@@ -304,6 +304,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 15),
 
                   const SizedBox(height: 25),
 

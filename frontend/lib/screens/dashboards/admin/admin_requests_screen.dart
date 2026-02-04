@@ -27,7 +27,7 @@ class _AdminRequestsScreenState extends State<AdminRequestsScreen> {
   Future<void> _fetchRequests() async {
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/admin/users?is_approved=false'),
+        Uri.parse('${ApiConstants.baseUrl}/api/admin/users?role=Coordinator&is_approved=false'),
       );
       if (response.statusCode == 200) {
         if (mounted) {

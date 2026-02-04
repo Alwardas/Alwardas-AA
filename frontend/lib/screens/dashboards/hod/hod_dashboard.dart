@@ -15,6 +15,7 @@ import 'hod_menu_tab.dart';
 import 'hod_profile_tab.dart';
 import 'hod_faculty_screen.dart';
 import 'hod_timetables_screen.dart';
+import 'hod_requests_screen.dart';
 import '../faculty/faculty_profile_screen.dart';
 
 class HodDashboard extends StatefulWidget {
@@ -295,22 +296,21 @@ class _HodDashboardState extends State<HodDashboard> {
                       const SizedBox(width: 15),
                       Expanded(
                         child: _buildQuickAccessCard(
-                          Icons.person_outline,
-                          'Profile',
-                          'Details',
+                          Icons.group_add_outlined,
+                          'Branch Requests',
+                          'Approve Users',
                           cardColor,
-                          const Color(0xFFf1c40f).withOpacity(0.2), 
-                          const Color(0xFFf1c40f),
+                          const Color(0xFFe74c3c).withOpacity(0.2), 
+                          const Color(0xFFe74c3c),
                           textColor,
                           subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 2),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodRequestsScreen())),
                         ),
                       ),
                     ],
                   ),
-
                   const SizedBox(height: 15),
-                  // Row 3 (Courses as requested from React)
+                  // Row 3
                   Row(
                     children: [
                       Expanded(
@@ -326,8 +326,20 @@ class _HodDashboardState extends State<HodDashboard> {
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodCoursesScreen())),
                         ),
                       ),
-                      const SizedBox(width: 15),
-                      const Spacer(),
+                       const SizedBox(width: 15),
+                       Expanded(
+                        child: _buildQuickAccessCard(
+                          Icons.person_outline,
+                          'Profile',
+                          'Details',
+                          cardColor,
+                          const Color(0xFFf1c40f).withOpacity(0.2), 
+                          const Color(0xFFf1c40f),
+                          textColor,
+                          subTextColor,
+                          onTap: () => setState(() => _selectedIndex = 2),
+                        ),
+                      ),
                     ],
                   ),
 
