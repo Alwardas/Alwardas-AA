@@ -24,8 +24,8 @@ pub async fn signup_handler(
     
     // Auto-approval logic
     let is_approved = match payload.role.as_str() {
-        "Principal" | "Admin" => true,
-        _ => false, // Student, Faculty, HOD need approval
+        "Admin" => true,
+        _ => false, // Principal, Student, Faculty, HOD need approval
     };
 
     // Auto-Calculate Branch, Year, Semester, and Batch for Students based on Login ID
@@ -148,18 +148,28 @@ pub async fn signup_handler(
             let user_id = r.get::<Uuid, _>("id");
             
             // Create notification for HOD if approval is needed
-            if !is_approved && (payload.role == "Student" || payload.role == "Faculty" || payload.role == "Parent") {
+            if !is_approved {
                 let msg = format!("New {} signup request: {} ({})", payload.role, payload.full_name, payload.login_id);
-                sqlx::query(
-                    "INSERT INTO notifications (type, message, sender_id, branch, status) VALUES ($1, $2, $3, $4, $5)"
+                let mut query_builder = sqlx::query(
+                    "INSERT INTO notifications (type, message, sender_id, branch, status, recipient_id) VALUES ($1, $2, $3, $4, $5, $6)"
                 )
                 .bind("USER_APPROVAL")
                 .bind(msg)
-                .bind(&payload.login_id)
-                .bind(&payload.branch)
-                .bind("UNREAD")
-                .execute(&state.pool)
-                .await.ok();
+                .bind(&payload.login_id);
+
+                if payload.role == "HOD" {
+                    // Send to Principal
+                    query_builder.bind(None::<String>).bind("UNREAD").bind(Some("PRINCIPAL_RECIPIENT"));
+                } else if payload.role == "Principal" {
+                    // Send to Admin
+                    query_builder.bind(None::<String>).bind("UNREAD").bind(Some("ADMIN_RECIPIENT"));
+                } else if payload.role == "Student" || payload.role == "Faculty" || payload.role == "Parent" {
+                    query_builder.bind(&payload.branch).bind("UNREAD").bind(None::<String>);
+                } else {
+                    query_builder.bind(None::<String>).bind("UNREAD").bind(None::<String>);
+                }
+                
+                query_builder.execute(&state.pool).await.ok();
             }
 
             let msg = if is_approved {
@@ -438,6 +448,11 @@ pub async fn get_notifications_handler(
              } else if let Some(branch) = &params.branch {
                  conditions.push(format!("branch = '{}'", branch));
              }
+        } else if role == "Principal" {
+             conditions.push("(recipient_id = 'PRINCIPAL_RECIPIENT' OR recipient_id IS NULL)".to_string());
+             // Optionally filter by specific principal user ID if needed
+        } else if role == "Admin" {
+             conditions.push("(recipient_id = 'ADMIN_RECIPIENT' OR recipient_id IS NULL)".to_string());
         } else {
              if let Some(uid) = &params.user_id {
                  conditions.push(format!("recipient_id = '{}'", uid));

@@ -10,6 +10,7 @@ import '../../../core/theme/app_theme.dart';
 import '../../../core/api_constants.dart';
 import '../../auth/login_screen.dart';
 import 'admin_users_screen.dart';
+import 'admin_requests_screen.dart';
 
 class AdminDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -170,7 +171,10 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 children: [
                   _buildStatItem("Total Users", _stats['total_users'].toString(), Icons.people, Colors.blue, textColor, subTextColor),
                   Container(height: 40, width: 1, color: Colors.grey.withOpacity(0.2)),
-                  _buildStatItem("Pending", _stats['pending_approvals'].toString(), Icons.pending_actions, Colors.orange, textColor, subTextColor),
+                  GestureDetector(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminRequestsScreen())),
+                    child: _buildStatItem("Pending", _stats['pending_approvals'].toString(), Icons.pending_actions, Colors.orange, textColor, subTextColor),
+                  ),
                 ],
               ),
             ),
@@ -203,6 +207,15 @@ class _AdminDashboardState extends State<AdminDashboard> {
                         cardColor, 
                         textColor, 
                         () {},
+                      ),
+                      _buildMenuCard(
+                        context, 
+                        'Requests', 
+                        Icons.pending_actions_rounded, 
+                        Colors.orange, 
+                        cardColor, 
+                        textColor, 
+                        () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminRequestsScreen())),
                       ),
                       _buildMenuCard(
                         context, 

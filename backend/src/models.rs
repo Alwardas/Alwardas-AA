@@ -579,6 +579,7 @@ pub struct AdminUserQuery {
     pub search: Option<String>,
     pub branch: Option<String>,
     pub year: Option<String>,
+    pub is_approved: Option<bool>,
 }
 
 #[derive(Serialize, FromRow)]

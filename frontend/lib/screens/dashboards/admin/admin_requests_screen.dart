@@ -7,14 +7,14 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 
-class PrincipalRequestsScreen extends StatefulWidget {
-  const PrincipalRequestsScreen({super.key});
+class AdminRequestsScreen extends StatefulWidget {
+  const AdminRequestsScreen({super.key});
 
   @override
-  State<PrincipalRequestsScreen> createState() => _PrincipalRequestsScreenState();
+  State<AdminRequestsScreen> createState() => _AdminRequestsScreenState();
 }
 
-class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
+class _AdminRequestsScreenState extends State<AdminRequestsScreen> {
   List<dynamic> _requests = [];
   bool _loading = true;
 
@@ -26,9 +26,9 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
 
   Future<void> _fetchRequests() async {
     try {
-      // Fetch unapproved HODs
+      // Fetch unapproved users (Prinicpals, for example)
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/admin/users?role=HOD&is_approved=false'),
+        Uri.parse('${ApiConstants.baseUrl}/api/admin/users?is_approved=false'),
       );
       if (response.statusCode == 200) {
         if (mounted) {
@@ -47,7 +47,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
   Future<void> _handleAction(String userId, String action) async {
     try {
       final response = await http.post(
-        Uri.parse('${ApiConstants.baseUrl}/api/principal/approve-hod'),
+        Uri.parse('${ApiConstants.baseUrl}/api/admin/users/approve'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'user_id': userId,
@@ -56,7 +56,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
       );
 
       if (response.statusCode == 200) {
-        _showSnackBar("Agent ${action == 'APPROVE' ? 'Approved' : 'Rejected'} successfully!");
+        _showSnackBar("User ${action == 'APPROVE' ? 'Approved' : 'Rejected'} successfully!");
         _fetchRequests();
       } else {
         _showSnackBar("Failed to process request");
@@ -104,7 +104,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
                   Icon(Icons.check_circle_outline, size: 80, color: tint.withOpacity(0.5)),
                   const SizedBox(height: 20),
                   Text("All Caught Up!", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
-                  Text("No pending HOD requests.", style: GoogleFonts.poppins(color: subTextColor)),
+                  Text("No pending requests.", style: GoogleFonts.poppins(color: subTextColor)),
                 ],
               ),
             )
@@ -125,6 +125,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
   }
 
   Widget _buildRequestCard(dynamic r, Color cardColor, Color textColor, Color subTextColor, Color tint, Color iconBg) {
+    final role = r['role'] ?? 'Unknown';
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       padding: const EdgeInsets.all(20),
@@ -150,7 +151,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(r['full_name'] ?? 'Unknown', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
-                    Text("HOD - ${r['branch'] ?? 'N/A'}", style: GoogleFonts.poppins(fontSize: 12, color: tint, fontWeight: FontWeight.bold)),
+                    Text("$role ${r['branch'] != null ? '- ${r['branch']}' : ''}", style: GoogleFonts.poppins(fontSize: 12, color: tint, fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
@@ -159,7 +160,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
           ),
           const SizedBox(height: 15),
           Text(
-            "New HOD account request for ${r['branch'] ?? 'administration'}. Approval required to enable login access.",
+            "Registration request for $role. Approval required to enable login and system access.",
             style: GoogleFonts.poppins(fontSize: 14, color: subTextColor),
           ),
           const SizedBox(height: 20),
@@ -198,4 +199,3 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
     );
   }
 }
-

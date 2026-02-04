@@ -98,77 +98,134 @@ class _LoginScreenState extends State<LoginScreen> {
              debugPrint("DEBUG: UserData constructed: $userData");
 
             if (mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Login Successful')));
-              debugPrint("DEBUG: Login Successful. Saving session...");
+              _showPopupResponse(
+                title: 'Login Successful',
+                message: 'Welcome back, ${userData['full_name']}!',
+                isError: false,
+              );
+              await Future.delayed(const Duration(milliseconds: 800)); // Brief pause for user to see success
               await AuthService.saveUserSession(userData);
-              
-              debugPrint("DEBUG: Session saved. Role obtained: ${userData['role']}");
-              
               Widget dashboard = _getDashboardForRole(userData['role'], userData);
-              debugPrint("DEBUG: Dashboard widget created: $dashboard");
-              
-              try {
-                await Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => dashboard));
-                debugPrint("DEBUG: Navigation pushed.");
-              } catch (navError) {
-                debugPrint("DEBUG: Navigation Error: $navError");
+              if (mounted) {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => dashboard));
               }
             }
           } else {
              if (mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(data['message'] ?? 'Login Failed')));
+              _showPopupResponse(
+                title: 'Access Denied',
+                message: data['message'] ?? 'Invalid ID or Password',
+                isError: true,
+              );
              }
           }
         } else {
            if (mounted) {
-            String msg = 'Server Error: ${response.statusCode}';
+            String msg = 'The server returned an error (${response.statusCode})';
+            String title = 'Server Error';
+            
             try {
                final errData = jsonDecode(response.body);
-               if (errData['message'] != null) msg = errData['message'];
+               if (errData['message'] != null) {
+                 msg = errData['message'];
+                 if (msg.toLowerCase().contains('pending') || msg.toLowerCase().contains('approved')) {
+                   title = 'Account Pending';
+                 }
+               }
             } catch (_) {}
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+            
+            _showPopupResponse(title: title, message: msg, isError: true);
            }
         }
 
       } catch (e) {
         debugPrint("Login Error: $e");
         
-        String errorMessage = 'Connection Error';
-        String suggestion = 'Please check your internet connection.';
+        String title = 'Connection Failed';
+        String errorMessage = 'We couldn\'t reach the campus server.';
         
         if (e.toString().contains('SocketException') || e.toString().contains('Connection refused')) {
-           errorMessage = 'Server Not Reachable';
-           suggestion = '1. Check if the Backend is running.\n'
-                        '2. Different Networks? Ensure devices are on the same Wi-Fi.\n'
-                        '3. Firewall? Windows Firewall might be blocking port 3001.\n'
-                        '4. Wrong IP? Check Settings against PC IP.';
+           errorMessage = '1. Check your internet connection.\n2. Ensure you are on the college network if required.\n3. The backend might be offline.';
         }
 
         if (mounted) {
-          showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text(errorMessage, style: const TextStyle(color: Colors.red)),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                   Text("The app could not connect to the server at '${ApiConstants.baseUrl}'."),
-                   const SizedBox(height: 10),
-                   const Text("Suggestions:", style: TextStyle(fontWeight: FontWeight.bold)),
-                   Text(suggestion),
-                   const SizedBox(height: 10),
-                   const Text("Technical Details:", style: TextStyle(fontSize: 10, color: Colors.grey)),
-                   Text(e.toString(), style: const TextStyle(fontSize: 10, color: Colors.grey)),
-                ],
-              ),
-              actions: [
-                TextButton(onPressed: () => Navigator.pop(context), child: const Text("OK")),
-              ],
-            ),
-          );
+          _showPopupResponse(title: title, message: errorMessage, isError: true);
         }
       } finally {
+        if (mounted) setState(() => _isLoading = false);
+      }
+    }
+
+  void _showPopupResponse({required String title, required String message, required bool isError}) {
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+        child: Container(
+          padding: const EdgeInsets.all(28),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: (isError ? Colors.red : Colors.green).withOpacity(0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  isError ? Icons.error_outline_rounded : Icons.check_circle_outline_rounded,
+                  color: isError ? Colors.red : Colors.green,
+                  size: 40,
+                ),
+              ),
+              const SizedBox(height: 24),
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0xFF1F2937),
+                ),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                message,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(
+                  fontSize: 14,
+                  color: const Color(0xFF6B7280),
+                  height: 1.5,
+                ),
+              ),
+              const SizedBox(height: 28),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.pop(context),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: isError ? Colors.grey[800] : const Color(0xFF3b5998),
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    elevation: 0,
+                  ),
+                  child: Text(
+                    isError ? 'Try Again' : 'Continue',
+                    style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
         // Only stop loading if we are still mounted and NOT navigating away
         // (If we successfully pushed replacement, mounted might still be true momentarily, but we don't want to rebuild)
         if (mounted) setState(() => _isLoading = false);

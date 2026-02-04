@@ -43,6 +43,10 @@ pub async fn get_admin_users_handler(
             conditions.push(format!("(full_name ILIKE '%{}%' OR login_id ILIKE '%{}%')", search, search));
         }
     }
+    
+    if let Some(approved) = params.is_approved {
+        conditions.push(format!("is_approved = {}", approved));
+    }
 
     if !conditions.is_empty() {
         query.push_str(" WHERE ");
