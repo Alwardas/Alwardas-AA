@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // Persistence
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
@@ -382,6 +383,25 @@ class HodStudentManagementScreen extends StatefulWidget {
 }
 
 class _HodStudentManagementScreenState extends State<HodStudentManagementScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _loadSectionCounts();
+  }
+
+  Future<void> _loadSectionCounts() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      for (var yearData in widget.years) {
+        final key = 'sections_${widget.userData['branch']}_${yearData['year']}';
+        final List<String>? stored = prefs.getStringList(key);
+        if (stored != null) {
+          yearData['sections'] = stored;
+        }
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
