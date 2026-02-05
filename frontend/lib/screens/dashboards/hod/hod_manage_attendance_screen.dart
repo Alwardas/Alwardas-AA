@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
+
 import 'dart:convert';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
@@ -39,30 +40,30 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
   List<dynamic> _students = [];
   List<dynamic> _originalStudents = []; 
   String _searchQuery = '';
-  bool _loading = true;
+  bool _loading = false;
   bool _submitting = false;
   String? _markedBy;
   bool _isEditing = false;
-
-
+  
+  // Removed Mock Data
 
   Future<void> _checkDailyStatus() async {
     final user = await AuthService.getUserSession();
     final branch = widget.branchOverride ?? user?['branch'] ?? '';
     final dateStr = _date.toIso8601String();
-
     final section = widget.section ?? 'Section A';
+
     try {
-      final amRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=MORNING&date=$dateStr&section=${Uri.encodeComponent(section)}'));
+      final amRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=MORNING&date=$dateStr&section=${Uri.encodeComponent(section)}'));
       if (amRes.statusCode == 200) {
         final data = json.decode(amRes.body);
-        setState(() => _morningMarked = data['marked']);
+        setState(() => _morningMarked = data['submitted']);
       }
       
-      final pmRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=AFTERNOON&date=$dateStr&section=${Uri.encodeComponent(section)}'));
+      final pmRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=AFTERNOON&date=$dateStr&section=${Uri.encodeComponent(section)}'));
       if (pmRes.statusCode == 200) {
         final data = json.decode(pmRes.body);
-        setState(() => _afternoonMarked = data['marked']);
+        setState(() => _afternoonMarked = data['submitted']);
       }
     } catch (e) {
       print("Status check error: $e");
@@ -74,25 +75,39 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
     final user = await AuthService.getUserSession();
     final branch = widget.branchOverride ?? user?['branch'] ?? '';
     final dateStr = _date.toIso8601String();
-
     final section = widget.section ?? 'Section A';
+
     try {
-      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=$_session&date=$dateStr&section=${Uri.encodeComponent(section)}'));
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record')
+          .replace(queryParameters: {
+            'branch': branch,
+            'year': widget.year,
+            'session': _session,
+            'date': dateStr,
+            'section': section
+          });
+
+      final res = await http.get(uri);
+      
       if (res.statusCode == 200) {
         final data = json.decode(res.body);
+        
         if (data['students'] != null) {
           final fetched = List<dynamic>.from(data['students']).map((s) => {
               ...s,
-              'status': (s['status'] == 'PENDING') ? 'PRESENT' : s['status']
+              'status': (s['status'] == 'PENDING') ? 'PRESENT' : s['status'],
+              // Ensure we have section info if backend sends it, else default
+              'section': section 
           }).toList();
           
           setState(() {
             _students = fetched;
-            // Deep copy for comparison
             _originalStudents = fetched.map((s) => Map<String, dynamic>.from(s)).toList();
             _markedBy = data['markedBy'];
             _loading = false;
           });
+        } else {
+           setState(() => _loading = false);
         }
       } else {
         setState(() => _loading = false);
@@ -100,7 +115,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
       }
     } catch (e) {
       setState(() => _loading = false);
-      _showSnackBar("Network Error");
+      _showSnackBar("Network Error: $e");
     }
   }
 
@@ -131,6 +146,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
          if (_session == 'MORNING') setState(() => _morningMarked = true);
          else setState(() => _afternoonMarked = true);
          setState(() => _isEditing = false);
+         _fetchAttendance(); // Refresh to ensure strict sync
        } else {
          final body = json.decode(res.body);
          _showSnackBar(body['error'] ?? "Submission failed");
@@ -141,6 +157,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
        setState(() => _submitting = false);
      }
   }
+
   
   void _toggleStatus(int index) {
     if (_isLocked && !_isEditing) return;
@@ -316,6 +333,50 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
                    mainAxisAlignment: MainAxisAlignment.end,
                    children: [
                      GestureDetector(
+                        onTap: () async {
+                          final selected = _students.where((s) => s['status'] == 'PRESENT').toList();
+                          if (selected.isEmpty) { _showSnackBar("Select students (Present) to move"); return; }
+                          
+                          String? target = await showDialog<String>(context: context, builder: (c) {
+                             String v = "";
+                             return AlertDialog(
+                               title: const Text("Move to Section"),
+                               content: TextField(autofocus: true, decoration: const InputDecoration(hintText: "Target Section"), onChanged: (val) => v = val),
+                               actions: [TextButton(onPressed: () => Navigator.pop(c), child: const Text("Cancel")), ElevatedButton(onPressed: () => Navigator.pop(c, v), child: const Text("Move"))],
+                             );
+                          });
+                          
+                          if (target != null && target.isNotEmpty) {
+                             setState(() => _loading = true);
+                             try {
+                               final ids = selected.map((s) => s['studentId']).toList();
+                               final res = await http.post(
+                                 Uri.parse('${ApiConstants.baseUrl}/api/students/move'),
+                                 headers: {'Content-Type': 'application/json'},
+                                 body: json.encode({
+                                   'studentIds': ids,
+                                   'targetSection': target,
+                                   'branch': widget.branchOverride ?? '',
+                                   'year': widget.year
+                                 })
+                               );
+                               if (res.statusCode == 200) {
+                                  _showSnackBar("Moved students to $target");
+                                  _fetchAttendance();
+                               } else {
+                                  _showSnackBar("Failed to move");
+                               }
+                             } catch (e) {
+                               _showSnackBar("Error: $e");
+                             } finally {
+                               setState(() => _loading = false);
+                             }
+                          }
+                        }, 
+                        child: Text("Move Selected", style: TextStyle(color: textColor, fontWeight: FontWeight.bold))
+                      ),
+                      const SizedBox(width: 20),
+                      GestureDetector(
                        onTap: _toggleSelectAll,
                        child: Text("Select All", style: TextStyle(color: tint, fontWeight: FontWeight.bold)),
                      )
@@ -451,16 +512,6 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
     final presentCount = _students.where((s) => s['status'] == 'PRESENT').length;
     final absentCount = _students.length - presentCount;
     
-    // Calculate changes
-    int changesCount = 0;
-    if (_originalStudents.isNotEmpty && _students.length == _originalStudents.length) {
-      for (int i = 0; i < _students.length; i++) {
-        if (_students[i]['status'] != _originalStudents[i]['status']) {
-           changesCount++;
-        }
-      }
-    }
-
     final bool confirm = await showDialog(
       context: context, 
       builder: (ctx) => AlertDialog(
@@ -473,11 +524,6 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
              const SizedBox(height: 10),
              Text("Present: $presentCount", style: const TextStyle(color: Colors.green, fontWeight: FontWeight.bold)),
              Text("Absent: $absentCount", style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
-             if (_isLocked && changesCount > 0)
-                Padding(
-                  padding: const EdgeInsets.only(top: 5),
-                  child: Text("Changes: $changesCount", style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
-                ),
           ],
         ),
         actions: [
@@ -501,7 +547,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
               _session = val; 
               _isEditing = false; // Reset editing on session switch
             });
-            _fetchAttendance(); // Fetch for new session
+            _fetchAttendance();
          },
          child: Container(
            padding: const EdgeInsets.symmetric(vertical: 8),

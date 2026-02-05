@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
+
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -45,143 +46,47 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
   }
 
   Future<void> _fetchStats() async {
+    setState(() => _loading = true);
     final user = await AuthService.getUserSession();
-    if (user == null || user['branch'] == null) return;
+    final branch = user?['branch'] ?? 'CSE';
+    final dateStr = DateTime.now().toIso8601String();
     
-    final date = DateTime.now().toIso8601String();
-    
-    // 1. Fetch Stats
     try {
-      print("DEBUG: Fetching stats for branch: '${user['branch']}'");
-      
-      final queryParams = {
-        'branch': user['branch'],
-        'date': date,
-      };
-      
-      if (_selectedSession != 'All') {
-        queryParams['session'] = _selectedSession.toUpperCase();
-      } else {
-        queryParams['session'] = 'ALL';
-      }
-
-      final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: queryParams);
-      print("DEBUG: Stats URI: $uri");
-      
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats')
+          .replace(queryParameters: {
+            'branch': branch,
+            'date': dateStr,
+            'session': _selectedSession
+          });
+          
       final res = await http.get(uri);
-      print("DEBUG: Stats Response Code: ${res.statusCode}");
-      print("DEBUG: Stats Response Body: ${res.body}");
-
       if (res.statusCode == 200) {
         final data = json.decode(res.body);
         setState(() {
           _stats = {
-            'totalStudents': data['totalStudents'] ?? 0,
-            'totalPresent': data['totalPresent'] ?? 0,
-            'totalAbsent': data['totalAbsent'] ?? 0
+            'totalStudents': data['total_students'] ?? 0,
+            'totalPresent': data['total_present'] ?? 0,
+            'totalAbsent': data['total_absent'] ?? 0
           };
+          _loading = false;
         });
+      } else {
+        setState(() => _loading = false);
       }
     } catch (e) {
-      print("Fetch Stats Error: $e");
+      setState(() => _loading = false);
+      print("Error fetching stats: $e");
     }
-
-    // 2. Fetch Status for Years
-    Map<String, bool> newStatus = {
-      '1st Year': false,
-      '2nd Year': false,
-      '3rd Year': false
-    };
-
-    for (String year in ['1st Year', '2nd Year', '3rd Year']) {
-      try {
-         String sessionToCheck = (_selectedSession == 'All') ? 'MORNING' : _selectedSession.toUpperCase();
-
-         final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/check').replace(queryParameters: {
-           'branch': user['branch'],
-           'year': year,
-           'date': date,
-           'session': sessionToCheck
-         });
-
-         final res = await http.get(uri);
-         if (res.statusCode == 200) {
-            final data = json.decode(res.body);
-            newStatus[year] = data['submitted'] ?? false;
-         }
-      } catch (e) {
-         print("Fetch Status Error ($year): $e");
-      }
-    }
-    
-    if (mounted) setState(() => _attendanceStatus = newStatus);
   }
 
   Future<void> _handleAddStudent() async {
-     final user = await AuthService.getUserSession();
-     if (user == null) return;
-     
-     if (_fullNameController.text.isEmpty || _studentIdController.text.isEmpty) {
-       _showSnackBar("Please fill all fields");
-       return;
-     }
-
-     setState(() => _submitting = true);
-     try {
-       final res = await http.post(
-         Uri.parse('${ApiConstants.baseUrl}/api/hod/add-student'),
-         headers: {'Content-Type': 'application/json'},
-         body: json.encode({
-           'fullName': _fullNameController.text,
-           'studentId': _studentIdController.text,
-           'year': _selectedYear,
-           'branch': user['branch']
-         })
-       );
-       
-       if (res.statusCode == 200 || res.statusCode == 201) {
-         _showSnackBar("Student Added");
-         _fullNameController.clear();
-         _studentIdController.clear();
-         setState(() => _modalVisible = false);
-         _fetchStats();
-       } else {
-         _showSnackBar("Failed to add student");
-       }
-     } catch (e) {
-       _showSnackBar("Network Error");
-     } finally {
-       setState(() => _submitting = false);
-     }
+     // Backend connection removed
+     _showSnackBar("Feature disabled");
   }
 
   Future<void> _handleRemoveStudent() async {
-     if (_removeIdController.text.isEmpty) {
-       _showSnackBar("Enter Student ID");
-       return;
-     }
-
-     setState(() => _submitting = true);
-     try {
-       final res = await http.post(
-         Uri.parse('${ApiConstants.baseUrl}/api/hod/remove-student'),
-         headers: {'Content-Type': 'application/json'},
-         body: json.encode({'studentId': _removeIdController.text})
-       );
-       
-       if (res.statusCode == 200) {
-         _showSnackBar("Student Removed");
-         _removeIdController.clear();
-         setState(() => _modalVisible = false);
-         _fetchStats();
-       } else {
-         _showSnackBar("Failed to remove student");
-       }
-     } catch (e) {
-       _showSnackBar("Network Error");
-     } finally {
-       setState(() => _submitting = false);
-     }
+     // Backend connection removed
+     _showSnackBar("Feature disabled");
   }
 
   void _showSnackBar(String text) {
@@ -319,7 +224,30 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                        children: [
                                          Text("Select Section", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: const Color(0xFF1e1e2d))),
-                                         IconButton(onPressed: () => Navigator.pop(ctx), icon: const Icon(Icons.close, color: Color(0xFF1e1e2d)))
+                                         Row(
+                                           children: [
+                                             IconButton(
+                                               icon: const Icon(Icons.add_circle, color: Colors.blue),
+                                               onPressed: () async {
+                                                  Navigator.pop(ctx);
+                                                  final n = await showDialog<String>(context: context, builder: (c) {
+                                                    String v = "";
+                                                    return AlertDialog(
+                                                      title: const Text("New Section"), 
+                                                      content: TextField(autofocus: true, decoration: const InputDecoration(hintText: "Section Name"), onChanged: (val)=>v=val),
+                                                      actions: [TextButton(onPressed:()=>Navigator.pop(c), child: const Text("Cancel")), ElevatedButton(onPressed:()=>Navigator.pop(c,v), child: const Text("Create"))]
+                                                    );
+                                                  });
+                                                  if (n != null && n.isNotEmpty) {
+                                                     final updated = List<String>.from(sections)..add(n);
+                                                     await prefs.setStringList(key, updated);
+                                                     _showSnackBar("Created $n");
+                                                  }
+                                               },
+                                             ),
+                                             IconButton(onPressed: () => Navigator.pop(ctx), icon: const Icon(Icons.close, color: Color(0xFF1e1e2d)))
+                                           ],
+                                         )
                                        ],
                                      ),
                                      Text(year, style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 14)),

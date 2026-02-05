@@ -67,6 +67,10 @@ class _SignupScreenState extends State<SignupScreen> {
 
   String? _selectedBranch;
   String? _selectedYear;
+  String? _selectedSection; // New
+  
+  final List<String> _sections = ['Section A', 'Section B', 'Section C', 'Section D']; // New
+
   bool _otpSent = false;
   
   bool _isSigningUp = false;
@@ -100,7 +104,14 @@ class _SignupScreenState extends State<SignupScreen> {
         return;
       }
 
-      // 4. DOB Check
+      // 4. Section Check (New)
+      bool isSectionRequired = ['Student'].contains(_selectedRole);
+      if (isSectionRequired && _selectedSection == null) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please select a Section')));
+        return;
+      }
+      
+      // 5. DOB Check
       bool isDobRequired = ['Student', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
       if (isDobRequired && _dobController.text.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Date of Birth')));
@@ -185,6 +196,7 @@ class _SignupScreenState extends State<SignupScreen> {
           'dob': _dobController.text.isNotEmpty ? _dobController.text : null,
           'experience': _experienceController.text,
           'email': _emailController.text,
+          'section': _selectedSection, // New
       };
 
       final response = await http.post(
@@ -277,6 +289,7 @@ class _SignupScreenState extends State<SignupScreen> {
                if (data['dob'] != null) _dobController.text = data['dob'];
                // Handle experience if it comes as string or int
                if (data['experience'] != null) _experienceController.text = data['experience'].toString(); 
+               if (data['section'] != null) _selectedSection = data['section']; // New 
                
                // Warning if Role mismatches?
                if (data['role'] != null && data['role'] != _selectedRole) {
@@ -314,7 +327,6 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pop(ctx); // Close dialog
                           _moveToStep2(); // Proceed
                         },
                         child: const Text("Yes, Proceed"),
@@ -370,6 +382,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 _userFound = false;
                 _fullNameController.clear();
                 _idController.clear();
+                _selectedSection = null; // Reset
              });
           },
         ),
@@ -440,15 +453,16 @@ class _SignupScreenState extends State<SignupScreen> {
     bool showDob = ['Student', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
     bool showProfessional = ['Faculty', 'HOD', 'Principal'].contains(_selectedRole);
     bool showPhone = ['Parent', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
+    bool showSection = ['Student'].contains(_selectedRole);
 
     return Column(
       children: [
-        // Name Field (Moved from Step 1, ReadOnly if found)
+        // Name Field
         CustomTextField(
           label: 'Full Name', 
           placeholder: 'Enter Full Name', 
           controller: _fullNameController,
-          readOnly: _userFound, // Read only if pre-loaded
+          readOnly: _userFound,
         ),
         if (_userFound)
           Padding(
@@ -456,9 +470,7 @@ class _SignupScreenState extends State<SignupScreen> {
             child: Text("Name auto-filled from records", style: GoogleFonts.poppins(fontSize: 12, color: Colors.green, fontStyle: FontStyle.italic)),
           ),
         
-        // ID Field removed (Input in Step 1)
-        
-        // Field 2: Branch
+        // Branch
         if (showBranch)
           CustomModalDropdown(
             label: 'Branch',
@@ -467,7 +479,7 @@ class _SignupScreenState extends State<SignupScreen> {
             onChanged: (val) => setState(() => _selectedBranch = val),
           ),
 
-        // Field 3: Year
+        // Year
         if (showYear)
           CustomModalDropdown(
             label: 'Course Year',
@@ -476,7 +488,16 @@ class _SignupScreenState extends State<SignupScreen> {
             onChanged: (val) => setState(() => _selectedYear = val),
           ),
           
-        // Field: Date of Birth
+        // Section
+        if (showSection)
+          CustomModalDropdown(
+            label: 'Section',
+            value: _selectedSection,
+            options: _sections,
+            onChanged: (val) => setState(() => _selectedSection = val),
+          ),
+          
+        // Date of Birth
         if (showDob)
           CustomTextField(
             label: 'Date of Birth',
@@ -513,8 +534,6 @@ class _SignupScreenState extends State<SignupScreen> {
             controller: _phoneController,
             keyboardType: TextInputType.phone,
           ),
-        
-        // Phone Number & OTP section removed as per request
       ],
     );
   }
