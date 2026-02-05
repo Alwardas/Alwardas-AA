@@ -191,7 +191,7 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                         
                         if (res.statusCode == 201) {
                            Navigator.pop(ctx);
-                           _loadStudents(); // Refresh list to fetch from DB
+                           _fetchStudents(); // Refresh list to fetch from DB
                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Student added successfully")));
                         } else {
                            final err = json.decode(res.body);
