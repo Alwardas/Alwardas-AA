@@ -406,50 +406,6 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
                  child: Row(
                    mainAxisAlignment: MainAxisAlignment.end,
                    children: [
-                     GestureDetector(
-                        onTap: () async {
-                          final selected = _students.where((s) => s['status'] == 'PRESENT').toList();
-                          if (selected.isEmpty) { _showSnackBar("Select students (Present) to move"); return; }
-                          
-                          String? target = await showDialog<String>(context: context, builder: (c) {
-                             String v = "";
-                             return AlertDialog(
-                               title: const Text("Move to Section"),
-                               content: TextField(autofocus: true, decoration: const InputDecoration(hintText: "Target Section"), onChanged: (val) => v = val),
-                               actions: [TextButton(onPressed: () => Navigator.pop(c), child: const Text("Cancel")), ElevatedButton(onPressed: () => Navigator.pop(c, v), child: const Text("Move"))],
-                             );
-                          });
-                          
-                          if (target != null && target.isNotEmpty) {
-                             setState(() => _loading = true);
-                             try {
-                               final ids = selected.map((s) => s['studentId']).toList();
-                               final res = await http.post(
-                                 Uri.parse('${ApiConstants.baseUrl}/api/students/move'),
-                                 headers: {'Content-Type': 'application/json'},
-                                 body: json.encode({
-                                   'studentIds': ids,
-                                   'targetSection': target,
-                                   'branch': widget.branchOverride ?? '',
-                                   'year': widget.year
-                                 })
-                               );
-                               if (res.statusCode == 200) {
-                                  _showSnackBar("Moved students to $target");
-                                  _fetchAttendance();
-                               } else {
-                                  _showSnackBar("Failed to move");
-                               }
-                             } catch (e) {
-                               _showSnackBar("Error: $e");
-                             } finally {
-                               setState(() => _loading = false);
-                             }
-                          }
-                        }, 
-                        child: Text("Move Selected", style: TextStyle(color: textColor, fontWeight: FontWeight.bold))
-                      ),
-                      const SizedBox(width: 20),
                       GestureDetector(
                        onTap: _toggleSelectAll,
                        child: Text("Select All", style: TextStyle(color: tint, fontWeight: FontWeight.bold)),
