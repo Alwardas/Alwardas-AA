@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // For rootBundle
+import 'package:shared_preferences/shared_preferences.dart'; // Persistence
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http; // Kept if needed later, or remove
@@ -34,6 +35,9 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
   bool _isSelectionMode = false;
   final Set<String> _selectedIds = {};
 
+  // STATIC CACHE for Moved Students (Simulates Backend Persistence in Session)
+  static final Map<String, String> _movedStudentsCache = {};
+
   @override
   void initState() {
     super.initState();
@@ -42,6 +46,22 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
 
   Future<void> _fetchStudents() async {
     setState(() => _isLoading = true);
+    
+    // Load Moved Students Cache from Disk
+    final prefs = await SharedPreferences.getInstance();
+    final String? storedMoves = prefs.getString('moved_students_v1');
+    if (storedMoves != null) {
+      try {
+        final Map<String, dynamic> decoded = json.decode(storedMoves);
+        _movedStudentsCache.clear();
+        decoded.forEach((key, value) {
+          _movedStudentsCache[key] = value.toString();
+        });
+      } catch (e) {
+        debugPrint("Error loading moved students cache: $e");
+      }
+    }
+
     try {
       // Map Branch Name to Key used in JSON (lowercase, short codes)
       String branchKey = 'cme'; // Default
@@ -92,35 +112,34 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
          } catch (e) { debugPrint("Skipping $file"); }
       }
 
-      setState(() {
-        if (foundStudents.isNotEmpty) {
-            String defaultSection = widget.allSections.isNotEmpty ? widget.allSections[0] : 'Section A';
-            
-            // Logic: All students from JSON are technically "Section A" (Default).
-            // We show them if current section is Default.
-            // UNLESS we are "Connected" and the backend tells us otherwise?
-            // Since we can't easily change the backend right now, we implement the Action Hooks 
-            // and keep the frontend logic as is for the "Demo".
-            
-            if (widget.section == defaultSection) {
-               _studentList = foundStudents.map((s) {
+       setState(() {
+         if (foundStudents.isNotEmpty) {
+             // 1. Convert ALL found students to internal format with section logic
+             List<Map<String, dynamic>> processedStudents = foundStudents.map((s) {
+                final id = (s['pin'] ?? 'Unknown').toString();
+                // Determine Section: Check Cache first, else default to 'Section A'
+                String assignedSection = _movedStudentsCache.containsKey(id) 
+                    ? _movedStudentsCache[id]! 
+                    : 'Section A';
+
                 return {
                   'fullName': s['name'] ?? 'Unknown',
-                  'studentId': s['pin'] ?? 'Unknown',
-                  'email': '${(s['pin'] ?? 'unknown').toString().toLowerCase()}@alwardas.edu', 
-                  'section': defaultSection, 
-                  'branch': branchKey, // Derived
+                  'studentId': id,
+                  'email': '$id@alwardas.edu', 
+                  'section': assignedSection, 
+                  'branch': branchKey,
                   'year': widget.year
                 };
-              }).toList();
-            } else {
+             }).toList();
+
+             // 2. FILTER based on the current screen's section
+             _studentList = processedStudents.where((s) => s['section'] == widget.section).toList();
+
+         } else {
               _studentList = [];
-            }
-        } else {
-             _studentList = [];
-        }
-        _isLoading = false;
-      });
+         }
+         _isLoading = false;
+       });
 
     } catch (e) {
       debugPrint("Error loading students: $e");
@@ -273,21 +292,34 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                           headers: {'Content-Type': 'application/json'}
                         );
                         
-                        // Local Update
+                        // Cache Update (Simulate Persistence) AND Save to Disk
+                        final prefs = await SharedPreferences.getInstance();
+                        for (var id in _selectedIds) {
+                            _movedStudentsCache[id] = targetSection!;
+                        }
+                        await prefs.setString('moved_students_v1', json.encode(_movedStudentsCache));
+
+                        // Local Update (Remove from current view)
                         setState(() {
                           _studentList.removeWhere((s) => _selectedIds.contains(s['studentId']));
                           _isSelectionMode = false;
                           _selectedIds.clear();
                         });
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Moved to $targetSection")));
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Moved ${_selectedIds.length} students to $targetSection")));
                      } catch (e) {
                         // Fallback UI update
+                        final prefs = await SharedPreferences.getInstance();
+                        for (var id in _selectedIds) {
+                            _movedStudentsCache[id] = targetSection!;
+                        }
+                        await prefs.setString('moved_students_v1', json.encode(_movedStudentsCache));
+
                         setState(() {
                           _studentList.removeWhere((s) => _selectedIds.contains(s['studentId']));
                           _isSelectionMode = false;
                           _selectedIds.clear();
                         });
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Moved (Local): $targetSection")));
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Moved ${_selectedIds.length} students to $targetSection (Local)")));
                      }
                    },
                    child: const Text("Move"),

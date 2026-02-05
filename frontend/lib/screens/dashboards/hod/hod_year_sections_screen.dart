@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // Persistence
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -27,8 +29,23 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
   @override
   void initState() {
     super.initState();
-    // Create a copy to edit locally
-    _sections = List<String>.from(widget.yearData['sections']);
+    _loadSections();
+  }
+
+  Future<void> _loadSections() async {
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'sections_${widget.branch}_${widget.yearData['year']}';
+    List<String>? stored = prefs.getStringList(key);
+    
+    setState(() {
+       _sections = stored ?? List<String>.from(widget.yearData['sections']);
+    });
+  }
+
+  Future<void> _saveSections() async {
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'sections_${widget.branch}_${widget.yearData['year']}';
+    await prefs.setStringList(key, _sections);
   }
 
   void _addSection() {
@@ -61,6 +78,7 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
                   setState(() {
                     _sections.add(controller.text.trim());
                   });
+                  _saveSections(); // Persist
                   widget.onUpdateSections(_sections); // Update parent
                   Navigator.pop(context);
                 }
@@ -103,6 +121,7 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
                   setState(() {
                     _sections[index] = controller.text.trim();
                   });
+                  _saveSections(); // Persist
                   widget.onUpdateSections(_sections);
                   Navigator.pop(context);
                 }
@@ -137,6 +156,7 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
                 setState(() {
                   _sections.removeAt(index);
                 });
+                _saveSections(); // Persist
                 widget.onUpdateSections(_sections);
                 Navigator.pop(context);
               },
