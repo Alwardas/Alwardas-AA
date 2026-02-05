@@ -7,7 +7,18 @@ use sqlx::{Postgres, Row, QueryBuilder};
 use crate::models::*;
 use uuid::Uuid;
 use chrono::Utc;
+use chrono::Utc;
 use std::collections::HashMap;
+
+#[derive(serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct MoveStudentsRequest {
+    pub student_ids: Vec<String>,
+    pub target_section: String,
+    pub branch: String, 
+    pub year: String,
+}
+
 
 // --- Faculty Profile ---
 
@@ -234,6 +245,39 @@ pub async fn get_faculty_by_branch_handler(
         })?;
 
     Ok(Json(faculty_list))
+}
+
+pub async fn move_students_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<MoveStudentsRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    println!("DEBUG: Moving students {:?} to Section {}", payload.student_ids, payload.target_section);
+
+    let mut tx = state.pool.begin().await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
+
+    // We assume 'studentIds' are 'studentId' (login_id). 
+    // If they are UUIDs, handle accordingly. Frontend sends 'pin' or 'studentId', which is login_id.
+    
+    // Using login_id because frontend sends that.
+    let query = "UPDATE users SET section = $1 WHERE login_id = ANY($2)";
+    
+    let result = sqlx::query(query)
+        .bind(&payload.target_section)
+        .bind(&payload.student_ids)
+        .execute(&mut *tx)
+        .await
+        .map_err(|e| {
+             eprintln!("Move Students Error: {:?}", e);
+             (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to update sections"})))
+        })?;
+
+    tx.commit().await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Commit Failed"}))))?;
+
+    println!("✅ Moved {} students to {}", result.rows_affected(), payload.target_section);
+
+    Ok(StatusCode::OK)
 }
 
 // --- Attendance ---
