@@ -7,7 +7,7 @@ use sqlx::{Postgres, Row, QueryBuilder};
 use crate::models::*;
 use uuid::Uuid;
 use chrono::Utc;
-use chrono::Utc;
+
 use std::collections::HashMap;
 
 #[derive(serde::Deserialize)]
