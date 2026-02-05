@@ -703,6 +703,10 @@ pub struct ResetResponse {
 }
 
 #[derive(Deserialize)]
+pub struct CheckUserQuery {
+    #[serde(rename = "loginId")]
+    pub login_id: String,
+}
 
 #[derive(Deserialize, Debug)]
 pub struct CreateStudentRequest {
