@@ -53,13 +53,13 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
 
     final section = widget.section ?? 'Section A';
     try {
-      final amRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${widget.year}&session=MORNING&date=$dateStr&section=$section'));
+      final amRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=MORNING&date=$dateStr&section=${Uri.encodeComponent(section)}'));
       if (amRes.statusCode == 200) {
         final data = json.decode(amRes.body);
         setState(() => _morningMarked = data['marked']);
       }
       
-      final pmRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${widget.year}&session=AFTERNOON&date=$dateStr&section=$section'));
+      final pmRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=AFTERNOON&date=$dateStr&section=${Uri.encodeComponent(section)}'));
       if (pmRes.statusCode == 200) {
         final data = json.decode(pmRes.body);
         setState(() => _afternoonMarked = data['marked']);
@@ -77,7 +77,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
 
     final section = widget.section ?? 'Section A';
     try {
-      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${widget.year}&session=$_session&date=$dateStr&section=$section'));
+      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=$_session&date=$dateStr&section=${Uri.encodeComponent(section)}'));
       if (res.statusCode == 200) {
         final data = json.decode(res.body);
         if (data['students'] != null) {

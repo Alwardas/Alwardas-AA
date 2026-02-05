@@ -294,33 +294,42 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                            
                            if (!mounted) return;
 
-                           showModalBottomSheet(
+                           showDialog(
                              context: context,
-                             backgroundColor: Colors.transparent,
-                             builder: (ctx) => Container(
-                               padding: const EdgeInsets.all(20),
-                               decoration: BoxDecoration(
-                                 color: cardColor,
-                                 borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-                               ),
-                               child: Column(
-                                 mainAxisSize: MainAxisSize.min,
-                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                 children: [
-                                   Text("Select Section for $year", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
-                                   const SizedBox(height: 20),
-                                   ...sections.map((section) => ListTile(
-                                     title: Text(section, style: GoogleFonts.poppins(color: textColor)),
-                                     leading: Icon(Icons.class_, color: tint),
-                                     trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
-                                     onTap: () async {
-                                       Navigator.pop(ctx);
-                                       await Navigator.push(context, MaterialPageRoute(builder: (_) => HODManageAttendanceScreen(year: year, initialSession: _selectedSession, section: section)));
-                                       _fetchStats();
-                                     },
-                                   )),
-                                   const SizedBox(height: 20),
-                                 ],
+                             builder: (ctx) => Dialog(
+                               backgroundColor: Colors.transparent,
+                               child: Container(
+                                 padding: const EdgeInsets.all(20),
+                                 decoration: BoxDecoration(
+                                   color: cardColor,
+                                   borderRadius: BorderRadius.circular(20),
+                                 ),
+                                 child: Column(
+                                   mainAxisSize: MainAxisSize.min,
+                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                   children: [
+                                     Row(
+                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                       children: [
+                                         Text("Select Section", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                                         IconButton(onPressed: () => Navigator.pop(ctx), icon: Icon(Icons.close, color: textColor))
+                                       ],
+                                     ),
+                                     Text(year, style: GoogleFonts.poppins(color: subTextColor, fontSize: 14)),
+                                     const SizedBox(height: 20),
+                                     ...sections.map((section) => ListTile(
+                                       title: Text(section, style: GoogleFonts.poppins(color: textColor)),
+                                       leading: Icon(Icons.class_, color: tint),
+                                       trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+                                       onTap: () async {
+                                         Navigator.pop(ctx);
+                                         await Navigator.push(context, MaterialPageRoute(builder: (_) => HODManageAttendanceScreen(year: year, initialSession: _selectedSession, section: section)));
+                                         _fetchStats();
+                                       },
+                                     )),
+                                     const SizedBox(height: 10),
+                                   ],
+                                 ),
                                ),
                              )
                            );
