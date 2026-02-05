@@ -12,7 +12,8 @@ class HODManageAttendanceScreen extends StatefulWidget {
   final String year;
   final String? initialSession;
   final String? branchOverride;
-  const HODManageAttendanceScreen({super.key, required this.year, this.initialSession, this.branchOverride});
+  final String? section;
+  const HODManageAttendanceScreen({super.key, required this.year, this.initialSession, this.branchOverride, this.section});
 
   @override
   _HODManageAttendanceScreenState createState() => _HODManageAttendanceScreenState();
@@ -50,14 +51,15 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
     final branch = widget.branchOverride ?? user?['branch'] ?? '';
     final dateStr = _date.toIso8601String();
 
+    final section = widget.section ?? 'Section A';
     try {
-      final amRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${widget.year}&session=MORNING&date=$dateStr'));
+      final amRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${widget.year}&session=MORNING&date=$dateStr&section=$section'));
       if (amRes.statusCode == 200) {
         final data = json.decode(amRes.body);
         setState(() => _morningMarked = data['marked']);
       }
       
-      final pmRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${widget.year}&session=AFTERNOON&date=$dateStr'));
+      final pmRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${widget.year}&session=AFTERNOON&date=$dateStr&section=$section'));
       if (pmRes.statusCode == 200) {
         final data = json.decode(pmRes.body);
         setState(() => _afternoonMarked = data['marked']);
@@ -73,8 +75,9 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
     final branch = widget.branchOverride ?? user?['branch'] ?? '';
     final dateStr = _date.toIso8601String();
 
+    final section = widget.section ?? 'Section A';
     try {
-      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${widget.year}&session=$_session&date=$dateStr'));
+      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${widget.year}&session=$_session&date=$dateStr&section=$section'));
       if (res.statusCode == 200) {
         final data = json.decode(res.body);
         if (data['students'] != null) {

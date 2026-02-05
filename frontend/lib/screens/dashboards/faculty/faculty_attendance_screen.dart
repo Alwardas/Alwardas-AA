@@ -26,6 +26,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
   String _selectedBranch = 'Computer Engineering';
   String _selectedYear = '1st Year';
   String _selectedSession = 'MORNING'; // MORNING | AFTERNOON
+  String _selectedSection = 'Section A';
   // ignore: unused_field
   final DateTime _selectedDate = DateTime.now();
   String _searchText = '';
@@ -65,7 +66,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
         // Or adding a lightweight endpoint `/api/attendance/check?branch=...&date=...&session=...`
         
         // Let's implement a simple check by fetch query
-        final url = Uri.parse('${ApiConstants.baseUrl}/api/attendance/check?branch=$branchCode&year=$_selectedYear&date=$dateStr&session=$_selectedSession');
+        final url = Uri.parse('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branchCode)}&year=${Uri.encodeComponent(_selectedYear)}&date=$dateStr&session=$_selectedSession&section=${Uri.encodeComponent(_selectedSection)}');
         final response = await http.get(url);
         
         if (response.statusCode == 200) {
@@ -81,69 +82,39 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
 
   Future<void> _fetchStudents() async {
     setState(() => _loading = true);
-    // don't reset _alreadySubmitted here, let _checkSubmissionStatus handle it
     try {
-      // Map UI Full Names to Backend Short Codes
-      String branchCode = _selectedBranch;
-      if (_selectedBranch == 'Computer Engineering') branchCode = 'CME';
-      else if (_selectedBranch == 'Civil Engineering') branchCode = 'Civil';
-      else if (_selectedBranch == 'Electrical & Electronics Engineering') branchCode = 'EEE';
-      else if (_selectedBranch == 'Electronics & Communication Engineering') branchCode = 'ECE';
-      else if (_selectedBranch == 'Mechanical Engineering') branchCode = 'Mech';
-      
-      // Check status first (This still hits API to check if attendance is marked)
-      await _checkSubmissionStatus(branchCode);
-      
-      // Load from local JSON files (Replaces API call)
-      List<dynamic> allFoundStudents = [];
-      final files = [
-        '2025-2028_students.json',
-        '2024-2027_students.json',
-        '2023-2026_students.json',
-        'alwar_students.json'
-      ];
+      final dateStr = _selectedDate.toIso8601String().split('T')[0];
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record?'
+          'branch=${Uri.encodeComponent(_selectedBranch)}&'
+          'year=${Uri.encodeComponent(_selectedYear)}&'
+          'session=$_selectedSession&'
+          'date=$dateStr&'
+          'section=${Uri.encodeComponent(_selectedSection)}');
 
-      // Map UI Branch Selection to JSON key (lowercase)
-      String branchKey = 'cme';
-      if (_selectedBranch.contains('Computer')) branchKey = 'cme';
-      else if (_selectedBranch.contains('Civil')) branchKey = 'civil';
-      else if (_selectedBranch.contains('Electrical')) branchKey = 'eee';
-      else if (_selectedBranch.contains('Electronics')) branchKey = 'ece';
-      else if (_selectedBranch.contains('Mechanical')) branchKey = 'mech';
+      final response = await http.get(url);
 
-      for (String file in files) {
-        try {
-          final String content = await rootBundle.loadString('assets/data/json/$file');
-          final Map<String, dynamic> data = json.decode(content);
-          
-          // Match Year (e.g. "1st Year", "2nd Year")
-          if (data.containsKey(_selectedYear)) {
-            final yearData = data[_selectedYear];
-            if (yearData != null && yearData is Map && yearData.containsKey(branchKey)) {
-              final studentsInFile = yearData[branchKey];
-              if (studentsInFile is List) {
-                allFoundStudents.addAll(studentsInFile);
-              }
-            }
-          }
-        } catch (e) {
-             debugPrint("Error reading $file: $e");
-        }
-      }
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        final bool marked = data['marked'] ?? false;
+        final List<dynamic> fetchedStudents = data['students'] ?? [];
 
-      if (allFoundStudents.isNotEmpty) {
         setState(() {
-          // Map JSON {pin, name} to UI {studentId, fullName}
-          _students = allFoundStudents.map((s) => {
-            'studentId': s['pin'],
-            'fullName': s['name']
-          }).toList();
+          _students = fetchedStudents;
+          _alreadySubmitted = marked;
           
-          _selectedStudentIds = _students.map((s) => s['studentId'].toString()).toList();
+          if (marked) {
+            // Pre-select students who were present
+            _selectedStudentIds = fetchedStudents
+                .where((s) => s['status'] == 'PRESENT')
+                .map((s) => s['studentId'].toString())
+                .toList();
+          } else {
+             // Default to all selected (present) for fresh marking
+             _selectedStudentIds = _students.map((s) => s['studentId'].toString()).toList();
+          }
         });
       } else {
-        setState(() => _students = []);
-        _showErrorDialog("No students found in record for $_selectedBranch - $_selectedYear");
+        _showErrorDialog("Failed to fetch students from server.");
       }
     } catch (e) {
       _showErrorDialog("Network error: $e");
@@ -411,6 +382,9 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
 
           _buildDropdown("Year", _selectedYear, ['1st Year', '2nd Year', '3rd Year'], 
             (val) => setState(() => _selectedYear = val!), textColor, subTextColor, iconBgColor, cardColor, dropdownBgColor),
+
+          _buildDropdown("Section", _selectedSection, ['Section A', 'Section B', 'Section C', 'Section D'], 
+            (val) => setState(() => _selectedSection = val!), textColor, subTextColor, iconBgColor, cardColor, dropdownBgColor),
 
           const SizedBox(height: 20),
           Text("Session", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600, color: subTextColor)),

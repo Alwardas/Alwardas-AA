@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
@@ -284,8 +285,45 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                        final isMarked = _attendanceStatus[year] ?? false; 
                        return GestureDetector(
                          onTap: () async {
-                           await Navigator.push(context, MaterialPageRoute(builder: (_) => HODManageAttendanceScreen(year: year, initialSession: _selectedSession)));
-                           _fetchStats();
+                           final user = await AuthService.getUserSession();
+                           if (user == null) return;
+                           
+                           final prefs = await SharedPreferences.getInstance();
+                           final key = 'sections_${user['branch']}_$year';
+                           final List<String> sections = prefs.getStringList(key) ?? ['Section A'];
+                           
+                           if (!mounted) return;
+
+                           showModalBottomSheet(
+                             context: context,
+                             backgroundColor: Colors.transparent,
+                             builder: (ctx) => Container(
+                               padding: const EdgeInsets.all(20),
+                               decoration: BoxDecoration(
+                                 color: cardColor,
+                                 borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                               ),
+                               child: Column(
+                                 mainAxisSize: MainAxisSize.min,
+                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                 children: [
+                                   Text("Select Section for $year", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                                   const SizedBox(height: 20),
+                                   ...sections.map((section) => ListTile(
+                                     title: Text(section, style: GoogleFonts.poppins(color: textColor)),
+                                     leading: Icon(Icons.class_, color: tint),
+                                     trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+                                     onTap: () async {
+                                       Navigator.pop(ctx);
+                                       await Navigator.push(context, MaterialPageRoute(builder: (_) => HODManageAttendanceScreen(year: year, initialSession: _selectedSession, section: section)));
+                                       _fetchStats();
+                                     },
+                                   )),
+                                   const SizedBox(height: 20),
+                                 ],
+                               ),
+                             )
+                           );
                          },
                          child: Container(
                            margin: const EdgeInsets.only(bottom: 15),

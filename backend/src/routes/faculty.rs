@@ -202,12 +202,14 @@ pub async fn get_students_handler(
 ) -> Result<Json<Vec<StudentBasicInfo>>, StatusCode> {
     let normalized_branch = normalize_branch(&params.branch);
     let year_pattern = format!("{}%", params.year.trim());
+    let section_filter = params.section.clone().unwrap_or_else(|| "Section A".to_string());
 
     let students = sqlx::query_as::<Postgres, StudentBasicInfo>(
-        "SELECT login_id as student_id, full_name, branch, year FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 ORDER BY login_id ASC"
+        "SELECT login_id as student_id, full_name, branch, year FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 AND section = $3 ORDER BY login_id ASC"
     )
     .bind(normalized_branch)
     .bind(year_pattern)
+    .bind(section_filter) // Bind the section
     .fetch_all(&state.pool)
     .await
     .map_err(|e| {
@@ -377,9 +379,10 @@ pub async fn submit_attendance_batch_handler(
         full_name: String,
         branch: Option<String>,
         year: Option<String>,
+        section: Option<String>,
     }
 
-    let rows = sqlx::query_as::<_, StudentInfoLocal>("SELECT id, login_id, full_name, branch, year FROM users WHERE login_id = ANY($1) OR id::text = ANY($1)")
+    let rows = sqlx::query_as::<_, StudentInfoLocal>("SELECT id, login_id, full_name, branch, year, section FROM users WHERE login_id = ANY($1) OR id::text = ANY($1)")
         .bind(&student_login_ids)
         .fetch_all(&state.pool)
         .await
@@ -401,7 +404,7 @@ pub async fn submit_attendance_batch_handler(
             let db_status = if record.status.to_uppercase().starts_with('P') { "P" } else { "A" };
             uuids_to_clear.push(info.id);
 
-            sqlx::query("INSERT INTO attendance (student_uuid, faculty_uuid, date, status, branch, year, session, student_name, student_login_id, faculty_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)")
+            sqlx::query("INSERT INTO attendance (student_uuid, faculty_uuid, date, status, branch, year, session, section, student_name, student_login_id, faculty_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)")
                 .bind(info.id)
                 .bind(faculty_uuid)
                 .bind(date)
@@ -409,6 +412,7 @@ pub async fn submit_attendance_batch_handler(
                 .bind(info.branch.clone().unwrap_or_default())
                 .bind(info.year.clone().unwrap_or_default())
                 .bind(&session)
+                .bind(info.section.clone().unwrap_or_else(|| "Section A".to_string()))
                 .bind(&info.full_name)
                 .bind(&info.login_id)
                 .bind(&faculty_name)
@@ -445,12 +449,14 @@ pub async fn check_attendance_status_handler(
 ) -> Result<Json<serde_json::Value>, StatusCode> {
     let date_str = params.date.split('T').next().unwrap_or(&params.date);
     let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d").map_err(|_| StatusCode::BAD_REQUEST)?;
+    let section = params.section.clone().unwrap_or_else(|| "Section A".to_string());
     
-    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM attendance WHERE branch = $1 AND year = $2 AND date = $3 AND session = $4")
+    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM attendance WHERE branch = $1 AND year = $2 AND date = $3 AND session = $4 AND section = $5")
         .bind(params.branch.trim())
         .bind(params.year.trim())
         .bind(date)
         .bind(params.session.trim().to_uppercase())
+        .bind(section)
         .fetch_one(&state.pool)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
@@ -465,24 +471,27 @@ pub async fn get_class_attendance_record_handler(
     let date_str = params.date.split('T').next().unwrap_or(&params.date);
     let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d").map_err(|_| StatusCode::BAD_REQUEST)?;
     let session_upper = params.session.trim().to_uppercase();
+    let section = params.section.clone().unwrap_or_else(|| "Section A".to_string());
     
-    let meta_row: Option<(String,)> = sqlx::query_as("SELECT faculty_name FROM attendance WHERE branch=$1 AND year=$2 AND session=$3 AND date=$4 LIMIT 1")
+    let meta_row: Option<(String,)> = sqlx::query_as("SELECT faculty_name FROM attendance WHERE branch=$1 AND year=$2 AND session=$3 AND date=$4 AND section=$5 LIMIT 1")
        .bind(normalize_branch(&params.branch))
        .bind(params.year.trim())
        .bind(&session_upper)
        .bind(date)
+       .bind(&section)
        .fetch_optional(&state.pool)
        .await
        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
        
     if let Some((marked_by,)) = meta_row {
         let records = sqlx::query_as::<_, StudentAttendanceItem>(
-            "SELECT u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = $1 AND a.year = $2 AND a.session = $3 AND a.date = $4 ORDER BY u.login_id ASC"
+            "SELECT u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = $1 AND a.year = $2 AND a.session = $3 AND a.date = $4 AND a.section = $5 ORDER BY u.login_id ASC"
         )
         .bind(normalize_branch(&params.branch))
         .bind(params.year.trim())
         .bind(&session_upper)
         .bind(date)
+        .bind(section)
         .fetch_all(&state.pool)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
@@ -491,10 +500,11 @@ pub async fn get_class_attendance_record_handler(
     } else {
         let year_pattern = format!("{}%", params.year.trim());
         let students = sqlx::query_as::<_, StudentAttendanceItem>(
-            "SELECT login_id as student_id, full_name, 'PENDING' as status FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 ORDER BY login_id ASC"
+            "SELECT login_id as student_id, full_name, 'PENDING' as status FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 AND section = $3 ORDER BY login_id ASC"
         )
          .bind(normalize_branch(&params.branch))
          .bind(year_pattern)
+         .bind(section)
          .fetch_all(&state.pool)
          .await
          .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;

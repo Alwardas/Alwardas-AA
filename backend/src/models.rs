@@ -203,6 +203,7 @@ pub struct StudentBasicInfo {
 pub struct StudentsQuery {
     pub branch: String,
     pub year: String,
+    pub section: Option<String>,
 }
 
 #[derive(Serialize)]
@@ -476,6 +477,7 @@ pub struct CheckAttendanceQuery {
     pub year: String,
     pub date: String,
     pub session: String,
+    pub section: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -484,6 +486,7 @@ pub struct ClassRecordQuery {
     pub year: String,
     pub session: String,
     pub date: String,
+    pub section: Option<String>,
 }
 
 #[derive(Serialize)]
