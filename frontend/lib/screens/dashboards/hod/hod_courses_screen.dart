@@ -209,7 +209,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
         if (_isSelectMode) {
           _toggleDeleteSelection(item['id']);
         } else {
-          Navigator.push(context, MaterialPageRoute(builder: (_) => HodLessonPlanScreen(subjectId: item['id'])));
+          Navigator.push(context, MaterialPageRoute(builder: (_) => HodLessonPlanScreen(subjectId: item['id'], subjectName: item['name'])));
         }
       },
       child: Container(
