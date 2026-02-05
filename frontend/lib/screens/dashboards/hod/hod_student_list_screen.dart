@@ -4,7 +4,8 @@ import 'package:flutter/services.dart'; // For rootBundle
 import 'package:shared_preferences/shared_preferences.dart'; // Persistence
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http; // Kept if needed later, or remove
+import 'package:http/http.dart' as http;
+import '../../../core/services/auth_service.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
@@ -150,40 +151,64 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
   void _addStudent() {
      final nameController = TextEditingController();
      final idController = TextEditingController();
+     bool isSubmitting = false;
      
      showDialog(
        context: context,
-       builder: (ctx) => AlertDialog(
-         title: Text("Add Student", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-         content: Column(
-           mainAxisSize: MainAxisSize.min,
-           children: [
-             TextField(controller: nameController, decoration: const InputDecoration(labelText: "Full Name")),
-             TextField(controller: idController, decoration: const InputDecoration(labelText: "Student ID")),
-           ],
-         ),
-         actions: [
-           TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Cancel")),
-           ElevatedButton(
-             onPressed: () {
-               if (nameController.text.isNotEmpty && idController.text.isNotEmpty) {
-                 setState(() {
-                   // Add to local list
-                   _studentList.add({
-                     'fullName': nameController.text,
-                     'studentId': idController.text,
-                     'email': '${idController.text.toLowerCase()}@college.edu',
-                     'section': widget.section,
-                     'branch': 'CME', // Should derive from widget.branch
-                     'year': widget.year
-                   });
-                 });
-                 Navigator.pop(ctx);
-               }
-             },
-             child: const Text("Add"),
-           )
-         ],
+       builder: (ctx) => StatefulBuilder(
+         builder: (context, setStateModal) {
+           return AlertDialog(
+             title: Text("Add Student to ${widget.section}", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+             content: Column(
+               mainAxisSize: MainAxisSize.min,
+               children: [
+                 TextField(controller: nameController, decoration: const InputDecoration(labelText: "Full Name")),
+                 TextField(controller: idController, decoration: const InputDecoration(labelText: "Student ID")),
+                 if (isSubmitting) const Padding(padding: EdgeInsets.only(top: 10), child: LinearProgressIndicator())
+               ],
+             ),
+             actions: [
+               TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Cancel")),
+               ElevatedButton(
+                 onPressed: isSubmitting ? null : () async {
+                   if (nameController.text.isNotEmpty && idController.text.isNotEmpty) {
+                     setStateModal(() => isSubmitting = true);
+                     try {
+                        final user = await AuthService.getUserSession();
+                        final branch = user?['branch'] ?? 'Computer Engineering';
+                        
+                        final res = await http.post(
+                          Uri.parse('${ApiConstants.baseUrl}/api/students/create'),
+                          headers: {'Content-Type': 'application/json'},
+                          body: json.encode({
+                             'fullName': nameController.text,
+                             'studentId': idController.text,
+                             'branch': branch,
+                             'year': widget.year,
+                             'section': widget.section // KEY FIX: Use current section
+                          })
+                        );
+                        
+                        if (res.statusCode == 201) {
+                           Navigator.pop(ctx);
+                           _loadStudents(); // Refresh list to fetch from DB
+                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Student added successfully")));
+                        } else {
+                           final err = json.decode(res.body);
+                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed: ${err['error']}")));
+                        }
+                     } catch (e) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+                     } finally {
+                        if (mounted) setStateModal(() => isSubmitting = false);
+                     }
+                   }
+                 },
+                 child: const Text("Add"),
+               )
+             ],
+           );
+         }
        )
      );
   }
