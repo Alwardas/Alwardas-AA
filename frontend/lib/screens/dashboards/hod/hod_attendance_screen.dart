@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart'; // For JSON fallback
 import 'package:http/http.dart' as http;
 
 import 'dart:convert';
@@ -48,7 +49,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
   Future<void> _fetchStats() async {
     setState(() => _loading = true);
     final user = await AuthService.getUserSession();
-    final branch = user?['branch'] ?? 'CSE';
+    final branch = user?['branch'] ?? 'Computer Engineering';
     final dateStr = DateTime.now().toIso8601String();
     
     try {
@@ -60,28 +61,113 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
           });
           
       final res = await http.get(uri);
+      int total = 0;
+      int present = 0;
+      int absent = 0;
+
       if (res.statusCode == 200) {
         final data = json.decode(res.body);
-        setState(() {
-          _stats = {
-            'totalStudents': data['total_students'] ?? 0,
-            'totalPresent': data['total_present'] ?? 0,
-            'totalAbsent': data['total_absent'] ?? 0
-          };
-          _loading = false;
-        });
-      } else {
-        setState(() => _loading = false);
+        total = data['total_students'] ?? 0;
+        present = data['total_present'] ?? 0;
+        absent = data['total_absent'] ?? 0;
       }
+      
+      // Fallback: If DB total is 0, use JSON count
+      if (total == 0) {
+         total = await _calculateTotalFromJson(branch);
+      }
+
+      setState(() {
+        _stats = {
+          'totalStudents': total,
+          'totalPresent': present,
+          'totalAbsent': absent
+        };
+        _loading = false;
+      });
+
     } catch (e) {
       setState(() => _loading = false);
       print("Error fetching stats: $e");
     }
   }
 
+  Future<int> _calculateTotalFromJson(String branchName) async {
+      try {
+        String branchKey = 'cme'; 
+        final b = branchName.toLowerCase();
+        if (b.contains('computer')) branchKey = 'cme';
+        else if (b.contains('civil')) branchKey = 'civil';
+        else if (b.contains('electrical')) branchKey = 'eee';
+        else if (b.contains('electronics')) branchKey = 'ece';
+        else if (b.contains('mechanical')) branchKey = 'mech';
+
+        final files = ['2025-2028_students.json', '2024-2027_students.json', '2023-2026_students.json'];
+        int count = 0;
+
+        for (String file in files) {
+           try {
+             final String content = await rootBundle.loadString('assets/data/json/$file');
+             final Map<String, dynamic> data = json.decode(content);
+             data.forEach((year, branches) {
+                if (branches is Map && branches.containsKey(branchKey)) {
+                   count += (branches[branchKey] as List).length;
+                }
+             });
+           } catch (_) {}
+        }
+        return count > 0 ? count : 0; 
+      } catch (e) {
+        return 0;
+      }
+  }
+
   Future<void> _handleAddStudent() async {
-     // Backend connection removed
-     _showSnackBar("Feature disabled");
+     setState(() => _submitting = true);
+     final user = await AuthService.getUserSession();
+     final branch = user?['branch'] ?? 'Computer Engineering'; // Use full name for consistency if needed, or normalizing backend handles it
+     
+     if (_fullNameController.text.isEmpty || _studentIdController.text.isEmpty) {
+        _showSnackBar("Please fill all fields");
+        setState(() => _submitting = false);
+        return;
+     }
+
+     try {
+       final res = await http.post(
+         Uri.parse('${ApiConstants.baseUrl}/api/students/create'),
+         headers: {'Content-Type': 'application/json'},
+         body: json.encode({
+           'fullName': _fullNameController.text,
+           'studentId': _studentIdController.text,
+           'branch': branch,
+           'year': _selectedYear,
+           'section': 'Section A' // Default to Section A as it's the primary view
+         })
+       );
+
+       if (res.statusCode == 201) {
+          _showSnackBar("Student Added Successfully");
+          setState(() {
+             _modalVisible = false;
+             _fullNameController.clear();
+             _studentIdController.clear();
+          });
+          _fetchStats(); // Refresh stats
+       } else {
+          // Try parse error
+          try {
+             final err = json.decode(res.body);
+             _showSnackBar("Failed: ${err['error']}");
+          } catch (_) {
+             _showSnackBar("Failed: ${res.statusCode}");
+          }
+       }
+     } catch (e) {
+       _showSnackBar("Error: $e");
+     } finally {
+       if (mounted) setState(() => _submitting = false);
+     }
   }
 
   Future<void> _handleRemoveStudent() async {

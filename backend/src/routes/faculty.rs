@@ -708,3 +708,38 @@ async fn resolve_user_id(id_str: &str, role_hint: &str, pool: &sqlx::PgPool) -> 
         None => Err((StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": format!("Invalid {} ID: {}", role_hint, id_str)}))))
     }
 }
+
+// --- Create Student (HOD) ---
+pub async fn create_student_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<CreateStudentRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let section = payload.section.unwrap_or_else(|| "Section A".to_string());
+    
+    // Check if exists
+    let exists = sqlx::query("SELECT 1 FROM users WHERE login_id = $1")
+        .bind(&payload.student_id)
+        .fetch_optional(&state.pool)
+        .await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
+
+    if exists.is_some() {
+        return Err((StatusCode::CONFLICT, Json(serde_json::json!({"error": "Student ID already exists"}))));
+    }
+
+    // Insert
+    let branch_norm = normalize_branch(&payload.branch);
+    sqlx::query("INSERT INTO users (id, full_name, role, login_id, password_hash, branch, year, section, is_approved, created_at, updated_at) VALUES ($1, $2, 'Student', $3, $4, $5, $6, $7, true, NOW(), NOW())")
+        .bind(Uuid::new_v4())
+        .bind(payload.full_name)
+        .bind(payload.student_id.clone())
+        .bind(payload.student_id) // Default password
+        .bind(branch_norm)
+        .bind(payload.year)
+        .bind(section)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
+
+    Ok(StatusCode::CREATED)
+}

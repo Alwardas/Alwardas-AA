@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart'; // For JSON loading fallback
 import 'package:http/http.dart' as http;
 
 import 'dart:convert';
@@ -89,14 +90,16 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
 
       final res = await http.get(uri);
       
+      bool apiSuccess = false;
+
       if (res.statusCode == 200) {
         final data = json.decode(res.body);
         
-        if (data['students'] != null) {
-          final fetched = List<dynamic>.from(data['students']).map((s) => {
+        if (data['students'] != null && (data['students'] as List).isNotEmpty) {
+           apiSuccess = true;
+           final fetched = List<dynamic>.from(data['students']).map((s) => {
               ...s,
               'status': (s['status'] == 'PENDING') ? 'PRESENT' : s['status'],
-              // Ensure we have section info if backend sends it, else default
               'section': section 
           }).toList();
           
@@ -106,17 +109,88 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
             _markedBy = data['markedBy'];
             _loading = false;
           });
-        } else {
-           setState(() => _loading = false);
         }
-      } else {
-        setState(() => _loading = false);
-        _showSnackBar("Failed to fetch records");
+      } 
+      
+      if (!apiSuccess) {
+         // FALLBACK: Load from JSON (Same logic as Department Page)
+         await _loadLocalJsonFallback(branch, widget.year, section);
       }
+
     } catch (e) {
-      setState(() => _loading = false);
-      _showSnackBar("Network Error: $e");
+      // On network error too, try fallback? Maybe risky, but user insisted.
+      print("API Error: $e. Attempting fallback.");
+      await _loadLocalJsonFallback(branch, widget.year, section);
+    } finally {
+      if (mounted) setState(() => _loading = false);
     }
+  }
+
+  Future<void> _loadLocalJsonFallback(String branchName, String year, String section) async {
+      try {
+        String branchKey = 'cme'; 
+        final b = branchName.toLowerCase();
+        if (b.contains('computer')) branchKey = 'cme';
+        else if (b.contains('civil')) branchKey = 'civil';
+        else if (b.contains('electrical')) branchKey = 'eee';
+        else if (b.contains('electronics')) branchKey = 'ece';
+        else if (b.contains('mechanical')) branchKey = 'mech';
+
+        final files = ['2025-2028_students.json', '2024-2027_students.json', '2023-2026_students.json', 'alwar_students.json'];
+        List<dynamic> foundStudents = [];
+
+        for (String file in files) {
+           try {
+             final String content = await rootBundle.loadString('assets/data/json/$file');
+             final Map<String, dynamic> data = json.decode(content);
+             if (data.containsKey(year)) {
+               final yearData = data[year];
+               if (yearData is Map && yearData.containsKey(branchKey)) {
+                 foundStudents.addAll(yearData[branchKey]);
+               }
+             }
+           } catch (_) {}
+        }
+
+        if (foundStudents.isNotEmpty) {
+             // Basic Mock logic to determine section if not in JSON (JSON assumes Section A mostly)
+             // We can just show ALL for Section A, and None for others? 
+             // Or simplistically distribute?
+             // User wants "Department Page" view. Department Page shows ALL under Section A?
+             // Let's assume they map to Section A.
+             
+             // Filter if section is NOT A? 
+             // For now, if section is 'Section A', show all. Else show empty?
+             // Or mimic the "Move" logic? 
+             // Let's just show them if section is Section A.
+             
+             if (section == 'Section A') {
+                final processed = foundStudents.map((s) => {
+                  'full_name': s['name'] ?? 'Unknown',
+                  'student_id': (s['pin'] ?? 'Unknown').toString(), // Note key difference: backend uses 'student_id' (login_id)
+                  'studentId': (s['pin'] ?? 'Unknown').toString(), // Dual key for compatibility
+                  'status': 'PRESENT',
+                  'section': section,
+                  'branch': branchName,
+                  'year': year
+                }).toList();
+                
+                // Sort by ID
+                processed.sort((a,b) => a['studentId'].toString().compareTo(b['studentId'].toString()));
+
+                setState(() {
+                  _students = processed;
+                  _originalStudents = processed.map((s) => Map<String, dynamic>.from(s)).toList();
+                  _markedBy = null; // Local
+                });
+             } else {
+               // Section B, C etc. - Start Empty.
+               setState(() { _students = []; _originalStudents = []; });
+             }
+        }
+      } catch (e) {
+        print("Fallback Error: $e");
+      }
   }
 
   Future<void> _handleSubmit() async {

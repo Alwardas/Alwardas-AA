@@ -703,7 +703,15 @@ pub struct ResetResponse {
 }
 
 #[derive(Deserialize)]
-pub struct CheckUserQuery {
-    #[serde(rename = "loginId")]
-    pub login_id: String,
+
+#[derive(Deserialize, Debug)]
+pub struct CreateStudentRequest {
+    #[serde(rename = "fullName")]
+    pub full_name: String,
+    #[serde(rename = "studentId")]
+    pub student_id: String,
+    pub branch: String,
+    pub year: String,
+    pub section: Option<String>,
 }
+
