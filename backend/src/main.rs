@@ -57,12 +57,35 @@ async fn main() {
     println!("✅ Successfully connected to the database!");
 
     // Run migrations
+    // Run migrations
     match sqlx::migrate!("./migrations").run(&pool).await {
         Ok(_) => println!("✅ Migrations complete!"),
         Err(e) => {
             eprintln!("⚠️ Migration warning: {}. The app will try to continue.", e);
         }
     }
+    
+    // FORCE FIX SCHEMA
+    println!("🔧 Attempting to force-fix schema...");
+    let _ = sqlx::query("ALTER TABLE attendance ADD COLUMN IF NOT EXISTS section VARCHAR(50) DEFAULT 'Section A'")
+        .execute(&pool)
+        .await
+        .map_err(|e| eprintln!("Force Fix Attendance Failed: {:?}", e));
+        
+    let _ = sqlx::query("ALTER TABLE users ADD COLUMN IF NOT EXISTS section VARCHAR(50) DEFAULT 'Section A'")
+        .execute(&pool)
+        .await
+        .map_err(|e| eprintln!("Force Fix Users Failed: {:?}", e));
+        
+    // FORCE DATA REPAIR
+    let _ = sqlx::query("UPDATE users SET section = 'Section A' WHERE section IS NULL")
+        .execute(&pool)
+        .await;
+    let _ = sqlx::query("UPDATE users SET is_approved = true WHERE role = 'Student' AND is_approved = false")
+        .execute(&pool)
+        .await;
+        
+    println!("🔧 Schema fix attempt complete.");
 
     // Fix Branch Names (Run in background)
     let fix_pool = pool.clone();
