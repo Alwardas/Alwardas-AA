@@ -6,6 +6,7 @@ import 'dart:convert';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
+import 'package:flutter/services.dart'; // Added for rootBundle
 
 class FacultyAttendanceScreen extends StatefulWidget {
   final Map<String, dynamic>? userData;
@@ -90,25 +91,59 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
       else if (_selectedBranch == 'Electronics & Communication Engineering') branchCode = 'ECE';
       else if (_selectedBranch == 'Mechanical Engineering') branchCode = 'Mech';
       
-      // Check status first
+      // Check status first (This still hits API to check if attendance is marked)
       await _checkSubmissionStatus(branchCode);
       
-      final url = Uri.parse('${ApiConstants.baseUrl}/api/students?branch=$branchCode&year=$_selectedYear');
-      final response = await http.get(url);
-      
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        if (data is List) {
-          setState(() {
-            _students = data;
-            _selectedStudentIds = data.map((s) => s['studentId'].toString()).toList();
-          });
-        } else {
-            setState(() => _students = []);
-            _showErrorDialog("No students found");
+      // Load from local JSON files (Replaces API call)
+      List<dynamic> allFoundStudents = [];
+      final files = [
+        '2025-2028_students.json',
+        '2024-2027_students.json',
+        '2023-2026_students.json',
+        'alwar_students.json'
+      ];
+
+      // Map UI Branch Selection to JSON key (lowercase)
+      String branchKey = 'cme';
+      if (_selectedBranch.contains('Computer')) branchKey = 'cme';
+      else if (_selectedBranch.contains('Civil')) branchKey = 'civil';
+      else if (_selectedBranch.contains('Electrical')) branchKey = 'eee';
+      else if (_selectedBranch.contains('Electronics')) branchKey = 'ece';
+      else if (_selectedBranch.contains('Mechanical')) branchKey = 'mech';
+
+      for (String file in files) {
+        try {
+          final String content = await rootBundle.loadString('assets/data/json/$file');
+          final Map<String, dynamic> data = json.decode(content);
+          
+          // Match Year (e.g. "1st Year", "2nd Year")
+          if (data.containsKey(_selectedYear)) {
+            final yearData = data[_selectedYear];
+            if (yearData != null && yearData is Map && yearData.containsKey(branchKey)) {
+              final studentsInFile = yearData[branchKey];
+              if (studentsInFile is List) {
+                allFoundStudents.addAll(studentsInFile);
+              }
+            }
+          }
+        } catch (e) {
+             debugPrint("Error reading $file: $e");
         }
+      }
+
+      if (allFoundStudents.isNotEmpty) {
+        setState(() {
+          // Map JSON {pin, name} to UI {studentId, fullName}
+          _students = allFoundStudents.map((s) => {
+            'studentId': s['pin'],
+            'fullName': s['name']
+          }).toList();
+          
+          _selectedStudentIds = _students.map((s) => s['studentId'].toString()).toList();
+        });
       } else {
-        _showErrorDialog("Failed to fetch student list");
+        setState(() => _students = []);
+        _showErrorDialog("No students found in record for $_selectedBranch - $_selectedYear");
       }
     } catch (e) {
       _showErrorDialog("Network error: $e");

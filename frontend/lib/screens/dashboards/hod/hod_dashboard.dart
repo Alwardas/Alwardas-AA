@@ -17,6 +17,7 @@ import 'hod_faculty_screen.dart';
 import 'hod_timetables_screen.dart';
 import 'hod_requests_screen.dart';
 import '../faculty/faculty_profile_screen.dart';
+import 'hod_department_screen.dart';
 
 class HodDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -340,6 +341,27 @@ class _HodDashboardState extends State<HodDashboard> {
                           onTap: () => setState(() => _selectedIndex = 2),
                         ),
                       ),
+                    ],
+                  ),
+                  const SizedBox(height: 15),
+                  // Row 4
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _buildQuickAccessCard(
+                          Icons.account_balance,
+                          'Our Dept',
+                          'Management',
+                          cardColor,
+                          Colors.indigo.withOpacity(0.2),
+                          Colors.indigo,
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodDepartmentScreen(userData: widget.userData))),
+                        ),
+                      ),
+                      const SizedBox(width: 15),
+                      const Expanded(child: SizedBox()), // Placeholder for balance
                     ],
                   ),
 

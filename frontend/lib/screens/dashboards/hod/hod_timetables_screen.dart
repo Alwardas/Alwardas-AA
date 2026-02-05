@@ -123,17 +123,7 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
     });
   }
 
-  void _addSection() {
-    if (_addController.text.trim().isEmpty || _selectedYearForSections == null) return;
-    setState(() {
-      // User wishes custom name support, so we use text as is
-      _selectedYearForSections!.sections.add(
-        SectionData(branch: _userBranch!, label: _addController.text.trim(), type: 'class')
-      );
-      _addModalVisible = false;
-      _addController.clear();
-    });
-  }
+  // _addSection removed as management is moved to Department page
 
   void _openTimetable(String title, String subtitle) {
      Navigator.push(
@@ -186,36 +176,7 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
     );
   }
 
-  void _renameSection(SectionData section) {
-    if (_selectedYearForSections == null) return;
-    
-    final renameController = TextEditingController(text: section.label);
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text("Rename Section"),
-        content: TextField(
-          controller: renameController,
-          decoration: const InputDecoration(labelText: "New Section Name"),
-          autofocus: true,
-        ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Cancel")),
-          TextButton(
-            onPressed: () {
-              if (renameController.text.trim().isNotEmpty) {
-                setState(() {
-                  section.label = renameController.text.trim();
-                });
-                Navigator.pop(ctx);
-              }
-            },
-            child: const Text("Rename", style: TextStyle(color: Colors.blue)),
-          ),
-        ],
-      )
-    );
-  }
+  // _renameSection removed as management is moved to Department page
 
   void _sortYears() {
     _years.sort((a, b) {
@@ -263,8 +224,8 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
             : IconButton(icon: Icon(Icons.arrow_back, color: textColor), onPressed: () => Navigator.pop(context)),
           centerTitle: true,
           actions: [
-            // Add Button specific to view
-            if (_addModalVisible == false && (_currentView == TimetableView.labs || _currentView == TimetableView.sections))
+            // Add Button specific to view (Labs Only)
+            if (_addModalVisible == false && _currentView == TimetableView.labs)
               IconButton(
                 icon: CircleAvatar(backgroundColor: tint, radius: 14, child: const Icon(Icons.add, color: Colors.white, size: 16)),
                 onPressed: () => setState(() => _addModalVisible = true),
@@ -405,8 +366,8 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
           () => _openTimetable(_selectedYearForSections!.name, section.label),
           isPinned: section.isPinned,
           onPin: () => _togglePinSection(section),
-          onEdit: () => _renameSection(section),
-          onDelete: () => _deleteSection(section),
+          // onEdit: () => _renameSection(section), // Managed by Dept Page
+          // onDelete: () => _deleteSection(section), // Managed by Dept Page
         );
       },
     );
@@ -540,8 +501,10 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
   // Add Modal
   Widget _buildAddModal(BuildContext context) {
     final isLab = _currentView == TimetableView.labs;
-    final title = isLab ? "Add New Lab" : "Add Section to ${_selectedYearForSections?.name}";
-    final hint = isLab ? "Lab Name (e.g. Physics Lab)" : "Section Name (e.g. Section A)";
+    if (!isLab) return const SizedBox.shrink(); // Should not happen given appBar logic
+    
+    final title = "Add New Lab";
+    final hint = "Lab Name (e.g. Physics Lab)";
 
     return Container(
       padding: const EdgeInsets.all(24),
@@ -566,7 +529,7 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
           ),
           const SizedBox(height: 24),
           ElevatedButton(
-            onPressed: isLab ? _addLab : _addSection,
+            onPressed: _addLab,
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 16),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

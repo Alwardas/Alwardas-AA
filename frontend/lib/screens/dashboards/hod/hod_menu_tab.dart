@@ -10,6 +10,7 @@ import 'hod_schedule_screen.dart';
 import 'hod_faculty_screen.dart';
 import 'hod_timetables_screen.dart';
 import 'hod_notifications_screen.dart';
+import 'hod_department_screen.dart';
 
 
 class HodMenuTab extends StatelessWidget {
@@ -32,9 +33,9 @@ class HodMenuTab extends StatelessWidget {
       {'label': 'Attendance', 'icon': Icons.calendar_today, 'route': const HODAttendanceScreen(), 'color': const Color(0xFF8e44ad)},
       {'label': 'My Course', 'icon': Icons.book, 'route': const HodCoursesScreen(), 'color': const Color(0xFFfee140)},
       {'label': 'My Schedule', 'icon': Icons.today, 'route': const HodScheduleScreen(), 'color': const Color(0xFFfa709a)},
-      {'label': 'Our Faculty', 'icon': Icons.people, 'route': HodFacultyScreen(branch: branch), 'color': const Color(0xFF4facfe)},
       {'label': 'Our Time Tables', 'icon': Icons.access_time, 'route': const HodTimetablesScreen(), 'color': const Color(0xFF43e97b)},
       {'label': 'Requests', 'icon': Icons.notifications, 'route': const HodNotificationsScreen(), 'color': const Color(0xFFff9f43)},
+      {'label': 'Our Department', 'icon': Icons.account_balance, 'route': HodDepartmentScreen(userData: userData), 'color': const Color(0xFF3F51B5)},
     ];
 
     return SafeArea(
