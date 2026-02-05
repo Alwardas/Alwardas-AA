@@ -299,10 +299,17 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                              builder: (ctx) => Dialog(
                                backgroundColor: Colors.transparent,
                                child: Container(
-                                 padding: const EdgeInsets.all(20),
+                                 padding: const EdgeInsets.all(25),
                                  decoration: BoxDecoration(
-                                   color: cardColor,
+                                   color: Colors.white,
                                    borderRadius: BorderRadius.circular(20),
+                                   boxShadow: [
+                                     BoxShadow(
+                                       color: Colors.black.withOpacity(0.15),
+                                       blurRadius: 20,
+                                       offset: const Offset(0, 10),
+                                     )
+                                   ],
                                  ),
                                  child: Column(
                                    mainAxisSize: MainAxisSize.min,
@@ -311,28 +318,28 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                      Row(
                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                        children: [
-                                         Text("Select Section", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
-                                         IconButton(onPressed: () => Navigator.pop(ctx), icon: Icon(Icons.close, color: textColor))
+                                         Text("Select Section", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: const Color(0xFF1e1e2d))),
+                                         IconButton(onPressed: () => Navigator.pop(ctx), icon: const Icon(Icons.close, color: Color(0xFF1e1e2d)))
                                        ],
                                      ),
-                                     Text(year, style: GoogleFonts.poppins(color: subTextColor, fontSize: 14)),
-                                     const SizedBox(height: 20),
+                                     Text(year, style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 14)),
+                                     const SizedBox(height: 25),
                                      ...sections.map((section) => Container(
-                                       margin: const EdgeInsets.only(bottom: 10),
+                                       margin: const EdgeInsets.only(bottom: 12),
                                        decoration: BoxDecoration(
-                                         color: iconBg,
-                                         borderRadius: BorderRadius.circular(12),
-                                         border: Border.all(color: tint.withOpacity(0.3)),
+                                         color: const Color(0xFFf8f9fa),
+                                         borderRadius: BorderRadius.circular(15),
+                                         border: Border.all(color: tint.withOpacity(0.2)),
                                        ),
                                        child: ListTile(
-                                         title: Text(section, style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600)),
+                                         title: Text(section, style: GoogleFonts.poppins(color: const Color(0xFF1e1e2d), fontWeight: FontWeight.w600)),
                                          leading: Container(
                                            padding: const EdgeInsets.all(8),
-                                           decoration: BoxDecoration(color: tint.withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
+                                           decoration: BoxDecoration(color: tint.withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
                                            child: Icon(Icons.class_, color: tint, size: 20),
                                          ),
                                          trailing: Icon(Icons.arrow_forward_ios, size: 14, color: tint),
-                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                                          onTap: () async {
                                            Navigator.pop(ctx);
                                            await Navigator.push(context, MaterialPageRoute(builder: (_) => HODManageAttendanceScreen(year: year, initialSession: _selectedSession, section: section)));

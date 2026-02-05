@@ -29,6 +29,27 @@ pub fn normalize_branch(input: &str) -> String {
     }
 }
 
+pub fn get_branch_variations(input: &str) -> Vec<String> {
+    let normalized = normalize_branch(input);
+    let mut variations = vec![normalized.clone()];
+    
+    match normalized.as_str() {
+        "Computer Engineering" => variations.extend(vec!["CME".to_string(), "CM".to_string(), "Computer".to_string()]),
+        "Electronics & Communication Engineering" => variations.extend(vec!["ECE".to_string(), "EC".to_string()]),
+        "Electrical & Electronics Engineering" => variations.extend(vec!["EEE".to_string(), "EE".to_string()]),
+        "Mechanical Engineering" => variations.extend(vec!["ME".to_string(), "MEC".to_string(), "MECH".to_string(), "Mechanical".to_string()]),
+        "Civil Engineering" => variations.extend(vec!["CE".to_string(), "CIV".to_string(), "CIVIL".to_string(), "Civil".to_string()]),
+        "General" => variations.extend(vec!["BS & H".to_string(), "BS&H".to_string(), "BSH".to_string(), "Basic Science".to_string()]),
+        _ => {}
+    }
+    
+    // Also include the original input just in case
+    variations.push(input.trim().to_string());
+    variations.sort();
+    variations.dedup();
+    variations
+}
+
 #[derive(Serialize, Deserialize, Debug)]
 pub struct SignupRequest {
     pub full_name: String,

@@ -200,16 +200,16 @@ pub async fn get_students_handler(
     State(state): State<AppState>,
     Query(params): Query<StudentsQuery>,
 ) -> Result<Json<Vec<StudentBasicInfo>>, StatusCode> {
-    let normalized_branch = normalize_branch(&params.branch);
+    let branch_variations = get_branch_variations(&params.branch);
     let year_pattern = format!("{}%", params.year.trim());
     let section_filter = params.section.clone().unwrap_or_else(|| "Section A".to_string());
 
     let students = sqlx::query_as::<Postgres, StudentBasicInfo>(
-        "SELECT login_id as student_id, full_name, branch, year FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 AND section = $3 ORDER BY login_id ASC"
+        "SELECT login_id as student_id, full_name, branch, year FROM users WHERE role = 'Student' AND branch = ANY($1) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
     )
-    .bind(normalized_branch)
+    .bind(branch_variations)
     .bind(year_pattern)
-    .bind(section_filter) // Bind the section
+    .bind(section_filter)
     .fetch_all(&state.pool)
     .await
     .map_err(|e| {
@@ -449,10 +449,11 @@ pub async fn check_attendance_status_handler(
 ) -> Result<Json<serde_json::Value>, StatusCode> {
     let date_str = params.date.split('T').next().unwrap_or(&params.date);
     let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d").map_err(|_| StatusCode::BAD_REQUEST)?;
+    let branch_variations = get_branch_variations(&params.branch);
     let section = params.section.clone().unwrap_or_else(|| "Section A".to_string());
     
-    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM attendance WHERE branch = $1 AND year = $2 AND date = $3 AND session = $4 AND section = $5")
-        .bind(params.branch.trim())
+    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM attendance WHERE branch = ANY($1) AND year = $2 AND date = $3 AND session = $4 AND section = $5")
+        .bind(branch_variations)
         .bind(params.year.trim())
         .bind(date)
         .bind(params.session.trim().to_uppercase())
@@ -471,43 +472,54 @@ pub async fn get_class_attendance_record_handler(
     let date_str = params.date.split('T').next().unwrap_or(&params.date);
     let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d").map_err(|_| StatusCode::BAD_REQUEST)?;
     let session_upper = params.session.trim().to_uppercase();
+    let branch_variations = get_branch_variations(&params.branch);
     let section = params.section.clone().unwrap_or_else(|| "Section A".to_string());
     
-    let meta_row: Option<(String,)> = sqlx::query_as("SELECT faculty_name FROM attendance WHERE branch=$1 AND year=$2 AND session=$3 AND date=$4 AND section=$5 LIMIT 1")
-       .bind(normalize_branch(&params.branch))
+    let meta_row: Option<(String,)> = sqlx::query_as("SELECT faculty_name FROM attendance WHERE branch = ANY($1) AND year = $2 AND session = $3 AND date = $4 AND section = $5 LIMIT 1")
+       .bind(&branch_variations)
        .bind(params.year.trim())
        .bind(&session_upper)
        .bind(date)
        .bind(&section)
        .fetch_optional(&state.pool)
        .await
-       .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+       .map_err(|e| {
+           eprintln!("Meta Row Error: {:?}", e);
+           StatusCode::INTERNAL_SERVER_ERROR
+       })?;
        
     if let Some((marked_by,)) = meta_row {
         let records = sqlx::query_as::<_, StudentAttendanceItem>(
-            "SELECT u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = $1 AND a.year = $2 AND a.session = $3 AND a.date = $4 AND a.section = $5 ORDER BY u.login_id ASC"
+            "SELECT u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = ANY($1) AND a.year = $2 AND a.session = $3 AND a.date = $4 AND a.section = $5 ORDER BY u.login_id ASC"
         )
-        .bind(normalize_branch(&params.branch))
+        .bind(&branch_variations)
         .bind(params.year.trim())
         .bind(&session_upper)
         .bind(date)
         .bind(section)
         .fetch_all(&state.pool)
         .await
-        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+        .map_err(|e| {
+            eprintln!("Records Fetch Error: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })?;
         
         Ok(Json(ClassRecordResponse { marked: true, marked_by: Some(marked_by), students: records }))
     } else {
+        println!("DEBUG: Fallback fetching students for branch variations: {:?}, year: {}, section: {}", branch_variations, params.year, section);
         let year_pattern = format!("{}%", params.year.trim());
         let students = sqlx::query_as::<_, StudentAttendanceItem>(
-            "SELECT login_id as student_id, full_name, 'PENDING' as status FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 AND section = $3 ORDER BY login_id ASC"
+            "SELECT login_id as student_id, full_name, 'PENDING' as status FROM users WHERE role = 'Student' AND branch = ANY($1) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
         )
-         .bind(normalize_branch(&params.branch))
+         .bind(&branch_variations)
          .bind(year_pattern)
          .bind(section)
          .fetch_all(&state.pool)
          .await
-         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+         .map_err(|e| {
+            eprintln!("Fallback Students Fetch Error: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+         })?;
          
          Ok(Json(ClassRecordResponse { marked: false, marked_by: None, students }))
     }

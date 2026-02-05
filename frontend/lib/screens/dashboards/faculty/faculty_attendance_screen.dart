@@ -366,54 +366,70 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
   Widget _buildSelectionForm(Color textColor, Color subTextColor, Color tintColor, Color iconBgColor, Color cardColor, Color? dropdownBgColor) {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("Select Class Details", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
-          const SizedBox(height: 20),
-          
-          _buildDropdown("Branch", _selectedBranch, [
-             'Computer Engineering',
-             'Civil Engineering',
-             'Electrical & Electronics Engineering',
-             'Electronics & Communication Engineering',
-             'Mechanical Engineering'
-          ], (val) => setState(() => _selectedBranch = val!), textColor, subTextColor, iconBgColor, cardColor, dropdownBgColor),
+      child: Container(
+        padding: const EdgeInsets.all(25),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 15,
+              offset: const Offset(0, 5),
+            )
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Class Selection", style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold, color: const Color(0xFF1e1e2d))),
+            Text("Please select details to fetch students", style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey[600])),
+            const SizedBox(height: 30),
+            
+            _buildDropdown("Branch", _selectedBranch, [
+               'Computer Engineering',
+               'Civil Engineering',
+               'Electrical & Electronics Engineering',
+               'Electronics & Communication Engineering',
+               'Mechanical Engineering'
+            ], (val) => setState(() => _selectedBranch = val!), const Color(0xFF1e1e2d), Colors.grey[600]!, const Color(0xFFf8f9fa), Colors.white, Colors.white),
 
-          _buildDropdown("Year", _selectedYear, ['1st Year', '2nd Year', '3rd Year'], 
-            (val) => setState(() => _selectedYear = val!), textColor, subTextColor, iconBgColor, cardColor, dropdownBgColor),
+            _buildDropdown("Year", _selectedYear, ['1st Year', '2nd Year', '3rd Year'], 
+              (val) => setState(() => _selectedYear = val!), const Color(0xFF1e1e2d), Colors.grey[600]!, const Color(0xFFf8f9fa), Colors.white, Colors.white),
 
-          _buildDropdown("Section", _selectedSection, ['Section A', 'Section B', 'Section C', 'Section D'], 
-            (val) => setState(() => _selectedSection = val!), textColor, subTextColor, iconBgColor, cardColor, dropdownBgColor),
+            _buildDropdown("Section", _selectedSection, ['Section A', 'Section B', 'Section C', 'Section D'], 
+              (val) => setState(() => _selectedSection = val!), const Color(0xFF1e1e2d), Colors.grey[600]!, const Color(0xFFf8f9fa), Colors.white, Colors.white),
 
-          const SizedBox(height: 20),
-          Text("Session", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600, color: subTextColor)),
-          const SizedBox(height: 10),
-          Row(
-            children: [
-              _buildSessionButton("Morning", "MORNING", tintColor, textColor, borderColor: subTextColor),
-              const SizedBox(width: 10),
-              _buildSessionButton("Afternoon", "AFTERNOON", tintColor, textColor, borderColor: subTextColor),
-            ],
-          ),
-
-          const SizedBox(height: 40),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: tintColor,
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              ),
-              onPressed: () {
-                setState(() => _step = 'MARK');
-                _fetchStudents();
-              },
-              child: Text("Fetch Students", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+            const SizedBox(height: 10),
+            Text("SESSION", style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.grey[600])),
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                _buildSessionButton("Morning", "MORNING", tintColor, const Color(0xFF1e1e2d), borderColor: const Color(0xFFe9ecef)),
+                const SizedBox(width: 10),
+                _buildSessionButton("Afternoon", "AFTERNOON", tintColor, const Color(0xFF1e1e2d), borderColor: const Color(0xFFe9ecef)),
+              ],
             ),
-          )
-        ],
+
+            const SizedBox(height: 40),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: tintColor,
+                  elevation: 0,
+                  padding: const EdgeInsets.symmetric(vertical: 18),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                ),
+                onPressed: () {
+                  setState(() => _step = 'MARK');
+                  _fetchStudents();
+                },
+                child: Text("Fetch Students", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
