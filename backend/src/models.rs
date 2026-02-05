@@ -58,6 +58,7 @@ pub struct SignupRequest {
     pub password: String,
     pub branch: Option<String>,
     pub year: Option<String>,
+    pub section: Option<String>,
     pub phone_number: Option<String>,
     pub dob: Option<String>, // "YYYY-MM-DD"
     pub experience: Option<String>,

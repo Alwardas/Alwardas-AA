@@ -25,8 +25,11 @@ pub async fn signup_handler(
     // Auto-approval logic
     let is_approved = match payload.role.as_str() {
         "Admin" => true,
-        _ => false, // Principal, Student, Faculty, HOD need approval
+        "Student" => true, // Auto-approve students for live fetching
+        _ => false, // Principal, Faculty, HOD need approval
     };
+    
+    let section = payload.section.clone().unwrap_or_else(|| "Section A".to_string());
 
     // Auto-Calculate Branch, Year, Semester, and Batch for Students based on Login ID
     let (final_branch, final_year, final_semester, final_batch) = if payload.role == "Student" {
@@ -101,8 +104,9 @@ pub async fn signup_handler(
                 experience = $8, 
                 email = $9,
                 semester = $10, 
-                batch_no = $11
-             WHERE id = $12 
+                batch_no = $11,
+                section = $12
+             WHERE id = $13 
              RETURNING id"
         )
         .bind(&payload.full_name)
@@ -115,15 +119,17 @@ pub async fn signup_handler(
         .bind(&payload.experience)
         .bind(&payload.email)
         .bind(&final_semester)
+        .bind(&final_semester)
         .bind(&final_batch)
+        .bind(&section)
         .bind(uid)
         .fetch_one(&state.pool)
         .await
     } else {
         // INSERT New User
         sqlx::query(
-            "INSERT INTO users (full_name, role, login_id, password_hash, branch, year, phone_number, dob, is_approved, experience, email, semester, batch_no) 
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8::DATE, $9, $10, $11, $12, $13) 
+            "INSERT INTO users (full_name, role, login_id, password_hash, branch, year, phone_number, dob, is_approved, experience, email, semester, batch_no, section) 
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8::DATE, $9, $10, $11, $12, $13, $14) 
              RETURNING id"
         )
         .bind(&payload.full_name)
@@ -138,7 +144,9 @@ pub async fn signup_handler(
         .bind(&payload.experience)
         .bind(&payload.email)
         .bind(&final_semester)
+        .bind(&final_semester)
         .bind(&final_batch)
+        .bind(&section)
         .fetch_one(&state.pool)
         .await
     };
