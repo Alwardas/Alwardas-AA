@@ -89,6 +89,11 @@ async fn main() {
     // let _ = sqlx::query("UPDATE users SET section = 'Section B' WHERE role = 'Student' AND section = 'Section A' AND right(login_id, 1) IN ('0', '2', '4', '6', '8')")
     //     .execute(&pool)
     //     .await;
+    
+    // ONE-TIME FIX: Reset all students to Section A to sync with Frontend JSON defaults
+    let _ = sqlx::query("UPDATE users SET section = 'Section A' WHERE role = 'Student'")
+        .execute(&pool)
+        .await;
         
     println!("🔧 Schema fix & Data distribution complete.");
 
