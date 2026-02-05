@@ -84,8 +84,13 @@ async fn main() {
     let _ = sqlx::query("UPDATE users SET is_approved = true WHERE role = 'Student' AND is_approved = false")
         .execute(&pool)
         .await;
+
+    // DISTRIBUTE FOR TESTING (Enable Section B)
+    let _ = sqlx::query("UPDATE users SET section = 'Section B' WHERE role = 'Student' AND section = 'Section A' AND right(login_id, 1) IN ('0', '2', '4', '6', '8')")
+        .execute(&pool)
+        .await;
         
-    println!("🔧 Schema fix attempt complete.");
+    println!("🔧 Schema fix & Data distribution complete.");
 
     // Fix Branch Names (Run in background)
     let fix_pool = pool.clone();
