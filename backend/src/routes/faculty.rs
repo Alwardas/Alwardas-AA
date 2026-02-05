@@ -205,7 +205,7 @@ pub async fn get_students_handler(
     let section_filter = params.section.clone().unwrap_or_else(|| "Section A".to_string());
 
     let students = sqlx::query_as::<Postgres, StudentBasicInfo>(
-        "SELECT login_id as student_id, full_name, branch, year FROM users WHERE role = 'Student' AND branch = ANY($1) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
+        "SELECT login_id as student_id, full_name, branch, year FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
     )
     .bind(branch_variations)
     .bind(year_pattern)
@@ -452,7 +452,7 @@ pub async fn check_attendance_status_handler(
     let branch_variations = get_branch_variations(&params.branch);
     let section = params.section.clone().unwrap_or_else(|| "Section A".to_string());
     
-    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM attendance WHERE branch = ANY($1) AND year = $2 AND date = $3 AND session = $4 AND section = $5")
+    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM attendance WHERE branch = ANY($1::text[]) AND year = $2 AND date = $3 AND session = $4 AND section = $5")
         .bind(branch_variations)
         .bind(params.year.trim())
         .bind(date)
@@ -475,7 +475,7 @@ pub async fn get_class_attendance_record_handler(
     let branch_variations = get_branch_variations(&params.branch);
     let section = params.section.clone().unwrap_or_else(|| "Section A".to_string());
     
-    let meta_row: Option<(String,)> = sqlx::query_as("SELECT faculty_name FROM attendance WHERE branch = ANY($1) AND year = $2 AND session = $3 AND date = $4 AND section = $5 LIMIT 1")
+    let meta_row: Option<(String,)> = sqlx::query_as("SELECT faculty_name FROM attendance WHERE branch = ANY($1::text[]) AND year = $2 AND session = $3 AND date = $4 AND section = $5 LIMIT 1")
        .bind(&branch_variations)
        .bind(params.year.trim())
        .bind(&session_upper)
@@ -490,7 +490,7 @@ pub async fn get_class_attendance_record_handler(
        
     if let Some((marked_by,)) = meta_row {
         let records = sqlx::query_as::<_, StudentAttendanceItem>(
-            "SELECT u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = ANY($1) AND a.year = $2 AND a.session = $3 AND a.date = $4 AND a.section = $5 ORDER BY u.login_id ASC"
+            "SELECT u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = ANY($1::text[]) AND a.year = $2 AND a.session = $3 AND a.date = $4 AND a.section = $5 ORDER BY u.login_id ASC"
         )
         .bind(&branch_variations)
         .bind(params.year.trim())
@@ -509,7 +509,7 @@ pub async fn get_class_attendance_record_handler(
         println!("DEBUG: Fallback fetching students for branch variations: {:?}, year: {}, section: {}", branch_variations, params.year, section);
         let year_pattern = format!("{}%", params.year.trim());
         let students = sqlx::query_as::<_, StudentAttendanceItem>(
-            "SELECT login_id as student_id, full_name, 'PENDING' as status FROM users WHERE role = 'Student' AND branch = ANY($1) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
+            "SELECT login_id as student_id, full_name, 'PENDING' as status FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
         )
          .bind(&branch_variations)
          .bind(year_pattern)
