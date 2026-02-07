@@ -2,32 +2,33 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../theme/theme_constants.dart';
 
 class AppTheme {
   // ... (previous colors and gradients)
   
   // Light Theme
-  static const Color _lightText = Color(0xFF1f2937); // #1f2937
-  static const Color _lightBackground = Color(0xFFffffff); // Main white
-  static const Color _lightTint = Color(0xFF2563eb); // #2563eb Royal Blue
-  static const Color _lightIcon = Color(0xFF687076); // Kept similar
+  static const Color _lightText = ThemeColors.lightText;
+  static const Color _lightBackground = Color(0xFFffffff); 
+  static const Color _lightTint = ThemeColors.lightTint;
+  static const Color _lightIcon = Color(0xFF687076);
 
-  // Dark Theme
-  static const Color _darkText = Color(0xFFffffff); // #ffffff
-  static const Color _darkBackground = Color(0xFF0f0c29); // Start of gradient
-  static const Color _darkTint = Color(0xFF00d2ff); // #00d2ff Cyan
-  static const Color _darkIcon = Color(0xFF9BA1A6);
+  // Futuristic Dark Theme Constants
+  static const Color _darkText = ThemeColors.darkTextPrimary;
+  static const Color _darkBackground = ThemeColors.darkBackgroundColor; // Use single color alias
+  static const Color _darkTint = ThemeColors.accentCyan; 
+  static const Color _darkIcon = ThemeColors.accentBlue; 
 
   // Gradients
-  static const List<Color> lightBodyGradient = [Color(0xFFffffff), Color(0xFFf3f4f6), Color(0xFFe5e7eb)];
-  static const List<Color> darkBodyGradient = [Color(0xFF0f0c29), Color(0xFF302b63), Color(0xFF24243e)];
+  static const List<Color> lightBodyGradient = ThemeColors.lightBackground;
+  static const List<Color> darkBodyGradient = ThemeColors.darkBackground; // Use List alias 
 
   static const List<Color> lightHeaderGradient = [Color(0xFF824abe), Color(0xFF17b1d8)];
-  static const List<Color> darkHeaderGradient = [Color(0xFF343e52), Color(0xFF3880ec)];
+  static const List<Color> darkHeaderGradient = ThemeColors.headerGradient; 
 
   // Announcement Gradients
-  static const List<Color> announcementBlue = [Color(0xFF4c669f), Color(0xFF3b5998)];
-  static const List<Color> announcementOrange = [Color(0xFFff9966), Color(0xFFff5e62)];
+  static const List<Color> announcementBlue = ThemeColors.examGradient;
+  static const List<Color> announcementOrange = [Color(0xFFff9966), Color(0xFFff5e62)]; // Keeping orange for variety if needed
 
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
@@ -51,8 +52,8 @@ class AppTheme {
       titleTextStyle: TextStyle(color: _lightText, fontSize: 20, fontWeight: FontWeight.bold),
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark, // Dark icons for light theme
-        statusBarBrightness: Brightness.light,    // For iOS
+        statusBarIconBrightness: Brightness.dark, 
+        statusBarBrightness: Brightness.light,    
       ),
     ),
     visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -65,7 +66,7 @@ class AppTheme {
     primaryColor: _darkTint,
     colorScheme: ColorScheme.dark(
       primary: _darkTint,
-      surface: _darkBackground,
+      surface: ThemeColors.darkCardBg, // Card Background
       onSurface: _darkText,
       secondary: _darkIcon,
     ),
@@ -81,8 +82,8 @@ class AppTheme {
       titleTextStyle: TextStyle(color: _darkText, fontSize: 20, fontWeight: FontWeight.bold),
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.light, // Light icons for dark theme
-        statusBarBrightness: Brightness.dark,     // For iOS
+        statusBarIconBrightness: Brightness.light, 
+        statusBarBrightness: Brightness.dark,     
       ),
     ),
     visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -98,28 +99,26 @@ class AppTheme {
     );
   }
 
-  // Glossy / Glassmorphism Utility
+  // Glossy / Glassmorphism Utility (Updated for new design)
   static BoxDecoration glassDecoration({
     required bool isDark,
     double opacity = 0.1,
     double borderRadius = 24,
     Color? customColor,
   }) {
+    // New Shadow System
+    final List<BoxShadow> shadows = isDark 
+    ? [BoxShadow(color: Colors.black.withOpacity(0.6), blurRadius: 40, offset: const Offset(0, 20))] // Dark Theme Shadow
+    : [BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 30, offset: const Offset(0, 10))]; // Light Theme Shadow
+
     return BoxDecoration(
-      color: customColor?.withOpacity(opacity) ?? 
-             (isDark ? Colors.white.withOpacity(0.08) : Colors.white.withOpacity(0.5)),
+      color: customColor ?? (isDark ? ThemeColors.darkCardBg : Colors.white),
       borderRadius: BorderRadius.circular(borderRadius),
       border: Border.all(
-        color: isDark ? Colors.white.withOpacity(0.15) : Colors.white.withOpacity(0.35),
-        width: 1.2,
+        color: isDark ? ThemeColors.darkBorder : Colors.transparent,
+        width: 1.0,
       ),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(isDark ? 0.2 : 0.05),
-          blurRadius: 10, // Reduced for performance
-          offset: const Offset(0, 5),
-        ),
-      ],
+      boxShadow: shadows,
     );
   }
 

@@ -58,7 +58,7 @@ class _CustomModalDropdownState extends State<CustomModalDropdown> {
                 const Divider(height: 1, color: Color(0xFFEEEEEE)),
                 const SizedBox(height: 10),
                 // List
-                Expanded(
+                Flexible(
                   child: ListView.separated(
                     shrinkWrap: true,
                     itemCount: widget.options.length,

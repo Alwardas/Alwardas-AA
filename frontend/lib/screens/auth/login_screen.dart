@@ -86,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
              
              final userData = {
               'id': data['id'],
-              'full_name': data['full_name'], // Expect snake_case from Rust default
+              'full_name': data['full_name'], 
               'role': data['role'],
               'login_id': data['login_id'],
               'branch': data['branch'],
@@ -94,6 +94,71 @@ class _LoginScreenState extends State<LoginScreen> {
               'semester': data['semester'], 
               'batch_no': data['batch_no'],
              };
+
+             // CHECK FOR PROIFLE UPDATE REQUEST (Self-Verification)
+             if (mounted) {
+               try {
+                 final checkUpdateUri = Uri.parse('${ApiConstants.baseUrl}/api/user/my-pending-update?userId=${userData['id'] ?? ''}');
+                 debugPrint("Checking for updates: $checkUpdateUri");
+                 final checkRes = await http.get(checkUpdateUri);
+                 
+                 if (checkRes.statusCode == 200) {
+                   final checkData = jsonDecode(checkRes.body);
+                   if (checkData['exists'] == true) {
+                      bool? confirmUpdate = await showDialog<bool>(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (ctx) => AlertDialog(
+                          title: const Text("Profile Update Pending"),
+                          content: const Text("You have requested to update your profile details. Do you want to apply these changes now?"),
+                          actions: [
+                            TextButton(onPressed: () => Navigator.pop(ctx, null), child: const Text("Reject", style: TextStyle(color: Colors.red))), // NULL = Reject
+                            TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text("Later")), // FALSE = Keep Pending
+                            ElevatedButton(onPressed: () => Navigator.pop(ctx, true), child: const Text("Yes, Update")), // TRUE = Accept
+                          ],
+                        )
+                      );
+                      
+                      if (confirmUpdate == true) {
+                         final acceptUri = Uri.parse('${ApiConstants.baseUrl}/api/user/accept-my-update');
+                         final acceptRes = await http.post(
+                            acceptUri,
+                            headers: {'Content-Type': 'application/json'},
+                            body: jsonEncode({'userId': userData['id']}),
+                         );
+                         
+                         if (acceptRes.statusCode == 200) {
+                            if (mounted) {
+                               _showPopupResponse(
+                                  title: 'Profile Updated', 
+                                  message: 'Your profile has been updated successfully. Please login with your new credentials.', 
+                                  isError: false
+                               );
+                               setState(() => _isLoading = false);
+                               return; // Stop login flow, require re-login
+                            }
+                         } else {
+                            if (mounted) {
+                               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Failed to update profile. Please try again later.')));
+                            }
+                         }
+                      } else if (confirmUpdate == null) {
+                         // REJECT -> Delete Request
+                         final rejectUri = Uri.parse('${ApiConstants.baseUrl}/api/user/reject-my-update'); 
+                         await http.post(
+                            rejectUri,
+                            headers: {'Content-Type': 'application/json'},
+                            body: jsonEncode({'userId': userData['id']}),
+                         );
+                         // Continue login with OLD details (userData)
+                      }
+                      // If FALSE (Later), do nothing, continue login with OLD details
+                   }
+                 }
+               } catch (e) {
+                 debugPrint("Error checking pending updates: $e");
+               }
+             }
 
              debugPrint("DEBUG: UserData constructed: $userData");
 
