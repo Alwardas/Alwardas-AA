@@ -37,6 +37,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
   final TextEditingController _semesterController = TextEditingController();
   final TextEditingController _dobController = TextEditingController();
   final TextEditingController _batchNoController = TextEditingController();
+  final TextEditingController _sectionController = TextEditingController();
 
   // Dropdown Options
   final List<String> _branchOptions = [
@@ -66,6 +67,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     _semesterController.dispose();
     _dobController.dispose();
     _batchNoController.dispose();
+    _sectionController.dispose();
     super.dispose();
   }
 
@@ -144,6 +146,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     _branchController.text = _profileData!['branch'] ?? '';
     _yearController.text = _profileData!['year'] ?? '';
     _semesterController.text = _profileData!['semester'] ?? '';
+    _sectionController.text = _profileData!['section'] ?? 'Section A'; // Default if missing
     
     // Handle Date Format: YYYY-MM-DD -> DD-MM-YYYY
     String rawDob = _profileData!['dob'] ?? _profileData!['date_of_birth'] ?? '';
@@ -201,7 +204,9 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
       'newYear': _yearController.text,
       'newSemester': _semesterController.text,
       'newDob': dobToSend,
+      'newDob': dobToSend,
       'newBatchNo': _batchNoController.text,
+      'newSection': _sectionController.text,
     };
 
     try {
@@ -555,7 +560,23 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                 ),
                 // Spacer or another field if needed
                 const SizedBox(width: 15),
-                const Expanded(child: SizedBox()), 
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                       _SectionLabel(text: "Section", color: subTextColor),
+                        if (_isEditing)
+                           GestureDetector(
+                             onTap: () => _showSelectionDialog("Select Section", ['Section A', 'Section B', 'Section C'], _sectionController),
+                             child: AbsorbPointer(
+                               child: _buildTextField(_sectionController, "Section", isDark, icon: Icons.arrow_drop_down),
+                             ),
+                           )
+                        else
+                           _ValueText(text: _sectionController.text, color: textColor),
+                    ],
+                  ),
+                ), 
             ]
         ),
         

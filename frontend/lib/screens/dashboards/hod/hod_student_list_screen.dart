@@ -48,99 +48,39 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
   Future<void> _fetchStudents() async {
     setState(() => _isLoading = true);
     
-    // Load Moved Students Cache from Disk
-    final prefs = await SharedPreferences.getInstance();
-    final String? storedMoves = prefs.getString('moved_students_v1');
-    if (storedMoves != null) {
-      try {
-        final Map<String, dynamic> decoded = json.decode(storedMoves);
-        _movedStudentsCache.clear();
-        decoded.forEach((key, value) {
-          _movedStudentsCache[key] = value.toString();
-        });
-      } catch (e) {
-        debugPrint("Error loading moved students cache: $e");
-      }
-    }
-
     try {
-      // Map Branch Name to Key used in JSON (lowercase, short codes)
-      String branchKey = 'cme'; // Default
-      final b = widget.branch.toLowerCase();
-      if (b.contains('computer')) branchKey = 'cme';
-      else if (b.contains('civil')) branchKey = 'civil';
-      else if (b.contains('electrical')) branchKey = 'eee';
-      else if (b.contains('electronics')) branchKey = 'ece';
-      else if (b.contains('mechanical')) branchKey = 'mech';
-
-      // Files provided by user
-      final files = [
-        '2025-2028_students.json',
-        '2024-2027_students.json',
-        '2023-2026_students.json',
-        'alwar_students.json'
-      ];
-
-      List<dynamic> foundStudents = [];
-
-      // 1. Try Fetching from API
-      // final url = Uri.parse('${ApiConstants.baseUrl}/api/students?branch=$branchCode&year=${widget.year}&section=${widget.section}');
-      // For now, we are simulating the connection by calling the API actions, but primarily relying on JSON for the base list 
-      // because the backend might not be populated yet.
-      // However, to make the "Move" persist, we really should rely on the Backend if available.
+      // 1. Fetch from API
+      // Use branch from widget. The backend handles variations.
+      // Encode query parameters
+      final queryParams = {
+        'branch': widget.branch,
+        'year': widget.year,
+        'section': widget.section, 
+      };
       
-      // Let's assume we want to LOAD from JSON, but then Sync any changes to backend?
-      // No, "Connect it" usually means "Make it work with the server".
-      // But user said "Use this json file". 
-      // HYBRID APPROACH: Load JSON. Then ask Backend for "Moves".
-      // That's too complex.
-      // 
-      // SIMPLE APPROACH requested: "Connect it".
-      // I will enabling the API calls in the actions.
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/students').replace(queryParameters: queryParams);
+      debugPrint("Fetching students from: $uri");
+
+      final response = await http.get(uri);
       
-      // Load JSON Base
-      for (String file in files) {
-          // ... (existing loading logic) ...
-         try {
-           final String content = await rootBundle.loadString('assets/data/json/$file');
-           final Map<String, dynamic> data = json.decode(content);
-           if (data.containsKey(widget.year)) {
-             final yearData = data[widget.year];
-             if (yearData != null && yearData is Map && yearData.containsKey(branchKey)) {
-               foundStudents.addAll(yearData[branchKey]);
-             }
-           }
-         } catch (e) { debugPrint("Skipping $file"); }
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        
+        setState(() {
+           _studentList = data.map((s) => {
+             'fullName': s['full_name'] ?? s['fullName'] ?? 'Unknown',
+             'studentId': s['student_id'] ?? s['studentId'] ?? s['login_id'] ?? 'Unknown',
+             'section': widget.section, // We fetched specific section
+             'branch': widget.branch,
+             'year': widget.year
+           }).toList();
+           _isLoading = false;
+        });
+      } else {
+         debugPrint("API Error: ${response.statusCode}");
+         // Fallback to empty or JSON if critical
+         setState(() { _studentList = []; _isLoading = false; });
       }
-
-       setState(() {
-         if (foundStudents.isNotEmpty) {
-             // 1. Convert ALL found students to internal format with section logic
-             List<Map<String, dynamic>> processedStudents = foundStudents.map((s) {
-                final id = (s['pin'] ?? 'Unknown').toString();
-                // Determine Section: Check Cache first, else default to 'Section A'
-                String assignedSection = _movedStudentsCache.containsKey(id) 
-                    ? _movedStudentsCache[id]! 
-                    : 'Section A';
-
-                return {
-                  'fullName': s['name'] ?? 'Unknown',
-                  'studentId': id,
-                  'email': '$id@alwardas.edu', 
-                  'section': assignedSection, 
-                  'branch': branchKey,
-                  'year': widget.year
-                };
-             }).toList();
-
-             // 2. FILTER based on the current screen's section
-             _studentList = processedStudents.where((s) => s['section'] == widget.section).toList();
-
-         } else {
-              _studentList = [];
-         }
-         _isLoading = false;
-       });
 
     } catch (e) {
       debugPrint("Error loading students: $e");
@@ -306,10 +246,17 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                      Navigator.pop(ctx);
                      try {
                         final url = Uri.parse('${ApiConstants.baseUrl}/api/students/move');
-                        await http.post(
+                        final response = await http.post(
                           url, 
                           body: json.encode({
-                            'studentIds': _selectedIds.toList(), 
+                            'student_ids': _selectedIds.toList(), // Changed to match backend struct (snake_case in some contexts, but let's check backend)
+                            // Backend `MoveStudentsRequest` expects camelCase `studentIds` OR snake_case `student_ids` depending on Serde?
+                            // Backend struct:
+                            // #[serde(rename_all = "camelCase")]
+                            // pub struct MoveStudentsRequest { pub student_ids: Vec<String>, ... }
+                            // 
+                            // If `rename_all="camelCase"`, then Rust field `student_ids` maps to JSON `studentIds`.
+                            'studentIds': _selectedIds.toList(),
                             'targetSection': targetSection,
                             'branch': widget.branch,
                             'year': widget.year
@@ -317,34 +264,23 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                           headers: {'Content-Type': 'application/json'}
                         );
                         
-                        // Cache Update (Simulate Persistence) AND Save to Disk
-                        final prefs = await SharedPreferences.getInstance();
-                        for (var id in _selectedIds) {
-                            _movedStudentsCache[id] = targetSection!;
+                        if (response.statusCode == 200) {
+                           // Success
+                           setState(() {
+                             // Remove from local list immediately
+                             _studentList.removeWhere((s) => _selectedIds.contains(s['studentId']));
+                             _isSelectionMode = false;
+                             _selectedIds.clear();
+                           });
+                           _fetchStudents(); // Refresh to be sure
+                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Moved students to $targetSection")));
+                        } else {
+                           debugPrint("Move failed: ${response.body}");
+                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to move students")));
                         }
-                        await prefs.setString('moved_students_v1', json.encode(_movedStudentsCache));
-
-                        // Local Update (Remove from current view)
-                        setState(() {
-                          _studentList.removeWhere((s) => _selectedIds.contains(s['studentId']));
-                          _isSelectionMode = false;
-                          _selectedIds.clear();
-                        });
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Moved ${_selectedIds.length} students to $targetSection")));
                      } catch (e) {
-                        // Fallback UI update
-                        final prefs = await SharedPreferences.getInstance();
-                        for (var id in _selectedIds) {
-                            _movedStudentsCache[id] = targetSection!;
-                        }
-                        await prefs.setString('moved_students_v1', json.encode(_movedStudentsCache));
-
-                        setState(() {
-                          _studentList.removeWhere((s) => _selectedIds.contains(s['studentId']));
-                          _isSelectionMode = false;
-                          _selectedIds.clear();
-                        });
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Moved ${_selectedIds.length} students to $targetSection (Local)")));
+                        debugPrint("Move Error: $e");
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
                      }
                    },
                    child: const Text("Move"),

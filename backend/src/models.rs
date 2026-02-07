@@ -219,6 +219,7 @@ pub struct StudentBasicInfo {
     pub full_name: String,
     pub branch: Option<String>,
     pub year: Option<String>,
+    pub section: Option<String>,
 }
 
 #[derive(Deserialize)]
