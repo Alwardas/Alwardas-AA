@@ -205,7 +205,6 @@ pub async fn get_students_handler(
     let section_filter = params.section.clone().unwrap_or_else(|| "Section A".to_string());
 
     let students = sqlx::query_as::<Postgres, StudentBasicInfo>(
-    let students = sqlx::query_as::<Postgres, StudentBasicInfo>(
         "SELECT login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
     )
     .bind(branch_variations)
