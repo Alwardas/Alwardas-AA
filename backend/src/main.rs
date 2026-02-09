@@ -91,10 +91,8 @@ async fn main() {
     //     .execute(&pool)
     //     .await;
     
-    // ONE-TIME FIX: Reset all students to Section A to sync with Frontend JSON defaults
-    let _ = sqlx::query("UPDATE users SET section = 'Section A' WHERE role = 'Student'")
-        .execute(&pool)
-        .await;
+    // ONE-TIME FIX removed to prevent resetting student sections
+    // let _ = sqlx::query("UPDATE users SET section = 'Section A' WHERE role = 'Student'")...
         
     // FORCE FIX SCHEMA - FACULTY SUBJECTS
     let _ = sqlx::query("ALTER TABLE faculty_subjects ADD COLUMN IF NOT EXISTS section VARCHAR(50) DEFAULT 'Section A'")
