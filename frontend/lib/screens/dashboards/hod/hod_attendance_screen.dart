@@ -362,7 +362,9 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                        final data = _detailedStats[year] ?? {};
                        final stats = data['stats'] ?? {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0};
                        final allMarked = data['allMarked'] ?? false;
-                       final sections = data['sectionList'] as List<String>? ?? ['Section A'];
+                       // SAFELY HANDLE LIST CAST
+                       final rawSections = data['sectionList'] as List?;
+                       final sections = rawSections?.map((e) => e.toString()).toList() ?? ['Section A'];
 
                        bool yearNoAtt = (stats['totalPresent'] == 0 && stats['totalAbsent'] == 0);
                        String yearAbsentStr = yearNoAtt && (stats['totalStudents'] ?? 0) > 0 ? "-" : stats['totalAbsent'].toString();
