@@ -49,8 +49,8 @@ async fn main() {
 
     
     let pool = PgPoolOptions::new()
-        .max_connections(5)
-        .acquire_timeout(std::time::Duration::from_secs(5)) // Reduced timeout
+        .max_connections(50)
+        .acquire_timeout(std::time::Duration::from_secs(10)) // Increased timeout
         .connect_with(options.clone())
         .await
         .expect("❌ CRITICAL: Failed to connect to the database. Please check your DATABASE_URL in Railway variables.");
@@ -124,6 +124,13 @@ async fn main() {
             PRIMARY KEY (branch, year, section_name)
         )
     ").execute(&pool).await.err();
+
+    // OPTIMIZATION INDEXES
+    let _ = sqlx::query("CREATE INDEX IF NOT EXISTS idx_attendance_lookup ON attendance(branch, year, session, date, section)")
+        .execute(&pool).await.err();
+        
+    let _ = sqlx::query("CREATE INDEX IF NOT EXISTS idx_users_lookup ON users(branch, year, section, role)")
+        .execute(&pool).await.err();
 
     println!("🔧 Schema fix & Data distribution complete.");
 
