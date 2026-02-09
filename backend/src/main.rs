@@ -184,6 +184,7 @@ async fn main() {
         .route("/api/students", get(faculty::get_students_handler))
         .route("/api/students/create", post(faculty::create_student_handler))
         .route("/api/students/move", post(faculty::move_students_handler))
+        .route("/api/students/delete", post(faculty::delete_student_handler))
         .route("/api/attendance/submit", post(faculty::submit_attendance_handler))
         .route("/api/attendance/batch", post(faculty::submit_attendance_batch_handler))
         .route("/api/attendance/check", get(faculty::check_attendance_status_handler))

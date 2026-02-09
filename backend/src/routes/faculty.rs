@@ -845,3 +845,29 @@ pub async fn update_sections_handler(
 
     Ok(StatusCode::OK)
 }
+
+#[derive(serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct DeleteStudentRequest {
+    pub student_id: String,
+}
+
+pub async fn delete_student_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<DeleteStudentRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let result = sqlx::query("DELETE FROM users WHERE login_id = $1 AND role = 'Student'")
+        .bind(&payload.student_id)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| {
+             eprintln!("Delete Student Error: {:?}", e);
+             (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to delete student"})))
+        })?;
+
+    if result.rows_affected() == 0 {
+        return Err((StatusCode::NOT_FOUND, Json(serde_json::json!({"error": "Student not found"}))));
+    }
+
+    Ok(StatusCode::OK)
+}
