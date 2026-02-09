@@ -8,6 +8,10 @@ import '../../../core/services/auth_service.dart';
 import 'hod_class_timetable_screen.dart';
 import 'hod_year_sections_screen.dart';
 import 'hod_faculty_screen.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import '../../../core/api_constants.dart';
+
 
 class HodDepartmentScreen extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -382,24 +386,54 @@ class HodStudentManagementScreen extends StatefulWidget {
   _HodStudentManagementScreenState createState() => _HodStudentManagementScreenState();
 }
 
+
 class _HodStudentManagementScreenState extends State<HodStudentManagementScreen> {
+  bool _isLoading = true;
+
   @override
   void initState() {
     super.initState();
-    _loadSectionCounts();
+    _loadAllSectionCounts();
   }
 
-  Future<void> _loadSectionCounts() async {
+  Future<void> _loadAllSectionCounts() async {
+    setState(() => _isLoading = true);
+    
     final prefs = await SharedPreferences.getInstance();
-    setState(() {
-      for (var yearData in widget.years) {
-        final key = 'sections_${widget.userData['branch']}_${yearData['year']}';
-        final List<String>? stored = prefs.getStringList(key);
-        if (stored != null) {
-          yearData['sections'] = stored;
+    final branch = widget.userData['branch'] ?? 'Computer Engineering';
+
+    for (var yearData in widget.years) {
+      final yearName = yearData['year'];
+      
+      // 1. Try API first for the truth
+      try {
+        final url = Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(yearName)}');
+        final response = await http.get(url);
+        
+        if (response.statusCode == 200) {
+          final List<dynamic> fetched = json.decode(response.body);
+          if (fetched.isNotEmpty) {
+            yearData['sections'] = fetched.map((e) => e.toString()).toList();
+            // Sync to prefs for offline fallback
+            prefs.setStringList('sections_${branch}_$yearName', yearData['sections']);
+            continue; 
+          }
         }
+      } catch (e) {
+        debugPrint("Error fetching counts for $yearName: $e");
       }
-    });
+
+      // 2. Fallback to Prefs if API fails or is empty
+      final key = 'sections_${branch}_$yearName';
+      final List<String>? stored = prefs.getStringList(key);
+      if (stored != null) {
+        yearData['sections'] = stored;
+      }
+    }
+
+    if (mounted) {
+      setState(() => _isLoading = false);
+    }
   }
 
   @override
@@ -423,11 +457,13 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
           gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: ListView.builder(
-              itemCount: widget.years.length,
-              itemBuilder: (context, index) {
+          child: _isLoading 
+            ? const Center(child: CircularProgressIndicator())
+            : Padding(
+                padding: const EdgeInsets.all(20),
+                child: ListView.builder(
+                  itemCount: widget.years.length,
+                  itemBuilder: (context, index) {
                 final year = widget.years[index];
                 return GestureDetector(
                   onTap: () {
