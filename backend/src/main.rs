@@ -34,6 +34,7 @@ async fn main() {
     
     let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port));
     println!("🚀 Server listening on {}", addr);
+    println!("v1.5 - Sections Fix");
     
     // Bind early to ensure Railway sees the port open
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
