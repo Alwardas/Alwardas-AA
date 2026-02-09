@@ -118,7 +118,6 @@ pub async fn signup_handler(
                     branch: payload.branch,
                     year: payload.year,
                     semester: final_semester,
-                    semester: final_semester,
                     batch_no: final_batch,
                     section: Some(section.clone())
                 }));
@@ -128,7 +127,8 @@ pub async fn signup_handler(
                  return Err((StatusCode::INTERNAL_SERVER_ERROR, Json(AuthResponse { 
                     id: None,
                     message: "Failed to submit update request".to_string(),
-                    branch: None, year: None, semester: None, batch_no: None, section: None
+                    branch: None, year: None, semester: None, batch_no: None, section: None,
+                    full_name: None, login_id: None, role: None
                  })));
             }
         }
@@ -203,6 +203,7 @@ pub async fn signup_handler(
                 full_name: Some(payload.full_name),
                 login_id: Some(payload.login_id),
                 branch: payload.branch,
+                year: payload.year,
                 semester: final_semester,
                 batch_no: final_batch,
                 section: Some(section.clone())

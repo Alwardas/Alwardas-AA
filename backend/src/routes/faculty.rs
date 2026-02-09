@@ -285,7 +285,7 @@ pub async fn move_students_handler(
         })?;
 
     tx.commit().await
-        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Commit Failed"}))))?;
+        .map_err(|_e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Commit Failed"}))))?;
 
     println!("✅ Moved {} students to {}", result.rows_affected(), payload.target_section);
 
