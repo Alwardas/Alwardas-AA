@@ -5,6 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../../../core/api_constants.dart';
 import 'hod_student_list_screen.dart';
 
 class HodYearSectionsScreen extends StatefulWidget {
@@ -33,19 +36,57 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
   }
 
   Future<void> _loadSections() async {
+    // 1. Try fetching from backend
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(widget.branch)}&year=${widget.yearData['year']}');
+      final response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        if (data.isNotEmpty) {
+           setState(() {
+             _sections = data.map((e) => e.toString()).toList();
+           });
+           return;
+        }
+      }
+    } catch (e) {
+      debugPrint("API Fetch Error: $e");
+    }
+
+    // 2. Fallback to passed data or SharedPreferences (migration path)
     final prefs = await SharedPreferences.getInstance();
     final key = 'sections_${widget.branch}_${widget.yearData['year']}';
     List<String>? stored = prefs.getStringList(key);
     
     setState(() {
        _sections = stored ?? List<String>.from(widget.yearData['sections']);
+       // If we loaded from local/default, let's sync to backend immediately if backend was empty?
+       // optional.
     });
   }
 
   Future<void> _saveSections() async {
+    // 1. Save locally (optimistic)
     final prefs = await SharedPreferences.getInstance();
     final key = 'sections_${widget.branch}_${widget.yearData['year']}';
     await prefs.setStringList(key, _sections);
+
+    // 2. Save to Backend
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/sections/update');
+      await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({
+          'branch': widget.branch,
+          'year': widget.yearData['year'],
+          'sections': _sections
+        }),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to sync sections to cloud: $e")));
+    }
   }
 
   void _addSection() {
@@ -118,11 +159,12 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
             ElevatedButton(
               onPressed: () {
                 if (controller.text.trim().isNotEmpty) {
-                  setState(() {
-                    _sections[index] = controller.text.trim();
-                  });
-                  _saveSections(); // Persist
-                  widget.onUpdateSections(_sections);
+                  final newName = controller.text.trim();
+                  final oldName = _sections[index];
+                  
+                  if (newName != oldName) {
+                      _performSectionRename(oldName, newName, index);
+                  }
                   Navigator.pop(context);
                 }
               },
@@ -132,6 +174,52 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
         );
       },
     );
+  }
+
+  Future<void> _performSectionRename(String oldName, String newName, int index) async {
+    // Optimistic Update
+    setState(() {
+      _sections[index] = newName;
+    });
+    // We update parent immediately for UI response
+    widget.onUpdateSections(_sections);
+
+    // Call Backend
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/sections/rename');
+      final response = await http.post(
+          url,
+          headers: {'Content-Type': 'application/json'},
+          body: json.encode({
+            'branch': widget.branch,
+            'year': widget.yearData['year'],
+            'oldName': oldName,
+            'newName': newName
+          })
+      );
+
+      if (response.statusCode != 200) {
+         // Revert on failure
+         if (mounted) {
+            setState(() {
+              _sections[index] = oldName;
+            });
+            widget.onUpdateSections(_sections);
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Rename failed: ${response.statusCode}")));
+         }
+      } else {
+         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Section renamed & students migrated.")));
+      }
+    } catch (e) {
+      debugPrint("Rename API Error: $e");
+      if (mounted) {
+         setState(() {
+             _sections[index] = oldName;
+         });
+         widget.onUpdateSections(_sections);
+         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+      }
+    }
   }
 
   void _deleteSection(int index) {

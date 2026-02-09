@@ -156,55 +156,7 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
   }
 
   // API / Action Methods
-  Future<void> _suspendStudent(String id) async {
-    try {
-      final url = Uri.parse('${ApiConstants.baseUrl}/api/students/suspend');
-      await http.post(url, body: json.encode({'studentId': id, 'status': 'suspended'}), headers: {'Content-Type': 'application/json'});
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Suspended Student $id")));
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error suspending: $e"), backgroundColor: Colors.red));
-    }
-  }
 
-  Future<void> _reportStudent(String id) async {
-    try {
-      final url = Uri.parse('${ApiConstants.baseUrl}/api/students/report');
-      await http.post(url, body: json.encode({'studentId': id, 'reason': 'Manual Report'}), headers: {'Content-Type': 'application/json'});
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Reported Student $id")));
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error reporting: $e"), backgroundColor: Colors.red));
-    }
-  }
-
-  Future<void> _deleteStudent(int index, String id) async {
-      showDialog(
-       context: context,
-       builder: (ctx) => AlertDialog(
-         title: const Text("Delete Student?"),
-         content: const Text("This action cannot be undone."),
-         actions: [
-           TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Cancel")),
-           TextButton(
-             onPressed: () async {
-               Navigator.pop(ctx);
-               try {
-                  final url = Uri.parse('${ApiConstants.baseUrl}/api/students/$id');
-                  // await http.delete(url); // Uncomment when endpoint ready
-                  // For now, simulating success even with network error to show UI update
-                  setState(() => _studentList.removeAt(index));
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Deleted Student $id")));
-               } catch (e) {
-                  // Fallback for UI if API fails
-                  setState(() => _studentList.removeAt(index));
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Deleted (Local): $id")));
-               }
-             }, 
-             child: const Text("Delete", style: TextStyle(color: Colors.red))
-           ),
-         ],
-       )
-     );
-  }
 
   void _bulkMoveStudents() {
       if (widget.allSections.length <= 1) {
@@ -294,8 +246,61 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
       );
   }
 
-  // Not used but kept for reference or removal
-  void _loadMockData() {} 
+  Future<void> _deleteStudent(int index, String id) async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text("Confirm Delete"),
+        content: Text("Are you sure you want to permanently delete student $id?"),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text("Cancel")),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            onPressed: () => Navigator.pop(ctx, true), 
+            child: const Text("Delete", style: TextStyle(color: Colors.white))
+          ),
+        ],
+      ),
+    );
+
+    if (confirm != true) return;
+
+    setState(() => _isLoading = true);
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/students/delete');
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({'studentId': id}),
+      );
+
+      if (response.statusCode == 200) {
+        // Remove locally by ID
+        setState(() {
+          _studentList.removeWhere((s) => s['studentId'].toString() == id);
+          _isLoading = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Student deleted successfully")));
+      } else {
+        setState(() => _isLoading = false);
+        debugPrint("Delete failed: ${response.body}");
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to delete: ${response.statusCode}")));
+      }
+    } catch (e) {
+      debugPrint("Delete error: $e");
+      setState(() => _isLoading = false);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+    }
+  }
+
+  // Fallback stubs
+  void _suspendStudent(String id) {
+     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Suspend feature coming soon")));
+  }
+  
+  void _reportStudent(String id) {
+     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Report feature coming soon")));
+  } 
 
 
   @override

@@ -71,26 +71,31 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
         setState(() {
           _availableSections = data.map((e) => e.toString()).toList();
           if (_availableSections.isNotEmpty) {
-             _availableSections.sort(); // Optional
+             _availableSections.sort();
              _selectedSection = _availableSections.first;
           } else {
-             _selectedSection = 'A'; // Fallback if no sections found? Or leave empty
+             _selectedSection = '';
           }
         });
       } else {
          debugPrint("Failed to fetch sections: ${response.body}");
-         // Fallback manual sections if API fails or not implemented
-         setState(() {
-            _availableSections = ['A', 'B', 'C'];
-            _selectedSection = 'A';
-         });
+         setState(() => _availableSections = []);
+         ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text("Failed to load sections (Status: ${response.statusCode}). Backend might be restarting."),
+              action: SnackBarAction(label: 'Retry', onPressed: _fetchSections),
+            )
+         );
       }
     } catch (e) {
       debugPrint("Error fetching sections: $e");
-       setState(() {
-          _availableSections = ['A', 'B', 'C'];
-          _selectedSection = 'A';
-       });
+       setState(() => _availableSections = []);
+       ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Connection error. Check network."),
+            action: SnackBarAction(label: 'Retry', onPressed: _fetchSections),
+          )
+       );
     } finally {
       if (mounted) setState(() => _loadingSections = false);
     }
