@@ -22,7 +22,11 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
   Map<String, dynamic> _stats = {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0};
   
   // Detailed Data: Year -> { stats: {total, present, absent}, sections: { name: {stats, isMarked} }, sectionList: [], allMarked: bool }
-  Map<String, dynamic> _detailedStats = {};
+  Map<String, dynamic> _detailedStats = {
+    '1st Year': {'stats': {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0}, 'sections': {}, 'sectionList': [], 'allMarked': false},
+    '2nd Year': {'stats': {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0}, 'sections': {}, 'sectionList': [], 'allMarked': false},
+    '3rd Year': {'stats': {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0}, 'sections': {}, 'sectionList': [], 'allMarked': false},
+  };
   
   bool _loading = false;
   
@@ -53,8 +57,6 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
     
     try {
       // 1. Overall Stats (Aggregated for all years)
-      // Note: The backend /api/attendance/stats with only branch/date/session gives total for branch
-      // We need to ensure we sum up if the backend doesn't handle "all years" implicitly (which it does by default if no year param)
       final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats')
           .replace(queryParameters: {
             'branch': branch,
@@ -65,15 +67,19 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
       final res = await http.get(uri);
       if (res.statusCode == 200) {
         final data = json.decode(res.body);
-        _stats = {
-          'totalStudents': data['totalStudents'] ?? 0,
-          'totalPresent': data['totalPresent'] ?? 0,
-          'totalAbsent': data['totalAbsent'] ?? 0
-        };
+        if (mounted) {
+           setState(() {
+             _stats = {
+                'totalStudents': data['totalStudents'] ?? 0,
+                'totalPresent': data['totalPresent'] ?? 0,
+                'totalAbsent': data['totalAbsent'] ?? 0
+             };
+           });
+        }
       }
 
       // 2. Detailed Year & Section Stats
-      Map<String, dynamic> newDetailedStats = {};
+      Map<String, dynamic> newDetailedStats = Map.from(_detailedStats);
       
       for (String year in ['1st Year', '2nd Year', '3rd Year']) {
          // A. Fetch Sections
@@ -137,16 +143,15 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
            'sectionList': sections,
            'allMarked': allSectionsMarked
          };
+         
+         // Incremental update to UI for "fast" feel
+         if (mounted) setState(() => _detailedStats = newDetailedStats);
       }
 
-      setState(() {
-        _detailedStats = newDetailedStats;
-        _loading = false;
-      });
-
     } catch (e) {
-      if(mounted) setState(() => _loading = false);
       print("Error fetching stats: $e");
+    } finally {
+      if(mounted) setState(() => _loading = false);
     }
   }
 
@@ -242,11 +247,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() => _modalVisible = true),
-        backgroundColor: tint,
-        child: const Icon(Icons.add, color: Colors.white),
-      ),
+      // FAB Removed
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
         child: SafeArea(
@@ -261,7 +262,6 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                       margin: const EdgeInsets.only(bottom: 20),
                       child: Row(
                         children: [
-                          // Session Segmented Control (Morning/Afternoon)
                           Expanded(
                             child: Container(
                               padding: const EdgeInsets.all(4),
@@ -333,11 +333,23 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                     // Overall Stats
                     Row(
                       children: [
-                         _buildStatCard("Total", _stats['totalStudents'].toString(), Colors.blue),
+                         _buildStatCard(
+                             "Total", 
+                             _loading && _stats['totalStudents'] == 0 ? "..." : _stats['totalStudents'].toString(), 
+                             Colors.blue
+                         ),
                          const SizedBox(width: 10),
-                         _buildStatCard("Present", _stats['totalPresent'].toString(), Colors.green),
+                         _buildStatCard(
+                             "Present", 
+                             _loading && _stats['totalStudents'] == 0 ? "..." : _stats['totalPresent'].toString(), 
+                             Colors.green
+                         ),
                          const SizedBox(width: 10),
-                         _buildStatCard("Absent", absentText, Colors.red),
+                         _buildStatCard(
+                             "Absent", 
+                             _loading && _stats['totalStudents'] == 0 ? "..." : absentText, 
+                             Colors.red
+                         ),
                       ],
                     ),
                     const SizedBox(height: 30),
@@ -345,19 +357,18 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                     Text("Year-wise Attendance", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
                     const SizedBox(height: 20),
                     
-                    if (_loading) 
-                        const Padding(padding: EdgeInsets.all(20), child: CircularProgressIndicator())
-                    else
+                    // Removed global loading check; cards always visible
                     ...['1st Year', '2nd Year', '3rd Year'].map((year) {
                        final data = _detailedStats[year] ?? {};
                        final stats = data['stats'] ?? {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0};
                        final allMarked = data['allMarked'] ?? false;
                        final sections = data['sectionList'] as List<String>? ?? ['Section A'];
 
-                       // Calculate Absent text for the year
-                       // If Present=0 and Absent=0, show '-' if there are students
                        bool yearNoAtt = (stats['totalPresent'] == 0 && stats['totalAbsent'] == 0);
                        String yearAbsentStr = yearNoAtt && (stats['totalStudents'] ?? 0) > 0 ? "-" : stats['totalAbsent'].toString();
+                       
+                       // If loading and values are 0, might show placeholder, but keeping 0 is also acceptable "numeric digit" behavior
+                       // Optimization: If stats are empty, use 0.
 
                        return GestureDetector(
                          onTap: () {
@@ -495,29 +506,8 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("Select Section", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: const Color(0xFF1e1e2d))),
-                      Row(
-                        children: [
-                             IconButton(
-                               icon: const Icon(Icons.add_circle, color: Colors.blue),
-                               onPressed: () async {
-                                  Navigator.pop(ctx);
-                                  final n = await showDialog<String>(context: context, builder: (c) {
-                                    String v = "";
-                                    return AlertDialog(
-                                      title: const Text("New Section"), 
-                                      content: TextField(autofocus: true, decoration: const InputDecoration(hintText: "Section Name"), onChanged: (val)=>v=val),
-                                      actions: [TextButton(onPressed:()=>Navigator.pop(c), child: const Text("Cancel")), ElevatedButton(onPressed:()=>Navigator.pop(c,v), child: const Text("Create"))]
-                                    );
-                                  });
-                                  if (n != null && n.isNotEmpty) {
-                                      final user = await AuthService.getUserSession();
-                                      _showSnackBar("Section creation requires backend update.");
-                                  }
-                               },
-                             ),
-                             IconButton(onPressed: () => Navigator.pop(ctx), icon: const Icon(Icons.close, color: Color(0xFF1e1e2d)))
-                        ],
-                      )
+                      // Removed Add/Close Row, kept only Close
+                      IconButton(onPressed: () => Navigator.pop(ctx), icon: const Icon(Icons.close, color: Color(0xFF1e1e2d)))
                     ],
                   ),
                   Text(year, style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 14)),
@@ -527,7 +517,6 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                      final isMarked = sInfo['isMarked'] == true;
                      final stats = sInfo['stats'] ?? {};
                      
-                     // Helper for absent text
                      bool secNoAtt = ((stats['totalPresent'] ?? 0) == 0 && (stats['totalAbsent'] ?? 0) == 0);
                      String secAbsentStr = secNoAtt && (stats['totalStudents'] ?? 0) > 0 ? "-" : stats['totalAbsent'].toString();
 
