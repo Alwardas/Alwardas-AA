@@ -94,13 +94,23 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
         final data = json.decode(res.body);
         
         if (data['students'] != null) {
-           final fetched = List<dynamic>.from(data['students']).map((s) => {
+           final fetched = List<dynamic>.from(data['students']).map((s) => <String, dynamic>{
               ...s,
               'status': (s['status'] == 'PENDING') ? 'PRESENT' : s['status'],
-              'studentId': s['student_id'] ?? s['studentId'], // handle backend vs mock key
-              'section': section 
+              // Ensure studentId is string to avoid comparison errors
+              'studentId': (s['student_id'] ?? s['studentId'] ?? '').toString(), 
+              'fullName': s['fullName'] ?? s['full_name'] ?? 'Unknown'
           }).toList();
           
+          // Optimization: Sort for easier management
+          fetched.sort((a, b) {
+             int nameComp = a['fullName'].toString().compareTo(b['fullName'].toString());
+             if (nameComp != 0) return nameComp;
+             return a['studentId'].toString().compareTo(b['studentId'].toString());
+          });
+          
+          print("HODManageAttendance: Fetched ${fetched.length} students");
+
           setState(() {
             _students = fetched;
             _originalStudents = fetched.map((s) => Map<String, dynamic>.from(s)).toList();
@@ -108,9 +118,11 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
             _loading = false;
           });
         } else {
+             print("HODManageAttendance: No students found in response");
              setState(() { _students = []; _originalStudents = []; _loading = false; });
         }
       } else {
+         print("HODManageAttendance: HTTP ${res.statusCode} - ${res.body}");
          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to fetch records: ${res.statusCode}")));
          setState(() { _students = []; _originalStudents = []; _loading = false; });
       }

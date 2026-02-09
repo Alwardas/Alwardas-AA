@@ -59,11 +59,11 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         final String? cachedOverall = prefs.getString('hod_overall_stats');
         
         if (cached != null) {
-            final Map<String, dynamic> decoded = json.decode(cached);
+            final Map<String, dynamic> decoded = Map<String, dynamic>.from(json.decode(cached));
             if (mounted) setState(() => _detailedStats = decoded);
         }
         if (cachedOverall != null) {
-            final Map<String, dynamic> decodedOverlay = json.decode(cachedOverall);
+            final Map<String, dynamic> decodedOverlay = Map<String, dynamic>.from(json.decode(cachedOverall));
             if (mounted) setState(() => _stats = decodedOverlay);
         }
       } catch (e) {
@@ -132,7 +132,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         // Initialize Year Entry
         newDetailedStats[year] = {
            'stats': {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0},
-           'sections': {},
+           'sections': <String, dynamic>{}, // Fix 1: Strict Typing
            'sectionList': sections,
            'allMarked': false
         };
@@ -461,7 +461,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                              child: InkWell(
                                borderRadius: BorderRadius.circular(15),
                                onTap: () {
-                                 _showSectionDialog(context, year, sections, data['sections'] ?? {});
+                                 _showSectionDialog(context, year, sections, Map<String, dynamic>.from(data['sections'] ?? {}));
                                },
                                child: Padding(
                                  padding: const EdgeInsets.all(20),
