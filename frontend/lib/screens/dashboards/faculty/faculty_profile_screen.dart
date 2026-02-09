@@ -214,7 +214,10 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true, 
       appBar: AppBar(
-        title: Text("Profile", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+        title: Padding(
+          padding: const EdgeInsets.only(top: 15),
+          child: Text("Profile", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
