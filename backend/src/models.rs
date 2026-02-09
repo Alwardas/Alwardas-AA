@@ -84,6 +84,7 @@ pub struct AuthResponse {
     pub year: Option<String>,
     pub semester: Option<String>,
     pub batch_no: Option<String>,
+    pub section: Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug, FromRow)]
@@ -203,6 +204,7 @@ pub struct StudentProfileResponse {
     pub semester: Option<String>,
     pub dob: Option<chrono::NaiveDate>,
     pub batch_no: Option<String>,
+    pub section: Option<String>,
     pub pending_update: Option<bool>,
 }
 
@@ -292,6 +294,9 @@ pub struct LessonPlanResponse {
 pub struct LessonPlanQuery {
     #[serde(rename = "subjectId")]
     pub subject_id: String,
+    #[serde(rename = "userId")]
+    pub user_id: Option<String>,
+    pub section: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -354,6 +359,7 @@ pub struct MarkCompleteRequest {
     #[serde(rename = "itemId")]
     pub item_id: String,
     pub completed: bool,
+    pub section: Option<String>,
 }
 
 #[derive(Serialize, FromRow)]
@@ -374,6 +380,7 @@ pub struct FacultySubjectResponse {
     pub name: String,
     pub branch: String,
     pub semester: String,
+    pub section: Option<String>,
     pub status: String,
     #[sqlx(rename = "subject_id")] 
     pub subject_id: String,
@@ -396,6 +403,7 @@ pub struct AddFacultySubjectRequest {
     #[serde(rename = "subjectName")]
     pub subject_name: String,
     pub branch: String,
+    pub section: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -404,6 +412,7 @@ pub struct RemoveFacultySubjectRequest {
     pub user_id: Uuid,
     #[serde(rename = "subjectId")]
     pub subject_id: String,
+    pub section: Option<String>,
 }
 
 #[derive(Deserialize)]

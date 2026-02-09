@@ -58,13 +58,15 @@ pub async fn get_faculty_subjects_handler(
             s.semester, 
             fs.status,
             fs.subject_id,
+            fs.section,
             COALESCE(
                 (
                     SELECT CASE 
                         WHEN COUNT(*) = 0 THEN 0 
-                        ELSE (COUNT(CASE WHEN completed = TRUE THEN 1 END) * 100 / COUNT(*))
+                        ELSE (COUNT(CASE WHEN lpp.completed = TRUE THEN 1 END) * 100 / COUNT(*))
                     END
                     FROM lesson_plan_items lpi 
+                    LEFT JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id AND lpp.section = fs.section
                     WHERE lpi.subject_id = s.id
                 ), 0
             )::INTEGER as completion_percentage
@@ -88,11 +90,13 @@ pub async fn add_faculty_subject_handler(
     State(state): State<AppState>,
     Json(payload): Json<AddFacultySubjectRequest>,
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let section = payload.section.unwrap_or_else(|| "Section A".to_string());
+
     sqlx::query(
         r#"
-        INSERT INTO faculty_subjects (user_id, subject_id, subject_name, branch, status)
-        VALUES ($1, $2, $3, $4, 'PENDING') 
-        ON CONFLICT (user_id, subject_id) 
+        INSERT INTO faculty_subjects (user_id, subject_id, subject_name, branch, status, section)
+        VALUES ($1, $2, $3, $4, 'PENDING', $5) 
+        ON CONFLICT (user_id, subject_id, section) 
         DO UPDATE SET status = 'PENDING' 
         WHERE faculty_subjects.status != 'APPROVED'
         "#
@@ -101,6 +105,7 @@ pub async fn add_faculty_subject_handler(
     .bind(&payload.subject_id)
     .bind(&payload.subject_name)
     .bind(&payload.branch)
+    .bind(section)
     .execute(&state.pool)
     .await
     .map_err(|e| {
@@ -126,9 +131,11 @@ pub async fn remove_faculty_subject_handler(
     State(state): State<AppState>,
     Json(payload): Json<RemoveFacultySubjectRequest>,
 ) -> Result<StatusCode, StatusCode> {
-    sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_id = $2")
+    let section = payload.section.unwrap_or_else(|| "Section A".to_string());
+    sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_id = $2 AND section = $3")
         .bind(payload.user_id)
         .bind(payload.subject_id)
+        .bind(section)
         .execute(&state.pool)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
@@ -143,11 +150,14 @@ pub async fn mark_lesson_plan_complete_handler(
     Json(payload): Json<MarkCompleteRequest>,
 ) -> Result<StatusCode, StatusCode> {
     let now = if payload.completed { Some(Utc::now()) } else { None };
+    let item_uuid = Uuid::parse_str(&payload.item_id).map_err(|_| StatusCode::BAD_REQUEST)?;
+    let section = payload.section.unwrap_or_else(|| "Section A".to_string());
 
-    sqlx::query("UPDATE lesson_plan_items SET completed = $1, completed_date = $2 WHERE id = $3")
+    let _ = sqlx::query("INSERT INTO lesson_plan_progress (item_id, section, completed, completed_date) VALUES ($1, $2, $3, $4) ON CONFLICT (item_id, section) DO UPDATE SET completed = EXCLUDED.completed, completed_date = EXCLUDED.completed_date")
+        .bind(item_uuid)
+        .bind(section)
         .bind(payload.completed)
         .bind(now)
-        .bind(&payload.item_id)
         .execute(&state.pool)
         .await
         .map_err(|e| {
@@ -742,4 +752,33 @@ pub async fn create_student_handler(
         .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
 
     Ok(StatusCode::CREATED)
+}
+
+#[derive(serde::Deserialize)]
+pub struct SectionsQuery {
+    pub branch: String,
+    pub year: String,
+}
+
+pub async fn get_sections_handler(
+    State(state): State<AppState>,
+    Query(params): Query<SectionsQuery>,
+) -> Result<Json<Vec<String>>, StatusCode> {
+    let branch_variations = get_branch_variations(&params.branch);
+    let year_pattern = format!("{}%", params.year.trim());
+
+    // Query distinct sections from users table where students exist
+    let sections: Vec<String> = sqlx::query_scalar(
+        "SELECT DISTINCT section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section IS NOT NULL ORDER BY section ASC"
+    )
+    .bind(&branch_variations)
+    .bind(year_pattern)
+    .fetch_all(&state.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Fetch Sections Error: {:?}", e);
+        StatusCode::INTERNAL_SERVER_ERROR
+    })?;
+
+    Ok(Json(sections))
 }

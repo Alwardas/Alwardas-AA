@@ -17,7 +17,7 @@ pub async fn get_student_profile_handler(
 ) -> Result<Json<StudentProfileResponse>, StatusCode> {
     let user_profile = sqlx::query_as::<Postgres, StudentProfileResponse>(
         "SELECT 
-            u.full_name, u.login_id, u.branch, u.year, u.semester, u.dob, u.batch_no,
+            u.full_name, u.login_id, u.branch, u.year, u.semester, u.dob, u.batch_no, u.section,
             EXISTS(SELECT 1 FROM profile_update_requests WHERE user_id = u.id AND status = 'PENDING') as pending_update
          FROM users u WHERE u.id = $1"
     )
@@ -107,9 +107,10 @@ pub async fn get_student_courses_handler(
         branch: Option<String>,
         year: Option<String>,
         semester: Option<String>,
+        section: Option<String>,
     }
 
-    let user_opt = sqlx::query_as::<_, UserData>("SELECT branch, year, semester FROM users WHERE id = $1")
+    let user_opt = sqlx::query_as::<_, UserData>("SELECT branch, year, semester, section FROM users WHERE id = $1")
         .bind(params.user_id)
         .fetch_optional(&state.pool)
         .await
@@ -123,6 +124,7 @@ pub async fn get_student_courses_handler(
     let branch = user.branch.unwrap_or_default();
     let year_str = user.year.unwrap_or_default();
     let sem_str = user.semester.unwrap_or_default();
+    let section = user.section.unwrap_or_else(|| "Section A".to_string());
 
     let semester_key = if !sem_str.is_empty() {
         sem_str.as_str()
@@ -138,7 +140,7 @@ pub async fn get_student_courses_handler(
         }
     };
     
-    println!("DEBUG: Fetching courses for Branch='{}', Semester='{}' (User Year='{}', Sem='{}')", branch, semester_key, year_str, sem_str);
+    println!("DEBUG: Fetching courses for Branch='{}', Semester='{}', Section='{}'", branch, semester_key, section);
 
     #[derive(sqlx::FromRow)]
     struct SubjectData {
@@ -156,13 +158,14 @@ pub async fn get_student_courses_handler(
             s.type as subject_type,
             COALESCE(u.full_name, s.faculty_name, 'TBA') as resolved_faculty_name
         FROM subjects s
-        LEFT JOIN faculty_subjects fs ON s.id = fs.subject_id AND fs.status = 'APPROVED'
+        LEFT JOIN faculty_subjects fs ON s.id = fs.subject_id AND fs.status = 'APPROVED' AND fs.section = $3
         LEFT JOIN users u ON fs.user_id = u.id
         WHERE s.branch = $1 AND s.semester = $2
         "#
     )
     .bind(&branch)
     .bind(semester_key)
+    .bind(section)
     .fetch_all(&state.pool)
     .await
     .map_err(|e| {
@@ -196,23 +199,37 @@ pub async fn get_student_lesson_plan_handler(
     println!("DEBUG: Request for subject_id: {}", params.subject_id);
     let subject_id = params.subject_id.trim();
 
+    // Determine section
+    let section = if let Some(s) = &params.section {
+         s.clone()
+    } else if let Some(uid_str) = &params.user_id {
+         let section_opt: Option<String> = sqlx::query_scalar("SELECT section FROM users WHERE id = $1")
+             .bind(Uuid::parse_str(uid_str).unwrap_or_default())
+             .fetch_optional(&state.pool).await.unwrap_or(None);
+         section_opt.unwrap_or_else(|| "Section A".to_string())
+    } else {
+         "Section A".to_string()
+    };
+
     let items = sqlx::query_as::<Postgres, LessonPlanItemResponse>(
         r#"
         SELECT 
-            id, 
-            type, 
-            topic, 
-            text, 
-            sno, 
-            completed,
-            completed_date as completed_at,
-            student_review
-        FROM lesson_plan_items 
-        WHERE subject_id = $1 
-        ORDER BY order_index ASC
+            lpi.id, 
+            lpi.type, 
+            lpi.topic, 
+            lpi.text, 
+            lpi.sno, 
+            COALESCE(lpp.completed, FALSE) as completed,
+            lpp.completed_date as completed_at,
+            lpi.student_review
+        FROM lesson_plan_items lpi
+        LEFT JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id AND lpp.section = $2
+        WHERE lpi.subject_id = $1 
+        ORDER BY lpi.order_index ASC
         "#
     )
     .bind(subject_id)
+    .bind(section)
     .fetch_all(&state.pool)
     .await
     .map_err(|e| {

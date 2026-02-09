@@ -95,6 +95,27 @@ async fn main() {
         .execute(&pool)
         .await;
         
+    // FORCE FIX SCHEMA - FACULTY SUBJECTS
+    let _ = sqlx::query("ALTER TABLE faculty_subjects ADD COLUMN IF NOT EXISTS section VARCHAR(50) DEFAULT 'Section A'")
+        .execute(&pool).await.err();
+        
+    let _ = sqlx::query("ALTER TABLE faculty_subjects DROP CONSTRAINT IF EXISTS faculty_subjects_pkey")
+        .execute(&pool).await.err();
+
+    let _ = sqlx::query("ALTER TABLE faculty_subjects ADD PRIMARY KEY (user_id, subject_id, section)")
+        .execute(&pool).await.err();
+
+    // FORCE FIX SCHEMA - LESSON PLAN PROGRESS
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS lesson_plan_progress (
+            item_id UUID REFERENCES lesson_plan_items(id) ON DELETE CASCADE,
+            section VARCHAR(50),
+            completed BOOLEAN DEFAULT FALSE,
+            completed_date TIMESTAMPTZ,
+            PRIMARY KEY (item_id, section)
+        )
+    ").execute(&pool).await.err();
+
     println!("🔧 Schema fix & Data distribution complete.");
 
     // Fix Branch Names (Run in background)
@@ -155,6 +176,8 @@ async fn main() {
         .route("/api/attendance/submit", post(faculty::submit_attendance_handler))
         .route("/api/attendance/batch", post(faculty::submit_attendance_batch_handler))
         .route("/api/attendance/check", get(faculty::check_attendance_status_handler))
+        .route("/api/attendance/check", get(faculty::check_attendance_status_handler))
+        .route("/api/sections", get(faculty::get_sections_handler))
         .route("/api/attendance/class-record", get(faculty::get_class_attendance_record_handler))
         .route("/api/attendance/stats", get(faculty::get_attendance_stats_handler))
         .route("/api/hod/approve", post(faculty::approve_handler))

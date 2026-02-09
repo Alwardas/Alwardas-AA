@@ -118,7 +118,9 @@ pub async fn signup_handler(
                     branch: payload.branch,
                     year: payload.year,
                     semester: final_semester,
-                    batch_no: final_batch
+                    semester: final_semester,
+                    batch_no: final_batch,
+                    section: Some(section.clone())
                 }));
             },
             Err(e) => {
@@ -126,7 +128,7 @@ pub async fn signup_handler(
                  return Err((StatusCode::INTERNAL_SERVER_ERROR, Json(AuthResponse { 
                     id: None,
                     message: "Failed to submit update request".to_string(),
-                    role: None, full_name: None, login_id: None, branch: None, year: None, semester: None, batch_no: None
+                    branch: None, year: None, semester: None, batch_no: None, section: None
                  })));
             }
         }
@@ -201,9 +203,9 @@ pub async fn signup_handler(
                 full_name: Some(payload.full_name),
                 login_id: Some(payload.login_id),
                 branch: payload.branch,
-                year: payload.year,
                 semester: final_semester,
-                batch_no: final_batch
+                batch_no: final_batch,
+                section: Some(section.clone())
             }))
         },
         Err(e) => {
@@ -217,7 +219,8 @@ pub async fn signup_handler(
                 branch: None,
                 year: None,
                 semester: None,
-                batch_no: None
+                batch_no: None,
+                section: None
             })))
         }
     }
@@ -376,10 +379,11 @@ pub async fn login_handler(
         year: Option<String>,
         semester: Option<String>,
         batch_no: Option<String>,
+        section: Option<String>,
     }
 
     let user_result: Option<UserRow> = sqlx::query_as(
-        "SELECT id, full_name, role, password_hash, is_approved, login_id, branch, year, semester, batch_no FROM users WHERE login_id = $1"
+        "SELECT id, full_name, role, password_hash, is_approved, login_id, branch, year, semester, batch_no, section FROM users WHERE login_id = $1"
     )
     .bind(&payload.login_id)
     .fetch_optional(&state.pool)
@@ -398,7 +402,8 @@ pub async fn login_handler(
                      branch: None,
                      year: None,
                      semester: None,
-                     batch_no: None
+                     batch_no: None,
+                     section: None
                  })));
              }
              return Ok(Json(AuthResponse { 
@@ -411,6 +416,7 @@ pub async fn login_handler(
                  year: user.year,
                  semester: user.semester,
                  batch_no: user.batch_no,
+                 section: user.section,
              }));
         }
     }
@@ -424,7 +430,8 @@ pub async fn login_handler(
         branch: None,
         year: None,
         semester: None,
-        batch_no: None
+        batch_no: None,
+        section: None
     })))
 }
 
