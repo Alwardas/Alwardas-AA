@@ -409,14 +409,36 @@ pub async fn submit_attendance_batch_handler(
     }
 
     let mut tx = state.pool.begin().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "DB Transaction Error"}))))?;
-    let mut uuids_to_clear = Vec::new();
+    
+    // 1. Collect Valid Student UUIDs
+    let mut uuids_to_update = Vec::new();
+    for record in &payload.records {
+        if let Some(info) = student_map.get(&record.student_id) {
+            uuids_to_update.push(info.id);
+        }
+    }
+
+    // 2. Clear existing records to handle updates/corrections
+    if !uuids_to_update.is_empty() {
+        sqlx::query("DELETE FROM attendance WHERE student_uuid = ANY($1) AND date = $2 AND session = $3")
+            .bind(&uuids_to_update)
+            .bind(date)
+            .bind(&session)
+            .execute(&mut *tx)
+            .await
+            .map_err(|e| {
+                eprintln!("Clear Attendance Error: {:?}", e);
+                (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to clear existing records"})))
+            })?;
+    }
+
     let mut count = 0;
     let mut errors = Vec::new();
 
+    // 3. Insert Loop
     for record in payload.records {
         if let Some(info) = student_map.get(&record.student_id) {
             let db_status = if record.status.to_uppercase().starts_with('P') { "P" } else { "A" };
-            uuids_to_clear.push(info.id);
 
             sqlx::query("INSERT INTO attendance (student_uuid, faculty_uuid, date, status, branch, year, session, section, student_name, student_login_id, faculty_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)")
                 .bind(info.id)
@@ -433,9 +455,10 @@ pub async fn submit_attendance_batch_handler(
                 .execute(&mut *tx)
                 .await.ok();
 
+            // Notify only if needed (Optional: Logic to avoid spamming notification on update? Keep for now)
             let formatted_date = date.format("%d-%m-%Y").to_string();
             let status_text = if db_status == "P" { "Present" } else { "Absent" };
-            let msg = format!("{} {} session marked as {}", formatted_date, session, status_text);
+            let msg = format!("{} {} session updated to {}", formatted_date, session, status_text);
             
             sqlx::query("INSERT INTO notifications (type, message, sender_id, recipient_id, status, branch, created_at) VALUES ($1, $2, $3, $4, 'UNREAD', $5, NOW())")
                 .bind("ATTENDANCE")

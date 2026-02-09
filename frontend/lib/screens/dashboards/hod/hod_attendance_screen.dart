@@ -10,6 +10,8 @@ import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 import 'hod_manage_attendance_screen.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
+
 class HODAttendanceScreen extends StatefulWidget {
   const HODAttendanceScreen({super.key});
 
@@ -21,7 +23,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
   // Overall Stats
   Map<String, dynamic> _stats = {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0};
   
-  // Detailed Data: Year -> { stats: {total, present, absent}, sections: { name: {stats, isMarked} }, sectionList: [], allMarked: bool }
+  // Detailed Data
   Map<String, dynamic> _detailedStats = {
     '1st Year': {'stats': {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0}, 'sections': {}, 'sectionList': [], 'allMarked': false},
     '2nd Year': {'stats': {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0}, 'sections': {}, 'sectionList': [], 'allMarked': false},
@@ -31,7 +33,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
   bool _loading = false;
   
   // Filters
-  String _selectedSession = 'Morning'; // Morning | Afternoon (Removed "All")
+  String _selectedSession = 'Morning'; // Morning | Afternoon
   DateTime _selectedDate = DateTime.now();
 
   // Modal State
@@ -46,27 +48,62 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
   @override
   void initState() {
     super.initState();
-    _fetchStats();
+    _loadCache(); // Load instant cache
+    _fetchStats(); // Fetch fresh data
+  }
+
+  Future<void> _loadCache() async {
+      try {
+        final prefs = await SharedPreferences.getInstance();
+        final String? cached = prefs.getString('hod_attendance_stats');
+        final String? cachedOverall = prefs.getString('hod_overall_stats');
+        
+        if (cached != null) {
+            final Map<String, dynamic> decoded = json.decode(cached);
+            if (mounted) setState(() => _detailedStats = decoded);
+        }
+        if (cachedOverall != null) {
+            final Map<String, dynamic> decodedOverlay = json.decode(cachedOverall);
+            if (mounted) setState(() => _stats = decodedOverlay);
+        }
+      } catch (e) {
+        print("Cache Load Error: $e");
+      }
   }
 
   Future<void> _fetchStats() async {
-    setState(() => _loading = true);
+    // Only show loading if we have no data at all
+    if (_stats['totalStudents'] == 0 && _detailedStats['1st Year']['sectionList'].isEmpty) {
+        setState(() => _loading = true);
+    }
+    
     final user = await AuthService.getUserSession();
     final branch = user?['branch'] ?? 'Computer Engineering';
     final dateStr = DateFormat('yyyy-MM-dd').format(_selectedDate); 
     
     try {
-      // 1. Overall Stats (Aggregated for all years)
-      final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats')
+      // 1. Fetch Overall Stats (Independent)
+      final overallUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats')
           .replace(queryParameters: {
             'branch': branch,
             'date': dateStr,
             'session': _selectedSession
           });
-          
-      final res = await http.get(uri);
-      if (res.statusCode == 200) {
-        final data = json.decode(res.body);
+
+      // 2. Fetch Sections for ALL years in Parallel
+      final years = ['1st Year', '2nd Year', '3rd Year'];
+      
+      final futures = [
+        http.get(overallUri), // Index 0
+        ...years.map((y) => http.get(Uri.parse('${ApiConstants.baseUrl}/api/sections').replace(queryParameters: {'branch': branch, 'year': y})))
+      ];
+
+      final results = await Future.wait(futures);
+      
+      // Process Overall Stats
+      final overallRes = results[0];
+      if (overallRes.statusCode == 200) {
+        final data = json.decode(overallRes.body);
         if (mounted) {
            setState(() {
              _stats = {
@@ -78,74 +115,99 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         }
       }
 
-      // 2. Detailed Year & Section Stats
+      // Process Sections & Prepare Parallel Stat Requests
+      List<Future<void>> statTasks = [];
       Map<String, dynamic> newDetailedStats = Map.from(_detailedStats);
-      
-      for (String year in ['1st Year', '2nd Year', '3rd Year']) {
-         // A. Fetch Sections
-         final secRes = await http.get(
-           Uri.parse('${ApiConstants.baseUrl}/api/sections').replace(queryParameters: {'branch': branch, 'year': year})
-         );
-         List<String> sections = ['Section A'];
-         if (secRes.statusCode == 200) {
-             sections = List<String>.from(json.decode(secRes.body));
-         }
 
-         // B. Fetch Year Stats
-         final yearStatsRes = await http.get(
-           Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
+      for (int i = 0; i < years.length; i++) {
+        final year = years[i];
+        final secRes = results[i + 1]; // Offset by 1 (overall stats is 0)
+        
+        List<String> sections = ['Section A'];
+        if (secRes.statusCode == 200) {
+           sections = List<String>.from(json.decode(secRes.body));
+        }
+        if (sections.isEmpty) sections = ['Section A'];
+
+        // Initialize Year Entry
+        newDetailedStats[year] = {
+           'stats': {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0},
+           'sections': {},
+           'sectionList': sections,
+           'allMarked': false
+        };
+
+        // A. Queue Year Stats Fetch
+        final yearUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
              'branch': branch,
              'year': year,
              'date': dateStr,
              'session': _selectedSession
-           })
-         );
-         Map<String, dynamic> yearStatsData = {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0};
-         if (yearStatsRes.statusCode == 200) {
-            yearStatsData = json.decode(yearStatsRes.body);
-         }
+        });
+        
+        statTasks.add(http.get(yearUri).then((res) {
+            if (res.statusCode == 200) {
+               newDetailedStats[year]['stats'] = json.decode(res.body);
+            }
+        }));
 
-         // C. Fetch Stats per Section
-         Map<String, dynamic> sectionMap = {};
-         bool allSectionsMarked = true;
-         
-         for (String section in sections) {
-             final sRes = await http.get(
-               Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
+        // B. Queue Section Stats Fetches
+        for (String section in sections) {
+             final secUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
                  'branch': branch,
                  'year': year,
                  'section': section,
                  'date': dateStr,
                  'session': _selectedSession
-               })
-             );
-             
-             Map<String, dynamic> sData = {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0};
-             if (sRes.statusCode == 200) {
-                sData = json.decode(sRes.body);
-             }
-             
-             // Check if attendance is marked (Present + Absent > 0)
-             bool isMarked = (sData['totalPresent'] as int) + (sData['totalAbsent'] as int) > 0;
-             if (!isMarked) allSectionsMarked = false;
+             });
 
-             sectionMap[section] = {
-               'stats': sData,
-               'isMarked': isMarked
-             };
-         }
-         
-         if (sections.isEmpty) allSectionsMarked = false;
+             statTasks.add(http.get(secUri).then((res) {
+                 if (res.statusCode == 200) {
+                     final sData = json.decode(res.body);
+                     bool isMarked = (sData['totalPresent'] as int) + (sData['totalAbsent'] as int) > 0;
+                     
+                     // Initialize sections map if needed (redundant but safe)
+                     if (newDetailedStats[year]['sections'] == null) newDetailedStats[year]['sections'] = {};
+                     
+                     (newDetailedStats[year]['sections'] as Map)[section] = {
+                       'stats': sData,
+                       'isMarked': isMarked
+                     };
+                 }
+             }));
+        }
+      }
 
-         newDetailedStats[year] = {
-           'stats': yearStatsData,
-           'sections': sectionMap, 
-           'sectionList': sections,
-           'allMarked': allSectionsMarked
-         };
+      // 3. Fire ALL Stat Requests Locally
+      await Future.wait(statTasks);
+      
+      // 4. Final Aggregation (Calculate 'allMarked')
+      for (String year in years) {
+          final data = newDetailedStats[year];
+          final sections = data['sectionList'] as List<String>;
+          final secMap = data['sections'] as Map;
+          
+          bool allMarked = true;
+          if (sections.isEmpty) allMarked = false;
+          
+          for (String sec in sections) {
+              final sInfo = secMap[sec];
+              if (sInfo == null || sInfo['isMarked'] != true) {
+                  allMarked = false;
+                  break;
+              }
+          }
+          newDetailedStats[year]['allMarked'] = allMarked;
+      }
+
+      if (mounted) {
+         setState(() => _detailedStats = newDetailedStats);
          
-         // Incremental update to UI for "fast" feel
-         if (mounted) setState(() => _detailedStats = newDetailedStats);
+         // Cache Data for Instant Load next time
+         SharedPreferences.getInstance().then((prefs) {
+             prefs.setString('hod_attendance_stats', json.encode(newDetailedStats));
+             prefs.setString('hod_overall_stats', json.encode(_stats));
+         });
       }
 
     } catch (e) {
@@ -354,8 +416,19 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                     ),
                     const SizedBox(height: 30),
                     
-                    Text("Year-wise Attendance", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
-                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Year-wise Attendance", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
+                        IconButton(
+                          icon: const Icon(Icons.refresh), 
+                          color: tint,
+                          onPressed: _fetchStats,
+                          tooltip: 'Refresh Stats',
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
                     
                     // Removed global loading check; cards always visible
                     ...['1st Year', '2nd Year', '3rd Year'].map((year) {
