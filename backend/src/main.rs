@@ -117,6 +117,16 @@ async fn main() {
         )
     ").execute(&pool).await.err();
 
+    // SECTIONS TABLE (New)
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS sections (
+            branch VARCHAR(255) NOT NULL,
+            year VARCHAR(50) NOT NULL,
+            section_name VARCHAR(50) NOT NULL,
+            PRIMARY KEY (branch, year, section_name)
+        )
+    ").execute(&pool).await.err();
+
     println!("🔧 Schema fix & Data distribution complete.");
 
     // Fix Branch Names (Run in background)
@@ -178,6 +188,7 @@ async fn main() {
         .route("/api/attendance/batch", post(faculty::submit_attendance_batch_handler))
         .route("/api/attendance/check", get(faculty::check_attendance_status_handler))
         .route("/api/sections", get(faculty::get_sections_handler))
+        .route("/api/sections/update", post(faculty::update_sections_handler))
         .route("/api/attendance/class-record", get(faculty::get_class_attendance_record_handler))
         .route("/api/attendance/stats", get(faculty::get_attendance_stats_handler))
         .route("/api/hod/approve", post(faculty::approve_handler))

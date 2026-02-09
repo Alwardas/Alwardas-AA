@@ -764,17 +764,31 @@ pub async fn get_sections_handler(
     State(state): State<AppState>,
     Query(params): Query<SectionsQuery>,
 ) -> Result<Json<Vec<String>>, StatusCode> {
+    let branch_norm = normalize_branch(&params.branch);
+
+    // 1. Try fetching from explicit 'sections' table
+    let config_sections: Vec<String> = sqlx::query_scalar(
+        "SELECT section_name FROM sections WHERE branch = $1 AND year = $2 ORDER BY section_name ASC"
+    )
+    .bind(&branch_norm)
+    .bind(&params.year)
+    .fetch_all(&state.pool)
+    .await
+    .unwrap_or_default();
+
+    if !config_sections.is_empty() {
+        return Ok(Json(config_sections));
+    }
+
+    // 2. Fallback: Query distinct sections from users table where students exist
     let branch_variations = get_branch_variations(&params.branch);
     let year_pattern = format!("{}%", params.year.trim());
-
-    println!("DEBUG: Fetch sections for Branch: '{}', Variations: {:?}, Year Pattern: '{}'", params.branch, branch_variations, year_pattern);
-
-    // Query distinct sections from users table where students exist
+    
     let sections: Vec<String> = sqlx::query_scalar(
         "SELECT DISTINCT section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section IS NOT NULL ORDER BY section ASC"
     )
     .bind(&branch_variations)
-    .bind(&year_pattern)
+    .bind(year_pattern)
     .fetch_all(&state.pool)
     .await
     .map_err(|e| {
@@ -782,7 +796,52 @@ pub async fn get_sections_handler(
         StatusCode::INTERNAL_SERVER_ERROR
     })?;
 
-    println!("DEBUG: Found sections: {:?}", sections);
+    if sections.is_empty() {
+        // Absolute fallback
+        Ok(Json(vec!["Section A".to_string()]))
+    } else {
+        Ok(Json(sections))
+    }
+}
 
-    Ok(Json(sections))
+#[derive(serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct UpdateSectionsRequest {
+    pub branch: String,
+    pub year: String,
+    pub sections: Vec<String>,
+}
+
+pub async fn update_sections_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<UpdateSectionsRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let branch_norm = normalize_branch(&payload.branch);
+    
+    let mut tx = state.pool.begin().await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
+
+    // Clear existing for this branch/year
+    sqlx::query("DELETE FROM sections WHERE branch = $1 AND year = $2")
+        .bind(&branch_norm)
+        .bind(&payload.year)
+        .execute(&mut *tx)
+        .await
+        .ok();
+
+    // Insert new
+    for section in payload.sections {
+        sqlx::query("INSERT INTO sections (branch, year, section_name) VALUES ($1, $2, $3)")
+            .bind(&branch_norm)
+            .bind(&payload.year)
+            .bind(section)
+            .execute(&mut *tx)
+            .await
+            .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
+    }
+
+    tx.commit().await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Commit Failed"}))))?;
+
+    Ok(StatusCode::OK)
 }
