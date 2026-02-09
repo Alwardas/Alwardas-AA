@@ -177,7 +177,6 @@ async fn main() {
         .route("/api/attendance/submit", post(faculty::submit_attendance_handler))
         .route("/api/attendance/batch", post(faculty::submit_attendance_batch_handler))
         .route("/api/attendance/check", get(faculty::check_attendance_status_handler))
-        .route("/api/attendance/check", get(faculty::check_attendance_status_handler))
         .route("/api/sections", get(faculty::get_sections_handler))
         .route("/api/attendance/class-record", get(faculty::get_class_attendance_record_handler))
         .route("/api/attendance/stats", get(faculty::get_attendance_stats_handler))
