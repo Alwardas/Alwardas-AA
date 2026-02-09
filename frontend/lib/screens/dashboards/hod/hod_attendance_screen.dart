@@ -445,13 +445,8 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                        // If loading and values are 0, might show placeholder, but keeping 0 is also acceptable "numeric digit" behavior
                        // Optimization: If stats are empty, use 0.
 
-                       return GestureDetector(
-                         onTap: () {
-                           _showSectionDialog(context, year, sections, data['sections'] ?? {});
-                         },
-                         child: Container(
+                       return Container(
                            margin: const EdgeInsets.only(bottom: 15),
-                           padding: const EdgeInsets.all(20),
                            decoration: BoxDecoration(
                              color: allMarked ? Colors.green.withOpacity(0.1) : cardColor,
                              border: Border.all(color: allMarked ? Colors.green : iconBg),
@@ -460,53 +455,65 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                if (isDark) BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 5, offset: const Offset(0,2))
                              ]
                            ),
-                           child: Column(
-                             children: [
-                               Row(
-                                 children: [
-                                   Container(
-                                     padding: const EdgeInsets.all(12),
-                                     decoration: BoxDecoration(color: allMarked ? Colors.green.withOpacity(0.2) : iconBg, borderRadius: BorderRadius.circular(12)),
-                                     child: Icon(Icons.school, color: allMarked ? Colors.green : tint, size: 24),
-                                   ),
-                                   const SizedBox(width: 15),
-                                   Expanded(
-                                     child: Column(
-                                       crossAxisAlignment: CrossAxisAlignment.start,
+                           child: Material(
+                             color: Colors.transparent,
+                             borderRadius: BorderRadius.circular(15),
+                             child: InkWell(
+                               borderRadius: BorderRadius.circular(15),
+                               onTap: () {
+                                 _showSectionDialog(context, year, sections, data['sections'] ?? {});
+                               },
+                               child: Padding(
+                                 padding: const EdgeInsets.all(20),
+                                 child: Column(
+                                   children: [
+                                     Row(
                                        children: [
-                                         Text(year, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
-                                         if (allMarked)
-                                           Text("All Sections Marked", style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 12)) 
-                                         else
-                                           Text("Tap to View/Manage", style: GoogleFonts.poppins(color: subTextColor, fontSize: 12)),
+                                         Container(
+                                           padding: const EdgeInsets.all(12),
+                                           decoration: BoxDecoration(color: allMarked ? Colors.green.withOpacity(0.2) : iconBg, borderRadius: BorderRadius.circular(12)),
+                                           child: Icon(Icons.school, color: allMarked ? Colors.green : tint, size: 24),
+                                         ),
+                                         const SizedBox(width: 15),
+                                         Expanded(
+                                           child: Column(
+                                             crossAxisAlignment: CrossAxisAlignment.start,
+                                             children: [
+                                               Text(year, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                                               if (allMarked)
+                                                 Text("All Sections Marked", style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 12)) 
+                                               else
+                                                 Text("Tap to View/Manage", style: GoogleFonts.poppins(color: subTextColor, fontSize: 12)),
+                                             ],
+                                           ),
+                                         ),
+                                         Icon(Icons.chevron_right, color: allMarked ? Colors.green : subTextColor)
                                        ],
                                      ),
-                                   ),
-                                   Icon(Icons.chevron_right, color: allMarked ? Colors.green : subTextColor)
-                                 ],
+                                     const SizedBox(height: 15),
+                                     // Granular Stats for Year
+                                     Container(
+                                       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                                       decoration: BoxDecoration(
+                                         color: isDark ? const Color(0xFF1E1E2D).withOpacity(0.5) : Colors.white.withOpacity(0.5),
+                                         borderRadius: BorderRadius.circular(10)
+                                       ),
+                                       child: Row(
+                                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                           children: [
+                                             _buildMiniStat("Total", stats['totalStudents'].toString(), subTextColor),
+                                             Container(height: 20, width: 1, color: iconBg),
+                                             _buildMiniStat("Present", stats['totalPresent'].toString(), Colors.green),
+                                             Container(height: 20, width: 1, color: iconBg),
+                                             _buildMiniStat("Absent", yearAbsentStr, Colors.red),
+                                           ],
+                                       ),
+                                     )
+                                   ],
+                                 ),
                                ),
-                               const SizedBox(height: 15),
-                               // Granular Stats for Year
-                               Container(
-                                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                                 decoration: BoxDecoration(
-                                   color: isDark ? const Color(0xFF1E1E2D).withOpacity(0.5) : Colors.white.withOpacity(0.5),
-                                   borderRadius: BorderRadius.circular(10)
-                                 ),
-                                 child: Row(
-                                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                     children: [
-                                       _buildMiniStat("Total", stats['totalStudents'].toString(), subTextColor),
-                                       Container(height: 20, width: 1, color: iconBg),
-                                       _buildMiniStat("Present", stats['totalPresent'].toString(), Colors.green),
-                                       Container(height: 20, width: 1, color: iconBg),
-                                       _buildMiniStat("Absent", yearAbsentStr, Colors.red),
-                                     ],
-                                 ),
-                               )
-                             ],
+                             ),
                            ),
-                         ),
                        );
                     }).toList(),
                     
