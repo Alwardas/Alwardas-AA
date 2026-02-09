@@ -99,13 +99,15 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
          builder: (context, setStateModal) {
            return AlertDialog(
              title: Text("Add Student to ${widget.section}", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-             content: Column(
-               mainAxisSize: MainAxisSize.min,
-               children: [
-                 TextField(controller: nameController, decoration: const InputDecoration(labelText: "Full Name")),
-                 TextField(controller: idController, decoration: const InputDecoration(labelText: "Student ID")),
-                 if (isSubmitting) const Padding(padding: EdgeInsets.only(top: 10), child: LinearProgressIndicator())
-               ],
+             content: SingleChildScrollView(
+               child: Column(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   TextField(controller: nameController, decoration: const InputDecoration(labelText: "Full Name")),
+                   TextField(controller: idController, decoration: const InputDecoration(labelText: "Student ID")),
+                   if (isSubmitting) const Padding(padding: EdgeInsets.only(top: 10), child: LinearProgressIndicator())
+                 ],
+               ),
              ),
              actions: [
                TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Cancel")),

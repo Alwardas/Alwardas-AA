@@ -257,7 +257,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
 
     return Column(
       children: [
-        // 1. Header Section - Fixed at Top
+        // 1. Header Section
         Container(
           padding: EdgeInsets.only(
             top: MediaQuery.of(context).padding.top + 10, 
@@ -268,8 +268,8 @@ class _ParentDashboardState extends State<ParentDashboard> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: isDark ? AppTheme.darkHeaderGradient : AppTheme.lightHeaderGradient,
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(40),
@@ -278,28 +278,21 @@ class _ParentDashboardState extends State<ParentDashboard> {
           ),
           child: Column(
              children: [
-                 // Top Row: Parent Portal Title
-                 Align(
-                   alignment: Alignment.center,
-                   child: Text(
-                      "PARENT PORTAL",
-                      style: GoogleFonts.poppins(
-                        color: Colors.white.withOpacity(0.8), 
-                        fontSize: 12,
-                        letterSpacing: 1.2,
-                        fontWeight: FontWeight.w600,
-                      ),
-                   ),
-                 ),
-               const SizedBox(height: 10),
-               
                 Row(
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
-                     Expanded(
+                   Expanded(
                      child: Column(
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
+                         Text(
+                           'Welcome Back,', 
+                            style: GoogleFonts.poppins(
+                              color: Colors.white70,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                         ),
                          FittedBox(
                            fit: BoxFit.scaleDown,
                            alignment: Alignment.centerLeft,
@@ -312,22 +305,26 @@ class _ParentDashboardState extends State<ParentDashboard> {
                              ),
                            ),
                          ),
-                         const SizedBox(height: 5),
-                         Text(
-                           currentChild['id'] ?? '',
-                           style: GoogleFonts.poppins(
-                             color: Colors.white.withOpacity(0.9),
-                             fontSize: 14,
-                             fontWeight: FontWeight.w500,
-                           ),
-                         ),
-                         Text(
-                           currentChild['name'] ?? 'Loading...',
-                           style: GoogleFonts.poppins(
-                             color: Colors.white.withOpacity(0.7),
-                             fontSize: 12,
-                           ),
-                         ),
+                         const SizedBox(height: 4),
+                         Row(
+                           children: [
+                             Container(
+                               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                               decoration: BoxDecoration(
+                                 color: Colors.white24,
+                                 borderRadius: BorderRadius.circular(10),
+                               ),
+                               child: Text(
+                                 'Student: ${currentChild['name'] ?? 'Loading...'}',
+                                 style: GoogleFonts.poppins(
+                                   color: Colors.white,
+                                   fontSize: 12,
+                                   fontWeight: FontWeight.w500,
+                                 ),
+                               ),
+                             ),
+                           ],
+                         )
                        ],
                      ),
                    ),
@@ -337,7 +334,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                          onTap: () => themeProvider.toggleTheme(),
                          child: _buildHeaderIcon(themeProvider.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round),
                        ),
-                       const SizedBox(width: 13),
+                       const SizedBox(width: 10),
                        GestureDetector(
                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentNotificationsScreen(userId: currentChild['id']))),
                          child: _buildHeaderIcon(Icons.notifications_none),
@@ -359,89 +356,8 @@ class _ParentDashboardState extends State<ParentDashboard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "${currentChild['name']}'s Overview",
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                   Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.calendar_today,
-                          'Attendance',
-                          '95% Present',
-                          cardColor,
-                          const Color(0xFF2ecc71).withOpacity(0.2), 
-                          const Color(0xFF2ecc71),
-                          textColor,
-                          subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 1),
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.insights,
-                          'Marks',
-                          'View report',
-                          cardColor,
-                          const Color(0xFF3b5998).withOpacity(0.2),
-                          const Color(0xFF3b5998),
-                          textColor,
-                          subTextColor,
-                           onTap: () => setState(() => _selectedIndex = 0),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 25),
-
-                  Text(
-                    'Quick Actions',
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                   Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.payment,
-                          'Fee Payments',
-                          'Due: \$0',
-                          cardColor,
-                          Colors.orange.withOpacity(0.2),
-                          Colors.orange,
-                          textColor,
-                          subTextColor,
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.assignment_turned_in,
-                          'Permissions',
-                          'New Request',
-                          cardColor,
-                          Colors.purple.withOpacity(0.2),
-                          Colors.purple,
-                          textColor,
-                          subTextColor,
-                           onTap: () => setState(() => _selectedIndex = 3),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 25),
-
+                  
+                  // Announcements
                   Text(
                     'Announcements',
                     style: GoogleFonts.poppins(
@@ -452,7 +368,6 @@ class _ParentDashboardState extends State<ParentDashboard> {
                   ),
                   const SizedBox(height: 15),
                   SingleChildScrollView(
-                    physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
@@ -461,7 +376,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                           'Saturday, 10 AM',
                           AppTheme.announcementBlue,
                         ),
-                        const SizedBox(width: 15),
+                         const SizedBox(width: 15),
                         _buildAnnouncementCard(
                           'Results Declared',
                           'Check now',
@@ -469,6 +384,74 @@ class _ParentDashboardState extends State<ParentDashboard> {
                         ),
                       ],
                     ),
+                  ),
+
+                  const SizedBox(height: 25),
+
+                  Text(
+                    "${currentChild['name']}'s Overview",
+                    style: GoogleFonts.poppins(
+                      color: textColor,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+
+                  GridView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: 1.2,
+                    ),
+                    children: [
+                       _buildQuickAccessCard(
+                          Icons.calendar_today,
+                          'Attendance',
+                          '95% Present',
+                          cardColor,
+                          const Color(0xFF2ecc71).withOpacity(0.1), 
+                          const Color(0xFF2ecc71),
+                          textColor,
+                          subTextColor,
+                          onTap: () => setState(() => _selectedIndex = 1),
+                        ),
+                        _buildQuickAccessCard(
+                          Icons.insights,
+                          'Marks',
+                          'View report',
+                          cardColor,
+                          const Color(0xFF3b5998).withOpacity(0.1),
+                          const Color(0xFF3b5998),
+                          textColor,
+                          subTextColor,
+                           onTap: () => setState(() => _selectedIndex = 0),
+                        ),
+                        _buildQuickAccessCard(
+                          Icons.payment,
+                          'Fee Payments',
+                          'Due: \$0',
+                          cardColor,
+                          Colors.orange.withOpacity(0.1),
+                          Colors.orange,
+                          textColor,
+                          subTextColor,
+                        ),
+                        _buildQuickAccessCard(
+                          Icons.assignment_turned_in,
+                          'Permissions',
+                          'New Request',
+                          cardColor,
+                          Colors.purple.withOpacity(0.1),
+                          Colors.purple,
+                          textColor,
+                          subTextColor,
+                           onTap: () => setState(() => _selectedIndex = 3),
+                        ),
+                    ]
                   ),
                 ],
               ),
@@ -479,16 +462,15 @@ class _ParentDashboardState extends State<ParentDashboard> {
     );
   }
 
-
-
    Widget _buildHeaderIcon(IconData icon) {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withOpacity(0.2),
         shape: BoxShape.circle,
+        border: Border.all(color: Colors.white.withOpacity(0.5), width: 1),
       ),
-      child: Icon(icon, color: Colors.white, size: 25),
+      child: Icon(icon, color: Colors.white, size: 20),
     );
   }
 
@@ -505,9 +487,9 @@ class _ParentDashboardState extends State<ParentDashboard> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: gradientColors.last.withOpacity(0.3),
+            color: Colors.black.withOpacity(0.1),
             blurRadius: 10,
-            offset: const Offset(0, 5),
+            offset: const Offset(0, 4),
           )
         ]
       ),
@@ -525,14 +507,14 @@ class _ParentDashboardState extends State<ParentDashboard> {
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13),
+                  style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 3),
                 Text(
                   subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withOpacity(0.8), fontSize: 11),
+                  style: GoogleFonts.poppins(color: Colors.white.withOpacity(0.8), fontSize: 13),
                 ),
               ],
             ),
@@ -546,31 +528,51 @@ class _ParentDashboardState extends State<ParentDashboard> {
     final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
     return GestureDetector(
       onTap: onTap,
-      child: AppTheme.buildGlassCard(
-        isDark: isDark,
-        padding: const EdgeInsets.all(15),
-        customColor: cardColor,
-        opacity: isDark ? 0.05 : 0.4,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+             width: 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              blurRadius: 15,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconBgColor.withOpacity(0.3),
+                color: iconColor.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
-              child: Icon(icon, color: iconColor, size: 24),
+              child: Icon(icon, color: iconColor, size: 26),
             ),
-            const SizedBox(height: 12),
-            Text(
-              title,
-               style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 14),
+            const SizedBox(height: 10),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 13),
+              ),
             ),
-            const SizedBox(height: 4),
-             Text(
-              subtitle,
-               style: GoogleFonts.poppins(color: subTextColor, fontSize: 12),
+            const SizedBox(height: 2),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                subtitle,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+              ),
             ),
           ],
         ),

@@ -218,7 +218,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    // Session Selector
+    // Session Selector
                     Container(
                       margin: const EdgeInsets.only(bottom: 20),
                       padding: const EdgeInsets.all(5),
@@ -227,33 +227,36 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                         borderRadius: BorderRadius.circular(25),
                         border: Border.all(color: iconBg)
                       ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: ['All', 'Morning', 'Afternoon'].map((session) {
-                          final isSelected = _selectedSession == session;
-                          return GestureDetector(
-                            onTap: () {
-                              setState(() => _selectedSession = session);
-                              _fetchStats();
-                            },
-                            child: AnimatedContainer(
-                              duration: const Duration(milliseconds: 200),
-                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                              decoration: BoxDecoration(
-                                color: isSelected ? tint : Colors.transparent,
-                                borderRadius: BorderRadius.circular(20),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: ['All', 'Morning', 'Afternoon'].map((session) {
+                            final isSelected = _selectedSession == session;
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() => _selectedSession = session);
+                                _fetchStats();
+                              },
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 200),
+                                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                                decoration: BoxDecoration(
+                                  color: isSelected ? tint : Colors.transparent,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Text(
+                                  session, 
+                                  style: GoogleFonts.poppins(
+                                    color: isSelected ? Colors.white : textColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14
+                                  )
+                                ),
                               ),
-                              child: Text(
-                                session, 
-                                style: GoogleFonts.poppins(
-                                  color: isSelected ? Colors.white : textColor,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14
-                                )
-                              ),
-                            ),
-                          );
-                        }).toList(),
+                            );
+                          }).toList(),
+                        ),
                       ),
                     ),
 
@@ -302,67 +305,69 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                      )
                                    ],
                                  ),
-                                 child: Column(
-                                   mainAxisSize: MainAxisSize.min,
-                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                   children: [
-                                     Row(
-                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                       children: [
-                                         Text("Select Section", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: const Color(0xFF1e1e2d))),
-                                         Row(
-                                           children: [
-                                             IconButton(
-                                               icon: const Icon(Icons.add_circle, color: Colors.blue),
-                                               onPressed: () async {
-                                                  Navigator.pop(ctx);
-                                                  final n = await showDialog<String>(context: context, builder: (c) {
-                                                    String v = "";
-                                                    return AlertDialog(
-                                                      title: const Text("New Section"), 
-                                                      content: TextField(autofocus: true, decoration: const InputDecoration(hintText: "Section Name"), onChanged: (val)=>v=val),
-                                                      actions: [TextButton(onPressed:()=>Navigator.pop(c), child: const Text("Cancel")), ElevatedButton(onPressed:()=>Navigator.pop(c,v), child: const Text("Create"))]
-                                                    );
-                                                  });
-                                                  if (n != null && n.isNotEmpty) {
-                                                     final updated = List<String>.from(sections)..add(n);
-                                                     await prefs.setStringList(key, updated);
-                                                     _showSnackBar("Created $n");
-                                                  }
-                                               },
-                                             ),
-                                             IconButton(onPressed: () => Navigator.pop(ctx), icon: const Icon(Icons.close, color: Color(0xFF1e1e2d)))
-                                           ],
-                                         )
-                                       ],
-                                     ),
-                                     Text(year, style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 14)),
-                                     const SizedBox(height: 25),
-                                     ...sections.map((section) => Container(
-                                       margin: const EdgeInsets.only(bottom: 12),
-                                       decoration: BoxDecoration(
-                                         color: const Color(0xFFf8f9fa),
-                                         borderRadius: BorderRadius.circular(15),
-                                         border: Border.all(color: tint.withOpacity(0.2)),
+                                 child: SingleChildScrollView(
+                                   child: Column(
+                                     mainAxisSize: MainAxisSize.min,
+                                     crossAxisAlignment: CrossAxisAlignment.start,
+                                     children: [
+                                       Row(
+                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                         children: [
+                                           Text("Select Section", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: const Color(0xFF1e1e2d))),
+                                           Row(
+                                             children: [
+                                               IconButton(
+                                                 icon: const Icon(Icons.add_circle, color: Colors.blue),
+                                                 onPressed: () async {
+                                                    Navigator.pop(ctx);
+                                                    final n = await showDialog<String>(context: context, builder: (c) {
+                                                      String v = "";
+                                                      return AlertDialog(
+                                                        title: const Text("New Section"), 
+                                                        content: TextField(autofocus: true, decoration: const InputDecoration(hintText: "Section Name"), onChanged: (val)=>v=val),
+                                                        actions: [TextButton(onPressed:()=>Navigator.pop(c), child: const Text("Cancel")), ElevatedButton(onPressed:()=>Navigator.pop(c,v), child: const Text("Create"))]
+                                                      );
+                                                    });
+                                                    if (n != null && n.isNotEmpty) {
+                                                       final updated = List<String>.from(sections)..add(n);
+                                                       await prefs.setStringList(key, updated);
+                                                       _showSnackBar("Created $n");
+                                                    }
+                                                 },
+                                               ),
+                                               IconButton(onPressed: () => Navigator.pop(ctx), icon: const Icon(Icons.close, color: Color(0xFF1e1e2d)))
+                                             ],
+                                           )
+                                         ],
                                        ),
-                                       child: ListTile(
-                                         title: Text(section, style: GoogleFonts.poppins(color: const Color(0xFF1e1e2d), fontWeight: FontWeight.w600)),
-                                         leading: Container(
-                                           padding: const EdgeInsets.all(8),
-                                           decoration: BoxDecoration(color: tint.withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
-                                           child: Icon(Icons.class_, color: tint, size: 20),
+                                       Text(year, style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 14)),
+                                       const SizedBox(height: 25),
+                                       ...sections.map((section) => Container(
+                                         margin: const EdgeInsets.only(bottom: 12),
+                                         decoration: BoxDecoration(
+                                           color: const Color(0xFFf8f9fa),
+                                           borderRadius: BorderRadius.circular(15),
+                                           border: Border.all(color: tint.withOpacity(0.2)),
                                          ),
-                                         trailing: Icon(Icons.arrow_forward_ios, size: 14, color: tint),
-                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                                         onTap: () async {
-                                           Navigator.pop(ctx);
-                                           await Navigator.push(context, MaterialPageRoute(builder: (_) => HODManageAttendanceScreen(year: year, initialSession: _selectedSession, section: section)));
-                                           _fetchStats();
-                                         },
-                                       ),
-                                     )),
-                                     const SizedBox(height: 10),
-                                   ],
+                                         child: ListTile(
+                                           title: Text(section, style: GoogleFonts.poppins(color: const Color(0xFF1e1e2d), fontWeight: FontWeight.w600)),
+                                           leading: Container(
+                                             padding: const EdgeInsets.all(8),
+                                             decoration: BoxDecoration(color: tint.withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
+                                             child: Icon(Icons.class_, color: tint, size: 20),
+                                           ),
+                                           trailing: Icon(Icons.arrow_forward_ios, size: 14, color: tint),
+                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                                           onTap: () async {
+                                             Navigator.pop(ctx);
+                                             await Navigator.push(context, MaterialPageRoute(builder: (_) => HODManageAttendanceScreen(year: year, initialSession: _selectedSession, section: section)));
+                                             _fetchStats();
+                                           },
+                                         ),
+                                       )),
+                                       const SizedBox(height: 10),
+                                     ],
+                                   ),
                                  ),
                                ),
                              )
@@ -472,73 +477,77 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
     return Container(
       color: Colors.black54,
       alignment: Alignment.center,
-      child: Container(
-         width: MediaQuery.of(context).size.width * 0.9,
-         padding: const EdgeInsets.all(20),
-         decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(16)),
-         child: Column(
-           mainAxisSize: MainAxisSize.min,
-           children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Manage Students", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
-                  IconButton(onPressed: () => setState(() => _modalVisible = false), icon: Icon(Icons.close, color: textColor))
-                ],
-              ),
-              // Tabs
-              Row(
-                children: [
-                  Expanded(child: GestureDetector(
-                    onTap: () => setState(() => _activeTab = 'add'),
-                    child: Container(
-                      padding: const EdgeInsets.all(10),
-                      color: _activeTab == 'add' ? tint : Colors.transparent,
-                      alignment: Alignment.center,
-                      child: Text("Add Student", style: TextStyle(color: _activeTab == 'add' ? Colors.white : textColor, fontWeight: FontWeight.bold)),
-                    ),
-                  )),
-                  Expanded(child: GestureDetector(
-                    onTap: () => setState(() => _activeTab = 'remove'),
-                    child: Container(
-                      padding: const EdgeInsets.all(10),
-                      color: _activeTab == 'remove' ? Colors.red : Colors.transparent,
-                      alignment: Alignment.center,
-                      child: Text("Remove Student", style: TextStyle(color: _activeTab == 'remove' ? Colors.white : textColor, fontWeight: FontWeight.bold)),
-                    ),
-                  )),
-                ],
-              ),
-              const SizedBox(height: 20),
-              
-              if (_activeTab == 'add') ...[
-                 TextField(controller: _fullNameController, decoration: InputDecoration(hintText: "Full Name", hintStyle: TextStyle(color: subTextColor)), style: TextStyle(color: textColor)),
-                 const SizedBox(height: 10),
-                 TextField(controller: _studentIdController, decoration: InputDecoration(hintText: "Student ID", hintStyle: TextStyle(color: subTextColor)), style: TextStyle(color: textColor)),
-                 const SizedBox(height: 10),
-                 // Year chips
-                 Row(
-                   children: ['1st Year', '2nd Year', '3rd Year'].map((y) => GestureDetector(
-                     onTap: () => setState(() => _selectedYear = y),
-                     child: Container(
-                       margin: const EdgeInsets.only(right: 10),
-                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                       decoration: BoxDecoration(color: _selectedYear == y ? tint : iconBg, borderRadius: BorderRadius.circular(10)),
-                       child: Text(y, style: TextStyle(color: _selectedYear == y ? Colors.white : textColor)),
+      child: Center(
+        child: SingleChildScrollView(
+          child: Container(
+             width: MediaQuery.of(context).size.width * 0.9,
+             padding: const EdgeInsets.all(20),
+             decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(16)),
+             child: Column(
+               mainAxisSize: MainAxisSize.min,
+               children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Manage Students", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                      IconButton(onPressed: () => setState(() => _modalVisible = false), icon: Icon(Icons.close, color: textColor))
+                    ],
+                  ),
+                  // Tabs
+                  Row(
+                    children: [
+                      Expanded(child: GestureDetector(
+                        onTap: () => setState(() => _activeTab = 'add'),
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          color: _activeTab == 'add' ? tint : Colors.transparent,
+                          alignment: Alignment.center,
+                          child: Text("Add Student", style: TextStyle(color: _activeTab == 'add' ? Colors.white : textColor, fontWeight: FontWeight.bold)),
+                        ),
+                      )),
+                      Expanded(child: GestureDetector(
+                        onTap: () => setState(() => _activeTab = 'remove'),
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          color: _activeTab == 'remove' ? Colors.red : Colors.transparent,
+                          alignment: Alignment.center,
+                          child: Text("Remove Student", style: TextStyle(color: _activeTab == 'remove' ? Colors.white : textColor, fontWeight: FontWeight.bold)),
+                        ),
+                      )),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  
+                  if (_activeTab == 'add') ...[
+                     TextField(controller: _fullNameController, decoration: InputDecoration(hintText: "Full Name", hintStyle: TextStyle(color: subTextColor)), style: TextStyle(color: textColor)),
+                     const SizedBox(height: 10),
+                     TextField(controller: _studentIdController, decoration: InputDecoration(hintText: "Student ID", hintStyle: TextStyle(color: subTextColor)), style: TextStyle(color: textColor)),
+                     const SizedBox(height: 10),
+                     // Year chips
+                     Row(
+                       children: ['1st Year', '2nd Year', '3rd Year'].map((y) => GestureDetector(
+                         onTap: () => setState(() => _selectedYear = y),
+                         child: Container(
+                           margin: const EdgeInsets.only(right: 10),
+                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                           decoration: BoxDecoration(color: _selectedYear == y ? tint : iconBg, borderRadius: BorderRadius.circular(10)),
+                           child: Text(y, style: TextStyle(color: _selectedYear == y ? Colors.white : textColor)),
+                         ),
+                       )).toList(),
                      ),
-                   )).toList(),
-                 ),
-                 const SizedBox(height: 20),
-                 ElevatedButton(onPressed: _submitting ? null : _handleAddStudent, style: ElevatedButton.styleFrom(backgroundColor: tint), child: _submitting ? const CircularProgressIndicator(color: Colors.white) : const Text("Add Student", style: TextStyle(color: Colors.white))),
-              ] else ...[
-                 TextField(controller: _removeIdController, decoration: InputDecoration(hintText: "Student ID", hintStyle: TextStyle(color: subTextColor)), style: TextStyle(color: textColor)),
-                 const SizedBox(height: 10),
-                 Text("Warning: Irreversible action.", style: TextStyle(color: Colors.red, fontSize: 12)),
-                 const SizedBox(height: 20),
-                 ElevatedButton(onPressed: _submitting ? null : _handleRemoveStudent, style: ElevatedButton.styleFrom(backgroundColor: Colors.red), child: _submitting ? const CircularProgressIndicator(color: Colors.white) : const Text("Remove Student", style: TextStyle(color: Colors.white))),
-              ]
-           ],
-         ),
+                     const SizedBox(height: 20),
+                     ElevatedButton(onPressed: _submitting ? null : _handleAddStudent, style: ElevatedButton.styleFrom(backgroundColor: tint), child: _submitting ? const CircularProgressIndicator(color: Colors.white) : const Text("Add Student", style: TextStyle(color: Colors.white))),
+                  ] else ...[
+                     TextField(controller: _removeIdController, decoration: InputDecoration(hintText: "Student ID", hintStyle: TextStyle(color: subTextColor)), style: TextStyle(color: textColor)),
+                     const SizedBox(height: 10),
+                     Text("Warning: Irreversible action.", style: TextStyle(color: Colors.red, fontSize: 12)),
+                     const SizedBox(height: 20),
+                     ElevatedButton(onPressed: _submitting ? null : _handleRemoveStudent, style: ElevatedButton.styleFrom(backgroundColor: Colors.red), child: _submitting ? const CircularProgressIndicator(color: Colors.white) : const Text("Remove Student", style: TextStyle(color: Colors.white))),
+                  ]
+               ],
+             ),
+          ),
+        ),
       ),
     );
   }

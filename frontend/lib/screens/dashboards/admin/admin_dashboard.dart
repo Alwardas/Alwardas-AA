@@ -68,7 +68,6 @@ class _AdminDashboardState extends State<AdminDashboard> {
 
   @override
   Widget build(BuildContext context) {
-    // Standard Theme Colors
     final theme = Theme.of(context);
     final themeProvider = Provider.of<ThemeProvider>(context);
     final isDark = themeProvider.isDarkMode;
@@ -78,7 +77,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
     final Color cardColor = isDark ? const Color(0xFF1E293B) : Colors.white;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: AppTheme.getAdaptiveOverlayStyle(true), // Header is dark (blue), so light icons
+      value: AppTheme.getAdaptiveOverlayStyle(true), 
       child: Scaffold(
         backgroundColor: theme.scaffoldBackgroundColor,
         body: Container(
@@ -91,89 +90,97 @@ class _AdminDashboardState extends State<AdminDashboard> {
           ),
           child: Column(
           children: [
-            // Standard App Header (Blue Gradient)
+            // 1. Header Section
             Container(
-              padding: EdgeInsets.fromLTRB(24, MediaQuery.of(context).padding.top + 20, 24, 30),
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).padding.top + 10, 
+                bottom: 30, 
+                left: 24, 
+                right: 24
+              ),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: isDark ? AppTheme.darkHeaderGradient : [const Color(0xFF1a4ab2), const Color(0xFF3b82f6)],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(40),
                   bottomRight: Radius.circular(40),
                 ),
-                boxShadow: [
-                  BoxShadow(color: Colors.black26, blurRadius: 20, offset: Offset(0, 10))
-                ]
               ),
               child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'ADMIN CONSOLE',
-                            style: GoogleFonts.poppins(color: Colors.white.withOpacity(0.8), fontSize: 12, letterSpacing: 1.5, fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            widget.userData['full_name'] ?? 'Administrator',
-                            style: GoogleFonts.poppins(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          IconButton(
-                            onPressed: () => themeProvider.toggleTheme(),
-                            icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode, color: Colors.white, size: 24),
-                          ),
-                          const SizedBox(width: 8),
-                          Container(
-                            decoration: BoxDecoration(color: Colors.white.withOpacity(0.1), shape: BoxShape.circle),
-                            child: IconButton(
-                              onPressed: () {
-                                // Notification Action placeholder
-                                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Notifications")));
-                              },
-                              icon: const Icon(Icons.notifications, color: Colors.white, size: 24),
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          Container(
-                            decoration: BoxDecoration(color: Colors.white.withOpacity(0.1), shape: BoxShape.circle),
-                            child: IconButton(
-                              onPressed: () => _logout(context),
-                              icon: const Icon(Icons.logout_rounded, color: Colors.white, size: 24),
-                              tooltip: "Logout",
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  // Stats removed as requested
-                ],
-              ),
+                 children: [
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     children: [
+                       Expanded(
+                         child: Column(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             Text(
+                               'Welcome Back,', 
+                               style: GoogleFonts.poppins(
+                                 color: Colors.white70,
+                                 fontSize: 18,
+                                 fontWeight: FontWeight.w600,
+                               ),
+                             ),
+                             FittedBox(
+                               fit: BoxFit.scaleDown,
+                               alignment: Alignment.centerLeft,
+                               child: Text(
+                                 widget.userData['full_name'] ?? 'Administrator',
+                                 style: GoogleFonts.poppins(
+                                   color: Colors.white,
+                                   fontSize: 26,
+                                   fontWeight: FontWeight.bold,
+                                 ),
+                               ),
+                             ),
+                             const SizedBox(height: 4),
+                             Text(
+                               'System Admin',
+                               style: GoogleFonts.poppins(
+                                 color: Colors.white70,
+                                 fontSize: 14,
+                               ),
+                             ),
+                           ],
+                         ),
+                       ),
+                       Row(
+                         children: [
+                           GestureDetector(
+                             onTap: () => themeProvider.toggleTheme(),
+                             child: _buildHeaderIcon(themeProvider.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round),
+                           ),
+                           const SizedBox(width: 10),
+                           GestureDetector(
+                             onTap: () => _logout(context),
+                             child: _buildHeaderIcon(Icons.logout),
+                           ),
+                         ],
+                       ),
+                     ],
+                   )
+                 ],
+               ),
             ),
             
-            
-            // Quick Stats Section (Moved to Body)
+            // Quick Stats Section 
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 24, 24, 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
                 children: [
-                  _buildStatItem("Total Users", _stats['total_users'].toString(), Icons.people, Colors.blue, textColor, subTextColor),
+                  Expanded(child: _buildStatItem("Total Users", _stats['total_users'].toString(), Icons.people, Colors.blue, textColor)),
                   Container(height: 40, width: 1, color: Colors.grey.withOpacity(0.2)),
-                  GestureDetector(
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminRequestsScreen())),
-                    child: _buildStatItem("Pending", _stats['pending_approvals'].toString(), Icons.pending_actions, Colors.orange, textColor, subTextColor),
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminRequestsScreen())),
+                      child: _buildStatItem("Pending Requests", _stats['pending_approvals'].toString(), Icons.pending_actions, Colors.orange, textColor),
+                    ),
                   ),
                 ],
               ),
@@ -186,54 +193,59 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 : GridView.count(
                     padding: const EdgeInsets.all(24),
                     crossAxisCount: 2,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
-                    childAspectRatio: 1.1,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 15,
+                    childAspectRatio: 1.2,
                     children: [
                       _buildMenuCard(
-                        context, 
                         'User Management', 
+                        'Manage access',
                         Icons.manage_accounts_outlined, 
                         Colors.blueAccent, 
                         cardColor, 
                         textColor, 
-                        () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminUsersScreen()))
+                        subTextColor,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminUsersScreen()))
                       ),
                       _buildMenuCard(
-                        context, 
                         'System Stats', 
+                        'View insights',
                         Icons.insights_outlined, 
                         Colors.purpleAccent, 
                         cardColor, 
                         textColor, 
-                        () {},
+                        subTextColor,
+                        onTap: () {},
                       ),
                       _buildMenuCard(
-                        context, 
                         'Coordinator Requests', 
+                        'Approve/Reject',
                         Icons.pending_actions_rounded, 
                         Colors.orange, 
                         cardColor, 
                         textColor, 
-                        () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminRequestsScreen())),
+                        subTextColor,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminRequestsScreen())),
                       ),
                       _buildMenuCard(
-                        context, 
                         'Database', 
+                        'Backup/Restore',
                         Icons.storage_rounded, 
                         Colors.tealAccent, 
                         cardColor, 
                         textColor, 
-                        () {},
+                        subTextColor,
+                        onTap: () {},
                       ),
                       _buildMenuCard(
-                        context, 
                         'Settings', 
+                        'Configuration',
                         Icons.settings_suggest_outlined, 
                         Colors.orangeAccent, 
                         cardColor, 
                         textColor, 
-                        () {},
+                        subTextColor,
+                        onTap: () {},
                       ),
                     ],
                   ),
@@ -245,7 +257,19 @@ class _AdminDashboardState extends State<AdminDashboard> {
     );
   }
 
-  Widget _buildStatItem(String label, String value, IconData icon, Color color, Color valueColor, Color labelColor) {
+  Widget _buildHeaderIcon(IconData icon) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.2),
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.white.withOpacity(0.5), width: 1),
+      ),
+      child: Icon(icon, color: Colors.white, size: 20),
+    );
+  }
+
+  Widget _buildStatItem(String label, String value, IconData icon, Color color, Color textColor) {
     return Column(
       children: [
         Container(
@@ -259,47 +283,68 @@ class _AdminDashboardState extends State<AdminDashboard> {
         const SizedBox(height: 8),
         Text(
           value,
-          style: GoogleFonts.poppins(color: valueColor, fontSize: 20, fontWeight: FontWeight.bold),
+          style: GoogleFonts.poppins(color: textColor, fontSize: 20, fontWeight: FontWeight.bold),
         ),
         Text(
           label,
-          style: GoogleFonts.poppins(color: labelColor, fontSize: 13, fontWeight: FontWeight.w500),
+          textAlign: TextAlign.center,
+          style: GoogleFonts.poppins(color: textColor.withOpacity(0.7), fontSize: 12, fontWeight: FontWeight.w500),
         ),
       ],
     );
   }
 
-  Widget _buildMenuCard(BuildContext context, String title, IconData icon, Color iconColor, Color cardColor, Color textColor, VoidCallback onTap) {
+  Widget _buildMenuCard(String title, String subtitle, IconData icon, Color iconColor, Color cardColor, Color textColor, Color subTextColor, {VoidCallback? onTap}) {
+    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+    final isDark = themeProvider.isDarkMode;
+    
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
         decoration: BoxDecoration(
-          color: cardColor,
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: Colors.grey.withOpacity(0.2), width: 1),
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+             width: 1,
+          ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              blurRadius: 20,
-              offset: const Offset(0, 10),
-            )
-          ]
+              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              blurRadius: 15,
+              offset: const Offset(0, 8),
+            ),
+          ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: iconColor.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
-              child: Icon(icon, color: iconColor, size: 32),
+              child: Icon(icon, color: iconColor, size: 26),
             ),
-            const SizedBox(height: 16),
-            Text(
-              title,
-              style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 14),
+            const SizedBox(height: 10),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 13),
+              ),
+            ),
+            const SizedBox(height: 2),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                subtitle,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+              ),
             ),
           ],
         ),

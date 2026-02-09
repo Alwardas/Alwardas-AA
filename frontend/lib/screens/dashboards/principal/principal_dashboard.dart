@@ -113,7 +113,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
 
     return Column(
       children: [
-        // 1. Header Section - Fixed at Top
+        // 1. Header Section
         Container(
           padding: EdgeInsets.only(
             top: MediaQuery.of(context).padding.top + 10, 
@@ -144,8 +144,9 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                          Text(
                            'Good Morning,', 
                            style: GoogleFonts.poppins(
-                             color: Colors.white.withOpacity(0.8),
+                             color: Colors.white70,
                              fontSize: 18,
+                             fontWeight: FontWeight.w600,
                            ),
                          ),
                          FittedBox(
@@ -164,7 +165,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                          Text(
                            widget.userData['role'] ?? 'Administration',
                            style: GoogleFonts.poppins(
-                             color: Colors.white.withOpacity(0.7),
+                             color: Colors.white70,
                              fontSize: 14,
                            ),
                          ),
@@ -235,127 +236,94 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                   ),
                   const SizedBox(height: 15),
                   
-                  // Row 1
-                  Row(
+                  GridView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: 1.2,
+                    ),
                     children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.calendar_today_outlined,
                           'Attendance',
                           'All Branches',
                           cardColor,
-                          const Color(0xFF8E2DE2).withOpacity(0.2), 
+                          const Color(0xFF8E2DE2).withOpacity(0.1), 
                           const Color(0xFF8E2DE2),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalAttendanceScreen())),
                         ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.menu_book,
                           'Syllabus',
                           'Track Progress',
                           cardColor,
-                          const Color(0xFF38ef7d).withOpacity(0.2), 
+                          const Color(0xFF38ef7d).withOpacity(0.1), 
                           const Color(0xFF38ef7d),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalLessonPlansScreen())),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-                  
-                  // Row 2
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.access_time,
                           'Timetables',
                           'Master View',
                           cardColor,
-                          const Color(0xFF606c88).withOpacity(0.2), 
+                          const Color(0xFF606c88).withOpacity(0.1), 
                           const Color(0xFF606c88),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalTimetablesScreen())),
                         ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.inbox_outlined,
                           'HOD Requests',
                           'Approve HODs',
                           cardColor,
-                          const Color(0xFFf1c40f).withOpacity(0.2), 
+                          const Color(0xFFf1c40f).withOpacity(0.1), 
                           const Color(0xFFf1c40f),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalRequestsScreen())),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-
-                  // Row 3
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.campaign_outlined,
                           'Announcements',
                           '& Warnings',
                           cardColor,
-                          const Color(0xFFff6347).withOpacity(0.2), 
+                          const Color(0xFFff6347).withOpacity(0.1), 
                           const Color(0xFFff6347),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalAnnouncementsScreen())),
                         ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.event_note,
                           'My Schedule',
                           'Personal',
                           cardColor,
-                          const Color(0xFF00d2ff).withOpacity(0.2), 
+                          const Color(0xFF00d2ff).withOpacity(0.1), 
                           const Color(0xFF00d2ff),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalScheduleScreen())),
                         ),
-                      ),
-                    ],
-                  ),
-                   const SizedBox(height: 15),
-
-                  // Row 4
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.groups_outlined,
                           'Faculty',
                           'Directory',
                           cardColor,
-                          const Color(0xFF38ef7d).withOpacity(0.2), 
+                          const Color(0xFF38ef7d).withOpacity(0.1), 
                           const Color(0xFF38ef7d),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalFacultyScreen())),
                         ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.person_outline,
                           'Profile',
                           'View Details',
@@ -366,7 +334,6 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           subTextColor,
                           onTap: () => setState(() => _selectedIndex = 2),
                         ),
-                      ),
                     ],
                   ),
 
@@ -385,14 +352,16 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: cardColor,
+                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border(
-                        left: const BorderSide(color: Color(0xFF8E2DE2), width: 4),
-                        top: BorderSide(color: Colors.grey.withOpacity(0.1)),
-                        right: BorderSide(color: Colors.grey.withOpacity(0.1)),
-                        bottom: BorderSide(color: Colors.grey.withOpacity(0.1)),
-                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 10,
+                          offset: const Offset(0, 5),
+                        ),
+                      ],
+                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -438,8 +407,9 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withOpacity(0.2),
         shape: BoxShape.circle,
+        border: Border.all(color: Colors.white.withOpacity(0.5), width: 1),
       ),
       child: Icon(icon, color: Colors.white, size: 20),
     );
@@ -499,31 +469,51 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
     final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
     return GestureDetector(
       onTap: onTap,
-      child: AppTheme.buildGlassCard(
-        isDark: isDark,
-        padding: const EdgeInsets.all(15),
-        customColor: cardColor,
-        opacity: isDark ? 0.05 : 0.4,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+             width: 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              blurRadius: 15,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconBgColor.withOpacity(0.3),
+                color: iconColor.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
-              child: Icon(icon, color: iconColor, size: 24),
+              child: Icon(icon, color: iconColor, size: 26),
             ),
-            const SizedBox(height: 12),
-            Text(
-              title,
-               style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 16),
+            const SizedBox(height: 10),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 13),
+              ),
             ),
-            const SizedBox(height: 4),
-             Text(
-              subtitle,
-               style: GoogleFonts.poppins(color: subTextColor, fontSize: 12),
+            const SizedBox(height: 2),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                subtitle,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+              ),
             ),
           ],
         ),

@@ -40,7 +40,7 @@ dependencies:
   provider: ^6.1.2
   shared_preferences: ^2.5.3
   video_player: ^2.8.2
-  device_preview: ^1.2.0
+
   grpc: ^3.2.4
   protobuf: ^3.1.0
   shimmer: ^3.0.0

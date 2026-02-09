@@ -114,7 +114,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
 
     return Column(
       children: [
-        // 1. Header Section - Fixed at Top
+        // 1. Header Section
         Container(
           padding: EdgeInsets.only(
             top: MediaQuery.of(context).padding.top + 10, 
@@ -125,8 +125,8 @@ class _StudentDashboardState extends State<StudentDashboard> {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [Color(0xFF1a4ab2), Color(0xFF3b82f6)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(40),
@@ -135,60 +135,51 @@ class _StudentDashboardState extends State<StudentDashboard> {
           ),
           child: Column(
              children: [
-               Align(
-                 alignment: Alignment.topLeft,
-                 child: Text(
-                    (widget.userData['branch'] ?? 'COMPUTER ENGINEERING').toUpperCase(),
-                    style: GoogleFonts.poppins(
-                      color: Colors.white.withOpacity(0.8),
-                      fontSize: 13,
-                      letterSpacing: 1.2,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    textAlign: TextAlign.left,
-                 ),
-               ),
-               const SizedBox(height: 10),
-               
-                // Name and ID Row
-                Row(
+               Row(
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
                    Expanded(
                      child: Column(
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
+                         Text(
+                           'Welcome Back,', 
+                            style: GoogleFonts.poppins(
+                              color: Colors.lightBlueAccent, // Accent 
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                         ),
                          FittedBox(
                            fit: BoxFit.scaleDown,
                            alignment: Alignment.centerLeft,
                            child: Text(
                              widget.userData['full_name'] ?? 'Student',
-                             style: GoogleFonts.poppins(
-                               color: Colors.white,
-                               fontSize: 26,
-                               fontWeight: FontWeight.bold,
-                             ),
+                              style: GoogleFonts.poppins(
+                                color: Colors.white, 
+                                fontSize: 26,
+                                fontWeight: FontWeight.bold,
+                              ),
                            ),
                          ),
-                         const SizedBox(height: 2),
+                         const SizedBox(height: 4),
                          Text(
-                           'Student ID: ${widget.userData['login_id'] ?? '24634-CM-026'}',
-                           style: GoogleFonts.poppins(
-                             color: Colors.white.withOpacity(0.7),
-                             fontSize: 14,
-                           ),
+                           '${widget.userData['branch'] ?? 'Engineering'} • ${widget.userData['login_id'] ?? ''}',
+                            style: GoogleFonts.poppins(
+                              color: Colors.white70, 
+                              fontSize: 14,
+                            ),
                          ),
                        ],
                      ),
                    ),
                    Row(
                      children: [
-                       // Theme Switcher - Glassy style as per image
                        GestureDetector(
                          onTap: () => themeProvider.toggleTheme(),
                          child: _buildHeaderIcon(themeProvider.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round),
                        ),
-                       const SizedBox(width: 12),
+                       const SizedBox(width: 10),
                        GestureDetector(
                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentNotificationsScreen())),
                          child: _buildHeaderIcon(Icons.notifications_none),
@@ -196,9 +187,9 @@ class _StudentDashboardState extends State<StudentDashboard> {
                      ],
                    ),
                  ],
-                )
+               )
              ],
-          ),
+           ),
         ),
 
         // 2. Scrollable Body
@@ -210,7 +201,8 @@ class _StudentDashboardState extends State<StudentDashboard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // 2. Announcements
+                  
+                  // Announcements
                   Text(
                     'Announcements',
                     style: GoogleFonts.poppins(
@@ -221,20 +213,19 @@ class _StudentDashboardState extends State<StudentDashboard> {
                   ),
                   const SizedBox(height: 15),
                   SingleChildScrollView(
-                    physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
                         _buildAnnouncementCard(
                           'Mid-term schedules released',
                           'Check your portal.',
-                          AppTheme.announcementBlue,
+                          const [Color(0xFF42E695), Color(0xFF3BB2B8)],
                         ),
-                        const SizedBox(width: 15),
+                         const SizedBox(width: 15),
                         _buildAnnouncementCard(
                           'Guest Lecture',
                           'Auditorium at 3 PM',
-                          AppTheme.announcementOrange,
+                          const [Color(0xFF2E2D88), Color(0xFF712B91)],
                         ),
                       ],
                     ),
@@ -242,7 +233,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
 
                   const SizedBox(height: 25),
 
-                  // 3. Quick Access
+                  // Quick Access: Grid Layout
                   Text(
                     'Quick Access',
                     style: GoogleFonts.poppins(
@@ -252,97 +243,78 @@ class _StudentDashboardState extends State<StudentDashboard> {
                     ),
                   ),
                   const SizedBox(height: 15),
-                  Row(
+
+                  GridView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: 1.2,
+                    ),
                     children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.menu_book,
-                          'My Courses',
-                          '4 Active',
-                          cardColor,
-                          const Color(0xFF3b5998).withOpacity(0.2), // React: rgba(59, 89, 152, 0.2)
-                          const Color(0xFF3b5998),
-                          textColor,
-                          subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 0),
-                        ),
+                      _buildQuickAccessCard(
+                        Icons.menu_book,
+                        'My Courses',
+                        '4 Active',
+                        cardColor,
+                        const Color(0xFF3b5998).withOpacity(0.1),
+                        const Color(0xFF3b5998),
+                        textColor,
+                        subTextColor,
+                        onTap: () => setState(() => _selectedIndex = 0),
                       ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.calendar_today,
-                          'Attendance',
-                          '95%',
-                          cardColor,
-                          const Color(0xFF2ecc71).withOpacity(0.2), // React: rgba(46, 204, 113, 0.2)
-                          const Color(0xFF2ecc71),
-                          textColor,
-                          subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 3),
-                        ),
+                      _buildQuickAccessCard(
+                        Icons.calendar_today,
+                        'Attendance',
+                        '95%',
+                        cardColor,
+                        const Color(0xFF2ecc71).withOpacity(0.1),
+                        const Color(0xFF2ecc71),
+                        textColor,
+                        subTextColor,
+                        onTap: () => setState(() => _selectedIndex = 3),
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.schedule,
-                          'Time Table',
-                          '3 Classes',
-                          cardColor,
-                          const Color(0xFF9b59b6).withOpacity(0.2), // React: rgba(155, 89, 182, 0.2)
-                          const Color(0xFF9b59b6),
-                          textColor,
-                          subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 1), // TimeTable is Index 1
-                        ),
+                      _buildQuickAccessCard(
+                        Icons.schedule,
+                        'Time Table',
+                        '3 Classes',
+                        cardColor,
+                        const Color(0xFF9b59b6).withOpacity(0.1),
+                        const Color(0xFF9b59b6),
+                        textColor,
+                        subTextColor,
+                        onTap: () => setState(() => _selectedIndex = 1),
                       ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.insights,
-                          'Marks / Results',
-                          'View Grades',
-                          cardColor,
-                          const Color(0xFFe67e22).withOpacity(0.2), // Orange tint
-                          const Color(0xFFe67e22),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentMarksScreen())),
-                        ),
+                      _buildQuickAccessCard(
+                        Icons.insights,
+                        'Marks / Results',
+                        'View Grades',
+                        cardColor,
+                        const Color(0xFFe67e22).withOpacity(0.1),
+                        const Color(0xFFe67e22),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentMarksScreen())),
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.report_problem_outlined, // Changed icon to be more relevant to "Issues"
-                          'Issues',
-                          'Report & Track',
-                          cardColor,
-                          const Color(0xFFE94057).withOpacity(0.2), // Pink/Red tint
-                          const Color(0xFFE94057),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentCommentsScreen(userData: widget.userData))),
-                        ),
+                      _buildQuickAccessCard(
+                        Icons.report_problem_outlined,
+                        'Issues',
+                        'Report & Track',
+                        cardColor,
+                        const Color(0xFFE94057).withOpacity(0.1),
+                        const Color(0xFFE94057),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentCommentsScreen(userData: widget.userData))),
                       ),
-                      const SizedBox(width: 15),
-                      // Placeholder or empty expanded to keep alignment if needed, 
-                      // or just use Flexible/Expanded logic. 
-                      // For now, let's just make it a single full width row or half width. 
-                      // A single card looking like the others is fine.
-                      const Spacer(), 
                     ],
                   ),
 
                   const SizedBox(height: 25),
 
-                  // 4. Today's Schedule
+                  // Today's Schedule (Cleaned up)
                   Text(
                     "Today's Schedule",
                     style: GoogleFonts.poppins(
@@ -354,50 +326,45 @@ class _StudentDashboardState extends State<StudentDashboard> {
                   const SizedBox(height: 15),
                   Container(
                     padding: const EdgeInsets.all(20),
-                    decoration: AppTheme.glassDecoration(
-                      isDark: isDark,
-                      customColor: cardColor,
-                      opacity: 0.6,
+                    decoration: BoxDecoration(
+                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 10,
+                          offset: const Offset(0, 5),
+                        ),
+                      ],
+                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05)),
                     ),
-                    child: Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          width: 4,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.cyanAccent,
-                            borderRadius: BorderRadius.circular(2),
+                        Text(
+                          '10:00 AM - 11:30 AM',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xFF00d2ff),
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 0.5,
                           ),
                         ),
-                        const SizedBox(width: 15),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '10:00 AM - 11:30 AM',
-                              style: GoogleFonts.poppins(
-                                color: Colors.cyanAccent,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(height: 5),
-                            Text(
-                              'Software Engineering',
-                              style: GoogleFonts.poppins(
-                                color: textColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'Room 301 (Dr. Lee)',
-                              style: GoogleFonts.poppins(
-                                color: subTextColor,
-                                fontSize: 13,
-                              ),
-                            ),
-                          ],
+                        const SizedBox(height: 8),
+                        Text(
+                          'Software Engineering',
+                          style: GoogleFonts.poppins(
+                            color: textColor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Room 301 (Dr. Lee)',
+                          style: GoogleFonts.poppins(
+                            color: subTextColor,
+                            fontSize: 14,
+                          ),
                         ),
                       ],
                     ),
@@ -415,10 +382,11 @@ class _StudentDashboardState extends State<StudentDashboard> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withOpacity(0.2),
         shape: BoxShape.circle,
+        border: Border.all(color: Colors.white.withOpacity(0.5), width: 1),
       ),
-      child: Icon(icon, color: Colors.white, size: 25),
+      child: Icon(icon, color: Colors.white, size: 20),
     );
   }
 
@@ -426,16 +394,20 @@ class _StudentDashboardState extends State<StudentDashboard> {
     return Container(
       width: 250,
       padding: const EdgeInsets.all(15),
-      decoration: AppTheme.glassDecoration(
-        isDark: Provider.of<ThemeProvider>(context, listen: false).isDarkMode,
-        borderRadius: 20,
-        opacity: 0.1,
-      ).copyWith(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: gradientColors,
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: Row(
         children: [
@@ -451,14 +423,14 @@ class _StudentDashboardState extends State<StudentDashboard> {
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13),
+                  style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 3),
                 Text(
                   subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withOpacity(0.8), fontSize: 11),
+                  style: GoogleFonts.poppins(color: Colors.white.withOpacity(0.8), fontSize: 13),
                 ),
               ],
             ),
@@ -472,31 +444,51 @@ class _StudentDashboardState extends State<StudentDashboard> {
     final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
     return GestureDetector(
       onTap: onTap,
-      child: AppTheme.buildGlassCard(
-        isDark: isDark,
-        padding: const EdgeInsets.all(15),
-        customColor: cardColor,
-        opacity: isDark ? 0.05 : 0.4,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+             width: 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              blurRadius: 15,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconBgColor.withOpacity(0.3),
+                color: iconColor.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
-              child: Icon(icon, color: iconColor, size: 24),
+              child: Icon(icon, color: iconColor, size: 26),
             ),
-            const SizedBox(height: 12),
-            Text(
-              title,
-               style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 14),
+            const SizedBox(height: 10),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 13),
+              ),
             ),
-            const SizedBox(height: 4),
-             Text(
-              subtitle,
-               style: GoogleFonts.poppins(color: subTextColor, fontSize: 12),
+            const SizedBox(height: 2),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                subtitle,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+              ),
             ),
           ],
         ),

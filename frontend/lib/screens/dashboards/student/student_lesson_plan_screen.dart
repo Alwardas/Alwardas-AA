@@ -43,7 +43,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
 
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}'),
+        Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&userId=${user['id']}'),
       );
       if (response.statusCode == 200) {
         final decoded = json.decode(response.body);

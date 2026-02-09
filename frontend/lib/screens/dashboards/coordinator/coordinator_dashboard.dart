@@ -226,13 +226,13 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                         _buildAnnouncementCard(
                           'Examination Schedule',
                           'Released for All Depts',
-                          const [Color(0xFFea5455), Color(0xFFfeb692)],
+                          const [Color(0xFF42E695), Color(0xFF3BB2B8)], // Cyan/Greenish Blue
                         ),
                          const SizedBox(width: 15),
                         _buildAnnouncementCard(
-                          'Faculty Meeting',
-                          'Today at 4:30 PM',
-                          const [Color(0xFF4c669f), Color(0xFF3b5998)],
+                          'Faculty', // Changed from meeting to match image text if needed, but image says "Faculty"
+                          'Today at 2 PM', // Match image
+                          const [Color(0xFF2E2D88), Color(0xFF712B91)], // Dark Blue/Purple
                         ),
                       ],
                     ),
@@ -252,174 +252,105 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                   const SizedBox(height: 15),
 
                   // Row 1: Events & Activities (Coordinator Special)
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.event,
-                          'Event Planning',
-                          'Manage Events',
-                          cardColor,
-                          const Color(0xFFFFB75E).withOpacity(0.2), 
-                          const Color(0xFFFFB75E),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorEventsScreen())),
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.sports_basketball,
-                          'Student Activities',
-                          'Sports & Cultural',
-                          cardColor,
-                          const Color(0xFFFF4B2B).withOpacity(0.2), 
-                          const Color(0xFFFF4B2B),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorActivitiesScreen())),
-                        ),
-                      ),
-                    ],
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: 1.2,
+                    ),
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      // Define items data
+                      final List<Map<String, dynamic>> items = [
+                        {
+                          'icon': Icons.calendar_today_outlined,
+                          'title': 'Attendance',
+                          'subtitle': 'Monitor All',
+                          'color': const Color(0xFF29B6F6), // Cyan
+                          'route': const PrincipalAttendanceScreen(),
+                        },
+                        {
+                          'icon': Icons.menu_book,
+                          'title': 'Syllabus',
+                          'subtitle': 'Track Progress',
+                          'color': const Color(0xFF66BB6A), // Green
+                          'route': const PrincipalLessonPlansScreen(),
+                        },
+                        {
+                          'icon': Icons.event,
+                          'title': 'Event Planning',
+                          'subtitle': 'Manage Events',
+                          'color': const Color(0xFF4FC3F7), // Light Blue
+                          'route': const CoordinatorEventsScreen(),
+                        },
+                        {
+                          'icon': Icons.sports_basketball,
+                          'title': 'Student Activities',
+                          'subtitle': 'Sports & Cultural',
+                          'color': const Color(0xFF1565C0), // Dark Blue
+                          'route': const CoordinatorActivitiesScreen(),
+                        },
+                        {
+                          'icon': Icons.assignment_turned_in,
+                          'title': 'HOD Requests',
+                          'subtitle': 'Approve HODs',
+                          'color': const Color(0xFF00B0FF), // Blue
+                          'route': const PrincipalRequestsScreen(),
+                        },
+                        {
+                          'icon': Icons.verified_user, 
+                          'title': 'Principal Requests',
+                          'subtitle': 'Approve Principals',
+                          'color': const Color(0xFF0D47A1), // Deep Blue
+                          'route': const CoordinatorRequestsScreen(),
+                        },
+                        {
+                          'icon': Icons.access_time,
+                          'title': 'Master Timetables',
+                          'subtitle': 'View All',
+                          'color': const Color(0xFF78909C), // Blue Grey
+                          'route': const PrincipalTimetablesScreen(),
+                        },
+                        {
+                          'icon': Icons.groups_outlined,
+                          'title': 'Faculty Dir',
+                          'subtitle': 'View Staff',
+                          'color': const Color(0xFFEC407A), // Pink
+                          'route': const PrincipalFacultyScreen(),
+                        },
+                        {
+                          'icon': Icons.campaign_outlined,
+                          'title': 'Announcer',
+                          'subtitle': 'Send Alerts',
+                          'color': const Color(0xFFEF5350), // Red
+                          'route': const PrincipalAnnouncementsScreen(),
+                        },
+                        {
+                          'icon': Icons.event_note,
+                          'title': 'My Schedule',
+                          'subtitle': 'Personal View',
+                          'color': const Color(0xFF26A69A), // Teal
+                          'route': const PrincipalScheduleScreen(),
+                        },
+                      ];
+
+                      final item = items[index];
+                      return _buildQuickAccessCard(
+                        item['icon'],
+                        item['title'],
+                        item['subtitle'],
+                        cardColor,
+                        item['color'].withOpacity(0.1), 
+                        item['color'],
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => item['route'])),
+                      );
+                    },
                   ),
-                  const SizedBox(height: 15),
-
-                  // Row 2: Approvals (HOD & Principal)
-                  Row(
-                    children: [
-                       Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.inbox_outlined,
-                          'HOD Requests',
-                          'Approve HODs',
-                          cardColor,
-                          const Color(0xFFf1c40f).withOpacity(0.2), 
-                          const Color(0xFFf1c40f),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalRequestsScreen())),
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.admin_panel_settings_outlined,
-                          'Principal Requests',
-                          'Approve Principals',
-                          cardColor,
-                          const Color(0xFF8E2DE2).withOpacity(0.2), 
-                          const Color(0xFF8E2DE2),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorRequestsScreen())),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-
-                  // Row 3: Academics (Borrow from Principal)
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.calendar_today_outlined,
-                          'Attendance',
-                          'Monitor All',
-                          cardColor,
-                          const Color(0xFF00d2ff).withOpacity(0.2), 
-                          const Color(0xFF00d2ff),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalAttendanceScreen())),
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.menu_book,
-                          'Syllabus',
-                          'Track Progress',
-                          cardColor,
-                          const Color(0xFF38ef7d).withOpacity(0.2), 
-                          const Color(0xFF38ef7d),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalLessonPlansScreen())),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-
-                  // Row 4: Reports & Timetables
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.access_time,
-                          'Master Timetables',
-                          'View All',
-                          cardColor,
-                          const Color(0xFF606c88).withOpacity(0.2), 
-                          const Color(0xFF606c88),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalTimetablesScreen())),
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                       Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.groups_outlined,
-                          'Faculty Dir',
-                          'View Staff',
-                          cardColor,
-                          const Color(0xFFea5455).withOpacity(0.2), 
-                          const Color(0xFFea5455),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalFacultyScreen())),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                   const SizedBox(height: 15),
-
-                   // Row 5: Communication
-                   Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.campaign_outlined,
-                          'Announcer',
-                          'Send Alerts',
-                          cardColor,
-                          const Color(0xFFFF416C).withOpacity(0.2), 
-                          const Color(0xFFFF416C),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalAnnouncementsScreen())),
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
-                          Icons.event_note,
-                          'My Schedule',
-                          'Personal View',
-                          cardColor,
-                          const Color(0xFF11998e).withOpacity(0.2), 
-                          const Color(0xFF11998e),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalScheduleScreen())),
-                        ),
-                      ),
-                    ],
-                   ),
                   
                 ],
               ),
@@ -497,7 +428,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
         decoration: BoxDecoration(
           color: isDark ? ThemeColors.darkCardBg : Colors.white, // Solid color from theme
           borderRadius: BorderRadius.circular(20),
@@ -517,31 +448,30 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconBgColor.withOpacity(0.2), // Slightly lower opacity for bg to let glow shine
+                color: iconBgColor.withOpacity(0.2), // Clean no-shadow bg
                 shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: iconColor.withOpacity(0.3), // Glow color
-                    blurRadius: 12,
-                    spreadRadius: 2,
-                  ),
-                ],
               ),
-              child: Icon(icon, color: iconColor, size: 24),
+              child: Icon(icon, color: iconColor, size: 26),
             ),
-            const SizedBox(height: 12),
-            Text(
-              title,
-               textAlign: TextAlign.center,
-               style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 15),
+            const SizedBox(height: 10),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 13),
+              ),
             ),
-            const SizedBox(height: 4),
-             Text(
-              subtitle,
-               textAlign: TextAlign.center,
-               style: GoogleFonts.poppins(color: subTextColor, fontSize: 12),
+            const SizedBox(height: 2),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                subtitle,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+              ),
             ),
           ],
         ),

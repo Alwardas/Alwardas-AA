@@ -93,6 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
               'year': data['year'],
               'semester': data['semester'], 
               'batch_no': data['batch_no'],
+              'section': data['section'],
              };
 
              // CHECK FOR PROIFLE UPDATE REQUEST (Self-Verification)

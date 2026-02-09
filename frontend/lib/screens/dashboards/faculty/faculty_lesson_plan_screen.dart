@@ -11,12 +11,14 @@ class FacultyLessonPlanScreen extends StatefulWidget {
   final String subjectId;
   final String subjectName; 
   final String facultyName;
+  final String? section;
 
   const FacultyLessonPlanScreen({
     super.key, 
     required this.subjectId, 
     this.subjectName = 'Lesson Plan',
     this.facultyName = 'Unknown Faculty',
+    this.section,
   });
 
   @override
@@ -42,9 +44,11 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
     if (user == null) return;
 
     try {
-      final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}'),
-      );
+      String url = '${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}';
+      if (widget.section != null) {
+        url += '&section=${widget.section}';
+      }
+      final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
         final decoded = json.decode(response.body);
         if (mounted) {
@@ -105,7 +109,8 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode({
             'itemId': itemId,
-            'completed': newStatus
+            'completed': newStatus,
+            'section': widget.section
           })
         );
         

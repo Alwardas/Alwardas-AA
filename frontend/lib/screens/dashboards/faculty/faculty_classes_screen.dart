@@ -15,7 +15,8 @@ import '../../../core/theme/app_theme.dart';
 import 'faculty_add_subject_screen.dart';
 
 class FacultyClassesScreen extends StatefulWidget {
-  const FacultyClassesScreen({super.key});
+  final VoidCallback? onBack;
+  const FacultyClassesScreen({super.key, this.onBack});
 
   @override
   _FacultyClassesScreenState createState() => _FacultyClassesScreenState();
@@ -214,7 +215,13 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
             )
           : IconButton(
               icon: Icon(Icons.arrow_back, color: textColor),
-              onPressed: () => Navigator.pop(context),
+              onPressed: () {
+                if (widget.onBack != null) {
+                  widget.onBack!();
+                } else {
+                  Navigator.pop(context);
+                }
+              },
             ),
         title: Text(
           _isDeleteMode ? "${_idsToDelete.length} Selected" : "My Courses",
@@ -373,9 +380,10 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
                context,
                MaterialPageRoute(
                  builder: (context) => FacultyLessonPlanScreen(
-                   subjectId: item['id'].toString(), 
+                   subjectId: item['subjectId']?.toString() ?? item['id'].toString(), 
                    subjectName: item['name'] ?? 'Subject',
                    facultyName: _facultyName.isNotEmpty ? _facultyName : 'You',
+                   section: item['section'],
                  ),
                ),
              );

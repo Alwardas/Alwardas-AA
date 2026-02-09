@@ -112,7 +112,7 @@ class _HodDashboardState extends State<HodDashboard> {
 
     return Column(
       children: [
-        // 1. Header Section - Fixed at Top
+        // 1. Header Section
         Container(
           padding: EdgeInsets.only(
             top: MediaQuery.of(context).padding.top + 10, 
@@ -123,8 +123,8 @@ class _HodDashboardState extends State<HodDashboard> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: isDark ? AppTheme.darkHeaderGradient : AppTheme.lightHeaderGradient,
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(40),
@@ -141,10 +141,11 @@ class _HodDashboardState extends State<HodDashboard> {
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
                          Text(
-                           'Welcome back,', 
+                           'Welcome Back,', 
                            style: GoogleFonts.poppins(
-                             color: Colors.white.withOpacity(0.8),
+                             color: Colors.white70,
                              fontSize: 18,
+                             fontWeight: FontWeight.w600,
                            ),
                          ),
                          FittedBox(
@@ -163,7 +164,7 @@ class _HodDashboardState extends State<HodDashboard> {
                          Text(
                            widget.userData['branch'] ?? 'My Department',
                            style: GoogleFonts.poppins(
-                             color: Colors.white.withOpacity(0.7),
+                             color: Colors.white70,
                              fontSize: 14,
                            ),
                          ),
@@ -244,124 +245,95 @@ class _HodDashboardState extends State<HodDashboard> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  // Row 1
-                  Row(
+
+                  
+                  GridView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: 1.2,
+                    ),
                     children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.people_alt_outlined,
                           'Faculty',
                           'Manage',
                           cardColor,
-                          const Color(0xFF38ef7d).withOpacity(0.2), 
+                          const Color(0xFF38ef7d).withOpacity(0.1), 
                           const Color(0xFF38ef7d),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodFacultyScreen(branch: widget.userData['branch'] ?? 'Computer Engineering'))),
                         ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.schedule,
                           'Timetables',
                           'Oversee',
                           cardColor,
-                          const Color(0xFF606c88).withOpacity(0.2), 
+                          const Color(0xFF606c88).withOpacity(0.1), 
                           const Color(0xFF606c88),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodTimetablesScreen())),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-                  // Row 2
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.description_outlined,
                           'Reports',
                           'View',
                           cardColor,
-                          const Color(0xFF141E30).withOpacity(0.2), 
+                          const Color(0xFF141E30).withOpacity(0.1), 
                           const Color(0xFF243B55),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HODAttendanceScreen())),
                         ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.group_add_outlined,
                           'Branch Requests',
                           'Approve Users',
                           cardColor,
-                          const Color(0xFFe74c3c).withOpacity(0.2), 
+                          const Color(0xFFe74c3c).withOpacity(0.1), 
                           const Color(0xFFe74c3c),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodRequestsScreen())),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-                  // Row 3
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.book,
                           'Courses',
                           'My Plan',
                           cardColor,
-                          Colors.blue.withOpacity(0.2),
+                          Colors.blue.withOpacity(0.1),
                           Colors.blue,
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodCoursesScreen())),
                         ),
-                      ),
-                       const SizedBox(width: 15),
-                       Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.person_outline,
                           'Profile',
                           'Details',
                           cardColor,
-                          const Color(0xFFf1c40f).withOpacity(0.2), 
+                          const Color(0xFFf1c40f).withOpacity(0.1), 
                           const Color(0xFFf1c40f),
                           textColor,
                           subTextColor,
                           onTap: () => setState(() => _selectedIndex = 2),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-                  // Row 4
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _buildQuickAccessCard(
+                        _buildQuickAccessCard(
                           Icons.account_balance,
                           'Our Dept',
                           'Management',
                           cardColor,
-                          Colors.indigo.withOpacity(0.2),
+                          Colors.indigo.withOpacity(0.1),
                           Colors.indigo,
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodDepartmentScreen(userData: widget.userData))),
                         ),
-                      ),
-                      const SizedBox(width: 15),
-                      const Expanded(child: SizedBox()), // Placeholder for balance
                     ],
                   ),
 
@@ -380,12 +352,16 @@ class _HodDashboardState extends State<HodDashboard> {
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: cardColor,
+                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.grey.withOpacity(0.1)),
                       boxShadow: [
-                        BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 5))
-                      ]
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 10,
+                          offset: const Offset(0, 5),
+                        ),
+                      ],
+                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -432,8 +408,9 @@ class _HodDashboardState extends State<HodDashboard> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withOpacity(0.2),
         shape: BoxShape.circle,
+        border: Border.all(color: Colors.white.withOpacity(0.5), width: 1),
       ),
       child: Icon(icon, color: Colors.white, size: 20),
     );
@@ -493,31 +470,51 @@ class _HodDashboardState extends State<HodDashboard> {
     final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
     return GestureDetector(
       onTap: onTap,
-      child: AppTheme.buildGlassCard(
-        isDark: isDark,
-        padding: const EdgeInsets.all(15),
-        customColor: cardColor,
-        opacity: isDark ? 0.05 : 0.4,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+             width: 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              blurRadius: 15,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconBgColor.withOpacity(0.3),
+                color: iconColor.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
-              child: Icon(icon, color: iconColor, size: 24),
+              child: Icon(icon, color: iconColor, size: 26),
             ),
-            const SizedBox(height: 12),
-            Text(
-              title,
-               style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 16),
+            const SizedBox(height: 10),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 13),
+              ),
             ),
-            const SizedBox(height: 4),
-             Text(
-              subtitle,
-               style: GoogleFonts.poppins(color: subTextColor, fontSize: 12),
+            const SizedBox(height: 2),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                subtitle,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+              ),
             ),
           ],
         ),
