@@ -767,18 +767,22 @@ pub async fn get_sections_handler(
     let branch_variations = get_branch_variations(&params.branch);
     let year_pattern = format!("{}%", params.year.trim());
 
+    println!("DEBUG: Fetch sections for Branch: '{}', Variations: {:?}, Year Pattern: '{}'", params.branch, branch_variations, year_pattern);
+
     // Query distinct sections from users table where students exist
     let sections: Vec<String> = sqlx::query_scalar(
         "SELECT DISTINCT section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section IS NOT NULL ORDER BY section ASC"
     )
     .bind(&branch_variations)
-    .bind(year_pattern)
+    .bind(&year_pattern)
     .fetch_all(&state.pool)
     .await
     .map_err(|e| {
         eprintln!("Fetch Sections Error: {:?}", e);
         StatusCode::INTERNAL_SERVER_ERROR
     })?;
+
+    println!("DEBUG: Found sections: {:?}", sections);
 
     Ok(Json(sections))
 }
