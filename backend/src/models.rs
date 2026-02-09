@@ -560,6 +560,8 @@ pub struct AttendanceStatsQuery {
     pub branch: String,
     pub date: String,
     pub session: Option<String>,
+    pub year: Option<String>,
+    pub section: Option<String>,
 }
 
 #[derive(Serialize)]

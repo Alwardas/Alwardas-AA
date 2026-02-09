@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter/services.dart'; // For JSON fallback
 import 'package:http/http.dart' as http;
-
 import 'dart:convert';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:intl/intl.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
@@ -20,25 +18,26 @@ class HODAttendanceScreen extends StatefulWidget {
 }
 
 class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
+  // Overall Stats
   Map<String, dynamic> _stats = {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0};
+  
+  // Detailed Data: Year -> { stats: {total, present, absent}, sections: { name: {stats, isMarked} }, sectionList: [], allMarked: bool }
+  Map<String, dynamic> _detailedStats = {};
+  
   bool _loading = false;
   
+  // Filters
+  String _selectedSession = 'Morning'; // Morning | Afternoon (Removed "All")
+  DateTime _selectedDate = DateTime.now();
+
   // Modal State
   bool _modalVisible = false;
-  String _activeTab = 'add'; // add | remove
+  String _activeTab = 'add'; 
   final _fullNameController = TextEditingController();
   final _studentIdController = TextEditingController();
   String _selectedYear = '1st Year';
   final _removeIdController = TextEditingController();
   bool _submitting = false;
-
-  Map<String, bool> _attendanceStatus = {
-    '1st Year': false,
-    '2nd Year': false,
-    '3rd Year': false
-  };
-
-  String _selectedSession = 'All'; // All | Morning | Afternoon
 
   @override
   void initState() {
@@ -50,9 +49,12 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
     setState(() => _loading = true);
     final user = await AuthService.getUserSession();
     final branch = user?['branch'] ?? 'Computer Engineering';
-    final dateStr = DateTime.now().toIso8601String();
+    final dateStr = DateFormat('yyyy-MM-dd').format(_selectedDate); 
     
     try {
+      // 1. Overall Stats (Aggregated for all years)
+      // Note: The backend /api/attendance/stats with only branch/date/session gives total for branch
+      // We need to ensure we sum up if the backend doesn't handle "all years" implicitly (which it does by default if no year param)
       final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats')
           .replace(queryParameters: {
             'branch': branch,
@@ -61,71 +63,112 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
           });
           
       final res = await http.get(uri);
-      int total = 0;
-      int present = 0;
-      int absent = 0;
-
       if (res.statusCode == 200) {
         final data = json.decode(res.body);
-        total = data['total_students'] ?? 0;
-        present = data['total_present'] ?? 0;
-        absent = data['total_absent'] ?? 0;
+        _stats = {
+          'totalStudents': data['totalStudents'] ?? 0,
+          'totalPresent': data['totalPresent'] ?? 0,
+          'totalAbsent': data['totalAbsent'] ?? 0
+        };
       }
+
+      // 2. Detailed Year & Section Stats
+      Map<String, dynamic> newDetailedStats = {};
       
-      // Fallback: If DB total is 0, use JSON count
-      if (total == 0) {
-         total = await _calculateTotalFromJson(branch);
+      for (String year in ['1st Year', '2nd Year', '3rd Year']) {
+         // A. Fetch Sections
+         final secRes = await http.get(
+           Uri.parse('${ApiConstants.baseUrl}/api/sections').replace(queryParameters: {'branch': branch, 'year': year})
+         );
+         List<String> sections = ['Section A'];
+         if (secRes.statusCode == 200) {
+             sections = List<String>.from(json.decode(secRes.body));
+         }
+
+         // B. Fetch Year Stats
+         final yearStatsRes = await http.get(
+           Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
+             'branch': branch,
+             'year': year,
+             'date': dateStr,
+             'session': _selectedSession
+           })
+         );
+         Map<String, dynamic> yearStatsData = {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0};
+         if (yearStatsRes.statusCode == 200) {
+            yearStatsData = json.decode(yearStatsRes.body);
+         }
+
+         // C. Fetch Stats per Section
+         Map<String, dynamic> sectionMap = {};
+         bool allSectionsMarked = true;
+         
+         for (String section in sections) {
+             final sRes = await http.get(
+               Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
+                 'branch': branch,
+                 'year': year,
+                 'section': section,
+                 'date': dateStr,
+                 'session': _selectedSession
+               })
+             );
+             
+             Map<String, dynamic> sData = {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0};
+             if (sRes.statusCode == 200) {
+                sData = json.decode(sRes.body);
+             }
+             
+             // Check if attendance is marked (Present + Absent > 0)
+             bool isMarked = (sData['totalPresent'] as int) + (sData['totalAbsent'] as int) > 0;
+             if (!isMarked) allSectionsMarked = false;
+
+             sectionMap[section] = {
+               'stats': sData,
+               'isMarked': isMarked
+             };
+         }
+         
+         if (sections.isEmpty) allSectionsMarked = false;
+
+         newDetailedStats[year] = {
+           'stats': yearStatsData,
+           'sections': sectionMap, 
+           'sectionList': sections,
+           'allMarked': allSectionsMarked
+         };
       }
 
       setState(() {
-        _stats = {
-          'totalStudents': total,
-          'totalPresent': present,
-          'totalAbsent': absent
-        };
+        _detailedStats = newDetailedStats;
         _loading = false;
       });
 
     } catch (e) {
-      setState(() => _loading = false);
+      if(mounted) setState(() => _loading = false);
       print("Error fetching stats: $e");
     }
   }
 
-  Future<int> _calculateTotalFromJson(String branchName) async {
-      try {
-        String branchKey = 'cme'; 
-        final b = branchName.toLowerCase();
-        if (b.contains('computer')) branchKey = 'cme';
-        else if (b.contains('civil')) branchKey = 'civil';
-        else if (b.contains('electrical')) branchKey = 'eee';
-        else if (b.contains('electronics')) branchKey = 'ece';
-        else if (b.contains('mechanical')) branchKey = 'mech';
-
-        final files = ['2025-2028_students.json', '2024-2027_students.json', '2023-2026_students.json'];
-        int count = 0;
-
-        for (String file in files) {
-           try {
-             final String content = await rootBundle.loadString('assets/data/json/$file');
-             final Map<String, dynamic> data = json.decode(content);
-             data.forEach((year, branches) {
-                if (branches is Map && branches.containsKey(branchKey)) {
-                   count += (branches[branchKey] as List).length;
-                }
-             });
-           } catch (_) {}
-        }
-        return count > 0 ? count : 0; 
-      } catch (e) {
-        return 0;
-      }
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate,
+      firstDate: DateTime(2020),
+      lastDate: DateTime.now(),
+    );
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+      });
+      _fetchStats();
+    }
   }
 
   Future<void> _handleAddStudent() async {
      setState(() => _submitting = true);
      final user = await AuthService.getUserSession();
-     final branch = user?['branch'] ?? 'Computer Engineering'; // Use full name for consistency if needed, or normalizing backend handles it
+     final branch = user?['branch'] ?? 'Computer Engineering'; 
      
      if (_fullNameController.text.isEmpty || _studentIdController.text.isEmpty) {
         _showSnackBar("Please fill all fields");
@@ -142,7 +185,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
            'studentId': _studentIdController.text,
            'branch': branch,
            'year': _selectedYear,
-           'section': 'Section A' // Default to Section A as it's the primary view
+           'section': 'Section A' 
          })
        );
 
@@ -153,9 +196,8 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
              _fullNameController.clear();
              _studentIdController.clear();
           });
-          _fetchStats(); // Refresh stats
+          _fetchStats(); 
        } else {
-          // Try parse error
           try {
              final err = json.decode(res.body);
              _showSnackBar("Failed: ${err['error']}");
@@ -171,7 +213,6 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
   }
 
   Future<void> _handleRemoveStudent() async {
-     // Backend connection removed
      _showSnackBar("Feature disabled");
   }
 
@@ -190,11 +231,8 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
     final iconBg = isDark ? ThemeColors.darkIconBg : ThemeColors.lightIconBg;
     final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
     
-    // Determine Absent Display Text
-    // If no attendance submitted (Present=0 & Absent=0), show '-'
-    // Note: This logic assumes 'totalStudents' > 0. If 0 students, '0' is fine.
     bool noAttendance = (_stats['totalPresent'] == 0 && _stats['totalAbsent'] == 0);
-    String absentText = noAttendance && _stats['totalStudents'] > 0 ? "-" : _stats['totalAbsent'].toString();
+    String absentText = noAttendance && (_stats['totalStudents'] ?? 0) > 0 ? "-" : _stats['totalAbsent'].toString();
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -218,49 +256,81 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
-    // Session Selector
+                    // Filter Row: Session Selector + Date Picker
                     Container(
                       margin: const EdgeInsets.only(bottom: 20),
-                      padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: cardColor,
-                        borderRadius: BorderRadius.circular(25),
-                        border: Border.all(color: iconBg)
-                      ),
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: ['All', 'Morning', 'Afternoon'].map((session) {
-                            final isSelected = _selectedSession == session;
-                            return GestureDetector(
-                              onTap: () {
-                                setState(() => _selectedSession = session);
-                                _fetchStats();
-                              },
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 200),
-                                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                                decoration: BoxDecoration(
-                                  color: isSelected ? tint : Colors.transparent,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Text(
-                                  session, 
-                                  style: GoogleFonts.poppins(
-                                    color: isSelected ? Colors.white : textColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14
-                                  )
-                                ),
+                      child: Row(
+                        children: [
+                          // Session Segmented Control (Morning/Afternoon)
+                          Expanded(
+                            child: Container(
+                              padding: const EdgeInsets.all(4),
+                              decoration: BoxDecoration(
+                                color: cardColor,
+                                borderRadius: BorderRadius.circular(25),
+                                border: Border.all(color: iconBg)
                               ),
-                            );
-                          }).toList(),
-                        ),
+                              child: Row(
+                                children: ['Morning', 'Afternoon'].map((session) {
+                                  final isSelected = _selectedSession == session;
+                                  return Expanded(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        setState(() => _selectedSession = session);
+                                        _fetchStats();
+                                      },
+                                      child: AnimatedContainer(
+                                        duration: const Duration(milliseconds: 200),
+                                        padding: const EdgeInsets.symmetric(vertical: 10),
+                                        alignment: Alignment.center,
+                                        decoration: BoxDecoration(
+                                          color: isSelected ? tint : Colors.transparent,
+                                          borderRadius: BorderRadius.circular(20),
+                                        ),
+                                        child: Text(
+                                          session, 
+                                          style: GoogleFonts.poppins(
+                                            color: isSelected ? Colors.white : textColor,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14
+                                          )
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }).toList(),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 15),
+                          
+                          // Date Picker
+                          GestureDetector(
+                            onTap: () => _selectDate(context),
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+                              decoration: BoxDecoration(
+                                color: cardColor,
+                                borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: iconBg)
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.calendar_today, color: tint, size: 20),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    DateFormat('MMM dd').format(_selectedDate),
+                                    style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold)
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
                       ),
                     ),
 
-                    // Stats
+                    // Overall Stats
                     Row(
                       children: [
                          _buildStatCard("Total", _stats['totalStudents'].toString(), Colors.blue),
@@ -272,136 +342,82 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                     ),
                     const SizedBox(height: 30),
                     
-                    Text("Select Year to View/Manage", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
+                    Text("Year-wise Attendance", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
                     const SizedBox(height: 20),
                     
+                    if (_loading) 
+                        const Padding(padding: EdgeInsets.all(20), child: CircularProgressIndicator())
+                    else
                     ...['1st Year', '2nd Year', '3rd Year'].map((year) {
-                       final isMarked = _attendanceStatus[year] ?? false; 
-                       return GestureDetector(
-                         onTap: () async {
-                           final user = await AuthService.getUserSession();
-                           if (user == null) return;
-                           
-                           final prefs = await SharedPreferences.getInstance();
-                           final key = 'sections_${user['branch']}_$year';
-                           final List<String> sections = prefs.getStringList(key) ?? ['Section A'];
-                           
-                           if (!mounted) return;
+                       final data = _detailedStats[year] ?? {};
+                       final stats = data['stats'] ?? {'totalStudents': 0, 'totalPresent': 0, 'totalAbsent': 0};
+                       final allMarked = data['allMarked'] ?? false;
+                       final sections = data['sectionList'] as List<String>? ?? ['Section A'];
 
-                           showDialog(
-                             context: context,
-                             builder: (ctx) => Dialog(
-                               backgroundColor: Colors.transparent,
-                               child: Container(
-                                 padding: const EdgeInsets.all(25),
-                                 decoration: BoxDecoration(
-                                   color: Colors.white,
-                                   borderRadius: BorderRadius.circular(20),
-                                   boxShadow: [
-                                     BoxShadow(
-                                       color: Colors.black.withOpacity(0.15),
-                                       blurRadius: 20,
-                                       offset: const Offset(0, 10),
-                                     )
-                                   ],
-                                 ),
-                                 child: SingleChildScrollView(
-                                   child: Column(
-                                     mainAxisSize: MainAxisSize.min,
-                                     crossAxisAlignment: CrossAxisAlignment.start,
-                                     children: [
-                                       Row(
-                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                         children: [
-                                           Text("Select Section", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: const Color(0xFF1e1e2d))),
-                                           Row(
-                                             children: [
-                                               IconButton(
-                                                 icon: const Icon(Icons.add_circle, color: Colors.blue),
-                                                 onPressed: () async {
-                                                    Navigator.pop(ctx);
-                                                    final n = await showDialog<String>(context: context, builder: (c) {
-                                                      String v = "";
-                                                      return AlertDialog(
-                                                        title: const Text("New Section"), 
-                                                        content: TextField(autofocus: true, decoration: const InputDecoration(hintText: "Section Name"), onChanged: (val)=>v=val),
-                                                        actions: [TextButton(onPressed:()=>Navigator.pop(c), child: const Text("Cancel")), ElevatedButton(onPressed:()=>Navigator.pop(c,v), child: const Text("Create"))]
-                                                      );
-                                                    });
-                                                    if (n != null && n.isNotEmpty) {
-                                                       final updated = List<String>.from(sections)..add(n);
-                                                       await prefs.setStringList(key, updated);
-                                                       _showSnackBar("Created $n");
-                                                    }
-                                                 },
-                                               ),
-                                               IconButton(onPressed: () => Navigator.pop(ctx), icon: const Icon(Icons.close, color: Color(0xFF1e1e2d)))
-                                             ],
-                                           )
-                                         ],
-                                       ),
-                                       Text(year, style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 14)),
-                                       const SizedBox(height: 25),
-                                       ...sections.map((section) => Container(
-                                         margin: const EdgeInsets.only(bottom: 12),
-                                         decoration: BoxDecoration(
-                                           color: const Color(0xFFf8f9fa),
-                                           borderRadius: BorderRadius.circular(15),
-                                           border: Border.all(color: tint.withOpacity(0.2)),
-                                         ),
-                                         child: ListTile(
-                                           title: Text(section, style: GoogleFonts.poppins(color: const Color(0xFF1e1e2d), fontWeight: FontWeight.w600)),
-                                           leading: Container(
-                                             padding: const EdgeInsets.all(8),
-                                             decoration: BoxDecoration(color: tint.withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
-                                             child: Icon(Icons.class_, color: tint, size: 20),
-                                           ),
-                                           trailing: Icon(Icons.arrow_forward_ios, size: 14, color: tint),
-                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                                           onTap: () async {
-                                             Navigator.pop(ctx);
-                                             await Navigator.push(context, MaterialPageRoute(builder: (_) => HODManageAttendanceScreen(year: year, initialSession: _selectedSession, section: section)));
-                                             _fetchStats();
-                                           },
-                                         ),
-                                       )),
-                                       const SizedBox(height: 10),
-                                     ],
-                                   ),
-                                 ),
-                               ),
-                             )
-                           );
+                       // Calculate Absent text for the year
+                       // If Present=0 and Absent=0, show '-' if there are students
+                       bool yearNoAtt = (stats['totalPresent'] == 0 && stats['totalAbsent'] == 0);
+                       String yearAbsentStr = yearNoAtt && (stats['totalStudents'] ?? 0) > 0 ? "-" : stats['totalAbsent'].toString();
+
+                       return GestureDetector(
+                         onTap: () {
+                           _showSectionDialog(context, year, sections, data['sections'] ?? {});
                          },
                          child: Container(
                            margin: const EdgeInsets.only(bottom: 15),
                            padding: const EdgeInsets.all(20),
                            decoration: BoxDecoration(
-                             color: isMarked ? Colors.green.withOpacity(0.1) : cardColor,
-                             border: Border.all(color: isMarked ? Colors.green : iconBg),
+                             color: allMarked ? Colors.green.withOpacity(0.1) : cardColor,
+                             border: Border.all(color: allMarked ? Colors.green : iconBg),
                              borderRadius: BorderRadius.circular(15),
+                             boxShadow: [
+                               if (isDark) BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 5, offset: const Offset(0,2))
+                             ]
                            ),
-                           child: Row(
+                           child: Column(
                              children: [
+                               Row(
+                                 children: [
+                                   Container(
+                                     padding: const EdgeInsets.all(12),
+                                     decoration: BoxDecoration(color: allMarked ? Colors.green.withOpacity(0.2) : iconBg, borderRadius: BorderRadius.circular(12)),
+                                     child: Icon(Icons.school, color: allMarked ? Colors.green : tint, size: 24),
+                                   ),
+                                   const SizedBox(width: 15),
+                                   Expanded(
+                                     child: Column(
+                                       crossAxisAlignment: CrossAxisAlignment.start,
+                                       children: [
+                                         Text(year, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                                         if (allMarked)
+                                           Text("All Sections Marked", style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 12)) 
+                                         else
+                                           Text("Tap to View/Manage", style: GoogleFonts.poppins(color: subTextColor, fontSize: 12)),
+                                       ],
+                                     ),
+                                   ),
+                                   Icon(Icons.chevron_right, color: allMarked ? Colors.green : subTextColor)
+                                 ],
+                               ),
+                               const SizedBox(height: 15),
+                               // Granular Stats for Year
                                Container(
-                                 padding: const EdgeInsets.all(12),
-                                 decoration: BoxDecoration(color: isMarked ? Colors.green.withOpacity(0.2) : iconBg, borderRadius: BorderRadius.circular(12)),
-                                 child: Icon(Icons.calendar_today, color: isMarked ? Colors.green : tint),
-                               ),
-                               const SizedBox(width: 15),
-                               Expanded(
-                                 child: Column(
-                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                   children: [
-                                     Text(year, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
-                                     if (isMarked)
-                                       Text("Attendance Marked", style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 12)) 
-                                     else
-                                       Text("Mark Attendance", style: GoogleFonts.poppins(color: subTextColor)),
-                                   ],
+                                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                                 decoration: BoxDecoration(
+                                   color: isDark ? const Color(0xFF1E1E2D).withOpacity(0.5) : Colors.white.withOpacity(0.5),
+                                   borderRadius: BorderRadius.circular(10)
                                  ),
-                               ),
-                               Icon(Icons.chevron_right, color: isMarked ? Colors.green : subTextColor)
+                                 child: Row(
+                                     mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                     children: [
+                                       _buildMiniStat("Total", stats['totalStudents'].toString(), subTextColor),
+                                       Container(height: 20, width: 1, color: iconBg),
+                                       _buildMiniStat("Present", stats['totalPresent'].toString(), Colors.green),
+                                       Container(height: 20, width: 1, color: iconBg),
+                                       _buildMiniStat("Absent", yearAbsentStr, Colors.red),
+                                     ],
+                                 ),
+                               )
                              ],
                            ),
                          ),
@@ -435,13 +451,8 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
             ),
             onPressed: () {
                ScaffoldMessenger.of(context).showSnackBar(
-                 const SnackBar(
-                   content: Text("Generating PDF Report..."),
-                   duration: Duration(seconds: 1),
-                 )
+                 const SnackBar(content: Text("Generating PDF Report..."), duration: Duration(seconds: 1))
                );
-               
-               // Simulate PDF generation delay
                Future.delayed(const Duration(seconds: 2), () {
                   if (mounted) {
                     showDialog(
@@ -449,9 +460,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                       builder: (ctx) => AlertDialog(
                         title: const Text("Success"),
                         content: const Text("Report has been downloaded successfully to /Download/Alwardas_Report_Dec2025.pdf"),
-                        actions: [
-                          TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Open"))
-                        ],
+                        actions: [TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Open"))],
                       )
                     );
                   }
@@ -460,6 +469,117 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  void _showSectionDialog(BuildContext context, String year, List<String> sections, Map<String, dynamic> sectionsData) {
+      showDialog(
+        context: context,
+        builder: (ctx) => Dialog(
+          backgroundColor: Colors.transparent,
+          child: Container(
+            padding: const EdgeInsets.all(25),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(color: Colors.black.withOpacity(0.15), blurRadius: 20, offset: const Offset(0, 10))
+              ],
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Select Section", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: const Color(0xFF1e1e2d))),
+                      Row(
+                        children: [
+                             IconButton(
+                               icon: const Icon(Icons.add_circle, color: Colors.blue),
+                               onPressed: () async {
+                                  Navigator.pop(ctx);
+                                  final n = await showDialog<String>(context: context, builder: (c) {
+                                    String v = "";
+                                    return AlertDialog(
+                                      title: const Text("New Section"), 
+                                      content: TextField(autofocus: true, decoration: const InputDecoration(hintText: "Section Name"), onChanged: (val)=>v=val),
+                                      actions: [TextButton(onPressed:()=>Navigator.pop(c), child: const Text("Cancel")), ElevatedButton(onPressed:()=>Navigator.pop(c,v), child: const Text("Create"))]
+                                    );
+                                  });
+                                  if (n != null && n.isNotEmpty) {
+                                      final user = await AuthService.getUserSession();
+                                      _showSnackBar("Section creation requires backend update.");
+                                  }
+                               },
+                             ),
+                             IconButton(onPressed: () => Navigator.pop(ctx), icon: const Icon(Icons.close, color: Color(0xFF1e1e2d)))
+                        ],
+                      )
+                    ],
+                  ),
+                  Text(year, style: GoogleFonts.poppins(color: Colors.grey[600], fontSize: 14)),
+                  const SizedBox(height: 25),
+                  ...sections.map((section) {
+                     final sInfo = sectionsData[section] ?? {};
+                     final isMarked = sInfo['isMarked'] == true;
+                     final stats = sInfo['stats'] ?? {};
+                     
+                     // Helper for absent text
+                     bool secNoAtt = ((stats['totalPresent'] ?? 0) == 0 && (stats['totalAbsent'] ?? 0) == 0);
+                     String secAbsentStr = secNoAtt && (stats['totalStudents'] ?? 0) > 0 ? "-" : stats['totalAbsent'].toString();
+
+                     return Container(
+                       margin: const EdgeInsets.only(bottom: 12),
+                       decoration: BoxDecoration(
+                         color: isMarked ? Colors.green.withOpacity(0.1) : const Color(0xFFf8f9fa),
+                         borderRadius: BorderRadius.circular(15),
+                         border: Border.all(color: isMarked ? Colors.green : Colors.blue.withOpacity(0.2)), 
+                       ),
+                       child: Column(
+                         children: [
+                           ListTile(
+                             title: Text(section, style: GoogleFonts.poppins(color: const Color(0xFF1e1e2d), fontWeight: FontWeight.w600)),
+                             trailing: Icon(Icons.arrow_forward_ios, size: 14, color: isMarked ? Colors.green : Colors.blue),
+                             onTap: () async {
+                               Navigator.pop(ctx);
+                               await Navigator.push(context, MaterialPageRoute(builder: (_) => HODManageAttendanceScreen(year: year, initialSession: _selectedSession, section: section)));
+                               _fetchStats();
+                             },
+                           ),
+                           // Mini Stats for Section
+                           Padding(
+                             padding: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceAround,
+                               children: [
+                                 Text("T: ${stats['totalStudents']}", style: TextStyle(fontSize: 12, color: Colors.grey[800])),
+                                 Text("P: ${stats['totalPresent']}", style: TextStyle(fontSize: 12, color: Colors.green)),
+                                 Text("A: $secAbsentStr", style: TextStyle(fontSize: 12, color: Colors.red)),
+                               ],
+                             ),
+                           )
+                         ],
+                       ),
+                     );
+                  }),
+                  const SizedBox(height: 10),
+                ],
+              ),
+            ),
+          ),
+        )
+      );
+  }
+
+  Widget _buildMiniStat(String label, String value, Color color) {
+    return Column(
+      children: [
+        Text(value, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: color)),
+        Text(label, style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
+      ],
     );
   }
 

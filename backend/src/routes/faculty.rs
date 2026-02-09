@@ -307,7 +307,8 @@ pub async fn submit_attendance_handler(
     let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d")
          .map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": format!("Invalid Date format, got: {}", payload.date)}))))?;
 
-    let student_row = sqlx::query("SELECT login_id, full_name, branch, year FROM users WHERE id = $1")
+    // Added 'section' to selection
+    let student_row = sqlx::query("SELECT login_id, full_name, branch, year, section FROM users WHERE id = $1")
         .bind(student_uuid)
         .fetch_one(&state.pool)
         .await
@@ -323,11 +324,13 @@ pub async fn submit_attendance_handler(
     let s_name: String = student_row.get("full_name");
     let s_branch: Option<String> = student_row.get("branch");
     let s_year: Option<String> = student_row.get("year");
+    let s_section: Option<String> = student_row.get("section"); // Get section
     
     let session = payload.session.clone().unwrap_or_else(|| "MORNING".to_string());
     let db_status = if payload.status.to_uppercase().starts_with('P') { "P" } else { "A" };
 
-    sqlx::query("INSERT INTO attendance (student_uuid, faculty_uuid, date, status, branch, year, session, student_name, student_login_id, faculty_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)")
+    // Added 'section' to INSERT
+    sqlx::query("INSERT INTO attendance (student_uuid, faculty_uuid, date, status, branch, year, session, section, student_name, student_login_id, faculty_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)")
         .bind(student_uuid)
         .bind(faculty_uuid)
         .bind(date)
@@ -335,6 +338,7 @@ pub async fn submit_attendance_handler(
         .bind(s_branch.clone().unwrap_or_default())
         .bind(s_year.unwrap_or_default())
         .bind(&session)
+        .bind(s_section.unwrap_or_else(|| "Section A".to_string())) // Bind section
         .bind(s_name)
         .bind(s_login)
         .bind(faculty_name)
@@ -543,34 +547,80 @@ pub async fn get_attendance_stats_handler(
     let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d").map_err(|_| StatusCode::BAD_REQUEST)?;
     let normalized = normalize_branch(&params.branch);
     
-    let total_students: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM users WHERE role = 'Student' AND branch = $1 AND is_approved = true")
-        .bind(&normalized)
+    // 1. Total Students
+    let mut qb_users = sqlx::QueryBuilder::new("SELECT COUNT(*) FROM users WHERE role = 'Student' AND branch = ");
+    qb_users.push_bind(&normalized);
+    qb_users.push(" AND is_approved = true");
+    
+    if let Some(y) = &params.year {
+        qb_users.push(" AND year = ");
+        qb_users.push_bind(y);
+    }
+    if let Some(s) = &params.section {
+        qb_users.push(" AND section = ");
+        qb_users.push_bind(s);
+    }
+    
+    let total_students: i64 = qb_users.build_query_scalar()
         .fetch_one(&state.pool)
         .await
         .unwrap_or(0);
     
-    let total_present: i64;
-    let total_absent: i64;
-    
+    // 2. Present
+    let mut qb_present = sqlx::QueryBuilder::new("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = ");
+    qb_present.push_bind(&normalized);
+    qb_present.push(" AND date = ");
+    qb_present.push_bind(date);
+    qb_present.push(" AND status = 'P'");
+
     if let Some(sess) = &params.session {
-        let session_val = sess.trim().to_uppercase();
-        if session_val == "ALL" || session_val.is_empty() {
-            total_present = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND status = 'P'")
-                .bind(&normalized).bind(date).fetch_one(&state.pool).await.unwrap_or(0);
-            total_absent = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND status = 'A'")
-                .bind(&normalized).bind(date).fetch_one(&state.pool).await.unwrap_or(0);
-        } else {
-            total_present = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND session = $3 AND status = 'P'")
-                .bind(&normalized).bind(date).bind(&session_val).fetch_one(&state.pool).await.unwrap_or(0);
-            total_absent = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND session = $3 AND status = 'A'")
-                .bind(&normalized).bind(date).bind(&session_val).fetch_one(&state.pool).await.unwrap_or(0);
+        let s_val = sess.trim().to_uppercase();
+        if s_val != "ALL" && !s_val.is_empty() {
+             qb_present.push(" AND session = ");
+             qb_present.push_bind(s_val);
         }
-    } else {
-        total_present = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND status = 'P'")
-            .bind(&normalized).bind(date).fetch_one(&state.pool).await.unwrap_or(0);
-        total_absent = sqlx::query_scalar("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = $1 AND date = $2 AND status = 'A'")
-            .bind(&normalized).bind(date).fetch_one(&state.pool).await.unwrap_or(0);
     }
+    if let Some(y) = &params.year {
+        qb_present.push(" AND year = ");
+        qb_present.push_bind(y);
+    }
+    if let Some(s) = &params.section {
+        qb_present.push(" AND section = ");
+        qb_present.push_bind(s);
+    }
+
+    let total_present: i64 = qb_present.build_query_scalar()
+        .fetch_one(&state.pool)
+        .await
+        .unwrap_or(0);
+
+    // 3. Absent
+    let mut qb_absent = sqlx::QueryBuilder::new("SELECT COUNT(DISTINCT student_uuid) FROM attendance WHERE branch = ");
+    qb_absent.push_bind(&normalized);
+    qb_absent.push(" AND date = ");
+    qb_absent.push_bind(date);
+    qb_absent.push(" AND status = 'A'");
+
+    if let Some(sess) = &params.session {
+        let s_val = sess.trim().to_uppercase();
+        if s_val != "ALL" && !s_val.is_empty() {
+             qb_absent.push(" AND session = ");
+             qb_absent.push_bind(s_val);
+        }
+    }
+    if let Some(y) = &params.year {
+        qb_absent.push(" AND year = ");
+        qb_absent.push_bind(y);
+    }
+    if let Some(s) = &params.section {
+        qb_absent.push(" AND section = ");
+        qb_absent.push_bind(s);
+    }
+
+    let total_absent: i64 = qb_absent.build_query_scalar()
+        .fetch_one(&state.pool)
+        .await
+        .unwrap_or(0);
 
     Ok(Json(AttendanceStatsResponse { total_students, total_present, total_absent }))
 }
