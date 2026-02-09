@@ -26,7 +26,9 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
   String _selectedBranch = 'Computer Engineering';
   String _selectedYear = '1st Year';
   String _selectedSession = 'MORNING'; // MORNING | AFTERNOON
-  String _selectedSection = 'Section A';
+  String _selectedSection = '';
+  List<String> _availableSections = [];
+  bool _loadingSections = false;
   // ignore: unused_field
   final DateTime _selectedDate = DateTime.now();
   String _searchText = '';
@@ -46,6 +48,51 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
     _facultyId = widget.userData != null ? widget.userData!['login_id'].toString() : 'faculty';
     if (_step == 'MARK') {
       _fetchStudents();
+    } else {
+       _fetchSections(); // Initial fetch
+    }
+  }
+
+  Future<void> _fetchSections() async {
+    if (_selectedBranch.isEmpty || _selectedYear.isEmpty) return;
+
+    setState(() {
+       _loadingSections = true;
+       _availableSections = [];
+       _selectedSection = '';
+    });
+
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(_selectedBranch)}&year=${Uri.encodeComponent(_selectedYear)}');
+      final response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        setState(() {
+          _availableSections = data.map((e) => e.toString()).toList();
+          if (_availableSections.isNotEmpty) {
+             _availableSections.sort(); // Optional
+             _selectedSection = _availableSections.first;
+          } else {
+             _selectedSection = 'A'; // Fallback if no sections found? Or leave empty
+          }
+        });
+      } else {
+         debugPrint("Failed to fetch sections: ${response.body}");
+         // Fallback manual sections if API fails or not implemented
+         setState(() {
+            _availableSections = ['A', 'B', 'C'];
+            _selectedSection = 'A';
+         });
+      }
+    } catch (e) {
+      debugPrint("Error fetching sections: $e");
+       setState(() {
+          _availableSections = ['A', 'B', 'C'];
+          _selectedSection = 'A';
+       });
+    } finally {
+      if (mounted) setState(() => _loadingSections = false);
     }
   }
 
@@ -392,13 +439,22 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
                'Electrical & Electronics Engineering',
                'Electronics & Communication Engineering',
                'Mechanical Engineering'
-            ], (val) => setState(() => _selectedBranch = val!), const Color(0xFF1e1e2d), Colors.grey[600]!, const Color(0xFFf8f9fa), Colors.white, Colors.white),
+            ], (val) {
+               setState(() => _selectedBranch = val!);
+               _fetchSections();
+            }, const Color(0xFF1e1e2d), Colors.grey[600]!, const Color(0xFFf8f9fa), Colors.white, Colors.white),
 
             _buildDropdown("Year", _selectedYear, ['1st Year', '2nd Year', '3rd Year'], 
-              (val) => setState(() => _selectedYear = val!), const Color(0xFF1e1e2d), Colors.grey[600]!, const Color(0xFFf8f9fa), Colors.white, Colors.white),
+              (val) {
+                 setState(() => _selectedYear = val!);
+                 _fetchSections();
+              }, const Color(0xFF1e1e2d), Colors.grey[600]!, const Color(0xFFf8f9fa), Colors.white, Colors.white),
 
-            _buildDropdown("Section", _selectedSection, ['Section A', 'Section B', 'Section C', 'Section D'], 
-              (val) => setState(() => _selectedSection = val!), const Color(0xFF1e1e2d), Colors.grey[600]!, const Color(0xFFf8f9fa), Colors.white, Colors.white),
+            if (_loadingSections)
+               const Padding(padding: EdgeInsets.only(bottom: 20), child: LinearProgressIndicator())
+            else if (_availableSections.isNotEmpty)
+              _buildDropdown("Section", _selectedSection, _availableSections, 
+                (val) => setState(() => _selectedSection = val!), const Color(0xFF1e1e2d), Colors.grey[600]!, const Color(0xFFf8f9fa), Colors.white, Colors.white),
 
             const SizedBox(height: 10),
             Text("SESSION", style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.grey[600])),

@@ -173,7 +173,11 @@ class _LoginScreenState extends State<LoginScreen> {
               await AuthService.saveUserSession(userData);
               Widget dashboard = _getDashboardForRole(userData['role'], userData);
               if (mounted) {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => dashboard));
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => dashboard),
+                  (route) => false, // Remove all previous routes
+                );
               }
             }
           } else {
