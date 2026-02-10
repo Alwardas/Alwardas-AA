@@ -1,6 +1,7 @@
 ﻿import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import '../core/services/auth_service.dart';
+import '../core/services/notification_service.dart';
 import 'auth/login_screen.dart';
 import 'dashboards/student/student_dashboard.dart';
 import 'dashboards/parent/parent_dashboard.dart';
@@ -25,7 +26,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    _initServices();
     _initializeVideo();
+  }
+
+  Future<void> _initServices() async {
+    await NotificationService().init();
+    await NotificationService().requestPermissions();
   }
 
   void _initializeVideo() {
