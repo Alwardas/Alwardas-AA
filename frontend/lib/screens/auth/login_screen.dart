@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -231,6 +231,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
 
   void _showPopupResponse({required String title, required String message, required bool isError}) {
+    if (!mounted) return;
     showDialog(
       context: context,
       builder: (context) => Dialog(
@@ -247,7 +248,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: (isError ? Colors.red : Colors.green).withOpacity(0.1),
+                  color: (isError ? Colors.red : Colors.green).withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -382,7 +383,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(35),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.12),
+                          color: Colors.black.withValues(alpha: 0.12),
                           blurRadius: 15,
                           offset: const Offset(0, 8),
                         ),

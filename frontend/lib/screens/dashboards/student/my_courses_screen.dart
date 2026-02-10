@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -50,9 +50,9 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
       final userId = user['id'];
       // Update header subtitle with user details if available
       if (user['branch'] != null && user['year'] != null) {
-         String subtitle = "${user['branch']} • ${user['year']}";
+         String subtitle = "${user['branch']} â€¢ ${user['year']}";
          if (user['semester'] != null && user['semester'].toString().isNotEmpty && user['semester'] != user['year']) {
-             subtitle += " • ${user['semester']}";
+             subtitle += " â€¢ ${user['semester']}";
          }
          setState(() {
            _headerSubtitle = subtitle;
@@ -69,10 +69,10 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
           _courses = data;
         });
       } else {
-        print("Failed to fetch courses: ${response.statusCode}");
+        debugPrint("Failed to fetch courses: ${response.statusCode}");
       }
     } catch (e) {
-      print("Error fetching courses: $e");
+      debugPrint("Error fetching courses: $e");
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
@@ -152,7 +152,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                          borderRadius: BorderRadius.circular(12),
                          border: Border.all(color: isDark ? Colors.white10 : Colors.grey.shade300),
                          boxShadow: [
-                           if (!isDark) BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4))
+                           if (!isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))
                          ]
                        ),
                        child: Row(
@@ -172,7 +172,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                        decoration: BoxDecoration(
                          color: isDark ? const Color(0xFF2C2C2E) : Colors.white,
                          borderRadius: BorderRadius.circular(12),
-                         boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10, offset: const Offset(0, 5))],
+                         boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10, offset: const Offset(0, 5))],
                        ),
                        child: Column(
                          crossAxisAlignment: CrossAxisAlignment.start,
@@ -312,7 +312,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
           borderRadius: BorderRadius.circular(20), // Slightly smaller radius
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 15,
               offset: const Offset(0, 8),
             ),
@@ -335,8 +335,8 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  "•",
-                  style: GoogleFonts.poppins(color: subtitleColor.withOpacity(0.5)),
+                  "â€¢",
+                  style: GoogleFonts.poppins(color: subtitleColor.withValues(alpha: 0.5)),
                 ),
                 const SizedBox(width: 8),
                 Expanded(
@@ -378,7 +378,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                     color: statusColor,
                     shape: BoxShape.circle,
                     boxShadow: [
-                      BoxShadow(color: statusColor.withOpacity(0.4), blurRadius: 6, offset: const Offset(0, 2))
+                      BoxShadow(color: statusColor.withValues(alpha: 0.4), blurRadius: 6, offset: const Offset(0, 2))
                     ]
                   ),
                 ),

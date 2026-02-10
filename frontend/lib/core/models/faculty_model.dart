@@ -1,4 +1,4 @@
-class BackendFacultyMember {
+﻿class BackendFacultyMember {
   final String id;
   final String loginId;
   final String name;

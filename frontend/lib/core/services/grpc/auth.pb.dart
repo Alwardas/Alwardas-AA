@@ -1,4 +1,4 @@
-//
+﻿//
 //  Generated code. Do not modify.
 //  source: auth.proto
 //

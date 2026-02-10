@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -101,7 +101,7 @@ class _PrincipalLabsScreenState extends State<PrincipalLabsScreen> {
                           children: [
                              Container(
                               padding: const EdgeInsets.all(12),
-                              decoration: BoxDecoration(color: Colors.orange.withOpacity(0.1), shape: BoxShape.circle),
+                              decoration: BoxDecoration(color: Colors.orange.withValues(alpha: 0.1), shape: BoxShape.circle),
                               child: const Icon(Icons.science, color: Colors.orange),
                             ),
                             const SizedBox(width: 15),

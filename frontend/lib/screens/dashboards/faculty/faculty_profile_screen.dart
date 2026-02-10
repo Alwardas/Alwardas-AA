@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -82,7 +82,7 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
         }
       }
     } catch (e) {
-      print("Error fetching profile: $e");
+      debugPrint("Error fetching profile: $e");
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -309,9 +309,9 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.logout, color: Colors.red.withOpacity(0.8), size: 20),
+                          Icon(Icons.logout, color: Colors.red.withValues(alpha: 0.8), size: 20),
                           const SizedBox(width: 8),
-                          Text("Logout Session", style: GoogleFonts.poppins(color: Colors.red.withOpacity(0.8), fontWeight: FontWeight.bold, fontSize: 14)),
+                          Text("Logout Session", style: GoogleFonts.poppins(color: Colors.red.withValues(alpha: 0.8), fontWeight: FontWeight.bold, fontSize: 14)),
                         ],
                       ),
                     ),

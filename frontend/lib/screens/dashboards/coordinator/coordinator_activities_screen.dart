@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -47,7 +47,7 @@ class CoordinatorActivitiesScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.sports_basketball_outlined, size: 80, color: tint.withOpacity(0.5)),
+                      Icon(Icons.sports_basketball_outlined, size: 80, color: tint.withValues(alpha: 0.5)),
                       const SizedBox(height: 20),
                       Text("Manage Campus Activities", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
                       Text("Coming soon: Club registrations and event tracking", style: GoogleFonts.poppins(color: subTextColor)),
@@ -68,7 +68,7 @@ class CoordinatorActivitiesScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: isSelected ? tint : Colors.transparent,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: isSelected ? tint : Colors.grey.withOpacity(0.3)),
+        border: Border.all(color: isSelected ? tint : Colors.grey.withValues(alpha: 0.3)),
       ),
       child: Text(label, style: TextStyle(color: isSelected ? Colors.white : Colors.grey, fontWeight: FontWeight.bold)),
     );

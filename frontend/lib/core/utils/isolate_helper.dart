@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+﻿import 'package:flutter/foundation.dart';
 
 /// A utils class to enforce heavy computations on background isolates.
 /// "Strictly DO: Flutter Isolates (`compute`)"

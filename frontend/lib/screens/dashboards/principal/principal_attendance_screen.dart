@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -140,7 +140,7 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
            'absent': (data['totalAbsent'] as int? ?? 0)
          };
        } catch (e) {
-         print("Error parsing stats for $branch: $e");
+         debugPrint("Error parsing stats for $branch: $e");
        }
     }
 
@@ -258,11 +258,11 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
                        margin: const EdgeInsets.only(bottom: 15),
                        padding: const EdgeInsets.all(20),
                        decoration: BoxDecoration(
-                         color: isCompleted ? Colors.green.withOpacity(0.1) : cardColor,
+                         color: isCompleted ? Colors.green.withValues(alpha: 0.1) : cardColor,
                          borderRadius: BorderRadius.circular(15),
                          border: Border.all(color: isCompleted ? Colors.green : iconBg),
                          boxShadow: [
-                           if(isDark) BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 5, offset: const Offset(0,2))
+                           if(isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5, offset: const Offset(0,2))
                          ]
                        ),
                        child: Column(
@@ -279,7 +279,7 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
                                    borderRadius: BorderRadius.circular(2),
                                    boxShadow: [
                                       BoxShadow(
-                                        color: (isCompleted ? Colors.green : tint).withOpacity(0.5), 
+                                        color: (isCompleted ? Colors.green : tint).withValues(alpha: 0.5), 
                                         blurRadius: 6, 
                                         offset: const Offset(0, 0)
                                       )

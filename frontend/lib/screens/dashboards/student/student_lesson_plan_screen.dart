@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -67,7 +67,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
         throw Exception('Failed to load lesson plan');
       }
     } catch (e) {
-      print("Error fetching lesson plan: $e");
+      debugPrint("Error fetching lesson plan: $e");
       if (mounted) {
         setState(() => _loading = false);
         _showSnackBar("Could not load lesson plan.");
@@ -227,7 +227,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                                       Container(
                                           padding: const EdgeInsets.all(8),
                                           decoration: BoxDecoration(
-                                              color: const Color(0xFF34C759).withOpacity(0.1),
+                                              color: const Color(0xFF34C759).withValues(alpha: 0.1),
                                               shape: BoxShape.circle,
                                           ),
                                           child: const Icon(Icons.check_circle, color: Color(0xFF34C759), size: 20),
@@ -273,9 +273,9 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                                             return Container(
                                                 padding: const EdgeInsets.all(12),
                                                 decoration: BoxDecoration(
-                                                    color: const Color(0xFF34C759).withOpacity(0.05), // Light Green Watermark
+                                                    color: const Color(0xFF34C759).withValues(alpha: 0.05), // Light Green Watermark
                                                     borderRadius: BorderRadius.circular(12),
-                                                    border: Border.all(color: const Color(0xFF34C759).withOpacity(0.2)),
+                                                    border: Border.all(color: const Color(0xFF34C759).withValues(alpha: 0.2)),
                                                 ),
                                                 child: Row(
                                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -346,15 +346,15 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
       if (_status == 'LAGGING') {
           statusColor = const Color(0xFFFF4B4B);
           statusText = "Lagging";
-          statusBg = const Color(0xFFFF4B4B).withOpacity(0.1);
+          statusBg = const Color(0xFFFF4B4B).withValues(alpha: 0.1);
       } else if (_status == 'OVERFAST') {
           statusColor = Colors.orange;
           statusText = "Overfast";
-          statusBg = Colors.orange.withOpacity(0.1);
+          statusBg = Colors.orange.withValues(alpha: 0.1);
       } else {
           statusColor = const Color(0xFF34C759);
           statusText = "On Track";
-          statusBg = const Color(0xFF34C759).withOpacity(0.1);
+          statusBg = const Color(0xFF34C759).withValues(alpha: 0.1);
       }
 
       return Container(
@@ -364,7 +364,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
               borderRadius: BorderRadius.circular(24),
               boxShadow: [
                   BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 20,
                       offset: const Offset(0, 10),
                   )
@@ -438,7 +438,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
     
     // Green Water Tinge Effect
     final bgColor = isCompleted 
-        ? const Color(0xFF34C759).withOpacity(0.1) // Green Water
+        ? const Color(0xFF34C759).withValues(alpha: 0.1) // Green Water
         : Colors.transparent;
     
     if (isUnit) {
@@ -471,7 +471,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
       decoration: BoxDecoration(
           color: bgColor,
           borderRadius: BorderRadius.circular(12),
-          border: isCompleted ? Border.all(color: const Color(0xFF34C759).withOpacity(0.2)) : null
+          border: isCompleted ? Border.all(color: const Color(0xFF34C759).withValues(alpha: 0.2)) : null
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -532,7 +532,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                IconButton(
                    icon: Icon(
                      Icons.chat_bubble_outline, 
-                     color: isCompleted ? tint : Colors.grey.withOpacity(0.3), 
+                     color: isCompleted ? tint : Colors.grey.withValues(alpha: 0.3), 
                      size: 20
                    ),
                    tooltip: isCompleted ? "Report Issue" : "Topic not yet completed",
@@ -590,7 +590,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
   Future<void> _fetchCurrentUser() async {
       final user = await AuthService.getUserSession();
       if(mounted && user != null) {
-          print("DEBUG: Current User ID: ${user['id']}");
+          debugPrint("DEBUG: Current User ID: ${user['id']}");
           setState(() => _currentUserId = user['id']);
       }
   }
@@ -604,7 +604,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
   
   Future<void> _fetchComments() async {
       setState(() => _loadingComments = true);
-      print("DEBUG: Fetching comments for item ${widget.item['id']}... CurrentUser: $_currentUserId");
+      debugPrint("DEBUG: Fetching comments for item ${widget.item['id']}... CurrentUser: $_currentUserId");
       try {
           final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan/feedback?lessonPlanId=${widget.item['id']}'));
           if (response.statusCode == 200) {
@@ -616,7 +616,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
               setState(() => _loadingComments = false);
           }
       } catch (e) {
-          print("Error fetching comments: $e");
+          debugPrint("Error fetching comments: $e");
           setState(() => _loadingComments = false);
       }
   }
@@ -669,7 +669,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                  child: Container(
                    width: 40, height: 4,
                    decoration: BoxDecoration(
-                     color: Colors.grey.withOpacity(0.3),
+                     color: Colors.grey.withValues(alpha: 0.3),
                      borderRadius: BorderRadius.circular(2)
                    ),
                  ),
@@ -769,7 +769,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                                                padding: const EdgeInsets.only(right: 8.0),
                                                child: Icon(
                                                  index < _rating ? Icons.star_rounded : Icons.star_border_rounded,
-                                                 color: isDisabled ? Colors.grey.withOpacity(0.3) : _getRatingColor(_rating), 
+                                                 color: isDisabled ? Colors.grey.withValues(alpha: 0.3) : _getRatingColor(_rating), 
                                                  size: 40
                                                ),
                                              ),
@@ -818,7 +818,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                                  ? Center(child: Column(
                                      mainAxisAlignment: MainAxisAlignment.center,
                                      children: [
-                                         Icon(Icons.chat_bubble_outline, size: 40, color: Colors.grey.withOpacity(0.3)),
+                                         Icon(Icons.chat_bubble_outline, size: 40, color: Colors.grey.withValues(alpha: 0.3)),
                                          const SizedBox(height: 10),
                                          Text("No feedback yet.", style: GoogleFonts.poppins(color: subTextColor)),
                                          TextButton(
@@ -856,7 +856,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
               duration: const Duration(milliseconds: 200),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
-                  color: isActive ? tint.withOpacity(0.2) : Colors.transparent,
+                  color: isActive ? tint.withValues(alpha: 0.2) : Colors.transparent,
                   borderRadius: BorderRadius.circular(16)
               ),
               child: Text(
@@ -883,9 +883,9 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
       
       final isMe = _currentUserId != null && comment['userId'] == _currentUserId;
       if (isMe) {
-          // print("DEBUG: Found my comment! ID: ${comment['id']}"); 
+          // debugPrint("DEBUG: Found my comment! ID: ${comment['id']}"); 
       } else {
-          // print("DEBUG: Not me. MyID: $_currentUserId, CommentUserID: ${comment['userId']}");
+          // debugPrint("DEBUG: Not me. MyID: $_currentUserId, CommentUserID: ${comment['userId']}");
       }
       
       // Calculate if editable (<= 15 mins)
@@ -893,7 +893,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
       if (isMe && createdAt != null) {
           final diff = DateTime.now().difference(createdAt);
           isEditable = diff.inMinutes <= 15;
-          // print("DEBUG: Diff minutes: ${diff.inMinutes}, Editable: $isEditable");
+          // debugPrint("DEBUG: Diff minutes: ${diff.inMinutes}, Editable: $isEditable");
       }
 
       return Container(
@@ -901,9 +901,9 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
           decoration: BoxDecoration(
               color: isDark ? Colors.grey[900] : Colors.white,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.grey.withOpacity(0.1)),
+              border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
               boxShadow: [
-                  BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10, offset: const Offset(0, 4))
+                  BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4))
               ]
           ),
           child: Column(
@@ -916,7 +916,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                                Text("Me", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: ThemeColors.lightTint)), 
                                Padding(
                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                 child: Text("•", style: TextStyle(color: Colors.grey[600])),
+                                 child: Text("â€¢", style: TextStyle(color: Colors.grey[600])),
                                ),
                            ],
 
@@ -927,14 +927,14 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                           
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Text("•", style: TextStyle(color: Colors.grey[600])),
+                            child: Text("â€¢", style: TextStyle(color: Colors.grey[600])),
                           ),
 
                           // 3. Issue Type / Tag
                           Container(
                               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                               decoration: BoxDecoration(
-                                  color: ratingColor.withOpacity(0.1),
+                                  color: ratingColor.withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(8)
                               ),
                               child: Text(
@@ -1004,9 +1004,9 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                               child: Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                                   decoration: BoxDecoration(
-                                      color: Colors.green.withOpacity(0.1),
+                                      color: Colors.green.withValues(alpha: 0.1),
                                       borderRadius: BorderRadius.circular(20),
-                                      border: Border.all(color: Colors.green.withOpacity(0.2)),
+                                      border: Border.all(color: Colors.green.withValues(alpha: 0.2)),
                                   ),
                                   child: Row(
                                       mainAxisSize: MainAxisSize.min,
@@ -1056,7 +1056,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                               Container(
                                   padding: const EdgeInsets.all(8),
                                   decoration: BoxDecoration(
-                                      color: Colors.green.withOpacity(0.1),
+                                      color: Colors.green.withValues(alpha: 0.1),
                                       shape: BoxShape.circle,
                                   ),
                                   child: const Icon(Icons.forum_rounded, color: Colors.green, size: 20),
@@ -1077,15 +1077,15 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                           width: double.infinity,
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                              color: isDark ? Colors.white.withOpacity(0.05) : Colors.grey[50],
+                              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey[50],
                               borderRadius: BorderRadius.circular(15),
-                              border: Border.all(color: Colors.grey.withOpacity(0.1)),
+                              border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
                           ),
                           child: Text(
                               reply,
                               style: GoogleFonts.poppins(
                                   fontSize: 14,
-                                  color: textColor.withOpacity(0.9),
+                                  color: textColor.withValues(alpha: 0.9),
                                   height: 1.6,
                               ),
                           ),
@@ -1097,7 +1097,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                               onPressed: () => Navigator.pop(context),
                               style: TextButton.styleFrom(
                                   padding: const EdgeInsets.symmetric(vertical: 14),
-                                  backgroundColor: Colors.grey.withOpacity(0.1),
+                                  backgroundColor: Colors.grey.withValues(alpha: 0.1),
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                               ),
                               child: Text(
@@ -1135,7 +1135,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to delete")));
            }
        } catch (e) {
-           print("Delete error: $e");
+           debugPrint("Delete error: $e");
        }
   }
 
@@ -1147,9 +1147,9 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
-          color: isSelected ? selectedColor.withOpacity(0.2) : Colors.transparent,
+          color: isSelected ? selectedColor.withValues(alpha: 0.2) : Colors.transparent,
           borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: isSelected ? selectedColor : Colors.grey.withOpacity(0.5)),
+          border: Border.all(color: isSelected ? selectedColor : Colors.grey.withValues(alpha: 0.5)),
         ),
         child: Text(
           label,
@@ -1190,7 +1190,7 @@ class _AIExplanationModalState extends State<AIExplanationModal> {
      if(mounted) {
        setState(() {
          _loading = false;
-         _explanation = "AI-Generated Explanation for '${widget.topic}':\n\nThis topic covers essential concepts that form the building blocks of this subject. An understanding of these principles is crucial for mastering more advanced topics. \n\nKey Points:\n• Core definitions and properties.\n• Practical applications in real-world scenarios.\n• Relationship with other units in the syllabus."; 
+         _explanation = "AI-Generated Explanation for '${widget.topic}':\n\nThis topic covers essential concepts that form the building blocks of this subject. An understanding of these principles is crucial for mastering more advanced topics. \n\nKey Points:\nâ€¢ Core definitions and properties.\nâ€¢ Practical applications in real-world scenarios.\nâ€¢ Relationship with other units in the syllabus."; 
        });
      }
   }
@@ -1223,7 +1223,7 @@ class _AIExplanationModalState extends State<AIExplanationModal> {
                  child: Container(
                    width: 40, height: 4,
                    decoration: BoxDecoration(
-                     color: Colors.grey.withOpacity(0.3),
+                     color: Colors.grey.withValues(alpha: 0.3),
                      borderRadius: BorderRadius.circular(2)
                    ),
                  ),

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -343,7 +343,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                         item['title'],
                         item['subtitle'],
                         cardColor,
-                        item['color'].withOpacity(0.1), 
+                        item['color'].withValues(alpha: 0.1), 
                         item['color'],
                         textColor,
                         subTextColor,
@@ -365,9 +365,9 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B).withOpacity(0.5), // Subtle bg
+        color: const Color(0xFF1E293B).withValues(alpha: 0.5), // Subtle bg
         shape: BoxShape.circle,
-        border: Border.all(color: const Color(0xFF38BDF8).withOpacity(0.3), width: 1),
+        border: Border.all(color: const Color(0xFF38BDF8).withValues(alpha: 0.3), width: 1),
       ),
       child: Icon(icon, color: const Color(0xFF38BDF8), size: 20), // Blue Icon
     );
@@ -386,7 +386,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -397,7 +397,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
           Container(
              width: 4, 
              height: 35, 
-             decoration: BoxDecoration(color: Colors.white.withOpacity(0.5), borderRadius: BorderRadius.circular(2)),
+             decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(2)),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -413,7 +413,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                 const SizedBox(height: 3),
                 Text(
                   subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withOpacity(0.8), fontSize: 13),
+                  style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 13),
                 ),
               ],
             ),
@@ -433,12 +433,12 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
           color: isDark ? ThemeColors.darkCardBg : Colors.white, // Solid color from theme
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? ThemeColors.darkBorder : Colors.black.withOpacity(0.03),
+             color: isDark ? ThemeColors.darkBorder : Colors.black.withValues(alpha: 0.03),
              width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
               blurRadius: 15, // Softer shadow
               offset: const Offset(0, 8),
             ),
@@ -450,7 +450,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconBgColor.withOpacity(0.2), // Clean no-shadow bg
+                color: iconBgColor.withValues(alpha: 0.2), // Clean no-shadow bg
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: iconColor, size: 26),

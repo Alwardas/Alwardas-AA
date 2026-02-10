@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -39,7 +39,7 @@ class _PrincipalProfileScreenState extends State<PrincipalProfileScreen> {
         });
       }
     } catch (e) {
-      print("Error fetching profile: $e");
+      debugPrint("Error fetching profile: $e");
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -160,7 +160,7 @@ class _PrincipalProfileScreenState extends State<PrincipalProfileScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label.toUpperCase(), style: GoogleFonts.poppins(fontSize: 10, color: labelColor.withOpacity(0.7), letterSpacing: 1)),
+          Text(label.toUpperCase(), style: GoogleFonts.poppins(fontSize: 10, color: labelColor.withValues(alpha: 0.7), letterSpacing: 1)),
           const SizedBox(height: 4),
           Text(value, style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
         ],

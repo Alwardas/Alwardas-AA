@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -80,7 +80,7 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
                          borderRadius: BorderRadius.circular(15),
                          border: Border.all(color: const Color(0xFF007BFF), width: 1.5), // Vibrant Blue Border
                          boxShadow: [
-                           if(isDark) BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 5, offset: const Offset(0,2))
+                           if(isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5, offset: const Offset(0,2))
                          ]
                        ),
                        child: Row(
@@ -103,7 +103,7 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
                 }),
                 
                 const SizedBox(height: 10),
-                Divider(color: subTextColor.withOpacity(0.2)),
+                Divider(color: subTextColor.withValues(alpha: 0.2)),
                 const SizedBox(height: 20),
                 
                 // Additional Options (Labs, Master) - Border Colored Style
@@ -117,8 +117,8 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
                            decoration: BoxDecoration(
                              color: cardColor,
                              borderRadius: BorderRadius.circular(15),
-                             border: Border.all(color: Colors.orange.withOpacity(0.5)),
-                             boxShadow: [if(isDark) BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 5)]
+                             border: Border.all(color: Colors.orange.withValues(alpha: 0.5)),
+                             boxShadow: [if(isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5)]
                            ),
                            child: Column(
                              children: [
@@ -139,8 +139,8 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
                            decoration: BoxDecoration(
                              color: cardColor,
                              borderRadius: BorderRadius.circular(15),
-                             border: Border.all(color: Colors.purple.withOpacity(0.5)),
-                             boxShadow: [if(isDark) BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 5)]
+                             border: Border.all(color: Colors.purple.withValues(alpha: 0.5)),
+                             boxShadow: [if(isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5)]
                            ),
                            child: Column(
                              children: [

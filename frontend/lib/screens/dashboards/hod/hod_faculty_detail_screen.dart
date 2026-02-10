@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/models/faculty_model.dart';
@@ -92,9 +92,9 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
                   color: cardColor,
                   borderRadius: BorderRadius.circular(24),
                   boxShadow: [
-                    BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 15, offset: const Offset(0, 5)),
+                    BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 15, offset: const Offset(0, 5)),
                   ],
-                  border: Border.all(color: iconBg.withOpacity(0.5)),
+                  border: Border.all(color: iconBg.withValues(alpha: 0.5)),
                 ),
                 child: Column(
                   children: [
@@ -108,7 +108,7 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
                           ),
                           child: CircleAvatar(
                             radius: 32,
-                            backgroundColor: tint.withOpacity(0.1),
+                            backgroundColor: tint.withValues(alpha: 0.1),
                             child: Text(
                               widget.faculty.name.isNotEmpty ? widget.faculty.name[0].toUpperCase() : '?', 
                               style: TextStyle(color: tint, fontWeight: FontWeight.bold, fontSize: 26)
@@ -125,7 +125,7 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                 decoration: BoxDecoration(
-                                  color: tint.withOpacity(0.1),
+                                  color: tint.withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Text(
@@ -159,7 +159,7 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
                 decoration: BoxDecoration(
                   color: cardColor,
                   borderRadius: BorderRadius.circular(25),
-                  border: Border.all(color: iconBg.withOpacity(0.5)),
+                  border: Border.all(color: iconBg.withValues(alpha: 0.5)),
                 ),
                 child: TabBar(
                   controller: _tabController,
@@ -167,7 +167,7 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
                     borderRadius: BorderRadius.circular(25),
                     color: tint,
                     boxShadow: [
-                      BoxShadow(color: tint.withOpacity(0.3), blurRadius: 8, offset: const Offset(0, 2))
+                      BoxShadow(color: tint.withValues(alpha: 0.3), blurRadius: 8, offset: const Offset(0, 2))
                     ],
                   ),
                   labelColor: Colors.white,
@@ -265,7 +265,7 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
               color: cardColor,
               borderRadius: BorderRadius.circular(20),
               border: Border.all(color: iconBg),
-              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 8)],
+              boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 8)],
             ),
             child: Row(
               children: [
@@ -274,7 +274,7 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
                   height: 55,
                   padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
-                    color: tint.withOpacity(0.05),
+                    color: tint.withValues(alpha: 0.05),
                     shape: BoxShape.circle,
                   ),
                   child: Stack(
@@ -299,7 +299,7 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(subjectName, style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
-                      Text("$branch • $sem", style: TextStyle(fontSize: 13, color: Colors.grey)),
+                      Text("$branch â€¢ $sem", style: TextStyle(fontSize: 13, color: Colors.grey)),
                     ],
                   ),
                 ),
@@ -332,7 +332,7 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
           Container(
             width: 80, height: 80,
             decoration: BoxDecoration(
-              color: tint.withOpacity(0.1),
+              color: tint.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, size: 40, color: tint),

@@ -1,4 +1,4 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               import 'package:flutter/material.dart';
+﻿                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -76,7 +76,7 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
         });
       }
     } catch (e) {
-      print("Failed to fetch subjects: $e");
+      debugPrint("Failed to fetch subjects: $e");
     }
   }
 
@@ -194,7 +194,7 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
                                padding: const EdgeInsets.symmetric(vertical: 8),
                                margin: const EdgeInsets.symmetric(vertical: 10),
                                decoration: BoxDecoration(
-                                 border: Border.all(color: tint.withOpacity(0.5)),
+                                 border: Border.all(color: tint.withValues(alpha: 0.5)),
                                  borderRadius: BorderRadius.circular(50),
                                ),
                                alignment: Alignment.center,

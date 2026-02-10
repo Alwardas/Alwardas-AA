@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -47,7 +47,7 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
         throw Exception('Failed to load issues');
       }
     } catch (e) {
-      print("Error fetching issues: $e");
+      debugPrint("Error fetching issues: $e");
       setState(() => _isLoadingIssues = false);
     }
   }
@@ -196,7 +196,7 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
                             foregroundColor: Colors.white,
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                             elevation: 5,
-                            shadowColor: const Color(0xFFE94057).withOpacity(0.4),
+                            shadowColor: const Color(0xFFE94057).withValues(alpha: 0.4),
                           ),
                           child: _isSubmitting 
                             ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
@@ -211,7 +211,7 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
                 ),
 
                 const SizedBox(height: 40),
-                Divider(color: subTextColor.withOpacity(0.2), thickness: 2),
+                Divider(color: subTextColor.withValues(alpha: 0.2), thickness: 2),
                 const SizedBox(height: 20),
 
                 // Track Issues Section
@@ -237,7 +237,7 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
                         borderRadius: BorderRadius.circular(15),
                         border: Border.all(color: iconBg),
                         boxShadow: [
-                           if(isDark) BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 5, offset: const Offset(0,2))
+                           if(isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5, offset: const Offset(0,2))
                          ]
                       ),
                       child: Column(
@@ -255,7 +255,7 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                                 decoration: BoxDecoration(
-                                  color: color.withOpacity(0.2),
+                                  color: color.withValues(alpha: 0.2),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: Text(

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -70,7 +70,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
         if (mounted) setState(() => _facultySubjects = []);
       }
     } catch (e) {
-      print("Error fetching subjects: $e");
+      debugPrint("Error fetching subjects: $e");
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -275,9 +275,9 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
             child: Container(
               padding: const EdgeInsets.all(30),
               decoration: BoxDecoration(
-                color: tint.withOpacity(0.1),
+                color: tint.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
-                border: Border.all(color: tint.withOpacity(0.3), width: 2),
+                border: Border.all(color: tint.withValues(alpha: 0.3), width: 2),
               ),
               child: Icon(Icons.add, size: 80, color: tint),
             ),
@@ -398,7 +398,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     blurRadius: 15,
                     offset: const Offset(0, 8),
                   ),
@@ -407,7 +407,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Header Row: Code • Semester • Branch • Section
+                  // Header Row: Code â€¢ Semester â€¢ Branch â€¢ Section
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -425,14 +425,14 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
                           ),
                           const SizedBox(width: 8),
                           Text(
-                            "•",
-                            style: GoogleFonts.poppins(color: subtitleColor.withOpacity(0.5)),
+                            "â€¢",
+                            style: GoogleFonts.poppins(color: subtitleColor.withValues(alpha: 0.5)),
                           ),
                           const SizedBox(width: 8),
                            Expanded(
                             child: Text(
                               // Combine Sem, Branch, Section
-                              "Sem ${item['semester'] ?? '?'} • ${(item['branch'] ?? '').toString().split(' ').first} ${item['section'] != null ? '• Sec ${item['section']}' : ''}",
+                              "Sem ${item['semester'] ?? '?'} â€¢ ${(item['branch'] ?? '').toString().split(' ').first} ${item['section'] != null ? 'â€¢ Sec ${item['section']}' : ''}",
                               style: GoogleFonts.poppins(
                                 color: subtitleColor,
                                 fontSize: 12,
@@ -492,7 +492,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
                         color: statusColor,
                         shape: BoxShape.circle,
                         boxShadow: [
-                          BoxShadow(color: statusColor.withOpacity(0.4), blurRadius: 6, offset: const Offset(0, 2))
+                          BoxShadow(color: statusColor.withValues(alpha: 0.4), blurRadius: 6, offset: const Offset(0, 2))
                         ]
                       ),
                     ),
@@ -548,9 +548,9 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Text(
         text.toUpperCase(), 

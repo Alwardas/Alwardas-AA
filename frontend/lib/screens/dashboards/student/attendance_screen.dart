@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -381,7 +381,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                       Container(
                         padding: const EdgeInsets.all(10),
                         margin: const EdgeInsets.only(bottom: 15),
-                        decoration: BoxDecoration(color: Colors.red.withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
+                        decoration: BoxDecoration(color: Colors.red.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)),
                         child: Row(
                           children: [
                             const Icon(Icons.info_outline, color: Colors.red, size: 20),
@@ -491,9 +491,9 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
         decoration: BoxDecoration(
           color: bgColor,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.grey.withOpacity(0.2)),
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
           boxShadow: [
-             BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 5, offset: const Offset(0, 2))
+             BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 5, offset: const Offset(0, 2))
           ]
         ),
         child: Row(
@@ -503,7 +503,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
               text, 
               style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 16, color: textColor)
             ),
-            Icon(Icons.keyboard_arrow_down, size: 16, color: textColor.withOpacity(0.7)),
+            Icon(Icons.keyboard_arrow_down, size: 16, color: textColor.withValues(alpha: 0.7)),
           ],
         ),
       ),
@@ -600,7 +600,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
               border: Border.all(color: color, width: 4),
               color: cardColor,
               boxShadow: isCenter ? [
-                 BoxShadow(color: color.withOpacity(0.2), blurRadius: 10, spreadRadius: 2)
+                 BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 10, spreadRadius: 2)
               ] : null
             ),
             alignment: Alignment.center,
@@ -618,13 +618,13 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                 if (label.isNotEmpty)
                   Text(
                     label,
-                    style: GoogleFonts.poppins(fontSize: 10, color: textColor.withOpacity(0.7)),
+                    style: GoogleFonts.poppins(fontSize: 10, color: textColor.withValues(alpha: 0.7)),
                   ),
               ],
             ),
           ),
           const SizedBox(height: 5),
-          Text(subLabel, style: GoogleFonts.poppins(fontWeight: FontWeight.w500, fontSize: 14, color: textColor.withOpacity(0.8))),
+          Text(subLabel, style: GoogleFonts.poppins(fontWeight: FontWeight.w500, fontSize: 14, color: textColor.withValues(alpha: 0.8))),
         ],
       ),
     );
@@ -643,7 +643,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map((d) => 
-            Expanded(child: Text(d, textAlign: TextAlign.center, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor.withOpacity(0.7))))
+            Expanded(child: Text(d, textAlign: TextAlign.center, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor.withValues(alpha: 0.7))))
           ).toList(),
         ),
         const SizedBox(height: 10),
@@ -689,9 +689,9 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
              bool isSelected = _selectedRequestDates.contains(dateStr);
 
              // Border color
-             Color borderColor = Colors.grey.withOpacity(0.3);
-             if (fullAbsent) borderColor = errorColor.withOpacity(0.5);
-             if (fullPresent) borderColor = Colors.greenAccent.withOpacity(0.8);
+             Color borderColor = Colors.grey.withValues(alpha: 0.3);
+             if (fullAbsent) borderColor = errorColor.withValues(alpha: 0.5);
+             if (fullPresent) borderColor = Colors.greenAccent.withValues(alpha: 0.8);
              if (isSelected) borderColor = Colors.blue;
 
              return GestureDetector(
@@ -702,11 +702,11 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                      alignment: Alignment.center,
                      decoration: BoxDecoration(
                        borderRadius: BorderRadius.circular(8),
-                       color: fullPresent ? Colors.greenAccent.withOpacity(0.4) : (fullAbsent ? Colors.red : null),
+                       color: fullPresent ? Colors.greenAccent.withValues(alpha: 0.4) : (fullAbsent ? Colors.red : null),
                        gradient: partial ? LinearGradient(
                           colors: [
-                             mPresent ? Colors.greenAccent.withOpacity(0.4) : Colors.red,
-                             aPresent ? Colors.greenAccent.withOpacity(0.4) : Colors.red,
+                             mPresent ? Colors.greenAccent.withValues(alpha: 0.4) : Colors.red,
+                             aPresent ? Colors.greenAccent.withValues(alpha: 0.4) : Colors.red,
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
@@ -764,7 +764,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
        decoration: BoxDecoration(
          color: Theme.of(context).cardColor,
          borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
-         boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 20)]
+         boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 20)]
        ),
        child: Column(
          crossAxisAlignment: CrossAxisAlignment.start,
@@ -792,7 +792,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                    bool aAvailable = dayStats['afternoon']?['status'] == 'ABSENT';
 
                    return Card(
-                     color: Colors.grey.withOpacity(0.05),
+                     color: Colors.grey.withValues(alpha: 0.05),
                      margin: const EdgeInsets.only(bottom: 10),
                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                      child: Padding(
@@ -858,7 +858,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
               maxLines: 3,
               decoration: InputDecoration(
                 hintText: "Reason for correction...",
-                fillColor: Colors.grey.withOpacity(0.1),
+                fillColor: Colors.grey.withValues(alpha: 0.1),
                 filled: true,
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide.none),
               ),
@@ -1057,9 +1057,9 @@ class _TrackRequestsSheetState extends State<TrackRequestsSheet> {
                               margin: const EdgeInsets.only(bottom: 15),
                               padding: const EdgeInsets.all(15),
                               decoration: BoxDecoration(
-                                color: isSelected ? Colors.blue.withOpacity(0.1) : Theme.of(context).scaffoldBackgroundColor,
+                                color: isSelected ? Colors.blue.withValues(alpha: 0.1) : Theme.of(context).scaffoldBackgroundColor,
                                 borderRadius: BorderRadius.circular(15),
-                                border: Border.all(color: isSelected ? Colors.blue : Colors.grey.withOpacity(0.1)),
+                                border: Border.all(color: isSelected ? Colors.blue : Colors.grey.withValues(alpha: 0.1)),
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -1069,7 +1069,7 @@ class _TrackRequestsSheetState extends State<TrackRequestsSheet> {
                                     children: [
                                       Container(
                                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                                        decoration: BoxDecoration(color: statusColor.withOpacity(0.1), borderRadius: BorderRadius.circular(20)),
+                                        decoration: BoxDecoration(color: statusColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(20)),
                                         child: Text(status, style: GoogleFonts.poppins(color: statusColor, fontWeight: FontWeight.bold, fontSize: 12)),
                                       ),
                                       if (_isSelectionMode)
@@ -1083,7 +1083,7 @@ class _TrackRequestsSheetState extends State<TrackRequestsSheet> {
                                   ),
                                   const SizedBox(height: 10),
                                   Text("Dates:", style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 14)),
-                                  ...datesInfo.map((d) => Text("• ${d['date']} (${d['session']})", style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey[700]))),
+                                  ...datesInfo.map((d) => Text("â€¢ ${d['date']} (${d['session']})", style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey[700]))),
                                   const SizedBox(height: 10),
                                   Text("Reason: ${item['reason']}", style: GoogleFonts.poppins(fontSize: 14, fontStyle: FontStyle.italic)),
                                 ],

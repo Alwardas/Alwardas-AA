@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -85,7 +85,7 @@ class _PrincipalBranchYearsScreenState extends State<PrincipalBranchYearsScreen>
         }
       }
     } catch (e) {
-      print("Fetch Stats Error: $e");
+      debugPrint("Fetch Stats Error: $e");
     }
 
     // 2. Fetch Status for Years for Selected Branch
@@ -112,7 +112,7 @@ class _PrincipalBranchYearsScreenState extends State<PrincipalBranchYearsScreen>
             newStatus[year] = data['submitted'] ?? false;
          }
       } catch (e) {
-         print("Fetch Status Error ($year): $e");
+         debugPrint("Fetch Status Error ($year): $e");
       }
     }
     
@@ -252,7 +252,7 @@ class _PrincipalBranchYearsScreenState extends State<PrincipalBranchYearsScreen>
                         margin: const EdgeInsets.only(bottom: 15),
                         padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
-                          color: isMarked ? Colors.green.withOpacity(0.1) : cardColor,
+                          color: isMarked ? Colors.green.withValues(alpha: 0.1) : cardColor,
                           border: Border.all(color: isMarked ? Colors.green : iconBg),
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -260,7 +260,7 @@ class _PrincipalBranchYearsScreenState extends State<PrincipalBranchYearsScreen>
                           children: [
                             Container(
                               padding: const EdgeInsets.all(12),
-                              decoration: BoxDecoration(color: isMarked ? Colors.green.withOpacity(0.2) : iconBg, borderRadius: BorderRadius.circular(12)),
+                              decoration: BoxDecoration(color: isMarked ? Colors.green.withValues(alpha: 0.2) : iconBg, borderRadius: BorderRadius.circular(12)),
                               child: Icon(Icons.calendar_today, color: isMarked ? Colors.green : tint),
                             ),
                             const SizedBox(width: 15),

@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 import 'package:flutter/material.dart';
 // For rootBundle
 // Persistence
@@ -409,7 +409,7 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(color: iconBg),
                               boxShadow: [
-                                BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 5))
+                                BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
                               ],
                             ),
                             child: Row(
@@ -433,7 +433,7 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                                   children: [
                                     CircleAvatar(
                                       radius: 25,
-                                      backgroundColor: tint.withOpacity(0.1),
+                                      backgroundColor: tint.withValues(alpha: 0.1),
                                       child: Text(
                                         student['fullName'].toString()[0].toUpperCase(), 
                                         style: TextStyle(color: tint, fontWeight: FontWeight.bold, fontSize: 20)

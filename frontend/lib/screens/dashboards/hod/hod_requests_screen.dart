@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -174,7 +174,7 @@ class _RequestCard extends StatelessWidget {
         color: cardColor,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10, offset: const Offset(0, 4)),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4)),
         ],
       ),
       child: Column(
@@ -183,7 +183,7 @@ class _RequestCard extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(color: tint.withOpacity(0.1), shape: BoxShape.circle),
+                decoration: BoxDecoration(color: tint.withValues(alpha: 0.1), shape: BoxShape.circle),
                 child: Icon(Icons.badge, color: tint, size: 28),
               ),
               const SizedBox(width: 15),
@@ -206,7 +206,7 @@ class _RequestCard extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => onAction(r['id'], 'REJECT'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red.withOpacity(0.1),
+                    backgroundColor: Colors.red.withValues(alpha: 0.1),
                     foregroundColor: Colors.red,
                     elevation: 0,
                     padding: const EdgeInsets.symmetric(vertical: 12),

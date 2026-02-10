@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -145,7 +145,7 @@ class _AdminUsersScreenState extends State<AdminUsersScreen> {
         throw Exception('Failed to load users');
       }
     } catch (e) {
-      print("Error fetching users: $e");
+      debugPrint("Error fetching users: $e");
       if (mounted) setState(() => _loading = false);
     }
   }
@@ -348,7 +348,7 @@ class _AdminUsersScreenState extends State<AdminUsersScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.person_off_outlined, size: 60, color: subTextColor.withOpacity(0.5)),
+              Icon(Icons.person_off_outlined, size: 60, color: subTextColor.withValues(alpha: 0.5)),
               const SizedBox(height: 10),
               Text("No users found", style: GoogleFonts.poppins(color: subTextColor)),
             ],
@@ -412,9 +412,9 @@ class _AdminUsersScreenState extends State<AdminUsersScreen> {
        decoration: BoxDecoration(
          color: cardColor,
          borderRadius: BorderRadius.circular(20),
-         border: Border.all(color: const Color(0xFF2563eb).withOpacity(0.1)),
+         border: Border.all(color: const Color(0xFF2563eb).withValues(alpha: 0.1)),
          boxShadow: [
-           BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 5))
+           BoxShadow(color: Colors.black.withValues(alpha: 0.03), blurRadius: 10, offset: const Offset(0, 5))
          ]
        ),
        child: Column(
@@ -484,7 +484,7 @@ class _UserListItem extends StatelessWidget {
           color: cardColor,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
-            BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 8, offset: const Offset(0, 4))
+            BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 8, offset: const Offset(0, 4))
           ]
         ),
         child: Row(
@@ -493,7 +493,7 @@ class _UserListItem extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 15),
                 child: CircleAvatar(
-                  backgroundColor: roleColor.withOpacity(0.1),
+                  backgroundColor: roleColor.withValues(alpha: 0.1),
                   child: Text(
                     (user['full_name'] ?? 'U')[0].toUpperCase(),
                     style: TextStyle(color: roleColor, fontWeight: FontWeight.bold),
@@ -521,7 +521,7 @@ class _UserListItem extends StatelessWidget {
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                             decoration: BoxDecoration(
-                              color: roleColor.withOpacity(0.1),
+                              color: roleColor.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(
@@ -532,7 +532,7 @@ class _UserListItem extends StatelessWidget {
                           if (user['branch'] != null) ...[
                             const SizedBox(width: 8),
                             Text(
-                              "•  ${user['branch']}",
+                              "â€¢  ${user['branch']}",
                               style: TextStyle(fontSize: 11, color: subTextColor),
                             ),
                           ]
@@ -555,9 +555,9 @@ class _UserListItem extends StatelessWidget {
                     margin: const EdgeInsets.only(bottom: 5),
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.orange.withOpacity(0.1),
+                      color: Colors.orange.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.orange.withOpacity(0.3))
+                      border: Border.all(color: Colors.orange.withValues(alpha: 0.3))
                     ),
                     child: const Text("Pending", style: TextStyle(fontSize: 10, color: Colors.orange, fontWeight: FontWeight.w600)),
                   ),

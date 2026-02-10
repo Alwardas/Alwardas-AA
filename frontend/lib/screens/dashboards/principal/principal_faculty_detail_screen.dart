@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -62,9 +62,9 @@ class _PrincipalFacultyDetailScreenState extends State<PrincipalFacultyDetailScr
                   color: cardColor,
                   borderRadius: BorderRadius.circular(24),
                   boxShadow: [
-                    BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 15, offset: const Offset(0, 5)),
+                    BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 15, offset: const Offset(0, 5)),
                   ],
-                  border: Border.all(color: iconBg.withOpacity(0.5)),
+                  border: Border.all(color: iconBg.withValues(alpha: 0.5)),
                 ),
                 child: Column(
                   children: [
@@ -78,7 +78,7 @@ class _PrincipalFacultyDetailScreenState extends State<PrincipalFacultyDetailScr
                           ),
                           child: CircleAvatar(
                             radius: 32,
-                            backgroundColor: tint.withOpacity(0.1),
+                            backgroundColor: tint.withValues(alpha: 0.1),
                             child: Text(
                               widget.faculty.name.isNotEmpty ? widget.faculty.name[0].toUpperCase() : '?', 
                               style: TextStyle(color: tint, fontWeight: FontWeight.bold, fontSize: 26)
@@ -95,7 +95,7 @@ class _PrincipalFacultyDetailScreenState extends State<PrincipalFacultyDetailScr
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                 decoration: BoxDecoration(
-                                  color: tint.withOpacity(0.1),
+                                  color: tint.withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Text(
@@ -129,7 +129,7 @@ class _PrincipalFacultyDetailScreenState extends State<PrincipalFacultyDetailScr
                 decoration: BoxDecoration(
                   color: cardColor,
                   borderRadius: BorderRadius.circular(25),
-                  border: Border.all(color: iconBg.withOpacity(0.5)),
+                  border: Border.all(color: iconBg.withValues(alpha: 0.5)),
                 ),
                 child: TabBar(
                   controller: _tabController,
@@ -137,7 +137,7 @@ class _PrincipalFacultyDetailScreenState extends State<PrincipalFacultyDetailScr
                     borderRadius: BorderRadius.circular(25),
                     color: tint,
                     boxShadow: [
-                      BoxShadow(color: tint.withOpacity(0.3), blurRadius: 8, offset: const Offset(0, 2))
+                      BoxShadow(color: tint.withValues(alpha: 0.3), blurRadius: 8, offset: const Offset(0, 2))
                     ],
                   ),
                   labelColor: Colors.white,
@@ -210,7 +210,7 @@ class _PrincipalFacultyDetailScreenState extends State<PrincipalFacultyDetailScr
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: tint.withOpacity(0.1),
+              color: tint.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, size: 40, color: tint),

@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -217,9 +217,9 @@ class _PrincipalFacultyScreenState extends State<PrincipalFacultyScreen> {
         border: isHod ? Border.all(color: hodBorderColor, width: 2) : Border.all(color: iconBg),
         boxShadow: [
           if (isHod) 
-             BoxShadow(color: Colors.amber.withOpacity(0.3), blurRadius: 12, offset: const Offset(0, 4))
+             BoxShadow(color: Colors.amber.withValues(alpha: 0.3), blurRadius: 12, offset: const Offset(0, 4))
           else 
-             BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 5))
+             BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
         ],
       ),
       child: Container(
@@ -230,7 +230,7 @@ class _PrincipalFacultyScreenState extends State<PrincipalFacultyScreen> {
               children: [
                 CircleAvatar(
                   radius: 28,
-                  backgroundColor: isHod ? Colors.white.withOpacity(0.6) : tint.withOpacity(0.1),
+                  backgroundColor: isHod ? Colors.white.withValues(alpha: 0.6) : tint.withValues(alpha: 0.1),
                   child: Text(
                     f.name.isNotEmpty ? f.name[0].toUpperCase() : '?', 
                     style: TextStyle(

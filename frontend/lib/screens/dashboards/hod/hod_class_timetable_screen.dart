@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -114,7 +114,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
               if (mounted) setState(() => _scheduleData = newSchedule);
           }
       } catch (e) {
-          print("Fetch Timetable Error: $e");
+          debugPrint("Fetch Timetable Error: $e");
       }
   }
 
@@ -209,7 +209,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
         title: Column(
           children: [
             Text("Class Timetable", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 16)),
-            Text("${widget.year} • ${widget.branch} • Sec ${widget.section}", style: GoogleFonts.poppins(fontSize: 10, color: subTextColor))
+            Text("${widget.year} â€¢ ${widget.branch} â€¢ Sec ${widget.section}", style: GoogleFonts.poppins(fontSize: 10, color: subTextColor))
           ],
         ),
         backgroundColor: Colors.transparent,
@@ -276,7 +276,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
                               padding: const EdgeInsets.symmetric(vertical: 8),
                               margin: const EdgeInsets.symmetric(vertical: 10),
                               decoration: BoxDecoration(
-                                border: Border.all(color: tint.withOpacity(0.5)),
+                                border: Border.all(color: tint.withValues(alpha: 0.5)),
                                 borderRadius: BorderRadius.circular(50),
                               ),
                               alignment: Alignment.center,
@@ -312,12 +312,12 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
                               padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
                                 color: cardColor,
-                                border: Border.all(color: hasClass ? tint.withOpacity(0.3) : iconBg),
+                                border: Border.all(color: hasClass ? tint.withValues(alpha: 0.3) : iconBg),
                                 borderRadius: BorderRadius.circular(16),
                                 boxShadow: [
                                   if (hasClass)
                                     BoxShadow(
-                                      color: tint.withOpacity(0.1),
+                                      color: tint.withValues(alpha: 0.1),
                                       blurRadius: 8,
                                       offset: const Offset(0, 4),
                                     )
@@ -328,7 +328,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
                                   Container(
                                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                                     decoration: BoxDecoration(
-                                      color: tint.withOpacity(0.1),
+                                      color: tint.withValues(alpha: 0.1),
                                       borderRadius: BorderRadius.circular(6)
                                     ),
                                     child: Text("Period ${item['number']}", style: GoogleFonts.poppins(color: tint, fontWeight: FontWeight.bold, fontSize: 10)),
@@ -338,7 +338,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
                                   const SizedBox(height: 12),
                                   Text(item['subject'],
                                       textAlign: TextAlign.center,
-                                      style: GoogleFonts.poppins(color: hasClass ? textColor : subTextColor.withOpacity(0.5), fontSize: 16, fontWeight: FontWeight.bold),
+                                      style: GoogleFonts.poppins(color: hasClass ? textColor : subTextColor.withValues(alpha: 0.5), fontSize: 16, fontWeight: FontWeight.bold),
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis),
                                   if (hasClass && item['faculty'] != null && item['faculty'].isNotEmpty) ...[
@@ -475,7 +475,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
                   labelText: "Subject Name",
                   labelStyle: TextStyle(color: subTextColor),
                   hintText: "e.g. Data Structures",
-                  hintStyle: TextStyle(color: subTextColor.withOpacity(0.5)),
+                  hintStyle: TextStyle(color: subTextColor.withValues(alpha: 0.5)),
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 ),
               ),
@@ -488,7 +488,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
                   labelText: "Faculty Name (Optional)",
                   labelStyle: TextStyle(color: subTextColor),
                   hintText: "e.g. Dr. Smith",
-                  hintStyle: TextStyle(color: subTextColor.withOpacity(0.5)),
+                  hintStyle: TextStyle(color: subTextColor.withValues(alpha: 0.5)),
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 ),
               ),

@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -19,8 +19,24 @@ class PdfService {
     final pdf = pw.Document();
 
     // Load Fonts
-    final fontRegular = await rootBundle.load("assets/fonts/Poppins-Regular.ttf").catchError((_) => rootBundle.load("assets/fonts/Inter-Regular.ttf")).catchError((_) => null);
-    final fontBold = await rootBundle.load("assets/fonts/Poppins-Bold.ttf").catchError((_) => rootBundle.load("assets/fonts/Inter-Bold.ttf")).catchError((_) => null);
+    // Load Fonts safely
+    ByteData? fontRegular;
+    try {
+      fontRegular = await rootBundle.load("assets/fonts/Poppins-Regular.ttf");
+    } catch (_) {
+      try {
+        fontRegular = await rootBundle.load("assets/fonts/Inter-Regular.ttf");
+      } catch (_) {}
+    }
+
+    ByteData? fontBold;
+    try {
+      fontBold = await rootBundle.load("assets/fonts/Poppins-Bold.ttf");
+    } catch (_) {
+      try {
+        fontBold = await rootBundle.load("assets/fonts/Inter-Bold.ttf");
+      } catch (_) {}
+    }
     
     final ttfRegular = fontRegular != null ? pw.Font.ttf(fontRegular) : pw.Font.courier();
     final ttfBold = fontBold != null ? pw.Font.ttf(fontBold) : pw.Font.courierBold();
@@ -97,7 +113,7 @@ class PdfService {
          if (!isHoliday) workingDays++;
       }
     } catch (e) {
-      print("Error calculating working days: $e");
+      debugPrint("Error calculating working days: $e");
       workingDays = daysInMonth; // Fallback
     }
 
@@ -146,11 +162,11 @@ class PdfService {
                  child: pw.Column(
                    crossAxisAlignment: pw.CrossAxisAlignment.start,
                    children: [
-                      _buildInfoRow("College:", "ALWARDAS POLYTECHNIC—GOPALAPATNAM", fontBold, fontRegular),
+                      _buildInfoRow("College:", "ALWARDAS POLYTECHNICâ€”GOPALAPATNAM", fontBold, fontRegular),
                       pw.SizedBox(height: 4),
                       _buildInfoRow("Branch:", branch, fontBold, fontRegular),
                       pw.SizedBox(height: 4),
-                      _buildInfoRow("Year & Section:", "$year – $section", fontBold, fontRegular),
+                      _buildInfoRow("Year & Section:", "$year â€“ $section", fontBold, fontRegular),
                       pw.SizedBox(height: 4),
                       _buildInfoRow("Month:", month, fontBold, fontRegular),
                    ]
@@ -539,7 +555,7 @@ class PdfService {
       await output.writeAsBytes(await pdf.save());
       await OpenFilex.open(path);
     } catch (e) {
-      print("Error saving PDF: $e");
+      debugPrint("Error saving PDF: $e");
     }
   }
 }

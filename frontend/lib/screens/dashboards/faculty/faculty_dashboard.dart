@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -258,7 +258,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           'My Classes',
                           'Manage',
                           cardColor,
-                          const Color(0xFF3b5998).withOpacity(0.1), 
+                          const Color(0xFF3b5998).withValues(alpha: 0.1), 
                           const Color(0xFF3b5998),
                           textColor,
                           subTextColor,
@@ -269,7 +269,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           'Schedule',
                           'View',
                           cardColor,
-                          const Color(0xFF9b59b6).withOpacity(0.1), 
+                          const Color(0xFF9b59b6).withValues(alpha: 0.1), 
                           const Color(0xFF9b59b6),
                           textColor,
                           subTextColor,
@@ -280,7 +280,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           'Attendance',
                           'Post',
                           cardColor,
-                          const Color(0xFF2ecc71).withOpacity(0.1), 
+                          const Color(0xFF2ecc71).withValues(alpha: 0.1), 
                           const Color(0xFF2ecc71),
                           textColor,
                           subTextColor,
@@ -291,7 +291,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           'Profile',
                           'Details',
                           cardColor,
-                          const Color(0xFFf1c40f).withOpacity(0.1), 
+                          const Color(0xFFf1c40f).withValues(alpha: 0.1), 
                           const Color(0xFFf1c40f),
                           textColor,
                           subTextColor,
@@ -319,12 +319,12 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 10,
                           offset: const Offset(0, 5),
                         ),
                       ],
-                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05)),
+                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -370,9 +370,9 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.white.withOpacity(0.5), width: 1),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 1),
       ),
       child: Icon(icon, color: Colors.white, size: 20),
     );
@@ -391,7 +391,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -402,7 +402,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
           Container(
              width: 4, 
              height: 35, 
-             decoration: BoxDecoration(color: Colors.white.withOpacity(0.5), borderRadius: BorderRadius.circular(2)),
+             decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(2)),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -418,7 +418,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                 const SizedBox(height: 3),
                 Text(
                   subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withOpacity(0.8), fontSize: 13),
+                  style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 13),
                 ),
               ],
             ),
@@ -438,12 +438,12 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
              width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
               blurRadius: 15,
               offset: const Offset(0, 8),
             ),
@@ -455,7 +455,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconColor.withOpacity(0.1),
+                color: iconColor.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: iconColor, size: 26),

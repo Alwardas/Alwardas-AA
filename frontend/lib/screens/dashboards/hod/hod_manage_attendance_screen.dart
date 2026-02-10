@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 // For JSON loading fallback
@@ -22,7 +22,7 @@ class HODManageAttendanceScreen extends StatefulWidget {
 }
 
 class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
-  DateTime _date = DateTime.now();
+  final DateTime _date = DateTime.now();
   late String _session; 
 
   @override
@@ -40,7 +40,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
   
   List<dynamic> _students = [];
   List<dynamic> _originalStudents = []; 
-  String _searchQuery = '';
+  final String _searchQuery = '';
   bool _loading = false;
   bool _submitting = false;
   String? _markedBy;
@@ -67,7 +67,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
         setState(() => _afternoonMarked = data['submitted']);
       }
     } catch (e) {
-      print("Status check error: $e");
+      debugPrint("Status check error: $e");
     }
   }
 
@@ -165,24 +165,42 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
          })
        );
        
-       if (res.statusCode == 200 || res.statusCode == 201) {
-         _showSnackBar("Attendance Saved");
-         _checkDailyStatus();
-         if (_session == 'MORNING') {
-           setState(() => _morningMarked = true);
-         } else {
-           setState(() => _afternoonMarked = true);
-         }
-         setState(() => _isEditing = false);
-         _fetchAttendance(); // Refresh to ensure strict sync
-       } else {
-         final body = json.decode(res.body);
-         _showSnackBar(body['error'] ?? "Submission failed");
-       }
-     } catch (e) {
-       _showSnackBar("Network Error");
-     } finally {
-       setState(() => _submitting = false);
+        if (res.statusCode == 200 || res.statusCode == 201) {
+          _showSnackBar("Attendance Saved");
+          
+          // Optimistic Update: Update flags immediately without refetching
+          if (_session == 'MORNING') {
+             _morningMarked = true;
+          } else {
+             _afternoonMarked = true;
+          }
+          
+          // Update original students to match current state (commit changes)
+          _originalStudents = _students.map((s) => Map<String, dynamic>.from(s)).toList();
+          
+          if (mounted) {
+             setState(() {
+                _isEditing = false;
+                _submitting = false;
+             });
+          }
+          
+          // Background refresh (optional, non-blocking)
+          _checkDailyStatus();
+        } else {
+          try {
+            final body = json.decode(res.body);
+            _showSnackBar(body['error'] ?? "Submission failed");
+          } catch (_) {
+             _showSnackBar("Submission failed: ${res.statusCode}");
+          }
+        }
+      } catch (e) {
+        _showSnackBar("Network Error: $e");
+      } finally {
+        if (mounted) setState(() => _submitting = false);
+      }
+
      }
   }
 
@@ -226,6 +244,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
   }
 
   void _showSnackBar(String text) {
+    if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
   }
   
@@ -413,7 +432,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
                                            Container(
                                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                                              decoration: BoxDecoration(
-                                               color: (isPresent ? Colors.green : Colors.red).withOpacity(0.2),
+                                               color: (isPresent ? Colors.green : Colors.red).withValues(alpha: 0.2),
                                                borderRadius: BorderRadius.circular(12),
                                              ),
                                              child: Text(student['status'], style: TextStyle(color: isPresent ? Colors.green : Colors.red, fontWeight: FontWeight.bold, fontSize: 10)),
@@ -436,7 +455,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
                                _isHoliday ? "HOLIDAY" : "SUBMITTED",
                                style: GoogleFonts.blackOpsOne(
                                  fontSize: 50,
-                                 color: (_isHoliday ? Colors.blue : Colors.grey).withOpacity(0.3),
+                                 color: (_isHoliday ? Colors.blue : Colors.grey).withValues(alpha: 0.3),
                                  fontWeight: FontWeight.bold
                                ),
                              ),
@@ -481,7 +500,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
                             width: double.infinity,
                             padding: const EdgeInsets.all(15),
                             alignment: Alignment.center,
-                            decoration: BoxDecoration(color: Colors.grey.withOpacity(0.2), borderRadius: BorderRadius.circular(12)),
+                            decoration: BoxDecoration(color: Colors.grey.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(12)),
                             child: Text("Attendance Marked by $_markedBy", style: TextStyle(color: textColor, fontWeight: FontWeight.bold)),
                          )
                    ],

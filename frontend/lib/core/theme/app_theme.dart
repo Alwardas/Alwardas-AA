@@ -1,4 +1,4 @@
-import 'dart:ui';
+﻿import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -108,8 +108,8 @@ class AppTheme {
   }) {
     // New Shadow System
     final List<BoxShadow> shadows = isDark 
-    ? [BoxShadow(color: Colors.black.withOpacity(0.6), blurRadius: 40, offset: const Offset(0, 20))] // Dark Theme Shadow
-    : [BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 30, offset: const Offset(0, 10))]; // Light Theme Shadow
+    ? [BoxShadow(color: Colors.black.withValues(alpha: 0.6), blurRadius: 40, offset: const Offset(0, 20))] // Dark Theme Shadow
+    : [BoxShadow(color: Colors.black.withValues(alpha: 0.08), blurRadius: 30, offset: const Offset(0, 10))]; // Light Theme Shadow
 
     return BoxDecoration(
       color: customColor ?? (isDark ? ThemeColors.darkCardBg : Colors.white),

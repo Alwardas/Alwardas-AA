@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ParentRequestsScreen extends StatefulWidget {
@@ -64,7 +64,7 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
                 decoration: BoxDecoration(
                   color: cardColor,
                   borderRadius: BorderRadius.circular(15),
-                  boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10)]
+                  boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10)]
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,7 +75,7 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
                         Text(req['type']!, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16)),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                          decoration: BoxDecoration(color: statusColor.withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
+                          decoration: BoxDecoration(color: statusColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10)),
                           child: Text(req['status']!, style: GoogleFonts.poppins(color: statusColor, fontSize: 12, fontWeight: FontWeight.bold)),
                         )
                       ],

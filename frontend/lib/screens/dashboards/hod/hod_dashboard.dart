@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -260,7 +260,7 @@ class _HodDashboardState extends State<HodDashboard> {
                           'Faculty',
                           'Manage',
                           cardColor,
-                          const Color(0xFF38ef7d).withOpacity(0.1), 
+                          const Color(0xFF38ef7d).withValues(alpha: 0.1), 
                           const Color(0xFF38ef7d),
                           textColor,
                           subTextColor,
@@ -271,7 +271,7 @@ class _HodDashboardState extends State<HodDashboard> {
                           'Timetables',
                           'Oversee',
                           cardColor,
-                          const Color(0xFF606c88).withOpacity(0.1), 
+                          const Color(0xFF606c88).withValues(alpha: 0.1), 
                           const Color(0xFF606c88),
                           textColor,
                           subTextColor,
@@ -282,7 +282,7 @@ class _HodDashboardState extends State<HodDashboard> {
                           'Reports',
                           'View',
                           cardColor,
-                          const Color(0xFF141E30).withOpacity(0.1), 
+                          const Color(0xFF141E30).withValues(alpha: 0.1), 
                           const Color(0xFF243B55),
                           textColor,
                           subTextColor,
@@ -293,7 +293,7 @@ class _HodDashboardState extends State<HodDashboard> {
                           'Branch Requests',
                           'Approve Users',
                           cardColor,
-                          const Color(0xFFe74c3c).withOpacity(0.1), 
+                          const Color(0xFFe74c3c).withValues(alpha: 0.1), 
                           const Color(0xFFe74c3c),
                           textColor,
                           subTextColor,
@@ -304,7 +304,7 @@ class _HodDashboardState extends State<HodDashboard> {
                           'Courses',
                           'My Plan',
                           cardColor,
-                          Colors.blue.withOpacity(0.1),
+                          Colors.blue.withValues(alpha: 0.1),
                           Colors.blue,
                           textColor,
                           subTextColor,
@@ -315,7 +315,7 @@ class _HodDashboardState extends State<HodDashboard> {
                           'Profile',
                           'Details',
                           cardColor,
-                          const Color(0xFFf1c40f).withOpacity(0.1), 
+                          const Color(0xFFf1c40f).withValues(alpha: 0.1), 
                           const Color(0xFFf1c40f),
                           textColor,
                           subTextColor,
@@ -326,7 +326,7 @@ class _HodDashboardState extends State<HodDashboard> {
                           'Our Dept',
                           'Management',
                           cardColor,
-                          Colors.indigo.withOpacity(0.1),
+                          Colors.indigo.withValues(alpha: 0.1),
                           Colors.indigo,
                           textColor,
                           subTextColor,
@@ -354,12 +354,12 @@ class _HodDashboardState extends State<HodDashboard> {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 10,
                           offset: const Offset(0, 5),
                         ),
                       ],
-                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05)),
+                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -406,9 +406,9 @@ class _HodDashboardState extends State<HodDashboard> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.white.withOpacity(0.5), width: 1),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 1),
       ),
       child: Icon(icon, color: Colors.white, size: 20),
     );
@@ -427,7 +427,7 @@ class _HodDashboardState extends State<HodDashboard> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -438,7 +438,7 @@ class _HodDashboardState extends State<HodDashboard> {
           Container(
              width: 4, 
              height: 35, 
-             decoration: BoxDecoration(color: Colors.white.withOpacity(0.5), borderRadius: BorderRadius.circular(2)),
+             decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(2)),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -454,7 +454,7 @@ class _HodDashboardState extends State<HodDashboard> {
                 const SizedBox(height: 3),
                 Text(
                   subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withOpacity(0.8), fontSize: 13),
+                  style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 13),
                 ),
               ],
             ),
@@ -474,12 +474,12 @@ class _HodDashboardState extends State<HodDashboard> {
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
              width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
               blurRadius: 15,
               offset: const Offset(0, 8),
             ),
@@ -491,7 +491,7 @@ class _HodDashboardState extends State<HodDashboard> {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconColor.withOpacity(0.1),
+                color: iconColor.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: iconColor, size: 26),

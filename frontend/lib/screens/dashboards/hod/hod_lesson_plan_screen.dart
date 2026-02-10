@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -253,12 +253,12 @@ class _HodLessonPlanScreenState extends State<HodLessonPlanScreen> {
       child: Container(
         margin: const EdgeInsets.only(bottom: 20),
         decoration: BoxDecoration(
-          color: isCompleted ? Colors.green.withOpacity(0.05) : (isDark ? Colors.grey[900] : Colors.white),
+          color: isCompleted ? Colors.green.withValues(alpha: 0.05) : (isDark ? Colors.grey[900] : Colors.white),
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
              if(!isCompleted)
               BoxShadow(
-                color: Colors.black.withOpacity(0.03),
+                color: Colors.black.withValues(alpha: 0.03),
                 blurRadius: 10,
                 offset: const Offset(0, 4)
               )
@@ -271,7 +271,7 @@ class _HodLessonPlanScreenState extends State<HodLessonPlanScreen> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: isCompleted ? Colors.green.withOpacity(0.1) : Colors.grey.withOpacity(0.05),
+                color: isCompleted ? Colors.green.withValues(alpha: 0.1) : Colors.grey.withValues(alpha: 0.05),
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
               ),
               child: Row(
@@ -451,9 +451,9 @@ class _FeedbackListState extends State<_FeedbackList> {
                        width: double.infinity,
                        padding: const EdgeInsets.all(16),
                        decoration: BoxDecoration(
-                         color: Colors.blue.withOpacity(0.05),
+                         color: Colors.blue.withValues(alpha: 0.05),
                          borderRadius: BorderRadius.circular(12),
-                         border: Border.all(color: Colors.blue.withOpacity(0.1))
+                         border: Border.all(color: Colors.blue.withValues(alpha: 0.1))
                        ),
                        child: Text(
                          existingReply!,
@@ -518,9 +518,9 @@ class _FeedbackListState extends State<_FeedbackList> {
         margin: const EdgeInsets.only(right: 8),
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: BoxDecoration(
-          color: Colors.grey.withOpacity(0.1),
+          color: Colors.grey.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.grey.withOpacity(0.3))
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.3))
         ),
         child: Text(text, style: GoogleFonts.poppins(fontSize: 12)),
       ),
@@ -610,7 +610,7 @@ class _FeedbackListState extends State<_FeedbackList> {
                                  padding: const EdgeInsets.all(16),
                                  decoration: BoxDecoration(
                                    color: Theme.of(context).cardColor,
-                                   border: Border.all(color: Colors.grey.withOpacity(0.2)),
+                                   border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
                                    borderRadius: BorderRadius.circular(12),
                                  ),
                                  child: Column(
@@ -630,7 +630,7 @@ class _FeedbackListState extends State<_FeedbackList> {
                                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                                            margin: const EdgeInsets.only(top: 6, bottom: 4),
                                            decoration: BoxDecoration(
-                                             color: Colors.red.withOpacity(0.1),
+                                             color: Colors.red.withValues(alpha: 0.1),
                                              borderRadius: BorderRadius.circular(4)
                                            ),
                                            child: Text(fb['issueType'], style: GoogleFonts.poppins(fontSize: 10, color: Colors.red)),
@@ -653,9 +653,9 @@ class _FeedbackListState extends State<_FeedbackList> {
                                           child: Container(
                                             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
                                             decoration: BoxDecoration(
-                                              color: hasReply ? Colors.green.withOpacity(0.1) : Colors.blue.withOpacity(0.1),
+                                              color: hasReply ? Colors.green.withValues(alpha: 0.1) : Colors.blue.withValues(alpha: 0.1),
                                               borderRadius: BorderRadius.circular(20),
-                                              border: Border.all(color: hasReply ? Colors.green.withOpacity(0.3) : Colors.blue.withOpacity(0.3))
+                                              border: Border.all(color: hasReply ? Colors.green.withValues(alpha: 0.3) : Colors.blue.withValues(alpha: 0.3))
                                             ),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.min,

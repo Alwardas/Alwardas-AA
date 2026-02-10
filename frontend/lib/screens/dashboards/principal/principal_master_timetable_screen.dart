@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -77,7 +77,7 @@ class _PrincipalMasterTimetableScreenState extends State<PrincipalMasterTimetabl
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.table_view_outlined, size: 60, color: tint.withOpacity(0.5)),
+                      Icon(Icons.table_view_outlined, size: 60, color: tint.withValues(alpha: 0.5)),
                       const SizedBox(height: 20),
                       Text("Timetable Ready", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
                       const SizedBox(height: 8),

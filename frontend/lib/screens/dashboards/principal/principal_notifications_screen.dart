@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +46,7 @@ class _PrincipalNotificationsScreenState extends State<PrincipalNotificationsScr
         }
       }
     } catch (e) {
-      print("Error fetching notifications: $e");
+      debugPrint("Error fetching notifications: $e");
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -161,7 +161,7 @@ class _PrincipalNotificationsScreenState extends State<PrincipalNotificationsScr
         borderRadius: BorderRadius.circular(15),
         border: Border.all(color: iconBg),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4, offset: const Offset(0, 2)),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 4, offset: const Offset(0, 2)),
         ],
       ),
       child: Column(

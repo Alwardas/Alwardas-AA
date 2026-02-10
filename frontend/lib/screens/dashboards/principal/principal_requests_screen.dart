@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -104,7 +104,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.check_circle_outline, size: 80, color: tint.withOpacity(0.5)),
+                    Icon(Icons.check_circle_outline, size: 80, color: tint.withValues(alpha: 0.5)),
                     const SizedBox(height: 20),
                     Text("All Caught Up!", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
                     Text("No pending HOD requests.", style: TextStyle(color: subTextColor)),
@@ -164,9 +164,9 @@ class _RequestCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: cardColor,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: iconBg.withOpacity(0.2)),
+        border: Border.all(color: iconBg.withValues(alpha: 0.2)),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12, offset: const Offset(0, 6)),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 12, offset: const Offset(0, 6)),
         ],
       ),
       child: Column(
@@ -176,7 +176,7 @@ class _RequestCard extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(color: tint.withOpacity(0.1), shape: BoxShape.circle),
+                decoration: BoxDecoration(color: tint.withValues(alpha: 0.1), shape: BoxShape.circle),
                 child: Icon(Icons.person_outline, color: tint, size: 20),
               ),
               const SizedBox(width: 12),

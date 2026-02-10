@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -66,7 +66,7 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
         });
       }
     } catch (e) {
-      print("Error fetching faculty data: $e");
+      debugPrint("Error fetching faculty data: $e");
       if (mounted) setState(() => _loading = false);
     }
   }
@@ -135,7 +135,7 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
         // Date parsing might be tricky without DateFormat (intl package). 
         // I will verify 'intl' usage or use a dummy date and hope backend finds record by other means or ignores date validation for this action.
       } catch (e) {
-        print("Date parse error: $e");
+        debugPrint("Date parse error: $e");
       }
     }
 
@@ -264,7 +264,7 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                   color: isProfile ? tint.withOpacity(0.1) : error.withOpacity(0.1),
+                   color: isProfile ? tint.withValues(alpha: 0.1) : error.withValues(alpha: 0.1),
                    borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(isProfile ? 'Profile' : 'Urgent', style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: isProfile ? tint : error)),
@@ -275,8 +275,8 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
           const SizedBox(height: 10),
           if (isProfile) ...[
              const Text("Changes:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
-             if (item['newFullName'] != null) Text("• Name: ${item['newFullName']}", style: TextStyle(color: textColor)),
-             if (item['newBranch'] != null) Text("• Branch: ${item['newBranch']}", style: TextStyle(color: textColor)),
+             if (item['newFullName'] != null) Text("â€¢ Name: ${item['newFullName']}", style: TextStyle(color: textColor)),
+             if (item['newBranch'] != null) Text("â€¢ Branch: ${item['newBranch']}", style: TextStyle(color: textColor)),
           ] else ...[
              Text(item['message'] ?? '', style: GoogleFonts.poppins(color: textColor, fontStyle: FontStyle.italic)),
           ],
@@ -289,7 +289,7 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
                   onPressed: () => isProfile ? _handleProfileAction(item['id'], 'REJECT') : _openAttendanceModal(item, 'REJECT'),
                   style: OutlinedButton.styleFrom(
                     foregroundColor: error,
-                    side: BorderSide(color: error.withOpacity(0.5)),
+                    side: BorderSide(color: error.withValues(alpha: 0.5)),
                   ),
                   child: const Text("Reject"),
                 ),
@@ -299,7 +299,7 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
                 child: ElevatedButton(
                   onPressed: () => isProfile ? _handleProfileAction(item['id'], 'APPROVE') : _openAttendanceModal(item, 'APPROVE'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green.withOpacity(0.2), // Light green bg
+                    backgroundColor: Colors.green.withValues(alpha: 0.2), // Light green bg
                     foregroundColor: Colors.green, // Green text
                     elevation: 0,
                   ),

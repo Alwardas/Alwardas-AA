@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart'; // Persistence
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -454,11 +454,11 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
                         margin: const EdgeInsets.only(bottom: 15),
                         padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
-                          color: isDark ? Colors.white.withOpacity(0.05) : Colors.white,
+                          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
                           borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Colors.grey.withOpacity(0.1)),
+                          border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
                           boxShadow: [
-                            BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 5, offset: const Offset(0, 2))
+                            BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 5, offset: const Offset(0, 2))
                           ],
                         ),
                         child: Row(
@@ -466,7 +466,7 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
                             Container(
                               padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                color: Colors.blueAccent.withOpacity(0.1),
+                                color: Colors.blueAccent.withValues(alpha: 0.1),
                                 shape: BoxShape.circle,
                               ),
                               child: const Icon(Icons.class_outlined, color: Colors.blueAccent),

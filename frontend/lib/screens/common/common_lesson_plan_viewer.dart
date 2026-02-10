@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -109,7 +109,7 @@ class _CommonLessonPlanViewerState extends State<CommonLessonPlanViewer> {
                               color: cardColor,
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(color: iconBg),
-                              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10)],
+                              boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10)],
                             ),
                             child: Row(
                               children: [
@@ -160,7 +160,7 @@ class _CommonLessonPlanViewerState extends State<CommonLessonPlanViewer> {
                                 decoration: BoxDecoration(
                                   color: cardColor,
                                   borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: isCompleted ? Colors.green.withOpacity(0.3) : iconBg, width: isCompleted ? 1.5 : 1),
+                                  border: Border.all(color: isCompleted ? Colors.green.withValues(alpha: 0.3) : iconBg, width: isCompleted ? 1.5 : 1),
                                 ),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -168,7 +168,7 @@ class _CommonLessonPlanViewerState extends State<CommonLessonPlanViewer> {
                                     Container(
                                       padding: const EdgeInsets.all(8),
                                       decoration: BoxDecoration(
-                                        color: isCompleted ? Colors.green.withOpacity(0.1) : iconBg.withOpacity(0.5),
+                                        color: isCompleted ? Colors.green.withValues(alpha: 0.1) : iconBg.withValues(alpha: 0.5),
                                         shape: BoxShape.circle,
                                       ),
                                       child: Text(

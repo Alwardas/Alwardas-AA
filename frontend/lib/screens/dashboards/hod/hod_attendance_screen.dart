@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -68,7 +68,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
             if (mounted) setState(() => _stats = decodedOverlay);
         }
       } catch (e) {
-        print("Cache Load Error: $e");
+        debugPrint("Cache Load Error: $e");
       }
   }
 
@@ -212,7 +212,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
       }
 
     } catch (e) {
-      print("Error fetching stats: $e");
+      debugPrint("Error fetching stats: $e");
     } finally {
       if(mounted) setState(() => _loading = false);
     }
@@ -285,6 +285,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
   }
 
   void _showSnackBar(String text) {
+    if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
   }
 
@@ -449,11 +450,11 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                        return Container(
                            margin: const EdgeInsets.only(bottom: 15),
                            decoration: BoxDecoration(
-                             color: allMarked ? Colors.green.withOpacity(0.1) : cardColor,
+                             color: allMarked ? Colors.green.withValues(alpha: 0.1) : cardColor,
                              border: Border.all(color: allMarked ? Colors.green : iconBg),
                              borderRadius: BorderRadius.circular(15),
                              boxShadow: [
-                               if (isDark) BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 5, offset: const Offset(0,2))
+                               if (isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5, offset: const Offset(0,2))
                              ]
                            ),
                            child: Material(
@@ -472,7 +473,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                        children: [
                                          Container(
                                            padding: const EdgeInsets.all(12),
-                                           decoration: BoxDecoration(color: allMarked ? Colors.green.withOpacity(0.2) : iconBg, borderRadius: BorderRadius.circular(12)),
+                                           decoration: BoxDecoration(color: allMarked ? Colors.green.withValues(alpha: 0.2) : iconBg, borderRadius: BorderRadius.circular(12)),
                                            child: Icon(Icons.school, color: allMarked ? Colors.green : tint, size: 24),
                                          ),
                                          const SizedBox(width: 15),
@@ -496,7 +497,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                      Container(
                                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                                        decoration: BoxDecoration(
-                                         color: isDark ? const Color(0xFF1E1E2D).withOpacity(0.5) : Colors.white.withOpacity(0.5),
+                                         color: isDark ? const Color(0xFF1E1E2D).withValues(alpha: 0.5) : Colors.white.withValues(alpha: 0.5),
                                          borderRadius: BorderRadius.circular(10)
                                        ),
                                        child: Row(
@@ -534,7 +535,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                        padding: const EdgeInsets.symmetric(vertical: 15),
                        side: const BorderSide(color: Colors.blueAccent),
                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), 
-                       backgroundColor: Colors.white.withOpacity(0.8)
+                       backgroundColor: Colors.white.withValues(alpha: 0.8)
                      ),
                      onPressed: _showHolidayDialog,
                    ),
@@ -554,7 +555,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: cardColor,
-          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10, offset: const Offset(0, -5))]
+          boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10, offset: const Offset(0, -5))]
         ),
         child: SafeArea(
           child: ElevatedButton.icon(
@@ -584,7 +585,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.15), blurRadius: 20, offset: const Offset(0, 10))
+                BoxShadow(color: Colors.black.withValues(alpha: 0.15), blurRadius: 20, offset: const Offset(0, 10))
               ],
             ),
             child: SingleChildScrollView(
@@ -613,9 +614,9 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                      return Container(
                        margin: const EdgeInsets.only(bottom: 12),
                        decoration: BoxDecoration(
-                         color: isMarked ? Colors.green.withOpacity(0.1) : const Color(0xFFf8f9fa),
+                         color: isMarked ? Colors.green.withValues(alpha: 0.1) : const Color(0xFFf8f9fa),
                          borderRadius: BorderRadius.circular(15),
-                         border: Border.all(color: isMarked ? Colors.green : Colors.blue.withOpacity(0.2)), 
+                         border: Border.all(color: isMarked ? Colors.green : Colors.blue.withValues(alpha: 0.2)), 
                        ),
                        child: Column(
                          children: [
@@ -1003,7 +1004,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
        } catch (e) {
            Navigator.pop(context); // Close Progress
            _showSnackBar("Error: $e");
-           print("Holiday Mark Error: $e");
+           debugPrint("Holiday Mark Error: $e");
        }
   }
 
@@ -1081,7 +1082,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                        }
                     }
                   } catch (e) {
-                    print("Error fetching $dateStr $session: $e");
+                    debugPrint("Error fetching $dateStr $session: $e");
                   }
                }
 
@@ -1121,7 +1122,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
 
       } catch (e) {
          if (mounted && Navigator.canPop(context)) Navigator.pop(context);
-         print("PDF Error: $e");
+         debugPrint("PDF Error: $e");
          _showSnackBar("Failed to generate report: $e");
       }
   }

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -84,7 +84,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
             }
         }
       } catch (e) {
-         print("Error fetching child data: $e");
+         debugPrint("Error fetching child data: $e");
          if (mounted) {
              setState(() {
                  _children = [{
@@ -139,7 +139,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                 
                 return ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: isSelected ? Theme.of(context).primaryColor : Colors.grey.withOpacity(0.2),
+                    backgroundColor: isSelected ? Theme.of(context).primaryColor : Colors.grey.withValues(alpha: 0.2),
                     child: Text(child['name']![0], style: TextStyle(color: isSelected ? Colors.white : Colors.grey)),
                   ),
                   title: Text(child['name']!, style: GoogleFonts.poppins(fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black)),
@@ -151,7 +151,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
               const Divider(),
               ListTile(
                 leading: CircleAvatar(
-                  backgroundColor: Theme.of(context).primaryColor.withOpacity(0.1),
+                  backgroundColor: Theme.of(context).primaryColor.withValues(alpha: 0.1),
                   child: Icon(Icons.add, color: Theme.of(context).primaryColor),
                 ),
                 title: Text("Add Another Child", style: GoogleFonts.poppins(fontWeight: FontWeight.w600, color: Theme.of(context).primaryColor)),
@@ -410,7 +410,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                           'Attendance',
                           '95% Present',
                           cardColor,
-                          const Color(0xFF2ecc71).withOpacity(0.1), 
+                          const Color(0xFF2ecc71).withValues(alpha: 0.1), 
                           const Color(0xFF2ecc71),
                           textColor,
                           subTextColor,
@@ -421,7 +421,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                           'Marks',
                           'View report',
                           cardColor,
-                          const Color(0xFF3b5998).withOpacity(0.1),
+                          const Color(0xFF3b5998).withValues(alpha: 0.1),
                           const Color(0xFF3b5998),
                           textColor,
                           subTextColor,
@@ -432,7 +432,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                           'Fee Payments',
                           'Due: \$0',
                           cardColor,
-                          Colors.orange.withOpacity(0.1),
+                          Colors.orange.withValues(alpha: 0.1),
                           Colors.orange,
                           textColor,
                           subTextColor,
@@ -442,7 +442,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                           'Permissions',
                           'New Request',
                           cardColor,
-                          Colors.purple.withOpacity(0.1),
+                          Colors.purple.withValues(alpha: 0.1),
                           Colors.purple,
                           textColor,
                           subTextColor,
@@ -463,9 +463,9 @@ class _ParentDashboardState extends State<ParentDashboard> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.white.withOpacity(0.5), width: 1),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 1),
       ),
       child: Icon(icon, color: Colors.white, size: 20),
     );
@@ -484,7 +484,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           )
@@ -495,7 +495,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
           Container(
              width: 4, 
              height: 35, 
-             decoration: BoxDecoration(color: Colors.white.withOpacity(0.5), borderRadius: BorderRadius.circular(2)),
+             decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(2)),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -511,7 +511,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                 const SizedBox(height: 3),
                 Text(
                   subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withOpacity(0.8), fontSize: 13),
+                  style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 13),
                 ),
               ],
             ),
@@ -531,12 +531,12 @@ class _ParentDashboardState extends State<ParentDashboard> {
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
              width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
               blurRadius: 15,
               offset: const Offset(0, 8),
             ),
@@ -548,7 +548,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconColor.withOpacity(0.1),
+                color: iconColor.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: iconColor, size: 26),

@@ -1,4 +1,4 @@
-class FacultyMember {
+﻿class FacultyMember {
   final String id;
   final String name;
   final String designation;

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -251,7 +251,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           'Attendance',
                           'All Branches',
                           cardColor,
-                          const Color(0xFF8E2DE2).withOpacity(0.1), 
+                          const Color(0xFF8E2DE2).withValues(alpha: 0.1), 
                           const Color(0xFF8E2DE2),
                           textColor,
                           subTextColor,
@@ -262,7 +262,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           'Syllabus',
                           'Track Progress',
                           cardColor,
-                          const Color(0xFF38ef7d).withOpacity(0.1), 
+                          const Color(0xFF38ef7d).withValues(alpha: 0.1), 
                           const Color(0xFF38ef7d),
                           textColor,
                           subTextColor,
@@ -273,7 +273,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           'Timetables',
                           'Master View',
                           cardColor,
-                          const Color(0xFF606c88).withOpacity(0.1), 
+                          const Color(0xFF606c88).withValues(alpha: 0.1), 
                           const Color(0xFF606c88),
                           textColor,
                           subTextColor,
@@ -284,7 +284,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           'HOD Requests',
                           'Approve HODs',
                           cardColor,
-                          const Color(0xFFf1c40f).withOpacity(0.1), 
+                          const Color(0xFFf1c40f).withValues(alpha: 0.1), 
                           const Color(0xFFf1c40f),
                           textColor,
                           subTextColor,
@@ -295,7 +295,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           'Announcements',
                           '& Warnings',
                           cardColor,
-                          const Color(0xFFff6347).withOpacity(0.1), 
+                          const Color(0xFFff6347).withValues(alpha: 0.1), 
                           const Color(0xFFff6347),
                           textColor,
                           subTextColor,
@@ -306,7 +306,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           'My Schedule',
                           'Personal',
                           cardColor,
-                          const Color(0xFF00d2ff).withOpacity(0.1), 
+                          const Color(0xFF00d2ff).withValues(alpha: 0.1), 
                           const Color(0xFF00d2ff),
                           textColor,
                           subTextColor,
@@ -317,7 +317,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           'Faculty',
                           'Directory',
                           cardColor,
-                          const Color(0xFF38ef7d).withOpacity(0.1), 
+                          const Color(0xFF38ef7d).withValues(alpha: 0.1), 
                           const Color(0xFF38ef7d),
                           textColor,
                           subTextColor,
@@ -328,7 +328,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           'Profile',
                           'View Details',
                           cardColor,
-                          Colors.grey.withOpacity(0.1), 
+                          Colors.grey.withValues(alpha: 0.1), 
                           Colors.grey,
                           textColor,
                           subTextColor,
@@ -356,12 +356,12 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 10,
                           offset: const Offset(0, 5),
                         ),
                       ],
-                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05)),
+                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -407,9 +407,9 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.white.withOpacity(0.5), width: 1),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 1),
       ),
       child: Icon(icon, color: Colors.white, size: 20),
     );
@@ -428,7 +428,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -439,7 +439,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
           Container(
              width: 4, 
              height: 35, 
-             decoration: BoxDecoration(color: Colors.white.withOpacity(0.5), borderRadius: BorderRadius.circular(2)),
+             decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(2)),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -455,7 +455,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                 const SizedBox(height: 3),
                 Text(
                   subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withOpacity(0.8), fontSize: 13),
+                  style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 13),
                 ),
               ],
             ),
@@ -475,12 +475,12 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
              width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
               blurRadius: 15,
               offset: const Offset(0, 8),
             ),
@@ -492,7 +492,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconColor.withOpacity(0.1),
+                color: iconColor.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: iconColor, size: 26),

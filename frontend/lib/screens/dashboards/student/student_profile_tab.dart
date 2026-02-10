@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -105,11 +105,11 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     }
 
     try {
-      print("Fetching profile for UserID: $userId");
+      debugPrint("Fetching profile for UserID: $userId");
       final response = await http.get(Uri.parse('${ApiConstants.studentProfile}?userId=$userId'));
       
-      print("Profile API Status: ${response.statusCode}");
-      print("Profile API Body: ${response.body}");
+      debugPrint("Profile API Status: ${response.statusCode}");
+      debugPrint("Profile API Body: ${response.body}");
 
       if (response.statusCode == 200) {
         _profileData = json.decode(response.body);
@@ -120,7 +120,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
         }
       } else {
         // Fallback to locally available data
-        print("API Failed, using local userData");
+        debugPrint("API Failed, using local userData");
         _profileData = widget.userData;
         _pendingRequest = null;
       }
@@ -366,7 +366,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                     height: 120,
                     width: 120,
                     errorBuilder: (context, error, stackTrace) => 
-                       Icon(Icons.school, size: 100, color: subTextColor.withOpacity(0.3)),
+                       Icon(Icons.school, size: 100, color: subTextColor.withValues(alpha: 0.3)),
                   ),
                   const SizedBox(height: 10),
                   Text(
@@ -432,7 +432,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
         else
             _ValueText(text: _fullNameController.text, color: textColor, isHeader: true),
         
-        Divider(color: Colors.grey.withOpacity(0.2), height: 30),
+        Divider(color: Colors.grey.withValues(alpha: 0.2), height: 30),
         
         // Row for Student ID & DOB
         Row(
@@ -470,7 +470,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
           ],
         ),
 
-        Divider(color: Colors.grey.withOpacity(0.2), height: 30),
+        Divider(color: Colors.grey.withValues(alpha: 0.2), height: 30),
 
         _SectionLabel(text: "Branch", color: subTextColor),
          if (_isEditing)
@@ -483,7 +483,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
          else
             _ValueText(text: _branchController.text, color: textColor),
 
-        Divider(color: Colors.grey.withOpacity(0.2), height: 30),
+        Divider(color: Colors.grey.withValues(alpha: 0.2), height: 30),
 
         // Row for Year and Batch No
         Row(
@@ -521,7 +521,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
            ],
         ),
 
-        Divider(color: Colors.grey.withOpacity(0.2), height: 30),
+        Divider(color: Colors.grey.withValues(alpha: 0.2), height: 30),
 
         // Row for Semester
         Row(
@@ -600,7 +600,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.amber.withOpacity(0.2),
+                color: Colors.amber.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: Colors.amber),
               ),

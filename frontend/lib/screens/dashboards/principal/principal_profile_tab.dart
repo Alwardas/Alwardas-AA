@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -115,7 +115,7 @@ class PrincipalProfileTab extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label.toUpperCase(), style: GoogleFonts.poppins(fontSize: 12, color: subTextColor.withOpacity(0.7), letterSpacing: 1, fontWeight: FontWeight.w600)),
+        Text(label.toUpperCase(), style: GoogleFonts.poppins(fontSize: 12, color: subTextColor.withValues(alpha: 0.7), letterSpacing: 1, fontWeight: FontWeight.w600)),
         const SizedBox(height: 5),
         Text(value, style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
       ],

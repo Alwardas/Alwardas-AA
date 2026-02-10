@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -49,7 +49,7 @@ class _PrincipalAnnouncementsScreenState extends State<PrincipalAnnouncementsScr
         });
       }
     } catch (e) {
-      print("Error fetching announcements: $e");
+      debugPrint("Error fetching announcements: $e");
     } finally {
       if (mounted) setState(() => _loading = false);
     }

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -50,7 +50,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
         throw Exception('Failed to load stats');
       }
     } catch (e) {
-      print("Error fetching stats: $e");
+      debugPrint("Error fetching stats: $e");
       if (mounted) setState(() => _loading = false);
     }
   }
@@ -175,7 +175,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
                 children: [
                   Expanded(child: _buildStatItem("Total Users", _stats['total_users'].toString(), Icons.people, Colors.blue, textColor)),
-                  Container(height: 40, width: 1, color: Colors.grey.withOpacity(0.2)),
+                  Container(height: 40, width: 1, color: Colors.grey.withValues(alpha: 0.2)),
                   Expanded(
                     child: GestureDetector(
                       onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminRequestsScreen())),
@@ -261,9 +261,9 @@ class _AdminDashboardState extends State<AdminDashboard> {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.white.withOpacity(0.5), width: 1),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 1),
       ),
       child: Icon(icon, color: Colors.white, size: 20),
     );
@@ -275,7 +275,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
+            color: color.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
           child: Icon(icon, color: color, size: 24),
@@ -288,7 +288,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
         Text(
           label,
           textAlign: TextAlign.center,
-          style: GoogleFonts.poppins(color: textColor.withOpacity(0.7), fontSize: 12, fontWeight: FontWeight.w500),
+          style: GoogleFonts.poppins(color: textColor.withValues(alpha: 0.7), fontSize: 12, fontWeight: FontWeight.w500),
         ),
       ],
     );
@@ -306,12 +306,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
              width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: isDark ? Colors.black.withOpacity(0.2) : Colors.grey.withOpacity(0.1),
+              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
               blurRadius: 15,
               offset: const Offset(0, 8),
             ),
@@ -323,7 +323,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: iconColor.withOpacity(0.1),
+                color: iconColor.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: iconColor, size: 26),

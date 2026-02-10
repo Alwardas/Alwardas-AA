@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -52,7 +52,7 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
         });
       }
     } catch (e) {
-      print("Error fetching subjects: $e");
+      debugPrint("Error fetching subjects: $e");
     }
   }
 
@@ -163,7 +163,7 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
               icon: Container(
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: tint.withOpacity(0.1),
+                  color: tint.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(Icons.add, color: tint, size: 24),
@@ -201,7 +201,7 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
                           color: isSelected ? tint : (isDark ? Colors.white10 : Colors.grey[200]),
                           borderRadius: BorderRadius.circular(30),
                           boxShadow: isSelected 
-                            ? [BoxShadow(color: tint.withOpacity(0.4), blurRadius: 8, offset: const Offset(0, 4))] 
+                            ? [BoxShadow(color: tint.withValues(alpha: 0.4), blurRadius: 8, offset: const Offset(0, 4))] 
                             : [],
                         ),
                         alignment: Alignment.center,
@@ -270,13 +270,13 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
                 color: isBreak ? Colors.orangeAccent : tint,
                 shape: BoxShape.circle,
                 border: Border.all(color: isDark ? Colors.black : Colors.white, width: 2),
-                boxShadow: [BoxShadow(color: (isBreak ? Colors.orangeAccent : tint).withOpacity(0.4), blurRadius: 6)],
+                boxShadow: [BoxShadow(color: (isBreak ? Colors.orangeAccent : tint).withValues(alpha: 0.4), blurRadius: 6)],
               ),
             ),
             Container(
               width: 2,
               height: isBreak ? 50 : 70, // Height depends on content
-              color: (isBreak ? Colors.orangeAccent : tint).withOpacity(0.2),
+              color: (isBreak ? Colors.orangeAccent : tint).withValues(alpha: 0.2),
             ),
           ],
         ),
@@ -291,14 +291,14 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: isBreak 
-                  ? Colors.orangeAccent.withOpacity(0.1) 
+                  ? Colors.orangeAccent.withValues(alpha: 0.1) 
                   : (isDark ? const Color(0xFF1E1E1E) : Colors.white),
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
-                  color: isBreak ? Colors.orange.withOpacity(0.3) : (isDark ? Colors.white10 : Colors.grey.shade200)
+                  color: isBreak ? Colors.orange.withValues(alpha: 0.3) : (isDark ? Colors.white10 : Colors.grey.shade200)
                 ),
                 boxShadow: isBreak ? [] : [
-                  BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4))
+                  BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))
                 ],
               ),
               child: Column(
@@ -311,7 +311,7 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                           decoration: BoxDecoration(
-                            color: tint.withOpacity(0.1),
+                            color: tint.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(6)
                           ),
                           child: Text("Period ${item['number']}", style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: tint)),
@@ -331,7 +331,7 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
                         style: GoogleFonts.poppins(
                           fontSize: 16, 
                           fontWeight: FontWeight.w600, 
-                          color: item['subject'] == '---' ? subTextColor.withOpacity(0.5) : textColor
+                          color: item['subject'] == '---' ? subTextColor.withValues(alpha: 0.5) : textColor
                         )
                       ),
                   
@@ -385,7 +385,7 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
                         decoration: BoxDecoration(
                           color: selected ? tint : Colors.transparent,
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: selected ? tint : subTextColor.withOpacity(0.3)),
+                          border: Border.all(color: selected ? tint : subTextColor.withValues(alpha: 0.3)),
                         ),
                         child: Text(d.substring(0, 3), style: TextStyle(color: selected ? Colors.white : textColor, fontWeight: selected ? FontWeight.bold : FontWeight.normal)),
                       ),
@@ -409,7 +409,7 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
                         decoration: BoxDecoration(
                           color: selected ? tint : Colors.transparent,
                           shape: BoxShape.circle,
-                          border: Border.all(color: selected ? tint : subTextColor.withOpacity(0.3)),
+                          border: Border.all(color: selected ? tint : subTextColor.withValues(alpha: 0.3)),
                         ),
                         alignment: Alignment.center,
                         child: Text(n.toString(), style: TextStyle(color: selected ? Colors.white : textColor, fontWeight: FontWeight.bold)),
@@ -446,7 +446,7 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
                               decoration: BoxDecoration(
                                 color: selected ? tint : Colors.transparent,
                                 borderRadius: BorderRadius.circular(20),
-                                border: Border.all(color: selected ? tint : subTextColor.withOpacity(0.3)),
+                                border: Border.all(color: selected ? tint : subTextColor.withValues(alpha: 0.3)),
                               ),
                               child: Text(s, style: TextStyle(color: selected ? Colors.white : textColor, fontSize: 13)),
                             ),
@@ -463,7 +463,7 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
                       decoration: InputDecoration(
                         hintText: "e.g. Special Seminar",
                         hintStyle: TextStyle(color: subTextColor),
-                        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: subTextColor.withOpacity(0.3))),
+                        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: subTextColor.withValues(alpha: 0.3))),
                         focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: tint)),
                       ),
                       onChanged: (val) {

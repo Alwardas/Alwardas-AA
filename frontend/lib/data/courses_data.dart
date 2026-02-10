@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class CoursesData {
@@ -12,7 +12,7 @@ class CoursesData {
     List<dynamic> all = [];
     final branches = ['civil.json', 'cme.json', 'ece.json', 'eee.json', 'mech.json'];
 
-    print("Loading courses from ${branches.length} files...");
+    debugPrint("Loading courses from ${branches.length} files...");
     for (String file in branches) {
       try {
         final String content = await rootBundle.loadString('assets/data/json/$file');
@@ -70,10 +70,10 @@ class CoursesData {
              }
           });
         }
-        print("Loaded $subjectsCount subjects from $file ($branchName)");
+        debugPrint("Loaded $subjectsCount subjects from $file ($branchName)");
       } catch (e) {
-        print("Error loading course data from $file: $e");
-        print("Make sure $file exists in assets/data/json/ and is listed in pubspec.yaml assets.");
+        debugPrint("Error loading course data from $file: $e");
+        debugPrint("Make sure $file exists in assets/data/json/ and is listed in pubspec.yaml assets.");
       }
     }
 

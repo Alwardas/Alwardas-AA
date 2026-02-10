@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -60,7 +60,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
         setState(() => _loading = false);
       }
     } catch (e) {
-      print("Error fetching subjects: $e");
+      debugPrint("Error fetching subjects: $e");
       if (mounted) setState(() => _loading = false);
     }
   }
@@ -228,7 +228,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
               children: [
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(color: tint.withOpacity(0.1), borderRadius: BorderRadius.circular(4)),
+                  decoration: BoxDecoration(color: tint.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(4)),
                   child: Text(item['code'] ?? item['id'], style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: tint)),
                 ),
                 if (_isSelectMode)
@@ -241,7 +241,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
                       Stack(
                         alignment: Alignment.center,
                         children: [
-                          SizedBox(width: 35, height: 35, child: CircularProgressIndicator(value: percentage / 100, strokeWidth: 3, backgroundColor: statusColor.withOpacity(0.2), valueColor: AlwaysStoppedAnimation(statusColor))),
+                          SizedBox(width: 35, height: 35, child: CircularProgressIndicator(value: percentage / 100, strokeWidth: 3, backgroundColor: statusColor.withValues(alpha: 0.2), valueColor: AlwaysStoppedAnimation(statusColor))),
                           Text("$percentage%", style: GoogleFonts.poppins(fontSize: 9, fontWeight: FontWeight.bold, color: statusColor)),
                         ],
                       ),
@@ -254,8 +254,8 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
             const SizedBox(height: 12),
             Row(
               children: [
-                _buildTag(item['branch'], tint.withOpacity(0.1), tint),
-                _buildTag(item['semester'], Colors.purple.withOpacity(0.1), Colors.purple),
+                _buildTag(item['branch'], tint.withValues(alpha: 0.1), tint),
+                _buildTag(item['semester'], Colors.purple.withValues(alpha: 0.1), Colors.purple),
               ],
             ),
           ],
@@ -329,7 +329,7 @@ class __AddSubjectModalState extends State<_AddSubjectModal> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12),
-              decoration: BoxDecoration(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05), borderRadius: BorderRadius.circular(12)),
+              decoration: BoxDecoration(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(12)),
               child: TextField(
                 onChanged: (v) => setState(() => _searchQuery = v),
                 style: TextStyle(color: textColor),
@@ -351,7 +351,7 @@ class __AddSubjectModalState extends State<_AddSubjectModal> {
                 return ListTile(
                   contentPadding: EdgeInsets.zero,
                   title: Text("${item['code']} - ${item['name']}", style: TextStyle(color: isAdded ? subTextColor : textColor, fontWeight: FontWeight.w600)),
-                  subtitle: Text("${item['branch']} • ${item['semester']}", style: TextStyle(color: subTextColor, fontSize: 12)),
+                  subtitle: Text("${item['branch']} â€¢ ${item['semester']}", style: TextStyle(color: subTextColor, fontSize: 12)),
                   trailing: isAdded
                       ? const Icon(Icons.check_circle, color: Colors.green)
                       : Icon(isSelected ? Icons.check_box : Icons.check_box_outline_blank, color: isSelected ? tint : subTextColor),

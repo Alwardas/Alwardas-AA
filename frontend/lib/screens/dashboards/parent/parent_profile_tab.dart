@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -80,13 +80,13 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
             });
             _populateControllers();
         } else {
-             print("Failed to fetch profile: ${response.statusCode}");
+             debugPrint("Failed to fetch profile: ${response.statusCode}");
              // Fallback to widget data if API fails
              _profileData = widget.userData; 
              _populateControllers();
         }
     } catch (e) {
-        print("Error fetching profile: $e");
+        debugPrint("Error fetching profile: $e");
          _profileData = widget.userData; 
          _populateControllers();
     } finally {
@@ -268,7 +268,7 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
                     height: 120,
                     width: 120,
                     errorBuilder: (context, error, stackTrace) =>
-                       Icon(Icons.school, size: 100, color: subTextColor.withOpacity(0.3)),
+                       Icon(Icons.school, size: 100, color: subTextColor.withValues(alpha: 0.3)),
                   ),
                   const SizedBox(height: 10),
                   Text(
@@ -354,7 +354,7 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
          else
             _ValueText(text: _phoneController.text, color: textColor),
 
-        Divider(color: Colors.grey.withOpacity(0.2), height: 20),
+        Divider(color: Colors.grey.withValues(alpha: 0.2), height: 20),
 
         // Student Details
         _SectionLabel(text: "Student Name", color: subTextColor),
@@ -405,7 +405,7 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
                child: Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.amber.withOpacity(0.2),
+                  color: Colors.amber.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(color: Colors.amber),
                 ),

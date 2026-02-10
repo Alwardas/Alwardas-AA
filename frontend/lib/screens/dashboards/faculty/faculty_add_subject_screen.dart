@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../theme/theme_constants.dart';
 
@@ -74,7 +74,7 @@ class _FacultyAddSubjectScreenState extends State<FacultyAddSubjectScreen> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               decoration: BoxDecoration(
-                color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.05),
+                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
                 borderRadius: BorderRadius.circular(15),
               ),
               child: TextField(
@@ -95,7 +95,7 @@ class _FacultyAddSubjectScreenState extends State<FacultyAddSubjectScreen> {
             child: ListView.separated(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               itemCount: filtered.length,
-              separatorBuilder: (_, __) => Divider(height: 1, color: subTextColor.withOpacity(0.1)),
+              separatorBuilder: (_, __) => Divider(height: 1, color: subTextColor.withValues(alpha: 0.1)),
               itemBuilder: (ctx, index) {
                 final item = filtered[index];
                 final isSelected = _selectedIds.contains(item['id']);
@@ -110,7 +110,7 @@ class _FacultyAddSubjectScreenState extends State<FacultyAddSubjectScreen> {
                     style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600, color: isAlreadyAdded ? subTextColor : textColor)
                   ),
                   subtitle: Text(
-                    "${item['branch']} • ${item['semester']}", 
+                    "${item['branch']} â€¢ ${item['semester']}", 
                     style: TextStyle(color: subTextColor, fontSize: 12)
                   ),
                   trailing: isAlreadyAdded

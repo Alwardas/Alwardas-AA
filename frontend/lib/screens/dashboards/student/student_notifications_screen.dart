@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -175,7 +175,7 @@ class _StudentNotificationsScreenState extends State<StudentNotificationsScreen>
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.notifications_off_outlined, size: 80, color: subTextColor.withOpacity(0.5)),
+                        Icon(Icons.notifications_off_outlined, size: 80, color: subTextColor.withValues(alpha: 0.5)),
                         const SizedBox(height: 20),
                         Text("No Notifications", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
                         const SizedBox(height: 8),
@@ -212,7 +212,7 @@ class _StudentNotificationsScreenState extends State<StudentNotificationsScreen>
                           padding: const EdgeInsets.all(16),
                           margin: const EdgeInsets.only(bottom: 12),
                           decoration: BoxDecoration(
-                            color: isSelected ? tint.withOpacity(0.1) : cardColor,
+                            color: isSelected ? tint.withValues(alpha: 0.1) : cardColor,
                             borderRadius: BorderRadius.circular(16),
                             border: Border.all(color: isSelected ? tint : iconBg),
                           ),
@@ -231,7 +231,7 @@ class _StudentNotificationsScreenState extends State<StudentNotificationsScreen>
                               
                               Container(
                                 padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(color: textColor.withOpacity(0.05), shape: BoxShape.circle),
+                                decoration: BoxDecoration(color: textColor.withValues(alpha: 0.05), shape: BoxShape.circle),
                                 child: _buildNotificationIcon(type, message, tint),
                               ),
                               const SizedBox(width: 15),
@@ -243,7 +243,7 @@ class _StudentNotificationsScreenState extends State<StudentNotificationsScreen>
                                     const SizedBox(height: 2),
                                     Text(message, style: GoogleFonts.poppins(fontSize: 14, color: textColor)),
                                     const SizedBox(height: 6),
-                                    Text(timeAgo, style: GoogleFonts.poppins(fontSize: 11, color: subTextColor.withOpacity(0.8))),
+                                    Text(timeAgo, style: GoogleFonts.poppins(fontSize: 11, color: subTextColor.withValues(alpha: 0.8))),
                                   ],
                                 ),
                               ),

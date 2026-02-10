@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:convert';
@@ -249,6 +249,7 @@ class _SignupScreenState extends State<SignupScreen> {
       final data = jsonDecode(response.body);
 
       if (response.statusCode == 200) {
+          if (!mounted) return;
           showDialog(
             context: context,
             barrierDismissible: false,
@@ -289,7 +290,7 @@ class _SignupScreenState extends State<SignupScreen> {
       }
 
     } catch (e) {
-      print(e);
+      debugPrint(e);
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Network Error. Is Backend running?')));
     } finally {
       if (mounted) setState(() => _isSigningUp = false);
@@ -398,7 +399,7 @@ class _SignupScreenState extends State<SignupScreen> {
        }
 
      } catch (e) {
-       print("Check Error: $e");
+       debugPrint("Check Error: $e");
        _moveToStep2();
      } finally {
        if (mounted) setState(() => _checkingUser = false);
@@ -657,7 +658,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
+                                  color: Colors.black.withValues(alpha: 0.1),
                                   blurRadius: 10,
                                   offset: const Offset(0, 5),
                                 ),

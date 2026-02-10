@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'dart:convert';
@@ -162,8 +162,8 @@ class _StudentDetailsScreenState extends State<StudentDetailsScreen> {
       decoration: InputDecoration(
         labelText: label,
         labelStyle: GoogleFonts.poppins(color: subTextColor),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: subTextColor.withOpacity(0.3))),
-        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: subTextColor.withOpacity(0.3))),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: subTextColor.withValues(alpha: 0.3))),
+        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: subTextColor.withValues(alpha: 0.3))),
         focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Colors.blueAccent)),
         isDense: true,
       ),
@@ -215,14 +215,14 @@ class _StudentDetailsScreenState extends State<StudentDetailsScreen> {
                           color: cardColor,
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
-                            BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 15, offset: const Offset(0, 5))
+                            BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 15, offset: const Offset(0, 5))
                           ],
                         ),
                         child: Column(
                           children: [
                             CircleAvatar(
                               radius: 40,
-                              backgroundColor: Colors.blueAccent.withOpacity(0.1),
+                              backgroundColor: Colors.blueAccent.withValues(alpha: 0.1),
                               child: Text(
                                 (_studentData!['fullName'] ?? 'S')[0].toUpperCase(),
                                 style: GoogleFonts.poppins(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.blueAccent),
@@ -283,7 +283,7 @@ class _StudentDetailsScreenState extends State<StudentDetailsScreen> {
         color: cardColor,
         borderRadius: BorderRadius.circular(16),
          boxShadow: [
-            BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10, offset: const Offset(0, 4))
+            BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4))
          ]
       ),
       child: Column(

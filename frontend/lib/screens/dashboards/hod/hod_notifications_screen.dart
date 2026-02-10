@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -270,7 +270,7 @@ class _HodNotificationsScreenState extends State<HodNotificationsScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.inbox, size: 60, color: color.withOpacity(0.5)),
+          Icon(Icons.inbox, size: 60, color: color.withValues(alpha: 0.5)),
           const SizedBox(height: 10),
           Text("No notifications", style: TextStyle(color: color, fontSize: 16)),
         ],
@@ -380,7 +380,7 @@ class _NotificationCardState extends State<NotificationCard> {
           borderRadius: BorderRadius.circular(15),
           border: Border.all(color: widget.isSelected ? widget.tint : widget.iconBg, width: widget.isSelected ? 2 : 1),
           boxShadow: [
-            BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4, offset: const Offset(0, 2)),
+            BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 4, offset: const Offset(0, 2)),
           ],
         ),
         child: Column(
@@ -426,7 +426,7 @@ class _NotificationCardState extends State<NotificationCard> {
               Container(
                 margin: const EdgeInsets.only(top: 10),
                 padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(color: widget.iconBg.withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
+                decoration: BoxDecoration(color: widget.iconBg.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)),
                 child: Text(details, style: GoogleFonts.poppins(fontSize: 14, color: widget.textColor)),
               ),
 

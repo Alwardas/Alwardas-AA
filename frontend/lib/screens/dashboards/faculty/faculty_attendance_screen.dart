@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -437,7 +437,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 15,
               offset: const Offset(0, 5),
             )
@@ -731,7 +731,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
           Positioned.fill(
               child: IgnorePointer(
                   child: Container(
-                      color: Colors.white.withOpacity(0.05), // Subtle fade
+                      color: Colors.white.withValues(alpha: 0.05), // Subtle fade
                       alignment: Alignment.center,
                       child: Transform.rotate(
                           angle: -0.5,
