@@ -22,7 +22,7 @@ class HODManageAttendanceScreen extends StatefulWidget {
 }
 
 class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
-  final DateTime _date = DateTime.now();
+  DateTime _date = DateTime.now();
   late String _session; 
 
   @override
@@ -40,7 +40,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
   
   List<dynamic> _students = [];
   List<dynamic> _originalStudents = []; 
-  final String _searchQuery = '';
+  String _searchQuery = '';
   bool _loading = false;
   bool _submitting = false;
   String? _markedBy;
@@ -196,13 +196,11 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
           }
         }
       } catch (e) {
-        _showSnackBar("Network Error: $e");
+        if (mounted) _showSnackBar("Network Error: $e");
       } finally {
         if (mounted) setState(() => _submitting = false);
       }
-
-     }
-  }
+    }
 
   
   void _toggleStatus(int index) {

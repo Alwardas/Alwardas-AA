@@ -1,4 +1,5 @@
-﻿import 'dart:convert';
+﻿import 'package:flutter/foundation.dart';
+import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class CoursesData {
@@ -93,3 +94,4 @@ class CoursesData {
     return all;
   }
 }
+

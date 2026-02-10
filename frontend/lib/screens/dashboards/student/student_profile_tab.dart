@@ -204,7 +204,6 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
       'newYear': _yearController.text,
       'newSemester': _semesterController.text,
       'newDob': dobToSend,
-      'newDob': dobToSend,
       'newBatchNo': _batchNoController.text,
       'newSection': _sectionController.text,
     };

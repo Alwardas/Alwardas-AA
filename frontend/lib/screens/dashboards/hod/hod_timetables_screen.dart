@@ -205,13 +205,11 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
     if (_currentView == TimetableView.master) title = 'Master Timetable';
     if (_currentView == TimetableView.sections) title = '${_selectedYearForSections?.name ?? ''} Sections';
 
-    return WillPopScope(
-      onWillPop: () async {
-        if (_currentView != TimetableView.main) {
-          _navigateBack();
-          return false;
-        }
-        return true;
+    return PopScope(
+      canPop: _currentView == TimetableView.main,
+      onPopInvoked: (didPop) {
+        if (didPop) return;
+        _navigateBack();
       },
       child: Scaffold(
         extendBodyBehindAppBar: true,

@@ -286,12 +286,12 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
           );
       } else {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(data['message'] ?? 'Signup Failed')));
+          if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(data['message'] ?? 'Signup Failed')));
       }
 
     } catch (e) {
-      debugPrint(e);
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Network Error. Is Backend running?')));
+      debugPrint(e.toString());
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Network Error. Is Backend running?')));
     } finally {
       if (mounted) setState(() => _isSigningUp = false);
     }
@@ -470,8 +470,7 @@ class _SignupScreenState extends State<SignupScreen> {
   // Step 2 Updated
   Widget _buildStep2() {
     // ... (Labels Logic Unchanged)
-    String idLabel = 'ID';
-    String idPlaceholder = 'Enter ID';
+    // ... (Labels Logic Unchanged)
     // (Collapsed for brevity, keep existing logic)
     
      // Visibility Logic

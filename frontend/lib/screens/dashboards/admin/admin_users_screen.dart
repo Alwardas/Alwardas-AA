@@ -253,13 +253,11 @@ class _AdminUsersScreenState extends State<AdminUsersScreen> {
             },
           ),
         ),
-        body: WillPopScope(
-          onWillPop: () async {
-            if (_viewLevel > 0) {
-              _navigateBack();
-              return false;
-            }
-            return true;
+        body: PopScope(
+          canPop: _viewLevel == 0,
+          onPopInvoked: (didPop) {
+            if (didPop) return;
+            _navigateBack();
           },
           child: Column(
             children: [
