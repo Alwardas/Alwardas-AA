@@ -9,7 +9,6 @@ import 'dashboards/hod/hod_dashboard.dart';
 import 'dashboards/principal/principal_dashboard.dart';
 import 'package:provider/provider.dart';
 import '../core/providers/theme_provider.dart';
-import 'dashboards/coordinator/coordinator_dashboard.dart';
 import 'dashboards/admin/admin_dashboard.dart';
 
 class SplashScreen extends StatefulWidget {

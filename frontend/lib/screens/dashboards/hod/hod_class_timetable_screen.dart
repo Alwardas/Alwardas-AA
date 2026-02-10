@@ -94,7 +94,9 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
               final List<dynamic> data = json.decode(res.body);
               
               Map<String, List<Map<String, dynamic>>> newSchedule = {};
-              for (var d in _days) newSchedule[d] = _getEmptyDay();
+              for (var d in _days) {
+                newSchedule[d] = _getEmptyDay();
+              }
               
               for (var item in data) {
                   String day = item['day'];

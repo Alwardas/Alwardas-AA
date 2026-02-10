@@ -7,7 +7,6 @@ import 'hod_announcements_screen.dart';
 import 'hod_attendance_screen.dart';
 import 'hod_courses_screen.dart';
 import 'hod_schedule_screen.dart';
-import 'hod_faculty_screen.dart';
 import 'hod_timetables_screen.dart';
 import 'hod_notifications_screen.dart';
 import 'hod_department_screen.dart';

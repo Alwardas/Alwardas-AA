@@ -114,8 +114,11 @@ class _HODAnnouncementsScreenState extends State<HODAnnouncementsScreen> {
         headers: {'Content-Type': 'application/json'},
         body: json.encode({'userId': user?['id']})
       );
-      if (res.statusCode == 200) _fetchAnnouncements();
-      else _showSnackBar("Failed to mark done");
+      if (res.statusCode == 200) {
+        _fetchAnnouncements();
+      } else {
+        _showSnackBar("Failed to mark done");
+      }
     } catch (e) {
       _showSnackBar("Network Error");
     }
@@ -124,8 +127,11 @@ class _HODAnnouncementsScreenState extends State<HODAnnouncementsScreen> {
   Future<void> _handleDelete(int id) async {
     try {
       final res = await http.delete(Uri.parse('${ApiConstants.baseUrl}/api/announcements/$id'));
-      if (res.statusCode == 200) _fetchAnnouncements();
-      else _showSnackBar("Failed to delete");
+      if (res.statusCode == 200) {
+        _fetchAnnouncements();
+      } else {
+        _showSnackBar("Failed to delete");
+      }
     } catch (e) {
       _showSnackBar("Network Error");
     }

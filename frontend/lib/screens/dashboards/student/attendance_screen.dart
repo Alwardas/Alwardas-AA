@@ -38,7 +38,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
   
   // Selection Mode Logic
   bool _isSelectionMode = false;
-  Set<String> _selectedRequestDates = {}; // "yyyy-MM-dd"
+  final Set<String> _selectedRequestDates = {}; // "yyyy-MM-dd"
   // For modal: Map of Date -> List<String> (sessions)
   Map<String, List<String>> _sessionsToCorrect = {}; 
 
@@ -1083,7 +1083,7 @@ class _TrackRequestsSheetState extends State<TrackRequestsSheet> {
                                   ),
                                   const SizedBox(height: 10),
                                   Text("Dates:", style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 14)),
-                                  ...datesInfo.map((d) => Text("• ${d['date']} (${d['session']})", style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey[700]))).toList(),
+                                  ...datesInfo.map((d) => Text("• ${d['date']} (${d['session']})", style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey[700]))),
                                   const SizedBox(height: 10),
                                   Text("Reason: ${item['reason']}", style: GoogleFonts.poppins(fontSize: 14, fontStyle: FontStyle.italic)),
                                 ],

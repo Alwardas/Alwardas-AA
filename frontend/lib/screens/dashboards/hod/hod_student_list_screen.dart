@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // For rootBundle
-import 'package:shared_preferences/shared_preferences.dart'; // Persistence
+// For rootBundle
+// Persistence
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -419,8 +419,11 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                                     value: _selectedIds.contains(student['studentId']),
                                     onChanged: (val) {
                                       setState(() {
-                                        if (val == true) _selectedIds.add(student['studentId']);
-                                        else _selectedIds.remove(student['studentId']);
+                                        if (val == true) {
+                                          _selectedIds.add(student['studentId']);
+                                        } else {
+                                          _selectedIds.remove(student['studentId']);
+                                        }
                                       });
                                     },
                                     activeColor: tint,

@@ -8,7 +8,7 @@ import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../data/courses_data.dart';
-import '../../dashboards/student/student_lesson_plan_screen.dart'; // Keep for reference or remove if unused
+// Keep for reference or remove if unused
 import 'faculty_lesson_plan_screen.dart';
 import '../../../core/theme/app_theme.dart';
 
@@ -30,7 +30,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
   
   // Delete Mode State
   bool _isDeleteMode = false;
-  Set<String> _idsToDelete = {};
+  final Set<String> _idsToDelete = {};
 
   @override
   void initState() {

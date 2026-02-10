@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'screens/auth/login_screen.dart';
 import 'screens/splash_screen.dart';
 
 import 'package:provider/provider.dart';
 import 'core/theme/app_theme.dart';
 import 'core/providers/theme_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'core/api_constants.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

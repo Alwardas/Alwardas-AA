@@ -3,14 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart'; // Persistence
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/custom_modal_dropdown.dart';
 import '../../theme/app_colors.dart';
 import '../../core/api_constants.dart';
 import '../../core/theme/app_theme.dart';
-import '../../core/providers/theme_provider.dart';
 
 class SignupScreen extends StatefulWidget {
   final int initialStep; 
@@ -100,7 +98,7 @@ class _SignupScreenState extends State<SignupScreen> {
      
      final prefs = await SharedPreferences.getInstance();
      // Key format matches HodYearSectionsScreen: 'sections_${branch}_${year}'
-     final key = 'sections_${_selectedBranch}_${_selectedYear}';
+     final key = 'sections_${_selectedBranch}_$_selectedYear';
      List<String>? stored = prefs.getStringList(key);
      
      setState(() {

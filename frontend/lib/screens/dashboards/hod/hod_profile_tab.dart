@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
@@ -228,91 +227,87 @@ class _HodProfileTabState extends State<HodProfileTab> {
         child: SafeArea(
           child: _loading 
             ? const Center(child: CircularProgressIndicator())
-            : Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center, // Center vertically
-                      children: [
-                        const SizedBox(height: 10),
-                        // College Logo
-                        Image.asset('assets/images/college logo.png', width: 220, height: 180), 
-                        const SizedBox(height: 5),
-                        Text(
-                          "Alwardas Polytechnic", 
-                          style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 15),
-
-                        // Profile Details Card
-                        Container(
-                          padding: const EdgeInsets.all(16), // Tighter padding
-                          decoration: AppTheme.glassDecoration(isDark: isDark, opacity: 0.25),
-                          child: Column(
-                            children: [
-                              _buildField("Full Name", _fullNameController, _isEditing, isDark, textColor, subTextColor),
-                              Row(
-                                children: [
-                                  Expanded(child: _buildField("HOD ID", _idController, _isEditing, isDark, textColor, subTextColor)),
-                                  const SizedBox(width: 12),
-                                  Expanded(child: _buildField("Date of Birth", _dobController, _isEditing, isDark, textColor, subTextColor, onTap: () => _selectDate(context))),
-                                ],
-                              ),
-                              _buildDropdownField("Department", _deptController, _isEditing, isDark, textColor, subTextColor),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 4),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Contact Details", style: GoogleFonts.poppins(fontSize: 11, color: subTextColor)),
-                                    if (_isEditing) ...[
-                                      TextField(
-                                        controller: _phoneController,
-                                        style: TextStyle(color: textColor, fontSize: 13),
-                                        decoration: const InputDecoration(hintText: 'Phone Number', isDense: true, contentPadding: EdgeInsets.symmetric(vertical: 8)),
-                                      ),
-                                      const SizedBox(height: 4),
-                                      TextField(
-                                        controller: _emailController,
-                                        style: TextStyle(color: textColor, fontSize: 13),
-                                        decoration: const InputDecoration(hintText: 'Email ID', isDense: true, contentPadding: EdgeInsets.symmetric(vertical: 8)),
-                                      ),
-                                    ] else ...[
-                                      Text(_phoneController.text.isEmpty ? "N/A" : _phoneController.text, style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: textColor)),
-                                      Text(_emailController.text.isEmpty ? "N/A" : _emailController.text, style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: textColor)),
-                                    ],
-                                    const Divider(height: 12, color: Colors.white10),
-                                  ],
-                                ),
-                              ),
-                              _buildField("Experience", _experienceController, _isEditing, isDark, textColor, subTextColor),
-                            ],
-                          ),
-                        ),
-                        
-                        const SizedBox(height: 30),
-                        
-                        // Logout
-                        GestureDetector(
-                          onTap: widget.onLogout,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.logout, color: Colors.red.withOpacity(0.8), size: 20),
-                              const SizedBox(width: 8),
-                              Text("Logout Session", style: GoogleFonts.poppins(color: Colors.red.withOpacity(0.8), fontWeight: FontWeight.bold, fontSize: 14)),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        Text("App Version 1.0.0", style: GoogleFonts.poppins(fontSize: 10, color: subTextColor)),
-                        const SizedBox(height: 15),
-                      ],
+            : SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 10),
+                    // College Logo
+                    Image.asset('assets/images/college logo.png', width: 220, height: 180), 
+                    const SizedBox(height: 5),
+                    Text(
+                      "Alwardas Polytechnic", 
+                      style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 15),
+
+                    // Profile Details Card
+                    Container(
+                      padding: const EdgeInsets.all(16), // Tighter padding
+                      decoration: AppTheme.glassDecoration(isDark: isDark, opacity: 0.25),
+                      child: Column(
+                        children: [
+                          _buildField("Full Name", _fullNameController, _isEditing, isDark, textColor, subTextColor),
+                          Row(
+                            children: [
+                              Expanded(child: _buildField("HOD ID", _idController, _isEditing, isDark, textColor, subTextColor)),
+                              const SizedBox(width: 12),
+                              Expanded(child: _buildField("Date of Birth", _dobController, _isEditing, isDark, textColor, subTextColor, onTap: () => _selectDate(context))),
+                            ],
+                          ),
+                          _buildDropdownField("Department", _deptController, _isEditing, isDark, textColor, subTextColor),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 4),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Contact Details", style: GoogleFonts.poppins(fontSize: 11, color: subTextColor)),
+                                if (_isEditing) ...[
+                                  TextField(
+                                    controller: _phoneController,
+                                    style: TextStyle(color: textColor, fontSize: 13),
+                                    decoration: const InputDecoration(hintText: 'Phone Number', isDense: true, contentPadding: EdgeInsets.symmetric(vertical: 8)),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  TextField(
+                                    controller: _emailController,
+                                    style: TextStyle(color: textColor, fontSize: 13),
+                                    decoration: const InputDecoration(hintText: 'Email ID', isDense: true, contentPadding: EdgeInsets.symmetric(vertical: 8)),
+                                  ),
+                                ] else ...[
+                                  Text(_phoneController.text.isEmpty ? "N/A" : _phoneController.text, style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: textColor)),
+                                  Text(_emailController.text.isEmpty ? "N/A" : _emailController.text, style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: textColor)),
+                                ],
+                                const Divider(height: 12, color: Colors.white10),
+                              ],
+                            ),
+                          ),
+                          _buildField("Experience", _experienceController, _isEditing, isDark, textColor, subTextColor),
+                        ],
+                      ),
+                    ),
+                    
+                    const SizedBox(height: 30),
+                    
+                    // Logout
+                    GestureDetector(
+                      onTap: widget.onLogout,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.logout, color: Colors.red.withOpacity(0.8), size: 20),
+                          const SizedBox(width: 8),
+                          Text("Logout Session", style: GoogleFonts.poppins(color: Colors.red.withOpacity(0.8), fontWeight: FontWeight.bold, fontSize: 14)),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text("App Version 1.0.0", style: GoogleFonts.poppins(fontSize: 10, color: subTextColor)),
+                    const SizedBox(height: 15),
+                  ],
+                ),
               ),
         ),
       ),

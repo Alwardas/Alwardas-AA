@@ -17,7 +17,7 @@ class FacultyScheduleScreen extends StatefulWidget {
 
 class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
   // Mock Data Structure
-  Map<String, List<Map<String, dynamic>>> _scheduleData = {
+  final Map<String, List<Map<String, dynamic>>> _scheduleData = {
     'Monday': _getStandardDay(),
     'Tuesday': _getStandardDay(),
     'Wednesday': _getStandardDay(),

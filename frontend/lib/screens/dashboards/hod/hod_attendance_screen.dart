@@ -9,6 +9,7 @@ import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 import 'hod_manage_attendance_screen.dart';
+import '../../../services/pdf_service.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -515,9 +516,31 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                              ),
                            ),
                        );
-                    }).toList(),
+                    }),
                     
-                    const SizedBox(height: 80), 
+              // Holiday Button (Floating at bottom of scroll view content or fixed? User said "below the all years")
+              // Since we are in SingleChildScrollView, placing it inside the Column at the end is correct.
+              // But we need to insert it BEFORE the closing bracket of the Column children.
+              // Re-injecting content with the new button.
+              
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                child: SizedBox(
+                   width: double.infinity,
+                   child: OutlinedButton.icon(
+                     icon: const Icon(Icons.beach_access, color: Colors.blueAccent),
+                     label: Text("Mark Today as Holiday", style: GoogleFonts.poppins(color: Colors.blueAccent, fontWeight: FontWeight.bold)),
+                     style: OutlinedButton.styleFrom(
+                       padding: const EdgeInsets.symmetric(vertical: 15),
+                       side: const BorderSide(color: Colors.blueAccent),
+                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), 
+                       backgroundColor: Colors.white.withOpacity(0.8)
+                     ),
+                     onPressed: _showHolidayDialog,
+                   ),
+                ),
+              ),
+              const SizedBox(height: 100), // Space for bottom bar
                   ],
                 ),
               ),
@@ -542,23 +565,8 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
             ),
-            onPressed: () {
-               ScaffoldMessenger.of(context).showSnackBar(
-                 const SnackBar(content: Text("Generating PDF Report..."), duration: Duration(seconds: 1))
-               );
-               Future.delayed(const Duration(seconds: 2), () {
-                  if (mounted) {
-                    showDialog(
-                      context: context,
-                      builder: (ctx) => AlertDialog(
-                        title: const Text("Success"),
-                        content: const Text("Report has been downloaded successfully to /Download/Alwardas_Report_Dec2025.pdf"),
-                        actions: [TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Open"))],
-                      )
-                    );
-                  }
-               });
-            },
+            onPressed: _showDownloadDialog,
+
           ),
         ),
       ),
@@ -741,5 +749,380 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         ),
       ),
     );
+  }
+  Future<void> _showDownloadDialog() async {
+    final user = await AuthService.getUserSession();
+    final branch = user?['branch'] ?? 'Computer Engineering';
+    
+    // Default values
+    String selectedYear = '1st Year';
+    String selectedSection = 'Section A';
+    String selectedMonth = DateFormat('MMMM').format(DateTime.now());
+    int selectedCalYear = DateTime.now().year;
+
+    // Available options
+    final years = ['1st Year', '2nd Year', '3rd Year'];
+    final months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    final calYears = [2024, 2025, 2026, 2027];
+    
+    // Fetch sections for default year first to populate dropdown
+    List<String> sections = ['Section A']; 
+    // Optimization: We could fetch sections when year changes, but for now stick to 'Section A' default or fetch once.
+    // Let's assume sections are standardized or fetched on open.
+    // Better: Fetch on open.
+    
+    if (!mounted) return;
+
+    showDialog(
+      context: context,
+      builder: (ctx) => StatefulBuilder(
+        builder: (context, setState) {
+          // Dynamic sections based on selected year
+          List<String> sections = ['Section A'];
+          if (_detailedStats.containsKey(selectedYear)) {
+             final list = _detailedStats[selectedYear]['sectionList'];
+             if (list is List && list.isNotEmpty) {
+                sections = list.map((e) => e.toString()).toList();
+             }
+          }
+          if (!sections.contains(selectedSection) && sections.isNotEmpty) {
+             selectedSection = sections.first;
+          }
+
+          return AlertDialog(
+            title: const Text("Download Monthly Report"),
+            content: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                   _buildDialogDropdown("Branch", [branch], branch, (val) {}), // Read-only
+                   const SizedBox(height: 10),
+                   _buildDialogDropdown("Year", years, selectedYear, (val) {
+                      setState(() {
+                         selectedYear = val!;
+                         // Reset section if needed will handle on next build or logic above
+                         // But we need to ensure selectedSection is valid for new year immediately
+                         final newSecs = (_detailedStats[val]['sectionList'] as List?)?.map((e) => e.toString()).toList() ?? ['Section A'];
+                         if (!newSecs.contains(selectedSection) && newSecs.isNotEmpty) {
+                            selectedSection = newSecs.first;
+                         }
+                      });
+                   }),
+                   const SizedBox(height: 10),
+                   _buildDialogDropdown("Section", sections, selectedSection, (val) => setState(() => selectedSection = val!)),
+                   const SizedBox(height: 10),
+                   Row(
+                     children: [
+                       Expanded(child: _buildDialogDropdown("Month", months, selectedMonth, (val) => setState(() => selectedMonth = val!))),
+                       const SizedBox(width: 10),
+                       Expanded(child: _buildDialogDropdown("Year", calYears.map((e) => e.toString()).toList(), selectedCalYear.toString(), (val) => setState(() => selectedCalYear = int.parse(val!)))),
+                     ],
+                   )
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Cancel")),
+              ElevatedButton(
+                onPressed: () {
+                   Navigator.pop(ctx);
+                   _generatePdfReport(branch, selectedYear, selectedSection, selectedMonth, selectedCalYear);
+                },
+                child: const Text("Download PDF"),
+              )
+            ],
+          );
+        }
+      )
+    );
+  }
+
+  Widget _buildDialogDropdown(String label, List<String> items, String value, ValueChanged<String?> onChanged) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: const TextStyle(fontSize: 12, color: Colors.grey)),
+        DropdownButtonFormField<String>(
+          value: items.contains(value) ? value : items.first,
+          items: items.map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
+          onChanged: items.length > 1 ? onChanged : null,
+          decoration: const InputDecoration(isDense: true, contentPadding: EdgeInsets.symmetric(vertical: 8)),
+        )
+      ],
+    );
+  }
+
+  Future<void> _showHolidayDialog() async {
+      final reasonController = TextEditingController();
+      final dateStr = DateFormat('dd/MM/yyyy').format(_selectedDate);
+      
+      final confirm = await showDialog<bool>(
+        context: context, 
+        builder: (ctx) => AlertDialog(
+          title: const Text("Mark Holiday"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+               Text("Mark $dateStr as a Holiday?", style: const TextStyle(fontWeight: FontWeight.bold)),
+               const SizedBox(height: 10),
+               TextField(
+                 controller: reasonController,
+                 decoration: const InputDecoration(
+                   labelText: "Reason (e.g., Holi, Diwali)",
+                   border: OutlineInputBorder(),
+                 ),
+               ),
+               const SizedBox(height: 10),
+               const Text("Note: This will mark 'H' for all students and disable further attendance marking for today.", style: TextStyle(fontSize: 12, color: Colors.grey)),
+            ],
+          ),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text("Cancel")),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text("Confirm Holiday", style: TextStyle(color: Colors.white)),
+            )
+          ],
+        )
+      );
+
+      if (confirm == true && reasonController.text.isNotEmpty) {
+          // Re-confirm Date explicitly as per requirement
+          final finalCheck = await showDialog<bool>(
+             context: context,
+             builder: (ctx) => AlertDialog(
+                title: const Text("Final Confirmation"),
+                content: Text("Are you sure you want to mark $dateStr as '${reasonController.text}'?"),
+                actions: [
+                   TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text("No")), 
+                   ElevatedButton(onPressed: () => Navigator.pop(ctx, true), child: const Text("Yes"))
+                ],
+             )
+          );
+          
+          if (finalCheck == true) {
+             _executeHolidayMarking(reasonController.text);
+          }
+      }
+  }
+
+  Future<void> _executeHolidayMarking(String reason) async {
+       showDialog(
+         context: context, 
+         barrierDismissible: false, 
+         builder: (_) => const Dialog(
+            child: Padding(padding: EdgeInsets.all(20), child: Row(children: [CircularProgressIndicator(), SizedBox(width: 20), Text("Marking Holiday...")]))
+         )
+       );
+       
+       try {
+           final user = await AuthService.getUserSession();
+           final branch = user?['branch'] ?? 'Computer Engineering';
+           final dateIso = _selectedDate.toIso8601String().substring(0, 10); // Check if time matters, usually safe
+
+           // Strategy: Iterate years, fetch section lists, then fetch students, then mark.
+           // This ensures we cover everyone.
+           
+           List<Map<String, String>> allStudents = [];
+           
+           for (var year in ['1st Year', '2nd Year', '3rd Year']) {
+                // Determine sections. If detailed stats loaded, use them. Else fetch.
+                List<String> sections = ['Section A'];
+                if (_detailedStats.containsKey(year) && (_detailedStats[year]['sectionList'] as List).isNotEmpty) {
+                    sections = (_detailedStats[year]['sectionList'] as List).map((e) => e.toString()).toList();
+                } else {
+                    // Fallback fetch sections
+                    try {
+                       final secRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=$branch&year=$year'));
+                       if (secRes.statusCode == 200) sections = List<String>.from(json.decode(secRes.body));
+                    } catch (_) {}
+                }
+                
+                // Fetch students for each section
+                for (var section in sections) {
+                    final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record').replace(queryParameters: {
+                       'branch': branch, 'year': year, 'section': section, 'date': dateIso, 'session': 'MORNING' 
+                    });
+                    
+                    final res = await http.get(uri);
+                    if (res.statusCode == 200) {
+                        final data = json.decode(res.body);
+                        if (data['students'] != null) {
+                            for(var s in data['students']) {
+                               allStudents.add({
+                                 'studentId': (s['studentId'] ?? s['student_id']).toString(),
+                                 'status': 'HOLIDAY'
+                               });
+                            }
+                        }
+                    }
+                }
+           }
+           
+           // Filter unique
+           final uniqueStudents = { for (var e in allStudents) e['studentId'] : e }.values.toList();
+           
+           if (uniqueStudents.isEmpty) {
+              Navigator.pop(context);
+              _showSnackBar("No students found to mark.");
+              return;
+           }
+
+           // Batch Submit
+           // Send MORNING
+           await http.post(
+              Uri.parse('${ApiConstants.baseUrl}/api/attendance/batch'),
+              headers: {'Content-Type': 'application/json'},
+              body: json.encode({
+                'records': uniqueStudents,
+                'date': _selectedDate.toIso8601String(),
+                'session': 'MORNING', 
+                'markedBy': user?['login_id'],
+                'remarks': reason
+              })
+           );
+           
+           // Send AFTERNOON
+           await http.post(
+              Uri.parse('${ApiConstants.baseUrl}/api/attendance/batch'),
+              headers: {'Content-Type': 'application/json'},
+              body: json.encode({
+                'records': uniqueStudents,
+                'date': _selectedDate.toIso8601String(),
+                'session': 'AFTERNOON', 
+                'markedBy': user?['login_id'],
+                'remarks': reason
+              })
+           );
+           
+           Navigator.pop(context); // Close Progress
+           _showSnackBar("Successfully marked Holiday: $reason");
+           _fetchStats(); // Refresh UI
+
+       } catch (e) {
+           Navigator.pop(context); // Close Progress
+           _showSnackBar("Error: $e");
+           print("Holiday Mark Error: $e");
+       }
+  }
+
+  Future<void> _generatePdfReport(String branch, String year, String section, String month, int calYear) async {
+      // 1. Show Progress
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (ctx) => const Dialog(
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Row(
+              children: [
+                CircularProgressIndicator(),
+                SizedBox(width: 20),
+                Text("Generating Report... Please wait"),
+              ],
+            ),
+          ),
+        )
+      );
+
+      try {
+         // 2. Fetch Data (Iterate Days)
+         final monthIndex = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'].indexOf(month) + 1;
+         final daysInMonth = DateTime(calYear, monthIndex + 1, 0).day;
+         
+         // Data Structure: Date -> StudentID -> {AM: Status, PM: Status}
+         Map<String, Map<String, Map<String, String>>> fullAttendanceData = {};
+         Map<String, String> studentNames = {};
+         List<String> studentIds = []; 
+         
+         // Fetch in batches of 3 days to avoid overloading (3 days * 2 sessions = 6 requests)
+         int batchSize = 3;
+         for (int i = 1; i <= daysInMonth; i += batchSize) {
+            List<Future<void>> tasks = [];
+            for (int j = i; j < i + batchSize && j <= daysInMonth; j++) {
+               final dayStr = j.toString();
+               final dateStr = "$calYear-${monthIndex.toString().padLeft(2, '0')}-${j.toString().padLeft(2, '0')}";
+               
+               // Initialize day map
+               fullAttendanceData[dayStr] = {};
+
+               // Helper to process session
+               Future<void> fetchSession(String session) async {
+                  final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record')
+                   .replace(queryParameters: {
+                     'branch': branch,
+                     'year': year,
+                     'section': section,
+                     'date': dateStr,
+                     'session': session
+                   });
+                  
+                  try {
+                    final res = await http.get(uri);
+                    if (res.statusCode == 200) {
+                       final data = json.decode(res.body);
+                       if (data['students'] != null) {
+                          for (var s in data['students']) {
+                             final sid = (s['studentId'] ?? s['student_id']).toString();
+                             final sname = (s['fullName'] ?? s['full_name']).toString();
+                             final status = s['status'] ?? '-';
+                             
+                             // Store Student Info (Unique)
+                             if (!studentNames.containsKey(sid)) {
+                                studentNames[sid] = sname;
+                                studentIds.add(sid);
+                             }
+                             
+                             // Store Status
+                             fullAttendanceData[dayStr]!.putIfAbsent(sid, () => {});
+                             fullAttendanceData[dayStr]![sid]![session == 'MORNING' ? 'AM' : 'PM'] = status;
+                          }
+                       }
+                    }
+                  } catch (e) {
+                    print("Error fetching $dateStr $session: $e");
+                  }
+               }
+
+               tasks.add(fetchSession('MORNING'));
+               tasks.add(fetchSession('AFTERNOON'));
+            }
+            await Future.wait(tasks);
+         }
+         
+         Navigator.pop(context); // Close Progress
+
+         if (studentIds.isEmpty) {
+            _showSnackBar("No student records found for this period.");
+            return;
+         }
+         
+         studentIds.sort();
+
+         // Transform for PDF Service
+         // Service expects: Sorted List of Students, and Data Map
+         List<Map<String, String>> sortedStudents = studentIds.map((id) => {
+           'id': id,
+           'name': studentNames[id] ?? 'Unknown'
+         }).toList();
+
+         // 3. Generate PDF
+         await PdfService.generateAttendanceReport(
+           branch: branch,
+           year: year,
+           section: section,
+           month: "$month $calYear",
+           attendanceData: fullAttendanceData, 
+           students: sortedStudents
+         );
+         
+         _showSnackBar("Report Downloaded Successfully");
+
+      } catch (e) {
+         if (mounted && Navigator.canPop(context)) Navigator.pop(context);
+         print("PDF Error: $e");
+         _showSnackBar("Failed to generate report: $e");
+      }
   }
 }

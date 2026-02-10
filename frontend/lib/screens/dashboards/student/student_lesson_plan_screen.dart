@@ -416,7 +416,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                           Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text("${_percentage}%", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: text)),
+                              Text("$_percentage%", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: text)),
                               Text("Done", style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
                             ],
                           ),

@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'dart:io';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
@@ -75,90 +74,79 @@ class _PrincipalProfileScreenState extends State<PrincipalProfileScreen> {
         width: double.infinity,
         decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
         child: SafeArea(
-          child: Column(
-            children: [
-              Expanded(
-                child: RefreshIndicator(
-                  onRefresh: _fetchProfileData,
-                  child: SingleChildScrollView(
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 20),
-                        // College Logo
-                        Column(
-                          children: [
-                            Image.asset(
-                              'assets/images/college_logo.png', // Adjusted based on previous context 
-                              width: 120, height: 120,
-                              errorBuilder: (context, error, stackTrace) => const Icon(Icons.school, size: 80, color: Colors.blue),
-                            ),
-                            const SizedBox(height: 10),
-                            Text(
-                              "Alwardas Polytechnic",
-                              style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold, color: textColor, letterSpacing: 1),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 40),
-
-                        // Profile Details
-                        _buildProfileSection("Full Name", _profileData?['fullName'] ?? 'Loading...', textColor, subTextColor),
-                        _buildDivider(dividerColor),
-                        
-                        Row(
-                          children: [
-                            Expanded(child: _buildProfileSection("ID", _profileData?['employeeId'] ?? 'N/A', textColor, subTextColor)),
-                            Expanded(child: _buildProfileSection("Role", _profileData?['role'] ?? 'N/A', textColor, subTextColor)),
-                          ],
-                        ),
-                        _buildDivider(dividerColor),
-
-                        Row(
-                          children: [
-                            Expanded(child: _buildProfileSection("Experience", 
-                                (_profileData?['experience']?.toString().contains('Year') ?? false)
-                                    ? (_profileData?['experience'] ?? 'N/A')
-                                    : "${_profileData?['experience'] ?? 'N/A'} - Years",
-                                textColor, subTextColor)),
-                            Expanded(child: _buildProfileSection("Phone", _profileData?['phone'] ?? 'N/A', textColor, subTextColor)),
-                          ],
-                        ),
-                        _buildDivider(dividerColor),
-
-                        _buildProfileSection("Email", _profileData?['email'] ?? 'N/A', textColor, subTextColor),
-                        const SizedBox(height: 40),
-                      ],
-                    ),
+          child: RefreshIndicator(
+            onRefresh: _fetchProfileData,
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+              child: Column(
+                children: [
+                  const SizedBox(height: 20),
+                  // College Logo
+                  Column(
+                    children: [
+                      Image.asset(
+                        'assets/images/college_logo.png', 
+                        width: 120, height: 120,
+                        errorBuilder: (context, error, stackTrace) => const Icon(Icons.school, size: 80, color: Colors.blue),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        "Alwardas Polytechnic",
+                        style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold, color: textColor, letterSpacing: 1),
+                      ),
+                    ],
                   ),
-                ),
-              ),
+                  const SizedBox(height: 40),
 
-              // Footer
-              Padding(
-                padding: EdgeInsets.only(bottom: Platform.isIOS ? 30 : 20, left: 24, right: 24),
-                child: Column(
-                  children: [
-                    GestureDetector(
-                      onTap: _logout,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(Icons.logout, color: Colors.red, size: 24),
-                            const SizedBox(width: 8),
-                            Text("Logout", style: GoogleFonts.poppins(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 16)),
-                          ],
-                        ),
+                  // Profile Details
+                  _buildProfileSection("Full Name", _profileData?['fullName'] ?? 'Loading...', textColor, subTextColor),
+                  _buildDivider(dividerColor),
+                  
+                  Row(
+                    children: [
+                      Expanded(child: _buildProfileSection("ID", _profileData?['employeeId'] ?? 'N/A', textColor, subTextColor)),
+                      Expanded(child: _buildProfileSection("Role", _profileData?['role'] ?? 'N/A', textColor, subTextColor)),
+                    ],
+                  ),
+                  _buildDivider(dividerColor),
+
+                  Row(
+                    children: [
+                      Expanded(child: _buildProfileSection("Experience", 
+                          (_profileData?['experience']?.toString().contains('Year') ?? false)
+                              ? (_profileData?['experience'] ?? 'N/A')
+                              : "${_profileData?['experience'] ?? 'N/A'} - Years",
+                          textColor, subTextColor)),
+                      Expanded(child: _buildProfileSection("Phone", _profileData?['phone'] ?? 'N/A', textColor, subTextColor)),
+                    ],
+                  ),
+                  _buildDivider(dividerColor),
+
+                  _buildProfileSection("Email", _profileData?['email'] ?? 'N/A', textColor, subTextColor),
+                  const SizedBox(height: 40),
+
+                  // Footer
+                  GestureDetector(
+                    onTap: _logout,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.logout, color: Colors.red, size: 24),
+                          const SizedBox(width: 8),
+                          Text("Logout", style: GoogleFonts.poppins(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 16)),
+                        ],
                       ),
                     ),
-                    Text("App Version 1.0.0", style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text("App Version 1.0.0", style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
+                  const SizedBox(height: 30),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

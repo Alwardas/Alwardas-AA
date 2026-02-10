@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
-import '../../../data/courses_data.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -452,7 +451,7 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
                               child: Text(s, style: TextStyle(color: selected ? Colors.white : textColor, fontSize: 13)),
                             ),
                           );
-                        }).toList(),
+                        }),
                       ],
                     ),
                     const SizedBox(height: 20),

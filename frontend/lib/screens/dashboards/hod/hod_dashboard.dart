@@ -6,7 +6,6 @@ import '../../auth/login_screen.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../core/theme/app_theme.dart';
-import 'hod_manage_attendance_screen.dart';
 import 'hod_announcements_screen.dart';
 import 'hod_notifications_screen.dart';
 import 'hod_courses_screen.dart';
@@ -16,7 +15,6 @@ import 'hod_profile_tab.dart';
 import 'hod_faculty_screen.dart';
 import 'hod_timetables_screen.dart';
 import 'hod_requests_screen.dart';
-import '../faculty/faculty_profile_screen.dart';
 import 'hod_department_screen.dart';
 
 class HodDashboard extends StatefulWidget {

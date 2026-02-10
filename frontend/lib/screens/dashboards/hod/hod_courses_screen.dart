@@ -24,7 +24,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
   final Set<String> _selectedForDelete = {};
   
   // Search state
-  String _searchQuery = "";
+  final String _searchQuery = "";
   List<dynamic> _allCourses = [];
 
   @override

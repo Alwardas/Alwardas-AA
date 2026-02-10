@@ -6,7 +6,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
-import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import 'student_details_screen.dart';
 

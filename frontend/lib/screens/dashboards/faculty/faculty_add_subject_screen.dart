@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../core/theme/app_theme.dart';
 import '../../../theme/theme_constants.dart';
 
 class FacultyAddSubjectScreen extends StatefulWidget {
@@ -19,7 +18,7 @@ class FacultyAddSubjectScreen extends StatefulWidget {
 
 class _FacultyAddSubjectScreenState extends State<FacultyAddSubjectScreen> {
   String _searchQuery = '';
-  List<String> _selectedIds = [];
+  final List<String> _selectedIds = [];
   
   @override
   Widget build(BuildContext context) {
@@ -122,15 +121,21 @@ class _FacultyAddSubjectScreenState extends State<FacultyAddSubjectScreen> {
                           side: BorderSide(color: subTextColor),
                           onChanged: (v) {
                             setState(() {
-                              if (v == true) _selectedIds.add(item['id']);
-                              else _selectedIds.remove(item['id']);
+                              if (v == true) {
+                                _selectedIds.add(item['id']);
+                              } else {
+                                _selectedIds.remove(item['id']);
+                              }
                             });
                           },
                         ),
                   onTap: isAlreadyAdded ? null : () {
                     setState(() {
-                      if (isSelected) _selectedIds.remove(item['id']);
-                      else _selectedIds.add(item['id']);
+                      if (isSelected) {
+                        _selectedIds.remove(item['id']);
+                      } else {
+                        _selectedIds.add(item['id']);
+                      }
                     });
                   },
                 );

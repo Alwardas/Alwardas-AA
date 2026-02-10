@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter/services.dart'; // For JSON loading fallback
+// For JSON loading fallback
 import 'package:http/http.dart' as http;
 
 import 'dart:convert';
@@ -71,6 +71,9 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
     }
   }
 
+  String? _holidayReason; 
+  bool _isHoliday = false;
+
   Future<void> _fetchAttendance() async {
     setState(() => _loading = true);
     final user = await AuthService.getUserSession();
@@ -102,33 +105,40 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
               'fullName': s['fullName'] ?? s['full_name'] ?? 'Unknown'
           }).toList();
           
-          // Optimization: Sort for easier management
           fetched.sort((a, b) {
              int nameComp = a['fullName'].toString().compareTo(b['fullName'].toString());
              if (nameComp != 0) return nameComp;
              return a['studentId'].toString().compareTo(b['studentId'].toString());
           });
           
-          print("HODManageAttendance: Fetched ${fetched.length} students");
+          // Check for Holiday
+          bool holidayDetected = fetched.any((s) => s['status'] == 'HOLIDAY');
+          String? reason;
+          if (holidayDetected) { 
+             // Try to find remarks/reason from ANY student record (assuming batch update set remarks)
+             // The API class-record might not return remarks per student standardly, but if it did:
+             // remarks might be in 'remarks' field if joined.
+             // If not available, just generic.
+             reason = "Holiday Marked";
+          }
 
           setState(() {
             _students = fetched;
             _originalStudents = fetched.map((s) => Map<String, dynamic>.from(s)).toList();
             _markedBy = data['markedBy'];
+            _isHoliday = holidayDetected;
+            _holidayReason = reason;
             _loading = false;
           });
         } else {
-             print("HODManageAttendance: No students found in response");
              setState(() { _students = []; _originalStudents = []; _loading = false; });
         }
       } else {
-         print("HODManageAttendance: HTTP ${res.statusCode} - ${res.body}");
          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to fetch records: ${res.statusCode}")));
          setState(() { _students = []; _originalStudents = []; _loading = false; });
       }
 
     } catch (e) {
-      print("API Error: $e");
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Network Error: $e")));
       setState(() { _loading = false; _students = []; });
     }
@@ -158,8 +168,11 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
        if (res.statusCode == 200 || res.statusCode == 201) {
          _showSnackBar("Attendance Saved");
          _checkDailyStatus();
-         if (_session == 'MORNING') setState(() => _morningMarked = true);
-         else setState(() => _afternoonMarked = true);
+         if (_session == 'MORNING') {
+           setState(() => _morningMarked = true);
+         } else {
+           setState(() => _afternoonMarked = true);
+         }
          setState(() => _isEditing = false);
          _fetchAttendance(); // Refresh to ensure strict sync
        } else {
@@ -175,7 +188,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
 
   
   void _toggleStatus(int index) {
-    if (_isLocked && !_isEditing) return;
+    if ((_isLocked || _isHoliday) && !_isEditing) return;
     
     setState(() {
       final s = _students[index];
@@ -184,12 +197,13 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
   }
 
   bool get _isLocked {
+    if (_isHoliday) return true;
     if (_session == 'MORNING') return _morningMarked;
     return _afternoonMarked;
   }
   
   void _toggleSelectAll() {
-     if (_isLocked && !_isEditing) return;
+     if ((_isLocked || _isHoliday) && !_isEditing) return;
      
      final filtered = _filteredStudents;
      final allPresent = filtered.every((s) => s['status'] == 'PRESENT');
@@ -419,10 +433,10 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
                            child: Transform.rotate(
                              angle: -0.5,
                              child: Text(
-                               "SUBMITTED",
+                               _isHoliday ? "HOLIDAY" : "SUBMITTED",
                                style: GoogleFonts.blackOpsOne(
                                  fontSize: 50,
-                                 color: Colors.grey.withOpacity(0.3),
+                                 color: (_isHoliday ? Colors.blue : Colors.grey).withOpacity(0.3),
                                  fontWeight: FontWeight.bold
                                ),
                              ),
@@ -434,6 +448,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
                ),
                
                // Footer
+               if (!_isHoliday) // Only show stats footer if not holiday (or show summary)
                Container(
                  padding: const EdgeInsets.all(20),
                  decoration: BoxDecoration(color: cardColor, borderRadius: const BorderRadius.vertical(top: Radius.circular(20))),
@@ -472,6 +487,14 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
                    ],
                  ),
                )
+               else
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(20),
+                    alignment: Alignment.center,
+                    color: cardColor,
+                    child: Text("Today is marked as Holiday (${_holidayReason ?? 'No Reason'})", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.blueAccent)),
+                  )
             ],
           ),
         ),

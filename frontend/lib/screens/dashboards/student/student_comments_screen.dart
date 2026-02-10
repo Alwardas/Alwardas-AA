@@ -316,7 +316,7 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
                         ],
                       ),
                     );
-                  }).toList(),
+                  }),
                   const SizedBox(height: 50),
               ],
             ),

@@ -100,7 +100,7 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
                        ),
                      ),
                    );
-                }).toList(),
+                }),
                 
                 const SizedBox(height: 10),
                 Divider(color: subTextColor.withOpacity(0.2)),

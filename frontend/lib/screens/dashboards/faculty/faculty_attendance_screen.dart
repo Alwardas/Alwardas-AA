@@ -6,7 +6,7 @@ import 'dart:convert';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
-import 'package:flutter/services.dart'; // Added for rootBundle
+// Added for rootBundle
 
 class FacultyAttendanceScreen extends StatefulWidget {
   final Map<String, dynamic>? userData;
@@ -132,6 +132,9 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
       }
   }
 
+  bool _isHoliday = false;
+  String _holidayReason = '';
+
   Future<void> _fetchStudents() async {
     setState(() => _loading = true);
     try {
@@ -150,12 +153,21 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
         final bool marked = data['marked'] ?? false;
         final List<dynamic> fetchedStudents = data['students'] ?? [];
 
+        bool holidayDetected = fetchedStudents.any((s) => s['status'] == 'HOLIDAY');
+        String reason = '';
+        if (holidayDetected) {
+            reason = "Holiday Marked"; // Default if reason not in student record
+            // If backend eventually sends reason, parse it here
+        }
+
         setState(() {
           _students = fetchedStudents;
           _alreadySubmitted = marked;
+          _isHoliday = holidayDetected;
+          _holidayReason = reason;
           
-          if (marked) {
-            // Pre-select students who were present
+          if (marked || holidayDetected) {
+            // Pre-select students who were present (if holiday, maybe none or all, but irrelevant as locked)
             _selectedStudentIds = fetchedStudents
                 .where((s) => s['status'] == 'PRESENT')
                 .map((s) => s['studentId'].toString())
@@ -171,7 +183,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
     } catch (e) {
       _showErrorDialog("Network error: $e");
     } finally {
-      setState(() => _loading = false);
+      if (mounted) setState(() => _loading = false);
     }
   }
   
@@ -618,7 +630,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
                      ),
                    ),
                    // Select All
-                   if (!_alreadySubmitted)
+                   if (!_alreadySubmitted && !_isHoliday)
                    Align(
                      alignment: Alignment.centerRight,
                      child: TextButton(
@@ -640,7 +652,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
                    final id = student['studentId'].toString();
                    final isSelected = _selectedStudentIds.contains(id);
                    return GestureDetector(
-                     onTap: _alreadySubmitted ? null : () => _toggleStudent(id),
+                     onTap: (_alreadySubmitted || _isHoliday) ? null : () => _toggleStudent(id),
                      child: Container(
                        margin: const EdgeInsets.only(bottom: 10),
                        padding: const EdgeInsets.all(16),
@@ -704,9 +716,9 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
                          padding: const EdgeInsets.symmetric(vertical: 15),
                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                        ),
-                       onPressed: _alreadySubmitted ? null : _handleSubmit,
-                       child: Text(_alreadySubmitted ? "Submitted (View Only)" : "Submit Attendance", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
-                     ),
+                        onPressed: (_alreadySubmitted || _isHoliday) ? null : _handleSubmit,
+                        child: Text(_isHoliday ? "Holiday (Locked)" : (_alreadySubmitted ? "Submitted (View Only)" : "Submit Attendance"), style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+                      ),
                    ),
                  ],
                ),
@@ -715,7 +727,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
         ),
 
         // Watermark Bloat overlay
-        if (_alreadySubmitted)
+        if (_alreadySubmitted || _isHoliday)
           Positioned.fill(
               child: IgnorePointer(
                   child: Container(
@@ -726,10 +738,10 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
                           child: Opacity(
                             opacity: 0.15,
                             child: Text(
-                                "SUBMITTED",
+                                _isHoliday ? "HOLIDAY" : "SUBMITTED",
                                 style: GoogleFonts.blackOpsOne(
                                     fontSize: 60, 
-                                    color: textColor, 
+                                    color: _isHoliday ? Colors.blue : textColor, 
                                     fontWeight: FontWeight.bold
                                 ),
                             ),

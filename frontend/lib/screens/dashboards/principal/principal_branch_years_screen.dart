@@ -116,10 +116,12 @@ class _PrincipalBranchYearsScreenState extends State<PrincipalBranchYearsScreen>
       }
     }
     
-    if (mounted) setState(() {
+    if (mounted) {
+      setState(() {
       _attendanceStatus = newStatus;
       _loading = false;
     });
+    }
   }
 
   @override
@@ -279,7 +281,7 @@ class _PrincipalBranchYearsScreenState extends State<PrincipalBranchYearsScreen>
                         ),
                       ),
                     );
-                }).toList(),
+                }),
               ],
             ),
           ),

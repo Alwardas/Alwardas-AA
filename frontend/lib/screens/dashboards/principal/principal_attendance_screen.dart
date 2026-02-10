@@ -318,7 +318,7 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
                        ),
                      ),
                    );
-                }).toList(),
+                }),
                 
                 const SizedBox(height: 20),
               ],

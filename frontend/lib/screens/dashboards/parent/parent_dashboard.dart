@@ -6,14 +6,11 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../../../core/api_constants.dart';
 import '../../auth/login_screen.dart';
-import '../../auth/signup_screen.dart';
 import 'add_child_screen.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
-import '../student/my_courses_screen.dart';
 import '../student/attendance_screen.dart';
-import '../student/time_table_screen.dart';
 import '../student/student_notifications_screen.dart';
 import '../student/student_marks_screen.dart'; 
 import 'parent_profile_tab.dart'; 
@@ -150,7 +147,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                   trailing: isSelected ? Icon(Icons.check_circle, color: Theme.of(context).primaryColor) : null,
                   onTap: () => _switchChild(index),
                 );
-              }).toList(),
+              }),
               const Divider(),
               ListTile(
                 leading: CircleAvatar(

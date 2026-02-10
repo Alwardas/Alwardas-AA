@@ -4,7 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart'; // Persistence
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
-import '../../../core/services/auth_service.dart';
 import 'hod_class_timetable_screen.dart';
 import 'hod_year_sections_screen.dart';
 import 'hod_faculty_screen.dart';
@@ -42,7 +41,7 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     },
   ];
 
-  Map<String, dynamic> _departmentRules = {
+  final Map<String, dynamic> _departmentRules = {
     'classDuration': '50 mins',
     'breakDuration': '10 mins',
     'workingDays': 'Monday - Saturday',

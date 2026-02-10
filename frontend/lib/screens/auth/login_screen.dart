@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:grpc/grpc.dart';
-import '../../core/services/grpc/auth.pbgrpc.dart';
-import '../../widgets/custom_text_field.dart';
-import '../../theme/app_colors.dart';
 import 'signup_screen.dart';
 import 'forgot_password_screen.dart';
 
@@ -14,8 +9,6 @@ import '../../core/api_constants.dart';
 import '../../core/services/auth_service.dart';
 import 'package:provider/provider.dart';
 import '../../core/providers/theme_provider.dart';
-import '../../core/theme/app_theme.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 // Import Dashboards
 import '../dashboards/student/student_dashboard.dart';
@@ -333,7 +326,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final isDark = themeProvider.isDarkMode;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
           // 1. Fixed Background
@@ -356,16 +349,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
           
           // 2. Scrollable Content (Logo + Card)
-          Padding(
-            padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+          Center(
             child: SingleChildScrollView(
-              physics: const ClampingScrollPhysics(),
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height,
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom + 20,
+                top: 20,
+                left: 20,
+                right: 20,
+              ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Spacer(flex: 3),
-                  
+                  const SizedBox(height: 40),
                   // App Logo in the middle area
                   Image.asset(
                     'assets/images/logo.png',
@@ -375,11 +370,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         const Icon(Icons.school, size: 80, color: Colors.white),
                   ),
                   
-                  const Spacer(flex: 2),
+                  const SizedBox(height: 40),
                   
                   // Login Fields Card at Bottom
                   Container(
-                    margin: const EdgeInsets.fromLTRB(24, 0, 24, 30),
+                    width: double.infinity,
+                    constraints: const BoxConstraints(maxWidth: 400),
                     padding: const EdgeInsets.all(32),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -400,10 +396,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       isDark: isDark,
                     ),
                   ),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
-          ),
           ),
 
 

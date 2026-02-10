@@ -25,8 +25,9 @@ class CoursesData {
           semesters.forEach((semName, types) {
              // Normalize semester name (e.g., "1st year" -> "1st Year")
              String normalizedSem = semName.toLowerCase();
-             if (normalizedSem.contains("1st")) normalizedSem = "1st Year";
-             else if (normalizedSem.contains("2nd")) normalizedSem = "2nd Semester";
+             if (normalizedSem.contains("1st")) {
+               normalizedSem = "1st Year";
+             } else if (normalizedSem.contains("2nd")) normalizedSem = "2nd Semester";
              else if (normalizedSem.contains("3rd")) normalizedSem = "3rd Semester";
              else if (normalizedSem.contains("4th")) normalizedSem = "4th Semester";
              else if (normalizedSem.contains("5th")) normalizedSem = "5th Semester";
