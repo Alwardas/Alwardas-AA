@@ -115,6 +115,18 @@ async fn main() {
         )
     ").execute(&pool).await.err();
 
+    // DEPARTMENT TIMINGS TABLE
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS department_timings (
+            branch TEXT PRIMARY KEY,
+            start_hour INT NOT NULL DEFAULT 9,
+            start_minute INT NOT NULL DEFAULT 0,
+            class_duration INT NOT NULL DEFAULT 50,
+            short_break_duration INT NOT NULL DEFAULT 10,
+            lunch_duration INT NOT NULL DEFAULT 50
+        )
+    ").execute(&pool).await.err();
+
     // SECTIONS TABLE (New)
     let _ = sqlx::query("
         CREATE TABLE IF NOT EXISTS sections (
@@ -206,6 +218,8 @@ async fn main() {
         .route("/api/timetable", get(faculty::get_timetable_handler))
         .route("/api/timetable/assign", post(faculty::assign_class_handler))
         .route("/api/timetable/clear", post(faculty::clear_class_handler))
+        .route("/api/department/timing", get(faculty::get_department_timings))
+        .route("/api/department/timing", post(faculty::update_department_timings))
         .route("/api/admin/users", get(admin::get_admin_users_handler))
         .route("/api/admin/stats", get(admin::get_admin_stats_handler))
         .route("/api/admin/users/approve", post(admin::admin_approve_user_handler))

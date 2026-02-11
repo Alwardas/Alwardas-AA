@@ -1052,3 +1052,77 @@ pub async fn rename_section_handler(
 
     Ok(StatusCode::OK)
 }
+
+// --- Department Timings ---
+
+#[derive(serde::Deserialize)]
+pub struct DepartmentTimingsQuery {
+    pub branch: String,
+}
+
+pub async fn get_department_timings(
+    State(state): State<AppState>,
+    Query(params): Query<DepartmentTimingsQuery>,
+) -> Result<Json<DepartmentTiming>, StatusCode> {
+    let branch_norm = normalize_branch(&params.branch);
+    
+    let timing = sqlx::query_as::<Postgres, DepartmentTiming>(
+        "SELECT * FROM department_timings WHERE branch = $1"
+    )
+    .bind(&branch_norm)
+    .fetch_optional(&state.pool)
+    .await;
+
+    match timing {
+        Ok(Some(t)) => Ok(Json(t)),
+        Ok(None) => {
+            // Return default
+            Ok(Json(DepartmentTiming {
+                branch: branch_norm,
+                start_hour: 9,
+                start_minute: 0,
+                class_duration: 50,
+                short_break_duration: 10,
+                lunch_duration: 50
+            }))
+        }
+        Err(e) => {
+            eprintln!("Get Timings Error: {:?}", e);
+            Err(StatusCode::INTERNAL_SERVER_ERROR)
+        }
+    }
+}
+
+pub async fn update_department_timings(
+    State(state): State<AppState>,
+    Json(payload): Json<DepartmentTiming>,
+) -> StatusCode {
+    let branch_norm = normalize_branch(&payload.branch);
+
+    let res = sqlx::query(
+        "INSERT INTO department_timings (branch, start_hour, start_minute, class_duration, short_break_duration, lunch_duration)
+         VALUES ($1, $2, $3, $4, $5, $6)
+         ON CONFLICT (branch) DO UPDATE SET
+            start_hour = EXCLUDED.start_hour,
+            start_minute = EXCLUDED.start_minute,
+            class_duration = EXCLUDED.class_duration,
+            short_break_duration = EXCLUDED.short_break_duration,
+            lunch_duration = EXCLUDED.lunch_duration"
+    )
+    .bind(branch_norm)
+    .bind(payload.start_hour)
+    .bind(payload.start_minute)
+    .bind(payload.class_duration)
+    .bind(payload.short_break_duration)
+    .bind(payload.lunch_duration)
+    .execute(&state.pool)
+    .await;
+
+    match res {
+        Ok(_) => StatusCode::OK,
+        Err(e) => {
+            eprintln!("Update Timings Error: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        }
+    }
+}

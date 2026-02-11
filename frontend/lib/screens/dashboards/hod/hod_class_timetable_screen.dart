@@ -84,25 +84,58 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
   }
 
   Future<void> _loadSettings() async {
-    final prefs = await SharedPreferences.getInstance();
-    final branch = widget.branch;
-    
-    final startHour = prefs.getInt('timing_start_hour_$branch') ?? 9;
-    final startMinute = prefs.getInt('timing_start_minute_$branch') ?? 0;
-    final classDuration = prefs.getInt('timing_class_duration_$branch') ?? 50;
-    final shortBreakDuration = prefs.getInt('timing_short_break_$branch') ?? 10;
-    final lunchDuration = prefs.getInt('timing_lunch_$branch') ?? 50;
+    int startHour = 9;
+    int startMinute = 0;
+    int classDuration = 50;
+    int shortBreakDuration = 10;
+    int lunchDuration = 50;
+
+    try {
+        final uri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': widget.branch});
+        final res = await http.get(uri);
+        if (res.statusCode == 200) {
+            final data = json.decode(res.body);
+            startHour = data['start_hour'] ?? 9;
+            startMinute = data['start_minute'] ?? 0;
+            classDuration = data['class_duration'] ?? 50;
+            shortBreakDuration = data['short_break_duration'] ?? 10;
+            lunchDuration = data['lunch_duration'] ?? 50;
+        } else {
+             // Fallback to shared prefs
+             final prefs = await SharedPreferences.getInstance();
+             final branch = widget.branch;
+             startHour = prefs.getInt('timing_start_hour_$branch') ?? 9;
+             startMinute = prefs.getInt('timing_start_minute_$branch') ?? 0;
+             classDuration = prefs.getInt('timing_class_duration_$branch') ?? 50;
+             shortBreakDuration = prefs.getInt('timing_short_break_$branch') ?? 10;
+             lunchDuration = prefs.getInt('timing_lunch_$branch') ?? 50;
+        }
+    } catch (e) {
+         debugPrint("Error fetching timings: $e");
+         // Fallback to shared prefs
+         final prefs = await SharedPreferences.getInstance();
+         final branch = widget.branch;
+         startHour = prefs.getInt('timing_start_hour_$branch') ?? 9;
+         startMinute = prefs.getInt('timing_start_minute_$branch') ?? 0;
+         classDuration = prefs.getInt('timing_class_duration_$branch') ?? 50;
+         shortBreakDuration = prefs.getInt('timing_short_break_$branch') ?? 10;
+         lunchDuration = prefs.getInt('timing_lunch_$branch') ?? 50;
+    }
+
     
     // Recalculate _periodTimes
     DateTime time = DateTime(2026, 1, 1, startHour, startMinute);
     Map<int, Map<String, String>> newPeriodTimes = {};
     
+    // Helper to format time in 12h AM/PM
+    String formatTime(DateTime t) => DateFormat('hh:mm a').format(t);
+
     for (int p = 1; p <= 8; p++) {
        DateTime start = time;
        time = time.add(Duration(minutes: classDuration));
        newPeriodTimes[p] = {
-         'start': DateFormat('HH:mm').format(start),
-         'end': DateFormat('HH:mm').format(time),
+         'start': formatTime(start),
+         'end': formatTime(time),
        };
        
        // Handle Breaks (same positions as in the Timing screen)

@@ -34,7 +34,7 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
     super.initState();
     final today = DateFormat('EEEE').format(DateTime.now());
     _selectedDay = _days.contains(today) ? today : 'Monday';
-    _initMockData();
+    _fetchTimings();
     _fetchMyActiveSubjects();
   }
 
@@ -56,21 +56,81 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
     }
   }
 
-  void _initMockData() {
-    for (var day in _days) {
-      _scheduleData[day] = [
-        {'id': '1', 'type': 'class', 'number': 1, 'time': '09:00 - 09:50', 'subject': '---'},
-        {'id': '2', 'type': 'class', 'number': 2, 'time': '09:50 - 10:40', 'subject': '---'},
-        {'id': 'b1', 'type': 'break', 'label': 'Short Break', 'time': '10:40 - 11:00'},
-        {'id': '3', 'type': 'class', 'number': 3, 'time': '11:00 - 11:50', 'subject': '---'},
-        {'id': '4', 'type': 'class', 'number': 4, 'time': '11:50 - 12:40', 'subject': '---'},
-        {'id': 'l1', 'type': 'lunch', 'label': 'Lunch Break', 'time': '12:40 - 01:30'},
-        {'id': '5', 'type': 'class', 'number': 5, 'time': '01:30 - 02:20', 'subject': '---'},
-        {'id': '6', 'type': 'class', 'number': 6, 'time': '02:20 - 03:10', 'subject': '---'},
-        {'id': 'b2', 'type': 'break', 'label': 'Short Break', 'time': '03:10 - 03:30'},
-        {'id': '7', 'type': 'class', 'number': 7, 'time': '03:30 - 04:20', 'subject': '---'},
-        {'id': '8', 'type': 'class', 'number': 8, 'time': '04:20 - 05:10', 'subject': '---'},
-      ];
+  Future<void> _fetchTimings() async {
+    final user = await AuthService.getUserSession();
+    if (user == null) return;
+    final branch = user['branch'] ?? 'Computer Engineering'; // Default or fetch from profile
+
+    int startHour = 9;
+    int startMinute = 0;
+    int classDuration = 50;
+    int shortBreakDuration = 10;
+    int lunchDuration = 50;
+
+    try {
+        // Fetch Department Timings
+        final uri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': branch});
+        final res = await http.get(uri);
+        if (res.statusCode == 200) {
+            final data = json.decode(res.body);
+            startHour = data['start_hour'] ?? 9;
+            startMinute = data['start_minute'] ?? 0;
+            classDuration = data['class_duration'] ?? 50;
+            shortBreakDuration = data['short_break_duration'] ?? 10;
+            lunchDuration = data['lunch_duration'] ?? 50;
+        }
+    } catch (e) {
+         debugPrint("Error fetching timings: $e");
+    }
+
+    // Generate Slots
+    DateTime time = DateTime(2026, 1, 1, startHour, startMinute);
+    List<Map<String, dynamic>> dailySlots = [];
+    
+    // Helper to format time in 12h AM/PM
+    String formatTime(DateTime t) => DateFormat('hh:mm a').format(t);
+
+    for (int p = 1; p <= 8; p++) {
+       DateTime start = time;
+       time = time.add(Duration(minutes: classDuration));
+       
+       dailySlots.add({
+         'id': 'p$p',
+         'type': 'class',
+         'number': p,
+         'time': '${formatTime(start)} - ${formatTime(time)}',
+         'subject': '---'
+       });
+       
+       // Handle Breaks
+       if (p == 2 || p == 6) {
+          DateTime bStart = time;
+          time = time.add(Duration(minutes: shortBreakDuration));
+          dailySlots.add({
+             'id': 'b${p==2?1:2}',
+             'type': 'break',
+             'label': 'Short Break',
+             'time': '${formatTime(bStart)} - ${formatTime(time)}'
+          });
+       } else if (p == 4) {
+          DateTime bStart = time;
+          time = time.add(Duration(minutes: lunchDuration));
+          dailySlots.add({
+             'id': 'l1',
+             'type': 'lunch',
+             'label': 'Lunch Break',
+             'time': '${formatTime(bStart)} - ${formatTime(time)}'
+          });
+       }
+    }
+
+    if (mounted) {
+      setState(() {
+        for (var day in _days) {
+            // Deep copy for each day to allow independent subject editing
+            _scheduleData[day] = dailySlots.map((s) => Map<String, dynamic>.from(s)).toList();
+        }
+      });
     }
   }
 

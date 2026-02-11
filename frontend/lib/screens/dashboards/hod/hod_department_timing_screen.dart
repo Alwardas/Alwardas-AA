@@ -3,6 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 
@@ -34,44 +37,77 @@ class _HodDepartmentTimingScreenState extends State<HodDepartmentTimingScreen> {
   }
 
   Future<void> _loadSettings() async {
-    final prefs = await SharedPreferences.getInstance();
-    setState(() {
-      final startHour = prefs.getInt('timing_start_hour_${widget.branch}') ?? 9;
-      final startMinute = prefs.getInt('timing_start_minute_${widget.branch}') ?? 0;
-      _startTime = TimeOfDay(hour: startHour, minute: startMinute);
-      _classDuration = prefs.getInt('timing_class_duration_${widget.branch}') ?? 50;
-      _shortBreakDuration = prefs.getInt('timing_short_break_${widget.branch}') ?? 10;
-      _lunchDuration = prefs.getInt('timing_lunch_${widget.branch}') ?? 50;
-    });
+    try {
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': widget.branch});
+      final res = await http.get(uri);
+      
+      if (res.statusCode == 200) {
+        final data = json.decode(res.body);
+        setState(() {
+          _startTime = TimeOfDay(hour: data['start_hour'] ?? 9, minute: data['start_minute'] ?? 0);
+          _classDuration = data['class_duration'] ?? 50;
+          _shortBreakDuration = data['short_break_duration'] ?? 10;
+          _lunchDuration = data['lunch_duration'] ?? 50;
+        });
+      }
+    } catch (e) {
+      debugPrint("Error loading timings: $e");
+    } finally {
+       // Also populate shared prefs as fallback or for caching if needed
+       final prefs = await SharedPreferences.getInstance();
+       // ... (optional sync to local)
+    }
     _generateTimings();
   }
 
   Future<void> _saveSettings() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setInt('timing_start_hour_${widget.branch}', _startTime.hour);
-    await prefs.setInt('timing_start_minute_${widget.branch}', _startTime.minute);
-    await prefs.setInt('timing_class_duration_${widget.branch}', _classDuration);
-    await prefs.setInt('timing_short_break_${widget.branch}', _shortBreakDuration);
-    await prefs.setInt('timing_lunch_${widget.branch}', _lunchDuration);
-    
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Timing Settings Saved Locally")),
-    );
+    try {
+        final body = {
+          'branch': widget.branch,
+          'start_hour': _startTime.hour,
+          'start_minute': _startTime.minute,
+          'class_duration': _classDuration,
+          'short_break_duration': _shortBreakDuration,
+          'lunch_duration': _lunchDuration
+        };
+
+        final res = await http.post(
+          Uri.parse('${ApiConstants.baseUrl}/api/department/timing'),
+          headers: {'Content-Type': 'application/json'},
+          body: json.encode(body)
+        );
+
+        if (res.statusCode == 200) {
+           ScaffoldMessenger.of(context).showSnackBar(
+             const SnackBar(content: Text("Timing Settings Saved to Server")),
+           );
+           
+           // Also save to SharedPreferences for offline access/legacy
+           final prefs = await SharedPreferences.getInstance();
+           await prefs.setInt('timing_start_hour_${widget.branch}', _startTime.hour);
+           await prefs.setInt('timing_start_minute_${widget.branch}', _startTime.minute);
+           await prefs.setInt('timing_class_duration_${widget.branch}', _classDuration);
+           await prefs.setInt('timing_short_break_${widget.branch}', _shortBreakDuration);
+           await prefs.setInt('timing_lunch_${widget.branch}', _lunchDuration);
+        } else {
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text("Failed to save: ${res.statusCode}")),
+           );
+        }
+    } catch (e) {
+       ScaffoldMessenger.of(context).showSnackBar(
+         SnackBar(content: Text("Network Error: $e")),
+       );
+    }
   }
 
   void _generateTimings() {
     List<Map<String, dynamic>> periods = [];
-    DateTime current = DateTime(2026, 1, 1, _startTime.hour, _startTime.minute);
-    
-    int periodCount = 1;
-    
-    for (int i = 1; i <= 11; i++) { // Max 8 classes + breaks
-       // This is a simplified loop to handle the specific logic
-    }
-    
-    // Let's do it procedurally
     DateTime time = DateTime(2026, 1, 1, _startTime.hour, _startTime.minute);
     
+    // Helper to format time in 12h AM/PM
+    String formatTime(DateTime t) => DateFormat('hh:mm a').format(t);
+
     for (int p = 1; p <= 8; p++) {
        // Class
        DateTime start = time;
@@ -79,8 +115,8 @@ class _HodDepartmentTimingScreenState extends State<HodDepartmentTimingScreen> {
        periods.add({
          'type': 'class',
          'number': p,
-         'start': DateFormat('HH:mm').format(start),
-         'end': DateFormat('HH:mm').format(time),
+         'start': formatTime(start),
+         'end': formatTime(time),
        });
        
        // Breaks
@@ -90,8 +126,8 @@ class _HodDepartmentTimingScreenState extends State<HodDepartmentTimingScreen> {
           periods.add({
             'type': 'break',
             'label': 'Short Break',
-            'start': DateFormat('HH:mm').format(bStart),
-            'end': DateFormat('HH:mm').format(time),
+            'start': formatTime(bStart),
+            'end': formatTime(time),
           });
        } else if (p == _lunchAfter) {
           DateTime bStart = time;
@@ -99,8 +135,8 @@ class _HodDepartmentTimingScreenState extends State<HodDepartmentTimingScreen> {
           periods.add({
             'type': 'lunch',
             'label': 'Lunch Break',
-            'start': DateFormat('HH:mm').format(bStart),
-            'end': DateFormat('HH:mm').format(time),
+            'start': formatTime(bStart),
+            'end': formatTime(time),
           });
        } else if (p == _shortBreak2After) {
           DateTime bStart = time;
@@ -108,8 +144,8 @@ class _HodDepartmentTimingScreenState extends State<HodDepartmentTimingScreen> {
           periods.add({
             'type': 'break',
             'label': 'Short Break',
-            'start': DateFormat('HH:mm').format(bStart),
-            'end': DateFormat('HH:mm').format(time),
+            'start': formatTime(bStart),
+            'end': formatTime(time),
           });
        }
     }
