@@ -104,6 +104,17 @@ pub struct Notification {
     pub created_at: DateTime<Utc>,
 }
 
+#[derive(Serialize, Deserialize, Debug, FromRow)]
+pub struct DepartmentTiming {
+    pub branch: String,
+    pub start_hour: i32,
+    pub start_minute: i32,
+    pub class_duration: i32,
+    pub short_break_duration: i32,
+    pub lunch_duration: i32,
+    pub slot_config: Option<serde_json::Value>, 
+}
+
 #[derive(Deserialize)]
 pub struct NotificationQuery {
     #[serde(rename = "userId")]

@@ -59,16 +59,16 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
   Future<void> _fetchTimings() async {
     final user = await AuthService.getUserSession();
     if (user == null) return;
-    final branch = user['branch'] ?? 'Computer Engineering'; // Default or fetch from profile
+    final branch = user['branch'] ?? 'Computer Engineering'; 
 
     int startHour = 9;
     int startMinute = 0;
     int classDuration = 50;
     int shortBreakDuration = 10;
     int lunchDuration = 50;
+    List<dynamic> slotConfig = [];
 
     try {
-        // Fetch Department Timings
         final uri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': branch});
         final res = await http.get(uri);
         if (res.statusCode == 200) {
@@ -78,6 +78,9 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
             classDuration = data['class_duration'] ?? 50;
             shortBreakDuration = data['short_break_duration'] ?? 10;
             lunchDuration = data['lunch_duration'] ?? 50;
+            if (data['slot_config'] != null) {
+               slotConfig = List<dynamic>.from(data['slot_config']);
+            }
         }
     } catch (e) {
          debugPrint("Error fetching timings: $e");
@@ -86,48 +89,87 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
     // Generate Slots
     DateTime time = DateTime(2026, 1, 1, startHour, startMinute);
     List<Map<String, dynamic>> dailySlots = [];
-    
-    // Helper to format time in 12h AM/PM
     String formatTime(DateTime t) => DateFormat('hh:mm a').format(t);
 
-    for (int p = 1; p <= 8; p++) {
-       DateTime start = time;
-       time = time.add(Duration(minutes: classDuration));
-       
-       dailySlots.add({
-         'id': 'p$p',
-         'type': 'class',
-         'number': p,
-         'time': '${formatTime(start)} - ${formatTime(time)}',
-         'subject': '---'
-       });
-       
-       // Handle Breaks
-       if (p == 2 || p == 6) {
-          DateTime bStart = time;
-          time = time.add(Duration(minutes: shortBreakDuration));
-          dailySlots.add({
-             'id': 'b${p==2?1:2}',
-             'type': 'break',
-             'label': 'Short Break',
-             'time': '${formatTime(bStart)} - ${formatTime(time)}'
-          });
-       } else if (p == 4) {
-          DateTime bStart = time;
-          time = time.add(Duration(minutes: lunchDuration));
-          dailySlots.add({
-             'id': 'l1',
-             'type': 'lunch',
-             'label': 'Lunch Break',
-             'time': '${formatTime(bStart)} - ${formatTime(time)}'
-          });
-       }
+    if (slotConfig.isNotEmpty) {
+        int pNum = 1;
+        int bNum = 1;
+        for (var type in slotConfig) {
+            DateTime start = time;
+            int duration = 0;
+            String id = "";
+            String entryType = "";
+            String label = "";
+            
+            if (type == 'P') {
+                duration = classDuration;
+                entryType = 'class';
+                id = 'p$pNum';
+            } else if (type == 'SB') {
+                duration = shortBreakDuration;
+                entryType = 'break';
+                label = 'Short Break';
+                id = 'sb$bNum';
+                bNum++;
+            } else if (type == 'LB') {
+                duration = lunchDuration;
+                entryType = 'lunch';
+                label = 'Lunch Break';
+                id = 'lb1';
+            }
+            
+            time = time.add(Duration(minutes: duration));
+            
+            dailySlots.add({
+                'id': id,
+                'type': entryType,
+                'number': type == 'P' ? pNum : null,
+                'label': label,
+                'time': '${formatTime(start)} - ${formatTime(time)}',
+                'subject': type == 'P' ? '---' : null
+            });
+
+            if (type == 'P') pNum++;
+        }
+    } else {
+        // Fallback Logic
+        for (int p = 1; p <= 8; p++) {
+           DateTime start = time;
+           time = time.add(Duration(minutes: classDuration));
+           
+           dailySlots.add({
+             'id': 'p$p',
+             'type': 'class',
+             'number': p,
+             'time': '${formatTime(start)} - ${formatTime(time)}',
+             'subject': '---'
+           });
+           
+           if (p == 2 || p == 6) {
+              DateTime bStart = time;
+              time = time.add(Duration(minutes: shortBreakDuration));
+              dailySlots.add({
+                 'id': 'b${p==2?1:2}',
+                 'type': 'break',
+                 'label': 'Short Break',
+                 'time': '${formatTime(bStart)} - ${formatTime(time)}'
+              });
+           } else if (p == 4) {
+              DateTime bStart = time;
+              time = time.add(Duration(minutes: lunchDuration));
+              dailySlots.add({
+                 'id': 'l1',
+                 'type': 'lunch',
+                 'label': 'Lunch Break',
+                 'time': '${formatTime(bStart)} - ${formatTime(time)}'
+              });
+           }
+        }
     }
 
     if (mounted) {
       setState(() {
         for (var day in _days) {
-            // Deep copy for each day to allow independent subject editing
             _scheduleData[day] = dailySlots.map((s) => Map<String, dynamic>.from(s)).toList();
         }
       });

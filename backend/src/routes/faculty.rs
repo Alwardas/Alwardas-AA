@@ -1100,14 +1100,15 @@ pub async fn update_department_timings(
     let branch_norm = normalize_branch(&payload.branch);
 
     let res = sqlx::query(
-        "INSERT INTO department_timings (branch, start_hour, start_minute, class_duration, short_break_duration, lunch_duration)
-         VALUES ($1, $2, $3, $4, $5, $6)
+        "INSERT INTO department_timings (branch, start_hour, start_minute, class_duration, short_break_duration, lunch_duration, slot_config)
+         VALUES ($1, $2, $3, $4, $5, $6, $7)
          ON CONFLICT (branch) DO UPDATE SET
             start_hour = EXCLUDED.start_hour,
             start_minute = EXCLUDED.start_minute,
             class_duration = EXCLUDED.class_duration,
             short_break_duration = EXCLUDED.short_break_duration,
-            lunch_duration = EXCLUDED.lunch_duration"
+            lunch_duration = EXCLUDED.lunch_duration,
+            slot_config = EXCLUDED.slot_config"
     )
     .bind(branch_norm)
     .bind(payload.start_hour)
@@ -1115,6 +1116,7 @@ pub async fn update_department_timings(
     .bind(payload.class_duration)
     .bind(payload.short_break_duration)
     .bind(payload.lunch_duration)
+    .bind(payload.slot_config)
     .execute(&state.pool)
     .await;
 

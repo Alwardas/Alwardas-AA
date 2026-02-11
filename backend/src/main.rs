@@ -123,9 +123,14 @@ async fn main() {
             start_minute INT NOT NULL DEFAULT 0,
             class_duration INT NOT NULL DEFAULT 50,
             short_break_duration INT NOT NULL DEFAULT 10,
-            lunch_duration INT NOT NULL DEFAULT 50
+            lunch_duration INT NOT NULL DEFAULT 50,
+            slot_config JSONB DEFAULT NULL
         )
     ").execute(&pool).await.err();
+
+    // Migration: Add slot_config if not exists
+    let _ = sqlx::query("ALTER TABLE department_timings ADD COLUMN IF NOT EXISTS slot_config JSONB DEFAULT NULL")
+         .execute(&pool).await.err();
 
     // SECTIONS TABLE (New)
     let _ = sqlx::query("

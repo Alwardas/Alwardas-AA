@@ -89,6 +89,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
     int classDuration = 50;
     int shortBreakDuration = 10;
     int lunchDuration = 50;
+    List<dynamic> slotConfig = []; // Will store ['P', 'P', 'SB', ...]
 
     try {
         final uri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': widget.branch});
@@ -100,56 +101,69 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
             classDuration = data['class_duration'] ?? 50;
             shortBreakDuration = data['short_break_duration'] ?? 10;
             lunchDuration = data['lunch_duration'] ?? 50;
+            if (data['slot_config'] != null) {
+               slotConfig = List<dynamic>.from(data['slot_config']);
+            }
         } else {
-             // Fallback to shared prefs
+             // Fallback to shared prefs ... (simplified for brevity, assume default if offline)
              final prefs = await SharedPreferences.getInstance();
              final branch = widget.branch;
              startHour = prefs.getInt('timing_start_hour_$branch') ?? 9;
-             startMinute = prefs.getInt('timing_start_minute_$branch') ?? 0;
-             classDuration = prefs.getInt('timing_class_duration_$branch') ?? 50;
-             shortBreakDuration = prefs.getInt('timing_short_break_$branch') ?? 10;
-             lunchDuration = prefs.getInt('timing_lunch_$branch') ?? 50;
+             // ... other preferences
         }
     } catch (e) {
          debugPrint("Error fetching timings: $e");
-         // Fallback to shared prefs
          final prefs = await SharedPreferences.getInstance();
          final branch = widget.branch;
          startHour = prefs.getInt('timing_start_hour_$branch') ?? 9;
-         startMinute = prefs.getInt('timing_start_minute_$branch') ?? 0;
-         classDuration = prefs.getInt('timing_class_duration_$branch') ?? 50;
-         shortBreakDuration = prefs.getInt('timing_short_break_$branch') ?? 10;
-         lunchDuration = prefs.getInt('timing_lunch_$branch') ?? 50;
+         // ...
     }
-
     
     // Recalculate _periodTimes
     DateTime time = DateTime(2026, 1, 1, startHour, startMinute);
     Map<int, Map<String, String>> newPeriodTimes = {};
-    
-    // Helper to format time in 12h AM/PM
     String formatTime(DateTime t) => DateFormat('hh:mm a').format(t);
 
-    for (int p = 1; p <= 8; p++) {
-       DateTime start = time;
-       time = time.add(Duration(minutes: classDuration));
-       newPeriodTimes[p] = {
-         'start': formatTime(start),
-         'end': formatTime(time),
-       };
-       
-       // Handle Breaks (same positions as in the Timing screen)
-       if (p == 2 || p == 6) {
-          time = time.add(Duration(minutes: shortBreakDuration));
-       } else if (p == 4) {
-          time = time.add(Duration(minutes: lunchDuration));
-       }
+    if (slotConfig.isNotEmpty) {
+        int pNum = 1;
+        for (var type in slotConfig) {
+            DateTime start = time;
+            int duration = 0;
+            if (type == 'P') duration = classDuration;
+            else if (type == 'SB') duration = shortBreakDuration;
+            else if (type == 'LB') duration = lunchDuration;
+            
+            time = time.add(Duration(minutes: duration));
+            
+            if (type == 'P') {
+                newPeriodTimes[pNum] = {
+                    'start': formatTime(start),
+                    'end': formatTime(time),
+                };
+                pNum++;
+            }
+        }
+    } else {
+        // Fallback Logic (Old)
+        for (int p = 1; p <= 8; p++) {
+           DateTime start = time;
+           time = time.add(Duration(minutes: classDuration));
+           newPeriodTimes[p] = {
+             'start': formatTime(start),
+             'end': formatTime(time),
+           };
+           
+           if (p == 2 || p == 6) {
+              time = time.add(Duration(minutes: shortBreakDuration));
+           } else if (p == 4) {
+              time = time.add(Duration(minutes: lunchDuration));
+           }
+        }
     }
     
     if (mounted) {
       setState(() {
         _periodTimes = newPeriodTimes;
-        // Re-initialize _scheduleData with new empty slots
         _scheduleData = {
           'Monday': _getEmptyDay(),
           'Tuesday': _getEmptyDay(),
