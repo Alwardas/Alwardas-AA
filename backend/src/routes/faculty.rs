@@ -1083,7 +1083,8 @@ pub async fn get_department_timings(
                 start_minute: 0,
                 class_duration: 50,
                 short_break_duration: 10,
-                lunch_duration: 50
+                lunch_duration: 50,
+                slot_config: None,
             }))
         }
         Err(e) => {
