@@ -153,6 +153,7 @@ async fn main() {
             day TEXT NOT NULL,
             period_index INT NOT NULL,
             subject TEXT NOT NULL,
+            subject_code TEXT,
             created_at TIMESTAMPTZ DEFAULT NOW(),
             UNIQUE(branch, year, section, day, period_index) 
         )

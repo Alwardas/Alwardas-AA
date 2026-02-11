@@ -114,6 +114,7 @@ pub struct TimetableEntry {
     pub day: String,
     pub period_index: i32,
     pub subject: String,
+    pub subject_code: Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -127,6 +128,8 @@ pub struct AssignClassRequest {
     #[serde(rename = "periodIndex")]
     pub period_index: i32,
     pub subject: String,
+    #[serde(rename = "subjectCode")]
+    pub subject_code: Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug, FromRow)]

@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
 import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
@@ -37,21 +38,18 @@ class _AddClassScreenState extends State<AddClassScreen> {
   String? _selectedSection;
   
   final TextEditingController _subjectController = TextEditingController();
+  final TextEditingController _subjectCodeController = TextEditingController();
   
   bool _isLoading = false;
   List<String> _sections = [];
+  List<Map<String, String>> _fetchedSubjects = [];
 
   // Options
   final List<String> _branches = ["CME", "EEE", "ECE", "MEC", "CIV"];
   final List<String> _years = ["1st Year", "2nd Year", "3rd Year"];
   
-  // Example Subjects (Should ideally be fetched, but user said "drop downlist contanis all subjects list can manually search")
-  // We'll use a hardcoded list + API subject list merge later or just allow free text with suggestions.
-  final List<String> _commonSubjects = [
-    "Mathematics I", "Physics", "Chemistry", "C Programming", "Data Structures", 
-    "Digital Logic", "Microprocessors", "Thermodynamics", "Fluid Mechanics", 
-    "Control Systems", "Machine Learning", "Cloud Computing", "Games", "Library", "Digital Class"
-  ];
+  // Activities for dropdown suggestions
+  final List<String> _activities = ["Games", "Library", "Digital Class", "Seminar", "Workshop", "Self Study"];
 
   @override
   void initState() {
@@ -61,16 +59,60 @@ class _AddClassScreenState extends State<AddClassScreen> {
       _selectedYear = widget.initialData!['year'];
       _selectedSection = widget.initialData!['section'];
       _subjectController.text = widget.initialData!['subject'] ?? '';
+      _subjectCodeController.text = widget.initialData!['subjectCode'] ?? '';
       _fetchSections();
+      _loadSubjectsFromJson();
+    }
+  }
+
+  Future<void> _loadSubjectsFromJson() async {
+    if (_selectedBranch == null || _selectedYear == null) return;
+    
+    try {
+      final String response = await rootBundle.loadString('assets/data/json/subject.json');
+      final List<dynamic> data = json.decode(response);
+      
+      String fullBranch = _mapBranchToFull(_selectedBranch!);
+      
+      final branchData = data.firstWhere(
+        (b) => b['branch_name'] == fullBranch,
+        orElse: () => null
+      );
+      
+      if (branchData != null && branchData['semesters'] != null) {
+        // Map 3rd Semester to 2nd Year, 5th to 3rd Year etc if needed
+        // But user said 1st Year, 2nd Year, 3rd Year. 
+        // Let's check keys in subject.json
+        String semesterKey = _selectedYear!;
+        // Handle semester mapping if necessary
+        if (_selectedYear == "2nd Year") semesterKey = "3rd Semester"; 
+        if (_selectedYear == "3rd Year") semesterKey = "5th Semester";
+
+        final semesterData = branchData['semesters'][semesterKey];
+        if (semesterData != null) {
+          List<Map<String, String>> subjects = [];
+          if (semesterData['theory'] != null) {
+            for (var s in semesterData['theory']) {
+              subjects.add({'id': s['id'].toString(), 'name': s['name'].toString()});
+            }
+          }
+          if (semesterData['practical'] != null) {
+            for (var s in semesterData['practical']) {
+              subjects.add({'id': s['id'].toString(), 'name': s['name'].toString()});
+            }
+          }
+          setState(() {
+            _fetchedSubjects = subjects;
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error loading subjects from JSON: $e");
     }
   }
 
   Future<void> _fetchSections() async {
     if (_selectedBranch == null || _selectedYear == null) return;
-    
-    // Convert short branch to full if needed by API, but let's assume API handles normalized or we send full.
-    // Actually Backend expects "Computer Engineering" etc.
-    // User wants "CME" in UI. We should map it.
     
     String fullBranch = _mapBranchToFull(_selectedBranch!);
     
@@ -94,7 +136,7 @@ class _AddClassScreenState extends State<AddClassScreen> {
   String _mapBranchToFull(String short) {
     switch (short) {
       case "CME": return "Computer Engineering";
-      case "EEE": return "Electrical & Electronics Engineering";
+      case "EEE": return "Electrical and Electronics Engineering";
       case "ECE": return "Electronics & Communication Engineering";
       case "MEC": return "Mechanical Engineering";
       case "CIV": return "Civil Engineering";
@@ -112,9 +154,7 @@ class _AddClassScreenState extends State<AddClassScreen> {
 
     try {
       final prefs = await SharedPreferences.getInstance();
-      final facultyId = prefs.getString('faculty_id') ?? ''; // Should be stored on login
-      // If not stored, we might need to fetch profile or user session again.
-      // Assuming 'user_data' key has JSON.
+      final facultyId = prefs.getString('faculty_id') ?? '';
       
       String fid = facultyId;
       if (fid.isEmpty) {
@@ -131,7 +171,8 @@ class _AddClassScreenState extends State<AddClassScreen> {
         'section': _selectedSection,
         'day': widget.day,
         'periodIndex': widget.periodIndex,
-        'subject': _subjectController.text
+        'subject': _subjectController.text,
+        'subjectCode': _subjectCodeController.text.isEmpty ? null : _subjectCodeController.text,
       };
 
       final res = await http.post(
@@ -141,14 +182,13 @@ class _AddClassScreenState extends State<AddClassScreen> {
       );
 
       if (res.statusCode == 200) {
-        // Schedule Notification
         try {
            await _scheduleNotification();
         } catch (e) {
            debugPrint("Notification Error: $e");
         }
 
-        Navigator.pop(context, true); // Return true to refresh
+        Navigator.pop(context, true);
       } else {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed: ${res.statusCode}")));
       }
@@ -160,15 +200,9 @@ class _AddClassScreenState extends State<AddClassScreen> {
   }
 
   Future<void> _scheduleNotification() async {
-      // Parse Time "09:00 AM"
       try {
-          // Remove spaces for robust parsing if needed, but DateFormat handles it
-          // Format expected: hh:mm a
           final format = DateFormat("hh:mm a"); 
           final DateTime parsedTime = format.parse(widget.startTime);
-          
-          // Find next instance of Day
-          // widget.day is "Monday", "Tuesday"...
           int targetWeekday = _getWeekdayIndex(widget.day);
           
           DateTime now = DateTime.now();
@@ -178,14 +212,16 @@ class _AddClassScreenState extends State<AddClassScreen> {
               scheduledDate = scheduledDate.add(const Duration(days: 1));
           }
 
-          // ID: Unique ID based on Day + Period?
-          // dayIndex * 100 + periodIndex
           int id = targetWeekday * 100 + widget.periodIndex;
+          String subInfo = _subjectController.text;
+          if (_subjectCodeController.text.isNotEmpty) {
+              subInfo = "${_subjectCodeController.text}: $subInfo";
+          }
 
           await NotificationService.scheduleClassNotification(
               id: id,
-              title: "Class Reminder",
-              body: "You have a class: ${_selectedBranch} - ${_selectedYear} - ${_selectedSection} : ${_subjectController.text}",
+              title: "Upcoming Class",
+              body: "Branch: $_selectedBranch, Year: $_selectedYear, Section: $_selectedSection - $subInfo at ${widget.startTime}",
               scheduledTime: scheduledDate
           );
       } catch (e) {
@@ -214,8 +250,7 @@ class _AddClassScreenState extends State<AddClassScreen> {
     final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
     final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
     
-    // Calculate full background to avoid transparency issues
-    final bgColor = isDark ? ThemeColors.darkBackground.first : ThemeColors.lightBackground.first; // Just use first for solid
+    final bgColor = isDark ? ThemeColors.darkBackground.first : ThemeColors.lightBackground.first;
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -226,10 +261,7 @@ class _AddClassScreenState extends State<AddClassScreen> {
         iconTheme: IconThemeData(color: textColor),
       ),
       body: Container(
-         // Ensure solid background is visually consistent if gradients used elsewhere
-         decoration: BoxDecoration(
-           color: bgColor
-         ),
+         decoration: BoxDecoration(color: bgColor),
          child: SafeArea(
            child: SingleChildScrollView(
              padding: const EdgeInsets.all(20),
@@ -239,17 +271,18 @@ class _AddClassScreenState extends State<AddClassScreen> {
                  _buildInfoCard(cardColor, textColor, tint),
                  const SizedBox(height: 30),
                  
-                 // Branch, Year, Section Row
                  Row(
                    children: [
                      Expanded(child: _buildDropdown("Branch", _branches, _selectedBranch, (val) {
-                       setState(() { _selectedBranch = val; _selectedSection = null; });
+                       setState(() { _selectedBranch = val; _selectedSection = null; _fetchedSubjects = []; });
                        _fetchSections();
+                       _loadSubjectsFromJson();
                      }, tint, textColor, cardColor)),
                      const SizedBox(width: 10),
                      Expanded(child: _buildDropdown("Year", _years, _selectedYear, (val) {
-                       setState(() { _selectedYear = val; _selectedSection = null; });
+                       setState(() { _selectedYear = val; _selectedSection = null; _fetchedSubjects = []; });
                        _fetchSections();
+                       _loadSubjectsFromJson();
                      }, tint, textColor, cardColor)),
                      const SizedBox(width: 10),
                      Expanded(child: _buildDropdown("Section", _sections, _selectedSection, (val) => setState(() => _selectedSection = val), tint, textColor, cardColor)),
@@ -258,31 +291,45 @@ class _AddClassScreenState extends State<AddClassScreen> {
                  
                  const SizedBox(height: 20),
                  
-                 // Subject
                  Text("Subject", style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w500)),
                  const SizedBox(height: 10),
-                 Autocomplete<String>(
+                 Autocomplete<Map<String, String>>(
+                   displayStringForOption: (Map<String, String> option) => option['name']!,
                    optionsBuilder: (TextEditingValue textEditingValue) {
                      if (textEditingValue.text == '') {
-                       return const Iterable<String>.empty();
+                       return _fetchedSubjects.take(5);
                      }
-                     return _commonSubjects.where((String option) {
-                       return option.toLowerCase().contains(textEditingValue.text.toLowerCase());
+                     final filtered = _fetchedSubjects.where((Map<String, String> option) {
+                       return option['name']!.toLowerCase().contains(textEditingValue.text.toLowerCase()) ||
+                              option['id']!.toLowerCase().contains(textEditingValue.text.toLowerCase());
+                     }).toList();
+                     
+                     // Add activity suggestions
+                     for (var activity in _activities) {
+                        if (activity.toLowerCase().contains(textEditingValue.text.toLowerCase())) {
+                           filtered.add({'id': 'ACT', 'name': activity});
+                        }
+                     }
+                     return filtered;
+                   },
+                   onSelected: (Map<String, String> selection) {
+                     setState(() {
+                        _subjectController.text = selection['name']!;
+                        _subjectCodeController.text = selection['id'] == 'ACT' ? '' : selection['id']!;
                      });
                    },
-                   onSelected: (String selection) {
-                     _subjectController.text = selection;
-                   },
                    fieldViewBuilder: (context, controller, focusNode, onFieldSubmitted) {
-                      // Sync controller if editing
                       if (controller.text.isEmpty && _subjectController.text.isNotEmpty) {
                           controller.text = _subjectController.text;
                       }
-                      
                       return TextField(
-                        controller: controller, // Use the Autocomplete's controller for display
+                        controller: controller,
                         focusNode: focusNode,
-                        onChanged: (val) => _subjectController.text = val, // Sync back
+                        onChanged: (val) {
+                           _subjectController.text = val;
+                           // If value changed manually, check if it matches a known subject to auto-fill code?
+                           // Or just leave code empty if not selected from list.
+                        },
                         style: TextStyle(color: textColor),
                         decoration: InputDecoration(
                           hintText: "Search or enter manually...",
@@ -300,18 +347,32 @@ class _AddClassScreenState extends State<AddClassScreen> {
                           elevation: 4.0,
                           color: cardColor,
                           child: ConstrainedBox(
-                            constraints: const BoxConstraints(maxHeight: 200, maxWidth: 300), // Restrict width
+                            constraints: const BoxConstraints(maxHeight: 250, maxWidth: 350),
                             child: ListView.builder(
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,
                               itemCount: options.length,
                               itemBuilder: (BuildContext context, int index) {
-                                final String option = options.elementAt(index);
+                                final Map<String, String> option = options.elementAt(index);
                                 return InkWell(
                                   onTap: () => onSelected(option),
                                   child: Container(
-                                    padding: const EdgeInsets.all(16.0),
-                                    child: Text(option, style: TextStyle(color: textColor)),
+                                    padding: const EdgeInsets.all(12.0),
+                                    decoration: BoxDecoration(
+                                      border: Border(bottom: BorderSide(color: textColor.withOpacity(0.05)))
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        if (option['id'] != 'ACT')
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                            decoration: BoxDecoration(color: tint.withOpacity(0.1), borderRadius: BorderRadius.circular(4)),
+                                            child: Text(option['id']!, style: TextStyle(color: tint, fontSize: 10, fontWeight: FontWeight.bold)),
+                                          ),
+                                        if (option['id'] != 'ACT') const SizedBox(width: 10),
+                                        Expanded(child: Text(option['name']!, style: TextStyle(color: textColor))),
+                                      ],
+                                    ),
                                   ),
                                 );
                               },
@@ -322,6 +383,12 @@ class _AddClassScreenState extends State<AddClassScreen> {
                    },
                  ),
                  
+                 if (_subjectCodeController.text.isNotEmpty)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Text("Subject Code: ${_subjectCodeController.text}", style: TextStyle(color: tint, fontSize: 12, fontWeight: FontWeight.bold)),
+                    ),
+
                  const SizedBox(height: 40),
                  
                  SizedBox(

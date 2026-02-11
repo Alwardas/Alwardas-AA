@@ -186,19 +186,13 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
                           
                           if (_scheduleData.containsKey(day)) {
                               var slots = _scheduleData[day]!;
-                              // Find the slot with this period index
-                              // Note: generateTimings uses 1-based index for 'number'. 
-                              // If backend uses 0-based or 1-based, we must match. 
-                              // Assuming add_class_screen sends 'number' (which is period number 1,2,3...).
-                              // Backend stores 'period_index'.
-                              
                               final idx = slots.indexWhere((s) => s['number'] == pIndex);
                               if (idx != -1) {
                                   slots[idx]['subject'] = entry['subject'];
+                                  slots[idx]['subjectCode'] = entry['subject_code'];
                                   slots[idx]['branch'] = entry['branch'];
                                   slots[idx]['year'] = entry['year'];
                                   slots[idx]['section'] = entry['section'];
-                                  // Store extra metadata for edit
                               }
                           }
                       }
@@ -212,20 +206,15 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
 
   void _onSlotTap(Map<String, dynamic> item) async {
     if (item['type'] != 'class') return;
-    
-    // If class assigned, show hint or do nothing (user says 'long press to edit')
     if (item['subject'] != '---') {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Long press to edit this class."), duration: Duration(milliseconds: 1000)));
         return;
     }
-    
-    // Assign New
     await _openAddClassScreen(item);
   }
   
   void _onSlotLongPress(Map<String, dynamic> item) async {
       if (item['type'] != 'class') return;
-      // Edit Existing or Assign New
       await _openAddClassScreen(item);
   }
   
@@ -235,14 +224,15 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
           MaterialPageRoute(
               builder: (context) => AddClassScreen(
                   day: _selectedDay,
-                  periodIndex: item['number'], // 1, 2, 3...
+                  periodIndex: item['number'],
                   startTime: item['startTime'] ?? '',
                   endTime: item['endTime'] ?? '',
                   initialData: item['subject'] != '---' ? {
-                      'branch': _mapFullBranchToShort(item['branch']), // We stored Full in DB? Or Short? DB likely has Full 
+                      'branch': _mapFullBranchToShort(item['branch']),
                       'year': item['year'],
                       'section': item['section'],
-                      'subject': item['subject']
+                      'subject': item['subject'],
+                      'subjectCode': item['subjectCode']
                   } : null
               )
           )
@@ -260,13 +250,7 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
       if (full.contains("Electronics")) return "ECE";
       if (full.contains("Mechanical")) return "MEC";
       if (full.contains("Civil")) return "CIV";
-      return full;
-  }
-
-  void _clearClass(Map<String, dynamic> item) async {
-      // Implement clear if needed, but user didn't explicitly ask for 'clear' button, just edit.
-      // We can leave clean via backend functionality? Or maybe inside AddClassScreen have a 'Delete' button?
-      // For now, assume overwrite is enough.
+      return "CME";
   }
 
   @override
@@ -295,7 +279,6 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
           bottom: false,
           child: Column(
             children: [
-              // Horizontal Day Selector
               Container(
                 height: 60,
                 margin: const EdgeInsets.symmetric(vertical: 10),
@@ -334,7 +317,6 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
                 ),
               ),
 
-              // Timeline List
               Expanded(
                 child: _isLoading 
                     ? Center(child: CircularProgressIndicator(color: tint))
@@ -365,7 +347,6 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Time Column
         SizedBox(
           width: 60,
           child: Column(
@@ -373,12 +354,16 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
             children: [
               Text(startTime, style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: textColor)),
               Text(endTime, style: GoogleFonts.poppins(fontSize: 10, color: subTextColor)),
+              if (item['number'] != null)
+                 Padding(
+                   padding: const EdgeInsets.only(top: 4.0),
+                   child: Text("Period ${item['number']}", style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: tint)),
+                 ),
             ],
           ),
         ),
         const SizedBox(width: 16),
         
-        // Timeline Line and Dot
         Column(
           children: [
             Container(
@@ -392,14 +377,13 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
             ),
             Container(
               width: 2,
-              height: isBreak ? 50 : 80, 
+              height: isBreak ? 60 : 100, 
               color: (isBreak ? Colors.orangeAccent : tint).withValues(alpha: 0.2),
             ),
           ],
         ),
         const SizedBox(width: 16),
 
-        // Content Card
         Expanded(
           child: GestureDetector(
             onTap: () => _onSlotTap(item),
@@ -410,8 +394,8 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
               decoration: BoxDecoration(
                 color: isBreak 
                   ? Colors.orangeAccent.withValues(alpha: 0.1) 
-                  : (isDark ? const Color(0xFF1E1E1E) : Colors.white),
-                borderRadius: BorderRadius.circular(16),
+                  : (isDark ? const Color(0xFF252525) : Colors.white),
+                borderRadius: BorderRadius.circular(20),
                 border: Border.all(
                   color: isBreak ? Colors.orange.withValues(alpha: 0.3) : (isDark ? Colors.white10 : Colors.grey.shade200)
                 ),
@@ -422,51 +406,54 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (!isBreak)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                          decoration: BoxDecoration(
-                            color: tint.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(6)
-                          ),
-                          child: Text("Period ${item['number']}", style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: tint)),
-                        ),
-                        if (isAssigned)
-                           Icon(Icons.edit, size: 14, color: subTextColor.withValues(alpha: 0.5)),
-                      ],
-                    ),
-                  
-                  const SizedBox(height: 6),
-                  
                   if (isBreak)
                     Text(item['label'], style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.orangeAccent, letterSpacing: 1))
                   else
                      Column(
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
+                         if (isAssigned && item['subjectCode'] != null)
+                           Padding(
+                             padding: const EdgeInsets.only(bottom: 6.0),
+                             child: Text(item['subjectCode'], style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: tint, letterSpacing: 1.2)),
+                           ),
+                         
                          Text(
                             isAssigned ? item['subject'] : "Free Period", 
                             style: GoogleFonts.poppins(
                               fontSize: 16, 
-                              fontWeight: FontWeight.w600, 
+                              fontWeight: FontWeight.w700, 
                               color: isAssigned ? textColor : subTextColor.withValues(alpha: 0.5)
                             )
                           ),
+                          
                           if (isAssigned)
                             Padding(
-                              padding: const EdgeInsets.only(top: 4),
-                              child: Text(
-                                "${_mapFullBranchToShort(item['branch'])} - ${item['year']} - ${item['section']}",
-                                style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                decoration: BoxDecoration(
+                                  color: tint.withOpacity(0.05),
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: tint.withOpacity(0.1))
+                                ),
+                                child: Text(
+                                  "${_mapFullBranchToShort(item['branch'])} : ${item['year']} : sec ${item['section']}",
+                                  style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.w500, color: subTextColor),
+                                ),
                               ),
                             ),
+                          
                           if (!isAssigned)
                             Padding(
-                              padding: const EdgeInsets.only(top: 4),
-                              child: Text("Tap to assign class", style: TextStyle(fontSize: 12, color: tint, fontStyle: FontStyle.italic)),
+                              padding: const EdgeInsets.only(top: 8),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.add_circle_outline, size: 14, color: tint),
+                                  const SizedBox(width: 4),
+                                  Text("Tap to assign", style: TextStyle(fontSize: 12, color: tint, fontStyle: FontStyle.italic)),
+                                ],
+                              ),
                             )
                        ],
                      )

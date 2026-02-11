@@ -1139,10 +1139,10 @@ pub async fn assign_class_handler(
     let branch_norm = normalize_branch(&payload.branch);
 
     sqlx::query(
-        "INSERT INTO timetable_entries (id, faculty_id, branch, year, section, day, period_index, subject)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        "INSERT INTO timetable_entries (id, faculty_id, branch, year, section, day, period_index, subject, subject_code)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
          ON CONFLICT (branch, year, section, day, period_index) 
-         DO UPDATE SET faculty_id = EXCLUDED.faculty_id, subject = EXCLUDED.subject"
+         DO UPDATE SET faculty_id = EXCLUDED.faculty_id, subject = EXCLUDED.subject, subject_code = EXCLUDED.subject_code"
     )
     .bind(Uuid::new_v4())
     .bind(&payload.faculty_id)
@@ -1152,6 +1152,7 @@ pub async fn assign_class_handler(
     .bind(&payload.day)
     .bind(payload.period_index)
     .bind(&payload.subject)
+    .bind(&payload.subject_code)
     .execute(&state.pool)
     .await
     .map_err(|e| {
@@ -1191,8 +1192,6 @@ pub async fn get_timetable_handler(
             .map(Json);
     }
     
-    // Fallback or other filters can be added here.
-    // Return empty for now to be safe if no filters.
     Ok(Json(vec![])) 
 }
 
