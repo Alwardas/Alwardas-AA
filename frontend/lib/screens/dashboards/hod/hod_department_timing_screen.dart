@@ -380,17 +380,5 @@ class _HodDepartmentTimingScreenState extends State<HodDepartmentTimingScreen> {
         );
       },
     );
-  }                    color: isClass ? textColor : tint,
-                    letterSpacing: isClass ? 0 : 1
-                  ),
-                ),
-              ),
-              if (isClass) 
-                Text("${_classDuration}m", style: TextStyle(fontSize: 12, color: subTextColor)),
-            ],
-          ),
-        );
-      },
-    );
   }
 }
