@@ -4,7 +4,7 @@ use axum::{
     http::StatusCode,
 };
 use sqlx::{Postgres, Row, QueryBuilder};
-use crate::models::*;
+use crate::models::{DepartmentTiming, *};
 use uuid::Uuid;
 use chrono::Utc;
 
@@ -957,7 +957,7 @@ pub async fn update_sections_handler(
     }
 
     tx.commit().await
-        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Commit Failed"}))))?;
+        .map_err(|_e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Commit Failed"}))))?;
 
     Ok(StatusCode::OK)
 }
@@ -1048,7 +1048,7 @@ pub async fn rename_section_handler(
     // Let's at least try updating faculty_subjects if feasible, but user asked for 'student table'.
     
     tx.commit().await
-        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Commit Failed"}))))?;
+        .map_err(|_e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Commit Failed"}))))?;
 
     Ok(StatusCode::OK)
 }
