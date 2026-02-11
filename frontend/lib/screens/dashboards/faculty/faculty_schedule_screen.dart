@@ -172,7 +172,8 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
       if (user == null) return;
       
       try {
-          final uri = Uri.parse('${ApiConstants.baseUrl}/api/timetable').replace(queryParameters: {'facultyId': user['id']});
+          final String fid = user['login_id'] ?? user['studentId'] ?? user['id'] ?? '';
+          final uri = Uri.parse('${ApiConstants.baseUrl}/api/timetable').replace(queryParameters: {'facultyId': fid});
           final res = await http.get(uri);
           
           if (res.statusCode == 200) {
@@ -253,6 +254,14 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
       return "CME";
   }
 
+  String _mapSectionShort(String? section) {
+      if (section == null) return "Sec A";
+      if (section.toLowerCase().contains("section")) {
+          return section.replaceAll(RegExp(r'section', caseSensitive: false), 'Sec').trim();
+      }
+      return "Sec $section";
+  }
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -272,6 +281,17 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: CircleAvatar(
+              backgroundColor: tint,
+              child: const Icon(Icons.add, color: Colors.white, size: 20),
+            ),
+            onPressed: () => _openAddClassScreen({}),
+            tooltip: "Assign Class",
+          ),
+          const SizedBox(width: 10),
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
@@ -438,7 +458,7 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
                                   border: Border.all(color: tint.withOpacity(0.1))
                                 ),
                                 child: Text(
-                                  "${_mapFullBranchToShort(item['branch'])} : ${item['year']} : sec ${item['section']}",
+                                  "${_mapFullBranchToShort(item['branch'])} : ${item['year']} : ${_mapSectionShort(item['section'])}",
                                   style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.w500, color: subTextColor),
                                 ),
                               ),

@@ -212,17 +212,37 @@ pub async fn get_students_handler(
 ) -> Result<Json<Vec<StudentBasicInfo>>, StatusCode> {
     let branch_variations = get_branch_variations(&params.branch);
     let year_pattern = format!("{}%", params.year.trim());
-    let section_filter = params.section.clone().unwrap_or_else(|| "Section A".to_string());
 
-    let students = sqlx::query_as::<Postgres, StudentBasicInfo>(
-        "SELECT login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
-    )
-    .bind(branch_variations)
-    .bind(year_pattern)
-    .bind(section_filter)
-    .fetch_all(&state.pool)
-    .await
-    .map_err(|e| {
+    let students = if let Some(sec) = &params.section {
+        if sec == "All" {
+            sqlx::query_as::<Postgres, StudentBasicInfo>(
+                "SELECT login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND is_approved = true ORDER BY login_id ASC"
+            )
+            .bind(branch_variations)
+            .bind(year_pattern)
+            .fetch_all(&state.pool)
+            .await
+        } else {
+            sqlx::query_as::<Postgres, StudentBasicInfo>(
+                "SELECT login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
+            )
+            .bind(branch_variations)
+            .bind(year_pattern)
+            .bind(sec)
+            .fetch_all(&state.pool)
+            .await
+        }
+    } else {
+        sqlx::query_as::<Postgres, StudentBasicInfo>(
+            "SELECT login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND is_approved = true ORDER BY login_id ASC"
+        )
+        .bind(branch_variations)
+        .bind(year_pattern)
+        .fetch_all(&state.pool)
+        .await
+    };
+
+    let students = students.map_err(|e| {
         eprintln!("Fetch Students Error: {:?}", e);
         StatusCode::INTERNAL_SERVER_ERROR
     })?;

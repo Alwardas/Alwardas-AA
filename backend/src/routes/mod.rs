@@ -152,7 +152,6 @@ pub async fn signup_handler(
         .bind(&payload.experience)
         .bind(&payload.email)
         .bind(&final_semester)
-        .bind(&final_semester)
         .bind(&final_batch)
         .bind(&section)
         .fetch_one(&state.pool)

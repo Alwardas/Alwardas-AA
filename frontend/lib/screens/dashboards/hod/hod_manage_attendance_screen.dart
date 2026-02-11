@@ -2,7 +2,7 @@
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter/services.dart';
+
 
 import 'dart:convert';
 import '../../../core/providers/theme_provider.dart';
@@ -106,33 +106,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
             }).toList();
         }
 
-        // --- Alwar Students Injection ---
-        if (widget.year == '1st Year' && section == 'Section A') {
-           try {
-              final String jsonString = await rootBundle.loadString('assets/data/json/alwar_students.json');
-              final Map<String, dynamic> alwarData = json.decode(jsonString);
-              if (alwarData.containsKey('1st Year')) {
-                  final bc = _getBranchCode(branch);
-                  final bs = alwarData['1st Year'][bc];
-                  if (bs != null && bs is List) {
-                      for (var s in bs) {
-                          final pin = s['pin'].toString();
-                          final name = s['name'].toString();
-                          if (!fetched.any((e) => e['studentId'] == pin)) {
-                              fetched.add({
-                                 'fullName': name,
-                                 'studentId': pin,
-                                 'status': 'PRESENT',
-                                 'isLocal': true
-                              });
-                          }
-                      }
-                  }
-              }
-           } catch (e) {
-              debugPrint("Local Alwar Load Error: $e");
-           }
-        }
+
 
         fetched.sort((a, b) {
             final idA = int.tryParse(a['studentId'].toString().replaceAll(RegExp(r'[^0-9]'), ''));
@@ -168,16 +142,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
     }
   }
 
-  String _getBranchCode(String branch) {
-      final b = branch.toLowerCase();
-      if (b.contains('computer')) return 'cme';
-      if (b.contains('electronics') && b.contains('communication')) return 'ece';
-      if (b.contains('electrical') && b.contains('electronics')) return 'eee';
-      if (b.contains('electrical')) return 'eee';
-      if (b.contains('mechanical')) return 'mech';
-      if (b.contains('civil')) return 'civil';
-      return 'cme'; 
-  }
+
 
   Future<void> _handleSubmit() async {
      setState(() => _submitting = true);

@@ -9,22 +9,23 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/services/notification_service.dart';
+import '../../../../core/services/auth_service.dart';
 import 'package:intl/intl.dart';
 
 class AddClassScreen extends StatefulWidget {
   final Map<String, dynamic>? initialData;
-  final String day;
-  final int periodIndex;
-  final String startTime;
-  final String endTime;
+  final String? day;
+  final int? periodIndex;
+  final String? startTime;
+  final String? endTime;
 
   const AddClassScreen({
     super.key,
     this.initialData,
-    required this.day,
-    required this.periodIndex,
-    required this.startTime,
-    required this.endTime,
+    this.day,
+    this.periodIndex,
+    this.startTime,
+    this.endTime,
   });
 
   @override
@@ -36,17 +37,23 @@ class _AddClassScreenState extends State<AddClassScreen> {
   String? _selectedBranch;
   String? _selectedYear;
   String? _selectedSection;
+  String? _selectedDay;
+  int? _selectedPeriodIndex;
   
   final TextEditingController _subjectController = TextEditingController();
   final TextEditingController _subjectCodeController = TextEditingController();
+  final TextEditingController _manualSubjectController = TextEditingController();
   
   bool _isLoading = false;
   List<String> _sections = [];
   List<Map<String, String>> _fetchedSubjects = [];
+  List<int> _availablePeriods = [1, 2, 3, 4, 5, 6, 7, 8];
+  Map<int, Map<String, String>> _periodTimes = {};
 
   // Options
   final List<String> _branches = ["CME", "EEE", "ECE", "MEC", "CIV"];
   final List<String> _years = ["1st Year", "2nd Year", "3rd Year"];
+  final List<String> _daysList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   
   // Activities for dropdown suggestions
   final List<String> _activities = ["Games", "Library", "Digital Class", "Seminar", "Workshop", "Self Study"];
@@ -54,6 +61,10 @@ class _AddClassScreenState extends State<AddClassScreen> {
   @override
   void initState() {
     super.initState();
+    _selectedDay = widget.day ?? DateFormat('EEEE').format(DateTime.now());
+    if (!_daysList.contains(_selectedDay)) _selectedDay = "Monday";
+    _selectedPeriodIndex = widget.periodIndex;
+
     if (widget.initialData != null) {
       _selectedBranch = widget.initialData!['branch'];
       _selectedYear = widget.initialData!['year'];
@@ -62,6 +73,93 @@ class _AddClassScreenState extends State<AddClassScreen> {
       _subjectCodeController.text = widget.initialData!['subjectCode'] ?? '';
       _fetchSections();
       _loadSubjectsFromJson();
+    } else {
+        _loadFacultyContext();
+    }
+  }
+
+  Future<void> _loadFacultyContext() async {
+      final user = await AuthService.getUserSession();
+      if (user != null && _selectedBranch == null) {
+          setState(() {
+              _selectedBranch = _mapFullToShort(user['branch']);
+          });
+          _fetchTimings();
+      }
+  }
+
+  String _mapFullToShort(String? full) {
+      if (full == null) return "CME";
+      if (full.contains("Computer")) return "CME";
+      if (full.contains("Electrical")) return "EEE";
+      if (full.contains("Electronics")) return "ECE";
+      if (full.contains("Mechanical")) return "MEC";
+      if (full.contains("Civil")) return "CIV";
+      return "CME";
+  }
+
+  Future<void> _fetchTimings() async {
+    if (_selectedBranch == null) return;
+    String fullBranch = _mapBranchToFull(_selectedBranch!);
+
+    try {
+        final uri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': fullBranch});
+        final res = await http.get(uri);
+        if (res.statusCode == 200) {
+            final data = json.decode(res.body);
+            int startHour = data['start_hour'] ?? 9;
+            int startMinute = data['start_minute'] ?? 0;
+            int classDuration = data['class_duration'] ?? 50;
+            int shortBreakDuration = data['short_break_duration'] ?? 10;
+            int lunchDuration = data['lunch_duration'] ?? 50;
+            List<dynamic> slotConfig = data['slot_config'] ?? [];
+
+            DateTime time = DateTime(2026, 1, 1, startHour, startMinute);
+            Map<int, Map<String, String>> newTimes = {};
+            List<int> periods = [];
+            
+            if (slotConfig.isNotEmpty) {
+                int pNum = 1;
+                for (var type in slotConfig) {
+                    DateTime start = time;
+                    int dur = 0;
+                    if (type == 'P') dur = classDuration;
+                    else if (type == 'SB') dur = shortBreakDuration;
+                    else if (type == 'LB') dur = lunchDuration;
+                    
+                    time = time.add(Duration(minutes: dur));
+                    if (type == 'P') {
+                        newTimes[pNum] = {
+                            'start': DateFormat('hh:mm a').format(start),
+                            'end': DateFormat('hh:mm a').format(time)
+                        };
+                        periods.add(pNum);
+                        pNum++;
+                    }
+                }
+            } else {
+                for (int i = 1; i <= 8; i++) {
+                    DateTime start = time;
+                    time = time.add(Duration(minutes: classDuration));
+                    newTimes[i] = {
+                        'start': DateFormat('hh:mm a').format(start),
+                        'end': DateFormat('hh:mm a').format(time)
+                    };
+                    periods.add(i);
+                    // Add breaks etc if needed but keep it simple
+                }
+            }
+
+            setState(() {
+                _availablePeriods = periods;
+                _periodTimes = newTimes;
+                if (_selectedPeriodIndex != null && !_availablePeriods.contains(_selectedPeriodIndex)) {
+                    _selectedPeriodIndex = null;
+                }
+            });
+        }
+    } catch (e) {
+        debugPrint("Error fetching timings: $e");
     }
   }
 
@@ -80,31 +178,43 @@ class _AddClassScreenState extends State<AddClassScreen> {
       );
       
       if (branchData != null && branchData['semesters'] != null) {
-        // Map 3rd Semester to 2nd Year, 5th to 3rd Year etc if needed
-        // But user said 1st Year, 2nd Year, 3rd Year. 
-        // Let's check keys in subject.json
-        String semesterKey = _selectedYear!;
-        // Handle semester mapping if necessary
-        if (_selectedYear == "2nd Year") semesterKey = "3rd Semester"; 
-        if (_selectedYear == "3rd Year") semesterKey = "5th Semester";
-
-        final semesterData = branchData['semesters'][semesterKey];
-        if (semesterData != null) {
-          List<Map<String, String>> subjects = [];
-          if (semesterData['theory'] != null) {
-            for (var s in semesterData['theory']) {
-              subjects.add({'id': s['id'].toString(), 'name': s['name'].toString()});
-            }
-          }
-          if (semesterData['practical'] != null) {
-            for (var s in semesterData['practical']) {
-              subjects.add({'id': s['id'].toString(), 'name': s['name'].toString()});
-            }
-          }
-          setState(() {
-            _fetchedSubjects = subjects;
-          });
+        List<String> semestersToLoad = [];
+        if (_selectedYear == "1st Year") {
+            semestersToLoad.add("1st Year");
+        } else if (_selectedYear == "2nd Year") {
+            semestersToLoad.addAll(["3rd Semester", "4th Semester"]);
+        } else if (_selectedYear == "3rd Year") {
+            semestersToLoad.addAll(["5th Semester", "6th Semester"]);
         }
+
+        List<Map<String, String>> subjects = [];
+        for (var semKey in semestersToLoad) {
+            final semesterData = branchData['semesters'][semKey];
+            if (semesterData != null) {
+                if (semesterData['theory'] != null) {
+                    for (var s in semesterData['theory']) {
+                        subjects.add({
+                            'id': s['id'].toString(), 
+                            'name': s['name'].toString(),
+                            'sem': semKey
+                        });
+                    }
+                }
+                if (semesterData['practical'] != null) {
+                    for (var s in semesterData['practical']) {
+                        subjects.add({
+                            'id': s['id'].toString(), 
+                            'name': s['name'].toString(),
+                            'sem': semKey
+                        });
+                    }
+                }
+            }
+        }
+
+        setState(() {
+            _fetchedSubjects = subjects;
+        });
       }
     } catch (e) {
       debugPrint("Error loading subjects from JSON: $e");
@@ -145,7 +255,12 @@ class _AddClassScreenState extends State<AddClassScreen> {
   }
 
   Future<void> _saveClass() async {
-    if (_selectedBranch == null || _selectedYear == null || _selectedSection == null || _subjectController.text.isEmpty) {
+    final String subject = _manualSubjectController.text.isNotEmpty 
+        ? _manualSubjectController.text 
+        : _subjectController.text;
+
+    if (_selectedBranch == null || _selectedYear == null || _selectedSection == null || 
+        _selectedDay == null || _selectedPeriodIndex == null || subject.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please fill all fields")));
       return;
     }
@@ -153,26 +268,31 @@ class _AddClassScreenState extends State<AddClassScreen> {
     setState(() => _isLoading = true);
 
     try {
-      final prefs = await SharedPreferences.getInstance();
-      final facultyId = prefs.getString('faculty_id') ?? '';
+      final user = await AuthService.getUserSession();
+      if (user == null) return;
+      final String fid = user['login_id'] ?? user['studentId'] ?? user['id'] ?? '';
       
-      String fid = facultyId;
       if (fid.isEmpty) {
-          final userData = prefs.getString('user_session');
-          if (userData != null) {
-              fid = jsonDecode(userData)['login_id']; 
-          }
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Session error. Please login again.")));
+          return;
       }
+
+      final times = _periodTimes[_selectedPeriodIndex] ?? {
+          'start': widget.startTime ?? '09:00 AM',
+          'end': widget.endTime ?? '09:50 AM'
+      };
 
       final body = {
         'facultyId': fid,
         'branch': _mapBranchToFull(_selectedBranch!),
         'year': _selectedYear,
         'section': _selectedSection,
-        'day': widget.day,
-        'periodIndex': widget.periodIndex,
-        'subject': _subjectController.text,
-        'subjectCode': _subjectCodeController.text.isEmpty ? null : _subjectCodeController.text,
+        'day': _selectedDay,
+        'periodIndex': _selectedPeriodIndex,
+        'subject': subject,
+        'subjectCode': _manualSubjectController.text.isNotEmpty ? null : _subjectCodeController.text,
+        'startTime': times['start'],
+        'endTime': times['end']
       };
 
       final res = await http.post(
@@ -201,9 +321,13 @@ class _AddClassScreenState extends State<AddClassScreen> {
 
   Future<void> _scheduleNotification() async {
       try {
+          final subject = _manualSubjectController.text.isNotEmpty ? _manualSubjectController.text : _subjectController.text;
+          final startTime = _periodTimes[_selectedPeriodIndex]?['start'] ?? widget.startTime ?? '';
+          if (startTime.isEmpty) return;
+
           final format = DateFormat("hh:mm a"); 
-          final DateTime parsedTime = format.parse(widget.startTime);
-          int targetWeekday = _getWeekdayIndex(widget.day);
+          final DateTime parsedTime = format.parse(startTime);
+          int targetWeekday = _getWeekdayIndex(_selectedDay!);
           
           DateTime now = DateTime.now();
           DateTime scheduledDate = DateTime(now.year, now.month, now.day, parsedTime.hour, parsedTime.minute);
@@ -212,20 +336,28 @@ class _AddClassScreenState extends State<AddClassScreen> {
               scheduledDate = scheduledDate.add(const Duration(days: 1));
           }
 
-          int id = targetWeekday * 100 + widget.periodIndex;
-          String subInfo = _subjectController.text;
-          if (_subjectCodeController.text.isNotEmpty) {
-              subInfo = "${_subjectCodeController.text}: $subInfo";
+          // Classes usually start on a specific date. 
+          // Set reminder 1 minute before
+          DateTime reminderTime = scheduledDate.subtract(const Duration(minutes: 1));
+          
+          if (reminderTime.isBefore(now)) {
+              // If 1 min before is already past but class is in future, maybe notifying now is okay or skip
+              // Let's just ensure it's in the future for the OS scheduler
+              return; 
           }
+
+          int id = targetWeekday * 100 + _selectedPeriodIndex!;
+          
+          String classInfo = "${_selectedBranch} : ${_selectedYear} : ${_mapSectionShort(_selectedSection)}";
 
           await NotificationService.scheduleClassNotification(
               id: id,
-              title: "Upcoming Class",
-              body: "Branch: $_selectedBranch, Year: $_selectedYear, Section: $_selectedSection - $subInfo at ${widget.startTime}",
-              scheduledTime: scheduledDate
+              title: "Class Reminder",
+              body: "Subject: $subject\nYou have a class of $classInfo",
+              scheduledTime: reminderTime
           );
       } catch (e) {
-          debugPrint("Date Parsing Error: $e");
+          debugPrint("Notification Error: $e");
       }
   }
 
@@ -242,12 +374,38 @@ class _AddClassScreenState extends State<AddClassScreen> {
       }
   }
 
+  void _clearManualSubject() {
+      if (_manualSubjectController.text.isNotEmpty) {
+          setState(() {
+              _manualSubjectController.clear();
+          });
+      }
+  }
+
+  void _clearListSubject() {
+      if (_subjectController.text.isNotEmpty) {
+          setState(() {
+              _subjectController.clear();
+              _subjectCodeController.clear();
+          });
+      }
+  }
+
+  String _mapSectionShort(String? section) {
+      if (section == null) return "Sec A";
+      if (section.toLowerCase().contains("section")) {
+          return section.replaceAll(RegExp(r'section', caseSensitive: false), 'Sec').trim();
+      }
+      return "Sec $section";
+  }
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final isDark = themeProvider.isDarkMode;
     final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
     final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
+    final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
     final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
     
     final bgColor = isDark ? ThemeColors.darkBackground.first : ThemeColors.lightBackground.first;
@@ -269,13 +427,26 @@ class _AddClassScreenState extends State<AddClassScreen> {
                crossAxisAlignment: CrossAxisAlignment.start,
                children: [
                  _buildInfoCard(cardColor, textColor, tint),
-                 const SizedBox(height: 30),
+                 const SizedBox(height: 20),
                  
+                 Row(
+                   children: [
+                     Expanded(child: _buildDropdown("Day", _daysList, _selectedDay, (val) => setState(() => _selectedDay = val), tint, textColor, cardColor)),
+                     const SizedBox(width: 10),
+                     Expanded(child: _buildDropdown("Period", _availablePeriods.map((e) => e.toString()).toList(), _selectedPeriodIndex?.toString(), (val) {
+                         setState(() => _selectedPeriodIndex = int.tryParse(val ?? ''));
+                     }, tint, textColor, cardColor)),
+                   ],
+                 ),
+
+                 const SizedBox(height: 20),
+
                  Row(
                    children: [
                      Expanded(child: _buildDropdown("Branch", _branches, _selectedBranch, (val) {
                        setState(() { _selectedBranch = val; _selectedSection = null; _fetchedSubjects = []; });
                        _fetchSections();
+                       _fetchTimings();
                        _loadSubjectsFromJson();
                      }, tint, textColor, cardColor)),
                      const SizedBox(width: 10),
@@ -289,15 +460,16 @@ class _AddClassScreenState extends State<AddClassScreen> {
                    ],
                  ),
                  
-                 const SizedBox(height: 20),
+                 const SizedBox(height: 25),
                  
-                 Text("Subject", style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w500)),
+                 Text("Select Subject from List", style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 14)),
                  const SizedBox(height: 10),
                  Autocomplete<Map<String, String>>(
                    displayStringForOption: (Map<String, String> option) => option['name']!,
                    optionsBuilder: (TextEditingValue textEditingValue) {
+                     if (_selectedBranch == null || _selectedYear == null) return const Iterable<Map<String, String>>.empty();
                      if (textEditingValue.text == '') {
-                       return _fetchedSubjects.take(5);
+                       return _fetchedSubjects;
                      }
                      final filtered = _fetchedSubjects.where((Map<String, String> option) {
                        return option['name']!.toLowerCase().contains(textEditingValue.text.toLowerCase()) ||
@@ -322,24 +494,34 @@ class _AddClassScreenState extends State<AddClassScreen> {
                       if (controller.text.isEmpty && _subjectController.text.isNotEmpty) {
                           controller.text = _subjectController.text;
                       }
-                      return TextField(
-                        controller: controller,
-                        focusNode: focusNode,
-                        onChanged: (val) {
-                           _subjectController.text = val;
-                           // If value changed manually, check if it matches a known subject to auto-fill code?
-                           // Or just leave code empty if not selected from list.
-                        },
-                        style: TextStyle(color: textColor),
-                        decoration: InputDecoration(
-                          hintText: "Search or enter manually...",
-                          hintStyle: TextStyle(color: textColor.withOpacity(0.5)),
-                          filled: true,
-                          fillColor: cardColor,
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide.none),
-                        ),
-                      );
-                   },
+                       return TextField(
+                         controller: controller,
+                         focusNode: focusNode,
+                         onChanged: (val) {
+                            _subjectController.text = val;
+                            _clearManualSubject();
+                         },
+                         style: TextStyle(color: textColor),
+                         decoration: InputDecoration(
+                           hintText: _selectedYear == null ? "Select Year first..." : "Search subject list...",
+                           hintStyle: TextStyle(color: textColor.withOpacity(0.5)),
+                           filled: true,
+                           fillColor: cardColor,
+                           border: OutlineInputBorder(
+                             borderRadius: BorderRadius.circular(10),
+                             borderSide: BorderSide(color: tint.withOpacity(0.3)),
+                           ),
+                           enabledBorder: OutlineInputBorder(
+                             borderRadius: BorderRadius.circular(10),
+                             borderSide: BorderSide(color: tint.withOpacity(0.3)),
+                           ),
+                           suffixIcon: _subjectController.text.isNotEmpty ? IconButton(icon: const Icon(Icons.clear, size: 16), onPressed: () {
+                               controller.clear();
+                               _clearListSubject();
+                           }) : null,
+                         ),
+                       );
+                    },
                    optionsViewBuilder: (context, onSelected, options) {
                       return Align(
                         alignment: Alignment.topLeft,
@@ -347,7 +529,7 @@ class _AddClassScreenState extends State<AddClassScreen> {
                           elevation: 4.0,
                           color: cardColor,
                           child: ConstrainedBox(
-                            constraints: const BoxConstraints(maxHeight: 250, maxWidth: 350),
+                            constraints: BoxConstraints(maxHeight: 250, maxWidth: MediaQuery.of(context).size.width - 40),
                             child: ListView.builder(
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,
@@ -370,7 +552,16 @@ class _AddClassScreenState extends State<AddClassScreen> {
                                             child: Text(option['id']!, style: TextStyle(color: tint, fontSize: 10, fontWeight: FontWeight.bold)),
                                           ),
                                         if (option['id'] != 'ACT') const SizedBox(width: 10),
-                                        Expanded(child: Text(option['name']!, style: TextStyle(color: textColor))),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text(option['name']!, style: TextStyle(color: textColor, fontWeight: FontWeight.bold)),
+                                              if (option['sem'] != null)
+                                                Text(option['sem']!, style: TextStyle(color: subTextColor, fontSize: 10)),
+                                            ],
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -383,13 +574,51 @@ class _AddClassScreenState extends State<AddClassScreen> {
                    },
                  ),
                  
-                 if (_subjectCodeController.text.isNotEmpty)
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: Text("Subject Code: ${_subjectCodeController.text}", style: TextStyle(color: tint, fontSize: 12, fontWeight: FontWeight.bold)),
-                    ),
+                  if (_subjectCodeController.text.isNotEmpty)
+                     Padding(
+                       padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                       child: Text("Subject Code: ${_subjectCodeController.text}", style: TextStyle(color: tint, fontSize: 12, fontWeight: FontWeight.bold)),
+                     ),
 
-                 const SizedBox(height: 40),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: [
+                       const Expanded(child: Divider()),
+                       Padding(
+                         padding: const EdgeInsets.symmetric(horizontal: 10),
+                         child: Text("OR", style: TextStyle(color: textColor.withOpacity(0.5), fontSize: 12, fontWeight: FontWeight.bold)),
+                       ),
+                       const Expanded(child: Divider()),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  
+                  Text("Enter Subject Manually", style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 14)),
+                  const SizedBox(height: 10),
+                  TextField(
+                    controller: _manualSubjectController,
+                    onChanged: (val) {
+                        if (val.isNotEmpty) _clearListSubject();
+                        setState(() {});
+                    },
+                    style: TextStyle(color: textColor),
+                    decoration: InputDecoration(
+                      hintText: "e.g. Special Guest Lecture",
+                      hintStyle: TextStyle(color: textColor.withOpacity(0.35)),
+                       filled: true,
+                       fillColor: cardColor,
+                       border: OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(10),
+                         borderSide: BorderSide(color: tint.withOpacity(0.3)),
+                       ),
+                       enabledBorder: OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(10),
+                         borderSide: BorderSide(color: tint.withOpacity(0.3)),
+                       ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 40),
                  
                  SizedBox(
                    width: double.infinity,
@@ -414,7 +643,11 @@ class _AddClassScreenState extends State<AddClassScreen> {
   }
   
   Widget _buildInfoCard(Color cardColor, Color textColor, Color tint) {
+      if (widget.day == null || widget.periodIndex == null) {
+          return const SizedBox.shrink();
+      }
       return Container(
+          margin: const EdgeInsets.only(bottom: 20),
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
               color: tint.withOpacity(0.1),
@@ -428,7 +661,7 @@ class _AddClassScreenState extends State<AddClassScreen> {
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                          Text(widget.day, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+                          Text("${widget.day} - Period ${widget.periodIndex}", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
                           Text("${widget.startTime} - ${widget.endTime}", style: GoogleFonts.poppins(fontSize: 12, color: textColor.withOpacity(0.8))),
                       ],
                   )
@@ -448,6 +681,7 @@ class _AddClassScreenState extends State<AddClassScreen> {
           decoration: BoxDecoration(
             color: cardColor,
             borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: tint.withOpacity(0.3)),
           ),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(

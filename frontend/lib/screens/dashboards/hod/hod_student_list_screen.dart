@@ -1,6 +1,5 @@
 ﻿import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 // Persistence
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -36,8 +35,7 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
   bool _isSelectionMode = false;
   final Set<String> _selectedIds = {};
 
-  // STATIC CACHE for Moved Students (Simulates Backend Persistence in Session)
-  static final Map<String, String> _movedStudentsCache = {};
+
 
   @override
   void initState() {
@@ -48,10 +46,9 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
   Future<void> _fetchStudents() async {
     setState(() => _isLoading = true);
     
-    List<dynamic> finalStudentList = [];
+    List<dynamic> currentSectionStudents = [];
 
     try {
-      // 1. Fetch from API
       final queryParams = {
         'branch': widget.branch,
         'year': widget.year,
@@ -59,70 +56,28 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
       };
       
       final uri = Uri.parse('${ApiConstants.baseUrl}/api/students').replace(queryParameters: queryParams);
-      
       final response = await http.get(uri);
       
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
-        finalStudentList = data.map((s) => {
-             'fullName': s['full_name'] ?? s['fullName'] ?? 'Unknown',
-             'studentId': s['student_id'] ?? s['studentId'] ?? s['login_id'] ?? 'Unknown',
-             'section': widget.section, 
-             'branch': widget.branch,
-             'year': widget.year
-        }).toList();
+        
+        for (var s in data) {
+           currentSectionStudents.add({
+             'fullName': s['fullName'] ?? s['full_name'] ?? 'Unknown',
+             'studentId': s['studentId'] ?? s['student_id'] ?? s['login_id'] ?? 'Unknown',
+             'section': s['section'] ?? widget.section, 
+             'branch': s['branch'] ?? widget.branch,
+             'year': s['year'] ?? widget.year
+           });
+        }
       } else {
          debugPrint("API Error: ${response.statusCode}");
       }
       
-      // 2. Load Alwar Students from JSON (Locally)
-      // Only for 1st Year, Section A (Default) as requested
-      if (widget.year == '1st Year' && widget.section == 'Section A') {
-          try {
-             final String jsonString = await rootBundle.loadString('assets/data/json/alwar_students.json');
-             final Map<String, dynamic> alwarData = json.decode(jsonString);
-             
-             // Check Year
-             if (alwarData.containsKey('1st Year')) {
-                 final branchCode = _getBranchCode(widget.branch);
-                 final branchStudents = alwarData['1st Year'][branchCode];
-                 
-                 if (branchStudents != null && branchStudents is List) {
-                     for (var s in branchStudents) {
-                         final pin = s['pin'].toString();
-                         final name = s['name'].toString();
-                         
-                         // Check for Duplicates (API takes precedence)
-                         final exists = finalStudentList.any((existing) => existing['studentId'] == pin);
-                         
-                         // Filter logic: "25315-**001" type. JSON contains these.
-                         // Add if not exists
-                         if (!exists) {
-                            finalStudentList.add({
-                               'fullName': name,
-                               'studentId': pin,
-                               'section': widget.section,
-                               'branch': widget.branch,
-                               'year': widget.year,
-                               'isLocal': true
-                            });
-                         }
-                     }
-                 }
-             }
-          } catch (e) {
-             debugPrint("Error loading local alwar_students.json: $e");
-          }
-      }
-
-      finalStudentList.sort((a, b) => a['studentId'].toString().compareTo(b['studentId'].toString()));
-
-      if (finalStudentList.any((s) => s['isLocal'] == true)) {
-          _syncAlwarStudents(isSilent: true);
-      }
+      currentSectionStudents.sort((a, b) => a['studentId'].toString().compareTo(b['studentId'].toString()));
 
       setState(() {
-         _studentList = finalStudentList;
+         _studentList = currentSectionStudents;
          _isLoading = false;
       });
 
@@ -132,16 +87,7 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
     }
   }
 
-  String _getBranchCode(String branch) {
-      final b = branch.toLowerCase();
-      if (b.contains('computer')) return 'cme';
-      if (b.contains('electronics') && b.contains('communication')) return 'ece';
-      if (b.contains('electrical') && b.contains('electronics')) return 'eee'; // Full check
-      if (b.contains('electrical')) return 'eee'; // Fallback
-      if (b.contains('mechanical')) return 'mech';
-      if (b.contains('civil')) return 'civil';
-      return 'cme'; // Default
-  }
+
 
   void _addStudent() {
      final nameController = TextEditingController();
@@ -302,70 +248,7 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
   }
 
 
-  Future<void> _syncAlwarStudents({bool isSilent = false}) async {
-      if (!isSilent) {
-        final confirm = await showDialog<bool>(
-          context: context,
-          builder: (ctx) => AlertDialog(
-             title: const Text("Sync to Database"),
-             content: const Text("This will upload all local 'Alwar' students (pin 25315-*) to the backend server. Continue?"),
-             actions: [
-                TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text("Cancel")),
-                ElevatedButton(onPressed: () => Navigator.pop(ctx, true), child: const Text("Sync"))
-             ]
-          )
-        );
-        if (confirm != true) return;
 
-        showDialog(
-            context: context,
-            barrierDismissible: false,
-            builder: (ctx) => const Dialog(
-               child: Padding(
-                 padding: EdgeInsets.all(20),
-                 child: Row(children: [CircularProgressIndicator(), SizedBox(width: 20), Text("Syncing Students...")]),
-               )
-            )
-        );
-      }
-
-      try {
-          final localStudents = _studentList.where((s) => s['isLocal'] == true).toList();
-          if (localStudents.isEmpty) {
-             if (mounted && !isSilent && Navigator.canPop(context)) Navigator.pop(context);
-             return;
-          }
-
-          final user = await AuthService.getUserSession();
-          final String branchName = (user != null && user['branch'] != null) ? user['branch'] : widget.branch;
-
-          final payloads = localStudents.map((s) => {
-             'fullName': s['fullName'],
-             'studentId': s['studentId'],
-             'branch': branchName, 
-             'year': widget.year,
-             'section': widget.section,
-          }).toList();
-
-          final res = await http.post(
-             Uri.parse('${ApiConstants.baseUrl}/api/students/bulk-create'),
-             headers: {'Content-Type': 'application/json'},
-             body: json.encode(payloads)
-          );
-          
-          if (mounted && !isSilent && Navigator.canPop(context)) Navigator.pop(context); 
-          
-          if (res.statusCode == 200) {
-             if (mounted && !isSilent) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Sync Complete"), backgroundColor: Colors.green));
-             _fetchStudents(); // Refresh to pull DB data
-          } else {
-             debugPrint("Bulk sync failed: ${res.body}");
-          }
-      } catch (e) {
-          if (mounted && !isSilent && Navigator.canPop(context)) Navigator.pop(context);
-          debugPrint("Sync Error: $e");
-      }
-  }
 
   Future<void> _deleteStudent(int index, String id) async {
     final confirm = await showDialog<bool>(
@@ -464,13 +347,7 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                onPressed: _selectedIds.isEmpty ? null : _bulkMoveStudents,
             )
           else ...[
-             // Sync Button for Alwar Students (1st Year, Section A)
-             if (widget.year == '1st Year' && widget.section == 'Section A' && _studentList.any((s) => s['isLocal'] == true))
-               IconButton(
-                 icon: const Icon(Icons.cloud_upload),
-                 tooltip: "Sync Alwar Students to Database",
-                 onPressed: _syncAlwarStudents,
-               ),
+
             
             PopupMenuButton<String>(
               icon: Icon(Icons.more_vert, color: textColor),
