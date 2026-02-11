@@ -751,35 +751,6 @@ pub async fn approve_attendance_correction_handler(
     Ok(Json(serde_json::json!({"message": "Processed successfully"})))
 }
 
-// --- Timetable ---
-
-pub async fn get_timetable_handler(
-    State(state): State<AppState>,
-    Query(params): Query<GetTimetableQuery>,
-) -> Result<Json<Vec<TimetableEntry>>, StatusCode> {
-    let section = params.section.unwrap_or_else(|| "A".to_string());
-    let entries = sqlx::query_as::<_, TimetableEntry>("SELECT * FROM timetables WHERE branch = $1 AND year = $2 AND section = $3 ORDER BY day, period_number")
-    .bind(normalize_branch(&params.branch)).bind(params.year).bind(section).fetch_all(&state.pool).await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
-    Ok(Json(entries))
-}
-
-pub async fn assign_class_handler(
-    State(state): State<AppState>,
-    Json(payload): Json<AssignClassRequest>,
-) -> Result<Json<TimetableEntry>, StatusCode> {
-    let entry_type = payload.entry_type.unwrap_or_else(|| "class".to_string());
-    let entry = sqlx::query_as::<_, TimetableEntry>("INSERT INTO timetables (branch, year, section, day, period_number, start_time, end_time, subject_name, type) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) ON CONFLICT (branch, year, section, day, period_number) DO UPDATE SET subject_name = EXCLUDED.subject_name, start_time = EXCLUDED.start_time, end_time = EXCLUDED.end_time, type = EXCLUDED.type RETURNING *")
-    .bind(normalize_branch(&payload.branch)).bind(payload.year).bind(payload.section).bind(payload.day).bind(payload.period_number).bind(payload.start_time).bind(payload.end_time).bind(payload.subject_name).bind(entry_type).fetch_one(&state.pool).await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
-    Ok(Json(entry))
-}
-
-pub async fn clear_class_handler(
-    State(state): State<AppState>,
-    Json(payload): Json<ClearClassRequest>,
-) -> Result<StatusCode, StatusCode> {
-    sqlx::query("DELETE FROM timetables WHERE id = $1").bind(payload.id).execute(&state.pool).await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
-    Ok(StatusCode::OK)
-}
 
 // --- Helpers ---
 
@@ -1167,19 +1138,6 @@ pub async fn get_timetable_handler(
     State(state): State<AppState>,
     Query(params): Query<std::collections::HashMap<String, String>>,
 ) -> Result<Json<Vec<TimetableEntry>>, StatusCode> {
-    // Determine scope: 
-    // If 'facultyId' is present, return only their classes.
-    // If 'branch', 'year', 'section' present, return class timetable.
-    
-    let mut query = "SELECT * FROM timetable_entries".to_string();
-    let mut conditions = Vec::new();
-    // We can't use bind dynamically easily with simple string building unless we track params.
-    // However, for this simple case, we can use checks.
-    
-    // For now, let's support facultyId filter (for My Schedule) and simple branch/year/section (for Student View).
-    // The user requirement is "faculty assign... My Schedule".
-    
-    // If facultyId is provided:
     if let Some(fid) = params.get("facultyId") {
         return sqlx::query_as::<Postgres, TimetableEntry>("SELECT * FROM timetable_entries WHERE faculty_id = $1")
             .bind(fid)
@@ -1187,6 +1145,21 @@ pub async fn get_timetable_handler(
             .await
             .map_err(|e| {
                 eprintln!("Get Timetable Error: {:?}", e);
+                StatusCode::INTERNAL_SERVER_ERROR 
+            })
+            .map(Json);
+    }
+
+    if let (Some(branch), Some(year)) = (params.get("branch"), params.get("year")) {
+        let section = params.get("section").cloned().unwrap_or_else(|| "A".to_string());
+        return sqlx::query_as::<Postgres, TimetableEntry>("SELECT * FROM timetable_entries WHERE branch = $1 AND year = $2 AND section = $3 ORDER BY day, period_index")
+            .bind(normalize_branch(branch))
+            .bind(year)
+            .bind(section)
+            .fetch_all(&state.pool)
+            .await
+            .map_err(|e| {
+                eprintln!("Get Timetable (Student) Error: {:?}", e);
                 StatusCode::INTERNAL_SERVER_ERROR 
             })
             .map(Json);

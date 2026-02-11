@@ -701,46 +701,6 @@ pub struct FacultyListDTO {
     pub role: String,
 }
 
-#[derive(Serialize, Deserialize, Debug, FromRow)]
-pub struct TimetableEntry {
-    pub id: Uuid,
-    pub branch: String,
-    pub year: String,
-    pub section: String,
-    pub day: String,
-    pub period_number: i32,
-    pub start_time: String,
-    pub end_time: String,
-    pub subject_name: String,
-    #[sqlx(rename = "type")]
-    pub entry_type: Option<String>,
-}
-
-#[derive(Deserialize)]
-pub struct GetTimetableQuery {
-    pub branch: String,
-    pub year: String,
-    pub section: Option<String>,
-}
-
-#[derive(Deserialize)]
-pub struct AssignClassRequest {
-    pub branch: String,
-    pub year: String,
-    pub section: String,
-    pub day: String,
-    pub period_number: i32,
-    pub start_time: String,
-    pub end_time: String,
-    pub subject_name: String,
-    pub entry_type: Option<String>, // defaults to 'class'
-}
-
-#[derive(Deserialize)]
-pub struct ClearClassRequest {
-    pub id: Uuid,
-}
-
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ForgotPasswordRequest {
     pub login_id: String,
