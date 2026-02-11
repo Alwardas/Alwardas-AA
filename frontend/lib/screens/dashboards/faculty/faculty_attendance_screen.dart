@@ -285,12 +285,23 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
       'records': records
     };
 
+    // Show loading dialog
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => const Center(
+        child: CircularProgressIndicator(color: Colors.white),
+      ),
+    );
+
     try {
       final response = await http.post(
         Uri.parse('${ApiConstants.baseUrl}/api/attendance/batch'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode(payload),
       );
+
+      if (mounted) Navigator.pop(context); // Dismiss loading dialog
 
       if (response.statusCode == 200 || response.statusCode == 201) {
          // final result = json.decode(response.body); // Not strictly needed for the message if we use local count

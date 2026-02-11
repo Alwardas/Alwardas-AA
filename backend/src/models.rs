@@ -729,5 +729,7 @@ pub struct CreateStudentRequest {
     pub branch: String,
     pub year: String,
     pub section: Option<String>,
+    pub batch: Option<String>,
+    pub semester: Option<String>,
 }
 

@@ -1,5 +1,7 @@
 ﻿import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -25,30 +27,9 @@ class HodClassTimetableScreen extends StatefulWidget {
 
 class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
   // Data Structure
-  Map<String, List<Map<String, dynamic>>> _scheduleData = {
-    'Monday': _getEmptyDay(),
-    'Tuesday': _getEmptyDay(),
-    'Wednesday': _getEmptyDay(),
-    'Thursday': _getEmptyDay(),
-    'Friday': _getEmptyDay(),
-    'Saturday': _getEmptyDay(),
-  };
+  Map<String, List<Map<String, dynamic>>> _scheduleData = {};
 
-  static List<Map<String, dynamic>> _getEmptyDay() => [
-        {'id': 'p1', 'type': 'class', 'number': 1, 'time': '9:00-9:50', 'subject': '---', 'faculty': ''},
-        {'id': 'p2', 'type': 'class', 'number': 2, 'time': '9:50-10:40', 'subject': '---', 'faculty': ''},
-        {'id': 'b1', 'type': 'break', 'label': 'B R E A K'},
-        {'id': 'p3', 'type': 'class', 'number': 3, 'time': '11:00-11:50', 'subject': '---', 'faculty': ''},
-        {'id': 'p4', 'type': 'class', 'number': 4, 'time': '11:50-12:40', 'subject': '---', 'faculty': ''},
-        {'id': 'l1', 'type': 'lunch', 'label': 'L U N C H'},
-        {'id': 'p5', 'type': 'class', 'number': 5, 'time': '1:30-2:20', 'subject': '---', 'faculty': ''},
-        {'id': 'p6', 'type': 'class', 'number': 6, 'time': '2:20-3:10', 'subject': '---', 'faculty': ''},
-        {'id': 'b2', 'type': 'break', 'label': 'B R E A K'},
-        {'id': 'p7', 'type': 'class', 'number': 7, 'time': '3:30-4:20', 'subject': '---', 'faculty': ''},
-        {'id': 'p8', 'type': 'class', 'number': 8, 'time': '4:20-5:10', 'subject': '---', 'faculty': ''},
-      ];
-
-  final Map<int, Map<String, String>> _periodTimes = {
+  Map<int, Map<String, String>> _periodTimes = {
       1: {'start': '09:00', 'end': '09:50'},
       2: {'start': '09:50', 'end': '10:40'},
       3: {'start': '11:00', 'end': '11:50'},
@@ -58,6 +39,27 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
       7: {'start': '15:30', 'end': '16:20'},
       8: {'start': '16:20', 'end': '17:10'},
   };
+
+  List<Map<String, dynamic>> _getEmptyDay() {
+    List<Map<String, dynamic>> slots = [];
+    
+    // We basically need to re-implement the generation logic here or use a shared util.
+    // For now I'll just dynamically build it from _periodTimes.
+    
+    slots.add({'id': 'p1', 'type': 'class', 'number': 1, 'time': '${_periodTimes[1]!['start']}-${_periodTimes[1]!['end']}', 'subject': '---', 'faculty': ''});
+    slots.add({'id': 'p2', 'type': 'class', 'number': 2, 'time': '${_periodTimes[2]!['start']}-${_periodTimes[2]!['end']}', 'subject': '---', 'faculty': ''});
+    slots.add({'id': 'b1', 'type': 'break', 'label': 'B R E A K'});
+    slots.add({'id': 'p3', 'type': 'class', 'number': 3, 'time': '${_periodTimes[3]!['start']}-${_periodTimes[3]!['end']}', 'subject': '---', 'faculty': ''});
+    slots.add({'id': 'p4', 'type': 'class', 'number': 4, 'time': '${_periodTimes[4]!['start']}-${_periodTimes[4]!['end']}', 'subject': '---', 'faculty': ''});
+    slots.add({'id': 'l1', 'type': 'lunch', 'label': 'L U N C H'});
+    slots.add({'id': 'p5', 'type': 'class', 'number': 5, 'time': '${_periodTimes[5]!['start']}-${_periodTimes[5]!['end']}', 'subject': '---', 'faculty': ''});
+    slots.add({'id': 'p6', 'type': 'class', 'number': 6, 'time': '${_periodTimes[6]!['start']}-${_periodTimes[6]!['end']}', 'subject': '---', 'faculty': ''});
+    slots.add({'id': 'b2', 'type': 'break', 'label': 'B R E A K'});
+    slots.add({'id': 'p7', 'type': 'class', 'number': 7, 'time': '${_periodTimes[7]!['start']}-${_periodTimes[7]!['end']}', 'subject': '---', 'faculty': ''});
+    slots.add({'id': 'p8', 'type': 'class', 'number': 8, 'time': '${_periodTimes[8]!['start']}-${_periodTimes[8]!['end']}', 'subject': '---', 'faculty': ''});
+    
+    return slots;
+  }
 
   final List<String> _days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   late String _selectedDay;
@@ -78,7 +80,53 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
     if (weekday > 6) weekday = 1;
     _selectedDay = _days[weekday - 1];
     _modalDay = _selectedDay;
-    _fetchTimetable();
+    _loadSettings().then((_) => _fetchTimetable());
+  }
+
+  Future<void> _loadSettings() async {
+    final prefs = await SharedPreferences.getInstance();
+    final branch = widget.branch;
+    
+    final startHour = prefs.getInt('timing_start_hour_$branch') ?? 9;
+    final startMinute = prefs.getInt('timing_start_minute_$branch') ?? 0;
+    final classDuration = prefs.getInt('timing_class_duration_$branch') ?? 50;
+    final shortBreakDuration = prefs.getInt('timing_short_break_$branch') ?? 10;
+    final lunchDuration = prefs.getInt('timing_lunch_$branch') ?? 50;
+    
+    // Recalculate _periodTimes
+    DateTime time = DateTime(2026, 1, 1, startHour, startMinute);
+    Map<int, Map<String, String>> newPeriodTimes = {};
+    
+    for (int p = 1; p <= 8; p++) {
+       DateTime start = time;
+       time = time.add(Duration(minutes: classDuration));
+       newPeriodTimes[p] = {
+         'start': DateFormat('HH:mm').format(start),
+         'end': DateFormat('HH:mm').format(time),
+       };
+       
+       // Handle Breaks (same positions as in the Timing screen)
+       if (p == 2 || p == 6) {
+          time = time.add(Duration(minutes: shortBreakDuration));
+       } else if (p == 4) {
+          time = time.add(Duration(minutes: lunchDuration));
+       }
+    }
+    
+    if (mounted) {
+      setState(() {
+        _periodTimes = newPeriodTimes;
+        // Re-initialize _scheduleData with new empty slots
+        _scheduleData = {
+          'Monday': _getEmptyDay(),
+          'Tuesday': _getEmptyDay(),
+          'Wednesday': _getEmptyDay(),
+          'Thursday': _getEmptyDay(),
+          'Friday': _getEmptyDay(),
+          'Saturday': _getEmptyDay(),
+        };
+      });
+    }
   }
 
   Future<void> _fetchTimetable() async {

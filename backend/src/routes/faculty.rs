@@ -812,7 +812,7 @@ pub async fn create_student_handler(
 
     // Insert
     let branch_norm = normalize_branch(&payload.branch);
-    sqlx::query("INSERT INTO users (id, full_name, role, login_id, password_hash, branch, year, section, is_approved, created_at, updated_at) VALUES ($1, $2, 'Student', $3, $4, $5, $6, $7, true, NOW(), NOW())")
+    sqlx::query("INSERT INTO users (id, full_name, role, login_id, password_hash, branch, year, section, is_approved, created_at, batch_no, semester) VALUES ($1, $2, 'Student', $3, $4, $5, $6, $7, true, NOW(), $8, $9)")
         .bind(Uuid::new_v4())
         .bind(payload.full_name)
         .bind(payload.student_id.clone())
@@ -820,11 +820,54 @@ pub async fn create_student_handler(
         .bind(branch_norm)
         .bind(payload.year)
         .bind(section)
+        .bind(payload.batch)
+        .bind(payload.semester)
         .execute(&state.pool)
         .await
         .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
 
     Ok(StatusCode::CREATED)
+}
+
+pub async fn bulk_create_students_handler(
+    State(state): State<AppState>,
+    Json(payloads): Json<Vec<CreateStudentRequest>>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let mut tx = state.pool.begin().await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
+
+    for payload in payloads {
+        let section = payload.section.unwrap_or_else(|| "Section A".to_string());
+        let branch_norm = normalize_branch(&payload.branch);
+
+        // Subquery approach to avoid multiple roundtrips for existence if possible, 
+        // but simpler for now is just to use a single insert with a WHERE NOT EXISTS
+        // Or just let it fail/ignore if login_id exists.
+        
+        let _ = sqlx::query(
+            "INSERT INTO users (id, full_name, role, login_id, password_hash, branch, year, section, is_approved, created_at, batch_no, semester)
+             SELECT $1, $2, 'Student', $3, $4, $5, $6, $7, true, NOW(), $8, $9
+             WHERE NOT EXISTS (SELECT 1 FROM users WHERE login_id = $10)"
+        )
+        .bind(Uuid::new_v4())
+        .bind(payload.full_name)
+        .bind(&payload.student_id)
+        .bind(&payload.student_id) 
+        .bind(branch_norm)
+        .bind(payload.year)
+        .bind(section)
+        .bind(payload.batch)
+        .bind(payload.semester)
+        .bind(&payload.student_id) // For NOT EXISTS check
+        .execute(&mut *tx)
+        .await; 
+        // We ignore individual errors in bulk sync to keep moving
+    }
+
+    tx.commit().await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
+
+    Ok(StatusCode::OK)
 }
 
 #[derive(serde::Deserialize)]

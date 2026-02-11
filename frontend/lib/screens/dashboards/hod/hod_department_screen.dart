@@ -7,6 +7,7 @@ import '../../../core/theme/app_theme.dart';
 import 'hod_class_timetable_screen.dart';
 import 'hod_year_sections_screen.dart';
 import 'hod_faculty_screen.dart';
+import 'hod_department_timing_screen.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../../core/api_constants.dart';
@@ -194,6 +195,8 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
                 _buildSectionHeader('Department Management', textColor),
                 const SizedBox(height: 15),
                 _buildManagementCards(context, isDark, textColor, subTextColor),
+                const SizedBox(height: 15),
+                _buildTimingCard(context, isDark, textColor, subTextColor),
                 const SizedBox(height: 30),
                 _buildSectionHeader('Department Rules', textColor),
                 const SizedBox(height: 15),
@@ -300,6 +303,17 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildTimingCard(BuildContext context, bool isDark, Color textColor, Color subTextColor) {
+    return _buildManagementCard(
+      context,
+      isDark,
+      'Timings',
+      Icons.access_time_filled_outlined,
+      Colors.teal,
+      () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodDepartmentTimingScreen(branch: widget.userData['branch'] ?? 'Computer Engineering'))),
     );
   }
 

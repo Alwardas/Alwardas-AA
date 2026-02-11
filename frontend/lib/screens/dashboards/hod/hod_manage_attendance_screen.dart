@@ -1,8 +1,8 @@
 ﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
-// For JSON loading fallback
 import 'package:http/http.dart' as http;
+import 'package:flutter/services.dart';
 
 import 'dart:convert';
 import '../../../core/providers/theme_provider.dart';
@@ -96,43 +96,67 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
       if (res.statusCode == 200) {
         final data = json.decode(res.body);
         
+        List<dynamic> fetched = [];
         if (data['students'] != null) {
-           final fetched = List<dynamic>.from(data['students']).map((s) => <String, dynamic>{
+            fetched = List<dynamic>.from(data['students']).map((s) => <String, dynamic>{
               ...s,
               'status': (s['status'] == 'PENDING') ? 'PRESENT' : s['status'],
-              // Ensure studentId is string to avoid comparison errors
               'studentId': (s['student_id'] ?? s['studentId'] ?? '').toString(), 
               'fullName': s['fullName'] ?? s['full_name'] ?? 'Unknown'
-          }).toList();
-          
-          fetched.sort((a, b) {
-             int nameComp = a['fullName'].toString().compareTo(b['fullName'].toString());
-             if (nameComp != 0) return nameComp;
-             return a['studentId'].toString().compareTo(b['studentId'].toString());
-          });
-          
-          // Check for Holiday
-          bool holidayDetected = fetched.any((s) => s['status'] == 'HOLIDAY');
-          String? reason;
-          if (holidayDetected) { 
-             // Try to find remarks/reason from ANY student record (assuming batch update set remarks)
-             // The API class-record might not return remarks per student standardly, but if it did:
-             // remarks might be in 'remarks' field if joined.
-             // If not available, just generic.
-             reason = "Holiday Marked";
-          }
-
-          setState(() {
-            _students = fetched;
-            _originalStudents = fetched.map((s) => Map<String, dynamic>.from(s)).toList();
-            _markedBy = data['markedBy'];
-            _isHoliday = holidayDetected;
-            _holidayReason = reason;
-            _loading = false;
-          });
-        } else {
-             setState(() { _students = []; _originalStudents = []; _loading = false; });
+            }).toList();
         }
+
+        // --- Alwar Students Injection ---
+        if (widget.year == '1st Year' && section == 'Section A') {
+           try {
+              final String jsonString = await rootBundle.loadString('assets/data/json/alwar_students.json');
+              final Map<String, dynamic> alwarData = json.decode(jsonString);
+              if (alwarData.containsKey('1st Year')) {
+                  final bc = _getBranchCode(branch);
+                  final bs = alwarData['1st Year'][bc];
+                  if (bs != null && bs is List) {
+                      for (var s in bs) {
+                          final pin = s['pin'].toString();
+                          final name = s['name'].toString();
+                          if (!fetched.any((e) => e['studentId'] == pin)) {
+                              fetched.add({
+                                 'fullName': name,
+                                 'studentId': pin,
+                                 'status': 'PRESENT',
+                                 'isLocal': true
+                              });
+                          }
+                      }
+                  }
+              }
+           } catch (e) {
+              debugPrint("Local Alwar Load Error: $e");
+           }
+        }
+
+        fetched.sort((a, b) {
+            final idA = int.tryParse(a['studentId'].toString().replaceAll(RegExp(r'[^0-9]'), ''));
+            final idB = int.tryParse(b['studentId'].toString().replaceAll(RegExp(r'[^0-9]'), ''));
+            if (idA != null && idB != null) {
+               int diff = idA.compareTo(idB);
+               if (diff != 0) return diff;
+            } else {
+               int strDiff = a['studentId'].toString().compareTo(b['studentId'].toString());
+               if (strDiff != 0) return strDiff;
+            }
+            return a['fullName'].toString().compareTo(b['fullName'].toString());
+        });
+        
+        bool holidayDetected = fetched.any((s) => s['status'] == 'HOLIDAY');
+
+        setState(() {
+          _students = fetched;
+          _originalStudents = fetched.map((s) => Map<String, dynamic>.from(s)).toList();
+          _markedBy = data['markedBy'];
+          _isHoliday = holidayDetected;
+          _holidayReason = holidayDetected ? "Holiday Marked" : null;
+          _loading = false;
+        });
       } else {
          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to fetch records: ${res.statusCode}")));
          setState(() { _students = []; _originalStudents = []; _loading = false; });
@@ -142,6 +166,17 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Network Error: $e")));
       setState(() { _loading = false; _students = []; });
     }
+  }
+
+  String _getBranchCode(String branch) {
+      final b = branch.toLowerCase();
+      if (b.contains('computer')) return 'cme';
+      if (b.contains('electronics') && b.contains('communication')) return 'ece';
+      if (b.contains('electrical') && b.contains('electronics')) return 'eee';
+      if (b.contains('electrical')) return 'eee';
+      if (b.contains('mechanical')) return 'mech';
+      if (b.contains('civil')) return 'civil';
+      return 'cme'; 
   }
 
   Future<void> _handleSubmit() async {
@@ -154,6 +189,13 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
      }).toList();
 
      try {
+       // Show loading overlay
+       showDialog(
+         context: context,
+         barrierDismissible: false,
+         builder: (ctx) => const Center(child: CircularProgressIndicator(color: Colors.white)),
+       );
+
        final res = await http.post(
          Uri.parse('${ApiConstants.baseUrl}/api/attendance/batch'),
          headers: {'Content-Type': 'application/json'},
@@ -164,6 +206,8 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
            'markedBy': user?['login_id']
          })
        );
+       
+       if (mounted) Navigator.pop(context); // Close loading overlay
        
         if (res.statusCode == 200 || res.statusCode == 201) {
           _showSnackBar("Attendance Saved");

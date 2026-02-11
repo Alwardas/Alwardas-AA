@@ -188,6 +188,7 @@ async fn main() {
         .route("/api/faculty/by-branch", get(faculty::get_faculty_by_branch_handler))
         .route("/api/students", get(faculty::get_students_handler))
         .route("/api/students/create", post(faculty::create_student_handler))
+        .route("/api/students/bulk-create", post(faculty::bulk_create_students_handler))
         .route("/api/students/move", post(faculty::move_students_handler))
         .route("/api/students/delete", post(faculty::delete_student_handler))
         .route("/api/attendance/submit", post(faculty::submit_attendance_handler))
@@ -258,6 +259,7 @@ async fn fix_branch_names(pool: &Pool<Postgres>) {
         ("CME", "Computer Engineering"),
         ("CM", "Computer Engineering"),
         ("Cme", "Computer Engineering"),
+        ("CSE", "Computer Engineering"),
         ("Computer", "Computer Engineering"),
         ("ECE", "Electronics & Communication Engineering"),
         ("EC", "Electronics & Communication Engineering"),

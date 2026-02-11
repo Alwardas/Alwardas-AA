@@ -6,7 +6,7 @@ import 'dart:convert';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
-import 'principal_branch_years_screen.dart';
+import '../hod/hod_attendance_screen.dart';
 
 class PrincipalAttendanceScreen extends StatefulWidget {
   const PrincipalAttendanceScreen({super.key});
@@ -20,8 +20,8 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
     "Computer Engineering",
     "Civil Engineering",
     "Mechanical Engineering",
-    "Electronics and Communication Engineering",
-    "Electrical and Electronics Engineering"
+    "Electronics & Communication Engineering",
+    "Electrical & Electronics Engineering"
   ];
 
   Map<String, dynamic> _aggregatedStats = {
@@ -247,8 +247,8 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
                        Navigator.push(
                          context, 
                          MaterialPageRoute(
-                           builder: (_) => PrincipalBranchYearsScreen(
-                             branchName: branch,
+                           builder: (_) => HODAttendanceScreen(
+                             forcedBranch: branch,
                              initialDate: _selectedDate, 
                            )
                          )
