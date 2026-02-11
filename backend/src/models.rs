@@ -105,6 +105,31 @@ pub struct Notification {
 }
 
 #[derive(Serialize, Deserialize, Debug, FromRow)]
+pub struct TimetableEntry {
+    pub id: Uuid,
+    pub faculty_id: String,
+    pub branch: String,
+    pub year: String,
+    pub section: String,
+    pub day: String,
+    pub period_index: i32,
+    pub subject: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct AssignClassRequest {
+    #[serde(rename = "facultyId")]
+    pub faculty_id: String,
+    pub branch: String,
+    pub year: String,
+    pub section: String,
+    pub day: String,
+    #[serde(rename = "periodIndex")]
+    pub period_index: i32,
+    pub subject: String,
+}
+
+#[derive(Serialize, Deserialize, Debug, FromRow)]
 pub struct DepartmentTiming {
     pub branch: String,
     pub start_hour: i32,

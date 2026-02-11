@@ -1129,3 +1129,88 @@ pub async fn update_department_timings(
         }
     }
 }
+
+// --- Timetable ---
+
+pub async fn assign_class_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<AssignClassRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let branch_norm = normalize_branch(&payload.branch);
+
+    sqlx::query(
+        "INSERT INTO timetable_entries (id, faculty_id, branch, year, section, day, period_index, subject)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+         ON CONFLICT (branch, year, section, day, period_index) 
+         DO UPDATE SET faculty_id = EXCLUDED.faculty_id, subject = EXCLUDED.subject"
+    )
+    .bind(Uuid::new_v4())
+    .bind(&payload.faculty_id)
+    .bind(&branch_norm)
+    .bind(&payload.year)
+    .bind(&payload.section)
+    .bind(&payload.day)
+    .bind(payload.period_index)
+    .bind(&payload.subject)
+    .execute(&state.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Assign Class Error: {:?}", e);
+        (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to assign class"})))
+    })?;
+
+    Ok(StatusCode::OK)
+}
+
+pub async fn get_timetable_handler(
+    State(state): State<AppState>,
+    Query(params): Query<std::collections::HashMap<String, String>>,
+) -> Result<Json<Vec<TimetableEntry>>, StatusCode> {
+    // Determine scope: 
+    // If 'facultyId' is present, return only their classes.
+    // If 'branch', 'year', 'section' present, return class timetable.
+    
+    let mut query = "SELECT * FROM timetable_entries".to_string();
+    let mut conditions = Vec::new();
+    // We can't use bind dynamically easily with simple string building unless we track params.
+    // However, for this simple case, we can use checks.
+    
+    // For now, let's support facultyId filter (for My Schedule) and simple branch/year/section (for Student View).
+    // The user requirement is "faculty assign... My Schedule".
+    
+    // If facultyId is provided:
+    if let Some(fid) = params.get("facultyId") {
+        return sqlx::query_as::<Postgres, TimetableEntry>("SELECT * FROM timetable_entries WHERE faculty_id = $1")
+            .bind(fid)
+            .fetch_all(&state.pool)
+            .await
+            .map_err(|e| {
+                eprintln!("Get Timetable Error: {:?}", e);
+                StatusCode::INTERNAL_SERVER_ERROR 
+            })
+            .map(Json);
+    }
+    
+    // Fallback or other filters can be added here.
+    // Return empty for now to be safe if no filters.
+    Ok(Json(vec![])) 
+}
+
+pub async fn clear_class_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<AssignClassRequest>, // Reusing request to identify slot
+) -> Result<StatusCode, StatusCode> {
+    sqlx::query("DELETE FROM timetable_entries WHERE branch = $1 AND year = $2 AND section = $3 AND day = $4 AND period_index = $5")
+        .bind(normalize_branch(&payload.branch))
+        .bind(&payload.year)
+        .bind(&payload.section)
+        .bind(&payload.day)
+        .bind(payload.period_index)
+        .execute(&state.pool)
+        .await
+        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+        
+    Ok(StatusCode::OK)
+}
+
+

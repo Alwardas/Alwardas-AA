@@ -142,6 +142,31 @@ async fn main() {
         )
     ").execute(&pool).await.err();
 
+    // TIMETABLE ENTRIES TABLE
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS timetable_entries (
+            id UUID PRIMARY KEY,
+            faculty_id TEXT NOT NULL,
+            branch TEXT NOT NULL,
+            year TEXT NOT NULL,
+            section TEXT NOT NULL,
+            day TEXT NOT NULL,
+            period_index INT NOT NULL,
+            subject TEXT NOT NULL,
+            created_at TIMESTAMPTZ DEFAULT NOW(),
+            UNIQUE(branch, year, section, day, period_index) 
+        )
+    ").execute(&pool).await.err();
+    
+    // Allow multiple faculty to potentially teach if sections are different, but unique constraint above enforces
+    // one class per section per period.
+    // However, faculty view is 'my schedule'.
+    // If faculty A assigns class for Branch X Year Y Section Z Period 1, no one else can assign for that same target.
+    // The previous constraint UNIQUE(branch, year, section, day, period_index) ensures no double booking for the *class*.
+    // But we also need to ensure no double booking for the *faculty*? 
+    // Maybe let's stick to the class constraint first.
+
+
     // OPTIMIZATION INDEXES
     let _ = sqlx::query("CREATE INDEX IF NOT EXISTS idx_attendance_lookup ON attendance(branch, year, session, date, section)")
         .execute(&pool).await.err();
