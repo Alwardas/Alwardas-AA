@@ -1,5 +1,6 @@
 ﻿import 'package:flutter/material.dart';
 import 'screens/splash_screen.dart';
+import 'core/services/notification_service.dart';
 
 import 'package:provider/provider.dart';
 import 'core/theme/app_theme.dart';
@@ -11,6 +12,15 @@ Future<void> main() async {
   // Performance: Increase image cache limit (100MB) for smoother asset loading
   PaintingBinding.instance.imageCache.maximumSize = 100 * 1024 * 1024;
   
+  // Initialize Notifications
+  try {
+     final notificationService = NotificationService();
+     await notificationService.init();
+     await notificationService.requestPermissions();
+  } catch (e) {
+     debugPrint("Notification Init Error: $e");
+  }
+
   // Hard reset API URL to production to clear any legacy local IPs stored in device cache
   final prefs = await SharedPreferences.getInstance();
   await prefs.remove('api_base_url');

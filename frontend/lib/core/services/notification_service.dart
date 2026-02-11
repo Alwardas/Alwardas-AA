@@ -61,4 +61,9 @@ class NotificationService {
       matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime, 
     );
   }
+
+  static Future<void> cancelNotification(int id) async {
+      final service = NotificationService();
+      await service._notificationsPlugin.cancel(id);
+  }
 }

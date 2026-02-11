@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
+import '../../../core/services/notification_service.dart';
 import 'add_class_screen.dart';
 
 class FacultyScheduleScreen extends StatefulWidget {
@@ -180,24 +181,25 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
               final List<dynamic> assignments = json.decode(res.body);
               
               if (mounted) {
-                  setState(() {
-                      for (var entry in assignments) {
-                          final day = entry['day'];
-                          final pIndex = entry['period_index'];
-                          
-                          if (_scheduleData.containsKey(day)) {
-                              var slots = _scheduleData[day]!;
-                              final idx = slots.indexWhere((s) => s['number'] == pIndex);
-                              if (idx != -1) {
-                                  slots[idx]['subject'] = entry['subject'];
-                                  slots[idx]['subjectCode'] = entry['subject_code'];
-                                  slots[idx]['branch'] = entry['branch'];
-                                  slots[idx]['year'] = entry['year'];
-                                  slots[idx]['section'] = entry['section'];
-                              }
-                          }
-                      }
-                  });
+                   setState(() {
+                       for (var entry in assignments) {
+                           final day = entry['day'];
+                           // Use period_index or periodIndex based on backend serializtion
+                           final pIndex = entry['period_index'] ?? entry['periodIndex'];
+                           
+                           if (day != null && pIndex != null && _scheduleData.containsKey(day)) {
+                               var slots = _scheduleData[day]!;
+                               final idx = slots.indexWhere((s) => s['number'] == pIndex);
+                               if (idx != -1) {
+                                   slots[idx]['subject'] = entry['subject'];
+                                   slots[idx]['subjectCode'] = entry['subject_code'] ?? entry['subjectCode'];
+                                   slots[idx]['branch'] = entry['branch'];
+                                   slots[idx]['year'] = entry['year'];
+                                   slots[idx]['section'] = entry['section'];
+                               }
+                           }
+                       }
+                   });
               }
           }
       } catch (e) {
@@ -216,7 +218,120 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
   
   void _onSlotLongPress(Map<String, dynamic> item) async {
       if (item['type'] != 'class') return;
-      await _openAddClassScreen(item);
+      
+      if (item['subject'] == '---') {
+          await _openAddClassScreen(item);
+          return;
+      }
+
+      final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+      final isDark = themeProvider.isDarkMode;
+      final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
+      final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
+      final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
+
+      showModalBottomSheet(
+          context: context,
+          backgroundColor: Colors.transparent,
+          builder: (context) => Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                  color: cardColor,
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
+              ),
+              child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                      Container(width: 40, height: 4, decoration: BoxDecoration(color: textColor.withOpacity(0.1), borderRadius: BorderRadius.circular(2))),
+                      const SizedBox(height: 20),
+                      Text("Manage Schedule", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18, color: textColor)),
+                      const SizedBox(height: 10),
+                      Text("Period ${item['number']} - ${item['subject']}", style: TextStyle(color: textColor.withOpacity(0.7), fontSize: 14)),
+                      const SizedBox(height: 25),
+                      ListTile(
+                          leading: Container(padding: const EdgeInsets.all(8), decoration: BoxDecoration(color: tint.withOpacity(0.1), borderRadius: BorderRadius.circular(10)), child: Icon(Icons.edit_outlined, color: tint)),
+                          title: Text("Edit Assignment", style: TextStyle(color: textColor, fontWeight: FontWeight.bold)),
+                          subtitle: Text("Change details or subject", style: TextStyle(color: textColor.withOpacity(0.5), fontSize: 12)),
+                          onTap: () {
+                              Navigator.pop(context);
+                              _openAddClassScreen(item);
+                          },
+                      ),
+                      const Divider(),
+                      ListTile(
+                          leading: Container(padding: const EdgeInsets.all(8), decoration: BoxDecoration(color: Colors.red.withOpacity(0.1), borderRadius: BorderRadius.circular(10)), child: const Icon(Icons.delete_outline, color: Colors.red)),
+                          title: const Text("Clear Schedule", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
+                          subtitle: Text("Remove this period assignment", style: TextStyle(color: Colors.red.withOpacity(0.5), fontSize: 12)),
+                          onTap: () {
+                              Navigator.pop(context);
+                              _showDeleteConfirm(item);
+                          },
+                      ),
+                      const SizedBox(height: 20),
+                  ],
+              ),
+          )
+      );
+  }
+
+  void _showDeleteConfirm(Map<String, dynamic> item) {
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+              title: const Text("Clear Class?"),
+              content: const Text("This will remove the assigned class from your schedule."),
+              actions: [
+                  TextButton(onPressed: () => Navigator.pop(context), child: const Text("Cancel")),
+                  TextButton(
+                      onPressed: () {
+                          Navigator.pop(context);
+                          _clearSchedule(item);
+                      }, 
+                      child: const Text("Clear", style: TextStyle(color: Colors.red))
+                  ),
+              ],
+          )
+      );
+  }
+
+  Future<void> _clearSchedule(Map<String, dynamic> item) async {
+      setState(() => _isLoading = true);
+      try {
+          final body = {
+              'facultyId': 'dummy', // Backend uses target keys, but needs a valid body
+              'branch': item['branch'],
+              'year': item['year'],
+              'section': item['section'],
+              'day': _selectedDay,
+              'periodIndex': item['number'],
+              'subject': 'clear'
+          };
+
+          final res = await http.post(
+              Uri.parse('${ApiConstants.baseUrl}/api/timetable/clear'),
+              headers: {'Content-Type': 'application/json'},
+              body: jsonEncode(body)
+          );
+
+          if (res.statusCode == 200) {
+              // Cancel notification
+              try {
+                  int targetWeekday = _getWeekdayIndex(_selectedDay);
+                  int id = targetWeekday * 100 + (item['number'] as int);
+                  await NotificationService.cancelNotification(id);
+              } catch (ev) {
+                  debugPrint("Cancel Notification Error: $ev");
+              }
+              _refreshSchedule();
+          } else {
+               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to clear schedule")));
+          }
+      } catch (e) {
+          debugPrint("Clear Error: $e");
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Error clearing schedule")));
+      } finally {
+          setState(() => _isLoading = false);
+      }
   }
   
   Future<void> _openAddClassScreen(Map<String, dynamic> item) async {
@@ -229,7 +344,7 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
                   startTime: item['startTime'] ?? '',
                   endTime: item['endTime'] ?? '',
                   initialData: item['subject'] != '---' ? {
-                      'branch': _mapFullBranchToShort(item['branch']),
+                      'branch': _mapFullToShort(item['branch']),
                       'year': item['year'],
                       'section': item['section'],
                       'subject': item['subject'],
@@ -244,8 +359,19 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
       }
   }
   
-  String _mapFullBranchToShort(String? full) {
+   String _mapFullBranchToShort(String? full) {
+       return _mapFullToShort(full);
+   }
+
+   String _mapFullToShort(String? full) {
       if (full == null) return "CME";
+      if (full == "Computer Engineering") return "CME";
+      if (full == "Electrical and Electronics Engineering") return "EEE";
+      if (full == "Electronics & Communication Engineering") return "ECE";
+      if (full == "Mechanical Engineering") return "MEC";
+      if (full == "Civil Engineering") return "CIV";
+      
+      // Partial matches
       if (full.contains("Computer")) return "CME";
       if (full.contains("Electrical")) return "EEE";
       if (full.contains("Electronics")) return "ECE";
@@ -254,13 +380,26 @@ class _FacultyScheduleScreenState extends State<FacultyScheduleScreen> {
       return "CME";
   }
 
-  String _mapSectionShort(String? section) {
-      if (section == null) return "Sec A";
-      if (section.toLowerCase().contains("section")) {
-          return section.replaceAll(RegExp(r'section', caseSensitive: false), 'Sec').trim();
-      }
-      return "Sec $section";
-  }
+   String _mapSectionShort(String? section) {
+       if (section == null) return "Sec A";
+       if (section.toLowerCase().contains("section")) {
+           return section.replaceAll(RegExp(r'section', caseSensitive: false), 'Sec').trim();
+       }
+       return "Sec $section";
+   }
+
+   int _getWeekdayIndex(String day) {
+       switch (day) {
+           case 'Monday': return DateTime.monday;
+           case 'Tuesday': return DateTime.tuesday;
+           case 'Wednesday': return DateTime.wednesday;
+           case 'Thursday': return DateTime.thursday;
+           case 'Friday': return DateTime.friday;
+           case 'Saturday': return DateTime.saturday;
+           case 'Sunday': return DateTime.sunday;
+           default: return DateTime.monday;
+       }
+   }
 
   @override
   Widget build(BuildContext context) {
