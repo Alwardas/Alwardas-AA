@@ -307,13 +307,21 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
   }
 
   Widget _buildTimingCard(BuildContext context, bool isDark, Color textColor, Color subTextColor) {
-    return _buildManagementCard(
-      context,
-      isDark,
-      'Timings',
-      Icons.access_time_filled_outlined,
-      Colors.teal,
-      () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodDepartmentTimingScreen(branch: widget.userData['branch'] ?? 'Computer Engineering'))),
+    return Row(
+      children: [
+        Expanded(
+          child: _buildManagementCard(
+            context,
+            isDark,
+            'Timings',
+            Icons.access_time_filled_outlined,
+            Colors.teal,
+            () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodDepartmentTimingScreen(branch: widget.userData['branch'] ?? 'Computer Engineering'))),
+          ),
+        ),
+        const SizedBox(width: 15),
+        const Expanded(child: SizedBox()), // Empty space to match the grid layout
+      ],
     );
   }
 
