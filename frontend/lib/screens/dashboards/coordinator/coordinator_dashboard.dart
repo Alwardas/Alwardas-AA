@@ -1,12 +1,17 @@
-﻿import 'package:flutter/material.dart';
+﻿import 'coordinator_announcement_details_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 import '../../auth/login_screen.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../theme/theme_constants.dart';
+import '../../../core/api_constants.dart';
 
 // Principal Modules
 import '../principal/principal_attendance_screen.dart';
@@ -24,6 +29,8 @@ import 'coordinator_activities_screen.dart';
 import 'coordinator_requests_screen.dart';
 import 'coordinator_menu_tab.dart';
 import 'coordinator_profile_tab.dart';
+import 'coordinator_announcements_screen.dart';
+import 'coordinator_create_announcement_screen.dart';
 
 
 class CoordinatorDashboard extends StatefulWidget {
@@ -37,6 +44,43 @@ class CoordinatorDashboard extends StatefulWidget {
 
 class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
   int _selectedIndex = 1; // Default to Home (index 1)
+  List<Announcement> _dashboardAnnouncements = [];
+  bool _isLoadingAnnouncements = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchDashboardAnnouncements();
+  }
+
+  Future<void> _fetchDashboardAnnouncements() async {
+    try {
+      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement'));
+      if (response.statusCode == 200) {
+        final List<dynamic> data = jsonDecode(response.body);
+        if (mounted) {
+          setState(() {
+            _dashboardAnnouncements = data.map((json) => Announcement.fromJson(json)).toList();
+            _isLoadingAnnouncements = false;
+          });
+        }
+      } else {
+        _loadMockDashboardAnnouncements();
+      }
+    } catch (e) {
+      debugPrint("Error fetching dashboard announcements: $e");
+      _loadMockDashboardAnnouncements();
+    }
+  }
+
+  void _loadMockDashboardAnnouncements() {
+    if (mounted) {
+      setState(() {
+        _dashboardAnnouncements = _getMockAnnouncements();
+        _isLoadingAnnouncements = false;
+      });
+    }
+  }
 
   void _logout() async {
      await AuthService.logout();
@@ -118,6 +162,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
     // Coordinator Header Gradient (Futuristic Theme)
     final List<Color> headerGradient = ThemeColors.headerGradient; 
     final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+    final theme = Theme.of(context);
 
     return Column(
       children: [
@@ -209,34 +254,86 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   
-                  // Announcements
-                  Text(
-                    'Announcements',
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  // Announcements Header
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Announcements',
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () async {
+                           final result = await Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorCreateAnnouncementScreen()));
+                           if (result == true) {
+                             _fetchDashboardAnnouncements();
+                           }
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(color: theme.primaryColor.withValues(alpha: 0.1), shape: BoxShape.circle),
+                          child: Icon(Icons.add, size: 20, color: theme.primaryColor),
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 15),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        _buildAnnouncementCard(
-                          'Examination Schedule',
-                          'Released for All Depts',
-                          const [Color(0xFF42E695), Color(0xFF3BB2B8)], // Cyan/Greenish Blue
-                        ),
-                         const SizedBox(width: 15),
-                        _buildAnnouncementCard(
-                          'Faculty', // Changed from meeting to match image text if needed, but image says "Faculty"
-                          'Today at 2 PM', // Match image
-                          const [Color(0xFF2E2D88), Color(0xFF712B91)], // Dark Blue/Purple
-                        ),
-                      ],
-                    ),
-                  ),
+                  
+                  // Dynamic Announcement List
+                  if (_isLoadingAnnouncements) 
+                      const Center(child: CircularProgressIndicator())
+                  else
+                      Builder(
+                        builder: (context) {
+                          List<Announcement> sortedList = List.from(_dashboardAnnouncements);
+                          // Sort by pinned, then date (same logic as main screen)
+                          sortedList.sort((a, b) {
+                            if (a.isPinned && !b.isPinned) return -1;
+                            if (!a.isPinned && b.isPinned) return 1;
+                            return b.createdAt.compareTo(a.createdAt);
+                          });
+
+                          final displayList = sortedList.take(3).toList();
+                          final hasMore = sortedList.length > 3;
+
+                          if (displayList.isEmpty) {
+                            return Center(child: Text("No announcements", style: GoogleFonts.poppins(color: subTextColor)));
+                          }
+
+                          return SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                ...displayList.map((announcement) => Padding(
+                                  padding: const EdgeInsets.only(right: 15),
+                                  child: _buildHorizontalAnnouncementCard(announcement),
+                                )),
+                                
+                                if (hasMore)
+                                  GestureDetector(
+                                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorAnnouncementsScreen())),
+                                    child: Container(
+                                      width: 60,
+                                      height: 90, // Match card height roughly
+                                      decoration: BoxDecoration(
+                                        color: cardColor,
+                                        borderRadius: BorderRadius.circular(20),
+                                        border: Border.all(color: Colors.grey.withOpacity(0.2)),
+                                      ),
+                                      child: const Center(
+                                        child: Icon(Icons.arrow_forward_ios, color: Colors.grey),
+                                      ),
+                                    ),
+                                  )
+                              ],
+                            ),
+                          );
+                        }
+                      ),
 
                   const SizedBox(height: 25),
 
@@ -326,7 +423,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                           'title': 'Announcer',
                           'subtitle': 'Send Alerts',
                           'color': const Color(0xFFEF5350), // Red
-                          'route': const PrincipalAnnouncementsScreen(),
+                          'route': const CoordinatorAnnouncementsScreen(),
                         },
                         {
                           'icon': Icons.event_note,
@@ -373,52 +470,306 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
     );
   }
 
-  Widget _buildAnnouncementCard(String title, String subtitle, List<Color> gradientColors) {
-    return Container(
-      width: 250,
-      padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: gradientColors,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
+  List<Announcement> _getMockAnnouncements() {
+    return [
+      Announcement(
+        id: '1',
+        title: 'Examination Schedule Released',
+        description: 'The final examination schedule has been released for all departments. Please review matches.',
+        type: AnnouncementType.exam,
+        audience: ['All Departments'],
+        priority: AnnouncementPriority.urgent,
+        startDate: DateTime.now().add(const Duration(days: 5)),
+        endDate: DateTime.now().add(const Duration(days: 10)),
+        createdAt: DateTime.now(),
+        isNew: true,
+        isPinned: true,
       ),
-      child: Row(
-        children: [
-          Container(
-             width: 4, 
-             height: 35, 
-             decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(2)),
+      Announcement(
+        id: '2',
+        title: 'Cultural Fest Announcement',
+        description: 'Get ready for the biggest cultural fest of the year!',
+        type: AnnouncementType.event,
+        audience: ['Students'],
+        priority: AnnouncementPriority.important,
+        startDate: DateTime.now().subtract(const Duration(days: 1)),
+        endDate: DateTime.now().add(const Duration(days: 3)),
+        createdAt: DateTime.now().subtract(const Duration(hours: 2)),
+      ),
+      Announcement(
+        id: '3',
+        title: 'Faculty Meeting at 2 PM',
+        description: 'Mandatory faculty meeting in the conference hall.',
+        type: AnnouncementType.faculty,
+        audience: ['Faculty'],
+        priority: AnnouncementPriority.normal,
+        startDate: DateTime.now(),
+        endDate: DateTime.now().add(const Duration(hours: 4)),
+        createdAt: DateTime.now().subtract(const Duration(hours: 5)),
+        isPinned: true,
+      ),
+      Announcement(
+        id: '4',
+        title: 'System Maintenance at Midnight',
+        description: 'Server will be down for maintenance.',
+        type: AnnouncementType.urgent,
+        audience: ['All Departments'],
+        priority: AnnouncementPriority.urgent,
+        startDate: DateTime.now().add(const Duration(days: 8)),
+        endDate: DateTime.now().add(const Duration(days: 9)),
+        createdAt: DateTime.now().subtract(const Duration(days: 1)),
+      ),
+    ];
+  }
+
+  Widget _buildAnnouncementCard(Announcement announcement) {
+    Color typeColorStart;
+    Color typeColorEnd;
+    IconData typeIcon;
+    
+    String audience = announcement.audience.isNotEmpty ? announcement.audience.first : 'All';
+
+    // Audience Color Logic
+    typeColorStart = Colors.grey; typeColorEnd = Colors.blueGrey;
+    if (audience.toLowerCase().contains('student')) {
+       typeColorStart = const Color(0xFF2E3192); typeColorEnd = const Color(0xFF1BFFFF); // Blue/Cyan
+    } else if (audience.toLowerCase().contains('parent')) {
+       typeColorStart = const Color(0xFFD4145A); typeColorEnd = const Color(0xFFFBB03B); // Red/Orange
+    } else if (audience.toLowerCase().contains('faculty')) {
+       typeColorStart = const Color(0xFF009245); typeColorEnd = const Color(0xFFFCEE21); // Green/Yellow
+    } else if (audience.toLowerCase().contains('hod')) {
+       typeColorStart = const Color(0xFF662D8C); typeColorEnd = const Color(0xFFED1E79); // Purple/Pink
+    } else if (audience.toLowerCase().contains('principal')) {
+       typeColorStart = const Color(0xFF12c2e9); typeColorEnd = const Color(0xFFc471ed); // Blue/Purple
+    } else if (audience.toLowerCase().contains('all')) {
+       typeColorStart = const Color(0xFFC04848); typeColorEnd = const Color(0xFF480048); // Red/Purple (Distinctive)
+    }
+
+    switch(announcement.type) {
+      case AnnouncementType.exam: typeIcon = Icons.campaign_outlined; break;
+      case AnnouncementType.event: typeIcon = Icons.calendar_today; break;
+      case AnnouncementType.faculty: typeIcon = Icons.school; break;
+      case AnnouncementType.urgent: typeIcon = Icons.warning_amber_rounded; break;
+      default: typeIcon = Icons.info_outline;
+    }
+
+    return GestureDetector(
+      onTap: () {
+         // Navigate to details if needed, or open announcements page
+         Navigator.push(context, MaterialPageRoute(builder: (_) => CoordinatorAnnouncementDetailsScreen(announcement: announcement)));
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 15),
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [typeColorStart, typeColorEnd],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 3),
-                Text(
-                  subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 13),
-                ),
-              ],
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: typeColorStart.withValues(alpha: 0.2),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
             ),
-          )
-        ],
+          ],
+        ),
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  Container(
+                    width: 44, 
+                    height: 44, 
+                    decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.2), shape: BoxShape.circle),
+                    child: Icon(typeIcon, color: Colors.white, size: 22),
+                  ),
+                  const SizedBox(width: 15),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          announcement.title,
+                          style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: 3),
+                        Text(
+                          DateFormat('MMM d, yyyy').format(announcement.startDate),
+                          style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 13),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            if (announcement.priority == AnnouncementPriority.urgent)
+              Positioned(
+                top: 12,
+                right: 12,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.warning_amber_rounded, color: Colors.white, size: 14),
+                      const SizedBox(width: 4),
+                      Text('URGENT', style: GoogleFonts.poppins(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHorizontalAnnouncementCard(Announcement announcement) {
+    Color typeColorStart;
+    Color typeColorEnd;
+    IconData typeIcon;
+    
+    String audience = announcement.audience.isNotEmpty ? announcement.audience.first : 'All';
+
+    // Audience Color Logic
+    typeColorStart = Colors.grey; typeColorEnd = Colors.blueGrey;
+    if (audience.toLowerCase().contains('student')) {
+       typeColorStart = const Color(0xFF2E3192); typeColorEnd = const Color(0xFF1BFFFF); // Blue/Cyan
+    } else if (audience.toLowerCase().contains('parent')) {
+       typeColorStart = const Color(0xFFD4145A); typeColorEnd = const Color(0xFFFBB03B); // Red/Orange
+    } else if (audience.toLowerCase().contains('faculty')) {
+       typeColorStart = const Color(0xFF009245); typeColorEnd = const Color(0xFFFCEE21); // Green/Yellow
+    } else if (audience.toLowerCase().contains('hod')) {
+       typeColorStart = const Color(0xFF662D8C); typeColorEnd = const Color(0xFFED1E79); // Purple/Pink
+    } else if (audience.toLowerCase().contains('principal')) {
+       typeColorStart = const Color(0xFF12c2e9); typeColorEnd = const Color(0xFFc471ed); // Blue/Purple
+    } else if (audience.toLowerCase().contains('all')) {
+       typeColorStart = const Color(0xFFC04848); typeColorEnd = const Color(0xFF480048); // Red/Purple (Distinctive)
+    }
+
+    switch(announcement.type) {
+      case AnnouncementType.exam: typeIcon = Icons.campaign_outlined; break;
+      case AnnouncementType.event: typeIcon = Icons.calendar_today; break;
+      case AnnouncementType.faculty: typeIcon = Icons.school; break;
+      case AnnouncementType.urgent: typeIcon = Icons.warning_amber_rounded; break;
+      default: typeIcon = Icons.info_outline;
+    }
+
+    return GestureDetector(
+      onTap: () {
+         Navigator.push(context, MaterialPageRoute(builder: (_) => CoordinatorAnnouncementDetailsScreen(announcement: announcement)));
+      },
+      child: Container(
+        width: 250, // Reduced width slightly
+        height: 90, // Reduced height as requested
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [typeColorStart, typeColorEnd],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(16), // Slightly smaller radius
+          boxShadow: [
+            BoxShadow(
+              color: typeColorStart.withValues(alpha: 0.2),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row( // Title Row with Icon
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 28,
+                            height: 28,
+                            decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.2), shape: BoxShape.circle),
+                            child: Icon(typeIcon, color: Colors.white, size: 14),
+                          ),
+                          const SizedBox(width: 8),
+                          SizedBox(
+                            width: 140, // Constrain Title Width
+                            child: Text(
+                              announcement.title,
+                              style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                      
+                    ],
+                  ),
+                  
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                         decoration: BoxDecoration(
+                           color: Colors.black.withValues(alpha: 0.2),
+                           borderRadius: BorderRadius.circular(8),
+                         ),
+                         child: Text(
+                           audience,
+                           style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.9), fontSize: 9),
+                         ),
+                      ),
+                      Text(
+                        DateFormat('MMM d').format(announcement.startDate),
+                        style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 12),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            if (announcement.priority == AnnouncementPriority.urgent)
+              Positioned(
+                top: 12,
+                right: 12,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.25),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 0.5)
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.warning_amber_rounded, color: Colors.white, size: 12),
+                      const SizedBox(width: 2),
+                      Text('URGENT', style: GoogleFonts.poppins(color: Colors.white, fontSize: 9, fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

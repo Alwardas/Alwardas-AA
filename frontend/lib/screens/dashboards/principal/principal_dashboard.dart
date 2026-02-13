@@ -2,10 +2,14 @@
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:intl/intl.dart'; 
 import '../../auth/login_screen.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/api_constants.dart';
 import 'principal_attendance_screen.dart';
 import 'principal_announcements_screen.dart';
 import 'principal_notifications_screen.dart';
@@ -29,6 +33,36 @@ class PrincipalDashboard extends StatefulWidget {
 
 class _PrincipalDashboardState extends State<PrincipalDashboard> {
   int _selectedIndex = 1; // Default to Home (index 1)
+  List<dynamic> _dashboardAnnouncements = [];
+  bool _isLoadingAnnouncements = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchDashboardAnnouncements();
+  }
+
+  Future<void> _fetchDashboardAnnouncements() async {
+    try {
+      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement'));
+      if (response.statusCode == 200) {
+        if (mounted) {
+           List<dynamic> all = json.decode(response.body);
+           // Sort by date desc
+           all.sort((a, b) => DateTime.parse(b['created_at']).compareTo(DateTime.parse(a['created_at'])));
+           setState(() {
+             _dashboardAnnouncements = all;
+             _isLoadingAnnouncements = false;
+           });
+        }
+      } else {
+        setState(() => _isLoadingAnnouncements = false);
+      }
+    } catch (e) {
+      debugPrint("Error fetching dashboard announcements: $e");
+      setState(() => _isLoadingAnnouncements = false);
+    }
+  }
 
   void _logout() async {
      await AuthService.logout();
@@ -158,7 +192,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                                color: Colors.white,
                                fontSize: 26,
                                fontWeight: FontWeight.bold,
-                             ),
+                              ),
                            ),
                          ),
                          const SizedBox(height: 4),
@@ -201,27 +235,50 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // 2. Announcements
-                  Text(
-                    'Announcements',
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Announcements',
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      // Add Button
+                      GestureDetector(
+                        onTap: () async {
+                           // Navigate to announcements screen (which has Create modal)
+                           await Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalAnnouncementsScreen()));
+                           _fetchDashboardAnnouncements(); // Refresh on return
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(color: const Color(0xFF8E2DE2).withValues(alpha: 0.1), shape: BoxShape.circle),
+                          child: const Icon(Icons.add, size: 20, color: Color(0xFF8E2DE2)),
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 15),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        _buildAnnouncementCard(
-                          'College Working Hours',
-                          '9:00 AM - 5:10 PM',
-                          const [Color(0xFF4c669f), Color(0xFF3b5998)],
-                        ),
-                      ],
+                  
+                  if (_isLoadingAnnouncements)
+                    const Center(child: CircularProgressIndicator())
+                  else if (_dashboardAnnouncements.isEmpty)
+                     Center(child: Text("No active announcements", style: GoogleFonts.poppins(color: subTextColor)))
+                  else
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: _dashboardAnnouncements.take(5).map((ann) {
+                          return Padding(
+                            padding: const EdgeInsets.only(right: 15),
+                            child: _buildAnnouncementCard(ann),
+                          );
+                        }).toList(),
+                      ),
                     ),
-                  ),
 
                   const SizedBox(height: 25),
 
@@ -415,7 +472,11 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
     );
   }
 
-  Widget _buildAnnouncementCard(String title, String subtitle, List<Color> gradientColors) {
+  Widget _buildAnnouncementCard(dynamic announcement) {
+    String title = announcement['title'] ?? 'No Title';
+    String subtitle = DateFormat('MMM d, yyyy').format(DateTime.parse(announcement['start_date']));
+    List<Color> gradientColors = const [Color(0xFF4c669f), Color(0xFF3b5998)];
+
     return Container(
       width: 250,
       padding: const EdgeInsets.all(15),

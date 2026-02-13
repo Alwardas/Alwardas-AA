@@ -84,10 +84,19 @@ class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          title: Text("Principal Requests", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+          title: Text("Principal Approvals", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: textColor),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new, color: textColor, size: 20),
+            onPressed: () => Navigator.pop(context),
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.refresh, color: textColor),
+              onPressed: _fetchRequests,
+            )
+          ],
         ),
         body: Stack(
           children: [
@@ -108,16 +117,22 @@ class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.inbox_outlined, size: 64, color: iconBg),
+                      Container(
+                         padding: const EdgeInsets.all(30),
+                         decoration: BoxDecoration(color: iconBg, shape: BoxShape.circle),
+                         child: Icon(Icons.check_circle_outline, size: 60, color: subTextColor)
+                      ),
                       const SizedBox(height: 20),
-                      Text("No pending principal requests", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
+                      Text("All Caught Up!", style: GoogleFonts.poppins(color: textColor, fontSize: 18, fontWeight: FontWeight.w600)),
+                      const SizedBox(height: 8),
+                      Text("No pending principal requests found.", style: GoogleFonts.poppins(color: subTextColor, fontSize: 14)),
                     ],
                   ),
                 )
               : RefreshIndicator(
                   onRefresh: _fetchRequests,
                   child: ListView.builder(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     itemCount: _requests.length,
                     itemBuilder: (ctx, index) {
                       final r = _requests[index];
@@ -164,21 +179,24 @@ class _PrincipalRequestCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
-      margin: const EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
         color: cardColor,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: iconBg, width: 1),
         boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4)),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4)),
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(color: tint.withValues(alpha: 0.1), shape: BoxShape.circle),
+                decoration: BoxDecoration(color: tint.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)),
                 child: Icon(Icons.school, color: tint, size: 28),
               ),
               const SizedBox(width: 15),
@@ -186,15 +204,33 @@ class _PrincipalRequestCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(r['full_name'] ?? 'Principal Name', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
-                    const SizedBox(height: 4),
-                    Text("ID: ${r['login_id']}", style: TextStyle(fontSize: 13, color: subTextColor, fontWeight: FontWeight.w500)),
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                       children: [
+                         Expanded(child: Text(r['full_name'] ?? 'Principal Name', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor))),
+                         Container(
+                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                           decoration: BoxDecoration(color: Colors.orange.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(6)),
+                           child: Text("Pending", style: GoogleFonts.poppins(fontSize: 10, color: Colors.orange, fontWeight: FontWeight.bold)),
+                         )
+                       ],
+                     ),
+                     const SizedBox(height: 4),
+                     Text(r['login_id'] ?? '', style: GoogleFonts.poppins(fontSize: 13, color: subTextColor)),
+                     const SizedBox(height: 8),
+                     Row(
+                       children: [
+                         Icon(Icons.badge_outlined, size: 14, color: subTextColor),
+                         const SizedBox(width: 5),
+                         Text("Role: ${r['role']}", style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
+                       ],
+                     )
                   ],
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 20),
           Row(
             children: [
               Expanded(
@@ -206,6 +242,7 @@ class _PrincipalRequestCard extends StatelessWidget {
                     elevation: 0,
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    side: BorderSide(color: Colors.red.withValues(alpha: 0.2))
                   ),
                   child: const Text('Reject', style: TextStyle(fontWeight: FontWeight.bold)),
                 ),
@@ -218,6 +255,7 @@ class _PrincipalRequestCard extends StatelessWidget {
                     backgroundColor: tint,
                     foregroundColor: Colors.white,
                     elevation: 0,
+                    shadowColor: tint.withValues(alpha: 0.4),
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),

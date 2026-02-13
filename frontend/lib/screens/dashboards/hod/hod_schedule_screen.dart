@@ -357,6 +357,10 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
       }
   }
 
+  String _mapFullBranchToShort(String? full) {
+      return _mapFullToShort(full);
+  }
+
    String _mapFullToShort(String? full) {
       if (full == null) return "CME";
       if (full == "Computer Engineering") return "CME";
@@ -447,13 +451,22 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
                         margin: const EdgeInsets.only(right: 12),
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         decoration: BoxDecoration(
                           color: isSelected ? tint : (isDark ? Colors.white10 : Colors.grey[200]),
                           borderRadius: BorderRadius.circular(30),
+                          boxShadow: isSelected 
+                            ? [BoxShadow(color: tint.withValues(alpha: 0.4), blurRadius: 8, offset: const Offset(0, 4))] 
+                            : [],
                         ),
                         alignment: Alignment.center,
-                        child: Text(day, style: GoogleFonts.poppins(color: isSelected ? Colors.white : textColor, fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal)),
+                        child: Text(
+                          day, 
+                          style: GoogleFonts.poppins(
+                            color: isSelected ? Colors.white : textColor, 
+                            fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal
+                          )
+                        ),
                       ),
                     );
                   },
@@ -462,16 +475,16 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
 
               Expanded(
                 child: _isLoading 
-                ? const Center(child: CircularProgressIndicator())
-                : ListView.builder(
-                  padding: const EdgeInsets.fromLTRB(16, 10, 16, 100),
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: currentSchedule.length,
-                  itemBuilder: (ctx, index) {
-                    final item = currentSchedule[index];
-                    return _buildTimelineItem(item, textColor, subTextColor, tint, isDark);
-                  },
-                ),
+                    ? Center(child: CircularProgressIndicator(color: tint))
+                    : ListView.builder(
+                      padding: const EdgeInsets.fromLTRB(20, 10, 20, 80),
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: currentSchedule.length,
+                      itemBuilder: (ctx, index) {
+                        final item = currentSchedule[index];
+                        return _buildTimelineItem(item, textColor, subTextColor, tint, isDark);
+                      },
+                    ),
               ),
             ],
           ),
@@ -482,78 +495,130 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
 
   Widget _buildTimelineItem(Map<String, dynamic> item, Color textColor, Color subTextColor, Color tint, bool isDark) {
     final bool isBreak = item['type'] == 'break' || item['type'] == 'lunch';
+    final String time = item['time'] ?? '';
+    final String startTime = item['startTime'] ?? time.split('-')[0].trim();
+    final String endTime = item['endTime'] ?? time.split('-')[1].trim();
+    final bool isAssigned = item['subject'] != '---' && item['subject'] != null;
 
-    return GestureDetector(
-        onTap: () => _onSlotTap(item),
-        onLongPress: () => _onSlotLongPress(item),
-        child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: 60,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-                SizedBox(
-                    width: 65,
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                            Text(item['startTime'] ?? '', style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.bold, color: textColor)),
-                            Text(item['endTime'] ?? '', style: GoogleFonts.poppins(fontSize: 10, color: subTextColor)),
-                        ],
-                    ),
-                ),
-                const SizedBox(width: 15),
-                Column(
-                    children: [
-                        Container(
-                            width: 12, height: 12,
-                            decoration: BoxDecoration(
-                                color: isBreak ? Colors.orange : tint,
-                                shape: BoxShape.circle,
-                                border: Border.all(color: isDark ? Colors.black : Colors.white, width: 2),
-                            ),
-                        ),
-                        Container(width: 2, height: 80, color: (isBreak ? Colors.orange : tint).withOpacity(0.2)),
-                    ],
-                ),
-                const SizedBox(width: 15),
-                Expanded(
-                    child: Container(
-                        margin: const EdgeInsets.only(bottom: 20),
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: isDark ? Colors.white.withOpacity(0.05) : Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: isBreak ? Colors.orange.withOpacity(0.3) : tint.withOpacity(0.1)),
-                        ),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                                if (!isBreak)
-                                    Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                            Text("Period ${item['number']}", style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: tint)),
-                                            if (item['subject'] != '---')
-                                                Icon(Icons.verified, size: 14, color: tint),
-                                        ],
-                                    ),
-                                const SizedBox(height: 5),
-                                Text(
-                                    isBreak ? (item['label'] ?? 'Break') : (item['subject'] ?? '---'),
-                                    style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: isBreak ? Colors.orange : (item['subject'] == '---' ? subTextColor : textColor))
-                                ),
-                                if (!isBreak && item['subject'] != '---')
-                                    Padding(
-                                        padding: const EdgeInsets.only(top: 8),
-                                        child: Text(
-                                            "${item['branch']} : ${item['year']} : ${_mapSectionShort(item['section'])}",
-                                            style: TextStyle(fontSize: 11, color: subTextColor, fontWeight: FontWeight.bold)
-                                        ),
-                                    ),
-                            ],
-                        ),
-                    ),
-                ),
+              Text(startTime, style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: textColor)),
+              Text(endTime, style: GoogleFonts.poppins(fontSize: 10, color: subTextColor)),
+              if (item['number'] != null)
+                 Padding(
+                   padding: const EdgeInsets.only(top: 4.0),
+                   child: Text("Period ${item['number']}", style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: tint)),
+                 ),
             ],
+          ),
         ),
+        const SizedBox(width: 16),
+        
+        Column(
+          children: [
+            Container(
+              width: 12, height: 12,
+              decoration: BoxDecoration(
+                color: isBreak ? Colors.orangeAccent : (isAssigned ? tint : tint.withOpacity(0.3)),
+                shape: BoxShape.circle,
+                border: Border.all(color: isDark ? const Color(0xFF1E1E1E) : Colors.white, width: 2),
+                boxShadow: [BoxShadow(color: (isBreak ? Colors.orangeAccent : tint).withValues(alpha: 0.4), blurRadius: 6)],
+              ),
+            ),
+            Container(
+              width: 2,
+              height: isBreak ? 60 : 100, 
+              color: (isBreak ? Colors.orangeAccent : tint).withValues(alpha: 0.2),
+            ),
+          ],
+        ),
+        const SizedBox(width: 16),
+
+        Expanded(
+          child: GestureDetector(
+            onTap: () => _onSlotTap(item),
+            onLongPress: () => _onSlotLongPress(item),
+            child: Container(
+              margin: const EdgeInsets.only(bottom: 16),
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: isBreak 
+                  ? Colors.orangeAccent.withValues(alpha: 0.1) 
+                  : (isDark ? const Color(0xFF252525) : Colors.white),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: isBreak ? Colors.orange.withValues(alpha: 0.3) : (isDark ? Colors.white10 : Colors.grey.shade200)
+                ),
+                boxShadow: isBreak ? [] : [
+                  BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (isBreak)
+                    Text(item['label'], style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.orangeAccent, letterSpacing: 1))
+                  else
+                     Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         if (isAssigned && item['subjectCode'] != null)
+                           Padding(
+                             padding: const EdgeInsets.only(bottom: 6.0),
+                             child: Text(item['subjectCode'], style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: tint, letterSpacing: 1.2)),
+                           ),
+                         
+                         Text(
+                            isAssigned ? item['subject'] : "Free Period", 
+                            style: GoogleFonts.poppins(
+                              fontSize: 16, 
+                              fontWeight: FontWeight.w700, 
+                              color: isAssigned ? textColor : subTextColor.withValues(alpha: 0.5)
+                            )
+                          ),
+                          
+                          if (isAssigned)
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                decoration: BoxDecoration(
+                                  color: tint.withOpacity(0.05),
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: tint.withOpacity(0.1))
+                                ),
+                                child: Text(
+                                  "${_mapFullBranchToShort(item['branch'])} : ${item['year']} : ${_mapSectionShort(item['section'])}",
+                                  style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.w500, color: subTextColor),
+                                ),
+                              ),
+                            ),
+                          
+                          if (!isAssigned)
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.add_circle_outline, size: 14, color: tint),
+                                  const SizedBox(width: 4),
+                                  Text("Tap to assign", style: TextStyle(fontSize: 12, color: tint, fontStyle: FontStyle.italic)),
+                                ],
+                              ),
+                            )
+                       ],
+                     )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

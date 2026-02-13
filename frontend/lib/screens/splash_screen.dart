@@ -11,6 +11,7 @@ import 'dashboards/principal/principal_dashboard.dart';
 import 'package:provider/provider.dart';
 import '../core/providers/theme_provider.dart';
 import 'dashboards/admin/admin_dashboard.dart';
+import 'dashboards/coordinator/coordinator_dashboard.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,19 +32,43 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _initServices() async {
-    await NotificationService().init();
-    await NotificationService().requestPermissions();
+    try {
+      await NotificationService().init();
+      await NotificationService().requestPermissions();
+    } catch (e) {
+      debugPrint("Service Init Error: $e");
+    }
   }
 
   void _initializeVideo() {
-    _controller = VideoPlayerController.asset("assets/1766819269806.mp4")
-      ..initialize().then((_) {
+    _controller = VideoPlayerController.asset("assets/1766819269806.mp4");
+    
+    _controller.initialize().then((_) {
+      if (mounted) {
         setState(() {});
         _controller.setPlaybackSpeed(1.35);
         _controller.play();
-      });
+      }
+    }).catchError((error) {
+      debugPrint("Video initialization error: $error");
+      _checkSession(); // Fallback to session check if video fails
+    });
+
+    // Safety timeout: if video doesn't initialize in 3 seconds, proceed to login
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted && !_controller.value.isInitialized) {
+        debugPrint("Video initialization timeout");
+        _checkSession();
+      }
+    });
 
     _controller.addListener(() {
+      if (_controller.value.hasError) {
+        debugPrint("Video player error: ${_controller.value.errorDescription}");
+        _checkSession();
+        return;
+      }
+      
       if (_controller.value.isInitialized &&
           _controller.value.position >= _controller.value.duration &&
           !_isNavigated) {
@@ -63,6 +88,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Widget destination;
     if (userData != null) {
       final role = userData['role'];
+      debugPrint("Session Found: Role=$role"); // Debug log
       switch (role) {
         case 'Student': destination = StudentDashboard(userData: userData); break;
         case 'Parent': destination = ParentDashboard(userData: userData); break;
@@ -70,9 +96,13 @@ class _SplashScreenState extends State<SplashScreen> {
         case 'HOD': destination = HodDashboard(userData: userData); break;
         case 'Principal': destination = PrincipalDashboard(userData: userData); break;
         case 'Admin': destination = AdminDashboard(userData: userData); break;
-        default: destination = const LoginScreen();
+        case 'Coordinator': destination = CoordinatorDashboard(userData: userData); break; // Added Coordinator
+        default: 
+           debugPrint("Unknown Role in Session: $role");
+           destination = const LoginScreen();
       }
     } else {
+      debugPrint("No Session Found");
       destination = const LoginScreen();
     }
 

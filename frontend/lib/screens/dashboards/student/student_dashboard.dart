@@ -13,6 +13,10 @@ import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../core/theme/app_theme.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:intl/intl.dart';
+import '../../../core/api_constants.dart';
 
 class StudentDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -25,6 +29,39 @@ class StudentDashboard extends StatefulWidget {
 
 class _StudentDashboardState extends State<StudentDashboard> {
   int _selectedIndex = 2; // Default to Home (index 2)
+  List<dynamic> _dashboardAnnouncements = [];
+  bool _isLoadingAnnouncements = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchDashboardAnnouncements();
+  }
+
+  Future<void> _fetchDashboardAnnouncements() async {
+    try {
+      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement'));
+      if (response.statusCode == 200) {
+        if (mounted) {
+           List<dynamic> all = json.decode(response.body);
+           // Filter for 'Student' or 'All'
+           // all.where((a) => (a['audience'] as List).contains('Student') || (a['audience'] as List).contains('All')).toList();
+           // For now, show all for simplicity or do client side filter
+           
+           all.sort((a, b) => DateTime.parse(b['created_at']).compareTo(DateTime.parse(a['created_at'])));
+           setState(() {
+             _dashboardAnnouncements = all;
+             _isLoadingAnnouncements = false;
+           });
+        }
+      } else {
+        setState(() => _isLoadingAnnouncements = false);
+      }
+    } catch (e) {
+      debugPrint("Error fetching dashboard announcements: $e");
+      setState(() => _isLoadingAnnouncements = false);
+    }
+  }
 
   void _logout() async {
      await AuthService.logout();
@@ -164,7 +201,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                          ),
                          const SizedBox(height: 4),
                          Text(
-                           '${widget.userData['branch'] ?? 'Engineering'} â€¢ ${widget.userData['login_id'] ?? ''}',
+                           '${widget.userData['branch'] ?? 'Engineering'} • ${widget.userData['login_id'] ?? ''}',
                             style: GoogleFonts.poppins(
                               color: Colors.white70, 
                               fontSize: 14,
@@ -212,24 +249,23 @@ class _StudentDashboardState extends State<StudentDashboard> {
                     ),
                   ),
                   const SizedBox(height: 15),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        _buildAnnouncementCard(
-                          'Mid-term schedules released',
-                          'Check your portal.',
-                          const [Color(0xFF42E695), Color(0xFF3BB2B8)],
-                        ),
-                         const SizedBox(width: 15),
-                        _buildAnnouncementCard(
-                          'Guest Lecture',
-                          'Auditorium at 3 PM',
-                          const [Color(0xFF2E2D88), Color(0xFF712B91)],
-                        ),
-                      ],
+                  
+                  if (_isLoadingAnnouncements)
+                    const Center(child: CircularProgressIndicator())
+                  else if (_dashboardAnnouncements.isEmpty)
+                     Center(child: Text("No active announcements", style: GoogleFonts.poppins(color: subTextColor)))
+                  else
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: _dashboardAnnouncements.take(5).map((ann) {
+                          return Padding(
+                            padding: const EdgeInsets.only(right: 15),
+                            child: _buildAnnouncementCard(ann),
+                          );
+                        }).toList(),
+                      ),
                     ),
-                  ),
 
                   const SizedBox(height: 25),
 
@@ -390,7 +426,11 @@ class _StudentDashboardState extends State<StudentDashboard> {
     );
   }
 
-  Widget _buildAnnouncementCard(String title, String subtitle, List<Color> gradientColors) {
+  Widget _buildAnnouncementCard(dynamic announcement) {
+    String title = announcement['title'] ?? 'No Title';
+    String subtitle = DateFormat('MMM d, yyyy').format(DateTime.parse(announcement['start_date']));
+    List<Color> gradientColors = const [Color(0xFF42E695), Color(0xFF3BB2B8)];
+
     return Container(
       width: 250,
       padding: const EdgeInsets.all(15),

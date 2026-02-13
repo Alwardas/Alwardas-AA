@@ -9,8 +9,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Performance: Increase image cache limit (100MB) for smoother asset loading
-  PaintingBinding.instance.imageCache.maximumSize = 100 * 1024 * 1024;
+  // Performance: Increase image cache limit (30MB) for smoother asset loading without crashing old devices
+  PaintingBinding.instance.imageCache.maximumSize = 30 * 1024 * 1024;
   
   // Initialize Notifications
   try {

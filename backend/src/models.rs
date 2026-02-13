@@ -732,3 +732,45 @@ pub struct CreateStudentRequest {
     pub semester: Option<String>,
 }
 
+#[derive(Serialize, Deserialize, Debug, FromRow)]
+pub struct Announcement {
+    pub id: Uuid,
+    pub title: String,
+    pub description: String,
+    #[sqlx(rename = "type")]
+    #[serde(rename = "type")]
+    pub announcement_type: String, 
+    pub audience: Vec<String>, 
+    pub priority: String,
+    pub start_date: DateTime<Utc>,
+    pub end_date: DateTime<Utc>,
+    pub created_at: DateTime<Utc>,
+    pub is_pinned: bool,
+    pub attachment_url: Option<String>,
+    pub creator_id: Uuid,
+}
+
+#[derive(Deserialize, Debug)]
+pub struct CreateAnnouncementRequest {
+    pub title: String,
+    pub description: String,
+    #[serde(rename = "type")]
+    pub announcement_type: String,
+    pub audience: Vec<String>,
+    pub priority: String,
+    pub start_date: DateTime<Utc>, 
+    pub end_date: DateTime<Utc>,   
+    #[serde(rename = "isPinned")]
+    pub is_pinned: bool,
+    #[serde(rename = "creatorId")]
+    pub creator_id: String, // Frontend sends string ID
+    #[serde(rename = "attachmentUrl")]
+    pub attachment_url: Option<String>,
+}
+
+#[derive(Deserialize)]
+pub struct GetAnnouncementsQuery {
+    #[serde(rename = "userId")]
+    pub user_id: Option<String>,
+    pub role: Option<String>,
+}

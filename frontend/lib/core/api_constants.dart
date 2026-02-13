@@ -1,28 +1,39 @@
-﻿
+﻿import 'package:flutter/foundation.dart';
+import 'dart:io';
+
 class ApiConstants {
   // ---------------------------------------------------------------------------
   // NETWORK CONFIGURATION
   // ---------------------------------------------------------------------------
-  // This default URL is used for the first launch.
-  // 
-  // NOTE: This URL is fixed for the production environment.
-  //
-  // Recommended Defaults:
-  // - Deployed Server: 'https://alwardas-aa-production.up.railway.app'
-  // - Local Android Emulator: 'http://10.0.2.2:3001'
-  // - Local Physical Device: 'http://192.168.29.227:3001'
-  // - Local Windows/iOS: 'http://localhost:3001'
   
-  // Set this to TRUE to build an APK that allows access from ANY network 
-  // (using the Railway Production Server)
-  static const bool forceProduction = true;
+  // Production URL
+  static const String _prodUrl = 'https://alwardas-aa-production.up.railway.app';
+  static const String _prodGrpcHost = 'alwardas-aa-production.up.railway.app';
 
-  static String get baseUrl => 'https://alwardas-aa-production.up.railway.app';
+  static String get baseUrl {
+    if (kReleaseMode) return _prodUrl;
+    
+    // Local Development
+    try {
+      if (Platform.isAndroid) return 'http://10.0.2.2:3001';
+    } catch(e) {
+      // web or other platforms where Platform.isAndroid might fail or not be relevant
+    }
+    return 'http://localhost:3001';
+  }
   
   // gRPC Configuration
-  static String get grpcHost => 'alwardas-aa-production.up.railway.app';
+  static String get grpcHost {
+     if (kReleaseMode) return _prodGrpcHost;
+     if (!kIsWeb && Platform.isAndroid) return '10.0.2.2';
+     return 'localhost';
+  }
 
-  static int get grpcPort => 443;
+  static int get grpcPort => kReleaseMode ? 443 : 3001; 
+  // Wait, the backend in main.rs has grpc_service multiplexed?
+  // It says: .fallback(...) checks for application/grpc. 
+  // So gRPC is also on port 3001 (or whatever PORT is).
+  // So grpcPort should be 3001 locally.
   
   static String get loginEndpoint => '$baseUrl/api/login';
   static String get signupEndpoint => '$baseUrl/api/signup';

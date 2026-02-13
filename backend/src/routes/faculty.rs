@@ -452,52 +452,72 @@ pub async fn submit_attendance_batch_handler(
             })?;
     }
 
-    let mut count = 0;
-    let mut errors = Vec::new();
+    let mut errors = Vec::<String>::new();
+    let mut attendance_builder = QueryBuilder::new(
+        "INSERT INTO attendance (student_uuid, faculty_uuid, date, status, branch, year, session, section, student_name, student_login_id, faculty_name) "
+    );
+    
+    let mut notification_builder = QueryBuilder::new(
+        "INSERT INTO notifications (type, message, sender_id, recipient_id, status, branch, created_at) "
+    );
 
-    // 3. Insert Loop
+    let mut attendance_count = 0;
+    let mut notification_count = 0;
+    let formatted_date = date.format("%d-%m-%Y").to_string();
+
+    // Collect all valid records first
+    let mut valid_records = Vec::new();
     for record in payload.records {
         if let Some(info) = student_map.get(&record.student_id) {
-            let db_status = if record.status.to_uppercase().starts_with('P') { "P" } else { "A" };
-
-            sqlx::query("INSERT INTO attendance (student_uuid, faculty_uuid, date, status, branch, year, session, section, student_name, student_login_id, faculty_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)")
-                .bind(info.id)
-                .bind(faculty_uuid)
-                .bind(date)
-                .bind(db_status)
-                .bind(info.branch.clone().unwrap_or_default())
-                .bind(info.year.clone().unwrap_or_default())
-                .bind(&session)
-                .bind(info.section.clone().unwrap_or_else(|| "Section A".to_string()))
-                .bind(&info.full_name)
-                .bind(&info.login_id)
-                .bind(&faculty_name)
-                .execute(&mut *tx)
-                .await.ok();
-
-            // Notify only if needed (Optional: Logic to avoid spamming notification on update? Keep for now)
-            let formatted_date = date.format("%d-%m-%Y").to_string();
-            let status_text = if db_status == "P" { "Present" } else { "Absent" };
-            let msg = format!("{} {} session updated to {}", formatted_date, session, status_text);
-            
-            sqlx::query("INSERT INTO notifications (type, message, sender_id, recipient_id, status, branch, created_at) VALUES ($1, $2, $3, $4, 'UNREAD', $5, NOW())")
-                .bind("ATTENDANCE")
-                .bind(msg)
-                .bind(&faculty_id_str)
-                .bind(info.id.to_string())
-                .bind(info.branch.clone().unwrap_or_default())
-                .execute(&mut *tx)
-                .await.ok();
-            
-            count += 1;
+            valid_records.push((record, info.clone()));
         } else {
             errors.push(format!("Student ID not found: {}", record.student_id));
         }
     }
 
-    tx.commit().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "DB Commit Error"}))))?;
+    if !valid_records.is_empty() {
+        // Build Attendance Bulk Insert
+        attendance_builder.push_values(valid_records.iter(), |mut b, (record, info)| {
+            let db_status = if record.status.to_uppercase().starts_with('P') { "P" } else { "A" };
+            b.push_bind(info.id)
+             .push_bind(faculty_uuid)
+             .push_bind(date)
+             .push_bind(db_status)
+             .push_bind(info.branch.clone().unwrap_or_default())
+             .push_bind(info.year.clone().unwrap_or_default())
+             .push_bind(&session)
+             .push_bind(info.section.clone().unwrap_or_else(|| "Section A".to_string()))
+             .push_bind(&info.full_name)
+             .push_bind(&info.login_id)
+             .push_bind(&faculty_name);
+            attendance_count += 1;
+        });
+        attendance_builder.build().execute(&mut *tx).await.ok();
 
-    Ok(Json(serde_json::json!({"message": "Batch processed", "count": count, "errors": errors})))
+        // Build Notification Bulk Insert
+        notification_builder.push_values(valid_records.iter(), |mut b, (record, info)| {
+            let db_status = if record.status.to_uppercase().starts_with('P') { "P" } else { "A" };
+            let status_text = if db_status == "P" { "Present" } else { "Absent" };
+            let msg = format!("{} {} session updated to {}", formatted_date, session, status_text);
+
+            b.push_bind("ATTENDANCE")
+             .push_bind(msg)
+             .push_bind(&faculty_id_str)
+             .push_bind(info.id.to_string())
+             .push_bind("UNREAD")
+             .push_bind(info.branch.clone().unwrap_or_default())
+             .push_bind(chrono::Utc::now());
+            notification_count += 1;
+        });
+        notification_builder.build().execute(&mut *tx).await.ok();
+    }
+
+    tx.commit().await.map_err(|e| {
+        eprintln!("Batch Commit Error: {:?}", e);
+        (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to save records"})))
+    })?;
+
+    Ok(Json(serde_json::json!({"message": "Batch processed", "count": attendance_count, "errors": errors})))
 }
 
 pub async fn check_attendance_status_handler(

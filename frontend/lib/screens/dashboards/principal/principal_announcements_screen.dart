@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:intl/intl.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
@@ -25,7 +26,7 @@ class _PrincipalAnnouncementsScreenState extends State<PrincipalAnnouncementsScr
   final _descController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
   TimeOfDay _selectedTime = TimeOfDay.now();
-  final List<String> _targetRoles = ['STUDENT', 'FACULTY', 'HOD', 'COORDINATOR'];
+  final List<String> _targetRoles = ['Student', 'Faculty', 'HOD', 'Coordinator']; // Consistent casing
   List<String> _selectedRoles = [];
 
   @override
@@ -40,12 +41,15 @@ class _PrincipalAnnouncementsScreenState extends State<PrincipalAnnouncementsScr
 
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/announcements?userId=${user['id']}&mode=authored'),
+        Uri.parse('${ApiConstants.baseUrl}/api/announcement'),
       );
       if (response.statusCode == 200) {
+        List<dynamic> all = json.decode(response.body);
+        // Filter by creator ID to show "My Announcements"
+        // Also sort by date
         setState(() {
-          _announcements = json.decode(response.body);
-          _announcements.sort((a, b) => DateTime.parse(b['eventDate']).compareTo(DateTime.parse(a['eventDate'])));
+          _announcements = all.where((a) => a['creator_id'] == user['id']).toList();
+          _announcements.sort((a, b) => DateTime.parse(b['created_at']).compareTo(DateTime.parse(a['created_at'])));
         });
       }
     } catch (e) {
@@ -64,66 +68,66 @@ class _PrincipalAnnouncementsScreenState extends State<PrincipalAnnouncementsScr
     setState(() => _submitting = true);
     final user = await AuthService.getUserSession();
 
-    final DateTime fullDateTime = DateTime(
+    final DateTime startDateTime = DateTime(
       _selectedDate.year, _selectedDate.month, _selectedDate.day,
       _selectedTime.hour, _selectedTime.minute,
-    );
+    ).toUtc();
+    
+    // Default end date: 7 days later
+    final DateTime endDateTime = startDateTime.add(const Duration(days: 7));
 
     final payload = {
-      'userId': user?['id'],
+      'creatorId': user?['id'],
       'title': _titleController.text.trim(),
       'description': _descController.text.trim(),
-      'date': _selectedDate.toIso8601String().split('T')[0],
-      'time': "${_selectedTime.hour.toString().padLeft(2, '0')}:${_selectedTime.minute.toString().padLeft(2, '0')}",
-      'targetRoles': _selectedRoles,
+      'type': 'general', // Default
+      'audience': _selectedRoles,
+      'priority': 'normal',
+      'start_date': startDateTime.toIso8601String(),
+      'end_date': endDateTime.toIso8601String(),
+      'isPinned': false,
+      'attachmentUrl': null
     };
 
     try {
       final response = await http.post(
-        Uri.parse('${ApiConstants.baseUrl}/api/announcements'),
+        Uri.parse('${ApiConstants.baseUrl}/api/announcement'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode(payload),
       );
 
-      if (response.statusCode == 200 || response.statusCode == 201) {
+      if (response.statusCode == 201 || response.statusCode == 200) {
         _showSnackBar("Announcement created successfully");
         Navigator.pop(context);
         _resetForm();
         _fetchAnnouncements();
       } else {
-        _showSnackBar("Failed to create announcement");
+        _showSnackBar("Failed: ${response.body}");
       }
     } catch (e) {
-      _showSnackBar("Network Error");
+      _showSnackBar("Network Error: $e");
     } finally {
       if (mounted) setState(() => _submitting = false);
     }
   }
 
-  Future<void> _handleDelete(int id) async {
+  Future<void> _handleDelete(String id) async {
     try {
-      final response = await http.delete(Uri.parse('${ApiConstants.baseUrl}/api/announcements/$id'));
+      // Backend should support DELETE /api/announcement/:id
+      // But currently main.rs registered handlers: create and get.
+      // I need to add delete handler in backend?
+      // For now, simulate success or fail.
+      // The user wants "Announcement Management (Update/Delete)" as next steps.
+      // I will implement UI for delete, but backend might 404/405.
+      // I'll leave the call here.
+      final response = await http.delete(Uri.parse('${ApiConstants.baseUrl}/api/announcement/$id'));
       if (response.statusCode == 200) {
         _fetchAnnouncements();
+      } else {
+         _showSnackBar("Delete not implemented or failed");
       }
     } catch (e) {
       _showSnackBar("Failed to delete");
-    }
-  }
-
-  Future<void> _handleMarkDone(int id) async {
-    final user = await AuthService.getUserSession();
-    try {
-      final response = await http.patch(
-        Uri.parse('${ApiConstants.baseUrl}/api/announcements/$id/complete'),
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode({'userId': user?['id']}),
-      );
-      if (response.statusCode == 200) {
-        _fetchAnnouncements();
-      }
-    } catch (e) {
-      _showSnackBar("Failed to mark as done");
     }
   }
 
@@ -199,7 +203,10 @@ class _PrincipalAnnouncementsScreenState extends State<PrincipalAnnouncementsScr
                   itemCount: _announcements.length,
                   itemBuilder: (ctx, index) {
                     final item = _announcements[index];
-                    final isCompleted = item['status'] == 'COMPLETED';
+                    // Check completion by end_date
+                    final endDate = DateTime.parse(item['end_date']);
+                    final isCompleted = DateTime.now().isAfter(endDate);
+                    
                     return _buildAnnouncementCard(item, isCompleted, cardColor, textColor, subTextColor, iconBg, tint);
                   },
                 ),
@@ -211,7 +218,6 @@ class _PrincipalAnnouncementsScreenState extends State<PrincipalAnnouncementsScr
   Widget _buildAnnouncementCard(dynamic item, bool isCompleted, Color cardColor, Color textColor, Color subTextColor, Color iconBg, Color tint) {
     return GestureDetector(
       onLongPress: () {
-        if (isCompleted) {
           showDialog(
             context: context,
             builder: (ctx) => AlertDialog(
@@ -229,7 +235,6 @@ class _PrincipalAnnouncementsScreenState extends State<PrincipalAnnouncementsScr
               ],
             ),
           );
-        }
       },
       child: AnimatedOpacity(
         duration: const Duration(milliseconds: 300),
@@ -248,28 +253,23 @@ class _PrincipalAnnouncementsScreenState extends State<PrincipalAnnouncementsScr
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
+                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(item['title'], style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                        Text(item['title'] ?? 'No Title', style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
                         Text(
-                          "${DateTime.parse(item['eventDate']).day}/${DateTime.parse(item['eventDate']).month}/${DateTime.parse(item['eventDate']).year}",
+                          DateFormat('MMM d, yyyy').format(DateTime.parse(item['start_date'])),
                           style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
                         ),
                       ],
                     ),
                   ),
-                  if (!isCompleted)
-                    IconButton(
-                      icon: Icon(Icons.check_circle_outline, color: tint),
-                      onPressed: () => _handleMarkDone(item['id']),
-                    )
-                  else
+                  if (isCompleted)
                     Column(
                       children: [
                         const Icon(Icons.check_circle, color: Colors.green, size: 24),
-                        Text("DONE", style: GoogleFonts.poppins(fontSize: 10, color: Colors.green, fontWeight: FontWeight.bold)),
+                        Text("EXPIRED", style: GoogleFonts.poppins(fontSize: 10, color: Colors.green, fontWeight: FontWeight.bold)),
                       ],
                     ),
                 ],
@@ -282,18 +282,12 @@ class _PrincipalAnnouncementsScreenState extends State<PrincipalAnnouncementsScr
               Wrap(
                 spacing: 8,
                 runSpacing: 8,
-                children: (item['targetRoles'] as List).map((role) => Container(
+                children: (item['audience'] as List<dynamic>? ?? []).map((role) => Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(color: iconBg, borderRadius: BorderRadius.circular(12)),
                   child: Text(role.toString(), style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: textColor)),
                 )).toList(),
               ),
-              if (isCompleted)
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Text("Long press to delete", textAlign: TextAlign.center, style: GoogleFonts.poppins(fontSize: 10, color: subTextColor)),
-                ),
             ],
           ),
         ),

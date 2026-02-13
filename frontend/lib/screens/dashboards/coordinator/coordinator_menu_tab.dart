@@ -13,6 +13,7 @@ import '../principal/principal_lesson_plans_screen.dart';
 import 'coordinator_events_screen.dart';
 import 'coordinator_activities_screen.dart';
 import 'coordinator_requests_screen.dart';
+import 'coordinator_announcements_screen.dart';
 
 class CoordinatorMenuTab extends StatelessWidget {
   const CoordinatorMenuTab({super.key});
@@ -27,7 +28,7 @@ class CoordinatorMenuTab extends StatelessWidget {
     final iconBg = isDark ? ThemeColors.darkIconBg : ThemeColors.lightIconBg;
 
     final List<Map<String, dynamic>> menuItems = [
-      {'label': 'Announcements', 'icon': Icons.campaign, 'route': const PrincipalAnnouncementsScreen(), 'color': ThemeColors.accentPurple},
+      {'label': 'Announcements', 'icon': Icons.campaign, 'route': const CoordinatorAnnouncementsScreen(), 'color': ThemeColors.accentPurple},
       {'label': 'Attendance Monitor', 'icon': Icons.calendar_today, 'route': const PrincipalAttendanceScreen(), 'color': ThemeColors.accentBlue},
       {'label': 'Faculty Directory', 'icon': Icons.people, 'route': const PrincipalFacultyScreen(), 'color': ThemeColors.accentCyan},
       {'label': 'Master Timetables', 'icon': Icons.access_time, 'route': const PrincipalTimetablesScreen(), 'color': ThemeColors.accentGreen},
