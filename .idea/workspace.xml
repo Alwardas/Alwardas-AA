@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="80d79b54-a26b-4fef-b931-49219b520e4d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/frontend/lib/core/grpc/grpc_channel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/core/grpc/grpc_channel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/core/grpc/grpc_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/core/grpc/grpc_client.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/core/routes/app_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/core/routes/app_routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/core/services/announcement_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/core/services/announcement_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/core/services/exam_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/core/services/exam_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/core/services/issue_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/core/services/issue_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/core/services/request_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/core/services/request_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/coordinator/coordinator_announcements_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/coordinator/coordinator_announcements_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/coordinator/coordinator_exams_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/coordinator/coordinator_exams_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/coordinator/coordinator_issues_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/coordinator/coordinator_issues_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/coordinator/coordinator_requests_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/coordinator/coordinator_requests_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/faculty/faculty_attendance_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/faculty/faculty_attendance_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/faculty/faculty_dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/faculty/faculty_dashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/faculty/faculty_menu_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/faculty/faculty_menu_tab.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/principal/principal_announcements_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/principal/principal_announcements_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/principal/principal_attendance_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/principal/principal_attendance_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/principal/principal_dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/principal/principal_dashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/principal/principal_menu_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/principal/principal_menu_tab.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/principal/principal_requests_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/principal/principal_requests_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/student/student_comments_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/student/student_comments_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/student/student_dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/student/student_dashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/dashboards/student/student_marks_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/dashboards/student/student_marks_screen.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="39eb73wwGW7SDRHv8Mz7yES2ELJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Alwardas A A",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="80d79b54-a26b-4fef-b931-49219b520e4d" name="Changes" comment="" />
+      <created>1771059319003</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771059319003</updated>
+    </task>
+    <servers />
+  </component>
+</project>

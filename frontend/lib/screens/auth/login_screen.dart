@@ -45,6 +45,16 @@ class _LoginScreenState extends State<LoginScreen> {
         final uri = Uri.parse(ApiConstants.loginEndpoint);
         debugPrint("Attempting login to: $uri");
 
+        // Explicit Connectivity Test
+        try {
+          debugPrint("Testing internet connectivity...");
+          final testRes = await http.get(Uri.parse('https://google.com')).timeout(const Duration(seconds: 5));
+          debugPrint("Internet Connectivity OK: ${testRes.statusCode}");
+        } catch (e) {
+          debugPrint("Internet Connectivity Check Failed: $e");
+          throw Exception("No Internet Access: Unable to reach google.com. Details: $e");
+        }
+
         final response = await http.post(
           uri,
           headers: {'Content-Type': 'application/json'},
