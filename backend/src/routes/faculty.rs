@@ -52,10 +52,10 @@ pub async fn get_faculty_subjects_handler(
     let subjects = sqlx::query_as::<Postgres, FacultySubjectResponse>(
         r#"
         SELECT 
-            s.id, 
-            s.name, 
-            s.branch, 
-            s.semester, 
+            fs.subject_id as id, 
+            COALESCE(s.name, fs.subject_name) as name, 
+            COALESCE(s.branch, fs.branch) as branch, 
+            COALESCE(s.semester, 'Unknown') as semester, 
             fs.status,
             fs.subject_id,
             fs.section,
@@ -67,11 +67,11 @@ pub async fn get_faculty_subjects_handler(
                     END
                     FROM lesson_plan_items lpi 
                     LEFT JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id AND lpp.section = fs.section
-                    WHERE lpi.subject_id = s.id
+                    WHERE lpi.subject_id = fs.subject_id
                 ), 0
             )::INTEGER as completion_percentage
         FROM faculty_subjects fs
-        JOIN subjects s ON fs.subject_id = s.id
+        LEFT JOIN subjects s ON fs.subject_id = s.id
         WHERE fs.user_id = $1
         "#
     )
