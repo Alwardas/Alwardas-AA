@@ -76,27 +76,28 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
     }
   }
 
-  Future<void> _handleAddSubjects(List<String> selectedIds) async {
+  Future<void> _handleAddSubjects(List<Map<String, dynamic>> subjectDetails) async {
     final user = await AuthService.getUserSession();
     if (user == null) return;
-
-    final selectedCourses = _allCourses.where((c) => selectedIds.contains(c['id'])).toList();
     
-    // Optimistic Update: Add items immediately to UI
+    // Optimistic Update
     if (mounted) {
       setState(() {
-        for (var c in selectedCourses) {
-           // Prevent duplicates if possible
-           if (!_facultySubjects.any((existing) => existing['name'] == c['name'])) {
-              _facultySubjects.add({
-                'id': c['id'], // Placeholder Id
-                'name': c['name'],
-                'code': c['code'] ?? c['id'], // Ensure code is passed for display
-                'branch': c['branch'],
-                'semester': c['semester'],
-                'status': 'PENDING'
-              });
-           }
+        for (var d in subjectDetails) {
+            final name = d['name'];
+            if (!_facultySubjects.any((existing) => existing['name'] == name && existing['section'] == d['section'])) {
+               _facultySubjects.add({
+                  'id': d['id'],
+                  'name': name,
+                  'code': d['code'] ?? d['id'],
+                  'branch': d['branch'],
+                  'section': d['section'],
+                  'year': d['year'],
+                  // infer semester or leave blank for now, or the Add Screen could provide it
+                  'semester': '?', 
+                  'status': 'PENDING'
+               });
+            }
         }
       });
     }
@@ -104,17 +105,17 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
     _showSnackBar("Requests sent to HODs.");
     
     try {
-       final facultyBranch = user['branch'] ?? 'Unknown';
-       
-       for (var sub in selectedCourses) {
+       for (var d in subjectDetails) {
           final response = await http.post(
             Uri.parse('${ApiConstants.baseUrl}/api/faculty/subjects'),
             headers: {'Content-Type': 'application/json'},
             body: json.encode({
               'userId': user['id'],
-              'subjectId': sub['id'],
-              'subjectName': sub['name'],
-              'branch': facultyBranch 
+              'subjectId': d['id'],
+              'subjectName': d['name'],
+              'branch': d['branch'],
+              'year': d['year'],
+              'section': d['section']
             })
           );
           
@@ -122,32 +123,9 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
              throw Exception('Failed to add subject: ${response.body}');
           }
        }
-       // Sync complete. We do NOT fetch immediately to avoid race conditions. 
-       // The optimistic items remain visible.
-       // _fetchFacultySubjects(); 
     } catch (e) {
-      _showSnackBar("Network Error");
+      _showSnackBar("Network Error: ${e.toString()}");
     }
-  }
-
-  Future<void> _removeSubject(String subjectId) async {
-    final user = await AuthService.getUserSession();
-    if (user == null) return;
-
-    try {
-      final request = http.Request('DELETE', Uri.parse('${ApiConstants.baseUrl}/api/faculty/subjects'));
-      request.headers['Content-Type'] = 'application/json';
-      request.body = json.encode({'userId': user['id'], 'subjectId': subjectId});
-      await request.send();
-      _showSnackBar("Subject removed.");
-      _fetchFacultySubjects(); // Refresh needed here to confirm removal
-    } catch (e) {
-      _showSnackBar("Failed to remove subject.");
-    }
-  }
-
-  void _showSnackBar(String text) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
   }
 
   void _openAddPage() async {
@@ -161,7 +139,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
       )
     );
 
-    if (result != null && result is List<String> && result.isNotEmpty) {
+    if (result != null && result is List<Map<String, dynamic>> && result.isNotEmpty) {
       _handleAddSubjects(result);
     }
   }

@@ -90,22 +90,25 @@ pub async fn add_faculty_subject_handler(
     State(state): State<AppState>,
     Json(payload): Json<AddFacultySubjectRequest>,
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    // Default to Section A if missing, but UI should send it now
     let section = payload.section.unwrap_or_else(|| "Section A".to_string());
+    // let year = payload.year.unwrap_or_default(); // Store year if we have a column, or just for metadata
 
+    // 1. Insert into faculty_subjects
+    // Using ON CONFLICT DO UPDATE to ensure we don't create duplicates, but reset status to PENDING if re-requesting
     sqlx::query(
         r#"
         INSERT INTO faculty_subjects (user_id, subject_id, subject_name, branch, status, section)
-        VALUES ($1, $2, $3, $4, 'PENDING', $5) 
+        VALUES ($1, $2, $3, $4, 'PENDING', $5)
         ON CONFLICT (user_id, subject_id, section) 
-        DO UPDATE SET status = 'PENDING' 
-        WHERE faculty_subjects.status != 'APPROVED'
+        DO UPDATE SET status = 'PENDING', subject_name = EXCLUDED.subject_name
         "#
     )
     .bind(payload.user_id)
     .bind(&payload.subject_id)
     .bind(&payload.subject_name)
     .bind(&payload.branch)
-    .bind(section)
+    .bind(&section)
     .execute(&state.pool)
     .await
     .map_err(|e| {
@@ -113,7 +116,10 @@ pub async fn add_faculty_subject_handler(
          (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to add subject"})))
     })?;
 
-    let msg = format!("Faculty requested subject: {}", payload.subject_name);
+    // 2. Create Notification
+    // Include Section in message for unique parsing later
+    let msg = format!("Faculty requested subject: {} for {}", payload.subject_name, section);
+    
     let _ = sqlx::query(
         "INSERT INTO notifications (type, message, sender_id, branch, status, created_at) VALUES ($1, $2, $3, $4, 'UNREAD', NOW())"
     )
@@ -131,14 +137,26 @@ pub async fn remove_faculty_subject_handler(
     State(state): State<AppState>,
     Json(payload): Json<RemoveFacultySubjectRequest>,
 ) -> Result<StatusCode, StatusCode> {
-    let section = payload.section.unwrap_or_else(|| "Section A".to_string());
-    sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_id = $2 AND section = $3")
-        .bind(payload.user_id)
-        .bind(payload.subject_id)
-        .bind(section)
-        .execute(&state.pool)
-        .await
-        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+    // If section is provided, use it. If not, this might be a legacy delete.
+    // Ideally we should require section. 
+    if let Some(section) = payload.section {
+        sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_id = $2 AND section = $3")
+            .bind(payload.user_id)
+            .bind(payload.subject_id)
+            .bind(section)
+            .execute(&state.pool)
+            .await
+            .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+    } else {
+        // Fallback: Delete all sections for this subject? Or just one?
+        // Safest is to delete all for this subject if no section specified (legacy behavior)
+        sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_id = $2")
+            .bind(payload.user_id)
+            .bind(payload.subject_id)
+            .execute(&state.pool)
+            .await
+            .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+    }
         
     Ok(StatusCode::OK)
 }
@@ -714,7 +732,7 @@ pub async fn approve_subject_handler(
     let is_approved = payload.action == "APPROVE";
     let faculty_uuid = resolve_user_id(&payload.sender_id, "Faculty", &state.pool).await?;
 
-    // 1. Fetch the notification to parse the subject name
+    // 1. Fetch the notification to parse the subject name and section
     let notification_row: Option<(String,)> = sqlx::query_as("SELECT message FROM notifications WHERE id = $1")
         .bind(payload.notification_id)
         .fetch_optional(&state.pool)
@@ -723,22 +741,41 @@ pub async fn approve_subject_handler(
 
     let message = notification_row.map(|r| r.0).unwrap_or_default();
     
-    // Parse subject name: "Faculty requested subject: SubjectName"
-    let subject_name = if message.contains("Faculty requested subject: ") {
-        message.split("Faculty requested subject: ").last().unwrap_or("").trim().to_string()
+    // Parse subject name and section: "Faculty requested subject: SubjectName for Section A"
+    // Or old format: "Faculty requested subject: SubjectName"
+    let (subject_name, section) = if message.contains("Faculty requested subject: ") {
+        let part = message.split("Faculty requested subject: ").last().unwrap_or("").trim();
+        if part.contains(" for ") {
+            let mut split = part.split(" for ");
+            let sub = split.next().unwrap_or("").trim().to_string();
+            let sec = split.last().unwrap_or("").trim().to_string();
+            (sub, Some(sec))
+        } else {
+            (part.to_string(), None)
+        }
     } else {
-        String::new()
+        (String::new(), None)
     };
 
     if is_approved {
         if !subject_name.is_empty() {
-            // Approve SPECIFIC subject
-            sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND subject_name = $2 AND status = 'PENDING'")
-                .bind(faculty_uuid)
-                .bind(subject_name)
-                .execute(&state.pool).await.ok();
+             if let Some(sec) = section {
+                // Approve SPECIFIC subject and section
+                sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND subject_name = $2 AND section = $3 AND status = 'PENDING'")
+                    .bind(faculty_uuid)
+                    .bind(subject_name)
+                    .bind(sec)
+                    .execute(&state.pool).await.ok();
+             } else {
+                // Fallback for requests without section (Legacy)
+                // This might approve multiple if same name exists in multiple sections (undesirable but handles legacy)
+                sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND subject_name = $2 AND status = 'PENDING'")
+                    .bind(faculty_uuid)
+                    .bind(subject_name)
+                    .execute(&state.pool).await.ok();
+             }
         } else {
-            // Fallback: Approve ALL pending (legacy behavior)
+            // Fallback: Approve ALL pending (legacy behavior, avoid if possible)
             sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND status = 'PENDING'")
                 .bind(faculty_uuid)
                 .execute(&state.pool).await.ok();
@@ -746,11 +783,20 @@ pub async fn approve_subject_handler(
         sqlx::query("UPDATE notifications SET status = 'ACCEPTED' WHERE id = $1").bind(payload.notification_id).execute(&state.pool).await.ok();
     } else {
         if !subject_name.is_empty() {
-             // Reject SPECIFIC subject
-             sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_name = $2 AND status = 'PENDING'")
-                .bind(faculty_uuid)
-                .bind(subject_name)
-                .execute(&state.pool).await.ok();
+             if let Some(sec) = section {
+                 // Reject SPECIFIC subject and section
+                 sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_name = $2 AND section = $3 AND status = 'PENDING'")
+                    .bind(faculty_uuid)
+                    .bind(subject_name)
+                    .bind(sec)
+                    .execute(&state.pool).await.ok();
+             } else {
+                 // Reject SPECIFIC subject (all sections pending)
+                 sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_name = $2 AND status = 'PENDING'")
+                    .bind(faculty_uuid)
+                    .bind(subject_name)
+                    .execute(&state.pool).await.ok();
+             }
         } else {
              // Fallback
              sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND status = 'PENDING'").bind(faculty_uuid).execute(&state.pool).await.ok();

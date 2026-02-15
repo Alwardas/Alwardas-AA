@@ -184,30 +184,38 @@ class _FacultyAddSubjectScreenState extends State<FacultyAddSubjectScreen> {
           return;
       }
       
-      // Find the ID. If manual text (not from list), we might not have ID.
-      // But typically we want a valid ID.
-      // If code is empty, maybe try to find by name in filtered list
       String subjectId = _subjectCodeController.text;
-      if (subjectId.isEmpty) {
-          final match = _filteredSubjects.firstWhere(
-             (s) => s['name'] == _subjectController.text, orElse: () => {}
-          );
-          if (match.isNotEmpty) {
-             subjectId = match['id'].toString();
-          }
+      String subjectName = _subjectController.text;
+      String? code;
+
+      // Try to find the full object for more details
+      final match = _filteredSubjects.firstWhere(
+          (s) => s['name'] == subjectName || s['id'].toString() == subjectId,
+          orElse: () => <String, dynamic>{}
+      );
+
+      if (match.isNotEmpty) {
+         subjectId = match['id'].toString();
+         subjectName = match['name'] ?? subjectName;
+         code = match['code']?.toString();
       }
       
-      // If still empty, we can't add properly for duplicate checks, but let's allow basic ID
       if (subjectId.isEmpty) {
-         // Create a temporary ID or fail? 
-         // Strategy: Use name as ID if no match found (for custom subjects if allowed, or just error)
-         // User said "select subjects from list", implies list selection is primary.
          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please select a valid subject from the list")));
          return;
       }
 
-      // Return List of IDs as expected by previous screen
-      Navigator.pop(context, [subjectId]);
+      // Return List of Maps as expected by FacultyClassesScreen
+      final result = [{
+        'id': subjectId,
+        'name': subjectName,
+        'code': code ?? subjectId,
+        'branch': _mapShortToFull(_selectedBranch!),
+        'year': _selectedYear,
+        'section': _selectedSection
+      }];
+
+      Navigator.pop(context, result);
   }
 
   @override
