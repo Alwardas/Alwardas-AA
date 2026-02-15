@@ -20,6 +20,7 @@ class HodRequestsScreen extends StatefulWidget {
 class _HodRequestsScreenState extends State<HodRequestsScreen> {
   List<dynamic> _requests = [];
   bool _loading = true;
+  final Map<String, String> _nameCache = {};
 
   @override
   void initState() {
@@ -28,56 +29,153 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> {
   }
 
   Future<void> _fetchRequests() async {
-    // Mocking Faculty Subject Requests as per user requirement
-    await Future.delayed(const Duration(seconds: 1));
-    if (mounted) {
-      setState(() {
-        _requests = [
-          {
-            'id': '101',
-            'type': 'subject_request',
-            'faculty_name': 'S ALIELU',
-            'subject_name': 'Advanced Mathematics',
-            'status': 'PENDING',
-          },
-          {
-            'id': '102',
-            'type': 'subject_request',
-            'faculty_name': 'Dr. P. Smith',
-            'subject_name': 'Thermodynamics',
-            'status': 'PENDING',
-          },
-           {
-            'id': '103',
-            'type': 'subject_request',
-            'faculty_name': 'A. Johnson',
-            'subject_name': 'Data Structures',
-            'status': 'APPROVED',
-          },
-        ];
-        _loading = false;
+    final user = await AuthService.getUserSession();
+    if (user == null) {
+      if (mounted) setState(() => _loading = false);
+      return;
+    }
+
+    // Fetch faculty names first
+    if (user['branch'] != null) {
+       await _fetchFacultyNames(user['branch'].toString());
+    }
+
+    try {
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/notifications').replace(queryParameters: {
+        'userId': user['id'].toString(),
+        'role': user['role']?.toString() ?? '',
+        'branch': user['branch']?.toString() ?? ''
       });
+      final response = await http.get(uri);
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        
+        // Filter and Map to Request Structure
+        final List<dynamic> mappedRequests = [];
+        
+        for (var n in data) {
+           if (n['type'] == 'SUBJECT_APPROVAL') {
+              String senderId = n['senderId']?.toString() ?? n['sender_id']?.toString() ?? '';
+              String message = n['message'] ?? '';
+              
+              // Resolve Name
+              String facultyName = _nameCache[senderId] ?? 'Faculty';
+              if (facultyName == 'Faculty') {
+                  // Try to find if we missed it
+                  await _fetchIndividualName(senderId);
+                  facultyName = _nameCache[senderId] ?? 'Faculty';
+              }
+
+              // Parse Subject Name
+              String subjectName = "Subject";
+              if (message.contains("Faculty requested subject: ")) {
+                  subjectName = message.split("Faculty requested subject: ").last.trim();
+              } else if (message.contains("requested subject:")) {
+                   subjectName = message.split("requested subject:").last.trim();
+              } else {
+                   subjectName = message;
+              }
+
+              mappedRequests.add({
+                'id': n['id'],
+                'senderId': senderId, // Needed for approval
+                'type': 'subject_request', // Keep internal type consistent with UI
+                'faculty_name': facultyName,
+                'subject_name': subjectName,
+                'status': n['status'] ?? 'PENDING',
+                'createdAt': n['createdAt']
+              });
+           }
+        }
+
+        if (mounted) {
+          setState(() {
+            _requests = mappedRequests;
+            _loading = false;
+          });
+        }
+      } else {
+        if (mounted) setState(() => _loading = false);
+      }
+    } catch (e) {
+      debugPrint("Error: $e");
+      if (mounted) setState(() => _loading = false);
     }
   }
 
-  Future<void> _handleAction(String requestId, String action) async {
-    // Mock API call
-    setState(() {
-       final index = _requests.indexWhere((r) => r['id'] == requestId);
-       if (index != -1) {
-         if (action == 'APPROVE') {
-            _requests[index]['status'] = 'APPROVED';
-            _showSnackBar("Request Approved");
-         } else {
-            _requests.removeAt(index); // Remove on reject
-            _showSnackBar("Request Rejected");
+  Future<void> _fetchFacultyNames(String branch) async {
+    try {
+      final response = await http.get(
+        Uri.parse('${ApiConstants.baseUrl}/api/faculty/by-branch?branch=$branch'),
+      );
+      if (response.statusCode == 200) {
+         final List<dynamic> data = json.decode(response.body);
+         for (var f in data) {
+            final id = f['id']?.toString() ?? '';
+            final name = f['name'] ?? f['full_name'] ?? 'Unknown';
+            if (id.isNotEmpty) _nameCache[id] = name;
+            final loginId = f['login_id']?.toString() ?? '';
+             if (loginId.isNotEmpty) _nameCache[loginId] = name;
          }
+      }
+    } catch (e) {
+      debugPrint("Error fetching names: $e");
+    }
+  }
+
+  Future<void> _fetchIndividualName(String id) async {
+    if (id.isEmpty || _nameCache.containsKey(id)) return;
+    try {
+        final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/users/$id'));
+        if (response.statusCode == 200) {
+           final data = json.decode(response.body);
+           final name = data['full_name'] ?? data['name'] ?? '';
+           if (name.isNotEmpty) {
+              _nameCache[id] = name;
+           }
+        }
+    } catch (_) {}
+  }
+
+
+  Future<void> _handleAction(String requestId, String action) async {
+    // Find the request to get senderId
+    final index = _requests.indexWhere((r) => r['id'] == requestId);
+    if (index == -1) return;
+    
+    final request = _requests[index];
+
+    try {
+       final response = await http.post(
+         Uri.parse('${ApiConstants.baseUrl}/api/hod/approve-subject'),
+         headers: {'Content-Type': 'application/json'},
+         body: json.encode({
+           'notificationId': requestId, 
+           'senderId': request['senderId'],
+           'action': action
+         }),
+       );
+
+       if (response.statusCode == 200) {
+          setState(() {
+             if (action == 'APPROVE') {
+                _requests[index]['status'] = 'APPROVED';
+                _showSnackBar("Request Approved");
+             } else {
+                _requests.removeAt(index);
+                _showSnackBar("Request Rejected");
+             }
+          });
+       } else {
+          _showSnackBar("Failed: ${response.body}");
        }
-    });
+    } catch (e) {
+       _showSnackBar("Network Error");
+    }
   }
 
   void _showSnackBar(String text) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
+    if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
   }
 
   @override
@@ -194,32 +292,14 @@ class _RequestCard extends StatelessWidget {
                  ),
                ],
                const SizedBox(width: 12),
-               Expanded(
-                 child: Text(
-                   "Faculty Course Request",
-                   style: GoogleFonts.poppins(
-                     fontSize: 16, // Increased size
-                     fontWeight: FontWeight.bold, // Prominent
-                     color: textColor, // Use main text color
-                   ),
-                 ),
-               ),
+               // Removed separate header text per user request
+               const Spacer(), // Push date to right
             ],
           ),
           const SizedBox(height: 12),
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: "${r['faculty_name'] ?? 'Faculty'}", 
-                  style: GoogleFonts.poppins(fontSize: 16, color: textColor, fontWeight: FontWeight.bold)
-                ),
-                TextSpan(
-                  text: " requested for the subject",
-                  style: GoogleFonts.poppins(fontSize: 16, color: subTextColor, fontWeight: FontWeight.normal)
-                ),
-              ],
-            ),
+          Text(
+            r['faculty_name'] ?? 'Faculty', 
+            style: GoogleFonts.poppins(fontSize: 16, color: textColor, fontWeight: FontWeight.bold)
           ),
           const SizedBox(height: 4),
           Text(

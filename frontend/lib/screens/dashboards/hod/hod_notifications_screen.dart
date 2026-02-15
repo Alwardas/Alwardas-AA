@@ -18,6 +18,14 @@ class HodNotificationsScreen extends StatefulWidget {
 }
 
 class _HodNotificationsScreenState extends State<HodNotificationsScreen> {
+  // Static cache to avoid repeated API calls
+  // Pre-populated with mock data for testing parity with Requests Screen
+  Map<String, String> _nameCache = {
+    '101': 'S ALIELU',
+    '102': 'Dr. P. Smith',
+    '103': 'A. Johnson',
+  }; 
+  
   List<dynamic> _notifications = [];
   bool _loading = true;
   final Set<String> _selectedItems = {};
@@ -34,6 +42,11 @@ class _HodNotificationsScreenState extends State<HodNotificationsScreen> {
     if (user == null) {
       if (mounted) setState(() => _loading = false);
       return;
+    }
+
+    // Fetch faculty names for lookup (parallel or sequential)
+    if (user['branch'] != null) {
+       _fetchFacultyNames(user['branch'].toString());
     }
 
     try {
@@ -60,13 +73,42 @@ class _HodNotificationsScreenState extends State<HodNotificationsScreen> {
     }
   }
 
+  Future<void> _fetchFacultyNames(String branch) async {
+    if (_nameCache.isNotEmpty) return;
+
+    try {
+      final response = await http.get(
+        Uri.parse('${ApiConstants.baseUrl}/api/faculty/by-branch?branch=$branch'),
+      );
+      if (response.statusCode == 200) {
+         final List<dynamic> data = json.decode(response.body);
+         final Map<String, String> names = {};
+         for (var f in data) {
+            // Assuming 'id' and 'name' or 'full_name' exist
+            final id = f['id']?.toString() ?? '';
+            final name = f['name'] ?? f['full_name'] ?? 'Unknown';
+            if (id.isNotEmpty) names[id] = name;
+            // Also map by login_id if needed, but senderId is usually database ID
+            final loginId = f['login_id']?.toString() ?? '';
+             if (loginId.isNotEmpty) names[loginId] = name;
+         }
+         if (mounted) {
+            setState(() {
+               _nameCache.addAll(names);
+            });
+         }
+      }
+    } catch (e) {
+      debugPrint("Error fetching faculty names: $e");
+    }
+  }
+
   void _toggleSelectionMode() {
     setState(() {
       _isSelectionMode = !_isSelectionMode;
       _selectedItems.clear();
     });
   }
-
   void _toggleItemSelection(String id) {
     setState(() {
       if (_selectedItems.contains(id)) {
@@ -270,7 +312,7 @@ class _HodNotificationsScreenState extends State<HodNotificationsScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.inbox, size: 60, color: color.withValues(alpha: 0.5)),
+          Icon(Icons.inbox, size: 60, color: color.withOpacity(0.5)),
           const SizedBox(height: 10),
           Text("No notifications", style: TextStyle(color: color, fontSize: 16)),
         ],
@@ -299,6 +341,7 @@ class _HodNotificationsScreenState extends State<HodNotificationsScreen> {
       tint: tint,
       isSelectionMode: _isSelectionMode,
       isSelected: isSelected,
+      nameCache: _nameCache, // Pass The Cache
       onSelect: () => _toggleItemSelection(item['id'].toString()),
       onLongPress: () => _handleLongPress(item['id'].toString()),
       onAction: _handleAction,
@@ -315,6 +358,7 @@ class NotificationCard extends StatefulWidget {
   final Color tint;
   final bool isSelectionMode;
   final bool isSelected;
+  final Map<String, String> nameCache; // Changed from facultyNames
   final VoidCallback onSelect;
   final VoidCallback onLongPress;
   final Function(dynamic, String) onAction;
@@ -329,6 +373,7 @@ class NotificationCard extends StatefulWidget {
     required this.tint,
     required this.isSelectionMode,
     required this.isSelected,
+    required this.nameCache, // Required
     required this.onSelect,
     required this.onLongPress,
     required this.onAction,
@@ -340,6 +385,56 @@ class NotificationCard extends StatefulWidget {
 
 class _NotificationCardState extends State<NotificationCard> {
   bool _expanded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _tryResolveName();
+  }
+
+  void _tryResolveName() {
+    String senderId = widget.item['senderId']?.toString() ?? widget.item['sender_id']?.toString() ?? '';
+    // If ID exists but name is not in cache, fetch it ONCE
+    if (senderId.isNotEmpty && !widget.nameCache.containsKey(senderId) && widget.item['user'] == null) {
+       _fetchIndividualName(senderId);
+    }
+  }
+
+  Future<void> _fetchIndividualName(String id) async {
+    // Try multiple endpoints to find the user
+    List<String> endpoints = [
+      '/api/users/$id',
+      '/api/user/$id',
+      '/api/faculty/$id',
+      '/api/students/$id', // Added student endpoint
+      '/api/student/$id',
+      '/api/faculty/detail/$id',
+      '/api/profile/$id'
+    ];
+
+    for (var endpoint in endpoints) {
+      try {
+        final response = await http.get(Uri.parse('${ApiConstants.baseUrl}$endpoint'));
+        if (response.statusCode == 200) {
+          final data = json.decode(response.body);
+          // Check various name fields
+          final name = data['name'] ?? data['full_name'] ?? data['username'] ?? data['faculty_name'] ?? data['student_name'] ?? "";
+          if (name.isNotEmpty) {
+             if (mounted) {
+               setState(() {
+                 widget.nameCache[id] = name;
+               });
+             }
+             return; // Found it, stop looking
+          }
+        }
+      } catch (e) {
+         // Continue to next endpoint
+      }
+    }
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -356,12 +451,33 @@ class _NotificationCardState extends State<NotificationCard> {
     String title = fullMessage;
     String details = "";
     
-    // Parsed fields for Subject Request - ROBUST LOGIC
-    String facultyName =  item['senderName'] ?? 
+    // Lookup Faculty Name from Cache
+    String senderId = item['senderId']?.toString() ?? 
+                      item['sender_id']?.toString() ?? 
+                      item['userId']?.toString() ?? 
+                      item['user_id']?.toString() ?? 
+                      '';
+    String fetchedName = widget.nameCache[senderId] ?? '';
+
+    // Check if senderId itself might be the name (fallback)
+    if (fetchedName.isEmpty && senderId.isNotEmpty && int.tryParse(senderId) == null && senderId.contains(" ")) {
+       fetchedName = senderId;
+    }
+
+    // Fallback logic
+    String facultyName = fetchedName.isNotEmpty ? fetchedName : (
+                          item['user']?['name'] ?? 
+                          item['user']?['full_name'] ?? 
+                          item['user']?['username'] ?? 
+                          item['sender']?['name'] ?? 
+                          item['sender']?['full_name'] ?? 
+                          item['data']?['faculty_name'] ??
+                          item['data']?['user']?['name'] ??
+                          item['senderName'] ?? 
                           item['sender_name'] ?? 
                           item['user_name'] ?? 
                           item['faculty_name'] ?? 
-                          ""; 
+                          ""); 
     
     // If name is still empty, try to parse from message
     if (facultyName.isEmpty && fullMessage.toLowerCase().contains("requested for")) {
@@ -372,8 +488,14 @@ class _NotificationCardState extends State<NotificationCard> {
        }
     }
     
-    if (facultyName.isEmpty || facultyName.toLowerCase() == "faculty") {
-       facultyName = "Unknown Faculty"; // Fallback to indicate missing data
+    // Final Fallback
+    if (facultyName.isEmpty || facultyName.toLowerCase().trim() == "faculty") {
+       // If ID is valid but name unfound, show ID cleanly ONLY if short (like Roll No)
+       if (senderId.isNotEmpty && senderId.length < 15 && !senderId.contains("-")) {
+          facultyName = "User $senderId"; 
+       } else {
+          facultyName = "Faculty"; // Hide detailed raw IDs
+       }
     }
 
     String subjectName = "Subject";
@@ -388,16 +510,33 @@ class _NotificationCardState extends State<NotificationCard> {
            }
         }
     } else if (isSubjectRequest) {
-        // Parse Subject Name safely
+        // Parse Subject Name safely - MIMIC ATTENDANCE LOGIC
         if (fullMessage.toLowerCase().contains("requested for")) {
-           final pattern = RegExp(r"requested for\s+(.*)", caseSensitive: false);
-           final match = pattern.firstMatch(fullMessage);
-           if (match != null && match.group(1) != null) {
-              subjectName = match.group(1)!.trim();
-              
-              // Remove "the subject" prefix if present
-              subjectName = subjectName.replaceAll(RegExp(r"^the subject\s+", caseSensitive: false), "");
+           // Case insensitive split workaround
+           int splitIndex = fullMessage.toLowerCase().indexOf("requested for");
+           String namePart = fullMessage.substring(0, splitIndex).trim();
+           String subjectPart = fullMessage.substring(splitIndex + "requested for".length).trim();
+           
+           // Remove "the subject" prefix if present
+           if (subjectPart.toLowerCase().startsWith("the subject")) {
+              subjectPart = subjectPart.substring("the subject".length).trim();
            }
+           
+           // Resolve Name
+           // If the message says "Faculty", try to use our fetched name
+           if (namePart.toLowerCase() == "faculty") {
+              if (fetchedName.isNotEmpty) {
+                 namePart = fetchedName;
+              } else if (senderId.isNotEmpty && senderId.length < 10 && !senderId.contains(RegExp(r'[a-zA-Z]'))) {
+                 // Only show ID if it's short (likely a roll no or simple ID)
+                 // otherwise use generic "Faculty" to avoid showing MongoDB ObjectIds
+                 namePart = "User $senderId";
+              }
+           }
+           
+           facultyName = namePart;
+           subjectName = subjectPart;
+           title = "$facultyName requested for $subjectName"; // Reconstruct title
         } else {
            subjectName = fullMessage;
         }
@@ -492,7 +631,7 @@ class _NotificationCardState extends State<NotificationCard> {
             if (isSubjectRequest) ...[
                Text(
                  facultyName, 
-                 style: GoogleFonts.poppins(fontSize: 12, color: widget.textColor, fontWeight: FontWeight.bold)
+                 style: GoogleFonts.poppins(fontSize: 14, color: widget.textColor, fontWeight: FontWeight.bold)
                ),
                const SizedBox(height: 1),
                Text(

@@ -107,7 +107,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
        final facultyBranch = user['branch'] ?? 'Unknown';
        
        for (var sub in selectedCourses) {
-          await http.post(
+          final response = await http.post(
             Uri.parse('${ApiConstants.baseUrl}/api/faculty/subjects'),
             headers: {'Content-Type': 'application/json'},
             body: json.encode({
@@ -117,6 +117,10 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
               'branch': facultyBranch 
             })
           );
+          
+          if (response.statusCode != 200) {
+             throw Exception('Failed to add subject: ${response.body}');
+          }
        }
        // Sync complete. We do NOT fetch immediately to avoid race conditions. 
        // The optimistic items remain visible.

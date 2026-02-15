@@ -714,11 +714,47 @@ pub async fn approve_subject_handler(
     let is_approved = payload.action == "APPROVE";
     let faculty_uuid = resolve_user_id(&payload.sender_id, "Faculty", &state.pool).await?;
 
+    // 1. Fetch the notification to parse the subject name
+    let notification_row: Option<(String,)> = sqlx::query_as("SELECT message FROM notifications WHERE id = $1")
+        .bind(payload.notification_id)
+        .fetch_optional(&state.pool)
+        .await
+        .map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to fetch notification"}))))?;
+
+    let message = notification_row.map(|r| r.0).unwrap_or_default();
+    
+    // Parse subject name: "Faculty requested subject: SubjectName"
+    let subject_name = if message.contains("Faculty requested subject: ") {
+        message.split("Faculty requested subject: ").last().unwrap_or("").trim().to_string()
+    } else {
+        String::new()
+    };
+
     if is_approved {
-        sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND status = 'PENDING'").bind(faculty_uuid).execute(&state.pool).await.ok();
+        if !subject_name.is_empty() {
+            // Approve SPECIFIC subject
+            sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND subject_name = $2 AND status = 'PENDING'")
+                .bind(faculty_uuid)
+                .bind(subject_name)
+                .execute(&state.pool).await.ok();
+        } else {
+            // Fallback: Approve ALL pending (legacy behavior)
+            sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND status = 'PENDING'")
+                .bind(faculty_uuid)
+                .execute(&state.pool).await.ok();
+        }
         sqlx::query("UPDATE notifications SET status = 'ACCEPTED' WHERE id = $1").bind(payload.notification_id).execute(&state.pool).await.ok();
     } else {
-        sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND status = 'PENDING'").bind(faculty_uuid).execute(&state.pool).await.ok();
+        if !subject_name.is_empty() {
+             // Reject SPECIFIC subject
+             sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_name = $2 AND status = 'PENDING'")
+                .bind(faculty_uuid)
+                .bind(subject_name)
+                .execute(&state.pool).await.ok();
+        } else {
+             // Fallback
+             sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND status = 'PENDING'").bind(faculty_uuid).execute(&state.pool).await.ok();
+        }
         sqlx::query("UPDATE notifications SET status = 'REJECTED' WHERE id = $1").bind(payload.notification_id).execute(&state.pool).await.ok();
     }
     Ok(StatusCode::OK)
