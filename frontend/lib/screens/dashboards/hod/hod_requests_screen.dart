@@ -66,10 +66,18 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> {
                   facultyName = _nameCache[senderId] ?? 'Faculty';
               }
 
-              // Parse Subject Name
+              // Parse Subject Name and Section
               String subjectName = "Subject";
               if (message.contains("Faculty requested subject: ")) {
-                  subjectName = message.split("Faculty requested subject: ").last.trim();
+                  String raw = message.split("Faculty requested subject: ").last.trim();
+                  // Check if it has " for " (Section)
+                  if (raw.contains(" for ")) {
+                      // e.g. "Math for Section A"
+                      // We can keep it as is, it's readable: "Math for Section A" 
+                      subjectName = raw;
+                  } else {
+                      subjectName = raw;
+                  }
               } else if (message.contains("requested subject:")) {
                    subjectName = message.split("requested subject:").last.trim();
               } else {
