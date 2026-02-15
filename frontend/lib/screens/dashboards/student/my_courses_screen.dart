@@ -50,9 +50,9 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
       final userId = user['id'];
       // Update header subtitle with user details if available
       if (user['branch'] != null && user['year'] != null) {
-         String subtitle = "${user['branch']} â€¢ ${user['year']}";
+         String subtitle = "${user['branch']} • ${user['year']}";
          if (user['semester'] != null && user['semester'].toString().isNotEmpty && user['semester'] != user['year']) {
-             subtitle += " â€¢ ${user['semester']}";
+             subtitle += " • ${user['semester']}";
          }
          setState(() {
            _headerSubtitle = subtitle;
@@ -332,11 +332,6 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                     fontWeight: FontWeight.w700,
                     letterSpacing: 0.5,
                   ),
-                ),
-                const SizedBox(width: 8),
-                Text(
-                  "â€¢",
-                  style: GoogleFonts.poppins(color: subtitleColor.withValues(alpha: 0.5)),
                 ),
                 const SizedBox(width: 8),
                 Expanded(

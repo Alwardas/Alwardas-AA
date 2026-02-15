@@ -31,6 +31,7 @@ import 'coordinator_menu_tab.dart';
 import 'coordinator_profile_tab.dart';
 import 'coordinator_announcements_screen.dart';
 import 'coordinator_create_announcement_screen.dart';
+import '../../../widgets/custom_bottom_nav_bar.dart';
 
 
 class CoordinatorDashboard extends StatefulWidget {
@@ -111,6 +112,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: overlayStyle,
       child: Scaffold(
+        extendBody: true,
         backgroundColor: bgColor,
         body: Container(
           decoration: BoxDecoration(
@@ -129,30 +131,21 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
             ],
           ),
         ),
-        bottomNavigationBar: Theme(
-          data: Theme.of(context).copyWith(
-            canvasColor: isDark ? const Color(0xFF020617) : Colors.white,
-          ),
-          child: BottomNavigationBar(
-            currentIndex: _selectedIndex,
-            onTap: (index) => setState(() => _selectedIndex = index),
-            backgroundColor: isDark ? const Color(0xFF020617) : Colors.white,
-            selectedItemColor: ThemeColors.accentBlue,
-            unselectedItemColor: const Color(0xFF64748B),
-            type: BottomNavigationBarType.fixed,
-            showUnselectedLabels: true,
-            selectedLabelStyle: GoogleFonts.poppins(fontSize: 10),
-            unselectedLabelStyle: GoogleFonts.poppins(fontSize: 10),
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined, size: 28),
-                activeIcon: Icon(Icons.home, size: 28),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
-            ],
-          ),
+        bottomNavigationBar: CustomBottomNavBar(
+          currentIndex: _selectedIndex,
+          onTap: (index) => setState(() => _selectedIndex = index),
+          selectedItemColor: ThemeColors.accentBlue,
+          unselectedItemColor: const Color(0xFF64748B),
+          backgroundColor: isDark ? const Color(0xFF020617) : Colors.white,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined, size: 28),
+              activeIcon: Icon(Icons.home, size: 28),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
+          ],
         ),
       ),
     );

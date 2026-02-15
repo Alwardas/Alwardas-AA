@@ -16,6 +16,7 @@ import 'hod_faculty_screen.dart';
 import 'hod_timetables_screen.dart';
 import 'hod_requests_screen.dart';
 import 'hod_department_screen.dart';
+import '../../../widgets/custom_bottom_nav_bar.dart';
 
 class HodDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -58,6 +59,7 @@ class _HodDashboardState extends State<HodDashboard> {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: overlayStyle,
       child: Scaffold(
+        extendBody: true,
         backgroundColor: bgColor,
         body: Container(
           decoration: BoxDecoration(
@@ -75,31 +77,23 @@ class _HodDashboardState extends State<HodDashboard> {
               HodProfileTab(userData: widget.userData, onLogout: _logout),
             ],
           ),
-        ),  bottomNavigationBar: Theme(
-          data: Theme.of(context).copyWith(
-            canvasColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
           ),
-          child: BottomNavigationBar(
-            currentIndex: _selectedIndex,
-            onTap: (index) => setState(() => _selectedIndex = index),
-            backgroundColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
-            selectedItemColor: tint,
-            unselectedItemColor: Colors.grey,
-            type: BottomNavigationBarType.fixed,
-            showUnselectedLabels: true,
-            selectedLabelStyle: GoogleFonts.poppins(fontSize: 10),
-            unselectedLabelStyle: GoogleFonts.poppins(fontSize: 10),
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined, size: 28),
-                activeIcon: Icon(Icons.home, size: 28),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
-            ],
+      bottomNavigationBar: CustomBottomNavBar(
+        currentIndex: _selectedIndex,
+        onTap: (index) => setState(() => _selectedIndex = index),
+        selectedItemColor: tint,
+        unselectedItemColor: Colors.grey,
+        backgroundColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined, size: 28),
+            activeIcon: Icon(Icons.home, size: 28),
+            label: 'Home',
           ),
-        ),
+          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
+        ],
+      ),
       ),
     );
   }

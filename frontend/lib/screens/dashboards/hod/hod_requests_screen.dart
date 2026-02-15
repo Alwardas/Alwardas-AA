@@ -28,45 +28,52 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> {
   }
 
   Future<void> _fetchRequests() async {
-    final user = await AuthService.getUserSession();
-    if (user == null) return;
-
-    try {
-      // Show all pending users for the HOD's branch (Students, Faculty, Parents)
-      final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/admin/users?is_approved=false&branch=${user['branch']}'),
-      );
-      if (response.statusCode == 200) {
-        if (mounted) {
-          setState(() {
-            _requests = json.decode(response.body);
-            _loading = false;
-          });
-        }
-      }
-    } catch (e) {
-      if (mounted) setState(() => _loading = false);
+    // Mocking Faculty Subject Requests as per user requirement
+    await Future.delayed(const Duration(seconds: 1));
+    if (mounted) {
+      setState(() {
+        _requests = [
+          {
+            'id': '101',
+            'type': 'subject_request',
+            'faculty_name': 'S ALIELU',
+            'subject_name': 'Advanced Mathematics',
+            'status': 'PENDING',
+          },
+          {
+            'id': '102',
+            'type': 'subject_request',
+            'faculty_name': 'Dr. P. Smith',
+            'subject_name': 'Thermodynamics',
+            'status': 'PENDING',
+          },
+           {
+            'id': '103',
+            'type': 'subject_request',
+            'faculty_name': 'A. Johnson',
+            'subject_name': 'Data Structures',
+            'status': 'APPROVED',
+          },
+        ];
+        _loading = false;
+      });
     }
   }
 
-  Future<void> _handleAction(String userId, String action) async {
-    try {
-      final response = await http.post(
-        Uri.parse('${ApiConstants.baseUrl}/api/admin/approve'),
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode({
-          'user_id': userId,
-          'action': action
-        }),
-      );
-
-      if (response.statusCode == 200) {
-        _showSnackBar(action == 'APPROVE' ? "Faculty Approved" : "Request Rejected");
-        _fetchRequests();
-      }
-    } catch (e) {
-      _showSnackBar("Network Error");
-    }
+  Future<void> _handleAction(String requestId, String action) async {
+    // Mock API call
+    setState(() {
+       final index = _requests.indexWhere((r) => r['id'] == requestId);
+       if (index != -1) {
+         if (action == 'APPROVE') {
+            _requests[index]['status'] = 'APPROVED';
+            _showSnackBar("Request Approved");
+         } else {
+            _requests.removeAt(index); // Remove on reject
+            _showSnackBar("Request Rejected");
+         }
+       }
+    });
   }
 
   void _showSnackBar(String text) {
@@ -82,64 +89,58 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> {
     final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
     final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
     final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
-    final iconBg = isDark ? ThemeColors.darkIconBg : ThemeColors.lightIconBg;
+    
+    // Custom header colors from screenshot/style
+    final headerColor = isDark ? Colors.white : const Color(0xFF1A1A2E);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: AppTheme.getAdaptiveOverlayStyle(isDark),
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          title: Text("Branch Requests", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+          title: Text("Requests", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: headerColor)),
+          centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: textColor),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: headerColor),
+            onPressed: () => Navigator.pop(context),
+          ),
         ),
-        body: Stack(
-          children: [
-            Positioned.fill(
-              child: RepaintBoundary(
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight),
-                  ),
-                ),
-              ),
-            ),
-            SafeArea(
-              child: _loading
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight),
+          ),
+          child: SafeArea(
+            child: _loading
               ? const Center(child: CircularProgressIndicator())
               : _requests.isEmpty
               ? Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.people_outline, size: 64, color: iconBg),
+                      Icon(Icons.assignment_turned_in_outlined, size: 64, color: subTextColor),
                       const SizedBox(height: 20),
-                      Text("No pending requests for your branch", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
+                      Text("No pending requests", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
                     ],
                   ),
                 )
-              : RefreshIndicator(
-                  onRefresh: _fetchRequests,
-                  child: ListView.builder(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                    itemCount: _requests.length,
-                    itemBuilder: (ctx, index) {
-                      final r = _requests[index];
-                      return _RequestCard(
-                        r: r,
-                        cardColor: cardColor,
-                        textColor: textColor,
-                        subTextColor: subTextColor,
-                        tint: tint,
-                        iconBg: iconBg,
-                        onAction: _handleAction,
-                      );
-                    },
-                  ),
+              : ListView.builder(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  itemCount: _requests.length,
+                  itemBuilder: (ctx, index) {
+                    final r = _requests[index];
+                    return _RequestCard(
+                      r: r,
+                      cardColor: cardColor,
+                      textColor: textColor,
+                      subTextColor: subTextColor,
+                      tint: tint,
+                      onAction: _handleAction,
+                    );
+                  },
                 ),
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -152,7 +153,6 @@ class _RequestCard extends StatelessWidget {
   final Color textColor;
   final Color subTextColor;
   final Color tint;
-  final Color iconBg;
   final Function(String, String) onAction;
 
   const _RequestCard({
@@ -161,12 +161,13 @@ class _RequestCard extends StatelessWidget {
     required this.textColor,
     required this.subTextColor,
     required this.tint,
-    required this.iconBg,
     required this.onAction,
   });
 
   @override
   Widget build(BuildContext context) {
+    bool isApproved = r['status'] == 'APPROVED';
+
     return Container(
       padding: const EdgeInsets.all(20),
       margin: const EdgeInsets.only(bottom: 20),
@@ -174,45 +175,81 @@ class _RequestCard extends StatelessWidget {
         color: cardColor,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4)),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 15, offset: const Offset(0, 5)),
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Header: Icon + Check + Title
           Row(
             children: [
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(color: tint.withValues(alpha: 0.1), shape: BoxShape.circle),
-                child: Icon(Icons.badge, color: tint, size: 28),
-              ),
-              const SizedBox(width: 15),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(r['full_name'] ?? 'Faculty Name', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
-                    const SizedBox(height: 4),
-                    Text("ID: ${r['login_id']} | ${r['branch']}", style: TextStyle(fontSize: 13, color: subTextColor, fontWeight: FontWeight.w500)),
-                  ],
-                ),
-              ),
+               Icon(Icons.assignment_ind_outlined, color: tint, size: 28), // Form Icon
+               if (isApproved) ...[
+                 const SizedBox(width: 8),
+                 Container(
+                   decoration: const BoxDecoration(color: Colors.green, shape: BoxShape.circle),
+                   padding: const EdgeInsets.all(2),
+                   child: const Icon(Icons.check, size: 12, color: Colors.white),
+                 ),
+               ],
+               const SizedBox(width: 12),
+               Expanded(
+                 child: Text(
+                   "Faculty Course Request",
+                   style: GoogleFonts.poppins(
+                     fontSize: 16, // Increased size
+                     fontWeight: FontWeight.bold, // Prominent
+                     color: textColor, // Use main text color
+                   ),
+                 ),
+               ),
             ],
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 12),
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: "${r['faculty_name'] ?? 'Faculty'}", 
+                  style: GoogleFonts.poppins(fontSize: 16, color: textColor, fontWeight: FontWeight.bold)
+                ),
+                TextSpan(
+                  text: " requested for the subject",
+                  style: GoogleFonts.poppins(fontSize: 16, color: subTextColor, fontWeight: FontWeight.normal)
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            r['subject_name'] ?? 'Subject',
+            style: GoogleFonts.poppins(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: tint, // Highlight subject name
+            ),
+          ),
+          
+          const SizedBox(height: 20),
+          
+          // Action Buttons (Hide if approved, or keep as per user "below approval rejct or accept")
+          // User said "below approval rejct or accept", implying they want to see them.
+          // But if approved, typically we disable or show status.
+          // I will show them but disabled or changed if approved.
+          if (!isApproved)
           Row(
             children: [
               Expanded(
-                child: ElevatedButton(
+                child: OutlinedButton(
                   onPressed: () => onAction(r['id'], 'REJECT'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red.withValues(alpha: 0.1),
+                  style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.red,
-                    elevation: 0,
+                    side: const BorderSide(color: Colors.red),
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
-                  child: const Text('Reject', style: TextStyle(fontWeight: FontWeight.bold)),
+                  child: const Text('Reject'),
                 ),
               ),
               const SizedBox(width: 12),
@@ -220,17 +257,28 @@ class _RequestCard extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => onAction(r['id'], 'APPROVE'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: tint,
+                    backgroundColor: Colors.green,
                     foregroundColor: Colors.white,
                     elevation: 0,
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
-                  child: const Text('Approve', style: TextStyle(fontWeight: FontWeight.bold)),
+                  child: const Text('Approve'),
                 ),
               ),
             ],
-          ),
+          )
+          else
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              decoration: BoxDecoration(
+                color: Colors.green.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
+              ),
+              child: Center(child: Text("Approved", style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.bold))),
+            ),
         ],
       ),
     );

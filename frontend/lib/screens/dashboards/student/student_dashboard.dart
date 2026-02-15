@@ -17,6 +17,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:intl/intl.dart';
 import '../../../core/api_constants.dart';
+import '../../../widgets/custom_bottom_nav_bar.dart';
 
 class StudentDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -93,56 +94,59 @@ class _StudentDashboardState extends State<StudentDashboard> {
     final bool isHomeTab = _selectedIndex == 2;
     SystemUiOverlayStyle overlayStyle = AppTheme.getAdaptiveOverlayStyle(isHomeTab || isDark);
 
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: overlayStyle,
-      child: Scaffold(
-        backgroundColor: bgColor,
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient,
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+    return PopScope(
+      canPop: _selectedIndex == 2,
+      onPopInvoked: (bool didPop) {
+        if (didPop) {
+          return;
+        }
+        setState(() {
+          _selectedIndex = 2;
+        });
+      },
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: overlayStyle,
+        child: Scaffold(
+          extendBody: true,
+          backgroundColor: bgColor,
+          body: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient,
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+            child: IndexedStack(
+              index: _selectedIndex,
+              children: [
+                // Placeholder for MyCoursesScreen
+                MyCoursesScreen(),
+                // Placeholder for TimeTableScreen
+                TimeTableScreen(),
+                _buildHomeTab(context, bgColor, cardColor, accentBlue, textColor, subTextColor, isDark),
+                // Placeholder for AttendanceScreen
+                AttendanceScreen(userData: widget.userData, onBack: () => setState(() => _selectedIndex = 2)),
+                StudentProfileTab(userData: widget.userData, onLogout: _logout),
+              ],
             ),
           ),
-          child: IndexedStack(
-            index: _selectedIndex,
-            children: [
-              // Placeholder for MyCoursesScreen
-              MyCoursesScreen(),
-              // Placeholder for TimeTableScreen
-              TimeTableScreen(),
-              _buildHomeTab(context, bgColor, cardColor, accentBlue, textColor, subTextColor, isDark),
-              // Placeholder for AttendanceScreen
-              AttendanceScreen(userData: widget.userData, onBack: () => setState(() => _selectedIndex = 2)),
-              StudentProfileTab(userData: widget.userData, onLogout: _logout),
+          bottomNavigationBar: CustomBottomNavBar(
+            currentIndex: _selectedIndex,
+            onTap: (index) => setState(() => _selectedIndex = index),
+            selectedItemColor: accentBlue,
+            unselectedItemColor: Colors.grey,
+            backgroundColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'My Courses'),
+              BottomNavigationBarItem(icon: Icon(Icons.schedule), label: 'Time Table'),
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+              BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Attendance'),
+              BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
             ],
           ),
         ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-          canvasColor: isDark ? const Color(0xFF1C1C2E) : Colors.white, 
-        ),
-        child: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: (index) => setState(() => _selectedIndex = index),
-          backgroundColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
-          selectedItemColor: accentBlue,
-          unselectedItemColor: Colors.grey,
-          type: BottomNavigationBarType.fixed, // Needed for 5 items
-          showUnselectedLabels: true,
-          selectedLabelStyle: GoogleFonts.poppins(fontSize: 10),
-          unselectedLabelStyle: GoogleFonts.poppins(fontSize: 10),
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'My Courses'),
-            BottomNavigationBarItem(icon: Icon(Icons.schedule), label: 'Time Table'),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Attendance'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-          ],
-        ),
       ),
-    ),
     );
   }
 
@@ -155,7 +159,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
         Container(
           padding: EdgeInsets.only(
             top: MediaQuery.of(context).padding.top + 10, 
-            bottom: 30, 
+            bottom: 20, 
             left: 24, 
             right: 24
           ),
@@ -179,34 +183,39 @@ class _StudentDashboardState extends State<StudentDashboard> {
                      child: Column(
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
-                         Text(
-                           'Welcome Back,', 
-                            style: GoogleFonts.poppins(
-                              color: Colors.lightBlueAccent, // Accent 
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                         ),
-                         FittedBox(
-                           fit: BoxFit.scaleDown,
-                           alignment: Alignment.centerLeft,
-                           child: Text(
-                             widget.userData['full_name'] ?? 'Student',
-                              style: GoogleFonts.poppins(
-                                color: Colors.white, 
-                                fontSize: 26,
-                                fontWeight: FontWeight.bold,
-                              ),
-                           ),
-                         ),
-                         const SizedBox(height: 4),
-                         Text(
-                           '${widget.userData['branch'] ?? 'Engineering'} • ${widget.userData['login_id'] ?? ''}',
-                            style: GoogleFonts.poppins(
-                              color: Colors.white70, 
-                              fontSize: 14,
-                            ),
-                         ),
+                          Text(
+                            'Welcome Back,',
+                             style: GoogleFonts.poppins(
+                               color: Colors.white70,
+                               fontSize: 14,
+                               fontWeight: FontWeight.w500,
+                             ),
+                          ),
+                          Text(
+                            widget.userData['full_name'] ?? 'Student', 
+                             style: GoogleFonts.poppins(
+                               color: Colors.white, 
+                               fontSize: 20, // Reduced from 24
+                               fontWeight: FontWeight.bold,
+                             ),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            'ID: ${widget.userData['login_id'] ?? 'N/A'}',
+                             style: GoogleFonts.poppins(
+                               color: Colors.white.withOpacity(0.9), 
+                               fontSize: 13, // Reduced from 15
+                               fontWeight: FontWeight.w500,
+                             ),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            widget.userData['branch'] ?? 'Engineering',
+                             style: GoogleFonts.poppins(
+                               color: Colors.white70, 
+                               fontSize: 14,
+                             ),
+                          ),
                        ],
                      ),
                    ),

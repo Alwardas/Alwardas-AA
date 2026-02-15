@@ -346,14 +346,38 @@ class _NotificationCardState extends State<NotificationCard> {
     final item = widget.item;
     final isActionable = item['type'] == 'USER_APPROVAL' || item['type'] == 'PROFILE_UPDATE_REQUEST' || item['type'] == 'SUBJECT_APPROVAL' || item['type'] == 'ATTENDANCE_CORRECTION_REQUEST';
     final status = item['status'];
+    final bool isApproved = status == 'APPROVED' || status == 'ACCEPTED';
     
     // Parse message
-    String fullMessage = item['message'];
+    String fullMessage = item['message'] ?? '';
     bool isAttendance = item['type'] == 'ATTENDANCE_CORRECTION_REQUEST';
+    bool isSubjectRequest = item['type'] == 'SUBJECT_APPROVAL';
     
     String title = fullMessage;
     String details = "";
     
+    // Parsed fields for Subject Request - ROBUST LOGIC
+    String facultyName =  item['senderName'] ?? 
+                          item['sender_name'] ?? 
+                          item['user_name'] ?? 
+                          item['faculty_name'] ?? 
+                          ""; 
+    
+    // If name is still empty, try to parse from message
+    if (facultyName.isEmpty && fullMessage.toLowerCase().contains("requested for")) {
+       final pattern = RegExp(r"^(.*?)\s+requested for", caseSensitive: false);
+       final match = pattern.firstMatch(fullMessage);
+       if (match != null && match.group(1) != null) {
+          facultyName = match.group(1)!.trim();
+       }
+    }
+    
+    if (facultyName.isEmpty || facultyName.toLowerCase() == "faculty") {
+       facultyName = "Unknown Faculty"; // Fallback to indicate missing data
+    }
+
+    String subjectName = "Subject";
+
     if (isAttendance) {
         if (fullMessage.contains("requests attendance correction for:")) {
            final parts = fullMessage.split("requests attendance correction for:");
@@ -362,6 +386,20 @@ class _NotificationCardState extends State<NotificationCard> {
               details = "Correction on: ${parts[1].trim()}";
               details = details.replaceAll(". Reason:", "\nReason:");
            }
+        }
+    } else if (isSubjectRequest) {
+        // Parse Subject Name safely
+        if (fullMessage.toLowerCase().contains("requested for")) {
+           final pattern = RegExp(r"requested for\s+(.*)", caseSensitive: false);
+           final match = pattern.firstMatch(fullMessage);
+           if (match != null && match.group(1) != null) {
+              subjectName = match.group(1)!.trim();
+              
+              // Remove "the subject" prefix if present
+              subjectName = subjectName.replaceAll(RegExp(r"^the subject\s+", caseSensitive: false), "");
+           }
+        } else {
+           subjectName = fullMessage;
         }
     }
 
@@ -373,42 +411,73 @@ class _NotificationCardState extends State<NotificationCard> {
         }
       },
       child: Container(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12), // Reduced padding
         margin: const EdgeInsets.only(bottom: 15),
         decoration: BoxDecoration(
           color: widget.cardColor,
           borderRadius: BorderRadius.circular(15),
           border: Border.all(color: widget.isSelected ? widget.tint : widget.iconBg, width: widget.isSelected ? 2 : 1),
           boxShadow: [
-            BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 4, offset: const Offset(0, 2)),
+             BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4)),
           ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+             // Header Row
              Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    if (widget.isSelectionMode)
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: Icon(widget.isSelected ? Icons.check_box : Icons.check_box_outline_blank, color: widget.tint),
-                      ),
-                    Icon(item['type'] == 'USER_APPROVAL' ? Icons.person_add : Icons.description, color: widget.tint, size: 24),
-                    const SizedBox(width: 10),
-                    if (status == 'ACCEPTED' || status == 'APPROVED')
-                      const Icon(Icons.check_circle, color: Colors.green, size: 18)
-                    else if (status == 'REJECTED')
-                      const Icon(Icons.cancel, color: Colors.red, size: 18),
-                  ],
+                Expanded(
+                  child: Row(
+                    children: [
+                      if (widget.isSelectionMode)
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Icon(widget.isSelected ? Icons.check_box : Icons.check_box_outline_blank, color: widget.tint),
+                        ),
+                      
+                      // Custom Icon & Title for Subject Request
+                      if (isSubjectRequest) ...[
+                         Icon(Icons.assignment_ind_outlined, color: widget.tint, size: 20), // Smaller Icon
+                         if (isApproved) ...[
+                           const SizedBox(width: 8),
+                           Container(
+                             decoration: const BoxDecoration(color: Colors.green, shape: BoxShape.circle),
+                             padding: const EdgeInsets.all(2),
+                             child: const Icon(Icons.check, size: 10, color: Colors.white),
+                           ),
+                         ],
+                         const SizedBox(width: 8),
+                         Expanded(
+                           child: Text(
+                             "Faculty Course Request",
+                             style: GoogleFonts.poppins(
+                               fontSize: 10, // Reduced to small size per request
+                               fontWeight: FontWeight.bold, 
+                               color: widget.textColor
+                             ),
+                           ),
+                         ),
+                      ] else ...[
+                         // Default Header
+                         Icon(item['type'] == 'USER_APPROVAL' ? Icons.person_add : Icons.description, color: widget.tint, size: 24),
+                         const SizedBox(width: 10),
+                         if (isApproved)
+                           const Icon(Icons.check_circle, color: Colors.green, size: 18)
+                         else if (status == 'REJECTED')
+                           const Icon(Icons.cancel, color: Colors.red, size: 18),
+                      ]
+                    ],
+                  ),
                 ),
+                
+                // Show date for ALL types including subject request
                 Row(
                   children: [
                      Text(
                        "${DateTime.parse(item['createdAt']).day}/${DateTime.parse(item['createdAt']).month}/${DateTime.parse(item['createdAt']).year}",
-                       style: GoogleFonts.poppins(fontSize: 12, color: widget.subTextColor),
+                       style: GoogleFonts.poppins(fontSize: 10, color: widget.subTextColor), // Date size 10
                      ),
                      if (isAttendance)
                         Icon(_expanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down, color: widget.subTextColor)
@@ -416,33 +485,85 @@ class _NotificationCardState extends State<NotificationCard> {
                 )
               ],
             ),
-            const SizedBox(height: 10),
             
-            // Title / Simple Message
-            Text(isAttendance ? title : fullMessage, style: GoogleFonts.poppins(fontSize: 16, color: widget.textColor, height: 1.4, fontWeight: isAttendance ? FontWeight.w600 : FontWeight.normal)),
+            const SizedBox(height: 8), // Reduced spacing
             
-            // Expanded Details
-            if (isAttendance && _expanded && details.isNotEmpty)
-              Container(
-                margin: const EdgeInsets.only(top: 10),
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(color: widget.iconBg.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)),
-                child: Text(details, style: GoogleFonts.poppins(fontSize: 14, color: widget.textColor)),
-              ),
+            // Content
+            if (isSubjectRequest) ...[
+               Text(
+                 facultyName, 
+                 style: GoogleFonts.poppins(fontSize: 12, color: widget.textColor, fontWeight: FontWeight.bold)
+               ),
+               const SizedBox(height: 1),
+               Text(
+                 subjectName,
+                 maxLines: 1, 
+                 overflow: TextOverflow.ellipsis,
+                 style: GoogleFonts.poppins(
+                   fontSize: 12, // Subject Name
+                   fontWeight: FontWeight.normal, 
+                   color: widget.textColor, 
+                 ),
+               ),
+            ] else ...[
+               // Default Content
+               Text(isAttendance ? title : fullMessage, style: GoogleFonts.poppins(fontSize: 14, color: widget.textColor, height: 1.4, fontWeight: isAttendance ? FontWeight.w600 : FontWeight.normal)),
+               if (isAttendance && _expanded && details.isNotEmpty)
+                Container(
+                  margin: const EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(color: widget.iconBg.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)),
+                  child: Text(details, style: GoogleFonts.poppins(fontSize: 14, color: widget.textColor)),
+                ),
+            ],
 
              // Action Buttons
             if (isActionable && !['APPROVED', 'REJECTED', 'ACCEPTED'].contains(status) && !widget.isSelectionMode)
               Padding(
                 padding: const EdgeInsets.only(top: 15),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end, // or Start as per request
                   children: [
-                    _buildActionButton("Reject", Colors.red, () => widget.onAction(item, 'REJECT')),
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: () => widget.onAction(item, 'REJECT'),
+                        style: OutlinedButton.styleFrom(
+                           foregroundColor: Colors.red, 
+                           side: const BorderSide(color: Colors.red),
+                           padding: const EdgeInsets.symmetric(vertical: 12),
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        ),
+                        child: const Text("Reject", style: TextStyle(fontWeight: FontWeight.bold)),
+                      ),
+                    ),
                     const SizedBox(width: 10),
-                    _buildActionButton("Approve", Colors.green, () => widget.onAction(item, 'APPROVE')),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () => widget.onAction(item, 'APPROVE'),
+                        style: ElevatedButton.styleFrom(
+                           backgroundColor: Colors.green, 
+                           padding: const EdgeInsets.symmetric(vertical: 12), 
+                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        ),
+                        child: const Text("Approve", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                      ),
+                    ),
                   ],
                 ),
               ),
+              
+             if (isSubjectRequest && isApproved)
+                Container(
+                  margin: const EdgeInsets.only(top: 15),
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  decoration: BoxDecoration(
+                    color: Colors.green.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
+                  ),
+                  child: Center(child: Text("Approved", style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.bold))),
+                ),
           ],
         ),
       ),
@@ -450,6 +571,7 @@ class _NotificationCardState extends State<NotificationCard> {
   }
   
   Widget _buildActionButton(String label, Color color, VoidCallback onTap) {
+    // Helper not used in new design, but kept if needed for other types
     return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(backgroundColor: color, padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),

@@ -15,6 +15,7 @@ import '../student/student_notifications_screen.dart';
 import '../student/student_marks_screen.dart'; 
 import 'parent_profile_tab.dart'; 
 import 'parent_requests_screen.dart'; 
+import '../../../widgets/custom_bottom_nav_bar.dart'; 
 
 class ParentDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -186,6 +187,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: overlayStyle,
       child: Scaffold(
+        extendBody: true,
         backgroundColor: bgColor,
         body: Container(
           decoration: BoxDecoration(
@@ -219,28 +221,19 @@ class _ParentDashboardState extends State<ParentDashboard> {
             ],
           ),
         ),
-        bottomNavigationBar: Theme(
-          data: Theme.of(context).copyWith(
-            canvasColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
-          ),
-          child: BottomNavigationBar(
-            currentIndex: _selectedIndex,
-            onTap: (index) => setState(() => _selectedIndex = index),
-            backgroundColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
-            selectedItemColor: accentBlue,
-            unselectedItemColor: Colors.grey,
-            type: BottomNavigationBarType.fixed,
-            showUnselectedLabels: true,
-            selectedLabelStyle: GoogleFonts.poppins(fontSize: 10),
-            unselectedLabelStyle: GoogleFonts.poppins(fontSize: 10),
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.school), label: 'Marks'),
-              BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Attendance'),
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(icon: Icon(Icons.assignment_turned_in), label: 'Requests'),
-              BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-            ],
-          ),
+        bottomNavigationBar: CustomBottomNavBar(
+          currentIndex: _selectedIndex,
+          onTap: (index) => setState(() => _selectedIndex = index),
+          selectedItemColor: accentBlue,
+          unselectedItemColor: Colors.grey,
+          backgroundColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.school), label: 'Marks'),
+            BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Attendance'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.assignment_turned_in), label: 'Requests'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          ],
         ),
       ),
     );

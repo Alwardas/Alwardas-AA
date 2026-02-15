@@ -201,7 +201,7 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
 
               Expanded(
                 child: SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding: const EdgeInsets.fromLTRB(20, 10, 20, 120),
                   child: Wrap(
                     spacing: 12,
                     runSpacing: 12,
