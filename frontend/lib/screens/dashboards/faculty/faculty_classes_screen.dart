@@ -144,6 +144,11 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
     }
   }
 
+  void _showSnackBar(String text) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
+  }
+
   // _promptRemoveAll Removed in favor of bulk delete mode
 
   Future<void> _deleteSelectedSubjects() async {
