@@ -11,6 +11,11 @@ import 'faculty_schedule_screen.dart';
 import 'faculty_attendance_screen.dart';
 import 'faculty_profile_screen.dart';
 import 'faculty_notifications_screen.dart';
+import 'faculty_issues_screen.dart';
+import 'faculty_exams_screen.dart';
+import 'faculty_requests_screen.dart';
+import 'faculty_announcements_screen.dart';
+import 'faculty_reviews_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
 
 class FacultyDashboard extends StatefulWidget {
@@ -23,7 +28,7 @@ class FacultyDashboard extends StatefulWidget {
 }
 
 class _FacultyDashboardState extends State<FacultyDashboard> {
-  int _selectedIndex = 2; // Default to Home (Dashboard)
+  int _selectedIndex = 1; // Default to Home (Dashboard)
 
   void _logout() async {
      await AuthService.logout();
@@ -55,10 +60,10 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: overlayStyle,
       child: PopScope(
-        canPop: _selectedIndex == 2,
+        canPop: _selectedIndex == 1,
         onPopInvoked: (didPop) {
           if (didPop) return;
-          setState(() => _selectedIndex = 2);
+          setState(() => _selectedIndex = 1);
         },
         child: Scaffold(
           extendBody: true,
@@ -74,10 +79,8 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
             child: IndexedStack(
               index: _selectedIndex,
               children: [
-                FacultyClassesScreen(onBack: () => setState(() => _selectedIndex = 2)),
-                const FacultyScheduleScreen(),
+                _buildMenuTab(context, isDark, textColor, subTextColor, cardColor),
                 _buildHomeTab(context, isDark, textColor, subTextColor, cardColor),
-                FacultyAttendanceScreen(userData: widget.userData),
                 FacultyProfileScreen(userData: widget.userData),
               ],
             ),
@@ -89,11 +92,9 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
             unselectedItemColor: Colors.grey,
             backgroundColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
             items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.menu_book_outlined), label: 'Classes'),
-              BottomNavigationBarItem(icon: Icon(Icons.schedule), label: 'Schedule'),
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(icon: Icon(Icons.check_circle_outline), label: 'Attendance'),
-              BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
+              BottomNavigationBarItem(icon: Icon(Icons.grid_view_rounded), label: 'Menu'),
+              BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: 'Home'),
+              BottomNavigationBarItem(icon: Icon(Icons.person_rounded), label: 'Profile'),
             ],
           ),
         ),
@@ -257,7 +258,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           const Color(0xFF3b5998),
                           textColor,
                           subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 0),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
                         ),
                         _buildQuickAccessCard(
                           Icons.schedule,
@@ -268,7 +269,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           const Color(0xFF9b59b6),
                           textColor,
                           subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 1),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
                         ),
                         _buildQuickAccessCard(
                           Icons.check_circle_outline,
@@ -279,7 +280,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           const Color(0xFF2ecc71),
                           textColor,
                           subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 3),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyAttendanceScreen(userData: widget.userData))),
                         ),
                         _buildQuickAccessCard(
                           Icons.person_outline,
@@ -290,7 +291,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           const Color(0xFFf1c40f),
                           textColor,
                           subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 4),
+                          onTap: () => setState(() => _selectedIndex = 2),
                         ),
                     ],
                   ),
@@ -471,6 +472,134 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                 subtitle,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Widget _buildMenuTab(BuildContext context, bool isDark, Color textColor, Color subTextColor, Color cardColor) {
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Menu',
+              style: GoogleFonts.poppins(
+                color: textColor,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              'Access all features',
+              style: GoogleFonts.poppins(
+                color: subTextColor,
+                fontSize: 14,
+              ),
+            ),
+            const SizedBox(height: 25),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 15,
+                mainAxisSpacing: 15,
+                childAspectRatio: 1.2,
+                children: [
+                  _buildQuickAccessCard(
+                    Icons.menu_book_outlined,
+                    'Classes',
+                    'Manage',
+                    cardColor,
+                    const Color(0xFF3b5998).withValues(alpha: 0.1),
+                    const Color(0xFF3b5998),
+                    textColor,
+                    subTextColor,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
+                  ),
+                  _buildQuickAccessCard(
+                    Icons.schedule,
+                    'Schedule',
+                    'View',
+                    cardColor,
+                    const Color(0xFF9b59b6).withValues(alpha: 0.1),
+                    const Color(0xFF9b59b6),
+                    textColor,
+                    subTextColor,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
+                  ),
+                  _buildQuickAccessCard(
+                    Icons.check_circle_outline,
+                    'Attendance',
+                    'Post',
+                    cardColor,
+                    const Color(0xFF2ecc71).withValues(alpha: 0.1),
+                    const Color(0xFF2ecc71),
+                    textColor,
+                    subTextColor,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyAttendanceScreen(userData: widget.userData))),
+                  ),
+
+                   _buildQuickAccessCard(
+                    Icons.campaign_outlined,
+                    'Announcements',
+                    'News',
+                    cardColor,
+                    const Color(0xFFF39C12).withValues(alpha: 0.1),
+                    const Color(0xFFF39C12),
+                    textColor,
+                    subTextColor,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyAnnouncementsScreen())),
+                  ),
+                   _buildQuickAccessCard(
+                    Icons.report_problem_outlined,
+                    'Issues',
+                    'Report',
+                    cardColor,
+                    const Color(0xFFE74C3C).withValues(alpha: 0.1),
+                    const Color(0xFFE74C3C),
+                    textColor,
+                    subTextColor,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyIssuesScreen())),
+                  ),
+                   _buildQuickAccessCard(
+                    Icons.assignment_outlined,
+                    'Exams',
+                    'Manage',
+                    cardColor,
+                    const Color(0xFF3498DB).withValues(alpha: 0.1),
+                    const Color(0xFF3498DB),
+                    textColor,
+                    subTextColor,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyExamsScreen())),
+                  ),
+                   _buildQuickAccessCard(
+                    Icons.request_page_outlined,
+                    'Requests',
+                    'Pending',
+                    cardColor,
+                    const Color(0xFF9B59B6).withValues(alpha: 0.1),
+                    const Color(0xFF9B59B6),
+                    textColor,
+                    subTextColor,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyRequestsScreen())),
+                  ),
+                   _buildQuickAccessCard(
+                    Icons.rate_review_outlined,
+                    'Reviews',
+                    'Feedback',
+                    cardColor,
+                    const Color(0xFF1ABC9C).withValues(alpha: 0.1),
+                    const Color(0xFF1ABC9C),
+                    textColor,
+                    subTextColor,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyReviewsScreen())),
+                  ),
+                ],
               ),
             ),
           ],

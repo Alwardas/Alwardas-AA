@@ -14,6 +14,8 @@ import 'coordinator_events_screen.dart';
 import 'coordinator_activities_screen.dart';
 import 'coordinator_requests_screen.dart';
 import 'coordinator_announcements_screen.dart';
+import 'coordinator_issues_screen.dart';
+import 'coordinator_department_screen.dart';
 
 class CoordinatorMenuTab extends StatelessWidget {
   const CoordinatorMenuTab({super.key});
@@ -33,11 +35,10 @@ class CoordinatorMenuTab extends StatelessWidget {
       {'label': 'Faculty Directory', 'icon': Icons.people, 'route': const PrincipalFacultyScreen(), 'color': ThemeColors.accentCyan},
       {'label': 'Master Timetables', 'icon': Icons.access_time, 'route': const PrincipalTimetablesScreen(), 'color': ThemeColors.accentGreen},
       {'label': 'My Schedule', 'icon': Icons.today, 'route': const PrincipalScheduleScreen(), 'color': ThemeColors.accentPurple},
-      {'label': 'HOD Approvals', 'icon': Icons.verified_user_outlined, 'route': const PrincipalRequestsScreen(), 'color': ThemeColors.accentGold},
-      {'label': 'Principal Approvals', 'icon': Icons.admin_panel_settings_outlined, 'route': const CoordinatorRequestsScreen(), 'color': ThemeColors.accentCyan},
       {'label': 'Syllabus Management', 'icon': Icons.book, 'route': const PrincipalLessonPlansScreen(), 'color': ThemeColors.accentGreen},
-      {'label': 'Event Planning', 'icon': Icons.event, 'route': const CoordinatorEventsScreen(), 'color': ThemeColors.accentBlue},
-      {'label': 'Student Activities', 'icon': Icons.sports_basketball, 'route': const CoordinatorActivitiesScreen(), 'color': ThemeColors.accentPurple},
+      {'label': 'Issues', 'icon': Icons.report_problem_outlined, 'route': const CoordinatorIssuesScreen(), 'color': ThemeColors.accentGold},
+      {'label': 'Requests', 'icon': Icons.request_page_outlined, 'route': const CoordinatorRequestsScreen(), 'color': ThemeColors.accentCyan},
+      {'label': 'Departments', 'icon': Icons.business, 'route': const CoordinatorDepartmentScreen(), 'color': ThemeColors.accentBlue},
     ];
 
     return SafeArea(

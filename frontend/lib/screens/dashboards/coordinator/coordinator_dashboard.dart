@@ -1,4 +1,5 @@
 ﻿import 'coordinator_announcement_details_screen.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
@@ -278,7 +279,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                   
                   // Dynamic Announcement List
                   if (_isLoadingAnnouncements) 
-                      const Center(child: CircularProgressIndicator())
+                      _buildAnnouncementsLoadingState(isDark)
                   else
                       Builder(
                         builder: (context) {
@@ -819,6 +820,30 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
             ),
           ],
         ),
+      ),
+    );
+  }
+  Widget _buildAnnouncementsLoadingState(bool isDark) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: List.generate(3, (index) {
+          return Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: Shimmer.fromColors(
+              baseColor: isDark ? const Color(0xFF1E293B) : Colors.grey[300]!,
+              highlightColor: isDark ? const Color(0xFF334155) : Colors.grey[100]!,
+              child: Container(
+                width: 250,
+                height: 90,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+            ),
+          );
+        }),
       ),
     );
   }

@@ -1,4 +1,5 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -31,6 +32,10 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
   };
   Map<String, Map<String, int>> _branchData = {};
   Map<String, bool> _branchCompletionStatus = {};
+  // Cache for total student strength per branch so we don't
+  // keep re-fetching / recalculating it on every refresh.
+  final Map<String, int> _branchTotalStudents = {};
+  bool _hasFetchedTotalsOnce = false;
   
   bool _loadingStats = true;
   DateTime _selectedDate = DateTime.now();
@@ -66,32 +71,51 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
     final date = _selectedDate.toIso8601String();
 
     try {
-      // Run all branch fetches in parallel
-      final List<Map<String, dynamic>> results = await Future.wait(
-        branches.map((branch) => _fetchSingleBranchData(branch, date))
-      );
+      // Fetch branches sequentially to prevent timeouts or dropped connections
+      // for the last branches (ECE, EEE) which often fail in parallel execution
+      final List<Map<String, dynamic>> results = [];
+      for (var branch in branches) {
+        results.add(await _fetchSingleBranchData(branch, date));
+      }
 
       int total = 0;
       int present = 0;
       int absent = 0;
-      Map<String, Map<String, int>> branchStats = {};
-      Map<String, bool> completionStatus = {};
+      final Map<String, Map<String, int>> branchStats = {};
+      final Map<String, bool> completionStatus = {};
 
       for (var result in results) {
         final String branch = result['branch'];
         final Map<String, int> stats = result['stats'];
         final bool isComplete = result['isComplete'];
 
-        total += stats['total']!;
-        present += stats['present']!;
-        absent += stats['absent']!;
-        
-        branchStats[branch] = stats;
+        // Only use the API-provided total once per branch.
+        // After that, keep using the cached strength so that
+        // subsequent refreshes only effectively update
+        // present / absent counts.
+        final int branchTotal;
+        if (_hasFetchedTotalsOnce && _branchTotalStudents.containsKey(branch)) {
+          branchTotal = _branchTotalStudents[branch]!;
+        } else {
+          branchTotal = stats['total'] ?? 0;
+          _branchTotalStudents[branch] = branchTotal;
+        }
+
+        total += branchTotal;
+        present += stats['present'] ?? 0;
+        absent += stats['absent'] ?? 0;
+
+        branchStats[branch] = {
+          'total': branchTotal,
+          'present': stats['present'] ?? 0,
+          'absent': stats['absent'] ?? 0,
+        };
         completionStatus[branch] = isComplete;
       }
 
       if (mounted) {
         setState(() {
+          _hasFetchedTotalsOnce = true;
           _aggregatedStats = {
             'totalStudents': total,
             'totalPresent': present,
@@ -198,9 +222,12 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
     final bgColors = isDark ? ThemeColors.darkBackground : ThemeColors.lightBackground;
     final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
     final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
-    final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
     final iconBg = isDark ? ThemeColors.darkIconBg : ThemeColors.lightIconBg;
     final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
+    
+    // Helper colors for manual Shimmer if needed, though helper widgets handle it
+    final shimmerBase = isDark ? const Color(0xFF1E293B) : Colors.grey[300]!;
+    final shimmerHighlight = isDark ? const Color(0xFF334155) : Colors.grey[100]!;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -245,7 +272,7 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
                   margin: const EdgeInsets.only(bottom: 20),
                   padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
-                    color: cardColor,
+                    color: isDark ? ThemeColors.darkCard : ThemeColors.lightCard,
                     borderRadius: BorderRadius.circular(25),
                     border: Border.all(color: iconBg)
                   ),
@@ -285,111 +312,115 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
                 ),
 
                 // Top Aggregated Stats
-                // Removed global loading check; cards always visible
-                Builder(
-                  builder: (context) {
-                    final bool aggLoading = _loadingStats;
-                    return Row(
-                      children: [
-                          _buildStatCard("Total", _aggregatedStats['totalStudents'].toString(), Colors.blue, isLoading: aggLoading),
-                          const SizedBox(width: 10),
-                          _buildStatCard("Present", _aggregatedStats['totalPresent'].toString(), Colors.green, isLoading: aggLoading),
-                          const SizedBox(width: 10),
-                          _buildStatCard("Absent", _aggregatedStats['totalAbsent'].toString(), Colors.red, isLoading: aggLoading),
-                      ],
-                    );
-                  }
-                ),
+                if (_loadingStats)
+                  Row(
+                    children: [
+                      _buildSkeletonStatCard(isDark),
+                      const SizedBox(width: 10),
+                      _buildSkeletonStatCard(isDark),
+                      const SizedBox(width: 10),
+                      _buildSkeletonStatCard(isDark),
+                    ],
+                  )
+                else
+                  Row(
+                    children: [
+                        _buildStatCard("Total", _aggregatedStats['totalStudents'].toString(), Colors.blue),
+                        const SizedBox(width: 10),
+                        _buildStatCard("Present", _aggregatedStats['totalPresent'].toString(), Colors.green),
+                        const SizedBox(width: 10),
+                        _buildStatCard("Absent", _aggregatedStats['totalAbsent'].toString(), Colors.red),
+                    ],
+                  ),
                 
                 const SizedBox(height: 30),
                 Text("Branch Overview", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 15),
 
                 // Branch Cards List
-                ...branches.map((branch) {
-                   final stats = _branchData[branch] ?? {'total': 0, 'present': 0, 'absent': 0};
-                   final isCompleted = _branchCompletionStatus[branch] ?? false;
-                   
-                   // If total is 0, assume data is still loading or failed (hide 0)
-                   final bool branchLoading = _loadingStats;
-
-                   return GestureDetector(
-                     onTap: () {
-                       Navigator.push(
-                         context, 
-                         MaterialPageRoute(
-                           builder: (_) => HODAttendanceScreen(
-                             forcedBranch: branch,
-                             initialDate: _selectedDate,
-                             initialSession: _selectedSession, // Pass session to HOD screen 
+                if (_loadingStats)
+                   ...List.generate(branches.length, (index) => _buildSkeletonBranchCard(isDark))
+                else
+                  ...branches.map((branch) {
+                     final stats = _branchData[branch] ?? {'total': 0, 'present': 0, 'absent': 0};
+                     final isCompleted = _branchCompletionStatus[branch] ?? false;
+                     
+                     return GestureDetector(
+                       onTap: () {
+                         Navigator.push(
+                           context, 
+                           MaterialPageRoute(
+                             builder: (_) => HODAttendanceScreen(
+                               forcedBranch: branch,
+                               initialDate: _selectedDate,
+                               initialSession: _selectedSession, 
+                             )
                            )
-                         )
-                       );
-                     },
-                     child: Container(
-                       margin: const EdgeInsets.only(bottom: 15),
-                       padding: const EdgeInsets.all(20),
-                       decoration: BoxDecoration(
-                         color: isCompleted ? Colors.green.withValues(alpha: 0.1) : cardColor,
-                         borderRadius: BorderRadius.circular(15),
-                         border: Border.all(color: isCompleted ? Colors.green : iconBg),
-                         boxShadow: [
-                           if(isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5, offset: const Offset(0,2))
-                         ]
-                       ),
-                       child: Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Row(
-                             children: [
-                               // Color Effect Strip
-                               Container(
-                                 width: 4, 
-                                 height: 40,
-                                 decoration: BoxDecoration(
-                                   color: isCompleted ? Colors.green : tint,
-                                   borderRadius: BorderRadius.circular(2),
-                                   boxShadow: [
-                                      BoxShadow(
-                                        color: (isCompleted ? Colors.green : tint).withValues(alpha: 0.5), 
-                                        blurRadius: 6, 
-                                        offset: const Offset(0, 0)
-                                      )
-                                   ]
-                                 ),
-                               ),
-                               const SizedBox(width: 15),
-                               Expanded(
-                                 child: Text(
-                                   branch, 
-                                   style: GoogleFonts.poppins(
-                                     fontSize: 16, 
-                                     fontWeight: FontWeight.bold, 
-                                     color: textColor
+                         );
+                       },
+                       child: Container(
+                         margin: const EdgeInsets.only(bottom: 15),
+                         padding: const EdgeInsets.all(20),
+                         decoration: BoxDecoration(
+                           color: isCompleted ? Colors.green.withValues(alpha: 0.1) : (isDark ? ThemeColors.darkCard : ThemeColors.lightCard),
+                           borderRadius: BorderRadius.circular(15),
+                           border: Border.all(color: isCompleted ? Colors.green : iconBg),
+                           boxShadow: [
+                             if(isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5, offset: const Offset(0,2))
+                           ]
+                         ),
+                         child: Column(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             Row(
+                               children: [
+                                 // Color Effect Strip
+                                 Container(
+                                   width: 4, 
+                                   height: 40,
+                                   decoration: BoxDecoration(
+                                     color: isCompleted ? Colors.green : tint,
+                                     borderRadius: BorderRadius.circular(2),
+                                     boxShadow: [
+                                        BoxShadow(
+                                          color: (isCompleted ? Colors.green : tint).withValues(alpha: 0.5), 
+                                          blurRadius: 6, 
+                                          offset: const Offset(0, 0)
+                                        )
+                                     ]
                                    ),
                                  ),
-                               ),
-                               if (isCompleted)
-                                 const Icon(Icons.check_circle, size: 20, color: Colors.green)
-                               else
-                                 Icon(Icons.arrow_forward_ios, size: 16, color: subTextColor)
-                             ],
-                           ),
-                           // Always show stats row, use loading indicator for values if needed
-                             const SizedBox(height: 15),
-                             Row(
-                               mainAxisAlignment: MainAxisAlignment.spaceAround,
-                               children: [
-                                 _buildMiniStat("Total", stats['total'].toString(), subTextColor, isLoading: branchLoading),
-                                 _buildMiniStat("Present", stats['present'].toString(), Colors.green, isLoading: branchLoading),
-                                 _buildMiniStat("Absent", stats['absent'].toString(), Colors.red, isLoading: branchLoading),
+                                 const SizedBox(width: 15),
+                                 Expanded(
+                                   child: Text(
+                                     branch, 
+                                     style: GoogleFonts.poppins(
+                                       fontSize: 16, 
+                                       fontWeight: FontWeight.bold, 
+                                       color: textColor
+                                     ),
+                                   ),
+                                 ),
+                                 if (isCompleted)
+                                   const Icon(Icons.check_circle, size: 20, color: Colors.green)
+                                 else
+                                   Icon(Icons.arrow_forward_ios, size: 16, color: subTextColor)
                                ],
-                             )
-                           ],
+                             ),
+                               const SizedBox(height: 15),
+                               Row(
+                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                 children: [
+                                   _buildMiniStat("Total", stats['total'].toString(), subTextColor),
+                                   _buildMiniStat("Present", stats['present'].toString(), Colors.green),
+                                   _buildMiniStat("Absent", stats['absent'].toString(), Colors.red),
+                                 ],
+                               )
+                             ],
+                         ),
                        ),
-                     ),
-                   );
-                }),
+                     );
+                  }),
                 
                 const SizedBox(height: 20),
               ],
@@ -400,45 +431,74 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
     );
   }
 
-  Widget _buildMiniStat(String label, String value, Color color, {bool isLoading = false}) {
+  Widget _buildMiniStat(String label, String value, Color color) {
     return Column(
       children: [
-        isLoading 
-          ? SizedBox(
-              width: 20, 
-              height: 20, 
-              child: CircularProgressIndicator(strokeWidth: 2, color: color)
-            )
-          : Text(
-              value == "0" ? "-" : value, 
-              style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: color)
-            ),
+        Text(
+            value == "0" ? "-" : value, 
+            style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: color)
+          ),
         Text(label, style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
       ],
     );
   }
 
-  Widget _buildStatCard(String label, String value, Color color, {bool isLoading = false}) {
+  Widget _buildStatCard(String label, String value, Color color) {
     return Expanded(
       child: Container(
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
         child: Column(
           children: [
-            isLoading 
-              ? const SizedBox(
-                  width: 24, 
-                  height: 24, 
-                  child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white)
-                )
-              : Text(
-                  value == "0" ? "-" : value, 
-                  style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)
-                ), 
+            Text(
+                value == "0" ? "-" : value, 
+                style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)
+              ), 
             Text(label, style: const TextStyle(color: Colors.white70))
           ]
         ),
       ),
     );
   }
+
+  Widget _buildSkeletonStatCard(bool isDark) {
+    final baseColor = isDark ? const Color(0xFF1E293B) : Colors.grey[300]!;
+    final highlightColor = isDark ? const Color(0xFF334155) : Colors.grey[100]!;
+    
+    return Expanded(
+      child: Shimmer.fromColors(
+        baseColor: baseColor,
+        highlightColor: highlightColor,
+        child: Container(
+          height: 80,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSkeletonBranchCard(bool isDark) {
+    final baseColor = isDark ? const Color(0xFF1E293B) : Colors.grey[300]!;
+    final highlightColor = isDark ? const Color(0xFF334155) : Colors.grey[100]!;
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15),
+      child: Shimmer.fromColors(
+        baseColor: baseColor,
+        highlightColor: highlightColor,
+        child: Container(
+          height: 120,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: Colors.grey.withOpacity(0.1)),
+          ),
+        ),
+      ),
+    );
+  }
 }
+

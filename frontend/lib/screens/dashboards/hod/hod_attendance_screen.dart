@@ -78,13 +78,32 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         final String? cached = prefs.getString('hod_attendance_stats');
         final String? cachedOverall = prefs.getString('hod_overall_stats');
         
-        if (cached != null) {
-            final Map<String, dynamic> decoded = Map<String, dynamic>.from(json.decode(cached));
-            if (mounted) setState(() => _detailedStats = decoded);
-        }
-        if (cachedOverall != null) {
-            final Map<String, dynamic> decodedOverlay = Map<String, dynamic>.from(json.decode(cachedOverall));
-            if (mounted) setState(() => _stats = decodedOverlay);
+        // Only load cache if we don't have fresh data yet (initial load)
+        if (mounted && _stats['totalStudents'] == 0) {
+            Map<String, dynamic> decodedStats = {};
+            Map<String, dynamic> decodedOverall = {};
+            
+            if (cached != null) {
+                decodedStats = Map<String, dynamic>.from(json.decode(cached));
+            }
+             if (cachedOverall != null) {
+                decodedOverall = Map<String, dynamic>.from(json.decode(cachedOverall));
+            }
+
+            if (mounted) {
+              setState(() {
+                  if (decodedStats.isNotEmpty) {
+                     decodedStats.forEach((key, value) {
+                        if (_detailedStats.containsKey(key)) {
+                           _detailedStats[key] = value;
+                        }
+                     });
+                  }
+                  if (decodedOverall.isNotEmpty) {
+                      _stats = decodedOverall;
+                  }
+              });
+            }
         }
       } catch (e) {
         debugPrint("Cache Load Error: $e");

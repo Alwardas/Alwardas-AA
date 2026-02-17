@@ -80,3 +80,21 @@ pub async fn get_announcements_handler(
         }
     }
 }
+
+pub async fn get_all_departments_handler(
+    State(data): State<AppState>,
+) -> impl IntoResponse {
+    let result = sqlx::query_as::<_, crate::models::DepartmentTiming>(
+        "SELECT * FROM department_timings"
+    )
+    .fetch_all(&data.pool)
+    .await;
+
+    match result {
+        Ok(departments) => (StatusCode::OK, Json(departments)).into_response(),
+        Err(e) => {
+            eprintln!("Failed to fetch departments: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(json!({"message": "Failed to fetch departments"}))).into_response()
+        }
+    }
+}

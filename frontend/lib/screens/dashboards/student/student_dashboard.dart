@@ -17,6 +17,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:intl/intl.dart';
 import '../../../core/api_constants.dart';
+import 'student_feedback_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
 
 class StudentDashboard extends StatefulWidget {
@@ -29,7 +30,7 @@ class StudentDashboard extends StatefulWidget {
 }
 
 class _StudentDashboardState extends State<StudentDashboard> {
-  int _selectedIndex = 2; // Default to Home (index 2)
+  int _selectedIndex = 1; // Default to Home (index 1)
   List<dynamic> _dashboardAnnouncements = [];
   bool _isLoadingAnnouncements = true;
 
@@ -91,17 +92,17 @@ class _StudentDashboardState extends State<StudentDashboard> {
     final Color subTextColor = theme.colorScheme.secondary;
 
     // Status Bar Logic
-    final bool isHomeTab = _selectedIndex == 2;
+    final bool isHomeTab = _selectedIndex == 1;
     SystemUiOverlayStyle overlayStyle = AppTheme.getAdaptiveOverlayStyle(isHomeTab || isDark);
 
     return PopScope(
-      canPop: _selectedIndex == 2,
+      canPop: _selectedIndex == 1,
       onPopInvoked: (bool didPop) {
         if (didPop) {
           return;
         }
         setState(() {
-          _selectedIndex = 2;
+          _selectedIndex = 1;
         });
       },
       child: AnnotatedRegion<SystemUiOverlayStyle>(
@@ -120,13 +121,8 @@ class _StudentDashboardState extends State<StudentDashboard> {
             child: IndexedStack(
               index: _selectedIndex,
               children: [
-                // Placeholder for MyCoursesScreen
-                MyCoursesScreen(),
-                // Placeholder for TimeTableScreen
-                TimeTableScreen(),
+                _buildMenuTab(context, bgColor, cardColor, accentBlue, textColor, subTextColor),
                 _buildHomeTab(context, bgColor, cardColor, accentBlue, textColor, subTextColor, isDark),
-                // Placeholder for AttendanceScreen
-                AttendanceScreen(userData: widget.userData, onBack: () => setState(() => _selectedIndex = 2)),
                 StudentProfileTab(userData: widget.userData, onLogout: _logout),
               ],
             ),
@@ -138,11 +134,9 @@ class _StudentDashboardState extends State<StudentDashboard> {
             unselectedItemColor: Colors.grey,
             backgroundColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
             items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'My Courses'),
-              BottomNavigationBarItem(icon: Icon(Icons.schedule), label: 'Time Table'),
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Attendance'),
-              BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+              BottomNavigationBarItem(icon: Icon(Icons.grid_view_rounded), label: 'Menu'),
+              BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: 'Home'),
+              BottomNavigationBarItem(icon: Icon(Icons.person_rounded), label: 'Profile'),
             ],
           ),
         ),
@@ -225,11 +219,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                          onTap: () => themeProvider.toggleTheme(),
                          child: _buildHeaderIcon(themeProvider.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round),
                        ),
-                       const SizedBox(width: 10),
-                       GestureDetector(
-                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentNotificationsScreen())),
-                         child: _buildHeaderIcon(Icons.notifications_none),
-                       ),
+
                      ],
                    ),
                  ],
@@ -308,7 +298,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                         const Color(0xFF3b5998),
                         textColor,
                         subTextColor,
-                        onTap: () => setState(() => _selectedIndex = 0),
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => MyCoursesScreen())),
                       ),
                       _buildQuickAccessCard(
                         Icons.calendar_today,
@@ -319,7 +309,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                         const Color(0xFF2ecc71),
                         textColor,
                         subTextColor,
-                        onTap: () => setState(() => _selectedIndex = 3),
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => AttendanceScreen(userData: widget.userData))),
                       ),
                       _buildQuickAccessCard(
                         Icons.schedule,
@@ -330,7 +320,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                         const Color(0xFF9b59b6),
                         textColor,
                         subTextColor,
-                        onTap: () => setState(() => _selectedIndex = 1),
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => TimeTableScreen())),
                       ),
                       _buildQuickAccessCard(
                         Icons.insights,
@@ -547,5 +537,117 @@ class _StudentDashboardState extends State<StudentDashboard> {
 
   Widget _buildPlaceholder(String title, Color textColor) {
      return Center(child: Text(title, style: TextStyle(color: textColor, fontSize: 20)));
+  }
+
+  Widget _buildMenuTab(BuildContext context, Color bgColor, Color cardColor, Color accentBlue, Color textColor, Color subTextColor) {
+    final List<Map<String, dynamic>> menuItems = [
+      {'label': 'My Courses', 'subtitle': '4 Active', 'icon': Icons.menu_book, 'color': const Color(0xFF3b5998), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => MyCoursesScreen()))},
+      {'label': 'Time Table', 'subtitle': '3 Classes', 'icon': Icons.schedule, 'color': const Color(0xFF9b59b6), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => TimeTableScreen()))},
+      {'label': 'Attendance', 'subtitle': 'Check status', 'icon': Icons.calendar_today, 'color': const Color(0xFF2ecc71), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => AttendanceScreen(userData: widget.userData)))},
+      {'label': 'Marks / Results', 'subtitle': 'View Grades', 'icon': Icons.insights, 'color': const Color(0xFFe67e22), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentMarksScreen()))},
+      {'label': 'Issues', 'subtitle': 'Report & Track', 'icon': Icons.report_problem_outlined, 'color': const Color(0xFFE94057), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentCommentsScreen(userData: widget.userData)))},
+      {'label': 'My Feedbacks', 'subtitle': 'Reviews', 'icon': Icons.feedback_outlined, 'color': const Color(0xFF1ABC9C), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentFeedbackScreen()))},
+    ];
+
+    return SafeArea(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Menu',
+                  style: GoogleFonts.poppins(
+                    color: textColor,
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  'Access all features',
+                  style: GoogleFonts.poppins(
+                    color: subTextColor,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              itemCount: menuItems.length,
+              itemBuilder: (context, index) {
+                final item = menuItems[index];
+                return _buildMenuCard(item, cardColor, textColor, subTextColor);
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMenuCard(Map<String, dynamic> item, Color cardColor, Color textColor, Color subTextColor) {
+    return GestureDetector(
+      onTap: item['onTap'],
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.05),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 48,
+              height: 48,
+              decoration: BoxDecoration(
+                color: (item['color'] as Color).withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Icon(item['icon'], color: item['color'], size: 24),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    item['label'],
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: textColor,
+                    ),
+                  ),
+                  Text(
+                    item['subtitle'],
+                    style: GoogleFonts.poppins(
+                      fontSize: 12,
+                      color: subTextColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(Icons.chevron_right, size: 20, color: subTextColor),
+          ],
+        ),
+      ),
+    );
   }
 }
