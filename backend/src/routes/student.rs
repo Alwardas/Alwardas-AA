@@ -121,26 +121,27 @@ pub async fn get_student_courses_handler(
         None => return Err(StatusCode::NOT_FOUND),
     };
 
-    let branch = user.branch.unwrap_or_default();
+    let branch_norm = normalize_branch(&user.branch.unwrap_or_default());
     let year_str = user.year.unwrap_or_default();
     let sem_str = user.semester.unwrap_or_default();
     let section = user.section.unwrap_or_else(|| "Section A".to_string());
 
-    let semester_key = if !sem_str.is_empty() {
-        sem_str.as_str()
-    } else if year_str == "1st Year" {
-        "1st Year"
+    // Normalize Semester Search 
+    // If student is 1st Year, they usually take "1st Year" subjects (common for both sems)
+    let semester_key = if year_str == "1st Year" {
+        "1st Year".to_string()
+    } else if !sem_str.is_empty() {
+        sem_str
     } else {
-        if year_str.contains("3rd Semester") { "3rd Semester" }
-        else if year_str.contains("4th Semester") { "4th Semester" }
-        else if year_str.contains("5th Semester") { "5th Semester" }
-        else if year_str.contains("6th Semester") { "6th Semester" }
-        else { 
-             "1st Year" 
-        }
+        // Fallback guess based on year string
+        if year_str.contains("2nd Year") || year_str.contains("3rd Semester") { "3rd Semester".to_string() }
+        else if year_str.contains("4th Semester") { "4th Semester".to_string() }
+        else if year_str.contains("3rd Year") || year_str.contains("5th Semester") { "5th Semester".to_string() }
+        else if year_str.contains("6th Semester") { "6th Semester".to_string() }
+        else { "1st Year".to_string() }
     };
     
-    println!("DEBUG: Fetching courses for Branch='{}', Semester='{}', Section='{}'", branch, semester_key, section);
+    println!("DEBUG: Fetching courses for Branch='{}', Semester='{}', Section='{}'", branch_norm, semester_key, section);
 
     #[derive(sqlx::FromRow)]
     struct SubjectData {
@@ -163,7 +164,7 @@ pub async fn get_student_courses_handler(
         WHERE s.branch = $1 AND s.semester = $2
         "#
     )
-    .bind(&branch)
+    .bind(&branch_norm)
     .bind(semester_key)
     .bind(section)
     .fetch_all(&state.pool)

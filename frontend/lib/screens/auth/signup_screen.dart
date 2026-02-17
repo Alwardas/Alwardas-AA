@@ -70,6 +70,7 @@ class _SignupScreenState extends State<SignupScreen> {
   
   List<String> _sections = ['Section A']; 
   List<String> _availableSemesters = [];
+  bool _isLoadingSections = false;
 
 
 
@@ -92,18 +93,39 @@ class _SignupScreenState extends State<SignupScreen> {
 
   Future<void> _loadSections() async {
      if (_selectedBranch == null || _selectedYear == null) {
-        setState(() => _sections = ['Section A']); // Default fallback
+        setState(() => _sections = ['Section A']);
         return;
      }
      
-     final prefs = await SharedPreferences.getInstance();
-     // Key format matches HodYearSectionsScreen: 'sections_${branch}_${year}'
-     final key = 'sections_${_selectedBranch}_$_selectedYear';
-     List<String>? stored = prefs.getStringList(key);
+     setState(() => _isLoadingSections = true);
      
-     setState(() {
-       _sections = stored ?? ['Section A']; // User requirement: "by default show only one section" (Section A) unless HOD updated it
-     });
+     try {
+       final uri = Uri.parse('${ApiConstants.baseUrl}/api/sections')
+           .replace(queryParameters: {
+             'branch': _selectedBranch!,
+             'year': _selectedYear!,
+           });
+           
+       final response = await http.get(uri);
+       
+       if (response.statusCode == 200) {
+         final List<dynamic> data = json.decode(response.body);
+         setState(() {
+           _sections = data.map((e) => e.toString()).toList();
+           if (_sections.isEmpty) _sections = ['Section A'];
+           
+           // If current selection is no longer valid, reset it
+           if (_selectedSection != null && !_sections.contains(_selectedSection)) {
+             _selectedSection = null;
+           }
+         });
+       }
+     } catch (e) {
+       debugPrint("Error loading sections: $e");
+       setState(() => _sections = ['Section A']);
+     } finally {
+       setState(() => _isLoadingSections = false);
+     }
   }
 
   bool _otpSent = false;
@@ -541,12 +563,17 @@ class _SignupScreenState extends State<SignupScreen> {
           
         // Section
         if (showSection && _selectedYear != null) // Only show if year selected (which loads sections)
-          CustomModalDropdown(
-            label: 'Section',
-            value: _selectedSection,
-            options: _sections, // Dynamic list
-            onChanged: (val) => setState(() => _selectedSection = val),
-          ),
+          _isLoadingSections 
+            ? const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Center(child: SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))),
+              )
+            : CustomModalDropdown(
+                label: 'Section',
+                value: _selectedSection,
+                options: _sections, // Dynamic list
+                onChanged: (val) => setState(() => _selectedSection = val),
+              ),
           
         // Date of Birth
         if (showDob)
