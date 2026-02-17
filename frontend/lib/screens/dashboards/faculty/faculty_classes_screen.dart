@@ -67,7 +67,13 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
       if (res.statusCode == 200) {
         if (mounted) setState(() => _facultySubjects = json.decode(res.body));
       } else {
-        if (mounted) setState(() => _facultySubjects = []);
+        debugPrint("Failed to fetch subjects: ${res.statusCode} ${res.body}");
+        if (mounted) {
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text('Failed to load courses: Server Error ${res.statusCode}'))
+           );
+           setState(() => _facultySubjects = []);
+        }
       }
     } catch (e) {
       debugPrint("Error fetching subjects: $e");
@@ -411,23 +417,19 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
                             ),
                           ),
                           const SizedBox(width: 8),
-                          Text(
-                            "â€¢",
-                            style: GoogleFonts.poppins(color: subtitleColor.withValues(alpha: 0.5)),
-                          ),
-                          const SizedBox(width: 8),
-                           Expanded(
-                            child: Text(
-                              // Combine Sem, Branch, Section
-                              "Sem ${item['semester'] ?? '?'} â€¢ ${(item['branch'] ?? '').toString().split(' ').first} ${item['section'] != null ? 'â€¢ Sec ${item['section']}' : ''}",
-                              style: GoogleFonts.poppins(
-                                color: subtitleColor,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
+                            Expanded(
+                              child: Text(
+                                // Format: "BRANCH : YEAR : SECTION"
+                                // Example: "CME : 1st Year : Sec A"
+                                "${_getBranchAbbreviation(item['branch'] ?? '')} : ${item['year'] ?? ''} : ${item['section'] ?? ''}",
+                                style: GoogleFonts.poppins(
+                                  color: subtitleColor,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                overflow: TextOverflow.ellipsis,
                               ),
-                              overflow: TextOverflow.ellipsis,
                             ),
-                          ),
                         ],
                       ),
                     ),
@@ -544,6 +546,31 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
         style: GoogleFonts.poppins(color: color, fontWeight: FontWeight.bold, fontSize: 10)
       ),
     );
+  }
+  String _getBranchAbbreviation(dynamic branch) {
+    String b = (branch ?? '').toString().trim();
+    if (b.isEmpty) return "??";
+
+    final map = {
+      'Computer Engineering': 'CME',
+      'Electronics & Communication Engineering': 'ECE',
+      'Electrical & Electronics Engineering': 'EEE',
+      'Mechanical Engineering': 'MECH',
+      'Civil Engineering': 'CIV',
+    };
+    
+    if (map.containsKey(b)) return map[b]!;
+    
+    String upper = b.toUpperCase();
+    if (upper.contains("COMPUTER")) return "CME";
+    if (upper.contains("ELECTRONICS") && upper.contains("COMM")) return "ECE";
+    if (upper.contains("ELECTRI")) return "EEE";
+    if (upper.contains("MECH")) return "MECH";
+    if (upper.contains("CIVIL")) return "CIVIL";
+
+    if (b.length <= 4) return b.toUpperCase();
+
+    return b.substring(0, 3).toUpperCase();
   }
 }
 

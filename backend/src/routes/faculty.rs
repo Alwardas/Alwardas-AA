@@ -59,17 +59,7 @@ pub async fn get_faculty_subjects_handler(
             fs.status,
             fs.subject_id,
             fs.section,
-            COALESCE(
-                (
-                    SELECT CASE 
-                        WHEN COUNT(*) = 0 THEN 0 
-                        ELSE (COUNT(CASE WHEN lpp.completed = TRUE THEN 1 END) * 100 / COUNT(*))
-                    END
-                    FROM lesson_plan_items lpi 
-                    LEFT JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id AND lpp.section = fs.section
-                    WHERE lpi.subject_id::text = fs.subject_id
-                ), 0
-            )::INTEGER as completion_percentage
+            0 as completion_percentage
         FROM faculty_subjects fs
         LEFT JOIN subjects s ON fs.subject_id = s.id::text
         WHERE fs.user_id = $1
