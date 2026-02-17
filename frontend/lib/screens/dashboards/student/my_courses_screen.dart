@@ -55,6 +55,10 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
          if (user['semester'] != null && user['semester'].toString().isNotEmpty && user['semester'] != user['year']) {
              subtitle += " • ${user['semester']}";
          }
+         // Add Section on new line
+         if (user['section'] != null && user['section'].toString().isNotEmpty) {
+             subtitle += "\n${user['section']}";
+         }
          setState(() {
            _headerSubtitle = subtitle;
          });
@@ -142,6 +146,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                 Center(
                    child: Text(
                      _headerSubtitle,
+                     textAlign: TextAlign.center,
                      style: GoogleFonts.poppins(
                        fontSize: 14,
                        color: subHeadingColor,

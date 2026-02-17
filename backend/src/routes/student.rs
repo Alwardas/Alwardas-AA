@@ -159,7 +159,7 @@ pub async fn get_student_courses_handler(
             s.type as subject_type,
             COALESCE(u.full_name, s.faculty_name, 'TBA') as resolved_faculty_name
         FROM subjects s
-        LEFT JOIN faculty_subjects fs ON s.id = fs.subject_id AND fs.status = 'APPROVED' AND fs.section = $3
+        LEFT JOIN faculty_subjects fs ON s.id = fs.subject_id AND fs.branch = s.branch AND fs.status = 'APPROVED' AND fs.section = $3
         LEFT JOIN users u ON fs.user_id = u.id
         WHERE s.branch = $1 AND s.semester = $2
         "#
