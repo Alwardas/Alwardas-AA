@@ -257,6 +257,7 @@ async fn main() {
         .route("/api/principal/approve-hod", post(principal::principal_approve_hod_handler))
         .route("/api/announcement", post(coordinator::create_announcement_handler).get(coordinator::get_announcements_handler))
         .route("/api/departments", get(coordinator::get_all_departments_handler))
+        .route("/api/departments/delete", post(coordinator::delete_department_handler))
         .with_state(AppState { pool })
         .fallback(move |req: axum::extract::Request| {
             let mut grpc_service = grpc_service.clone();

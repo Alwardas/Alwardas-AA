@@ -98,3 +98,33 @@ pub async fn get_all_departments_handler(
         }
     }
 }
+
+pub async fn delete_department_handler(
+    State(data): State<AppState>,
+    Json(payload): Json<serde_json::Value>,
+) -> impl IntoResponse {
+    let branch = payload.get("branch").and_then(|v| v.as_str());
+
+    if let Some(branch_name) = branch {
+        let result = sqlx::query("DELETE FROM department_timings WHERE branch = $1")
+            .bind(branch_name)
+            .execute(&data.pool)
+            .await;
+
+        match result {
+            Ok(res) => {
+                if res.rows_affected() > 0 {
+                    (StatusCode::OK, Json(json!({"message": "Department deleted successfully"}))).into_response()
+                } else {
+                    (StatusCode::NOT_FOUND, Json(json!({"message": "Department not found"}))).into_response()
+                }
+            },
+            Err(e) => {
+                eprintln!("Failed to delete department: {:?}", e);
+                (StatusCode::INTERNAL_SERVER_ERROR, Json(json!({"message": "Failed to delete department"}))).into_response()
+            }
+        }
+    } else {
+        (StatusCode::BAD_REQUEST, Json(json!({"message": "Branch name is required"}))).into_response()
+    }
+}

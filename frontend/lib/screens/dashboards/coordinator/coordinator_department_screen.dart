@@ -65,7 +65,8 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
     setState(() => _isLoading = true);
     try {
       final prefs = await SharedPreferences.getInstance();
-      final String? baseUrl = prefs.getString('api_base_url') ?? 'http://10.0.2.2:3001';
+      // Use production URL as default
+      final String? baseUrl = prefs.getString('api_base_url') ?? 'https://alwardas-aa-production.up.railway.app';
       final url = Uri.parse('$baseUrl/api/departments');
 
       final response = await http.get(url);
@@ -122,6 +123,47 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
 
     if (result == true) {
       _fetchDepartments(); // Refresh list after adding
+    }
+  }
+
+  Future<void> _deleteDepartment(String branchName) async {
+    final prefs = await SharedPreferences.getInstance();
+    final String? baseUrl = prefs.getString('api_base_url') ?? 'https://alwardas-aa-production.up.railway.app'; // Default to Prod
+    
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/api/departments/delete'),
+        headers: {"Content-Type": "application/json"},
+        body: jsonEncode({"branch": branchName}),
+      );
+
+      if (response.statusCode == 200) {
+        if (mounted) {
+           ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("Department '$branchName' deleted successfully")),
+          );
+          _fetchDepartments(); // Refresh to sync
+          
+          // Also remove locally to reflect immediately if it was a hardcoded one that isn't in DB yet? 
+          // Actually, better to just refresh. But for hardcoded ones, they will reappear if not persisted in DB but just hardcoded.
+          // For now assuming we are deleting dynamic ones.
+          setState(() {
+            branches.removeWhere((b) => b['name'] == branchName);
+          });
+        }
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text("Failed to delete: ${response.body}")),
+          );
+        }
+      }
+    } catch (e) {
+      if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text("Error: $e")),
+          );
+      }
     }
   }
 
@@ -219,6 +261,28 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
             ScaffoldMessenger.of(context).showSnackBar(
                SnackBar(content: Text("Selected: ${branch['name']}")),
             );
+          },
+          onLongPress: () {
+             showDialog(
+               context: context,
+               builder: (ctx) => AlertDialog(
+                 title: const Text("Delete Department"),
+                 content: Text("Are you sure you want to delete '${branch['name']}'?"),
+                 actions: [
+                   TextButton(
+                     onPressed: () => Navigator.pop(ctx),
+                     child: const Text("Cancel"),
+                   ),
+                   TextButton(
+                     onPressed: () {
+                       Navigator.pop(ctx);
+                       _deleteDepartment(branch['name']);
+                     },
+                     child: const Text("Delete", style: TextStyle(color: Colors.red)),
+                   ),
+                 ],
+               ),
+             );
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

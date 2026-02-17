@@ -32,7 +32,7 @@ class _CoordinatorAddDepartmentScreenState extends State<CoordinatorAddDepartmen
 
     try {
       final prefs = await SharedPreferences.getInstance();
-      final String? baseUrl = prefs.getString('api_base_url') ?? 'http://10.0.2.2:3001'; 
+      final String? baseUrl = prefs.getString('api_base_url') ?? 'https://alwardas-aa-production.up.railway.app'; 
       
       // Use the existing endpoint for Department Timing which effectively creates/updates a branch configuration
       final url = Uri.parse('$baseUrl/api/department/timing');
