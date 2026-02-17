@@ -1306,4 +1306,80 @@ pub async fn clear_class_handler(
     Ok(StatusCode::OK)
 }
 
+// --- Department Timings ---
+
+pub async fn get_department_timings(
+    State(state): State<AppState>,
+    Query(params): Query<std::collections::HashMap<String, String>>,
+) -> Result<Json<Vec<DepartmentTiming>>, StatusCode> {
+    
+    let result = if let Some(branch) = params.get("branch") {
+         sqlx::query_as::<Postgres, DepartmentTiming>("SELECT * FROM department_timings WHERE branch = $1")
+            .bind(normalize_branch(branch))
+            .fetch_all(&state.pool)
+            .await
+    } else {
+         sqlx::query_as::<Postgres, DepartmentTiming>("SELECT * FROM department_timings")
+            .fetch_all(&state.pool)
+            .await
+    };
+
+    match result {
+        Ok(timings) => Ok(Json(timings)),
+        Err(e) => {
+            eprintln!("Get Department Timings Error: {:?}", e);
+            Err(StatusCode::INTERNAL_SERVER_ERROR)
+        }
+    }
+}
+
+pub async fn update_department_timings(
+    State(state): State<AppState>,
+    Json(payload): Json<serde_json::Value>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let branch = payload.get("branch").and_then(|v| v.as_str()).unwrap_or("");
+    let start_hour = payload.get("start_hour").and_then(|v| v.as_i64()).unwrap_or(9) as i32;
+    let start_minute = payload.get("start_minute").and_then(|v| v.as_i64()).unwrap_or(0) as i32;
+    let class_duration = payload.get("class_duration").and_then(|v| v.as_i64()).unwrap_or(50) as i32;
+    let short_break_duration = payload.get("short_break_duration").and_then(|v| v.as_i64()).unwrap_or(10) as i32;
+    let lunch_duration = payload.get("lunch_duration").and_then(|v| v.as_i64()).unwrap_or(50) as i32;
+    let slot_config = payload.get("slot_config").cloned();
+    let short_code = payload.get("short_code").and_then(|v| v.as_str()); 
+
+    if branch.is_empty() {
+        return Err((StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Branch is required"}))));
+    }
+    
+    let result = sqlx::query(
+        "INSERT INTO department_timings (branch, start_hour, start_minute, class_duration, short_break_duration, lunch_duration, slot_config, short_code)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+         ON CONFLICT (branch) DO UPDATE SET
+            start_hour = EXCLUDED.start_hour,
+            start_minute = EXCLUDED.start_minute,
+            class_duration = EXCLUDED.class_duration,
+            short_break_duration = EXCLUDED.short_break_duration,
+            lunch_duration = EXCLUDED.lunch_duration,
+            slot_config = EXCLUDED.slot_config,
+            short_code = COALESCE(EXCLUDED.short_code, department_timings.short_code)"
+    )
+    .bind(branch) 
+    .bind(start_hour)
+    .bind(start_minute)
+    .bind(class_duration)
+    .bind(short_break_duration)
+    .bind(lunch_duration)
+    .bind(slot_config)
+    .bind(short_code)
+    .execute(&state.pool)
+    .await;
+
+    match result {
+        Ok(_) => Ok(StatusCode::OK),
+        Err(e) => {
+            eprintln!("Update Department Timings Error: {:?}", e);
+            Err((StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to update"}))))
+        }
+    }
+}
+
 

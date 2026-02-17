@@ -39,6 +39,7 @@ class _CoordinatorAddDepartmentScreenState extends State<CoordinatorAddDepartmen
       
       final Map<String, dynamic> body = {
         "branch": _fullNameController.text.trim(),
+        "short_code": _shortCodeController.text.trim(),
         "start_hour": int.tryParse(_startHourController.text) ?? 9,
         "start_minute": int.tryParse(_startMinuteController.text) ?? 0,
         "class_duration": int.tryParse(_classDurationController.text) ?? 50,

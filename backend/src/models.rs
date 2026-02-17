@@ -140,6 +140,7 @@ pub struct DepartmentTiming {
     pub class_duration: i32,
     pub short_break_duration: i32,
     pub lunch_duration: i32,
+    pub short_code: Option<String>,
     pub slot_config: Option<serde_json::Value>, 
 }
 

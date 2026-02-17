@@ -332,7 +332,27 @@ class _FacultyAddSubjectScreenState extends State<FacultyAddSubjectScreen> {
                           itemCount: options.length,
                           itemBuilder: (BuildContext context, int index) {
                             final option = options.elementAt(index);
-                            final isAlreadyAdded = widget.existingSubjects.any((existing) => existing['id'].toString() == option['id'].toString() || existing['subjectId'].toString() == option['id'].toString());
+                            
+                            // CHECK DUPLICATES: Only if Section matches!
+                            // Allows adding same subject to valid different sections (A vs B)
+                            final isAlreadyAdded = widget.existingSubjects.any((existing) {
+                                // ID Match
+                                final exId = existing['subject_id']?.toString() ?? existing['id']?.toString();
+                                final optId = option['id'].toString();
+                                if (exId != optId) return false;
+                                
+                                // Section Match
+                                var exSection = existing['section']?.toString() ?? '';
+                                var curSection = _selectedSection ?? '';
+                                
+                                if (curSection.isEmpty) return false; 
+                                
+                                // Normalize: "Section A" -> "a", "A" -> "a"
+                                exSection = exSection.toLowerCase().replaceAll('section', '').replaceAll(':', '').trim();
+                                curSection = curSection.toLowerCase().replaceAll('section', '').replaceAll(':', '').trim();
+                                
+                                return exSection == curSection;
+                            });
                             
                             return InkWell(
                               onTap: isAlreadyAdded ? null : () => onSelected(option),

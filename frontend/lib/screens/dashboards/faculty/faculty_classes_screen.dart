@@ -421,7 +421,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
                               child: Text(
                                 // Format: "BRANCH : YEAR : SECTION"
                                 // Example: "CME : 1st Year : Sec A"
-                                "${_getBranchAbbreviation(item['branch'] ?? '')} : ${item['year'] ?? ''} : ${item['section'] ?? ''}",
+                                "${_getBranchAbbreviation(item['branch'] ?? '')} : ${item['year'] ?? item['semester'] ?? ''} : ${item['section'] ?? ''}",
                                 style: GoogleFonts.poppins(
                                   color: subtitleColor,
                                   fontSize: 12,
