@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
+import '../../../core/theme/app_theme.dart';
 import 'student_lesson_plan_screen.dart'; // Keep this for navigation
 
 class MyCoursesScreen extends StatefulWidget {
@@ -104,120 +105,136 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
        return type == _selectedFilter;
     }).toList();
     
+    // Ensure gradient covers the entire screen including behind AppBar
     return Scaffold(
-      backgroundColor: Colors.transparent, // Parent gradient visible
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.transparent, 
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: false, // Back button handled manually if needed, or by navigation stack
         title: Text(
           "My Courses",
           style: GoogleFonts.poppins(
             color: headingColor,
             fontWeight: FontWeight.w700,
-            fontSize: 22, // 22-24px
+            fontSize: 22,
           ),
         ),
+        iconTheme: IconThemeData(color: headingColor),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-            // Header Subtitle
-            Center(
-               child: Text(
-                 _headerSubtitle,
-                 style: GoogleFonts.poppins(
-                   fontSize: 14,
-                   color: subHeadingColor,
-                   fontWeight: FontWeight.w500,
-                 ),
-               ),
-            ),
-            
-            const SizedBox(height: 15),
-
-            // Dropdown Filter
-            Padding(
-               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-               child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-                   GestureDetector(
-                     onTap: () => setState(() => _dropdownVisible = !_dropdownVisible),
-                     child: Container(
-                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                       decoration: BoxDecoration(
-                         color: iconBg,
-                         borderRadius: BorderRadius.circular(12),
-                         border: Border.all(color: isDark ? Colors.white10 : Colors.grey.shade300),
-                         boxShadow: [
-                           if (!isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))
-                         ]
-                       ),
-                       child: Row(
-                         mainAxisSize: MainAxisSize.min, // Wrap content
-                         children: [
-                           Text("$_selectedFilter Subjects", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
-                           const SizedBox(width: 10),
-                           Icon(_dropdownVisible ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down, color: textColor)
-                         ],
-                       ),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+                // Header Subtitle
+                Center(
+                   child: Text(
+                     _headerSubtitle,
+                     style: GoogleFonts.poppins(
+                       fontSize: 14,
+                       color: subHeadingColor,
+                       fontWeight: FontWeight.w500,
                      ),
                    ),
-                   if (_dropdownVisible)
-                     Container(
-                       margin: const EdgeInsets.only(top: 8),
-                       width: 200, 
-                       decoration: BoxDecoration(
-                         color: isDark ? const Color(0xFF2C2C2E) : Colors.white,
-                         borderRadius: BorderRadius.circular(12),
-                         boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10, offset: const Offset(0, 5))],
+                ),
+                
+                const SizedBox(height: 15),
+    
+                // Dropdown Filter
+                Padding(
+                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                   child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       GestureDetector(
+                         onTap: () => setState(() => _dropdownVisible = !_dropdownVisible),
+                         child: Container(
+                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                           decoration: BoxDecoration(
+                             color: iconBg,
+                             borderRadius: BorderRadius.circular(12),
+                             border: Border.all(color: isDark ? Colors.white10 : Colors.grey.shade300),
+                             boxShadow: [
+                               if (!isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))
+                             ]
+                           ),
+                           child: Row(
+                             mainAxisSize: MainAxisSize.min, // Wrap content
+                             children: [
+                               Text("$_selectedFilter Subjects", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
+                               const SizedBox(width: 10),
+                               Icon(_dropdownVisible ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down, color: textColor)
+                             ],
+                           ),
+                         ),
                        ),
-                       child: Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: _filterOptions.map((option) {
-                           return InkWell(
-                             onTap: () {
-                               setState(() {
-                                 _selectedFilter = option;
-                                 _dropdownVisible = false;
-                               });
-                             },
-                             child: Container(
-                               width: double.infinity,
-                               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                               decoration: BoxDecoration(
-                                 border: option != _filterOptions.last 
-                                    ? Border(bottom: BorderSide(color: isDark ? Colors.white10 : Colors.grey.shade100))
-                                    : null
-                               ),
-                               child: Text(
-                                 "$option Subjects",
-                                 style: GoogleFonts.poppins(
-                                   color: _selectedFilter == option ? const Color(0xFF4B7FFB) : textColor,
-                                   fontWeight: _selectedFilter == option ? FontWeight.w600 : FontWeight.normal,
+                       if (_dropdownVisible)
+                         Container(
+                           margin: const EdgeInsets.only(top: 8),
+                           width: 200, 
+                           decoration: BoxDecoration(
+                             color: isDark ? const Color(0xFF2C2C2E) : Colors.white,
+                             borderRadius: BorderRadius.circular(12),
+                             boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10, offset: const Offset(0, 5))],
+                           ),
+                           child: Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: _filterOptions.map((option) {
+                               return InkWell(
+                                 onTap: () {
+                                   setState(() {
+                                     _selectedFilter = option;
+                                     _dropdownVisible = false;
+                                   });
+                                 },
+                                 child: Container(
+                                   width: double.infinity,
+                                   padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                                   decoration: BoxDecoration(
+                                     border: option != _filterOptions.last 
+                                        ? Border(bottom: BorderSide(color: isDark ? Colors.white10 : Colors.grey.shade100))
+                                        : null
+                                   ),
+                                   child: Text(
+                                     "$option Subjects",
+                                     style: GoogleFonts.poppins(
+                                       color: _selectedFilter == option ? const Color(0xFF4B7FFB) : textColor,
+                                       fontWeight: _selectedFilter == option ? FontWeight.w600 : FontWeight.normal,
+                                     ),
+                                   ),
                                  ),
-                               ),
-                             ),
-                           );
-                         }).toList(),
-                       ),
-                     ),
-                 ],
-               ),
-            ),
-
-            const SizedBox(height: 10),
-
-            Expanded(
-               child: _isLoading 
-                 ? const Center(child: CircularProgressIndicator())
-                 : displayedCourses.isEmpty 
-                    ? _buildEmptyState(subHeadingColor)
-                    : _buildCourseList(displayedCourses, isDark),
-            ),
-        ],
+                               );
+                             }).toList(),
+                           ),
+                         ),
+                     ],
+                   ),
+                ),
+    
+                const SizedBox(height: 10),
+    
+                Expanded(
+                   child: _isLoading 
+                     ? const Center(child: CircularProgressIndicator())
+                     : displayedCourses.isEmpty 
+                        ? _buildEmptyState(subHeadingColor)
+                        : _buildCourseList(displayedCourses, isDark),
+                ),
+            ],
+          ),
+        ),
       ),
     );
   }

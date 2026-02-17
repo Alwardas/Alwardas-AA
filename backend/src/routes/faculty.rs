@@ -71,7 +71,7 @@ pub async fn get_faculty_subjects_handler(
                 ), 0
             )::INTEGER as completion_percentage
         FROM faculty_subjects fs
-        LEFT JOIN subjects s ON fs.subject_id = s.id
+        LEFT JOIN subjects s ON fs.subject_id = s.id::text
         WHERE fs.user_id = $1
         "#
     )
@@ -757,52 +757,61 @@ pub async fn approve_subject_handler(
         (String::new(), None)
     };
 
-    if is_approved {
-        if !subject_name.is_empty() {
-             if let Some(sec) = section {
+    // If we parsed a subject name, proceed with specific targeting
+    if !subject_name.is_empty() {
+        if is_approved {
+             if let Some(sec) = &section {
                 // Approve SPECIFIC subject and section
+                // Also update others with same name/section to APPROVED if any dupes exist (safeguard)
                 sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND subject_name = $2 AND section = $3 AND status = 'PENDING'")
                     .bind(faculty_uuid)
-                    .bind(subject_name)
+                    .bind(&subject_name)
                     .bind(sec)
                     .execute(&state.pool).await.ok();
              } else {
                 // Fallback for requests without section (Legacy)
-                // This might approve multiple if same name exists in multiple sections (undesirable but handles legacy)
                 sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND subject_name = $2 AND status = 'PENDING'")
                     .bind(faculty_uuid)
-                    .bind(subject_name)
+                    .bind(&subject_name)
                     .execute(&state.pool).await.ok();
              }
         } else {
-            // Fallback: Approve ALL pending (legacy behavior, avoid if possible)
-            sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND status = 'PENDING'")
-                .bind(faculty_uuid)
-                .execute(&state.pool).await.ok();
-        }
-        sqlx::query("UPDATE notifications SET status = 'ACCEPTED' WHERE id = $1").bind(payload.notification_id).execute(&state.pool).await.ok();
-    } else {
-        if !subject_name.is_empty() {
-             if let Some(sec) = section {
+             // Rejection Logic
+             if let Some(sec) = &section {
                  // Reject SPECIFIC subject and section
                  sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_name = $2 AND section = $3 AND status = 'PENDING'")
                     .bind(faculty_uuid)
-                    .bind(subject_name)
+                    .bind(&subject_name)
                     .bind(sec)
                     .execute(&state.pool).await.ok();
              } else {
                  // Reject SPECIFIC subject (all sections pending)
                  sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND subject_name = $2 AND status = 'PENDING'")
                     .bind(faculty_uuid)
-                    .bind(subject_name)
+                    .bind(&subject_name)
                     .execute(&state.pool).await.ok();
              }
-        } else {
-             // Fallback
-             sqlx::query("DELETE FROM faculty_subjects WHERE user_id = $1 AND status = 'PENDING'").bind(faculty_uuid).execute(&state.pool).await.ok();
         }
-        sqlx::query("UPDATE notifications SET status = 'REJECTED' WHERE id = $1").bind(payload.notification_id).execute(&state.pool).await.ok();
+    } else {
+        // Fallback: If we couldn't parse the message, we might be in trouble. 
+        // But for safety, let's not auto-approve everything.
+        // If it was a generic "Review my subjects" request, maybe approve all?
+        // Let's assume explicit subject requests only for now.
+        if is_approved {
+             // DANGEROUS: Approves ALL pending. Only do this if strictly intended.
+             // sqlx::query("UPDATE faculty_subjects SET status = 'APPROVED' WHERE user_id = $1 AND status = 'PENDING'").bind(faculty_uuid).execute(&state.pool).await.ok();
+        }
     }
+
+    // Always update notification status
+    let status_str = if is_approved { "ACCEPTED" } else { "REJECTED" };
+    sqlx::query("UPDATE notifications SET status = $1 WHERE id = $2")
+        .bind(status_str)
+        .bind(payload.notification_id)
+        .execute(&state.pool)
+        .await
+        .ok();
+
     Ok(StatusCode::OK)
 }
 
