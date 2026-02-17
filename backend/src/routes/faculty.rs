@@ -67,7 +67,7 @@ pub async fn get_faculty_subjects_handler(
                     END
                     FROM lesson_plan_items lpi 
                     LEFT JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id AND lpp.section = fs.section
-                    WHERE lpi.subject_id = fs.subject_id
+                    WHERE lpi.subject_id::text = fs.subject_id
                 ), 0
             )::INTEGER as completion_percentage
         FROM faculty_subjects fs
