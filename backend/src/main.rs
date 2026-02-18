@@ -49,7 +49,7 @@ async fn main() {
 
     
     let pool = PgPoolOptions::new()
-        .max_connections(15)
+        .max_connections(50)
         .acquire_timeout(std::time::Duration::from_secs(10)) // Increased timeout
         .connect_with(options.clone())
         .await
