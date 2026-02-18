@@ -238,6 +238,8 @@ pub async fn get_student_lesson_plan_handler(
         StatusCode::INTERNAL_SERVER_ERROR
     })?;
 
+    println!("DEBUG: Found {} items for subject {}", items.len(), subject_id);
+
     let total = items.len();
     let completed = items.iter().filter(|i| i.completed.unwrap_or(false)).count();
     let percentage = if total > 0 { (completed * 100) / total } else { 0 } as i32;
