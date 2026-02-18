@@ -196,7 +196,7 @@ pub async fn get_student_courses_handler(
 pub async fn get_student_lesson_plan_handler(
     State(state): State<AppState>,
     Query(params): Query<LessonPlanQuery>,
-) -> Result<Json<LessonPlanResponse>, StatusCode> {
+) -> Result<Json<LessonPlanResponse>, (StatusCode, Json<serde_json::Value>)> {
     println!("DEBUG: Request for subject_id: {}", params.subject_id);
     let subject_id = params.subject_id.trim();
 
@@ -235,7 +235,7 @@ pub async fn get_student_lesson_plan_handler(
     .await
     .map_err(|e| {
         eprintln!("Lesson Plan Query Error: {:?}", e);
-        StatusCode::INTERNAL_SERVER_ERROR
+        (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()})))
     })?;
 
     println!("DEBUG: Found {} items for subject {}", items.len(), subject_id);
