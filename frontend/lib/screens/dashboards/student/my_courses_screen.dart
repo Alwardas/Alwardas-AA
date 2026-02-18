@@ -313,37 +313,42 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
       statusColor = const Color(0xFFFF4B4B); // Red
     }
     
-    return GestureDetector(
-       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => StudentLessonPlanScreen(
-              subjectId: course['id'] ?? '',
-              subjectName: course['name'] ?? 'Lesson Plan',
-              facultyName: facultyName,
-            ),
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16),
+      decoration: BoxDecoration(
+        color: cardBg,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 15,
+            offset: const Offset(0, 8),
           ),
-        );
-      },
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 16), // Reduced margin
-        padding: const EdgeInsets.all(18), // Reduced padding
-        decoration: BoxDecoration(
-          color: cardBg,
-          borderRadius: BorderRadius.circular(20), // Slightly smaller radius
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.05),
-              blurRadius: 15,
-              offset: const Offset(0, 8),
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Header Row: Course ID and Faculty Name
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(20),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => StudentLessonPlanScreen(
+                  subjectId: course['id'] ?? '',
+                  subjectName: course['name'] ?? 'Lesson Plan',
+                  facultyName: facultyName,
+                ),
+              ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(18),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Header Row: Course ID and Faculty Name
             Row(
               children: [
                 Text(
@@ -441,6 +446,8 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
           ],
         ),
       ),
-    );
+    ),
+  ),
+);
   }
 }

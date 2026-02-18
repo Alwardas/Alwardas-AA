@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class StudentLessonPlanScreen extends StatefulWidget {
   final String subjectId;
@@ -42,9 +43,13 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
     if (user == null) return;
 
     try {
-      final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&userId=${user['id']}'),
-      );
+      final url = '${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&userId=${user['id']}';
+      debugPrint("DEBUG: Fetching Lesson Plan from $url");
+      
+      final response = await http.get(Uri.parse(url));
+      
+      debugPrint("DEBUG: Lesson Plan Response: ${response.statusCode} - ${response.body}");
+
       if (response.statusCode == 200) {
         final decoded = json.decode(response.body);
         if (mounted) {
@@ -64,7 +69,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
           });
         }
       } else {
-        throw Exception('Failed to load lesson plan');
+        throw Exception('Failed to load lesson plan: ${response.statusCode}');
       }
     } catch (e) {
       debugPrint("Error fetching lesson plan: $e");
@@ -147,7 +152,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
           icon: Icon(Icons.arrow_back_ios, color: text, size: 20),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text("Syllabus Tracking", style: GoogleFonts.poppins(color: text, fontWeight: FontWeight.bold, fontSize: 18)),
+        title: Text("Syllabus & Lesson Plan", style: GoogleFonts.poppins(color: text, fontWeight: FontWeight.bold, fontSize: 18)),
         actions: [
             IconButton(
                 icon: Icon(Icons.calendar_today, color: text, size: 20),
@@ -181,7 +186,16 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                       sliver: SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (context, index) {
-                            return _buildLessonItem(_data[index]);
+                            return AnimationConfiguration.staggeredList(
+                              position: index,
+                              duration: const Duration(milliseconds: 375),
+                              child: SlideAnimation(
+                                verticalOffset: 50.0,
+                                child: FadeInAnimation(
+                                  child: _buildLessonItem(_data[index]),
+                                ),
+                              ),
+                            );
                           },
                           childCount: _data.length,
                         ),
@@ -377,7 +391,9 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                              Text(widget.subjectName, style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: text)),
+                              Text(widget.subjectName, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: text)),
+                              const SizedBox(height: 4),
+                              Text(widget.facultyName, style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey[600], fontWeight: FontWeight.w500)),
                               const SizedBox(height: 12),
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -432,8 +448,8 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
     final text = isDark ? Colors.white : const Color(0xFF2D3748);
     final tint = Theme.of(context).primaryColor;
 
-    final isUnit = item['type'] == 'unit';
-    final isUnitEnd = item['type'] == 'unitEnd';
+    final isUnit = item['type'].toString().toLowerCase() == 'unit';
+    final isUnitEnd = item['type'].toString().toLowerCase() == 'unitend';
     final isCompleted = item['completed'] == true;
     
     // Green Water Tinge Effect

@@ -215,7 +215,7 @@ pub async fn get_student_lesson_plan_handler(
     let items = sqlx::query_as::<Postgres, LessonPlanItemResponse>(
         r#"
         SELECT 
-            lpi.id, 
+            lpi.id::TEXT as id, 
             lpi.type, 
             lpi.topic, 
             lpi.text, 
