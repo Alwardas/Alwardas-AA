@@ -383,6 +383,33 @@ pub struct LessonPlanFeedbackResponse {
     pub replied_at: Option<DateTime<Utc>>,
 }
 
+#[derive(Serialize, FromRow)]
+#[serde(rename_all = "camelCase")]
+pub struct StudentFeedbacksResponse {
+    pub id: Uuid,
+    pub rating: i32,
+    #[sqlx(rename = "issue_type")]
+    #[serde(rename = "issueType")]
+    pub issue_type: String,
+    pub comment: String,
+    #[sqlx(rename = "created_at")]
+    #[serde(rename = "createdAt")]
+    pub created_at: DateTime<Utc>,
+    pub reply: Option<String>,
+    #[sqlx(rename = "replied_at")]
+    #[serde(rename = "repliedAt")]
+    pub replied_at: Option<DateTime<Utc>>,
+    
+    // Joined fields
+    pub topic: Option<String>,
+    #[sqlx(rename = "subject_code")]
+    #[serde(rename = "subjectCode")]
+    pub subject_code: Option<String>, 
+    #[sqlx(rename = "subject_name")]
+    #[serde(rename = "subjectName")]
+    pub subject_name: Option<String>,
+}
+
 #[derive(Deserialize)]
 pub struct ReplyFeedbackRequest {
     #[serde(rename = "feedbackId")]

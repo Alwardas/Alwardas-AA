@@ -400,6 +400,36 @@ pub async fn get_lesson_plan_feedback_handler(
     Ok(Json(feedbacks))
 }
 
+pub async fn get_student_all_feedbacks_handler(
+    State(state): State<AppState>,
+    Query(params): Query<ProfileQuery>,
+) -> Result<Json<Vec<StudentFeedbacksResponse>>, (StatusCode, Json<serde_json::Value>)> {
+    
+    let feedbacks = sqlx::query_as::<Postgres, StudentFeedbacksResponse>(
+        r#"
+        SELECT 
+            lpf.id, lpf.rating, lpf.issue_type, lpf.comment, lpf.created_at, lpf.reply, lpf.replied_at,
+            lpi.topic,
+            s.id as subject_code,
+            s.name as subject_name
+        FROM lesson_plan_feedback lpf
+        LEFT JOIN lesson_plan_items lpi ON lpf.lesson_plan_item_id = lpi.id
+        LEFT JOIN subjects s ON lpi.subject_id = s.id
+        WHERE lpf.user_id = $1
+        ORDER BY lpf.created_at DESC
+        "#
+    )
+    .bind(params.user_id)
+    .fetch_all(&state.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Get All Feedbacks Error: {:?}", e);
+        (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to fetch feedbacks"})))
+    })?;
+
+    Ok(Json(feedbacks))
+}
+
 // --- Issues ---
 
 pub async fn submit_issue_handler(

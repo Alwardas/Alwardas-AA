@@ -211,6 +211,7 @@ async fn main() {
         .route("/api/student/lesson-plan", get(student::get_student_lesson_plan_handler))
         .route("/api/student/lesson-plan/feedback", post(student::submit_lesson_plan_feedback_handler).get(student::get_lesson_plan_feedback_handler))
         .route("/api/student/lesson-plan/feedback/:id", axum::routing::delete(student::delete_lesson_plan_feedback_handler))
+        .route("/api/student/feedbacks", get(student::get_student_all_feedbacks_handler))
         .route("/api/issues/submit", post(student::submit_issue_handler))
         .route("/api/issues", get(student::get_student_issues_handler))
         .route("/api/user/request-update", post(student::request_profile_update_handler))
