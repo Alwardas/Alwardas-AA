@@ -117,7 +117,7 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
            _fetchLessonPlan(); // Refresh data
            _showSnackBar(newStatus ? "Topic marked as Completed!" : "Topic marked as Incomplete.");
         } else {
-           _showSnackBar("Failed to update status.");
+           _showSnackBar("Failed: ${response.body}");
         }
       } catch(e) {
         _showSnackBar("Error: $e");

@@ -156,10 +156,12 @@ pub async fn remove_faculty_subject_handler(
 pub async fn mark_lesson_plan_complete_handler(
     State(state): State<AppState>,
     Json(payload): Json<MarkCompleteRequest>,
-) -> Result<StatusCode, StatusCode> {
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
     let now = if payload.completed { Some(Utc::now()) } else { None };
-    // let item_uuid = Uuid::parse_str(&payload.item_id).map_err(|_| StatusCode::BAD_REQUEST)?; // Removed UUID restriction
+    // let item_uuid = Uuid::parse_str(&payload.item_id).map_err(|_| StatusCode::BAD_REQUEST)?;
     let section = payload.section.unwrap_or_else(|| "Section A".to_string());
+
+    println!("DEBUG: Marking item {} as completed: {} for section {}", payload.item_id, payload.completed, section);
 
     let _ = sqlx::query("INSERT INTO lesson_plan_progress (item_id, section, completed, completed_date) VALUES ($1, $2, $3, $4) ON CONFLICT (item_id, section) DO UPDATE SET completed = EXCLUDED.completed, completed_date = EXCLUDED.completed_date")
         .bind(&payload.item_id)
@@ -170,7 +172,7 @@ pub async fn mark_lesson_plan_complete_handler(
         .await
         .map_err(|e| {
             eprintln!("Mark Complete Error: {:?}", e);
-            StatusCode::INTERNAL_SERVER_ERROR
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()})))
         })?;
 
     Ok(StatusCode::OK)
