@@ -280,6 +280,9 @@ pub struct StudentCourse {
     pub credits: i32,
     pub progress: i32,
     pub subject_type: String,
+    pub faculty_email: Option<String>,
+    pub faculty_phone: Option<String>,
+    pub faculty_department: Option<String>,
 }
 
 #[derive(Serialize)]

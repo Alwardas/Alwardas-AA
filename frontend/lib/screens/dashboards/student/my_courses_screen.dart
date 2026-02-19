@@ -298,6 +298,9 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
     final progress = course['progress'] ?? 0;
     final facultyName = course['facultyName'] ?? course['faculty_name'] ?? 'TBA';
+    final facultyEmail = course['facultyEmail'];
+    final facultyPhone = course['facultyPhone'];
+    final facultyDept = course['facultyDepartment'];
     
     // Status Logic
     String statusText;
@@ -362,14 +365,22 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                 ),
                 const SizedBox(width: 8),
                 Expanded(
-                  child: Text(
-                    facultyName,
-                    style: GoogleFonts.poppins(
-                      color: subtitleColor,
-                      fontSize: 12, // Smaller font
-                      fontWeight: FontWeight.w500,
+                  child: GestureDetector(
+                    onTap: () {
+                      if (facultyName != 'TBA') {
+                        _showFacultyDetails(context, facultyName, facultyDept, facultyEmail, facultyPhone);
+                      }
+                    },
+                    child: Text(
+                      facultyName,
+                      style: GoogleFonts.poppins(
+                        color: subtitleColor,
+                        fontSize: 12, // Smaller font
+                        fontWeight: FontWeight.w500,
+                        decoration: facultyName != 'TBA' ? TextDecoration.underline : null,
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],
@@ -449,5 +460,54 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
     ),
   ),
 );
+  }
+
+
+  void _showFacultyDetails(BuildContext context, String name, String? dept, String? email, String? phone) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Text("Faculty Details", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildDetailRow(Icons.person, "Name", name),
+            const SizedBox(height: 10),
+            _buildDetailRow(Icons.business, "Department", dept ?? "N/A"),
+            const SizedBox(height: 10),
+            _buildDetailRow(Icons.email, "Email", email ?? "N/A"),
+            const SizedBox(height: 10),
+            _buildDetailRow(Icons.phone, "Phone", phone ?? "N/A"),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text("Close", style: GoogleFonts.poppins()),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDetailRow(IconData icon, String label, String value) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Icon(icon, size: 20, color: Colors.blueAccent),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(label, style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
+              Text(value, style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500)),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }

@@ -149,6 +149,9 @@ pub async fn get_student_courses_handler(
         name: String,
         subject_type: String,
         resolved_faculty_name: Option<String>,
+        faculty_email: Option<String>,
+        faculty_phone: Option<String>,
+        faculty_department: Option<String>,
     }
 
     let subjects = sqlx::query_as::<_, SubjectData>(
@@ -157,7 +160,10 @@ pub async fn get_student_courses_handler(
             s.id, 
             s.name, 
             s.type as subject_type,
-            COALESCE(u.full_name, s.faculty_name, 'TBA') as resolved_faculty_name
+            COALESCE(u.full_name, s.faculty_name, 'TBA') as resolved_faculty_name,
+            u.email as faculty_email,
+            u.phone_number as faculty_phone,
+            u.branch as faculty_department
         FROM subjects s
         LEFT JOIN faculty_subjects fs ON s.id = fs.subject_id AND fs.branch = s.branch AND fs.status = 'APPROVED' AND fs.section = $3
         LEFT JOIN users u ON fs.user_id = u.id
@@ -185,6 +191,9 @@ pub async fn get_student_courses_handler(
             credits,
             progress,
             subject_type: s.subject_type,
+            faculty_email: s.faculty_email,
+            faculty_phone: s.faculty_phone,
+            faculty_department: s.faculty_department,
         }
     }).collect();
 
