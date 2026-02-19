@@ -158,11 +158,11 @@ pub async fn mark_lesson_plan_complete_handler(
     Json(payload): Json<MarkCompleteRequest>,
 ) -> Result<StatusCode, StatusCode> {
     let now = if payload.completed { Some(Utc::now()) } else { None };
-    let item_uuid = Uuid::parse_str(&payload.item_id).map_err(|_| StatusCode::BAD_REQUEST)?;
+    // let item_uuid = Uuid::parse_str(&payload.item_id).map_err(|_| StatusCode::BAD_REQUEST)?; // Removed UUID restriction
     let section = payload.section.unwrap_or_else(|| "Section A".to_string());
 
     let _ = sqlx::query("INSERT INTO lesson_plan_progress (item_id, section, completed, completed_date) VALUES ($1, $2, $3, $4) ON CONFLICT (item_id, section) DO UPDATE SET completed = EXCLUDED.completed, completed_date = EXCLUDED.completed_date")
-        .bind(item_uuid)
+        .bind(&payload.item_id)
         .bind(section)
         .bind(payload.completed)
         .bind(now)
