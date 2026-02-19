@@ -107,7 +107,7 @@ async fn main() {
     // FORCE FIX SCHEMA - LESSON PLAN PROGRESS
     let _ = sqlx::query("
         CREATE TABLE IF NOT EXISTS lesson_plan_progress (
-            item_id UUID REFERENCES lesson_plan_items(id) ON DELETE CASCADE,
+            item_id TEXT REFERENCES lesson_plan_items(id) ON DELETE CASCADE,
             section VARCHAR(50),
             completed BOOLEAN DEFAULT FALSE,
             completed_date TIMESTAMPTZ,
