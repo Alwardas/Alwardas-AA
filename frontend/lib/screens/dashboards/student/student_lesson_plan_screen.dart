@@ -741,18 +741,18 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                                          spacing: 12,
                                          runSpacing: 12,
                                          children: [
-                                           _buildChip("DONE", _issueType == 'DONE', tint, (selected) {
+                                           _buildChip("DONE", _issueType == 'DONE', Colors.green, (selected) {
                                               setState(() {
                                                   _issueType = 'DONE';
                                               });
                                            }),
-                                           _buildChip("NOT UNDERSTOOD", _issueType == 'NOT_UNDERSTOOD', tint, (selected) {
+                                           _buildChip("NOT UNDERSTOOD", _issueType == 'NOT_UNDERSTOOD', Colors.orange, (selected) {
                                               setState(() {
                                                   _issueType = 'NOT_UNDERSTOOD';
                                                   if(_rating > 3) _rating = 3; // Clamp max
                                               });
                                            }),
-                                           _buildChip("NOT DONE", _issueType == 'NOT_DONE', tint, (selected) {
+                                           _buildChip("NOT DONE", _issueType == 'NOT_DONE', Colors.red, (selected) {
                                               setState(() {
                                                   _issueType = 'NOT_DONE';
                                                   if(_rating > 2) _rating = 2; // Clamp max
@@ -904,12 +904,13 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
           // debugPrint("DEBUG: Not me. MyID: $_currentUserId, CommentUserID: ${comment['userId']}");
       }
       
-      // Calculate if editable (<= 15 mins)
+      // Calculate if editable (<= 5 mins) and deletable (<= 24 hours)
       bool isEditable = false;
+      bool isDeletable = false;
       if (isMe && createdAt != null) {
           final diff = DateTime.now().difference(createdAt);
-          isEditable = diff.inMinutes <= 15;
-          // debugPrint("DEBUG: Diff minutes: ${diff.inMinutes}, Editable: $isEditable");
+          isEditable = diff.inMinutes <= 5;
+          isDeletable = diff.inHours <= 24;
       }
 
       return Container(
@@ -932,7 +933,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                                Text("Me", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: ThemeColors.lightTint)), 
                                Padding(
                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                 child: Text("â€¢", style: TextStyle(color: Colors.grey[600])),
+                                 child: Text("•", style: TextStyle(color: Colors.grey[600])),
                                ),
                            ],
 
@@ -943,7 +944,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                           
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Text("â€¢", style: TextStyle(color: Colors.grey[600])),
+                            child: Text("•", style: TextStyle(color: Colors.grey[600])),
                           ),
 
                           // 3. Issue Type / Tag
@@ -964,8 +965,8 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                           // 4. Date
                           Text(dateStr, style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey)),
                           
-                          // 5. More Options (Edit/Delete) if editable
-                          if (isEditable)
+                          // 5. More Options (Edit/Delete)
+                          if (isEditable || isDeletable)
                              PopupMenuButton<String>(
                                  icon: Icon(Icons.more_vert, size: 18, color: Colors.grey),
                                  onSelected: (value) {
@@ -981,7 +982,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                                             // Let's implement Delete + Re-posted as simple edit for now if backend doesn't support update.
                                             // Or better: _deleteComment(comment['id']) then let user write.
                                             // Actually, let's keep it simple: Show alert "Edit feature coming soon" or implement delete.
-                                            // The user request: "able to delete... able to modify... within 15 mins"
+                                            // The user request: "able to delete... able to modify... within 5 mins"
                                          });
                                          // For "Edit", we need to handle the update logic. 
                                          // Since I haven't added update endpoint yet, I'll Delete the old one and let them Submit a new one.
@@ -991,14 +992,16 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                                      }
                                  },
                                  itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                                     const PopupMenuItem<String>(
-                                         value: 'edit',
-                                         child: Text('Edit'),
-                                     ),
-                                     const PopupMenuItem<String>(
-                                         value: 'delete',
-                                         child: Text('Delete', style: TextStyle(color: Colors.red)),
-                                     ),
+                                     if (isEditable)
+                                         const PopupMenuItem<String>(
+                                             value: 'edit',
+                                             child: Text('Edit'),
+                                         ),
+                                     if (isDeletable)
+                                         const PopupMenuItem<String>(
+                                             value: 'delete',
+                                             child: Text('Delete', style: TextStyle(color: Colors.red)),
+                                         ),
                                  ],
                              )
                       ],
@@ -1206,7 +1209,7 @@ class _AIExplanationModalState extends State<AIExplanationModal> {
      if(mounted) {
        setState(() {
          _loading = false;
-         _explanation = "AI-Generated Explanation for '${widget.topic}':\n\nThis topic covers essential concepts that form the building blocks of this subject. An understanding of these principles is crucial for mastering more advanced topics. \n\nKey Points:\nâ€¢ Core definitions and properties.\nâ€¢ Practical applications in real-world scenarios.\nâ€¢ Relationship with other units in the syllabus."; 
+         _explanation = "AI-Generated Explanation for '${widget.topic}':\n\nThis topic covers essential concepts that form the building blocks of this subject. An understanding of these principles is crucial for mastering more advanced topics. \n\nKey Points:\n• Core definitions and properties.\n• Practical applications in real-world scenarios.\n• Relationship with other units in the syllabus."; 
        });
      }
   }

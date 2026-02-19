@@ -275,8 +275,8 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
           const SizedBox(height: 10),
           if (isProfile) ...[
              const Text("Changes:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
-             if (item['newFullName'] != null) Text("â€¢ Name: ${item['newFullName']}", style: TextStyle(color: textColor)),
-             if (item['newBranch'] != null) Text("â€¢ Branch: ${item['newBranch']}", style: TextStyle(color: textColor)),
+             if (item['newFullName'] != null) Text("• Name: ${item['newFullName']}", style: TextStyle(color: textColor)),
+             if (item['newBranch'] != null) Text("• Branch: ${item['newBranch']}", style: TextStyle(color: textColor)),
           ] else ...[
              Text(item['message'] ?? '', style: GoogleFonts.poppins(color: textColor, fontStyle: FontStyle.italic)),
           ],

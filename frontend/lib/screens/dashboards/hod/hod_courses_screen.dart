@@ -351,7 +351,7 @@ class __AddSubjectModalState extends State<_AddSubjectModal> {
                 return ListTile(
                   contentPadding: EdgeInsets.zero,
                   title: Text("${item['code']} - ${item['name']}", style: TextStyle(color: isAdded ? subTextColor : textColor, fontWeight: FontWeight.w600)),
-                  subtitle: Text("${item['branch']} â€¢ ${item['semester']}", style: TextStyle(color: subTextColor, fontSize: 12)),
+                  subtitle: Text("${item['branch']} • ${item['semester']}", style: TextStyle(color: subTextColor, fontSize: 12)),
                   trailing: isAdded
                       ? const Icon(Icons.check_circle, color: Colors.green)
                       : Icon(isSelected ? Icons.check_box : Icons.check_box_outline_blank, color: isSelected ? tint : subTextColor),

@@ -303,17 +303,19 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
     final facultyDept = course['facultyDepartment'];
     
     // Status Logic
-    String statusText;
+    String statusText = course['status'] ?? 'On Track';
     Color statusColor;
-    if (progress > 85) {
+    
+    // Normalize status text
+    if (statusText.toLowerCase() == 'overfast') {
       statusText = "Overfast";
       statusColor = Colors.orange;
-    } else if (progress >= 30) {
-      statusText = "On Track";
-      statusColor = const Color(0xFF34C759); // Green
-    } else {
+    } else if (statusText.toLowerCase() == 'lagging') {
       statusText = "Lagging";
       statusColor = const Color(0xFFFF4B4B); // Red
+    } else {
+      statusText = "On Track";
+      statusColor = const Color(0xFF34C759); // Green
     }
     
     return Container(

@@ -304,7 +304,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
         title: Column(
           children: [
             Text("Class Timetable", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 16)),
-            Text("${widget.year} â€¢ ${widget.branch} â€¢ Sec ${widget.section}", style: GoogleFonts.poppins(fontSize: 10, color: subTextColor))
+            Text("${widget.year} • ${widget.branch} • Sec ${widget.section}", style: GoogleFonts.poppins(fontSize: 10, color: subTextColor))
           ],
         ),
         backgroundColor: Colors.transparent,

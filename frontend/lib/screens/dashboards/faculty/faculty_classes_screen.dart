@@ -400,7 +400,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Header Row: Code â€¢ Semester â€¢ Branch â€¢ Section
+                  // Header Row: Code • Semester • Branch • Section
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

@@ -143,7 +143,9 @@ pub async fn get_student_courses_handler(
     
     println!("DEBUG: Fetching courses for Branch='{}', Semester='{}', Section='{}'", branch_norm, semester_key, section);
 
-    #[derive(sqlx::FromRow)]
+    println!("DEBUG: Fetching courses for Branch='{}', Semester='{}', Section='{}'", branch_norm, semester_key, section);
+
+    #[derive(sqlx::FromRow, Debug)]
     struct SubjectData {
         id: String,
         name: String,
@@ -172,7 +174,7 @@ pub async fn get_student_courses_handler(
     )
     .bind(&branch_norm)
     .bind(semester_key)
-    .bind(section)
+    .bind(&section)
     .fetch_all(&state.pool)
     .await
     .map_err(|e| {
@@ -180,11 +182,47 @@ pub async fn get_student_courses_handler(
         StatusCode::INTERNAL_SERVER_ERROR
     })?;
 
-    let courses: Vec<StudentCourse> = subjects.into_iter().enumerate().map(|(i, s)| {
-        let progress = ((s.name.len() * 7 + i * 13) % 70 + 30) as i32;
-        let credits = if s.name.len() % 2 == 0 { 4 } else { 3 };
-        
-        StudentCourse {
+    let mut courses = Vec::new();
+
+    for s in subjects {
+        // Calculate Progress & Status per subject
+        // Count total items
+        let total_items: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM lesson_plan_items WHERE subject_id = $1")
+            .bind(&s.id)
+            .fetch_one(&state.pool)
+            .await
+            .unwrap_or(0);
+
+        // Count completed items for this section
+        let completed_items: i64 = sqlx::query_scalar(
+            "SELECT COUNT(*) FROM lesson_plan_items lpi 
+             JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id 
+             WHERE lpi.subject_id = $1 AND lpp.section = $2 AND lpp.completed = TRUE"
+        )
+        .bind(&s.id)
+        .bind(&section)
+        .fetch_one(&state.pool)
+        .await
+        .unwrap_or(0);
+
+        let progress = if total_items > 0 {
+            (completed_items * 100) / total_items
+        } else {
+            0
+        } as i32;
+
+        let expected_progress = 30; // Mock expectation for now, can be dynamic later
+        let status = if progress < expected_progress - 10 {
+            "Lagging".to_string()
+        } else if progress > expected_progress + 10 {
+            "Overfast".to_string()
+        } else {
+            "On Track".to_string()
+        };
+
+        let credits = if s.name.len() % 2 == 0 { 4 } else { 3 }; // Existing logic
+
+        courses.push(StudentCourse {
             id: s.id,
             name: s.name,
             faculty_name: s.resolved_faculty_name.unwrap_or("TBA".to_string()),
@@ -194,8 +232,9 @@ pub async fn get_student_courses_handler(
             faculty_email: s.faculty_email,
             faculty_phone: s.faculty_phone,
             faculty_department: s.faculty_department,
-        }
-    }).collect();
+            status: Some(status),
+        });
+    }
 
     Ok(Json(courses))
 }
@@ -317,8 +356,8 @@ pub async fn delete_lesson_plan_feedback_handler(
          }
          
          let diff = Utc::now().signed_duration_since(created_at);
-         if diff.num_minutes() > 15 {
-              return Err((StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Cannot delete feedback after 15 minutes"}))));
+         if diff.num_hours() > 24 {
+              return Err((StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Cannot delete feedback after 24 hours"}))));
          }
 
          sqlx::query("DELETE FROM lesson_plan_feedback WHERE id = $1")

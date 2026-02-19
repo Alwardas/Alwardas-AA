@@ -283,6 +283,7 @@ pub struct StudentCourse {
     pub faculty_email: Option<String>,
     pub faculty_phone: Option<String>,
     pub faculty_department: Option<String>,
+    pub status: Option<String>,
 }
 
 #[derive(Serialize)]

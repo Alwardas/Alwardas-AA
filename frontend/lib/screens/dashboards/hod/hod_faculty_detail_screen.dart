@@ -299,7 +299,7 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(subjectName, style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
-                      Text("$branch â€¢ $sem", style: TextStyle(fontSize: 13, color: Colors.grey)),
+                      Text("$branch • $sem", style: TextStyle(fontSize: 13, color: Colors.grey)),
                     ],
                   ),
                 ),

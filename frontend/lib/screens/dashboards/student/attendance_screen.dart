@@ -1083,7 +1083,7 @@ class _TrackRequestsSheetState extends State<TrackRequestsSheet> {
                                   ),
                                   const SizedBox(height: 10),
                                   Text("Dates:", style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 14)),
-                                  ...datesInfo.map((d) => Text("â€¢ ${d['date']} (${d['session']})", style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey[700]))),
+                                  ...datesInfo.map((d) => Text("• ${d['date']} (${d['session']})", style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey[700]))),
                                   const SizedBox(height: 10),
                                   Text("Reason: ${item['reason']}", style: GoogleFonts.poppins(fontSize: 14, fontStyle: FontStyle.italic)),
                                 ],

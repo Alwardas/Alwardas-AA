@@ -530,7 +530,7 @@ class _UserListItem extends StatelessWidget {
                           if (user['branch'] != null) ...[
                             const SizedBox(width: 8),
                             Text(
-                              "â€¢  ${user['branch']}",
+                              "•  ${user['branch']}",
                               style: TextStyle(fontSize: 11, color: subTextColor),
                             ),
                           ]
