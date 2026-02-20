@@ -68,6 +68,23 @@ async fn main() {
     
     // FORCE FIX SCHEMA
     println!("🔧 Attempting to force-fix schema...");
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS announcements (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            title VARCHAR(255) NOT NULL,
+            description TEXT NOT NULL,
+            type VARCHAR(50) NOT NULL,
+            audience TEXT[] NOT NULL,
+            priority VARCHAR(50) NOT NULL,
+            start_date TIMESTAMPTZ NOT NULL,
+            end_date TIMESTAMPTZ NOT NULL,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+            is_pinned BOOLEAN NOT NULL DEFAULT FALSE,
+            attachment_url VARCHAR(255),
+            creator_id UUID NOT NULL
+        )
+    ").execute(&pool).await.map_err(|e| eprintln!("Force Fix Announcements Failed: {:?}", e));
+
     let _ = sqlx::query("ALTER TABLE attendance ADD COLUMN IF NOT EXISTS section VARCHAR(50) DEFAULT 'Section A'")
         .execute(&pool)
         .await
