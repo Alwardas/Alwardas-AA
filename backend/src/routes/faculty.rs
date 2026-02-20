@@ -214,6 +214,62 @@ pub async fn reply_to_feedback_handler(
     }
 }
 
+
+// --- Faculty Feedback ---
+
+#[derive(serde::Deserialize)]
+pub struct FacultyFeedbackQuery {
+    #[serde(rename = "facultyId")]
+    pub faculty_id: Uuid,
+}
+
+#[derive(serde::Serialize, sqlx::FromRow)]
+pub struct FacultyFeedbackResponse {
+    pub id: Uuid,
+    pub rating: Option<i32>,
+    pub comment: Option<String>,
+    pub reply: Option<String>,
+    #[sqlx(rename = "createdAt")]
+    pub created_at: Option<chrono::DateTime<chrono::Utc>>,
+    #[sqlx(rename = "subjectName")]
+    pub subject_name: Option<String>,
+    pub topic: Option<String>,
+}
+
+pub async fn get_faculty_feedbacks_handler(
+    State(state): State<AppState>,
+    Query(params): Query<FacultyFeedbackQuery>,
+) -> Result<Json<Vec<FacultyFeedbackResponse>>, StatusCode> {
+    let feedbacks = sqlx::query_as::<Postgres, FacultyFeedbackResponse>(
+        r#"
+         SELECT 
+             lpf.id, 
+             lpf.rating, 
+             lpf.comment, 
+             lpf.reply, 
+             lpf.created_at as "createdAt", 
+             s.name as "subjectName", 
+             lpi.topic 
+         FROM lesson_plan_feedback lpf
+         JOIN lesson_plan_items lpi ON lpf.lesson_plan_item_id = lpi.id::text
+         JOIN subjects s ON lpi.subject_id = s.id::text
+         JOIN users u ON lpf.user_id = u.id
+         JOIN faculty_subjects fs ON fs.subject_id = s.id::text AND fs.section = u.section
+         WHERE fs.user_id = $1
+         ORDER BY lpf.created_at DESC
+        "#
+    )
+    .bind(params.faculty_id)
+    .fetch_all(&state.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Fetch Faculty Feedback Error: {:?}", e);
+        StatusCode::INTERNAL_SERVER_ERROR
+    })?;
+
+    Ok(Json(feedbacks))
+}
+
 // --- Students View ---
 
 pub async fn get_students_handler(

@@ -128,3 +128,73 @@ pub async fn delete_department_handler(
         (StatusCode::BAD_REQUEST, Json(json!({"message": "Branch name is required"}))).into_response()
     }
 }
+
+pub async fn delete_announcement_handler(
+    State(data): State<AppState>,
+    Json(payload): Json<serde_json::Value>,
+) -> impl IntoResponse {
+    let id_str = payload.get("id").and_then(|v| v.as_str());
+
+    if let Some(id_str) = id_str {
+        if let Ok(announcement_id) = Uuid::parse_str(id_str) {
+            let result = sqlx::query("DELETE FROM announcements WHERE id = $1")
+                .bind(announcement_id)
+                .execute(&data.pool)
+                .await;
+
+            match result {
+                Ok(res) => {
+                    if res.rows_affected() > 0 {
+                        (StatusCode::OK, Json(json!({"message": "Announcement deleted successfully"}))).into_response()
+                    } else {
+                        (StatusCode::NOT_FOUND, Json(json!({"message": "Announcement not found"}))).into_response()
+                    }
+                },
+                Err(e) => {
+                    eprintln!("Failed to delete announcement: {:?}", e);
+                    (StatusCode::INTERNAL_SERVER_ERROR, Json(json!({"message": "Failed to delete announcement"}))).into_response()
+                }
+            }
+        } else {
+            (StatusCode::BAD_REQUEST, Json(json!({"message": "Invalid announcement ID format"}))).into_response()
+        }
+    } else {
+        (StatusCode::BAD_REQUEST, Json(json!({"message": "Announcement ID is required"}))).into_response()
+    }
+}
+
+pub async fn pin_announcement_handler(
+    State(data): State<AppState>,
+    Json(payload): Json<serde_json::Value>,
+) -> impl IntoResponse {
+    let id_str = payload.get("id").and_then(|v| v.as_str());
+    let is_pinned = payload.get("isPinned").and_then(|v| v.as_bool()).unwrap_or(false);
+
+    if let Some(id_str) = id_str {
+        if let Ok(announcement_id) = Uuid::parse_str(id_str) {
+            let result = sqlx::query("UPDATE announcements SET is_pinned = $1 WHERE id = $2")
+                .bind(is_pinned)
+                .bind(announcement_id)
+                .execute(&data.pool)
+                .await;
+
+            match result {
+                Ok(res) => {
+                    if res.rows_affected() > 0 {
+                        (StatusCode::OK, Json(json!({"message": "Announcement pinned status updated successfully"}))).into_response()
+                    } else {
+                        (StatusCode::NOT_FOUND, Json(json!({"message": "Announcement not found"}))).into_response()
+                    }
+                },
+                Err(e) => {
+                    eprintln!("Failed to update announcement pin status: {:?}", e);
+                    (StatusCode::INTERNAL_SERVER_ERROR, Json(json!({"message": "Failed to update announcement pin status"}))).into_response()
+                }
+            }
+        } else {
+            (StatusCode::BAD_REQUEST, Json(json!({"message": "Invalid announcement ID format"}))).into_response()
+        }
+    } else {
+        (StatusCode::BAD_REQUEST, Json(json!({"message": "Announcement ID is required"}))).into_response()
+    }
+}

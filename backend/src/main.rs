@@ -230,6 +230,7 @@ async fn main() {
         .route("/api/faculty/lesson-plan/complete", post(faculty::mark_lesson_plan_complete_handler))
         .route("/api/faculty/lesson-plan/feedback/reply", post(faculty::reply_to_feedback_handler))
         .route("/api/faculty/by-branch", get(faculty::get_faculty_by_branch_handler))
+        .route("/api/faculty/feedbacks", get(faculty::get_faculty_feedbacks_handler))
         .route("/api/students", get(faculty::get_students_handler))
         .route("/api/students/create", post(faculty::create_student_handler))
         .route("/api/students/bulk-create", post(faculty::bulk_create_students_handler))

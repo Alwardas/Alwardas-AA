@@ -136,8 +136,8 @@ pub async fn signup_handler(
 
     // NEW USER -> INSERT
     let row = sqlx::query(
-            "INSERT INTO users (full_name, role, login_id, password_hash, branch, year, phone_number, dob, is_approved, experience, email, semester, batch_no, section) 
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8::DATE, $9, $10, $11, $12, $13, $14) 
+            "INSERT INTO users (full_name, role, login_id, password_hash, branch, year, phone_number, dob, is_approved, experience, email, semester, batch_no, section, title) 
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8::DATE, $9, $10, $11, $12, $13, $14, $15) 
              RETURNING id"
         )
         .bind(&payload.full_name)
@@ -154,6 +154,7 @@ pub async fn signup_handler(
         .bind(&final_semester)
         .bind(&final_batch)
         .bind(&section)
+        .bind(&payload.title)
         .fetch_one(&state.pool)
         .await;
 

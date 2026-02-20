@@ -65,6 +65,7 @@ pub struct SignupRequest {
     pub email: Option<String>,
     pub semester: Option<String>,
     pub batch_no: Option<String>,
+    pub title: Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
