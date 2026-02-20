@@ -195,7 +195,7 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
                   children: [
                     _buildCoursesTab(context),
                     _buildPlaceholderTab(context, Icons.bar_chart, "Attendance Stats", "Faculty attendance records and statistics."),
-                    _buildPlaceholderTab(context, Icons.comment, "Comments", "Notes and remarks regarding this faculty member."),
+                    _buildCommentsTab(context),
                     _buildPlaceholderTab(context, Icons.schedule, "Weekly Schedule", "Detailed time table for the week."),
                   ],
                 ),
@@ -310,6 +310,114 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
         );
       },
     );
+  }
+
+  Widget _buildCommentsTab(BuildContext context) {
+    return FutureBuilder<List<dynamic>>(
+      future: _fetchFacultyFeedback(),
+      builder: (context, snapshot) {
+         if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+         }
+         if (snapshot.hasError) {
+            return Center(child: Text("Error: ${snapshot.error}"));
+         }
+         
+         final feedbacks = snapshot.data ?? [];
+         
+         if (feedbacks.isEmpty) {
+            return _buildPlaceholderTab(context, Icons.chat_bubble_outline, "No Comments", "No feedback available for this faculty.");
+         }
+         
+         final isDark = Provider.of<ThemeProvider>(context).isDarkMode;
+         final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
+         final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
+         final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
+
+         return ListView.separated(
+            padding: const EdgeInsets.all(20),
+            itemCount: feedbacks.length,
+            separatorBuilder: (ctx, index) => const SizedBox(height: 15),
+            itemBuilder: (ctx, index) {
+               final item = feedbacks[index];
+               // format date
+               // item['createdAt']
+               
+               return Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                      color: cardColor,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)],
+                  ),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                  Text(item['subjectName'] ?? 'Subject', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 14, color: textColor)),
+                                  // Rating
+                                  Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                      decoration: BoxDecoration(
+                                          color: _getRatingColor(item['rating'] ?? 0).withValues(alpha: 0.1),
+                                          borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      child: Row(
+                                          children: [
+                                              Icon(Icons.star, size: 14, color: _getRatingColor(item['rating'] ?? 0)),
+                                              const SizedBox(width: 4),
+                                              Text("${item['rating'] ?? 0}", style: TextStyle(fontWeight: FontWeight.bold, color: _getRatingColor(item['rating'] ?? 0))),
+                                          ],
+                                      ),
+                                  ),
+                              ],
+                          ),
+                          const SizedBox(height: 8),
+                          Text(item['comment'] ?? '', style: GoogleFonts.poppins(fontSize: 13, color: textColor)),
+                          if (item['reply'] != null) ...[
+                             const SizedBox(height: 8),
+                             Container(
+                                 padding: const EdgeInsets.all(8),
+                                 decoration: BoxDecoration(
+                                     color: isDark ? Colors.black26 : Colors.grey[100],
+                                     borderRadius: BorderRadius.circular(8),
+                                 ),
+                                 child: Row(
+                                     children: [
+                                         const Icon(Icons.reply, size: 14, color: Colors.blue),
+                                         const SizedBox(width: 8),
+                                         Expanded(child: Text("Reply: ${item['reply']}", style: TextStyle(fontSize: 12, color: subTextColor, fontStyle: FontStyle.italic))),
+                                     ], 
+                                 ),
+                             ),
+                          ]
+                      ],
+                  ),
+               );
+            },
+         );
+      },
+    );
+  }
+
+  Future<List<dynamic>> _fetchFacultyFeedback() async {
+      try {
+          final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/faculty/feedbacks?facultyId=${widget.faculty.id}'));
+          if (response.statusCode == 200) {
+              return json.decode(response.body);
+          }
+      } catch (e) {
+          debugPrint("Error fetching feedback: $e");
+      }
+      return [];
+  }
+  
+  Color _getRatingColor(int rating) {
+      if (rating >= 4) return Colors.green;
+      if (rating >= 2) return Colors.orange;
+      return Colors.red;
   }
 
   Widget _buildPlaceholderTab(BuildContext context, IconData icon, String title, String subtitle) {

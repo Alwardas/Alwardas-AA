@@ -207,8 +207,11 @@ class _CoordinatorAnnouncementsScreenState extends State<CoordinatorAnnouncement
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-             Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorCreateAnnouncementScreen()));
+        onPressed: () async {
+             final result = await Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorCreateAnnouncementScreen()));
+             if (result == true) {
+                 _fetchAnnouncements();
+             }
         },
         backgroundColor: Colors.blueAccent,
         child: const Icon(Icons.add, color: Colors.white),
@@ -399,23 +402,66 @@ class _CoordinatorAnnouncementsScreenState extends State<CoordinatorAnnouncement
                  ListTile(
                    leading: Icon(Icons.push_pin, color: isDark ? Colors.white : Colors.black),
                    title: Text(announcement.isPinned ? 'Unpin Announcement' : 'Pin Announcement', style: TextStyle(color: isDark ? Colors.white : Colors.black)),
-                   onTap: () {
-                     // Toggle Pin Logic Mock
+                   onTap: () async {
                      Navigator.pop(ctx);
-                   },
-                 ),
-                 ListTile(
-                   leading: const Icon(Icons.edit_note, color: Colors.blue),
-                   title: Text('Move to Draft', style: TextStyle(color: isDark ? Colors.white : Colors.black)),
-                   onTap: () {
-                     Navigator.pop(ctx);
+                     try {
+                        final body = {
+                           "id": announcement.id,
+                           "isPinned": !announcement.isPinned
+                        };
+                        final response = await http.post(
+                          Uri.parse('${ApiConstants.baseUrl}/api/announcement/pin'),
+                          headers: {'Content-Type': 'application/json'},
+                          body: jsonEncode(body),
+                        );
+                            if (!context.mounted) return;
+                        if (response.statusCode == 200) {
+                           _fetchAnnouncements();
+                        } else {
+                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Failed to update pin status: ${response.body}')));
+                        }
+                     } catch(e) {
+                         if (!context.mounted) return;
+                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e')));
+                     }
                    },
                  ),
                  ListTile(
                    leading: const Icon(Icons.delete, color: Colors.red),
                    title: const Text('Delete', style: TextStyle(color: Colors.red)),
-                   onTap: () {
+                   onTap: () async {
                      Navigator.pop(ctx);
+                     bool confirm = await showDialog(
+                         context: context,
+                         builder: (context) => AlertDialog(
+                             backgroundColor: isDark ? const Color(0xFF1E293B) : Colors.white,
+                             title: Text('Delete Announcement?', style: TextStyle(color: isDark ? Colors.white : Colors.black)),
+                             content: Text('This action cannot be undone.', style: TextStyle(color: isDark ? Colors.grey : Colors.black54)),
+                             actions: [
+                                 TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
+                                 TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('Delete', style: TextStyle(color: Colors.red))),
+                             ]
+                         )
+                     ) ?? false;
+                     
+                     if (confirm) {
+                         try {
+                            final response = await http.post(
+                              Uri.parse('${ApiConstants.baseUrl}/api/announcement/delete'),
+                              headers: {'Content-Type': 'application/json'},
+                              body: jsonEncode({"id": announcement.id}),
+                            );
+                            if (!context.mounted) return;
+                            if (response.statusCode == 200) {
+                               _fetchAnnouncements();
+                            } else {
+                               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Failed to delete: ${response.body}')));
+                            }
+                         } catch(e) {
+                             if (!context.mounted) return;
+                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e')));
+                         }
+                     }
                    },
                  ),
                  const SizedBox(height: 20),
@@ -508,7 +554,7 @@ class _CoordinatorAnnouncementsScreenState extends State<CoordinatorAnnouncement
                          ),
                          Text(
                              "${DateFormat('hh:mm a').format(announcement.startDate)} • $timeText",
-                             style: GoogleFonts.poppins(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w500),
+                             style: GoogleFonts.poppins(color: timeColor, fontSize: 12, fontWeight: FontWeight.w500),
                          )
                       ],
                     )

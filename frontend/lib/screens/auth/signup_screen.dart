@@ -62,6 +62,9 @@ class _SignupScreenState extends State<SignupScreen> {
     '2nd Year',
     '3rd Year',
   ];
+  
+  final List<String> _titles = ['Ms', 'Mr', 'Mrs', 'Mx', 'Prof'];
+  String? _selectedTitle;
 
   String? _selectedBranch;
   String? _selectedYear;
@@ -216,7 +219,7 @@ class _SignupScreenState extends State<SignupScreen> {
     );
     if (picked != null) {
       setState(() {
-        _dobController.text = "${picked.year}-${picked.month.toString().padLeft(2, '0')}-${picked.day.toString().padLeft(2, '0')}";
+        _dobController.text = "${picked.day.toString().padLeft(2, '0')}/${picked.month.toString().padLeft(2, '0')}/${picked.year}";
       });
     }
   }
@@ -248,6 +251,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
       final Map<String, dynamic> payload = {
           'full_name': _fullNameController.text,
+          'title': _selectedTitle,
           'role': _selectedRole,
           'login_id': finalLoginId,
           'password': _passwordController.text,
@@ -255,7 +259,11 @@ class _SignupScreenState extends State<SignupScreen> {
           'year': _selectedYear,
           'semester': _selectedSemester, // New field 
           'phone_number': _phoneController.text.isNotEmpty ? _phoneController.text : null,
-          'dob': _dobController.text.isNotEmpty ? _dobController.text : null,
+          'dob': _dobController.text.isNotEmpty 
+              ? (_dobController.text.contains('/') 
+                  ? "${_dobController.text.split('/')[2]}-${_dobController.text.split('/')[1]}-${_dobController.text.split('/')[0]}" 
+                  : _dobController.text) 
+              : null,
           'experience': _experienceController.text,
           'email': _emailController.text,
           'section': _selectedSection, 
@@ -370,8 +378,19 @@ class _SignupScreenState extends State<SignupScreen> {
 
                if (data['phone'] != null) _phoneController.text = data['phone'];
                if (data['email'] != null) _emailController.text = data['email'];
-               if (data['dob'] != null) _dobController.text = data['dob'];
-               if (data['experience'] != null) _experienceController.text = data['experience'].toString(); 
+               if (data['dob'] != null) {
+                  try {
+                      final parts = data['dob'].toString().split('-');
+                      if (parts.length == 3) {
+                          _dobController.text = "${parts[2]}/${parts[1]}/${parts[0]}";
+                      } else {
+                          _dobController.text = data['dob'];
+                      }
+                  } catch (_) {
+                       _dobController.text = data['dob'];
+                  }
+               }
+               if (data['experience'] != null) _experienceController.text = data['experience'].toString();  
                if (data['section'] != null) _selectedSection = data['section']; 
                
                // Trigger updates
@@ -470,7 +489,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
              const SizedBox(height: 5),
              const SizedBox(height: 5),
-            Text("Format: 12345-BRANCH-123 (Check for existing record)", style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
+
         ]
       ],
     );
@@ -506,6 +525,17 @@ class _SignupScreenState extends State<SignupScreen> {
 
     return Column(
       children: [
+        CustomModalDropdown(
+          label: 'Title',
+          value: _selectedTitle,
+          options: _titles,
+          onChanged: (val) {
+            setState(() {
+              _selectedTitle = val;
+            });
+          },
+        ),
+        
         CustomTextField(
           label: 'Full Name', 
           placeholder: 'Enter Full Name', 
@@ -579,11 +609,19 @@ class _SignupScreenState extends State<SignupScreen> {
         if (showDob)
           CustomTextField(
             label: 'Date of Birth',
-            placeholder: 'YYYY-MM-DD',
+            placeholder: 'DD/MM/YYYY',
             controller: _dobController,
-            readOnly: true,
-            onTap: () => _selectDate(context),
-            suffixIcon: const Icon(Icons.calendar_today, color: Color(0xFF666666)),
+            readOnly: _userFound,
+            keyboardType: TextInputType.number,
+            inputFormatters: [
+               FilteringTextInputFormatter.allow(RegExp(r'[0-9/]')),
+               LengthLimitingTextInputFormatter(10),
+               DateTextFormatter(),
+            ],
+            suffixIcon: IconButton(
+               icon: const Icon(Icons.calendar_today, color: Color(0xFF666666)),
+               onPressed: _userFound ? null : () => _selectDate(context),
+            ),
           ),
           
         if (showProfessional) ...[
@@ -888,6 +926,67 @@ class StudentIdFormatter extends TextInputFormatter {
     return TextEditingValue(
       text: finalResult,
       selection: TextSelection.collapsed(offset: finalResult.length),
+    );
+  }
+}
+
+class DateTextFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+    
+    // Allow deletion
+    if (newValue.text.length < oldValue.text.length) {
+      return newValue;
+    }
+
+    String text = newValue.text.replaceAll(RegExp(r'[^0-9]'), '');
+    
+    // Prevent typing more than 8 digits
+    if (text.length > 8) return oldValue;
+
+    final buffer = StringBuffer();
+    
+    for (int i = 0; i < text.length; i++) {
+        int digit = int.parse(text[i]);
+        
+        // Validate Day (First 2 digits)
+        if (i == 0) {
+           if (digit > 3) return oldValue; // First digit of day max 3
+        }
+        if (i == 1) {
+           int day = int.parse(text.substring(0, 2));
+           if (day == 0 || day > 31) return oldValue; // Day must be 01-31
+        }
+        
+        // Validate Month (Next 2 digits)
+        if (i == 2) {
+           if (digit > 1) return oldValue; // First digit of month max 1
+        }
+        if (i == 3) {
+           int month = int.parse(text.substring(2, 4));
+           if (month == 0 || month > 12) return oldValue; // Month must be 01-12
+        }
+        
+        buffer.write(text[i]);
+
+        // Add slash after Day and Month
+        // Add slash only if we have typed the full segment or moving to next
+        // Logic: if index is 1 (end of day) and we are continuing, add slash. 
+        // Or if we just finished typing 2nd char.
+        if (i == 1 || i == 3) {
+            buffer.write('/');
+        }
+    }
+    
+    String finalString = buffer.toString();
+    
+    // Handle edge case where slash might be added but we want to allow typing to continue cleanly?
+    // Actually standard behavior is fine.
+    
+    return TextEditingValue(
+        text: finalString,
+        selection: TextSelection.collapsed(offset: finalString.length),
     );
   }
 }

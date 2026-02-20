@@ -153,7 +153,7 @@ class _StudentFeedbackScreenState extends State<StudentFeedbackScreen> {
                           Text(
                              item['topic'] ?? 'Unknown Topic',
                              style: GoogleFonts.poppins(
-                                 fontSize: 16,
+                                 fontSize: 12,
                                  fontWeight: FontWeight.w600,
                                  color: textColor,
                              ),

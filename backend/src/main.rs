@@ -68,6 +68,8 @@ async fn main() {
     
     // FORCE FIX SCHEMA
     println!("🔧 Attempting to force-fix schema...");
+    let _ = sqlx::query("DELETE FROM announcements WHERE title ILIKE '%Fixed Schema Test%' OR title ILIKE '%Local Test%'")
+        .execute(&pool).await.map_err(|e| eprintln!("Delete test announcements failed: {:?}", e));
     let _ = sqlx::query("
         CREATE TABLE IF NOT EXISTS announcements (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
