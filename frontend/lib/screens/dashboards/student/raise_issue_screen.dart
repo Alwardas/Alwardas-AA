@@ -26,11 +26,14 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
   bool _isSubmitting = false;
 
   final List<String> _categories = ['Attendance', 'Marks', 'Academic', 'Other'];
-  final List<String> _targets = ['Faculty', 'HOD', 'Principal', 'Coordinator'];
+  final List<String> _targets = ['HOD', 'Principal', 'Coordinator', 'Parent', 'Course Faculty', 'Branch Faculty'];
 
   // Dynamic Faculty Dropdown Support
   List<dynamic> _studentCourses = [];
   bool _isLoadingCourses = false;
+
+  List<dynamic> _branchFaculties = [];
+  bool _isLoadingBranchFaculties = false;
   
   // For multiple select
   List<String> _selectedFaculties = [];
@@ -39,6 +42,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
   void initState() {
     super.initState();
     _fetchStudentCourses();
+    _fetchBranchFaculties();
   }
 
   Future<void> _fetchStudentCourses() async {
@@ -62,11 +66,31 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
     }
   }
 
+  Future<void> _fetchBranchFaculties() async {
+    final branch = widget.userData['branch'] ?? 'All';
+
+    setState(() => _isLoadingBranchFaculties = true);
+    try {
+      final response = await http.get(
+        Uri.parse('${ApiConstants.facultyByBranch}?branch=$branch'),
+      );
+      if (response.statusCode == 200) {
+        setState(() {
+          _branchFaculties = json.decode(response.body);
+        });
+      }
+    } catch (e) {
+      debugPrint("Error fetching branch faculties: $e");
+    } finally {
+      if (mounted) setState(() => _isLoadingBranchFaculties = false);
+    }
+  }
+
   Future<void> _submitIssue() async {
     if (!_formKey.currentState!.validate()) return;
     
     // Validate Faculty Multiple Selection
-    if (_selectedTarget == 'Faculty' && _selectedFaculties.isEmpty) {
+    if ((_selectedTarget == 'Course Faculty' || _selectedTarget == 'Branch Faculty') && _selectedFaculties.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Please select at least one faculty member.")),
       );
@@ -80,7 +104,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
 
     // If Faculty selected, append names to the description so backend can see it implicitly inside Description or Category
     String finalDescription = _descriptionController.text;
-    if (_selectedTarget == 'Faculty' && _selectedFaculties.isNotEmpty) {
+    if ((_selectedTarget == 'Course Faculty' || _selectedTarget == 'Branch Faculty') && _selectedFaculties.isNotEmpty) {
       finalDescription = 'Target Faculties: ${_selectedFaculties.join(", ")}\n\n$finalDescription';
     }
 
@@ -126,7 +150,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
     }
   }
 
-  // A simple build method for multiple selection chips for Faculty
+  // A simple build method for multiple selection chips for Course Faculty
   Widget _buildFacultyMultiSelect(Color cardColor, Color textColor, Color subTextColor) {
     if (_isLoadingCourses) {
       return const Padding(
@@ -164,7 +188,79 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 10),
-        Text("Select Faculty (Multiple Allowed)", style: GoogleFonts.poppins(color: subTextColor, fontSize: 13)),
+        Text("Select Course Faculty (Multiple Allowed)", style: GoogleFonts.poppins(color: subTextColor, fontSize: 13)),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 8.0,
+          runSpacing: 8.0,
+          children: uniqueFaculties.map((faculty) {
+            final isSelected = _selectedFaculties.contains(faculty);
+            return FilterChip(
+              label: Text(faculty, style: GoogleFonts.poppins(color: isSelected ? Colors.white : textColor, fontSize: 13)),
+              selected: isSelected,
+              selectedColor: theme.primaryColor,
+              backgroundColor: cardColor,
+              checkmarkColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+                side: BorderSide(color: isSelected ? theme.primaryColor : subTextColor.withOpacity(0.3)),
+              ),
+              onSelected: (bool selected) {
+                setState(() {
+                  if (selected) {
+                    _selectedFaculties.add(faculty);
+                  } else {
+                    _selectedFaculties.remove(faculty);
+                  }
+                });
+              },
+            );
+          }).toList(),
+        ),
+        const SizedBox(height: 10),
+      ],
+    );
+  }
+
+  // A simple build method for multiple selection chips for Branch Faculty
+  Widget _buildBranchFacultyMultiSelect(Color cardColor, Color textColor, Color subTextColor) {
+    if (_isLoadingBranchFaculties) {
+      return const Padding(
+        padding: EdgeInsets.symmetric(vertical: 10),
+        child: Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    if (_branchFaculties.isEmpty) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Text("No branch faculties found.", style: GoogleFonts.poppins(color: Colors.red)),
+      );
+    }
+
+    // Extract unique faculty names
+    final Set<String> uniqueFaculties = {};
+    for (var faculty in _branchFaculties) {
+      final fname = faculty['fullName'] ?? faculty['full_name'] ?? 'Unknown';
+      if (fname != 'Unknown' && fname.toString().trim().isNotEmpty) {
+        uniqueFaculties.add(fname.toString());
+      }
+    }
+
+    if (uniqueFaculties.isEmpty) {
+       return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Text("No faculties found in your branch.", style: GoogleFonts.poppins(color: subTextColor)),
+      );
+    }
+
+    final theme = Theme.of(context);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 10),
+        Text("Select Branch Faculty (Multiple Allowed)", style: GoogleFonts.poppins(color: subTextColor, fontSize: 13)),
         const SizedBox(height: 8),
         Wrap(
           spacing: 8.0,
@@ -272,7 +368,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
                       onChanged: (v) {
                         setState(() {
                            _selectedTarget = v;
-                           if (v != 'Faculty') {
+                           if (v != 'Course Faculty' && v != 'Branch Faculty') {
                              _selectedFaculties.clear();
                            }
                         });
@@ -281,12 +377,14 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
                     ),
                     
                     // Dynamic Faculty Selection
-                    if (_selectedTarget == 'Faculty') 
+                    if (_selectedTarget == 'Course Faculty') 
                       _buildFacultyMultiSelect(cardColor, textColor, subTextColor)
+                    else if (_selectedTarget == 'Branch Faculty')
+                      _buildBranchFacultyMultiSelect(cardColor, textColor, subTextColor)
                     else 
                       const SizedBox(height: 20),
 
-                    if (_selectedTarget != 'Faculty')
+                    if (_selectedTarget != 'Course Faculty' && _selectedTarget != 'Branch Faculty')
                        const SizedBox(height: 5),
 
                     // Title TextField

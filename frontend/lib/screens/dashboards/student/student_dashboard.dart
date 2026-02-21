@@ -20,6 +20,7 @@ import '../../../core/api_constants.dart';
 import 'student_feedback_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
 import '../../../widgets/shared_dashboard_announcements.dart';
+import 'student_announcements_screen.dart';
 
 class StudentDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -189,10 +190,14 @@ class _StudentDashboardState extends State<StudentDashboard> {
                    Row(
                      children: [
                        GestureDetector(
+                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentNotificationsScreen(userId: widget.userData['id']))),
+                         child: _buildHeaderIcon(Icons.notifications_outlined),
+                       ),
+                       const SizedBox(width: 12),
+                       GestureDetector(
                          onTap: () => themeProvider.toggleTheme(),
                          child: _buildHeaderIcon(themeProvider.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round),
                        ),
-
                      ],
                    ),
                  ],
@@ -442,6 +447,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
       {'label': 'Marks / Results', 'subtitle': 'View Grades', 'icon': Icons.insights, 'color': const Color(0xFFe67e22), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentMarksScreen()))},
       {'label': 'Issues', 'subtitle': 'Report & Track', 'icon': Icons.report_problem_outlined, 'color': const Color(0xFFE94057), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentCommentsScreen(userData: widget.userData)))},
       {'label': 'My Feedbacks', 'subtitle': 'Reviews', 'icon': Icons.feedback_outlined, 'color': const Color(0xFF1ABC9C), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentFeedbackScreen(userData: widget.userData)))},
+      {'label': 'Announcements', 'subtitle': 'Updates & News', 'icon': Icons.campaign_rounded, 'color': const Color(0xFF3498DB), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentAnnouncementsScreen()))},
     ];
 
     return SafeArea(
