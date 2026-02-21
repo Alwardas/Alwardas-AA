@@ -31,4 +31,7 @@ class ApiConstants {
 
   // Faculty
   static String get facultyByBranch => '$baseUrl/api/faculty/by-branch';
+
+  // AI Integration (Google Gemini)
+  static String get geminiApiKey => 'YOUR_GEMINI_API_KEY'; // Replace this with your actual Google Gemini API Key
 }

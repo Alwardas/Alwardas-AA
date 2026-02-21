@@ -503,8 +503,8 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
               ),
             ),
             
-            // AI Icon (Only if NOT completed)
-            if (showIcons && !isCompleted)
+            // AI Icon (Always shown, even if completed)
+            if (showIcons)
               Padding(
                 padding: const EdgeInsets.only(right: 12, top: 0),
                 child: GestureDetector(
@@ -1204,13 +1204,57 @@ class _AIExplanationModalState extends State<AIExplanationModal> {
   }
 
   Future<void> _fetchExplanation() async {
-     // Simulate network delay for AI generation
-     await Future.delayed(const Duration(seconds: 2));
-     if(mounted) {
-       setState(() {
-         _loading = false;
-         _explanation = "AI-Generated Explanation for '${widget.topic}':\n\nThis topic covers essential concepts that form the building blocks of this subject. An understanding of these principles is crucial for mastering more advanced topics. \n\nKey Points:\n• Core definitions and properties.\n• Practical applications in real-world scenarios.\n• Relationship with other units in the syllabus."; 
-       });
+     try {
+       // Clean the topic string of special characters and stop words for better search
+       String cleanTopic = widget.topic.replaceAll(RegExp(r'[^a-zA-Z0-9\s]'), ' ').trim();
+       if (cleanTopic.length > 50) {
+           cleanTopic = cleanTopic.substring(0, 50); // Trim excessively long topics
+       }
+
+       // 1. First, search Wikipedia to find the exact closest article title
+       final searchUrl = Uri.parse('https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${Uri.encodeComponent(cleanTopic)}&utf8=&format=json');
+       final searchResponse = await http.get(searchUrl).timeout(const Duration(seconds: 10));
+       
+       if (searchResponse.statusCode == 200 && mounted) {
+          final searchData = json.decode(searchResponse.body);
+          
+          if (searchData['query'] != null && searchData['query']['search'].isNotEmpty) {
+             // 2. We found a match! Fetch the summary for the top result
+             final bestMatchTitle = searchData['query']['search'][0]['title'];
+             
+             final summaryUrl = Uri.parse('https://en.wikipedia.org/api/rest_v1/page/summary/${Uri.encodeComponent(bestMatchTitle)}');
+             final summaryResponse = await http.get(summaryUrl).timeout(const Duration(seconds: 10));
+             
+             if (summaryResponse.statusCode == 200 && mounted) {
+                 final summaryData = json.decode(summaryResponse.body);
+                 setState(() {
+                    _loading = false;
+                    if (summaryData['extract'] != null && summaryData['extract'].toString().isNotEmpty) {
+                        _explanation = "AI Topic Summary ('$bestMatchTitle'):\n\n${summaryData['extract']}";
+                    } else {
+                        _explanation = "We couldn't find a direct AI summary for '${widget.topic}'.\n\nThis topic covers essential concepts in your syllabus. Make sure to refer to your main textbook or consult the faculty for detailed aspects and derivations."; 
+                    }
+                 });
+                 return; // Exit here on success
+             }
+          }
+       }
+       
+       // Fallback if no search results or network timeout
+       if (mounted) {
+           setState(() {
+             _loading = false;
+             _explanation = "We couldn't fetch a direct AI summary for '${widget.topic}' right now.\n\nThis topic covers essential concepts that form the building blocks of this subject. An understanding of these principles is crucial for mastering more advanced topics."; 
+           });
+       }
+
+     } catch (e) {
+        if (mounted) {
+           setState(() {
+             _loading = false;
+             _explanation = "We ran into an error fetching the summary for '${widget.topic}'. Please check your connection."; 
+           });
+        }
      }
   }
 
