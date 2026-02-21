@@ -17,6 +17,7 @@ import 'hod_timetables_screen.dart';
 import 'hod_requests_screen.dart';
 import 'hod_department_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
+import '../../../widgets/shared_dashboard_announcements.dart';
 
 class HodDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -191,41 +192,8 @@ class _HodDashboardState extends State<HodDashboard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // 2. Announcements HEADER
-                  Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                     children: [
-                       Text(
-                         'Announcements',
-                         style: GoogleFonts.poppins(
-                           color: textColor,
-                           fontSize: 18,
-                           fontWeight: FontWeight.bold,
-                         ),
-                       ),
-                       GestureDetector(
-                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HODAnnouncementsScreen())),
-                         child: Text(
-                           "View All",
-                           style: GoogleFonts.poppins(color: const Color(0xFF00d2ff), fontWeight: FontWeight.bold),
-                         ),
-                       )
-                     ],
-                  ),
-                  const SizedBox(height: 15),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        _buildAnnouncementCard(
-                          'College Working Hours',
-                          '9:00 AM - 5:10 PM\nby College Management',
-                          const [Color(0xFF4c669f), Color(0xFF3b5998)],
-                        ),
-                      ],
-                    ),
-                  ),
-
+                  // 2. Announcements
+                  SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'HOD'),
                   const SizedBox(height: 25),
 
                   // 3. Quick Access
@@ -408,55 +376,7 @@ class _HodDashboardState extends State<HodDashboard> {
     );
   }
 
-  Widget _buildAnnouncementCard(String title, String subtitle, List<Color> gradientColors) {
-    return Container(
-      width: 250,
-      padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: gradientColors,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Container(
-             width: 4, 
-             height: 35, 
-             decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(2)),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 3),
-                Text(
-                  subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 13),
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
+
 
   Widget _buildQuickAccessCard(IconData icon, String title, String subtitle, Color cardColor, Color iconBgColor, Color iconColor, Color textColor, Color subTextColor, {VoidCallback? onTap}) {
     final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;

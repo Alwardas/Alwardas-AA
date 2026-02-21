@@ -3,13 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
+import '../../../core/theme/app_theme.dart';
 import '../../../core/api_constants.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:intl/intl.dart';
+import 'raise_issue_screen.dart';
 
 class StudentCommentsScreen extends StatefulWidget {
-  final Map<String, dynamic> userData; // Need userData for ID
+  final Map<String, dynamic> userData; 
   const StudentCommentsScreen({super.key, required this.userData});
 
   @override
@@ -18,11 +20,17 @@ class StudentCommentsScreen extends StatefulWidget {
 
 class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _subjectController = TextEditingController();
-  final TextEditingController _messageController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  String? _selectedCategory;
+  String? _selectedTarget;
   bool _isSubmitting = false;
+
   List<dynamic> _issues = [];
   bool _isLoadingIssues = true;
+
+  final List<String> _categories = ['Attendance', 'Marks', 'Academic', 'Other'];
+  final List<String> _targets = ['Faculty', 'HOD', 'Principal', 'Coordinator'];
 
   @override
   void initState() {
@@ -52,30 +60,34 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
     }
   }
 
-  Future<void> _submitIssue() async {
+  Future<void> _submitIssue(BuildContext modalContext, StateSetter setModalState) async {
     if (!_formKey.currentState!.validate()) return;
     
-    final userId = widget.userData['id']; // Ensure ID is present
+    final userId = widget.userData['id'];
     if (userId == null) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("User ID not found")));
       return;
     }
 
-    setState(() => _isSubmitting = true);
+    setModalState(() => _isSubmitting = true);
 
     try {
       final response = await http.post(
         Uri.parse(ApiConstants.studentSubmitIssue),
         body: json.encode({
           'userId': userId,
-          'subject': _subjectController.text,
-          'description': _messageController.text, // Backend expects description
+          'subject': _titleController.text, // Title maps to subject
+          'description': _descriptionController.text, 
+          'category': _selectedCategory,
+          'targetRole': _selectedTarget,
         }),
         headers: {'Content-Type': 'application/json'},
       );
 
       if (response.statusCode == 200) {
         if (mounted) {
+          Navigator.pop(modalContext); // Close modal
+          
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text("Issue reported successfully!", style: GoogleFonts.poppins()),
@@ -83,10 +95,15 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
               behavior: SnackBarBehavior.floating,
             )
           );
-          _subjectController.clear();
-          _messageController.clear();
           
-          // Refresh list instead of popping
+          _titleController.clear();
+          _descriptionController.clear();
+          _selectedCategory = null;
+          _selectedTarget = null;
+          
+          setState(() {
+            _isLoadingIssues = true;
+          });
           _fetchIssues(); 
         }
       } else {
@@ -103,233 +120,205 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
         );
       }
     } finally {
-      if (mounted) setState(() => _isSubmitting = false);
+      if (mounted) setModalState(() => _isSubmitting = false);
     }
+  }
+
+  void _navigateToRaiseIssue() async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => RaiseIssueScreen(userData: widget.userData),
+      ),
+    );
+    
+    // If the issue was raised successfully, it returns true to trigger a refresh
+    if (result == true) {
+      setState(() {
+        _isLoadingIssues = true;
+      });
+      _fetchIssues();
+    }
+  }
+
+  Widget _buildStatusChip(String status) {
+    Color color;
+    String label;
+    if (status.toUpperCase() == 'PENDING' || status.toUpperCase() == 'OPEN') {
+      color = Colors.orange; // Yellow/Orange
+      label = "Open";
+    } else if (status.toUpperCase() == 'IN_PROGRESS') {
+      color = Colors.blue;
+      label = "In Progress";
+    } else if (status.toUpperCase() == 'RESOLVED' || status.toUpperCase() == 'ACCEPTED') {
+      color = Colors.green;
+      label = "Resolved";
+    } else {
+      color = Colors.grey;
+      label = status;
+    }
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: color.withValues(alpha: 0.5))
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+           Container(width: 8, height: 8, decoration: BoxDecoration(color: color, shape: BoxShape.circle)),
+           const SizedBox(width: 6),
+           Text(label, style: GoogleFonts.poppins(color: color, fontSize: 12, fontWeight: FontWeight.bold)),
+        ]
+      )
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
+    final theme = Theme.of(context);
     final isDark = themeProvider.isDarkMode;
-    final bgColors = isDark ? ThemeColors.darkBackground : ThemeColors.lightBackground;
-    final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
-    final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
-    final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
-    final iconBg = isDark ? ThemeColors.darkIconBg : ThemeColors.lightIconBg;
+    final bgColors = isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final cardColor = isDark ? const Color(0xFF1E293B) : Colors.white;
+    final subTextColor = isDark ? Colors.grey[400]! : Colors.grey[600]!;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text("Report Issue", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+        title: Text("My Issues", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.add, color: theme.primaryColor, size: 28),
+            onPressed: _navigateToRaiseIssue,
+          ),
+          const SizedBox(width: 8),
+        ],
       ),
       body: Container(
-        decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
+        decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter)),
         child: SafeArea(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Form Section
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Report an Issue", 
-                        style: GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.bold, color: textColor)
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        "Describe the issue you are facing.", 
-                        style: GoogleFonts.poppins(fontSize: 14, color: subTextColor)
-                      ),
-                      const SizedBox(height: 30),
-                      
-                      Text("Subject", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
-                      const SizedBox(height: 8),
-                      TextFormField(
-                        controller: _subjectController,
-                        style: GoogleFonts.poppins(color: textColor),
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: cardColor,
-                          hintText: "Enter subject (e.g., Course Issue, Facility Request)",
-                          hintStyle: GoogleFonts.poppins(color: subTextColor),
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                        ),
-                        validator: (val) => val == null || val.isEmpty ? "Subject is required" : null,
-                      ),
-                      const SizedBox(height: 20),
-
-                      Text("Description", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
-                      const SizedBox(height: 8),
-                      TextFormField(
-                        controller: _messageController,
-                        style: GoogleFonts.poppins(color: textColor),
-                        maxLines: 6,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: cardColor,
-                          hintText: "Describe your issue here...",
-                          hintStyle: GoogleFonts.poppins(color: subTextColor),
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                        ),
-                        validator: (val) => val == null || val.isEmpty ? "Description is required" : null,
-                      ),
-                      
-                      const SizedBox(height: 30),
-                      
-                      SizedBox(
-                        width: double.infinity,
-                        height: 55,
-                        child: ElevatedButton(
-                          onPressed: _isSubmitting ? null : _submitIssue,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFE94057),
-                            foregroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                            elevation: 5,
-                            shadowColor: const Color(0xFFE94057).withValues(alpha: 0.4),
-                          ),
-                          child: _isSubmitting 
-                            ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
-                            : Text(
-                                "Submit Issue", 
-                                style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold)
-                              ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+            child: _isLoadingIssues
+                ? const Center(child: CircularProgressIndicator())
+                : _issues.isEmpty
+                    ? Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.mark_email_unread_outlined, size: 64, color: subTextColor.withValues(alpha: 0.5)),
+                            const SizedBox(height: 16),
+                            Text("No issues raised yet", style: GoogleFonts.poppins(fontSize: 16, color: subTextColor, fontWeight: FontWeight.w500)),
+                          ],
                         ),
                       )
-                    ],
-                  ),
-                ),
+                    : ListView.builder(
+                        itemCount: _issues.length,
+                        physics: const BouncingScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          final issue = _issues[index];
+                          final status = issue['status'] ?? 'PENDING';
+                          final date = DateTime.parse(issue['createdAt']);
+                          final formattedDate = DateFormat('dd MMM yyyy').format(date.toLocal());
 
-                const SizedBox(height: 40),
-                Divider(color: subTextColor.withValues(alpha: 0.2), thickness: 2),
-                const SizedBox(height: 20),
-
-                // Track Issues Section
-                Text("Track Issues", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
-                const SizedBox(height: 15),
-
-                if (_isLoadingIssues)
-                  const Center(child: CircularProgressIndicator())
-                else if (_issues.isEmpty)
-                   Center(child: Text("No issues raised yet.", style: GoogleFonts.poppins(color: subTextColor)))
-                else
-                  ..._issues.map((issue) {
-                    final status = issue['status'] ?? 'PENDING';
-                    final color = _getStatusColor(status);
-                    final date = DateTime.parse(issue['createdAt']);
-                    final formattedDate = DateFormat('MMM d, y, h:mm a').format(date.toLocal());
-
-                    return Container(
-                      margin: const EdgeInsets.only(bottom: 15),
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: cardColor,
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: iconBg),
-                        boxShadow: [
-                           if(isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5, offset: const Offset(0,2))
-                         ]
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  issue['subject'] ?? 'No Subject',
-                                  style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: textColor),
-                                ),
-                              ),
-                              Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                                decoration: BoxDecoration(
-                                  color: color.withValues(alpha: 0.2),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: Text(
-                                  status,
-                                  style: GoogleFonts.poppins(color: color, fontWeight: FontWeight.bold, fontSize: 12),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 8),
-                          Text(issue['description'] ?? '', style: GoogleFonts.poppins(color: subTextColor, fontSize: 14)),
-                          const SizedBox(height: 12),
-                          Row(
-                             children: [
-                               Icon(Icons.calendar_today, size: 14, color: subTextColor),
-                               const SizedBox(width: 5),
-                               Text("Raised: $formattedDate", style: GoogleFonts.poppins(color: subTextColor, fontSize: 12)),
-                             ],
-                          ),
-                          
-                          // Response Section if available
-                          if (issue['response'] != null || issue['reactedAt'] != null) ...[
-                            const SizedBox(height: 12),
-                            Container(
-                              padding: const EdgeInsets.all(12),
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: isDark ? Colors.black26 : Colors.grey[100],
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  if(issue['response'] != null)
-                                    Text("Response: ${issue['response']}", style: GoogleFonts.poppins(color: textColor, fontSize: 13, fontStyle: FontStyle.italic)),
-                                  
-                                  const SizedBox(height: 5),
-                                  if(issue['reactedAt'] != null) ...[
-                                     Row(
-                                       children: [
-                                         Icon(Icons.check_circle_outline, size: 14, color: Colors.green),
-                                         const SizedBox(width: 5),
-                                         Text(
-                                            "Reacted: ${DateFormat('MMM d, h:mm a').format(DateTime.parse(issue['reactedAt']).toLocal())}", 
-                                            style: GoogleFonts.poppins(color: Colors.green, fontSize: 12)
-                                         ),
-                                       ],
-                                     ),
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 16),
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: cardColor,
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.05),
+                                  blurRadius: 10,
+                                  offset: const Offset(0, 4),
+                                )
+                              ]
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text("📌 ", style: TextStyle(fontSize: 16)),
+                                    Expanded(
+                                      child: Text(
+                                        issue['subject'] ?? 'No Title',
+                                        style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: textColor),
+                                      ),
+                                    ),
                                   ],
-                                  if(issue['responderName'] != null) ...[
-                                    const SizedBox(height: 2),
-                                    Text("By: ${issue['responderName']}", style: GoogleFonts.poppins(color: subTextColor, fontSize: 12)),
-                                  ]
+                                ),
+                                const SizedBox(height: 12),
+                                Text(
+                                  "Category: ${issue['category'] ?? 'Other'}", 
+                                  style: GoogleFonts.poppins(color: subTextColor, fontSize: 13, fontWeight: FontWeight.w500)
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Target: ${issue['targetRole'] ?? 'Faculty'}", 
+                                  style: GoogleFonts.poppins(color: subTextColor, fontSize: 13, fontWeight: FontWeight.w500)
+                                ),
+                                const SizedBox(height: 16),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    _buildStatusChip(status),
+                                    Text(
+                                      "Date: $formattedDate", 
+                                      style: GoogleFonts.poppins(color: subTextColor, fontSize: 13)
+                                    ),
+                                  ],
+                                ),
+                                // Show description and response if available
+                                if (issue['description'] != null && issue['description'].toString().isNotEmpty) ...[
+                                  const SizedBox(height: 12),
+                                  const Divider(),
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    issue['description'],
+                                    style: GoogleFonts.poppins(color: textColor.withValues(alpha: 0.8), fontSize: 13),
+                                  )
                                 ],
-                              ),
-                            )
-                          ]
-                        ],
+                                if (issue['response'] != null) ...[
+                                    const SizedBox(height: 12),
+                                    Container(
+                                      padding: const EdgeInsets.all(12),
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: isDark ? Colors.black26 : Colors.grey[100],
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text("Response: ${issue['response']}", style: GoogleFonts.poppins(color: textColor, fontSize: 13, fontStyle: FontStyle.italic)),
+                                          if(issue['responderName'] != null) ...[
+                                            const SizedBox(height: 4),
+                                            Text("By: ${issue['responderName']}", style: GoogleFonts.poppins(color: subTextColor, fontSize: 12)),
+                                          ]
+                                        ],
+                                      ),
+                                    )
+                                ]
+                              ],
+                            ),
+                          );
+                        },
                       ),
-                    );
-                  }),
-                  const SizedBox(height: 50),
-              ],
-            ),
           ),
         ),
       ),
     );
   }
-
-  Color _getStatusColor(String status) {
-    if (status == 'PENDING') return Colors.orange;
-    if (status == 'RESOLVED' || status == 'ACCEPTED') return Colors.green;
-    if (status == 'REJECTED') return Colors.red;
-    return Colors.blue;
-  }
 }
+

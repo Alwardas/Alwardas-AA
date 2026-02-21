@@ -23,6 +23,7 @@ class ApiConstants {
   static String get studentProfile => '$baseUrl/api/student/profile';
   static String get studentRequestStatus => '$baseUrl/api/student/request-status';
   static String get studentRequestChange => '$baseUrl/api/student/request-change';
+  static String get studentGetCourses => '$baseUrl/api/student/courses';
 
   // Issue Tracking
   static String get studentSubmitIssue => '$baseUrl/api/issues/submit';

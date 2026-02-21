@@ -13,7 +13,8 @@ import 'coordinator_create_announcement_screen.dart';
 import 'coordinator_announcement_details_screen.dart';
 
 class CoordinatorAnnouncementsScreen extends StatefulWidget {
-  const CoordinatorAnnouncementsScreen({super.key});
+  final bool isReadOnly;
+  const CoordinatorAnnouncementsScreen({super.key, this.isReadOnly = false});
 
   @override
   State<CoordinatorAnnouncementsScreen> createState() => _CoordinatorAnnouncementsScreenState();
@@ -206,7 +207,7 @@ class _CoordinatorAnnouncementsScreenState extends State<CoordinatorAnnouncement
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: widget.isReadOnly ? null : FloatingActionButton(
         onPressed: () async {
              final result = await Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorCreateAnnouncementScreen()));
              if (result == true) {
@@ -388,7 +389,7 @@ class _CoordinatorAnnouncementsScreenState extends State<CoordinatorAnnouncement
       }
 
       return GestureDetector(
-        onLongPress: () {
+        onLongPress: widget.isReadOnly ? null : () {
            showModalBottomSheet(
              context: context,
              backgroundColor: isDark ? const Color(0xFF1E293B) : Colors.white,

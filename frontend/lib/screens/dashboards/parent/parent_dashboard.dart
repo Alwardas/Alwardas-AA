@@ -16,6 +16,7 @@ import '../student/student_marks_screen.dart';
 import 'parent_profile_tab.dart'; 
 import 'parent_requests_screen.dart'; 
 import '../../../widgets/custom_bottom_nav_bar.dart'; 
+import '../../../widgets/shared_dashboard_announcements.dart';
 
 class ParentDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -348,34 +349,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                 children: [
                   
                   // Announcements
-                  Text(
-                    'Announcements',
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        _buildAnnouncementCard(
-                          'Parent-Teacher Meeting',
-                          'Saturday, 10 AM',
-                          AppTheme.announcementBlue,
-                        ),
-                         const SizedBox(width: 15),
-                        _buildAnnouncementCard(
-                          'Results Declared',
-                          'Check now',
-                          AppTheme.announcementOrange,
-                        ),
-                      ],
-                    ),
-                  ),
-
+                  SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'Parent'),
                   const SizedBox(height: 25),
 
                   Text(
@@ -464,55 +438,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
     );
   }
 
-  Widget _buildAnnouncementCard(String title, String subtitle, List<Color> gradientColors) {
-    return Container(
-      width: 250,
-      padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: gradientColors,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          )
-        ]
-      ),
-      child: Row(
-        children: [
-          Container(
-             width: 4, 
-             height: 35, 
-             decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(2)),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 3),
-                Text(
-                  subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 13),
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
+
 
   Widget _buildQuickAccessCard(IconData icon, String title, String subtitle, Color cardColor, Color iconBgColor, Color iconColor, Color textColor, Color subTextColor, {VoidCallback? onTap}) {
     final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;

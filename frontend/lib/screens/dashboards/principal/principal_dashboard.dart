@@ -14,6 +14,7 @@ import 'principal_attendance_screen.dart';
 import 'principal_announcements_screen.dart';
 import 'principal_notifications_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
+import '../../../widgets/shared_dashboard_announcements.dart';
 
 import 'principal_faculty_screen.dart';
 import 'principal_lesson_plans_screen.dart';
@@ -34,35 +35,10 @@ class PrincipalDashboard extends StatefulWidget {
 
 class _PrincipalDashboardState extends State<PrincipalDashboard> {
   int _selectedIndex = 1; // Default to Home (index 1)
-  List<dynamic> _dashboardAnnouncements = [];
-  bool _isLoadingAnnouncements = true;
 
   @override
   void initState() {
     super.initState();
-    _fetchDashboardAnnouncements();
-  }
-
-  Future<void> _fetchDashboardAnnouncements() async {
-    try {
-      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement'));
-      if (response.statusCode == 200) {
-        if (mounted) {
-           List<dynamic> all = json.decode(response.body);
-           // Sort by date desc
-           all.sort((a, b) => DateTime.parse(b['created_at']).compareTo(DateTime.parse(a['created_at'])));
-           setState(() {
-             _dashboardAnnouncements = all;
-             _isLoadingAnnouncements = false;
-           });
-        }
-      } else {
-        setState(() => _isLoadingAnnouncements = false);
-      }
-    } catch (e) {
-      debugPrint("Error fetching dashboard announcements: $e");
-      setState(() => _isLoadingAnnouncements = false);
-    }
   }
 
   void _logout() async {
@@ -228,51 +204,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // 2. Announcements
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Announcements',
-                        style: GoogleFonts.poppins(
-                          color: textColor,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      // Add Button
-                      GestureDetector(
-                        onTap: () async {
-                           // Navigate to announcements screen (which has Create modal)
-                           await Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalAnnouncementsScreen()));
-                           _fetchDashboardAnnouncements(); // Refresh on return
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(color: const Color(0xFF8E2DE2).withValues(alpha: 0.1), shape: BoxShape.circle),
-                          child: const Icon(Icons.add, size: 20, color: Color(0xFF8E2DE2)),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-                  
-                  if (_isLoadingAnnouncements)
-                    const Center(child: CircularProgressIndicator())
-                  else if (_dashboardAnnouncements.isEmpty)
-                     Center(child: Text("No active announcements", style: GoogleFonts.poppins(color: subTextColor)))
-                  else
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: _dashboardAnnouncements.take(5).map((ann) {
-                          return Padding(
-                            padding: const EdgeInsets.only(right: 15),
-                            child: _buildAnnouncementCard(ann),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-
+                  SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'Principal'),
                   const SizedBox(height: 25),
 
                   // 3. Quick Access (Administration)
@@ -465,59 +397,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
     );
   }
 
-  Widget _buildAnnouncementCard(dynamic announcement) {
-    String title = announcement['title'] ?? 'No Title';
-    String subtitle = DateFormat('MMM d, yyyy').format(DateTime.parse(announcement['start_date']));
-    List<Color> gradientColors = const [Color(0xFF4c669f), Color(0xFF3b5998)];
 
-    return Container(
-      width: 250,
-      padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: gradientColors,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Container(
-             width: 4, 
-             height: 35, 
-             decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(2)),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 3),
-                Text(
-                  subtitle,
-                  style: GoogleFonts.poppins(color: Colors.white.withValues(alpha: 0.8), fontSize: 13),
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
 
   Widget _buildQuickAccessCard(IconData icon, String title, String subtitle, Color cardColor, Color iconBgColor, Color iconColor, Color textColor, Color subTextColor, {VoidCallback? onTap}) {
     final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
