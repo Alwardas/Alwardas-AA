@@ -34,6 +34,6 @@ class ApiConstants {
   // Faculty
   static String get facultyByBranch => '$baseUrl/api/faculty/by-branch';
   static String get facultyGetIssues => '$baseUrl/api/faculty/issues';
-  static String get facultyResolveIssue(String id) => '$baseUrl/api/faculty/issues/$id/resolve';
+  static String facultyResolveIssue(String id) => '$baseUrl/api/faculty/issues/$id/resolve';
 
  }
