@@ -266,6 +266,7 @@ async fn main() {
         .route("/api/sections/rename", post(faculty::rename_section_handler))
         .route("/api/attendance/class-record", get(faculty::get_class_attendance_record_handler))
         .route("/api/attendance/stats", get(faculty::get_attendance_stats_handler))
+        .route("/api/attendance/absents", get(faculty::get_absent_students_handler))
         .route("/api/hod/approve", post(faculty::approve_handler))
         .route("/api/hod/approve-subject", post(faculty::approve_subject_handler))
         .route("/api/hod/approve-profile-change", post(faculty::approve_profile_change_handler))

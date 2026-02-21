@@ -836,6 +836,54 @@ pub async fn get_attendance_stats_handler(
     Ok(Json(AttendanceStatsResponse { total_students, total_present, total_absent }))
 }
 
+pub async fn get_absent_students_handler(
+    State(state): State<AppState>,
+    Query(params): Query<AttendanceStatsQuery>,
+) -> Result<Json<Vec<StudentAttendanceItem>>, StatusCode> {
+    let date_str = params.date.split('T').next().unwrap_or(&params.date);
+    let date = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d").map_err(|_| StatusCode::BAD_REQUEST)?;
+    let normalized = normalize_branch(&params.branch);
+    
+    let mut qb = sqlx::QueryBuilder::new(
+        "SELECT u.login_id as student_id, u.full_name, 'ABSENT' as status 
+         FROM attendance a 
+         JOIN users u ON a.student_uuid = u.id 
+         WHERE a.branch = "
+    );
+    qb.push_bind(&normalized);
+    qb.push(" AND a.date = ");
+    qb.push_bind(date);
+    qb.push(" AND a.status = 'A'");
+
+    if let Some(sess) = &params.session {
+        let s_val = sess.trim().to_uppercase();
+        if s_val != "ALL" && !s_val.is_empty() {
+             qb.push(" AND a.session = ");
+             qb.push_bind(s_val);
+        }
+    }
+    if let Some(y) = &params.year {
+        qb.push(" AND a.year = ");
+        qb.push_bind(y);
+    }
+    if let Some(s) = &params.section {
+        qb.push(" AND a.section = ");
+        qb.push_bind(s);
+    }
+    
+    qb.push(" ORDER BY u.login_id ASC");
+
+    let absents = qb.build_query_as::<StudentAttendanceItem>()
+        .fetch_all(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Fetch Absents Error: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })?;
+
+    Ok(Json(absents))
+}
+
 // --- HOD Actions ---
 
 pub async fn approve_handler(

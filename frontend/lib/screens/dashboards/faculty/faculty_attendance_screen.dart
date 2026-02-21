@@ -6,6 +6,7 @@ import 'dart:convert';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
+import '../../../widgets/absent_students_popup.dart';
 // Added for rootBundle
 
 class FacultyAttendanceScreen extends StatefulWidget {
@@ -238,37 +239,67 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
   Future<void> _handleSubmit() async {
     final total = _students.length;
     final present = _students.where((s) => _selectedStudentIds.contains(s['studentId'].toString())).length;
-    final absent = total - present;
+    final absentStudents = _students.where((s) => !_selectedStudentIds.contains(s['studentId'].toString())).toList();
+    final absentCount = total - present;
 
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        // backgroundColor: Theme.of(context).cardColor, // structured default is better
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: Text("Confirm Submission", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
         content: Column(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Present: $present", style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.bold)),
-            Text("Absent: $absent", style: GoogleFonts.poppins(color: Colors.red, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 10),
-            Text("Are you sure you want to submit?", style: GoogleFonts.poppins()),
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.grey.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _buildSummaryItem(total.toString(), "Total", Colors.blue),
+                  _buildSummaryItem(present.toString(), "Present", Colors.green),
+                  _buildSummaryItem(absentCount.toString(), "Absent", Colors.red),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text("Are you sure you want to submit the attendance for this session?", 
+              textAlign: TextAlign.center,
+              style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[600])
+            ),
           ],
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: Text("Cancel", style: GoogleFonts.poppins(color: Colors.grey)),
+            child: Text("Cancel", style: GoogleFonts.poppins(color: Colors.grey, fontWeight: FontWeight.w600)),
           ),
-          TextButton(
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF6366F1),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              elevation: 0,
+            ),
             onPressed: () {
               Navigator.pop(ctx);
               _executeSubmission();
             },
-            child: Text("OK", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+            child: Text("Confirm", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white)),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildSummaryItem(String value, String label, Color color) {
+    return Column(
+      children: [
+        Text(value, style: GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.bold, color: color)),
+        Text(label, style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.w500)),
+      ],
     );
   }
 
@@ -591,6 +622,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
     final filtered = _getFilteredStudents();
     final total = filtered.length;
     final present = filtered.where((s) => _selectedStudentIds.contains(s['studentId'].toString())).length;
+    final absentStudents = filtered.where((s) => !_selectedStudentIds.contains(s['studentId'].toString())).toList();
     final absent = total - present;
 
     return Stack(
@@ -714,7 +746,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                      children: [
                        Text("Present: $present", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.green)),
-                       Text("Absent: $absent", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.red)),
+                       GestureDetector(onTap:()=>AbsentStudentsPopup.show(context,absentStudents,"Absent Students"),child:Text("Absent: $absent", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.red))),
                        Text("Total: $total", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: subTextColor)),
                      ],
                    ),

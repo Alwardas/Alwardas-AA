@@ -8,6 +8,8 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import '../hod/hod_attendance_screen.dart';
+import '../../../widgets/absent_students_popup.dart';
+import 'package:intl/intl.dart';
 
 class PrincipalAttendanceScreen extends StatefulWidget {
   const PrincipalAttendanceScreen({super.key});
@@ -215,6 +217,44 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
     }
   }
 
+  void _showSnackBar(String text) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
+  }
+
+  Future<void> _viewAbsentStudents({String? branch}) async {
+    final dateStr = DateFormat('yyyy-MM-dd').format(_selectedDate);
+    
+    // Show loading
+    showDialog(context: context, barrierDismissible: false, builder: (_) => const Center(child: CircularProgressIndicator(color: Colors.white)));
+
+    try {
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/absents').replace(queryParameters: {
+        'date': dateStr,
+        'session': _selectedSession,
+        if (branch != null) 'branch': branch,
+      });
+      
+      final res = await http.get(uri);
+      if (mounted) Navigator.pop(context); // close loading
+
+      if (res.statusCode == 200) {
+        final List<dynamic> absents = json.decode(res.body);
+        String title = "Absent Students";
+        if (branch != null) title += " - $branch";
+        
+        if (mounted) {
+           AbsentStudentsPopup.show(context, absents, title);
+        }
+      } else {
+        _showSnackBar("Failed to fetch absents");
+      }
+    } catch (e) {
+      if (mounted) Navigator.pop(context); // close loading
+      _showSnackBar("Error: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -329,7 +369,7 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
                         const SizedBox(width: 10),
                         _buildStatCard("Present", _aggregatedStats['totalPresent'].toString(), Colors.green),
                         const SizedBox(width: 10),
-                        _buildStatCard("Absent", _aggregatedStats['totalAbsent'].toString(), Colors.red),
+                        _buildStatCard("Absent", _aggregatedStats['totalAbsent'].toString(), Colors.red, onTap: () => _viewAbsentStudents()),
                     ],
                   ),
                 
@@ -431,31 +471,50 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
     );
   }
 
-  Widget _buildMiniStat(String label, String value, Color color) {
-    return Column(
-      children: [
-        Text(
-            value == "0" ? "-" : value, 
-            style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: color)
-          ),
-        Text(label, style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
-      ],
-    );
-  }
-
-  Widget _buildStatCard(String label, String value, Color color) {
-    return Expanded(
+  Widget _buildMiniStat(String label, String value, Color color, {VoidCallback? onTap}) {
+    return GestureDetector(
+      onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(15),
-        decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        decoration: BoxDecoration(
+          color: onTap != null ? color.withValues(alpha: 0.1) : Colors.transparent,
+          borderRadius: BorderRadius.circular(8),
+        ),
         child: Column(
           children: [
             Text(
-                value == "0" ? "-" : value, 
-                style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)
-              ), 
-            Text(label, style: const TextStyle(color: Colors.white70))
-          ]
+              value == "0" ? "-" : value, 
+              style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: color)
+            ),
+            Text(label, style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStatCard(String label, String value, Color color, {VoidCallback? onTap}) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(15),
+          decoration: BoxDecoration(
+            color: color, 
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              if (onTap != null) BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 8, offset: const Offset(0, 4))
+            ]
+          ),
+          child: Column(
+            children: [
+              Text(
+                  value == "0" ? "-" : value, 
+                  style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)
+                ), 
+              Text(label, style: const TextStyle(color: Colors.white70))
+            ]
+          ),
         ),
       ),
     );

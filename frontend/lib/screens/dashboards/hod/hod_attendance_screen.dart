@@ -10,6 +10,7 @@ import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 import 'hod_manage_attendance_screen.dart';
 import '../../../services/pdf_service.dart';
+import '../../../widgets/absent_students_popup.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -319,6 +320,43 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
   }
 
+  Future<void> _viewAbsentStudents({String? year, String? section}) async {
+    final branch = _branch;
+    final dateStr = DateFormat('yyyy-MM-dd').format(_selectedDate);
+    
+    // Show loading
+    showDialog(context: context, barrierDismissible: false, builder: (_) => const Center(child: CircularProgressIndicator(color: Colors.white)));
+
+    try {
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/absents').replace(queryParameters: {
+        'branch': branch,
+        'date': dateStr,
+        'session': _selectedSession,
+        if (year != null) 'year': year,
+        if (section != null) 'section': section,
+      });
+      
+      final res = await http.get(uri);
+      if (mounted) Navigator.pop(context); // close loading
+
+      if (res.statusCode == 200) {
+        final List<dynamic> absents = json.decode(res.body);
+        String title = "Absent Students";
+        if (year != null) title += " - $year";
+        if (section != null) title += " ($section)";
+        
+        if (mounted) {
+           AbsentStudentsPopup.show(context, absents, title);
+        }
+      } else {
+        _showSnackBar("Failed to fetch absents");
+      }
+    } catch (e) {
+      if (mounted) Navigator.pop(context); // close loading
+      _showSnackBar("Error: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -442,7 +480,8 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                          _buildStatCard(
                              "Absent", 
                              _loading && _stats['totalStudents'] == 0 ? "..." : absentText, 
-                             Colors.red
+                             Colors.red,
+                             onTap: () => _viewAbsentStudents()
                          ),
                       ],
                     ),
@@ -537,7 +576,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                              Container(height: 20, width: 1, color: iconBg),
                                              _buildMiniStat("Present", stats['totalPresent'].toString(), Colors.green),
                                              Container(height: 20, width: 1, color: iconBg),
-                                             _buildMiniStat("Absent", yearAbsentStr, Colors.red),
+                                             _buildMiniStat("Absent", yearAbsentStr, Colors.red, onTap: () => _viewAbsentStudents(year: year)),
                                            ],
                                        ),
                                      )
@@ -665,9 +704,9 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                              child: Row(
                                mainAxisAlignment: MainAxisAlignment.spaceAround,
                                children: [
-                                 Text("T: ${stats['totalStudents']}", style: TextStyle(fontSize: 12, color: Colors.grey[800])),
-                                 Text("P: ${stats['totalPresent']}", style: TextStyle(fontSize: 12, color: Colors.green)),
-                                 Text("A: $secAbsentStr", style: TextStyle(fontSize: 12, color: Colors.red)),
+                                  _buildMiniStat("Total", (stats['totalStudents'] ?? 0).toString(), Colors.grey[800]!),
+                                  _buildMiniStat("Present", (stats['totalPresent'] ?? 0).toString(), Colors.green),
+                                  _buildMiniStat("Absent", secAbsentStr, Colors.red, onTap: () => _viewAbsentStudents(year: year, section: section)),
                                ],
                              ),
                            )
@@ -684,24 +723,43 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
       );
   }
 
-  Widget _buildMiniStat(String label, String value, Color color) {
-    return Column(
-      children: [
-        Text(
-          value == "0" ? "-" : value, 
-          style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: color)
+  Widget _buildMiniStat(String label, String value, Color color, {VoidCallback? onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        decoration: BoxDecoration(
+          color: onTap != null ? color.withValues(alpha: 0.1) : Colors.transparent,
+          borderRadius: BorderRadius.circular(8),
         ),
-        Text(label, style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
-      ],
+        child: Column(
+          children: [
+            Text(
+              value == "0" || value == "-" ? "-" : value, 
+              style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: color)
+            ),
+            Text(label, style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
+          ],
+        ),
+      ),
     );
   }
 
-  Widget _buildStatCard(String label, String value, Color color) {
+  Widget _buildStatCard(String label, String value, Color color, {VoidCallback? onTap}) {
     return Expanded(
-      child: Container(
-        padding: const EdgeInsets.all(15),
-        decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
-        child: Column(children: [Text(value, style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)), Text(label, style: const TextStyle(color: Colors.white70))]),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(15),
+          decoration: BoxDecoration(
+            color: color, 
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              if (onTap != null) BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 8, offset: const Offset(0, 4))
+            ]
+          ),
+          child: Column(children: [Text(value, style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)), Text(label, style: const TextStyle(color: Colors.white70))]),
+        ),
       ),
     );
   }
