@@ -1205,21 +1205,31 @@ class _AIExplanationModalState extends State<AIExplanationModal> {
 
   Future<void> _fetchExplanation() async {
      try {
-       // Clean the topic string of special characters and stop words for better search
-       String cleanTopic = widget.topic.replaceAll(RegExp(r'[^a-zA-Z0-9\s]'), ' ').trim();
-       if (cleanTopic.length > 50) {
-           cleanTopic = cleanTopic.substring(0, 50); // Trim excessively long topics
+       // 1. First, try an EXACT match. Perfect for well-named topics like "Binary Search"
+       final exactUrl = Uri.parse('https://en.wikipedia.org/api/rest_v1/page/summary/${Uri.encodeComponent(widget.topic.trim())}');
+       final exactResponse = await http.get(exactUrl).timeout(const Duration(seconds: 10));
+       
+       if (exactResponse.statusCode == 200 && mounted) {
+           final exactData = json.decode(exactResponse.body);
+           if (exactData['extract'] != null && exactData['extract'].toString().isNotEmpty) {
+               setState(() {
+                  _loading = false;
+                  _explanation = "AI Topic Summary ('${widget.topic}'):\n\n${exactData['extract']}";
+               });
+               return;
+           }
        }
 
-       // 1. First, search Wikipedia to find the exact closest article title
+       // 2. If exact match fails (e.g. syllabus topic is a long sentence), fallback to a smart search
+       String cleanTopic = widget.topic.replaceAll(RegExp(r'[^a-zA-Z0-9\s]'), ' ').trim();
+       if (cleanTopic.length > 60) cleanTopic = cleanTopic.substring(0, 60);
+
        final searchUrl = Uri.parse('https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${Uri.encodeComponent(cleanTopic)}&utf8=&format=json');
        final searchResponse = await http.get(searchUrl).timeout(const Duration(seconds: 10));
        
        if (searchResponse.statusCode == 200 && mounted) {
           final searchData = json.decode(searchResponse.body);
-          
           if (searchData['query'] != null && searchData['query']['search'].isNotEmpty) {
-             // 2. We found a match! Fetch the summary for the top result
              final bestMatchTitle = searchData['query']['search'][0]['title'];
              
              final summaryUrl = Uri.parse('https://en.wikipedia.org/api/rest_v1/page/summary/${Uri.encodeComponent(bestMatchTitle)}');
@@ -1235,7 +1245,7 @@ class _AIExplanationModalState extends State<AIExplanationModal> {
                         _explanation = "We couldn't find a direct AI summary for '${widget.topic}'.\n\nThis topic covers essential concepts in your syllabus. Make sure to refer to your main textbook or consult the faculty for detailed aspects and derivations."; 
                     }
                  });
-                 return; // Exit here on success
+                 return;
              }
           }
        }

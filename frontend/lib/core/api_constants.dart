@@ -28,10 +28,12 @@ class ApiConstants {
   // Issue Tracking
   static String get studentSubmitIssue => '$baseUrl/api/issues/submit';
   static String get studentGetIssues => '$baseUrl/api/issues';
+  static String get studentUpdateIssue => '$baseUrl/api/issues';
+  static String get studentDeleteIssue => '$baseUrl/api/issues';
 
   // Faculty
   static String get facultyByBranch => '$baseUrl/api/faculty/by-branch';
+  static String get facultyGetIssues => '$baseUrl/api/faculty/issues';
+  static String get facultyResolveIssue(String id) => '$baseUrl/api/faculty/issues/$id/resolve';
 
-  // AI Integration (Google Gemini)
-  static String get geminiApiKey => 'YOUR_GEMINI_API_KEY'; // Replace this with your actual Google Gemini API Key
-}
+ }

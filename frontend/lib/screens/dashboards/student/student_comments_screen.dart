@@ -60,6 +60,115 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
     }
   }
 
+  Future<void> _deleteIssue(String issueId) async {
+    final userId = widget.userData['id'];
+    if (userId == null) return;
+
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Delete Issue?", style: GoogleFonts.poppins()),
+        content: Text("Are you sure you want to delete this issue?", style: GoogleFonts.poppins()),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text("Cancel")),
+          TextButton(onPressed: () => Navigator.pop(context, true), child: const Text("Delete", style: TextStyle(color: Colors.red))),
+        ],
+      )
+    );
+
+    if (confirm != true) return;
+
+    try {
+      final response = await http.delete(
+        Uri.parse('${ApiConstants.studentDeleteIssue}/$issueId?userId=$userId')
+      );
+      if (response.statusCode == 200) {
+        if (mounted) {
+           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Issue deleted")));
+           _fetchIssues();
+        }
+      } else {
+        throw Exception("Failed to delete issue");
+      }
+    } catch (e) {
+      if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Could not delete issue")));
+      }
+    }
+  }
+
+  void _showEditDialog(Map<String, dynamic> issue) {
+    if (issue['status'] != 'PENDING' && issue['status'] != 'OPEN') {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Only pending issues can be edited.")));
+        return;
+    }
+
+    final editTitleController = TextEditingController(text: issue['subject']);
+    final editDescController = TextEditingController(text: issue['description']);
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Edit Issue", style: GoogleFonts.poppins()),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: editTitleController,
+                decoration: const InputDecoration(labelText: "Subject"),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: editDescController,
+                decoration: const InputDecoration(labelText: "Description"),
+                maxLines: 3,
+              ),
+            ]
+          ),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(context), child: const Text("Cancel")),
+            TextButton(
+              onPressed: () async {
+                Navigator.pop(context);
+                final userId = widget.userData['id'];
+                if (userId == null) return;
+                
+                try {
+                  final response = await http.put(
+                    Uri.parse('${ApiConstants.studentUpdateIssue}/${issue['id']}'),
+                    headers: {'Content-Type': 'application/json'},
+                    body: json.encode({
+                      'userId': userId,
+                      'subject': editTitleController.text,
+                      'description': editDescController.text,
+                      'category': issue['category'],
+                      'targetRole': issue['targetRole'],
+                    })
+                  );
+
+                  if (response.statusCode == 200) {
+                     if (mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Issue updated successfully")));
+                        _fetchIssues();
+                     }
+                  } else {
+                     throw Exception("Failed to update");
+                  }
+                } catch (e) {
+                   if (mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Could not update issue")));
+                   }
+                }
+              }, 
+              child: const Text("Save")
+            ),
+          ],
+        );
+      }
+    );
+  }
+
   Future<void> _submitIssue(BuildContext modalContext, StateSetter setModalState) async {
     if (!_formKey.currentState!.validate()) return;
     
@@ -256,6 +365,21 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
                                         style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: textColor),
                                       ),
                                     ),
+                                    if (status.toUpperCase() == 'PENDING' || status.toUpperCase() == 'OPEN') ...[
+                                       IconButton(
+                                         icon: const Icon(Icons.edit, size: 20, color: Colors.blue),
+                                         padding: EdgeInsets.zero,
+                                         constraints: const BoxConstraints(),
+                                         onPressed: () => _showEditDialog(issue),
+                                       ),
+                                       const SizedBox(width: 10),
+                                       IconButton(
+                                         icon: const Icon(Icons.delete, size: 20, color: Colors.red),
+                                         padding: EdgeInsets.zero,
+                                         constraints: const BoxConstraints(),
+                                         onPressed: () => _deleteIssue(issue['id'].toString()),
+                                       ),
+                                    ],
                                   ],
                                 ),
                                 const SizedBox(height: 12),

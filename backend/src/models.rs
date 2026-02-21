@@ -175,6 +175,10 @@ pub struct Issue {
     pub user_id: Uuid,
     pub subject: String,
     pub description: String,
+    pub category: Option<String>,
+    #[serde(rename = "targetRole")]
+    #[sqlx(rename = "target_role")]
+    pub target_role: Option<String>,
     pub status: String,
     pub response: Option<String>,
     #[serde(rename = "respondedBy")]
@@ -197,10 +201,30 @@ pub struct SubmitIssueRequest {
     pub user_id: String,
     pub subject: String,
     pub description: String,
+    pub category: Option<String>,
+    #[serde(rename = "targetRole")]
+    pub target_role: Option<String>,
 }
 
 #[derive(Deserialize)]
 pub struct GetIssuesQuery {
+    #[serde(rename = "userId")]
+    pub user_id: String,
+}
+
+#[derive(Deserialize)]
+pub struct UpdateIssueRequest {
+    #[serde(rename = "userId")]
+    pub user_id: String,
+    pub subject: String,
+    pub description: String,
+    pub category: Option<String>,
+    #[serde(rename = "targetRole")]
+    pub target_role: Option<String>,
+}
+
+#[derive(Deserialize)]
+pub struct DeleteIssueQuery {
     #[serde(rename = "userId")]
     pub user_id: String,
 }

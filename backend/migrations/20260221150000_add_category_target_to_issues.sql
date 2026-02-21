@@ -1,0 +1,2 @@
+ALTER TABLE issues ADD COLUMN category VARCHAR(100) DEFAULT 'Other';
+ALTER TABLE issues ADD COLUMN target_role VARCHAR(255) DEFAULT 'Faculty';

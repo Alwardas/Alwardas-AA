@@ -270,6 +270,88 @@ pub async fn get_faculty_feedbacks_handler(
     Ok(Json(feedbacks))
 }
 
+// --- Faculty Assigned Issues ---
+
+#[derive(serde::Deserialize)]
+pub struct GetAssignedIssuesQuery {
+    #[serde(rename = "facultyId")]
+    pub faculty_id: Uuid,
+}
+
+#[derive(serde::Deserialize)]
+pub struct ResolveIssueRequest {
+    #[serde(rename = "facultyId")]
+    pub faculty_id: Uuid,
+    pub response: String,
+    pub status: String,
+}
+
+pub async fn get_assigned_issues_handler(
+    State(state): State<AppState>,
+    Query(params): Query<GetAssignedIssuesQuery>,
+) -> Result<Json<Vec<Issue>>, (StatusCode, Json<serde_json::Value>)> {
+    // Fetch issues assigned to Faculty, or HOD/Coordinator if that is their role.
+    let user_role: Option<String> = sqlx::query_scalar("SELECT role FROM users WHERE id = $1")
+        .bind(params.faculty_id)
+        .fetch_optional(&state.pool).await.unwrap_or(None);
+
+    let role = user_role.unwrap_or_else(|| "FACULTY".to_string());
+    
+    // We match target_role based on the user's role. If targetRole is empty, anyone can see?
+    let query = r#"
+        SELECT 
+            i.id, i.user_id, i.subject, i.description, i.category, i.target_role, i.status, i.response, i.responded_by, i.created_at, i.reacted_at,
+            u_responder.full_name as responder_name
+        FROM issues i
+        LEFT JOIN users u_responder ON i.responded_by = u_responder.id
+        WHERE i.target_role ILIKE '%' || $1 || '%' OR i.target_role ILIKE '%Faculty%'
+        ORDER BY i.created_at DESC
+    "#;
+
+    // Faculty maps to Faculty. HOD maps to HOD etc
+    let role_filter = match role.to_uppercase().as_str() {
+        "HOD" => "HOD",
+        "PRINCIPAL" => "Principal",
+        "COORDINATOR" => "Coordinator",
+        _ => "Faculty",
+    };
+
+    let issues = sqlx::query_as::<Postgres, Issue>(query)
+        .bind(role_filter)
+        .fetch_all(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Get Assigned Issues Error: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to fetch issues"})))
+        })?;
+
+    Ok(Json(issues))
+}
+
+pub async fn resolve_issue_handler(
+    State(state): State<AppState>,
+    axum::extract::Path(issue_id): axum::extract::Path<Uuid>,
+    Json(payload): Json<ResolveIssueRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let res = sqlx::query("UPDATE issues SET status = $1, response = $2, responded_by = $3, reacted_at = NOW() WHERE id = $4")
+        .bind(&payload.status)
+        .bind(&payload.response)
+        .bind(payload.faculty_id)
+        .bind(issue_id)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Resolve Issue Error: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to resolve issue"})))
+        })?;
+        
+    if res.rows_affected() == 0 {
+        return Err((StatusCode::NOT_FOUND, Json(serde_json::json!({"error": "Issue not found"}))));
+    }
+
+    Ok(StatusCode::OK)
+}
+
 // --- Students View ---
 
 pub async fn get_students_handler(

@@ -489,7 +489,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                     const Color(0xFFE74C3C),
                     textColor,
                     subTextColor,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyIssuesScreen())),
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyIssuesScreen(userData: widget.userData))),
                   ),
                    _buildQuickAccessCard(
                     Icons.assignment_outlined,

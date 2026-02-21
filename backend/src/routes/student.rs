@@ -438,10 +438,12 @@ pub async fn submit_issue_handler(
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
     let uid = Uuid::parse_str(&payload.user_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
 
-    sqlx::query("INSERT INTO issues (user_id, subject, description) VALUES ($1, $2, $3)")
+    sqlx::query("INSERT INTO issues (user_id, subject, description, category, target_role) VALUES ($1, $2, $3, $4, $5)")
         .bind(uid)
         .bind(&payload.subject)
         .bind(&payload.description)
+        .bind(&payload.category)
+        .bind(&payload.target_role)
         .execute(&state.pool)
         .await
         .map_err(|e| {
@@ -460,7 +462,7 @@ pub async fn get_student_issues_handler(
 
     let query = r#"
         SELECT 
-            i.id, i.user_id, i.subject, i.description, i.status, i.response, i.responded_by, i.created_at, i.reacted_at,
+            i.id, i.user_id, i.subject, i.description, i.category, i.target_role, i.status, i.response, i.responded_by, i.created_at, i.reacted_at,
             u_responder.full_name as responder_name
         FROM issues i
         LEFT JOIN users u_responder ON i.responded_by = u_responder.id
@@ -478,6 +480,58 @@ pub async fn get_student_issues_handler(
         })?;
 
     Ok(Json(issues))
+}
+
+pub async fn update_issue_handler(
+    State(state): State<AppState>,
+    Path(issue_id): Path<Uuid>,
+    Json(payload): Json<UpdateIssueRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let uid = Uuid::parse_str(&payload.user_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
+
+    let res = sqlx::query("UPDATE issues SET subject = $1, description = $2, category = $3, target_role = $4 WHERE id = $5 AND user_id = $6 AND status = 'PENDING'")
+        .bind(&payload.subject)
+        .bind(&payload.description)
+        .bind(&payload.category)
+        .bind(&payload.target_role)
+        .bind(issue_id)
+        .bind(uid)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Update Issue Error: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to update issue"})))
+        })?;
+    
+    if res.rows_affected() == 0 {
+        return Err((StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Issue not found or cannot be edited"}))));
+    }
+
+    Ok(StatusCode::OK)
+}
+
+pub async fn delete_issue_handler(
+    State(state): State<AppState>,
+    Path(issue_id): Path<Uuid>,
+    Query(params): Query<DeleteIssueQuery>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let uid = Uuid::parse_str(&params.user_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
+
+    let res = sqlx::query("DELETE FROM issues WHERE id = $1 AND user_id = $2 AND status = 'PENDING'")
+        .bind(issue_id)
+        .bind(uid)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Delete Issue Error: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to delete issue"})))
+        })?;
+        
+    if res.rows_affected() == 0 {
+        return Err((StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Issue not found or cannot be deleted"}))));
+    }
+
+    Ok(StatusCode::OK)
 }
 
 // --- Attendance ---

@@ -22,7 +22,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
   final TextEditingController _descriptionController = TextEditingController();
   
   String? _selectedCategory;
-  String? _selectedTarget;
+  List<String> _selectedTargets = [];
   bool _isSubmitting = false;
 
   final List<String> _categories = ['Attendance', 'Marks', 'Academic', 'Other'];
@@ -41,7 +41,9 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
   @override
   void initState() {
     super.initState();
-    _fetchStudentCourses();
+    if (widget.userData['role'] == 'Student') {
+      _fetchStudentCourses();
+    }
     _fetchBranchFaculties();
   }
 
@@ -89,8 +91,16 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
   Future<void> _submitIssue() async {
     if (!_formKey.currentState!.validate()) return;
     
+    // Validate Target Selection
+    if (_selectedTargets.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Please select at least one target.")),
+      );
+      return;
+    }
+
     // Validate Faculty Multiple Selection
-    if ((_selectedTarget == 'Course Faculty' || _selectedTarget == 'Branch Faculty') && _selectedFaculties.isEmpty) {
+    if ((_selectedTargets.contains('Course Faculty') || _selectedTargets.contains('Branch Faculty')) && _selectedFaculties.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Please select at least one faculty member.")),
       );
@@ -104,7 +114,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
 
     // If Faculty selected, append names to the description so backend can see it implicitly inside Description or Category
     String finalDescription = _descriptionController.text;
-    if ((_selectedTarget == 'Course Faculty' || _selectedTarget == 'Branch Faculty') && _selectedFaculties.isNotEmpty) {
+    if (widget.userData['role'] == 'Student' && (_selectedTargets.contains('Course Faculty') || _selectedTargets.contains('Branch Faculty')) && _selectedFaculties.isNotEmpty) {
       finalDescription = 'Target Faculties: ${_selectedFaculties.join(", ")}\n\n$finalDescription';
     }
 
@@ -116,7 +126,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
           'subject': _titleController.text, 
           'description': finalDescription, 
           'category': _selectedCategory,
-          'targetRole': _selectedTarget,
+          'targetRole': _selectedTargets.join(', '),
         }),
         headers: {'Content-Type': 'application/json'},
       );
@@ -304,6 +314,11 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
     final cardColor = isDark ? const Color(0xFF1E293B) : Colors.white;
     final subTextColor = isDark ? Colors.grey[400]! : Colors.grey[600]!;
 
+    final isStudent = widget.userData['role'] == 'Student';
+    final targetList = isStudent 
+      ? ['HOD', 'Principal', 'Coordinator', 'Parent', 'Course Faculty', 'Branch Faculty']
+      : ['HOD', 'Principal', 'Coordinator'];
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -353,38 +368,51 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
                     ),
                     const SizedBox(height: 20),
 
-                    // Target Dropdown
-                    DropdownButtonFormField<String>(
-                      value: _selectedTarget,
-                      decoration: InputDecoration(
-                        labelText: "Target",
-                        labelStyle: GoogleFonts.poppins(color: subTextColor),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: isDark ? Colors.white24 : Colors.black12)),
-                      ),
-                      dropdownColor: cardColor,
-                      style: GoogleFonts.poppins(color: textColor),
-                      items: _targets.map((t) => DropdownMenuItem(value: t, child: Text(t))).toList(),
-                      onChanged: (v) {
-                        setState(() {
-                           _selectedTarget = v;
-                           if (v != 'Course Faculty' && v != 'Branch Faculty') {
-                             _selectedFaculties.clear();
-                           }
-                        });
-                      },
-                      validator: (v) => v == null ? "Select Target" : null,
+                    // Target Multiple Selection Chips
+                    const SizedBox(height: 10),
+                    Text("Select Targets (Multiple Allowed)", style: GoogleFonts.poppins(color: subTextColor, fontSize: 13)),
+                    const SizedBox(height: 8),
+                    Wrap(
+                      spacing: 8.0,
+                      runSpacing: 8.0,
+                      children: targetList.map((target) {
+                        final isSelected = _selectedTargets.contains(target);
+                        return FilterChip(
+                          label: Text(target, style: GoogleFonts.poppins(color: isSelected ? Colors.white : textColor, fontSize: 13)),
+                          selected: isSelected,
+                          selectedColor: theme.primaryColor,
+                          backgroundColor: cardColor,
+                          checkmarkColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            side: BorderSide(color: isSelected ? theme.primaryColor : subTextColor.withOpacity(0.3)),
+                          ),
+                          onSelected: (bool selected) {
+                            setState(() {
+                              if (selected) {
+                                _selectedTargets.add(target);
+                              } else {
+                                _selectedTargets.remove(target);
+                                // Clear faculty selections if all faculty targets are deselected
+                                if (!_selectedTargets.contains('Course Faculty') && !_selectedTargets.contains('Branch Faculty')) {
+                                   _selectedFaculties.clear();
+                                }
+                              }
+                            });
+                          },
+                        );
+                      }).toList(),
                     ),
+                    const SizedBox(height: 20),
                     
                     // Dynamic Faculty Selection
-                    if (_selectedTarget == 'Course Faculty') 
-                      _buildFacultyMultiSelect(cardColor, textColor, subTextColor)
-                    else if (_selectedTarget == 'Branch Faculty')
-                      _buildBranchFacultyMultiSelect(cardColor, textColor, subTextColor)
-                    else 
-                      const SizedBox(height: 20),
+                    if (_selectedTargets.contains('Course Faculty')) 
+                      _buildFacultyMultiSelect(cardColor, textColor, subTextColor),
+                      
+                    if (_selectedTargets.contains('Branch Faculty'))
+                      _buildBranchFacultyMultiSelect(cardColor, textColor, subTextColor),
 
-                    if (_selectedTarget != 'Course Faculty' && _selectedTarget != 'Branch Faculty')
+                    if (!_selectedTargets.contains('Course Faculty') && !_selectedTargets.contains('Branch Faculty'))
                        const SizedBox(height: 5),
 
                     // Title TextField
