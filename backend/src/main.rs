@@ -150,6 +150,10 @@ async fn main() {
     // Migration: Add slot_config if not exists
     let _ = sqlx::query("ALTER TABLE department_timings ADD COLUMN IF NOT EXISTS slot_config JSONB DEFAULT NULL")
          .execute(&pool).await.err();
+         
+    // Migration: Add short_code if not exists
+    let _ = sqlx::query("ALTER TABLE department_timings ADD COLUMN IF NOT EXISTS short_code VARCHAR(50) DEFAULT NULL")
+         .execute(&pool).await.err();
 
     // SECTIONS TABLE (New)
     let _ = sqlx::query("
