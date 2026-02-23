@@ -1465,7 +1465,7 @@ pub async fn update_department_timings(
     
     let result = sqlx::query(
         "INSERT INTO department_timings (branch, start_hour, start_minute, class_duration, short_break_duration, lunch_duration, slot_config, short_code)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+         VALUES ($1, $2, $3, $4, $5, $6, $7::jsonb, $8::varchar)
          ON CONFLICT (branch) DO UPDATE SET
             start_hour = EXCLUDED.start_hour,
             start_minute = EXCLUDED.start_minute,

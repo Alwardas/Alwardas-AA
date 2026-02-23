@@ -251,17 +251,6 @@ class _HodDashboardState extends State<HodDashboard> {
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HODAttendanceScreen())),
                         ),
                         _buildQuickAccessCard(
-                          Icons.group_add_outlined,
-                          'Branch Requests',
-                          'Approve Users',
-                          cardColor,
-                          const Color(0xFFe74c3c).withValues(alpha: 0.1), 
-                          const Color(0xFFe74c3c),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodRequestsScreen())),
-                        ),
-                        _buildQuickAccessCard(
                           Icons.book,
                           'Courses',
                           'My Plan',
@@ -272,88 +261,12 @@ class _HodDashboardState extends State<HodDashboard> {
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodCoursesScreen())),
                         ),
-                        _buildQuickAccessCard(
-                          Icons.person_outline,
-                          'Profile',
-                          'Details',
-                          cardColor,
-                          const Color(0xFFf1c40f).withValues(alpha: 0.1), 
-                          const Color(0xFFf1c40f),
-                          textColor,
-                          subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 2),
-                        ),
-                        _buildQuickAccessCard(
-                          Icons.account_balance,
-                          'Our Dept',
-                          'Management',
-                          cardColor,
-                          Colors.indigo.withValues(alpha: 0.1),
-                          Colors.indigo,
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodDepartmentScreen(userData: widget.userData))),
-                        ),
                     ],
                   ),
 
                   const SizedBox(height: 25),
 
-                  // 4. Today's Schedule
-                  Text(
-                    "Today's Schedule",
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.05),
-                          blurRadius: 10,
-                          offset: const Offset(0, 5),
-                        ),
-                      ],
-                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '11:00 AM - 12:00 PM',
-                          style: GoogleFonts.poppins(
-                            color: const Color(0xFF00d2ff),
-                            fontSize: 13,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          'HOD Meeting',
-                          style: GoogleFonts.poppins(
-                            color: textColor,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Board Room',
-                          style: GoogleFonts.poppins(
-                            color: subTextColor,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+
                   const SizedBox(height: 30),
                 ],
               ),
