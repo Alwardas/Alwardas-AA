@@ -95,7 +95,9 @@ class _CoordinatorCreateAnnouncementScreenState extends State<CoordinatorCreateA
             "end_date": endDateTime,
             "isPinned": false, 
             "creatorId": creatorId,
-            "attachmentUrl": _attachmentName
+            "attachmentUrl": _attachmentName,
+            "sendPush": _sendPush,
+            "sendInApp": _sendInApp
         };
         
         final response = await http.post(

@@ -55,14 +55,17 @@ class _HodScheduleScreenState extends State<HodScheduleScreen> {
         final uri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': branch});
         final res = await http.get(uri);
         if (res.statusCode == 200) {
-            final data = json.decode(res.body);
-            startHour = data['start_hour'] ?? 9;
-            startMinute = data['start_minute'] ?? 0;
-            classDuration = data['class_duration'] ?? 50;
-            shortBreakDuration = data['short_break_duration'] ?? 10;
-            lunchDuration = data['lunch_duration'] ?? 50;
-            if (data['slot_config'] != null) {
-               slotConfig = List<dynamic>.from(data['slot_config']);
+            final List<dynamic> listData = json.decode(res.body);
+            if (listData.isNotEmpty) {
+                final data = listData[0];
+                startHour = data['start_hour'] ?? 9;
+                startMinute = data['start_minute'] ?? 0;
+                classDuration = data['class_duration'] ?? 50;
+                shortBreakDuration = data['short_break_duration'] ?? 10;
+                lunchDuration = data['lunch_duration'] ?? 50;
+                if (data['slot_config'] != null) {
+                   slotConfig = List<dynamic>.from(data['slot_config']);
+                }
             }
         }
     } catch (e) {

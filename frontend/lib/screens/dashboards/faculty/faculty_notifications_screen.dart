@@ -54,14 +54,16 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
 
       // Merge & Tag
       final taggedRequests = requests.map((r) => {...r, 'uniqueType': 'PROFILE_REQUEST'}).toList();
-      final taggedNotifs = notifications
-          .where((n) => n['type'] == 'ATTENDANCE_DISPUTE' && n['status'] != 'PROCESSED')
-          .map((n) => {...n, 'uniqueType': 'ATTENDANCE_DISPUTE'})
+      final filteredNotifs = notifications
+          .where((n) => (n['type'] == 'ATTENDANCE_DISPUTE' && n['status'] != 'PROCESSED') || 
+                        n['type'] == 'ANNOUNCEMENT' || 
+                        n['type'] == 'GENERAL')
+          .map((n) => {...n, 'uniqueType': n['type']})
           .toList();
       
       if (mounted) {
         setState(() {
-          _items = [...taggedRequests, ...taggedNotifs];
+          _items = [...taggedRequests, ...filteredNotifs];
           _loading = false;
         });
       }
@@ -225,14 +227,18 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
   }
 
   Widget _buildItem(dynamic item, Color textColor, Color subTextColor, Color cardColor, Color iconBg, Color tint, Color error) {
-    final isProfile = item['uniqueType'] == 'PROFILE_REQUEST';
+    final uniqueType = item['uniqueType'];
+    final isProfile = uniqueType == 'PROFILE_REQUEST';
+    final isAnnouncement = uniqueType == 'ANNOUNCEMENT';
+    final isGeneral = uniqueType == 'GENERAL';
+    final isActionable = isProfile || uniqueType == 'ATTENDANCE_DISPUTE';
     
     return Container(
       margin: const EdgeInsets.only(bottom: 15),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: cardColor,
-        border: Border.all(color: isProfile ? iconBg : tint),
+        border: Border.all(color: (isAnnouncement || isGeneral) ? tint.withValues(alpha: 0.5) : (isProfile ? iconBg : tint)),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
@@ -248,6 +254,10 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
                   alignment: Alignment.center,
                   child: Text(item['user']?['fullName']?.substring(0,1) ?? 'S', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 )
+              else if (isAnnouncement)
+                Icon(Icons.campaign_rounded, size: 36, color: Colors.blue)
+              else if (isGeneral)
+                Icon(Icons.info_outline, size: 36, color: tint)
               else
                 Icon(Icons.warning_amber_rounded, size: 36, color: error),
               
@@ -256,18 +266,27 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(isProfile ? (item['user']?['fullName'] ?? 'Unknown') : 'Attendance Dispute', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: textColor)),
-                    Text(isProfile ? (item['user']?['studentId'] ?? '') : "Student ID: ${item['senderId']}", style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
+                    Text(
+                      isProfile ? (item['user']?['fullName'] ?? 'Unknown') : (isAnnouncement ? 'Announcement' : (isGeneral ? 'Update' : 'Attendance Dispute')), 
+                      style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: textColor)
+                    ),
+                    Text(
+                      isProfile ? (item['user']?['studentId'] ?? '') : (isAnnouncement || isGeneral ? 'System Alert' : "Student ID: ${item['senderId']}"), 
+                      style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)
+                    ),
                   ],
                 ),
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                   color: isProfile ? tint.withValues(alpha: 0.1) : error.withValues(alpha: 0.1),
+                   color: (isAnnouncement || isGeneral) ? Colors.blue.withValues(alpha: 0.1) : (isProfile ? tint.withValues(alpha: 0.1) : error.withValues(alpha: 0.1)),
                    borderRadius: BorderRadius.circular(8),
                 ),
-                child: Text(isProfile ? 'Profile' : 'Urgent', style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: isProfile ? tint : error)),
+                child: Text(
+                  isProfile ? 'Profile' : (isAnnouncement ? 'Alert' : (isGeneral ? 'Info' : 'Urgent')), 
+                  style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: (isAnnouncement || isGeneral) ? Colors.blue : (isProfile ? tint : error))
+                ),
               )
             ],
           ),
@@ -278,36 +297,38 @@ class _FacultyNotificationsScreenState extends State<FacultyNotificationsScreen>
              if (item['newFullName'] != null) Text("• Name: ${item['newFullName']}", style: TextStyle(color: textColor)),
              if (item['newBranch'] != null) Text("• Branch: ${item['newBranch']}", style: TextStyle(color: textColor)),
           ] else ...[
-             Text(item['message'] ?? '', style: GoogleFonts.poppins(color: textColor, fontStyle: FontStyle.italic)),
+             Text(item['message'] ?? '', style: GoogleFonts.poppins(color: textColor, fontStyle: isActionable ? FontStyle.italic : FontStyle.normal)),
           ],
 
-          const SizedBox(height: 15),
-          Row(
-            children: [
-              Expanded(
-                child: OutlinedButton(
-                  onPressed: () => isProfile ? _handleProfileAction(item['id'], 'REJECT') : _openAttendanceModal(item, 'REJECT'),
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: error,
-                    side: BorderSide(color: error.withValues(alpha: 0.5)),
+          if (isActionable) ...[
+            const SizedBox(height: 15),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: () => isProfile ? _handleProfileAction(item['id'], 'REJECT') : _openAttendanceModal(item, 'REJECT'),
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: error,
+                      side: BorderSide(color: error.withValues(alpha: 0.5)),
+                    ),
+                    child: const Text("Reject"),
                   ),
-                  child: const Text("Reject"),
                 ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () => isProfile ? _handleProfileAction(item['id'], 'APPROVE') : _openAttendanceModal(item, 'APPROVE'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green.withValues(alpha: 0.2), // Light green bg
-                    foregroundColor: Colors.green, // Green text
-                    elevation: 0,
+                const SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () => isProfile ? _handleProfileAction(item['id'], 'APPROVE') : _openAttendanceModal(item, 'APPROVE'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green.withValues(alpha: 0.2), 
+                      foregroundColor: Colors.green, 
+                      elevation: 0,
+                    ),
+                    child: const Text("Approve"),
                   ),
-                  child: const Text("Approve"),
                 ),
-              ),
-            ],
-          )
+              ],
+            )
+          ],
         ],
       ),
     );

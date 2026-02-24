@@ -22,23 +22,21 @@ pub async fn create_announcement_handler(
         Err(_) => return (StatusCode::BAD_REQUEST, Json(json!({"message": "Invalid Creator ID"}))).into_response(),
     };
 
-    // Use query_as instead of query_as! to avoid macro expansion issues without live DB connection during this edit context
-    // We need to match the struct fields
     let result = sqlx::query_as::<_, Announcement>(
         "INSERT INTO announcements (id, title, description, type, audience, priority, start_date, end_date, is_pinned, attachment_url, creator_id, created_at) 
          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) 
          RETURNING *"
     )
     .bind(new_id)
-    .bind(body.title)
-    .bind(body.description)
-    .bind(body.announcement_type)
+    .bind(&body.title)
+    .bind(&body.description)
+    .bind(&body.announcement_type)
     .bind(&body.audience)
-    .bind(body.priority)
+    .bind(&body.priority)
     .bind(body.start_date)
     .bind(body.end_date)
     .bind(body.is_pinned)
-    .bind(body.attachment_url)
+    .bind(&body.attachment_url)
     .bind(creator_uuid)
     .bind(Utc::now())
     .fetch_one(&data.pool)
@@ -46,6 +44,43 @@ pub async fn create_announcement_handler(
 
     match result {
         Ok(announcement) => {
+            // Send In-App Notifications if requested
+            if body.send_in_app {
+                let msg = format!("{}: {}", body.title, body.description);
+                if msg.len() > 200 {
+                    // Truncate if too long for notification summary
+                    // msg = format!("{}...", &msg[..197]);
+                }
+                
+                let mut global_broadcast_sent = false;
+                for audience_role in &body.audience {
+                    let recipient_label = match audience_role.as_str() {
+                        "Students" | "Faculty" | "All" => {
+                            if global_broadcast_sent { continue; }
+                            global_broadcast_sent = true;
+                            None
+                        },
+                        "HODs" => Some("HOD_RECIPIENT"),
+                        "Principal" => Some("PRINCIPAL_RECIPIENT"),
+                        "Coordinator" => Some("COORDINATOR_RECIPIENT"),
+                        _ => None,
+                    };
+
+                    // Insert notification
+                    let _ = sqlx::query(
+                        "INSERT INTO notifications (type, message, sender_id, recipient_id, status, created_at) 
+                         VALUES ($1, $2, $3, $4, 'UNREAD', $5)"
+                    )
+                    .bind("ANNOUNCEMENT")
+                    .bind(&msg)
+                    .bind(&body.creator_id)
+                    .bind(recipient_label)
+                    .bind(Utc::now())
+                    .execute(&data.pool)
+                    .await;
+                }
+            }
+
             (StatusCode::CREATED, Json(json!({"message": "Announcement created successfully", "announcement": announcement}))).into_response()
         }
         Err(e) => {

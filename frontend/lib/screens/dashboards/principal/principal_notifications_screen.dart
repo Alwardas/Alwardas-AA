@@ -171,7 +171,8 @@ class _PrincipalNotificationsScreenState extends State<PrincipalNotificationsScr
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Icon(
-                item['type'] == 'USER_APPROVAL' ? Icons.person_add : Icons.description,
+                item['type'] == 'USER_APPROVAL' ? Icons.person_add : 
+                (item['type'] == 'ANNOUNCEMENT' ? Icons.campaign_rounded : Icons.description),
                 color: tint,
                 size: 24,
               ),

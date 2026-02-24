@@ -5,6 +5,9 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/services/auth_service.dart';
 import 'hod_class_timetable_screen.dart'; // New Screen
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../../../core/api_constants.dart';
 
 // ---------------------------------------------------------------------------
 // Data models
@@ -63,6 +66,7 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
   
   // Classes Data
   List<YearData> _years = [];
+  bool _isLoading = false;
 
   // Modals
   bool _addModalVisible = false;
@@ -80,26 +84,57 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
       if (mounted) {
         setState(() {
           _userBranch = user['branch'];
-          _initData();
         });
+        await _initData();
       }
     }
   }
 
-  void _initData() {
+  Future<void> _initData() async {
     if (_userBranch == null) return;
+    
+    setState(() => _isLoading = true);
 
     // Default Labs
     _labs = [
       {'name': 'Computer Lab 1', 'branch': _userBranch!},
     ];
 
-    // Default Years (Only 3 years as requested)
-    _years = [
-      YearData(name: '1st Year', sections: [SectionData(branch: _userBranch!, label: 'Section A')]),
-      YearData(name: '2nd Year', sections: [SectionData(branch: _userBranch!, label: 'Section A')]),
-      YearData(name: '3rd Year', sections: [SectionData(branch: _userBranch!, label: 'Section A')]),
-    ];
+    // Fetch Years and Sections dynamically
+    List<String> yearNames = ['1st Year', '2nd Year', '3rd Year'];
+    List<YearData> loadedYears = [];
+
+    for (String yearName in yearNames) {
+      List<SectionData> sectionsForYear = [];
+      try {
+        final url = Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(_userBranch!)}&year=${Uri.encodeComponent(yearName)}');
+        final response = await http.get(url);
+        
+        if (response.statusCode == 200) {
+          final List<dynamic> fetched = json.decode(response.body);
+          if (fetched.isNotEmpty) {
+            for (var sec in fetched) {
+               sectionsForYear.add(SectionData(branch: _userBranch!, label: sec.toString()));
+            }
+          } else {
+             sectionsForYear.add(SectionData(branch: _userBranch!, label: 'Section A'));
+          }
+        } else {
+           sectionsForYear.add(SectionData(branch: _userBranch!, label: 'Section A'));
+        }
+      } catch (e) {
+        debugPrint("Error fetching sections for $yearName: $e");
+        sectionsForYear.add(SectionData(branch: _userBranch!, label: 'Section A'));
+      }
+      loadedYears.add(YearData(name: yearName, sections: sectionsForYear));
+    }
+
+    if (mounted) {
+      setState(() {
+        _years = loadedYears;
+        _isLoading = false;
+      });
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -242,7 +277,7 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
   }
 
   Widget _buildBody(BuildContext context) {
-    if (_userBranch == null) return const Center(child: CircularProgressIndicator());
+    if (_isLoading || _userBranch == null) return const Center(child: CircularProgressIndicator());
 
     switch (_currentView) {
       case TimetableView.main:

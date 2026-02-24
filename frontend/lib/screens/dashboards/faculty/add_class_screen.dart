@@ -103,63 +103,73 @@ class _AddClassScreenState extends State<AddClassScreen> {
     String fullBranch = _mapBranchToFull(_selectedBranch!);
 
     try {
-        final uri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': fullBranch});
-        final res = await http.get(uri);
-        if (res.statusCode == 200) {
-            final data = json.decode(res.body);
-            int startHour = data['start_hour'] ?? 9;
-            int startMinute = data['start_minute'] ?? 0;
-            int classDuration = data['class_duration'] ?? 50;
-            int shortBreakDuration = data['short_break_duration'] ?? 10;
-            int lunchDuration = data['lunch_duration'] ?? 50;
-            List<dynamic> slotConfig = data['slot_config'] ?? [];
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': fullBranch});
+      final res = await http.get(uri);
+      
+      int startHour = 9;
+      int startMinute = 0;
+      int classDuration = 50;
+      int shortBreakDuration = 10;
+      int lunchDuration = 50;
+      List<dynamic> slotConfig = [];
 
-            DateTime time = DateTime(2026, 1, 1, startHour, startMinute);
-            Map<int, Map<String, String>> newTimes = {};
-            List<int> periods = [];
-            
-            if (slotConfig.isNotEmpty) {
-                int pNum = 1;
-                for (var type in slotConfig) {
-                    DateTime start = time;
-                    int dur = 0;
-                    if (type == 'P') dur = classDuration;
-                    else if (type == 'SB') dur = shortBreakDuration;
-                    else if (type == 'LB') dur = lunchDuration;
-                    
-                    time = time.add(Duration(minutes: dur));
-                    if (type == 'P') {
-                        newTimes[pNum] = {
-                            'start': DateFormat('hh:mm a').format(start),
-                            'end': DateFormat('hh:mm a').format(time)
-                        };
-                        periods.add(pNum);
-                        pNum++;
-                    }
-                }
-            } else {
-                for (int i = 1; i <= 8; i++) {
-                    DateTime start = time;
-                    time = time.add(Duration(minutes: classDuration));
-                    newTimes[i] = {
-                        'start': DateFormat('hh:mm a').format(start),
-                        'end': DateFormat('hh:mm a').format(time)
-                    };
-                    periods.add(i);
-                    // Add breaks etc if needed but keep it simple
-                }
-            }
-
-            setState(() {
-                _availablePeriods = periods;
-                _periodTimes = newTimes;
-                if (_selectedPeriodIndex != null && !_availablePeriods.contains(_selectedPeriodIndex)) {
-                    _selectedPeriodIndex = null;
-                }
-            });
+      if (res.statusCode == 200) {
+        final List<dynamic> listData = json.decode(res.body);
+        if (listData.isNotEmpty) {
+          final data = listData[0];
+          startHour = data['start_hour'] ?? 9;
+          startMinute = data['start_minute'] ?? 0;
+          classDuration = data['class_duration'] ?? 50;
+          shortBreakDuration = data['short_break_duration'] ?? 10;
+          lunchDuration = data['lunch_duration'] ?? 50;
+          slotConfig = data['slot_config'] ?? [];
         }
+      }
+
+      DateTime time = DateTime(2026, 1, 1, startHour, startMinute);
+      Map<int, Map<String, String>> newTimes = {};
+      List<int> periods = [];
+
+      if (slotConfig.isNotEmpty) {
+        int pNum = 1;
+        for (var type in slotConfig) {
+          DateTime start = time;
+          int dur = 0;
+          if (type == 'P') dur = classDuration;
+          else if (type == 'SB') dur = shortBreakDuration;
+          else if (type == 'LB') dur = lunchDuration;
+
+          time = time.add(Duration(minutes: dur));
+          if (type == 'P') {
+            newTimes[pNum] = {
+              'start': DateFormat('hh:mm a').format(start),
+              'end': DateFormat('hh:mm a').format(time)
+            };
+            periods.add(pNum);
+            pNum++;
+          }
+        }
+      } else {
+        for (int i = 1; i <= 8; i++) {
+          DateTime start = time;
+          time = time.add(Duration(minutes: classDuration));
+          newTimes[i] = {
+            'start': DateFormat('hh:mm a').format(start),
+            'end': DateFormat('hh:mm a').format(time)
+          };
+          periods.add(i);
+        }
+      }
+
+      setState(() {
+        _availablePeriods = periods;
+        _periodTimes = newTimes;
+        if (_selectedPeriodIndex != null && !_availablePeriods.contains(_selectedPeriodIndex)) {
+          _selectedPeriodIndex = null;
+        }
+      });
     } catch (e) {
-        debugPrint("Error fetching timings: $e");
+      debugPrint("Error fetching timings: $e");
     }
   }
 

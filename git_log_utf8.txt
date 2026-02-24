@@ -1,0 +1,1019 @@
+commit 591ce6a8cc85cb8329ef24f9fa206e0cb87070ac
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-23 14:30:19 +0530
+
+    feat(hod): redesign profile tab to match reference UI frontend
+
+commit 8b6fabb73901ddba29ea6e91435f2fae53563247
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-23 14:20:05 +0530
+
+    fix(hod): dynamic schema patch for short_code column bypassing broken migrations
+
+commit 9b6f4ee5b117b70422f72d436492b9e905490203
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-23 13:31:46 +0530
+
+    fix(hod): department timings save and dashboard quick access update
+
+commit cb689088a7cad2915610a6513e69d75799b18cab
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-21 16:49:19 +0530
+
+    feat: Add absent students popup and interactive counts across roles
+
+commit 1906af9beb305628588aaf708b21c70ec735c637
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-21 15:40:27 +0530
+
+    Fix Dart syntax error in ApiConstants (getter with parameters)
+
+commit 3e5b71e6ebfe3f17102d86286dae5951305b7a2c
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-21 14:59:53 +0530
+
+    Implement Faculty Issues management system and update student issue targeting
+
+commit 056bfe6fbda6f0e3c0f8eb85f66b5af847d23733
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-21 12:36:27 +0530
+
+    feat(student): integrate free Wikipedia AI topic summary; refine announcements layout
+
+commit 0869b77afe2511cb617178ba027e6820f95372c0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-21 11:46:02 +0530
+
+    fix(backend): correct redis tokio tls features
+
+commit 3eca9adecaf28d73497902b2ce56130eec1d8bf5
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-21 11:41:50 +0530
+
+    chore(backend): add redis dependency for caching/data
+
+commit 2b58e0a6ad56d4b82b763645275832919ef21718
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-21 10:27:59 +0530
+
+    feat(student): update raise issue to full screen with dynamic faculty multi-select
+
+commit 8e2a0d56cabbd4ab1330bebd84a360670265b44c
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-20 15:35:36 +0530
+
+    added remove cleanup query
+
+commit 933ac477c841df3b3e4986467cf8e6fc0b8d81d8
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-20 15:12:59 +0530
+
+    add missing delete/pin routes to main.rs
+
+commit d4eb18e39cc25961e241a2bec36e69b41c2ce9bc
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-20 14:51:47 +0530
+
+    force sync announcements schema
+
+commit f96401991eedcc70a2397832a5ff444a866a6c64
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-20 14:33:01 +0530
+
+    update announcements
+
+commit 5176469bc86874cf07da1abbc7d68f49a5f82229
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-19 15:43:39 +0530
+
+    Implement student feedbacks page
+
+commit 8a04b75179b8252ff271d658b970829e7c56a0cf
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-19 15:00:07 +0530
+
+    Fix encoding issues and update feedback logic
+
+commit 2fb8babf6010337a6bedf697d471041feea2f261
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-19 14:03:40 +0530
+
+    feat: Add faculty details popup on student courses page
+
+commit f1f4606215993b2b1f8a1e0d2fab9c78dc9d35c0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-19 11:31:06 +0530
+
+    Improve debuggability of lesson plan marking
+
+commit c4ccbec66465f2ebfae3f6385b545dbcde387f29
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-19 11:24:10 +0530
+
+    Allow non-UUID lesson plan item IDs in Mark Complete
+
+commit f1841230e4221a7bc43ee3c583da98e667e0d448
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-19 11:03:08 +0530
+
+    Fix missing lesson_plan_progress table
+
+commit aa9cd38f8dfbd37d67f6af8232c91b573cfe5e4b
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-18 12:13:23 +0530
+
+    Expose DB error message in lesson plan API response
+
+commit a93e81a554335cd3321ca0a225187a3ae43409e6
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-18 12:05:12 +0530
+
+    Seed lesson plan data for CM-101
+
+commit 6895c964c9978ff2826aa23b9a8c289d1602ca8e
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-18 11:54:56 +0530
+
+    Add detailed logging to lesson plan handler
+
+commit a1cc881b1a9a326589ea05a61762c6c8278e48b7
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-18 11:45:39 +0530
+
+    Increase DB pool size to 50 for higher concurrency
+
+commit 069f44c37144c63bd7812efe6376ea409c959230
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-18 11:44:11 +0530
+
+    Reduce DB pool size to fix MaxClientsInSessionMode error
+
+commit 27dc20231ccc08988c4418aecf8c1ba45b7ffee3
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-18 11:36:18 +0530
+
+    Fix backend lesson plan query 500 error: Cast UUID to TEXT
+
+commit d312e546d78ee96e68759cd2af04904fe85ebe57
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-17 16:44:14 +0530
+
+    Enhance student signup with dynamic sections and improve course list UI/logic
+
+commit 6d0d555974028fa53e9626d0e4ce9ed8a7dca4aa
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-17 16:30:42 +0530
+
+    Fix student course fetching by normalizing 1st Year semesters and branches
+
+commit 485fc73b7f4cc609bc3eeb579582a0143a5698da
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-17 15:49:58 +0530
+
+    Fix backend compilation errors by removing redundant function definitions
+
+commit 1edda526cdfd0e60fa15a5876e6632f2d13cecf2
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-17 15:44:08 +0530
+
+    Implement custom department short codes and fix faculty subject duplication check
+
+commit 947044d9ce10d4ed7c6144fcded616f33da8d296
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-17 14:48:16 +0530
+
+    Fix faculty subjects query to prevent 500 error & update UI
+
+commit 594f220445aa374b3c07c005c5f9985c0bb2ad9b
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-17 14:24:11 +0530
+
+    Fix faculty subjects query to handle text vs UUID mismatch
+
+commit 33d4069f463e1bdffa41b9f1f43791486790eb01
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-17 14:12:22 +0530
+
+    Fix MyCourses screen theme and backend subject persistence
+
+commit e5f059bdffa1e7e8f3163dc07f4d22e84198afc3
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-17 12:47:12 +0530
+
+    Update
+
+commit b53abe1939e65eb796c91aa259b1eb363c45c1ce
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-17 11:49:12 +0530
+
+    Add Coordinator Department page and backend routes
+
+commit 28c0ab8b007c5ba7470af95f2f25d996542f0de7
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-15 18:00:05 +0530
+
+    Fix syntax error: Add missing _showSnackBar method to FacultyClassesScreen
+
+commit b7c96c7bb3a5e7b9f2781624374a58a80a5c298a
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-15 17:56:52 +0530
+
+    Enhance HOD notifications to display section details
+
+commit 65b34de7eb657b07ce49904f2e980a8353df468b
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-15 17:53:17 +0530
+
+    Fix pending subjects persistence: Use LEFT JOIN in fetch query
+
+commit 7b2509111a5fb61d83e6094a6a130e4a5ded693a
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-15 17:42:19 +0530
+
+    Fix faculty subject approval: include section in notification and process specific section approvals
+
+commit d9e25ec2c7b26cf3cf6c66cb82a6f42cf9ff459b
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-15 17:23:38 +0530
+
+    Fix HOD subject requests, update backend logic, and redesign faculty add subject screen
+
+commit a773f20c17d65618b2facd619470d641b5e1f9bc
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-15 15:50:16 +0530
+
+    Enhance HodNotificationsScreen: improved Faculty Subject Request card layout with proper name parsing, font sizing, and compact design
+
+commit 99cb58a65888bf95bea998561f19a1788bf8470e
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-14 17:00:58 +0530
+
+    fix(faculty): Resolve dart type errors and import paths in add subject screen
+
+commit ab2f9be7549de7d3fa6ff7ac0189845d8b3295ed
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-13 12:20:54 +0530
+
+    Integrate Announcement API: Enable dynamic fetching and creation across Coordinator, Principal, and Student dashboards
+
+commit eb48b6a11a381824016e4417b2072421ee461bd6
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 16:14:04 +0530
+
+    Enhance Faculty and HOD schedule with dynamic API sync, notification reminders, and long-press management
+
+commit f55034f62b757c4024ab3fd2b19b247d3df21166
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 15:57:34 +0530
+
+    Implement Faculty Assign Class feature, 1-min reminders, and fix HOD student duplication
+
+commit cb5bf17368995dd262dbe6750ec9cccabc3265ed
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 13:50:14 +0530
+
+    Fix backend compilation errors: resolve duplicate handlers and models, fix timetable logic
+
+commit b5fa5f4533807819c158e833e93fa1ba09c30921
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 12:44:47 +0530
+
+    Enhance faculty schedule: add subject codes, fix subject data JSON, and update notification service for FLN v19 compatibility
+
+commit e534e294b9b5d8d388c40e650ca8f996d0fc6617
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 12:22:20 +0530
+
+    Implement Faculty My Schedule with assignment, notifications, and UI updates
+
+commit f37ae7004020c28b23d084872f71985eb2344184
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 11:43:43 +0530
+
+    Fix syntax errors in HOD department timing screen
+
+commit 3f06a39451eb5186e403ff30e54c42b338ac8c07
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 11:42:55 +0530
+
+    Fix DepartmentTiming instantiation error
+
+commit 4f8d752649c6e3b7f3438168d1067efed022bc9c
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 11:42:00 +0530
+
+    Fix backend compilation errors and add sqlx json feature
+
+commit 8c7f6c735281afdcb79e4d89039fd08da4a648b8
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 11:36:39 +0530
+
+    Implement flexible department timing with drag-and-drop slots in HOD dashboard and propagate to faculty schedule
+
+commit 356eecc3a3ac120d30067c5758479d6367a97f2a
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 11:25:02 +0530
+
+    Implement department timing backend integration and 12-hour clock format
+
+commit 9c7da7d81ee96e7b72bef4cd3f65c9029ce151be
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 11:18:09 +0530
+
+    Adjust HOD department timing card size to match other management cards
+
+commit 79e4c318628a5a451dc10b4b3da4f24d858b54ec
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-11 11:11:47 +0530
+
+    Implement bulk student sync, dynamic department timings, and optimize attendance screens
+
+commit d9ab0be1f3021c483a7c9b267e34943c3f620cc0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-10 15:58:47 +0530
+
+    Add NotificationService and initial permission requests
+
+commit 96ce52efaa5770f964a79dac695126fa957728d4
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-10 15:23:20 +0530
+
+    Fix remaining lint warnings and deprecations
+
+commit 46851197d4c9566034c7d75ef3cbb180e5e2dc0e
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-10 14:11:15 +0530
+
+    Optimize attendance submission and fix runtime PDF font error
+
+commit 9e1e8f9d497e9d21595491c9c86725213822df7e
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-10 13:36:53 +0530
+
+    Fix PDF service errors and multiple dart fixes for lints
+
+commit 501df91b86cc486631f98dc0830d93e74954f4ca
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 16:20:41 +0530
+
+    Fix Syntax Error in HOD Screens: Brace Mismatch and Type Casting Issues
+
+commit 6081a57db4d5b21305fc2490ec7a69f419b1b20f
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 16:09:08 +0530
+
+    Optimize for 10GB Server: 1000 DB Connections + Parallel Fetching + Instant Caching + Tap Ripple
+
+commit 59517f2a39b48fc924cc64d463eafc1ff29ce568
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 16:05:54 +0530
+
+    Optimize HOD Attendance: Ripple Effect for Instant Feedback + Backend Indexes + Connection Pool Fix
+
+commit 67dd255f707b5d00cbb8a314d3b9f5c9e6a229bc
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 15:54:19 +0530
+
+    Optimize Backend: Increased connection pool size to 50 and added DB indexes for speed
+
+commit 0149de8c0c9c4ebda7d1aa14c8a35696930108e5
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 15:43:54 +0530
+
+    Optimize HOD Attendance: Connect to DB, Parallel Fetching, caching, and Fix Corrections
+
+commit ea183219c253b47bb9c5dcdbe8b1a5d2d8c796cc
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 14:57:20 +0530
+
+    Fix list type casting error in HOD Attendance Screen
+
+commit f4223cb64d428d33c0fb59b3374b3e4c275191e1
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 14:53:23 +0530
+
+    Optimize HOD Attendance Screen: Removed FAB, Add Section logic, and stabilized UI cards
+
+commit 08b062493eef369e198d5c8441541920aa9acc62
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 14:43:56 +0530
+
+    Enhance HOD Attendance: Detailed stats, calendar, session toggle & backend fix
+
+commit 03aa251aa15ec0dd6dabc0fbb2ae226054d1f70a
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 12:33:50 +0530
+
+    Fix section count sync glitch in HOD student management and add loading state
+
+commit 8a6447912e48a6c6f84fa49250e515b7bc62459d
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 12:29:03 +0530
+
+    Implement safe section deletion with student migration check
+
+commit 2e1fd7fe4851f4bba4349292a59ed56f9bd02bc6
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 12:20:58 +0530
+
+    Remove destructive SQL query that resets student sections on startup
+
+commit 220c7712c502bbfbbd47055b3d9cb77f544af488
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 12:11:50 +0530
+
+    Align HOD & Faculty Profile styles and add header padding
+
+commit 722cb34a258158315829e0336b84febda9322c9a
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 12:05:53 +0530
+
+    Fix duplicate method declarations in frontend
+
+commit 233e1cf7bd6d3520602403dafc8dfb72ac726205
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 12:04:17 +0530
+
+    Implement section rename handler to migrate students
+
+commit 1c8de850a9bf3375a6582e1c09a920e4c3762287
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 11:57:34 +0530
+
+    Implement student deletion functionality
+
+commit 1165884d6dea8a678bb491e84159f782df5a9c80
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 11:33:14 +0530
+
+    Implement sections table and HOD sync
+
+commit 8e8ae4413a62ae866fa16eb1717df9f5d6cd3cf3
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 11:31:01 +0530
+
+    Add debug logs for get_sections_handler
+
+commit ef13425dabc020130455ed07c14c3c0f2cbb37b0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 11:25:11 +0530
+
+    Fix overlapping route panic in main.rs
+
+commit 49016e79e81e7aeecc053a79560adef540917a57
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 11:20:21 +0530
+
+    Forcing deployment - fixed compilation errors
+
+commit 80f3f858dea3dc03dd855c418e100883c5ef3c98
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 11:10:54 +0530
+
+    Trigger deployment
+
+commit 7fc9f75cf985995750f0ea30cf5f2c9dba6ecf66
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 11:06:51 +0530
+
+    Add get_sections_handler backend API
+
+commit 172f62c47aeaaad2c1a78cae5a6e1a67678dfdc6
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 10:59:41 +0530
+
+    Fetch sections dynamically
+
+commit 069560ce202e96120fe023e171802dae62a96284
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-09 10:41:17 +0530
+
+    Fix faculty dashboard navigation and logout
+
+commit 62825bdb8330f0c1a265e2e0c3e5f70d72762356
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-07 13:17:35 +0530
+
+    Fix syntax error: Remove duplicate line in faculty.rs
+
+commit c592b954d3aee6c10851aae28ca22dbc9c9e6db0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-07 13:15:10 +0530
+
+    Add section to student profile and backend logic for student move
+
+commit 3e6802221136b1c872d48c898f6596e47c9b56db
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-07 13:02:42 +0530
+
+    Fix signup flow: handle existing users with pending update request, add check/accept/reject update handlers in backend and frontend, update UI for dropdowns and dialogs
+
+commit 494a123e0663d5b8f40cf7468d3c50b00931b4ea
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 22:59:36 +0530
+
+    feat: Align HOD lesson plan UI and logic with Faculty implementation
+
+commit f98a07f99b322f59ed0f5c887f59295c9a772fd0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 21:03:43 +0530
+
+    Remove 'Move Selected' from Attendance Log
+
+commit 618eb4588930bee8d8236f79a8b39640eb56a8ea
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 21:00:37 +0530
+
+    Fix migration default value to Section A
+
+commit f27624a5b43fd94426cf87ab2070ac66eb7fc842
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 20:56:44 +0530
+
+    Fix syntax error: correct method name _fetchStudents
+
+commit 1084ece202f79cfb79b5bea531f0e55d12d7c68f
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 20:51:39 +0530
+
+    Fix backend compilation errors in models.rs
+
+commit f7bab50b069c59bb4a7b06c4acba320f2e5be317
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 20:48:09 +0530
+
+    Fix Add Student in student list to persist to backend and correct section
+
+commit bc7d0000bc1185407df8e38650fe3a3dee911435
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 20:44:37 +0530
+
+    Implement Add Student backend endpoint and frontend integration
+
+commit 01d4d651e0235a17f08cc3ac3a91d38c7c4ce2af
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 20:28:54 +0530
+
+    Force reset all students to Section A for consistency
+
+commit b3362ec084e5e5ee585ac22c9a2589974f412988
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 20:24:38 +0530
+
+    Disable automatic student section distribution on startup
+
+commit 46071556cfa309db85695855758900cd22ec7d8f
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 20:16:58 +0530
+
+    Implement section management backend logic and UI updates
+
+commit caca09bc8902add7d8e3e1d24af68c72a5e7d796
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 14:56:37 +0530
+
+    Enable auto-approve and section assignment for live student fetching
+
+commit 60058543ab628200e82dfc97d22885693dd93d04
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 14:34:50 +0530
+
+    Add database indexes for faster attendance fetching
+
+commit d780b93fe2790ee935deeb8a15bbab4a3c62e3a8
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 14:30:28 +0530
+
+    Distribute students to Section B for testing
+
+commit 55f31bc6554406db0965534580057ad5e5a4aac8
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 14:18:45 +0530
+
+    Emergency fix: Force schema repair and data consistency on startup
+
+commit 3df2cad34dde31fcbb2edbff613a8d90fc0cd52f
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 14:06:45 +0530
+
+    Fix SQLx array binding with type cast and ensure all students are approved
+
+commit 4bc73eae5e6c9409528b228bc9497a3b501e27fd
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 14:00:27 +0530
+
+    Enhance attendance section fetching and UI with white card backgrounds
+
+commit 4f4a4e8c7411dacbb701dcbba82acd5034035f7d
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 13:38:45 +0530
+
+    Fix visibility of section items in selection dialog
+
+commit f3e61fcf96f75f3a18f9782add34f3b39b13c7cd
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 13:37:44 +0530
+
+    Fix Centered Section selection, URL encoding for sections, and null DB sections
+
+commit 9005427a39a13aab7509749d2c6cb0a122378083
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 13:30:07 +0530
+
+    Implement section-based attendance for HOD and Faculty with backend integration
+
+commit 89a7c060f4846e0beb89248cc2fff7828c793757
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 13:05:46 +0530
+
+    Fix section count discrepancy in student management screen using persistent storage
+
+commit fb8fce3a770af6cb8bc76693cb7d53cb7a736f2d
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 12:53:59 +0530
+
+    Fix duplicate Utc import in faculty.rs to resolve build error
+
+commit f25fd7ee23331e754303a84af179b89ab414ee91
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 12:50:57 +0530
+
+    Implement backend move_students API with DB migration and connect frontend actions
+
+commit c2bc5e3a8b90e27368beead594980727382f3638
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 12:41:37 +0530
+
+    Added local persistence for student moves and sections using SharedPreferences. Updated UI feedback.
+
+commit 22e488c7b2caaa30c68be9b160ce1caa22bcc93e
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-05 12:25:11 +0530
+
+    Integrated student management features: Load from JSON, backend-connected actions (Move/Delete/Suspend), and updated UI.
+
+commit 8347b75c2a40059abbe2ae9809f67ada200cae8e
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 13:59:54 +0530
+
+    chore: rename app to Alwardas Academics & Administration and fix XML escaping
+
+commit cf6871cc1cd7a28bd7d6de5c6a0f0d4f9396824f
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 12:18:31 +0530
+
+    Add database migration for CASCADE delete on parent_student_links
+
+commit 8e1832dbba4274da32cdd12e0b026619b708ddc7
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 12:07:31 +0530
+
+    Cleanup: Remove unnecessary main_backup.rs file
+
+commit e75593f8ffbb219c3f330be1f811971dd00e6bb6
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 12:04:15 +0530
+
+    Update seed script with Coordinator demo user
+
+commit 0d223e0363a570bc59864a94f77f2a6414325404
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 11:55:33 +0530
+
+    Implement hierarchical approval flow: Student/Faculty/Parent to HOD, HOD to Principal, Principal to Coordinator, Coordinator to Admin
+
+commit 957165d3284b067638c6fce0b6ebb02d9e863155
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 11:36:24 +0530
+
+    Optimize UI performance: remove redundant fonts, add RepaintBoundaries, and refactor list items
+
+commit 4d3a23453050044cc9ad3c8f1b57f38df2c6b0a2
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 11:30:35 +0530
+
+    Simplify login error messages and explicitly handle No Internet Connection
+
+commit c86336a967e70993acea31b68254350320a427b9
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 11:29:26 +0530
+
+    Simplify and non-technical login error messages
+
+commit 55f0bf65185e9c8647deccb9bb6be3ad390933df
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 11:26:26 +0530
+
+    Fix Flutter syntax errors in login_screen.dart
+
+commit c60b918a72eae80cd40d22a31cd477069a53e07a
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 11:18:55 +0530
+
+    Fix Rust compilation error (E0382) and cleanup unused imports
+
+commit 33c81ec8dbbd50cca9ba2d909ff3392f845b280d
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-04 11:13:03 +0530
+
+    Implement HOD and Principal approval flow, manual Admin approval for Principals, and enhanced login error reporting
+
+commit 2f194a35cc7a3e9ebab5db1c59237ed1efc8a65b
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 16:26:12 +0530
+
+    Clean up debug logs for production
+
+commit 682c0eea54d804dbe7589ff0ad1458881f2563df
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 16:24:05 +0530
+
+    Re-enable gRPC fallback for authentication
+
+commit 29ce8e286851c23b4924455e4d50b2c893fe591b
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 16:20:08 +0530
+
+    Add /health endpoint for Railway health checks
+
+commit 43b7c0507b3ec7f959f0044a6c6181128a4d7224
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 16:14:59 +0530
+
+    Fix: Remove accidental syntax error (early closing brace)
+
+commit b15aeed154618593486d891da61afaa30b85000f
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 16:12:53 +0530
+
+    Debug: Add request logging and revert to IPv4 binding
+
+commit 209404fa3e547e9eebe7864dc25b760e6039a92a
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 16:09:09 +0530
+
+    Debug: Add TraceLayer and revert to IPv4 binding to diagnose 502 error
+
+commit 79d0089935acfea50f953d9a4b30a3155606c9cc
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 16:05:09 +0530
+
+    Fix: restore full app with IPv6 binding and disable fallback
+
+commit a3b3ea8d437b371c8e19478c5a47c7e5f3867f1f
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 16:01:43 +0530
+
+    Fix: bind to IPv6 [::] to support Railway dual-stack/IPv6 networking
+
+commit c81d3aee039990bc82383cbb2aa8dd0fa14ab3df
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:58:52 +0530
+
+    Debug: Replace Axum with raw TCP listener to diagnose network connectivity
+
+commit 66c468c9f47b5082cb5fa881a1a956a8e87d0990
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:55:32 +0530
+
+    Debug: Add startup logs to verify PORT variable and process life
+
+commit ff0d9d49f0e56c03f91f0ba798cb77f30a9a2af0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:53:31 +0530
+
+    Debug: Replace backend with minimal Hello World server to isolate 502
+
+commit 33f8850d6f255e6baea9934213a6d224fbdc7d09
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:49:15 +0530
+
+    Fix: bind port immediately on startup to prevent boot timeouts
+
+commit ea6736028fcb72a85efbe1024c215a8679f6f008
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:44:16 +0530
+
+    Debug: simplify socket binding and use permissive CORS to isolate network issue
+
+commit 0400610552a71f5bdce97c9cc079c0abc49c6b98
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:41:41 +0530
+
+    Debug: temporarily disable gRPC fallback to verify HTTP connectivity
+
+commit 8fefa4ae9fc912eba27da4300f8f3e5551f020e0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:32:47 +0530
+
+    Fix: further standardize server startup and add verbose binding logs
+
+commit 049af465837c3d8e642862fc0e69f27ee83e9979
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:26:01 +0530
+
+    Fix: move gRPC handling to Axum fallback for better stability and reliability
+
+commit a1ca45fe047020949d2976c6ca230743375181c9
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:18:08 +0530
+
+    Fix: standardized multiplexing body types for Axum 0.7 and Tonic 0.12
+
+commit 4061c66ca94a19dd3696a302d3df6c0269a20c2c
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:12:39 +0530
+
+    Fix: correctly box request body for Tonic service and fix multiplexing signature
+
+commit 979591e024233aab1ed581b3111045b22fa78c78
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:10:37 +0530
+
+    Fix: resolve gRPC/HTTP body type mismatch and Incoming import error
+
+commit c5114ffbc18d8ef457dfd2e88a344f441ca72319
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 15:00:44 +0530
+
+    Fix: correctly align dependencies and types for Axum 0.7/Tonic 0.12 build
+
+commit 95d764db613a2829e3794ae1c4f9d86b3ef52dbb
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 14:56:42 +0530
+
+    Fix: Make multiplexing service Infallible for axum::serve stability
+
+commit e88c16a74d9870a0f048155b9397fcc73d305280
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 14:56:09 +0530
+
+    Chore: Remove hardcoded port from Dockerfile for Railway compatibility
+
+commit 155e132b772ce2be1fd6e0568a0700bee3b16c8a
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 14:55:09 +0530
+
+    Fix: Backend port multiplexing and database connection for Railway deployment
+
+commit 9214065b726809af77be89ce8471923d950d31a0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 14:28:49 +0530
+
+    Fix: backend multiplexing, database connection stability, and frontend API cleanup
+
+commit a1c1c3f11247a28c7d5a69b6deeafcb5287119a4
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 12:34:23 +0530
+
+    Upgrade Tonic to 0.12 to match Axum 0.7 (HTTP 1.0) and fix multiplexing build
+
+commit bce0bb4d2a4d350938b2aceb4dd96a08991f38b6
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 12:23:58 +0530
+
+    Fix main.rs compile error: Ensure multiplexed service is Infallible and unifies body types
+
+commit 53cc1ed8ca3be11cb391ea0bda600b2fdde23446
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 12:15:42 +0530
+
+    Implement Multiplexing: Serve HTTP and gRPC on the same port (8080) for Railway compatibility
+
+commit 17065a8d090994c49d854ba0f91f84e7563347ff
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 12:07:50 +0530
+
+    Fix migration 20260201: Use IF NOT EXISTS for feedback columns
+
+commit ebfe7e279436bfe204f949fa47e412743dc4c287
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 12:01:03 +0530
+
+    Force drop index and table for timetables to finally fix migration 502 loop
+
+commit 9b4f6c69268829aaae979f3ecbe74e57c3baf3ee
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 11:45:01 +0530
+
+    Drop timetables on startup to force clean migration state
+
+commit f7ee80aaf2a6197a266260a21de9990c01f8eb2a
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 11:33:28 +0530
+
+    Drop attendance_correction_requests table on startup to clean schema state
+
+commit 8bd978a14abdafd8b42e5a77f26c26b6ea8c2331
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 11:16:30 +0530
+
+    Fix migration for timetables: Use IF NOT EXISTS
+
+commit 6e7cee5d45643419a1bb778e8f10f27fb83f0c45
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 11:09:48 +0530
+
+    Drop attendance table on startup to prevent index creation conflicts during migration replay
+
+commit 2bdadba3c8f1cdbcadd960f57a1fd7c8de749de0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 11:02:40 +0530
+
+    Fix migration 000002: Use IF NOT EXISTS for adding columns
+
+commit dc44708bd3936606faa8dadc256e3d2a3e44f4d0
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 10:57:43 +0530
+
+    Wipe all migration history on startup to force resync
+
+commit 47b2fbabf31cfd9c700264c2c210b5b100545aee
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 10:55:51 +0530
+
+    Add .dockerignore to fix Railway build timeout by excluding frontend and target
+
+commit dda814d2ac7922f2ed68979a2c5ff7d0301b4f4a
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 10:41:36 +0530
+
+    Fix migration checksum mismatch for version 0001
+
+commit 74fa27ea30a03b671403b332da108b140725f6a8
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 10:34:35 +0530
+
+    Fix migration checksum mismatch by removing bad record
+
+commit ede55e6dd42d0ed5a474c6f295a010bb484e14fd
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-03 10:12:47 +0530
+
+    Optimize backend startup: Move heavy tasks to background to prevent Railway 502 timeout
+
+commit 45d6b5ac0abad646c6dfc8a05f37ec28ad335ee4
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 12:02:35 +0530
+
+    Copy protos to container for build step
+
+commit 5480cfaa41f11e93f6ef12c527bac9d1e2764002
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 12:00:13 +0530
+
+    Fix Rust nightly image tag
+
+commit 5a132a13bf23c7bab941546ff4f8e16c1930c0c9
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 11:58:35 +0530
+
+    Switch to Rust Nightly for edition2024 support
+
+commit 9bd9c91833bb4e840d3523d1680af9b315a8f09f
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 11:53:52 +0530
+
+    Update Rust version to fix dependency build error
+
+commit 062df639f48b883e1af4b152b95362590aa61f48
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 11:46:40 +0530
+
+    Move Dockerfile to root for correct build context
+
+commit b7b50716a60b1bb9640fd1d69461a13a63237cdf
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 11:42:08 +0530
+
+    Simplify Dockerfile for Railway build
+
+commit fcbca08813421cc08f337d7aded7a1a240ec1c0d
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 11:37:57 +0530
+
+    Force update Dockerfile for Railway
+
+commit 4a8392e9680755f76ca4291512db6ca9c1d76be2
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 11:30:23 +0530
+
+    Fix Dockerfile copy instruction
+
+commit 87912e0df4c11142965294e584e2123c41c85c03
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 11:18:00 +0530
+
+    Switch login to HTTP for Railway compatibility
+
+commit 2cedfb19eedba62234b43373b255b574e07b7f49
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 10:49:51 +0530
+
+    Add Dockerfile for backend deployment
+
+commit 06c169201341471061124b1c778e163484a05543
+Author: Alwardas Polytechnic <aldspolytechnic@gmail.com>
+Date:   2026-02-02 10:47:54 +0530
+
+    Initial commit

@@ -259,13 +259,16 @@ class _StudentNotificationsScreenState extends State<StudentNotificationsScreen>
     );
   }
   Widget _buildNotificationIcon(String type, String message, Color tint) {
-    if (type == 'ATTENDANCE') {
+    if (type.toUpperCase() == 'ATTENDANCE') {
       if (message.toLowerCase().contains('present')) {
         return const Icon(Icons.check_circle, color: Colors.green, size: 24);
       } else if (message.toLowerCase().contains('absent')) {
         return const Icon(Icons.cancel, color: Colors.red, size: 24);
       }
       return const Icon(Icons.calendar_today, color: Colors.orange, size: 24);
+    }
+    if (type.toUpperCase() == 'ANNOUNCEMENT') {
+        return const Icon(Icons.campaign_rounded, color: Colors.blue, size: 24);
     }
     return Icon(Icons.notifications, color: tint, size: 24);
   }

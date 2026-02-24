@@ -40,24 +40,42 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
       8: {'start': '16:20', 'end': '17:10'},
   };
 
+  List<dynamic> _slotConfig = [];
+
   List<Map<String, dynamic>> _getEmptyDay() {
     List<Map<String, dynamic>> slots = [];
     
-    // We basically need to re-implement the generation logic here or use a shared util.
-    // For now I'll just dynamically build it from _periodTimes.
-    
-    slots.add({'id': 'p1', 'type': 'class', 'number': 1, 'time': '${_periodTimes[1]!['start']}-${_periodTimes[1]!['end']}', 'subject': '---', 'faculty': ''});
-    slots.add({'id': 'p2', 'type': 'class', 'number': 2, 'time': '${_periodTimes[2]!['start']}-${_periodTimes[2]!['end']}', 'subject': '---', 'faculty': ''});
-    slots.add({'id': 'b1', 'type': 'break', 'label': 'B R E A K'});
-    slots.add({'id': 'p3', 'type': 'class', 'number': 3, 'time': '${_periodTimes[3]!['start']}-${_periodTimes[3]!['end']}', 'subject': '---', 'faculty': ''});
-    slots.add({'id': 'p4', 'type': 'class', 'number': 4, 'time': '${_periodTimes[4]!['start']}-${_periodTimes[4]!['end']}', 'subject': '---', 'faculty': ''});
-    slots.add({'id': 'l1', 'type': 'lunch', 'label': 'L U N C H'});
-    slots.add({'id': 'p5', 'type': 'class', 'number': 5, 'time': '${_periodTimes[5]!['start']}-${_periodTimes[5]!['end']}', 'subject': '---', 'faculty': ''});
-    slots.add({'id': 'p6', 'type': 'class', 'number': 6, 'time': '${_periodTimes[6]!['start']}-${_periodTimes[6]!['end']}', 'subject': '---', 'faculty': ''});
-    slots.add({'id': 'b2', 'type': 'break', 'label': 'B R E A K'});
-    slots.add({'id': 'p7', 'type': 'class', 'number': 7, 'time': '${_periodTimes[7]!['start']}-${_periodTimes[7]!['end']}', 'subject': '---', 'faculty': ''});
-    slots.add({'id': 'p8', 'type': 'class', 'number': 8, 'time': '${_periodTimes[8]!['start']}-${_periodTimes[8]!['end']}', 'subject': '---', 'faculty': ''});
-    
+    if (_slotConfig.isEmpty) {
+      slots.add({'id': 'p1', 'type': 'class', 'number': 1, 'time': '${_periodTimes[1]?['start']}-${_periodTimes[1]?['end']}', 'subject': '---', 'faculty': ''});
+      slots.add({'id': 'p2', 'type': 'class', 'number': 2, 'time': '${_periodTimes[2]?['start']}-${_periodTimes[2]?['end']}', 'subject': '---', 'faculty': ''});
+      slots.add({'id': 'b1', 'type': 'break', 'label': 'B R E A K'});
+      slots.add({'id': 'p3', 'type': 'class', 'number': 3, 'time': '${_periodTimes[3]?['start']}-${_periodTimes[3]?['end']}', 'subject': '---', 'faculty': ''});
+      slots.add({'id': 'p4', 'type': 'class', 'number': 4, 'time': '${_periodTimes[4]?['start']}-${_periodTimes[4]?['end']}', 'subject': '---', 'faculty': ''});
+      slots.add({'id': 'l1', 'type': 'lunch', 'label': 'L U N C H'});
+      slots.add({'id': 'p5', 'type': 'class', 'number': 5, 'time': '${_periodTimes[5]?['start']}-${_periodTimes[5]?['end']}', 'subject': '---', 'faculty': ''});
+      slots.add({'id': 'p6', 'type': 'class', 'number': 6, 'time': '${_periodTimes[6]?['start']}-${_periodTimes[6]?['end']}', 'subject': '---', 'faculty': ''});
+      slots.add({'id': 'b2', 'type': 'break', 'label': 'B R E A K'});
+      slots.add({'id': 'p7', 'type': 'class', 'number': 7, 'time': '${_periodTimes[7]?['start']}-${_periodTimes[7]?['end']}', 'subject': '---', 'faculty': ''});
+      slots.add({'id': 'p8', 'type': 'class', 'number': 8, 'time': '${_periodTimes[8]?['start']}-${_periodTimes[8]?['end']}', 'subject': '---', 'faculty': ''});
+    } else {
+        int pNum = 1;
+        int bNum = 1;
+        int lNum = 1;
+        for (var type in _slotConfig) {
+            if (type == 'P') {
+                if (_periodTimes.containsKey(pNum)) {
+                   slots.add({'id': 'p$pNum', 'type': 'class', 'number': pNum, 'time': '${_periodTimes[pNum]!['start']}-${_periodTimes[pNum]!['end']}', 'subject': '---', 'faculty': ''});
+                }
+                pNum++;
+            } else if (type == 'SB') {
+                slots.add({'id': 'b$bNum', 'type': 'break', 'label': 'B R E A K'});
+                bNum++;
+            } else if (type == 'LB') {
+                slots.add({'id': 'l$lNum', 'type': 'lunch', 'label': 'L U N C H'});
+                lNum++;
+            }
+        }
+    }
     return slots;
   }
 
@@ -95,14 +113,17 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
         final uri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': widget.branch});
         final res = await http.get(uri);
         if (res.statusCode == 200) {
-            final data = json.decode(res.body);
-            startHour = data['start_hour'] ?? 9;
-            startMinute = data['start_minute'] ?? 0;
-            classDuration = data['class_duration'] ?? 50;
-            shortBreakDuration = data['short_break_duration'] ?? 10;
-            lunchDuration = data['lunch_duration'] ?? 50;
-            if (data['slot_config'] != null) {
-               slotConfig = List<dynamic>.from(data['slot_config']);
+            final List<dynamic> listData = json.decode(res.body);
+            if (listData.isNotEmpty) {
+                final data = listData[0];
+                startHour = data['start_hour'] ?? 9;
+                startMinute = data['start_minute'] ?? 0;
+                classDuration = data['class_duration'] ?? 50;
+                shortBreakDuration = data['short_break_duration'] ?? 10;
+                lunchDuration = data['lunch_duration'] ?? 50;
+                if (data['slot_config'] != null) {
+                   slotConfig = List<dynamic>.from(data['slot_config']);
+                }
             }
         } else {
              // Fallback to shared prefs ... (simplified for brevity, assume default if offline)
@@ -125,6 +146,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
     String formatTime(DateTime t) => DateFormat('hh:mm a').format(t);
 
     if (slotConfig.isNotEmpty) {
+        _slotConfig = slotConfig;
         int pNum = 1;
         for (var type in slotConfig) {
             DateTime start = time;

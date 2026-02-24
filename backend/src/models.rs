@@ -820,9 +820,13 @@ pub struct CreateAnnouncementRequest {
     #[serde(rename = "isPinned")]
     pub is_pinned: bool,
     #[serde(rename = "creatorId")]
-    pub creator_id: String, // Frontend sends string ID
+    pub creator_id: String, 
     #[serde(rename = "attachmentUrl")]
     pub attachment_url: Option<String>,
+    #[serde(rename = "sendPush", default)]
+    pub send_push: bool,
+    #[serde(rename = "sendInApp", default)]
+    pub send_in_app: bool,
 }
 
 #[derive(Deserialize)]

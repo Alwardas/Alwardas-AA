@@ -600,7 +600,12 @@ class _NotificationCardState extends State<NotificationCard> {
                          ),
                       ] else ...[
                          // Default Header
-                         Icon(item['type'] == 'USER_APPROVAL' ? Icons.person_add : Icons.description, color: widget.tint, size: 24),
+                         Icon(
+                           item['type'] == 'USER_APPROVAL' ? Icons.person_add : 
+                           (item['type'] == 'ANNOUNCEMENT' ? Icons.campaign_rounded : Icons.description), 
+                           color: widget.tint, 
+                           size: 24
+                         ),
                          const SizedBox(width: 10),
                          if (isApproved)
                            const Icon(Icons.check_circle, color: Colors.green, size: 18)

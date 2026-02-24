@@ -602,7 +602,7 @@ pub async fn get_notifications_handler(
         match role.as_str() {
             "Student" => {
                  if let Some(uid) = &params.user_id {
-                    conditions.push(format!("recipient_id = '{}'", uid));
+                    conditions.push(format!("(recipient_id = '{}' OR recipient_id IS NULL)", uid));
                  }
             },
             "Faculty" => {

@@ -43,22 +43,25 @@ class _HodDepartmentTimingScreenState extends State<HodDepartmentTimingScreen> {
       final res = await http.get(uri);
       
       if (res.statusCode == 200) {
-        final data = json.decode(res.body);
-        setState(() {
-          _startTime = TimeOfDay(hour: data['start_hour'] ?? 9, minute: data['start_minute'] ?? 0);
-          _classDuration = data['class_duration'] ?? 50;
-          _shortBreakDuration = data['short_break_duration'] ?? 10;
-          _lunchDuration = data['lunch_duration'] ?? 50;
-          
-          if (data['slot_config'] != null) {
-             _slotConfig = List<String>.from(data['slot_config']);
-             _periodsCount = _slotConfig.where((s) => s == 'P').length;
-          } else {
-             // Default initialization
-             _periodsCount = 8;
-             _updateSlotConfig();
-          }
-        });
+        final List<dynamic> listData = json.decode(res.body);
+        if (listData.isNotEmpty) {
+          final data = listData[0];
+          setState(() {
+            _startTime = TimeOfDay(hour: data['start_hour'] ?? 9, minute: data['start_minute'] ?? 0);
+            _classDuration = data['class_duration'] ?? 50;
+            _shortBreakDuration = data['short_break_duration'] ?? 10;
+            _lunchDuration = data['lunch_duration'] ?? 50;
+            
+            if (data['slot_config'] != null) {
+               _slotConfig = List<String>.from(data['slot_config']);
+               _periodsCount = _slotConfig.where((s) => s == 'P').length;
+            } else {
+               // Default initialization
+               _periodsCount = 8;
+               _updateSlotConfig();
+            }
+          });
+        }
       }
     } catch (e) {
       debugPrint("Error loading timings: $e");
