@@ -106,7 +106,17 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
              
              for (var slot in daySlots) {
                 if (slot['type'] == 'class' && slot['number'] == period) {
-                   slot['subject'] = item['subject'];
+                   String subjectStr = item['subject'] ?? '';
+                   String facName = item['faculty_name'] ?? '';
+                   
+                   if (facName.isEmpty && subjectStr.contains('(') && subjectStr.endsWith(')')) {
+                       int idx = subjectStr.lastIndexOf('(');
+                       facName = subjectStr.substring(idx + 1, subjectStr.length - 1);
+                       subjectStr = subjectStr.substring(0, idx).trim();
+                   }
+                   
+                   slot['subject'] = subjectStr;
+                   slot['facultyName'] = facName;
                 }
              }
            }
@@ -225,24 +235,71 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                        }
 
                        // Class Item (Read Only)
+                       final hasClass = item['subject'] != '---';
+                       
                        return Container(
                          width: width,
-                         padding: const EdgeInsets.all(16),
+                         height: 100, // Fixed height for uniformity
+                         padding: const EdgeInsets.all(12),
                          decoration: BoxDecoration(
                            color: cardColor,
-                           border: Border.all(color: iconBg),
+                           border: Border.all(color: hasClass ? tint.withValues(alpha: 0.3) : iconBg),
                            borderRadius: BorderRadius.circular(16),
+                           boxShadow: [
+                             if (hasClass)
+                               BoxShadow(
+                                 color: tint.withValues(alpha: 0.1),
+                                 blurRadius: 8,
+                                 offset: const Offset(0, 4),
+                               )
+                           ]
                          ),
                          child: Column(
+                           crossAxisAlignment: CrossAxisAlignment.start,
                            children: [
-                             Text("Period ${item['number']}", style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600)),
-                             const SizedBox(height: 5),
-                             Text(item['time'], style: GoogleFonts.poppins(color: tint, fontSize: 12)),
-                             const SizedBox(height: 10),
-                             Text(item['subject'], 
-                               textAlign: TextAlign.center,
-                               style: GoogleFonts.poppins(color: textColor, fontSize: 18, fontWeight: FontWeight.bold),
-                               maxLines: 2, 
+                             Row(
+                               crossAxisAlignment: CrossAxisAlignment.start,
+                               children: [
+                                 Expanded(
+                                   flex: 3,
+                                   child: Column(
+                                     crossAxisAlignment: CrossAxisAlignment.start,
+                                     children: [
+                                       Container(
+                                         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                         decoration: BoxDecoration(
+                                           color: tint.withValues(alpha: 0.1),
+                                           borderRadius: BorderRadius.circular(4)
+                                         ),
+                                         child: Text("P${item['number']} • ${item['time']}", style: GoogleFonts.poppins(color: tint, fontWeight: FontWeight.bold, fontSize: 9)),
+                                       ),
+                                     ],
+                                   ),
+                                 ),
+                                 if (hasClass && item['facultyName'] != null && item['facultyName'].toString().isNotEmpty) ...[
+                                   const SizedBox(width: 4),
+                                   Expanded(
+                                     flex: 2,
+                                     child: Text(
+                                       item['facultyName'], 
+                                       textAlign: TextAlign.right, 
+                                       style: GoogleFonts.poppins(color: subTextColor, fontSize: 9, fontWeight: FontWeight.w500), 
+                                       maxLines: 2, 
+                                       overflow: TextOverflow.ellipsis
+                                     ),
+                                   ),
+                                 ]
+                               ],
+                             ),
+                             const Spacer(),
+                             Text(
+                               item['subject'], 
+                               style: GoogleFonts.poppins(
+                                 color: hasClass ? textColor : subTextColor.withValues(alpha: 0.5), 
+                                 fontSize: 13, 
+                                 fontWeight: FontWeight.bold
+                               ),
+                               maxLines: 2,
                                overflow: TextOverflow.ellipsis
                              ),
                            ],

@@ -1373,7 +1373,7 @@ pub async fn get_timetable_handler(
     Query(params): Query<std::collections::HashMap<String, String>>,
 ) -> Result<Json<Vec<TimetableEntry>>, StatusCode> {
     if let Some(fid) = params.get("facultyId") {
-        return sqlx::query_as::<Postgres, TimetableEntry>("SELECT * FROM timetable_entries WHERE faculty_id = $1")
+        return sqlx::query_as::<Postgres, TimetableEntry>("SELECT t.*, u.full_name as faculty_name FROM timetable_entries t LEFT JOIN users u ON t.faculty_id = u.login_id WHERE t.faculty_id = $1")
             .bind(fid)
             .fetch_all(&state.pool)
             .await
@@ -1386,7 +1386,7 @@ pub async fn get_timetable_handler(
 
     if let (Some(branch), Some(year)) = (params.get("branch"), params.get("year")) {
         let section = params.get("section").cloned().unwrap_or_else(|| "A".to_string());
-        return sqlx::query_as::<Postgres, TimetableEntry>("SELECT * FROM timetable_entries WHERE branch = $1 AND year = $2 AND section = $3 ORDER BY day, period_index")
+        return sqlx::query_as::<Postgres, TimetableEntry>("SELECT t.*, u.full_name as faculty_name FROM timetable_entries t LEFT JOIN users u ON t.faculty_id = u.login_id WHERE t.branch = $1 AND t.year = $2 AND t.section = $3 ORDER BY t.day, t.period_index")
             .bind(normalize_branch(branch))
             .bind(year)
             .bind(section)
