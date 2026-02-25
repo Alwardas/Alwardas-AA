@@ -218,12 +218,12 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
               for (var item in data) {
                   String day = item['day'];
                   if (newSchedule.containsKey(day)) {
-                      int pNum = item['period_number'];
+                      int pNum = item['period_index'] ?? item['periodIndex'] ?? 0;
                       var daySlots = newSchedule[day]!;
                       for (var slot in daySlots) {
                           if (slot['type'] == 'class' && slot['number'] == pNum) {
                               slot['id'] = item['id']; 
-                              slot['subject'] = item['subject_name'];
+                              slot['subject'] = item['subject'];
                           }
                       }
                   }
@@ -253,15 +253,13 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
         final times = _periodTimes[pNum] ?? {'start': '00:00', 'end': '00:00'};
         
         final body = {
+            'facultyId': 'HOD_ASSIGNED',
             'branch': widget.branch,
             'year': widget.year,
             'section': widget.section,
             'day': _modalDay,
-            'period_number': pNum,
-            'start_time': times['start'],
-            'end_time': times['end'],
-            'subject_name': subject,
-            'entry_type': 'class'
+            'periodIndex': pNum,
+            'subject': subject,
         };
         
         final res = await http.post(
@@ -286,14 +284,22 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
     }
   }
 
-  Future<void> _handleClearClass(String day, String id) async {
-    if (id.startsWith('p')) return; 
-
+  Future<void> _handleClearClass(String day, int periodIndex) async {
     try {
+        final body = {
+            'facultyId': 'dummy',
+            'branch': widget.branch,
+            'year': widget.year,
+            'section': widget.section,
+            'day': day,
+            'periodIndex': periodIndex,
+            'subject': 'clear'
+        };
+
         final res = await http.post(
             Uri.parse('${ApiConstants.baseUrl}/api/timetable/clear'),
             headers: {'Content-Type': 'application/json'},
-            body: json.encode({'id': id})
+            body: json.encode(body)
         );
         
         if (res.statusCode == 200) {
@@ -416,7 +422,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
                                             TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Cancel")),
                                             TextButton(
                                                 onPressed: () {
-                                                  _handleClearClass(_selectedDay, item['id']);
+                                                  _handleClearClass(_selectedDay, item['number']);
                                                   Navigator.pop(ctx);
                                                 },
                                                 child: const Text("Clear", style: TextStyle(color: Colors.red))),

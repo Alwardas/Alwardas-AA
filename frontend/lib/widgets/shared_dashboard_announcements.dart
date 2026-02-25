@@ -133,7 +133,7 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => CoordinatorAnnouncementsScreen(isReadOnly: !isCoordinator))),
                           child: Container(
                             width: 60,
-                            height: 90,
+                            height: 80,
                             decoration: BoxDecoration(
                               color: isDark ? const Color(0xFF1E293B) : Colors.white,
                               borderRadius: BorderRadius.circular(20),
@@ -190,7 +190,7 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
       },
       child: Container(
         width: 250,
-        height: 90,
+        height: 80,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [typeColorStart, typeColorEnd],
@@ -302,7 +302,7 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
               highlightColor: isDark ? const Color(0xFF334155) : Colors.grey[100]!,
               child: Container(
                 width: 250,
-                height: 90,
+                height: 80,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16),

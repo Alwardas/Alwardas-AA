@@ -47,6 +47,7 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
   // Student Data
   String? _studentYear;
   String? _studentBranch;
+  String? _studentSection;
 
   @override
   void initState() {
@@ -67,20 +68,22 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
           // Rule: Read only the year (e.g., "2nd Year"). Ignore semester.
           _studentYear = user['year'] ?? '';
           _studentBranch = user['branch'];
+          _studentSection = user['section'] ?? 'Section A';
         });
         
         if (_studentYear != null && _studentBranch != null) {
-           _fetchTimetableForYear(_studentYear!, _studentBranch!);
+           _fetchTimetableForYear(_studentYear!, _studentBranch!, _studentSection!);
         }
       }
     }
   }
 
-  Future<void> _fetchTimetableForYear(String year, String branch) async {
+  Future<void> _fetchTimetableForYear(String year, String branch, String section) async {
     try {
       final uri = Uri.parse('${ApiConstants.baseUrl}/api/timetable').replace(queryParameters: {
         'branch': branch,
-        'year': year
+        'year': year,
+        'section': section,
       });
       
       final res = await http.get(uri);
@@ -98,13 +101,12 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
         for (var item in data) {
            String day = item['day'];
            if (newSchedule.containsKey(day)) {
-             int period = item['period_number'];
+             int period = item['period_index'] ?? item['periodIndex'] ?? 0;
              var daySlots = newSchedule[day]!;
              
              for (var slot in daySlots) {
                 if (slot['type'] == 'class' && slot['number'] == period) {
-                   slot['subject'] = item['subject_name'];
-                   slot['time'] = "${item['start_time']}-${item['end_time']}";
+                   slot['subject'] = item['subject'];
                 }
              }
            }

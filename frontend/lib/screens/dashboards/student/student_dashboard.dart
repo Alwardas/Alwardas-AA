@@ -131,13 +131,13 @@ class _StudentDashboardState extends State<StudentDashboard> {
             left: 24, 
             right: 24
           ),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFF1a4ab2), Color(0xFF3b82f6)],
+              colors: isDark ? AppTheme.darkHeaderGradient : AppTheme.lightHeaderGradient,
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40),
             ),
@@ -276,7 +276,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                       ),
                       _buildQuickAccessCard(
                         Icons.insights,
-                        'Marks / Results',
+                        'Exams / Results',
                         'View Grades',
                         cardColor,
                         const Color(0xFFe67e22).withValues(alpha: 0.1),
@@ -441,13 +441,13 @@ class _StudentDashboardState extends State<StudentDashboard> {
 
   Widget _buildMenuTab(BuildContext context, Color bgColor, Color cardColor, Color accentBlue, Color textColor, Color subTextColor) {
     final List<Map<String, dynamic>> menuItems = [
+      {'label': 'Announcements', 'subtitle': 'Updates & News', 'icon': Icons.campaign_rounded, 'color': const Color(0xFFf83600), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentAnnouncementsScreen()))},
+      {'label': 'Attendance', 'subtitle': 'Check status', 'icon': Icons.calendar_today, 'color': const Color(0xFF2ecc71), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => AttendanceScreen(userData: widget.userData)))},
       {'label': 'My Courses', 'subtitle': '4 Active', 'icon': Icons.menu_book, 'color': const Color(0xFF3b5998), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => MyCoursesScreen()))},
       {'label': 'Time Table', 'subtitle': '3 Classes', 'icon': Icons.schedule, 'color': const Color(0xFF9b59b6), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => TimeTableScreen()))},
-      {'label': 'Attendance', 'subtitle': 'Check status', 'icon': Icons.calendar_today, 'color': const Color(0xFF2ecc71), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => AttendanceScreen(userData: widget.userData)))},
-      {'label': 'Marks / Results', 'subtitle': 'View Grades', 'icon': Icons.insights, 'color': const Color(0xFFe67e22), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentMarksScreen()))},
+      {'label': 'Exams / Results', 'subtitle': 'View Grades', 'icon': Icons.insights, 'color': const Color(0xFFe67e22), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentMarksScreen()))},
       {'label': 'Issues', 'subtitle': 'Report & Track', 'icon': Icons.report_problem_outlined, 'color': const Color(0xFFE94057), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentCommentsScreen(userData: widget.userData)))},
       {'label': 'My Feedbacks', 'subtitle': 'Reviews', 'icon': Icons.feedback_outlined, 'color': const Color(0xFF1ABC9C), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentFeedbackScreen(userData: widget.userData)))},
-      {'label': 'Announcements', 'subtitle': 'Updates & News', 'icon': Icons.campaign_rounded, 'color': const Color(0xFF3498DB), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentAnnouncementsScreen()))},
     ];
 
     return SafeArea(
