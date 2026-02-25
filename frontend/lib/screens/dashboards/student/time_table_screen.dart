@@ -139,6 +139,7 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
     final isDark = themeProvider.isDarkMode;
     final bgColors = isDark ? ThemeColors.darkBackground : ThemeColors.lightBackground;
     final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
+    final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
     final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
     final iconBg = isDark ? ThemeColors.darkIconBg : ThemeColors.lightIconBg;
     final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
