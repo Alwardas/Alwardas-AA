@@ -293,15 +293,22 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                ],
                              ),
                              const Spacer(),
-                             Text(
-                               item['subject'], 
-                               style: GoogleFonts.poppins(
-                                 color: hasClass ? textColor : subTextColor.withValues(alpha: 0.5), 
-                                 fontSize: 13, 
-                                 fontWeight: FontWeight.bold
-                               ),
-                               maxLines: 2,
-                               overflow: TextOverflow.ellipsis
+                             LayoutBuilder(
+                               builder: (context, constraints) {
+                                 final isLongName = item['subject'].length > 20;
+                                 return Text(
+                                   item['subject'], 
+                                   style: GoogleFonts.poppins(
+                                     color: hasClass ? textColor : subTextColor.withValues(alpha: 0.5), 
+                                     fontSize: isLongName ? 10 : 12, 
+                                     fontWeight: FontWeight.bold,
+                                     height: 1.1,
+                                   ),
+                                   textAlign: TextAlign.left,
+                                   maxLines: isLongName ? 2 : 1,
+                                   overflow: TextOverflow.ellipsis
+                                 );
+                               }
                              ),
                            ],
                          ),
