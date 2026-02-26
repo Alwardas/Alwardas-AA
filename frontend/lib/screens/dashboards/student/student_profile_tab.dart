@@ -456,6 +456,9 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     // Usually retrieved from widget.userData or _profileData
     final contact = _profileData?['phone_number'] ?? _profileData?['phoneNumber'] ?? '+91 XXXXX XXXXX';
     final email = _profileData?['email'] ?? 'Not Provided';
+    
+    final String titleStr = _profileData?['title']?.toString() ?? widget.userData['title']?.toString() ?? '';
+    final String displayName = "${titleStr.isNotEmpty ? '$titleStr ' : ''}${_fullNameController.text}".toUpperCase();
 
     return Stack(
       children: [
@@ -483,7 +486,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      _fullNameController.text.toUpperCase(),
+                      displayName,
                       style: GoogleFonts.inter(
                         fontSize: 18, // Decreased font size from 22
                         fontWeight: FontWeight.w800,

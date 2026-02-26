@@ -267,6 +267,7 @@ pub struct ChangePasswordRequest {
 #[serde(rename_all = "camelCase")]
 pub struct StudentProfileResponse {
     pub full_name: String,
+    pub title: Option<String>,
     pub login_id: String,
     pub branch: Option<String>,
     pub year: Option<String>,

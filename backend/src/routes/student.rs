@@ -17,7 +17,7 @@ pub async fn get_student_profile_handler(
 ) -> Result<Json<StudentProfileResponse>, StatusCode> {
     let user_profile = sqlx::query_as::<Postgres, StudentProfileResponse>(
         "SELECT 
-            u.full_name, u.login_id, u.branch, u.year, u.semester, u.dob, u.batch_no, u.section, u.phone_number, u.email,
+            u.full_name, u.title, u.login_id, u.branch, u.year, u.semester, u.dob, u.batch_no, u.section, u.phone_number, u.email,
             EXISTS(SELECT 1 FROM profile_update_requests WHERE user_id = u.id AND status = 'PENDING') as pending_update
          FROM users u WHERE u.id = $1"
     )
