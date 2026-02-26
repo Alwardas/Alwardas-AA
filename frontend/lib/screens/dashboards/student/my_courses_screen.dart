@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:provider/provider.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -232,7 +233,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
     
                 Expanded(
                    child: _isLoading 
-                     ? const Center(child: CircularProgressIndicator())
+                     ? _buildSkeletonCourseList(isDark)
                      : displayedCourses.isEmpty 
                         ? _buildEmptyState(subHeadingColor)
                         : _buildCourseList(displayedCourses, isDark),
@@ -241,6 +242,27 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildSkeletonCourseList(bool isDark) {
+    return ListView.builder(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      itemCount: 4, // Number of skeleton items
+      itemBuilder: (context, index) {
+        return Shimmer.fromColors(
+          baseColor: isDark ? const Color(0xFF1E1E2C) : Colors.grey.shade300,
+          highlightColor: isDark ? const Color(0xFF2C2C2E) : Colors.grey.shade100,
+          child: Container(
+            margin: const EdgeInsets.only(bottom: 16),
+            height: 120, // Approximate height of course item
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF1E1E2C) : Colors.white,
+              borderRadius: BorderRadius.circular(20),
+            ),
+          ),
+        );
+      },
     );
   }
 

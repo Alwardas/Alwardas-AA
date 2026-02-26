@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:shimmer/shimmer.dart';
 import '../../../core/api_constants.dart';
 
 class AttendanceScreen extends StatefulWidget {
@@ -432,11 +433,11 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                       ),
 
                     // Calendar
-                    _loading 
-                      ? Center(child: CircularProgressIndicator(color: theme.primaryColor)) 
-                      : _buildCalendarGrid(textColor, theme.colorScheme.error),
-                    
-                    const SizedBox(height: 30),
+                  _loading 
+                    ? _buildSkeletonCalendar(theme.cardColor, textColor)
+                    : _buildCalendarGrid(textColor, theme.colorScheme.error),
+                  
+                  const SizedBox(height: 30),
                     
                     // Request Button
                     ElevatedButton(
@@ -775,6 +776,43 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
            },
         ),
       ],
+    );
+  }
+
+  Widget _buildSkeletonCalendar(Color cardColor, Color textColor) {
+    return Shimmer.fromColors(
+      baseColor: cardColor,
+      highlightColor: cardColor.withValues(alpha: 0.5),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map((d) => 
+              Expanded(child: Container(height: 20, margin: const EdgeInsets.symmetric(horizontal: 10), color: Colors.white))
+            ).toList(),
+          ),
+          const SizedBox(height: 10),
+          GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 7,
+              childAspectRatio: 0.85, 
+              mainAxisSpacing: 8,
+              crossAxisSpacing: 8,
+            ),
+            itemCount: 35, // Typical calendar grid size
+            itemBuilder: (context, index) {
+              return Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 
