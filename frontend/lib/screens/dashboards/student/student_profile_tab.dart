@@ -363,61 +363,43 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  // Logo and Background Element Stack
+                  // Logo Section
                   SizedBox(
-                    height: 180,
-                    child: Stack(
-                      alignment: Alignment.center,
+                    height: 200,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Decorative Background Blob
-                        Positioned(
-                          top: 10,
-                          child: Container(
-                            width: 250,
-                            height: 120,
-                            decoration: BoxDecoration(
-                              color: isDark ? const Color(0xFF2C3E50).withValues(alpha: 0.5) : const Color(0xFFE2E8F0).withValues(alpha: 0.6),
-                              borderRadius: const BorderRadius.all(Radius.elliptical(250, 120)),
-                            ),
+                        Image.asset(
+                          'assets/images/college logo.png', 
+                          height: 110,
+                          width: 110,
+                          errorBuilder: (context, error, stackTrace) => 
+                             Icon(Icons.school, size: 100, color: subTextColor.withValues(alpha: 0.3)),
+                        ),
+                        const SizedBox(height: 16),
+                        Text(
+                          "Alwardas Polytechnic",
+                          style: GoogleFonts.inter(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: textColor,
                           ),
                         ),
-                        // Logo and Text
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              'assets/images/college logo.png', 
-                              height: 80,
-                              width: 80,
-                              errorBuilder: (context, error, stackTrace) => 
-                                 Icon(Icons.school, size: 80, color: subTextColor.withValues(alpha: 0.3)),
+                        const SizedBox(height: 6),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: isDark ? Colors.white12 : Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Text(
+                            "Est. 2017",
+                            style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: subTextColor,
                             ),
-                            const SizedBox(height: 12),
-                            Text(
-                              "Alwardas Polytechnic",
-                              style: GoogleFonts.inter(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: textColor,
-                              ),
-                            ),
-                            const SizedBox(height: 6),
-                            Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                              decoration: BoxDecoration(
-                                color: isDark ? Colors.white12 : Colors.grey.shade200,
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Text(
-                                "Est. 2017",
-                                style: GoogleFonts.inter(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: subTextColor,
-                                ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       ],
                     ),
@@ -617,6 +599,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
 
   Widget _buildInfoCard({required IconData icon, required Color iconColor, required String label, required String value, required bool isDark}) {
     return Container(
+      height: 95, // Consistent equal size for all cards
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
