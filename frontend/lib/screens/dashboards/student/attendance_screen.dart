@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -147,9 +147,12 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
         final List<dynamic> history = data['history'] ?? [];
         final List<Map<String, dynamic>> mappedHistory = [];
         
-        Set<String> uniquePresentDates = {};
-        Set<String> uniqueAbsentDates = {};
+        double totalPresentCount = 0;
+        double totalAbsentCount = 0;
         Set<String> allUniqueDates = {};
+        
+        // Group by date first
+        Map<String, List<Map<String, dynamic>>> recordsByDate = {};
 
         for (var record in history) {
            String rawDate = record['date'];
@@ -157,16 +160,18 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
            
            allUniqueDates.add(dateOnly);
            
-           String statusRaw = (record['status'] as String).toUpperCase();
-           String status = statusRaw.startsWith('P') ? 'PRESENT' : 'ABSENT';
-
-           if (status == 'PRESENT') {
-             uniquePresentDates.add(dateOnly);
-           } else if (status == 'ABSENT') {
-             uniqueAbsentDates.add(dateOnly);
+           if (!recordsByDate.containsKey(dateOnly)) {
+             recordsByDate[dateOnly] = [];
            }
            
+           String statusRaw = (record['status'] as String).toUpperCase();
+           String status = statusRaw.startsWith('P') ? 'PRESENT' : 'ABSENT';
            String session = (record['session'] ?? 'MORNING').toString().toUpperCase();
+
+           recordsByDate[dateOnly]!.add({
+             'status': status,
+             'session': session,
+           });
 
            mappedHistory.add({
              'date': rawDate, 
@@ -177,18 +182,54 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
            });
         }
         
-        final finalPresentCount = uniquePresentDates.length;
-        final finalAbsentCount = allUniqueDates.difference(uniquePresentDates).length;
+        for (String date in allUniqueDates) {
+          final dayRecords = recordsByDate[date] ?? [];
+          bool hasMorning = dayRecords.any((r) => r['session'] == 'MORNING');
+          bool hasAfternoon = dayRecords.any((r) => r['session'] == 'AFTERNOON');
+          
+          bool morningPresent = dayRecords.any((r) => r['session'] == 'MORNING' && r['status'] == 'PRESENT');
+          bool afternoonPresent = dayRecords.any((r) => r['session'] == 'AFTERNOON' && r['status'] == 'PRESENT');
+          
+          // If a student is absent morning and afternoon, that is 1 absent day.
+          // If a student is absent one session, that is 0.5 absent days.
+          // Same for present. Count valid recorded sessions.
+          double dayPresent = 0.0;
+          double dayAbsent = 0.0;
+          
+          bool isSingleSessionDay = (hasMorning && !hasAfternoon) || (!hasMorning && hasAfternoon);
+          
+          if (hasMorning) {
+             if (morningPresent) {
+               dayPresent += isSingleSessionDay ? 1.0 : 0.5;
+             } else {
+               dayAbsent += 0.5;
+             }
+          }
+          if (hasAfternoon) {
+             if (afternoonPresent) {
+               dayPresent += isSingleSessionDay ? 1.0 : 0.5;
+             } else {
+               dayAbsent += 0.5;
+             }
+          }
+          
+          totalPresentCount += dayPresent;
+          totalAbsentCount += dayAbsent;
+        }
         
-        final totalDays = finalPresentCount + finalAbsentCount;
-        final percentage = totalDays > 0 ? (finalPresentCount / totalDays) * 100 : 0.0;
+        final totalDays = totalPresentCount + totalAbsentCount;
+        final percentage = totalDays > 0 ? (totalPresentCount / totalDays) * 100 : 0.0;
 
         if (mounted) {
           setState(() {
             _attendanceData = mappedHistory;
+            // Format to remove .0 if it's a whole number
+            String presentDisplay = totalPresentCount == totalPresentCount.toInt() ? totalPresentCount.toInt().toString() : totalPresentCount.toString();
+            String absentDisplay = totalAbsentCount == totalAbsentCount.toInt() ? totalAbsentCount.toInt().toString() : totalAbsentCount.toString();
+
             _stats = {
-              'present': finalPresentCount, 
-              'absent': finalAbsentCount,
+              'present': presentDisplay, 
+              'absent': absentDisplay,
               'percentage': percentage.toStringAsFixed(1),
               'totalWorkingDays': totalDays 
             };
@@ -326,10 +367,9 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textColor = theme.colorScheme.onSurface;
-    final subTextColor = theme.colorScheme.secondary;
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -675,15 +715,13 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
              bool aPresent = afternoon?['status'] == 'PRESENT';
              bool mAbsent = morning?['status'] == 'ABSENT';
              bool aAbsent = afternoon?['status'] == 'ABSENT';
-
-             if (afternoon == null) {
-                if (mPresent) aPresent = true;
-                if (mAbsent) aAbsent = true;
-             }
+             bool mRecorded = morning != null && morning.isNotEmpty;
+             bool aRecorded = afternoon != null && afternoon.isNotEmpty;
 
              bool fullPresent = mPresent && aPresent;
              bool fullAbsent = mAbsent && aAbsent;
-             bool partial = (mPresent && aAbsent) || (mAbsent && aPresent);
+             bool partial = (mPresent && aAbsent) || (mAbsent && aPresent) || 
+                            (mRecorded && !aRecorded) || (!mRecorded && aRecorded);
              
              // Selection State
              bool isSelected = _selectedRequestDates.contains(dateStr);
@@ -693,6 +731,9 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
              if (fullAbsent) borderColor = errorColor.withValues(alpha: 0.5);
              if (fullPresent) borderColor = Colors.greenAccent.withValues(alpha: 0.8);
              if (isSelected) borderColor = Colors.blue;
+
+             Color morningColor = mRecorded ? (mPresent ? Colors.greenAccent.withValues(alpha: 0.4) : Colors.red) : Colors.transparent;
+             Color afternoonColor = aRecorded ? (aPresent ? Colors.greenAccent.withValues(alpha: 0.4) : Colors.red) : Colors.transparent;
 
              return GestureDetector(
                onTap: (mAbsent || aAbsent) ? () => _handleDayTap(dateStr, morning, afternoon) : null,
@@ -704,10 +745,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                        borderRadius: BorderRadius.circular(8),
                        color: fullPresent ? Colors.greenAccent.withValues(alpha: 0.4) : (fullAbsent ? Colors.red : null),
                        gradient: partial ? LinearGradient(
-                          colors: [
-                             mPresent ? Colors.greenAccent.withValues(alpha: 0.4) : Colors.red,
-                             aPresent ? Colors.greenAccent.withValues(alpha: 0.4) : Colors.red,
-                          ],
+                          colors: [morningColor, afternoonColor],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           stops: const [0.5, 0.5] 

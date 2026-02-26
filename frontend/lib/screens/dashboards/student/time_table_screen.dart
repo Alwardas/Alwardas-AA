@@ -117,6 +117,9 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                    
                    slot['subject'] = subjectStr;
                    slot['facultyName'] = facName;
+                   slot['facultyEmail'] = item['faculty_email'] ?? item['facultyEmail'];
+                   slot['facultyPhone'] = item['faculty_phone'] ?? item['facultyPhone'];
+                   slot['facultyDept'] = item['faculty_department'] ?? item['facultyDepartment'];
                 }
              }
            }
@@ -255,60 +258,55 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                )
                            ]
                          ),
-                         child: Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
+                         child: Stack(
+                           clipBehavior: Clip.none,
                            children: [
-                             Row(
-                               crossAxisAlignment: CrossAxisAlignment.start,
-                               children: [
-                                 Expanded(
-                                   flex: 3,
-                                   child: Column(
-                                     crossAxisAlignment: CrossAxisAlignment.start,
-                                     children: [
-                                       Container(
-                                         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                         decoration: BoxDecoration(
-                                           color: tint.withValues(alpha: 0.1),
-                                           borderRadius: BorderRadius.circular(4)
-                                         ),
-                                         child: Text("P${item['number']} • ${item['time']}", style: GoogleFonts.poppins(color: tint, fontWeight: FontWeight.bold, fontSize: 9)),
-                                       ),
-                                     ],
-                                   ),
+                             Positioned(
+                               top: 0,
+                               left: 0,
+                               child: Container(
+                                 padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                 decoration: BoxDecoration(
+                                   color: tint.withValues(alpha: 0.1),
+                                   borderRadius: BorderRadius.circular(4)
                                  ),
-                                 if (hasClass && item['facultyName'] != null && item['facultyName'].toString().isNotEmpty) ...[
-                                   const SizedBox(width: 4),
-                                   Expanded(
-                                     flex: 2,
-                                     child: Text(
-                                       item['facultyName'], 
-                                       textAlign: TextAlign.right, 
-                                       style: GoogleFonts.poppins(color: subTextColor, fontSize: 9, fontWeight: FontWeight.w500), 
-                                       maxLines: 2, 
+                                 child: Text("P${item['number']} • ${item['time']}", style: GoogleFonts.poppins(color: tint, fontWeight: FontWeight.bold, fontSize: 9)),
+                               ),
+                             ),
+                             Center(
+                               child: Padding(
+                                 padding: const EdgeInsets.only(top: 14.0),
+                                 child: Column(
+                                   mainAxisSize: MainAxisSize.min,
+                                   children: [
+                                     Text(
+                                       item['subject'], 
+                                       style: GoogleFonts.poppins(
+                                         color: hasClass ? textColor : subTextColor.withValues(alpha: 0.5), 
+                                         fontSize: item['subject'].length > 20 ? 10 : 12, 
+                                         fontWeight: FontWeight.bold,
+                                         height: 1.1,
+                                       ),
+                                       textAlign: TextAlign.center,
+                                       maxLines: item['subject'].length > 20 ? 2 : 1,
                                        overflow: TextOverflow.ellipsis
                                      ),
-                                   ),
-                                 ]
-                               ],
-                             ),
-                             const Spacer(),
-                             LayoutBuilder(
-                               builder: (context, constraints) {
-                                 final isLongName = item['subject'].length > 20;
-                                 return Text(
-                                   item['subject'], 
-                                   style: GoogleFonts.poppins(
-                                     color: hasClass ? textColor : subTextColor.withValues(alpha: 0.5), 
-                                     fontSize: isLongName ? 10 : 12, 
-                                     fontWeight: FontWeight.bold,
-                                     height: 1.1,
-                                   ),
-                                   textAlign: TextAlign.left,
-                                   maxLines: isLongName ? 2 : 1,
-                                   overflow: TextOverflow.ellipsis
-                                 );
-                               }
+                                     if (hasClass && item['facultyName'] != null && item['facultyName'].toString().isNotEmpty) ...[
+                                       const SizedBox(height: 4),
+                                       GestureDetector(
+                                         onTap: () => _showFacultyDetails(context, item['facultyName'], item['facultyDept'], item['facultyEmail'], item['facultyPhone']),
+                                         child: Text(
+                                           item['facultyName'], 
+                                           textAlign: TextAlign.center, 
+                                           style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 10, fontWeight: FontWeight.w600), 
+                                           maxLines: 1, 
+                                           overflow: TextOverflow.ellipsis
+                                         ),
+                                       ),
+                                     ]
+                                   ],
+                                 ),
+                               ),
                              ),
                            ],
                          ),
@@ -321,6 +319,54 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  void _showFacultyDetails(BuildContext context, String name, String? dept, String? email, String? phone) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Text("Faculty Details", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildDetailRow(Icons.person, "Name", name),
+            const SizedBox(height: 10),
+            _buildDetailRow(Icons.business, "Department", dept ?? "N/A"),
+            const SizedBox(height: 10),
+            _buildDetailRow(Icons.email, "Email", email ?? "N/A"),
+            const SizedBox(height: 10),
+            _buildDetailRow(Icons.phone, "Phone", phone ?? "N/A"),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text("Close", style: GoogleFonts.poppins()),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDetailRow(IconData icon, String label, String value) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Icon(icon, size: 20, color: Colors.blueAccent),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(label, style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
+              Text(value, style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500)),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

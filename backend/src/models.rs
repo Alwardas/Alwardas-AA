@@ -117,6 +117,9 @@ pub struct TimetableEntry {
     pub subject: String,
     pub subject_code: Option<String>,
     pub faculty_name: Option<String>,
+    pub faculty_email: Option<String>,
+    pub faculty_phone: Option<String>,
+    pub faculty_department: Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
