@@ -38,6 +38,8 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
   final TextEditingController _dobController = TextEditingController();
   final TextEditingController _batchNoController = TextEditingController();
   final TextEditingController _sectionController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
 
   // Dropdown Options
   final List<String> _branchOptions = [
@@ -68,6 +70,8 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     _dobController.dispose();
     _batchNoController.dispose();
     _sectionController.dispose();
+    _phoneController.dispose();
+    _emailController.dispose();
     super.dispose();
   }
 
@@ -147,6 +151,8 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     _yearController.text = _profileData!['year'] ?? '';
     _semesterController.text = _profileData!['semester'] ?? '';
     _sectionController.text = _profileData!['section'] ?? 'Section A'; // Default if missing
+    _phoneController.text = _profileData!['phone_number'] ?? _profileData!['phoneNumber'] ?? '';
+    _emailController.text = _profileData!['email'] ?? '';
     
     // Handle Date Format: YYYY-MM-DD -> DD-MM-YYYY
     String rawDob = _profileData!['dob'] ?? _profileData!['date_of_birth'] ?? '';
@@ -206,6 +212,8 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
       'newDob': dobToSend,
       'newBatchNo': _batchNoController.text,
       'newSection': _sectionController.text,
+      'newPhone': _phoneController.text,
+      'newEmail': _emailController.text,
     };
 
     try {
@@ -758,6 +766,31 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                              child: _buildTextField(_sectionController, "Section", isDark, icon: Icons.arrow_drop_down),
                            ),
                          )
+                      ],
+                    ),
+                  ), 
+              ]
+          ),
+          const SizedBox(height: 20),
+
+          Row(
+              children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                         _SectionLabel(text: "Phone Number", color: subTextColor),
+                         _buildTextField(_phoneController, "Enter Phone Number", isDark),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 15),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                         _SectionLabel(text: "Email ID", color: subTextColor),
+                         _buildTextField(_emailController, "Enter Email ID", isDark),
                       ],
                     ),
                   ), 

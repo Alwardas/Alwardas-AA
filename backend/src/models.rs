@@ -275,6 +275,8 @@ pub struct StudentProfileResponse {
     pub batch_no: Option<String>,
     pub section: Option<String>,
     pub pending_update: Option<bool>,
+    pub phone_number: Option<String>,
+    pub email: Option<String>,
 }
 
 #[derive(Deserialize)]

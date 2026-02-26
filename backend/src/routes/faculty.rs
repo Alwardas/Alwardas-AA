@@ -1006,8 +1006,8 @@ pub async fn approve_profile_change_handler(
              let request_id: Uuid = r.get("id");
              let new_data: serde_json::Value = r.get("new_data");
              let full_name = new_data["newFullName"].as_str().or(new_data["fullName"].as_str()).map(|s| s.to_string());
-             let phone = new_data["phoneNumber"].as_str().map(|s| s.to_string());
-             let email = new_data["email"].as_str().map(|s| s.to_string());
+             let phone = new_data["newPhone"].as_str().or(new_data["phoneNumber"].as_str()).map(|s| s.to_string());
+             let email = new_data["newEmail"].as_str().or(new_data["email"].as_str()).map(|s| s.to_string());
              let exp = new_data["experience"].as_str().map(|s| s.to_string());
              let dob_str = new_data["newDob"].as_str().or(new_data["dob"].as_str()).map(|s| s.to_string());
              let login_id = new_data["newStudentId"].as_str().or(new_data["facultyId"].as_str()).map(|s| s.to_string());

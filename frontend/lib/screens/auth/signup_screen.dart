@@ -183,15 +183,27 @@ class _SignupScreenState extends State<SignupScreen> {
         return;
       }
       
-      // 5. Professional Details Check (Experience & Email)
+      // 5. Professional Details Check (Experience)
       bool isProfessionalDetailsRequired = ['Faculty', 'HOD', 'Principal'].contains(_selectedRole);
       if (isProfessionalDetailsRequired) {
         if (_experienceController.text.isEmpty) {
            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Years of Experience')));
            return;
         }
+      }
+
+      bool isEmailRequired = ['Student', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
+      if (isEmailRequired) {
         if (_emailController.text.isEmpty) {
            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Email ID')));
+           return;
+        }
+      }
+      
+      bool isPhoneRequired = ['Student', 'Parent', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
+      if (isPhoneRequired) {
+        if (_phoneController.text.isEmpty) {
+           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Phone Number')));
            return;
         }
       }
@@ -520,7 +532,8 @@ class _SignupScreenState extends State<SignupScreen> {
     // bool showSemester = same as showYear
     bool showDob = ['Student', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
     bool showProfessional = ['Faculty', 'HOD', 'Principal'].contains(_selectedRole);
-    bool showPhone = ['Parent', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
+    bool showEmail = ['Student', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
+    bool showPhone = ['Student', 'Parent', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
     bool showSection = ['Student'].contains(_selectedRole);
 
     return Column(
@@ -636,13 +649,15 @@ class _SignupScreenState extends State<SignupScreen> {
               LengthLimitingTextInputFormatter(2),
             ],
           ),
+        ],
+
+        if (showEmail)
           CustomTextField(
             label: 'Email ID',
             placeholder: 'Enter Email',
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
           ),
-        ],
 
         if (showPhone)
           CustomTextField(
