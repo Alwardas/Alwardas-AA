@@ -470,20 +470,20 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
             children: [
               // --- TOP SECTION ---
               Padding(
-                padding: const EdgeInsets.all(24),
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18), // Reduced vertical padding
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       _fullNameController.text.toUpperCase(),
                       style: GoogleFonts.inter(
-                        fontSize: 22,
+                        fontSize: 18, // Decreased font size from 22
                         fontWeight: FontWeight.w800,
                         color: textColor,
                         letterSpacing: 0.5,
                       ),
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 8), // Reduced spacing
                     // Student ID Row with Copy Icon
                     Row(
                       mainAxisSize: MainAxisSize.min,
@@ -518,29 +518,6 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                           ),
                         ),
                       ],
-                    ),
-                    const SizedBox(height: 12),
-                    // Active Status Badge
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFECFDF5),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            width: 8, height: 8,
-                            decoration: const BoxDecoration(color: Color(0xFF10B981), shape: BoxShape.circle),
-                          ),
-                          const SizedBox(width: 6),
-                          Text(
-                            "Active Student",
-                            style: GoogleFonts.inter(color: const Color(0xFF059669), fontWeight: FontWeight.w600, fontSize: 13),
-                          )
-                        ],
-                      ),
                     ),
                   ],
                 ),
