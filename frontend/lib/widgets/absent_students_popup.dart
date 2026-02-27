@@ -92,7 +92,7 @@ class AbsentStudentsPopup extends StatelessWidget {
                           backgroundColor: Colors.red.withValues(alpha: 0.1),
                           radius: 20,
                           child: Text(
-                             id.toString().substring(id.toString().length > 2 ? id.toString().length - 2 : 0), 
+                             id.toString().substring(id.toString().length > 3 ? id.toString().length - 3 : 0), 
                              style: const TextStyle(color: Colors.red, fontSize: 13, fontWeight: FontWeight.bold)
                           ),
                         ),

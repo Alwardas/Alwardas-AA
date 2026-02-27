@@ -234,7 +234,14 @@ pub async fn reject_my_pending_update_handler(
      let user_id_str = payload.get("userId").and_then(|v| v.as_str()).unwrap_or("");
      let user_id = Uuid::parse_str(user_id_str).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
 
-     sqlx::query("DELETE FROM profile_update_requests WHERE user_id = $1 AND status = 'PENDING_USER_APPROVAL'")
+     // Also delete corresponding notifications if any
+     sqlx::query("DELETE FROM notifications WHERE sender_id = $1 AND type = 'PROFILE_UPDATE_REQUEST'")
+        .bind(user_id_str)
+        .execute(&state.pool)
+        .await
+        .ok();
+
+     sqlx::query("DELETE FROM profile_update_requests WHERE user_id = $1 AND status IN ('PENDING_USER_APPROVAL', 'PENDING')")
         .bind(user_id)
         .execute(&state.pool)
         .await

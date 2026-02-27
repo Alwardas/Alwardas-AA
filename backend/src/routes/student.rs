@@ -47,6 +47,12 @@ pub async fn request_profile_update_handler(
 
     let mut tx = state.pool.begin().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to start transaction"}))))?;
 
+    // Delete existing pending requests for this user to avoid duplication
+    sqlx::query("DELETE FROM profile_update_requests WHERE user_id = $1 AND status = 'PENDING'")
+        .bind(user_uuid)
+        .execute(&mut *tx)
+        .await.ok();
+
     sqlx::query("INSERT INTO profile_update_requests (user_id, new_data, status) VALUES ($1, $2, 'PENDING')")
         .bind(user_uuid)
         .bind(json_data)

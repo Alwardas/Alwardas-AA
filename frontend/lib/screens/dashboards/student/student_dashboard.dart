@@ -159,13 +159,17 @@ class _StudentDashboardState extends State<StudentDashboard> {
                                fontWeight: FontWeight.w500,
                              ),
                           ),
-                          Text(
-                            widget.userData['full_name'] ?? 'Student', 
-                             style: GoogleFonts.poppins(
-                               color: Colors.white, 
-                               fontSize: 20, // Reduced from 24
-                               fontWeight: FontWeight.bold,
-                             ),
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              widget.userData['full_name'] ?? 'Student', 
+                               style: GoogleFonts.poppins(
+                                 color: Colors.white, 
+                                 fontSize: 18, // Reduced for a better fit
+                                 fontWeight: FontWeight.bold,
+                               ),
+                            ),
                           ),
                           const SizedBox(height: 2),
                           Text(

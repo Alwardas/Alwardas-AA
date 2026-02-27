@@ -42,12 +42,7 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     },
   ];
 
-  final Map<String, dynamic> _departmentRules = {
-    'classDuration': '50 mins',
-    'breakDuration': '10 mins',
-    'workingDays': 'Monday - Saturday',
-    'workingHours': '9:00 AM - 5:00 PM',
-  };
+
 
   void _addSection(int yearIndex) {
     TextEditingController controller = TextEditingController();
@@ -78,70 +73,6 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     );
   }
 
-  void _editRules() {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (context) => Container(
-        padding: EdgeInsets.only(
-          bottom: MediaQuery.of(context).viewInsets.bottom,
-          top: 20,
-          left: 20,
-          right: 20,
-        ),
-        decoration: BoxDecoration(
-          color: Theme.of(context).scaffoldBackgroundColor,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(width: 40, height: 4, decoration: BoxDecoration(color: Colors.grey.withValues(alpha: 0.3), borderRadius: BorderRadius.circular(2))),
-              const SizedBox(height: 20),
-              Text('Edit Department Rules', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold)),
-              const SizedBox(height: 30),
-              _buildRuleInputField('Class Duration', 'classDuration'),
-              _buildRuleInputField('Break Duration', 'breakDuration'),
-              _buildRuleInputField('Working Days', 'workingDays'),
-              _buildRuleInputField('Working Hours', 'workingHours'),
-              const SizedBox(height: 30),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => Navigator.pop(context),
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    backgroundColor: Colors.blueAccent,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                  ),
-                  child: Text('Save Changes', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold)),
-                ),
-              ),
-              const SizedBox(height: 30),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildRuleInputField(String label, String key) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: TextField(
-        onChanged: (val) => _departmentRules[key] = val,
-        decoration: InputDecoration(
-          labelText: label,
-          hintText: _departmentRules[key],
-          filled: true,
-          fillColor: Colors.grey.withValues(alpha: 0.05),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide.none),
-        ),
-      ),
-    );
-  }
 
   void _navigateToTimetable(String year, String section) {
     Navigator.push(
@@ -197,21 +128,11 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
                 _buildManagementCards(context, isDark, textColor, subTextColor),
                 const SizedBox(height: 15),
                 _buildTimingCard(context, isDark, textColor, subTextColor),
-                const SizedBox(height: 30),
-                _buildSectionHeader('Department Rules', textColor),
-                const SizedBox(height: 15),
-                _buildRulesCard(isDark, textColor, subTextColor),
-                const SizedBox(height: 50),
+                const SizedBox(height: 20),
               ],
             ),
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _editRules,
-        icon: const Icon(Icons.settings),
-        label: const Text('Manage Rules'),
-        backgroundColor: Colors.blueAccent,
       ),
     );
   }
@@ -365,35 +286,7 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     )));
   }
 
-  Widget _buildRulesCard(bool isDark, Color textColor, Color subTextColor) {
-    return AppTheme.buildGlassCard(
-      isDark: isDark,
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        children: [
-          _buildRuleRow(Icons.timer_outlined, 'Class Duration', _departmentRules['classDuration'], textColor, subTextColor),
-          const Divider(height: 24),
-          _buildRuleRow(Icons.coffee_outlined, 'Break Duration', _departmentRules['breakDuration'], textColor, subTextColor),
-          const Divider(height: 24),
-          _buildRuleRow(Icons.calendar_month_outlined, 'Working Days', _departmentRules['workingDays'], textColor, subTextColor),
-          const Divider(height: 24),
-          _buildRuleRow(Icons.access_time_outlined, 'Working Hours', _departmentRules['workingHours'], textColor, subTextColor),
-        ],
-      ),
-    );
-  }
 
-  Widget _buildRuleRow(IconData icon, String label, String value, Color textColor, Color subTextColor) {
-    return Row(
-      children: [
-        Icon(icon, size: 20, color: Colors.blueAccent),
-        const SizedBox(width: 15),
-        Text(label, style: GoogleFonts.poppins(fontSize: 14, color: subTextColor)),
-        const Spacer(),
-        Text(value, style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: textColor)),
-      ],
-    );
-  }
 }
 
 class HodStudentManagementScreen extends StatefulWidget {

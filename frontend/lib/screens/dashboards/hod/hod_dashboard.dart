@@ -15,6 +15,7 @@ import 'hod_profile_tab.dart';
 import 'hod_faculty_screen.dart';
 import 'hod_timetables_screen.dart';
 import 'hod_requests_screen.dart';
+import 'hod_issues_screen.dart';
 import 'hod_department_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
 import '../../../widgets/shared_dashboard_announcements.dart';
@@ -240,8 +241,8 @@ class _HodDashboardState extends State<HodDashboard> {
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodTimetablesScreen())),
                         ),
                         _buildQuickAccessCard(
-                          Icons.description_outlined,
-                          'Reports',
+                          Icons.fact_check_outlined,
+                          'Attendance',
                           'View',
                           cardColor,
                           const Color(0xFF141E30).withValues(alpha: 0.1), 
@@ -260,6 +261,28 @@ class _HodDashboardState extends State<HodDashboard> {
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodCoursesScreen())),
+                        ),
+                        _buildQuickAccessCard(
+                          Icons.mail_outline,
+                          'Requests',
+                          'Manage',
+                          cardColor,
+                          Colors.orange.withValues(alpha: 0.1),
+                          Colors.orange,
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodRequestsScreen())),
+                        ),
+                        _buildQuickAccessCard(
+                          Icons.report_problem_outlined,
+                          'Issues',
+                          'Resolve',
+                          cardColor,
+                          Colors.red.withValues(alpha: 0.1),
+                          Colors.red,
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodIssuesScreen())),
                         ),
                     ],
                   ),

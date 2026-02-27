@@ -1,4 +1,5 @@
 ﻿import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -51,6 +52,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     'Basic Sciences & Humanities'
   ];
   final List<String> _yearOptions = ['1st Year', '2nd Year', '3rd Year'];
+  List<String> _availableSections = ['Section A', 'Section B', 'Section C'];
   // _semesterOptions will now be dynamically derived, but we keep the master list if needed or just remove it if unused.
   // We will generate the specific list in logic.
 
@@ -140,6 +142,61 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     }
   }
 
+  Future<void> _fetchSections() async {
+    final branch = _branchController.text;
+    final year = _yearController.text;
+    if (branch.isEmpty || year.isEmpty) return;
+
+    try {
+      final response = await http.get(Uri.parse('${ApiConstants.getSections}?branch=$branch&year=$year'));
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        if (mounted) {
+          setState(() {
+            _availableSections = data.map((e) => e.toString()).toList();
+            if (_availableSections.isEmpty) {
+               _availableSections = ['Section A', 'Section B', 'Section C'];
+            }
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching sections: $e");
+    }
+  }
+
+  Future<void> _handleCancelRequest() async {
+     final userId = widget.userData['id'] ?? widget.userData['userId'];
+     try {
+       setState(() => _isLoading = true);
+       final response = await http.post(
+         Uri.parse(ApiConstants.rejectProfileUpdate),
+         headers: {'Content-Type': 'application/json'},
+         body: json.encode({'userId': userId}),
+       );
+       
+       setState(() => _isLoading = false);
+       if (response.statusCode == 200) {
+          setState(() {
+            _pendingRequest = null;
+          });
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Update request cancelled.')));
+          }
+          _fetchProfileData(); // Refresh
+       } else {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Failed to cancel: ${response.statusCode}')));
+          }
+       }
+     } catch (e) {
+       if (mounted) {
+         setState(() => _isLoading = false);
+         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e')));
+       }
+     }
+  }
+
   void _populateControllers() {
     if (_profileData == null) return;
     _fullNameController.text = _profileData!['full_name'] ?? _profileData!['fullName'] ?? '';
@@ -174,6 +231,8 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     if (_batchNoController.text.isEmpty || _batchNoController.text == 'N/A') {
       _calculateBatch();
     }
+    
+    _fetchSections(); // Pre-fetch sections for the student's branch/year
   }
 
   Future<void> _handleSubmitCorrection() async {
@@ -233,6 +292,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
            });
            if(mounted) {
              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Correction request sent for approval.')));
+             _fetchProfileData();
            }
        } else {
            if(mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Failed to send request: ${response.statusCode}')));
@@ -245,14 +305,11 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
   }
 
   void _toggleEditMode() {
-    if (_pendingRequest != null && !_isEditing) {
-       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('You already have a pending change request.')));
-       return;
-    }
     setState(() {
       _isEditing = !_isEditing;
       if (_isEditing) {
         _populateControllers(); 
+        _fetchSections(); // Fetch sections when entering edit mode
       }
     });
   }
@@ -277,7 +334,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(title),
+        title: Text(title, style: GoogleFonts.inter(fontWeight: FontWeight.bold)),
         content: SizedBox(
           width: double.maxFinite,
           child: ListView.builder(
@@ -292,6 +349,9 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                     _calculateBatch();
                   }
                   Navigator.pop(context);
+                  if (title.contains("Year") || title.contains("Branch")) {
+                    _fetchSections(); // Re-fetch sections if branch/year changes
+                  }
                 },
               );
             },
@@ -316,16 +376,19 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: textColor),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Text("My Profile", style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w700, fontSize: 20)),
+        automaticallyImplyLeading: false,
+        leading: _isEditing 
+            ? IconButton(
+                icon: Icon(Icons.arrow_back, color: textColor),
+                onPressed: () {
+                  setState(() {
+                    _isEditing = false;
+                  });
+                },
+              )
+            : null,
+        title: Text(_isEditing ? "Update Profile" : "My Profile", style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w700, fontSize: 20)),
         actions: [
-           IconButton(
-            icon: Icon(Icons.notifications_outlined, color: textColor),
-            onPressed: () { },
-          ),
           Theme(
             data: Theme.of(context).copyWith(
                cardColor: isDark ? const Color(0xFF222240) : Colors.white,
@@ -337,6 +400,8 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                   _toggleEditMode();
                 } else if (value == 'change_password') {
                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Feature coming soon')));
+                } else if (value == 'logout') {
+                   widget.onLogout();
                 }
               },
               itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
@@ -360,6 +425,17 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                     ],
                   ),
                 ),
+                const PopupMenuDivider(),
+                PopupMenuItem<String>(
+                  value: 'logout',
+                  child: Row(
+                    children: [
+                      const Icon(Icons.logout, color: Color(0xFFDC2626), size: 20),
+                      const SizedBox(width: 8),
+                       const Text('Logout', style: TextStyle(color: Color(0xFFDC2626))),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -373,18 +449,19 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                 children: [
                   // Logo Section
                   SizedBox(
-                    height: 200,
+                    height: 240, // Increased to prevent overflow
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        const SizedBox(height: 16), // Pushes the logo slightly further down
                         Image.asset(
                           'assets/images/college logo.png', 
-                          height: 110,
-                          width: 110,
+                          height: 140, // Increased size
+                          width: 140,
                           errorBuilder: (context, error, stackTrace) => 
                              Icon(Icons.school, size: 100, color: subTextColor.withValues(alpha: 0.3)),
                         ),
-                        const SizedBox(height: 16),
+                        const SizedBox(height: 12),
                         Text(
                           "Alwardas Polytechnic",
                           style: GoogleFonts.inter(
@@ -393,22 +470,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                             color: textColor,
                           ),
                         ),
-                        const SizedBox(height: 6),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                          decoration: BoxDecoration(
-                            color: isDark ? Colors.white12 : Colors.grey.shade200,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Text(
-                            "Est. 2017",
-                            style: GoogleFonts.inter(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              color: subTextColor,
-                            ),
-                          ),
-                        ),
+                        const SizedBox(height: 8), // Replaces the Est block spacing
                       ],
                     ),
                   ),
@@ -421,30 +483,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                          : _buildProfileCard(textColor, subTextColor, isDark),
                   ),
                   
-                  const SizedBox(height: 40),
-
-                  // Logout Button
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 40),
-                    child: ElevatedButton.icon(
-                      onPressed: widget.onLogout,
-                      icon: const Icon(Icons.logout, color: Color(0xFFDC2626)),
-                      label: Text("Logout", style: GoogleFonts.inter(color: const Color(0xFFDC2626), fontSize: 16, fontWeight: FontWeight.bold)),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFFEF2F2),
-                        elevation: 0,
-                        shadowColor: Colors.transparent,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          side: const BorderSide(color: Color(0xFFFECACA), width: 1.5),
-                        ),
-                        minimumSize: const Size(double.infinity, 50),
-                      ),
-                    ),
-                  ),
-                  
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 100),
                 ],
               ),
             ),
@@ -460,15 +499,17 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     final String titleStr = _profileData?['title']?.toString() ?? widget.userData['title']?.toString() ?? '';
     final String displayName = "${titleStr.isNotEmpty ? '$titleStr ' : ''}${_fullNameController.text}".toUpperCase();
 
-    return Stack(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // The main white card background containing everything
+        // Name and ID Card
         Container(
           width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           decoration: BoxDecoration(
             color: isDark ? const Color(0xFF1E293B) : Colors.white,
-            borderRadius: BorderRadius.circular(24),
-            boxShadow: [
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: isDark ? [] : [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.04),
                 blurRadius: 20,
@@ -479,103 +520,455 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // --- TOP SECTION ---
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18), // Reduced vertical padding
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      displayName,
-                      style: GoogleFonts.inter(
-                        fontSize: 18, // Decreased font size from 22
-                        fontWeight: FontWeight.w800,
-                        color: textColor,
-                        letterSpacing: 0.5,
-                      ),
-                    ),
-                    const SizedBox(height: 8), // Reduced spacing
-                    // Student ID Row with Copy Icon
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFEFF6FF),
-                            borderRadius: BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
-                          ),
-                          child: Text(
-                            "Student ID",
-                            style: GoogleFonts.inter(color: const Color(0xFF3B82F6), fontWeight: FontWeight.w600, fontSize: 13),
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.only(left: 10, right: 12, top: 6, bottom: 6),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: const Color(0xFFEFF6FF), width: 1.5),
-                            borderRadius: const BorderRadius.only(topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
-                          ),
-                          child: Row(
-                            children: [
-                              Text(
-                                _studentIdController.text,
-                                style: GoogleFonts.inter(color: const Color(0xFF1E293B), fontWeight: FontWeight.w700, fontSize: 13),
-                              ),
-                              const SizedBox(width: 8),
-                              const Icon(Icons.copy, size: 14, color: Color(0xFF64748B)),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+              Text(
+                displayName,
+                style: GoogleFonts.inter(
+                  fontSize: 16, 
+                  fontWeight: FontWeight.w800,
+                  color: textColor,
+                  letterSpacing: 0.5,
                 ),
               ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: isDark ? const Color(0xFF1E3A8A).withValues(alpha: 0.3) : const Color(0xFFEFF6FF),
+                      borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
+                    ),
+                    child: Text(
+                      "Student ID",
+                      style: GoogleFonts.inter(color: isDark ? const Color(0xFF60A5FA) : const Color(0xFF3B82F6), fontWeight: FontWeight.w700, fontSize: 12),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Clipboard.setData(ClipboardData(text: _studentIdController.text));
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Student ID copied to clipboard'), duration: Duration(seconds: 2)));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF0F172A) : Colors.white,
+                        border: Border.all(color: isDark ? const Color(0xFF1E3A8A).withValues(alpha: 0.3) : const Color(0xFFEFF6FF), width: 1.5),
+                        borderRadius: const BorderRadius.only(topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            _studentIdController.text,
+                            style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w800, fontSize: 12),
+                          ),
+                          const SizedBox(width: 8),
+                          Icon(Icons.copy_outlined, size: 16, color: subTextColor),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        
+        const SizedBox(height: 24),
 
-              // --- GRID SECTION ---
-              // Applying a different background color to the bottom grid area to separate it slightly, or keeping it same
-              Container(
-                decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
-                  borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(24), bottomRight: Radius.circular(24)),
-                ),
-                padding: const EdgeInsets.all(12),
-                child: Column(
+        // ACADEMIC Section
+        _buildSection(
+          title: "ACADEMIC",
+          lineColor: const Color(0xFF3B82F6), // Blue
+          child: Container(
+             decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: isDark ? Colors.white12 : const Color(0xFFF1F5F9), width: 1.5),
+             ),
+             child: Column(
+                children: [
+                   _buildRowItem(icon: Icons.computer, iconColor: const Color(0xFF8B5CF6), label: _branchController.text, isDark: isDark),
+                   _buildRowItem(icon: Icons.calendar_month, iconColor: const Color(0xFFF59E0B), label: "Batch", value: _batchNoController.text, isDark: isDark),
+                   _buildRowItem(icon: Icons.apartment, iconColor: const Color(0xFF10B981), label: "Current Year", value: _yearController.text, isDark: isDark),
+                   _buildRowItem(icon: Icons.grid_view_rounded, iconColor: const Color(0xFFF43F5E), label: "Section", value: _sectionController.text, isDark: isDark),
+                   _buildRowItem(icon: Icons.account_tree, iconColor: const Color(0xFFF59E0B), label: "Semester", value: _semesterController.text, isDark: isDark, showBorder: false),
+                ]
+             )
+          )
+        ),
+        
+        const SizedBox(height: 24),
+
+        // PERSONAL Section
+        _buildSection(
+          title: "PERSONAL",
+          lineColor: const Color(0xFF10B981), // Teal
+          child: Container(
+             decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: isDark ? Colors.white12 : const Color(0xFFF1F5F9), width: 1.5),
+             ),
+             child: Column(
+                children: [
+                   _buildRowItem(icon: Icons.calendar_today, iconColor: const Color(0xFF3B82F6), label: "Date of Birth", value: _dobController.text, isDark: isDark),
+                   _buildRowItem(icon: Icons.phone, iconColor: const Color(0xFF8B5CF6), label: "Phone", value: contact, isDark: isDark, showCopy: true),
+                   _buildRowItem(icon: Icons.email_outlined, iconColor: const Color(0xFFEC4899), label: "Email", value: email, isDark: isDark, showBorder: false, showCopy: true),
+                ]
+              )
+           ),
+        ),
+        if (_pendingRequest != null) ...[
+          const SizedBox(height: 24),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.orange.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
+            ),
+            child: Column(
+              children: [
+                Row(
                   children: [
-                    Row(
-                      children: [
-                        Expanded(child: _buildInfoCard(icon: Icons.calendar_month, iconColor: const Color(0xFF3B82F6), label: "Date of Birth", value: _dobController.text, isDark: isDark)),
-                        const SizedBox(width: 12),
-                        Expanded(child: _buildInfoCard(icon: Icons.computer, iconColor: const Color(0xFF8B5CF6), label: "Branch", value: _branchController.text, isDark: isDark)),
-                      ],
-                    ),
-                    const SizedBox(height: 12),
-                    Row(
-                      children: [
-                        Expanded(child: _buildInfoCard(icon: Icons.apartment, iconColor: const Color(0xFF10B981), label: "Current Year", value: _yearController.text, isDark: isDark)),
-                        const SizedBox(width: 12),
-                        Expanded(child: _buildInfoCard(icon: Icons.date_range, iconColor: const Color(0xFFF59E0B), label: "Batch", value: _batchNoController.text, isDark: isDark)),
-                      ],
-                    ),
-                    const SizedBox(height: 12),
-                    Row(
-                      children: [
-                        Expanded(child: _buildInfoCard(icon: Icons.account_tree, iconColor: const Color(0xFFF59E0B), label: "Semester", value: _semesterController.text, isDark: isDark)),
-                        const SizedBox(width: 12),
-                        Expanded(child: _buildInfoCard(icon: Icons.grid_view_rounded, iconColor: const Color(0xFFEC4899), label: "Section", value: _sectionController.text, isDark: isDark)),
-                      ],
-                    ),
-                    const SizedBox(height: 12),
-                    Row(
-                      children: [
-                        Expanded(child: _buildInfoCard(icon: Icons.phone, iconColor: const Color(0xFF3B82F6), label: "Contact", value: contact, isDark: isDark)),
-                        const SizedBox(width: 12),
-                        Expanded(child: _buildInfoCard(icon: Icons.email_outlined, iconColor: const Color(0xFF8B5CF6), label: "Email", value: email, isDark: isDark)),
-                      ],
+                    const Icon(Icons.info_outline, color: Colors.orange, size: 20),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        "You have a pending correction request. Some features might be limited until it's approved.",
+                        style: GoogleFonts.inter(fontSize: 13, color: isDark ? Colors.orange[200] : Colors.orange[800], fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ],
+                ),
+                const SizedBox(height: 12),
+                TextButton.icon(
+                  onPressed: _handleCancelRequest,
+                  icon: const Icon(Icons.cancel_outlined, color: Colors.red, size: 18),
+                  label: Text("Cancel My Request", style: GoogleFonts.inter(color: Colors.red, fontWeight: FontWeight.w600)),
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                    backgroundColor: Colors.red.withValues(alpha: 0.1),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+
+  Widget _buildSection({required String? title, required Color lineColor, required Widget child}) {
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            width: 3.5,
+            decoration: BoxDecoration(
+              color: lineColor,
+              borderRadius: BorderRadius.circular(4),
+            ),
+            margin: const EdgeInsets.only(right: 16),
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (title != null) ...[
+                  Text(title, style: GoogleFonts.inter(fontSize: 11, fontWeight: FontWeight.w700, letterSpacing: 1.2, color: const Color(0xFF64748B))),
+                  const SizedBox(height: 12),
+                ],
+                child,
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRowItem({
+    required IconData icon, 
+    required Color iconColor, 
+    required String label, 
+    String? value, 
+    bool isDark = false, 
+    bool showCopy = false,
+    bool showBorder = true,
+  }) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: iconColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(icon, color: iconColor, size: 18),
+              ),
+              const SizedBox(width: 16),
+              Text(
+                label,
+                style: GoogleFonts.inter(
+                  color: isDark ? Colors.white70 : (value == null ? const Color(0xFF1E293B) : const Color(0xFF475569)),
+                  fontSize: 13,
+                  fontWeight: value == null ? FontWeight.w600 : FontWeight.w500,
+                ),
+              ),
+              if (value != null) ...[
+                Expanded(
+                  child: GestureDetector(
+                    onTap: showCopy ? () {
+                      Clipboard.setData(ClipboardData(text: value));
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$label copied to clipboard'), duration: const Duration(seconds: 2)));
+                    } : null,
+                    behavior: HitTestBehavior.opaque,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            value,
+                            style: GoogleFonts.inter(
+                              color: isDark ? Colors.white : const Color(0xFF1E293B),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        if (showCopy) ...[
+                          const SizedBox(width: 8),
+                          const Icon(Icons.copy_outlined, size: 16, color: Color(0xFF94A3B8)),
+                        ]
+                      ],
+                    ),
+                  ),
+                )
+              ]
+            ],
+          ),
+        ),
+        if (showBorder)
+           Divider(height: 1, thickness: 1, color: isDark ? Colors.white10 : const Color(0xFFF1F5F9), indent: 56, endIndent: 16),
+      ],
+    );
+  }
+
+  // Fallback Edit Form - Keep old UI structure for editing mode so logic remains intact
+  Widget _buildEditProfileForm(Color textColor, Color subTextColor, bool isDark) {
+    return Column(
+      children: [
+        if (_pendingRequest != null) ...[
+           Container(
+             width: double.infinity,
+             margin: const EdgeInsets.only(bottom: 20),
+             padding: const EdgeInsets.all(12),
+             decoration: BoxDecoration(
+               color: Colors.orange.withValues(alpha: 0.1),
+               borderRadius: BorderRadius.circular(12),
+               border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
+             ),
+             child: Row(
+               children: [
+                 const Icon(Icons.pending_actions, color: Colors.orange, size: 20),
+                 const SizedBox(width: 12),
+                 Expanded(
+                   child: Text(
+                     "Update request pending approval",
+                     style: GoogleFonts.inter(fontSize: 13, color: isDark ? Colors.orange[200] : Colors.orange[800], fontWeight: FontWeight.bold),
+                   ),
+                 ),
+                 TextButton(
+                    onPressed: _handleCancelRequest,
+                    child: Text("CANCEL", style: GoogleFonts.inter(color: Colors.red, fontSize: 12, fontWeight: FontWeight.bold)),
+                 )
+               ],
+             ),
+           ),
+        ],
+        Container(
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.circular(24),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.05),
+                blurRadius: 20,
+                offset: const Offset(0, 10),
+              )
+            ]
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              _SectionLabel(text: "Full Name", color: subTextColor),
+              _buildTextField(_fullNameController, "Enter Full Name", isDark),
+              const SizedBox(height: 20),
+              
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                         _SectionLabel(text: "Student ID", color: subTextColor),
+                         _buildTextField(_studentIdController, "Enter ID", isDark),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 15),
+                  Expanded(
+                     child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                           _SectionLabel(text: "Date of Birth", color: subTextColor),
+                           GestureDetector(
+                             onTap: () => _selectDate(context),
+                             child: AbsorbPointer(
+                               child: _buildTextField(_dobController, "YYYY-MM-DD", isDark, icon: Icons.calendar_today),
+                             ),
+                           )
+                        ],
+                     ),
+                   ),
+                ],
+              ),
+              const SizedBox(height: 20),
+    
+              _SectionLabel(text: "Branch", color: subTextColor),
+              GestureDetector(
+                onTap: () => _showSelectionDialog("Select Branch", _branchOptions, _branchController),
+                child: AbsorbPointer(
+                  child: _buildTextField(_branchController, "Select Branch", isDark, icon: Icons.arrow_drop_down),
+                ),
+              ),
+              const SizedBox(height: 20),
+    
+              Row(
+                 children: [
+                   Expanded(
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         _SectionLabel(text: "Current Year", color: subTextColor),
+                          GestureDetector(
+                            onTap: () => _showSelectionDialog("Select Year", _yearOptions, _yearController),
+                            child: AbsorbPointer(
+                              child: _buildTextField(_yearController, "Select Year", isDark, icon: Icons.arrow_drop_down),
+                            ),
+                          )
+                       ],
+                     ),
+                   ),
+                   const SizedBox(width: 15),
+                   Expanded(
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         _SectionLabel(text: "Batch No", color: subTextColor),
+                         _buildTextField(_batchNoController, "Enter Batch No", isDark),
+                       ],
+                     ),
+                   ),
+                 ],
+              ),
+              const SizedBox(height: 20),
+    
+              Row(
+                  children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                             _SectionLabel(text: "Semester", color: subTextColor),
+                             GestureDetector(
+                               onTap: () {
+                                  List<String> options = [];
+                                  String selectedYear = _yearController.text.trim();
+                                  if (selectedYear == '1st Year') {
+                                      options = ['1st Year'];
+                                  } else if (selectedYear == '2nd Year') {
+                                      options = ['3rd Semester', '4th Semester'];
+                                  } else if (selectedYear == '3rd Year') {
+                                      options = ['5th Semester', '6th Semester'];
+                                  } else {
+                                      options = ['1st Year', '3rd Semester', '4th Semester', '5th Semester', '6th Semester'];
+                                  }
+                                  _showSelectionDialog("Select Semester", options, _semesterController);
+                               },
+                               child: AbsorbPointer(
+                                 child: _buildTextField(_semesterController, "Select Semester", isDark, icon: Icons.arrow_drop_down),
+                               ),
+                             )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 15),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                             _SectionLabel(text: "Section", color: subTextColor),
+                             GestureDetector(
+                               onTap: () => _showSelectionDialog("Select Section", _availableSections, _sectionController),
+                               child: AbsorbPointer(
+                                 child: _buildTextField(_sectionController, "Section", isDark, icon: Icons.arrow_drop_down),
+                               ),
+                             )
+                          ],
+                        ),
+                      ), 
+                  ]
+              ),
+              const SizedBox(height: 20),
+    
+              Row(
+                  children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                             _SectionLabel(text: "Phone Number", color: subTextColor),
+                             _buildTextField(_phoneController, "Enter Phone Number", isDark),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 15),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                             _SectionLabel(text: "Email ID", color: subTextColor),
+                             _buildTextField(_emailController, "Enter Email ID", isDark),
+                          ],
+                        ),
+                      ), 
+                  ]
+              ),
+              
+              const SizedBox(height: 25),
+    
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: _handleSubmitCorrection,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: isDark ? Colors.white : const Color(0xFF4B7FFB),
+                    foregroundColor: isDark ? const Color(0xFF4B7FFB) : Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  ),
+                  child: Text("Submit Correction Request", style: GoogleFonts.inter(fontWeight: FontWeight.bold)),
                 ),
               ),
             ],
@@ -585,240 +978,6 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     );
   }
 
-  Widget _buildInfoCard({required IconData icon, required Color iconColor, required String label, required String value, required bool isDark}) {
-    return Container(
-      height: 95, // Consistent equal size for all cards
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: isDark ? Colors.white12 : Colors.grey.shade200),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: iconColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Icon(icon, color: iconColor, size: 20),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  label,
-                  style: GoogleFonts.inter(
-                    color: isDark ? Colors.white70 : const Color(0xFF64748B),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  value.isEmpty ? "N/A" : value,
-                  style: GoogleFonts.inter(
-                    color: isDark ? Colors.white : const Color(0xFF1E293B),
-                    fontSize: 13,
-                    fontWeight: FontWeight.w700,
-                  ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  // Fallback Edit Form - Keep old UI structure for editing mode so logic remains intact
-  Widget _buildEditProfileForm(Color textColor, Color subTextColor, bool isDark) {
-    return Container(
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(24),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          )
-        ]
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _SectionLabel(text: "Full Name", color: subTextColor),
-          _buildTextField(_fullNameController, "Enter Full Name", isDark),
-          const SizedBox(height: 20),
-          
-          Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                     _SectionLabel(text: "Student ID", color: subTextColor),
-                     _buildTextField(_studentIdController, "Enter ID", isDark),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 15),
-              Expanded(
-                 child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                       _SectionLabel(text: "Date of Birth", color: subTextColor),
-                       GestureDetector(
-                         onTap: () => _selectDate(context),
-                         child: AbsorbPointer(
-                           child: _buildTextField(_dobController, "YYYY-MM-DD", isDark, icon: Icons.calendar_today),
-                         ),
-                       )
-                    ],
-                 ),
-               ),
-            ],
-          ),
-          const SizedBox(height: 20),
-
-          _SectionLabel(text: "Branch", color: subTextColor),
-          GestureDetector(
-            onTap: () => _showSelectionDialog("Select Branch", _branchOptions, _branchController),
-            child: AbsorbPointer(
-              child: _buildTextField(_branchController, "Select Branch", isDark, icon: Icons.arrow_drop_down),
-            ),
-          ),
-          const SizedBox(height: 20),
-
-          Row(
-             children: [
-               Expanded(
-                 child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     _SectionLabel(text: "Current Year", color: subTextColor),
-                      GestureDetector(
-                        onTap: () => _showSelectionDialog("Select Year", _yearOptions, _yearController),
-                        child: AbsorbPointer(
-                          child: _buildTextField(_yearController, "Select Year", isDark, icon: Icons.arrow_drop_down),
-                        ),
-                      )
-                   ],
-                 ),
-               ),
-               const SizedBox(width: 15),
-               Expanded(
-                 child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     _SectionLabel(text: "Batch No", color: subTextColor),
-                     _buildTextField(_batchNoController, "Enter Batch No", isDark),
-                   ],
-                 ),
-               ),
-             ],
-          ),
-          const SizedBox(height: 20),
-
-          Row(
-              children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                         _SectionLabel(text: "Semester", color: subTextColor),
-                         GestureDetector(
-                           onTap: () {
-                              List<String> options = [];
-                              String selectedYear = _yearController.text.trim();
-                              if (selectedYear == '1st Year') {
-                                  options = ['1st Year'];
-                              } else if (selectedYear == '2nd Year') {
-                                  options = ['3rd Semester', '4th Semester'];
-                              } else if (selectedYear == '3rd Year') {
-                                  options = ['5th Semester', '6th Semester'];
-                              } else {
-                                  options = ['1st Year', '3rd Semester', '4th Semester', '5th Semester', '6th Semester'];
-                              }
-                              _showSelectionDialog("Select Semester", options, _semesterController);
-                           },
-                           child: AbsorbPointer(
-                             child: _buildTextField(_semesterController, "Select Semester", isDark, icon: Icons.arrow_drop_down),
-                           ),
-                         )
-                      ],
-                    ),
-                  ),
-                  const SizedBox(width: 15),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                         _SectionLabel(text: "Section", color: subTextColor),
-                         GestureDetector(
-                           onTap: () => _showSelectionDialog("Select Section", ['Section A', 'Section B', 'Section C'], _sectionController),
-                           child: AbsorbPointer(
-                             child: _buildTextField(_sectionController, "Section", isDark, icon: Icons.arrow_drop_down),
-                           ),
-                         )
-                      ],
-                    ),
-                  ), 
-              ]
-          ),
-          const SizedBox(height: 20),
-
-          Row(
-              children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                         _SectionLabel(text: "Phone Number", color: subTextColor),
-                         _buildTextField(_phoneController, "Enter Phone Number", isDark),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(width: 15),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                         _SectionLabel(text: "Email ID", color: subTextColor),
-                         _buildTextField(_emailController, "Enter Email ID", isDark),
-                      ],
-                    ),
-                  ), 
-              ]
-          ),
-          
-          const SizedBox(height: 25),
-
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: _handleSubmitCorrection,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: isDark ? Colors.white : const Color(0xFF4B7FFB),
-                foregroundColor: isDark ? const Color(0xFF4B7FFB) : Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              ),
-              child: Text("Submit Correction Request", style: GoogleFonts.inter(fontWeight: FontWeight.bold)),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   Widget _buildTextField(TextEditingController controller, String hint, bool isDark, {IconData? icon}) {
     return Container(
