@@ -8,6 +8,7 @@ import 'dart:convert';
 import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
+import 'hod_assign_class_screen.dart';
 
 class HodClassTimetableScreen extends StatefulWidget {
   final String branch;
@@ -83,12 +84,6 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
   late String _selectedDay;
   bool _dropdownVisible = false;
 
-  // Modal State
-  bool _modalVisible = false;
-  late String _modalDay;
-  String _periodNumber = '1';
-  final TextEditingController _subjectController = TextEditingController();
-  final TextEditingController _facultyController = TextEditingController();
   bool _isLoading = false;
 
   @override
@@ -97,7 +92,6 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
     int weekday = DateTime.now().weekday; // 1 = Mon, 7 = Sun
     if (weekday > 6) weekday = 1;
     _selectedDay = _days[weekday - 1];
-    _modalDay = _selectedDay;
     _loadSettings().then((_) => _fetchTimetable());
   }
 
@@ -235,54 +229,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
       }
   }
 
-  Future<void> _handleAddClass() async {
-    if (_subjectController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please enter a subject name.")));
-      return;
-    }
-    
-    setState(() => _isLoading = true);
-    
-    try {
-        int pNum = int.parse(_periodNumber);
-        String subject = _subjectController.text.trim();
-        if (_facultyController.text.isNotEmpty) {
-            subject += " (${_facultyController.text.trim()})";
-        }
-        
-        final times = _periodTimes[pNum] ?? {'start': '00:00', 'end': '00:00'};
-        
-        final body = {
-            'facultyId': 'HOD_ASSIGNED',
-            'branch': widget.branch,
-            'year': widget.year,
-            'section': widget.section,
-            'day': _modalDay,
-            'periodIndex': pNum,
-            'subject': subject,
-        };
-        
-        final res = await http.post(
-            Uri.parse('${ApiConstants.baseUrl}/api/timetable/assign'),
-            headers: {'Content-Type': 'application/json'},
-            body: json.encode(body)
-        );
-        
-        if (res.statusCode == 200) {
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Class Assigned")));
-            _subjectController.clear();
-            _facultyController.clear();
-            setState(() => _modalVisible = false);
-            _fetchTimetable();
-        } else {
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to assign class")));
-        }
-    } catch (e) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Network Error")));
-    } finally {
-        if (mounted) setState(() => _isLoading = false);
-    }
-  }
+  // _handleAddClass removed in favor of HodAssignClassScreen
 
   Future<void> _handleClearClass(String day, int periodIndex) async {
     try {
@@ -342,9 +289,19 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
         actions: [
           IconButton(
             icon: CircleAvatar(backgroundColor: tint, child: const Icon(Icons.add, color: Colors.white)),
-            onPressed: () {
-              setState(() => _modalDay = _selectedDay);
-              setState(() => _modalVisible = true);
+            onPressed: () async {
+              final result = await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => HodAssignClassScreen(
+                    branch: widget.branch,
+                    year: widget.year,
+                    section: widget.section,
+                    initialDay: _selectedDay,
+                  ),
+                ),
+              );
+              if (result == true) _fetchTimetable();
             },
             tooltip: "Assign Class",
           ),
@@ -411,6 +368,23 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
                           final hasClass = item['subject'] != '---';
 
                           return GestureDetector(
+                            onTap: () async {
+                              if (!hasClass) {
+                                final result = await Navigator.push(
+                                  context, 
+                                  MaterialPageRoute(
+                                    builder: (_) => HodAssignClassScreen(
+                                      branch: widget.branch,
+                                      year: widget.year,
+                                      section: widget.section,
+                                      initialDay: _selectedDay,
+                                      initialPeriod: item['number'] as int,
+                                    )
+                                  )
+                                );
+                                if (result == true) _fetchTimetable();
+                              }
+                            },
                             onLongPress: () {
                               if (hasClass) {
                                 showDialog(
@@ -507,8 +481,7 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
                   ),
                 ),
 
-              // Add Modal
-              if (_modalVisible) _buildModal(textColor, subTextColor, isDark ? const Color(0xFF24243e) : Colors.white, tint, iconBg),
+              // Modal removed
             ],
           ),
         ),
@@ -516,119 +489,5 @@ class _HodClassTimetableScreenState extends State<HodClassTimetableScreen> {
     );
   }
 
-  Widget _buildModal(Color textColor, Color subTextColor, Color modalBg, Color tint, Color iconBg) {
-    return Container(
-      color: Colors.black54,
-      alignment: Alignment.bottomCenter,
-      child: Container(
-        constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.8),
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: modalBg,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Assign Class", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                  IconButton(icon: const Icon(Icons.close), onPressed: () => setState(() => _modalVisible = false))
-                ],
-              ),
-  
-              // Day Selector Horizontal
-              const Text("Select Day", style: TextStyle(fontWeight: FontWeight.bold)),
-              const SizedBox(height: 10),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: _days
-                      .map((day) => GestureDetector(
-                            onTap: () => setState(() => _modalDay = day),
-                            child: Container(
-                              margin: const EdgeInsets.only(right: 10),
-                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                              decoration: BoxDecoration(
-                                color: _modalDay == day ? tint : Colors.transparent,
-                                border: Border.all(color: iconBg),
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Text(day.substring(0, 3), style: TextStyle(color: _modalDay == day ? Colors.white : textColor)),
-                            ),
-                          ))
-                      .toList(),
-                ),
-              ),
-  
-              const SizedBox(height: 20),
-              const Text("Select Period (1-8)", style: TextStyle(fontWeight: FontWeight.bold)),
-              const SizedBox(height: 10),
-              Wrap(
-                // Period Grid
-                spacing: 10, runSpacing: 10,
-                children: List.generate(8, (index) {
-                  final num = (index + 1).toString();
-                  return GestureDetector(
-                    onTap: () => setState(() => _periodNumber = num),
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: _periodNumber == num ? tint : Colors.transparent,
-                          border: Border.all(color: iconBg),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Text(num,
-                          style:
-                              TextStyle(color: _periodNumber == num ? Colors.white : textColor, fontWeight: FontWeight.bold)),
-                    ),
-                  );
-                }),
-              ),
-  
-              const SizedBox(height: 20),
-              TextField(
-                controller: _subjectController,
-                style: TextStyle(color: textColor),
-                decoration: InputDecoration(
-                  labelText: "Subject Name",
-                  labelStyle: TextStyle(color: subTextColor),
-                  hintText: "e.g. Data Structures",
-                  hintStyle: TextStyle(color: subTextColor.withValues(alpha: 0.5)),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                ),
-              ),
-              
-              const SizedBox(height: 12),
-               TextField(
-                controller: _facultyController,
-                style: TextStyle(color: textColor),
-                decoration: InputDecoration(
-                  labelText: "Faculty Name (Optional)",
-                  labelStyle: TextStyle(color: subTextColor),
-                  hintText: "e.g. Dr. Smith",
-                  hintStyle: TextStyle(color: subTextColor.withValues(alpha: 0.5)),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                ),
-              ),
-  
-              const SizedBox(height: 20),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: _handleAddClass,
-                  style: ElevatedButton.styleFrom(backgroundColor: tint, padding: const EdgeInsets.all(15)),
-                  child: const Text("Assign", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+  // _buildModal removed
 }

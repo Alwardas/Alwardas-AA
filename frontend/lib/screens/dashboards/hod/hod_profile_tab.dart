@@ -299,18 +299,14 @@ class _HodProfileTabState extends State<HodProfileTab> {
                                 shape: BoxShape.circle,
                                 color: Colors.white,
                               ),
-                              child: Image.asset('assets/images/college logo.png', width: 90, height: 90, fit: BoxFit.contain),
+                              child: Image.asset('assets/images/college logo.png', width: 140, height: 140, fit: BoxFit.contain),
                             ),
                             const SizedBox(height: 12),
                             Text(
                               "Alwardas Polytechnic", 
                               style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
                             ),
-                            const SizedBox(height: 2),
-                            Text(
-                              "Est. 2017",
-                              style: GoogleFonts.poppins(fontSize: 12, color: subTextColor, fontWeight: FontWeight.w500),
-                            ),
+                            const SizedBox(height: 8), 
                           ],
                         ),
                       ),
@@ -394,7 +390,7 @@ class _HodProfileTabState extends State<HodProfileTab> {
                               ],
                             ),
                             
-                            const SizedBox(height: 24),
+                            const SizedBox(height: 20),
 
                             // Grid Items exactly like the design
                             GridView.count(
@@ -440,8 +436,6 @@ class _HodProfileTabState extends State<HodProfileTab> {
                               ],
                             ),
                             
-                            const SizedBox(height: 12),
-                            
                             // Full width cards at bottom
                             _buildFullWidthCard(
                                icon: Icons.phone_outlined, 
@@ -451,7 +445,6 @@ class _HodProfileTabState extends State<HodProfileTab> {
                                value: _phoneController.text.isNotEmpty ? _phoneController.text : "Not Provided",
                                cardBg: cardBg, borderColor: borderColor, textColor: textColor, subTextColor: subTextColor
                             ),
-                            const SizedBox(height: 12),
                             
                             _buildFullWidthCard(
                                icon: Icons.email_outlined, 
@@ -465,7 +458,7 @@ class _HodProfileTabState extends State<HodProfileTab> {
                         ),
                       ),
 
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 50), // Increased for better separation
 
                       // Logout Button
                       SizedBox(
@@ -489,7 +482,7 @@ class _HodProfileTabState extends State<HodProfileTab> {
                         ),
                       ),
                       
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 100),
                     ],
                   ),
                 ),

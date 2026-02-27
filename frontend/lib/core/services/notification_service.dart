@@ -62,6 +62,31 @@ class NotificationService {
     );
   }
 
+  static Future<void> showImmediateNotification({
+    required int id,
+    required String title,
+    required String body,
+    String? payload,
+  }) async {
+    final service = NotificationService();
+    await service._notificationsPlugin.show(
+      id,
+      title,
+      body,
+      const NotificationDetails(
+        android: AndroidNotificationDetails(
+          'alert_channel',
+          'Immediate Alerts',
+          importance: Importance.max,
+          priority: Priority.high,
+          showWhen: true,
+        ),
+        iOS: DarwinNotificationDetails(),
+      ),
+      payload: payload,
+    );
+  }
+
   static Future<void> cancelNotification(int id) async {
       final service = NotificationService();
       await service._notificationsPlugin.cancel(id);

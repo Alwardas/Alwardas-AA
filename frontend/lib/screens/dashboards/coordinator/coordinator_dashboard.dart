@@ -34,6 +34,9 @@ import 'coordinator_announcements_screen.dart';
 import 'coordinator_create_announcement_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
 import '../../../widgets/shared_dashboard_announcements.dart';
+import 'dart:async';
+import '../../../core/services/notification_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class CoordinatorDashboard extends StatefulWidget {
@@ -45,15 +48,88 @@ class CoordinatorDashboard extends StatefulWidget {
   State<CoordinatorDashboard> createState() => _CoordinatorDashboardState();
 }
 
+
 class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
   int _selectedIndex = 1; // Default to Home (index 1)
+  Timer? _notificationTimer;
+  String? _lastNotifiedId;
 
   @override
   void initState() {
     super.initState();
+    _startNotificationPolling();
+  }
+
+  @override
+  void dispose() {
+    _notificationTimer?.cancel();
+    super.dispose();
+  }
+
+  void _startNotificationPolling() {
+    _checkNewNotifications(isInitial: true);
+    _notificationTimer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      _checkNewNotifications(isInitial: false);
+    });
+  }
+
+  Future<void> _checkNewNotifications({bool isInitial = false}) async {
+    try {
+      final user = await AuthService.getUserSession();
+      if (user == null) return;
+
+      final response = await http.get(Uri.parse(
+          '${ApiConstants.baseUrl}/api/notifications?role=Coordinator&userId=${user['id']}'));
+
+      if (response.statusCode == 200) {
+        final List<dynamic> notifications = json.decode(response.body);
+        if (notifications.isEmpty) return;
+
+        final latest = notifications.first;
+        final String latestId = latest['id'].toString();
+
+        if (_lastNotifiedId == null) {
+          final prefs = await SharedPreferences.getInstance();
+          _lastNotifiedId = prefs.getString('last_coordinator_notification_id');
+        }
+
+        if (latestId != _lastNotifiedId) {
+          if (!isInitial) {
+            if (latest['status'] == 'UNREAD' || latest['status'] == 'PENDING') {
+              await NotificationService.showImmediateNotification(
+                id: latestId.hashCode,
+                title: _getNotificationTitle(latest['type']),
+                body: latest['message'] ?? 'New notification received',
+                payload: 'notif_${latest['id']}',
+              );
+            }
+          }
+
+          _lastNotifiedId = latestId;
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setString('last_coordinator_notification_id', latestId);
+        }
+      }
+    } catch (e) {
+      debugPrint("Coordinator Notification Polling Error: $e");
+    }
+  }
+
+  String _getNotificationTitle(String? type) {
+    switch (type) {
+      case 'PRINCIPAL_REQUEST':
+        return 'Principal Approval Request';
+      case 'ANNOUNCEMENT':
+        return 'New Announcement';
+      case 'SYSTEM_ALERT':
+        return 'System Alert';
+      default:
+        return 'Coordinator Notification';
+    }
   }
 
   void _logout() async {
+     _notificationTimer?.cancel();
      await AuthService.logout();
      if (mounted) {
        Navigator.pushAndRemoveUntil(

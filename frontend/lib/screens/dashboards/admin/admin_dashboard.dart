@@ -11,6 +11,9 @@ import '../../../core/api_constants.dart';
 import '../../auth/login_screen.dart';
 import 'admin_users_screen.dart';
 import 'admin_requests_screen.dart';
+import 'dart:async';
+import '../../../core/services/notification_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AdminDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -21,8 +24,12 @@ class AdminDashboard extends StatefulWidget {
   State<AdminDashboard> createState() => _AdminDashboardState();
 }
 
+
 class _AdminDashboardState extends State<AdminDashboard> {
   bool _loading = true;
+  Timer? _notificationTimer;
+  String? _lastNotifiedId;
+
   Map<String, dynamic> _stats = {
     'total_users': 0,
     'pending_approvals': 0,
@@ -34,6 +41,62 @@ class _AdminDashboardState extends State<AdminDashboard> {
   void initState() {
     super.initState();
     _fetchStats();
+    _startNotificationPolling();
+  }
+
+  @override
+  void dispose() {
+    _notificationTimer?.cancel();
+    super.dispose();
+  }
+
+  void _startNotificationPolling() {
+    _checkNewNotifications(isInitial: true);
+    _notificationTimer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      _checkNewNotifications(isInitial: false);
+    });
+  }
+
+  Future<void> _checkNewNotifications({bool isInitial = false}) async {
+    try {
+      final user = await AuthService.getUserSession();
+      if (user == null) return;
+
+      final response = await http.get(Uri.parse(
+          '${ApiConstants.baseUrl}/api/notifications?role=Admin&userId=${user['id']}'));
+
+      if (response.statusCode == 200) {
+        final List<dynamic> notifications = json.decode(response.body);
+        if (notifications.isEmpty) return;
+
+        final latest = notifications.first;
+        final String latestId = latest['id'].toString();
+
+        if (_lastNotifiedId == null) {
+          final prefs = await SharedPreferences.getInstance();
+          _lastNotifiedId = prefs.getString('last_admin_notification_id');
+        }
+
+        if (latestId != _lastNotifiedId) {
+          if (!isInitial) {
+            if (latest['status'] == 'UNREAD' || latest['status'] == 'PENDING') {
+              await NotificationService.showImmediateNotification(
+                id: latestId.hashCode,
+                title: 'Admin Alert',
+                body: latest['message'] ?? 'New system notification',
+                payload: 'notif_${latest['id']}',
+              );
+            }
+          }
+
+          _lastNotifiedId = latestId;
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setString('last_admin_notification_id', latestId);
+        }
+      }
+    } catch (e) {
+      debugPrint("Admin Notification Polling Error: $e");
+    }
   }
 
   Future<void> _fetchStats() async {
@@ -56,6 +119,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
   }
 
   void _logout(BuildContext context) async {
+    _notificationTimer?.cancel();
     await AuthService.logout();
     if (context.mounted) {
       Navigator.pushAndRemoveUntil(

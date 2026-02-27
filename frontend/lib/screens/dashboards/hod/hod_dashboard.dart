@@ -14,11 +14,18 @@ import 'hod_menu_tab.dart';
 import 'hod_profile_tab.dart';
 import 'hod_faculty_screen.dart';
 import 'hod_timetables_screen.dart';
+import 'hod_schedule_screen.dart';
 import 'hod_requests_screen.dart';
 import 'hod_issues_screen.dart';
 import 'hod_department_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
 import '../../../widgets/shared_dashboard_announcements.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../../core/api_constants.dart';
+import '../../../core/services/notification_service.dart';
 
 class HodDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -29,10 +36,186 @@ class HodDashboard extends StatefulWidget {
   State<HodDashboard> createState() => _HodDashboardState();
 }
 
+
 class _HodDashboardState extends State<HodDashboard> {
   int _selectedIndex = 1; // Default to Home (index 1)
+  Timer? _notificationTimer;
+  String? _lastNotifiedId;
+
+  @override
+  void initState() {
+    super.initState();
+    _startNotificationPolling();
+    _setupClassReminders();
+  }
+
+  @override
+  void dispose() {
+    _notificationTimer?.cancel();
+    super.dispose();
+  }
+
+  void _startNotificationPolling() {
+    // Initial fetch to set the baseline ID without showing a notification
+    _checkNewNotifications(isInitial: true);
+    // Poll every 30 seconds
+    _notificationTimer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      _checkNewNotifications(isInitial: false);
+    });
+  }
+
+  Future<void> _checkNewNotifications({bool isInitial = false}) async {
+    try {
+      final user = await AuthService.getUserSession();
+      if (user == null) return;
+
+      final response = await http.get(Uri.parse(
+          '${ApiConstants.baseUrl}/api/notifications?role=HOD&branch=${Uri.encodeComponent(user['branch'] ?? '')}&userId=${user['id']}'));
+
+      if (response.statusCode == 200) {
+        final List<dynamic> notifications = json.decode(response.body);
+        if (notifications.isEmpty) return;
+
+        // The first notification is the newest (sorted by created_at DESC)
+        final latest = notifications.first;
+        final String latestId = latest['id'].toString();
+
+        // Load last notified ID if not in memory
+        if (_lastNotifiedId == null) {
+          final prefs = await SharedPreferences.getInstance();
+          _lastNotifiedId = prefs.getString('last_hod_notification_id');
+        }
+
+        if (latestId != _lastNotifiedId) {
+          if (!isInitial) {
+            // New notification found AND it's not the very first check of this session
+            // Only notify if it's UNREAD or PENDING (some backend endpoints use PENDING)
+            if (latest['status'] == 'UNREAD' || latest['status'] == 'PENDING') {
+              await NotificationService.showImmediateNotification(
+                id: latestId.hashCode,
+                title: _getNotificationTitle(latest['type']),
+                body: latest['message'] ?? 'New request received',
+                payload: 'notif_${latest['id']}',
+              );
+            }
+          }
+
+          // Update last notified ID
+          _lastNotifiedId = latestId;
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setString('last_hod_notification_id', latestId);
+        }
+      }
+    } catch (e) {
+      debugPrint("Notification Polling Error: $e");
+    }
+  }
+
+  Future<void> _setupClassReminders() async {
+    try {
+      final user = await AuthService.getUserSession();
+      if (user == null) return;
+      final String fid = user['login_id'] ?? user['id'] ?? '';
+      final String branch = user['branch'] ?? 'Computer Engineering';
+
+      // 1. Fetch Department Timings
+      final timingUri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': branch});
+      final timingRes = await http.get(timingUri);
+      if (timingRes.statusCode != 200) return;
+      final List<dynamic> timings = json.decode(timingRes.body);
+      if (timings.isEmpty) return;
+
+      final t = timings[0];
+      int startHour = t['start_hour'] ?? 9;
+      int startMinute = t['start_minute'] ?? 0;
+      int classDuration = t['class_duration'] ?? 50;
+      int breakDuration = t['short_break_duration'] ?? 10;
+      int lunchDuration = t['lunch_duration'] ?? 50;
+      List<dynamic> slotConfig = List<dynamic>.from(t['slot_config'] ?? ['P','P','SB','P','P','LB','P','P','SB','P','P']);
+
+      // 2. Map period index to start time
+      Map<int, TimeOfDay> periodStartTimes = {};
+      DateTime currentTime = DateTime(2026, 1, 1, startHour, startMinute);
+      int pNum = 1;
+      for (var type in slotConfig) {
+        if (type == 'P') {
+          periodStartTimes[pNum] = TimeOfDay(hour: currentTime.hour, minute: currentTime.minute);
+          currentTime = currentTime.add(Duration(minutes: classDuration));
+          pNum++;
+        } else if (type == 'SB') {
+          currentTime = currentTime.add(Duration(minutes: breakDuration));
+        } else if (type == 'LB') {
+          currentTime = currentTime.add(Duration(minutes: lunchDuration));
+        }
+      }
+
+      // 3. Fetch My Schedule
+      final scheduleUri = Uri.parse('${ApiConstants.baseUrl}/api/timetable').replace(queryParameters: {'facultyId': fid});
+      final scheduleRes = await http.get(scheduleUri);
+      if (scheduleRes.statusCode != 200) return;
+      final List<dynamic> schedule = json.decode(scheduleRes.body);
+
+      // 4. Schedule Notifications
+      const mapDays = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6};
+      
+      for (var item in schedule) {
+        final dayStr = item['day'];
+        final pIndex = item['period_index'] ?? item['periodIndex'];
+        if (dayStr != null && pIndex != null && mapDays.containsKey(dayStr)) {
+          final startTime = periodStartTimes[pIndex];
+          if (startTime != null) {
+            // Find next occurrence of this day
+            int targetDay = mapDays[dayStr]!;
+            DateTime now = DateTime.now();
+            int daysUntil = targetDay - now.weekday;
+            if (daysUntil < 0) daysUntil += 7;
+            
+            DateTime scheduledDateTime = DateTime(
+              now.year, now.month, now.day,
+              startTime.hour, startTime.minute
+            ).add(Duration(days: daysUntil));
+
+            // Set to 1 minute before
+            scheduledDateTime = scheduledDateTime.subtract(const Duration(minutes: 1));
+
+            // If the time for today has already passed, move to next week
+            if (scheduledDateTime.isBefore(now)) {
+              scheduledDateTime = scheduledDateTime.add(const Duration(days: 7));
+            }
+
+            await NotificationService.scheduleClassNotification(
+              id: 'class_${item['id']}'.hashCode,
+              title: 'Class Reminder (1 min to go)',
+              body: 'Upcoming: ${item['subject']} for ${item['branch']} ${item['year']} ${item['section']}',
+              scheduledTime: scheduledDateTime,
+            );
+          }
+        }
+      }
+    } catch (e) {
+      debugPrint("Setup Class Reminders Error: $e");
+    }
+  }
+
+  String _getNotificationTitle(String? type) {
+    switch (type) {
+      case 'USER_APPROVAL':
+        return 'New User Approval';
+      case 'PROFILE_UPDATE_REQUEST':
+        return 'Profile Update Request';
+      case 'SUBJECT_APPROVAL':
+        return 'Subject Approval Required';
+      case 'ATTENDANCE_CORRECTION':
+        return 'Attendance Correction';
+      case 'ISSUE_ASSIGNED':
+        return 'New Issue Reported';
+      default:
+        return 'HOD Notification';
+    }
+  }
 
   void _logout() async {
+     _notificationTimer?.cancel();
      await AuthService.logout();
      if (mounted) {
        Navigator.pushAndRemoveUntil(
@@ -283,6 +466,17 @@ class _HodDashboardState extends State<HodDashboard> {
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodIssuesScreen())),
+                        ),
+                        _buildQuickAccessCard(
+                          Icons.book_online_outlined,
+                          'My Schedule',
+                          'Teaching Plan',
+                          cardColor,
+                          Colors.indigo.withValues(alpha: 0.1), 
+                          Colors.indigo,
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodScheduleScreen())),
                         ),
                     ],
                   ),

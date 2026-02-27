@@ -17,6 +17,9 @@ import 'parent_profile_tab.dart';
 import 'parent_requests_screen.dart'; 
 import '../../../widgets/custom_bottom_nav_bar.dart'; 
 import '../../../widgets/shared_dashboard_announcements.dart';
+import 'dart:async';
+import '../../../core/services/notification_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ParentDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -27,8 +30,11 @@ class ParentDashboard extends StatefulWidget {
   State<ParentDashboard> createState() => _ParentDashboardState();
 }
 
+
 class _ParentDashboardState extends State<ParentDashboard> {
   int _selectedIndex = 2; // Default to Home
+  Timer? _notificationTimer;
+  String? _lastNotifiedId;
   
   // Mock Children Data - In a real app, this would come from the API
   List<Map<String, String>> _children = [];
@@ -53,6 +59,62 @@ class _ParentDashboardState extends State<ParentDashboard> {
         },
       ];
       _fetchChildData();
+    }
+    _startNotificationPolling();
+  }
+
+  @override
+  void dispose() {
+    _notificationTimer?.cancel();
+    super.dispose();
+  }
+
+  void _startNotificationPolling() {
+    _checkNewNotifications(isInitial: true);
+    _notificationTimer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      _checkNewNotifications(isInitial: false);
+    });
+  }
+
+  Future<void> _checkNewNotifications({bool isInitial = false}) async {
+    try {
+      final user = await AuthService.getUserSession();
+      if (user == null) return;
+
+      final response = await http.get(Uri.parse(
+          '${ApiConstants.baseUrl}/api/notifications?role=Parent&userId=${user['id']}'));
+
+      if (response.statusCode == 200) {
+        final List<dynamic> notifications = json.decode(response.body);
+        if (notifications.isEmpty) return;
+
+        final latest = notifications.first;
+        final String latestId = latest['id'].toString();
+
+        if (_lastNotifiedId == null) {
+          final prefs = await SharedPreferences.getInstance();
+          _lastNotifiedId = prefs.getString('last_parent_notification_id');
+        }
+
+        if (latestId != _lastNotifiedId) {
+          if (!isInitial) {
+            if (latest['status'] == 'UNREAD' || latest['status'] == 'PENDING') {
+              await NotificationService.showImmediateNotification(
+                id: latestId.hashCode,
+                title: 'Parent Notification',
+                body: latest['message'] ?? 'New update regarding your child',
+                payload: 'notif_${latest['id']}',
+              );
+            }
+          }
+
+          _lastNotifiedId = latestId;
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setString('last_parent_notification_id', latestId);
+        }
+      }
+    } catch (e) {
+      debugPrint("Parent Notification Polling Error: $e");
     }
   }
 
@@ -96,10 +158,11 @@ class _ParentDashboardState extends State<ParentDashboard> {
                  }];
              });
          }
-  }
+      }
   }
 
   void _logout() async {
+    _notificationTimer?.cancel();
     await AuthService.logout();
     if (mounted) {
       Navigator.pushAndRemoveUntil(

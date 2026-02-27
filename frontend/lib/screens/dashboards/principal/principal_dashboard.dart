@@ -23,6 +23,9 @@ import 'principal_schedule_screen.dart';
 import 'principal_timetables_screen.dart';
 import 'principal_menu_tab.dart';
 import 'principal_profile_tab.dart';
+import 'dart:async';
+import '../../../core/services/notification_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PrincipalDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -33,15 +36,90 @@ class PrincipalDashboard extends StatefulWidget {
   State<PrincipalDashboard> createState() => _PrincipalDashboardState();
 }
 
+
 class _PrincipalDashboardState extends State<PrincipalDashboard> {
   int _selectedIndex = 1; // Default to Home (index 1)
+  Timer? _notificationTimer;
+  String? _lastNotifiedId;
 
   @override
   void initState() {
     super.initState();
+    _startNotificationPolling();
+  }
+
+  @override
+  void dispose() {
+    _notificationTimer?.cancel();
+    super.dispose();
+  }
+
+  void _startNotificationPolling() {
+    _checkNewNotifications(isInitial: true);
+    _notificationTimer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      _checkNewNotifications(isInitial: false);
+    });
+  }
+
+  Future<void> _checkNewNotifications({bool isInitial = false}) async {
+    try {
+      final user = await AuthService.getUserSession();
+      if (user == null) return;
+
+      final response = await http.get(Uri.parse(
+          '${ApiConstants.baseUrl}/api/notifications?role=Principal&userId=${user['id']}'));
+
+      if (response.statusCode == 200) {
+        final List<dynamic> notifications = json.decode(response.body);
+        if (notifications.isEmpty) return;
+
+        final latest = notifications.first;
+        final String latestId = latest['id'].toString();
+
+        if (_lastNotifiedId == null) {
+          final prefs = await SharedPreferences.getInstance();
+          _lastNotifiedId = prefs.getString('last_principal_notification_id');
+        }
+
+        if (latestId != _lastNotifiedId) {
+          if (!isInitial) {
+            if (latest['status'] == 'UNREAD' || latest['status'] == 'PENDING') {
+              await NotificationService.showImmediateNotification(
+                id: latestId.hashCode,
+                title: _getNotificationTitle(latest['type']),
+                body: latest['message'] ?? 'New notification received',
+                payload: 'notif_${latest['id']}',
+              );
+            }
+          }
+
+          _lastNotifiedId = latestId;
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setString('last_principal_notification_id', latestId);
+        }
+      }
+    } catch (e) {
+      debugPrint("Principal Notification Polling Error: $e");
+    }
+  }
+
+  String _getNotificationTitle(String? type) {
+    switch (type) {
+      case 'HOD_REQUEST':
+        return 'HOD Approval Request';
+      case 'ANNOUNCEMENT':
+        return 'New Announcement';
+      case 'ISSUE_REPORTED':
+        return 'New Issue Reported';
+      case 'SYSTEM_ALERT':
+        return 'System Alert';
+      default:
+        return 'Principal Notification';
+    }
   }
 
   void _logout() async {
+     _notificationTimer?.cancel();
      await AuthService.logout();
      if (mounted) {
        Navigator.pushAndRemoveUntil(
