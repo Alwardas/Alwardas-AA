@@ -9,6 +9,7 @@ import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/services/auth_service.dart';
+import '../../../core/services/notification_service.dart';
 
 class HodAssignClassScreen extends StatefulWidget {
   final String branch;
@@ -16,6 +17,7 @@ class HodAssignClassScreen extends StatefulWidget {
   final String section;
   final String? initialDay;
   final int? initialPeriod;
+  final Map<String, dynamic>? initialData;
 
   const HodAssignClassScreen({
     super.key,
@@ -24,6 +26,7 @@ class HodAssignClassScreen extends StatefulWidget {
     required this.section,
     this.initialDay,
     this.initialPeriod,
+    this.initialData,
   });
 
   @override
@@ -58,6 +61,10 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
     _selectedBranch = widget.branch;
     _selectedYear = widget.year;
     _selectedSection = widget.section;
+
+    if (widget.initialData != null) {
+      _subjectController.text = widget.initialData!['subject'] ?? '';
+    }
 
     _fetchTimings();
     _fetchSections();
@@ -232,6 +239,11 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
       );
 
       if (res.statusCode == 200) {
+        try {
+           await _scheduleNotification();
+        } catch (e) {
+           debugPrint("Notification Error: $e");
+        }
         Navigator.pop(context, true);
       } else {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to assign class")));
@@ -241,6 +253,88 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
+  }
+
+  Future<void> _scheduleNotification() async {
+      try {
+          final subject = _manualSubjectController.text.isNotEmpty ? _manualSubjectController.text : _subjectController.text;
+          final times = _periodTimes[_selectedPeriod];
+          if (times == null) return;
+          
+          final startTime = times['start'];
+          if (startTime == null) return;
+
+          final format = DateFormat("hh:mm a"); 
+          final DateTime parsedTime = format.parse(startTime);
+          int targetWeekday = _getWeekdayIndex(_selectedDay!);
+          
+          DateTime now = DateTime.now();
+          DateTime scheduledDate = DateTime(now.year, now.month, now.day, parsedTime.hour, parsedTime.minute);
+          
+          while (scheduledDate.weekday != targetWeekday || scheduledDate.isBefore(now)) {
+              scheduledDate = scheduledDate.add(const Duration(days: 1));
+          }
+
+          // Set reminder 1 minute before
+          DateTime reminderTime = scheduledDate.subtract(const Duration(minutes: 1));
+          
+          if (reminderTime.isBefore(now)) {
+              if (scheduledDate.isAfter(now)) {
+                  reminderTime = scheduledDate; // Fallback to start time if reminder already passed
+              } else {
+                  return; // Both in the past
+              }
+          }
+
+          int id = targetWeekday * 100 + _selectedPeriod!;
+          
+          String branchShort = _selectedBranch ?? widget.branch;
+          if (branchShort.length > 5) {
+              branchShort = _mapFullToShort(branchShort);
+          }
+          
+          String classInfo = "$branchShort : $_selectedYear : ${_mapSectionShort(_selectedSection)}";
+
+          await NotificationService.scheduleClassNotification(
+              id: id,
+              title: "Class Reminder",
+              body: "Subject: $subject\nYou have a class of $classInfo",
+              scheduledTime: reminderTime
+          );
+      } catch (e) {
+          debugPrint("Notification Error: $e");
+      }
+  }
+
+  int _getWeekdayIndex(String day) {
+      switch (day) {
+          case 'Monday': return DateTime.monday;
+          case 'Tuesday': return DateTime.tuesday;
+          case 'Wednesday': return DateTime.wednesday;
+          case 'Thursday': return DateTime.thursday;
+          case 'Friday': return DateTime.friday;
+          case 'Saturday': return DateTime.saturday;
+          case 'Sunday': return DateTime.sunday;
+          default: return DateTime.monday;
+      }
+  }
+
+  String _mapFullToShort(String? full) {
+      if (full == null) return "CME";
+      if (full.contains("Computer")) return "CME";
+      if (full.contains("Electrical")) return "EEE";
+      if (full.contains("Electronics")) return "ECE";
+      if (full.contains("Mechanical")) return "MEC";
+      if (full.contains("Civil")) return "CIV";
+      return "CME";
+  }
+
+  String _mapSectionShort(String? section) {
+      if (section == null) return "Sec A";
+      if (section.toLowerCase().contains("section")) {
+          return section.replaceAll(RegExp(r'section', caseSensitive: false), 'Sec').trim();
+      }
+      return "Sec $section";
   }
 
   @override

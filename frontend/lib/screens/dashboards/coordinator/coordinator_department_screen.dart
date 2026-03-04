@@ -66,7 +66,7 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
     try {
       final prefs = await SharedPreferences.getInstance();
       // Use production URL as default
-      final String? baseUrl = prefs.getString('api_base_url') ?? 'https://alwardas-aa-production.up.railway.app';
+      final String? baseUrl = prefs.getString('api_base_url') ?? 'https://alwardas-aa-production-ca71.up.railway.app';
       final url = Uri.parse('$baseUrl/api/departments');
 
       final response = await http.get(url);
@@ -128,7 +128,7 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
 
   Future<void> _deleteDepartment(String branchName) async {
     final prefs = await SharedPreferences.getInstance();
-    final String? baseUrl = prefs.getString('api_base_url') ?? 'https://alwardas-aa-production.up.railway.app'; // Default to Prod
+    final String? baseUrl = prefs.getString('api_base_url') ?? 'https://alwardas-aa-production-ca71.up.railway.app'; // Default to Prod
     
     try {
       final response = await http.post(

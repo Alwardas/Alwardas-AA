@@ -2,8 +2,8 @@
 import 'dart:io';
 
 class ApiConstants {
-  static const String _prodUrl = 'https://alwardas-aa-production.up.railway.app';
-  static const String _prodGrpcHost = 'alwardas-aa-production.up.railway.app';
+  static const String _prodUrl = 'https://alwardas-aa-production-ca71.up.railway.app';
+  static const String _prodGrpcHost = 'alwardas-aa-production-ca71.up.railway.app';
 
   static String get baseUrl {
     return _prodUrl; 
