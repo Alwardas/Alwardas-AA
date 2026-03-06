@@ -222,356 +222,353 @@ class _HodProfileTabState extends State<HodProfileTab> {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final isDark = themeProvider.isDarkMode;
-    
-    // Explicitly using colors mapped from the requested light theme for the exact look
-    // but allowing dark mode adaptations if standard variables are used.
-    final Color bgColor = isDark ? const Color(0xFF111827) : const Color(0xFFfafafa);
-    final Color cardBg = isDark ? const Color(0xFF1f2937) : Colors.white;
-    final Color textColor = isDark ? Colors.white : const Color(0xFF1f2937);
-    final Color subTextColor = isDark ? Colors.grey[400]! : const Color(0xFF6B7280);
-    final Color borderColor = isDark ? Colors.grey[800]! : const Color(0xFFe5e7eb);
-    final Color mainLightBlue = isDark ? Colors.blue[900]! : const Color(0xFFe0f2fe);
-    final Color mainBlueIcon = isDark ? Colors.blue[300]! : const Color(0xFF0369a1);
+
+    final Color bgColor = isDark ? const Color(0xFF1E1E2C) : const Color(0xFFF8FAFC);
+    final Color textColor = isDark ? Colors.white : const Color(0xFF1E293B);
+    final Color subTextColor = isDark ? Colors.white70 : const Color(0xFF64748B);
 
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        title: Text("My Profile", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 20)),
-        backgroundColor: bgColor,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
-        iconTheme: IconThemeData(color: textColor),
+        automaticallyImplyLeading: false,
+        title: Text("My Profile", style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w700, fontSize: 20)),
         actions: [
           IconButton(
             icon: Icon(Icons.notifications_outlined, color: textColor),
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodNotificationsScreen())),
           ),
-          PopupMenuButton<String>(
-            icon: Icon(Icons.more_vert, color: textColor),
-            onSelected: (val) {
-              if (val == 'edit') {
-                _showEditProfileDialog();
-              }
-            },
-            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-              const PopupMenuItem<String>(
-                value: 'edit',
-                child: Row(children: [Icon(Icons.edit, size: 18), SizedBox(width: 8), Text('Edit Profile')]),
-              ),
-            ],
-          ),
-          const SizedBox(width: 10),
-        ],
-      ),
-      body: _loading 
-        ? const Center(child: CircularProgressIndicator())
-        : Stack(
-            children: [
-              // Subtle background splash like the image
-              if (!isDark)
-              Positioned(
-                top: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                   height: 200,
-                   decoration: BoxDecoration(
-                     gradient: RadialGradient(
-                       colors: [Colors.blue.withValues(alpha: 0.1), Colors.transparent],
-                       radius: 1.5,
-                     )
-                   ),
-                ),
-              ),
-
-              SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Column(
+          Theme(
+            data: Theme.of(context).copyWith(
+               cardColor: isDark ? const Color(0xFF222240) : Colors.white,
+            ),
+            child: PopupMenuButton<String>(
+              icon: Icon(Icons.more_vert, color: textColor),
+              onSelected: (value) {
+                if (value == 'update_profile') {
+                  _showEditProfileDialog();
+                } else if (value == 'change_password') {
+                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Feature coming soon')));
+                } else if (value == 'logout') {
+                   widget.onLogout();
+                }
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                 PopupMenuItem<String>(
+                  value: 'update_profile',
+                  child: Row(
                     children: [
-                      // College Logo & Name
-                      Center(
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(4),
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white,
-                              ),
-                              child: Image.asset('assets/images/college logo.png', width: 140, height: 140, fit: BoxFit.contain),
-                            ),
-                            const SizedBox(height: 12),
-                            Text(
-                              "Alwardas Polytechnic", 
-                              style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
-                            ),
-                            const SizedBox(height: 8), 
-                          ],
-                        ),
-                      ),
-                      
-                      const SizedBox(height: 24),
-
-                      // Main Card
-                      Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.all(24),
-                        decoration: BoxDecoration(
-                          color: cardBg,
-                          borderRadius: BorderRadius.circular(24),
-                          boxShadow: [
-                            BoxShadow(
-                              color: isDark ? Colors.black26 : Colors.black.withValues(alpha: 0.03),
-                              blurRadius: 20,
-                              offset: const Offset(0, 10),
-                            )
-                          ],
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            // Header Area inside Card
-                            Text(
-                              _fullNameController.text.toUpperCase(),
-                              style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w800, color: textColor, letterSpacing: 0.5),
-                            ),
-                            const SizedBox(height: 12),
-                            
-                            // Badges Row
-                            Wrap(
-                              spacing: 12,
-                              runSpacing: 10,
-                              children: [
-                                // ID Badge
-                                Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                                  decoration: BoxDecoration(
-                                    color: mainLightBlue,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Text("Employee ID", style: GoogleFonts.poppins(fontSize: 12, color: mainBlueIcon, fontWeight: FontWeight.w600)),
-                                      const SizedBox(width: 8),
-                                      Text(_idController.text, style: GoogleFonts.poppins(fontSize: 13, color: textColor, fontWeight: FontWeight.bold)),
-                                      const SizedBox(width: 6),
-                                      GestureDetector(
-                                        onTap: () {
-                                          Clipboard.setData(ClipboardData(text: _idController.text));
-                                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('ID Copied')));
-                                        },
-                                        child: Icon(Icons.copy_rounded, size: 14, color: textColor),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                
-                                // Status Badge
-                                Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                                  decoration: BoxDecoration(
-                                    color: isDark ? Colors.green[900]!.withValues(alpha: 0.4) : const Color(0xFFdcfce7),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Container(
-                                         width: 6, height: 6,
-                                         decoration: const BoxDecoration(color: Color(0xFF16a34a), shape: BoxShape.circle),
-                                      ),
-                                      const SizedBox(width: 6),
-                                      Text("Active HOD", style: GoogleFonts.poppins(fontSize: 12, color: const Color(0xFF16a34a), fontWeight: FontWeight.w600)),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            
-                            const SizedBox(height: 20),
-
-                            // Grid Items exactly like the design
-                            GridView.count(
-                              crossAxisCount: 2,
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              mainAxisSpacing: 12,
-                              crossAxisSpacing: 12,
-                              childAspectRatio: 2.2, // Adjusted for typical 2-column layout to fit text clearly
-                              children: [
-                                _buildGridCard(
-                                  icon: Icons.calendar_month_outlined, 
-                                  iconBg: const Color(0xFFe0f2fe), 
-                                  iconColor: const Color(0xFF0284c7), 
-                                  label: "Date of Birth", 
-                                  value: _dobController.text.isNotEmpty ? _dobController.text : "Not Provided",
-                                  cardBg: cardBg, borderColor: borderColor, textColor: textColor, subTextColor: subTextColor
-                                ),
-                                _buildGridCard(
-                                  icon: Icons.computer_outlined, 
-                                  iconBg: const Color(0xFFf3e8ff), 
-                                  iconColor: const Color(0xFF9333ea), 
-                                  label: "Department", 
-                                  value: _deptController.text.isNotEmpty ? _deptController.text : "N/A",
-                                  cardBg: cardBg, borderColor: borderColor, textColor: textColor, subTextColor: subTextColor
-                                ),
-                                _buildGridCard(
-                                  icon: Icons.business_center_outlined, 
-                                  iconBg: const Color(0xFFdcfce7), 
-                                  iconColor: const Color(0xFF16a34a), 
-                                  label: "Experience", 
-                                  value: _experienceController.text.isNotEmpty ? "${_experienceController.text} Years" : "N/A",
-                                  cardBg: cardBg, borderColor: borderColor, textColor: textColor, subTextColor: subTextColor
-                                ),
-                                _buildGridCard(
-                                  icon: Icons.verified_user_outlined, 
-                                  iconBg: const Color(0xFFffedd5), 
-                                  iconColor: const Color(0xFFea580c), 
-                                  label: "Role", 
-                                  value: widget.userData['role'] ?? 'HOD',
-                                  cardBg: cardBg, borderColor: borderColor, textColor: textColor, subTextColor: subTextColor
-                                ),
-                              ],
-                            ),
-                            
-                            // Full width cards at bottom
-                            _buildFullWidthCard(
-                               icon: Icons.phone_outlined, 
-                               iconBg: const Color(0xFFe0f2fe), 
-                               iconColor: const Color(0xFF2563eb), 
-                               label: "Contact", 
-                               value: _phoneController.text.isNotEmpty ? _phoneController.text : "Not Provided",
-                               cardBg: cardBg, borderColor: borderColor, textColor: textColor, subTextColor: subTextColor
-                            ),
-                            
-                            _buildFullWidthCard(
-                               icon: Icons.email_outlined, 
-                               iconBg: const Color(0xFFf3e8ff), 
-                               iconColor: const Color(0xFF9333ea), 
-                               label: "Email", 
-                               value: _emailController.text.isNotEmpty ? _emailController.text : "Not Provided",
-                               cardBg: cardBg, borderColor: borderColor, textColor: textColor, subTextColor: subTextColor
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      const SizedBox(height: 50), // Increased for better separation
-
-                      // Logout Button
-                      SizedBox(
-                        width: double.infinity,
-                        child: OutlinedButton(
-                          onPressed: widget.onLogout,
-                          style: OutlinedButton.styleFrom(
-                            backgroundColor: isDark ? const Color(0xFF450a0a) : const Color(0xFFfef2f2),
-                            side: BorderSide(color: const Color(0xFFef4444).withValues(alpha: 0.3)),
-                            padding: const EdgeInsets.symmetric(vertical: 16),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(Icons.logout_rounded, color: Color(0xFFef4444), size: 20),
-                              const SizedBox(width: 8),
-                              Text("Logout", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: const Color(0xFFef4444))),
-                            ],
-                          ),
-                        ),
-                      ),
-                      
-                      const SizedBox(height: 100),
+                      Icon(Icons.edit, color: textColor, size: 20),
+                      const SizedBox(width: 8),
+                       Text('Update Profile', style: TextStyle(color: textColor)),
                     ],
                   ),
                 ),
+                PopupMenuItem<String>(
+                  value: 'change_password',
+                  child: Row(
+                    children: [
+                      Icon(Icons.lock_outline, color: textColor, size: 20),
+                      const SizedBox(width: 8),
+                       Text('Change Password', style: TextStyle(color: textColor)),
+                    ],
+                  ),
+                ),
+                const PopupMenuDivider(),
+                PopupMenuItem<String>(
+                  value: 'logout',
+                  child: Row(
+                    children: [
+                      const Icon(Icons.logout, color: Color(0xFFDC2626), size: 20),
+                      const SizedBox(width: 8),
+                       const Text('Logout', style: TextStyle(color: Color(0xFFDC2626))),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      body: _loading 
+          ? Center(child: CircularProgressIndicator(color: Theme.of(context).primaryColor))
+          : SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  // Logo Section
+                  SizedBox(
+                    height: 240,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const SizedBox(height: 16),
+                        Image.asset(
+                          'assets/images/college logo.png', 
+                          height: 140,
+                          width: 140,
+                          errorBuilder: (context, error, stackTrace) => 
+                             Icon(Icons.school, size: 100, color: subTextColor.withValues(alpha: 0.3)),
+                        ),
+                        const SizedBox(height: 12),
+                        Text(
+                          "Alwardas Polytechnic",
+                          style: GoogleFonts.inter(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: textColor,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                      ],
+                    ),
+                  ),
+                  
+                  // Main Profile Content
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: _buildProfileCard(textColor, subTextColor, isDark),
+                  ),
+                  
+                  const SizedBox(height: 100),
+                ],
+              ),
+            ),
+    );
+  }
+
+  Widget _buildProfileCard(Color textColor, Color subTextColor, bool isDark) {
+    final contact = _phoneController.text.isNotEmpty ? _phoneController.text : '+91 XXXXX XXXXX';
+    final email = _emailController.text.isNotEmpty ? _emailController.text : 'Not Provided';
+    final String displayName = _fullNameController.text.toUpperCase();
+    String rawRole = widget.userData['role'] ?? 'HOD';
+    final String role = rawRole.toUpperCase() == 'HOD' ? 'Head of the Department' : rawRole;
+    final String department = _deptController.text.isNotEmpty ? _deptController.text : 'N/A';
+    final String experience = _experienceController.text.isNotEmpty ? "${_experienceController.text} Years" : 'N/A';
+    final String dob = _dobController.text.isNotEmpty ? _dobController.text : 'Not Provided';
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Name and ID Card
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: isDark ? [] : [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.04),
+                blurRadius: 20,
+                offset: const Offset(0, 10),
+              )
+            ]
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                displayName,
+                style: GoogleFonts.inter(
+                  fontSize: 16, 
+                  fontWeight: FontWeight.w800,
+                  color: textColor,
+                  letterSpacing: 0.5,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: isDark ? const Color(0xFF1E3A8A).withValues(alpha: 0.3) : const Color(0xFFEFF6FF),
+                      borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
+                    ),
+                    child: Text(
+                      "Employee ID",
+                      style: GoogleFonts.inter(color: isDark ? const Color(0xFF60A5FA) : const Color(0xFF3B82F6), fontWeight: FontWeight.w700, fontSize: 12),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Clipboard.setData(ClipboardData(text: _idController.text));
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('ID copied to clipboard'), duration: Duration(seconds: 2)));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF0F172A) : Colors.white,
+                        border: Border.all(color: isDark ? const Color(0xFF1E3A8A).withValues(alpha: 0.3) : const Color(0xFFEFF6FF), width: 1.5),
+                        borderRadius: const BorderRadius.only(topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            _idController.text,
+                            style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w800, fontSize: 12),
+                          ),
+                          const SizedBox(width: 8),
+                          Icon(Icons.copy_outlined, size: 16, color: subTextColor),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
+        ),
+        
+        const SizedBox(height: 24),
+
+        // PROFESSIONAL Section
+        _buildSection(
+          title: "PROFESSIONAL",
+          lineColor: const Color(0xFF3B82F6), // Blue
+          child: Container(
+             decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: isDark ? Colors.white12 : const Color(0xFFF1F5F9), width: 1.5),
+             ),
+             child: Column(
+                children: [
+                   _buildRowItem(icon: Icons.computer, iconColor: const Color(0xFF8B5CF6), label: department, isDark: isDark),
+                   _buildRowItem(icon: Icons.verified_user_outlined, iconColor: const Color(0xFFF59E0B), label: "Role", value: role, isDark: isDark),
+                   _buildRowItem(icon: Icons.business_center_outlined, iconColor: const Color(0xFF10B981), label: "Experience", value: experience, isDark: isDark, showBorder: false),
+                ]
+             )
+          )
+        ),
+        
+        const SizedBox(height: 24),
+
+        // PERSONAL Section
+        _buildSection(
+          title: "PERSONAL",
+          lineColor: const Color(0xFF10B981), // Teal
+          child: Container(
+             decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: isDark ? Colors.white12 : const Color(0xFFF1F5F9), width: 1.5),
+             ),
+             child: Column(
+                children: [
+                   _buildRowItem(icon: Icons.calendar_today, iconColor: const Color(0xFF3B82F6), label: "Date of Birth", value: dob, isDark: isDark),
+                   _buildRowItem(icon: Icons.phone, iconColor: const Color(0xFF8B5CF6), label: "Phone", value: contact, isDark: isDark, showCopy: true),
+                   _buildRowItem(icon: Icons.email_outlined, iconColor: const Color(0xFFEC4899), label: "Email", value: email, isDark: isDark, showBorder: false, showCopy: true),
+                ]
+              )
+           ),
+        ),
+      ],
     );
   }
 
-  Widget _buildGridCard({
-    required IconData icon, required Color iconBg, required Color iconColor, 
-    required String label, required String value,
-    required Color cardBg, required Color borderColor, required Color textColor, required Color subTextColor
-  }) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      decoration: BoxDecoration(
-        color: cardBg,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: borderColor),
-      ),
+  Widget _buildSection({required String? title, required Color lineColor, required Widget child}) {
+    return IntrinsicHeight(
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-             padding: const EdgeInsets.all(8),
-             decoration: BoxDecoration(color: iconBg, borderRadius: BorderRadius.circular(10)),
-             child: Icon(icon, color: iconColor, size: 20),
+            width: 3.5,
+            decoration: BoxDecoration(
+              color: lineColor,
+              borderRadius: BorderRadius.circular(4),
+            ),
+            margin: const EdgeInsets.only(right: 16),
           ),
-          const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(label, style: GoogleFonts.poppins(fontSize: 10, color: subTextColor, fontWeight: FontWeight.w500)),
-                const SizedBox(height: 2),
-                Text(
-                  value, 
-                  style: GoogleFonts.poppins(fontSize: 13, color: textColor, fontWeight: FontWeight.w600),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
+                if (title != null) ...[
+                  Text(title, style: GoogleFonts.inter(fontSize: 11, fontWeight: FontWeight.w700, letterSpacing: 1.2, color: const Color(0xFF64748B))),
+                  const SizedBox(height: 12),
+                ],
+                child,
               ],
             ),
-          )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildFullWidthCard({
-    required IconData icon, required Color iconBg, required Color iconColor, 
-    required String label, required String value,
-    required Color cardBg, required Color borderColor, required Color textColor, required Color subTextColor
+  Widget _buildRowItem({
+    required IconData icon, 
+    required Color iconColor, 
+    required String label, 
+    String? value, 
+    bool isDark = false, 
+    bool showCopy = false,
+    bool showBorder = true,
   }) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-      decoration: BoxDecoration(
-        color: cardBg,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: borderColor),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-             padding: const EdgeInsets.all(10),
-             decoration: BoxDecoration(color: iconBg, borderRadius: BorderRadius.circular(12)),
-             child: Icon(icon, color: iconColor, size: 22),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(label, style: GoogleFonts.poppins(fontSize: 12, color: subTextColor, fontWeight: FontWeight.w500)),
-                const SizedBox(height: 2),
-                Text(
-                  value, 
-                  style: GoogleFonts.poppins(fontSize: 14, color: textColor, fontWeight: FontWeight.w600),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: iconColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
                 ),
-              ],
-            ),
-          )
-        ],
-      ),
+                child: Icon(icon, color: iconColor, size: 18),
+              ),
+              const SizedBox(width: 16),
+              Text(
+                label,
+                style: GoogleFonts.inter(
+                  color: isDark ? Colors.white70 : (value == null ? const Color(0xFF1E293B) : const Color(0xFF475569)),
+                  fontSize: 13,
+                  fontWeight: value == null ? FontWeight.w600 : FontWeight.w500,
+                ),
+              ),
+              if (value != null) ...[
+                Expanded(
+                  child: GestureDetector(
+                    onTap: showCopy ? () {
+                      Clipboard.setData(ClipboardData(text: value));
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$label copied to clipboard'), duration: const Duration(seconds: 2)));
+                    } : null,
+                    behavior: HitTestBehavior.opaque,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            value,
+                            style: GoogleFonts.inter(
+                              color: isDark ? Colors.white : const Color(0xFF1E293B),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        if (showCopy) ...[
+                          const SizedBox(width: 8),
+                          const Icon(Icons.copy_outlined, size: 16, color: Color(0xFF94A3B8)),
+                        ]
+                      ],
+                    ),
+                  ),
+                )
+              ]
+            ],
+          ),
+        ),
+        if (showBorder)
+           Divider(height: 1, thickness: 1, color: isDark ? Colors.white10 : const Color(0xFFF1F5F9), indent: 56, endIndent: 16),
+      ],
     );
   }
 }

@@ -199,20 +199,22 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
 
   void _populateControllers() {
     if (_profileData == null) return;
-    _fullNameController.text = _profileData!['full_name'] ?? _profileData!['fullName'] ?? '';
+    _fullNameController.text = _profileData!['full_name'] ?? _profileData!['fullName'] ?? widget.userData['full_name'] ?? widget.userData['fullName'] ?? '';
     
     // Check for camelCase 'loginId' first (backend standard), then snake_case fallback
-    _studentIdController.text = _profileData!['studentId'] ?? _profileData!['loginId'] ?? _profileData!['login_id'] ?? '';
+    _studentIdController.text = _profileData!['studentId'] ?? _profileData!['loginId'] ?? _profileData!['login_id'] ?? widget.userData['login_id'] ?? '';
     
-    _branchController.text = _profileData!['branch'] ?? '';
-    _yearController.text = _profileData!['year'] ?? '';
-    _semesterController.text = _profileData!['semester'] ?? '';
-    _sectionController.text = _profileData!['section'] ?? 'Section A'; // Default if missing
-    _phoneController.text = _profileData!['phone_number'] ?? _profileData!['phoneNumber'] ?? '';
-    _emailController.text = _profileData!['email'] ?? '';
+    _branchController.text = _profileData!['branch'] ?? widget.userData['branch'] ?? '';
+    _yearController.text = _profileData!['year'] ?? widget.userData['year'] ?? '';
+    _semesterController.text = _profileData!['semester'] ?? widget.userData['semester'] ?? '';
+    _sectionController.text = _profileData!['section'] ?? widget.userData['section'] ?? 'Section A'; // Default if missing
+      // Updated to handle various possible phone field names from backend and userData
+      _phoneController.text = _profileData!['phone_number'] ?? _profileData!['phoneNumber'] ?? _profileData!['phone'] ?? widget.userData['phone_number'] ?? widget.userData['phoneNumber'] ?? widget.userData['phone'] ?? '';
+      // Updated to handle email field variations
+      _emailController.text = _profileData!['email'] ?? _profileData!['email_id'] ?? _profileData!['emailAddress'] ?? widget.userData['email'] ?? widget.userData['email_id'] ?? widget.userData['emailAddress'] ?? '';
     
     // Handle Date Format: YYYY-MM-DD -> DD-MM-YYYY
-    String rawDob = _profileData!['dob'] ?? _profileData!['date_of_birth'] ?? '';
+    String rawDob = _profileData!['dob'] ?? _profileData!['date_of_birth'] ?? widget.userData['dob'] ?? widget.userData['date_of_birth'] ?? '';
     if (rawDob.isNotEmpty) {
       try {
         // Backend returns YYYY-MM-DD
@@ -225,7 +227,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
       _dobController.text = '';
     }
     
-    _batchNoController.text = _profileData!['batch_no'] ?? _profileData!['batchNo'] ?? '';
+    _batchNoController.text = _profileData!['batch_no'] ?? _profileData!['batchNo'] ?? widget.userData['batch_no'] ?? '';
     
     // Auto calculate if empty
     if (_batchNoController.text.isEmpty || _batchNoController.text == 'N/A') {
@@ -491,11 +493,11 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
   }
 
   Widget _buildProfileCard(Color textColor, Color subTextColor, bool isDark) {
-    // Determine the phone and email fallback since they are not always present in model. 
-    // Usually retrieved from widget.userData or _profileData
-    final contact = _profileData?['phone_number'] ?? _profileData?['phoneNumber'] ?? '+91 XXXXX XXXXX';
-    final email = _profileData?['email'] ?? 'Not Provided';
-    
+    // Determine the phone and email fallback robustly by checking populated form controllers
+    final contact = _phoneController.text.isNotEmpty ? _phoneController.text : '+91 XXXXX XXXXX';
+    final email = _emailController.text.isNotEmpty ? _emailController.text : 'Not Provided';
+    final dobDisplay = _dobController.text.isNotEmpty ? _dobController.text : 'Not Provided';
+
     final String titleStr = _profileData?['title']?.toString() ?? widget.userData['title']?.toString() ?? '';
     final String displayName = "${titleStr.isNotEmpty ? '$titleStr ' : ''}${_fullNameController.text}".toUpperCase();
 
@@ -612,7 +614,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
              ),
              child: Column(
                 children: [
-                   _buildRowItem(icon: Icons.calendar_today, iconColor: const Color(0xFF3B82F6), label: "Date of Birth", value: _dobController.text, isDark: isDark),
+                   _buildRowItem(icon: Icons.calendar_today, iconColor: const Color(0xFF3B82F6), label: "Date of Birth", value: dobDisplay, isDark: isDark),
                    _buildRowItem(icon: Icons.phone, iconColor: const Color(0xFF8B5CF6), label: "Phone", value: contact, isDark: isDark, showCopy: true),
                    _buildRowItem(icon: Icons.email_outlined, iconColor: const Color(0xFFEC4899), label: "Email", value: email, isDark: isDark, showBorder: false, showCopy: true),
                 ]

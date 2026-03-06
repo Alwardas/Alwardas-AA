@@ -9,6 +9,7 @@ import 'package:shimmer/shimmer.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
 import '../../../theme/theme_constants.dart';
+import '../../../core/helpers/announcement_theme_helper.dart';
 import 'coordinator_create_announcement_screen.dart';
 import 'coordinator_announcement_details_screen.dart';
 
@@ -35,7 +36,10 @@ class _CoordinatorAnnouncementsScreenState extends State<CoordinatorAnnouncement
 
   Future<void> _fetchAnnouncements() async {
     try {
-      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement'));
+      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement')).timeout(
+        const Duration(seconds: 5),
+        onTimeout: () => http.Response('[]', 408),
+      );
       
       if (response.statusCode == 200) {
         final List<dynamic> data = jsonDecode(response.body);
@@ -326,41 +330,11 @@ class _CoordinatorAnnouncementsScreenState extends State<CoordinatorAnnouncement
   }
 
   Widget _buildAnnouncementCard(BuildContext context, Announcement announcement, bool isDark) {
-      Color typeColorStart;
-      Color typeColorEnd;
-      IconData typeIcon;
-      // Define audience colors (Target Audience types: Students, Faculty, HODs, Principal, Parents, All)
-      // Map based on first audience entry for simplicity
-      String audience = announcement.audience.isNotEmpty ? announcement.audience.first : 'All';
+      final themeData = AnnouncementThemeHelper.getTheme(announcement.type.toString().split('.').last, isDark);
       
-      // Default
-      typeColorStart = Colors.grey; typeColorEnd = Colors.blueGrey;
-      
-      if (audience.toLowerCase().contains('student')) {
-         typeColorStart = const Color(0xFF2E3192); typeColorEnd = const Color(0xFF1BFFFF); // Blue/Cyan
-      } else if (audience.toLowerCase().contains('parent')) {
-         typeColorStart = const Color(0xFFD4145A); typeColorEnd = const Color(0xFFFBB03B); // Red/Orange
-      } else if (audience.toLowerCase().contains('faculty')) {
-         typeColorStart = const Color(0xFF009245); typeColorEnd = const Color(0xFFFCEE21); // Green/Yellow
-      } else if (audience.toLowerCase().contains('hod')) {
-         typeColorStart = const Color(0xFF662D8C); typeColorEnd = const Color(0xFFED1E79); // Purple/Pink
-      } else if (audience.toLowerCase().contains('principal')) {
-         typeColorStart = const Color(0xFF12c2e9); typeColorEnd = const Color(0xFFc471ed); // Blue/Purple
-      } else if (audience.toLowerCase().contains('all')) {
-         typeColorStart = const Color(0xFFC04848); typeColorEnd = const Color(0xFF480048); // Red/Purple (Distinctive)
-      }
-
-      // Icon based on type still seems appropriate or should icon also be audience based?
-      // Prompt says "annoucemnets cards must be in differnt different colors based on the type targent audience"
-      // It implies card styling.
-
-      switch(announcement.type) {
-         case AnnouncementType.exam: typeIcon = Icons.campaign_outlined; break;
-         case AnnouncementType.event: typeIcon = Icons.calendar_today; break;
-         case AnnouncementType.faculty: typeIcon = Icons.school; break;
-         case AnnouncementType.urgent: typeIcon = Icons.warning_amber_rounded; break;
-         default: typeIcon = Icons.info_outline;
-      }
+      Color typeColorStart = themeData.cardGradient.first;
+      Color typeColorEnd = themeData.cardGradient.last;
+      IconData typeIcon = themeData.typeIcon;
       
       final now = DateTime.now();
       bool isScheduled = announcement.startDate.isAfter(now);
@@ -660,12 +634,12 @@ class Announcement {
       title: json['title'],
       description: json['description'],
       type: AnnouncementType.values.firstWhere(
-        (e) => e.toString().split('.').last == json['type'], 
+        (e) => e.toString().split('.').last.toLowerCase() == (json['type']?.toString() ?? '').toLowerCase(), 
         orElse: () => AnnouncementType.general
       ),
       audience: List<String>.from(json['audience'] ?? []),
       priority: AnnouncementPriority.values.firstWhere(
-        (e) => e.toString().split('.').last == json['priority'], 
+        (e) => e.toString().split('.').last.toLowerCase() == (json['priority']?.toString() ?? '').toLowerCase(), 
         orElse: () => AnnouncementPriority.normal
       ),
       startDate: DateTime.parse(json['start_date']),

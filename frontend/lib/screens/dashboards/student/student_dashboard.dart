@@ -304,83 +304,112 @@ class _StudentDashboardState extends State<StudentDashboard> {
             left: 24, 
             right: 24
           ),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: isDark ? AppTheme.darkHeaderGradient : AppTheme.lightHeaderGradient,
+              colors: [Color(0xFF6B48FF), Color(0xFF4B83FF), Color(0xFF1EC9F8)],
+              stops: [0.0, 0.5, 1.0],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40),
             ),
           ),
-          child: Column(
-             children: [
-               Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   Expanded(
-                     child: Column(
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                          Text(
-                            'Welcome Back,',
-                             style: GoogleFonts.poppins(
-                               color: Colors.white70,
-                               fontSize: 14,
-                               fontWeight: FontWeight.w500,
-                             ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                     Text(
+                       'Welcome Back,',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white.withValues(alpha: 0.9),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                     ),
+                     const SizedBox(height: 2),
+                     FittedBox(
+                       fit: BoxFit.scaleDown,
+                       alignment: Alignment.centerLeft,
+                       child: Text(
+                         widget.userData['full_name']?.toString().toUpperCase() ?? 'STUDENT', 
+                          style: GoogleFonts.poppins(
+                            color: Colors.white, 
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 0.5,
                           ),
-                          FittedBox(
-                            fit: BoxFit.scaleDown,
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              widget.userData['full_name'] ?? 'Student', 
-                               style: GoogleFonts.poppins(
-                                 color: Colors.white, 
-                                 fontSize: 18, // Reduced for a better fit
-                                 fontWeight: FontWeight.bold,
-                               ),
+                       ),
+                     ),
+                     const SizedBox(height: 2),
+                     Text(
+                       'ID: ${widget.userData['login_id'] ?? 'N/A'}',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white.withValues(alpha: 0.9), 
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                        ),
+                     ),
+                     const SizedBox(height: 2),
+                     Text(
+                       widget.userData['branch'] ?? 'Computer Engineering',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white.withValues(alpha: 0.8), 
+                          fontSize: 13,
+                        ),
+                     ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.4), width: 1),
+                  color: Colors.white.withValues(alpha: 0.1),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentNotificationsScreen(userId: widget.userData['id']))),
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          const Icon(Icons.notifications_none, color: Colors.white, size: 22),
+                          Positioned(
+                            right: 0,
+                            top: 0,
+                            child: Container(
+                              width: 8, height: 8,
+                              decoration: const BoxDecoration(
+                                color: Colors.redAccent,
+                                shape: BoxShape.circle,
+                              ),
                             ),
                           ),
-                          const SizedBox(height: 2),
-                          Text(
-                            'ID: ${widget.userData['login_id'] ?? 'N/A'}',
-                             style: GoogleFonts.poppins(
-                               color: Colors.white.withOpacity(0.9), 
-                               fontSize: 13, // Reduced from 15
-                               fontWeight: FontWeight.w500,
-                             ),
-                          ),
-                          const SizedBox(height: 2),
-                          Text(
-                            widget.userData['branch'] ?? 'Engineering',
-                             style: GoogleFonts.poppins(
-                               color: Colors.white70, 
-                               fontSize: 14,
-                             ),
-                          ),
-                       ],
-                     ),
-                   ),
-                   Row(
-                     children: [
-                       GestureDetector(
-                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentNotificationsScreen(userId: widget.userData['id']))),
-                         child: _buildHeaderIcon(Icons.notifications_outlined),
-                       ),
-                       const SizedBox(width: 12),
-                       GestureDetector(
-                         onTap: () => themeProvider.toggleTheme(),
-                         child: _buildHeaderIcon(themeProvider.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round),
-                       ),
-                     ],
-                   ),
-                 ],
-               )
-             ],
-           ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    GestureDetector(
+                      onTap: () => themeProvider.toggleTheme(),
+                      child: Icon(
+                        isDark ? Icons.wb_sunny : Icons.nightlight_round, 
+                        color: Colors.white, 
+                        size: 20
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
 
         // 2. Scrollable Body
@@ -398,15 +427,26 @@ class _StudentDashboardState extends State<StudentDashboard> {
                   const SizedBox(height: 25),
 
                   // Quick Access: Grid Layout
-                  Text(
-                    'Quick Access',
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        'Quick Access',
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Container(
+                          height: 1,
+                          color: Colors.grey.withValues(alpha: 0.2),
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 20),
 
                   GridView(
                     shrinkWrap: true,
@@ -416,7 +456,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                       crossAxisCount: 2,
                       crossAxisSpacing: 15,
                       mainAxisSpacing: 15,
-                      childAspectRatio: 1.2,
+                      childAspectRatio: 1.4,
                     ),
                     children: [
                       _buildQuickAccessCard(
@@ -463,16 +503,37 @@ class _StudentDashboardState extends State<StudentDashboard> {
                         subTextColor,
                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentMarksScreen())),
                       ),
-                      _buildQuickAccessCard(
-                        Icons.report_problem_outlined,
-                        'Issues',
-                        'Report & Track',
-                        cardColor,
-                        const Color(0xFFE94057).withValues(alpha: 0.1),
-                        const Color(0xFFE94057),
-                        textColor,
-                        subTextColor,
-                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentCommentsScreen(userData: widget.userData))),
+                    ],
+                  ),
+                  const SizedBox(height: 15),
+                  
+                  // Bottom Horizontal Cards
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _buildHorizontalCard(
+                          Icons.warning_amber_rounded,
+                          'Issues',
+                          'Report & Track',
+                          const Color(0xFFE94057),
+                          cardColor,
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentCommentsScreen(userData: widget.userData))),
+                        ),
+                      ),
+                      const SizedBox(width: 15),
+                      Expanded(
+                        child: _buildHorizontalCard(
+                          Icons.person,
+                          'Feedback',
+                          'App Feedback',
+                          const Color(0xFF1ABC9C),
+                          cardColor,
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentFeedbackScreen(userData: widget.userData))),
+                        ),
                       ),
                     ],
                   ),
@@ -607,6 +668,61 @@ class _StudentDashboardState extends State<StudentDashboard> {
                 style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHorizontalCard(IconData icon, String title, String subtitle, Color color, Color cardColor, Color textColor, Color subTextColor, {VoidCallback? onTap}) {
+    final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
+             width: 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
+              blurRadius: 15,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: color, size: 20),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title,
+                    style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 13),
+                  ),
+                  Text(
+                    subtitle,
+                    style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+                  ),
+                ],
+              ),
+            ),
+            Icon(Icons.chevron_right, size: 16, color: subTextColor),
           ],
         ),
       ),
