@@ -1,10 +1,11 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/services/auth_service.dart';
 import 'hod_class_timetable_screen.dart'; // New Screen
+import 'hod_department_timing_screen.dart'; // Added
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../../../core/api_constants.dart';
@@ -306,6 +307,10 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
             _buildBigCard(context, "Labs", Icons.science, Colors.orange, () => setState(() => _currentView = TimetableView.labs)),
             const SizedBox(height: 20),
             _buildBigCard(context, "Master Timetable", Icons.grid_view_rounded, Colors.purple, () => setState(() => _currentView = TimetableView.master)),
+            const SizedBox(height: 20),
+            _buildBigCard(context, "Timings", Icons.access_time_filled_outlined, Colors.teal, () {
+               Navigator.push(context, MaterialPageRoute(builder: (_) => HodDepartmentTimingScreen(branch: _userBranch ?? 'Computer Engineering')));
+            }),
           ],
         ),
       ),

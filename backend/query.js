@@ -1,19 +1,17 @@
 const { Client } = require('pg');
+const connectionString = 'postgresql://postgres.eyvpvrfadrgnewxslxzo:Alwardas-Polytechnic%402025@aws-1-ap-south-1.pooler.supabase.com:5432/postgres?sslmode=require';
 
 const client = new Client({
-    connectionString: 'postgresql://postgres.eyvpvrfadrgnewxslxzo:Alwardas-Polytechnic%402025@aws-1-ap-south-1.pooler.supabase.com:5432/postgres',
+    connectionString: connectionString,
     ssl: { rejectUnauthorized: false }
 });
 
-client.connect()
-    .then(() => {
-        return client.query("SELECT * FROM users WHERE login_id = '24634-CM-026'");
-    })
-    .then(res => {
-        console.log("Data for 24634-CM-026:", res.rows[0]);
-        client.end();
-    })
-    .catch(err => {
-        console.error(err);
-        client.end();
-    });
+async function main() {
+    await client.connect();
+    const res = await client.query("SELECT id, login_id, full_name, email, phone_number, dob FROM users WHERE role = 'Student' LIMIT 5");
+    console.log(res.rows);
+    const user = await client.query("SELECT * FROM users WHERE login_id = 'A25P001' OR login_id = 'A26P001' LIMIT 1");
+    console.log("Specific User:", user.rows);
+    await client.end();
+}
+main().catch(console.error);

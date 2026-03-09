@@ -547,6 +547,8 @@ class _HodProfileTabState extends State<HodProfileTab> {
                         Flexible(
                           child: Text(
                             value,
+                            textAlign: TextAlign.right,
+                            softWrap: true,
                             style: GoogleFonts.inter(
                               color: isDark ? Colors.white : const Color(0xFF1E293B),
                               fontSize: 13,

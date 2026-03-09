@@ -34,6 +34,14 @@ class _CoordinatorCreateAnnouncementScreenState
   bool _sendInApp = true;
   String? _attachmentName;
 
+  // Targeting filters
+  List<String> _departments = [];
+  List<String> _selectedBranches = [];
+  final List<String> _years = ['1st Year', '2nd Year', '3rd Year'];
+  List<String> _selectedYears = [];
+  List<String> _sections = ['Section A', 'Section B'];
+  List<String> _selectedSections = [];
+
   // UI State
   bool _isAutoSaving = false;
   Timer? _autoSaveTimer;
@@ -51,6 +59,7 @@ class _CoordinatorCreateAnnouncementScreenState
   @override
   void initState() {
     super.initState();
+    _fetchDepartments();
     // Auto-save Setup
     _autoSaveTimer = Timer.periodic(const Duration(seconds: 10), (timer) {
       if (_titleController.text.isNotEmpty) {
@@ -63,6 +72,20 @@ class _CoordinatorCreateAnnouncementScreenState
 
     _titleController.addListener(() => setState(() {}));
     _descController.addListener(() => setState(() {}));
+  }
+
+  Future<void> _fetchDepartments() async {
+    try {
+      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/departments'));
+      if (res.statusCode == 200) {
+        final List data = json.decode(res.body);
+        if (mounted) {
+          setState(() {
+             _departments = data.map((d) => d['branch'].toString()).toList();
+          });
+        }
+      }
+    } catch (_) {}
   }
 
   @override
@@ -98,11 +121,18 @@ class _CoordinatorCreateAnnouncementScreenState
 
       final endDateTime = _endDate.toUtc().toIso8601String();
 
+      List<String> finalAudience = List.from(_selectedAudience);
+      if (finalAudience.contains('Students')) {
+         if (_selectedBranches.isNotEmpty) finalAudience.add("Branches: ${_selectedBranches.join(', ')}");
+         if (_selectedYears.isNotEmpty) finalAudience.add("Years: ${_selectedYears.join(', ')}");
+         if (_selectedSections.isNotEmpty) finalAudience.add("Sections: ${_selectedSections.join(', ')}");
+      }
+
       final body = {
         "title": _titleController.text,
         "description": _descController.text,
         "type": _selectedType.toString().split('.').last,
-        "audience": _selectedAudience,
+        "audience": finalAudience,
         "priority": _selectedPriority.toString().split('.').last,
         "start_date": startDateTime,
         "end_date": endDateTime,
@@ -364,7 +394,19 @@ class _CoordinatorCreateAnnouncementScreenState
                         ),
                       );
                     }).toList(),
-                  )
+                  ),
+                  if (_selectedAudience.contains('Students')) ...[
+                     const SizedBox(height: 15),
+                     Row(
+                       children: [
+                         _buildMultiSelectDropdown("Branches", _departments, _selectedBranches, (val) => setState(() => _selectedBranches = val), isDark),
+                         const SizedBox(width: 10),
+                         _buildMultiSelectDropdown("Years", _years, _selectedYears, (val) => setState(() => _selectedYears = val), isDark),
+                         const SizedBox(width: 10),
+                         _buildMultiSelectDropdown("Sections", _sections, _selectedSections, (val) => setState(() => _selectedSections = val), isDark),
+                       ],
+                     ),
+                  ]
                 ],
                 isDark),
 
@@ -644,9 +686,18 @@ class _CoordinatorCreateAnnouncementScreenState
                                 Text(
                                   _selectedAudience.isEmpty
                                       ? "Target Audience"
-                                      : _selectedAudience.join(", "),
+                                      : (() {
+                                          List<String> previewAudience = List.from(_selectedAudience);
+                                          if (previewAudience.contains('Students')) {
+                                               if (_selectedBranches.isNotEmpty) previewAudience.add("(${_selectedBranches.take(2).join(',')}${_selectedBranches.length > 2 ? '...' : ''})");
+                                               if (_selectedYears.isNotEmpty) previewAudience.add("(${_selectedYears.take(2).join(',')}${_selectedYears.length > 2 ? '...' : ''})");
+                                          }
+                                          return previewAudience.join(", ");
+                                        })(),
                                   style: GoogleFonts.poppins(
                                       color: Colors.white70, fontSize: 13),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ],
                             ),
@@ -707,5 +758,85 @@ class _CoordinatorCreateAnnouncementScreenState
         ),
       ),
     );
+  }
+
+  Widget _buildMultiSelectDropdown(String title, List<String> options, List<String> selectedItems, Function(List<String>) onChanged, bool isDark) {
+     return Expanded(
+       child: GestureDetector(
+         onTap: () async {
+            if (options.isEmpty) return;
+            final result = await showDialog<List<String>>(
+               context: context,
+               builder: (ctx) {
+                  List<String> tempSelected = List.from(selectedItems);
+                  return StatefulBuilder(
+                    builder: (context, setDialogState) {
+                       return AlertDialog(
+                          backgroundColor: isDark ? const Color(0xFF1E293B) : Colors.white,
+                          title: Text('Select $title', style: GoogleFonts.poppins(color: isDark ? Colors.white : Colors.black, fontSize: 16, fontWeight: FontWeight.bold)),
+                          content: SizedBox(
+                             width: double.maxFinite,
+                             child: ListView(
+                                shrinkWrap: true,
+                                children: options.map((opt) {
+                                   return CheckboxListTile(
+                                      title: Text(opt, style: TextStyle(color: isDark ? Colors.white : Colors.black, fontSize: 14)),
+                                      value: tempSelected.contains(opt),
+                                      activeColor: const Color(0xFF2563EB),
+                                      checkColor: Colors.white,
+                                      controlAffinity: ListTileControlAffinity.leading,
+                                      onChanged: (val) {
+                                         setDialogState(() {
+                                            if (val == true) {
+                                               tempSelected.add(opt);
+                                            } else {
+                                               tempSelected.remove(opt);
+                                            }
+                                         });
+                                      }
+                                   );
+                                }).toList()
+                             )
+                          ),
+                          actions: [
+                             TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Cancel')),
+                             ElevatedButton(
+                                onPressed: () => Navigator.pop(ctx, tempSelected), 
+                                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF2563EB)),
+                                child: const Text('Confirm', style: TextStyle(color: Colors.white))
+                             ),
+                          ]
+                       );
+                    }
+                  );
+               }
+            );
+            if (result != null) {
+               onChanged(result);
+            }
+         },
+         child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+            decoration: BoxDecoration(
+               color: isDark ? const Color(0xFF1E293B) : Colors.white,
+               borderRadius: BorderRadius.circular(10),
+               border: Border.all(color: Colors.grey.withValues(alpha: 0.3)),
+            ),
+            child: Row(
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               children: [
+                  Expanded(
+                    child: Text(
+                      selectedItems.isEmpty ? title : '${selectedItems.length} selected', 
+                      overflow: TextOverflow.ellipsis, 
+                      style: TextStyle(color: isDark ? Colors.white70 : Colors.black87, fontSize: 12)
+                    )
+                  ),
+                  const Icon(Icons.arrow_drop_down, color: Colors.grey, size: 16)
+               ]
+            )
+         )
+       )
+     );
   }
 }

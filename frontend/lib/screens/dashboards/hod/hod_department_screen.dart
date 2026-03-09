@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart'; // Persistence
 import 'package:provider/provider.dart';
@@ -7,7 +7,6 @@ import '../../../core/theme/app_theme.dart';
 import 'hod_class_timetable_screen.dart';
 import 'hod_year_sections_screen.dart';
 import 'hod_faculty_screen.dart';
-import 'hod_department_timing_screen.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../../core/api_constants.dart';
@@ -104,18 +103,24 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
         iconTheme: IconThemeData(color: textColor),
         centerTitle: false,
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: bgColors,
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: bgColors,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
           ),
-        ),
-        child: SafeArea(
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.only(
+               top: MediaQuery.of(context).padding.top + kToolbarHeight + 10, 
+               left: 20, 
+               right: 20, 
+               bottom: 100 // Padding for bottom navbar
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -126,8 +131,10 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
                 _buildSectionHeader('Department Management', textColor),
                 const SizedBox(height: 15),
                 _buildManagementCards(context, isDark, textColor, subTextColor),
+                const SizedBox(height: 20),
+                _buildSectionHeader('Syllabus', textColor),
                 const SizedBox(height: 15),
-                _buildTimingCard(context, isDark, textColor, subTextColor),
+                _buildSyllabusCard(context, isDark, textColor, subTextColor),
                 const SizedBox(height: 20),
               ],
             ),
@@ -227,21 +234,21 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     );
   }
 
-  Widget _buildTimingCard(BuildContext context, bool isDark, Color textColor, Color subTextColor) {
+  Widget _buildSyllabusCard(BuildContext context, bool isDark, Color textColor, Color subTextColor) {
     return Row(
       children: [
         Expanded(
           child: _buildManagementCard(
             context,
             isDark,
-            'Timings',
-            Icons.access_time_filled_outlined,
-            Colors.teal,
-            () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodDepartmentTimingScreen(branch: widget.userData['branch'] ?? 'Computer Engineering'))),
+            'Syllabus Management',
+            Icons.menu_book,
+            Colors.purple,
+            () {
+               _showSyllabusYearsModal(context);
+            },
           ),
         ),
-        const SizedBox(width: 15),
-        const Expanded(child: SizedBox()), // Empty space to match the grid layout
       ],
     );
   }
@@ -276,9 +283,6 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
   }
 
   void _showStudentYearsModal(BuildContext context) {
-    // Determine text color based on theme context *before* the modal builder if possible, or use Builder inside.
-    // However, showing a new screen is better as requested "show years cards".
-    // I will push a new simplified screen for "Students Management"
     Navigator.push(context, MaterialPageRoute(builder: (_) => HodStudentManagementScreen(
       userData: widget.userData,
       years: _years, // Pass state
@@ -286,6 +290,12 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     )));
   }
 
+  void _showSyllabusYearsModal(BuildContext context) {
+    Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusYearsScreen(
+      userData: widget.userData,
+      years: _years,
+    )));
+  }
 
 }
 
@@ -438,6 +448,291 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class HodSyllabusYearsScreen extends StatefulWidget {
+  final Map<String, dynamic> userData;
+  final List<Map<String, dynamic>> years;
+
+  const HodSyllabusYearsScreen({super.key, required this.userData, required this.years});
+  
+  @override
+  _HodSyllabusYearsScreenState createState() => _HodSyllabusYearsScreenState();
+}
+
+
+class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadAllSectionCounts();
+  }
+
+  Future<void> _loadAllSectionCounts() async {
+    setState(() => _isLoading = true);
+    
+    final prefs = await SharedPreferences.getInstance();
+    final branch = widget.userData['branch'] ?? 'Computer Engineering';
+
+    for (var yearData in widget.years) {
+      final yearName = yearData['year'];
+      
+      // 1. Try API first for the truth
+      try {
+        final url = Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(yearName)}');
+        final response = await http.get(url);
+        
+        if (response.statusCode == 200) {
+          final List<dynamic> fetched = json.decode(response.body);
+          if (fetched.isNotEmpty) {
+            yearData['sections'] = fetched.map((e) => e.toString()).toList();
+            // Sync to prefs for offline fallback
+            prefs.setStringList('sections_${branch}_$yearName', yearData['sections']);
+            continue; 
+          }
+        }
+      } catch (e) {
+        debugPrint("Error fetching counts for $yearName: $e");
+      }
+
+      // 2. Fallback to Prefs if API fails or is empty
+      final key = 'sections_${branch}_$yearName';
+      final List<String>? stored = prefs.getStringList(key);
+      if (stored != null) {
+        yearData['sections'] = stored;
+      }
+    }
+
+    if (mounted) {
+      setState(() => _isLoading = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDark = themeProvider.isDarkMode;
+    final bgColors = isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final subTextColor = isDark ? Colors.white70 : Colors.black54;
+
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: Text('Syllabus Management', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: textColor),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
+        ),
+        child: SafeArea(
+          child: _isLoading 
+            ? const Center(child: CircularProgressIndicator())
+            : Padding(
+                padding: const EdgeInsets.all(20),
+                child: ListView.builder(
+                  itemCount: widget.years.length,
+                  itemBuilder: (context, index) {
+                final year = widget.years[index];
+                return GestureDetector(
+                  onTap: () {
+                    _showSyllabusSectionsModal(context, year);
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.only(bottom: 15),
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+                      boxShadow: [
+                         BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
+                      ]
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(color: Colors.purple.withValues(alpha: 0.1), shape: BoxShape.circle),
+                          child: const Icon(Icons.menu_book, color: Colors.purple, size: 24),
+                        ),
+                        const SizedBox(width: 20),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                year['year'],
+                                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 18),
+                              ),
+                              Text(
+                                '${year['sections'].length} Sections',
+                                style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Icon(Icons.percent_rounded, size: 24, color: Colors.purple.withValues(alpha: 0.7)),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _showSyllabusSectionsModal(BuildContext context, Map<String, dynamic> yearData) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => HodSyllabusSectionsModal(
+        yearData: yearData,
+        branch: widget.userData['branch'] ?? 'Computer Engineering',
+      ),
+    );
+  }
+}
+
+class HodSyllabusSectionsModal extends StatelessWidget {
+  final Map<String, dynamic> yearData;
+  final String branch;
+
+  const HodSyllabusSectionsModal({super.key, required this.yearData, required this.branch});
+
+  @override
+  Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDark = themeProvider.isDarkMode;
+    final bgColor = isDark ? const Color(0xFF1E1E1E) : Colors.white;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final subTextColor = isDark ? Colors.white70 : Colors.black54;
+
+    final List<String> sections = List<String>.from(yearData['sections'] ?? []);
+    
+    // Sort sections alphabetically
+    sections.sort();
+
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.7,
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(24),
+          topRight: Radius.circular(24),
+        ),
+      ),
+      child: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.only(top: 12),
+            width: 40,
+            height: 5,
+            decoration: BoxDecoration(
+              color: isDark ? Colors.white24 : Colors.black12,
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '${yearData['year']} Sections',
+                  style: GoogleFonts.poppins(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: textColor,
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.close, color: textColor),
+                  onPressed: () => Navigator.pop(context),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: sections.isEmpty
+                ? Center(
+                    child: Text(
+                      'No sections found for ${yearData['year']}.',
+                      style: GoogleFonts.poppins(color: subTextColor),
+                    ),
+                  )
+                : ListView.builder(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    itemCount: sections.length,
+                    itemBuilder: (context, index) {
+                      final sectionName = sections[index];
+                      return GestureDetector(
+                        onTap: () {
+                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Section syllabus coming soon!')));
+                           Navigator.pop(context);
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 12),
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey.withValues(alpha: 0.05),
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: Colors.purple.withValues(alpha: 0.1),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: const Icon(Icons.class_, color: Colors.purple, size: 20),
+                              ),
+                              const SizedBox(width: 16),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      sectionName,
+                                      style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.w600,
+                                        color: textColor,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                    Text(
+                                      'View Syllabus progress',
+                                      style: GoogleFonts.poppins(
+                                        fontSize: 12,
+                                        color: subTextColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Icon(Icons.percent_rounded, size: 24, color: Colors.purple.withValues(alpha: 0.7)),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+          ),
+        ],
       ),
     );
   }

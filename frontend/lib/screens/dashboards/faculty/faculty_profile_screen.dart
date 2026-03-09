@@ -1,19 +1,19 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:intl/intl.dart';
-import 'package:flutter/services.dart';
 import '../../../core/providers/theme_provider.dart';
-import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 import '../../auth/login_screen.dart';
-import '../../../core/theme/app_theme.dart';
+import 'faculty_notifications_screen.dart';
 
 class FacultyProfileScreen extends StatefulWidget {
-  final Map<String, dynamic>? userData; // Passed from dash, but might need fresh fetch
+  final Map<String, dynamic>? userData;
+
   const FacultyProfileScreen({super.key, this.userData});
 
   @override
@@ -24,8 +24,7 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
   // State
   Map<String, dynamic>? _profileData;
   bool _loading = true;
-  bool _isEditing = false;
-  
+
   // Edit Form
   final TextEditingController _fullNameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
@@ -43,7 +42,10 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
 
   Future<void> _fetchProfile() async {
     final user = await AuthService.getUserSession();
-    if (user == null) return;
+    if (user == null) {
+      if (mounted) setState(() => _loading = false);
+      return;
+    }
     final userId = user['id'];
 
     setState(() => _loading = true);
@@ -63,7 +65,7 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
           _emailController.text = data['email'] ?? '';
           if (data['dob'] != null && data['dob'].toString().isNotEmpty) {
             try {
-               _dobController.text = DateFormat('dd-MM-yyyy').format(DateTime.parse(data['dob']));
+               _dobController.text = DateFormat('dd MMM yyyy').format(DateTime.parse(data['dob']));
             } catch (e) {
                _dobController.text = data['dob'];
             }
@@ -72,14 +74,14 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
           }
         });
       } else {
-        if (widget.userData != null) {
+         if (widget.userData != null) {
            setState(() {
-            _profileData = widget.userData;
+             _profileData = widget.userData;
              _fullNameController.text = widget.userData!['full_name'] ?? '';
              _idController.text = 'ID-${widget.userData!['login_id'] ?? ''}';
              _deptController.text = widget.userData!['branch'] ?? '';
            });
-        }
+         }
       }
     } catch (e) {
       debugPrint("Error fetching profile: $e");
@@ -88,63 +90,35 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
     }
   }
 
-  // OTP logic removed as per request
-  
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(1950),
-      lastDate: DateTime.now(),
-    );
-    if (picked != null) {
-      setState(() {
-        _dobController.text = DateFormat('dd-MM-yyyy').format(picked);
-      });
-    }
-  }
-
-  Future<void> _saveChanges() async {
-     final user = await AuthService.getUserSession();
-     if (user == null) return;
-
-     // Convert UI Date (dd-MM-yyyy) to Backend Date (yyyy-MM-dd)
-     String apiDob = _dobController.text;
-     if (apiDob.isNotEmpty) {
-       try {
-         final parsed = DateFormat('dd-MM-yyyy').parse(apiDob);
-         apiDob = DateFormat('yyyy-MM-dd').format(parsed);
-       } catch (e) {
-         // Fallback or ignore
-       }
-     }
-
-     // Check only for changes in protected fields
-     bool requestToHod = false;
-     if (_profileData != null) {
-        String currentId = _idController.text.replaceAll('ID-', '');
-        String originalId = (_profileData!['facultyId'] ?? '').toString();
-        // Loose equality check for safety
-        if (currentId.trim() != originalId.trim()) requestToHod = true;
-
-        String currentBranch = _deptController.text;
-        String originalBranch = (_profileData!['branch'] ?? '').toString();
-        if (currentBranch.trim() != originalBranch.trim()) requestToHod = true;
-     }
-
+  Future<void> _saveChanges(Map<String, String> updates) async {
      try {
-       http.Response response;
+       final user = await AuthService.getUserSession();
+       if (user == null) return;
        
+       String apiDob = updates['dob'] ?? '';
+       try {
+          if (apiDob.isNotEmpty) {
+             apiDob = DateFormat('yyyy-MM-dd').format(DateFormat('dd MMM yyyy').parse(apiDob));
+          }
+       } catch(_) {}
+
+       bool requestToHod = false; 
+       if ((updates['fullName'] ?? '') != (_profileData?['fullName'] ?? '') || 
+           (updates['experience'] ?? '') != (_profileData?['experience'] ?? '')) {
+            requestToHod = true;
+       }
+
+       http.Response response;
        if (requestToHod) {
-         response = await http.post(
+          response = await http.post(
            Uri.parse('${ApiConstants.baseUrl}/api/user/request-update'),
            headers: {'Content-Type': 'application/json'},
            body: json.encode({
              'userId': user['id'],
-             'fullName': _fullNameController.text,
-             'phoneNumber': _phoneController.text, // Include all fields in request
-             'experience': _experienceController.text,
-             'email': _emailController.text,
+             'fullName': updates['fullName'],
+             'phoneNumber': updates['phoneNumber'],
+             'experience': updates['experience'],
+             'email': updates['email'],
              'dob': apiDob,
              'facultyId': _idController.text.replaceAll('ID-', ''),
              'branch': _deptController.text
@@ -156,21 +130,19 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
            headers: {'Content-Type': 'application/json'},
            body: json.encode({
              'userId': user['id'],
-             'fullName': _fullNameController.text,
-             'phoneNumber': _phoneController.text,
-             'experience': _experienceController.text,
-             'email': _emailController.text,
+             'fullName': updates['fullName'],
+             'phoneNumber': updates['phoneNumber'],
+             'experience': updates['experience'],
+             'email': updates['email'],
              'dob': apiDob,
-             // ID and Branch not updated here
            })
          );
        }
 
        if (response.statusCode == 200) {
-         setState(() => _isEditing = false);
          String message = "Profile Updated!";
          if (requestToHod) {
-           message = "Profile change request sent to HOD for approval.";
+           message = "Profile change request sent for approval.";
          }
          if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -178,7 +150,7 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
               backgroundColor: requestToHod ? Colors.orange : Colors.green,
             ));
          }
-         if (!requestToHod) _fetchProfile(); // Refresh only if immediate update
+         if (!requestToHod) _fetchProfile();
        } else {
          if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Update Failed: ${response.statusCode}")));
@@ -189,6 +161,61 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Network Error")));
        }
      }
+  }
+
+  void _showEditProfileDialog() {
+    final TextEditingController nameC = TextEditingController(text: _fullNameController.text);
+    final TextEditingController phoneC = TextEditingController(text: _phoneController.text);
+    final TextEditingController emailC = TextEditingController(text: _emailController.text);
+    final TextEditingController expC = TextEditingController(text: _experienceController.text);
+    final TextEditingController dobC = TextEditingController(text: _dobController.text);
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Edit Profile", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextField(controller: nameC, decoration: const InputDecoration(labelText: "Full Name")),
+                TextField(controller: dobC, decoration: const InputDecoration(labelText: "Date of Birth (dd MMM yyyy)"), readOnly: true, onTap: () async {
+                   final DateTime? picked = await showDatePicker(
+                      context: context,
+                      initialDate: DateTime.now(),
+                      firstDate: DateTime(1950),
+                      lastDate: DateTime.now(),
+                    );
+                    if (picked != null) {
+                        dobC.text = DateFormat('dd MMM yyyy').format(picked);
+                    }
+                }),
+                TextField(controller: expC, decoration: const InputDecoration(labelText: "Experience (Years)"), keyboardType: TextInputType.number),
+                TextField(controller: phoneC, decoration: const InputDecoration(labelText: "Phone Number"), keyboardType: TextInputType.phone),
+                TextField(controller: emailC, decoration: const InputDecoration(labelText: "Email ID"), keyboardType: TextInputType.emailAddress),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(context), child: const Text("Cancel")),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                _saveChanges({
+                  'fullName': nameC.text,
+                  'phoneNumber': phoneC.text,
+                  'experience': expC.text,
+                  'email': emailC.text,
+                  'dob': dobC.text,
+                });
+              }, 
+              child: const Text("Save")
+            )
+          ],
+        );
+      }
+    );
   }
 
   Future<void> _logout() async {
@@ -205,211 +232,356 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final isDark = themeProvider.isDarkMode;
-    final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
-    final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
-    final iconBg = isDark ? ThemeColors.darkIconBg : ThemeColors.lightIconBg;
-    final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
+
+    final Color bgColor = isDark ? const Color(0xFF1E1E2C) : const Color(0xFFF8FAFC);
+    final Color textColor = isDark ? Colors.white : const Color(0xFF1E293B);
+    final Color subTextColor = isDark ? Colors.white70 : const Color(0xFF64748B);
 
     return Scaffold(
-      extendBodyBehindAppBar: true, 
+      backgroundColor: bgColor,
       appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.only(top: 15),
-          child: Text("Profile", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
-        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: IconThemeData(color: textColor),
+        centerTitle: false,
+        automaticallyImplyLeading: false,
+        title: Text("My Profile", style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w700, fontSize: 20)),
         actions: [
           IconButton(
-            icon: Icon(_isEditing ? Icons.check : Icons.edit, color: textColor),
-            onPressed: () => _isEditing ? _saveChanges() : setState(() => _isEditing = true),
+            icon: Icon(Icons.notifications_outlined, color: textColor),
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyNotificationsScreen())),
           ),
-          const SizedBox(width: 10),
+          Theme(
+            data: Theme.of(context).copyWith(
+               cardColor: isDark ? const Color(0xFF222240) : Colors.white,
+            ),
+            child: PopupMenuButton<String>(
+              icon: Icon(Icons.more_vert, color: textColor),
+              onSelected: (value) {
+                if (value == 'update_profile') {
+                  _showEditProfileDialog();
+                } else if (value == 'change_password') {
+                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Feature coming soon')));
+                } else if (value == 'logout') {
+                   _logout();
+                }
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                 PopupMenuItem<String>(
+                  value: 'update_profile',
+                  child: Row(
+                    children: [
+                      Icon(Icons.edit, color: textColor, size: 20),
+                      const SizedBox(width: 8),
+                       Text('Update Profile', style: TextStyle(color: textColor)),
+                    ],
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'change_password',
+                  child: Row(
+                    children: [
+                      Icon(Icons.lock_outline, color: textColor, size: 20),
+                      const SizedBox(width: 8),
+                       Text('Change Password', style: TextStyle(color: textColor)),
+                    ],
+                  ),
+                ),
+                const PopupMenuDivider(),
+                PopupMenuItem<String>(
+                  value: 'logout',
+                  child: Row(
+                    children: [
+                      const Icon(Icons.logout, color: Color(0xFFDC2626), size: 20),
+                      const SizedBox(width: 8),
+                       const Text('Logout', style: TextStyle(color: Color(0xFFDC2626))),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient,
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+      body: _loading 
+          ? Center(child: CircularProgressIndicator(color: Theme.of(context).primaryColor))
+          : SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  // Logo Section
+                  SizedBox(
+                    height: 240,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const SizedBox(height: 16),
+                        Image.asset(
+                          'assets/images/college logo.png', 
+                          height: 140,
+                          width: 140,
+                          errorBuilder: (context, error, stackTrace) => 
+                             Icon(Icons.school, size: 100, color: subTextColor.withValues(alpha: 0.3)),
+                        ),
+                        const SizedBox(height: 12),
+                        Text(
+                          "Alwardas Polytechnic",
+                          style: GoogleFonts.inter(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: textColor,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                      ],
+                    ),
+                  ),
+                  
+                  // Main Profile Content
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: _buildProfileCard(textColor, subTextColor, isDark),
+                  ),
+                  
+                  const SizedBox(height: 100),
+                ],
+              ),
+            ),
+    );
+  }
+
+  Widget _buildProfileCard(Color textColor, Color subTextColor, bool isDark) {
+    final contact = _phoneController.text.isNotEmpty ? _phoneController.text : '+91 XXXXX XXXXX';
+    final email = _emailController.text.isNotEmpty ? _emailController.text : 'Not Provided';
+    final String displayName = _fullNameController.text.toUpperCase();
+    String rawRole = widget.userData?['role'] ?? 'Faculty';
+    final String role = rawRole;
+    final String department = _deptController.text.isNotEmpty ? _deptController.text : 'N/A';
+    final String experience = _experienceController.text.isNotEmpty ? "${_experienceController.text} Years" : 'N/A';
+    final String dob = _dobController.text.isNotEmpty ? _dobController.text : 'Not Provided';
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Name and ID Card
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: isDark ? [] : [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.04),
+                blurRadius: 20,
+                offset: const Offset(0, 10),
+              )
+            ]
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                displayName,
+                style: GoogleFonts.inter(
+                  fontSize: 16, 
+                  fontWeight: FontWeight.w800,
+                  color: textColor,
+                  letterSpacing: 0.5,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: isDark ? const Color(0xFF1E3A8A).withValues(alpha: 0.3) : const Color(0xFFEFF6FF),
+                      borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
+                    ),
+                    child: Text(
+                      "Employee ID",
+                      style: GoogleFonts.inter(color: isDark ? const Color(0xFF60A5FA) : const Color(0xFF3B82F6), fontWeight: FontWeight.w700, fontSize: 12),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Clipboard.setData(ClipboardData(text: _idController.text));
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('ID copied to clipboard'), duration: Duration(seconds: 2)));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF0F172A) : Colors.white,
+                        border: Border.all(color: isDark ? const Color(0xFF1E3A8A).withValues(alpha: 0.3) : const Color(0xFFEFF6FF), width: 1.5),
+                        borderRadius: const BorderRadius.only(topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            _idController.text,
+                            style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w800, fontSize: 12),
+                          ),
+                          const SizedBox(width: 8),
+                          Icon(Icons.copy_outlined, size: 16, color: subTextColor),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
-        child: SafeArea(
-          child: _loading 
-            ? const Center(child: CircularProgressIndicator())
-            : SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-                child: Column(
-                  children: [
-                    const SizedBox(height: 10),
-                    // College Logo
-                    Image.asset('assets/images/college logo.png', width: 220, height: 180), 
-                    const SizedBox(height: 5),
-                    Text(
-                      "Alwardas Polytechnic", 
-                      style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 15),
+        
+        const SizedBox(height: 24),
 
-                    // Profile Details Card
-                    Container(
-                      padding: const EdgeInsets.all(16), // Tighter padding
-                      decoration: AppTheme.glassDecoration(isDark: isDark, opacity: 0.25),
-                      child: Column(
-                        children: [
-                          _buildField("Full Name", _fullNameController, _isEditing, isDark, textColor, subTextColor),
-                          Row(
-                            children: [
-                              Expanded(child: _buildField("Faculty ID", _idController, _isEditing, isDark, textColor, subTextColor)),
-                              const SizedBox(width: 12),
-                              Expanded(child: _buildField("Date of Birth", _dobController, _isEditing, isDark, textColor, subTextColor, onTap: () => _selectDate(context))),
-                            ],
-                          ),
-                          _buildDropdownField("Department", _deptController, _isEditing, isDark, textColor, subTextColor),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 4),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Contact Details", style: GoogleFonts.poppins(fontSize: 11, color: subTextColor)),
-                                if (_isEditing) ...[
-                                  TextField(
-                                    controller: _phoneController,
-                                    style: TextStyle(color: textColor, fontSize: 13),
-                                    decoration: const InputDecoration(hintText: 'Phone Number', isDense: true, contentPadding: EdgeInsets.symmetric(vertical: 8)),
-                                  ),
-                                  const SizedBox(height: 4),
-                                  TextField(
-                                    controller: _emailController,
-                                    style: TextStyle(color: textColor, fontSize: 13),
-                                    decoration: const InputDecoration(hintText: 'Email ID', isDense: true, contentPadding: EdgeInsets.symmetric(vertical: 8)),
-                                  ),
-                                ] else ...[
-                                  Text(_phoneController.text, style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: textColor)),
-                                  Text(_emailController.text, style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: textColor)),
-                                ],
-                                const Divider(height: 12, color: Colors.white10),
-                              ],
+        // PROFESSIONAL Section
+        _buildSection(
+          title: "PROFESSIONAL",
+          lineColor: const Color(0xFF3B82F6), // Blue
+          child: Container(
+             decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: isDark ? Colors.white12 : const Color(0xFFF1F5F9), width: 1.5),
+             ),
+             child: Column(
+                children: [
+                   _buildRowItem(icon: Icons.computer, iconColor: const Color(0xFF8B5CF6), label: department, isDark: isDark),
+                   _buildRowItem(icon: Icons.verified_user_outlined, iconColor: const Color(0xFFF59E0B), label: "Role", value: role, isDark: isDark),
+                   _buildRowItem(icon: Icons.business_center_outlined, iconColor: const Color(0xFF10B981), label: "Experience", value: experience, isDark: isDark, showBorder: false),
+                ]
+             )
+          )
+        ),
+        
+        const SizedBox(height: 24),
+
+        // PERSONAL Section
+        _buildSection(
+          title: "PERSONAL",
+          lineColor: const Color(0xFF10B981), // Teal
+          child: Container(
+             decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: isDark ? Colors.white12 : const Color(0xFFF1F5F9), width: 1.5),
+             ),
+             child: Column(
+                children: [
+                   _buildRowItem(icon: Icons.calendar_today, iconColor: const Color(0xFF3B82F6), label: "Date of Birth", value: dob, isDark: isDark),
+                   _buildRowItem(icon: Icons.phone, iconColor: const Color(0xFF8B5CF6), label: "Phone", value: contact, isDark: isDark, showCopy: true),
+                   _buildRowItem(icon: Icons.email_outlined, iconColor: const Color(0xFFEC4899), label: "Email", value: email, isDark: isDark, showBorder: false, showCopy: true),
+                ]
+              )
+           ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSection({required String? title, required Color lineColor, required Widget child}) {
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            width: 3.5,
+            decoration: BoxDecoration(
+              color: lineColor,
+              borderRadius: BorderRadius.circular(4),
+            ),
+            margin: const EdgeInsets.only(right: 16),
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (title != null) ...[
+                  Text(title, style: GoogleFonts.inter(fontSize: 11, fontWeight: FontWeight.w700, letterSpacing: 1.2, color: const Color(0xFF64748B))),
+                  const SizedBox(height: 12),
+                ],
+                child,
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRowItem({
+    required IconData icon, 
+    required Color iconColor, 
+    required String label, 
+    String? value, 
+    bool isDark = false, 
+    bool showCopy = false,
+    bool showBorder = true,
+  }) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: iconColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(icon, color: iconColor, size: 18),
+              ),
+              const SizedBox(width: 16),
+              Text(
+                label,
+                style: GoogleFonts.inter(
+                  color: isDark ? Colors.white70 : (value == null ? const Color(0xFF1E293B) : const Color(0xFF475569)),
+                  fontSize: 13,
+                  fontWeight: value == null ? FontWeight.w600 : FontWeight.w500,
+                ),
+              ),
+              if (value != null) ...[
+                Expanded(
+                  child: GestureDetector(
+                    onTap: showCopy ? () {
+                      Clipboard.setData(ClipboardData(text: value));
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$label copied to clipboard'), duration: const Duration(seconds: 2)));
+                    } : null,
+                    behavior: HitTestBehavior.opaque,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            value,
+                            textAlign: TextAlign.right,
+                            softWrap: true,
+                            style: GoogleFonts.inter(
+                              color: isDark ? Colors.white : const Color(0xFF1E293B),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
-                          _buildField("Experience", _experienceController, _isEditing, isDark, textColor, subTextColor),
-                        ],
-                      ),
-                    ),
-                    
-                    const SizedBox(height: 30), 
-                    
-                    // Logout
-                    GestureDetector(
-                      onTap: _logout,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.logout, color: Colors.red.withValues(alpha: 0.8), size: 20),
+                        ),
+                        if (showCopy) ...[
                           const SizedBox(width: 8),
-                          Text("Logout Session", style: GoogleFonts.poppins(color: Colors.red.withValues(alpha: 0.8), fontWeight: FontWeight.bold, fontSize: 14)),
-                        ],
-                      ),
+                          const Icon(Icons.copy_outlined, size: 16, color: Color(0xFF94A3B8)),
+                        ]
+                      ],
                     ),
-                    const SizedBox(height: 5),
-                    Text("App Version 1.0.0", style: GoogleFonts.poppins(fontSize: 10, color: subTextColor)),
-                    const SizedBox(height: 15),
-                  ],
-                ),
-              ),
+                  ),
+                )
+              ]
+            ],
+          ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildField(String label, TextEditingController controller, bool isEditable, bool isDark, Color textColor, Color subTextColor, {VoidCallback? onTap}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4), // Reduced vertical padding
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(label, style: GoogleFonts.poppins(fontSize: 11, color: subTextColor)),
-          if (isEditable)
-            SizedBox(
-              height: 30, // Limit height for textfield
-              child: TextField(
-                controller: controller, 
-                style: TextStyle(color: textColor, fontSize: 13),
-                readOnly: onTap != null,
-                onTap: onTap,
-                keyboardType: label == "Experience" ? TextInputType.number : TextInputType.text,
-                inputFormatters: label == "Experience" ? [
-                  FilteringTextInputFormatter.digitsOnly,
-                  LengthLimitingTextInputFormatter(2),
-                ] : null,
-                decoration: const InputDecoration(isDense: true, contentPadding: EdgeInsets.symmetric(vertical: 6)),
-              ),
-            )
-          else
-            Text(
-              (label == "Experience" && controller.text.isNotEmpty && !controller.text.toLowerCase().contains('year')) 
-                  ? "${controller.text} - Years" 
-                  : controller.text,
-              style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: textColor),
-            ),
-          const Divider(height: 12, color: Colors.white10),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDropdownField(String label, TextEditingController controller, bool isEditable, bool isDark, Color textColor, Color subTextColor) {
-    final List<String> branches = [
-      'Computer Engineering',
-      'Civil Engineering',
-      'Electrical & Electronics Engineering',
-      'Electronics & Communication Engineering',
-      'Mechanical Engineering',
-      'Basic Sciences & Humanities'
-    ];
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(label, style: GoogleFonts.poppins(fontSize: 11, color: subTextColor)),
-          if (isEditable)
-             SizedBox(
-               height: 30,
-               child: DropdownButtonFormField<String>(
-                value: branches.contains(controller.text) ? controller.text : null,
-                items: branches.map((b) => DropdownMenuItem(
-                  value: b, 
-                  child: Text(
-                    b, 
-                    style: TextStyle(color: textColor, fontSize: 13),
-                    overflow: TextOverflow.ellipsis,
-                  )
-                )).toList(),
-                onChanged: (val) {
-                  if (val != null) setState(() => controller.text = val);
-                },
-                isExpanded: true,
-                dropdownColor: isDark ? const Color(0xFF2C2C2C) : Colors.white,
-                decoration: const InputDecoration(
-                  border: InputBorder.none,
-                  isDense: true,
-                  contentPadding: EdgeInsets.zero,
-                ),
-                style: TextStyle(color: textColor, fontSize: 13),
-                iconEnabledColor: textColor,
-              ),
-             )
-          else
-            Text(controller.text, style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: textColor)),
-          const Divider(height: 12, color: Colors.white10),
-        ],
-      ),
+        if (showBorder)
+           Divider(height: 1, thickness: 1, color: isDark ? Colors.white10 : const Color(0xFFF1F5F9), indent: 56, endIndent: 16),
+      ],
     );
   }
 }
+

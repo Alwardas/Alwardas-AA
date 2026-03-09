@@ -1,4 +1,4 @@
-﻿import 'coordinator_announcement_details_screen.dart';
+import 'coordinator_announcement_details_screen.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
