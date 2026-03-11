@@ -577,9 +577,9 @@ pub async fn get_student_attendance_handler(
         StatusCode::INTERNAL_SERVER_ERROR
     })?;
 
-    let total_classes = history.len() as i64; 
-    let present_count = history.iter().filter(|r| r.status == "P").count() as i64;
-    let absent_count = history.iter().filter(|r| r.status == "A").count() as i64;
+    let present_count = history.iter().filter(|r| r.status == "P" || r.status == "PRESENT").count() as i64;
+    let absent_count = history.iter().filter(|r| r.status == "A" || r.status == "ABSENT").count() as i64;
+    let total_classes = present_count + absent_count; // Exclude HOLIDAY
     
     let percentage = if total_classes > 0 {
         (present_count as f64 / total_classes as f64) * 100.0

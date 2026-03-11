@@ -166,7 +166,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
            }
            
            String statusRaw = (record['status'] as String).toUpperCase();
-           String status = statusRaw.startsWith('P') ? 'PRESENT' : 'ABSENT';
+           String status = statusRaw.startsWith('H') || statusRaw.contains('HOLIDAY') ? 'HOLIDAY' : statusRaw.startsWith('P') ? 'PRESENT' : 'ABSENT';
            String session = (record['session'] ?? 'MORNING').toString().toUpperCase();
 
            recordsByDate[dateOnly]!.add({
@@ -184,6 +184,9 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
         }
         
         for (String date in allUniqueDates) {
+          final dt = DateTime.tryParse(date);
+          if (dt == null || dt.month != _selectedMonth || dt.year != _selectedYear) continue;
+
           final dayRecords = recordsByDate[date] ?? [];
           bool hasMorning = dayRecords.any((r) => r['session'] == 'MORNING');
           bool hasAfternoon = dayRecords.any((r) => r['session'] == 'AFTERNOON');
@@ -191,26 +194,26 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
           bool morningPresent = dayRecords.any((r) => r['session'] == 'MORNING' && r['status'] == 'PRESENT');
           bool afternoonPresent = dayRecords.any((r) => r['session'] == 'AFTERNOON' && r['status'] == 'PRESENT');
           
-          // If a student is absent morning and afternoon, that is 1 absent day.
-          // If a student is absent one session, that is 0.5 absent days.
-          // Same for present. Count valid recorded sessions.
+          bool morningHoliday = dayRecords.any((r) => r['session'] == 'MORNING' && r['status'] == 'HOLIDAY');
+          bool afternoonHoliday = dayRecords.any((r) => r['session'] == 'AFTERNOON' && r['status'] == 'HOLIDAY');
+
           double dayPresent = 0.0;
           double dayAbsent = 0.0;
           
           bool isSingleSessionDay = (hasMorning && !hasAfternoon) || (!hasMorning && hasAfternoon);
           
-          if (hasMorning) {
+          if (hasMorning && !morningHoliday) {
              if (morningPresent) {
                dayPresent += isSingleSessionDay ? 1.0 : 0.5;
              } else {
-               dayAbsent += 0.5;
+               dayAbsent += isSingleSessionDay ? 1.0 : 0.5;
              }
           }
-          if (hasAfternoon) {
+          if (hasAfternoon && !afternoonHoliday) {
              if (afternoonPresent) {
                dayPresent += isSingleSessionDay ? 1.0 : 0.5;
              } else {
-               dayAbsent += 0.5;
+               dayAbsent += isSingleSessionDay ? 1.0 : 0.5;
              }
           }
           
@@ -716,13 +719,17 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
              bool aPresent = afternoon?['status'] == 'PRESENT';
              bool mAbsent = morning?['status'] == 'ABSENT';
              bool aAbsent = afternoon?['status'] == 'ABSENT';
-             bool mRecorded = morning != null && morning.isNotEmpty;
-             bool aRecorded = afternoon != null && afternoon.isNotEmpty;
+             bool mHoliday = morning?['status'] == 'HOLIDAY';
+             bool aHoliday = afternoon?['status'] == 'HOLIDAY';
+             bool isHolidayDay = mHoliday || aHoliday; // any session holiday makes it holiday
+             
+             bool mRecorded = morning != null && morning.isNotEmpty && !mHoliday;
+             bool aRecorded = afternoon != null && afternoon.isNotEmpty && !aHoliday;
 
              bool fullPresent = mPresent && aPresent;
              bool fullAbsent = mAbsent && aAbsent;
-             bool partial = (mPresent && aAbsent) || (mAbsent && aPresent) || 
-                            (mRecorded && !aRecorded) || (!mRecorded && aRecorded);
+             bool partial = (!isHolidayDay) && ((mPresent && aAbsent) || (mAbsent && aPresent) || 
+                            (mRecorded && !aRecorded) || (!mRecorded && aRecorded));
              
              // Selection State
              bool isSelected = _selectedRequestDates.contains(dateStr);
@@ -737,14 +744,14 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
              Color afternoonColor = aRecorded ? (aPresent ? Colors.greenAccent.withValues(alpha: 0.4) : Colors.red) : Colors.transparent;
 
              return GestureDetector(
-               onTap: (mAbsent || aAbsent) ? () => _handleDayTap(dateStr, morning, afternoon) : null,
+               onTap: (mAbsent || aAbsent) && !isHolidayDay ? () => _handleDayTap(dateStr, morning, afternoon) : null,
                child: Stack(
                  children: [
                    Container(
                      alignment: Alignment.center,
                      decoration: BoxDecoration(
                        borderRadius: BorderRadius.circular(8),
-                       color: fullPresent ? Colors.greenAccent.withValues(alpha: 0.4) : (fullAbsent ? Colors.red : null),
+                       color: isHolidayDay ? Colors.grey.withValues(alpha: 0.1) : (fullPresent ? Colors.greenAccent.withValues(alpha: 0.4) : (fullAbsent ? Colors.red : null)),
                        gradient: partial ? LinearGradient(
                           colors: [morningColor, afternoonColor],
                           begin: Alignment.topLeft,
@@ -756,14 +763,23 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                          width: isSelected ? 3 : 1,
                        )
                      ),
-                     child: Text(
-                       "$dayNum",
-                       style: GoogleFonts.poppins(
-                         color: fullAbsent ? Colors.white : textColor,
-                         fontWeight: FontWeight.w600,
+                     child: Opacity(
+                       opacity: isHolidayDay ? 0.3 : 1.0, 
+                       child: isHolidayDay ? Image.asset('assets/holiday.png', fit: BoxFit.contain, width: 30, height: 30) : Text(
+                         "$dayNum",
+                         style: GoogleFonts.poppins(
+                           color: fullAbsent ? Colors.white : textColor,
+                           fontWeight: FontWeight.w600,
+                         ),
                        ),
                      ),
                    ),
+                   if (isHolidayDay)
+                      const Positioned(
+                        bottom: 2,
+                        right: 2,
+                        child: Icon(Icons.beach_access, color: Colors.blueAccent, size: 12),
+                      ),
                    if (isSelected)
                      const Positioned(
                        top: 2,

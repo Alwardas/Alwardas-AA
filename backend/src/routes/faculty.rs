@@ -495,7 +495,8 @@ pub async fn submit_attendance_handler(
     let s_section: Option<String> = student_row.get("section"); // Get section
     
     let session = payload.session.clone().unwrap_or_else(|| "MORNING".to_string());
-    let db_status = if payload.status.to_uppercase().starts_with('P') { "P" } else { "A" };
+    let st_upper = payload.status.to_uppercase();
+    let db_status = if st_upper.starts_with('H') { "H" } else if st_upper.starts_with('P') { "P" } else { "A" };
 
     // Added 'section' to INSERT
     sqlx::query("INSERT INTO attendance (student_uuid, faculty_uuid, date, status, branch, year, session, section, student_name, student_login_id, faculty_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)")
@@ -515,7 +516,7 @@ pub async fn submit_attendance_handler(
         .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("Database Error: {}", e)}))))?;
 
     let formatted_date = date.format("%d-%m-%Y").to_string();
-    let status_text = if db_status == "P" { "Present" } else { "Absent" };
+    let status_text = if db_status == "P" { "Present" } else if db_status == "H" { "Holiday" } else { "Absent" };
     let msg = format!("{} {} session marked as {}", formatted_date, session, status_text);
     
     let _ = sqlx::query("INSERT INTO notifications (type, message, sender_id, recipient_id, branch, status, created_at) VALUES ($1, $2, $3, $4, $5, 'UNREAD', NOW())")
@@ -626,7 +627,8 @@ pub async fn submit_attendance_batch_handler(
     if !valid_records.is_empty() {
         // Build Attendance Bulk Insert
         attendance_builder.push_values(valid_records.iter(), |mut b, (record, info)| {
-            let db_status = if record.status.to_uppercase().starts_with('P') { "P" } else { "A" };
+            let st_upper = record.status.to_uppercase();
+            let db_status = if st_upper.starts_with('H') { "H" } else if st_upper.starts_with('P') { "P" } else { "A" };
             b.push_bind(info.id)
              .push_bind(faculty_uuid)
              .push_bind(date)
@@ -644,8 +646,9 @@ pub async fn submit_attendance_batch_handler(
 
         // Build Notification Bulk Insert
         notification_builder.push_values(valid_records.iter(), |mut b, (record, info)| {
-            let db_status = if record.status.to_uppercase().starts_with('P') { "P" } else { "A" };
-            let status_text = if db_status == "P" { "Present" } else { "Absent" };
+            let st_upper = record.status.to_uppercase();
+            let db_status = if st_upper.starts_with('H') { "H" } else if st_upper.starts_with('P') { "P" } else { "A" };
+            let status_text = if db_status == "P" { "Present" } else if db_status == "H" { "Holiday" } else { "Absent" };
             let msg = format!("{} {} session updated to {}", formatted_date, session, status_text);
 
             b.push_bind("ATTENDANCE")
@@ -715,7 +718,7 @@ pub async fn get_class_attendance_record_handler(
        
     if let Some((marked_by,)) = meta_row {
         let records = sqlx::query_as::<_, StudentAttendanceItem>(
-            "SELECT u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = ANY($1::text[]) AND a.year = $2 AND a.session = $3 AND a.date = $4 AND a.section = $5 ORDER BY u.login_id ASC"
+            "SELECT u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' WHEN a.status = 'H' THEN 'HOLIDAY' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = ANY($1::text[]) AND a.year = $2 AND a.session = $3 AND a.date = $4 AND a.section = $5 ORDER BY u.login_id ASC"
         )
         .bind(&branch_variations)
         .bind(params.year.trim())

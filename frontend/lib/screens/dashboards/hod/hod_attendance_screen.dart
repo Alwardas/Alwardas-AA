@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -1031,7 +1031,15 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
               children: [
                 CircularProgressIndicator(),
                 SizedBox(width: 20),
-                Text("Fetching Data... Please wait"),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Downloading Report...", style: TextStyle(fontWeight: FontWeight.bold)),
+                    SizedBox(height: 5),
+                    Text("Please wait...", style: TextStyle(fontSize: 12, color: Colors.grey)),
+                  ],
+                ),
               ],
             ),
           ),
@@ -1115,39 +1123,24 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                // Calculate Working Days
                int workingDays = 0;
                try {
-                  // Count non-holiday days in fetched data
-                  // Or approximate: Days in month minus Sundays
-                  // Let's use simpler logic: Total Days - Sundays. 
-                  // Because calculating holidays from data requires iterating all students.
-                  // But we have data['attendance'].
                   final att = data['attendance'] as Map<String, dynamic>;
-                  for (int i=1; i<=monthEnd.day; i++) {
-                      DateTime d = DateTime(current.year, current.month, i);
-                      if (d.weekday == DateTime.sunday) continue;
+                  for (var key in att.keys) {
+                      final dayRecs = att[key] as Map<String, dynamic>;
+                      if (dayRecs.isEmpty) continue;
                       
-                      String k = DateFormat('yyyy-MM-dd').format(d);
-                      bool isHoliday = false;
-                      // Fallback key check
-                      if (!att.containsKey(k)) {
-                         k = i.toString();
+                      final firstStudent = dayRecs.values.first; // {AM: X, PM: Y}
+                      final am = firstStudent['AM'].toString().toUpperCase();
+                      final pm = firstStudent['PM'].toString().toUpperCase();
+                      
+                      if (am.contains('HOLIDAY') || pm.contains('HOLIDAY') || am == 'H' || pm == 'H') {
+                           continue; // It's a holiday
                       }
                       
-                      if (att.containsKey(k)) {
-                          final dayRecs = att[k] as Map<String, dynamic>;
-                          if (dayRecs.isNotEmpty) {
-                              final one = dayRecs.values.first; // {AM: X, PM: Y}
-                              // Fix: one is Map<String, String>
-                              final am = one['AM'].toString().toUpperCase();
-                              final pm = one['PM'].toString().toUpperCase();
-                              if (am.contains('HOLIDAY') || pm.contains('HOLIDAY') || am == 'H' || pm == 'H') {
-                                  isHoliday = true;
-                              }
-                          }
-                      }
-                      if (!isHoliday) workingDays++;
+                      workingDays++;
                   }
-               } catch (_) {
-                  workingDays = 25; // Fallback
+               } catch (e) {
+                  debugPrint("Error calculating working days: $e");
+                  workingDays = 0;
                }
                
                reports.add({

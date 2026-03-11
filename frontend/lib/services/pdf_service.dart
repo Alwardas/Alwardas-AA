@@ -1,4 +1,4 @@
-﻿import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
@@ -92,33 +92,22 @@ class PdfService {
     // --- Summary Page ---
     if (includeSummary && !isDateRange) {
         // Calculate Working Days
-        int workingDays = 0;
-        try {
-          final dateObj = DateFormat("MMMM yyyy").parse(month);
-          final parsedDaysInMonth = _getDaysInMonth(month);
-          for (int i = 1; i <= parsedDaysInMonth; i++) {
-             DateTime d = DateTime(dateObj.year, dateObj.month, i);
-             if (d.weekday == DateTime.sunday) continue;
-
-             // Check for Holiday in Data
-             bool isHoliday = false;
-             String key = i.toString();
-             if (attendanceData.containsKey(key)) {
-                 final dayRecs = attendanceData[key]!;
-                 if (dayRecs.isNotEmpty) {
-                     final oneStudent = dayRecs.values.first; // Check first student
-                     if (_normalizeStatus(oneStudent['AM']) == 'H' || _normalizeStatus(oneStudent['PM']) == 'H') {
-                         isHoliday = true;
-                     }
-                 }
-             }
-             
-             if (!isHoliday) workingDays++;
-          }
-        } catch (e) {
-          debugPrint("Error calculating working days: $e");
-          workingDays = daysInMonth; 
-        }
+         int workingDays = 0;
+         try {
+            for (var key in attendanceData.keys) {
+                final dayRecs = attendanceData[key]!;
+                if (dayRecs.isEmpty) continue;
+                
+                final oneStudent = dayRecs.values.first; // Check first student
+                if (_normalizeStatus(oneStudent['AM']) == 'H' || _normalizeStatus(oneStudent['PM']) == 'H') {
+                    continue; // Holiday
+                }
+                workingDays++;
+            }
+         } catch (e) {
+            debugPrint("Error calculating working days: $e");
+            workingDays = attendanceData.length; 
+         }
 
         pdf.addPage(
           pw.MultiPage(
@@ -157,29 +146,29 @@ class PdfService {
     final now = DateTime.now();
     final formattedDate = DateFormat('dd-MMM-yyyy hh:mm a').format(now);
 
-    for (var report in monthReports) {
-        String month = report['month'];
-        int workingDays = report['workingDays'];
-        Map<String, Map<String, Map<String, String>>> data = report['data'];
-        String reportId = "SUM-${month.toUpperCase().substring(0,3)}-${branch.substring(0,2)}-${DateTime.now().millisecond}";
+    final parsedMonths = monthReports.map((r) {
+       final mStr = r['month'].toString();
+       return mStr.split(' ')[0].substring(0, 3); // e.g., "Aug"
+    }).toList();
 
-        pdf.addPage(
-          pw.MultiPage(
-            pageFormat: PdfPageFormat.a4.landscape, 
-            margin: const pw.EdgeInsets.all(30),
-            header: (context) => _buildReportHeader(branch, year, section, month, formattedDate, reportId, ttfBold, ttfRegular), // Add Header for Multi-Month
-            footer: (context) => _buildBottomFooter(reportId, context.pageNumber, 1, ttfRegular),
-            build: (context) => [
-              pw.SizedBox(height: 20),
-              pw.Center(child: pw.Text("FINAL VIEW (${month.toUpperCase()})", style: pw.TextStyle(font: ttfBold, fontSize: 16, decoration: pw.TextDecoration.underline))),
-              pw.SizedBox(height: 20),
-              _buildSummaryTable(students, data, workingDays, ttfBold, ttfRegular),
-              pw.SizedBox(height: 30),
-              _buildSignatureBlock(ttfBold, ttfRegular, formattedDate),
-            ]
-          )
-        );
-    }
+    int totalOverallWorkingDays = monthReports.fold(0, (sum, r) => sum + (r['workingDays'] as int));
+
+    pdf.addPage(
+      pw.MultiPage(
+        pageFormat: PdfPageFormat.a4.landscape, 
+        margin: const pw.EdgeInsets.all(30),
+        header: (context) => _buildReportHeader(branch, year, section, "Combined Multi-Month", formattedDate, "SUM-MUL-01", ttfBold, ttfRegular),
+        footer: (context) => _buildBottomFooter("SUM-MUL-01", context.pageNumber, 1, ttfRegular),
+        build: (context) => [
+          pw.SizedBox(height: 20),
+          pw.Center(child: pw.Text("FINAL ATTENDANCE SUMMARY", style: pw.TextStyle(font: ttfBold, fontSize: 16, decoration: pw.TextDecoration.underline))),
+          pw.SizedBox(height: 20),
+          _buildMultiMonthSummaryTable(students, monthReports, parsedMonths, totalOverallWorkingDays, ttfBold, ttfRegular),
+          pw.SizedBox(height: 30),
+          _buildSignatureBlock(ttfBold, ttfRegular, formattedDate),
+        ]
+      )
+    );
 
     await _saveAndLaunchPdf(pdf, "Summary_Report_${branch}_$section.pdf");
   }
@@ -519,6 +508,76 @@ class PdfService {
          ]
       );
   }
+
+   static pw.Widget _buildMultiMonthSummaryTable(List<Map<String, String>> students, List<Map<String, dynamic>> monthReports, List<String> monthLabels, int totalWorkingDays, pw.Font fb, pw.Font fr) {
+      double totalDaysDouble = totalWorkingDays.toDouble();
+
+      return pw.Table(
+        border: pw.TableBorder.all(color: PdfColors.black, width: 0.5),
+        columnWidths: {
+          0: const pw.FixedColumnWidth(100), 
+          1: const pw.FlexColumnWidth(2.5), 
+          for (int i=0; i<monthLabels.length; i++)
+             (i+2): const pw.FlexColumnWidth(1),
+          // Total and Percentage
+          (monthLabels.length + 2): const pw.FixedColumnWidth(60),
+          (monthLabels.length + 3): const pw.FixedColumnWidth(60),
+        },
+        children: [
+          pw.TableRow(
+            decoration: const pw.BoxDecoration(color: PdfColors.grey200),
+            children: [
+               _summaryHeaderCell("Student ID", fb, height: 40),
+               _summaryHeaderCell("Student Name", fb, height: 40),
+               for (String m in monthLabels)
+                 _summaryHeaderCell(m.toUpperCase(), fb, height: 40),
+               _summaryHeaderCell("TOTAL", fb, height: 40),
+               _summaryHeaderCell("PERCENTAGE", fb, height: 40),
+            ]
+          ),
+          for (var s in students)
+            _buildMultiMonthRow(s, monthReports, monthLabels, totalDaysDouble, fb, fr)
+        ]
+      );
+   }
+
+   static pw.TableRow _buildMultiMonthRow(Map<String, String> student, List<Map<String, dynamic>> monthReports, List<String> monthLabels, double totalWorkingDays, pw.Font fb, pw.Font fr) {
+      double overallPresent = 0;
+      List<pw.Widget> monthCells = [];
+
+      for (var report in monthReports) {
+         Map<String, Map<String, Map<String, String>>> data = report['data'];
+         int presentAM = 0;
+         int presentPM = 0;
+
+         data.forEach((day, studentsData) {
+            if (studentsData.containsKey(student['id'])) {
+                final sStatus = studentsData[student['id']]!;
+                if (_normalizeStatus(sStatus['AM']) == 'P') presentAM++;
+                if (_normalizeStatus(sStatus['PM']) == 'P') presentPM++;
+            }
+         });
+         
+         double mPresentDays = (presentAM + presentPM) / 2.0;
+         overallPresent += mPresentDays;
+         
+         String disp = mPresentDays % 1 == 0 ? mPresentDays.toInt().toString() : mPresentDays.toStringAsFixed(1);
+         monthCells.add(_centeredCell(disp, fr));
+      }
+
+      double percentage = totalWorkingDays > 0 ? (overallPresent / totalWorkingDays) * 100 : 0.0;
+      String dispTotal = overallPresent % 1 == 0 ? overallPresent.toInt().toString() : overallPresent.toStringAsFixed(1);
+
+      return pw.TableRow(
+         children: [
+            _centeredCell(student['id'] ?? '', fr),
+            pw.Padding(padding: const pw.EdgeInsets.all(6), child: pw.Text(student['name']?.toUpperCase() ?? '', style: pw.TextStyle(font: fb, fontSize: 9))),
+            ...monthCells,
+            _centeredCell(dispTotal, fr),
+            _centeredCell("${percentage.toStringAsFixed(2)}%", fb),
+         ]
+      );
+   }
 
   static pw.Widget _centeredCell(String text, pw.Font font) {
      return pw.Container(
