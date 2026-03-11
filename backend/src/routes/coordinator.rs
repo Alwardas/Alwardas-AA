@@ -8,7 +8,7 @@ use uuid::Uuid;
 use chrono::Utc;
 use crate::models::{AppState, Announcement, CreateAnnouncementRequest, GetAnnouncementsQuery};
 use serde_json::json;
-use sqlx::Row; // For manual mapping if needed, but FromRow derives should work
+// use sqlx::Row; // Removed to fix warning
 
 pub async fn create_announcement_handler(
     State(data): State<AppState>,

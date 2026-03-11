@@ -1500,7 +1500,7 @@ pub async fn update_department_timings(
 
 // --- HOD Syllabus Management ---
 
-#[derive(serde::Serialize)]
+#[derive(serde::Serialize, sqlx::FromRow)]
 #[serde(rename_all = "camelCase")]
 pub struct CourseResponse {
     pub course_id: String,
@@ -1510,7 +1510,7 @@ pub struct CourseResponse {
 pub async fn get_courses_handler(
     State(state): State<AppState>,
 ) -> Result<Json<Vec<CourseResponse>>, StatusCode> {
-    let courses = sqlx::query_as!(CourseResponse, "SELECT course_id, course_name FROM courses")
+    let courses = sqlx::query_as::<_, CourseResponse>("SELECT course_id, course_name FROM courses")
         .fetch_all(&state.pool)
         .await
         .unwrap_or_default();
