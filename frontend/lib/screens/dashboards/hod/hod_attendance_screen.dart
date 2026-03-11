@@ -1047,11 +1047,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
       );
 
       try {
-         if (config.mode == ReportMode.multiMonthSummary) {
-             await _generateMultiMonthReport(config);
-         } else {
-             await _generateStandardReport(config);
-         }
+         await _generateMultiMonthReport(config);
          Navigator.pop(context); // Close Progress
          _showSnackBar("Report Downloaded Successfully");
       } catch (e) {
@@ -1059,47 +1055,6 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
          _showSnackBar("Error: $e");
          debugPrint(e.toString());
       }
-  }
-
-  Future<void> _generateStandardReport(ReportConfig config) async {
-       DateTime start = config.startDate;
-       DateTime end = config.endDate;
-       
-       final data = await _fetchAttendanceData(config.branch, config.year, config.section, start, end);
-       if (data['ids'].isEmpty) throw "No data found for this period";
-
-       String periodLabel;
-       if (config.mode == ReportMode.dateRange) {
-           periodLabel = "${DateFormat('dd/MM/yyyy').format(start)} to ${DateFormat('dd/MM/yyyy').format(end)}";
-       } else {
-           periodLabel = DateFormat('MMMM yyyy').format(start);
-       }
-
-       List<Map<String, String>> students = (data['ids'] as List<String>).map((id) => {
-          'id': id,
-          'name': (data['names'] as Map<String, String>)[id] ?? 'Unknown'
-       }).toList();
-
-       await PdfService.generateAttendanceReport(
-          branch: config.branch,
-          year: config.year,
-          section: config.section,
-          month: periodLabel, // Acts as label
-          attendanceData: (data['attendance'] as Map<String, dynamic>).map(
-            (key, value) => MapEntry(
-              key, 
-              (value as Map<String, dynamic>).map(
-                (k, v) => MapEntry(
-                  k, 
-                  (v as Map<String, dynamic>).map((k2, v2) => MapEntry(k2, v2.toString()))
-                )
-              )
-            )
-          ), 
-          students: students,
-          includeDaily: config.includeDaily,
-          includeSummary: config.includeSummary
-       );
   }
 
   Future<void> _generateMultiMonthReport(ReportConfig config) async {
@@ -1247,30 +1202,18 @@ class ReportOptionsDialog extends StatefulWidget {
   State<ReportOptionsDialog> createState() => _ReportOptionsDialogState();
 }
 
-class _ReportOptionsDialogState extends State<ReportOptionsDialog> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
-  
+class _ReportOptionsDialogState extends State<ReportOptionsDialog> {
   // Selections
   late String _selectedYear;
   late String _selectedSection;
 
-  // Monthly
-  DateTime _selectedMonth = DateTime.now();
-  bool _daily = true;
-  bool _summary = true;
-
-  // Date Range
-  DateTime _rangeStart = DateTime.now().subtract(const Duration(days: 7));
-  DateTime _rangeEnd = DateTime.now();
-
-  // Multi Month
+  // Multi Month Options
   DateTime _multiStart = DateTime(DateTime.now().year, 1);
   DateTime _multiEnd = DateTime.now();
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
     _selectedYear = widget.initialYear;
     _selectedSection = widget.initialSection;
     _updateSection();
@@ -1303,7 +1246,7 @@ class _ReportOptionsDialogState extends State<ReportOptionsDialog> with SingleTi
     return Dialog(
        child: Container(
          width: 400,
-         height: 600, // Increased height
+         height: 400, // Reduced height since tabs are removed
          padding: const EdgeInsets.all(20),
          child: Column(
            children: [
@@ -1323,73 +1266,25 @@ class _ReportOptionsDialogState extends State<ReportOptionsDialog> with SingleTi
              }),
              
              const SizedBox(height: 20),
-             TabBar(
-               controller: _tabController,
-               labelColor: Colors.blue,
-               unselectedLabelColor: Colors.grey,
-               tabs: const [
-                 Tab(text: "Monthly"),
-                 Tab(text: "Range"),
-                 Tab(text: "Multi-Summary"),
-               ]
-             ),
              Expanded(
-               child: TabBarView(
-                 controller: _tabController,
+               child: Column(
+                 mainAxisAlignment: MainAxisAlignment.center,
                  children: [
-                    // Monthly Tab
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                         _buildMonthPicker("Select Month", _selectedMonth, (d) => setState(() => _selectedMonth = d)),
-                         CheckboxListTile(title: const Text("Include Daily Attendance"), value: _daily, onChanged: (v) => setState(() => _daily = v!)),
-                         CheckboxListTile(title: const Text("Include Final Summary"), value: _summary, onChanged: (v) => setState(() => _summary = v!)),
-                         const SizedBox(height: 20),
-                         ElevatedButton(
-                           onPressed: () {
-                              final start = DateTime(_selectedMonth.year, _selectedMonth.month, 1);
-                              final end = DateTime(_selectedMonth.year, _selectedMonth.month + 1, 0);
-                              widget.onGenerate(ReportConfig(mode: ReportMode.monthly, branch: widget.branch, year: _selectedYear, section: _selectedSection, startDate: start, endDate: end, includeDaily: _daily, includeSummary: _summary));
-                              Navigator.pop(context);
-                           }, 
-                           child: const Text("Download")
-                         )
-                      ]
-                    ),
-                    // Range Tab
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                         _buildDatePicker("Start Date", _rangeStart, (d) => setState(() => _rangeStart = d)),
-                         _buildDatePicker("End Date", _rangeEnd, (d) => setState(() => _rangeEnd = d)),
-                         const SizedBox(height: 20),
-                         ElevatedButton(
-                           onPressed: () {
-                              widget.onGenerate(ReportConfig(mode: ReportMode.dateRange, branch: widget.branch, year: _selectedYear, section: _selectedSection, startDate: _rangeStart, endDate: _rangeEnd, includeDaily: true, includeSummary: false));
-                              Navigator.pop(context);
-                           }, 
-                           child: const Text("Download")
-                         )
-                      ]
-                    ),
-                    // Multi-Summary Tab
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                         _buildMonthPicker("Start Month", _multiStart, (d) => setState(() => _multiStart = d)),
-                         _buildMonthPicker("End Month", _multiEnd, (d) => setState(() => _multiEnd = d)),
-                         const SizedBox(height: 20),
-                         ElevatedButton(
-                           onPressed: () {
-                              final start = DateTime(_multiStart.year, _multiStart.month, 1);
-                              final end = DateTime(_multiEnd.year, _multiEnd.month + 1, 0); // End of end month
-                              widget.onGenerate(ReportConfig(mode: ReportMode.multiMonthSummary, branch: widget.branch, year: _selectedYear, section: _selectedSection, startDate: start, endDate: end));
-                              Navigator.pop(context);
-                           }, 
-                           child: const Text("Download")
-                         )
-                      ]
-                    ),
+                    _buildMonthPicker("Start Month", _multiStart, (d) => setState(() => _multiStart = d)),
+                    _buildMonthPicker("End Month", _multiEnd, (d) => setState(() => _multiEnd = d)),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+                      ),
+                      onPressed: () {
+                         final start = DateTime(_multiStart.year, _multiStart.month, 1);
+                         final end = DateTime(_multiEnd.year, _multiEnd.month + 1, 0); // End of end month
+                         widget.onGenerate(ReportConfig(mode: ReportMode.multiMonthSummary, branch: widget.branch, year: _selectedYear, section: _selectedSection, startDate: start, endDate: end));
+                         Navigator.pop(context);
+                      }, 
+                      child: const Text("Download Report")
+                    )
                  ]
                )
              )
