@@ -1,8 +1,60 @@
-﻿import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
+import '../../../../core/services/auth_service.dart';
+import '../../../../core/api_constants.dart';
 
-class StudentMarksScreen extends StatelessWidget {
+class StudentMarksScreen extends StatefulWidget {
   const StudentMarksScreen({super.key});
+
+  @override
+  State<StudentMarksScreen> createState() => _StudentMarksScreenState();
+}
+
+class _StudentMarksScreenState extends State<StudentMarksScreen> {
+  bool _isLoading = true;
+  String? _error;
+  List<dynamic> _semesters = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchAcademics();
+  }
+
+  Future<void> _fetchAcademics() async {
+    try {
+      final user = await AuthService.getUserSession();
+      if (user == null) {
+        setState(() {
+          _error = "User session not found.";
+          _isLoading = false;
+        });
+        return;
+      }
+
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/student/academics?userId=${user['id']}');
+      final response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        setState(() {
+          _semesters = json.decode(response.body);
+          _isLoading = false;
+        });
+      } else {
+        setState(() {
+          _error = "Failed to load academic records.";
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _error = "Network error while connecting.";
+        _isLoading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,30 +68,45 @@ class StudentMarksScreen extends StatelessWidget {
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(20),
-        physics: const BouncingScrollPhysics(),
-        children: [
-          _buildSemesterCard(context, "Semester 1", "SGPA: 8.5", [
-            {"subject": "Engineering Mathematics-I", "grade": "A+", "score": "92/100"},
-            {"subject": "Engineering Chemistry", "grade": "A", "score": "85/100"},
-            {"subject": "Basic Electronics", "grade": "B+", "score": "78/100"},
-            {"subject": "Computer Programming", "grade": "O", "score": "95/100"},
-          ]),
-          const SizedBox(height: 20),
-          _buildSemesterCard(context, "Semester 2 (Ongoing)", "Current Avg: 82%", [
-            {"subject": "Engineering Mathematics-II", "grade": "-", "score": "88/100 (Internal)"},
-            {"subject": "Engineering Physics", "grade": "-", "score": "75/100 (Internal)"},
-             {"subject": "Data Structures", "grade": "-", "score": "90/100 (Internal)"},
-          ]),
-        ],
-      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : _error != null
+              ? Center(child: Text(_error!, style: GoogleFonts.poppins(color: Colors.red)))
+              : _semesters.isEmpty
+                  ? Center(child: Text("No academic records found.", style: GoogleFonts.poppins(color: textColor)))
+                  : ListView.builder(
+                      padding: const EdgeInsets.all(20),
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: _semesters.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: _buildSemesterCard(context, _semesters[index]),
+                        );
+                      },
+                    ),
     );
   }
 
-  Widget _buildSemesterCard(BuildContext context, String title, String subtitle, List<Map<String, String>> subjects) {
+  Widget _buildSemesterCard(BuildContext context, Map<String, dynamic> semesterData) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final cardColor = isDark ? const Color(0xFF1E1E24) : Colors.white;
+
+    final String yearLabel = semesterData['yearLabel'] ?? '';
+    final String semName = semesterData['semesterName'] ?? '';
+    final bool isOngoing = semesterData['isOngoing'] ?? false;
+    final double? sgpa = semesterData['sgpa'];
+
+    final String title = "$yearLabel – $semName${isOngoing ? ' (Ongoing)' : ''}";
+    
+    String subtitle;
+    if (isOngoing) {
+      subtitle = sgpa != null ? "Current Avg: ${sgpa.toStringAsFixed(2)}" : "Current Avg: -";
+    } else {
+      subtitle = sgpa != null ? "SGPA: ${sgpa.toStringAsFixed(2)}" : "SGPA: -";
+    }
+
+    final List<dynamic> subjects = semesterData['subjects'] ?? [];
 
     return Container(
       decoration: BoxDecoration(
@@ -56,35 +123,55 @@ class StudentMarksScreen extends StatelessWidget {
           title: Text(title, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16)),
           subtitle: Text(subtitle, style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.w600)),
           children: [
-            ...subjects.map((s) => Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              decoration: BoxDecoration(
-                border: Border(top: BorderSide(color: Colors.grey.withValues(alpha: 0.1)))
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            if (subjects.isEmpty)
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Text("No subjects available for this semester.", style: GoogleFonts.poppins(color: Colors.grey)),
+              )
+            else
+              ...subjects.map((sub) {
+                final subName = sub['subjectName'] ?? 'Unknown Subject';
+                final marks = sub['marks'];
+                final scoreStr = marks != null ? "$marks / 100" : "- / 100";
+                final gradeStr = sub['grade'] ?? "-";
+
+                return Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  decoration: BoxDecoration(
+                    border: Border(top: BorderSide(color: Colors.grey.withValues(alpha: 0.1)))
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(s['subject']!, style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
-                      Text("Score: ${s['score']}", style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(subName, style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                            Text(
+                              isOngoing && marks != null ? "Score: $scoreStr" : "Score: $scoreStr",
+                              style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: isDark ? Colors.grey[800] : Colors.grey[100],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Text(gradeStr, style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+                      )
                     ],
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.grey[800] : Colors.grey[100],
-                      borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Text(s['grade']!, style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-                  )
-                ],
-              ),
-            ))
+                );
+              })
           ],
         ),
       ),
     );
   }
 }
+

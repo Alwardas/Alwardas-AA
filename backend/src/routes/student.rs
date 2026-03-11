@@ -690,3 +690,165 @@ pub async fn delete_attendance_correction_requests_handler(
     
     Ok(StatusCode::OK)
 }
+
+// --- Academics ---
+
+#[derive(serde::Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SubjectMarkResponse {
+    pub subject_name: String,
+    pub marks: Option<i32>,
+    pub credit: i32,
+    pub grade: Option<String>,
+    pub grade_points: Option<i32>,
+}
+
+#[derive(serde::Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SemesterAcademicsResponse {
+    pub semester_name: String,
+    pub year_label: String,
+    pub is_ongoing: bool,
+    pub subjects: Vec<SubjectMarkResponse>,
+    pub sgpa: Option<f64>,
+}
+
+pub async fn get_student_academics_handler(
+    State(state): State<AppState>,
+    Query(params): Query<ProfileQuery>,
+) -> Result<Json<Vec<SemesterAcademicsResponse>>, (StatusCode, Json<serde_json::Value>)> {
+    
+    // Fetch user details
+    #[derive(sqlx::FromRow)]
+    struct UserDataInfo {
+        login_id: String,
+        branch: Option<String>,
+        year: Option<String>,
+        semester: Option<String>,
+    }
+
+    let user_opt = sqlx::query_as::<_, UserDataInfo>("SELECT login_id, branch, year, semester FROM users WHERE id = $1")
+        .bind(params.user_id)
+        .fetch_optional(&state.pool)
+        .await
+        .map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "DB Error"}))))?;
+
+    let user = match user_opt {
+        Some(u) => u,
+        None => return Err((StatusCode::NOT_FOUND, Json(serde_json::json!({"error": "User not found"})))),
+    };
+
+    let branch_norm = normalize_branch(&user.branch.unwrap_or_default());
+    let year_str = user.year.unwrap_or_default();
+    let sem_str = user.semester.unwrap_or_default();
+
+    let semester_key = if year_str == "1st Year" {
+        "1st Year".to_string()
+    } else if !sem_str.is_empty() {
+        sem_str
+    } else {
+        if year_str.contains("2nd Year") || year_str.contains("3rd Semester") { "3rd Semester".to_string() }
+        else if year_str.contains("4th Semester") { "4th Semester".to_string() }
+        else if year_str.contains("3rd Year") || year_str.contains("5th Semester") { "5th Semester".to_string() }
+        else if year_str.contains("6th Semester") { "6th Semester".to_string() }
+        else { "1st Year".to_string() }
+    };
+
+    let ordered_sems = vec![
+        ("1st Year", "1st Year", "Semester 1"),
+        ("2nd Year", "3rd Semester", "Semester 3"),
+        ("2nd Year", "4th Semester", "Semester 4"),
+        ("3rd Year", "5th Semester", "Semester 5"),
+        ("3rd Year", "6th Semester", "Semester 6"),
+    ];
+
+    let mut result = Vec::new();
+
+    // Loop through semesters until we find the current one
+    for (year_l, db_sem, disp_sem) in ordered_sems {
+        let is_current = db_sem == semester_key;
+        
+        // Fetch subjects for this branch and sem
+        #[derive(sqlx::FromRow)]
+        struct SubjData {
+            name: String,
+            credit: Option<i32>,
+        }
+        let subjects: Vec<SubjData> = sqlx::query_as(
+            "SELECT name, credit FROM subjects WHERE branch = $1 AND semester = $2"
+        )
+        .bind(&branch_norm)
+        .bind(db_sem)
+        .fetch_all(&state.pool)
+        .await
+        .unwrap_or_default();
+
+        let mut sub_responses = Vec::new();
+        let mut total_points = 0.0;
+        let mut total_credits = 0.0;
+        let mut all_marks_present = true;
+
+        for s in &subjects {
+            let credit_val = s.credit.unwrap_or(3);
+            
+            // Fetch mark
+            let mark_opt: Option<i32> = sqlx::query_scalar(
+                "SELECT marks FROM student_marks WHERE student_id = $1 AND semester = $2 AND subject_name = $3"
+            )
+            .bind(&user.login_id)
+            .bind(db_sem)
+            .bind(&s.name)
+            .fetch_optional(&state.pool)
+            .await
+            .unwrap_or(None)
+            .flatten();
+
+            let (grade, gpa) = if let Some(m) = mark_opt {
+                if m >= 90 { (Some("O".to_string()), Some(10)) }
+                else if m >= 80 { (Some("A+".to_string()), Some(9)) }
+                else if m >= 70 { (Some("A".to_string()), Some(8)) }
+                else if m >= 60 { (Some("B+".to_string()), Some(7)) }
+                else if m >= 50 { (Some("B".to_string()), Some(6)) }
+                else if m >= 40 { (Some("C".to_string()), Some(5)) }
+                else { (Some("F".to_string()), Some(0)) }
+            } else {
+                all_marks_present = false;
+                (None, None)
+            };
+
+            if let Some(gp) = gpa {
+                total_points += (gp * credit_val) as f64;
+                total_credits += credit_val as f64;
+            }
+
+            sub_responses.push(SubjectMarkResponse {
+                subject_name: s.name.clone(),
+                marks: mark_opt,
+                credit: credit_val,
+                grade,
+                grade_points: gpa,
+            });
+        }
+
+        let sgpa = if !subjects.is_empty() && all_marks_present && total_credits > 0.0 {
+            Some(total_points / total_credits)
+        } else {
+            None
+        };
+
+        result.push(SemesterAcademicsResponse {
+            year_label: year_l.to_string(),
+            semester_name: disp_sem.to_string(),
+            is_ongoing: is_current,
+            subjects: sub_responses,
+            sgpa,
+        });
+
+        if is_current {
+            break;
+        }
+    }
+
+    Ok(Json(result))
+}
+

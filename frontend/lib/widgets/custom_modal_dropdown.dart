@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomModalDropdown extends StatefulWidget {
@@ -41,12 +41,15 @@ class _CustomModalDropdownState extends State<CustomModalDropdown> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'Select ${widget.label}',
-                      style: GoogleFonts.poppins(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF333333),
+                    Expanded(
+                      child: Text(
+                        'Select ${widget.label}',
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF333333),
+                        ),
                       ),
                     ),
                     IconButton(
@@ -119,13 +122,17 @@ class _CustomModalDropdownState extends State<CustomModalDropdown> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  widget.value ?? 'Select ${widget.label}',
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    color: widget.value != null ? const Color(0xFF333333) : const Color(0xFF999999),
+                Expanded(
+                  child: Text(
+                    widget.value ?? 'Select ${widget.label}',
+                    overflow: TextOverflow.ellipsis,
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: widget.value != null ? const Color(0xFF333333) : const Color(0xFF999999),
+                    ),
                   ),
                 ),
+                const SizedBox(width: 8),
                 const Icon(Icons.keyboard_arrow_down, color: Color(0xFF666666)),
               ],
             ),

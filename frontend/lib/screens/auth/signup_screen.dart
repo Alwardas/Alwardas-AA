@@ -31,6 +31,7 @@ class _SignupScreenState extends State<SignupScreen> {
     if (widget.forcedRole != null) {
       _selectedRole = widget.forcedRole;
     }
+    _fetchBranches();
   }
 
   // Controllers
@@ -48,13 +49,13 @@ class _SignupScreenState extends State<SignupScreen> {
 
   // Options
   final List<String> _roles = ['Student', 'Parent', 'Faculty', 'HOD', 'Principal', 'Admin'];
-  final List<String> _branches = [
+  List<String> _branches = [
     'Computer Engineering',
     'Civil Engineering',
     'Electrical & Electronics Engineering',
     'Electronics & Communication Engineering',
     'Mechanical Engineering',
-    'Basic Sciences & Humanities'
+    ' Basic Science & Humanities'
   ];
   
   final List<String> _years = [
@@ -74,6 +75,58 @@ class _SignupScreenState extends State<SignupScreen> {
   List<String> _sections = ['Section A']; 
   List<String> _availableSemesters = [];
   bool _isLoadingSections = false;
+  bool _isLoadingBranches = false;
+
+  Future<void> _fetchBranches() async {
+    setState(() => _isLoadingBranches = true);
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/departments');
+      final response = await http.get(url);
+      
+      final prefs = await SharedPreferences.getInstance();
+      List<String> deletedPresets = prefs.getStringList('deleted_presets') ?? [];
+      
+      List<String> presets = [
+        'Civil Engineering',
+        'Computer Engineering',
+        'Electronics & Communication',
+        'Electrical & Electronics',
+        'Mechanical Engineering',
+      ];
+
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        Set<String> branchSet = {};
+        
+        for (String p in presets) {
+            if (!deletedPresets.contains(p)) {
+                branchSet.add(p);
+            }
+        }
+        
+        for (var item in data) {
+           String branchName = item['branch'] ?? '';
+           if (branchName.isNotEmpty) {
+               branchSet.add(branchName);
+           }
+        }
+        
+        branchSet.add(' Basic Science & Humanities');
+        
+        setState(() {
+           _branches = branchSet.toList();
+           // Reset selected branch if it's no longer in list
+           if (_selectedBranch != null && !_branches.contains(_selectedBranch)) {
+               _selectedBranch = null;
+           }
+        });
+      }
+    } catch (e) {
+       debugPrint("Error fetching branches: $e");
+    } finally {
+       if (mounted) setState(() => _isLoadingBranches = false);
+    }
+  }
 
 
 
@@ -563,7 +616,12 @@ class _SignupScreenState extends State<SignupScreen> {
         
         // Branch
         if (showBranch)
-          CustomModalDropdown(
+          _isLoadingBranches 
+            ? const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Center(child: SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))),
+              )
+            : CustomModalDropdown(
             label: 'Branch',
             value: _selectedBranch,
             options: _branches,

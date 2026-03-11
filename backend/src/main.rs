@@ -181,6 +181,22 @@ async fn main() {
         )
     ").execute(&pool).await.err();
 
+    // STUDENT MARKS TABLE
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS student_marks (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            student_id TEXT NOT NULL,
+            semester TEXT NOT NULL,
+            subject_name TEXT NOT NULL,
+            marks INT DEFAULT NULL,
+            UNIQUE(student_id, semester, subject_name)
+        )
+    ").execute(&pool).await.err();
+
+    // Migration: Add credit if not exists
+    let _ = sqlx::query("ALTER TABLE subjects ADD COLUMN IF NOT EXISTS credit INT DEFAULT 3")
+         .execute(&pool).await.err();
+
     // TIMETABLE ENTRIES TABLE
     let _ = sqlx::query("
         CREATE TABLE IF NOT EXISTS timetable_entries (
@@ -248,6 +264,7 @@ async fn main() {
         .route("/api/student/profile", get(student::get_student_profile_handler))
         .route("/api/student/courses", get(student::get_student_courses_handler))
         .route("/api/student/lesson-plan", get(student::get_student_lesson_plan_handler))
+        .route("/api/student/academics", get(student::get_student_academics_handler))
         .route("/api/student/lesson-plan/feedback", post(student::submit_lesson_plan_feedback_handler).get(student::get_lesson_plan_feedback_handler))
         .route("/api/student/lesson-plan/feedback/:id", axum::routing::delete(student::delete_lesson_plan_feedback_handler))
         .route("/api/student/feedbacks", get(student::get_student_all_feedbacks_handler))
