@@ -283,7 +283,7 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
               width: 80,
               alignment: Alignment.center,
               child: Text(
-                DateFormat('MMM d').format(announcement.startDate),
+                DateFormat('dd/MM/yyyy').format(announcement.startDate),
                 style: GoogleFonts.poppins(
                   color: isDark ? Colors.grey[400] : Colors.grey[600],
                   fontWeight: FontWeight.w500,

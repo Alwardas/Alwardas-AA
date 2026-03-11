@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -335,7 +335,7 @@ class _StudentCommentsScreenState extends State<StudentCommentsScreen> {
                           final issue = _issues[index];
                           final status = issue['status'] ?? 'PENDING';
                           final date = DateTime.parse(issue['createdAt']);
-                          final formattedDate = DateFormat('dd MMM yyyy').format(date.toLocal());
+                          final formattedDate = DateFormat('dd/MM/yyyy').format(date.toLocal());
 
                           return Container(
                             margin: const EdgeInsets.only(bottom: 16),

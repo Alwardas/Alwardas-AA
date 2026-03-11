@@ -463,7 +463,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                   Icon(Icons.calendar_today, color: tint, size: 20),
                                   const SizedBox(width: 8),
                                   Text(
-                                    DateFormat('MMM dd').format(_selectedDate),
+                                    DateFormat('dd/MM/yyyy').format(_selectedDate),
                                     style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold)
                                   )
                                 ],

@@ -356,6 +356,8 @@ pub struct LessonPlanItemResponse {
     #[serde(rename = "completedAt")]
     pub completed_at: Option<chrono::DateTime<Utc>>,
     pub student_review: Option<String>,
+    #[serde(rename = "scheduledDate")]
+    pub scheduled_date: Option<chrono::DateTime<Utc>>,
 }
 
 #[derive(Serialize)]

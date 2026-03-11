@@ -7,6 +7,7 @@ import '../../../core/theme/app_theme.dart';
 import 'hod_class_timetable_screen.dart';
 import 'hod_year_sections_screen.dart';
 import 'hod_faculty_screen.dart';
+import 'hod_syllabus_management_screen.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../../core/api_constants.dart';
@@ -240,7 +241,7 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
             Icons.menu_book,
             Colors.purple,
             () {
-               _showSyllabusYearsModal(context);
+               Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusManagementScreen(userData: widget.userData)));
             },
           ),
         ),

@@ -49,7 +49,7 @@ class PdfService {
     final ttfBold = fontBold != null ? pw.Font.ttf(fontBold) : pw.Font.courierBold();
 
     final now = DateTime.now();
-    final formattedDate = DateFormat('dd-MMM-yyyy hh:mm a').format(now);
+    final formattedDate = DateFormat('dd/MM/yyyy hh:mm a').format(now);
 
     final parsedMonths = monthReports.map((r) {
        final mStr = r['month'].toString();

@@ -214,6 +214,57 @@ async fn main() {
         )
     ").execute(&pool).await.err();
     
+    // COURSES TABLE
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS courses (
+            course_id TEXT PRIMARY KEY,
+            course_name TEXT NOT NULL
+        )
+    ").execute(&pool).await.err();
+
+    // LESSON TOPICS TABLE
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS lesson_topics (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            subject_id TEXT NOT NULL,
+            unit TEXT NOT NULL,
+            topic_name TEXT NOT NULL
+        )
+    ").execute(&pool).await.err();
+
+    // LESSON SCHEDULE TABLE
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS lesson_schedule (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            subject_id TEXT NOT NULL,
+            topic_id TEXT NOT NULL,
+            schedule_date TIMESTAMPTZ,
+            faculty_id TEXT,
+            branch TEXT NOT NULL,
+            year TEXT NOT NULL,
+            semester TEXT NOT NULL,
+            UNIQUE(subject_id, topic_id)
+        )
+    ").execute(&pool).await.err();
+    
+    // Fallback: If `courses` table is empty, insert some default courses
+    let mut tx = pool.begin().await.unwrap();
+    let courses_count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM courses").fetch_one(&mut *tx).await.unwrap_or(0);
+    if courses_count == 0 {
+        sqlx::query("INSERT INTO courses (course_id, course_name) VALUES ('C-23', 'Computer Engineering (C-23)'), ('C-26', 'Computer Engineering (C-26)')").execute(&mut *tx).await.unwrap();
+    }
+    tx.commit().await.unwrap();
+    
+    // Wait, let's also seed 'lesson_topics' if empty for existing subjects
+    let mut tx2 = pool.begin().await.unwrap();
+    let topics_count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM lesson_topics").fetch_one(&mut *tx2).await.unwrap_or(0);
+    if topics_count == 0 {
+        // Insert a dummy topic for testing
+        sqlx::query("INSERT INTO lesson_topics (subject_id, unit, topic_name) VALUES ('1', 'Unit 1', 'Basics of Java'), ('1', 'Unit 1', 'Variables & Data Types')").execute(&mut *tx2).await.unwrap_or_default();
+    }
+    tx2.commit().await.unwrap();
+
+
     // Allow multiple faculty to potentially teach if sections are different, but unique constraint above enforces
     // one class per section per period.
     // However, faculty view is 'my schedule'.
@@ -313,6 +364,10 @@ async fn main() {
         .route("/api/timetable/clear", post(faculty::clear_class_handler))
         .route("/api/department/timing", get(faculty::get_department_timings))
         .route("/api/department/timing", post(faculty::update_department_timings))
+        .route("/api/faculty/hod-courses", get(faculty::get_courses_handler))
+        .route("/api/faculty/hod-semester-subjects", get(faculty::get_semester_subjects_handler))
+        .route("/api/faculty/hod-lesson-topics", get(faculty::get_lesson_topics_handler))
+        .route("/api/faculty/hod-assign-schedule", post(faculty::assign_lesson_schedule_handler))
         .route("/api/admin/users", get(admin::get_admin_users_handler))
         .route("/api/admin/stats", get(admin::get_admin_stats_handler))
         .route("/api/admin/users/approve", post(admin::admin_approve_user_handler))

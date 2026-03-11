@@ -709,7 +709,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
              if (dayNum > daysInMonth) return const SizedBox();
 
              // Check status
-             final dateStr = DateFormat('yyyy-MM-dd').format(DateTime(_selectedYear, _selectedMonth, dayNum));
+             final dateStr = DateFormat('dd/MM/yyyy').format(DateTime(_selectedYear, _selectedMonth, dayNum));
              final dayStats = _getDayStatus(dateStr);
              final morning = dayStats['morning'] as Map<String, dynamic>?;
              final afternoon = dayStats['afternoon'] as Map<String, dynamic>?;
@@ -1168,7 +1168,7 @@ class _TrackRequestsSheetState extends State<TrackRequestsSheet> {
                                         Icon(isSelected ? Icons.check_circle : Icons.circle_outlined, color: isSelected ? Colors.blue : Colors.grey)
                                       else
                                         Text(
-                                          DateFormat('dd MMM yyyy').format(DateTime.parse(item['created_at'])),
+                                          DateFormat('dd/MM/yyyy').format(DateTime.parse(item['created_at'])),
                                           style: GoogleFonts.poppins(color: Colors.grey, fontSize: 12),
                                         )
                                     ],

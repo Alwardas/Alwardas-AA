@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -244,9 +244,13 @@ class _HodLessonPlanScreenState extends State<HodLessonPlanScreen> {
         );
     }
     
-    // Dates (Mocked for now or fetched if available)
-    final scheduledDate = "2024-01-10"; // Should come from item['target_date']
-    final completedDate = isCompleted ? DateFormat('yyyy-MM-dd').format(DateTime.now()) : "Pending"; 
+    // Dates 
+    final scheduledDate = item['scheduledDate'] != null 
+        ? DateFormat('dd/MM/yyyy').format(DateTime.parse(item['scheduledDate'])) 
+        : "Not Scheduled";
+    final completedDate = isCompleted ? (item['completedAt'] != null 
+        ? DateFormat('dd/MM/yyyy').format(DateTime.parse(item['completedAt'])) 
+        : DateFormat('dd/MM/yyyy').format(DateTime.now())) : "Pending"; 
 
     return Opacity(
       opacity: isCompleted ? 0.6 : 1.0,

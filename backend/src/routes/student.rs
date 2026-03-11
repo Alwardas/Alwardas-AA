@@ -276,9 +276,11 @@ pub async fn get_student_lesson_plan_handler(
             lpi.sno, 
             COALESCE(lpp.completed, FALSE) as completed,
             lpp.completed_date as completed_at,
-            lpi.student_review
+            lpi.student_review,
+            ls.schedule_date as scheduled_date
         FROM lesson_plan_items lpi
         LEFT JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id AND lpp.section = $2
+        LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id
         WHERE lpi.subject_id = $1 
         ORDER BY lpi.order_index ASC
         "#

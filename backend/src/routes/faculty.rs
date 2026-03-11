@@ -1498,4 +1498,145 @@ pub async fn update_department_timings(
     }
 }
 
+// --- HOD Syllabus Management ---
 
+#[derive(serde::Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct CourseResponse {
+    pub course_id: String,
+    pub course_name: String,
+}
+
+pub async fn get_courses_handler(
+    State(state): State<AppState>,
+) -> Result<Json<Vec<CourseResponse>>, StatusCode> {
+    let courses = sqlx::query_as!(CourseResponse, "SELECT course_id, course_name FROM courses")
+        .fetch_all(&state.pool)
+        .await
+        .unwrap_or_default();
+    Ok(Json(courses))
+}
+
+#[derive(serde::Deserialize)]
+pub struct SemesterSubjectsQuery {
+    pub branch: String,
+    pub year: String,
+    pub semester: String,
+}
+
+#[derive(serde::Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SemesterSubjectResponse {
+    pub id: String,
+    pub subject_name: String,
+}
+
+pub async fn get_semester_subjects_handler(
+    State(state): State<AppState>,
+    Query(params): Query<SemesterSubjectsQuery>,
+) -> Result<Json<Vec<SemesterSubjectResponse>>, StatusCode> {
+    
+    // Fallback normalizer
+    let branch = params.branch.trim().to_string();
+    
+    #[derive(sqlx::FromRow)]
+    struct SubjRow {
+        id: String,
+        name: String,
+    }
+
+    let subjects: Vec<SubjRow> = sqlx::query_as("SELECT id, name FROM subjects WHERE branch = $1 AND semester = $2")
+        .bind(&branch)
+        .bind(&params.semester)
+        .fetch_all(&state.pool)
+        .await
+        .unwrap_or_default();
+
+    let res: Vec<SemesterSubjectResponse> = subjects.into_iter().map(|s| SemesterSubjectResponse {
+        id: s.id.clone(),
+        subject_name: s.name.clone()
+    }).collect();
+
+    Ok(Json(res))
+}
+
+#[derive(serde::Deserialize)]
+pub struct LessonTopicsQuery {
+    pub subject_id: String,
+}
+
+#[derive(serde::Serialize, sqlx::FromRow)]
+#[serde(rename_all = "camelCase")]
+pub struct LessonTopicResponse {
+    pub id: String,
+    pub unit: String,
+    pub topic_name: String,
+    pub schedule_date: Option<chrono::DateTime<Utc>>,
+}
+
+
+pub async fn get_lesson_topics_handler(
+    State(state): State<AppState>,
+    Query(params): Query<LessonTopicsQuery>,
+) -> Result<Json<Vec<LessonTopicResponse>>, (StatusCode, Json<serde_json::Value>)> {
+    // Topic matches subject, and JOIN on schedule table to find schedule date if it exists
+    let sql = r#"
+        SELECT lpi.id::text, COALESCE(lpi.sno, 'Unit') as unit, lpi.topic as topic_name, ls.schedule_date 
+        FROM lesson_plan_items lpi
+        LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id
+        WHERE lpi.subject_id = $1
+        ORDER BY lpi.order_index
+    "#;
+
+    let topics = sqlx::query_as::<_, LessonTopicResponse>(sql)
+        .bind(&params.subject_id)
+        .fetch_all(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Topic Fetch Error: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "DB Error"})))
+        })?;
+
+    Ok(Json(topics))
+}
+
+#[derive(serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AssignLessonScheduleRequest {
+    pub subject_id: String,
+    pub topic_id: String,
+    pub schedule_date: chrono::DateTime<Utc>,
+    pub faculty_id: Option<String>,
+    pub branch: String,
+    pub year: String,
+    pub semester: String,
+}
+
+pub async fn assign_lesson_schedule_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<AssignLessonScheduleRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    // Insert/Upsert into lesson_schedule so that the schedule applies for that topic
+    let res = sqlx::query(
+        "INSERT INTO lesson_schedule (subject_id, topic_id, schedule_date, faculty_id, branch, year, semester)
+         VALUES ($1, $2, $3, $4, $5, $6, $7)
+         ON CONFLICT (subject_id, topic_id) DO UPDATE SET schedule_date = EXCLUDED.schedule_date, faculty_id = EXCLUDED.faculty_id"
+    )
+    .bind(&payload.subject_id)
+    .bind(payload.topic_id)
+    .bind(payload.schedule_date)
+    .bind(&payload.faculty_id)
+    .bind(&payload.branch)
+    .bind(&payload.year)
+    .bind(&payload.semester)
+    .execute(&state.pool)
+    .await;
+
+    match res {
+        Ok(_) => Ok(StatusCode::OK),
+        Err(e) => {
+            eprintln!("Assign Schedule Error: {:?}", e);
+            Err((StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to assign schedule"}))))
+        }
+    }
+}

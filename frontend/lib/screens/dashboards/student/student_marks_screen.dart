@@ -99,14 +99,37 @@ class _StudentMarksScreenState extends State<StudentMarksScreen> {
 
     final String title = "$yearLabel – $semName${isOngoing ? ' (Ongoing)' : ''}";
     
-    String subtitle;
-    if (isOngoing) {
-      subtitle = sgpa != null ? "Current Avg: ${sgpa.toStringAsFixed(2)}" : "Current Avg: -";
-    } else {
-      subtitle = sgpa != null ? "SGPA: ${sgpa.toStringAsFixed(2)}" : "SGPA: -";
+    final List<dynamic> subjects = semesterData['subjects'] ?? [];
+    
+    int backlogCount = 0;
+    for (var sub in subjects) {
+      final marks = sub['marks'];
+      final grade = sub['grade'];
+      if ((marks != null && marks < 35) || grade == 'F') {
+        backlogCount++;
+      }
     }
 
-    final List<dynamic> subjects = semesterData['subjects'] ?? [];
+    String sgpaText;
+    if (isOngoing) {
+      sgpaText = sgpa != null ? "Current Avg: ${sgpa.toStringAsFixed(2)}" : "Current Avg: -";
+    } else {
+      sgpaText = sgpa != null ? "SGPA: ${sgpa.toStringAsFixed(2)}" : "SGPA: -";
+    }
+
+    Widget subtitleWidget;
+    if (backlogCount > 0) {
+      subtitleWidget = Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(sgpaText, style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.w600)),
+          const SizedBox(height: 2),
+          Text("$backlogCount Backlog", style: GoogleFonts.poppins(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 13)),
+        ],
+      );
+    } else {
+      subtitleWidget = Text(sgpaText, style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.w600));
+    }
 
     return Container(
       decoration: BoxDecoration(
@@ -121,7 +144,7 @@ class _StudentMarksScreenState extends State<StudentMarksScreen> {
         child: ExpansionTile(
           tilePadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           title: Text(title, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16)),
-          subtitle: Text(subtitle, style: GoogleFonts.poppins(color: Colors.green, fontWeight: FontWeight.w600)),
+          subtitle: subtitleWidget,
           children: [
             if (subjects.isEmpty)
               Padding(
@@ -134,10 +157,17 @@ class _StudentMarksScreenState extends State<StudentMarksScreen> {
                 final marks = sub['marks'];
                 final scoreStr = marks != null ? "$marks / 100" : "- / 100";
                 final gradeStr = sub['grade'] ?? "-";
+                
+                final bool isFailed = (marks != null && marks < 40) || gradeStr == 'F';
+                
+                final bgColor = isFailed ? Colors.red.withValues(alpha: 0.05) : Colors.transparent;
+                final textColor = isFailed ? Colors.red : (isDark ? Colors.white : Colors.black);
+                final subtitleColor = isFailed ? Colors.red[300]! : Colors.grey;
 
                 return Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                   decoration: BoxDecoration(
+                    color: bgColor,
                     border: Border(top: BorderSide(color: Colors.grey.withValues(alpha: 0.1)))
                   ),
                   child: Row(
@@ -147,10 +177,10 @@ class _StudentMarksScreenState extends State<StudentMarksScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(subName, style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                            Text(subName, style: GoogleFonts.poppins(fontWeight: FontWeight.w500, color: textColor)),
                             Text(
-                              isOngoing && marks != null ? "Score: $scoreStr" : "Score: $scoreStr",
-                              style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)
+                              isFailed ? "$scoreStr (Failed)" : scoreStr,
+                              style: GoogleFonts.poppins(fontSize: 12, color: subtitleColor)
                             ),
                           ],
                         ),

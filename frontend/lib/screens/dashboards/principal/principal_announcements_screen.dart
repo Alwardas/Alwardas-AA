@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -259,7 +259,7 @@ class _PrincipalAnnouncementsScreenState extends State<PrincipalAnnouncementsScr
                       children: [
                         Text(item['title'] ?? 'No Title', style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
                         Text(
-                          DateFormat('MMM d, yyyy').format(DateTime.parse(item['start_date'])),
+                          DateFormat('dd/MM/yyyy').format(DateTime.parse(item['start_date'])),
                           style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
                         ),
                       ],

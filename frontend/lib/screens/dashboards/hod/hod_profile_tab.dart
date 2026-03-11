@@ -66,7 +66,7 @@ class _HodProfileTabState extends State<HodProfileTab> {
           _emailController.text = data['email'] ?? '';
           if (data['dob'] != null && data['dob'].toString().isNotEmpty) {
             try {
-               _dobController.text = DateFormat('dd MMM yyyy').format(DateTime.parse(data['dob']));
+               _dobController.text = DateFormat('dd/MM/yyyy').format(DateTime.parse(data['dob']));
             } catch (e) {
                _dobController.text = data['dob'];
             }
@@ -98,7 +98,7 @@ class _HodProfileTabState extends State<HodProfileTab> {
        String apiDob = updates['dob'] ?? '';
        try {
           if (apiDob.isNotEmpty) {
-             apiDob = DateFormat('yyyy-MM-dd').format(DateFormat('dd MMM yyyy').parse(apiDob));
+             apiDob = DateFormat('yyyy-MM-dd').format(DateFormat('dd/MM/yyyy').parse(apiDob));
           }
        } catch(_) {}
 
@@ -180,7 +180,7 @@ class _HodProfileTabState extends State<HodProfileTab> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 TextField(controller: nameC, decoration: const InputDecoration(labelText: "Full Name")),
-                TextField(controller: dobC, decoration: const InputDecoration(labelText: "Date of Birth (dd MMM yyyy)"), readOnly: true, onTap: () async {
+                TextField(controller: dobC, decoration: const InputDecoration(labelText: "Date of Birth (dd/MM/yyyy)"), readOnly: true, onTap: () async {
                    final DateTime? picked = await showDatePicker(
                       context: context,
                       initialDate: DateTime.now(),
@@ -188,7 +188,7 @@ class _HodProfileTabState extends State<HodProfileTab> {
                       lastDate: DateTime.now(),
                     );
                     if (picked != null) {
-                        dobC.text = DateFormat('dd MMM yyyy').format(picked);
+                        dobC.text = DateFormat('dd/MM/yyyy').format(picked);
                     }
                 }),
                 TextField(controller: expC, decoration: const InputDecoration(labelText: "Experience (Years)"), keyboardType: TextInputType.number),

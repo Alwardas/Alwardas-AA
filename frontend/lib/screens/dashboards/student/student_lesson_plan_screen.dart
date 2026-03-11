@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -279,7 +279,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                                             String displayTopic = item['topic'] ?? item['text'] ?? "Unknown";
                                             String completedDateStr = "";
                                             try {
-                                              completedDateStr = DateFormat('dd-MM-yyyy').format(DateTime.parse(item['completedAt']).toLocal());
+                                              completedDateStr = DateFormat('dd/MM/yyyy').format(DateTime.parse(item['completedAt']).toLocal());
                                             } catch (e) {
                                               completedDateStr = item['completedAt'].toString().split('T')[0];
                                             }
@@ -473,9 +473,18 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
     String? completedDate;
     
     // Date Parsing Logic
+    String? scheduledDate;
+    if (item['scheduledDate'] != null) {
+      try {
+         scheduledDate = DateFormat('dd/MM/yyyy').format(DateTime.parse(item['scheduledDate']).toLocal());
+      } catch (e) {
+         scheduledDate = item['scheduledDate'].toString().split('T')[0];
+      }
+    }
+
     if (item['completedAt'] != null) {
       try {
-         completedDate = DateFormat('dd-MM-yyyy').format(DateTime.parse(item['completedAt']).toLocal());
+         completedDate = DateFormat('dd/MM/yyyy').format(DateTime.parse(item['completedAt']).toLocal());
       } catch (e) {
          completedDate = item['completedAt'].toString().split('T')[0];
       }
@@ -517,6 +526,15 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                       // Scheduled Date Watermark
+                       if (scheduledDate != null)
+                          Padding(
+                              padding: const EdgeInsets.only(bottom: 2),
+                              child: Text(
+                                  "Target: $scheduledDate",
+                                  style: GoogleFonts.poppins(fontSize: 10, color: tint.withValues(alpha: 0.7), fontWeight: FontWeight.bold),
+                              ),
+                          ),
                        // Completed Date Watermark (Visible only if completed)
                        if (isCompleted && completedDate != null)
                           Padding(

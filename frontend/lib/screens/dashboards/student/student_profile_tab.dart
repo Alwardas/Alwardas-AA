@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -219,7 +219,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
       try {
         // Backend returns YYYY-MM-DD
         DateTime date = DateTime.parse(rawDob);
-        _dobController.text = DateFormat('dd-MM-yyyy').format(date);
+        _dobController.text = DateFormat('dd/MM/yyyy').format(date);
       } catch (e) {
         _dobController.text = rawDob; // Fallback to raw if parsing fails
       }
@@ -255,8 +255,8 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     // Convert Date Format from DD-MM-YYYY to YYYY-MM-DD
     String dobToSend = _dobController.text;
     try {
-        if (dobToSend.isNotEmpty && dobToSend.contains('-')) {
-           final parts = dobToSend.split('-');
+        if (dobToSend.isNotEmpty && dobToSend.contains('/')) {
+           final parts = dobToSend.split('/');
            if (parts.length == 3) {
               dobToSend = "${parts[2]}-${parts[1]}-${parts[0]}";
            }
@@ -326,7 +326,7 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     );
     if (picked != null) {
       setState(() {
-        _dobController.text = DateFormat('dd-MM-yyyy').format(picked);
+        _dobController.text = DateFormat('dd/MM/yyyy').format(picked);
       });
     }
   }

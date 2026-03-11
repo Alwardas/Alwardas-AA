@@ -101,7 +101,7 @@ class _StudentFeedbackScreenState extends State<StudentFeedbackScreen> {
                   separatorBuilder: (context, index) => const SizedBox(height: 15),
                   itemBuilder: (context, index) {
                     final item = _feedbacks[index];
-                    final dateStr = DateFormat('MMM d, yyyy • h:mm a').format(DateTime.parse(item['createdAt']).toLocal());
+                    final dateStr = DateFormat('dd/MM/yyyy • h:mm a').format(DateTime.parse(item['createdAt']).toLocal());
                     final rating = item['rating'] ?? 0;
                     final issueType = item['issueType'] ?? 'FEEDBACK';
                     final issueColor = _getIssueColor(issueType);
@@ -223,7 +223,7 @@ class _StudentFeedbackScreenState extends State<StudentFeedbackScreen> {
                                                  const Spacer(),
                                                  if (repliedAt != null)
                                                    Text(
-                                                      DateFormat('MMM d').format(DateTime.parse(repliedAt).toLocal()),
+                                                      DateFormat('dd/MM/yyyy').format(DateTime.parse(repliedAt).toLocal()),
                                                       style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey),
                                                    ),
                                              ],

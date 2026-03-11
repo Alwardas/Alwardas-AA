@@ -11,6 +11,7 @@ import 'hod_timetables_screen.dart';
 import 'hod_notifications_screen.dart';
 import 'hod_department_screen.dart';
 import 'hod_issues_screen.dart';
+import 'hod_syllabus_management_screen.dart';
 import 'hod_requests_screen.dart';
 
 
@@ -37,6 +38,7 @@ class HodMenuTab extends StatelessWidget {
       {'label': 'Our Time Tables', 'icon': Icons.access_time, 'route': const HodTimetablesScreen(), 'color': const Color(0xFF43e97b)},
       {'label': 'Requests', 'icon': Icons.notifications, 'route': const HodRequestsScreen(), 'color': const Color(0xFFff9f43)},
       {'label': 'Our Department', 'icon': Icons.account_balance, 'route': HodDepartmentScreen(userData: userData), 'color': const Color(0xFF3F51B5)},
+      {'label': 'Syllabus Management', 'icon': Icons.menu_book, 'route': HodSyllabusManagementScreen(userData: userData), 'color': Colors.purple},
       {'label': 'Issues', 'icon': Icons.report_problem, 'route': const HodIssuesScreen(), 'color': const Color(0xFFe74c3c)},
     ];
 

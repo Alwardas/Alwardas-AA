@@ -229,7 +229,7 @@ class _FacultyIssuesScreenState extends State<FacultyIssuesScreen> with SingleTi
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                    Text(
-                     "Date: ${DateFormat('dd MMM yyyy').format(DateTime.parse(issue['createdAt']).toLocal())}",
+                     "Date: ${DateFormat('dd/MM/yyyy').format(DateTime.parse(issue['createdAt']).toLocal())}",
                      style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey),
                    ),
                    if (isAssigned && !isResolved) 
