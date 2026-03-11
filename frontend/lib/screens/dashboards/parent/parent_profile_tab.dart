@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -317,18 +318,6 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
   }
 
   Widget _buildProfileCard(Color textColor, Color subTextColor, bool isDark) {
-    return Container(
-      padding: const EdgeInsets.all(24),
-      decoration: AppTheme.glassDecoration(
-        isDark: isDark,
-        opacity: 0.1,
-      ),
-      child: _buildProfileContent(textColor, subTextColor, isDark),
-    );
-  }
-
-  Widget _buildProfileContent(
-      Color textColor, Color subTextColor, bool isDark) {
     // Determine Student Details (Prefer _studentData, fallback to widget.currentChild)
     String studentName = widget.currentChild['name'] ?? 'N/A';
     String studentBranch = widget.currentChild['branch'] ?? 'N/A';
@@ -348,186 +337,318 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
     String semesterDisplay = "$studentYear $studentSem".trim();
     if (semesterDisplay.isEmpty) semesterDisplay = "N/A";
 
+    final contact = _phoneController.text.isNotEmpty
+        ? _phoneController.text
+        : '+91 XXXXX XXXXX';
+    final email = _profileData?['email'] ?? 'Not Provided';
+    final String displayName = _fullNameController.text.isNotEmpty
+        ? _fullNameController.text.toUpperCase()
+        : 'PARENT NAME';
+    String parentId = widget.userData['login_id'] ?? 'N/A';
+
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Parent Details
-        if (_isEditing)
-          _buildTextField(_fullNameController, "Enter Full Name", isDark)
-        else
-          _ValueText(
-              text: "Name : ${_fullNameController.text}",
-              color: textColor,
-              isHeader: true),
-
-        const SizedBox(height: 5),
-
-        _ValueText(
-            text: "ID : ${widget.userData['login_id'] ?? 'N/A'}",
-            color: textColor,
-            isHeader: true),
-
-        const SizedBox(height: 15),
-        Divider(color: Colors.grey.withValues(alpha: 0.2), height: 20),
-        const SizedBox(height: 5),
-
-        // Student Details
-        Text("Student Details",
-            style: GoogleFonts.poppins(
-                color: textColor, fontSize: 18, fontWeight: FontWeight.bold)),
-        const SizedBox(height: 15),
-
-        _ValueText(text: "Student Name : $studentName", color: subTextColor),
-        const SizedBox(height: 10),
-
-        _ValueText(text: "Student ID : $studentId", color: subTextColor),
-        const SizedBox(height: 10),
-
-        _ValueText(text: "Branch : $studentBranch", color: subTextColor),
-        const SizedBox(height: 10),
-
-        _ValueText(
-            text:
-                "Year & Section : $semesterDisplay - ${widget.userData['section'] ?? 'Section A'}",
-            color: subTextColor),
-
-        const SizedBox(height: 15),
-        Divider(color: Colors.grey.withValues(alpha: 0.2), height: 20),
-        const SizedBox(height: 5),
-
-        // Personal Details
-        Text("Personal Details",
-            style: GoogleFonts.poppins(
-                color: textColor, fontSize: 18, fontWeight: FontWeight.bold)),
-        const SizedBox(height: 15),
-
-        if (_isEditing)
-          _buildTextField(_phoneController, "Enter Phone", isDark)
-        else
-          _ValueText(
-              text: "Phone : ${_phoneController.text}", color: subTextColor),
-        const SizedBox(height: 10),
-
-        _ValueText(
-            text: "Email : ${_profileData?['email'] ?? 'parent@gmail.com'}",
-            color: subTextColor),
-
-        // ... (Edit buttons etc logic stays the same)
-        if (_isEditing) ...[
-          const SizedBox(height: 20),
-          Column(
+        // Name and ID Card
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: isDark
+                  ? []
+                  : [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.04),
+                        blurRadius: 20,
+                        offset: const Offset(0, 10),
+                      )
+                    ]),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: _handleSubmitCorrection,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        isDark ? Colors.white : const Color(0xFF4B7FFB),
-                    foregroundColor:
-                        isDark ? const Color(0xFF4B7FFB) : Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)),
-                  ),
-                  child: Text("Save Changes",
-                      style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+              Text(
+                displayName,
+                style: GoogleFonts.inter(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w800,
+                  color: textColor,
+                  letterSpacing: 0.5,
                 ),
               ),
-              TextButton(
-                  onPressed: _toggleEditMode, child: const Text("Cancel"))
-            ],
-          )
-        ] else if (_pendingRequest != null)
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.amber.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.amber),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              const SizedBox(height: 16),
+              Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.hourglass_empty,
-                      color: Colors.amber, size: 20),
-                  const SizedBox(width: 8),
-                  Text("Update Pending Approval",
-                      style: GoogleFonts.poppins(
-                          color: Colors.amber, fontWeight: FontWeight.bold)),
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? const Color(0xFF1E3A8A).withValues(alpha: 0.3)
+                          : const Color(0xFFEFF6FF),
+                      borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          bottomLeft: Radius.circular(20)),
+                    ),
+                    child: Text(
+                      "Parent ID",
+                      style: GoogleFonts.inter(
+                          color: isDark
+                              ? const Color(0xFF60A5FA)
+                              : const Color(0xFF3B82F6),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Clipboard.setData(ClipboardData(text: parentId));
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          content: Text('ID copied to clipboard'),
+                          duration: Duration(seconds: 2)));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 14, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF0F172A) : Colors.white,
+                        border: Border.all(
+                            color: isDark
+                                ? const Color(0xFF1E3A8A).withValues(alpha: 0.3)
+                                : const Color(0xFFEFF6FF),
+                            width: 1.5),
+                        borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20)),
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            parentId,
+                            style: GoogleFonts.inter(
+                                color: textColor,
+                                fontWeight: FontWeight.w800,
+                                fontSize: 12),
+                          ),
+                          const SizedBox(width: 8),
+                          Icon(Icons.copy_outlined,
+                              size: 16, color: subTextColor),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
-            ),
+            ],
           ),
+        ),
+
+        const SizedBox(height: 24),
+
+        // STUDENT DETAILS Section
+        _buildSection(
+            title: "STUDENT DETAILS",
+            lineColor: const Color(0xFF3B82F6), // Blue
+            child: Container(
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                      color: isDark ? Colors.white12 : const Color(0xFFF1F5F9),
+                      width: 1.5),
+                ),
+                child: Column(children: [
+                  _buildRowItem(
+                      icon: Icons.person_outline,
+                      iconColor: const Color(0xFF8B5CF6),
+                      label: "Student Name",
+                      value: studentName,
+                      isDark: isDark),
+                  _buildRowItem(
+                      icon: Icons.badge_outlined,
+                      iconColor: const Color(0xFFF59E0B),
+                      label: "Student ID",
+                      value: studentId,
+                      isDark: isDark,
+                      showCopy: true),
+                  _buildRowItem(
+                      icon: Icons.computer,
+                      iconColor: const Color(0xFF10B981),
+                      label: "Branch",
+                      value: studentBranch,
+                      isDark: isDark),
+                  _buildRowItem(
+                      icon: Icons.class_outlined,
+                      iconColor: const Color(0xFF3B82F6),
+                      label: "Year & Section",
+                      value:
+                          "$semesterDisplay - ${widget.userData['section'] ?? 'A'}",
+                      isDark: isDark,
+                      showBorder: false),
+                ]))),
+
+        const SizedBox(height: 24),
+
+        // PERSONAL DETAILS Section
+        _buildSection(
+          title: "PERSONAL DETAILS",
+          lineColor: const Color(0xFF10B981), // Teal
+          child: Container(
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(
+                    color: isDark ? Colors.white12 : const Color(0xFFF1F5F9),
+                    width: 1.5),
+              ),
+              child: Column(children: [
+                _buildRowItem(
+                    icon: Icons.phone,
+                    iconColor: const Color(0xFF8B5CF6),
+                    label: "Phone",
+                    value: contact,
+                    isDark: isDark,
+                    showCopy: true),
+                _buildRowItem(
+                    icon: Icons.email_outlined,
+                    iconColor: const Color(0xFFEC4899),
+                    label: "Email",
+                    value: email,
+                    isDark: isDark,
+                    showBorder: false,
+                    showCopy: true),
+              ])),
+        ),
       ],
     );
   }
 
-  Widget _buildTextField(
-      TextEditingController controller, String hint, bool isDark,
-      {IconData? icon, int maxLines = 1}) {
-    return Container(
-      decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1C1C2E) : Colors.grey[100],
-          borderRadius: BorderRadius.circular(10),
-          border:
-              Border.all(color: isDark ? Colors.white10 : Colors.grey[300]!)),
-      child: TextField(
-        controller: controller,
-        style: TextStyle(color: isDark ? Colors.white : Colors.black87),
-        maxLines: maxLines,
-        decoration: InputDecoration(
-          hintText: hint,
-          hintStyle: TextStyle(color: isDark ? Colors.white54 : Colors.grey),
-          border: InputBorder.none,
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
-          suffixIcon: icon != null
-              ? Icon(icon, color: isDark ? Colors.white54 : Colors.grey)
-              : null,
+  Widget _buildSection(
+      {required String? title,
+      required Color lineColor,
+      required Widget child}) {
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            width: 3.5,
+            decoration: BoxDecoration(
+              color: lineColor,
+              borderRadius: BorderRadius.circular(4),
+            ),
+            margin: const EdgeInsets.only(right: 16),
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (title != null) ...[
+                  Text(title,
+                      style: GoogleFonts.inter(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.2,
+                          color: const Color(0xFF64748B))),
+                  const SizedBox(height: 12),
+                ],
+                child,
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRowItem({
+    required IconData icon,
+    required Color iconColor,
+    required String label,
+    String? value,
+    bool isDark = false,
+    bool showCopy = false,
+    bool showBorder = true,
+  }) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: iconColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(icon, color: iconColor, size: 18),
+              ),
+              const SizedBox(width: 16),
+              Text(
+                label,
+                style: GoogleFonts.inter(
+                  color: isDark
+                      ? Colors.white70
+                      : (value == null
+                          ? const Color(0xFF1E293B)
+                          : const Color(0xFF475569)),
+                  fontSize: 13,
+                  fontWeight: value == null ? FontWeight.w600 : FontWeight.w500,
+                ),
+              ),
+              if (value != null) ...[
+                Expanded(
+                  child: GestureDetector(
+                    onTap: showCopy
+                        ? () {
+                            Clipboard.setData(ClipboardData(text: value));
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text('$label copied to clipboard'),
+                                duration: const Duration(seconds: 2)));
+                          }
+                        : null,
+                    behavior: HitTestBehavior.opaque,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            value,
+                            textAlign: TextAlign.right,
+                            softWrap: true,
+                            style: GoogleFonts.inter(
+                              color: isDark
+                                  ? Colors.white
+                                  : const Color(0xFF1E293B),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        if (showCopy) ...[
+                          const SizedBox(width: 8),
+                          const Icon(Icons.copy_outlined,
+                              size: 16, color: Color(0xFF94A3B8)),
+                        ]
+                      ],
+                    ),
+                  ),
+                )
+              ]
+            ],
+          ),
         ),
-      ),
-    );
-  }
-}
-
-class _SectionLabel extends StatelessWidget {
-  final String text;
-  final Color color;
-  const _SectionLabel({required this.text, required this.color});
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 2),
-      child: Text(
-        text.toUpperCase(),
-        style: GoogleFonts.poppins(
-            color: color,
-            fontSize: 10,
-            letterSpacing: 1.2,
-            fontWeight: FontWeight.w500),
-      ),
-    );
-  }
-}
-
-class _ValueText extends StatelessWidget {
-  final String text;
-  final Color color;
-  final bool isHeader;
-  const _ValueText(
-      {required this.text, required this.color, this.isHeader = false});
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text.isEmpty ? "N/A" : text,
-      style: GoogleFonts.poppins(
-          color: color,
-          fontSize: isHeader ? 18 : 15,
-          fontWeight: isHeader ? FontWeight.bold : FontWeight.w600),
+        if (showBorder)
+          Divider(
+              height: 1,
+              thickness: 1,
+              color: isDark ? Colors.white10 : const Color(0xFFF1F5F9),
+              indent: 56,
+              endIndent: 16),
+      ],
     );
   }
 }
