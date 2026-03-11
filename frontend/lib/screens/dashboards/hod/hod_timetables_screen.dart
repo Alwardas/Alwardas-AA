@@ -46,7 +46,8 @@ class YearData {
 // Timetables screen
 // ---------------------------------------------------------------------------
 class HodTimetablesScreen extends StatefulWidget {
-  const HodTimetablesScreen({super.key});
+  final String? branch;
+  const HodTimetablesScreen({super.key, this.branch});
 
   @override
   _HodTimetablesScreenState createState() => _HodTimetablesScreenState();
@@ -61,6 +62,7 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
 
   // Data
   String? _userBranch;
+  String? _userRole;
   
   // Labs Data
   List<Map<String, String>> _labs = [];
@@ -76,17 +78,30 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
   @override
   void initState() {
     super.initState();
-    _loadUserBranch();
+    _loadUserConfig();
   }
 
-  Future<void> _loadUserBranch() async {
+  Future<void> _loadUserConfig() async {
     final user = await AuthService.getUserSession();
-    if (user != null && user['branch'] != null) {
+    if (user != null) {
       if (mounted) {
         setState(() {
-          _userBranch = user['branch'];
+          _userRole = user['role']?.toString().toUpperCase();
         });
-        await _initData();
+      }
+    }
+    
+    if (widget.branch != null && widget.branch!.isNotEmpty) {
+      _userBranch = widget.branch;
+      _initData();
+    } else {
+      if (user != null && user['branch'] != null) {
+        if (mounted) {
+          setState(() {
+            _userBranch = user['branch'];
+          });
+          await _initData();
+        }
       }
     }
   }
@@ -304,8 +319,15 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
           children: [
             _buildBigCard(context, "Classes", Icons.class_, Colors.blue, () => setState(() => _currentView = TimetableView.classes)),
             const SizedBox(height: 20),
-            _buildBigCard(context, "Labs", Icons.science, Colors.orange, () => setState(() => _currentView = TimetableView.labs)),
-            const SizedBox(height: 20),
+            
+            if (_userRole != 'COORDINATOR') // Hide for Coordinator role
+              Column(
+                children: [
+                  _buildBigCard(context, "Labs", Icons.science, Colors.orange, () => setState(() => _currentView = TimetableView.labs)),
+                  const SizedBox(height: 20),
+                ],
+              ),
+            
             _buildBigCard(context, "Master Timetable", Icons.grid_view_rounded, Colors.purple, () => setState(() => _currentView = TimetableView.master)),
             const SizedBox(height: 20),
             _buildBigCard(context, "Timings", Icons.access_time_filled_outlined, Colors.teal, () {

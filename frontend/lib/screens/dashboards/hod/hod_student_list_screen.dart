@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 // Persistence
 import 'package:google_fonts/google_fonts.dart';
@@ -8,6 +8,7 @@ import '../../../core/services/auth_service.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
+import '../admin/student_details_screen.dart';
 
 class HodStudentListScreen extends StatefulWidget {
   final String branch;
@@ -63,11 +64,13 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
         
         for (var s in data) {
            currentSectionStudents.add({
+             'dbId': s['id'] ?? '', // Store DB UUID for profile view mapping
              'fullName': s['fullName'] ?? s['full_name'] ?? 'Unknown',
              'studentId': s['studentId'] ?? s['student_id'] ?? s['login_id'] ?? 'Unknown',
              'section': s['section'] ?? widget.section, 
              'branch': s['branch'] ?? widget.branch,
-             'year': s['year'] ?? widget.year
+             'year': s['year'] ?? widget.year,
+             'isSuspended': false,
            });
         }
       } else {
@@ -297,9 +300,14 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
     }
   }
 
-  // Fallback stubs
   void _suspendStudent(String id) {
-     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Suspend feature coming soon")));
+     setState(() {
+       final index = _studentList.indexWhere((s) => s['studentId'].toString() == id);
+       if (index != -1) {
+         _studentList[index]['isSuspended'] = !(_studentList[index]['isSuspended'] ?? false);
+       }
+     });
+     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Warning flag toggled")));
   }
   
   void _reportStudent(String id) {
@@ -409,19 +417,41 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                         itemCount: filteredList.length,
                         itemBuilder: (ctx, index) {
                           final student = filteredList[index];
-                          return Container(
-                            margin: const EdgeInsets.only(bottom: 16),
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12), // Compact padding
-                            decoration: BoxDecoration(
-                              color: cardColor,
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(color: iconBg),
-                              boxShadow: [
-                                BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
-                              ],
-                            ),
-                            child: Row(
-                              children: [
+                          return GestureDetector(
+                            onTap: () {
+                              if (_isSelectionMode) {
+                                setState(() {
+                                  if (_selectedIds.contains(student['studentId'])) {
+                                    _selectedIds.remove(student['studentId']);
+                                  } else {
+                                    _selectedIds.add(student['studentId']);
+                                  }
+                                });
+                              } else {
+                                final passId = (student['dbId'] != null && student['dbId'].toString().isNotEmpty) 
+                                               ? student['dbId'].toString() 
+                                               : student['studentId'].toString();
+                                Navigator.push(
+                                  context, 
+                                  MaterialPageRoute(
+                                    builder: (_) => StudentDetailsScreen(userId: passId, userName: student['fullName'])
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(bottom: 16),
+                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12), // Compact padding
+                              decoration: BoxDecoration(
+                                color: (student['isSuspended'] == true) ? Colors.red.withOpacity(0.05) : cardColor,
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(color: (student['isSuspended'] == true) ? Colors.redAccent.withOpacity(0.5) : iconBg, width: (student['isSuspended'] == true) ? 1.5 : 1),
+                                boxShadow: [
+                                  BoxShadow(color: (student['isSuspended'] == true) ? Colors.red.withOpacity(0.1) : Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
+                                ],
+                              ),
+                              child: Row(
+                                children: [
                                 if (_isSelectionMode)
                                   Checkbox(
                                     value: _selectedIds.contains(student['studentId']),
@@ -483,21 +513,22 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                                   icon: Icon(Icons.more_vert, color: subTextColor),
                                   onSelected: (val) {
                                     final id = student['studentId'].toString();
-                                    if (val == 'delete') _deleteStudent(index, id);
+                                    if (val == 'remove') _deleteStudent(index, id);
                                     if (val == 'suspend') _suspendStudent(id);
                                     if (val == 'report') _reportStudent(id);
                                   },
                                   itemBuilder: (context) => [
                                     const PopupMenuItem(value: 'suspend', child: Row(children: [Icon(Icons.block, color: Colors.orange), SizedBox(width: 8), Text("Suspend")])),
                                     const PopupMenuItem(value: 'report', child: Row(children: [Icon(Icons.flag, color: Colors.amber), SizedBox(width: 8), Text("Report")])),
-                                    const PopupMenuItem(value: 'delete', child: Row(children: [Icon(Icons.delete, color: Colors.red), SizedBox(width: 8), Text("Delete")])),
+                                    const PopupMenuItem(value: 'remove', child: Row(children: [Icon(Icons.delete, color: Colors.red), SizedBox(width: 8), Text("Remove")])),
                                   ],
                                 )
                               ],
                             ),
-                          );
-                        },
-                      ),
+                          ),
+                        );
+                      },
+                    ),
               ),
             ],
           ),

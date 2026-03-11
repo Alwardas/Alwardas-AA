@@ -5,6 +5,8 @@ import 'add_department_screen.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../../core/api_constants.dart';
+import 'coordinator_branch_details_screen.dart';
 
 class CoordinatorDepartmentScreen extends StatefulWidget {
   const CoordinatorDepartmentScreen({super.key});
@@ -14,8 +16,10 @@ class CoordinatorDepartmentScreen extends StatefulWidget {
 }
 
 class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScreen> {
-  // Initial hardcoded list to ensure default branches are always visible quickly
-  List<Map<String, dynamic>> branches = [
+  List<Map<String, dynamic>> branches = [];
+  bool _isLoading = false;
+
+  final List<Map<String, dynamic>> _presets = [
     {
       'name': 'Civil Engineering',
       'code': 'CIVIL',
@@ -53,8 +57,6 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
     },
   ];
 
-  bool _isLoading = false;
-
   @override
   void initState() {
     super.initState();
@@ -65,39 +67,70 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
     setState(() => _isLoading = true);
     try {
       final prefs = await SharedPreferences.getInstance();
-      // Use production URL as default
-      final String? baseUrl = prefs.getString('api_base_url') ?? 'https://alwardas-aa-production-ca71.up.railway.app';
-      final url = Uri.parse('$baseUrl/api/departments');
+      List<String> deletedPresets = prefs.getStringList('deleted_presets') ?? [];
 
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/departments');
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
         
-        setState(() {
-          for (var item in data) {
-            String branchName = item['branch'] ?? 'Unknown';
-            // Simple check to avoid creating duplicates if the name matches 'CME' or 'Computer Engineering' roughly.
-            // For now, exact match check or partial containment.
-            
-            bool exists = branches.any((test) => 
-               test['name'] == branchName || 
-               test['code'] == branchName ||
-               (test['name'] as String).contains(branchName)
-            );
+        if (mounted) {
+          setState(() {
+            branches.clear();
 
-            if (!exists) {
-              // Add new dynamic branch
-              branches.add({
-                'name': branchName,
-                'code': _generateShortCode(branchName),
-                'icon': Icons.school_rounded, // Default icon for dynamic branches
-                'color': const Color(0xFF43A047), // Default Green theme for new branches
-                'gradient': [const Color(0xFF66BB6A), const Color(0xFF2E7D32)],
-              });
+            // 1. Add presets that haven't been deleted locally
+            for (var preset in _presets) {
+              if (!deletedPresets.contains(preset['name'])) {
+                branches.add(Map.from(preset));
+              }
             }
-          }
-        });
+
+            // 2. Add or update data from the database
+            for (var item in data) {
+              String branchName = item['branch'] ?? 'Unknown';
+              
+              int existingIdx = branches.indexWhere((b) => b['name'] == branchName);
+              
+              if (existingIdx != -1) {
+                // If the preset is already in the list, update its short code if available from DB
+                if (item['short_code'] != null && item['short_code'].toString().isNotEmpty) {
+                  branches[existingIdx]['code'] = item['short_code'];
+                }
+              } else {
+                // If it doesn't exist in our current list, it's either entirely new (AI & ML)
+                // or a preset we deleted locally but it exists in DB (re-added).
+                // If it's in the DB, it supersedes the local deletion. We should add it.
+                var matchingPreset = _presets.firstWhere(
+                  (preset) => 
+                    preset['name'] == branchName || 
+                    preset['code'] == branchName ||
+                    (preset['name'] as String).contains(branchName),
+                  orElse: () => {
+                    'name': branchName,
+                    'code': _generateShortCode(branchName),
+                    'icon': Icons.school_rounded,
+                    'color': const Color(0xFF43A047),
+                    'gradient': [const Color(0xFF66BB6A), const Color(0xFF2E7D32)],
+                  }
+                );
+
+                branches.add({
+                  ...matchingPreset,
+                  'name': branchName,
+                  'code': item['short_code'] ?? matchingPreset['code'] ?? _generateShortCode(branchName),
+                });
+                
+                // If it was in deletedPresets previously but is now in the database, 
+                // we should remove it from the deletedList so it persists normally.
+                if (deletedPresets.contains(branchName)) {
+                   deletedPresets.remove(branchName);
+                   prefs.setStringList('deleted_presets', deletedPresets);
+                }
+              }
+            }
+          });
+        }
       }
     } catch (e) {
       debugPrint("Error fetching departments: $e");
@@ -127,26 +160,28 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
   }
 
   Future<void> _deleteDepartment(String branchName) async {
-    final prefs = await SharedPreferences.getInstance();
-    final String? baseUrl = prefs.getString('api_base_url') ?? 'https://alwardas-aa-production-ca71.up.railway.app'; // Default to Prod
-    
     try {
       final response = await http.post(
-        Uri.parse('$baseUrl/api/departments/delete'),
+        Uri.parse('${ApiConstants.baseUrl}/api/departments/delete'),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({"branch": branchName}),
       );
 
-      if (response.statusCode == 200) {
+      // 200 = Success DB delete. 404 = Not found in DB (which is fine if it's just a UI preset).
+      if (response.statusCode == 200 || response.statusCode == 404) {
         if (mounted) {
            ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text("Department '$branchName' deleted successfully")),
           );
-          _fetchDepartments(); // Refresh to sync
+
+          // Mark it as deleted locally so the preset doesn't reload.
+          final prefs = await SharedPreferences.getInstance();
+          List<String> deletedPresets = prefs.getStringList('deleted_presets') ?? [];
+          if (!deletedPresets.contains(branchName)) {
+             deletedPresets.add(branchName);
+             await prefs.setStringList('deleted_presets', deletedPresets);
+          }
           
-          // Also remove locally to reflect immediately if it was a hardcoded one that isn't in DB yet? 
-          // Actually, better to just refresh. But for hardcoded ones, they will reappear if not persisted in DB but just hardcoded.
-          // For now assuming we are deleting dynamic ones.
           setState(() {
             branches.removeWhere((b) => b['name'] == branchName);
           });
@@ -154,7 +189,7 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
       } else {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-             SnackBar(content: Text("Failed to delete: ${response.body}")),
+             SnackBar(content: Text("Failed to delete department.")),
           );
         }
       }
@@ -201,9 +236,11 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
           ),
         ],
       ),
-      body: _isLoading && branches.length <= 5 
+      body: _isLoading && branches.isEmpty 
         ? const Center(child: CircularProgressIndicator()) 
-        : AnimationLimiter(
+        : branches.isEmpty
+          ? const Center(child: Text("No departments found. Add a department to get started."))
+          : AnimationLimiter(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: RefreshIndicator(
@@ -257,9 +294,12 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
         child: InkWell(
           borderRadius: BorderRadius.circular(20),
           onTap: () {
-            // Future navigation to branch details?
-            ScaffoldMessenger.of(context).showSnackBar(
-               SnackBar(content: Text("Selected: ${branch['name']}")),
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => CoordinatorBranchDetailsScreen(
+                branchName: branch['name'],
+                shortCode: branch['code'],
+              )),
             );
           },
           onLongPress: () {

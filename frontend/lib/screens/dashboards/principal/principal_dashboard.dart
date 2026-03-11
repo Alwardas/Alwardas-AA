@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +21,8 @@ import 'principal_lesson_plans_screen.dart';
 import 'principal_requests_screen.dart';
 import 'principal_schedule_screen.dart';
 import 'principal_timetables_screen.dart';
+import 'principal_issues_screen.dart';
+import '../coordinator/coordinator_department_screen.dart';
 import 'principal_menu_tab.dart';
 import 'principal_profile_tab.dart';
 import 'dart:async';
@@ -294,8 +296,6 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  
                   GridView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -339,28 +339,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalTimetablesScreen())),
                         ),
-                        _buildQuickAccessCard(
-                          Icons.inbox_outlined,
-                          'HOD Requests',
-                          'Approve HODs',
-                          cardColor,
-                          const Color(0xFFf1c40f).withValues(alpha: 0.1), 
-                          const Color(0xFFf1c40f),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalRequestsScreen())),
-                        ),
-                        _buildQuickAccessCard(
-                          Icons.campaign_outlined,
-                          'Announcements',
-                          '& Warnings',
-                          cardColor,
-                          const Color(0xFFff6347).withValues(alpha: 0.1), 
-                          const Color(0xFFff6347),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalAnnouncementsScreen())),
-                        ),
+
                         _buildQuickAccessCard(
                           Icons.event_note,
                           'My Schedule',
@@ -384,76 +363,30 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalFacultyScreen())),
                         ),
                         _buildQuickAccessCard(
-                          Icons.person_outline,
-                          'Profile',
-                          'View Details',
+                          Icons.business,
+                          'Departments',
+                          'All Branches',
                           cardColor,
-                          Colors.grey.withValues(alpha: 0.1), 
-                          Colors.grey,
+                          const Color(0xFF29B6F6).withValues(alpha: 0.1), 
+                          const Color(0xFF29B6F6),
                           textColor,
                           subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 2),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorDepartmentScreen())),
+                        ),
+                        _buildQuickAccessCard(
+                          Icons.report_problem,
+                          'Issues',
+                          'Reported Issues',
+                          cardColor,
+                          const Color(0xFFEF5350).withValues(alpha: 0.1), 
+                          const Color(0xFFEF5350),
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalIssuesScreen())),
                         ),
                     ],
                   ),
 
-                  const SizedBox(height: 25),
-
-                  // 4. Today's Schedule (Priority Tasks)
-                  Text(
-                    "Priority Tasks",
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.05),
-                          blurRadius: 10,
-                          offset: const Offset(0, 5),
-                        ),
-                      ],
-                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'DUE TODAY',
-                          style: GoogleFonts.poppins(
-                            color: const Color(0xFF8E2DE2),
-                            fontSize: 13,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          'Review Budget Proposals',
-                          style: GoogleFonts.poppins(
-                            color: textColor,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Finance Dept',
-                          style: GoogleFonts.poppins(
-                            color: subTextColor,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
                 ],
               ),
             ),

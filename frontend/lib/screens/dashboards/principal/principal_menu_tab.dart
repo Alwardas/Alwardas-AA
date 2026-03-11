@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -10,6 +10,8 @@ import 'principal_timetables_screen.dart';
 import 'principal_schedule_screen.dart';
 import 'principal_requests_screen.dart';
 import 'principal_lesson_plans_screen.dart';
+import 'principal_issues_screen.dart';
+import '../coordinator/coordinator_department_screen.dart';
 
 class PrincipalMenuTab extends StatelessWidget {
   const PrincipalMenuTab({super.key});
@@ -31,6 +33,8 @@ class PrincipalMenuTab extends StatelessWidget {
       {'label': 'My Schedule', 'icon': Icons.today, 'route': const PrincipalScheduleScreen(), 'color': const Color(0xFFfa709a)},
       {'label': 'Requests & Approvals', 'icon': Icons.inbox, 'route': const PrincipalRequestsScreen(), 'color': const Color(0xFFf1c40f)},
       {'label': 'Syllabus Management', 'icon': Icons.book, 'route': const PrincipalLessonPlansScreen(), 'color': const Color(0xFF38ef7d)},
+      {'label': 'Issues', 'icon': Icons.report_problem, 'route': const PrincipalIssuesScreen(), 'color': const Color(0xFFEF5350)},
+      {'label': 'Departments', 'icon': Icons.business, 'route': const CoordinatorDepartmentScreen(), 'color': const Color(0xFF29B6F6)},
     ];
 
     return SafeArea(

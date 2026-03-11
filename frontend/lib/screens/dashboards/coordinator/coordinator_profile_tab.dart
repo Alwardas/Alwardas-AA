@@ -1,127 +1,538 @@
-﻿import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:intl/intl.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
-import '../../../core/theme/app_theme.dart';
+import '../../../core/api_constants.dart';
+import '../../../core/services/auth_service.dart';
 
-class CoordinatorProfileTab extends StatelessWidget {
+class CoordinatorProfileTab extends StatefulWidget {
   final Map<String, dynamic> userData;
   final VoidCallback onLogout;
 
   const CoordinatorProfileTab({super.key, required this.userData, required this.onLogout});
 
   @override
-  Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    final isDark = themeProvider.isDarkMode;
-    final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
-    final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
-    final iconBg = isDark ? ThemeColors.darkIconBg : ThemeColors.lightIconBg;
+  _CoordinatorProfileTabState createState() => _CoordinatorProfileTabState();
+}
 
-    final Map<String, dynamic> displayData = {
-      'fullName': userData['full_name'] ?? 'Coordinator',
-      'employeeId': userData['login_id'] ?? 'CO001',
-      'role': userData['role'] ?? 'Coordinator',
-      'email': userData['email'] ?? 'coordinator@college.edu',
-      'phone': userData['phone'] ?? '+91 99999 99999',
-      'experience': userData['experience'] ?? 'Senior Admin'
-    };
+class _CoordinatorProfileTabState extends State<CoordinatorProfileTab> {
+  // State
+  Map<String, dynamic>? _profileData;
+  bool _loading = true;
 
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        children: [
-          // Header
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: Text("Profile", style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold, color: textColor)),
-          ),
+  // Edit Form
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _idController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _experienceController = TextEditingController();
+  final TextEditingController _dobController = TextEditingController();
 
-          // College Logo
-          const SizedBox(height: 10),
-          Image.asset('assets/images/college logo.png', width: 120, height: 120, errorBuilder: (c,e,s) => const Icon(Icons.school, size: 80)),
-          const SizedBox(height: 10),
-          Text(
-            "Alwardas Polytechnic", 
-            style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor, letterSpacing: 1),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 30),
+  @override
+  void initState() {
+    super.initState();
+    _fetchProfile();
+  }
 
-          // Profile Card
-          Container(
-            padding: const EdgeInsets.all(24),
-            decoration: AppTheme.glassDecoration(
-              isDark: isDark,
-              opacity: 0.1,
-            ),
+  Future<void> _fetchProfile() async {
+    final user = await AuthService.getUserSession();
+    if (user == null) {
+      if (mounted) setState(() => _loading = false);
+      return;
+    }
+    final userId = user['id'];
+
+    setState(() => _loading = true);
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/faculty/profile?userId=$userId');
+      final response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        setState(() {
+          _profileData = data;
+          _fullNameController.text = data['fullName'] ?? '';
+          _phoneController.text = data['phoneNumber'] ?? '';
+          _experienceController.text = data['experience'] ?? '';
+          _idController.text = 'ID-${data['facultyId'] ?? ''}';
+          _emailController.text = data['email'] ?? '';
+          if (data['dob'] != null && data['dob'].toString().isNotEmpty) {
+            try {
+               _dobController.text = DateFormat('dd MMM yyyy').format(DateTime.parse(data['dob']));
+            } catch (e) {
+               _dobController.text = data['dob'];
+            }
+          } else {
+             _dobController.text = '';
+          }
+        });
+      } else {
+         // Fallback to widget.userData
+         setState(() {
+           _profileData = widget.userData;
+           _fullNameController.text = widget.userData['full_name'] ?? '';
+           _idController.text = 'ID-${widget.userData['login_id'] ?? ''}';
+         });
+      }
+    } catch (e) {
+      debugPrint("Error fetching profile: $e");
+    } finally {
+      if (mounted) setState(() => _loading = false);
+    }
+  }
+
+  Future<void> _saveChanges(Map<String, String> updates) async {
+     try {
+       final user = await AuthService.getUserSession();
+       if (user == null) return;
+       
+       String apiDob = updates['dob'] ?? '';
+       try {
+          if (apiDob.isNotEmpty) {
+             apiDob = DateFormat('yyyy-MM-dd').format(DateFormat('dd MMM yyyy').parse(apiDob));
+          }
+       } catch(_) {}
+
+       final response = await http.post(
+         Uri.parse('${ApiConstants.baseUrl}/api/user/update'),
+         headers: {'Content-Type': 'application/json'},
+         body: json.encode({
+           'userId': user['id'],
+           'fullName': updates['fullName'],
+           'phoneNumber': updates['phoneNumber'],
+           'experience': updates['experience'],
+           'email': updates['email'],
+           'dob': apiDob,
+         })
+       );
+
+       if (response.statusCode == 200) {
+         if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: Text("Profile Updated!"),
+              backgroundColor: Colors.green,
+            ));
+         }
+         _fetchProfile();
+       } else {
+         if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Update Failed: ${response.statusCode}")));
+         }
+       }
+     } catch (e) {
+       if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Network Error")));
+       }
+     }
+  }
+
+  void _showEditProfileDialog() {
+    final TextEditingController nameC = TextEditingController(text: _fullNameController.text);
+    final TextEditingController phoneC = TextEditingController(text: _phoneController.text);
+    final TextEditingController emailC = TextEditingController(text: _emailController.text);
+    final TextEditingController expC = TextEditingController(text: _experienceController.text);
+    final TextEditingController dobC = TextEditingController(text: _dobController.text);
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Edit Profile", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+          content: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                _buildSection("Full Name", displayData['fullName'], textColor, subTextColor),
-                _buildDivider(iconBg),
-                Row(
-                  children: [
-                    Expanded(child: _buildSection("ID", displayData['employeeId'], textColor, subTextColor)),
-                    Expanded(child: _buildSection("Role", displayData['role'], textColor, subTextColor)),
-                  ],
-                ),
-                _buildDivider(iconBg),
-                Row(
-                  children: [
-                    Expanded(child: _buildSection("Experience", displayData['experience'], textColor, subTextColor)),
-                    Expanded(child: _buildSection("Phone", displayData['phone'], textColor, subTextColor)),
-                  ],
-                ),
-                _buildDivider(iconBg),
-                _buildSection("Email", displayData['email'], textColor, subTextColor),
+                TextField(controller: nameC, decoration: const InputDecoration(labelText: "Full Name")),
+                TextField(controller: dobC, decoration: const InputDecoration(labelText: "Date of Birth (dd MMM yyyy)"), readOnly: true, onTap: () async {
+                   final DateTime? picked = await showDatePicker(
+                      context: context,
+                      initialDate: DateTime.now(),
+                      firstDate: DateTime(1950),
+                      lastDate: DateTime.now(),
+                    );
+                    if (picked != null) {
+                        dobC.text = DateFormat('dd MMM yyyy').format(picked);
+                    }
+                }),
+                TextField(controller: expC, decoration: const InputDecoration(labelText: "Experience (Years)"), keyboardType: TextInputType.number),
+                TextField(controller: phoneC, decoration: const InputDecoration(labelText: "Phone Number"), keyboardType: TextInputType.phone),
+                TextField(controller: emailC, decoration: const InputDecoration(labelText: "Email ID"), keyboardType: TextInputType.emailAddress),
               ],
             ),
           ),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(context), child: const Text("Cancel")),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                _saveChanges({
+                  'fullName': nameC.text,
+                  'phoneNumber': phoneC.text,
+                  'experience': expC.text,
+                  'email': emailC.text,
+                  'dob': dobC.text,
+                });
+              }, 
+              child: const Text("Save")
+            )
+          ],
+        );
+      }
+    );
+  }
 
-          const SizedBox(height: 40),
+  @override
+  Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDark = themeProvider.isDarkMode;
 
-          // Footer
-          Column(
-            children: [
-              GestureDetector(
-                onTap: onLogout,
-                child: Padding(
-                  padding: const EdgeInsets.all(12),
+    final Color bgColor = isDark ? const Color(0xFF1E1E2C) : const Color(0xFFF8FAFC);
+    final Color textColor = isDark ? Colors.white : const Color(0xFF1E293B);
+    final Color subTextColor = isDark ? Colors.white70 : const Color(0xFF64748B);
+
+    return Scaffold(
+      backgroundColor: bgColor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: false,
+        automaticallyImplyLeading: false,
+        title: Text("My Profile", style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w700, fontSize: 20)),
+        actions: [
+          Theme(
+            data: Theme.of(context).copyWith(
+               cardColor: isDark ? const Color(0xFF222240) : Colors.white,
+            ),
+            child: PopupMenuButton<String>(
+              icon: Icon(Icons.more_vert, color: textColor),
+              onSelected: (value) {
+                if (value == 'update_profile') {
+                  _showEditProfileDialog();
+                } else if (value == 'change_password') {
+                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Feature coming soon')));
+                } else if (value == 'logout') {
+                   widget.onLogout();
+                }
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                 PopupMenuItem<String>(
+                  value: 'update_profile',
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(Icons.logout, color: Colors.red, size: 24),
-                      const SizedBox(width: 10),
-                      Text("Logout", style: GoogleFonts.poppins(color: Colors.red, fontSize: 16, fontWeight: FontWeight.bold)),
+                      Icon(Icons.edit, color: textColor, size: 20),
+                      const SizedBox(width: 8),
+                       Text('Update Profile', style: TextStyle(color: textColor)),
                     ],
                   ),
                 ),
+                PopupMenuItem<String>(
+                  value: 'change_password',
+                  child: Row(
+                    children: [
+                      Icon(Icons.lock_outline, color: textColor, size: 20),
+                      const SizedBox(width: 8),
+                       Text('Change Password', style: TextStyle(color: textColor)),
+                    ],
+                  ),
+                ),
+                const PopupMenuDivider(),
+                PopupMenuItem<String>(
+                  value: 'logout',
+                  child: Row(
+                    children: [
+                      const Icon(Icons.logout, color: Color(0xFFDC2626), size: 20),
+                      const SizedBox(width: 8),
+                       const Text('Logout', style: TextStyle(color: Color(0xFFDC2626))),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      body: _loading 
+          ? Center(child: CircularProgressIndicator(color: Theme.of(context).primaryColor))
+          : SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  // Logo Section
+                  SizedBox(
+                    height: 240,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const SizedBox(height: 16),
+                        Image.asset(
+                          'assets/images/college logo.png', 
+                          height: 140,
+                          width: 140,
+                          errorBuilder: (context, error, stackTrace) => 
+                             Icon(Icons.school, size: 100, color: subTextColor.withValues(alpha: 0.3)),
+                        ),
+                        const SizedBox(height: 12),
+                        Text(
+                          "Alwardas Polytechnic",
+                          style: GoogleFonts.inter(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: textColor,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                      ],
+                    ),
+                  ),
+                  
+                  // Main Profile Content
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: _buildProfileCard(textColor, subTextColor, isDark),
+                  ),
+                  
+                  const SizedBox(height: 100),
+                ],
               ),
-              const SizedBox(height: 5),
-              Text("App Version 1.0.0", style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
-              const SizedBox(height: 40),
+            ),
+    );
+  }
+
+  Widget _buildProfileCard(Color textColor, Color subTextColor, bool isDark) {
+    final contact = _phoneController.text.isNotEmpty ? _phoneController.text : '+91 XXXXX XXXXX';
+    final email = _emailController.text.isNotEmpty ? _emailController.text : 'Not Provided';
+    final String displayName = _fullNameController.text.toUpperCase();
+    String rawRole = widget.userData['role'] ?? 'Coordinator';
+    final String role = rawRole.toUpperCase() == 'COORDINATOR' ? 'Coordinator' : rawRole;
+    final String experience = _experienceController.text.isNotEmpty ? "${_experienceController.text} Years" : 'N/A';
+    final String dob = _dobController.text.isNotEmpty ? _dobController.text : 'Not Provided';
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Name and ID Card
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: isDark ? [] : [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.04),
+                blurRadius: 20,
+                offset: const Offset(0, 10),
+              )
+            ]
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                displayName,
+                style: GoogleFonts.inter(
+                  fontSize: 16, 
+                  fontWeight: FontWeight.w800,
+                  color: textColor,
+                  letterSpacing: 0.5,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: isDark ? const Color(0xFF1E3A8A).withValues(alpha: 0.3) : const Color(0xFFEFF6FF),
+                      borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
+                    ),
+                    child: Text(
+                      "Employee ID",
+                      style: GoogleFonts.inter(color: isDark ? const Color(0xFF60A5FA) : const Color(0xFF3B82F6), fontWeight: FontWeight.w700, fontSize: 12),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Clipboard.setData(ClipboardData(text: _idController.text));
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('ID copied to clipboard'), duration: Duration(seconds: 2)));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF0F172A) : Colors.white,
+                        border: Border.all(color: isDark ? const Color(0xFF1E3A8A).withValues(alpha: 0.3) : const Color(0xFFEFF6FF), width: 1.5),
+                        borderRadius: const BorderRadius.only(topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            _idController.text,
+                            style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w800, fontSize: 12),
+                          ),
+                          const SizedBox(width: 8),
+                          Icon(Icons.copy_outlined, size: 16, color: subTextColor),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
+          ),
+        ),
+        
+        const SizedBox(height: 24),
+
+        // PROFESSIONAL Section
+        _buildSection(
+          title: "PROFESSIONAL",
+          lineColor: const Color(0xFF3B82F6), // Blue
+          child: Container(
+             decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: isDark ? Colors.white12 : const Color(0xFFF1F5F9), width: 1.5),
+             ),
+             child: Column(
+                children: [
+                   _buildRowItem(icon: Icons.verified_user_outlined, iconColor: const Color(0xFFF59E0B), label: "Role", value: role, isDark: isDark),
+                   _buildRowItem(icon: Icons.business_center_outlined, iconColor: const Color(0xFF10B981), label: "Experience", value: experience, isDark: isDark, showBorder: false),
+                ]
+             )
+          )
+        ),
+        
+        const SizedBox(height: 24),
+
+        // PERSONAL Section
+        _buildSection(
+          title: "PERSONAL",
+          lineColor: const Color(0xFF10B981), // Teal
+          child: Container(
+             decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: isDark ? Colors.white12 : const Color(0xFFF1F5F9), width: 1.5),
+             ),
+             child: Column(
+                children: [
+                   _buildRowItem(icon: Icons.calendar_today, iconColor: const Color(0xFF3B82F6), label: "Date of Birth", value: dob, isDark: isDark),
+                   _buildRowItem(icon: Icons.phone, iconColor: const Color(0xFF8B5CF6), label: "Phone", value: contact, isDark: isDark, showCopy: true),
+                   _buildRowItem(icon: Icons.email_outlined, iconColor: const Color(0xFFEC4899), label: "Email", value: email, isDark: isDark, showBorder: false, showCopy: true),
+                ]
+              )
+           ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSection({required String? title, required Color lineColor, required Widget child}) {
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            width: 3.5,
+            decoration: BoxDecoration(
+              color: lineColor,
+              borderRadius: BorderRadius.circular(4),
+            ),
+            margin: const EdgeInsets.only(right: 16),
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (title != null) ...[
+                  Text(title, style: GoogleFonts.inter(fontSize: 11, fontWeight: FontWeight.w700, letterSpacing: 1.2, color: const Color(0xFF64748B))),
+                  const SizedBox(height: 12),
+                ],
+                child,
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildSection(String label, String value, Color textColor, Color subTextColor) {
+  Widget _buildRowItem({
+    required IconData icon, 
+    required Color iconColor, 
+    required String label, 
+    String? value, 
+    bool isDark = false, 
+    bool showCopy = false,
+    bool showBorder = true,
+  }) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label.toUpperCase(), style: GoogleFonts.poppins(fontSize: 12, color: subTextColor.withValues(alpha: 0.7), letterSpacing: 1, fontWeight: FontWeight.w600)),
-        const SizedBox(height: 5),
-        Text(value, style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: iconColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(icon, color: iconColor, size: 18),
+              ),
+              const SizedBox(width: 16),
+              Text(
+                label,
+                style: GoogleFonts.inter(
+                  color: isDark ? Colors.white70 : (value == null ? const Color(0xFF1E293B) : const Color(0xFF475569)),
+                  fontSize: 13,
+                  fontWeight: value == null ? FontWeight.w600 : FontWeight.w500,
+                ),
+              ),
+              if (value != null) ...[
+                Expanded(
+                  child: GestureDetector(
+                    onTap: showCopy ? () {
+                      Clipboard.setData(ClipboardData(text: value));
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$label copied to clipboard'), duration: const Duration(seconds: 2)));
+                    } : null,
+                    behavior: HitTestBehavior.opaque,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            value,
+                            textAlign: TextAlign.right,
+                            softWrap: true,
+                            style: GoogleFonts.inter(
+                              color: isDark ? Colors.white : const Color(0xFF1E293B),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        if (showCopy) ...[
+                          const SizedBox(width: 8),
+                          const Icon(Icons.copy_outlined, size: 16, color: Color(0xFF94A3B8)),
+                        ]
+                      ],
+                    ),
+                  ),
+                )
+              ]
+            ],
+          ),
+        ),
+        if (showBorder)
+           Divider(height: 1, thickness: 1, color: isDark ? Colors.white10 : const Color(0xFFF1F5F9), indent: 56, endIndent: 16),
       ],
     );
-  }
-
-  Widget _buildDivider(Color color) {
-    return Container(height: 1, width: double.infinity, color: color, margin: const EdgeInsets.symmetric(vertical: 15));
   }
 }

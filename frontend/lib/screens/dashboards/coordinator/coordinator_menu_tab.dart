@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
@@ -34,7 +34,6 @@ class CoordinatorMenuTab extends StatelessWidget {
       {'label': 'Attendance Monitor', 'icon': Icons.calendar_today, 'route': const PrincipalAttendanceScreen(), 'color': ThemeColors.accentBlue},
       {'label': 'Faculty Directory', 'icon': Icons.people, 'route': const PrincipalFacultyScreen(), 'color': ThemeColors.accentCyan},
       {'label': 'Master Timetables', 'icon': Icons.access_time, 'route': const PrincipalTimetablesScreen(), 'color': ThemeColors.accentGreen},
-      {'label': 'My Schedule', 'icon': Icons.today, 'route': const PrincipalScheduleScreen(), 'color': ThemeColors.accentPurple},
       {'label': 'Syllabus Management', 'icon': Icons.book, 'route': const PrincipalLessonPlansScreen(), 'color': ThemeColors.accentGreen},
       {'label': 'Issues', 'icon': Icons.report_problem_outlined, 'route': const CoordinatorIssuesScreen(), 'color': ThemeColors.accentGold},
       {'label': 'Requests', 'icon': Icons.request_page_outlined, 'route': const CoordinatorRequestsScreen(), 'color': ThemeColors.accentCyan},

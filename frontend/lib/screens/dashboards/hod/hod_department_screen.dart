@@ -41,8 +41,6 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     },
   ];
 
-
-
   void _addSection(int yearIndex) {
     TextEditingController controller = TextEditingController();
     showDialog(
@@ -143,9 +141,6 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
       ),
     );
   }
-
-  // Helper methods remain same, but _buildAppBar is no longer needed.
-
 
   Widget _buildSectionHeader(String title, Color textColor) {
     return Text(
@@ -329,7 +324,6 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
     for (var yearData in widget.years) {
       final yearName = yearData['year'];
       
-      // 1. Try API first for the truth
       try {
         final url = Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(yearName)}');
         final response = await http.get(url);
@@ -338,7 +332,6 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
           final List<dynamic> fetched = json.decode(response.body);
           if (fetched.isNotEmpty) {
             yearData['sections'] = fetched.map((e) => e.toString()).toList();
-            // Sync to prefs for offline fallback
             prefs.setStringList('sections_${branch}_$yearName', yearData['sections']);
             continue; 
           }
@@ -347,7 +340,6 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
         debugPrint("Error fetching counts for $yearName: $e");
       }
 
-      // 2. Fallback to Prefs if API fails or is empty
       final key = 'sections_${branch}_$yearName';
       final List<String>? stored = prefs.getStringList(key);
       if (stored != null) {
@@ -482,7 +474,6 @@ class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
     for (var yearData in widget.years) {
       final yearName = yearData['year'];
       
-      // 1. Try API first for the truth
       try {
         final url = Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(yearName)}');
         final response = await http.get(url);
@@ -491,7 +482,6 @@ class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
           final List<dynamic> fetched = json.decode(response.body);
           if (fetched.isNotEmpty) {
             yearData['sections'] = fetched.map((e) => e.toString()).toList();
-            // Sync to prefs for offline fallback
             prefs.setStringList('sections_${branch}_$yearName', yearData['sections']);
             continue; 
           }
@@ -500,7 +490,6 @@ class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
         debugPrint("Error fetching counts for $yearName: $e");
       }
 
-      // 2. Fallback to Prefs if API fails or is empty
       final key = 'sections_${branch}_$yearName';
       final List<String>? stored = prefs.getStringList(key);
       if (stored != null) {
@@ -544,7 +533,7 @@ class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
                 final year = widget.years[index];
                 return GestureDetector(
                   onTap: () {
-                    _showSyllabusSectionsModal(context, year);
+                    _openSyllabusSectionsScreen(context, year);
                   },
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 15),
@@ -580,7 +569,22 @@ class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
                             ],
                           ),
                         ),
-                        Icon(Icons.percent_rounded, size: 24, color: Colors.purple.withValues(alpha: 0.7)),
+                        SizedBox(
+                          width: 45,
+                          height: 45,
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              CircularProgressIndicator(
+                                value: 0.0,
+                                strokeWidth: 4,
+                                backgroundColor: Colors.purple.withValues(alpha: 0.1),
+                                valueColor: const AlwaysStoppedAnimation<Color>(Colors.purple),
+                              ),
+                              Text('0%', style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: textColor)),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -593,30 +597,25 @@ class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
     );
   }
 
-  void _showSyllabusSectionsModal(BuildContext context, Map<String, dynamic> yearData) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (context) => HodSyllabusSectionsModal(
-        yearData: yearData,
-        branch: widget.userData['branch'] ?? 'Computer Engineering',
-      ),
-    );
+  void _openSyllabusSectionsScreen(BuildContext context, Map<String, dynamic> yearData) {
+    Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusSectionsScreen(
+      yearData: yearData,
+      branch: widget.userData['branch'] ?? 'Computer Engineering',
+    )));
   }
 }
 
-class HodSyllabusSectionsModal extends StatelessWidget {
+class HodSyllabusSectionsScreen extends StatelessWidget {
   final Map<String, dynamic> yearData;
   final String branch;
 
-  const HodSyllabusSectionsModal({super.key, required this.yearData, required this.branch});
+  const HodSyllabusSectionsScreen({super.key, required this.yearData, required this.branch});
 
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final isDark = themeProvider.isDarkMode;
-    final bgColor = isDark ? const Color(0xFF1E1E1E) : Colors.white;
+    final bgColors = isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient;
     final textColor = isDark ? Colors.white : Colors.black87;
     final subTextColor = isDark ? Colors.white70 : Colors.black54;
 
@@ -625,114 +624,108 @@ class HodSyllabusSectionsModal extends StatelessWidget {
     // Sort sections alphabetically
     sections.sort();
 
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.7,
-      decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(24),
-          topRight: Radius.circular(24),
-        ),
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: Text('${yearData['year']} Sections', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: textColor),
       ),
-      child: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.only(top: 12),
-            width: 40,
-            height: 5,
-            decoration: BoxDecoration(
-              color: isDark ? Colors.white24 : Colors.black12,
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  '${yearData['year']} Sections',
-                  style: GoogleFonts.poppins(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: textColor,
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.close, color: textColor),
-                  onPressed: () => Navigator.pop(context),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: sections.isEmpty
-                ? Center(
-                    child: Text(
-                      'No sections found for ${yearData['year']}.',
-                      style: GoogleFonts.poppins(color: subTextColor),
-                    ),
-                  )
-                : ListView.builder(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    itemCount: sections.length,
-                    itemBuilder: (context, index) {
-                      final sectionName = sections[index];
-                      return GestureDetector(
-                        onTap: () {
-                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Section syllabus coming soon!')));
-                           Navigator.pop(context);
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(bottom: 12),
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey.withValues(alpha: 0.05),
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: Colors.purple.withValues(alpha: 0.1),
-                                  shape: BoxShape.circle,
-                                ),
-                                child: const Icon(Icons.class_, color: Colors.purple, size: 20),
-                              ),
-                              const SizedBox(width: 16),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      sectionName,
-                                      style: GoogleFonts.poppins(
-                                        fontWeight: FontWeight.w600,
-                                        color: textColor,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                    Text(
-                                      'View Syllabus progress',
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 12,
-                                        color: subTextColor,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Icon(Icons.percent_rounded, size: 24, color: Colors.purple.withValues(alpha: 0.7)),
-                            ],
-                          ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: sections.isEmpty
+                    ? Center(
+                        child: Text(
+                          'No sections found for ${yearData['year']}.',
+                          style: GoogleFonts.poppins(color: subTextColor),
                         ),
-                      );
-                    },
-                  ),
+                      )
+                    : ListView.builder(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        itemCount: sections.length,
+                        itemBuilder: (context, index) {
+                          final sectionName = sections[index];
+                          return GestureDetector(
+                            onTap: () {
+                               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Section syllabus coming soon!')));
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(bottom: 12),
+                              padding: const EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+                                borderRadius: BorderRadius.circular(16),
+                                border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+                                boxShadow: [
+                                   BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
+                                ]
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                      color: Colors.purple.withValues(alpha: 0.1),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: const Icon(Icons.class_, color: Colors.purple, size: 20),
+                                  ),
+                                  const SizedBox(width: 16),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          sectionName,
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.w600,
+                                            color: textColor,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        Text(
+                                          'View Syllabus progress',
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 12,
+                                            color: subTextColor,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 45,
+                                    height: 45,
+                                    child: Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        CircularProgressIndicator(
+                                          value: 0.0,
+                                          strokeWidth: 4,
+                                          backgroundColor: Colors.purple.withValues(alpha: 0.1),
+                                          valueColor: const AlwaysStoppedAnimation<Color>(Colors.purple),
+                                        ),
+                                        Text('0%', style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: textColor)),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

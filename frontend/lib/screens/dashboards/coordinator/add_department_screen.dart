@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../../core/api_constants.dart';
 
 class CoordinatorAddDepartmentScreen extends StatefulWidget {
   const CoordinatorAddDepartmentScreen({super.key});
@@ -31,11 +32,8 @@ class _CoordinatorAddDepartmentScreenState extends State<CoordinatorAddDepartmen
     setState(() => _isLoading = true);
 
     try {
-      final prefs = await SharedPreferences.getInstance();
-      final String? baseUrl = prefs.getString('api_base_url') ?? 'https://alwardas-aa-production-ca71.up.railway.app'; 
-      
       // Use the existing endpoint for Department Timing which effectively creates/updates a branch configuration
-      final url = Uri.parse('$baseUrl/api/department/timing');
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/department/timing');
       
       final Map<String, dynamic> body = {
         "branch": _fullNameController.text.trim(),

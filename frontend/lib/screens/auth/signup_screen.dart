@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:convert';
@@ -149,21 +149,21 @@ class _SignupScreenState extends State<SignupScreen> {
       }
 
       // 2. Branch Check
-      bool isBranchRequired = ['Student', 'Parent', 'Faculty', 'HOD'].contains(_selectedRole);
+      bool isBranchRequired = ['Student', 'Faculty', 'HOD'].contains(_selectedRole);
       if (isBranchRequired && _selectedBranch == null) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please select a Branch')));
         return;
       }
 
       // 3. Year Check
-      bool isYearRequired = ['Student', 'Parent'].contains(_selectedRole);
+      bool isYearRequired = ['Student'].contains(_selectedRole);
       if (isYearRequired && _selectedYear == null) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please select a Course Year')));
         return;
       }
       
       // 3.5 Semester Check (New)
-      bool isSemesterRequired = ['Student', 'Parent'].contains(_selectedRole);
+      bool isSemesterRequired = ['Student'].contains(_selectedRole);
       if (isSemesterRequired && _selectedSemester == null) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please select a Semester')));
         return;
@@ -192,7 +192,7 @@ class _SignupScreenState extends State<SignupScreen> {
         }
       }
 
-      bool isEmailRequired = ['Student', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
+      bool isEmailRequired = ['Student', 'Parent', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
       if (isEmailRequired) {
         if (_emailController.text.isEmpty) {
            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Email ID')));
@@ -493,8 +493,8 @@ class _SignupScreenState extends State<SignupScreen> {
                 textCapitalization: TextCapitalization.characters,
                 inputFormatters: (_selectedRole == 'Student' || _selectedRole == 'Parent') 
                    ? [
-                       FilteringTextInputFormatter.allow(RegExp(r'[A-Z0-9-]')),
-                       LengthLimitingTextInputFormatter(16), 
+                       FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z0-9-]')),
+                       LengthLimitingTextInputFormatter(20), 
                        StudentIdFormatter(isParent: _selectedRole == 'Parent'),
                      ] 
                    : [],
@@ -527,12 +527,12 @@ class _SignupScreenState extends State<SignupScreen> {
     // (Collapsed for brevity, keep existing logic)
     
      // Visibility Logic
-    bool showBranch = ['Student', 'Parent', 'Faculty', 'HOD'].contains(_selectedRole);
-    bool showYear = ['Student', 'Parent'].contains(_selectedRole);
+    bool showBranch = ['Student', 'Faculty', 'HOD'].contains(_selectedRole);
+    bool showYear = ['Student'].contains(_selectedRole);
     // bool showSemester = same as showYear
     bool showDob = ['Student', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
     bool showProfessional = ['Faculty', 'HOD', 'Principal'].contains(_selectedRole);
-    bool showEmail = ['Student', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
+    bool showEmail = ['Student', 'Parent', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
     bool showPhone = ['Student', 'Parent', 'Faculty', 'HOD', 'Principal'].contains(_selectedRole);
     bool showSection = ['Student'].contains(_selectedRole);
 
@@ -550,8 +550,8 @@ class _SignupScreenState extends State<SignupScreen> {
         ),
         
         CustomTextField(
-          label: 'Full Name', 
-          placeholder: 'Enter Full Name', 
+          label: _selectedRole == 'Parent' ? 'Parent Name' : 'Full Name', 
+          placeholder: _selectedRole == 'Parent' ? 'Enter Parent Name' : 'Enter Full Name', 
           controller: _fullNameController,
           readOnly: _userFound,
         ),
@@ -889,54 +889,36 @@ class StudentIdFormatter extends TextInputFormatter {
   ) {
     String text = newValue.text.toUpperCase();
     
-    // Pass if empty or deleting fully
-    if (text.isEmpty) return newValue;
-
-    // Handle Parent "P-"
-    if (isParent) {
-       if (!text.startsWith('P-')) {
-          text = 'P-$text'; // Auto-fix prefix
-       }
+    // If the box is completely cleared, allow it to become completely empty.
+    if (text.isEmpty) {
+       return const TextEditingValue(text: '');
     }
-    
-    // Work on the "core" ID (without P-)
-    String prefix = isParent ? "P-" : "";
-    String core = isParent && text.length >= 2 ? text.substring(2) : text;
-    
-    // Cleaning: Only keep valid chars (Digits, Letters, -)
-    // Note: User deleted a character?
-    bool isDeleting = newValue.text.length < oldValue.text.length;
-    
-    if (isDeleting) return newValue; // Allow standard deletion without logic interfering too much
 
-    // Clean input: remove implicit chars for processing
-    String clean = core.replaceAll('-', '').replaceAll(RegExp(r'[^A-Z0-9]'), '');
+    // Clean all special characters out of the newly typed string.
+    String clean = text.replaceAll(RegExp(r'[^A-Z0-9]'), '');
+    
+    if (isParent) {
+       if (clean.startsWith('P')) clean = clean.substring(1);
+    }
     
     StringBuffer formatted = StringBuffer();
+    if (isParent) formatted.write('P-');
     
-    // 1. First 5 Digits
     for (int i = 0; i < clean.length; i++) {
-        if (i == 5) formatted.write('-'); // Auto dash after 5th char
-        if (i > 5) {
-             // We are in Branch section
-             // We need to detect when to put next dash.
-             // Branch can be 1-4 chars. So we can't auto-dash strictly on count unless we know max length.
-             // BUT user requirement says: "numeric automatic '-' ... alphabetic '-' again 3 digits".
-             // We can detect when digits start again to insert dash?
-             
-             // Simple heuristic: If it was a letter and now it's a number, insert dash
-             bool prevIsLetter = RegExp(r'[A-Z]').hasMatch(clean[i-1]);
-             bool currIsDigit = RegExp(r'[0-9]').hasMatch(clean[i]);
-             
-             if (prevIsLetter && currIsDigit) {
-                 formatted.write('-');
-             }
+      if (i == 5 && clean.length > 5) {
+        formatted.write('-');
+      }
+      if (i > 5) {
+        bool prevIsLetter = RegExp(r'[A-Z]').hasMatch(clean[i-1]);
+        bool currIsDigit = RegExp(r'[0-9]').hasMatch(clean[i]);
+        if (prevIsLetter && currIsDigit) {
+          formatted.write('-');
         }
-        
-        formatted.write(clean[i]);
+      }
+      formatted.write(clean[i]);
     }
     
-    String finalResult = prefix + formatted.toString();
+    String finalResult = formatted.toString();
     
     return TextEditingValue(
       text: finalResult,

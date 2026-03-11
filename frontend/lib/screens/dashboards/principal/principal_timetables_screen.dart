@@ -1,9 +1,12 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
-import 'principal_branch_timetable_screen.dart';
+import '../hod/hod_timetables_screen.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../../../core/api_constants.dart';
 import 'principal_labs_screen.dart';
 import 'principal_master_timetable_screen.dart';
 
@@ -15,13 +18,44 @@ class PrincipalTimetablesScreen extends StatefulWidget {
 }
 
 class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
-  final List<String> branches = [
-    "Computer Engineering",
-    "Civil Engineering",
-    "Mechanical Engineering",
-    "Electronics and Communication Engineering",
-    "Electrical and Electronics Engineering"
-  ];
+  List<String> branches = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchBranches();
+  }
+
+  Future<void> _fetchBranches() async {
+    try {
+      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/departments'));
+      if (res.statusCode == 200) {
+        final List<dynamic> data = json.decode(res.body);
+        if (mounted) {
+          setState(() {
+            branches = data.map((d) => d['branch']?.toString() ?? '').where((b) => b.isNotEmpty).toList();
+          });
+        }
+      } else {
+         _fallbackBranches();
+      }
+    } catch (e) {
+      _fallbackBranches();
+    }
+  }
+
+  void _fallbackBranches() {
+    if (!mounted) return;
+    setState(() {
+      branches = [
+        "Computer Engineering",
+        "Civil Engineering",
+        "Mechanical Engineering",
+        "Electronics & Communication Engineering",
+        "Electrical & Electronics Engineering"
+      ];
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +78,8 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
         centerTitle: true,
       ),
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
         decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
         child: SafeArea(
           child: SingleChildScrollView(
@@ -68,7 +104,7 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
                        Navigator.push(
                          context, 
                          MaterialPageRoute(
-                           builder: (_) => PrincipalBranchTimetableScreen(branch: branch)
+                           builder: (_) => HodTimetablesScreen(branch: branch)
                          )
                        );
                      },
@@ -130,28 +166,7 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
                          ),
                       ),
                     ),
-                    const SizedBox(width: 15),
-                    Expanded(
-                       child: GestureDetector(
-                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalMasterTimetableScreen())),
-                         child: Container(
-                           padding: const EdgeInsets.all(20),
-                           decoration: BoxDecoration(
-                             color: cardColor,
-                             borderRadius: BorderRadius.circular(15),
-                             border: Border.all(color: Colors.purple.withValues(alpha: 0.5)),
-                             boxShadow: [if(isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5)]
-                           ),
-                           child: Column(
-                             children: [
-                               Icon(Icons.grid_view_rounded, color: Colors.purple, size: 30),
-                               const SizedBox(height: 10),
-                               Text("Master Table", style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold))
-                             ]
-                           ),
-                         ),
-                      ),
-                    ),
+                    // Master Table removed as per requested
                   ],
                 ),
                 

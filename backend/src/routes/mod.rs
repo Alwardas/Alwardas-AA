@@ -213,7 +213,7 @@ pub async fn signup_handler(
             eprintln!("Signup Error: {:?}", e);
             Err((StatusCode::INTERNAL_SERVER_ERROR, Json(AuthResponse { 
                 id: None,
-                message: "User likely already exists".to_string(), 
+                message: format!("User likely already exists: {}", e), 
                 role: None, 
                 full_name: None,
                 login_id: None,

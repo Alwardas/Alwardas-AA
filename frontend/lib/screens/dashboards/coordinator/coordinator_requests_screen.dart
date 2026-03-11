@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -16,25 +16,45 @@ class CoordinatorRequestsScreen extends StatefulWidget {
   _CoordinatorRequestsScreenState createState() => _CoordinatorRequestsScreenState();
 }
 
-class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> {
-  List<dynamic> _requests = [];
+class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> with SingleTickerProviderStateMixin {
+  List<dynamic> _staffRequests = [];
+  List<dynamic> _studentParentRequests = [];
   bool _loading = true;
+  late TabController _tabController;
 
   @override
   void initState() {
     super.initState();
+    _tabController = TabController(length: 2, vsync: this);
     _fetchRequests();
   }
 
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   Future<void> _fetchRequests() async {
+    setState(() => _loading = true);
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/admin/users?role=Principal&is_approved=false'),
+        Uri.parse('${ApiConstants.baseUrl}/api/admin/users?is_approved=false'),
       );
       if (response.statusCode == 200) {
         if (mounted) {
+          final List<dynamic> allRequests = json.decode(response.body);
           setState(() {
-            _requests = json.decode(response.body);
+            _staffRequests = allRequests.where((r) {
+              final role = r['role']?.toString().toUpperCase() ?? '';
+              return ['HOD', 'FACULTY', 'PRINCIPAL', 'INCHARGE'].contains(role);
+            }).toList();
+
+            _studentParentRequests = allRequests.where((r) {
+              final role = r['role']?.toString().toUpperCase() ?? '';
+              return ['STUDENT', 'PARENT'].contains(role);
+            }).toList();
+
             _loading = false;
           });
         }
@@ -44,20 +64,23 @@ class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> {
     }
   }
 
-  Future<void> _handleAction(String userId, String action) async {
+  Future<void> _handleAction(String userId, String action, String role) async {
     try {
       final response = await http.post(
-        Uri.parse('${ApiConstants.baseUrl}/api/admin/approve'),
+        Uri.parse('${ApiConstants.baseUrl}/api/admin/users/approve'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'user_id': userId,
-          'action': action
+          'action': action,
+          'reason': ''
         }),
       );
 
       if (response.statusCode == 200) {
-        _showSnackBar(action == 'APPROVE' ? "Principal Approved" : "Request Rejected");
+        _showSnackBar(action == 'APPROVE' ? "$role Approved" : "Request Rejected");
         _fetchRequests();
+      } else {
+        _showSnackBar("Failed to modify request: ${response.statusCode}");
       }
     } catch (e) {
       _showSnackBar("Network Error");
@@ -65,7 +88,7 @@ class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> {
   }
 
   void _showSnackBar(String text) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
+    if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
   }
 
   @override
@@ -84,7 +107,7 @@ class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          title: Text("Principal Approvals", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+          title: Text("Requests", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: IconButton(
@@ -97,6 +120,16 @@ class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> {
               onPressed: _fetchRequests,
             )
           ],
+          bottom: TabBar(
+            controller: _tabController,
+            labelColor: tint,
+            unselectedLabelColor: subTextColor,
+            indicatorColor: tint,
+            tabs: const [
+              Tab(text: "College Staff"),
+              Tab(text: "Students & Parents"),
+            ],
+          ),
         ),
         body: Stack(
           children: [
@@ -112,45 +145,56 @@ class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> {
             SafeArea(
               child: _loading
               ? const Center(child: CircularProgressIndicator())
-              : _requests.isEmpty
-              ? Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                         padding: const EdgeInsets.all(30),
-                         decoration: BoxDecoration(color: iconBg, shape: BoxShape.circle),
-                         child: Icon(Icons.check_circle_outline, size: 60, color: subTextColor)
-                      ),
-                      const SizedBox(height: 20),
-                      Text("All Caught Up!", style: GoogleFonts.poppins(color: textColor, fontSize: 18, fontWeight: FontWeight.w600)),
-                      const SizedBox(height: 8),
-                      Text("No pending principal requests found.", style: GoogleFonts.poppins(color: subTextColor, fontSize: 14)),
-                    ],
-                  ),
-                )
-              : RefreshIndicator(
-                  onRefresh: _fetchRequests,
-                  child: ListView.builder(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    itemCount: _requests.length,
-                    itemBuilder: (ctx, index) {
-                      final r = _requests[index];
-                      return _PrincipalRequestCard(
-                        r: r,
-                        cardColor: cardColor,
-                        textColor: textColor,
-                        subTextColor: subTextColor,
-                        tint: tint,
-                        iconBg: iconBg,
-                        onAction: _handleAction,
-                      );
-                    },
-                  ),
+              : TabBarView(
+                  controller: _tabController,
+                  children: [
+                    _buildRequestsList(_staffRequests, cardColor, textColor, subTextColor, tint, iconBg),
+                    _buildRequestsList(_studentParentRequests, cardColor, textColor, subTextColor, tint, iconBg),
+                  ],
                 ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildRequestsList(List<dynamic> list, Color cardColor, Color textColor, Color subTextColor, Color tint, Color iconBg) {
+    if (list.isEmpty) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+               padding: const EdgeInsets.all(30),
+               decoration: BoxDecoration(color: iconBg, shape: BoxShape.circle),
+               child: Icon(Icons.check_circle_outline, size: 60, color: subTextColor)
+            ),
+            const SizedBox(height: 20),
+            Text("All Caught Up!", style: GoogleFonts.poppins(color: textColor, fontSize: 18, fontWeight: FontWeight.w600)),
+            const SizedBox(height: 8),
+            Text("No pending requests found here.", style: GoogleFonts.poppins(color: subTextColor, fontSize: 14)),
+          ],
+        ),
+      );
+    }
+    return RefreshIndicator(
+      onRefresh: _fetchRequests,
+      child: ListView.builder(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        itemCount: list.length,
+        itemBuilder: (ctx, index) {
+          final r = list[index];
+          return _PrincipalRequestCard(
+            r: r,
+            cardColor: cardColor,
+            textColor: textColor,
+            subTextColor: subTextColor,
+            tint: tint,
+            iconBg: iconBg,
+            onAction: _handleAction,
+          );
+        },
       ),
     );
   }
@@ -163,7 +207,7 @@ class _PrincipalRequestCard extends StatelessWidget {
   final Color subTextColor;
   final Color tint;
   final Color iconBg;
-  final Function(String, String) onAction;
+  final Function(String, String, String) onAction;
 
   const _PrincipalRequestCard({
     required this.r,
@@ -177,6 +221,7 @@ class _PrincipalRequestCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final role = r['role'] ?? 'Unknown';
     return Container(
       padding: const EdgeInsets.all(20),
       margin: const EdgeInsets.only(bottom: 16),
@@ -197,7 +242,7 @@ class _PrincipalRequestCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(color: tint.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)),
-                child: Icon(Icons.school, color: tint, size: 28),
+                child: Icon(Icons.person_outline, color: tint, size: 28),
               ),
               const SizedBox(width: 15),
               Expanded(
@@ -207,7 +252,7 @@ class _PrincipalRequestCard extends StatelessWidget {
                      Row(
                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                        children: [
-                         Expanded(child: Text(r['full_name'] ?? 'Principal Name', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor))),
+                         Expanded(child: Text(r['full_name'] ?? 'User Name', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor))),
                          Container(
                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                            decoration: BoxDecoration(color: Colors.orange.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(6)),
@@ -222,9 +267,20 @@ class _PrincipalRequestCard extends StatelessWidget {
                        children: [
                          Icon(Icons.badge_outlined, size: 14, color: subTextColor),
                          const SizedBox(width: 5),
-                         Text("Role: ${r['role']}", style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
+                         Text("Role: $role", style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
                        ],
-                     )
+                     ),
+                     if (r['branch'] != null && r['branch'].toString().isNotEmpty && r['branch'] != 'Not provided')
+                       Padding(
+                         padding: const EdgeInsets.only(top: 4.0),
+                         child: Row(
+                           children: [
+                             Icon(Icons.school_outlined, size: 14, color: subTextColor),
+                             const SizedBox(width: 5),
+                             Expanded(child: Text("Branch: ${r['branch']}", style: GoogleFonts.poppins(fontSize: 12, color: subTextColor), overflow: TextOverflow.ellipsis)),
+                           ],
+                         ),
+                       )
                   ],
                 ),
               ),
@@ -235,7 +291,7 @@ class _PrincipalRequestCard extends StatelessWidget {
             children: [
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () => onAction(r['id'], 'REJECT'),
+                  onPressed: () => onAction(r['id'], 'REJECT', role),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red.withValues(alpha: 0.1),
                     foregroundColor: Colors.red,
@@ -250,7 +306,7 @@ class _PrincipalRequestCard extends StatelessWidget {
               const SizedBox(width: 12),
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () => onAction(r['id'], 'APPROVE'),
+                  onPressed: () => onAction(r['id'], 'APPROVE', role),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: tint,
                     foregroundColor: Colors.white,

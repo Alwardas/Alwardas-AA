@@ -25,6 +25,7 @@ import '../principal/principal_schedule_screen.dart';
 import '../principal/principal_timetables_screen.dart';
 
 // Coordinator Modules
+import 'coordinator_issues_screen.dart';
 import 'coordinator_events_screen.dart';
 import 'coordinator_activities_screen.dart';
 import 'coordinator_requests_screen.dart';
@@ -300,14 +301,14 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
 
                   // Quick Access: Coordinator Specific
                   Text(
-                    'Administration',
+                    'Administration Side',
                     style: GoogleFonts.poppins(
                       color: textColor,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 5),
 
                   // Row 1: Events & Activities (Coordinator Special)
                   GridView.builder(
@@ -319,7 +320,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                       mainAxisSpacing: 15,
                       childAspectRatio: 1.2,
                     ),
-                    itemCount: 10,
+                    itemCount: 6,
                     itemBuilder: (context, index) {
                       // Define items data
                       final List<Map<String, dynamic>> items = [
@@ -332,66 +333,38 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                         },
                         {
                           'icon': Icons.menu_book,
-                          'title': 'Syllabus',
+                          'title': 'Syllabus Management',
                           'subtitle': 'Track Progress',
                           'color': const Color(0xFF66BB6A), // Green
                           'route': const PrincipalLessonPlansScreen(),
                         },
                         {
-                          'icon': Icons.event,
-                          'title': 'Event Planning',
-                          'subtitle': 'Manage Events',
-                          'color': const Color(0xFF4FC3F7), // Light Blue
-                          'route': const CoordinatorEventsScreen(),
-                        },
-                        {
-                          'icon': Icons.sports_basketball,
-                          'title': 'Student Activities',
-                          'subtitle': 'Sports & Cultural',
-                          'color': const Color(0xFF1565C0), // Dark Blue
-                          'route': const CoordinatorActivitiesScreen(),
-                        },
-                        {
                           'icon': Icons.assignment_turned_in,
-                          'title': 'HOD Requests',
-                          'subtitle': 'Approve HODs',
+                          'title': 'Requests',
+                          'subtitle': 'Approve Requests',
                           'color': const Color(0xFF00B0FF), // Blue
-                          'route': const PrincipalRequestsScreen(),
-                        },
-                        {
-                          'icon': Icons.verified_user, 
-                          'title': 'Principal Requests',
-                          'subtitle': 'Approve Principals',
-                          'color': const Color(0xFF0D47A1), // Deep Blue
                           'route': const CoordinatorRequestsScreen(),
                         },
                         {
                           'icon': Icons.access_time,
-                          'title': 'Master Timetables',
+                          'title': 'Time Tables',
                           'subtitle': 'View All',
                           'color': const Color(0xFF78909C), // Blue Grey
                           'route': const PrincipalTimetablesScreen(),
                         },
                         {
+                          'icon': Icons.report_problem,
+                          'title': 'Issues',
+                          'subtitle': 'Student Issues',
+                          'color': const Color(0xFFEF5350), // Red
+                          'route': const CoordinatorIssuesScreen(),
+                        },
+                        {
                           'icon': Icons.groups_outlined,
-                          'title': 'Faculty Dir',
+                          'title': 'Faculty Directory',
                           'subtitle': 'View Staff',
                           'color': const Color(0xFFEC407A), // Pink
                           'route': const PrincipalFacultyScreen(),
-                        },
-                        {
-                          'icon': Icons.campaign_outlined,
-                          'title': 'Announcer',
-                          'subtitle': 'Send Alerts',
-                          'color': const Color(0xFFEF5350), // Red
-                          'route': const CoordinatorAnnouncementsScreen(),
-                        },
-                        {
-                          'icon': Icons.event_note,
-                          'title': 'My Schedule',
-                          'subtitle': 'Personal View',
-                          'color': const Color(0xFF26A69A), // Teal
-                          'route': const PrincipalScheduleScreen(),
                         },
                       ];
 

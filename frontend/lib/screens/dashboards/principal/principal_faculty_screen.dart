@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -20,15 +20,7 @@ class PrincipalFacultyScreen extends StatefulWidget {
 class _PrincipalFacultyScreenState extends State<PrincipalFacultyScreen> {
   String _selectedDept = 'All';
   String _searchQuery = '';
-  final List<String> _departments = [
-    'All', 
-    'Computer Engineering', 
-    'Civil Engineering', 
-    'Mechanical Engineering',
-    'Electronics & Communication Engineering',
-    'Electrical & Electronics Engineering',
-    'General'
-  ];
+  List<String> _departments = ['All'];
 
   List<BackendFacultyMember> _facultyList = [];
   bool _isLoading = true;
@@ -37,7 +29,30 @@ class _PrincipalFacultyScreenState extends State<PrincipalFacultyScreen> {
   @override
   void initState() {
     super.initState();
+    _fetchDepartments();
     _fetchFaculty();
+  }
+
+  Future<void> _fetchDepartments() async {
+    try {
+      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/departments'));
+      if (res.statusCode == 200) {
+        final List<dynamic> data = json.decode(res.body);
+        setState(() {
+          _departments = ['All', ...data.map((d) => d['branch']?.toString() ?? '').where((b) => b.isNotEmpty)];
+        });
+      } else {
+         _fallbackDepartments();
+      }
+    } catch (e) {
+      _fallbackDepartments();
+    }
+  }
+
+  void _fallbackDepartments() {
+    setState(() {
+      _departments = ['All', 'Computer Engineering', 'Civil Engineering', 'Mechanical Engineering', 'Electronics & Communication Engineering', 'Electrical & Electronics Engineering', 'General'];
+    });
   }
 
   Future<void> _fetchFaculty() async {

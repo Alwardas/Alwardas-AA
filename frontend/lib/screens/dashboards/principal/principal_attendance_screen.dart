@@ -19,13 +19,7 @@ class PrincipalAttendanceScreen extends StatefulWidget {
 }
 
 class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
-  final List<String> branches = [
-    "Computer Engineering",
-    "Civil Engineering",
-    "Mechanical Engineering",
-    "Electronics & Communication Engineering",
-    "Electrical & Electronics Engineering"
-  ];
+  List<String> branches = [];
 
   Map<String, dynamic> _aggregatedStats = {
     'totalStudents': 0, 
@@ -46,11 +40,33 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
   @override
   void initState() {
     super.initState();
-    // Initialize default data for instant render
+    _fetchBranches();
+  }
+
+  Future<void> _fetchBranches() async {
+    try {
+      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/departments'));
+      if (res.statusCode == 200) {
+        final List<dynamic> data = json.decode(res.body);
+        setState(() {
+          branches = data.map((d) => d['branch']?.toString() ?? '').where((b) => b.isNotEmpty).toList();
+        });
+      } else {
+         _fallbackBranches();
+      }
+    } catch (e) {
+      _fallbackBranches();
+    }
     for (var branch in branches) {
       _branchData[branch] = {'total': 0, 'present': 0, 'absent': 0};
     }
     _fetchAggregatedStats();
+  }
+
+  void _fallbackBranches() {
+    setState(() {
+       branches = ["Computer Engineering", "Civil Engineering", "Mechanical Engineering", "Electronics & Communication Engineering", "Electrical & Electronics Engineering"];
+    });
   }
 
   Future<void> _selectDate(BuildContext context) async {

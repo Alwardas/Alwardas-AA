@@ -1,6 +1,10 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../hod/hod_class_timetable_screen.dart';
@@ -13,24 +17,55 @@ class PrincipalLabsScreen extends StatefulWidget {
 }
 
 class _PrincipalLabsScreenState extends State<PrincipalLabsScreen> {
-  String _selectedBranch = 'Computer Engineering';
-  final List<String> _branches = [
-    'Computer Engineering', 
-    'Civil Engineering', 
-    'Mechanical Engineering', 
-    'Electronics and Communication Engineering',
-    'Electrical and Electronics Engineering',
-    'Basic Sciences & Humanities'
-  ];
+  String _selectedBranch = 'Basic Science & Humanities';
+  List<String> _branches = ['Basic Science & Humanities'];
+  bool _isLoading = true;
 
-  // Dummy Data for Labs (Default 1 Lab per branch matches HOD default)
-  final Map<String, List<String>> _labsData = {
-    'Computer Engineering': ['Computer Lab 1'],
-    'Civil Engineering': ['Civil Lab 1'],
-    'Mechanical Engineering': ['Mechanical Lab 1'],
-    'Electronics and Communication Engineering': ['Electronics Lab 1'],
-    'Electrical and Electronics Engineering': ['Electrical Lab 1'],
-  };
+  @override
+  void initState() {
+    super.initState();
+    _fetchBranches();
+  }
+
+  Future<void> _fetchBranches() async {
+    try {
+      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/departments'));
+      if (res.statusCode == 200) {
+        final List<dynamic> data = json.decode(res.body);
+        if (mounted) {
+          setState(() {
+            _branches = ['Basic Science & Humanities'];
+            _branches.addAll(data.map((d) => d['name']?.toString() ?? d['branch']?.toString() ?? '').where((b) => b.isNotEmpty).toList());
+            _isLoading = false;
+          });
+        }
+      } else {
+         _fallbackBranches();
+      }
+    } catch (e) {
+      _fallbackBranches();
+    }
+  }
+
+  void _fallbackBranches() {
+    if (!mounted) return;
+    setState(() {
+      _branches = [
+        'Basic Science & Humanities',
+        'Computer Engineering', 
+        'Civil Engineering', 
+        'Mechanical Engineering', 
+        'Electronics and Communication Engineering',
+        'Electrical and Electronics Engineering'
+      ];
+      _isLoading = false;
+    });
+  }
+
+  List<String> get currentLabs {
+    if (_selectedBranch == 'Basic Science & Humanities') return ['Physics Lab', 'Chemistry Lab', 'English Comm Lab', 'Basic IT Lab'];
+    return ['$_selectedBranch Lab 1'];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +77,7 @@ class _PrincipalLabsScreenState extends State<PrincipalLabsScreen> {
     final iconBg = isDark ? ThemeColors.darkIconBg : ThemeColors.lightIconBg;
     final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
 
-    final currentLabs = _labsData[_selectedBranch] ?? ['General Lab 1'];
+
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -53,9 +88,11 @@ class _PrincipalLabsScreenState extends State<PrincipalLabsScreen> {
         iconTheme: IconThemeData(color: textColor),
       ),
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
         decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
         child: SafeArea(
-          child: Column(
+          child: _isLoading ? const Center(child: CircularProgressIndicator()) : Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(20),
