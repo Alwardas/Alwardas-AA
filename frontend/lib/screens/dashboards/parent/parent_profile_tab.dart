@@ -230,6 +230,8 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
                                     'unknown',
                                 userRole: 'Parent', // Or dynamic if available
                               )));
+                } else if (value == 'logout') {
+                  widget.onLogout();
                 }
               },
               itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
@@ -252,6 +254,18 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
                       const SizedBox(width: 8),
                       Text('Change Password',
                           style: TextStyle(color: textColor)),
+                    ],
+                  ),
+                ),
+                const PopupMenuDivider(),
+                const PopupMenuItem<String>(
+                  value: 'logout',
+                  child: Row(
+                    children: [
+                      Icon(Icons.logout, color: Color(0xFFDC2626), size: 20),
+                      SizedBox(width: 8),
+                      Text('Logout',
+                          style: TextStyle(color: Color(0xFFDC2626))),
                     ],
                   ),
                 ),
@@ -294,16 +308,6 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
                       padding: const EdgeInsets.only(top: 40, bottom: 30),
                       child: Column(
                         children: [
-                          TextButton.icon(
-                            onPressed: widget.onLogout,
-                            icon: const Icon(Icons.logout,
-                                color: Color(0xFFFF4B4B)),
-                            label: Text("Logout",
-                                style: GoogleFonts.poppins(
-                                    color: const Color(0xFFFF4B4B),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600)),
-                          ),
                           const SizedBox(height: 5),
                           Text("App Version 1.0.0",
                               style: GoogleFonts.poppins(
