@@ -97,6 +97,11 @@ async fn main() {
         .await
         .map_err(|e| eprintln!("Force Fix Users Failed: {:?}", e));
         
+    let _ = sqlx::query("ALTER TABLE users ADD COLUMN IF NOT EXISTS title VARCHAR(100) DEFAULT NULL")
+        .execute(&pool)
+        .await
+        .map_err(|e| eprintln!("Force Fix Users Title Failed: {:?}", e));
+        
     // FORCE DATA REPAIR
     let _ = sqlx::query("UPDATE users SET section = 'Section A' WHERE section IS NULL")
         .execute(&pool)
