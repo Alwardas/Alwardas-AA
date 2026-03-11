@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import '../core/services/auth_service.dart';
 import '../core/services/notification_service.dart';
@@ -43,16 +43,20 @@ class _SplashScreenState extends State<SplashScreen> {
   void _initializeVideo() {
     _controller = VideoPlayerController.asset("assets/1766819269806.mp4");
     
-    _controller.initialize().then((_) {
-      if (mounted) {
-        setState(() {});
-        _controller.setPlaybackSpeed(1.35);
-        _controller.play();
+    Future<void> init() async {
+      try {
+        await _controller.initialize();
+        if (mounted) {
+          setState(() {});
+          _controller.setPlaybackSpeed(1.35);
+          _controller.play();
+        }
+      } catch (error) {
+        debugPrint("Video initialization error: $error");
+        _checkSession();
       }
-    }).catchError((error) {
-      debugPrint("Video initialization error: $error");
-      _checkSession(); // Fallback to session check if video fails
-    });
+    }
+    init();
 
     // Safety timeout: if video doesn't initialize in 3 seconds, proceed to login
     Future.delayed(const Duration(seconds: 3), () {

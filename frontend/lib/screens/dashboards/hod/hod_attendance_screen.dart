@@ -134,22 +134,24 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
             'session': _selectedSession
           });
 
-      // Update overall stats first
-      http.get(overallUri).then((res) {
-        if (res.statusCode == 200) {
+      // 1. Update overall stats first
+      try {
+        final res = await http.get(overallUri);
+        if (res.statusCode == 200 && mounted) {
           final data = json.decode(res.body);
-          if (mounted) {
-             setState(() {
-               _stats = {
-                  'totalStudents': data['totalStudents'] ?? 0,
-                  'totalPresent': data['totalPresent'] ?? 0,
-                  'totalAbsent': data['totalAbsent'] ?? 0
-               };
-             });
-             SharedPreferences.getInstance().then((prefs) => prefs.setString('hod_overall_stats', json.encode(_stats)));
-          }
+          setState(() {
+            _stats = {
+                'totalStudents': data['totalStudents'] ?? 0,
+                'totalPresent': data['totalPresent'] ?? 0,
+                'totalAbsent': data['totalAbsent'] ?? 0
+            };
+          });
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setString('hod_overall_stats', json.encode(_stats));
         }
-      });
+      } catch (e) {
+        debugPrint("Error fetching overall stats: $e");
+      }
 
       // 2. Fetch Sections for Target or ALL years
       final yearsToProcess = targetYear != null ? [targetYear] : ['1st Year', '2nd Year', '3rd Year'];
@@ -158,17 +160,16 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         if (mounted) setState(() => _fetchingYears.add(year));
 
         // Fetch Section List for this Year
-        final secUri = Uri.parse('${ApiConstants.baseUrl}/api/sections').replace(queryParameters: {'branch': branch, 'year': year});
-        
-        http.get(secUri).then((secRes) async {
+        try {
+          final secUri = Uri.parse('${ApiConstants.baseUrl}/api/sections').replace(queryParameters: {'branch': branch, 'year': year});
+          final secRes = await http.get(secUri);
+          
           List<String> sections = ['Section A'];
           if (secRes.statusCode == 200) {
              sections = List<String>.from(json.decode(secRes.body));
           }
           if (sections.isEmpty) sections = ['Section A'];
 
-          // Initialize/Update Year Entry WITHOUT wiping old stats immediately
-          // We only update the sectionList now
           if (mounted) {
             setState(() {
               _detailedStats[year]['sectionList'] = sections;
@@ -190,8 +191,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
             });
           }
 
-
-          // Fetch Stats for Each Section (Parallelized)
+          // Fetch Stats for Each Section
           final sectionFutures = sections.map((section) {
                final secStatUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
                    'branch': branch,
@@ -233,14 +233,13 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
               _fetchingYears.remove(year);
             });
             
-            // Save to cache after each year is updated
-            SharedPreferences.getInstance().then((prefs) {
-                prefs.setString('hod_attendance_stats', json.encode(_detailedStats));
-            });
+            final prefs = await SharedPreferences.getInstance();
+            await prefs.setString('hod_attendance_stats', json.encode(_detailedStats));
           }
-        }).catchError((e) {
+        } catch (e) {
+          debugPrint("Error fetching year stats for $year: $e");
           if (mounted) setState(() => _fetchingYears.remove(year));
-        });
+        }
       }
 
     } catch (e) {
@@ -325,7 +324,20 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
     final dateStr = DateFormat('yyyy-MM-dd').format(_selectedDate);
     
     // Show loading
-    showDialog(context: context, barrierDismissible: false, builder: (_) => const Center(child: CircularProgressIndicator(color: Colors.white)));
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => Center(
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: CircularProgressIndicator(color: Provider.of<ThemeProvider>(context, listen: false).isDarkMode ? ThemeColors.darkTint : ThemeColors.lightTint),
+        )
+      )
+    );
 
     try {
       final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/absents').replace(queryParameters: {
@@ -903,9 +915,35 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
        showDialog(
          context: context, 
          barrierDismissible: false, 
-         builder: (_) => const Dialog(
-            child: Padding(padding: EdgeInsets.all(20), child: Row(children: [CircularProgressIndicator(), SizedBox(width: 20), Text("Marking Holiday...")]))
-         )
+         builder: (ctx) {
+           final isDark = Provider.of<ThemeProvider>(ctx, listen: false).isDarkMode;
+           final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
+           final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
+           final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
+           
+           return Dialog(
+             backgroundColor: cardColor,
+             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+             child: Padding(
+               padding: const EdgeInsets.all(25),
+               child: Row(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   CircularProgressIndicator(strokeWidth: 3, valueColor: AlwaysStoppedAnimation<Color>(tint)),
+                   const SizedBox(width: 25),
+                   Text(
+                     "Marking Holiday...",
+                     style: GoogleFonts.poppins(
+                       fontWeight: FontWeight.w600,
+                       color: textColor,
+                       fontSize: 16
+                     )
+                   ),
+                 ],
+               ),
+             ),
+           );
+         }
        );
        
        try {
@@ -1024,26 +1062,30 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
       showDialog(
         context: context,
         barrierDismissible: false,
-        builder: (ctx) => const Dialog(
-          child: Padding(
-            padding: EdgeInsets.all(20),
-            child: Row(
-              children: [
-                CircularProgressIndicator(),
-                SizedBox(width: 20),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Downloading Report...", style: TextStyle(fontWeight: FontWeight.bold)),
-                    SizedBox(height: 5),
-                    Text("Please wait...", style: TextStyle(fontSize: 12, color: Colors.grey)),
-                  ],
-                ),
-              ],
+        builder: (ctx) {
+          return Dialog(
+            backgroundColor: Colors.white,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+            child: Padding(
+              padding: const EdgeInsets.all(25),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                   const CircularProgressIndicator(strokeWidth: 3, valueColor: AlwaysStoppedAnimation<Color>(Colors.blueAccent)),
+                   const SizedBox(width: 25),
+                   Text(
+                     "Downloading Report...",
+                     style: GoogleFonts.poppins(
+                       fontWeight: FontWeight.w600,
+                       color: Colors.black,
+                       fontSize: 16
+                     )
+                   ),
+                ],
+              ),
             ),
-          ),
-        )
+          );
+        }
       );
 
       try {
@@ -1059,52 +1101,82 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
 
   Future<void> _generateMultiMonthReport(ReportConfig config) async {
       // Loop from start month to end month
-      DateTime current = DateTime(config.startDate.year, config.startDate.month, 1);
-      DateTime end = DateTime(config.endDate.year, config.endDate.month, 1);
+      DateTime currentMonthStart = DateTime(config.startDate.year, config.startDate.month, 1);
+      DateTime endMonthStart = DateTime(config.endDate.year, config.endDate.month, 1);
       
       List<Map<String, dynamic>> reports = [];
       Map<String, String> globalNames = {};
       Set<String> globalIds = {};
 
-      while (current.isBefore(end) || current.isAtSameMomentAs(end)) {
-          DateTime monthEnd = DateTime(current.year, current.month + 1, 0);
-          final data = await _fetchAttendanceData(config.branch, config.year, config.section, current, monthEnd);
+      // 1. Fetch ALL Students for the class
+      try {
+          final stuUri = Uri.parse('${ApiConstants.baseUrl}/api/students').replace(queryParameters: {
+              'branch': config.branch,
+              'year': config.year,
+              if (config.section.isNotEmpty && config.section != 'All') 'section': config.section,
+          });
+          final stuRes = await http.get(stuUri);
+          if (stuRes.statusCode == 200) {
+              final List<dynamic> sList = json.decode(stuRes.body);
+              for (var s in sList) {
+                  final sId = s['studentId'].toString();
+                  globalIds.add(sId);
+                  globalNames[sId] = s['fullName'].toString();
+              }
+          }
+      } catch (e) {
+          debugPrint("Failed to fetch full student list for register: $e");
+      }
+
+      while (currentMonthStart.isBefore(endMonthStart) || currentMonthStart.isAtSameMomentAs(endMonthStart)) {
+          // Clamp the fetch dates to be strictly within the selected date range for this month
+          DateTime fetchStart = currentMonthStart.isBefore(config.startDate) ? config.startDate : currentMonthStart;
+          DateTime monthEnd = DateTime(currentMonthStart.year, currentMonthStart.month + 1, 0);
+          DateTime fetchEnd = monthEnd.isAfter(config.endDate) ? config.endDate : monthEnd;
+          
+          final data = await _fetchAttendanceData(config.branch, config.year, config.section, fetchStart, fetchEnd);
           
           if ((data['ids'] as List).isNotEmpty) {
                // Merge Students
                (data['ids'] as List<String>).forEach(globalIds.add);
                globalNames.addAll(data['names'] as Map<String, String>);
+          }
 
-               // Calculate Working Days
-               int workingDays = 0;
-               try {
-                  final att = data['attendance'] as Map<String, dynamic>;
-                  for (var key in att.keys) {
-                      final dayRecs = att[key] as Map<String, dynamic>;
-                      if (dayRecs.isEmpty) continue;
+          // Calculate Working Days using true class-wide marked detection
+          int workingDays = 0;
+          try {
+              final att = data['attendance'] as Map<String, dynamic>;
+              for (var key in att.keys) {
+                  final dayRecs = att[key] as Map<String, dynamic>;
+                  if (dayRecs.isEmpty) continue;
+                  
+                  bool markedWorking = false;
+                  for (var sData in dayRecs.values) {
+                      final am = sData['AM'].toString().toUpperCase();
+                      final pm = sData['PM'].toString().toUpperCase();
                       
-                      final firstStudent = dayRecs.values.first; // {AM: X, PM: Y}
-                      final am = firstStudent['AM'].toString().toUpperCase();
-                      final pm = firstStudent['PM'].toString().toUpperCase();
-                      
-                      if (am.contains('HOLIDAY') || pm.contains('HOLIDAY') || am == 'H' || pm == 'H') {
-                           continue; // It's a holiday
+                      if (am == 'P' || am == 'A' || am.contains('PRESENT') || am.contains('ABSENT') ||
+                          pm == 'P' || pm == 'A' || pm.contains('PRESENT') || pm.contains('ABSENT')) {
+                          markedWorking = true;
+                          break;
                       }
-                      
+                  }
+                  
+                  if (markedWorking) {
                       workingDays++;
                   }
-               } catch (e) {
-                  debugPrint("Error calculating working days: $e");
-                  workingDays = 0;
-               }
-               
-               reports.add({
-                  'month': DateFormat('MMMM yyyy').format(current),
-                  'workingDays': workingDays, 
-                  'data': data['attendance']
-               });
+              }
+          } catch (e) {
+              debugPrint("Error calculating working days: $e");
+              workingDays = 0;
           }
-          current = DateTime(current.year, current.month + 1, 1);
+          
+          reports.add({
+              'month': DateFormat('MMMM').format(currentMonthStart).toUpperCase(), // e.g., AUGUST, SEPT
+              'workingDays': workingDays, 
+              'data': data['attendance']
+          });
+          currentMonthStart = DateTime(currentMonthStart.year, currentMonthStart.month + 1, 1);
       }
       
       if (reports.isEmpty) throw "No records found.";
@@ -1116,7 +1188,11 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
       }).toList();
 
       await PdfService.generateMultiMonthSummaryReport(
-          branch: config.branch, year: config.year, section: config.section, 
+          branch: config.branch, 
+          year: config.year, 
+          section: config.section, 
+          startDate: config.startDate,
+          endDate: config.endDate,
           monthReports: reports, 
           students: students
       );
@@ -1207,8 +1283,8 @@ class _ReportOptionsDialogState extends State<ReportOptionsDialog> {
   late String _selectedYear;
   late String _selectedSection;
 
-  // Multi Month Options
-  DateTime _multiStart = DateTime(DateTime.now().year, 1);
+  // Select Options Date instead of Month
+  DateTime _multiStart = DateTime.now().subtract(const Duration(days: 30));
   DateTime _multiEnd = DateTime.now();
 
   @override
@@ -1243,89 +1319,157 @@ class _ReportOptionsDialogState extends State<ReportOptionsDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return Dialog(
-       child: Container(
-         width: 400,
-         height: 400, // Reduced height since tabs are removed
-         padding: const EdgeInsets.all(20),
-         child: Column(
-           children: [
-             Text("Download Attendance Report", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18)),
-             const SizedBox(height: 15),
-             
-             // Common Filters
-             _buildDropdown("Year", ['1st Year', '2nd Year', '3rd Year'], _selectedYear, (val) {
-                setState(() {
-                   _selectedYear = val!;
-                   _updateSection();
-                });
-             }),
-             const SizedBox(height: 10),
-             _buildDropdown("Section", _getSections(_selectedYear), _selectedSection, (val) {
-                setState(() => _selectedSection = val!);
-             }),
-             
-             const SizedBox(height: 20),
-             Expanded(
-               child: Column(
-                 mainAxisAlignment: MainAxisAlignment.center,
-                 children: [
-                    _buildMonthPicker("Start Month", _multiStart, (d) => setState(() => _multiStart = d)),
-                    _buildMonthPicker("End Month", _multiEnd, (d) => setState(() => _multiEnd = d)),
-                    const SizedBox(height: 20),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
-                      ),
-                      onPressed: () {
-                         final start = DateTime(_multiStart.year, _multiStart.month, 1);
-                         final end = DateTime(_multiEnd.year, _multiEnd.month + 1, 0); // End of end month
-                         widget.onGenerate(ReportConfig(mode: ReportMode.multiMonthSummary, branch: widget.branch, year: _selectedYear, section: _selectedSection, startDate: start, endDate: end));
-                         Navigator.pop(context);
-                      }, 
-                      child: const Text("Download Report")
-                    )
-                 ]
-               )
-             )
-           ]
-         )
-       )
+    const textColor = Colors.black;
+    const cardColor = Colors.white;
+    const secondaryBg = Color(0xFFF8F9FA);
+
+    return AlertDialog(
+      backgroundColor: cardColor,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      title: Text(
+        "Generate Report",
+        style: GoogleFonts.poppins(
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+          color: textColor,
+        ),
+        textAlign: TextAlign.center,
+      ),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              "Select options to download the attendance summary",
+              style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey[600]),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 25),
+            
+            // Filters
+            _buildDropdown("Year", ['1st Year', '2nd Year', '3rd Year'], _selectedYear, (val) {
+               setState(() {
+                  _selectedYear = val!;
+                  _updateSection();
+               });
+            }, textColor, secondaryBg, cardColor),
+            
+            const SizedBox(height: 15),
+            
+            _buildDropdown("Section", _getSections(_selectedYear), _selectedSection, (val) {
+               setState(() => _selectedSection = val!);
+            }, textColor, secondaryBg, cardColor),
+            
+            const SizedBox(height: 25),
+            
+            Container(
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: secondaryBg,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+              ),
+              child: Column(
+                children: [
+                  _buildRangeDatePicker("Start Date", _multiStart, (d) => setState(() => _multiStart = d), textColor, Colors.blueAccent),
+                  const Divider(color: Colors.black12, thickness: 0.5),
+                  _buildRangeDatePicker("End Date", _multiEnd, (d) => setState(() => _multiEnd = d), textColor, Colors.blueAccent),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      actionsPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      actions: [
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blueAccent,
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              elevation: 0,
+            ),
+            onPressed: () {
+               final start = DateTime(_multiStart.year, _multiStart.month, _multiStart.day);
+               final end = DateTime(_multiEnd.year, _multiEnd.month, _multiEnd.day);
+               final config = ReportConfig(
+                 mode: ReportMode.multiMonthSummary, 
+                 branch: widget.branch, 
+                 year: _selectedYear, 
+                 section: _selectedSection, 
+                 startDate: start, 
+                 endDate: end
+               );
+               Navigator.pop(context); // Close the dialog immediately
+               widget.onGenerate(config); // Trigger the generation outside the dialog
+            }, 
+            child: Text(
+              "Download Report", 
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold, 
+                color: Colors.white,
+                fontSize: 16
+              )
+            )
+          ),
+        )
+      ],
     );
   }
 
-  Widget _buildDropdown(String label, List<String> items, String value, ValueChanged<String?> onChanged) {
-    // Ensure value is in items
+  Widget _buildDropdown(String label, List<String> items, String value, ValueChanged<String?> onChanged, Color textColor, Color iconBg, Color cardColor) {
     if (!items.contains(value)) {
        if (items.isNotEmpty) value = items.first;
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: const TextStyle(fontSize: 12, color: Colors.grey)),
-        DropdownButtonFormField<String>(
-          value: value,
-          items: items.map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
-          onChanged: items.length > 1 ? onChanged : null,
-          decoration: const InputDecoration(isDense: true, contentPadding: EdgeInsets.symmetric(vertical: 8)),
+        Text(label.toUpperCase(), style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey[700])),
+        const SizedBox(height: 8),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12),
+          decoration: BoxDecoration(
+            color: iconBg,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: Colors.black12, width: 1),
+          ),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              value: value,
+              isExpanded: true,
+              dropdownColor: cardColor,
+              items: items.map((e) => DropdownMenuItem(value: e, child: Text(e, style: GoogleFonts.poppins(color: textColor, fontSize: 14)))).toList(),
+              onChanged: items.length > 1 ? onChanged : null,
+              icon: const Icon(Icons.keyboard_arrow_down, color: Colors.black54),
+            ),
+          ),
         )
       ]
     );
   }
   
-  Widget _buildMonthPicker(String label, DateTime val, Function(DateTime) onPick) {
+  Widget _buildRangeDatePicker(String label, DateTime val, Function(DateTime) onPick, Color textColor, Color tint) {
      return ListTile(
-       title: Text(label),
-       subtitle: Text(DateFormat('MMMM yyyy').format(val)),
-       trailing: const Icon(Icons.calendar_today),
+       contentPadding: EdgeInsets.zero,
+       title: Text(label, style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey[700])),
+       subtitle: Text(DateFormat('dd/MM/yyyy').format(val), style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 15)),
+       trailing: Icon(Icons.calendar_month, color: tint),
        onTap: () async {
-          // DatePicker restricted to years 2020-2030, showing only year/month if possible or just standard date picker
           final d = await showDatePicker(
              context: context, 
              firstDate: DateTime(2020), 
              lastDate: DateTime(2030), 
              initialDate: val,
-             initialDatePickerMode: DatePickerMode.year // Help user select month easier
+             builder: (context, child) {
+                return Theme(
+                  data: ThemeData.light().copyWith(
+                    colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
+                  ),
+                  child: child!,
+                );
+             }
           );
           if (d != null) onPick(d);
        }

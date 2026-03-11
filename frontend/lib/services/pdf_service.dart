@@ -15,14 +15,36 @@ class PdfService {
     required String branch,
     required String year,
     required String section,
+    required DateTime startDate,
+    required DateTime endDate,
     required List<Map<String, dynamic>> monthReports, // {month: Str, workingDays: int, data: Map}
     required List<Map<String, String>> students,
   }) async {
     final pdf = pw.Document();
 
     // Fonts
-    ByteData? fontRegular = await rootBundle.load("assets/fonts/Poppins-Regular.ttf").catchError((_) => rootBundle.load("assets/fonts/Inter-Regular.ttf").catchError((_) => null));
-    ByteData? fontBold = await rootBundle.load("assets/fonts/Poppins-Bold.ttf").catchError((_) => rootBundle.load("assets/fonts/Inter-Bold.ttf").catchError((_) => null));
+    ByteData? fontRegular;
+    try {
+      fontRegular = await rootBundle.load("assets/fonts/Poppins-Regular.ttf");
+    } catch (_) {
+      try {
+        fontRegular = await rootBundle.load("assets/fonts/Inter-Regular.ttf");
+      } catch (_) {
+        fontRegular = null;
+      }
+    }
+
+    ByteData? fontBold;
+    try {
+      fontBold = await rootBundle.load("assets/fonts/Poppins-Bold.ttf");
+    } catch (_) {
+      try {
+        fontBold = await rootBundle.load("assets/fonts/Inter-Bold.ttf");
+      } catch (_) {
+        fontBold = null;
+      }
+    }
+
     final ttfRegular = fontRegular != null ? pw.Font.ttf(fontRegular) : pw.Font.courier();
     final ttfBold = fontBold != null ? pw.Font.ttf(fontBold) : pw.Font.courierBold();
 
@@ -31,21 +53,24 @@ class PdfService {
 
     final parsedMonths = monthReports.map((r) {
        final mStr = r['month'].toString();
-       return mStr.split(' ')[0].substring(0, 3); // e.g., "Aug"
+       final mName = mStr.split(' ')[0].substring(0, 3).toUpperCase();
+       final wDays = r['workingDays'] as int;
+       return "$mName($wDays)";
     }).toList();
 
     int totalOverallWorkingDays = monthReports.fold(0, (sum, r) => sum + (r['workingDays'] as int));
+    
+    // Generate Report ID
+    final String reportId = "ATT-${now.year}-${now.millisecondsSinceEpoch.toString().substring(8)}";
 
     pdf.addPage(
       pw.MultiPage(
-        pageFormat: PdfPageFormat.a4.landscape, 
+        pageFormat: PdfPageFormat.a4, // Changed from landscape to portrait
         margin: const pw.EdgeInsets.all(30),
-        header: (context) => _buildReportHeader(branch, year, section, "Combined Multi-Month", formattedDate, "SUM-MUL-01", ttfBold, ttfRegular),
-        footer: (context) => _buildBottomFooter("SUM-MUL-01", context.pageNumber, 1, ttfRegular),
+        footer: (context) => _buildBottomFooter(reportId, context.pageNumber, 1, ttfRegular),
         build: (context) => [
-          pw.SizedBox(height: 20),
-          pw.Center(child: pw.Text("FINAL ATTENDANCE SUMMARY", style: pw.TextStyle(font: ttfBold, fontSize: 16, decoration: pw.TextDecoration.underline))),
-          pw.SizedBox(height: 20),
+          _buildReportHeader(branch, year, section, startDate, endDate, reportId, ttfBold, ttfRegular),
+          pw.SizedBox(height: 10),
           _buildMultiMonthSummaryTable(students, monthReports, parsedMonths, totalOverallWorkingDays, ttfBold, ttfRegular),
           pw.SizedBox(height: 30),
           _buildSignatureBlock(ttfBold, ttfRegular, formattedDate),
@@ -58,7 +83,9 @@ class PdfService {
 
 
 
-  static pw.Widget _buildReportHeader(String branch, String year, String section, String month, String generatedOn, String reportId, pw.Font fontBold, pw.Font fontRegular) {
+  static pw.Widget _buildReportHeader(String branch, String year, String section, DateTime startDate, DateTime endDate, String reportId, pw.Font fontBold, pw.Font fontRegular) {
+    String fromToStr = "${DateFormat('dd/MM/yyyy').format(startDate)}  \u2192  ${DateFormat('dd/MM/yyyy').format(endDate)}";
+    
     return pw.Column(
       children: [
         // Grey Header Bar
@@ -84,13 +111,13 @@ class PdfService {
                  child: pw.Column(
                    crossAxisAlignment: pw.CrossAxisAlignment.start,
                    children: [
-                      _buildInfoRow("College:", "ALWARDAS POLYTECHNIC-GOPALAPATNAM", fontBold, fontRegular),
+                      _buildInfoRow("College Name:", "ALWARDAS POLYTECHNIC", fontBold, fontRegular),
                       pw.SizedBox(height: 4),
                       _buildInfoRow("Branch:", branch, fontBold, fontRegular),
                       pw.SizedBox(height: 4),
-                      _buildInfoRow("Year & Section:", "$year - $section", fontBold, fontRegular),
+                      _buildInfoRow("Year:", year, fontBold, fontRegular),
                       pw.SizedBox(height: 4),
-                      _buildInfoRow("Period:", month, fontBold, fontRegular),
+                      _buildInfoRow("Section:", section, fontBold, fontRegular),
                    ]
                  )
                ),
@@ -100,11 +127,9 @@ class PdfService {
                  child: pw.Column(
                    crossAxisAlignment: pw.CrossAxisAlignment.start,
                    children: [
-                      _buildInfoRow("Generated On:", generatedOn, fontBold, fontRegular),
-                      pw.SizedBox(height: 4),
-                      _buildInfoRow("Generated By:", "HOD / Admin", fontBold, fontRegular),
-                      pw.SizedBox(height: 4),
                       _buildInfoRow("Report ID:", reportId, fontBold, fontRegular),
+                      pw.SizedBox(height: 4),
+                      _buildInfoRow("From - To:", fromToStr, fontBold, fontRegular),
                    ]
                  )
                )
@@ -112,9 +137,6 @@ class PdfService {
            )
         ),
         pw.SizedBox(height: 8),
-        pw.Center(child: pw.Text("Legend: P = Present | A = Absent | H = Holiday", style: pw.TextStyle(font: fontBold, fontSize: 10))),
-        pw.Divider(thickness: 1.5, color: PdfColors.grey800),
-        pw.SizedBox(height: 5),
       ]
     );
   }
@@ -133,18 +155,17 @@ class PdfService {
   static String _normalizeStatus(String? s) {
      if (s == null) return '';
      final up = s.toUpperCase();
-     if (up.contains('ABSENT')) return 'A';
-     if (up.contains('PRESENT')) return 'P';
-     if (up.contains('HOLIDAY')) return 'H';
+     if (up.contains('ABSENT') || up == 'A') return 'A';
+     if (up.contains('PRESENT') || up == 'P') return 'P';
+     if (up.contains('HOLIDAY') || up == 'H') return 'H';
      return ''; 
   }
 
 
 
-  static pw.Widget _summaryHeaderCell(String text, pw.Font font, {double height = 30}) {
+  static pw.Widget _summaryHeaderCell(String text, pw.Font font) {
     return pw.Container(
-      height: height,
-      padding: const pw.EdgeInsets.all(5),
+      padding: const pw.EdgeInsets.all(4),
       alignment: pw.Alignment.center,
       child: pw.Text(text, style: pw.TextStyle(font: font, fontSize: 9, fontWeight: pw.FontWeight.bold), textAlign: pw.TextAlign.center)
     );
@@ -156,24 +177,24 @@ class PdfService {
       return pw.Table(
         border: pw.TableBorder.all(color: PdfColors.black, width: 0.5),
         columnWidths: {
-          0: const pw.FixedColumnWidth(100), 
-          1: const pw.FlexColumnWidth(2.5), 
+          0: const pw.FixedColumnWidth(60), // ID (made smaller for portrait)
+          1: const pw.FlexColumnWidth(2),   // Name
           for (int i=0; i<monthLabels.length; i++)
              (i+2): const pw.FlexColumnWidth(1),
           // Total and Percentage
-          (monthLabels.length + 2): const pw.FixedColumnWidth(60),
-          (monthLabels.length + 3): const pw.FixedColumnWidth(60),
+          (monthLabels.length + 2): const pw.FixedColumnWidth(50),
+          (monthLabels.length + 3): const pw.FixedColumnWidth(40),
         },
         children: [
           pw.TableRow(
             decoration: const pw.BoxDecoration(color: PdfColors.grey200),
             children: [
-               _summaryHeaderCell("Student ID", fb, height: 40),
-               _summaryHeaderCell("Student Name", fb, height: 40),
+               _summaryHeaderCell("Student ID", fb),
+               _summaryHeaderCell("Student Name", fb),
                for (String m in monthLabels)
-                 _summaryHeaderCell(m.toUpperCase(), fb, height: 40),
-               _summaryHeaderCell("TOTAL", fb, height: 40),
-               _summaryHeaderCell("PERCENTAGE", fb, height: 40),
+                 _summaryHeaderCell(m, fb),
+               _summaryHeaderCell("Total($totalWorkingDays)", fb),
+               _summaryHeaderCell("%", fb),
             ]
           ),
           for (var s in students)
@@ -188,18 +209,38 @@ class PdfService {
 
       for (var report in monthReports) {
          Map<String, Map<String, Map<String, String>>> data = report['data'];
-         int presentAM = 0;
-         int presentPM = 0;
+         double mPresentDays = 0;
 
          data.forEach((day, studentsData) {
-            if (studentsData.containsKey(student['id'])) {
-                final sStatus = studentsData[student['id']]!;
-                if (_normalizeStatus(sStatus['AM']) == 'P') presentAM++;
-                if (_normalizeStatus(sStatus['PM']) == 'P') presentPM++;
-            }
+             bool hasAM = false;
+             bool hasPM = false;
+             
+             // Check class-wide if AM or PM sessions happened and weren't holidays
+             for (var sData in studentsData.values) {
+                 final am = _normalizeStatus(sData['AM']);
+                 final pm = _normalizeStatus(sData['PM']);
+                 if (am == 'P' || am == 'A') hasAM = true;
+                 if (pm == 'P' || pm == 'A') hasPM = true;
+             }
+
+             if (hasAM || hasPM) {
+                 bool isSingleSession = (hasAM && !hasPM) || (!hasAM && hasPM);
+                 
+                 if (studentsData.containsKey(student['id'])) {
+                     final sStatus = studentsData[student['id']]!;
+                     bool pAM = _normalizeStatus(sStatus['AM']) == 'P';
+                     bool pPM = _normalizeStatus(sStatus['PM']) == 'P';
+                     
+                     if (hasAM && pAM) {
+                         mPresentDays += isSingleSession ? 1.0 : 0.5;
+                     }
+                     if (hasPM && pPM) {
+                         mPresentDays += isSingleSession ? 1.0 : 0.5;
+                     }
+                 }
+             }
          });
          
-         double mPresentDays = (presentAM + presentPM) / 2.0;
          overallPresent += mPresentDays;
          
          String disp = mPresentDays % 1 == 0 ? mPresentDays.toInt().toString() : mPresentDays.toStringAsFixed(1);
@@ -208,24 +249,26 @@ class PdfService {
 
       double percentage = totalWorkingDays > 0 ? (overallPresent / totalWorkingDays) * 100 : 0.0;
       String dispTotal = overallPresent % 1 == 0 ? overallPresent.toInt().toString() : overallPresent.toStringAsFixed(1);
+      
+      // format percentage cleanly
+      String dispPerc = percentage % 1 == 0 ? percentage.toInt().toString() : percentage.toStringAsFixed(2);
 
       return pw.TableRow(
          children: [
             _centeredCell(student['id'] ?? '', fr),
-            pw.Padding(padding: const pw.EdgeInsets.all(6), child: pw.Text(student['name']?.toUpperCase() ?? '', style: pw.TextStyle(font: fb, fontSize: 9))),
+            pw.Padding(padding: const pw.EdgeInsets.symmetric(vertical: 4, horizontal: 4), child: pw.Text(student['name']?.toUpperCase() ?? '', style: pw.TextStyle(font: fb, fontSize: 8))),
             ...monthCells,
             _centeredCell(dispTotal, fr),
-            _centeredCell("${percentage.toStringAsFixed(2)}%", fb),
+            _centeredCell("$dispPerc%", fb),
          ]
       );
    }
 
   static pw.Widget _centeredCell(String text, pw.Font font) {
      return pw.Container(
-       height: 25,
-       padding: const pw.EdgeInsets.all(2),
+       padding: const pw.EdgeInsets.symmetric(vertical: 4, horizontal: 1),
        alignment: pw.Alignment.center,
-       child: pw.Text(text, style: pw.TextStyle(font: font, fontSize: 9))
+       child: pw.Text(text, style: pw.TextStyle(font: font, fontSize: 8))
      );
   }
 

@@ -164,6 +164,17 @@ async fn main() {
             PRIMARY KEY (branch, year, section_name)
         )
     ").execute(&pool).await.err();
+    
+    // PARENT STUDENT TABLE (New)
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS parent_student (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            parent_id TEXT NOT NULL,
+            student_id TEXT NOT NULL,
+            relationship TEXT,
+            UNIQUE(parent_id, student_id)
+        )
+    ").execute(&pool).await.err();
 
     // TIMETABLE ENTRIES TABLE
     let _ = sqlx::query("

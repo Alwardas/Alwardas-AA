@@ -242,7 +242,20 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
     final dateStr = DateFormat('yyyy-MM-dd').format(_selectedDate);
     
     // Show loading
-    showDialog(context: context, barrierDismissible: false, builder: (_) => const Center(child: CircularProgressIndicator(color: Colors.white)));
+    showDialog(
+      context: context, 
+      barrierDismissible: false, 
+      builder: (_) => Center(
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: CircularProgressIndicator(color: Provider.of<ThemeProvider>(context, listen: false).isDarkMode ? ThemeColors.darkTint : ThemeColors.lightTint),
+        )
+      )
+    );
 
     try {
       final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/absents').replace(queryParameters: {

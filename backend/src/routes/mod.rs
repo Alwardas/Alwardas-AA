@@ -134,6 +134,33 @@ pub async fn signup_handler(
         }
     }
 
+    // For Parents: Verify student exists and prepare link
+    let mut target_student_id = String::new();
+    if payload.role == "Parent" {
+        target_student_id = payload.login_id.strip_prefix("P-").unwrap_or(&payload.login_id).to_string();
+        
+        let student_exists = sqlx::query("SELECT id FROM users WHERE login_id = $1 AND role = 'Student'")
+            .bind(&target_student_id)
+            .fetch_optional(&state.pool)
+            .await
+            .unwrap_or(None);
+            
+        if student_exists.is_none() {
+            return Err((StatusCode::BAD_REQUEST, Json(AuthResponse { 
+                id: None,
+                message: format!("Student ID {} not found. Cannot link Parent account.", target_student_id), 
+                role: None, 
+                full_name: None,
+                login_id: None,
+                branch: None,
+                year: None,
+                semester: None,
+                batch_no: None,
+                section: None
+            })));
+        }
+    }
+
     // NEW USER -> INSERT
     let row = sqlx::query(
             "INSERT INTO users (full_name, role, login_id, password_hash, branch, year, phone_number, dob, is_approved, experience, email, semester, batch_no, section, title) 
@@ -196,6 +223,17 @@ pub async fn signup_handler(
             } else {
                 "Account created! Waiting for approval.".to_string()
             };
+            
+            // Link Parent to Student if applicable
+            if payload.role == "Parent" && !target_student_id.is_empty() {
+                let _ = sqlx::query("INSERT INTO parent_student (parent_id, student_id, relationship) VALUES ($1, $2, $3) ON CONFLICT DO NOTHING")
+                    .bind(&payload.login_id)
+                    .bind(&target_student_id)
+                    .bind("Parent")
+                    .execute(&state.pool)
+                    .await;
+            }
+            
             Ok(Json(AuthResponse { 
                 id: Some(user_id.to_string()),
                 message: msg, 

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -158,7 +158,16 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
        showDialog(
          context: context,
          barrierDismissible: false,
-         builder: (ctx) => const Center(child: CircularProgressIndicator(color: Colors.white)),
+         builder: (ctx) => Center(
+           child: Container(
+             padding: const EdgeInsets.all(20),
+             decoration: BoxDecoration(
+               color: Colors.white,
+               borderRadius: BorderRadius.circular(15),
+             ),
+             child: CircularProgressIndicator(color: Provider.of<ThemeProvider>(context, listen: false).isDarkMode ? ThemeColors.darkTint : ThemeColors.lightTint),
+           )
+         ),
        );
 
        final res = await http.post(

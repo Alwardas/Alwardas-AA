@@ -37,24 +37,41 @@ pub async fn get_parent_profile_handler(
         None => return Err(StatusCode::NOT_FOUND),
     };
 
-    let student_login_id = if parent.login_id.starts_with("P-") {
-        parent.login_id[2..].to_string()
-    } else {
-        parent.login_id.clone() 
-    };
-
     let student_opt = sqlx::query_as::<_, StudentDetails>(
-        "SELECT full_name, login_id, branch, year, semester, batch_no FROM users WHERE login_id = $1"
+        "SELECT u.full_name, u.login_id, u.branch, u.year, u.semester, u.batch_no 
+         FROM users u
+         JOIN parent_student ps ON u.login_id = ps.student_id
+         WHERE ps.parent_id = $1 AND u.role = 'Student'
+         LIMIT 1"
     )
-    .bind(&student_login_id)
+    .bind(&parent.login_id)
     .fetch_optional(&state.pool)
     .await
     .unwrap_or(None);
+
+    let final_student_opt = if student_opt.is_none() {
+        // Fallback for legacy ones without explicit relationship mapping
+        let legacy_id = if parent.login_id.starts_with("P-") {
+            parent.login_id[2..].to_string()
+        } else {
+            parent.login_id.clone() 
+        };
+        
+        sqlx::query_as::<_, StudentDetails>(
+            "SELECT full_name, login_id, branch, year, semester, batch_no FROM users WHERE login_id = $1 AND role = 'Student'"
+        )
+        .bind(&legacy_id)
+        .fetch_optional(&state.pool)
+        .await
+        .unwrap_or(None)
+    } else {
+        student_opt
+    };
 
     Ok(Json(ParentProfileResponse {
         full_name: parent.full_name,
         phone_number: parent.phone_number,
         email: parent.email,
-        student: student_opt,
+        student: final_student_opt,
     }))
 }
