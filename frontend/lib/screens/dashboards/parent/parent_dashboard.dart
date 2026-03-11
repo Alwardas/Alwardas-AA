@@ -30,6 +30,7 @@ class ParentDashboard extends StatefulWidget {
   State<ParentDashboard> createState() => _ParentDashboardState();
 }
 
+class _ParentDashboardState extends State<ParentDashboard> {
   int _selectedIndex = 1; // Default to Home
   Timer? _notificationTimer;
   String? _lastNotifiedId;
