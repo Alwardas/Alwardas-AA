@@ -1536,8 +1536,16 @@ pub async fn get_semester_subjects_handler(
     Query(params): Query<SemesterSubjectsQuery>,
 ) -> Result<Json<Vec<SemesterSubjectResponse>>, StatusCode> {
     
-    // Fallback normalizer
-    let branch = params.branch.trim().to_string();
+    // Normalizers
+    let branch = crate::models::normalize_branch(&params.branch);
+    let semester_variations = match params.semester.as_str() {
+        "Semester 1" => vec!["1st Year".to_string(), "1st Semester".to_string()],
+        "Semester 3" => vec!["3rd Semester".to_string(), "3rd".to_string()],
+        "Semester 4" => vec!["4th Semester".to_string()],
+        "Semester 5" => vec!["5th Semester".to_string()],
+        "Semester 6" => vec!["6th Semester".to_string()],
+        _ => vec![params.semester.clone()],
+    };
     
     #[derive(sqlx::FromRow)]
     struct SubjRow {
@@ -1545,9 +1553,9 @@ pub async fn get_semester_subjects_handler(
         name: String,
     }
 
-    let subjects: Vec<SubjRow> = sqlx::query_as("SELECT id, name FROM subjects WHERE branch = $1 AND semester = $2")
+    let subjects: Vec<SubjRow> = sqlx::query_as("SELECT id, name FROM subjects WHERE branch = $1 AND semester = ANY($2)")
         .bind(&branch)
-        .bind(&params.semester)
+        .bind(&semester_variations)
         .fetch_all(&state.pool)
         .await
         .unwrap_or_default();
