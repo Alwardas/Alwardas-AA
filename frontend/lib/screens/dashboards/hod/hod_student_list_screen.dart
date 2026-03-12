@@ -8,7 +8,7 @@ import '../../../core/services/auth_service.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
-import '../admin/student_details_screen.dart';
+import 'hod_student_profile_screen.dart';
 
 class HodStudentListScreen extends StatefulWidget {
   final String branch;
@@ -434,7 +434,7 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
                                 Navigator.push(
                                   context, 
                                   MaterialPageRoute(
-                                    builder: (_) => StudentDetailsScreen(userId: passId, userName: student['fullName'])
+                                    builder: (_) => HodStudentProfileScreen(userId: passId, studentId: student['studentId'], studentName: student['fullName'])
                                   ),
                                 );
                               }

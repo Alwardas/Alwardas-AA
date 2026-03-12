@@ -6,7 +6,8 @@ import '../../../../core/services/auth_service.dart';
 import '../../../../core/api_constants.dart';
 
 class StudentMarksScreen extends StatefulWidget {
-  const StudentMarksScreen({super.key});
+  final String? userId;
+  const StudentMarksScreen({super.key, this.userId});
 
   @override
   State<StudentMarksScreen> createState() => _StudentMarksScreenState();
@@ -34,7 +35,8 @@ class _StudentMarksScreenState extends State<StudentMarksScreen> {
         return;
       }
 
-      final url = Uri.parse('${ApiConstants.baseUrl}/api/student/academics?userId=${user['id']}');
+      final targetUserId = widget.userId ?? user['id'];
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/student/academics?userId=$targetUserId');
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
