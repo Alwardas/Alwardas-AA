@@ -386,6 +386,91 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
       },
     );
   }
+
+  Widget _buildDropdownLabel(String label, IconData icon, Color tint, Color textColor) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        children: [
+          Icon(icon, size: 18, color: tint),
+          const SizedBox(width: 8),
+          Text(
+            label,
+            style: GoogleFonts.poppins(
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              color: textColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDropdown({
+    required String? value,
+    required List<String> items,
+    required String hint,
+    required void Function(String?) onChanged,
+    required Color textColor,
+    required Color tint,
+    bool loading = false,
+    bool enabled = true,
+    bool isSearchable = false,
+  }) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: tint.withValues(alpha: 0.2)),
+        color: enabled ? Colors.transparent : Colors.grey.withValues(alpha: 0.1),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          value: value,
+          hint: loading
+              ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2))
+              : Text(hint, style: GoogleFonts.poppins(color: textColor.withValues(alpha: 0.5), fontSize: 14)),
+          isExpanded: true,
+          icon: Icon(Icons.keyboard_arrow_down_rounded, color: tint),
+          dropdownColor: Theme.of(context).cardColor,
+          items: items.map((String item) {
+            return DropdownMenuItem<String>(
+              value: item,
+              child: Text(item, style: GoogleFonts.poppins(color: textColor, fontSize: 14)),
+            );
+          }).toList(),
+          onChanged: enabled ? onChanged : null,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSubmitButton(Color tint) {
+    return SizedBox(
+      width: double.infinity,
+      height: 56,
+      child: ElevatedButton(
+        onPressed: _submitting ? null : _addSubject,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: tint,
+          foregroundColor: Colors.white,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          elevation: 0,
+        ),
+        child: _submitting
+            ? const CircularProgressIndicator(color: Colors.white)
+            : Text(
+                "Add Subject",
+                style: GoogleFonts.poppins(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+      ),
+    );
+  }
 }
 
 class _SearchContent extends StatefulWidget {
@@ -482,92 +567,6 @@ class __SearchContentState extends State<_SearchContent> {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-  Widget _buildDropdownLabel(String label, IconData icon, Color tint, Color textColor) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Row(
-        children: [
-          Icon(icon, size: 18, color: tint),
-          const SizedBox(width: 8),
-          Text(
-            label,
-            style: GoogleFonts.poppins(
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              color: textColor,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDropdown({
-    required String? value,
-    required List<String> items,
-    required String hint,
-    required void Function(String?) onChanged,
-    required Color textColor,
-    required Color tint,
-    bool loading = false,
-    bool enabled = true,
-    bool isSearchable = false,
-  }) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: tint.withValues(alpha: 0.2)),
-        color: enabled ? Colors.transparent : Colors.grey.withValues(alpha: 0.1),
-      ),
-      child: DropdownButtonHideUnderline(
-        child: DropdownButton<String>(
-          value: value,
-          hint: loading
-              ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2))
-              : Text(hint, style: GoogleFonts.poppins(color: textColor.withValues(alpha: 0.5), fontSize: 14)),
-          isExpanded: true,
-          icon: Icon(Icons.keyboard_arrow_down_rounded, color: tint),
-          dropdownColor: Theme.of(context).cardColor,
-          items: items.map((String item) {
-            return DropdownMenuItem<String>(
-              value: item,
-              child: Text(item, style: GoogleFonts.poppins(color: textColor, fontSize: 14)),
-            );
-          }).toList(),
-          onChanged: enabled ? onChanged : null,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSubmitButton(Color tint) {
-    return SizedBox(
-      width: double.infinity,
-      height: 56,
-      child: ElevatedButton(
-        onPressed: _submitting ? null : _addSubject,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: tint,
-          foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          elevation: 0,
-        ),
-        child: _submitting
-            ? const CircularProgressIndicator(color: Colors.white)
-            : Text(
-                "Add Subject",
-                style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
       ),
     );
   }
