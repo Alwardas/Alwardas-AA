@@ -26,36 +26,35 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
   String? _selectedBranch;
   String? _selectedYear;
   String? _selectedSection;
-  
-  final TextEditingController _subjectController = TextEditingController();
-  final TextEditingController _subjectIdController = TextEditingController();
+  String? _selectedSubject;
 
-  final List<String> _branches = ["Computer Engineering", "Electronics & Communication Engineering", "Electrical & Electronics Engineering", "Mechanical Engineering", "Civil Engineering"];
+  List<String> _branches = [];
   final List<String> _years = ["1st Year", "2nd Year", "3rd Year"];
   List<String> _sections = [];
-  List<Map<String, dynamic>> _filteredSubjects = [];
+  List<String> _subjects = [];
 
+  bool _loadingBranches = true;
   bool _loadingSections = false;
   bool _submitting = false;
 
   @override
   void initState() {
     super.initState();
-    _loadDefaults();
+    _fetchBranches();
   }
 
-  Future<void> _loadDefaults() async {
-    final user = await AuthService.getUserSession();
-    if (user != null) {
-      String branch = user['branch'] ?? '';
-      if (branch.isNotEmpty) {
-        // Find match in our branches list
-        final match = _branches.firstWhere((b) => b.toLowerCase().contains(branch.toLowerCase()), orElse: () => "");
-        if (match.isNotEmpty) {
-          setState(() => _selectedBranch = match);
-          _updateSubjects();
-        }
+  Future<void> _fetchBranches() async {
+    try {
+      final response = await http.get(Uri.parse(ApiConstants.hodGetDepartments));
+      if (response.statusCode == 200) {
+        setState(() {
+          _branches = List<String>.from(json.decode(response.body));
+          _loadingBranches = false;
+        });
       }
+    } catch (e) {
+      debugPrint("Error fetching branches: $e");
+      setState(() => _loadingBranches = false);
     }
   }
 
@@ -75,7 +74,6 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
           final List<dynamic> data = json.decode(response.body);
           _sections = data.map((e) => e.toString()).toList();
           _loadingSections = false;
-          if (_sections.isNotEmpty) _selectedSection = _sections.first;
         });
       }
     } catch (e) {
@@ -84,13 +82,17 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
     }
   }
 
-  void _updateSubjects() {
+  void _filterSubjectsLocally() {
     if (_selectedBranch == null || _selectedYear == null) {
-      setState(() => _filteredSubjects = []);
+      setState(() => _subjects = []);
       return;
     }
 
-    // Filter logic similar to faculty: Match Branch AND Year
+    final targetSems = [];
+    if (_selectedYear == "1st Year") targetSems.addAll(["1", "2", "Semester 1", "Semester 2", "1st Year"]);
+    else if (_selectedYear == "2nd Year") targetSems.addAll(["3", "4", "Semester 3", "Semester 4"]);
+    else if (_selectedYear == "3rd Year") targetSems.addAll(["5", "6", "Semester 5", "Semester 6"]);
+
     final filtered = widget.allCourses.where((c) {
       final b = c['branch'] ?? '';
       final s = c['semester']?.toString() ?? '';
@@ -98,26 +100,18 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
       bool branchMatch = b == _selectedBranch || b.contains(_selectedBranch!);
       if (!branchMatch) return false;
 
-      // Extract year from semester string if possible
-      bool yearMatch = s.toLowerCase().contains(_selectedYear!.toLowerCase());
-      if (!yearMatch) {
-         // Fallback mapping for semesters
-         if (_selectedYear == "1st Year") yearMatch = s == "1" || s == "2" || s.contains("Semester 1") || s.contains("Semester 2");
-         else if (_selectedYear == "2nd Year") yearMatch = s == "3" || s == "4" || s.contains("Semester 3") || s.contains("Semester 4");
-         else if (_selectedYear == "3rd Year") yearMatch = s == "5" || s == "6" || s.contains("Semester 5") || s.contains("Semester 6");
-      }
-      
-      return yearMatch;
-    }).map((e) => e as Map<String, dynamic>).toList();
+      bool semMatch = targetSems.any((ts) => s.toLowerCase().contains(ts.toLowerCase()));
+      return semMatch;
+    }).map((e) => e['name'].toString()).toSet().toList(); // Unique names
 
     setState(() {
-      _filteredSubjects = filtered;
+      _subjects = filtered;
+      _selectedSubject = null;
     });
   }
 
   Future<void> _addSubject() async {
-    final subjectName = _subjectController.text.trim();
-    if (_selectedBranch == null || _selectedYear == null || _selectedSection == null || subjectName.isEmpty) {
+    if (_selectedBranch == null || _selectedYear == null || _selectedSection == null || _selectedSubject == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Please fill all fields."), backgroundColor: Colors.orange),
       );
@@ -137,7 +131,7 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
           "branch": _selectedBranch,
           "year": _selectedYear,
           "section": _selectedSection,
-          "subjectName": subjectName,
+          "subjectName": _selectedSubject,
           "createdBy": user['id'],
         }),
       );
@@ -180,6 +174,7 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
     final isDark = themeProvider.isDarkMode;
     final bgColors = isDark ? ThemeColors.darkBackground : ThemeColors.lightBackground;
     final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
+    final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
     final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
     final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
 
@@ -202,9 +197,9 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildSelectors(cardColor, textColor, tint),
-                const SizedBox(height: 24),
-                _buildSubjectSearch(cardColor, textColor, tint),
+                _buildHeader(tint, textColor, subTextColor),
+                const SizedBox(height: 32),
+                _buildSelectionCard(cardColor, textColor, subTextColor, tint),
                 const SizedBox(height: 32),
                 _buildSubmitButton(tint),
               ],
@@ -215,136 +210,179 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
     );
   }
 
-  Widget _buildSelectors(Color cardColor, Color textColor, Color tint) {
+  Widget _buildHeader(Color tint, Color textColor, Color subTextColor) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(color: tint.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)),
+          child: Icon(Icons.menu_book_rounded, color: tint, size: 32),
+        ),
+        const SizedBox(height: 16),
+        Text("Manage Courses", style: GoogleFonts.poppins(fontSize: 28, fontWeight: FontWeight.bold, color: textColor)),
+        Text("Configure subjects for different branches and sections.", style: GoogleFonts.poppins(fontSize: 14, color: subTextColor)),
+      ],
+    );
+  }
+
+  Widget _buildSelectionCard(Color cardColor, Color textColor, Color subTextColor, Color tint) {
     return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(color: cardColor, borderRadius: BorderRadius.circular(20)),
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 20, offset: const Offset(0, 10))],
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Expanded(child: _buildDropdown("Branch", _branches, _selectedBranch, (val) {
-                setState(() => _selectedBranch = val);
-                _fetchSections();
-                _updateSubjects();
-              }, tint, textColor, cardColor)),
-              const SizedBox(width: 12),
-              Expanded(child: _buildDropdown("Year", _years, _selectedYear, (val) {
-                setState(() => _selectedYear = val);
-                _fetchSections();
-                _updateSubjects();
-              }, tint, textColor, cardColor)),
-            ],
+          _buildDropdownLabel("Branch", Icons.account_tree_outlined, tint, textColor),
+          _buildDropdown(
+            value: _selectedBranch,
+            items: _branches,
+            hint: "Select Branch",
+            loading: _loadingBranches,
+            onChanged: (v) {
+              setState(() => _selectedBranch = v);
+              _fetchSections();
+              _filterSubjectsLocally();
+            },
+            textColor: textColor,
+            tint: tint,
           ),
-          const SizedBox(height: 16),
-          _buildDropdown("Section", _sections, _selectedSection, (val) => setState(() => _selectedSection = val), tint, textColor, cardColor, loading: _loadingSections),
+          const SizedBox(height: 20),
+          _buildDropdownLabel("Year", Icons.calendar_today_outlined, tint, textColor),
+          _buildDropdown(
+            value: _selectedYear,
+            items: _years,
+            hint: "Select Year",
+            onChanged: (v) {
+              setState(() => _selectedYear = v);
+              _fetchSections();
+              _filterSubjectsLocally();
+            },
+            textColor: textColor,
+            tint: tint,
+          ),
+          const SizedBox(height: 20),
+          _buildDropdownLabel("Section", Icons.grid_view_outlined, tint, textColor),
+          _buildDropdown(
+            value: _selectedSection,
+            items: _sections,
+            hint: "Select Section",
+            loading: _loadingSections,
+            enabled: _selectedBranch != null && _selectedYear != null,
+            onChanged: (v) => setState(() => _selectedSection = v),
+            textColor: textColor,
+            tint: tint,
+          ),
+          const SizedBox(height: 32),
+          const Divider(),
+          const SizedBox(height: 24),
+          _buildDropdownLabel("Select Subject", Icons.library_books_outlined, tint, textColor),
+          _buildSearchableSelector(
+            value: _selectedSubject,
+            items: _subjects,
+            hint: "Select Subject",
+            enabled: _selectedBranch != null && _selectedYear != null,
+            onTap: () => _showSearchableModal(context, "Select Subject", _subjects, (val) {
+              setState(() => _selectedSubject = val);
+            }, textColor, cardColor, tint),
+            textColor: textColor,
+            tint: tint,
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildSubjectSearch(Color cardColor, Color textColor, Color tint) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Search Subject", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: textColor)),
-        const SizedBox(height: 10),
-        Autocomplete<Map<String, dynamic>>(
-          displayStringForOption: (option) => option['name'] ?? '',
-          optionsBuilder: (TextEditingValue textEditingValue) {
-            if (_selectedBranch == null || _selectedYear == null) return const Iterable<Map<String, dynamic>>.empty();
-            if (textEditingValue.text.isEmpty) return _filteredSubjects;
-            return _filteredSubjects.where((option) {
-              final name = option['name'].toString().toLowerCase();
-              return name.contains(textEditingValue.text.toLowerCase());
-            });
-          },
-          onSelected: (selection) {
-            setState(() {
-              _subjectController.text = selection['name'];
-              _subjectIdController.text = selection['id'].toString();
-            });
-          },
-          fieldViewBuilder: (context, controller, focusNode, onFieldSubmitted) {
-            if (controller.text.isEmpty && _subjectController.text.isNotEmpty) {
-              controller.text = _subjectController.text;
-            }
-            return TextField(
-              controller: controller,
-              focusNode: focusNode,
-              onChanged: (val) => _subjectController.text = val,
-              style: GoogleFonts.poppins(color: textColor),
-              decoration: InputDecoration(
-                hintText: _selectedYear == null ? "Select Year first..." : "Type to search subject...",
-                hintStyle: GoogleFonts.poppins(color: textColor.withValues(alpha: 0.5)),
-                filled: true,
-                fillColor: cardColor,
-                prefixIcon: Icon(Icons.search, color: tint),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide.none),
-              ),
-            );
-          },
-          optionsViewBuilder: (context, onSelected, options) {
-            return Align(
-              alignment: Alignment.topLeft,
-              child: Material(
-                elevation: 4,
-                color: cardColor,
-                borderRadius: BorderRadius.circular(15),
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(maxHeight: 300, maxWidth: MediaQuery.of(context).size.width - 48),
-                  child: ListView.builder(
-                    padding: EdgeInsets.zero,
-                    shrinkWrap: true,
-                    itemCount: options.length,
-                    itemBuilder: (context, index) {
-                      final option = options.elementAt(index);
-                      return ListTile(
-                        title: Text(option['name'], style: GoogleFonts.poppins(color: textColor)),
-                        onTap: () => onSelected(option),
-                      );
-                    },
-                  ),
-                ),
-              ),
-            );
-          },
-        ),
-      ],
+  // --- Helper Widgets ---
+
+  Widget _buildDropdownLabel(String label, IconData icon, Color tint, Color textColor) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        children: [
+          Icon(icon, size: 18, color: tint),
+          const SizedBox(width: 8),
+          Text(label, style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600, color: textColor)),
+        ],
+      ),
     );
   }
 
-  Widget _buildDropdown(String label, List<String> items, String? value, Function(String?) onChanged, Color tint, Color textColor, Color cardColor, {bool loading = false}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label, style: GoogleFonts.poppins(fontSize: 12, color: textColor.withValues(alpha: 0.7))),
-        const SizedBox(height: 6),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          decoration: BoxDecoration(
-            color: cardColor.withValues(alpha: 0.5),
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: tint.withValues(alpha: 0.2)),
-          ),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton<String>(
-              value: value,
-              isExpanded: true,
-              dropdownColor: cardColor,
-              icon: loading ? const SizedBox(width: 14, height: 14, child: CircularProgressIndicator(strokeWidth: 2)) : Icon(Icons.keyboard_arrow_down, color: tint),
-              hint: Text("Select", style: GoogleFonts.poppins(fontSize: 13, color: textColor.withValues(alpha: 0.5))),
-              items: items.map((String item) {
-                return DropdownMenuItem<String>(
-                  value: item,
-                  child: Text(item, style: GoogleFonts.poppins(color: textColor, fontSize: 13)),
-                );
-              }).toList(),
-              onChanged: onChanged,
-            ),
-          ),
+  Widget _buildDropdown({
+    required String? value,
+    required List<String> items,
+    required String hint,
+    required void Function(String?) onChanged,
+    required Color textColor,
+    required Color tint,
+    bool loading = false,
+    bool enabled = true,
+  }) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: tint.withValues(alpha: 0.2)),
+        color: enabled ? Colors.transparent : Colors.grey.withValues(alpha: 0.1),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          value: value,
+          hint: loading
+              ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2))
+              : Text(hint, style: GoogleFonts.poppins(color: textColor.withValues(alpha: 0.5), fontSize: 14)),
+          isExpanded: true,
+          icon: Icon(Icons.keyboard_arrow_down_rounded, color: tint),
+          dropdownColor: Theme.of(context).cardColor,
+          items: items.map((String item) {
+            return DropdownMenuItem<String>(
+              value: item,
+              child: Text(item, style: GoogleFonts.poppins(color: textColor, fontSize: 14)),
+            );
+          }).toList(),
+          onChanged: enabled ? onChanged : null,
         ),
-      ],
+      ),
+    );
+  }
+
+  Widget _buildSearchableSelector({
+    required String? value,
+    required List<String> items,
+    required String hint,
+    required VoidCallback onTap,
+    required Color textColor,
+    required Color tint,
+    bool enabled = true,
+  }) {
+    return GestureDetector(
+      onTap: enabled ? onTap : null,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: tint.withValues(alpha: 0.2)),
+          color: enabled ? Colors.transparent : Colors.grey.withValues(alpha: 0.1),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                value ?? hint,
+                style: GoogleFonts.poppins(color: value != null ? textColor : textColor.withValues(alpha: 0.5), fontSize: 14),
+              ),
+            ),
+            Icon(Icons.search, size: 20, color: tint),
+          ],
+        ),
+      ),
     );
   }
 
@@ -361,6 +399,103 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
           elevation: 0,
         ),
         child: _submitting ? const CircularProgressIndicator(color: Colors.white) : Text("Add Subject", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold)),
+      ),
+    );
+  }
+
+  void _showSearchableModal(BuildContext context, String title, List<String> items, Function(String) onSelect, Color textColor, Color cardColor, Color tint) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => _SearchContent(title: title, items: items, onSelect: onSelect, textColor: textColor, cardColor: cardColor, tint: tint),
+    );
+  }
+}
+
+class _SearchContent extends StatefulWidget {
+  final String title;
+  final List<String> items;
+  final Function(String) onSelect;
+  final Color textColor;
+  final Color cardColor;
+  final Color tint;
+
+  const _SearchContent({required this.title, required this.items, required this.onSelect, required this.textColor, required this.cardColor, required this.tint});
+
+  @override
+  __SearchContentState createState() => __SearchContentState();
+}
+
+class __SearchContentState extends State<_SearchContent> {
+  late List<String> filteredItems;
+  String query = "";
+
+  @override
+  void initState() {
+    super.initState();
+    filteredItems = widget.items;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final bottomInset = MediaQuery.of(context).viewInsets.bottom;
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.7 + bottomInset,
+      padding: EdgeInsets.only(bottom: bottomInset),
+      decoration: BoxDecoration(color: widget.cardColor, borderRadius: const BorderRadius.vertical(top: Radius.circular(24))),
+      child: Column(
+        children: [
+          const SizedBox(height: 12),
+          Container(width: 40, height: 4, decoration: BoxDecoration(color: Colors.grey.withValues(alpha: 0.3), borderRadius: BorderRadius.circular(2))),
+          Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(widget.title, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: widget.textColor)),
+                IconButton(icon: const Icon(Icons.close), onPressed: () => Navigator.pop(context)),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: TextField(
+              autofocus: true,
+              style: GoogleFonts.poppins(color: widget.textColor),
+              decoration: InputDecoration(
+                hintText: "Search...",
+                hintStyle: GoogleFonts.poppins(color: widget.textColor.withValues(alpha: 0.5)),
+                prefixIcon: Icon(Icons.search, color: widget.tint),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: widget.tint.withValues(alpha: 0.2))),
+                focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: widget.tint)),
+              ),
+              onChanged: (v) {
+                setState(() {
+                  query = v;
+                  filteredItems = widget.items.where((i) => i.toLowerCase().contains(v.toLowerCase())).toList();
+                });
+              },
+            ),
+          ),
+          const SizedBox(height: 16),
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              itemCount: filteredItems.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(filteredItems[index], style: GoogleFonts.poppins(color: widget.textColor)),
+                  trailing: Icon(Icons.chevron_right, color: widget.tint.withValues(alpha: 0.3)),
+                  onTap: () {
+                    widget.onSelect(filteredItems[index]);
+                    Navigator.pop(context);
+                  },
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
