@@ -254,7 +254,8 @@ pub struct UpdateIssueStatusRequest {
     pub status: String,
 }
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct GetIssuesQuery {
     pub user_id: String,
     pub role: String,
