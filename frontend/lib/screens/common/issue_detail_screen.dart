@@ -316,7 +316,7 @@ class _IssueDetailScreenState extends State<IssueDetailScreen> {
                 hintText: "Add a comment...",
                 hintStyle: GoogleFonts.poppins(color: subTextColor),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(24), borderSide: BorderSide.none),
-                fillColor: isDark ? Colors.white10 : Colors.black12.withOpacity(0.05),
+                fillColor: Provider.of<ThemeProvider>(context, listen: false).isDarkMode ? Colors.white10 : Colors.black12.withOpacity(0.05),
                 filled: true,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               ),

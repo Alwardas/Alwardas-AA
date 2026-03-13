@@ -21,7 +21,6 @@ import 'principal_lesson_plans_screen.dart';
 import 'principal_requests_screen.dart';
 import 'principal_schedule_screen.dart';
 import 'principal_timetables_screen.dart';
-import 'principal_issues_screen.dart';
 import '../../common/issue_management_screen.dart';
 import '../coordinator/coordinator_department_screen.dart';
 import 'principal_menu_tab.dart';

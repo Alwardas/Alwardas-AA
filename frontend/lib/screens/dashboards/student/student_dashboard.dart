@@ -8,7 +8,6 @@ import 'time_table_screen.dart';
 import 'my_courses_screen.dart';
 import 'student_notifications_screen.dart';
 import 'student_marks_screen.dart';
-import 'student_comments_screen.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/services/auth_service.dart';
