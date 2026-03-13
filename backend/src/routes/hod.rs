@@ -7,6 +7,7 @@ use serde::{Deserialize, Serialize};
 use crate::models::AppState;
 use uuid::Uuid;
 use serde_json::json;
+use sqlx::Row;
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
