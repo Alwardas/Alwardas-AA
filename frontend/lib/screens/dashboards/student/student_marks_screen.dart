@@ -179,7 +179,7 @@ class _StudentMarksScreenState extends State<StudentMarksScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(subName, style: GoogleFonts.poppins(fontWeight: FontWeight.w500, color: textColor)),
+                            Text("${sub['subjectId']} - $subName", style: GoogleFonts.poppins(fontWeight: FontWeight.w500, color: textColor)),
                             Text(
                               isFailed ? "$scoreStr (Failed)" : scoreStr,
                               style: GoogleFonts.poppins(fontSize: 12, color: subtitleColor)

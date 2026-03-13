@@ -137,8 +137,8 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    subject['subjectName'],
-                    style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 17),
+                    "${subject['id']} - ${subject['subjectName']}",
+                    style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 16),
                   ),
                   const SizedBox(height: 4),
                   Text(

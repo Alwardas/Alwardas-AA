@@ -705,6 +705,7 @@ pub async fn delete_attendance_correction_requests_handler(
 #[derive(serde::Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SubjectMarkResponse {
+    pub subject_id: String,
     pub subject_name: String,
     pub marks: Option<i32>,
     pub credit: i32,
@@ -781,11 +782,12 @@ pub async fn get_student_academics_handler(
         // Fetch subjects for this branch and sem
         #[derive(sqlx::FromRow)]
         struct SubjData {
+            id: String,
             name: String,
             credit: Option<i32>,
         }
         let subjects: Vec<SubjData> = sqlx::query_as(
-            "SELECT name, credit FROM subjects WHERE branch = $1 AND semester = $2"
+            "SELECT id, name, credit FROM subjects WHERE branch = $1 AND semester = $2 ORDER BY id ASC"
         )
         .bind(&branch_norm)
         .bind(db_sem)
@@ -832,6 +834,7 @@ pub async fn get_student_academics_handler(
             }
 
             sub_responses.push(SubjectMarkResponse {
+                subject_id: s.id.clone(),
                 subject_name: s.name.clone(),
                 marks: mark_opt,
                 credit: credit_val,

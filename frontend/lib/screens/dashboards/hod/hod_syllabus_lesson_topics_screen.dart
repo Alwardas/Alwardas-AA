@@ -40,7 +40,8 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
   }
 
   Future<void> _fetchTopics() async {
-    final url = Uri.parse('${ApiConstants.baseUrl}/api/faculty/hod-lesson-topics?subject_id=${Uri.encodeComponent(widget.subjectId)}');
+    final branch = widget.userData['branch'] ?? 'Computer Engineering';
+    final url = Uri.parse('${ApiConstants.baseUrl}/api/faculty/hod-lesson-topics?subject_id=${Uri.encodeComponent(widget.subjectId)}&section=${Uri.encodeComponent(widget.section)}&branch=${Uri.encodeComponent(branch)}');
     try {
       final response = await http.get(url);
       if (response.statusCode == 200) {

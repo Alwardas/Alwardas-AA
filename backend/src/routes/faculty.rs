@@ -1568,7 +1568,7 @@ pub async fn get_semester_subjects_handler(
         name: String,
     }
 
-    let subjects: Vec<SubjRow> = sqlx::query_as("SELECT id, name FROM subjects WHERE branch = $1 AND semester = ANY($2)")
+    let subjects: Vec<SubjRow> = sqlx::query_as("SELECT id, name FROM subjects WHERE branch = $1 AND semester = ANY($2) ORDER BY id ASC")
         .bind(&branch)
         .bind(&semester_variations)
         .fetch_all(&state.pool)
@@ -1586,6 +1586,8 @@ pub async fn get_semester_subjects_handler(
 #[derive(serde::Deserialize)]
 pub struct LessonTopicsQuery {
     pub subject_id: String,
+    pub section: Option<String>,
+    pub branch: Option<String>,
 }
 
 #[derive(serde::Serialize, sqlx::FromRow)]
@@ -1606,13 +1608,17 @@ pub async fn get_lesson_topics_handler(
     let sql = r#"
         SELECT lpi.id::text, COALESCE(lpi.sno, 'Unit') as unit, lpi.topic as topic_name, ls.schedule_date 
         FROM lesson_plan_items lpi
-        LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id
+        LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id 
+            AND (ls.section = $2 OR $2 IS NULL)
+            AND (ls.branch = $3 OR $3 IS NULL)
         WHERE lpi.subject_id = $1
         ORDER BY lpi.order_index
     "#;
 
     let topics = sqlx::query_as::<_, LessonTopicResponse>(sql)
         .bind(&params.subject_id)
+        .bind(&params.section)
+        .bind(&params.branch)
         .fetch_all(&state.pool)
         .await
         .map_err(|e| {
