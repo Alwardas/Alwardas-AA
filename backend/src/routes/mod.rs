@@ -209,8 +209,8 @@ pub async fn signup_handler(
                     // Send to Coordinator
                     query_builder.bind(None::<String>).bind("UNREAD").bind(Some("COORDINATOR_RECIPIENT"))
                 } else if payload.role == "Coordinator" {
-                    // Send to Admin
-                    query_builder.bind(None::<String>).bind("UNREAD").bind(Some("ADMIN_RECIPIENT"))
+                    // Send to Principal
+                    query_builder.bind(None::<String>).bind("UNREAD").bind(Some("PRINCIPAL_RECIPIENT"))
                 } else {
                     query_builder.bind(None::<String>).bind("UNREAD").bind(None::<String>)
                 };
