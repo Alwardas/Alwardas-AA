@@ -419,10 +419,10 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
             // Course Name
             Text(
-              course['name'] ?? 'Unknown Course',
+              "${course['id']} - ${course['name']}",
               style: GoogleFonts.manrope(
                 color: titleColor,
-                fontSize: 16, // Reduced from 20
+                fontSize: 16,
                 fontWeight: FontWeight.w700,
                 height: 1.2,
               ),

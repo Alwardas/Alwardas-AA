@@ -98,6 +98,7 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
           'branch': branch,
           'year': widget.year,
           'semester': widget.semester,
+          'section': widget.section,
         }),
       );
 

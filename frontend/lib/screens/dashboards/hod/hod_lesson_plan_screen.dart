@@ -10,12 +10,14 @@ class HodLessonPlanScreen extends StatefulWidget {
   final String subjectId;
   final String subjectName; 
   final String facultyName;
+  final String section;
 
   const HodLessonPlanScreen({
     super.key, 
     required this.subjectId, 
     this.subjectName = 'Lesson Plan',
     this.facultyName = 'Unknown Faculty',
+    this.section = 'Section A',
   });
 
   @override
@@ -42,7 +44,7 @@ class _HodLessonPlanScreenState extends State<HodLessonPlanScreen> {
 
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}'),
+        Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&section=${Uri.encodeComponent(widget.section)}'),
       );
       if (response.statusCode == 200) {
         final decoded = json.decode(response.body);
@@ -104,7 +106,8 @@ class _HodLessonPlanScreenState extends State<HodLessonPlanScreen> {
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode({
             'itemId': itemId,
-            'completed': newStatus
+            'completed': newStatus,
+            'section': widget.section
           })
         );
         

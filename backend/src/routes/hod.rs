@@ -122,7 +122,7 @@ pub async fn get_added_course_subjects_handler(
     Query(params): Query<crate::models::ProfileQuery>,
 ) -> Result<Json<serde_json::Value>, StatusCode> {
     let result = sqlx::query(
-        "SELECT id, branch, year, section, subject_name FROM course_subjects WHERE created_by = $1 ORDER BY created_at DESC"
+        "SELECT id, branch, year, section, subject_name, subject_code FROM course_subjects WHERE created_by = $1 ORDER BY subject_code ASC, subject_name ASC"
     )
     .bind(&params.user_id)
     .fetch_all(&data.pool)
@@ -139,7 +139,7 @@ pub async fn get_added_course_subjects_handler(
             "year": row.get::<String, _>("year"),
             "section": row.get::<String, _>("section"),
             "subjectName": row.get::<String, _>("subject_name"),
-            "subjectCode": row.get::<Option<String>, _>("subject_code").unwrap_or_default(),
+            "subject_id": row.get::<Option<String>, _>("subject_code").unwrap_or_default(),
         })
     }).collect();
 

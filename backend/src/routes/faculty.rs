@@ -78,6 +78,7 @@ pub async fn get_faculty_subjects_handler(
             0 as completion_percentage
         FROM course_subjects cs
         WHERE cs.created_by = $1::text
+        ORDER BY subject_id ASC
         "#
     )
     .bind(params.user_id)
@@ -1639,6 +1640,7 @@ pub struct AssignLessonScheduleRequest {
     pub branch: String,
     pub year: String,
     pub semester: String,
+    pub section: String,
 }
 
 pub async fn assign_lesson_schedule_handler(
@@ -1647,9 +1649,9 @@ pub async fn assign_lesson_schedule_handler(
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
     // Insert/Upsert into lesson_schedule so that the schedule applies for that topic
     let res = sqlx::query(
-        "INSERT INTO lesson_schedule (subject_id, topic_id, schedule_date, faculty_id, branch, year, semester)
-         VALUES ($1, $2, $3, $4, $5, $6, $7)
-         ON CONFLICT (subject_id, topic_id) DO UPDATE SET schedule_date = EXCLUDED.schedule_date, faculty_id = EXCLUDED.faculty_id"
+        "INSERT INTO lesson_schedule (subject_id, topic_id, schedule_date, faculty_id, branch, year, semester, section)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+         ON CONFLICT (subject_id, topic_id, section, branch) DO UPDATE SET schedule_date = EXCLUDED.schedule_date, faculty_id = EXCLUDED.faculty_id"
     )
     .bind(&payload.subject_id)
     .bind(payload.topic_id)
@@ -1658,6 +1660,7 @@ pub async fn assign_lesson_schedule_handler(
     .bind(&payload.branch)
     .bind(&payload.year)
     .bind(&payload.semester)
+    .bind(&payload.section)
     .execute(&state.pool)
     .await;
 

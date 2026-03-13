@@ -213,7 +213,11 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
         if (_isSelectMode) {
           _toggleDeleteSelection(item['id']);
         } else {
-          Navigator.push(context, MaterialPageRoute(builder: (_) => HodLessonPlanScreen(subjectId: item['id'], subjectName: item['name'])));
+          Navigator.push(context, MaterialPageRoute(builder: (_) => HodLessonPlanScreen(
+            subjectId: item['subject_id'] ?? item['id'], 
+            subjectName: item['name'],
+            section: item['section'] ?? 'Section A',
+          )));
         }
       },
       child: Container(
@@ -254,7 +258,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
               ],
             ),
             const SizedBox(height: 12),
-            Text(item['name'], style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: textColor)),
+            Text("${item['subject_id'] ?? ''} - ${item['name']}", style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600, color: textColor)),
             const SizedBox(height: 8),
             Row(
               children: [
