@@ -296,10 +296,6 @@ async fn main() {
         .add_service(AuthServiceServer::new(auth_service))
         .into_service();
 
-    let cors = CorsLayer::new()
-        .allow_origin(Any)
-        .allow_methods([Method::GET, Method::POST, Method::DELETE, Method::PUT])
-        .allow_headers(Any);
 
     let app = Router::new()
         .route("/", get(root))

@@ -1,13 +1,11 @@
-use ax_core::extract::Path;
 use axum::{
-    extract::{State, Query},
+    extract::{State, Query, Path},
     Json,
     http::StatusCode,
 };
-use sqlx::{Postgres, Row};
+use sqlx::Postgres;
 use crate::models::*;
 use uuid::Uuid;
-use chrono::{DateTime, Utc};
 
 pub async fn submit_issue_handler(
     State(state): State<AppState>,
@@ -106,7 +104,7 @@ pub async fn get_issues_handler(
 
 pub async fn get_issue_details_handler(
     State(state): State<AppState>,
-    axum::extract::Path(issue_id): axum::extract::Path<Uuid>,
+    Path(issue_id): Path<Uuid>,
 ) -> Result<Json<Issue>, (StatusCode, Json<serde_json::Value>)> {
     let issue = sqlx::query_as::<Postgres, Issue>(
         r#"
@@ -131,7 +129,7 @@ pub async fn get_issue_details_handler(
 
 pub async fn get_issue_comments_handler(
     State(state): State<AppState>,
-    axum::extract::Path(issue_id): axum::extract::Path<Uuid>,
+    Path(issue_id): Path<Uuid>,
 ) -> Result<Json<Vec<IssueComment>>, (StatusCode, Json<serde_json::Value>)> {
     let comments = sqlx::query_as::<Postgres, IssueComment>(
         r#"
@@ -174,7 +172,7 @@ pub async fn submit_comment_handler(
 
 pub async fn assign_issue_handler(
     State(state): State<AppState>,
-    axum::extract::Path(issue_id): axum::extract::Path<Uuid>,
+    Path(issue_id): Path<Uuid>,
     Json(payload): Json<AssignIssueRequest>,
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
     let assigned_to = Uuid::parse_str(&payload.assigned_to).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
@@ -191,7 +189,7 @@ pub async fn assign_issue_handler(
 
 pub async fn update_issue_status_handler(
     State(state): State<AppState>,
-    axum::extract::Path(issue_id): axum::extract::Path<Uuid>,
+    Path(issue_id): Path<Uuid>,
     Json(payload): Json<UpdateIssueStatusRequest>,
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
     
