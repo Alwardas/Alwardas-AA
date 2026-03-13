@@ -122,7 +122,12 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
   void _openAddModal() async {
     final result = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const HodAddSubjectScreen()),
+      MaterialPageRoute(
+        builder: (context) => HodAddSubjectScreen(
+          allCourses: _allCourses,
+          existingSubjects: _mySubjects,
+        ),
+      ),
     );
     
     if (result == true) {
