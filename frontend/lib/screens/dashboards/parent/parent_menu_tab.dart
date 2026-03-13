@@ -9,6 +9,7 @@ import '../student/attendance_screen.dart';
 import '../student/student_notifications_screen.dart';
 import '../student/student_marks_screen.dart';
 import '../student/my_courses_screen.dart';
+import '../../common/issue_management_screen.dart';
 
 class ParentMenuTab extends StatelessWidget {
   final Map<String, dynamic> userData;
@@ -86,8 +87,7 @@ class ParentMenuTab extends StatelessWidget {
         'title': 'Issues',
         'icon': Icons.report_problem,
         'color': const Color(0xFFEF5350),
-        'onTap': () => ScaffoldMessenger.of(context)
-            .showSnackBar(const SnackBar(content: Text('Issues coming soon'))),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: userData))),
       },
     ];
 

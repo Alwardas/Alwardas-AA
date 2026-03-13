@@ -27,16 +27,17 @@ class ApiConstants {
   static String get rejectProfileUpdate => '$baseUrl/api/user/reject-my-update';
   static String get getSections => '$baseUrl/api/sections';
 
-  // Issue Tracking
-  static String get studentSubmitIssue => '$baseUrl/api/issues/submit';
-  static String get studentGetIssues => '$baseUrl/api/issues';
-  static String get studentUpdateIssue => '$baseUrl/api/issues';
-  static String get studentDeleteIssue => '$baseUrl/api/issues';
+  // Issue Tracking (Centralized)
+  static String get submitIssue => '$baseUrl/api/issues/submit';
+  static String get getIssues => '$baseUrl/api/issues';
+  static String getIssueDetails(String id) => '$baseUrl/api/issues/$id';
+  static String getIssueComments(String id) => '$baseUrl/api/issues/$id/comments';
+  static String get submitComment => '$baseUrl/api/issues/comments/submit';
+  static String assignIssue(String id) => '$baseUrl/api/issues/$id/assign';
+  static String updateIssueStatus(String id) => '$baseUrl/api/issues/$id/status';
 
   // Faculty
   static String get facultyByBranch => '$baseUrl/api/faculty/by-branch';
-  static String get facultyGetIssues => '$baseUrl/api/faculty/issues';
-  static String facultyResolveIssue(String id) => '$baseUrl/api/faculty/issues/$id/resolve';
   
   // HOD Courses
   static String get hodGetDepartments => '$baseUrl/api/hod/departments';

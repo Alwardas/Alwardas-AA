@@ -25,7 +25,7 @@ import '../principal/principal_schedule_screen.dart';
 import '../principal/principal_timetables_screen.dart';
 
 // Coordinator Modules
-import 'coordinator_issues_screen.dart';
+import '../../common/issue_management_screen.dart';
 import 'coordinator_events_screen.dart';
 import 'coordinator_activities_screen.dart';
 import 'coordinator_requests_screen.dart';
@@ -172,7 +172,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
           child: IndexedStack(
             index: _selectedIndex,
             children: [
-              const CoordinatorMenuTab(),
+              CoordinatorMenuTab(userData: widget.userData),
               _buildHomeTab(context, cardColor, textColor, subTextColor, isDark),
               CoordinatorProfileTab(userData: widget.userData, onLogout: _logout),
             ],
@@ -357,7 +357,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                           'title': 'Issues',
                           'subtitle': 'Student Issues',
                           'color': const Color(0xFFEF5350), // Red
-                          'route': const CoordinatorIssuesScreen(),
+                          'route': IssueManagementScreen(userData: widget.userData),
                         },
                         {
                           'icon': Icons.groups_outlined,

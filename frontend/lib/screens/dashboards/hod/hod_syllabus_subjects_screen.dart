@@ -40,7 +40,7 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
   Future<void> _fetchSubjects() async {
     final branch = widget.userData['branch'] ?? 'Computer Engineering';
     final url = Uri.parse(
-      '${ApiConstants.baseUrl}/api/faculty/hod-semester-subjects?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&semester=${Uri.encodeComponent(widget.semester)}&course_id=${Uri.encodeComponent(widget.courseId)}'
+      '${ApiConstants.baseUrl}/api/faculty/hod-semester-subjects?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&semester=${Uri.encodeComponent(widget.semester)}'
     );
     
     try {

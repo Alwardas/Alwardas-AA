@@ -10,11 +10,12 @@ import 'principal_timetables_screen.dart';
 import 'principal_schedule_screen.dart';
 import 'principal_requests_screen.dart';
 import 'principal_lesson_plans_screen.dart';
-import 'principal_issues_screen.dart';
+import '../../common/issue_management_screen.dart';
 import '../coordinator/coordinator_department_screen.dart';
 
 class PrincipalMenuTab extends StatelessWidget {
-  const PrincipalMenuTab({super.key});
+  final Map<String, dynamic> userData;
+  const PrincipalMenuTab({super.key, this.userData = const {}});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class PrincipalMenuTab extends StatelessWidget {
       {'label': 'My Schedule', 'icon': Icons.today, 'route': const PrincipalScheduleScreen(), 'color': const Color(0xFFfa709a)},
       {'label': 'Requests & Approvals', 'icon': Icons.inbox, 'route': const PrincipalRequestsScreen(), 'color': const Color(0xFFf1c40f)},
       {'label': 'Syllabus Management', 'icon': Icons.book, 'route': const PrincipalLessonPlansScreen(), 'color': const Color(0xFF38ef7d)},
-      {'label': 'Issues', 'icon': Icons.report_problem, 'route': const PrincipalIssuesScreen(), 'color': const Color(0xFFEF5350)},
+      {'label': 'Issues', 'icon': Icons.report_problem, 'route': IssueManagementScreen(userData: userData), 'color': const Color(0xFFEF5350)},
       {'label': 'Departments', 'icon': Icons.business, 'route': const CoordinatorDepartmentScreen(), 'color': const Color(0xFF29B6F6)},
     ];
 

@@ -22,6 +22,7 @@ import 'principal_requests_screen.dart';
 import 'principal_schedule_screen.dart';
 import 'principal_timetables_screen.dart';
 import 'principal_issues_screen.dart';
+import '../../common/issue_management_screen.dart';
 import '../coordinator/coordinator_department_screen.dart';
 import 'principal_menu_tab.dart';
 import 'principal_profile_tab.dart';
@@ -163,7 +164,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
           child: IndexedStack(
             index: _selectedIndex,
             children: [
-              const PrincipalMenuTab(),
+              PrincipalMenuTab(userData: widget.userData),
               _buildHomeTab(context, cardColor, textColor, subTextColor, isDark),
               PrincipalProfileTab(userData: widget.userData, onLogout: _logout),
             ],
@@ -382,7 +383,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           const Color(0xFFEF5350),
                           textColor,
                           subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalIssuesScreen())),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
                         ),
                     ],
                   ),

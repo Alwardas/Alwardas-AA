@@ -11,7 +11,7 @@ import 'faculty_schedule_screen.dart';
 import 'faculty_attendance_screen.dart';
 import 'faculty_profile_screen.dart';
 import 'faculty_notifications_screen.dart';
-import 'faculty_issues_screen.dart';
+import '../../common/issue_management_screen.dart';
 import 'faculty_exams_screen.dart';
 import 'faculty_requests_screen.dart';
 import 'faculty_announcements_screen.dart';
@@ -608,7 +608,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                     const Color(0xFFE74C3C),
                     textColor,
                     subTextColor,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyIssuesScreen(userData: widget.userData))),
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
                   ),
                    _buildQuickAccessCard(
                     Icons.assignment_outlined,

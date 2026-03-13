@@ -7,18 +7,15 @@ import '../principal/principal_announcements_screen.dart';
 import '../principal/principal_attendance_screen.dart';
 import '../principal/principal_faculty_screen.dart';
 import '../principal/principal_timetables_screen.dart';
-import '../principal/principal_schedule_screen.dart';
-import '../principal/principal_requests_screen.dart';
 import '../principal/principal_lesson_plans_screen.dart';
-import 'coordinator_events_screen.dart';
-import 'coordinator_activities_screen.dart';
-import 'coordinator_requests_screen.dart';
 import 'coordinator_announcements_screen.dart';
-import 'coordinator_issues_screen.dart';
+import 'coordinator_requests_screen.dart';
 import 'coordinator_department_screen.dart';
+import '../../common/issue_management_screen.dart';
 
 class CoordinatorMenuTab extends StatelessWidget {
-  const CoordinatorMenuTab({super.key});
+  final Map<String, dynamic> userData;
+  const CoordinatorMenuTab({super.key, this.userData = const {}});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +32,7 @@ class CoordinatorMenuTab extends StatelessWidget {
       {'label': 'Faculty Directory', 'icon': Icons.people, 'route': const PrincipalFacultyScreen(), 'color': ThemeColors.accentCyan},
       {'label': 'Master Timetables', 'icon': Icons.access_time, 'route': const PrincipalTimetablesScreen(), 'color': ThemeColors.accentGreen},
       {'label': 'Syllabus Management', 'icon': Icons.book, 'route': const PrincipalLessonPlansScreen(), 'color': ThemeColors.accentGreen},
-      {'label': 'Issues', 'icon': Icons.report_problem_outlined, 'route': const CoordinatorIssuesScreen(), 'color': ThemeColors.accentGold},
+      {'label': 'Issues', 'icon': Icons.report_problem_outlined, 'route': IssueManagementScreen(userData: userData), 'color': ThemeColors.accentGold},
       {'label': 'Requests', 'icon': Icons.request_page_outlined, 'route': const CoordinatorRequestsScreen(), 'color': ThemeColors.accentCyan},
       {'label': 'Departments', 'icon': Icons.business, 'route': const CoordinatorDepartmentScreen(), 'color': ThemeColors.accentBlue},
     ];

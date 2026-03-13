@@ -172,65 +172,93 @@ pub struct ApprovalRequest {
 }
 
 #[derive(Serialize, Deserialize, Debug, FromRow)]
+#[serde(rename_all = "camelCase")]
 pub struct Issue {
     pub id: Uuid,
-    #[serde(rename = "userId")]
-    #[sqlx(rename = "user_id")]
-    pub user_id: Uuid,
-    pub subject: String,
+    pub title: String,
     pub description: String,
-    pub category: Option<String>,
-    #[serde(rename = "targetRole")]
-    #[sqlx(rename = "target_role")]
-    pub target_role: Option<String>,
+    pub category: String,
+    pub priority: String,
     pub status: String,
-    pub response: Option<String>,
-    #[serde(rename = "respondedBy")]
-    #[sqlx(rename = "responded_by")]
-    pub responded_by: Option<Uuid>,
-    #[serde(rename = "createdAt")]
-    #[sqlx(rename = "created_at")]
-    pub created_at: DateTime<Utc>,
-    #[serde(rename = "reactedAt")]
-    #[sqlx(rename = "reacted_at")]
-    pub reacted_at: Option<DateTime<Utc>>,
-    #[serde(rename = "responderName")] 
-    #[sqlx(default)] 
-    pub responder_name: Option<String>,
+    #[serde(rename = "createdBy")]
+    #[sqlx(rename = "created_by")]
+    pub created_by: Uuid,
+    #[serde(rename = "userRole")]
+    #[sqlx(rename = "user_role")]
+    pub user_role: String,
+    #[serde(rename = "assignedTo")]
+    #[sqlx(rename = "assigned_to")]
+    pub assigned_to: Option<Uuid>,
+    #[serde(rename = "createdDate")]
+    #[sqlx(rename = "created_date")]
+    pub created_date: DateTime<Utc>,
+    
+    // Virtual fields joined from users
+    #[serde(rename = "creatorName")]
+    #[sqlx(default)]
+    pub creator_name: Option<String>,
+    #[serde(rename = "assignedName")]
+    #[sqlx(default)]
+    pub assigned_name: Option<String>,
 }
 
 #[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct SubmitIssueRequest {
-    #[serde(rename = "userId")]
-    pub user_id: String,
-    pub subject: String,
+    pub title: String,
     pub description: String,
-    pub category: Option<String>,
-    #[serde(rename = "targetRole")]
-    pub target_role: Option<String>,
+    pub category: String,
+    pub priority: String,
+    pub created_by: String, // UUID as string
+    pub user_role: String,
+}
+
+#[derive(Serialize, Deserialize, Debug, FromRow)]
+#[serde(rename_all = "camelCase")]
+pub struct IssueComment {
+    pub id: Uuid,
+    #[serde(rename = "issueId")]
+    #[sqlx(rename = "issue_id")]
+    pub issue_id: Uuid,
+    pub comment: String,
+    #[serde(rename = "commentBy")]
+    #[sqlx(rename = "comment_by")]
+    pub comment_by: Uuid,
+    #[serde(rename = "commentDate")]
+    #[sqlx(rename = "comment_date")]
+    pub comment_date: DateTime<Utc>,
+    
+    // Joined field
+    #[serde(rename = "userName")]
+    #[sqlx(default)]
+    pub user_name: Option<String>,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SubmitCommentRequest {
+    pub issue_id: String,
+    pub comment: String,
+    pub comment_by: String,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AssignIssueRequest {
+    pub assigned_to: String, // Staff UUID
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct UpdateIssueStatusRequest {
+    pub status: String,
 }
 
 #[derive(Deserialize)]
 pub struct GetIssuesQuery {
-    #[serde(rename = "userId")]
     pub user_id: String,
-}
-
-#[derive(Deserialize)]
-pub struct UpdateIssueRequest {
-    #[serde(rename = "userId")]
-    pub user_id: String,
-    pub subject: String,
-    pub description: String,
-    pub category: Option<String>,
-    #[serde(rename = "targetRole")]
-    pub target_role: Option<String>,
-}
-
-#[derive(Deserialize)]
-pub struct DeleteIssueQuery {
-    #[serde(rename = "userId")]
-    pub user_id: String,
+    pub role: String,
+    pub branch: Option<String>,
 }
 
 #[derive(Deserialize)]

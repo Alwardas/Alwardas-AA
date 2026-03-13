@@ -16,7 +16,7 @@ import 'hod_faculty_screen.dart';
 import 'hod_timetables_screen.dart';
 import 'hod_schedule_screen.dart';
 import 'hod_requests_screen.dart';
-import 'hod_issues_screen.dart';
+import '../../common/issue_management_screen.dart';
 import 'hod_department_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
 import '../../../widgets/shared_dashboard_announcements.dart';
@@ -465,7 +465,7 @@ class _HodDashboardState extends State<HodDashboard> {
                           Colors.red,
                           textColor,
                           subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodIssuesScreen())),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
                         ),
                         _buildQuickAccessCard(
                           Icons.book_online_outlined,
