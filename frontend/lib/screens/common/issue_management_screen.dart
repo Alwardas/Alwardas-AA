@@ -42,9 +42,17 @@ class _IssueManagementScreenState extends State<IssueManagementScreen> {
       final role = widget.userData['role'];
       final branch = widget.userData['branch'];
       
-      final url = '${ApiConstants.getIssues}?userId=$userId&role=$role${branch != null ? "&branch=$branch" : ""}';
+      final queryParameters = {
+        'userId': userId.toString(),
+        'role': role.toString(),
+      };
+      if (branch != null) {
+        queryParameters['branch'] = branch.toString();
+      }
+
+      final uri = Uri.parse(ApiConstants.getIssues).replace(queryParameters: queryParameters);
       
-      final response = await http.get(Uri.parse(url));
+      final response = await http.get(uri);
 
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
