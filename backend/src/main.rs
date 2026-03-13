@@ -377,6 +377,10 @@ async fn main() {
         .route("/api/announcement/pin", post(coordinator::pin_announcement_handler))
         .route("/api/departments", get(coordinator::get_all_departments_handler))
         .route("/api/departments/delete", post(coordinator::delete_department_handler))
+        .route("/api/hod/departments", get(hod::get_hod_departments_handler))
+        .route("/api/hod/sections", get(hod::get_hod_sections_handler))
+        .route("/api/hod/subjects", get(hod::get_hod_subjects_handler))
+        .route("/api/hod/course-subjects", post(hod::add_course_subject_handler).get(hod::get_added_course_subjects_handler))
         .with_state(AppState { pool })
         .fallback(move |req: axum::extract::Request| {
             let mut grpc_service = grpc_service.clone();

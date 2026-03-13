@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -9,6 +9,7 @@ import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../data/courses_data.dart';
 import 'hod_lesson_plan_screen.dart';
+import 'hod_add_subject_screen.dart';
 
 class HodCoursesScreen extends StatefulWidget {
   const HodCoursesScreen({super.key});
@@ -118,17 +119,15 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
     }
   }
 
-  void _openAddModal() {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (context) => _AddSubjectModal(
-        allCourses: _allCourses,
-        currentSubjects: _mySubjects,
-        onAdded: _fetchMySubjects,
-      ),
+  void _openAddModal() async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HodAddSubjectScreen()),
     );
+    
+    if (result == true) {
+      _fetchMySubjects();
+    }
   }
 
   @override

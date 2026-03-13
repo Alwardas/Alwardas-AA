@@ -1,4 +1,4 @@
-﻿import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 import 'dart:io';
 
 class ApiConstants {
@@ -37,5 +37,11 @@ class ApiConstants {
   static String get facultyByBranch => '$baseUrl/api/faculty/by-branch';
   static String get facultyGetIssues => '$baseUrl/api/faculty/issues';
   static String facultyResolveIssue(String id) => '$baseUrl/api/faculty/issues/$id/resolve';
+  
+  // HOD Courses
+  static String get hodGetDepartments => '$baseUrl/api/hod/departments';
+  static String get hodGetSections => '$baseUrl/api/hod/sections';
+  static String get hodGetSubjects => '$baseUrl/api/hod/subjects';
+  static String get hodCourseSubjects => '$baseUrl/api/hod/course-subjects';
 
  }

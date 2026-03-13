@@ -51,6 +51,7 @@ pub async fn get_faculty_subjects_handler(
     State(state): State<AppState>,
     Query(params): Query<FacultyQueryParams>,
 ) -> Result<Json<Vec<FacultySubjectResponse>>, StatusCode> {
+    // Union existing faculty_subjects with new course_subjects added by this user
     let subjects = sqlx::query_as::<Postgres, FacultySubjectResponse>(
         r#"
         SELECT 
@@ -65,6 +66,18 @@ pub async fn get_faculty_subjects_handler(
         FROM faculty_subjects fs
         LEFT JOIN subjects s ON fs.subject_id = s.id::text
         WHERE fs.user_id = $1
+        UNION ALL
+        SELECT
+            cs.id::text as id,
+            cs.subject_name as name,
+            cs.branch,
+            cs.year as semester,
+            'APPROVED' as status,
+            cs.id::text as subject_id,
+            cs.section,
+            0 as completion_percentage
+        FROM course_subjects cs
+        WHERE cs.created_by = $1::text
         "#
     )
     .bind(params.user_id)

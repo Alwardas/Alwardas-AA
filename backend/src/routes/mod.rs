@@ -4,6 +4,7 @@ pub mod student;
 pub mod parent;
 pub mod principal;
 pub mod coordinator;
+pub mod hod;
 
 use axum::{
     extract::{State, Query},
