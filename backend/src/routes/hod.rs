@@ -18,6 +18,7 @@ pub struct AddCourseSubjectRequest {
     pub subject_name: String,
     pub subject_code: String,
     pub created_by: String, // hod_id
+    pub course_id: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -102,7 +103,7 @@ pub async fn add_course_subject_handler(
 
     // 2. Insert new record
     sqlx::query(
-        "INSERT INTO course_subjects (branch, year, section, subject_name, subject_code, created_by) VALUES ($1, $2, $3, $4, $5, $6)"
+        "INSERT INTO course_subjects (branch, year, section, subject_name, subject_code, created_by, course_id) VALUES ($1, $2, $3, $4, $5, $6, $7)"
     )
     .bind(&payload.branch)
     .bind(&payload.year)
@@ -110,6 +111,7 @@ pub async fn add_course_subject_handler(
     .bind(&payload.subject_name)
     .bind(&payload.subject_code)
     .bind(&payload.created_by)
+    .bind(payload.course_id.unwrap_or_else(|| "C-23".to_string()))
     .execute(&data.pool)
     .await
     .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(json!({"message": e.to_string()}))))?;

@@ -1538,6 +1538,7 @@ pub struct SemesterSubjectsQuery {
     pub branch: String,
     pub year: String,
     pub semester: String,
+    pub course_id: Option<String>,
 }
 
 #[derive(serde::Serialize)]
@@ -1569,12 +1570,18 @@ pub async fn get_semester_subjects_handler(
         name: String,
     }
 
-    let subjects: Vec<SubjRow> = sqlx::query_as("SELECT id, name FROM subjects WHERE branch = $1 AND semester = ANY($2) ORDER BY id ASC")
-        .bind(&branch)
-        .bind(&semester_variations)
-        .fetch_all(&state.pool)
-        .await
-        .unwrap_or_default();
+    let subjects: Vec<SubjRow> = sqlx::query_as(
+        "SELECT id, name FROM subjects 
+         WHERE branch = $1 AND semester = ANY($2) 
+         AND (course_id = $3 OR $3 IS NULL)
+         ORDER BY id ASC"
+    )
+    .bind(&branch)
+    .bind(&semester_variations)
+    .bind(&params.course_id)
+    .fetch_all(&state.pool)
+    .await
+    .unwrap_or_default();
 
     let res: Vec<SemesterSubjectResponse> = subjects.into_iter().map(|s| SemesterSubjectResponse {
         id: s.id.clone(),
