@@ -7,6 +7,7 @@ use axum::{
 // Actually, query_as often needs the trait, but crate::models might bring it in.
 // Let's just remove the unused ones.
 use crate::models::{AppState, ProfileQuery, ParentProfileResponse, StudentDetails};
+use crate::routes::faculty::resolve_user_id;
 
 pub async fn get_parent_profile_handler(
     State(state): State<AppState>,
@@ -21,10 +22,12 @@ pub async fn get_parent_profile_handler(
         email: Option<String>,
     }
 
+    let user_uuid = resolve_user_id(&params.user_id, "Parent", &state.pool).await.map_err(|_| StatusCode::BAD_REQUEST)?;
+
     let parent_opt = sqlx::query_as::<_, ParentData>(
         "SELECT full_name, login_id, phone_number, email FROM users WHERE id = $1"
     )
-    .bind(params.user_id)
+    .bind(user_uuid)
     .fetch_optional(&state.pool)
     .await
     .map_err(|e| {

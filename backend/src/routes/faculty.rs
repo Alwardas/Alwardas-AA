@@ -26,10 +26,12 @@ pub async fn get_faculty_profile_handler(
     State(state): State<AppState>,
     Query(params): Query<ProfileQuery>,
 ) -> Result<Json<FacultyProfileResponse>, StatusCode> {
+    let user_uuid = resolve_user_id(&params.user_id, "Faculty", &state.pool).await.map_err(|_| StatusCode::BAD_REQUEST)?;
+
     let profile = sqlx::query_as::<Postgres, FacultyProfileResponse>(
         "SELECT full_name, login_id as faculty_id, branch, email, phone_number, experience, dob FROM users WHERE id = $1"
     )
-    .bind(params.user_id)
+    .bind(user_uuid)
     .fetch_optional(&state.pool)
     .await
     .map_err(|e| {
@@ -364,7 +366,7 @@ pub async fn get_students_handler(
     let students = if let Some(sec) = &params.section {
         if sec == "All" {
             sqlx::query_as::<Postgres, StudentBasicInfo>(
-                "SELECT login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND is_approved = true ORDER BY login_id ASC"
+                "SELECT id, login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND is_approved = true ORDER BY login_id ASC"
             )
             .bind(branch_variations)
             .bind(year_pattern)
@@ -372,7 +374,7 @@ pub async fn get_students_handler(
             .await
         } else {
             sqlx::query_as::<Postgres, StudentBasicInfo>(
-                "SELECT login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
+                "SELECT id, login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
             )
             .bind(branch_variations)
             .bind(year_pattern)
@@ -382,7 +384,7 @@ pub async fn get_students_handler(
         }
     } else {
         sqlx::query_as::<Postgres, StudentBasicInfo>(
-            "SELECT login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND is_approved = true ORDER BY login_id ASC"
+            "SELECT id, login_id as student_id, full_name, branch, year, section FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND is_approved = true ORDER BY login_id ASC"
         )
         .bind(branch_variations)
         .bind(year_pattern)
@@ -1066,7 +1068,7 @@ pub async fn approve_attendance_correction_handler(
 
 // --- Helpers ---
 
-async fn resolve_user_id(id_str: &str, role_hint: &str, pool: &sqlx::PgPool) -> Result<Uuid, (StatusCode, Json<serde_json::Value>)> {
+pub async fn resolve_user_id(id_str: &str, role_hint: &str, pool: &sqlx::PgPool) -> Result<Uuid, (StatusCode, Json<serde_json::Value>)> {
     if let Ok(uuid) = Uuid::parse_str(id_str) { return Ok(uuid); }
     let row = sqlx::query("SELECT id FROM users WHERE login_id = $1").bind(id_str).fetch_optional(pool).await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("DB error resolving {}", role_hint)}))))?;
     match row {

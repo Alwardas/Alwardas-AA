@@ -9,19 +9,23 @@ use uuid::Uuid;
 use chrono::{DateTime, Utc};
 use std::collections::HashMap;
 
+use crate::routes::faculty::resolve_user_id;
+
 // --- Profile ---
 
 pub async fn get_student_profile_handler(
     State(state): State<AppState>,
     Query(params): Query<ProfileQuery>,
 ) -> Result<Json<StudentProfileResponse>, StatusCode> {
+    let user_uuid = resolve_user_id(&params.user_id, "Student", &state.pool).await.map_err(|_| StatusCode::BAD_REQUEST)?;
+
     let user_profile = sqlx::query_as::<Postgres, StudentProfileResponse>(
         "SELECT 
             u.full_name, u.login_id, u.branch, u.year, u.semester, u.dob, u.batch_no, u.section, u.phone_number, u.email,
             EXISTS(SELECT 1 FROM profile_update_requests WHERE user_id = u.id AND status = 'PENDING') as pending_update
          FROM users u WHERE u.id = $1"
     )
-    .bind(params.user_id)
+    .bind(user_uuid)
     .fetch_optional(&state.pool)
     .await
     .map_err(|e| {
@@ -116,8 +120,10 @@ pub async fn get_student_courses_handler(
         section: Option<String>,
     }
 
+    let user_uuid = resolve_user_id(&params.user_id, "Student", &state.pool).await.map_err(|_| StatusCode::BAD_REQUEST)?;
+
     let user_opt = sqlx::query_as::<_, UserData>("SELECT branch, year, semester, section FROM users WHERE id = $1")
-        .bind(params.user_id)
+        .bind(user_uuid)
         .fetch_optional(&state.pool)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
@@ -412,7 +418,8 @@ pub async fn get_student_all_feedbacks_handler(
     State(state): State<AppState>,
     Query(params): Query<ProfileQuery>,
 ) -> Result<Json<Vec<StudentFeedbacksResponse>>, (StatusCode, Json<serde_json::Value>)> {
-    
+    let user_uuid = resolve_user_id(&params.user_id, "Student", &state.pool).await?;
+
     let feedbacks = sqlx::query_as::<Postgres, StudentFeedbacksResponse>(
         r#"
         SELECT 
@@ -422,12 +429,12 @@ pub async fn get_student_all_feedbacks_handler(
             s.name as subject_name
         FROM lesson_plan_feedback lpf
         LEFT JOIN lesson_plan_items lpi ON lpf.lesson_plan_item_id = lpi.id
-        LEFT JOIN subjects s ON lpi.subject_id = s.id
+        LEFT JOIN subjects s ON lpi.subject_id = s.id::text
         WHERE lpf.user_id = $1
         ORDER BY lpf.created_at DESC
         "#
     )
-    .bind(params.user_id)
+    .bind(user_uuid)
     .fetch_all(&state.pool)
     .await
     .map_err(|e| {
@@ -719,7 +726,8 @@ pub async fn get_student_academics_handler(
     State(state): State<AppState>,
     Query(params): Query<ProfileQuery>,
 ) -> Result<Json<Vec<SemesterAcademicsResponse>>, (StatusCode, Json<serde_json::Value>)> {
-    
+    let user_uuid = resolve_user_id(&params.user_id, "Student", &state.pool).await?;
+
     // Fetch user details
     #[derive(sqlx::FromRow)]
     struct UserDataInfo {
@@ -730,7 +738,7 @@ pub async fn get_student_academics_handler(
     }
 
     let user_opt = sqlx::query_as::<_, UserDataInfo>("SELECT login_id, branch, year, semester FROM users WHERE id = $1")
-        .bind(params.user_id)
+        .bind(user_uuid)
         .fetch_optional(&state.pool)
         .await
         .map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "DB Error"}))))?;

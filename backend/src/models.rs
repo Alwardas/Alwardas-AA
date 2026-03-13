@@ -284,12 +284,13 @@ pub struct StudentProfileResponse {
 #[derive(Deserialize)]
 pub struct ProfileQuery {
     #[serde(rename = "userId")]
-    pub user_id: Uuid,
+    pub user_id: String,
 }
 
 #[derive(Serialize, FromRow)]
 #[serde(rename_all = "camelCase")]
 pub struct StudentBasicInfo {
+    pub id: Uuid,
     pub student_id: String,
     pub full_name: String,
     pub branch: Option<String>,

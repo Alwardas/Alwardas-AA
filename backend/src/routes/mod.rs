@@ -292,8 +292,19 @@ pub async fn check_my_pending_update_handler(
     State(state): State<AppState>,
     Query(params): Query<ProfileQuery>, 
 ) -> Result<Json<serde_json::Value>, StatusCode> {
+    let user_uuid = if let Ok(u) = Uuid::parse_str(&params.user_id) {
+        u
+    } else {
+        sqlx::query_scalar("SELECT id FROM users WHERE login_id = $1")
+            .bind(&params.user_id)
+            .fetch_optional(&state.pool)
+            .await
+            .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?
+            .ok_or(StatusCode::BAD_REQUEST)?
+    };
+
     let row = sqlx::query("SELECT id, new_data FROM profile_update_requests WHERE user_id = $1 AND status = 'PENDING_USER_APPROVAL'")
-        .bind(params.user_id)
+        .bind(user_uuid)
         .fetch_optional(&state.pool)
         .await
         .unwrap_or(None);
