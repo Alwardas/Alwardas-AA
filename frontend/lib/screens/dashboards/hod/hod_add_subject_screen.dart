@@ -123,6 +123,15 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
 
     setState(() => _submitting = true);
 
+    // Find subject code from filtered subjects
+    String subjectCode = "";
+    final match = widget.allCourses.firstWhere(
+      (c) => c['name'] == _selectedSubject,
+      orElse: () => null,
+    );
+    if (match != null) {
+      subjectCode = match['code']?.toString() ?? "";
+    }
     try {
       final response = await http.post(
         Uri.parse(ApiConstants.hodCourseSubjects),
@@ -132,6 +141,7 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
           "year": _selectedYear,
           "section": _selectedSection,
           "subjectName": _selectedSubject,
+          "subjectCode": subjectCode,
           "createdBy": user['id'],
         }),
       );

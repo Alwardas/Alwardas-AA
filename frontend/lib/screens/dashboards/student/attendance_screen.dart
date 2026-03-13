@@ -740,8 +740,8 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
              if (fullPresent) borderColor = Colors.greenAccent.withValues(alpha: 0.8);
              if (isSelected) borderColor = Colors.blue;
 
-             Color morningColor = mRecorded ? (mPresent ? Colors.green.withValues(alpha: 0.3) : Colors.red.withValues(alpha: 0.3)) : Colors.transparent;
-             Color afternoonColor = aRecorded ? (aPresent ? Colors.green.withValues(alpha: 0.3) : Colors.red.withValues(alpha: 0.3)) : Colors.transparent;
+             Color morningColor = mRecorded ? (mPresent ? Colors.green.withValues(alpha: 0.9) : Colors.red.withValues(alpha: 0.9)) : Colors.transparent;
+             Color afternoonColor = aRecorded ? (aPresent ? Colors.green.withValues(alpha: 0.9) : Colors.red.withValues(alpha: 0.9)) : Colors.transparent;
 
              return GestureDetector(
                onTap: (mAbsent || aAbsent) && !isHolidayDay ? () => _handleDayTap(dateStr, morning, afternoon) : null,
@@ -754,9 +754,9 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                         color: isHolidayDay 
                             ? Colors.grey.withValues(alpha: 0.1) 
                             : (fullPresent 
-                                ? Colors.green.withValues(alpha: 0.3) 
+                                ? Colors.green.withValues(alpha: 0.9) 
                                 : (fullAbsent 
-                                    ? Colors.red.withValues(alpha: 0.3) 
+                                    ? Colors.red.withValues(alpha: 0.9) 
                                     : null)),
                        gradient: partial ? LinearGradient(
                           colors: [morningColor, afternoonColor],
@@ -771,13 +771,13 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                      ),
                      child: Opacity(
                        opacity: isHolidayDay ? 0.3 : 1.0, 
-                       child: isHolidayDay ? Image.asset('assets/holiday.png', fit: BoxFit.contain, width: 30, height: 30) : Text(
-                         "$dayNum",
-                         style: GoogleFonts.poppins(
-                           color: fullAbsent ? Colors.white : textColor,
-                           fontWeight: FontWeight.w600,
-                         ),
-                       ),
+                        child: isHolidayDay ? Image.asset('assets/holiday.png', fit: BoxFit.contain, width: 30, height: 30) : Text(
+                          "$dayNum",
+                          style: GoogleFonts.poppins(
+                            color: (mRecorded || aRecorded) ? Colors.white : textColor,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                      ),
                    ),
                    if (isHolidayDay)

@@ -12,6 +12,8 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../student/attendance_screen.dart';
 import '../student/student_notifications_screen.dart';
+import '../student/student_marks_screen.dart';
+import '../student/my_courses_screen.dart';
 import 'parent_profile_tab.dart';
 import 'parent_menu_tab.dart';
 import 'parent_requests_screen.dart';
@@ -451,6 +453,104 @@ class _ParentDashboardState extends State<ParentDashboard> {
                       userRole: widget.userData['role'] ?? 'Parent'),
                   const SizedBox(height: 25),
 
+                  // Quick Access Section
+                  Row(
+                    children: [
+                      Text(
+                        'Quick Access',
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Container(
+                          height: 1,
+                          color: Colors.grey.withValues(alpha: 0.2),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+
+                  GridView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.zero,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: 1.4,
+                    ),
+                    children: [
+                      _buildQuickAccessCard(
+                        Icons.insights,
+                        'Academics',
+                        'View Marks',
+                        cardColor,
+                        const Color(0xFFe67e22).withValues(alpha: 0.1),
+                        const Color(0xFFe67e22),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => StudentMarksScreen(
+                                    userId: currentChild['id']))),
+                      ),
+                      _buildQuickAccessCard(
+                        Icons.calendar_today,
+                        'Attendance',
+                        'Check Status',
+                        cardColor,
+                        const Color(0xFF2ecc71).withValues(alpha: 0.1),
+                        const Color(0xFF2ecc71),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => AttendanceScreen(
+                                    userData: currentChild,
+                                    onBack: () => Navigator.pop(context)))),
+                      ),
+                      _buildQuickAccessCard(
+                        Icons.menu_book_rounded,
+                        'My Courses',
+                        'Study Material',
+                        cardColor,
+                        const Color(0xFF3b5998).withValues(alpha: 0.1),
+                        const Color(0xFF3b5998),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => MyCoursesScreen(
+                                    userId: currentChild['id']))),
+                      ),
+                      _buildQuickAccessCard(
+                        Icons.campaign_outlined,
+                        'Notifications',
+                        'Latest News',
+                        cardColor,
+                        const Color(0xFFff6347).withValues(alpha: 0.1),
+                        const Color(0xFFff6347),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => StudentNotificationsScreen(
+                                    userId: currentChild['id']))),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 25),
+
                   // Simplified Quick Info Section
                   Container(
                       width: double.infinity,
@@ -507,14 +607,15 @@ class _ParentDashboardState extends State<ParentDashboard> {
                                   color:
                                       const Color(0xFF2ecc71).withOpacity(0.1),
                                   borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Text("Today's Attendance: Present",
+                                  ),
+                                child: Text("Overall Attendance Healthy",
                                     style: GoogleFonts.poppins(
                                         color: const Color(0xFF2ecc71),
                                         fontWeight: FontWeight.w600)),
                               )
                             ]),
                           ])),
+                  const SizedBox(height: 100),
                 ],
               ),
             ),

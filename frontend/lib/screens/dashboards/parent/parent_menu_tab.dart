@@ -8,8 +8,7 @@ import '../../../core/theme/app_theme.dart';
 import '../student/attendance_screen.dart';
 import '../student/student_notifications_screen.dart';
 import '../student/student_marks_screen.dart';
-// import 'parent_requests_screen.dart';
-// import '../principal/principal_issues_screen.dart'; // Or a separate one
+import '../student/my_courses_screen.dart';
 
 class ParentMenuTab extends StatelessWidget {
   final Map<String, dynamic> userData;
@@ -42,6 +41,15 @@ class ParentMenuTab extends StatelessWidget {
                     onBack: () => Navigator.pop(context)))),
       },
       {
+        'title': 'My Courses',
+        'icon': Icons.menu_book_rounded,
+        'color': const Color(0xFF3b5998),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => MyCoursesScreen(userId: currentChild['id']))),
+      },
+      {
         'title': 'Announcements',
         'icon': Icons.campaign_outlined,
         'color': const Color(0xFFff6347),
@@ -53,10 +61,12 @@ class ParentMenuTab extends StatelessWidget {
       },
       {
         'title': 'Academics',
-        'icon': Icons.menu_book,
-        'color': const Color(0xFF3b5998),
-        'onTap': () => Navigator.push(context,
-            MaterialPageRoute(builder: (_) => const StudentMarksScreen())),
+        'icon': Icons.insights_rounded,
+        'color': const Color(0xFFe67e22),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => StudentMarksScreen(userId: currentChild['id']))),
       },
       {
         'title': 'Fee Payments',
@@ -69,7 +79,6 @@ class ParentMenuTab extends StatelessWidget {
         'title': 'Permission & Requests',
         'icon': Icons.assignment_turned_in,
         'color': Colors.indigo,
-        // 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ParentRequestsScreen())),
         'onTap': () => ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Requests coming soon'))),
       },
@@ -101,18 +110,19 @@ class ParentMenuTab extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(24),
         child: Column(
-          children: menuItems
-              .map((item) => _buildMenuCard(
-                    item['title'],
-                    item['icon'],
-                    item['color'],
-                    item['onTap'],
-                    cardColor,
-                    textColor,
-                    subTextColor,
-                    isDark,
-                  ))
-              .toList(),
+          children: [
+            ...menuItems.map((item) => _buildMenuCard(
+                  item['title'],
+                  item['icon'],
+                  item['color'],
+                  item['onTap'],
+                  cardColor,
+                  textColor,
+                  subTextColor,
+                  isDark,
+                )),
+            const SizedBox(height: 100),
+          ],
         ),
       ),
     );

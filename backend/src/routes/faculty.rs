@@ -73,7 +73,7 @@ pub async fn get_faculty_subjects_handler(
             cs.branch,
             cs.year as semester,
             'APPROVED' as status,
-            cs.id::text as subject_id,
+            COALESCE(cs.subject_code, cs.id::text) as subject_id,
             cs.section,
             0 as completion_percentage
         FROM course_subjects cs

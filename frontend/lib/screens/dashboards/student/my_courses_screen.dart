@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -11,7 +11,8 @@ import '../../../core/theme/app_theme.dart';
 import 'student_lesson_plan_screen.dart'; // Keep this for navigation
 
 class MyCoursesScreen extends StatefulWidget {
-  const MyCoursesScreen({super.key});
+  final String? userId;
+  const MyCoursesScreen({super.key, this.userId});
 
   @override
   State<MyCoursesScreen> createState() => _MyCoursesScreenState();
@@ -49,7 +50,11 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
     }
 
     try {
-      final userId = user['id'];
+      final String? userId = widget.userId ?? user['id'];
+      if (userId == null) {
+          setState(() => _isLoading = false);
+          return;
+      }
       // Update header subtitle with user details if available
       if (user['branch'] != null && user['year'] != null) {
          String subtitle = "${user['branch']} • ${user['year']}";

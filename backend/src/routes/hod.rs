@@ -16,6 +16,7 @@ pub struct AddCourseSubjectRequest {
     pub year: String,
     pub section: String,
     pub subject_name: String,
+    pub subject_code: String,
     pub created_by: String, // hod_id
 }
 
@@ -101,12 +102,13 @@ pub async fn add_course_subject_handler(
 
     // 2. Insert new record
     sqlx::query(
-        "INSERT INTO course_subjects (branch, year, section, subject_name, created_by) VALUES ($1, $2, $3, $4, $5)"
+        "INSERT INTO course_subjects (branch, year, section, subject_name, subject_code, created_by) VALUES ($1, $2, $3, $4, $5, $6)"
     )
     .bind(&payload.branch)
     .bind(&payload.year)
     .bind(&payload.section)
     .bind(&payload.subject_name)
+    .bind(&payload.subject_code)
     .bind(&payload.created_by)
     .execute(&data.pool)
     .await
@@ -137,6 +139,7 @@ pub async fn get_added_course_subjects_handler(
             "year": row.get::<String, _>("year"),
             "section": row.get::<String, _>("section"),
             "subjectName": row.get::<String, _>("subject_name"),
+            "subjectCode": row.get::<Option<String>, _>("subject_code").unwrap_or_default(),
         })
     }).collect();
 

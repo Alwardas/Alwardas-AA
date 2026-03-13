@@ -256,7 +256,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                          ),
                          const SizedBox(height: 4),
                          Text(
-                           'Master Administration',
+                           'Alwardas Campus - Coordinator',
                             style: GoogleFonts.poppins(
                               color: const Color(0xFF94A3B8), // Text Sub
                               fontSize: 14,

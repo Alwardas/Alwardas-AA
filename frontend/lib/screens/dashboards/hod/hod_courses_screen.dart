@@ -233,7 +233,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(color: tint.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(4)),
-                  child: Text(item['code'] ?? item['id'], style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: tint)),
+                  child: Text(item['subject_id'] ?? item['id'], style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: tint)),
                 ),
                 if (_isSelectMode)
                   Icon(isSelected ? Icons.check_box : Icons.check_box_outline_blank, color: isSelected ? Colors.red : subTextColor)
@@ -255,11 +255,14 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
             ),
             const SizedBox(height: 12),
             Text(item['name'], style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: textColor)),
-            const SizedBox(height: 12),
+            const SizedBox(height: 8),
             Row(
               children: [
-                _buildTag(item['branch'], tint.withValues(alpha: 0.1), tint),
-                _buildTag(item['semester'], Colors.purple.withValues(alpha: 0.1), Colors.purple),
+                _buildTag(
+                  "${item['branch']} · ${item['semester']} · ${item['section']?.toString().replaceAll('Section', 'Sec') ?? ''}",
+                  tint.withValues(alpha: 0.1),
+                  subTextColor.withValues(alpha: 0.8),
+                ),
               ],
             ),
           ],

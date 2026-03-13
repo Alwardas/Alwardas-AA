@@ -315,6 +315,7 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
                         ],
                       ),
                     ),
+                  const SizedBox(height: 100),
                 ],
               ),
             ),
