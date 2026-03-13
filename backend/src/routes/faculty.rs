@@ -1596,30 +1596,30 @@ pub struct LessonTopicsQuery {
 pub struct LessonTopicResponse {
     pub id: String,
     pub unit: String,
-    pub topic_name: String,
+    pub topic_name: Option<String>,
     pub schedule_date: Option<chrono::DateTime<Utc>>,
 }
-
 
 pub async fn get_lesson_topics_handler(
     State(state): State<AppState>,
     Query(params): Query<LessonTopicsQuery>,
 ) -> Result<Json<Vec<LessonTopicResponse>>, (StatusCode, Json<serde_json::Value>)> {
-    // Topic matches subject, and JOIN on schedule table to find schedule date if it exists
+    println!("DEBUG: Fetching topics for subject='{}', section='{:?}', branch='{:?}'", params.subject_id, params.section, params.branch);
+    
     let sql = r#"
-        SELECT lpi.id::text, COALESCE(lpi.sno, 'Unit') as unit, lpi.topic as topic_name, ls.schedule_date 
+        SELECT lpi.id::text, COALESCE(lpi.sno, 'Unit') as unit, COALESCE(lpi.topic, lpi.text) as topic_name, ls.schedule_date 
         FROM lesson_plan_items lpi
         LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id 
-            AND (ls.section = $2 OR $2 IS NULL)
+            AND (TRIM(ls.section) = TRIM($2) OR $2 IS NULL)
             AND (ls.branch = $3 OR $3 IS NULL)
-        WHERE lpi.subject_id = $1
+        WHERE TRIM(lpi.subject_id) ILIKE TRIM($1)
         ORDER BY lpi.order_index
     "#;
 
     let topics = sqlx::query_as::<_, LessonTopicResponse>(sql)
         .bind(&params.subject_id)
         .bind(&params.section)
-        .bind(&params.branch)
+        .bind(params.branch.as_ref().map(|b| crate::models::normalize_branch(b)))
         .fetch_all(&state.pool)
         .await
         .map_err(|e| {
@@ -1647,6 +1647,8 @@ pub async fn assign_lesson_schedule_handler(
     State(state): State<AppState>,
     Json(payload): Json<AssignLessonScheduleRequest>,
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let branch_norm = crate::models::normalize_branch(&payload.branch);
+
     // Insert/Upsert into lesson_schedule so that the schedule applies for that topic
     let res = sqlx::query(
         "INSERT INTO lesson_schedule (subject_id, topic_id, schedule_date, faculty_id, branch, year, semester, section)
@@ -1657,7 +1659,7 @@ pub async fn assign_lesson_schedule_handler(
     .bind(payload.topic_id)
     .bind(payload.schedule_date)
     .bind(&payload.faculty_id)
-    .bind(&payload.branch)
+    .bind(&branch_norm)
     .bind(&payload.year)
     .bind(&payload.semester)
     .bind(&payload.section)
