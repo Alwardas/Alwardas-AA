@@ -709,7 +709,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
              if (dayNum > daysInMonth) return const SizedBox();
 
              // Check status
-             final dateStr = DateFormat('dd/MM/yyyy').format(DateTime(_selectedYear, _selectedMonth, dayNum));
+             final dateStr = DateFormat('yyyy-MM-dd').format(DateTime(_selectedYear, _selectedMonth, dayNum));
              final dayStats = _getDayStatus(dateStr);
              final morning = dayStats['morning'] as Map<String, dynamic>?;
              final afternoon = dayStats['afternoon'] as Map<String, dynamic>?;
@@ -740,8 +740,8 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
              if (fullPresent) borderColor = Colors.greenAccent.withValues(alpha: 0.8);
              if (isSelected) borderColor = Colors.blue;
 
-             Color morningColor = mRecorded ? (mPresent ? Colors.greenAccent.withValues(alpha: 0.4) : Colors.red) : Colors.transparent;
-             Color afternoonColor = aRecorded ? (aPresent ? Colors.greenAccent.withValues(alpha: 0.4) : Colors.red) : Colors.transparent;
+             Color morningColor = mRecorded ? (mPresent ? Colors.green.withValues(alpha: 0.3) : Colors.red.withValues(alpha: 0.3)) : Colors.transparent;
+             Color afternoonColor = aRecorded ? (aPresent ? Colors.green.withValues(alpha: 0.3) : Colors.red.withValues(alpha: 0.3)) : Colors.transparent;
 
              return GestureDetector(
                onTap: (mAbsent || aAbsent) && !isHolidayDay ? () => _handleDayTap(dateStr, morning, afternoon) : null,
@@ -751,7 +751,13 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                      alignment: Alignment.center,
                      decoration: BoxDecoration(
                        borderRadius: BorderRadius.circular(8),
-                       color: isHolidayDay ? Colors.grey.withValues(alpha: 0.1) : (fullPresent ? Colors.greenAccent.withValues(alpha: 0.4) : (fullAbsent ? Colors.red : null)),
+                        color: isHolidayDay 
+                            ? Colors.grey.withValues(alpha: 0.1) 
+                            : (fullPresent 
+                                ? Colors.green.withValues(alpha: 0.3) 
+                                : (fullAbsent 
+                                    ? Colors.red.withValues(alpha: 0.3) 
+                                    : null)),
                        gradient: partial ? LinearGradient(
                           colors: [morningColor, afternoonColor],
                           begin: Alignment.topLeft,
@@ -832,8 +838,12 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
     );
   }
 
-  Map<String, dynamic> _getDayStatus(String dateStr) {
-    final records = _attendanceData.where((d) => d['date'].startsWith(dateStr) || d['date'].split('T')[0] == dateStr).toList();
+   Map<String, dynamic> _getDayStatus(String dateStr) {
+    final records = _attendanceData.where((d) {
+       final dDate = d['date'];
+       if (dDate == null) return false;
+       return dDate.toString().startsWith(dateStr);
+    }).toList();
     final morning = records.firstWhere((d) => d['session'] == 'MORNING', orElse: () => {});
     final afternoon = records.firstWhere((d) => d['session'] == 'AFTERNOON', orElse: () => {});
     
