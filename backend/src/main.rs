@@ -282,6 +282,9 @@ async fn main() {
         )
     ").execute(&pool).await.err();
 
+    sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS user_role VARCHAR(50) DEFAULT 'Student'")
+        .execute(&pool).await.err();
+
     sqlx::query("
         CREATE TABLE IF NOT EXISTS issue_comments (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

@@ -362,8 +362,13 @@ class _CreateIssueSheetState extends State<CreateIssueSheet> {
           const SnackBar(content: Text("Issue reported successfully"), backgroundColor: Colors.green),
         );
       } else {
+        String errorMessage = "Failed to report issue: ${response.statusCode}";
+        try {
+          final body = json.decode(response.body);
+          if (body['error'] != null) errorMessage = body['error'];
+        } catch (_) {}
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Failed to report issue: ${response.statusCode}"), backgroundColor: Colors.red),
+          SnackBar(content: Text(errorMessage), backgroundColor: Colors.red),
         );
       }
     } catch (e) {

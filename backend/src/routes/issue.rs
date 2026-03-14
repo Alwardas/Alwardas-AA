@@ -40,7 +40,7 @@ pub async fn submit_issue_handler(
     .await
     .map_err(|e| {
         eprintln!("Submit Issue Error: {:?}", e);
-        (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to submit issue"})))
+        (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("Failed to submit issue: {}", e)})))
     })?;
 
     Ok(StatusCode::OK)
