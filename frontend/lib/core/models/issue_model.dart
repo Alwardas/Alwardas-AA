@@ -38,7 +38,7 @@ class Issue {
       createdBy: json['createdBy'] ?? '',
       userRole: json['userRole'] ?? '',
       assignedTo: json['assignedTo'],
-      createdDate: DateTime.parse(json['createdDate']),
+      createdDate: json['createdDate'] != null ? DateTime.parse(json['createdDate']) : DateTime.now(),
       creatorName: json['creatorName'],
       assignedName: json['assignedName'],
     );

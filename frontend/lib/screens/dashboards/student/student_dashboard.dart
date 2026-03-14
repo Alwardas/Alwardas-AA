@@ -42,12 +42,14 @@ class _StudentDashboardState extends State<StudentDashboard> {
   
   List<Map<String, dynamic>> _todaySchedule = [];
   List<Map<String, dynamic>> _todayPracticals = [];
+  String _todayAttendanceStatus = "Not taken yet";
 
   @override
   void initState() {
     super.initState();
     _startNotificationPolling();
     _setupClassReminders();
+    _fetchTodayAttendance();
   }
 
   @override
@@ -102,6 +104,81 @@ class _StudentDashboardState extends State<StudentDashboard> {
       }
     } catch (e) {
       debugPrint("Student Notification Polling Error: $e");
+    }
+  }
+
+  Future<void> _fetchTodayAttendance() async {
+    final studentId = widget.userData['id']?.toString() ?? widget.userData['login_id']?.toString();
+    if (studentId == null) return;
+    
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/attendance?studentId=$studentId');
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> dataMap = json.decode(response.body);
+        final List<dynamic> data = dataMap['history'] ?? [];
+        final String todayStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
+        
+        bool hasMorning = false;
+        bool hasAfternoon = false;
+        String morningStatus = "";
+        String afternoonStatus = "";
+        bool dayIsHoliday = false;
+
+        for (var record in data) {
+          String rawDate = record['date']?.toString() ?? '';
+          String recordDateStr = rawDate.split('T')[0];
+          String recordStatus = (record['status'] ?? '').toString().toUpperCase();
+
+          if (recordDateStr == todayStr) {
+            if (record['session'] == 'MORNING') {
+              hasMorning = true;
+              morningStatus = recordStatus;
+            } else if (record['session'] == 'AFTERNOON') {
+              hasAfternoon = true;
+              afternoonStatus = recordStatus;
+            }
+            
+            if (recordStatus.contains('HOLIDAY') || recordStatus.startsWith('H')) {
+              dayIsHoliday = true;
+            }
+          }
+        }
+        
+        if (mounted) {
+          setState(() {
+            if (dayIsHoliday) {
+              _todayAttendanceStatus = "Holiday";
+            } else if (hasMorning && hasAfternoon) {
+               if (morningStatus.contains('HOLIDAY') || afternoonStatus.contains('HOLIDAY')) {
+                  _todayAttendanceStatus = "Holiday";
+               } else if (morningStatus == 'PRESENT' && afternoonStatus == 'PRESENT') {
+                  _todayAttendanceStatus = "Present";
+               } else if (morningStatus == 'ABSENT' && afternoonStatus == 'ABSENT') {
+                  _todayAttendanceStatus = "Absent";
+               } else {
+                  _todayAttendanceStatus = "Half Day";
+               }
+            } else if (hasMorning) {
+               if (morningStatus.contains('HOLIDAY')) {
+                  _todayAttendanceStatus = "Holiday";
+               } else {
+                  _todayAttendanceStatus = morningStatus == 'PRESENT' ? "Present (Morning)" : "Absent (Morning)";
+               }
+            } else if (hasAfternoon) {
+               if (afternoonStatus.contains('HOLIDAY')) {
+                  _todayAttendanceStatus = "Holiday";
+               } else {
+                  _todayAttendanceStatus = afternoonStatus == 'PRESENT' ? "Present (Afternoon)" : "Absent (Afternoon)";
+               }
+            } else {
+               _todayAttendanceStatus = "Not taken yet";
+            }
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching student today attendance: $e");
     }
   }
 
@@ -480,7 +557,63 @@ class _StudentDashboardState extends State<StudentDashboard> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 15),
+
+                  // Today Attendance status card - Same as Parent dashboard
+                  Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      decoration: BoxDecoration(
+                          color:
+                              isDark ? const Color(0xFF1E293B) : Colors.white,
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                              color: isDark
+                                  ? Colors.white10
+                                  : Colors.black.withOpacity(0.05)),
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                                  Colors.black.withOpacity(isDark ? 0.2 : 0.05),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            )
+                          ]),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Today Attendance",
+                                style: GoogleFonts.poppins(
+                                    color: subTextColor,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w600)),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: _todayAttendanceStatus.toLowerCase().contains('present') 
+                                    ? const Color(0xFF2ecc71).withOpacity(0.1)
+                                    : _todayAttendanceStatus.toLowerCase().contains('absent')
+                                      ? Colors.red.withOpacity(0.1)
+                                      : _todayAttendanceStatus.toLowerCase().contains('holiday')
+                                        ? Colors.blue.withOpacity(0.1)
+                                        : Colors.orange.withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(8),
+                                ),
+                              child: Text(_todayAttendanceStatus,
+                                  style: GoogleFonts.poppins(
+                                      color: _todayAttendanceStatus.toLowerCase().contains('present') 
+                                        ? const Color(0xFF2ecc71)
+                                        : _todayAttendanceStatus.toLowerCase().contains('absent')
+                                          ? Colors.red
+                                          : _todayAttendanceStatus.toLowerCase().contains('holiday')
+                                            ? Colors.blue
+                                            : Colors.orange,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600)),
+                            )
+                          ])),
+                  const SizedBox(height: 15),
 
                   GridView(
                     shrinkWrap: true,
@@ -496,7 +629,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                       _buildQuickAccessCard(
                         Icons.menu_book,
                         'My Courses',
-                        '4 Active',
+                        '',
                         cardColor,
                         const Color(0xFF3b5998).withValues(alpha: 0.1),
                         const Color(0xFF3b5998),
@@ -507,7 +640,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                       _buildQuickAccessCard(
                         Icons.calendar_today,
                         'Attendance',
-                        '95%',
+                        '',
                         cardColor,
                         const Color(0xFF2ecc71).withValues(alpha: 0.1),
                         const Color(0xFF2ecc71),
@@ -518,7 +651,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                       _buildQuickAccessCard(
                         Icons.schedule,
                         'Time Table',
-                        '3 Classes',
+                        '',
                         cardColor,
                         const Color(0xFF9b59b6).withValues(alpha: 0.1),
                         const Color(0xFF9b59b6),
@@ -529,7 +662,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                       _buildQuickAccessCard(
                         Icons.insights,
                         'Exams / Results',
-                        'View Grades',
+                        '',
                         cardColor,
                         const Color(0xFFe67e22).withValues(alpha: 0.1),
                         const Color(0xFFe67e22),
@@ -548,7 +681,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                         child: _buildHorizontalCard(
                           Icons.warning_amber_rounded,
                           'Issues',
-                          'Report & Track',
+                          '',
                           const Color(0xFFE94057),
                           cardColor,
                           textColor,
@@ -561,7 +694,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                         child: _buildHorizontalCard(
                           Icons.person,
                           'Feedback',
-                          'App Feedback',
+                          '',
                           const Color(0xFF1ABC9C),
                           cardColor,
                           textColor,
@@ -572,42 +705,44 @@ class _StudentDashboardState extends State<StudentDashboard> {
                     ],
                   ),
 
+                  const SizedBox(height: 20),
+
                   // Today's Schedule
                   if (_todaySchedule.isNotEmpty) ...[
                       Text(
-                        "Today's Schedule",
+                        "Today's Practical Schedule",
                         style: GoogleFonts.poppins(
                           color: textColor,
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 8),
                       ..._todaySchedule.map((cls) => _buildClassCard(cls, isDark, textColor, subTextColor)),
                   ] else ...[
                       Text(
-                        "Today's Schedule",
+                        "Today's Practical Schedule",
                         style: GoogleFonts.poppins(
                           color: textColor,
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 8),
                       Text("No classes scheduled for today.", style: GoogleFonts.poppins(color: subTextColor)),
                   ],
 
                   if (_todayPracticals.isNotEmpty) ...[
-                      const SizedBox(height: 25),
+                      const SizedBox(height: 15),
                       Text(
-                        "Practical Sessions Today",
+                        "Today's Practical Schedule",
                         style: GoogleFonts.poppins(
                           color: textColor,
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 8),
                       ..._todayPracticals.map((cls) => _buildClassCard(cls, isDark, textColor, subTextColor)),
                   ],
                   const SizedBox(height: 100), // Additional bottom spacing
@@ -725,15 +860,17 @@ class _StudentDashboardState extends State<StudentDashboard> {
                 style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 13),
               ),
             ),
-            const SizedBox(height: 2),
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                subtitle,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+            if (subtitle.isNotEmpty) ...[
+              const SizedBox(height: 2),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  subtitle,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+                ),
               ),
-            ),
+            ],
           ],
         ),
       ),
@@ -781,10 +918,11 @@ class _StudentDashboardState extends State<StudentDashboard> {
                     title,
                     style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 13),
                   ),
-                  Text(
-                    subtitle,
-                    style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
-                  ),
+                  if (subtitle.isNotEmpty)
+                    Text(
+                      subtitle,
+                      style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+                    ),
                 ],
               ),
             ),

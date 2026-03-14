@@ -61,8 +61,13 @@ class _IssueManagementScreenState extends State<IssueManagementScreen> {
           _isLoading = false;
         });
       } else {
+        String errorMessage = "Failed to load issues: ${response.statusCode}";
+        try {
+          final body = json.decode(response.body);
+          if (body['error'] != null) errorMessage = body['error'];
+        } catch (_) {}
         setState(() {
-          _error = "Failed to load issues: ${response.statusCode}";
+          _error = errorMessage;
           _isLoading = false;
         });
       }

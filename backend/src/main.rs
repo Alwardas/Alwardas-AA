@@ -267,6 +267,31 @@ async fn main() {
         )
     ").execute(&pool).await.err();
     
+    sqlx::query("
+        CREATE TABLE IF NOT EXISTS issues (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            title VARCHAR(255) NOT NULL,
+            description TEXT NOT NULL,
+            category VARCHAR(100) NOT NULL,
+            priority VARCHAR(50) NOT NULL,
+            status VARCHAR(50) NOT NULL DEFAULT 'Open',
+            created_by UUID NOT NULL REFERENCES users(id),
+            user_role VARCHAR(50) NOT NULL,
+            assigned_to UUID REFERENCES users(id),
+            created_date TIMESTAMPTZ DEFAULT NOW()
+        )
+    ").execute(&pool).await.err();
+
+    sqlx::query("
+        CREATE TABLE IF NOT EXISTS issue_comments (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            issue_id UUID NOT NULL REFERENCES issues(id) ON DELETE CASCADE,
+            comment TEXT NOT NULL,
+            comment_by UUID NOT NULL REFERENCES users(id),
+            comment_date TIMESTAMPTZ DEFAULT NOW()
+        )
+    ").execute(&pool).await.err();
+
     // Fallback: If `courses` table is empty, insert some default courses
     let mut tx = pool.begin().await.unwrap();
     let courses_count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM courses").fetch_one(&mut *tx).await.unwrap_or(0);

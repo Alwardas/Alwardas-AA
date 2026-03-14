@@ -769,17 +769,32 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                          width: isSelected ? 3 : 1,
                        )
                      ),
-                     child: Opacity(
-                       opacity: isHolidayDay ? 0.3 : 1.0, 
-                        child: isHolidayDay ? Image.asset('assets/holiday.png', fit: BoxFit.contain, width: 30, height: 30) : Text(
-                          "$dayNum",
-                          style: GoogleFonts.poppins(
-                            color: (mRecorded || aRecorded) ? Colors.white : textColor,
-                            fontWeight: FontWeight.w600,
+                      child: isHolidayDay 
+                        ? Container(
+                            width: 32,
+                            height: 32,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.withOpacity(0.2),
+                              shape: BoxShape.circle,
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              "H",
+                              style: GoogleFonts.poppins(
+                                color: Colors.grey.shade600,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              ),
+                            ),
+                          )
+                        : Text(
+                            "$dayNum",
+                            style: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
-                        ),
-                     ),
-                   ),
+                    ),
                    if (isHolidayDay)
                       const Positioned(
                         bottom: 2,

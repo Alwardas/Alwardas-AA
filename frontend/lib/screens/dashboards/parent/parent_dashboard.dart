@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:intl/intl.dart';
 import '../../../core/api_constants.dart';
 import '../../auth/login_screen.dart';
 import 'add_child_screen.dart';
@@ -77,30 +78,44 @@ class _ParentDashboardState extends State<ParentDashboard> {
       final url = Uri.parse('${ApiConstants.baseUrl}/api/attendance?studentId=$studentId');
       final response = await http.get(url);
       if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
-        final String todayStr = DateTime.now().toIso8601String().split('T')[0];
-        
+        final Map<String, dynamic> dataMap = json.decode(response.body);
+        final List<dynamic> data = dataMap['history'] ?? [];
+        final String todayStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
         bool hasMorning = false;
         bool hasAfternoon = false;
         String morningStatus = "";
         String afternoonStatus = "";
+        bool dayIsHoliday = false;
 
         for (var record in data) {
-          if (record['date'] != null && record['date'].toString().startsWith(todayStr)) {
+          String rawDate = record['date']?.toString() ?? '';
+          String recordDateStr = rawDate.split('T')[0];
+          String recordStatus = (record['status'] ?? '').toString().toUpperCase();
+
+          if (recordDateStr == todayStr) {
             if (record['session'] == 'MORNING') {
               hasMorning = true;
-              morningStatus = record['status'] ?? '';
+              morningStatus = recordStatus;
             } else if (record['session'] == 'AFTERNOON') {
               hasAfternoon = true;
-              afternoonStatus = record['status'] ?? '';
+              afternoonStatus = recordStatus;
+            }
+            
+            // Comprehensive holiday check
+            if (recordStatus.contains('HOLIDAY') || recordStatus.startsWith('H')) {
+              dayIsHoliday = true;
             }
           }
         }
         
         if (mounted) {
           setState(() {
-            if (hasMorning && hasAfternoon) {
-               if (morningStatus == 'PRESENT' && afternoonStatus == 'PRESENT') {
+            if (dayIsHoliday) {
+              _todayAttendanceStatus = "Holiday";
+            } else if (hasMorning && hasAfternoon) {
+               if (morningStatus.contains('HOLIDAY') || afternoonStatus.contains('HOLIDAY')) {
+                  _todayAttendanceStatus = "Holiday";
+               } else if (morningStatus == 'PRESENT' && afternoonStatus == 'PRESENT') {
                   _todayAttendanceStatus = "Present";
                } else if (morningStatus == 'ABSENT' && afternoonStatus == 'ABSENT') {
                   _todayAttendanceStatus = "Absent";
@@ -108,9 +123,17 @@ class _ParentDashboardState extends State<ParentDashboard> {
                   _todayAttendanceStatus = "Half Day";
                }
             } else if (hasMorning) {
-               _todayAttendanceStatus = morningStatus == 'PRESENT' ? "Present (Morning)" : "Absent (Morning)";
+               if (morningStatus.contains('HOLIDAY')) {
+                  _todayAttendanceStatus = "Holiday";
+               } else {
+                  _todayAttendanceStatus = morningStatus == 'PRESENT' ? "Present (Morning)" : "Absent (Morning)";
+               }
             } else if (hasAfternoon) {
-               _todayAttendanceStatus = afternoonStatus == 'PRESENT' ? "Present (Afternoon)" : "Absent (Afternoon)";
+               if (afternoonStatus.contains('HOLIDAY')) {
+                  _todayAttendanceStatus = "Holiday";
+               } else {
+                  _todayAttendanceStatus = afternoonStatus == 'PRESENT' ? "Present (Afternoon)" : "Absent (Afternoon)";
+               }
             } else {
                _todayAttendanceStatus = "Not taken yet";
             }
@@ -204,6 +227,8 @@ class _ParentDashboardState extends State<ParentDashboard> {
                 }
               ];
             });
+            // Fetch attendance after children data is loaded
+            _fetchTodayAttendance();
           }
         }
       }
@@ -430,18 +455,19 @@ class _ParentDashboardState extends State<ParentDashboard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Alwardas \u2013',
+                          'Alwardas \u2013 Parent Portal',
                           style: GoogleFonts.poppins(
                             color: Colors.white70,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
+                        const SizedBox(height: 2),
                         FittedBox(
                           fit: BoxFit.scaleDown,
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            'Parent Portal',
+                            widget.userData['full_name'] ?? 'Parent',
                             style: GoogleFonts.poppins(
                               color: Colors.white,
                               fontSize: 26,
@@ -510,7 +536,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                   // Announcements
                   SharedDashboardAnnouncements(
                       userRole: widget.userData['role'] ?? 'Parent'),
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 10),
 
                   // Quick Access Section
                   Row(
@@ -532,7 +558,63 @@ class _ParentDashboardState extends State<ParentDashboard> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 15),
+
+                  // Simplified Quick Info Section (Recent Status) - Repositioned & Resized
+                  Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      decoration: BoxDecoration(
+                          color:
+                              isDark ? const Color(0xFF1E293B) : Colors.white,
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                              color: isDark
+                                  ? Colors.white10
+                                  : Colors.black.withOpacity(0.05)),
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                                  Colors.black.withOpacity(isDark ? 0.2 : 0.05),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            )
+                          ]),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Today Attendance",
+                                style: GoogleFonts.poppins(
+                                    color: subTextColor,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w600)),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: _todayAttendanceStatus.toLowerCase().contains('present') 
+                                    ? const Color(0xFF2ecc71).withOpacity(0.1)
+                                    : _todayAttendanceStatus.toLowerCase().contains('absent')
+                                      ? Colors.red.withOpacity(0.1)
+                                      : _todayAttendanceStatus.toLowerCase().contains('holiday')
+                                        ? Colors.blue.withOpacity(0.1)
+                                        : Colors.orange.withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(8),
+                                ),
+                              child: Text(_todayAttendanceStatus,
+                                  style: GoogleFonts.poppins(
+                                      color: _todayAttendanceStatus.toLowerCase().contains('present') 
+                                        ? const Color(0xFF2ecc71)
+                                        : _todayAttendanceStatus.toLowerCase().contains('absent')
+                                          ? Colors.red
+                                          : _todayAttendanceStatus.toLowerCase().contains('holiday')
+                                            ? Colors.blue
+                                            : Colors.orange,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600)),
+                            )
+                          ])),
+                  const SizedBox(height: 15),
 
                   GridView(
                     shrinkWrap: true,
@@ -607,60 +689,6 @@ class _ParentDashboardState extends State<ParentDashboard> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 25),
-
-                  // Simplified Quick Info Section
-                  Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.all(24),
-                      decoration: BoxDecoration(
-                          color:
-                              isDark ? const Color(0xFF1E293B) : Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                              color: isDark
-                                  ? Colors.white10
-                                  : Colors.black.withOpacity(0.05)),
-                          boxShadow: [
-                            BoxShadow(
-                              color:
-                                  Colors.black.withOpacity(isDark ? 0.2 : 0.05),
-                              blurRadius: 10,
-                              offset: const Offset(0, 4),
-                            )
-                          ]),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Recent Status",
-                                style: GoogleFonts.poppins(
-                                    color: subTextColor,
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w600)),
-                            const SizedBox(height: 10),
-                            Row(children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 5),
-                                decoration: BoxDecoration(
-                                  color: _todayAttendanceStatus.toLowerCase().contains('present') 
-                                      ? const Color(0xFF2ecc71).withOpacity(0.1)
-                                      : _todayAttendanceStatus.toLowerCase().contains('absent')
-                                        ? Colors.red.withOpacity(0.1)
-                                        : Colors.orange.withOpacity(0.1),
-                                  borderRadius: BorderRadius.circular(8),
-                                  ),
-                                child: Text("Today Attendance: $_todayAttendanceStatus",
-                                    style: GoogleFonts.poppins(
-                                        color: _todayAttendanceStatus.toLowerCase().contains('present') 
-                                          ? const Color(0xFF2ecc71)
-                                          : _todayAttendanceStatus.toLowerCase().contains('absent')
-                                            ? Colors.red
-                                            : Colors.orange,
-                                        fontWeight: FontWeight.w600)),
-                              )
-                            ]),
-                          ])),
                   const SizedBox(height: 100),
                 ],
               ),

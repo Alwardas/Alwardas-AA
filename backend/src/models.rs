@@ -191,7 +191,7 @@ pub struct Issue {
     pub assigned_to: Option<Uuid>,
     #[serde(rename = "createdDate")]
     #[sqlx(rename = "created_date")]
-    pub created_date: DateTime<Utc>,
+    pub created_date: Option<DateTime<Utc>>,
     
     // Virtual fields joined from users
     #[serde(rename = "creatorName")]
