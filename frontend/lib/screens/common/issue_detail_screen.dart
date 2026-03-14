@@ -231,18 +231,33 @@ class _IssueDetailScreenState extends State<IssueDetailScreen> {
   }
 
   Widget _buildStatusDropdown(bool isAdmin, Color textColor, Color subTextColor) {
+    // Standardize the status options
     final statusOptions = ['Open', 'In Progress', 'Resolved', 'Closed'];
     
+    // Normalize current status to match options, or default to 'Open'
+    String currentStatus = _currentIssue.status;
+    if (currentStatus.toUpperCase() == 'PENDING') currentStatus = 'Open';
+    if (!statusOptions.contains(currentStatus)) {
+      // Try to find a case-insensitive match
+      currentStatus = statusOptions.firstWhere(
+        (opt) => opt.toLowerCase() == currentStatus.toLowerCase(),
+        orElse: () => 'Open'
+      );
+    }
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text("Status:", style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold)),
         if (isAdmin)
           DropdownButton<String>(
-            value: _currentIssue.status,
+            value: currentStatus,
             underline: Container(),
             icon: Icon(Icons.arrow_drop_down, color: Theme.of(context).primaryColor),
-            items: statusOptions.map((s) => DropdownMenuItem(value: s, child: Text(s, style: GoogleFonts.poppins(color: textColor, fontSize: 14)))).toList(),
+            items: statusOptions.map((s) => DropdownMenuItem(
+              value: s, 
+              child: Text(s, style: GoogleFonts.poppins(color: textColor, fontSize: 14))
+            )).toList(),
             onChanged: (v) {
               if (v != null) _updateStatus(v);
             },
@@ -254,7 +269,7 @@ class _IssueDetailScreenState extends State<IssueDetailScreen> {
               color: Colors.blue.withOpacity(0.1),
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Text(_currentIssue.status, style: GoogleFonts.poppins(color: Colors.blue, fontWeight: FontWeight.w600, fontSize: 13)),
+            child: Text(currentStatus, style: GoogleFonts.poppins(color: Colors.blue, fontWeight: FontWeight.w600, fontSize: 13)),
           ),
       ],
     );
