@@ -273,6 +273,7 @@ async fn main() {
     let _ = sqlx::query("ALTER TABLE issues RENAME COLUMN user_id TO created_by").execute(&pool).await;
     let _ = sqlx::query("ALTER TABLE issues RENAME COLUMN subject TO title").execute(&pool).await;
     let _ = sqlx::query("ALTER TABLE issues RENAME COLUMN created_at TO created_date").execute(&pool).await;
+    let _ = sqlx::query("ALTER TABLE issues RENAME COLUMN responded_by TO assigned_to").execute(&pool).await;
 
     sqlx::query("
         CREATE TABLE IF NOT EXISTS issues (
@@ -296,6 +297,7 @@ async fn main() {
     let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS created_date TIMESTAMPTZ DEFAULT NOW()").execute(&pool).await;
     let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS title VARCHAR(255)").execute(&pool).await;
     let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS description TEXT").execute(&pool).await;
+    let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS assigned_to UUID").execute(&pool).await;
 
     sqlx::query("
         CREATE TABLE IF NOT EXISTS issue_comments (
