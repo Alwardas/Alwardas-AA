@@ -269,25 +269,33 @@ async fn main() {
     
     let _ = sqlx::query("CREATE EXTENSION IF NOT EXISTS \"pgcrypto\"").execute(&pool).await;
 
+    // Force migration from older schema versions if they exist
+    let _ = sqlx::query("ALTER TABLE issues RENAME COLUMN user_id TO created_by").execute(&pool).await;
+    let _ = sqlx::query("ALTER TABLE issues RENAME COLUMN subject TO title").execute(&pool).await;
+    let _ = sqlx::query("ALTER TABLE issues RENAME COLUMN created_at TO created_date").execute(&pool).await;
+
     sqlx::query("
         CREATE TABLE IF NOT EXISTS issues (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
             title VARCHAR(255) NOT NULL,
             description TEXT NOT NULL,
-            category VARCHAR(100) NOT NULL,
-            priority VARCHAR(50) NOT NULL,
+            category VARCHAR(100) NOT NULL DEFAULT 'General',
+            priority VARCHAR(50) NOT NULL DEFAULT 'Medium',
             status VARCHAR(50) NOT NULL DEFAULT 'Open',
             created_by UUID NOT NULL REFERENCES users(id),
-            user_role VARCHAR(50) NOT NULL,
+            user_role VARCHAR(50) NOT NULL DEFAULT 'Student',
             assigned_to UUID REFERENCES users(id),
             created_date TIMESTAMPTZ DEFAULT NOW()
         )
     ").execute(&pool).await.err();
 
+    let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS created_by UUID").execute(&pool).await;
     let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS user_role VARCHAR(50) DEFAULT 'Student'").execute(&pool).await;
     let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS category VARCHAR(100) DEFAULT 'General'").execute(&pool).await;
     let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS priority VARCHAR(50) DEFAULT 'Medium'").execute(&pool).await;
     let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS created_date TIMESTAMPTZ DEFAULT NOW()").execute(&pool).await;
+    let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS title VARCHAR(255)").execute(&pool).await;
+    let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS description TEXT").execute(&pool).await;
 
     sqlx::query("
         CREATE TABLE IF NOT EXISTS issue_comments (
