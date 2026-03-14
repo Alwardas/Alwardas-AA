@@ -876,3 +876,64 @@ pub struct GetAnnouncementsQuery {
     pub user_id: Option<String>,
     pub role: Option<String>,
 }
+
+#[derive(Serialize, Deserialize, Debug, FromRow)]
+#[serde(rename_all = "camelCase")]
+pub struct ParentRequest {
+    pub id: Uuid,
+    #[sqlx(rename = "parent_id")]
+    pub parent_id: Uuid,
+    #[sqlx(rename = "student_id")]
+    pub student_id: Uuid,
+    #[sqlx(rename = "request_type")]
+    pub request_type: String,
+    pub subject: String,
+    pub description: String,
+    #[sqlx(rename = "date_duration")]
+    pub date_duration: String,
+    pub status: String,
+    #[sqlx(rename = "created_at")]
+    pub created_at: DateTime<Utc>,
+    #[sqlx(rename = "updated_at")]
+    pub updated_at: DateTime<Utc>,
+    #[sqlx(rename = "assigned_to")]
+    pub assigned_to: Option<Uuid>,
+    
+    // Joint fields
+    #[sqlx(default)]
+    pub parent_name: Option<String>,
+    #[sqlx(default)]
+    pub student_name: Option<String>,
+    #[sqlx(default)]
+    pub assigned_name: Option<String>,
+}
+
+#[derive(Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct SubmitParentRequest {
+    pub parent_id: String,
+    pub student_id: String,
+    pub request_type: String,
+    pub subject: String,
+    pub description: String,
+    pub date_duration: String,
+}
+
+#[derive(Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct UpdateParentRequestStatus {
+    pub status: String,
+}
+
+#[derive(Deserialize, Debug)]
+pub struct ParentRequestQuery {
+    #[serde(rename = "parentId")]
+    pub parent_id: Option<String>,
+    #[serde(rename = "studentId")]
+    pub student_id: Option<String>,
+    #[serde(rename = "role")]
+    pub role: Option<String>,
+    #[serde(rename = "branch")]
+    pub branch: Option<String>,
+}
+

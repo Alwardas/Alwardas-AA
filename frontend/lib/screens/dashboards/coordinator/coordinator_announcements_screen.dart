@@ -10,6 +10,7 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/helpers/announcement_theme_helper.dart';
+import '../../../core/services/auth_service.dart';
 import 'coordinator_create_announcement_screen.dart';
 import 'coordinator_announcement_details_screen.dart';
 
@@ -36,7 +37,13 @@ class _CoordinatorAnnouncementsScreenState extends State<CoordinatorAnnouncement
 
   Future<void> _fetchAnnouncements() async {
     try {
-      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement')).timeout(
+      final user = await AuthService.getUserSession();
+      String roleParam = '';
+      if (user != null && user['role'] != null) {
+        roleParam = '?role=${user['role']}';
+      }
+
+      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement$roleParam')).timeout(
         const Duration(seconds: 5),
         onTimeout: () => http.Response('[]', 408),
       );

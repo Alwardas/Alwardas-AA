@@ -52,7 +52,7 @@ pub async fn get_issues_handler(
 ) -> Result<Json<Vec<Issue>>, (StatusCode, Json<serde_json::Value>)> {
     let user_uuid = Uuid::parse_str(&params.user_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
 
-    let mut query = String::from(r#"
+    let mut query = sqlx::QueryBuilder::new(r#"
         SELECT 
             i.id, i.title, i.description, i.category, i.priority, i.status, i.created_by, i.user_role, i.assigned_to, i.created_date,
             u_creator.full_name as creator_name,
@@ -70,28 +70,37 @@ pub async fn get_issues_handler(
     
     match params.role.as_str() {
         "Student" | "Parent" | "Faculty" => {
-            query.push_str(" AND i.created_by = $1");
+            query.push(" AND i.created_by = ");
+            query.push_bind(user_uuid);
         }
-        "HOD" | "Principal" => {
-            // HOD/Principal see issues from their branch or assigned to them
+        "HOD" => {
+            // HOD see issues from their branch or assigned to them
             if let Some(branch) = &params.branch {
-                query.push_str(&format!(" AND (u_creator.branch = '{}' OR i.assigned_to = $1)", branch));
+                query.push(" AND (u_creator.branch = ");
+                query.push_bind(branch);
+                query.push(" OR i.assigned_to = ");
+                query.push_bind(user_uuid);
+                query.push(")");
             } else {
-                query.push_str(" AND (i.created_by = $1 OR i.assigned_to = $1)");
+                query.push(" AND (i.created_by = ");
+                query.push_bind(user_uuid);
+                query.push(" OR i.assigned_to = ");
+                query.push_bind(user_uuid);
+                query.push(")");
             }
         }
-        "Coordinator" | "Admin" => {
-            // See all
+        "Principal" | "Coordinator" | "Admin" => {
+            // Principal/Coordinator/Admin see all issues
         }
         _ => {
-            query.push_str(" AND i.created_by = $1");
+            query.push(" AND i.created_by = ");
+            query.push_bind(user_uuid);
         }
     }
 
-    query.push_str(" ORDER BY i.created_date DESC");
+    query.push(" ORDER BY i.created_date DESC");
 
-    let issues = sqlx::query_as::<Postgres, Issue>(&query)
-        .bind(user_uuid)
+    let issues = query.build_query_as::<Issue>()
         .fetch_all(&state.pool)
         .await
         .map_err(|e| {

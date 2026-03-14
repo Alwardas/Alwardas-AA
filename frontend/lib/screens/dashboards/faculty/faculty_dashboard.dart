@@ -611,17 +611,6 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                     onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
                   ),
                    _buildQuickAccessCard(
-                    Icons.assignment_outlined,
-                    'Exams',
-                    'Manage',
-                    cardColor,
-                    const Color(0xFF3498DB).withValues(alpha: 0.1),
-                    const Color(0xFF3498DB),
-                    textColor,
-                    subTextColor,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyExamsScreen())),
-                  ),
-                   _buildQuickAccessCard(
                     Icons.request_page_outlined,
                     'Requests',
                     'Pending',

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -6,20 +6,25 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 
+import '../../../widgets/parent_requests_viewer.dart';
+
 class PrincipalRequestsScreen extends StatefulWidget {
-  const PrincipalRequestsScreen({super.key});
+  final Map<String, dynamic> userData;
+  const PrincipalRequestsScreen({super.key, required this.userData});
 
   @override
   State<PrincipalRequestsScreen> createState() => _PrincipalRequestsScreenState();
 }
 
-class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
-  List<dynamic> _requests = [];
+class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  List<dynamic> _hodRequests = [];
   bool _loading = true;
 
   @override
   void initState() {
     super.initState();
+    _tabController = TabController(length: 2, vsync: this);
     _fetchRequests();
   }
 
@@ -31,7 +36,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
       if (response.statusCode == 200) {
         if (mounted) {
           setState(() {
-            _requests = json.decode(response.body);
+            _hodRequests = json.decode(response.body);
             _loading = false;
           });
         }
@@ -84,6 +89,16 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
+        bottom: TabBar(
+            controller: _tabController,
+            labelColor: tint,
+            unselectedLabelColor: subTextColor,
+            indicatorColor: tint,
+            tabs: const [
+              Tab(text: "HOD Approvals"),
+              Tab(text: "Parent Requests"),
+            ],
+          ),
       ),
       body: Stack(
         children: [
@@ -97,45 +112,55 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> {
             ),
           ),
           SafeArea(
-            child: _loading 
-            ? const Center(child: CircularProgressIndicator())
-            : _requests.isEmpty 
-            ? Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.check_circle_outline, size: 80, color: tint.withValues(alpha: 0.5)),
-                    const SizedBox(height: 20),
-                    Text("All Caught Up!", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
-                    Text("No pending HOD requests.", style: TextStyle(color: subTextColor)),
-                  ],
-                ),
-              )
-            : RefreshIndicator(
-                onRefresh: _fetchRequests,
-                child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  itemCount: _requests.length,
-                  itemBuilder: (ctx, index) {
-                    final r = _requests[index];
-                    return _RequestCard(
-                      r: r,
-                      cardColor: cardColor,
-                      textColor: textColor,
-                      subTextColor: subTextColor,
-                      tint: tint,
-                      iconBg: iconBg,
-                      onAction: _handleAction,
-                    );
-                  },
-                ),
-              ),
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                 // HOD Approvals Tab
+                 _loading 
+                  ? const Center(child: CircularProgressIndicator())
+                  : _hodRequests.isEmpty 
+                  ? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.check_circle_outline, size: 80, color: tint.withValues(alpha: 0.5)),
+                          const SizedBox(height: 20),
+                          Text("All Caught Up!", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
+                          Text("No pending HOD requests.", style: TextStyle(color: subTextColor)),
+                        ],
+                      ),
+                    )
+                  : RefreshIndicator(
+                      onRefresh: _fetchRequests,
+                      child: ListView.builder(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        itemCount: _hodRequests.length,
+                        itemBuilder: (ctx, index) {
+                          final r = _hodRequests[index];
+                          return _RequestCard(
+                            r: r,
+                            cardColor: cardColor,
+                            textColor: textColor,
+                            subTextColor: subTextColor,
+                            tint: tint,
+                            iconBg: iconBg,
+                            onAction: _handleAction,
+                          );
+                        },
+                      ),
+                    ),
+                
+                // Parent Requests Tab
+                ParentRequestsViewer(userData: widget.userData),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 }
+
 
 class _RequestCard extends StatelessWidget {
   final dynamic r;

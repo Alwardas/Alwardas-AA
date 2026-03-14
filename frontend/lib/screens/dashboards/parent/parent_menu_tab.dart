@@ -9,6 +9,8 @@ import '../student/attendance_screen.dart';
 import '../student/student_notifications_screen.dart';
 import '../student/student_marks_screen.dart';
 import '../student/my_courses_screen.dart';
+import '../student/student_announcements_screen.dart';
+import 'parent_requests_screen.dart';
 import '../../common/issue_management_screen.dart';
 
 class ParentMenuTab extends StatelessWidget {
@@ -31,6 +33,15 @@ class ParentMenuTab extends StatelessWidget {
 
     final List<Map<String, dynamic>> menuItems = [
       {
+        'title': 'Announcements',
+        'icon': Icons.campaign_outlined,
+        'color': const Color(0xFFff6347),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => const StudentAnnouncementsScreen())),
+      },
+      {
         'title': 'Attendance',
         'icon': Icons.calendar_today,
         'color': const Color(0xFF2ecc71),
@@ -49,16 +60,6 @@ class ParentMenuTab extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (_) => MyCoursesScreen(userId: currentChild['id']))),
-      },
-      {
-        'title': 'Announcements',
-        'icon': Icons.campaign_outlined,
-        'color': const Color(0xFFff6347),
-        'onTap': () => Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (_) =>
-                    StudentNotificationsScreen(userId: currentChild['id']))),
       },
       {
         'title': 'Academics',
@@ -80,8 +81,13 @@ class ParentMenuTab extends StatelessWidget {
         'title': 'Permission & Requests',
         'icon': Icons.assignment_turned_in,
         'color': Colors.indigo,
-        'onTap': () => ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Requests coming soon'))),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => ParentRequestsScreen(
+                      userData: userData,
+                      studentId: currentChild['id'],
+                    ))),
       },
       {
         'title': 'Issues',

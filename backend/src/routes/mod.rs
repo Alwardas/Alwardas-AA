@@ -660,20 +660,31 @@ pub async fn get_notifications_handler(
         match role.as_str() {
             "Student" => {
                  if let Some(uid) = &params.user_id {
-                    conditions.push(format!("(recipient_id = '{}' OR recipient_id IS NULL)", uid));
+                    conditions.push(format!("(recipient_id = '{}' OR recipient_id = 'STUDENT_RECIPIENT' OR recipient_id IS NULL)", uid));
+                 } else {
+                    conditions.push("(recipient_id = 'STUDENT_RECIPIENT' OR recipient_id IS NULL)".to_string());
                  }
             },
             "Faculty" => {
                 if let Some(uid) = &params.user_id {
-                    conditions.push(format!("(recipient_id = '{}' OR (recipient_id IS NULL AND (branch = '{}' OR branch IS NULL)))", 
+                    conditions.push(format!("(recipient_id = '{}' OR recipient_id = 'FACULTY_RECIPIENT' OR (recipient_id IS NULL AND (branch = '{}' OR branch IS NULL)))", 
                         uid, params.branch.as_deref().unwrap_or("")));
+                } else {
+                    conditions.push("(recipient_id = 'FACULTY_RECIPIENT' OR recipient_id IS NULL)".to_string());
                 }
+            },
+            "Parent" => {
+                if let Some(uid) = &params.user_id {
+                    conditions.push(format!("(recipient_id = '{}' OR recipient_id = 'PARENT_RECIPIENT' OR recipient_id IS NULL)", uid));
+                 } else {
+                    conditions.push("(recipient_id = 'PARENT_RECIPIENT' OR recipient_id IS NULL)".to_string());
+                 }
             },
             "HOD" => {
                 if let Some(branch) = &params.branch {
-                    conditions.push(format!("(recipient_id = 'HOD_RECIPIENT' AND branch = '{}') OR (recipient_id IS NULL AND (branch = '{}' OR branch IS NULL))", branch, branch));
+                    conditions.push(format!("(recipient_id = 'HOD_RECIPIENT' AND (branch = '{}' OR branch IS NULL)) OR (recipient_id IS NULL AND (branch = '{}' OR branch IS NULL))", branch, branch));
                 } else if let Some(uid) = &params.user_id {
-                     conditions.push(format!("recipient_id = '{}'", uid));
+                     conditions.push(format!("(recipient_id = '{}' OR recipient_id = 'HOD_RECIPIENT' OR recipient_id IS NULL)", uid));
                 }
             },
             "Principal" => {

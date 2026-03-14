@@ -45,4 +45,9 @@ class ApiConstants {
   static String get hodGetSubjects => '$baseUrl/api/hod/subjects';
   static String get hodCourseSubjects => '$baseUrl/api/hod/course-subjects';
 
+  // Parent Requests
+  static String get submitParentRequest => '$baseUrl/api/parent/requests/submit';
+  static String get getParentRequests => '$baseUrl/api/parent/requests';
+  static String updateParentRequestStatus(String id) => '$baseUrl/api/parent/requests/$id/status';
+
  }

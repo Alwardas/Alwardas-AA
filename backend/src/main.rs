@@ -181,6 +181,26 @@ async fn main() {
         )
     ").execute(&pool).await.err();
 
+    // PARENT REQUESTS TABLE (New)
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS parent_requests (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            parent_id UUID NOT NULL REFERENCES users(id),
+            student_id UUID NOT NULL REFERENCES users(id),
+            request_type VARCHAR(50) NOT NULL,
+            subject VARCHAR(255) NOT NULL,
+            description TEXT NOT NULL,
+            date_duration VARCHAR(100) NOT NULL,
+            status VARCHAR(50) NOT NULL DEFAULT 'Pending',
+            created_at TIMESTAMPTZ DEFAULT NOW(),
+            updated_at TIMESTAMPTZ DEFAULT NOW(),
+            assigned_to UUID REFERENCES users(id)
+        )
+    ").execute(&pool).await.err();
+    
+    let _ = sqlx::query("CREATE INDEX IF NOT EXISTS idx_parent_requests_parent_id ON parent_requests(parent_id)").execute(&pool).await.err();
+    let _ = sqlx::query("CREATE INDEX IF NOT EXISTS idx_parent_requests_student_id ON parent_requests(student_id)").execute(&pool).await.err();
+
     // STUDENT MARKS TABLE
     let _ = sqlx::query("
         CREATE TABLE IF NOT EXISTS student_marks (
@@ -331,6 +351,9 @@ async fn main() {
         .route("/api/user/accept-my-update", post(accept_my_pending_update_handler))
         .route("/api/user/reject-my-update", post(reject_my_pending_update_handler))
         .route("/api/parent/profile", get(parent::get_parent_profile_handler))
+        .route("/api/parent/requests/submit", post(parent::submit_parent_request_handler))
+        .route("/api/parent/requests", get(parent::get_parent_requests_handler))
+        .route("/api/parent/requests/:id/status", post(parent::update_parent_request_status_handler))
         .route("/api/faculty/profile", get(faculty::get_faculty_profile_handler))
         .route("/api/faculty/subjects", get(faculty::get_faculty_subjects_handler))
         .route("/api/faculty/subjects", post(faculty::add_faculty_subject_handler))

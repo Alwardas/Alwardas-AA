@@ -63,7 +63,63 @@ class _ParentDashboardState extends State<ParentDashboard> {
       _fetchChildData();
     }
     _startNotificationPolling();
+    // Fetch attendance for initial child if available
+    _fetchTodayAttendance();
   }
+
+  String _todayAttendanceStatus = "Not taken yet";
+
+  Future<void> _fetchTodayAttendance() async {
+    if (_children.isEmpty || _children[_selectedChildIndex]['id'] == null || _children[_selectedChildIndex]['id']!.isEmpty) return;
+    String studentId = _children[_selectedChildIndex]['id']!;
+    
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/attendance?studentId=$studentId');
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        final String todayStr = DateTime.now().toIso8601String().split('T')[0];
+        
+        bool hasMorning = false;
+        bool hasAfternoon = false;
+        String morningStatus = "";
+        String afternoonStatus = "";
+
+        for (var record in data) {
+          if (record['date'] != null && record['date'].toString().startsWith(todayStr)) {
+            if (record['session'] == 'MORNING') {
+              hasMorning = true;
+              morningStatus = record['status'] ?? '';
+            } else if (record['session'] == 'AFTERNOON') {
+              hasAfternoon = true;
+              afternoonStatus = record['status'] ?? '';
+            }
+          }
+        }
+        
+        if (mounted) {
+          setState(() {
+            if (hasMorning && hasAfternoon) {
+               if (morningStatus == 'PRESENT' && afternoonStatus == 'PRESENT') {
+                  _todayAttendanceStatus = "Present";
+               } else if (morningStatus == 'ABSENT' && afternoonStatus == 'ABSENT') {
+                  _todayAttendanceStatus = "Absent";
+               } else {
+                  _todayAttendanceStatus = "Half Day";
+               }
+            } else if (hasMorning) {
+               _todayAttendanceStatus = morningStatus == 'PRESENT' ? "Present (Morning)" : "Absent (Morning)";
+            } else if (hasAfternoon) {
+               _todayAttendanceStatus = afternoonStatus == 'PRESENT' ? "Present (Afternoon)" : "Absent (Afternoon)";
+            } else {
+               _todayAttendanceStatus = "Not taken yet";
+            }
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching parent today attendance: $e");
+    }
 
   @override
   void dispose() {
@@ -184,7 +240,9 @@ class _ParentDashboardState extends State<ParentDashboard> {
   void _switchChild(int index) {
     setState(() {
       _selectedChildIndex = index;
+      _todayAttendanceStatus = "Loading...";
     });
+    _fetchTodayAttendance();
     Navigator.pop(context); // Close the bottom sheet
   }
 
@@ -371,7 +429,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Welcome Back,',
+                          'Alwardas \u2013',
                           style: GoogleFonts.poppins(
                             color: Colors.white70,
                             fontSize: 18,
@@ -382,7 +440,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                           fit: BoxFit.scaleDown,
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            widget.userData['full_name'] ?? 'Parent',
+                            'Parent Portal',
                             style: GoogleFonts.poppins(
                               color: Colors.white,
                               fontSize: 26,
@@ -487,21 +545,6 @@ class _ParentDashboardState extends State<ParentDashboard> {
                     ),
                     children: [
                       _buildQuickAccessCard(
-                        Icons.insights,
-                        'Academics',
-                        'View Marks',
-                        cardColor,
-                        const Color(0xFFe67e22).withValues(alpha: 0.1),
-                        const Color(0xFFe67e22),
-                        textColor,
-                        subTextColor,
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => StudentMarksScreen(
-                                    userId: currentChild['id']))),
-                      ),
-                      _buildQuickAccessCard(
                         Icons.calendar_today,
                         'Attendance',
                         'Check Status',
@@ -516,6 +559,20 @@ class _ParentDashboardState extends State<ParentDashboard> {
                                 builder: (_) => AttendanceScreen(
                                     userData: currentChild,
                                     onBack: () => Navigator.pop(context)))),
+                      ),
+                      _buildQuickAccessCard(
+                        Icons.assignment_ind_outlined,
+                        'Permissions',
+                        'Requests & Leave',
+                        cardColor,
+                        const Color(0xFF9b59b6).withValues(alpha: 0.1),
+                        const Color(0xFF9b59b6),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => ParentRequestsScreen(userData: widget.userData))),
                       ),
                       _buildQuickAccessCard(
                         Icons.menu_book_rounded,
@@ -533,18 +590,18 @@ class _ParentDashboardState extends State<ParentDashboard> {
                                     userId: currentChild['id']))),
                       ),
                       _buildQuickAccessCard(
-                        Icons.campaign_outlined,
-                        'Notifications',
-                        'Latest News',
+                        Icons.insights,
+                        'Academics',
+                        'View Marks',
                         cardColor,
-                        const Color(0xFFff6347).withValues(alpha: 0.1),
-                        const Color(0xFFff6347),
+                        const Color(0xFFe67e22).withValues(alpha: 0.1),
+                        const Color(0xFFe67e22),
                         textColor,
                         subTextColor,
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) => StudentNotificationsScreen(
+                                builder: (_) => StudentMarksScreen(
                                     userId: currentChild['id']))),
                       ),
                     ],
@@ -574,25 +631,6 @@ class _ParentDashboardState extends State<ParentDashboard> {
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Student Details",
-                                style: GoogleFonts.poppins(
-                                    color: subTextColor,
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w600)),
-                            const SizedBox(height: 10),
-                            Text("Student: ${currentChild['name'] ?? 'N/A'}",
-                                style: GoogleFonts.poppins(
-                                    color: textColor, fontSize: 16)),
-                            const SizedBox(height: 5),
-                            Text("Branch: ${currentChild['branch'] ?? 'N/A'}",
-                                style: GoogleFonts.poppins(
-                                    color: textColor, fontSize: 15)),
-                            const SizedBox(height: 5),
-                            Text(
-                                "Year & Section: ${currentChild['year'] ?? ''} - ${widget.userData['section'] ?? 'Section A'}",
-                                style: GoogleFonts.poppins(
-                                    color: textColor, fontSize: 15)),
-                            const SizedBox(height: 20),
                             Text("Recent Status",
                                 style: GoogleFonts.poppins(
                                     color: subTextColor,
@@ -604,13 +642,20 @@ class _ParentDashboardState extends State<ParentDashboard> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 5),
                                 decoration: BoxDecoration(
-                                  color:
-                                      const Color(0xFF2ecc71).withOpacity(0.1),
+                                  color: _todayAttendanceStatus.toLowerCase().contains('present') 
+                                      ? const Color(0xFF2ecc71).withOpacity(0.1)
+                                      : _todayAttendanceStatus.toLowerCase().contains('absent')
+                                        ? Colors.red.withOpacity(0.1)
+                                        : Colors.orange.withOpacity(0.1),
                                   borderRadius: BorderRadius.circular(8),
                                   ),
-                                child: Text("Overall Attendance Healthy",
+                                child: Text("Today Attendance: $_todayAttendanceStatus",
                                     style: GoogleFonts.poppins(
-                                        color: const Color(0xFF2ecc71),
+                                        color: _todayAttendanceStatus.toLowerCase().contains('present') 
+                                          ? const Color(0xFF2ecc71)
+                                          : _todayAttendanceStatus.toLowerCase().contains('absent')
+                                            ? Colors.red
+                                            : Colors.orange,
                                         fontWeight: FontWeight.w600)),
                               )
                             ]),

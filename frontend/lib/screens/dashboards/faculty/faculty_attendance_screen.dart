@@ -424,26 +424,8 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
         child: SafeArea( // Use SafeArea to respect AppBar
           child: Column(
             children: [
-               // Tab Switcher
-               Container(
-                 margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                 padding: const EdgeInsets.all(4),
-                 decoration: BoxDecoration(
-                   color: iconBgColor,
-                   borderRadius: BorderRadius.circular(12),
-                 ),
-                 child: Row(
-                   children: [
-                     _buildTabButton('Students', tintColor, textColor, subTextColor),
-                     _buildTabButton('Self', tintColor, textColor, subTextColor),
-                   ],
-                 ),
-               ),
-
                Expanded(
-                 child: _activeTab == 'Students' 
-                  ? (_step == 'SELECT' ? _buildSelectionForm(textColor, subTextColor, tintColor, iconBgColor, cardColor, dropdownBgColor) : _buildMarkingScreen(textColor, subTextColor, tintColor, iconBgColor, cardColor))
-                  : _buildSelfTab(textColor, subTextColor, cardColor, borderColor, tintColor),
+                 child: _step == 'SELECT' ? _buildSelectionForm(textColor, subTextColor, tintColor, iconBgColor, cardColor, dropdownBgColor) : _buildMarkingScreen(textColor, subTextColor, tintColor, iconBgColor, cardColor),
                ),
             ],
           ),

@@ -39,6 +39,9 @@ class _StudentDashboardState extends State<StudentDashboard> {
   int _selectedIndex = 1; // Default to Home (index 1)
   Timer? _notificationTimer;
   String? _lastNotifiedId;
+  
+  List<Map<String, dynamic>> _todaySchedule = [];
+  List<Map<String, dynamic>> _todayPracticals = [];
 
   @override
   void initState() {
@@ -156,9 +159,15 @@ class _StudentDashboardState extends State<StudentDashboard> {
 
       // 4. Schedule Notifications
       const mapDays = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6};
+      
+      String todayStr = DateFormat('EEEE').format(DateTime.now());
+      List<Map<String, dynamic>> tempNormal = [];
+      List<Map<String, dynamic>> tempPractical = [];
+
       for (var item in schedule) {
         final dayStr = item['day'];
         final pIndex = item['period_index'] ?? item['periodIndex'];
+        
         if (dayStr != null && pIndex != null && mapDays.containsKey(dayStr)) {
           final startTime = periodStartTimes[pIndex];
           if (startTime != null) {
@@ -172,10 +181,8 @@ class _StudentDashboardState extends State<StudentDashboard> {
               startTime.hour, startTime.minute
             ).add(Duration(days: daysUntil));
 
-            // Set to 1 minute before
             scheduledDateTime = scheduledDateTime.subtract(const Duration(minutes: 1));
 
-            // If the time for today has already passed, move to next week's occurrence
             if (scheduledDateTime.isBefore(now)) {
               scheduledDateTime = scheduledDateTime.add(const Duration(days: 7));
             }
@@ -186,8 +193,35 @@ class _StudentDashboardState extends State<StudentDashboard> {
               body: 'Upcoming: ${item['subject']} starts in 1 minute.',
               scheduledTime: scheduledDateTime,
             );
+            
+            if (dayStr == todayStr) {
+               String hourStr = startTime.hour > 12 ? (startTime.hour - 12).toString() : (startTime.hour == 0 ? "12" : startTime.hour.toString());
+               String amPmStr = startTime.hour >= 12 ? 'PM' : 'AM';
+               String classTime = "$hourStr:${startTime.minute.toString().padLeft(2, '0')} $amPmStr";
+               Map<String, dynamic> classData = {
+                 'subject': item['subject'],
+                 'time': classTime,
+                 'faculty': item['faculty_name'] ?? '',
+                 'pIndex': pIndex,
+               };
+               
+                tempNormal.add(classData);
+                if (item['subject'].toString().toLowerCase().contains('practical') || item['subject'].toString().toLowerCase().contains('lab')) {
+                   tempPractical.add(classData);
+                }
+            }
           }
         }
+      }
+      
+      tempNormal.sort((a, b) => (a['pIndex'] as int).compareTo(b['pIndex'] as int));
+      tempPractical.sort((a, b) => (a['pIndex'] as int).compareTo(b['pIndex'] as int));
+
+      if (mounted) {
+         setState(() {
+            _todaySchedule = tempNormal;
+            _todayPracticals = tempPractical;
+         });
       }
     } catch (e) {
       debugPrint("Setup Class Reminders Error (Student): $e");
@@ -538,69 +572,101 @@ class _StudentDashboardState extends State<StudentDashboard> {
                     ],
                   ),
 
-                  const SizedBox(height: 25),
+                  // Today's Schedule
+                  if (_todaySchedule.isNotEmpty) ...[
+                      Text(
+                        "Today's Schedule",
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 15),
+                      ..._todaySchedule.map((cls) => _buildClassCard(cls, isDark, textColor, subTextColor)),
+                  ] else ...[
+                      Text(
+                        "Today's Schedule",
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 15),
+                      Text("No classes scheduled for today.", style: GoogleFonts.poppins(color: subTextColor)),
+                  ],
 
-                  // Today's Schedule (Cleaned up)
-                  Text(
-                    "Today's Schedule",
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.05),
-                          blurRadius: 10,
-                          offset: const Offset(0, 5),
+                  if (_todayPracticals.isNotEmpty) ...[
+                      const SizedBox(height: 25),
+                      Text(
+                        "Practical Sessions Today",
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),
-                      ],
-                      border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '10:00 AM - 11:30 AM',
-                          style: GoogleFonts.poppins(
-                            color: const Color(0xFF00d2ff),
-                            fontSize: 13,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          'Software Engineering',
-                          style: GoogleFonts.poppins(
-                            color: textColor,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Room 301 (Dr. Lee)',
-                          style: GoogleFonts.poppins(
-                            color: subTextColor,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
+                      ),
+                      const SizedBox(height: 15),
+                      ..._todayPracticals.map((cls) => _buildClassCard(cls, isDark, textColor, subTextColor)),
+                  ],
+                  const SizedBox(height: 100), // Additional bottom spacing
                 ],
               ),
             ),
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildClassCard(Map<String, dynamic> cls, bool isDark, Color textColor, Color subTextColor) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 15),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 5),
+          ),
+        ],
+        border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            cls['time'] ?? '',
+            style: GoogleFonts.poppins(
+              color: const Color(0xFF00d2ff),
+              fontSize: 13,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 0.5,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            cls['subject'] ?? '',
+            style: GoogleFonts.poppins(
+              color: textColor,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          if (cls['faculty'] != null && cls['faculty'].toString().isNotEmpty && cls['faculty'] != '---')
+             Text(
+               'Faculty: ${cls['faculty']}',
+               style: GoogleFonts.poppins(
+                 color: subTextColor,
+                 fontSize: 14,
+               ),
+             ),
+        ],
+      ),
     );
   }
 

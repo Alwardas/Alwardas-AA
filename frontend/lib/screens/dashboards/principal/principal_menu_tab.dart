@@ -32,7 +32,7 @@ class PrincipalMenuTab extends StatelessWidget {
       {'label': 'Faculty Directory', 'icon': Icons.people, 'route': const PrincipalFacultyScreen(), 'color': const Color(0xFF8E2DE2)},
       {'label': 'Master Timetables', 'icon': Icons.access_time, 'route': const PrincipalTimetablesScreen(), 'color': const Color(0xFF606c88)},
       {'label': 'My Schedule', 'icon': Icons.today, 'route': const PrincipalScheduleScreen(), 'color': const Color(0xFFfa709a)},
-      {'label': 'Requests & Approvals', 'icon': Icons.inbox, 'route': const PrincipalRequestsScreen(), 'color': const Color(0xFFf1c40f)},
+      {'label': 'Requests & Approvals', 'icon': Icons.inbox, 'route': PrincipalRequestsScreen(userData: userData), 'color': const Color(0xFFf1c40f)},
       {'label': 'Syllabus Management', 'icon': Icons.book, 'route': const PrincipalLessonPlansScreen(), 'color': const Color(0xFF38ef7d)},
       {'label': 'Issues', 'icon': Icons.report_problem, 'route': IssueManagementScreen(userData: userData), 'color': const Color(0xFFEF5350)},
       {'label': 'Departments', 'icon': Icons.business, 'route': const CoordinatorDepartmentScreen(), 'color': const Color(0xFF29B6F6)},

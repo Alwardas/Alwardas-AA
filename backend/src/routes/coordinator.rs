@@ -47,19 +47,13 @@ pub async fn create_announcement_handler(
             // Send In-App Notifications if requested
             if body.send_in_app {
                 let msg = format!("{}: {}", body.title, body.description);
-                if msg.len() > 200 {
-                    // Truncate if too long for notification summary
-                    // msg = format!("{}...", &msg[..197]);
-                }
                 
-                let mut global_broadcast_sent = false;
                 for audience_role in &body.audience {
                     let recipient_label = match audience_role.as_str() {
-                        "Students" | "Faculty" | "All" => {
-                            if global_broadcast_sent { continue; }
-                            global_broadcast_sent = true;
-                            None
-                        },
+                        "All" => None,
+                        "Students" => Some("STUDENT_RECIPIENT"),
+                        "Faculty" => Some("FACULTY_RECIPIENT"),
+                        "Parents" => Some("PARENT_RECIPIENT"),
                         "HODs" => Some("HOD_RECIPIENT"),
                         "Principal" => Some("PRINCIPAL_RECIPIENT"),
                         "Coordinator" => Some("COORDINATOR_RECIPIENT"),
@@ -92,20 +86,24 @@ pub async fn create_announcement_handler(
 
 pub async fn get_announcements_handler(
     State(data): State<AppState>,
-    Query(_params): Query<GetAnnouncementsQuery>,
+    Query(params): Query<GetAnnouncementsQuery>,
 ) -> impl IntoResponse {
-    // If user_id/role is provided, we could filter. 
-    // For now, let's fetch strictly relevant announcements or all active ones.
-    
-    // Logic: 
-    // 1. Fetch all announcements where end_date >= NOW() (Active)
-    // 2. Sort by is_pinned DESC, created_at DESC
-    
-    let result = sqlx::query_as::<_, Announcement>(
-        "SELECT * FROM announcements WHERE end_date >= NOW() ORDER BY is_pinned DESC, created_at DESC"
-    )
-    .fetch_all(&data.pool)
-    .await;
+    let result = if let Some(role) = params.role {
+        let role_plural = format!("{}s", role);
+        sqlx::query_as::<_, Announcement>(
+            "SELECT * FROM announcements WHERE end_date >= NOW() AND ('All' = ANY(audience) OR $1 = ANY(audience) OR $2 = ANY(audience)) ORDER BY is_pinned DESC, created_at DESC"
+        )
+        .bind(role)
+        .bind(role_plural)
+        .fetch_all(&data.pool)
+        .await
+    } else {
+        sqlx::query_as::<_, Announcement>(
+            "SELECT * FROM announcements WHERE end_date >= NOW() ORDER BY is_pinned DESC, created_at DESC"
+        )
+        .fetch_all(&data.pool)
+        .await
+    };
 
     match result {
         Ok(announcements) => (StatusCode::OK, Json(announcements)).into_response(),

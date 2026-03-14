@@ -10,31 +10,32 @@ import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 
+import '../../../widgets/parent_requests_viewer.dart';
+
 class HodRequestsScreen extends StatefulWidget {
-  const HodRequestsScreen({super.key});
+  final Map<String, dynamic> userData;
+  const HodRequestsScreen({super.key, required this.userData});
 
   @override
   _HodRequestsScreenState createState() => _HodRequestsScreenState();
 }
 
-class _HodRequestsScreenState extends State<HodRequestsScreen> {
-  List<dynamic> _requests = [];
+class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  List<dynamic> _facultyRequests = [];
   bool _loading = true;
   final Map<String, String> _nameCache = {};
 
   @override
   void initState() {
     super.initState();
+    _tabController = TabController(length: 2, vsync: this);
     _fetchRequests();
   }
 
   Future<void> _fetchRequests() async {
-    final user = await AuthService.getUserSession();
-    if (user == null) {
-      if (mounted) setState(() => _loading = false);
-      return;
-    }
-
+    final user = widget.userData;
+    
     // Fetch faculty names first
     if (user['branch'] != null) {
        await _fetchFacultyNames(user['branch'].toString());
@@ -70,14 +71,7 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> {
               String subjectName = "Subject";
               if (message.contains("Faculty requested subject: ")) {
                   String raw = message.split("Faculty requested subject: ").last.trim();
-                  // Check if it has " for " (Section)
-                  if (raw.contains(" for ")) {
-                      // e.g. "Math for Section A"
-                      // We can keep it as is, it's readable: "Math for Section A" 
-                      subjectName = raw;
-                  } else {
-                      subjectName = raw;
-                  }
+                  subjectName = raw;
               } else if (message.contains("requested subject:")) {
                    subjectName = message.split("requested subject:").last.trim();
               } else {
@@ -98,7 +92,7 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> {
 
         if (mounted) {
           setState(() {
-            _requests = mappedRequests;
+            _facultyRequests = mappedRequests;
             _loading = false;
           });
         }
@@ -147,11 +141,10 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> {
 
 
   Future<void> _handleAction(String requestId, String action) async {
-    // Find the request to get senderId
-    final index = _requests.indexWhere((r) => r['id'] == requestId);
+    final index = _facultyRequests.indexWhere((r) => r['id'] == requestId);
     if (index == -1) return;
     
-    final request = _requests[index];
+    final request = _facultyRequests[index];
 
     try {
        final response = await http.post(
@@ -167,10 +160,10 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> {
        if (response.statusCode == 200) {
           setState(() {
              if (action == 'APPROVE') {
-                _requests[index]['status'] = 'APPROVED';
+                _facultyRequests[index]['status'] = 'APPROVED';
                 _showSnackBar("Request Approved");
              } else {
-                _requests.removeAt(index);
+                _facultyRequests.removeAt(index);
                 _showSnackBar("Request Rejected");
              }
           });
@@ -196,7 +189,6 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> {
     final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
     final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
     
-    // Custom header colors from screenshot/style
     final headerColor = isDark ? Colors.white : const Color(0xFF1A1A2E);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -212,46 +204,66 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> {
             icon: Icon(Icons.arrow_back, color: headerColor),
             onPressed: () => Navigator.pop(context),
           ),
+          bottom: TabBar(
+            controller: _tabController,
+            labelColor: tint,
+            unselectedLabelColor: subTextColor,
+            indicatorColor: tint,
+            tabs: const [
+              Tab(text: "Faculty Requests"),
+              Tab(text: "Parent Requests"),
+            ],
+          ),
         ),
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight),
           ),
           child: SafeArea(
-            child: _loading
-              ? const Center(child: CircularProgressIndicator())
-              : _requests.isEmpty
-              ? Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.assignment_turned_in_outlined, size: 64, color: subTextColor),
-                      const SizedBox(height: 20),
-                      Text("No pending requests", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
-                    ],
-                  ),
-                )
-              : ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  itemCount: _requests.length,
-                  itemBuilder: (ctx, index) {
-                    final r = _requests[index];
-                    return _RequestCard(
-                      r: r,
-                      cardColor: cardColor,
-                      textColor: textColor,
-                      subTextColor: subTextColor,
-                      tint: tint,
-                      onAction: _handleAction,
-                    );
-                  },
-                ),
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                // Faculty Requests Tab
+                _loading
+                  ? const Center(child: CircularProgressIndicator())
+                  : _facultyRequests.isEmpty
+                  ? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.assignment_turned_in_outlined, size: 64, color: subTextColor),
+                          const SizedBox(height: 20),
+                          Text("No pending requests", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
+                        ],
+                      ),
+                    )
+                  : ListView.builder(
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      itemCount: _facultyRequests.length,
+                      itemBuilder: (ctx, index) {
+                        final r = _facultyRequests[index];
+                        return _RequestCard(
+                          r: r,
+                          cardColor: cardColor,
+                          textColor: textColor,
+                          subTextColor: subTextColor,
+                          tint: tint,
+                          onAction: _handleAction,
+                        );
+                      },
+                    ),
+                
+                // Parent Requests Tab
+                ParentRequestsViewer(userData: widget.userData),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
 
 class _RequestCard extends StatelessWidget {
   final dynamic r;

@@ -52,7 +52,7 @@ class _CoordinatorCreateAnnouncementScreenState
     'Faculty',
     'HODs',
     'Principal',
-    'Parents',
+    'Coordinator', 'Parents',
     'All'
   ];
 

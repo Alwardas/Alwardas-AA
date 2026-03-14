@@ -78,3 +78,108 @@ pub async fn get_parent_profile_handler(
         student: final_student_opt,
     }))
 }
+
+pub async fn submit_parent_request_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<crate::models::SubmitParentRequest>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let parent_uuid = Uuid::parse_str(&payload.parent_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid Parent ID"}))))?;
+    let student_uuid = Uuid::parse_str(&payload.student_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid Student ID"}))))?;
+
+    sqlx::query(
+        "INSERT INTO parent_requests (parent_id, student_id, request_type, subject, description, date_duration, status) 
+         VALUES ($1, $2, $3, $4, $5, $6, 'Pending')"
+    )
+    .bind(parent_uuid)
+    .bind(student_uuid)
+    .bind(&payload.request_type)
+    .bind(&payload.subject)
+    .bind(&payload.description)
+    .bind(&payload.date_duration)
+    .execute(&state.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Submit Parent Request Error: {:?}", e);
+        (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to submit request"})))
+    })?;
+
+    Ok(StatusCode::OK)
+}
+
+pub async fn get_parent_requests_handler(
+    State(state): State<AppState>,
+    Query(params): Query<crate::models::ParentRequestQuery>,
+) -> Result<Json<Vec<crate::models::ParentRequest>>, (StatusCode, Json<serde_json::Value>)> {
+    
+    let mut query = sqlx::QueryBuilder::new(r#"
+        SELECT 
+            pr.id, pr.parent_id, pr.student_id, pr.request_type, pr.subject, pr.description, pr.date_duration, pr.status, pr.created_at, pr.updated_at, pr.assigned_to,
+            u_parent.full_name as parent_name,
+            u_student.full_name as student_name,
+            u_assigned.full_name as assigned_name
+        FROM parent_requests pr
+        LEFT JOIN users u_parent ON pr.parent_id = u_parent.id
+        LEFT JOIN users u_student ON pr.student_id = u_student.id
+        LEFT JOIN users u_assigned ON pr.assigned_to = u_assigned.id
+        WHERE 1=1
+    "#);
+
+    if let Some(parent_id) = &params.parent_id {
+        if let Ok(p_uuid) = Uuid::parse_str(parent_id) {
+            query.push(" AND pr.parent_id = ");
+            query.push_bind(p_uuid);
+        }
+    }
+
+    if let Some(student_id) = &params.student_id {
+        if let Ok(s_uuid) = Uuid::parse_str(student_id) {
+            query.push(" AND pr.student_id = ");
+            query.push_bind(s_uuid);
+        }
+    }
+
+    if let Some(role) = &params.role {
+        match role.as_str() {
+            "Faculty" | "HOD" | "Principal" | "Coordinator" => {
+                if let Some(branch) = &params.branch {
+                    query.push(" AND (u_student.branch = ");
+                    query.push_bind(branch);
+                    query.push(")");
+                }
+            }
+            _ => {}
+        }
+    }
+
+    query.push(" ORDER BY pr.created_at DESC");
+
+    let requests = query.build_query_as::<crate::models::ParentRequest>()
+        .fetch_all(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Get Parent Requests Error: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to fetch requests"})))
+        })?;
+
+    Ok(Json(requests))
+}
+
+pub async fn update_parent_request_status_handler(
+    State(state): State<AppState>,
+    axum::extract::Path(request_id): axum::extract::Path<Uuid>,
+    Json(payload): Json<crate::models::UpdateParentRequestStatus>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    
+    sqlx::query("UPDATE parent_requests SET status = $1, updated_at = NOW() WHERE id = $2")
+        .bind(&payload.status)
+        .bind(request_id)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Update Parent Request Status Error: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to update status"})))
+        })?;
+
+    Ok(StatusCode::OK)
+}
+
