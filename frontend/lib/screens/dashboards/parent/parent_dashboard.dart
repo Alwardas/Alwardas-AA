@@ -120,6 +120,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
     } catch (e) {
       debugPrint("Error fetching parent today attendance: $e");
     }
+  }
 
   @override
   void dispose() {

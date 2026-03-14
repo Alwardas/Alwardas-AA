@@ -454,7 +454,7 @@ class _HodDashboardState extends State<HodDashboard> {
                           Colors.orange,
                           textColor,
                           subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodRequestsScreen())),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodRequestsScreen(userData: widget.userData))),
                         ),
                         _buildQuickAccessCard(
                           Icons.report_problem_outlined,

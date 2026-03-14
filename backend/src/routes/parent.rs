@@ -8,6 +8,7 @@ use axum::{
 // Let's just remove the unused ones.
 use crate::models::{AppState, ProfileQuery, ParentProfileResponse, StudentDetails};
 use crate::routes::faculty::resolve_user_id;
+use uuid::Uuid;
 
 pub async fn get_parent_profile_handler(
     State(state): State<AppState>,
