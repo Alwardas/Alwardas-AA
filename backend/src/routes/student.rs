@@ -22,8 +22,15 @@ pub async fn get_student_profile_handler(
     let user_profile = sqlx::query_as::<Postgres, StudentProfileResponse>(
         "SELECT 
             u.full_name, u.login_id, u.branch, u.year, u.semester, u.dob, u.batch_no, u.section, u.phone_number, u.email,
-            EXISTS(SELECT 1 FROM profile_update_requests WHERE user_id = u.id AND status = 'PENDING') as pending_update
-         FROM users u WHERE u.id = $1"
+            EXISTS(SELECT 1 FROM profile_update_requests WHERE user_id = u.id AND status = 'PENDING') as pending_update,
+            COALESCE(p1.full_name, p2.full_name) as parent_name,
+            COALESCE(p1.phone_number, p2.phone_number) as parent_phone,
+            COALESCE(p1.email, p2.email) as parent_email
+         FROM users u 
+         LEFT JOIN parent_student ps ON u.login_id = ps.student_id
+         LEFT JOIN users p1 ON ps.parent_id = p1.login_id AND p1.role = 'Parent'
+         LEFT JOIN users p2 ON (CASE WHEN u.login_id NOT LIKE 'P-%' THEN 'P-' || u.login_id ELSE u.login_id END) = p2.login_id AND p2.role = 'Parent'
+         WHERE u.id = $1"
     )
     .bind(user_uuid)
     .fetch_optional(&state.pool)

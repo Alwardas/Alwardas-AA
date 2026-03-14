@@ -36,7 +36,7 @@ class FacultyDashboard extends StatefulWidget {
 
 
 class _FacultyDashboardState extends State<FacultyDashboard> {
-  int _selectedIndex = 1; // Default to Home (Dashboard)
+  int _selectedIndex = 0; // Default to Menu (Dashboard)
   Timer? _notificationTimer;
   String? _lastNotifiedId;
 
@@ -233,17 +233,17 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
     final Color subTextColor = theme.colorScheme.secondary;
     final Color tint = theme.primaryColor;
 
-    // Status Bar Logic
-    final bool isHomeTab = _selectedIndex == 2;
+    // Status Bar Logic - Index 1 is Home
+    final bool isHomeTab = _selectedIndex == 1;
     SystemUiOverlayStyle overlayStyle = AppTheme.getAdaptiveOverlayStyle(isHomeTab || isDark);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: overlayStyle,
       child: PopScope(
-        canPop: _selectedIndex == 1,
+        canPop: _selectedIndex == 0, // Now Menu is the root
         onPopInvoked: (didPop) {
           if (didPop) return;
-          setState(() => _selectedIndex = 1);
+          setState(() => _selectedIndex = 0);
         },
         child: Scaffold(
           extendBody: true,
@@ -287,6 +287,37 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
     final List<Color> headerGradient = isDark 
         ? [const Color(0xFF343e52), const Color(0xFF3880ec)] 
         : [const Color(0xFF824abe), const Color(0xFF17b1d8)];
+
+    final List<Map<String, dynamic>> quickAccessItems = [
+      {
+        'icon': Icons.menu_book_outlined,
+        'title': 'My Classes',
+        'subtitle': 'Manage Materials',
+        'color': const Color(0xFF3b5998),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
+      },
+      {
+        'icon': Icons.schedule,
+        'title': 'Schedule',
+        'subtitle': 'View Today',
+        'color': const Color(0xFF9b59b6),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
+      },
+      {
+        'icon': Icons.check_circle_outline,
+        'title': 'Attendance',
+        'subtitle': 'Post Now',
+        'color': const Color(0xFF2ecc71),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyAttendanceScreen(userData: widget.userData))),
+      },
+      {
+        'icon': Icons.person_outline,
+        'title': 'Profile',
+        'subtitle': 'Details',
+        'color': const Color(0xFFf1c40f),
+        'onTap': () => setState(() => _selectedIndex = 2),
+      },
+    ];
 
     return Column(
       children: [
@@ -389,62 +420,75 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  GridView(
+                  const SizedBox(height: 15),
+                  ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 15,
-                      mainAxisSpacing: 15,
-                      childAspectRatio: 1.2,
-                    ),
-                    children: [
-                        _buildQuickAccessCard(
-                          Icons.menu_book_outlined,
-                          'My Classes',
-                          'Manage',
-                          cardColor,
-                          const Color(0xFF3b5998).withValues(alpha: 0.1), 
-                          const Color(0xFF3b5998),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
+                    itemCount: quickAccessItems.length,
+                    padding: EdgeInsets.zero,
+                    itemBuilder: (context, index) {
+                      final item = quickAccessItems[index];
+                      return GestureDetector(
+                        onTap: item['onTap'],
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 12),
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(
+                               color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
+                               width: 1,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.05),
+                                blurRadius: 10,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: (item['color'] as Color).withOpacity(0.1),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(item['icon'], color: item['color'], size: 24),
+                              ),
+                              const SizedBox(width: 16),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      item['title'],
+                                      style: GoogleFonts.poppins(
+                                        color: textColor,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                    Text(
+                                      item['subtitle'],
+                                      style: GoogleFonts.poppins(
+                                        color: subTextColor,
+                                        fontSize: 11,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Icon(Icons.chevron_right_rounded, color: subTextColor.withOpacity(0.5)),
+                            ],
+                          ),
                         ),
-                        _buildQuickAccessCard(
-                          Icons.schedule,
-                          'Schedule',
-                          'View',
-                          cardColor,
-                          const Color(0xFF9b59b6).withValues(alpha: 0.1), 
-                          const Color(0xFF9b59b6),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
-                        ),
-                        _buildQuickAccessCard(
-                          Icons.check_circle_outline,
-                          'Attendance',
-                          'Post',
-                          cardColor,
-                          const Color(0xFF2ecc71).withValues(alpha: 0.1), 
-                          const Color(0xFF2ecc71),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyAttendanceScreen(userData: widget.userData))),
-                        ),
-                        _buildQuickAccessCard(
-                          Icons.person_outline,
-                          'Profile',
-                          'Details',
-                          cardColor,
-                          const Color(0xFFf1c40f).withValues(alpha: 0.1), 
-                          const Color(0xFFf1c40f),
-                          textColor,
-                          subTextColor,
-                          onTap: () => setState(() => _selectedIndex = 2),
-                        ),
-                    ],
+                      );
+                    },
                   ),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
@@ -524,13 +568,58 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
     );
   }
   Widget _buildMenuTab(BuildContext context, bool isDark, Color textColor, Color subTextColor, Color cardColor) {
+    final List<Map<String, dynamic>> menuItems = [
+      {
+        'icon': Icons.menu_book_outlined,
+        'title': 'Classes',
+        'color': const Color(0xFF3b5998),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
+      },
+      {
+        'icon': Icons.schedule,
+        'title': 'Schedule',
+        'color': const Color(0xFF9b59b6),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
+      },
+      {
+        'icon': Icons.check_circle_outline,
+        'title': 'Attendance',
+        'color': const Color(0xFF2ecc71),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyAttendanceScreen(userData: widget.userData))),
+      },
+      {
+        'icon': Icons.campaign_outlined,
+        'title': 'Announcements',
+        'color': const Color(0xFFF39C12),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyAnnouncementsScreen())),
+      },
+      {
+        'icon': Icons.report_problem_outlined,
+        'title': 'Issues',
+        'color': const Color(0xFFE74C3C),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
+      },
+      {
+        'icon': Icons.request_page_outlined,
+        'title': 'Requests',
+        'color': const Color(0xFF9B59B6),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyRequestsScreen())),
+      },
+      {
+        'icon': Icons.rate_review_outlined,
+        'title': 'Feedbacks',
+        'color': const Color(0xFF1ABC9C),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyReviewsScreen())),
+      },
+    ];
+
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+            child: Text(
               'Menu',
               style: GoogleFonts.poppins(
                 color: textColor,
@@ -538,105 +627,68 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 10),
-            Text(
-              'Access all features',
-              style: GoogleFonts.poppins(
-                color: subTextColor,
-                fontSize: 14,
-              ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              physics: const BouncingScrollPhysics(),
+              itemCount: menuItems.length,
+              itemBuilder: (context, index) {
+                final item = menuItems[index];
+                return InkWell(
+                  onTap: item['onTap'] as VoidCallback,
+                  borderRadius: BorderRadius.circular(16),
+                  child: Container(
+                    margin: const EdgeInsets.only(bottom: 12),
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: cardColor,
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                        color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+                        width: 1,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.03),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: (item['color'] as Color).withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          child: Icon(item['icon'] as IconData, color: item['color'] as Color, size: 28),
+                        ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: Text(
+                            item['title'] as String,
+                            style: GoogleFonts.poppins(
+                              color: textColor,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 17,
+                            ),
+                          ),
+                        ),
+                        Icon(
+                          Icons.chevron_right_rounded,
+                          color: subTextColor.withValues(alpha: 0.5),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
             ),
-            const SizedBox(height: 25),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
-                childAspectRatio: 1.2,
-                children: [
-                  _buildQuickAccessCard(
-                    Icons.menu_book_outlined,
-                    'Classes',
-                    'Manage',
-                    cardColor,
-                    const Color(0xFF3b5998).withValues(alpha: 0.1),
-                    const Color(0xFF3b5998),
-                    textColor,
-                    subTextColor,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
-                  ),
-                  _buildQuickAccessCard(
-                    Icons.schedule,
-                    'Schedule',
-                    'View',
-                    cardColor,
-                    const Color(0xFF9b59b6).withValues(alpha: 0.1),
-                    const Color(0xFF9b59b6),
-                    textColor,
-                    subTextColor,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
-                  ),
-                  _buildQuickAccessCard(
-                    Icons.check_circle_outline,
-                    'Attendance',
-                    'Post',
-                    cardColor,
-                    const Color(0xFF2ecc71).withValues(alpha: 0.1),
-                    const Color(0xFF2ecc71),
-                    textColor,
-                    subTextColor,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyAttendanceScreen(userData: widget.userData))),
-                  ),
-
-                   _buildQuickAccessCard(
-                    Icons.campaign_outlined,
-                    'Announcements',
-                    'News',
-                    cardColor,
-                    const Color(0xFFF39C12).withValues(alpha: 0.1),
-                    const Color(0xFFF39C12),
-                    textColor,
-                    subTextColor,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyAnnouncementsScreen())),
-                  ),
-                   _buildQuickAccessCard(
-                    Icons.report_problem_outlined,
-                    'Issues',
-                    'Report',
-                    cardColor,
-                    const Color(0xFFE74C3C).withValues(alpha: 0.1),
-                    const Color(0xFFE74C3C),
-                    textColor,
-                    subTextColor,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
-                  ),
-                   _buildQuickAccessCard(
-                    Icons.request_page_outlined,
-                    'Requests',
-                    'Pending',
-                    cardColor,
-                    const Color(0xFF9B59B6).withValues(alpha: 0.1),
-                    const Color(0xFF9B59B6),
-                    textColor,
-                    subTextColor,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyRequestsScreen())),
-                  ),
-                   _buildQuickAccessCard(
-                    Icons.rate_review_outlined,
-                    'Reviews',
-                    'Feedback',
-                    cardColor,
-                    const Color(0xFF1ABC9C).withValues(alpha: 0.1),
-                    const Color(0xFF1ABC9C),
-                    textColor,
-                    subTextColor,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyReviewsScreen())),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

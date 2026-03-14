@@ -309,6 +309,9 @@ pub struct StudentProfileResponse {
     pub pending_update: Option<bool>,
     pub phone_number: Option<String>,
     pub email: Option<String>,
+    pub parent_name: Option<String>,
+    pub parent_phone: Option<String>,
+    pub parent_email: Option<String>,
 }
 
 #[derive(Deserialize)]

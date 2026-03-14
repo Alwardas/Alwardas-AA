@@ -131,10 +131,6 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
                 const SizedBox(height: 15),
                 _buildManagementCards(context, isDark, textColor, subTextColor),
                 const SizedBox(height: 20),
-                _buildSectionHeader('Syllabus', textColor),
-                const SizedBox(height: 15),
-                _buildSyllabusCard(context, isDark, textColor, subTextColor),
-                const SizedBox(height: 20),
               ],
             ),
           ),
@@ -230,24 +226,6 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     );
   }
 
-  Widget _buildSyllabusCard(BuildContext context, bool isDark, Color textColor, Color subTextColor) {
-    return Row(
-      children: [
-        Expanded(
-          child: _buildManagementCard(
-            context,
-            isDark,
-            'Syllabus Management',
-            Icons.menu_book,
-            Colors.purple,
-            () {
-               Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusManagementScreen(userData: widget.userData)));
-            },
-          ),
-        ),
-      ],
-    );
-  }
 
   Widget _buildManagementCard(BuildContext context, bool isDark, String title, IconData icon, Color color, VoidCallback onTap) {
     return GestureDetector(

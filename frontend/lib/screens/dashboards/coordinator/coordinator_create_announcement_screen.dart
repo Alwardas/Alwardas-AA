@@ -32,7 +32,6 @@ class _CoordinatorCreateAnnouncementScreenState
   DateTime _endDate = DateTime.now().add(const Duration(days: 7));
   bool _sendPush = true;
   bool _sendInApp = true;
-  String? _attachmentName;
 
   // Targeting filters
   List<String> _departments = [];
@@ -138,7 +137,7 @@ class _CoordinatorCreateAnnouncementScreenState
         "end_date": endDateTime,
         "isPinned": false,
         "creatorId": creatorId,
-        "attachmentUrl": _attachmentName,
+        "creatorId": creatorId,
         "sendPush": _sendPush,
         "sendInApp": _sendInApp
       };
@@ -434,40 +433,6 @@ class _CoordinatorCreateAnnouncementScreenState
 
             const SizedBox(height: 20),
 
-            _buildFormSection(
-                "Attachment",
-                [
-                  GestureDetector(
-                    onTap: () {
-                      setState(() =>
-                          _attachmentName = "Expl_Exam_Schedule_2026.pdf");
-                    },
-                    child: Container(
-                      height: 60,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.grey, style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(15),
-                        color:
-                            isDark ? const Color(0xFF1E293B) : Colors.grey[100],
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.upload_file, color: Colors.blueAccent),
-                          const SizedBox(width: 10),
-                          Text(_attachmentName ?? "PDF, JPG, JPEG (Max 2MB)",
-                              style: TextStyle(
-                                  color:
-                                      isDark ? Colors.white70 : Colors.black54))
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-                isDark),
-
-            const SizedBox(height: 20),
 
             _buildFormSection(
                 "Notifications",

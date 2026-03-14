@@ -256,9 +256,10 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
 
   Widget _buildParentDetails(Color cardColor, Color textColor, Color subTextColor) {
     // Attempt to get from API if available, else omit gently or use what is available
-    final String parentName = _studentData?['parentName'] ?? 'Sai Kumar'; // fallback according to prompt if no data
-    final String parentPhone = _studentData?['parentPhone'] ?? '9876543210';
-    final String parentEmail = _studentData?['parentEmail'] ?? 'parent@email.com';
+    // Attempt to get from API if available
+    final String parentName = _studentData?['parentName'] ?? 'N/A';
+    final String parentPhone = _studentData?['parentPhone'] ?? 'N/A';
+    final String parentEmail = _studentData?['parentEmail'] ?? 'N/A';
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -305,7 +306,13 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
                       icon: Icons.call,
                       label: "Call",
                       color: Colors.green,
-                      onTap: () => _launchUrlStr("tel:$parentPhone"),
+                      onTap: () {
+                        if (parentPhone == 'N/A') {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Phone number not available')));
+                        } else {
+                          _launchUrlStr("tel:$parentPhone");
+                        }
+                      },
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -314,7 +321,13 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
                       icon: Icons.message,
                       label: "Message",
                       color: Colors.blue,
-                      onTap: () => _launchUrlStr("sms:$parentPhone"),
+                      onTap: () {
+                        if (parentPhone == 'N/A') {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Phone number not available')));
+                        } else {
+                          _launchUrlStr("sms:$parentPhone");
+                        }
+                      },
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -323,7 +336,15 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
                       icon: Icons.chat,
                       label: "WhatsApp",
                       color: const Color(0xFF25D366), // WhatsApp Green
-                      onTap: () => _launchUrlStr("https://wa.me/$parentPhone"),
+                      onTap: () {
+                        if (parentPhone == 'N/A') {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Phone number not available')));
+                        } else {
+                          // Ensure number is in international format without '+' for wa.me if possible, 
+                          // but usually it works with digits.
+                          _launchUrlStr("https://wa.me/${parentPhone.replaceAll(RegExp(r'[^0-9]'), '')}");
+                        }
+                      },
                     ),
                   ),
                 ],
