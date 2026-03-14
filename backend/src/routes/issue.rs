@@ -106,9 +106,6 @@ pub async fn get_issues_handler(
         .map_err(|e| {
             eprintln!("Get Issues Error: {:?}", e);
             let err_msg = e.to_string();
-            if err_msg.contains("does not exist") {
-                 return (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Issues system is being initialized. Please refresh in a moment."})));
-            }
             (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("Database error: {}", err_msg)})))
         })?;
 

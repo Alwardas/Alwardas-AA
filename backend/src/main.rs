@@ -267,6 +267,8 @@ async fn main() {
         )
     ").execute(&pool).await.err();
     
+    let _ = sqlx::query("CREATE EXTENSION IF NOT EXISTS \"pgcrypto\"").execute(&pool).await;
+
     sqlx::query("
         CREATE TABLE IF NOT EXISTS issues (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -282,8 +284,10 @@ async fn main() {
         )
     ").execute(&pool).await.err();
 
-    sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS user_role VARCHAR(50) DEFAULT 'Student'")
-        .execute(&pool).await.err();
+    let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS user_role VARCHAR(50) DEFAULT 'Student'").execute(&pool).await;
+    let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS category VARCHAR(100) DEFAULT 'General'").execute(&pool).await;
+    let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS priority VARCHAR(50) DEFAULT 'Medium'").execute(&pool).await;
+    let _ = sqlx::query("ALTER TABLE issues ADD COLUMN IF NOT EXISTS created_date TIMESTAMPTZ DEFAULT NOW()").execute(&pool).await;
 
     sqlx::query("
         CREATE TABLE IF NOT EXISTS issue_comments (
