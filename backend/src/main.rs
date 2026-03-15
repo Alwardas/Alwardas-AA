@@ -41,18 +41,32 @@ async fn main() {
     dotenv().ok();
     let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
-    let options = PgConnectOptions::from_str(&database_url)
+    let options = PgConnectOptions::from_str(&database_url.trim())
         .expect("Failed to parse DATABASE_URL")
         .statement_cache_capacity(0);
 
-
+    println!("⏳ Connecting to database (Attempting with 30s timeout and retries)...");
     
-    let pool = PgPoolOptions::new()
-        .max_connections(50)
-        .acquire_timeout(std::time::Duration::from_secs(10)) // Increased timeout
-        .connect_with(options.clone())
-        .await
-        .expect("❌ CRITICAL: Failed to connect to the database. Please check your DATABASE_URL in Railway variables.");
+    let mut retry_count = 0;
+    let max_retries = 5;
+    let pool = loop {
+        match PgPoolOptions::new()
+            .max_connections(50)
+            .acquire_timeout(std::time::Duration::from_secs(30)) 
+            .connect_with(options.clone())
+            .await 
+        {
+            Ok(p) => break p,
+            Err(e) => {
+                retry_count += 1;
+                if retry_count >= max_retries {
+                    panic!("❌ CRITICAL: Failed to connect to the database after {} attempts. Error: {}", max_retries, e);
+                }
+                println!("⚠️ Database connection attempt {} failed: {}. Retrying in 5 seconds...", retry_count, e);
+                tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+            }
+        }
+    };
 
     println!("✅ Successfully connected to the database!");
 
