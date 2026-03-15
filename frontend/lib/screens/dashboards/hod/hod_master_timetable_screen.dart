@@ -130,7 +130,7 @@ class _HodMasterTimetableScreenState extends State<HodMasterTimetableScreen> {
               selectedColor: tint,
               backgroundColor: iconBg,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              border: BorderSide.none,
+              side: BorderSide.none,
               showCheckmark: false,
             ),
           );
