@@ -7,7 +7,7 @@ use serde::{Deserialize, Serialize};
 use crate::models::AppState;
 use uuid::Uuid;
 use serde_json::json;
-use sqlx::Row;
+use sqlx::{Row, Postgres};
 use crate::models::{MasterTimetableQuery, MasterTimetableResponse, MasterTimetableRow, FacultyClash, TimetableEntry, normalize_branch};
 use std::collections::HashMap;
 
@@ -159,7 +159,7 @@ pub async fn get_master_timetable_handler(
 
     // 1. Get all year + section combinations for this branch
     // Check 'sections' table first, fallback to users if needed
-    let mut class_combos: Vec<(String, String)> = sqlx::query_as::<(String, String)>(
+    let mut class_combos: Vec<(String, String)> = sqlx::query_as::<Postgres, (String, String)>(
         "SELECT year, section_name FROM sections WHERE branch = $1 ORDER BY year ASC, section_name ASC"
     )
     .bind(&branch_norm)
@@ -169,7 +169,7 @@ pub async fn get_master_timetable_handler(
 
     if class_combos.is_empty() {
         // Fallback to distinct year/section from users table
-        class_combos = sqlx::query_as::<(String, String)>(
+        class_combos = sqlx::query_as::<Postgres, (String, String)>(
             "SELECT DISTINCT year, section FROM users WHERE role = 'Student' AND branch = $1 AND year IS NOT NULL AND section IS NOT NULL ORDER BY year ASC, section ASC"
         )
         .bind(&branch_norm)

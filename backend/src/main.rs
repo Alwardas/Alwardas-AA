@@ -1,10 +1,9 @@
 use axum::{
     routing::{get, post},
     Router,
-    http::Method,
 };
 use sqlx::{postgres::{PgPoolOptions, PgConnectOptions}, Pool, Postgres};
-use tower_http::cors::{Any, CorsLayer};
+use tower_http::cors::CorsLayer;
 use dotenvy::dotenv;
 use std::str::FromStr;
 

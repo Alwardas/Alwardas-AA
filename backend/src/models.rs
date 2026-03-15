@@ -105,7 +105,7 @@ pub struct Notification {
     pub created_at: DateTime<Utc>,
 }
 
-#[derive(Serialize, Deserialize, Debug, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 pub struct TimetableEntry {
     pub id: Uuid,
     pub faculty_id: String,
@@ -156,7 +156,7 @@ pub struct MasterTimetableResponse {
     pub faculty_clashes: Vec<FacultyClash>,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MasterTimetableRow {
     pub class_name: String,
@@ -165,7 +165,7 @@ pub struct MasterTimetableRow {
     pub periods: Vec<Option<TimetableEntry>>,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct FacultyClash {
     pub faculty_name: String,
