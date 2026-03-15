@@ -43,26 +43,32 @@ class _SplashScreenState extends State<SplashScreen> {
   void _initializeVideo() {
     _controller = VideoPlayerController.asset("assets/1766819269806.mp4");
     
+    // Set volume to 0 to prevent audio focus conflicts (critical during calls)
+    _controller.setVolume(0.0);
+
     Future<void> init() async {
       try {
-        await _controller.initialize();
+        // Use a timeout for the initialization itself to prevent hanging on hardware lock
+        await _controller.initialize().timeout(const Duration(milliseconds: 1500));
         if (mounted) {
           setState(() {});
           _controller.setPlaybackSpeed(1.35);
-          _controller.play();
+          _controller.play().catchError((e) => debugPrint("Play error: $e"));
         }
       } catch (error) {
-        debugPrint("Video initialization error: $error");
-        _checkSession();
+        debugPrint("Video initialization error or timeout: $error");
+        _checkSession(); // Jump to next screen immediately on failure
       }
     }
     init();
 
-    // Safety timeout: if video doesn't initialize in 3 seconds, proceed to login
-    Future.delayed(const Duration(seconds: 3), () {
-      if (mounted && !_controller.value.isInitialized) {
-        debugPrint("Video initialization timeout");
-        _checkSession();
+    // Aggressive safety timeout: if video doesn't initialize/play in 2 seconds, proceed
+    Future.delayed(const Duration(milliseconds: 2000), () {
+      if (mounted && !_isNavigated) {
+        if (!_controller.value.isInitialized || !_controller.value.isPlaying) {
+           debugPrint("Safety jump triggered");
+           _checkSession();
+        }
       }
     });
 

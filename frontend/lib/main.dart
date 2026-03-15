@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'screens/splash_screen.dart';
 import 'core/services/notification_service.dart';
 
@@ -12,18 +12,18 @@ Future<void> main() async {
   // Performance: Increase image cache limit (30MB) for smoother asset loading without crashing old devices
   PaintingBinding.instance.imageCache.maximumSize = 30 * 1024 * 1024;
   
-  // Initialize Notifications
-  try {
-     final notificationService = NotificationService();
-     await notificationService.init();
-     await notificationService.requestPermissions();
-  } catch (e) {
-     debugPrint("Notification Init Error: $e");
-  }
+  // Initialize Notifications asynchronously to avoid blocking the main UI startup (critical if system overlays are restricted during calls)
+  NotificationService().init().then((_) {
+     NotificationService().requestPermissions();
+  }).catchError((e) => debugPrint("Notification Async Init Error: $e"));
 
   // Hard reset API URL to production to clear any legacy local IPs stored in device cache
-  final prefs = await SharedPreferences.getInstance();
-  await prefs.remove('api_base_url');
+  try {
+    final prefs = await SharedPreferences.getInstance().timeout(const Duration(seconds: 2));
+    await prefs.remove('api_base_url');
+  } catch (e) {
+    debugPrint("Startup Prefs Error: $e");
+  }
 
   runApp(
     ChangeNotifierProvider(
