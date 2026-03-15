@@ -389,6 +389,7 @@ pub struct SectionSubjectsProgressQuery {
     pub year: String,
     pub section: String,
     pub course_id: String,
+    pub semester: Option<String>,
 }
 
 pub async fn get_section_subjects_progress_handler(
@@ -400,17 +401,46 @@ pub async fn get_section_subjects_progress_handler(
     #[derive(sqlx::FromRow)]
     struct SubjectInfo { id: String, name: String }
 
-    let subjects = sqlx::query_as::<Postgres, SubjectInfo>(
-        "SELECT id, name FROM subjects WHERE branch = $1 AND (course_id = $2 OR course_id IS NULL) AND (semester LIKE $3 OR semester LIKE $4 OR semester LIKE $5)"
-    )
-    .bind(branch_norm)
-    .bind(params.course_id)
-    .bind(format!("{}%", params.year))
-    .bind(if params.year == "1st Year" { "1st Semester%" } else if params.year == "2nd Year" { "3rd Semester%" } else { "5th Semester%" })
-    .bind(if params.year == "1st Year" { "2nd Semester%" } else if params.year == "2nd Year" { "4th Semester%" } else { "6th Semester%" })
-    .fetch_all(&data.pool)
-    .await
-    .unwrap_or_default();
+    let semester_pattern = params.semester.as_ref().map(|s| {
+        match s.as_str() {
+            "Semester 1" => vec!["1st Year".to_string(), "1st Semester".to_string()],
+            "Semester 3" => vec!["3rd Semester".to_string(), "3rd".to_string()],
+            "Semester 4" => vec!["4th Semester".to_string()],
+            "Semester 5" => vec!["5th Semester".to_string()],
+            "Semester 6" => vec!["6th Semester".to_string()],
+            _ => vec![s.clone()],
+        }
+    });
+
+    let subjects = if let Some(patterns) = semester_pattern {
+        sqlx::query_as::<Postgres, SubjectInfo>(
+            "SELECT id, name FROM subjects 
+             WHERE branch = $1 AND (course_id = $2 OR course_id IS NULL) 
+             AND semester = ANY($3)
+             ORDER BY id ASC"
+        )
+        .bind(branch_norm)
+        .bind(params.course_id)
+        .bind(&patterns)
+        .fetch_all(&data.pool)
+        .await
+        .unwrap_or_default()
+    } else {
+        sqlx::query_as::<Postgres, SubjectInfo>(
+            "SELECT id, name FROM subjects 
+             WHERE branch = $1 AND (course_id = $2 OR course_id IS NULL) 
+             AND (semester LIKE $3 OR semester LIKE $4 OR semester LIKE $5)
+             ORDER BY id ASC"
+        )
+        .bind(branch_norm)
+        .bind(params.course_id)
+        .bind(format!("{}%", params.year))
+        .bind(if params.year == "1st Year" { "1st Semester%" } else if params.year == "2nd Year" { "3rd Semester%" } else { "5th Semester%" })
+        .bind(if params.year == "1st Year" { "2nd Semester%" } else if params.year == "2nd Year" { "4th Semester%" } else { "6th Semester%" })
+        .fetch_all(&data.pool)
+        .await
+        .unwrap_or_default()
+    };
 
     let mut responses = Vec::new();
     for sub in subjects {

@@ -437,18 +437,9 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           ),
                        ),
                      ),
-                     const SizedBox(height: 2),
+                     const SizedBox(height: 4),
                      Text(
-                       'ID: ${widget.userData['login_id'] ?? 'N/A'}',
-                        style: GoogleFonts.poppins(
-                          color: Colors.white.withValues(alpha: 0.9), 
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500,
-                        ),
-                     ),
-                     const SizedBox(height: 2),
-                     Text(
-                       widget.userData['branch'] ?? 'Department',
+                       '${widget.userData['branch'] ?? 'Department'} ( Faculty )',
                         style: GoogleFonts.poppins(
                           color: Colors.white.withValues(alpha: 0.8), 
                           fontSize: 13,

@@ -251,9 +251,13 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
         );
     }
     
-    // Dates (Mocked for now or fetched if available)
-    final scheduledDate = "2024-01-10"; // Should come from item['target_date']
-    final completedDate = isCompleted ? DateFormat('yyyy-MM-dd').format(DateTime.now()) : "Pending"; 
+    // Dates
+    final scheduledDate = item['scheduled_date'] != null 
+        ? DateFormat('dd-MM-yyyy').format(DateTime.parse(item['scheduled_date']).toLocal()) 
+        : "Not Scheduled";
+    final completedDate = isCompleted && item['completed_at'] != null 
+        ? DateFormat('dd-MM-yyyy').format(DateTime.parse(item['completed_at']).toLocal()) 
+        : "Pending"; 
 
     return Opacity(
       opacity: isCompleted ? 0.6 : 1.0,
@@ -285,7 +289,7 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
                 children: [
                    // S.No
                    Text(
-                     "${item['s_no'] ?? ''}",
+                     "${item['sno'] ?? item['s_no'] ?? ''}",
                      style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.grey),
                    ),
                    const SizedBox(width: 12),
@@ -325,7 +329,7 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
 
                    // Comment Icon moved strictly right of dates
                    IconButton(
-                      icon: Icon(Icons.comment_outlined, size: 20, color: Colors.blueGrey),
+                      icon: const Icon(Icons.comment_outlined, size: 20, color: Colors.blueGrey),
                       onPressed: () => _showReviewsModal(item),
                       constraints: const BoxConstraints(),
                       tooltip: "View Reviews",

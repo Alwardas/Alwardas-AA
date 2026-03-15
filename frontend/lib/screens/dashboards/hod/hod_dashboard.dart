@@ -20,6 +20,7 @@ import 'hod_schedule_screen.dart';
 import 'hod_requests_screen.dart';
 import '../../common/issue_management_screen.dart';
 import 'hod_department_screen.dart';
+import 'hod_syllabus_management_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
 import '../../../widgets/shared_dashboard_announcements.dart';
 import 'dart:async';
@@ -443,63 +444,58 @@ class _HodDashboardState extends State<HodDashboard> {
 
 
                   // 3. Quick Access
-                  Text(
-                    'Quick Access',
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        'Quick Access',
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Container(
+                          height: 1,
+                          color: Colors.grey.withValues(alpha: 0.2),
+                        ),
+                      ),
+                    ],
                   ),
+                  const SizedBox(height: 15),
+                  GestureDetector(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusManagementScreen(userData: widget.userData))),
+                    child: _buildProgressCard(textColor, subTextColor, isDark)
+                  ),
+                  const SizedBox(height: 25),
 
-                  
                   GridView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.zero,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 15,
                       mainAxisSpacing: 15,
-                      childAspectRatio: 1.2,
+                      childAspectRatio: 1.4,
                     ),
                     children: [
                         _buildQuickAccessCard(
-                          Icons.people_alt_outlined,
-                          'Faculty',
-                          'Manage',
-                          cardColor,
-                          const Color(0xFF38ef7d).withValues(alpha: 0.1), 
-                          const Color(0xFF38ef7d),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodFacultyScreen(branch: widget.userData['branch'] ?? 'Computer Engineering'))),
-                        ),
-                        _buildQuickAccessCard(
-                          Icons.schedule,
-                          'Timetables',
-                          'Oversee',
-                          cardColor,
-                          const Color(0xFF606c88).withValues(alpha: 0.1), 
-                          const Color(0xFF606c88),
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodTimetablesScreen())),
-                        ),
-                        _buildQuickAccessCard(
-                          Icons.fact_check_outlined,
+                          Icons.check_circle_outline,
                           'Attendance',
-                          'View',
+                          '',
                           cardColor,
-                          const Color(0xFF141E30).withValues(alpha: 0.1), 
-                          const Color(0xFF243B55),
+                          const Color(0xFF2ecc71).withValues(alpha: 0.1), 
+                          const Color(0xFF2ecc71),
                           textColor,
                           subTextColor,
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HODAttendanceScreen())),
                         ),
                         _buildQuickAccessCard(
                           Icons.book,
-                          'Courses',
-                          'My Plan',
+                          'My Courses',
+                          '',
                           cardColor,
                           Colors.blue.withValues(alpha: 0.1),
                           Colors.blue,
@@ -508,45 +504,61 @@ class _HodDashboardState extends State<HodDashboard> {
                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodCoursesScreen())),
                         ),
                         _buildQuickAccessCard(
-                          Icons.mail_outline,
-                          'Requests',
-                          'Manage',
+                          Icons.schedule,
+                          'Timetables',
+                          '',
                           cardColor,
-                          Colors.orange.withValues(alpha: 0.1),
-                          Colors.orange,
+                          const Color(0xFF606c88).withValues(alpha: 0.1), 
+                          const Color(0xFF606c88),
                           textColor,
                           subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodRequestsScreen(userData: widget.userData))),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodTimetablesScreen())),
                         ),
                         _buildQuickAccessCard(
-                          Icons.report_problem_outlined,
-                          'Issues',
-                          'Resolve',
+                          Icons.business_outlined,
+                          'Department',
+                          '',
                           cardColor,
-                          Colors.red.withValues(alpha: 0.1),
-                          Colors.red,
+                          const Color(0xFF38ef7d).withValues(alpha: 0.1), 
+                          const Color(0xFF38ef7d),
                           textColor,
                           subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
-                        ),
-                        _buildQuickAccessCard(
-                          Icons.book_online_outlined,
-                          'My Schedule',
-                          'Teaching Plan',
-                          cardColor,
-                          Colors.indigo.withValues(alpha: 0.1), 
-                          Colors.indigo,
-                          textColor,
-                          subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodScheduleScreen())),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodDepartmentScreen(userData: widget.userData))),
                         ),
                     ],
                   ),
 
-                  const SizedBox(height: 25),
-
-
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _buildHorizontalCard(
+                          Icons.report_problem_outlined,
+                          'Issues',
+                          '',
+                          Colors.red,
+                          cardColor,
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
+                        ),
+                      ),
+                      const SizedBox(width: 15),
+                      Expanded(
+                        child: _buildHorizontalCard(
+                          Icons.mail_outline,
+                          'Requests',
+                          '',
+                          Colors.orange,
+                          cardColor,
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodRequestsScreen(userData: widget.userData))),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 100),
                 ],
               ),
             ),
@@ -621,6 +633,191 @@ class _HodDashboardState extends State<HodDashboard> {
                 style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+  Widget _buildProgressCard(Color textColor, Color subTextColor, bool isDark) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(
+          color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Over All Branch Progress',
+                style: GoogleFonts.poppins(
+                  color: textColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF6B48FF).withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  'On Track',
+                  style: GoogleFonts.poppins(
+                    color: const Color(0xFF6B48FF),
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Syllabus Completion',
+                          style: GoogleFonts.poppins(
+                            color: subTextColor,
+                            fontSize: 13,
+                          ),
+                        ),
+                        Text(
+                          '74%',
+                          style: GoogleFonts.poppins(
+                            color: textColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Stack(
+                      children: [
+                        Container(
+                          height: 8,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ),
+                        Container(
+                          height: 8,
+                          width: MediaQuery.of(context).size.width * 0.5, // Approx 74% relative to container width
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [Color(0xFF6B48FF), Color(0xFF1EC9F8)],
+                            ),
+                            borderRadius: BorderRadius.circular(4),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(0xFF6B48FF).withValues(alpha: 0.3),
+                                blurRadius: 8,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 25),
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF6B48FF).withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                  Icons.auto_graph_rounded,
+                  color: Color(0xFF6B48FF),
+                  size: 26,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+  Widget _buildHorizontalCard(IconData icon, String title, String subtitle, Color color, Color cardColor, Color textColor, Color subTextColor, {VoidCallback? onTap}) {
+    final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
+             width: 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
+              blurRadius: 15,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: color, size: 20),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title,
+                    style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 13),
+                  ),
+                  if (subtitle.isNotEmpty)
+                    Text(
+                      subtitle,
+                      style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+                    ),
+                ],
+              ),
+            ),
+            Icon(Icons.chevron_right, size: 16, color: subTextColor),
           ],
         ),
       ),

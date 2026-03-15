@@ -172,7 +172,11 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
   Widget _buildTopicCard(dynamic topic, bool isDark, Color textColor, Color subTextColor) {
     final cardColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white;
     final bool hasSchedule = topic['scheduleDate'] != null;
+    final bool isCompleted = topic['completed'] == true;
     final dateStr = hasSchedule ? DateFormat('dd/MM/yyyy').format(DateTime.parse(topic['scheduleDate'])) : "Not Scheduled";
+    final completedDateStr = isCompleted && topic['completedDate'] != null 
+        ? DateFormat('dd/MM/yyyy').format(DateTime.parse(topic['completedDate'])) 
+        : "";
 
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
@@ -180,7 +184,11 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
       decoration: BoxDecoration(
         color: cardColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: hasSchedule ? Colors.deepPurple.withValues(alpha: 0.3) : Colors.grey.withValues(alpha: 0.2)),
+        border: Border.all(
+          color: isCompleted 
+            ? Colors.green.withValues(alpha: 0.3) 
+            : (hasSchedule ? Colors.deepPurple.withValues(alpha: 0.3) : Colors.grey.withValues(alpha: 0.2))
+        ),
       ),
       child: Row(
         children: [
@@ -188,9 +196,26 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  topic['unit'] ?? 'Unit X',
-                  style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      topic['unit'] ?? 'Unit X',
+                      style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: isCompleted ? Colors.green : Colors.deepPurpleAccent),
+                    ),
+                    if (isCompleted)
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: Colors.green.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Text(
+                          "Completed",
+                          style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.green),
+                        ),
+                      ),
+                  ],
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -198,26 +223,51 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
                   style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600, color: textColor),
                 ),
                 const SizedBox(height: 10),
-                GestureDetector(
-                  onTap: () => _pickDate(topic),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: hasSchedule ? Colors.deepPurple.withValues(alpha: 0.1) : Colors.grey.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(Icons.calendar_today, size: 14, color: hasSchedule ? Colors.deepPurple : subTextColor),
-                        const SizedBox(width: 6),
-                        Text(
-                          dateStr,
-                          style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: hasSchedule ? Colors.deepPurple : subTextColor),
+                Row(
+                   children: [
+                      GestureDetector(
+                        onTap: () => _pickDate(topic),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                          decoration: BoxDecoration(
+                            color: hasSchedule ? Colors.deepPurple.withValues(alpha: 0.1) : Colors.grey.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.calendar_today, size: 14, color: hasSchedule ? Colors.deepPurple : subTextColor),
+                              const SizedBox(width: 6),
+                              Text(
+                                dateStr,
+                                style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: hasSchedule ? Colors.deepPurple : subTextColor),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      if (isCompleted) ...[
+                        const SizedBox(width: 10),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                          decoration: BoxDecoration(
+                            color: Colors.green.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Icon(Icons.check_circle, size: 14, color: Colors.green),
+                              const SizedBox(width: 6),
+                              Text(
+                                completedDateStr,
+                                style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.green),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
-                    ),
-                  ),
+                   ],
                 ),
               ],
             ),

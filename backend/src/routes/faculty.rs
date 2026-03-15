@@ -1525,6 +1525,8 @@ pub struct LessonTopicResponse {
     pub unit: String,
     pub topic_name: Option<String>,
     pub schedule_date: Option<chrono::DateTime<Utc>>,
+    pub completed: Option<bool>,
+    pub completed_date: Option<chrono::DateTime<Utc>>,
 }
 
 pub async fn get_lesson_topics_handler(
@@ -1534,11 +1536,19 @@ pub async fn get_lesson_topics_handler(
     println!("DEBUG: Fetching topics for subject='{}', section='{:?}', branch='{:?}'", params.subject_id, params.section, params.branch);
     
     let sql = r#"
-        SELECT lpi.id::text, COALESCE(lpi.sno, 'Unit') as unit, COALESCE(lpi.topic, lpi.text) as topic_name, ls.schedule_date 
+        SELECT 
+            lpi.id::text, 
+            COALESCE(lpi.sno, 'Unit') as unit, 
+            COALESCE(lpi.topic, lpi.text) as topic_name, 
+            ls.schedule_date,
+            COALESCE(lp.completed, FALSE) as completed,
+            lp.completed_date
         FROM lesson_plan_items lpi
         LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id 
             AND (TRIM(ls.section) = TRIM($2) OR $2 IS NULL)
             AND (ls.branch = $3 OR $3 IS NULL)
+        LEFT JOIN lesson_plan_progress lp ON lpi.id = lp.item_id
+            AND (TRIM(lp.section) = TRIM($2) OR $2 IS NULL)
         WHERE TRIM(lpi.subject_id) ILIKE TRIM($1)
         ORDER BY lpi.order_index
     "#;
