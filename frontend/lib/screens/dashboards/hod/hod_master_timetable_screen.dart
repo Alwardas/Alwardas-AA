@@ -7,6 +7,11 @@ import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/services/auth_service.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:path_provider/path_provider.dart';
+import 'package:open_filex/open_filex.dart';
+import 'dart:io';
 
 class HodMasterTimetableScreen extends StatefulWidget {
   final String branch;
@@ -63,6 +68,76 @@ class _HodMasterTimetableScreenState extends State<HodMasterTimetableScreen> {
     }
   }
 
+  Future<void> _generateAndDownloadPDF() async {
+    final pdf = pw.Document();
+    final allRows = [..._rows, ..._labRows];
+
+    pdf.addPage(
+      pw.MultiPage(
+        pageFormat: PdfPageFormat.a4.landscape,
+        margin: const pw.EdgeInsets.all(32),
+        build: (pw.Context context) {
+          return [
+            pw.Header(
+              level: 0,
+              child: pw.Column(
+                crossAxisAlignment: pw.CrossAxisAlignment.start,
+                children: [
+                   pw.Text("BRANCH: ${widget.branch.toUpperCase()}", style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold)),
+                   pw.SizedBox(height: 10),
+                   pw.Center(child: pw.Text("Master Time Table - $_selectedDay", style: pw.TextStyle(fontSize: 22, fontWeight: pw.FontWeight.bold))),
+                   pw.SizedBox(height: 20),
+                ]
+              )
+            ),
+            pw.Table(
+              border: pw.TableBorder.all(),
+              children: [
+                pw.TableRow(
+                  decoration: const pw.BoxDecoration(color: PdfColors.grey300),
+                  children: [
+                    pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text("Class / Lab", style: pw.TextStyle(fontWeight: pw.FontWeight.bold))),
+                    ...List.generate(8, (i) => pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text("P${i + 1}", style: pw.TextStyle(fontWeight: pw.FontWeight.bold)))),
+                  ],
+                ),
+                ...allRows.map((row) {
+                  return pw.TableRow(
+                    children: [
+                      pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text(row['className'], style: pw.TextStyle(fontSize: 10, fontWeight: pw.FontWeight.bold))),
+                      ...(row['periods'] as List).map((p) {
+                        if (p == null) return pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text("-", textAlign: pw.TextAlign.center));
+                        return pw.Padding(
+                          padding: const pw.EdgeInsets.all(5),
+                          child: pw.Column(
+                            crossAxisAlignment: pw.CrossAxisAlignment.start,
+                            children: [
+                              pw.Text(p['subject'] ?? "Unknown", style: pw.TextStyle(fontSize: 9, fontWeight: pw.FontWeight.bold)),
+                              pw.Text(p['facultyName'] ?? "N/A", style: pw.TextStyle(fontSize: 8)),
+                            ],
+                          ),
+                        );
+                      }).toList(),
+                    ],
+                  );
+                }).toList(),
+              ],
+            ),
+          ];
+        },
+      ),
+    );
+
+    try {
+      final dir = await getTemporaryDirectory();
+      final file = File("${dir.path}/Master_Timetable_${_selectedDay}.pdf");
+      await file.writeAsBytes(await pdf.save());
+      await OpenFilex.open(file.path);
+    } catch (e) {
+      debugPrint("PDF Generation Error: $e");
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to generate PDF: $e")));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -100,13 +175,20 @@ class _HodMasterTimetableScreenState extends State<HodMasterTimetableScreen> {
                     ? _buildEmptyState(textColor, subTextColor, tint)
                     : SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
-                        padding: const EdgeInsets.only(bottom: 30),
+                        padding: const EdgeInsets.only(bottom: 100),
                         child: _buildTimetableGrid([..._rows, ..._labRows], cardColor, textColor, subTextColor, tint, iconBg),
                       ),
               ),
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _generateAndDownloadPDF,
+        label: Text("Download PDF", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        icon: const Icon(Icons.picture_as_pdf_rounded),
+        backgroundColor: tint,
+        foregroundColor: Colors.white,
       ),
     );
   }
