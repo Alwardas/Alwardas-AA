@@ -40,29 +40,50 @@ async fn main() {
 
     dotenv().ok();
     let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    let trimmed_url = database_url.trim();
 
-    let options = PgConnectOptions::from_str(&database_url.trim())
+    // Redact password for logging
+    let redacted_url = if let Some(at_pos) = trimmed_url.find('@') {
+        if let Some(pass_start) = trimmed_url[..at_pos].find(':') {
+             // Second colon usually starts password in postgres://user:pass@host
+             if let Some(pass_at) = trimmed_url[(pass_start + 1)..at_pos].find(':') {
+                let actual_pass_start = pass_start + 1 + pass_at;
+                format!("{}***{}", &trimmed_url[..actual_pass_start+1], &trimmed_url[at_pos..])
+             } else {
+                trimmed_url.to_string()
+             }
+        } else {
+            trimmed_url.to_string()
+        }
+    } else {
+        trimmed_url.to_string()
+    };
+    println!("🔌 Using Connection String: {}", redacted_url);
+
+    let options = PgConnectOptions::from_str(trimmed_url)
         .expect("Failed to parse DATABASE_URL")
-        .statement_cache_capacity(0);
+        .statement_cache_capacity(0)
+        .connect_timeout(std::time::Duration::from_secs(30)); 
 
-    println!("⏳ Connecting to database (Attempting with 30s timeout and retries)...");
+    println!("⏳ Connecting to database (Attempting with 60s timeout and retries)...");
     
     let mut retry_count = 0;
     let max_retries = 5;
     let pool = loop {
         match PgPoolOptions::new()
-            .max_connections(20)
-            .acquire_timeout(std::time::Duration::from_secs(30)) 
+            .max_connections(10)
+            .acquire_timeout(std::time::Duration::from_secs(60)) 
             .connect_with(options.clone())
             .await 
         {
             Ok(p) => break p,
             Err(e) => {
                 retry_count += 1;
+                println!("❌ Database connection attempt {} failed. Error: {:?}", retry_count, e);
                 if retry_count >= max_retries {
-                    panic!("❌ CRITICAL: Failed to connect to the database after {} attempts. Error: {}", max_retries, e);
+                    panic!("❌ CRITICAL: Failed to connect to the database after {} attempts.", max_retries);
                 }
-                println!("⚠️ Database connection attempt {} failed: {}. Retrying in 5 seconds...", retry_count, e);
+                println!("⏳ Retrying in 5 seconds...");
                 tokio::time::sleep(std::time::Duration::from_secs(5)).await;
             }
         }
