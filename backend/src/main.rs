@@ -2,7 +2,7 @@ use axum::{
     routing::{get, post},
     Router,
 };
-use sqlx::{postgres::{PgPoolOptions, PgConnectOptions}, Pool, Postgres, ConnectOptions};
+use sqlx::{postgres::{PgPoolOptions, PgConnectOptions}, Pool, Postgres};
 use tower_http::cors::CorsLayer;
 use dotenvy::dotenv;
 use std::str::FromStr;
@@ -62,8 +62,7 @@ async fn main() {
 
     let options = PgConnectOptions::from_str(trimmed_url)
         .expect("Failed to parse DATABASE_URL")
-        .statement_cache_capacity(0)
-        .connect_timeout(std::time::Duration::from_secs(30)); 
+        .statement_cache_capacity(0);
 
     println!("⏳ Connecting to database (Attempting with 60s timeout and retries)...");
     
