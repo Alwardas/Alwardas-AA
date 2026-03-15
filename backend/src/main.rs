@@ -350,21 +350,33 @@ async fn main() {
     ").execute(&pool).await.err();
 
     // Fallback: If `courses` table is empty, insert some default courses
-    let mut tx = pool.begin().await.unwrap();
-    let courses_count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM courses").fetch_one(&mut *tx).await.unwrap_or(0);
-    if courses_count == 0 {
-        sqlx::query("INSERT INTO courses (course_id, course_name) VALUES ('C-23', 'Computer Engineering (C-23)'), ('C-26', 'Computer Engineering (C-26)')").execute(&mut *tx).await.unwrap();
+    match pool.begin().await {
+        Ok(mut tx) => {
+            let courses_count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM courses")
+                .fetch_one(&mut *tx).await.unwrap_or(0);
+            if courses_count == 0 {
+                let _ = sqlx::query("INSERT INTO courses (course_id, course_name) VALUES ('C-23', 'Computer Engineering (C-23)'), ('C-26', 'Computer Engineering (C-26)')")
+                    .execute(&mut *tx).await;
+            }
+            let _ = tx.commit().await;
+        }
+        Err(e) => eprintln!("Failed to start transaction for courses seed: {:?}", e),
     }
-    tx.commit().await.unwrap();
     
     // Wait, let's also seed 'lesson_topics' if empty for existing subjects
-    let mut tx2 = pool.begin().await.unwrap();
-    let topics_count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM lesson_topics").fetch_one(&mut *tx2).await.unwrap_or(0);
-    if topics_count == 0 {
-        // Insert a dummy topic for testing
-        sqlx::query("INSERT INTO lesson_topics (subject_id, unit, topic_name) VALUES ('1', 'Unit 1', 'Basics of Java'), ('1', 'Unit 1', 'Variables & Data Types')").execute(&mut *tx2).await.unwrap_or_default();
+    match pool.begin().await {
+        Ok(mut tx2) => {
+            let topics_count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM lesson_topics")
+                .fetch_one(&mut *tx2).await.unwrap_or(0);
+            if topics_count == 0 {
+                // Insert a dummy topic for testing
+                let _ = sqlx::query("INSERT INTO lesson_topics (subject_id, unit, topic_name) VALUES ('1', 'Unit 1', 'Basics of Java'), ('1', 'Unit 1', 'Variables & Data Types')")
+                    .execute(&mut *tx2).await;
+            }
+            let _ = tx2.commit().await;
+        }
+        Err(e) => eprintln!("Failed to start transaction for topics seed: {:?}", e),
     }
-    tx2.commit().await.unwrap();
 
 
     // Allow multiple faculty to potentially teach if sections are different, but unique constraint above enforces
