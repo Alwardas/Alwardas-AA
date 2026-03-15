@@ -32,6 +32,7 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
   List<dynamic> _studentList = [];
   bool _isLoading = true;
   String _searchQuery = '';
+  String? _userRole;
   
   bool _isSelectionMode = false;
   final Set<String> _selectedIds = {};
@@ -41,7 +42,17 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
   @override
   void initState() {
     super.initState();
+    _fetchUserRole();
     _fetchStudents();
+  }
+
+  Future<void> _fetchUserRole() async {
+    final session = await AuthService.getUserSession();
+    if (mounted) {
+      setState(() {
+        _userRole = session?['role']?.toString().toUpperCase();
+      });
+    }
   }
 
   Future<void> _fetchStudents() async {
@@ -52,10 +63,12 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
     try {
       final queryParams = {
         'branch': widget.branch,
-        'year': widget.year,
-        'section': widget.section, 
       };
       
+      // Only add year/section if they aren't 'All' (Search mode)
+      if (widget.year != "All") queryParams['year'] = widget.year;
+      if (widget.section != "All") queryParams['section'] = widget.section;
+
       final uri = Uri.parse('${ApiConstants.baseUrl}/api/students').replace(queryParameters: queryParams);
       final response = await http.get(uri);
       
@@ -92,72 +105,6 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
 
 
 
-  void _addStudent() {
-     final nameController = TextEditingController();
-     final idController = TextEditingController();
-     bool isSubmitting = false;
-     
-     showDialog(
-       context: context,
-       builder: (ctx) => StatefulBuilder(
-         builder: (context, setStateModal) {
-           return AlertDialog(
-             title: Text("Add Student to ${widget.section}", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-             content: SingleChildScrollView(
-               child: Column(
-                 mainAxisSize: MainAxisSize.min,
-                 children: [
-                   TextField(controller: nameController, decoration: const InputDecoration(labelText: "Full Name")),
-                   TextField(controller: idController, decoration: const InputDecoration(labelText: "Student ID")),
-                   if (isSubmitting) const Padding(padding: EdgeInsets.only(top: 10), child: LinearProgressIndicator())
-                 ],
-               ),
-             ),
-             actions: [
-               TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Cancel")),
-               ElevatedButton(
-                 onPressed: isSubmitting ? null : () async {
-                   if (nameController.text.isNotEmpty && idController.text.isNotEmpty) {
-                     setStateModal(() => isSubmitting = true);
-                     try {
-                        final user = await AuthService.getUserSession();
-                        final branch = user?['branch'] ?? 'Computer Engineering';
-                        
-                        final res = await http.post(
-                          Uri.parse('${ApiConstants.baseUrl}/api/students/create'),
-                          headers: {'Content-Type': 'application/json'},
-                          body: json.encode({
-                             'fullName': nameController.text,
-                             'studentId': idController.text,
-                             'branch': branch,
-                             'year': widget.year,
-                             'section': widget.section // KEY FIX: Use current section
-                          })
-                        );
-                        
-                        if (res.statusCode == 201) {
-                           Navigator.pop(ctx);
-                           _fetchStudents(); // Refresh list to fetch from DB
-                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Student added successfully")));
-                        } else {
-                           final err = json.decode(res.body);
-                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed: ${err['error']}")));
-                        }
-                     } catch (e) {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
-                     } finally {
-                        if (mounted) setStateModal(() => isSubmitting = false);
-                     }
-                   }
-                 },
-                 child: const Text("Add"),
-               )
-             ],
-           );
-         }
-       )
-     );
-  }
 
   // API / Action Methods
 
@@ -372,12 +319,6 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _addStudent,
-        icon: const Icon(Icons.add),
-        label: const Text("Add Student"),
-        backgroundColor: tint,
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),

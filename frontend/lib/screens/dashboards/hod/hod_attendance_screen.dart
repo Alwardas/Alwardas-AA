@@ -358,7 +358,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         if (section != null) title += " ($section)";
         
         if (mounted) {
-           AbsentStudentsPopup.show(context, absents, title);
+           AbsentStudentsPopup.show(context, absents, title, date: _selectedDate);
         }
       } else {
         _showSnackBar("Failed to fetch absents");

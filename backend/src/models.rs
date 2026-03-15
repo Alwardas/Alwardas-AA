@@ -707,6 +707,7 @@ pub struct ClassRecordResponse {
 #[derive(Serialize, FromRow)]
 #[serde(rename_all = "camelCase")]
 pub struct StudentAttendanceItem {
+    pub id: Uuid,
     #[sqlx(rename = "student_id")]
     pub student_id: String,
     #[sqlx(rename = "full_name")]

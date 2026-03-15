@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../common/absent_students_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -44,10 +45,16 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
   Timer? _notificationTimer;
   String? _lastNotifiedId;
 
+  // Attendance Stats
+  int _absentCount = 0;
+  List<dynamic> _absentStudents = [];
+  bool _isLoadingAttendance = false;
+
   @override
   void initState() {
     super.initState();
     _startNotificationPolling();
+    _fetchTodayAttendance();
   }
 
   @override
@@ -130,6 +137,55 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
          (route) => false,
        );
      }
+  }
+
+  Future<void> _fetchTodayAttendance() async {
+    if (mounted) setState(() => _isLoadingAttendance = true);
+    try {
+      final dateStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
+
+      // Principal gets aggregated stats for the whole college
+      final statsUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
+        'date': dateStr,
+        'session': 'Morning'
+      });
+      final statsRes = await http.get(statsUri);
+      
+      final absentUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/absents').replace(queryParameters: {
+        'date': dateStr,
+        'session': 'Morning'
+      });
+      final absentRes = await http.get(absentUri);
+
+      if (statsRes.statusCode == 200 && absentRes.statusCode == 200 && mounted) {
+        final stats = json.decode(statsRes.body);
+        final absents = json.decode(absentRes.body);
+        setState(() {
+          _absentCount = stats['totalAbsent'] ?? 0;
+          _absentStudents = absents;
+        });
+      }
+    } catch (e) {
+      debugPrint("Error fetching today attendance (Principal): $e");
+    } finally {
+      if (mounted) setState(() => _isLoadingAttendance = false);
+    }
+  }
+
+  void _showAbsentList() {
+    if (_absentStudents.isEmpty && _absentCount == 0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("No attendance records for today yet.")));
+      return;
+    }
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => AbsentStudentsScreen(
+          absents: _absentStudents,
+          title: "College-wide Absentees",
+        ),
+      ),
+    );
   }
 
   @override
@@ -285,7 +341,8 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                 children: [
                   // 2. Announcements
                   SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'Principal'),
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 15),
+
 
                   // 3. Quick Access (Administration)
                   Text(
@@ -395,6 +452,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
       ],
     );
   }
+
 
   Widget _buildHeaderIcon(IconData icon) {
     return Container(

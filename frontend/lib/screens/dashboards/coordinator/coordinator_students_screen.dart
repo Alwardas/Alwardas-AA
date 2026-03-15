@@ -98,18 +98,8 @@ class _CoordinatorStudentsScreenState extends State<CoordinatorStudentsScreen> {
                   style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
                 ),
                 const SizedBox(height: 16),
-                GridView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1,
-                    mainAxisExtent: 100,
-                    mainAxisSpacing: 16,
-                  ),
-                  itemCount: _years.length,
-                  itemBuilder: (context, index) {
-                    return _buildYearCard(_years[index], isDark, textColor, subTextColor);
-                  },
+                Column(
+                  children: _years.map((year) => _buildYearCard(year, isDark, textColor)).toList(),
                 ),
               ],
             ),
@@ -117,60 +107,181 @@ class _CoordinatorStudentsScreenState extends State<CoordinatorStudentsScreen> {
     );
   }
 
-  Widget _buildYearCard(String year, bool isDark, Color textColor, Color subTextColor) {
-    return GestureDetector(
-      onTap: () {
-        if (_selectedBranch == null) return;
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) => HodStudentListScreen(
-              branch: _selectedBranch!,
-              year: year,
-              section: "All", // Coordinator can view all sections
-              allSections: const ["Section A", "Section B", "Section C"], // Mock for now
-            ),
+  Future<void> _showSectionSelection(String year) async {
+    if (_selectedBranch == null) return;
+    
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          child: _SectionSelector(
+            branch: _selectedBranch!,
+            year: year,
+            onSectionSelected: (section, allSections) {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => HodStudentListScreen(
+                    branch: _selectedBranch!,
+                    year: year,
+                    section: section,
+                    allSections: allSections,
+                  ),
+                ),
+              );
+            },
           ),
         );
       },
+    );
+  }
+
+  Widget _buildYearCard(String year, bool isDark, Color textColor) {
+    return GestureDetector(
+      onTap: () => _showSectionSelection(year),
       child: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(28),
+          border: Border.all(color: isDark ? Colors.white10 : Colors.grey.shade200),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.05),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
+              color: Colors.black.withValues(alpha: 0.04),
+              blurRadius: 15,
+              offset: const Offset(0, 8),
             )
           ],
-          border: Border.all(color: isDark ? Colors.white10 : Colors.grey.shade200),
         ),
         child: Row(
           children: [
             Container(
-              width: 80,
+              width: 54, // Fixed size for proper square look
+              height: 54,
               decoration: BoxDecoration(
-                color: const Color(0xFF2563EB).withValues(alpha: 0.1),
-                borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
+                color: const Color(0xFFE3F2FD), // Subtle Light Blue
+                borderRadius: BorderRadius.circular(15), // Soft rounded square
               ),
-              child: const Icon(Icons.school_outlined, color: Color(0xFF2563EB), size: 32),
+              child: const Icon(Icons.people_alt, color: Color(0xFF2196F3), size: 28),
             ),
             const SizedBox(width: 20),
             Expanded(
+              child: Text(
+                year,
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                ),
+              ),
+            ),
+            const Icon(Icons.chevron_right_rounded, color: Color(0xFFB0BEC5), size: 24),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SectionSelector extends StatefulWidget {
+  final String branch;
+  final String year;
+  final Function(String, List<String>) onSectionSelected;
+
+  const _SectionSelector({
+    required this.branch,
+    required this.year,
+    required this.onSectionSelected,
+  });
+
+  @override
+  State<_SectionSelector> createState() => _SectionSelectorState();
+}
+
+class _SectionSelectorState extends State<_SectionSelector> {
+  List<String> _sections = [];
+  bool _loading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchSections();
+  }
+
+  Future<void> _fetchSections() async {
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(widget.branch)}&year=${widget.year}');
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        setState(() {
+          _sections = data.map((e) => e.toString()).toList();
+          _loading = false;
+        });
+      } else {
+        setState(() => _loading = false);
+      }
+    } catch (_) {
+      setState(() => _loading = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Provider.of<ThemeProvider>(context).isDarkMode;
+    final textColor = isDark ? Colors.white : Colors.black87;
+
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            "Select Section",
+            style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
+          ),
+          const SizedBox(height: 10),
+          const Divider(),
+          if (_loading)
+            const Padding(padding: EdgeInsets.all(20), child: CircularProgressIndicator())
+          else if (_sections.isEmpty)
+            Padding(
+              padding: const EdgeInsets.all(30),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(year, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
-                  Text("View all students", style: GoogleFonts.poppins(fontSize: 13, color: subTextColor)),
+                  Icon(Icons.info_outline, size: 40, color: Colors.grey[400]),
+                  const SizedBox(height: 10),
+                  Text("No sections found for this year.", style: GoogleFonts.poppins(color: Colors.grey)),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () => widget.onSectionSelected("All", ["All"]),
+                    child: const Text("View All Students"),
+                  )
+                ],
+              ),
+            )
+          else
+            Flexible(
+              child: ListView(
+                shrinkWrap: true,
+                children: [
+                  ListTile(
+                    leading: const Icon(Icons.groups_outlined, color: Colors.blue),
+                    title: Text("All Sections", style: GoogleFonts.poppins(color: textColor)),
+                    onTap: () => widget.onSectionSelected("All", _sections),
+                  ),
+                  ..._sections.map((s) => ListTile(
+                    leading: const Icon(Icons.class_outlined, color: Colors.blue),
+                    title: Text(s, style: GoogleFonts.poppins(color: textColor)),
+                    onTap: () => widget.onSectionSelected(s, _sections),
+                  )),
                 ],
               ),
             ),
-            const Icon(Icons.chevron_right, color: Colors.grey),
-            const SizedBox(width: 16),
-          ],
-        ),
+        ],
       ),
     );
   }

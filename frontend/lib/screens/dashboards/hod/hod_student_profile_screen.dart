@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'dart:convert';
@@ -74,12 +76,29 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
   }
 
   Future<void> _launchUrlStr(String uriString) async {
-    final uri = Uri.parse(uriString);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    } else {
+    try {
+      final uri = Uri.parse(uriString);
+      
+      // For mailto, we use a more direct approach as canLaunchUrl can be 
+      // unreliable even with correct manifest queries on some devices.
+      if (uri.scheme == 'mailto') {
+        final launched = await launchUrl(uri, mode: LaunchMode.externalApplication);
+        if (!launched && mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Could not open email app')));
+        }
+        return;
+      }
+
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Could not perform action')));
+        }
+      }
+    } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Could not perform action')));
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e')));
       }
     }
   }
@@ -164,51 +183,83 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
   Widget _buildBasicDetailsCard(Color cardColor, Color textColor, Color subTextColor, Color primaryColor) {
     final String fullName = _studentData?['fullName'] ?? widget.studentName;
     final String studentId = _studentData?['loginId'] ?? widget.studentId;
-    final String dob = _studentData?['dob'] ?? 'N/A';
+    String dob = _studentData?['dob'] ?? 'N/A';
+
+    if (dob != 'N/A') {
+      try {
+        final date = DateTime.parse(dob);
+        dob = DateFormat('dd MMM yyyy').format(date);
+      } catch (e) {
+        // Fallback to original if parsing fails
+      }
+    }
 
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
       decoration: BoxDecoration(
         color: cardColor,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 15,
-            offset: const Offset(0, 5),
+            offset: const Offset(0, 8),
           )
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatar(
-            radius: 45,
-            backgroundColor: primaryColor.withValues(alpha: 0.1),
-            child: Text(
-              fullName.isNotEmpty ? fullName[0].toUpperCase() : 'S',
-              style: GoogleFonts.inter(fontSize: 36, fontWeight: FontWeight.bold, color: primaryColor),
+          Text(
+            fullName.toUpperCase(),
+            style: GoogleFonts.inter(
+              fontSize: 18,
+              fontWeight: FontWeight.w800,
+              color: textColor,
+              letterSpacing: 0.5,
             ),
-          ),
-          const SizedBox(height: 16),
-          Text(
-            fullName,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold, color: textColor),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            studentId,
-            style: GoogleFonts.inter(fontSize: 16, color: subTextColor, fontWeight: FontWeight.w500),
           ),
           const SizedBox(height: 12),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.cake, size: 16, color: subTextColor),
-              const SizedBox(width: 6),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                decoration: BoxDecoration(
+                  color: primaryColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  "ID",
+                  style: GoogleFonts.inter(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: primaryColor,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Text(
+                studentId,
+                style: GoogleFonts.inter(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                  color: subTextColor,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Row(
+            children: [
+              Icon(Icons.cake_outlined, size: 16, color: subTextColor),
+              const SizedBox(width: 8),
               Text(
                 "Date of Birth: $dob",
-                style: GoogleFonts.inter(fontSize: 14, color: subTextColor),
+                style: GoogleFonts.inter(
+                  fontSize: 13,
+                  color: subTextColor,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ],
           ),
@@ -244,9 +295,26 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
           ),
           child: Column(
             children: [
-              _buildDetailRow(Icons.phone, "Phone", phone, textColor, subTextColor),
+              GestureDetector(
+                onTap: () {
+                  if (phone != 'N/A' && phone.isNotEmpty) {
+                    Clipboard.setData(ClipboardData(text: phone));
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Phone number copied to clipboard')));
+                  }
+                },
+                child: _buildDetailRow(Icons.phone, "Phone", phone, textColor, subTextColor, showCopy: true),
+              ),
               const Divider(height: 30),
-              _buildDetailRow(Icons.email, "Email", email, textColor, subTextColor),
+              GestureDetector(
+                onTap: () {
+                  if (email != 'N/A' && email.isNotEmpty) {
+                    _launchUrlStr("mailto:$email");
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Email address not available')));
+                  }
+                },
+                child: _buildDetailRow(Icons.email, "Email", email, textColor, subTextColor, isTappable: true, showCopy: true),
+              ),
             ],
           ),
         ),
@@ -287,9 +355,26 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
             children: [
               _buildDetailRow(Icons.person, "Parent Name", parentName, textColor, subTextColor),
               const Divider(height: 20),
-              _buildDetailRow(Icons.phone_android, "Phone", parentPhone, textColor, subTextColor),
+              GestureDetector(
+                onTap: () {
+                  if (parentPhone != 'N/A' && parentPhone.isNotEmpty) {
+                    Clipboard.setData(ClipboardData(text: parentPhone));
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Parent phone number copied to clipboard')));
+                  }
+                },
+                child: _buildDetailRow(Icons.phone_android, "Phone", parentPhone, textColor, subTextColor, showCopy: true),
+              ),
               const Divider(height: 20),
-              _buildDetailRow(Icons.mail_outline, "Email", parentEmail, textColor, subTextColor),
+              GestureDetector(
+                onTap: () {
+                  if (parentEmail != 'N/A' && parentEmail.isNotEmpty) {
+                    _launchUrlStr("mailto:$parentEmail");
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Email address not available')));
+                  }
+                },
+                child: _buildDetailRow(Icons.mail_outline, "Email", parentEmail, textColor, subTextColor, isTappable: true, showCopy: true),
+              ),
               const SizedBox(height: 24),
               
               Text(
@@ -330,23 +415,6 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
                       },
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: _buildActionButton(
-                      icon: Icons.chat,
-                      label: "WhatsApp",
-                      color: const Color(0xFF25D366), // WhatsApp Green
-                      onTap: () {
-                        if (parentPhone == 'N/A') {
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Phone number not available')));
-                        } else {
-                          // Ensure number is in international format without '+' for wa.me if possible, 
-                          // but usually it works with digits.
-                          _launchUrlStr("https://wa.me/${parentPhone.replaceAll(RegExp(r'[^0-9]'), '')}");
-                        }
-                      },
-                    ),
-                  ),
                 ],
               ),
             ],
@@ -356,7 +424,7 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
     );
   }
 
-  Widget _buildDetailRow(IconData icon, String title, String value, Color textColor, Color subTextColor) {
+  Widget _buildDetailRow(IconData icon, String title, String value, Color textColor, Color subTextColor, {bool isTappable = false, bool showCopy = false}) {
     return Row(
       children: [
         Container(
@@ -373,7 +441,23 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(title, style: GoogleFonts.inter(fontSize: 12, color: subTextColor)),
-              Text(value, style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.w500, color: textColor)),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      value, 
+                      style: GoogleFonts.inter(
+                        fontSize: 15, 
+                        fontWeight: FontWeight.w500, 
+                        color: isTappable ? Theme.of(context).primaryColor : textColor,
+                        decoration: isTappable ? TextDecoration.underline : null,
+                      )
+                    ),
+                  ),
+                  if (showCopy && value != 'N/A' && value.isNotEmpty)
+                    Icon(Icons.copy_outlined, size: 16, color: subTextColor.withValues(alpha: 0.5)),
+                ],
+              ),
             ],
           ),
         ),

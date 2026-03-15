@@ -654,7 +654,7 @@ pub async fn get_class_attendance_record_handler(
        
     if let Some((marked_by,)) = meta_row {
         let records = sqlx::query_as::<_, StudentAttendanceItem>(
-            "SELECT u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' WHEN a.status = 'H' THEN 'HOLIDAY' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = ANY($1::text[]) AND a.year = $2 AND a.session = $3 AND a.date = $4 AND a.section = $5 ORDER BY u.login_id ASC"
+            "SELECT u.id, u.login_id as student_id, u.full_name, CASE WHEN a.status = 'P' THEN 'PRESENT' WHEN a.status = 'H' THEN 'HOLIDAY' ELSE 'ABSENT' END as status FROM attendance a JOIN users u ON a.student_uuid = u.id WHERE a.branch = ANY($1::text[]) AND a.year = $2 AND a.session = $3 AND a.date = $4 AND a.section = $5 ORDER BY u.login_id ASC"
         )
         .bind(&branch_variations)
         .bind(params.year.trim())
@@ -673,7 +673,7 @@ pub async fn get_class_attendance_record_handler(
         println!("DEBUG: Fallback fetching students for branch variations: {:?}, year: {}, section: {}", branch_variations, params.year, section);
         let year_pattern = format!("{}%", params.year.trim());
         let students = sqlx::query_as::<_, StudentAttendanceItem>(
-            "SELECT login_id as student_id, full_name, 'PENDING' as status FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
+            "SELECT id, login_id as student_id, full_name, 'PENDING' as status FROM users WHERE role = 'Student' AND branch = ANY($1::text[]) AND year LIKE $2 AND section = $3 AND is_approved = true ORDER BY login_id ASC"
         )
          .bind(&branch_variations)
          .bind(year_pattern)
@@ -784,7 +784,7 @@ pub async fn get_absent_students_handler(
     let normalized = normalize_branch(&params.branch);
     
     let mut qb = sqlx::QueryBuilder::new(
-        "SELECT u.login_id as student_id, u.full_name, 'ABSENT' as status 
+        "SELECT u.id, u.login_id as student_id, u.full_name, 'ABSENT' as status 
          FROM attendance a 
          JOIN users u ON a.student_uuid = u.id 
          WHERE a.branch = "

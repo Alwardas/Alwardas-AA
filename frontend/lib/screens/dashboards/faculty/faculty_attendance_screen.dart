@@ -735,7 +735,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                      children: [
                        Text("Present: $present", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.green)),
-                       GestureDetector(onTap:()=>AbsentStudentsPopup.show(context,absentStudents,"Absent Students"),child:Text("Absent: $absent", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.red))),
+                       GestureDetector(onTap:()=>AbsentStudentsPopup.show(context,absentStudents,"Absent Students", date: _selectedDate),child:Text("Absent: $absent", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.red))),
                        Text("Total: $total", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: subTextColor)),
                      ],
                    ),

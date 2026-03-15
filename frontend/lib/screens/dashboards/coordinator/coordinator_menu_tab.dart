@@ -35,7 +35,6 @@ class CoordinatorMenuTab extends StatelessWidget {
       {'label': 'Syllabus Management', 'icon': Icons.book, 'route': const PrincipalLessonPlansScreen(), 'color': ThemeColors.accentGreen},
       {'label': 'Issues', 'icon': Icons.report_problem_outlined, 'route': IssueManagementScreen(userData: userData), 'color': ThemeColors.accentGold},
       {'label': 'Requests', 'icon': Icons.request_page_outlined, 'route': const CoordinatorRequestsScreen(), 'color': ThemeColors.accentCyan},
-      {'label': 'Students', 'icon': Icons.school, 'route': const CoordinatorStudentsScreen(), 'color': ThemeColors.accentGold},
       {'label': 'Departments', 'icon': Icons.business, 'route': const CoordinatorDepartmentScreen(), 'color': ThemeColors.accentBlue},
     ];
 

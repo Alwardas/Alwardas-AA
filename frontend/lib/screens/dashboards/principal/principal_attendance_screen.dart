@@ -273,7 +273,7 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
         if (branch != null) title += " - $branch";
         
         if (mounted) {
-           AbsentStudentsPopup.show(context, absents, title);
+           AbsentStudentsPopup.show(context, absents, title, date: _selectedDate);
         }
       } else {
         _showSnackBar("Failed to fetch absents");

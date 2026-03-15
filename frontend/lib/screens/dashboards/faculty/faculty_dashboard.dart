@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../common/absent_students_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../auth/login_screen.dart';
@@ -16,6 +17,7 @@ import 'faculty_exams_screen.dart';
 import 'faculty_requests_screen.dart';
 import 'faculty_announcements_screen.dart';
 import 'faculty_reviews_screen.dart';
+import '../coordinator/coordinator_students_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
 import '../../../widgets/shared_dashboard_announcements.dart';
 import 'dart:async';
@@ -24,6 +26,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/notification_service.dart';
+import 'package:intl/intl.dart';
 
 class FacultyDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -36,15 +39,24 @@ class FacultyDashboard extends StatefulWidget {
 
 
 class _FacultyDashboardState extends State<FacultyDashboard> {
-  int _selectedIndex = 0; // Default to Menu (Dashboard)
+  int _selectedIndex = 1; // Default to Home
   Timer? _notificationTimer;
   String? _lastNotifiedId;
+  
+  List<Map<String, dynamic>> _todaySchedule = [];
+  List<Map<String, dynamic>> _todayPracticals = [];
+  
+  // Attendance Stats
+  int _absentCount = 0;
+  List<dynamic> _absentStudents = [];
+  bool _isLoadingAttendance = false;
 
   @override
   void initState() {
     super.initState();
     _startNotificationPolling();
     _setupClassReminders();
+    _fetchTodayAttendance();
   }
 
   @override
@@ -152,8 +164,13 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
       if (scheduleRes.statusCode != 200) return;
       final List<dynamic> schedule = json.decode(scheduleRes.body);
 
-      // 4. Schedule Notifications
+      // 4. Schedule Notifications & Display
       const mapDays = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6};
+      
+      String todayStr = DateFormat('EEEE').format(DateTime.now());
+      List<Map<String, dynamic>> tempNormal = [];
+      List<Map<String, dynamic>> tempPractical = [];
+
       for (var item in schedule) {
         final dayStr = item['day'];
         final pIndex = item['period_index'] ?? item['periodIndex'];
@@ -184,12 +201,95 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
               body: 'Upcoming: ${item['subject']} for ${item['branch']} ${item['year']} ${item['section']}',
               scheduledTime: scheduledDateTime,
             );
+
+            if (dayStr == todayStr) {
+               String hourStr = startTime.hour > 12 ? (startTime.hour - 12).toString() : (startTime.hour == 0 ? "12" : startTime.hour.toString());
+               String amPmStr = startTime.hour >= 12 ? 'PM' : 'AM';
+               String classTime = "$hourStr:${startTime.minute.toString().padLeft(2, '0')} $amPmStr";
+               Map<String, dynamic> classData = {
+                 'subject': item['subject'],
+                 'time': classTime,
+                 'year': item['year'] ?? '',
+                 'branch': item['branch'] ?? '',
+                 'section': item['section'] ?? '',
+                 'pIndex': pIndex,
+               };
+               
+                tempNormal.add(classData);
+                if (item['subject'].toString().toLowerCase().contains('practical') || item['subject'].toString().toLowerCase().contains('lab')) {
+                   tempPractical.add(classData);
+                }
+            }
           }
         }
+      }
+
+      tempNormal.sort((a, b) => (a['pIndex'] as int).compareTo(b['pIndex'] as int));
+      tempPractical.sort((a, b) => (a['pIndex'] as int).compareTo(b['pIndex'] as int));
+
+      if (mounted) {
+         setState(() {
+            _todaySchedule = tempNormal;
+            _todayPracticals = tempPractical;
+         });
       }
     } catch (e) {
       debugPrint("Setup Class Reminders Error (Faculty): $e");
     }
+  }
+
+  Future<void> _fetchTodayAttendance() async {
+    if (mounted) setState(() => _isLoadingAttendance = true);
+    try {
+      final user = await AuthService.getUserSession();
+      if (user == null) return;
+      final branch = user['branch'] ?? 'Computer Engineering';
+      final dateStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
+
+      // Try Morning session by default
+      final statsUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
+        'branch': branch,
+        'date': dateStr,
+        'session': 'Morning'
+      });
+      final statsRes = await http.get(statsUri);
+      
+      final absentUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/absents').replace(queryParameters: {
+        'branch': branch,
+        'date': dateStr,
+        'session': 'Morning'
+      });
+      final absentRes = await http.get(absentUri);
+
+      if (statsRes.statusCode == 200 && absentRes.statusCode == 200 && mounted) {
+        final stats = json.decode(statsRes.body);
+        final absents = json.decode(absentRes.body);
+        setState(() {
+          _absentCount = stats['totalAbsent'] ?? 0;
+          _absentStudents = absents;
+        });
+      }
+    } catch (e) {
+      debugPrint("Error fetching today attendance (Faculty): $e");
+    } finally {
+      if (mounted) setState(() => _isLoadingAttendance = false);
+    }
+  }
+
+  void _showAbsentList() {
+    if (_absentStudents.isEmpty && _absentCount == 0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("No attendance records for today yet.")));
+      return;
+    }
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => AbsentStudentsScreen(
+          absents: _absentStudents,
+          title: "Today's Absentees",
+        ),
+      ),
+    );
   }
 
   String _getNotificationTitle(String? type) {
@@ -240,10 +340,10 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: overlayStyle,
       child: PopScope(
-        canPop: _selectedIndex == 0, // Now Menu is the root
-        onPopInvoked: (didPop) {
+        canPop: _selectedIndex == 1,
+        onPopInvoked: (bool didPop) {
           if (didPop) return;
-          setState(() => _selectedIndex = 0);
+          setState(() => _selectedIndex = 1);
         },
         child: Scaffold(
           extendBody: true,
@@ -284,40 +384,6 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
 
   Widget _buildHomeTab(BuildContext context, bool isDark, Color textColor, Color subTextColor, Color cardColor) {
     final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
-    final List<Color> headerGradient = isDark 
-        ? [const Color(0xFF343e52), const Color(0xFF3880ec)] 
-        : [const Color(0xFF824abe), const Color(0xFF17b1d8)];
-
-    final List<Map<String, dynamic>> quickAccessItems = [
-      {
-        'icon': Icons.menu_book_outlined,
-        'title': 'My Classes',
-        'subtitle': 'Manage Materials',
-        'color': const Color(0xFF3b5998),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
-      },
-      {
-        'icon': Icons.schedule,
-        'title': 'Schedule',
-        'subtitle': 'View Today',
-        'color': const Color(0xFF9b59b6),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
-      },
-      {
-        'icon': Icons.check_circle_outline,
-        'title': 'Attendance',
-        'subtitle': 'Post Now',
-        'color': const Color(0xFF2ecc71),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyAttendanceScreen(userData: widget.userData))),
-      },
-      {
-        'icon': Icons.person_outline,
-        'title': 'Profile',
-        'subtitle': 'Details',
-        'color': const Color(0xFFf1c40f),
-        'onTap': () => setState(() => _selectedIndex = 2),
-      },
-    ];
 
     return Column(
       children: [
@@ -325,78 +391,116 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
         Container(
           padding: EdgeInsets.only(
             top: MediaQuery.of(context).padding.top + 10, 
-            bottom: 30, 
+            bottom: 20, 
             left: 24, 
             right: 24
           ),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: headerGradient,
+              colors: [Color(0xFF6B48FF), Color(0xFF4B83FF), Color(0xFF1EC9F8)],
+              stops: [0.0, 0.5, 1.0],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40),
             ),
           ),
-          child: Column(
-             children: [
-               Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   Expanded(
-                     child: Column(
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                         Text(
-                           'Welcome Back,', 
-                           style: GoogleFonts.poppins(
-                             color: Colors.white70, 
-                             fontSize: 18,
-                             fontWeight: FontWeight.w600,
-                           ),
-                         ),
-                         FittedBox(
-                           fit: BoxFit.scaleDown,
-                           alignment: Alignment.centerLeft,
-                           child: Text(
-                             widget.userData['full_name'] ?? 'Faculty',
-                             style: GoogleFonts.poppins(
-                               color: Colors.white,
-                               fontSize: 26,
-                               fontWeight: FontWeight.bold,
-                             ),
-                           ),
-                         ),
-                         const SizedBox(height: 4),
-                         Text(
-                           widget.userData['branch'] ?? 'Department',
-                           style: GoogleFonts.poppins(
-                             color: Colors.white70, 
-                             fontSize: 14,
-                           ),
-                         ),
-                       ],
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                     Text(
+                       'Welcome Back,',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white.withValues(alpha: 0.9),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
                      ),
-                   ),
-                   Row(
-                     children: [
-                       GestureDetector(
-                         onTap: () => themeProvider.toggleTheme(),
-                         child: _buildHeaderIcon(themeProvider.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round),
+                     const SizedBox(height: 2),
+                     FittedBox(
+                       fit: BoxFit.scaleDown,
+                       alignment: Alignment.centerLeft,
+                       child: Text(
+                         widget.userData['full_name']?.toString().toUpperCase() ?? 'FACULTY', 
+                          style: GoogleFonts.poppins(
+                            color: Colors.white, 
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 0.5,
+                          ),
                        ),
-                       const SizedBox(width: 10),
-                       GestureDetector(
-                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyNotificationsScreen())),
-                         child: _buildHeaderIcon(Icons.notifications_none),
-                       ),
-                     ],
-                   ),
-                 ],
-               )
-             ],
-           ),
+                     ),
+                     const SizedBox(height: 2),
+                     Text(
+                       'ID: ${widget.userData['login_id'] ?? 'N/A'}',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white.withValues(alpha: 0.9), 
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                        ),
+                     ),
+                     const SizedBox(height: 2),
+                     Text(
+                       widget.userData['branch'] ?? 'Department',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white.withValues(alpha: 0.8), 
+                          fontSize: 13,
+                        ),
+                     ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.4), width: 1),
+                  color: Colors.white.withValues(alpha: 0.1),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyNotificationsScreen())),
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                           const Icon(Icons.notifications_none, color: Colors.white, size: 22),
+                           Positioned(
+                            right: 0,
+                            top: 0,
+                            child: Container(
+                              width: 8, height: 8,
+                              decoration: const BoxDecoration(
+                                color: Colors.redAccent,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    GestureDetector(
+                      onTap: () => themeProvider.toggleTheme(),
+                      child: Icon(
+                        isDark ? Icons.wb_sunny : Icons.nightlight_round, 
+                        color: Colors.white, 
+                        size: 20
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
 
         // 2. Scrollable Body
@@ -409,86 +513,162 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'Faculty'),
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 15),
+
 
                   // Quick Access
-                  Text(
-                    'Quick Access',
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        'Quick Access',
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Container(
+                          height: 1,
+                          color: Colors.grey.withValues(alpha: 0.2),
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 15),
-                  ListView.builder(
+
+                  GridView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: quickAccessItems.length,
                     padding: EdgeInsets.zero,
-                    itemBuilder: (context, index) {
-                      final item = quickAccessItems[index];
-                      return GestureDetector(
-                        onTap: item['onTap'],
-                        child: Container(
-                          margin: const EdgeInsets.only(bottom: 12),
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(
-                               color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
-                               width: 1,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.05),
-                                blurRadius: 10,
-                                offset: const Offset(0, 4),
-                              ),
-                            ],
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: (item['color'] as Color).withOpacity(0.1),
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(item['icon'], color: item['color'], size: 24),
-                              ),
-                              const SizedBox(width: 16),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      item['title'],
-                                      style: GoogleFonts.poppins(
-                                        color: textColor,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 15,
-                                      ),
-                                    ),
-                                    Text(
-                                      item['subtitle'],
-                                      style: GoogleFonts.poppins(
-                                        color: subTextColor,
-                                        fontSize: 11,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Icon(Icons.chevron_right_rounded, color: subTextColor.withOpacity(0.5)),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: 1.4,
+                    ),
+                    children: [
+                      _buildQuickAccessCard(
+                        Icons.menu_book_outlined,
+                        'My Classes',
+                        '',
+                        cardColor,
+                        const Color(0xFF3b5998).withValues(alpha: 0.1),
+                        const Color(0xFF3b5998),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
+                      ),
+                      _buildQuickAccessCard(
+                        Icons.schedule,
+                        'Schedule',
+                        '',
+                        cardColor,
+                        const Color(0xFF9b59b6).withValues(alpha: 0.1),
+                        const Color(0xFF9b59b6),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
+                      ),
+                      _buildQuickAccessCard(
+                        Icons.check_circle_outline,
+                        'Attendance',
+                        '',
+                        cardColor,
+                        const Color(0xFF2ecc71).withValues(alpha: 0.1),
+                        const Color(0xFF2ecc71),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyAttendanceScreen(userData: widget.userData))),
+                      ),
+                      _buildQuickAccessCard(
+                        Icons.people_outline,
+                        'Students',
+                        '',
+                        cardColor,
+                        const Color(0xFF3498db).withValues(alpha: 0.1),
+                        const Color(0xFF3498db),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorStudentsScreen())),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 15),
+                  
+                  // Bottom Horizontal Cards
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _buildHorizontalCard(
+                          Icons.report_problem_outlined,
+                          'Issues',
+                          '',
+                          const Color(0xFFE94057),
+                          cardColor,
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
+                        ),
+                      ),
+                      const SizedBox(width: 15),
+                      Expanded(
+                        child: _buildHorizontalCard(
+                          Icons.rate_review_outlined,
+                          'Feedbacks',
+                          '',
+                          const Color(0xFF1ABC9C),
+                          cardColor,
+                          textColor,
+                          subTextColor,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyReviewsScreen())),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 15),
+
+                  // Today's Schedule
+                  if (_todaySchedule.isNotEmpty) ...[
+                      Text(
+                        "Today's Schedule",
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      ..._todaySchedule.map((cls) => _buildClassCard(cls, isDark, textColor, subTextColor)),
+                  ] else ...[
+                      Text(
+                        "Today's Schedule",
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text("No classes scheduled for today.", style: GoogleFonts.poppins(color: subTextColor)),
+                  ],
+
+                  if (_todayPracticals.isNotEmpty) ...[
+                      const SizedBox(height: 15),
+                      Text(
+                        "Today's Practical Schedule",
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      ..._todayPracticals.map((cls) => _buildClassCard(cls, isDark, textColor, subTextColor)),
+                  ],
+
+                  const SizedBox(height: 100),
                 ],
               ),
             ),
@@ -497,6 +677,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
       ],
     );
   }
+
 
   Widget _buildHeaderIcon(IconData icon) {
     return Container(
@@ -554,14 +735,71 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
               ),
             ),
             const SizedBox(height: 2),
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                subtitle,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+            if (subtitle.isNotEmpty)
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  subtitle,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHorizontalCard(IconData icon, String title, String subtitle, Color color, Color cardColor, Color textColor, Color subTextColor, {VoidCallback? onTap}) {
+    final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
+             width: 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
+              blurRadius: 15,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: color, size: 20),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title,
+                    style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 13),
+                  ),
+                  if (subtitle.isNotEmpty)
+                    Text(
+                      subtitle,
+                      style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+                    ),
+                ],
               ),
             ),
+            Icon(Icons.chevron_right, size: 16, color: subTextColor),
           ],
         ),
       ),
@@ -610,6 +848,12 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
         'title': 'Feedbacks',
         'color': const Color(0xFF1ABC9C),
         'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyReviewsScreen())),
+      },
+      {
+        'icon': Icons.people_outline,
+        'title': 'Students',
+        'color': const Color(0xFF3498db),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorStudentsScreen())),
       },
     ];
 
@@ -688,6 +932,55 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
               },
             ),
           ),
+        ],
+      ),
+    );
+  }
+  Widget _buildClassCard(Map<String, dynamic> cls, bool isDark, Color textColor, Color subTextColor) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 15),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 5),
+          ),
+        ],
+        border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            cls['time'] ?? '',
+            style: GoogleFonts.poppins(
+              color: const Color(0xFF00d2ff),
+              fontSize: 13,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 0.5,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            cls['subject'] ?? '',
+            style: GoogleFonts.poppins(
+              color: textColor,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          if (cls['year'] != null && cls['year'].toString().isNotEmpty)
+             Text(
+               'For: ${cls['branch']} ${cls['year']} ${cls['section']}',
+               style: GoogleFonts.poppins(
+                 color: subTextColor,
+                 fontSize: 14,
+               ),
+             ),
         ],
       ),
     );
