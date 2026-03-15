@@ -7,6 +7,7 @@ import '../../../widgets/custom_bottom_nav_bar.dart';
 import '../../../widgets/shared_dashboard_announcements.dart';
 import 'incharge_profile_screen.dart';
 import 'incharge_tracking_screen.dart';
+import 'incharge_reports_screen.dart';
 import '../../auth/login_screen.dart';
 import 'package:flutter/services.dart';
 
@@ -167,13 +168,21 @@ class _InchargeDashboardState extends State<InchargeDashboard> {
                     isDark,
                   ),
                 ),
-                const SizedBox(height: 16),
-                _buildPlaceholderCard(
-                  'Reports',
-                  'View departmental reports and statistics',
-                  Icons.bar_chart_rounded,
-                  const Color(0xFF10B981),
-                  isDark,
+                // Reports feature
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => InchargeReportsScreen(userData: widget.userData),
+                    ),
+                  ),
+                  child: _buildPlaceholderCard(
+                    'Reports',
+                    'View departmental reports and statistics',
+                    Icons.bar_chart_rounded,
+                    const Color(0xFF10B981),
+                    isDark,
+                  ),
                 ),
                 
                 const SizedBox(height: 100),
