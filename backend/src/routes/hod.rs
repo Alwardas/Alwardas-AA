@@ -180,7 +180,7 @@ pub async fn get_master_timetable_handler(
 
     if class_combos.is_empty() {
         // Final fallback if no students/sections exist
-        return Ok(Json(MasterTimetableResponse { rows: vec![], faculty_clashes: vec![] }));
+        return Ok(Json(MasterTimetableResponse { rows: vec![], lab_rows: vec![], faculty_clashes: vec![] }));
     }
 
     // 2. Fetch all timetable entries for this branch and day
@@ -217,7 +217,6 @@ pub async fn get_master_timetable_handler(
     let mut rows = Vec::new();
     for (year, section) in class_combos {
         let mut periods = Vec::new();
-        // Assuming 8 periods as per requirement
         for p in 0..8 {
             let entry = entries_map.get(&(year.clone(), section.clone())).and_then(|m| m.get(&p).cloned());
             periods.push(entry);
@@ -231,13 +230,39 @@ pub async fn get_master_timetable_handler(
         });
     }
 
+    // 4b. Fetch Labs
+    let lab_names: Vec<String> = sqlx::query_scalar::<Postgres, String>(
+        "SELECT DISTINCT section FROM timetable_entries WHERE branch = $1 AND year = 'Lab' ORDER BY section ASC"
+    )
+    .bind(&branch_norm)
+    .fetch_all(&data.pool)
+    .await
+    .unwrap_or_default();
+
+    let mut lab_rows = Vec::new();
+    for lab_name in lab_names {
+        let mut periods = Vec::new();
+        for p in 0..8 {
+            let entry = entries_map.get(&("Lab".to_string(), lab_name.clone())).and_then(|m| m.get(&p).cloned());
+            periods.push(entry);
+        }
+
+        lab_rows.push(MasterTimetableRow {
+            class_name: lab_name.clone(),
+            year: "Lab".to_string(),
+            section: lab_name,
+            periods,
+        });
+    }
+
     // 5. Detect Faculty Clashes
-    // Clashes happen if same faculty is assigned to multiple classes in the same period
-    // Map: (PeriodIndex, FacultyID) -> Vec<ClassName>
+    // Clashes happen if same faculty is assigned to multiple classes (or labs) in the same period
     let mut faculty_occupancy: HashMap<(i32, String), Vec<String>> = HashMap::new();
     let mut faculty_names: HashMap<String, String> = HashMap::new();
 
-    for row in &rows {
+    let all_display_rows = rows.iter().chain(lab_rows.iter());
+
+    for row in all_display_rows {
         for (idx, period) in row.periods.iter().enumerate() {
             if let Some(entry) = period {
                 let key = (idx as i32, entry.faculty_id.clone());
@@ -263,6 +288,7 @@ pub async fn get_master_timetable_handler(
 
     Ok(Json(MasterTimetableResponse {
         rows,
+        lab_rows,
         faculty_clashes,
     }))
 }

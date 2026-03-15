@@ -23,6 +23,7 @@ class _HodMasterTimetableScreenState extends State<HodMasterTimetableScreen> {
   bool _isLoading = false;
   
   List<dynamic> _rows = [];
+  List<dynamic> _labRows = [];
   List<dynamic> _clashes = [];
 
   @override
@@ -48,6 +49,7 @@ class _HodMasterTimetableScreenState extends State<HodMasterTimetableScreen> {
         if (mounted) {
           setState(() {
             _rows = data['rows'] ?? [];
+            _labRows = data['labRows'] ?? [];
             _clashes = data['facultyClashes'] ?? [];
             _isLoading = false;
           });
@@ -94,13 +96,40 @@ class _HodMasterTimetableScreenState extends State<HodMasterTimetableScreen> {
               Expanded(
                 child: _isLoading 
                   ? const Center(child: CircularProgressIndicator())
-                  : _rows.isEmpty 
+                  : _rows.isEmpty && _labRows.isEmpty
                     ? _buildEmptyState(textColor, subTextColor, tint)
-                    : _buildTimetableGrid(cardColor, textColor, subTextColor, tint, iconBg),
+                    : SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            if (_rows.isNotEmpty) ...[
+                              _buildSectionHeader("Classes (Year & Section)", textColor),
+                              _buildTimetableGrid(_rows, cardColor, textColor, subTextColor, tint, iconBg),
+                              const SizedBox(height: 30),
+                            ],
+                            if (_labRows.isNotEmpty) ...[
+                              _buildSectionHeader("Computer Labs", textColor),
+                              _buildTimetableGrid(_labRows, cardColor, textColor, subTextColor, tint, iconBg),
+                              const SizedBox(height: 30),
+                            ],
+                          ],
+                        ),
+                      ),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildSectionHeader(String title, Color textColor) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Text(
+        title,
+        style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
       ),
     );
   }
@@ -171,32 +200,29 @@ class _HodMasterTimetableScreenState extends State<HodMasterTimetableScreen> {
     );
   }
 
-  Widget _buildTimetableGrid(Color cardColor, Color textColor, Color subTextColor, Color tint, Color iconBg) {
+  Widget _buildTimetableGrid(List<dynamic> rows, Color cardColor, Color textColor, Color subTextColor, Color tint, Color iconBg) {
     return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.all(20),
-        child: Container(
-          decoration: BoxDecoration(
-            color: cardColor,
-            borderRadius: BorderRadius.circular(24),
-            border: Border.all(color: iconBg),
-          ),
-          child: DataTable(
-            columnSpacing: 25,
-            headingRowColor: WidgetStateProperty.all(tint.withValues(alpha: 0.05)),
-            columns: [
-              DataColumn(label: _headerText("Class", textColor)),
-              ...List.generate(8, (i) => DataColumn(label: _headerText("P${i + 1}", textColor))),
-            ],
-            rows: _rows.map((row) {
-              return DataRow(cells: [
-                DataCell(Text(row['className'], style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 13))),
-                ... (row['periods'] as List).map((p) => DataCell(_buildCell(p, textColor, subTextColor))),
-              ]);
-            }).toList(),
-          ),
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Container(
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(24),
+          border: Border.all(color: iconBg),
+        ),
+        child: DataTable(
+          columnSpacing: 25,
+          headingRowColor: WidgetStateProperty.all(tint.withValues(alpha: 0.05)),
+          columns: [
+            DataColumn(label: _headerText("Name", textColor)),
+            ...List.generate(8, (i) => DataColumn(label: _headerText("P${i + 1}", textColor))),
+          ],
+          rows: rows.map((row) {
+            return DataRow(cells: [
+              DataCell(Text(row['className'], style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 13))),
+              ... (row['periods'] as List).map((p) => DataCell(_buildCell(p, textColor, subTextColor))),
+            ]);
+          }).toList(),
         ),
       ),
     );

@@ -153,6 +153,7 @@ pub struct DepartmentTiming {
 #[serde(rename_all = "camelCase")]
 pub struct MasterTimetableResponse {
     pub rows: Vec<MasterTimetableRow>,
+    pub lab_rows: Vec<MasterTimetableRow>,
     pub faculty_clashes: Vec<FacultyClash>,
 }
 
