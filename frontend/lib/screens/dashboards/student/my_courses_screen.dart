@@ -383,13 +383,16 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                 // Header Row: Course ID and Faculty Name
             Row(
               children: [
-                Text(
-                  course['id'] ?? '',
-                  style: GoogleFonts.poppins(
-                    color: courseIdColor,
-                    fontSize: 13, // Smaller font
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0.5,
+                Flexible(
+                  child: Text(
+                    course['subjectCode'] ?? course['id'] ?? '',
+                    style: GoogleFonts.poppins(
+                      color: courseIdColor,
+                      fontSize: 13, 
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 0.5,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -404,7 +407,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                       facultyName,
                       style: GoogleFonts.poppins(
                         color: subtitleColor,
-                        fontSize: 12, // Smaller font
+                        fontSize: 12, 
                         fontWeight: FontWeight.w500,
                         decoration: facultyName != 'TBA' ? TextDecoration.underline : null,
                       ),
@@ -419,13 +422,15 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
             // Course Name
             Text(
-              "${course['id']} - ${course['name']}",
+              "${course['subjectCode'] ?? course['id']} - ${course['name']}",
               style: GoogleFonts.manrope(
                 color: titleColor,
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
                 height: 1.2,
               ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
 
             const SizedBox(height: 12),

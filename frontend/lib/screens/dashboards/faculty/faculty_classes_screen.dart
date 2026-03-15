@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -289,11 +289,12 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
 
     // Helper to get code safely
     String getCode(Map<String, dynamic> item) {
+       if (item['subjectId'] != null && item['subjectId'].toString().isNotEmpty) return item['subjectId'];
        if (item['code'] != null && item['code'].toString().isNotEmpty) return item['code'];
        // Lookup
        if (_allCourses.isNotEmpty) {
            final match = _allCourses.firstWhere(
-             (c) => c['id'].toString() == item['subjectId'].toString() || c['id'].toString() == item['id'].toString(), 
+             (c) => c['id'].toString() == (item['subjectId'] ?? item['id']).toString(), 
              orElse: () => null
            );
            if (match != null) return match['code'] ?? '';
@@ -308,8 +309,6 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
       String codeB = getCode(b).toUpperCase();
       
       // Regex to separate prefix (letters, optional) and number
-      // e.g., "CM-101" -> Prefix: "CM", Number: 101
-      // e.g., "101" -> Prefix: "", Number: 101
       final RegExp exp = RegExp(r'^([A-Z]*)[^0-9]*([0-9]+)');
       final matchA = exp.firstMatch(codeA);
       final matchB = exp.firstMatch(codeB);
@@ -325,13 +324,6 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
         if (prefixComp != 0) return prefixComp;
         
         return numA.compareTo(numB);
-      }
-      
-      // Fallback: Code might be purely numeric without regex match
-      int? intA = int.tryParse(codeA.replaceAll(RegExp(r'[^0-9]'), ''));
-      int? intB = int.tryParse(codeB.replaceAll(RegExp(r'[^0-9]'), ''));
-      if (intA != null && intB != null) {
-        return intA.compareTo(intB);
       }
       return codeA.compareTo(codeB);
     });
@@ -350,25 +342,12 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
         final subtitleColor = isDark ? Colors.white70 : Colors.grey[600]!;
         final courseIdColor = const Color(0xFF4B7FFB);
         
-        // Status Logic for Faculty
-        String statusText;
-        Color statusColor;
-        if (isPending) {
-           statusText = "Pending Approval";
-           statusColor = Colors.orange;
-        } else {
-           statusText = "On Track"; 
-           statusColor = const Color(0xFF34C759);
-        }
-
-        // Mock Progress for visual consistency
-        final progress = 0; 
+        String statusText = isPending ? "Pending Approval" : "On Track";
+        Color statusColor = isPending ? Colors.orange : const Color(0xFF34C759);
 
         return GestureDetector(
           onTap: () {
-             if (isPending) return; // Do nothing if pending
-             
-             // Navigate to Lesson Plan details
+             if (isPending) return; 
              Navigator.push(
                context,
                MaterialPageRoute(
@@ -382,7 +361,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
              );
           },
           child: Opacity(
-            opacity: isPending ? 0.6 : 1.0, // Fade out pending items
+            opacity: isPending ? 0.6 : 1.0, 
             child: Container(
               margin: const EdgeInsets.only(bottom: 16),
               padding: const EdgeInsets.all(18),
@@ -400,27 +379,28 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Header Row: Code • Semester • Branch • Section
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
                       child: Row(
                         children: [
-                          Text(
-                            code.isNotEmpty ? code : "---",
-                            style: GoogleFonts.poppins(
-                              color: courseIdColor,
-                              fontSize: 13,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 0.5,
+                          Flexible(
+                            child: Text(
+                              code.isNotEmpty ? code : "---",
+                              style: GoogleFonts.poppins(
+                                color: courseIdColor,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 0.5,
+                              ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                           const SizedBox(width: 8),
                             Expanded(
+                              flex: 2,
                               child: Text(
-                                // Format: "BRANCH : YEAR : SECTION"
-                                // Example: "CME : 1st Year : Sec A"
                                 "${_getBranchAbbreviation(item['branch'] ?? '')} : ${item['year'] ?? item['semester'] ?? ''} : ${item['section'] ?? ''}",
                                 style: GoogleFonts.poppins(
                                   color: subtitleColor,
@@ -461,13 +441,15 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
 
                 // Course Name
                 Text(
-                  item['name'] ?? 'Untitled Subject',
+                  "${code} - ${item['name'] ?? 'Untitled Subject'}",
                   style: GoogleFonts.manrope(
                     color: titleColor,
-                    fontSize: 14, // Reduced size
+                    fontSize: 14, 
                     fontWeight: FontWeight.w700,
                     height: 1.2,
                   ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
 
                 
