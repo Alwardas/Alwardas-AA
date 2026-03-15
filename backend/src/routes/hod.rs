@@ -348,12 +348,25 @@ pub async fn get_year_sections_progress_handler(
     let branch_norm = normalize_branch(&params.branch);
     
     // Get sections for this branch/year
-    let sections: Vec<String> = sqlx::query_scalar("SELECT section_name FROM sections WHERE branch = $1 AND year = $2")
+    let mut sections: Vec<String> = sqlx::query_scalar("SELECT section_name FROM sections WHERE branch = $1 AND year = $2")
         .bind(&branch_norm)
         .bind(&params.year)
         .fetch_all(&data.pool)
         .await
         .unwrap_or_default();
+
+    if sections.is_empty() {
+        // Fallback to distinct year/section from users table
+        let year_pattern = format!("{}%", params.year.trim());
+        sections = sqlx::query_scalar(
+            "SELECT DISTINCT section FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 AND section IS NOT NULL ORDER BY section ASC"
+        )
+        .bind(&branch_norm)
+        .bind(year_pattern)
+        .fetch_all(&data.pool)
+        .await
+        .unwrap_or_default();
+    }
 
     let mut responses = Vec::new();
     for section in sections {
@@ -381,14 +394,17 @@ pub async fn get_section_subjects_progress_handler(
 ) -> Result<Json<Vec<SubjectProgressResponse>>, StatusCode> {
     let branch_norm = normalize_branch(&params.branch);
     
-    let subjects = sqlx::query!(
-        "SELECT id, name FROM subjects WHERE branch = $1 AND (course_id = $2 OR course_id IS NULL) AND (semester LIKE $3 OR semester LIKE $4 OR semester LIKE $5)",
-        branch_norm,
-        params.course_id,
-        format!("{}%", params.year),
-        if params.year == "1st Year" { "1st Semester%" } else if params.year == "2nd Year" { "3rd Semester%" } else { "5th Semester%" },
-        if params.year == "1st Year" { "2nd Semester%" } else if params.year == "2nd Year" { "4th Semester%" } else { "6th Semester%" }
+    #[derive(sqlx::FromRow)]
+    struct SubjectInfo { id: String, name: String }
+
+    let subjects = sqlx::query_as::<Postgres, SubjectInfo>(
+        "SELECT id, name FROM subjects WHERE branch = $1 AND (course_id = $2 OR course_id IS NULL) AND (semester LIKE $3 OR semester LIKE $4 OR semester LIKE $5)"
     )
+    .bind(branch_norm)
+    .bind(params.course_id)
+    .bind(format!("{}%", params.year))
+    .bind(if params.year == "1st Year" { "1st Semester%" } else if params.year == "2nd Year" { "3rd Semester%" } else { "5th Semester%" })
+    .bind(if params.year == "1st Year" { "2nd Semester%" } else if params.year == "2nd Year" { "4th Semester%" } else { "6th Semester%" })
     .fetch_all(&data.pool)
     .await
     .unwrap_or_default();
@@ -410,12 +426,22 @@ pub async fn get_section_subjects_progress_handler(
 // --- Internal Calculation Helpers ---
 
 async fn calculate_year_progress(pool: &sqlx::PgPool, branch: &str, course_id: &str, year: &str) -> Option<i32> {
-    let sections: Vec<String> = sqlx::query_scalar("SELECT section_name FROM sections WHERE branch = $1 AND year = $2")
+    let mut sections: Vec<String> = sqlx::query_scalar("SELECT section_name FROM sections WHERE branch = $1 AND year = $2")
         .bind(branch)
         .bind(year)
         .fetch_all(pool)
         .await
         .unwrap_or_default();
+
+    if sections.is_empty() {
+        let year_pattern = format!("{}%", year.trim());
+        sections = sqlx::query_scalar("SELECT DISTINCT section FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 AND section IS NOT NULL")
+            .bind(branch)
+            .bind(year_pattern)
+            .fetch_all(pool)
+            .await
+            .unwrap_or_default();
+    }
 
     if sections.is_empty() { return Some(0); }
 
@@ -428,14 +454,17 @@ async fn calculate_year_progress(pool: &sqlx::PgPool, branch: &str, course_id: &
 }
 
 async fn calculate_section_progress(pool: &sqlx::PgPool, branch: &str, course_id: &str, year: &str, section: &str) -> Option<i32> {
-    let subjects = sqlx::query!(
-        "SELECT id FROM subjects WHERE branch = $1 AND (course_id = $2 OR course_id IS NULL) AND (semester LIKE $3 OR semester LIKE $4 OR semester LIKE $5)",
-        branch,
-        course_id,
-        format!("{}%", year),
-        if year == "1st Year" { "1st Semester%" } else if year == "2nd Year" { "3rd Semester%" } else { "5th Semester%" },
-        if year == "1st Year" { "2nd Semester%" } else if year == "2nd Year" { "4th Semester%" } else { "6th Semester%" }
+    #[derive(sqlx::FromRow)]
+    struct SubjectIdOnly { id: String }
+
+    let subjects = sqlx::query_as::<Postgres, SubjectIdOnly>(
+        "SELECT id FROM subjects WHERE branch = $1 AND (course_id = $2 OR course_id IS NULL) AND (semester LIKE $3 OR semester LIKE $4 OR semester LIKE $5)"
     )
+    .bind(branch)
+    .bind(course_id)
+    .bind(format!("{}%", year))
+    .bind(if year == "1st Year" { "1st Semester%" } else if year == "2nd Year" { "3rd Semester%" } else { "5th Semester%" })
+    .bind(if year == "1st Year" { "2nd Semester%" } else if year == "2nd Year" { "4th Semester%" } else { "6th Semester%" })
     .fetch_all(pool)
     .await
     .unwrap_or_default();
@@ -452,7 +481,7 @@ async fn calculate_section_progress(pool: &sqlx::PgPool, branch: &str, course_id
 }
 
 async fn calculate_subject_progress(pool: &sqlx::PgPool, subject_id: &str, section: &str) -> (i32, String) {
-    let stats = sqlx::query!(
+    let stats = sqlx::query(
         r#"
         SELECT 
             COUNT(lpi.id) as total_topics,
@@ -462,18 +491,18 @@ async fn calculate_subject_progress(pool: &sqlx::PgPool, subject_id: &str, secti
         LEFT JOIN lesson_plan_progress lp ON lpi.id = lp.item_id AND lp.section = $2
         LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id AND ls.section = $2
         WHERE lpi.subject_id = $1
-        "#,
-        subject_id,
-        section
+        "#
     )
+    .bind(subject_id)
+    .bind(section)
     .fetch_one(pool)
     .await
     .ok();
 
     if let Some(s) = stats {
-        let total = s.total_topics.unwrap_or(0);
-        let completed = s.completed_topics.unwrap_or(0);
-        let scheduled = s.scheduled_topics.unwrap_or(0);
+        let total: i64 = s.get("total_topics");
+        let completed: i64 = s.get("completed_topics");
+        let scheduled: i64 = s.get("scheduled_topics");
 
         let percentage = if total > 0 { (completed as f64 * 100.0 / total as f64).round() as i32 } else { 0 };
         
