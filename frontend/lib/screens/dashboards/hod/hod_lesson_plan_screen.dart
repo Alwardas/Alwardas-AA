@@ -42,9 +42,10 @@ class _HodLessonPlanScreenState extends State<HodLessonPlanScreen> {
     final user = await AuthService.getUserSession();
     if (user == null) return;
 
+    final branch = user['branch'] ?? '';
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&section=${Uri.encodeComponent(widget.section)}'),
+        Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&section=${Uri.encodeComponent(widget.section)}&branch=${Uri.encodeComponent(branch)}'),
       );
       if (response.statusCode == 200) {
         final decoded = json.decode(response.body);

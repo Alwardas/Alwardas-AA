@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -42,8 +42,9 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
     final user = await AuthService.getUserSession();
     if (user == null) return;
 
+    final branch = user['branch'] ?? '';
     try {
-      String url = '${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}';
+      String url = '${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&branch=${Uri.encodeComponent(branch)}';
       if (widget.section != null) {
         url += '&section=${widget.section}';
       }

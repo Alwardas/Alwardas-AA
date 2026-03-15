@@ -280,6 +280,18 @@ pub async fn get_student_lesson_plan_handler(
          "Section A".to_string()
     };
 
+    // Determine branch
+    let branch_norm = if let Some(b) = &params.branch {
+        Some(normalize_branch(b))
+    } else if let Some(uid_str) = &params.user_id {
+         let branch_opt: Option<String> = sqlx::query_scalar("SELECT branch FROM users WHERE id = $1")
+             .bind(Uuid::parse_str(uid_str).unwrap_or_default())
+             .fetch_optional(&state.pool).await.unwrap_or(None);
+         branch_opt.map(|b| normalize_branch(&b))
+    } else {
+         None
+    };
+
     let items = sqlx::query_as::<Postgres, LessonPlanItemResponse>(
         r#"
         SELECT 
@@ -293,14 +305,17 @@ pub async fn get_student_lesson_plan_handler(
             lpi.student_review,
             ls.schedule_date as scheduled_date
         FROM lesson_plan_items lpi
-        LEFT JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id AND (lpp.section = $2 OR $2 IS NULL)
-        LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id AND (ls.section = $2 OR $2 IS NULL)
+        LEFT JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id AND (TRIM(lpp.section) = TRIM($2) OR $2 IS NULL)
+        LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id 
+            AND (TRIM(ls.section) = TRIM($2) OR $2 IS NULL)
+            AND (ls.branch = $3 OR $3 IS NULL)
         WHERE TRIM(lpi.subject_id) ILIKE TRIM($1)
         ORDER BY lpi.order_index ASC
         "#
     )
     .bind(subject_id)
     .bind(section)
+    .bind(branch_norm)
     .fetch_all(&state.pool)
     .await
     .map_err(|e| {

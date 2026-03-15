@@ -42,8 +42,9 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
     final user = await AuthService.getUserSession();
     if (user == null) return;
 
+    final branch = user['branch'] ?? '';
     try {
-      final url = '${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&userId=${user['id']}';
+      final url = '${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&userId=${user['id']}&branch=${Uri.encodeComponent(branch)}';
       debugPrint("DEBUG: Fetching Lesson Plan from $url");
       
       final response = await http.get(Uri.parse(url));

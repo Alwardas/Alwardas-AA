@@ -443,6 +443,7 @@ pub struct LessonPlanQuery {
     #[serde(rename = "userId")]
     pub user_id: Option<String>,
     pub section: Option<String>,
+    pub branch: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -548,6 +549,7 @@ pub struct FacultyProfileResponse {
 }
 
 #[derive(Serialize, FromRow)]
+#[serde(rename_all = "camelCase")]
 pub struct FacultySubjectResponse {
     pub id: String,
     pub name: String,
