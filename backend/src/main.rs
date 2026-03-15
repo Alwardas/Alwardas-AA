@@ -513,6 +513,7 @@ async fn main() {
         .route("/api/announcement/delete", post(coordinator::delete_announcement_handler))
         .route("/api/announcement/pin", post(coordinator::pin_announcement_handler))
         .route("/api/departments", get(coordinator::get_all_departments_handler))
+        .route("/api/coordinator/overall-syllabus-progress", get(coordinator::get_all_branches_syllabus_progress_handler))
         .route("/api/departments/delete", post(coordinator::delete_department_handler))
         .route("/api/hod/departments", get(hod::get_hod_departments_handler))
         .route("/api/hod/sections", get(hod::get_hod_sections_handler))

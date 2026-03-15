@@ -231,3 +231,46 @@ pub async fn pin_announcement_handler(
         (StatusCode::BAD_REQUEST, Json(json!({"message": "Announcement ID is required"}))).into_response()
     }
 }
+pub async fn get_all_branches_syllabus_progress_handler(
+    State(data): State<AppState>,
+    Query(params): Query<serde_json::Value>,
+) -> impl IntoResponse {
+    let course_id = params.get("courseId").and_then(|v| v.as_str()).unwrap_or("C-23");
+    
+    // 1. Fetch all branches
+    let branches_res = sqlx::query_scalar::<_, String>("SELECT branch FROM department_timings")
+        .fetch_all(&data.pool)
+        .await;
+
+    let branches = match branches_res {
+        Ok(b) => b,
+        Err(_) => return (StatusCode::INTERNAL_SERVER_ERROR, Json(json!({"message": "Failed to fetch branches"}))).into_response(),
+    };
+
+    let mut result = Vec::new();
+
+    for branch_name in branches {
+        let mut total_avg = 0.0;
+        let years = vec!["1st Year", "2nd Year", "3rd Year"];
+        let mut year_data = Vec::new();
+        
+        for year in &years {
+            let progress = crate::routes::hod::calculate_year_progress(&data.pool, &branch_name, course_id, year).await.unwrap_or(0);
+            total_avg += progress as f64;
+            year_data.push(json!({
+                "year": year.to_string(),
+                "percentage": progress
+            }));
+        }
+
+        let overall = (total_avg / 3.0).round() as i32;
+
+        result.push(json!({
+            "branch": branch_name,
+            "overallPercentage": overall,
+            "years": year_data
+        }));
+    }
+
+    (StatusCode::OK, Json(result)).into_response()
+}

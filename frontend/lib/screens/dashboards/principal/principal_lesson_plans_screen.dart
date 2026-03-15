@@ -27,22 +27,18 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
 
   Future<void> _fetchBranches() async {
     try {
-      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/departments'));
+      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/coordinator/overall-syllabus-progress'));
       if (res.statusCode == 200) {
         final List<dynamic> data = json.decode(res.body);
-        final colors = [Colors.blue, Colors.green, Colors.orange, Colors.red, Colors.purple, Colors.teal];
-        final random = Random();
-        
         if (mounted) {
           setState(() {
             deptProgress = data.map((d) {
-              final String branchName = d['branch']?.toString() ?? '';
               return {
-                 'dept': branchName, 
-                 'progress': 0.40 + (random.nextDouble() * 0.50), // 40-90%
-                 'color': colors[deptProgress.length % colors.length]
+                 'dept': d['branch']?.toString() ?? '', 
+                 'progress': (d['overallPercentage'] ?? 0) / 100.0,
+                 'years': d['years'] ?? [],
               };
-            }).where((b) => (b['dept'] as String).isNotEmpty).toList();
+            }).toList();
             isLoading = false;
           });
         }
@@ -50,6 +46,7 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
          _fallbackBranches();
       }
     } catch (e) {
+      debugPrint("Fetch Syllabus Progress Error: $e");
       _fallbackBranches();
     }
   }
@@ -58,10 +55,24 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
     if (!mounted) return;
     setState(() {
       deptProgress = [
-        {'dept': 'Computer Engineering', 'progress': 0.75, 'color': Colors.blue},
-        {'dept': 'Civil Engineering', 'progress': 0.60, 'color': Colors.green},
-        {'dept': 'Mechanical Engineering', 'progress': 0.85, 'color': Colors.orange},
-        {'dept': 'Electrical Engineering', 'progress': 0.45, 'color': Colors.red},
+        {
+          'dept': 'Computer Engineering', 
+          'progress': 0.75, 
+          'years': [
+            {'year': '1st Year', 'percentage': 80},
+            {'year': '2nd Year', 'percentage': 70},
+            {'year': '3rd Year', 'percentage': 75},
+          ]
+        },
+        {
+          'dept': 'Civil Engineering', 
+          'progress': 0.60, 
+          'years': [
+            {'year': '1st Year', 'percentage': 60},
+            {'year': '2nd Year', 'percentage': 55},
+            {'year': '3rd Year', 'percentage': 65},
+          ]
+        },
       ];
       isLoading = false;
     });
@@ -71,66 +82,77 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final isDark = themeProvider.isDarkMode;
-    final bgColors = isDark ? ThemeColors.darkBackground : ThemeColors.lightBackground;
-    final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
-    final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
-    final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
-    final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
-    final iconBg = isDark ? ThemeColors.darkIconBg : ThemeColors.lightIconBg;
-
-    // Find highest completion
-    Map<String, dynamic>? highest;
-    if (deptProgress.isNotEmpty) {
-      highest = deptProgress.reduce((curr, next) => curr['progress'] > next['progress'] ? curr : next);
-    }
+    final textColor = isDark ? Colors.white : const Color(0xFF1E293B);
+    final subTextColor = isDark ? Colors.white70 : const Color(0xFF64748B);
+    final bgColor = isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC);
+    final cardColor = isDark ? const Color(0xFF1E293B) : Colors.white;
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      backgroundColor: bgColor,
       appBar: AppBar(
-        title: Text("Syllabus Management", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+        title: Text("Syllabus Management", 
+          style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
+        centerTitle: true,
       ),
-      body: Container(
-        decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
-        child: SafeArea(
-          child: isLoading 
-            ? Center(child: CircularProgressIndicator(color: tint))
-            : ListView(
-            padding: const EdgeInsets.all(20),
-            children: [
-              Text(
-                "Departmental Overview",
-                style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
-              ),
-              const SizedBox(height: 20),
-              ...deptProgress.map((d) => _buildDeptProgressCard(d, cardColor, textColor, subTextColor, iconBg)),
-              const SizedBox(height: 30),
-              if (highest != null) ...[
-                Text(
-                  "Highest Completion",
-                  style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
-                ),
-                const SizedBox(height: 15),
-                _buildTopPerformerCard(highest['dept'], '${(highest['progress'] * 100).toInt()}%', cardColor, textColor, highest['color'], iconBg),
-              ]
-            ],
+      body: isLoading 
+        ? Center(child: CircularProgressIndicator(color: ThemeColors.primary))
+        : RefreshIndicator(
+            onRefresh: _fetchBranches,
+            color: ThemeColors.primary,
+            child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+              children: [
+                _buildHeader(textColor, subTextColor),
+                const SizedBox(height: 30),
+                ...deptProgress.map((d) => _buildEnhancedDeptCard(d, cardColor, textColor, subTextColor, isDark)),
+                const SizedBox(height: 80),
+              ],
+            ),
           ),
-        ),
-      ),
     );
   }
 
-  Widget _buildDeptProgressCard(Map<String, dynamic> d, Color cardColor, Color textColor, Color subTextColor, Color iconBg) {
+  Widget _buildHeader(Color textColor, Color subTextColor) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "College-wide Progress",
+          style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold, color: textColor),
+        ),
+        Text(
+          "Tracking syllabus completion across all departments",
+          style: GoogleFonts.poppins(fontSize: 14, color: subTextColor),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildEnhancedDeptCard(Map<String, dynamic> d, Color cardColor, Color textColor, Color subTextColor, bool isDark) {
+    final double overallProgress = d['progress'];
+    final List<dynamic> years = d['years'];
+    final accentColor = _getAccentColor(overallProgress);
+
     return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.only(bottom: 24),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: cardColor,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: iconBg),
-        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))],
+        borderRadius: BorderRadius.circular(28),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(isDark ? 0.3 : 0.05),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
+        ],
+        border: Border.all(
+          color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.03),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,71 +161,121 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: Text(d['dept'], style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor), overflow: TextOverflow.ellipsis),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(d['dept'].toUpperCase(), 
+                      style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: accentColor, letterSpacing: 1.1)
+                    ),
+                    const SizedBox(height: 4),
+                    Text("Overall Syllabus Progress", 
+                      style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)
+                    ),
+                  ],
+                ),
               ),
-              Text("${(d['progress'] * 100).toInt()}%", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: d['color'])),
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: accentColor.withOpacity(0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(Icons.analytics_rounded, color: accentColor, size: 24),
+              ),
             ],
           ),
-          const SizedBox(height: 15),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: LinearProgressIndicator(
-              value: d['progress'],
-              backgroundColor: iconBg,
-              color: d['color'],
-              minHeight: 10,
-            ),
-          ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 25),
+          
+          // Overall Progress Bar
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildStat("85 Total Units", subTextColor),
-              const SizedBox(width: 20),
-              _buildStat("${(85 * d['progress']).toInt()} Completed", subTextColor),
+              Text("${(overallProgress * 100).toInt()}% Completed", 
+                style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: textColor)
+              ),
+              Text(overallProgress >= 0.75 ? "On Track" : (overallProgress >= 0.5 ? "In Progress" : "Needs Attention"),
+                style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600, color: accentColor)
+              ),
             ],
-          )
+          ),
+          const SizedBox(height: 12),
+          Stack(
+            children: [
+              Container(
+                height: 10,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: isDark ? Colors.white10 : Colors.grey[200],
+                  borderRadius: BorderRadius.circular(5),
+                ),
+              ),
+              FractionallySizedBox(
+                widthFactor: overallProgress.clamp(0.0, 1.0),
+                child: Container(
+                  height: 10,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [accentColor.withOpacity(0.7), accentColor]),
+                    borderRadius: BorderRadius.circular(5),
+                    boxShadow: [
+                      BoxShadow(color: accentColor.withOpacity(0.3), blurRadius: 4, offset: const Offset(0, 2)),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          
+          const SizedBox(height: 24),
+          Divider(color: isDark ? Colors.white10 : Colors.black12, height: 1),
+          const SizedBox(height: 20),
+          
+          // Yearly Breakdown
+          Text("Yearly Breakdown", 
+            style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: textColor.withOpacity(0.7))
+          ),
+          const SizedBox(height: 12),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: years.map((y) => _buildYearMiniProgress(y, textColor, isDark)).toList(),
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildStat(String text, Color color) {
-    return Row(
+  Widget _buildYearMiniProgress(dynamic yearData, Color textColor, bool isDark) {
+    final String year = yearData['year']?.toString().split(' ')[0] ?? '';
+    final int percentage = yearData['percentage'] ?? 0;
+    final color = _getAccentColor(percentage / 100.0);
+
+    return Column(
       children: [
-        Container(width: 6, height: 6, decoration: BoxDecoration(color: color.withValues(alpha: 0.5), shape: BoxShape.circle)),
-        const SizedBox(width: 6),
-        Text(text, style: GoogleFonts.poppins(fontSize: 12, color: color)),
+        Container(
+          height: 45,
+          width: 45,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: color.withOpacity(0.2), width: 2),
+          ),
+          child: Center(
+            child: Text("$percentage%", 
+              style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.bold, color: textColor)
+            ),
+          ),
+        ),
+        const SizedBox(height: 6),
+        Text("$year Year", 
+          style: GoogleFonts.poppins(fontSize: 10, color: textColor.withOpacity(0.6), fontWeight: FontWeight.w500)
+        ),
       ],
     );
   }
 
-  Widget _buildTopPerformerCard(String name, String value, Color cardColor, Color textColor, Color accentColor, Color iconBg) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [accentColor.withValues(alpha: 0.8), accentColor], begin: Alignment.topLeft, end: Alignment.bottomRight),
-        borderRadius: BorderRadius.circular(24),
-        boxShadow: [BoxShadow(color: accentColor.withValues(alpha: 0.3), blurRadius: 10, offset: const Offset(0, 5))],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Current Leader", style: GoogleFonts.poppins(color: Colors.white70, fontSize: 13)),
-                Text(name, style: GoogleFonts.poppins(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
-              ],
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-            decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(12)),
-            child: Text(value, style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20)),
-          )
-        ],
-      ),
-    );
+  Color _getAccentColor(double progress) {
+    if (progress >= 0.8) return const Color(0xFF10B981); // Emerald
+    if (progress >= 0.5) return const Color(0xFF6366F1); // Indigo
+    if (progress >= 0.3) return const Color(0xFFF59E0B); // Amber
+    return const Color(0xFFEF4444); // Red
   }
 }
