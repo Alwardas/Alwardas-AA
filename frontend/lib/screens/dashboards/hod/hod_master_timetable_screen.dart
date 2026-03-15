@@ -100,36 +100,13 @@ class _HodMasterTimetableScreenState extends State<HodMasterTimetableScreen> {
                     ? _buildEmptyState(textColor, subTextColor, tint)
                     : SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (_rows.isNotEmpty) ...[
-                              _buildSectionHeader("Classes (Year & Section)", textColor),
-                              _buildTimetableGrid(_rows, cardColor, textColor, subTextColor, tint, iconBg),
-                              const SizedBox(height: 30),
-                            ],
-                            if (_labRows.isNotEmpty) ...[
-                              _buildSectionHeader("Computer Labs", textColor),
-                              _buildTimetableGrid(_labRows, cardColor, textColor, subTextColor, tint, iconBg),
-                              const SizedBox(height: 30),
-                            ],
-                          ],
-                        ),
+                        padding: const EdgeInsets.only(bottom: 30),
+                        child: _buildTimetableGrid([..._rows, ..._labRows], cardColor, textColor, subTextColor, tint, iconBg),
                       ),
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildSectionHeader(String title, Color textColor) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: Text(
-        title,
-        style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
       ),
     );
   }
@@ -214,7 +191,7 @@ class _HodMasterTimetableScreenState extends State<HodMasterTimetableScreen> {
           columnSpacing: 25,
           headingRowColor: WidgetStateProperty.all(tint.withValues(alpha: 0.05)),
           columns: [
-            DataColumn(label: _headerText("Name", textColor)),
+            DataColumn(label: _headerText("Class / Lab", textColor)),
             ...List.generate(8, (i) => DataColumn(label: _headerText("P${i + 1}", textColor))),
           ],
           rows: rows.map((row) {

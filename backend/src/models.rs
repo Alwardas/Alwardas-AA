@@ -106,6 +106,7 @@ pub struct Notification {
 }
 
 #[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct TimetableEntry {
     pub id: Uuid,
     pub faculty_id: String,
