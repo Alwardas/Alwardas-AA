@@ -1,4 +1,5 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -88,6 +89,23 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
       
       final res = await http.get(uri);
       
+      // Fetch Statuses for TODAY (so we can color code today's classes)
+      final todayDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
+      final statusUri = Uri.parse('${ApiConstants.baseUrl}/api/incharge/class-status').replace(queryParameters: {
+        'branch': branch,
+        'year': year,
+        'section': section,
+        'date': todayDate,
+      });
+      final statusRes = await http.get(statusUri);
+      Map<int, dynamic> statusMap = {};
+      if (statusRes.statusCode == 200) {
+        final List<dynamic> sData = json.decode(statusRes.body);
+        for (var s in sData) {
+          statusMap[s['periodIndex']] = s;
+        }
+      }
+      
       if (res.statusCode == 200) {
         final List<dynamic> data = json.decode(res.body);
         
@@ -120,6 +138,17 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                    slot['facultyEmail'] = item['faculty_email'] ?? item['facultyEmail'];
                    slot['facultyPhone'] = item['faculty_phone'] ?? item['facultyPhone'];
                    slot['facultyDept'] = item['faculty_department'] ?? item['facultyDepartment'];
+                   
+                   // Add status if this is 'Today's' schedule
+                   final currentDayName = DateFormat('EEEE').format(DateTime.now());
+                   if (day == currentDayName && statusMap.containsKey(period)) {
+                      final s = statusMap[period];
+                      slot['status'] = s['status'];
+                      if (s['status'] == 'substitute') {
+                        slot['subject'] = s['actualSubject'];
+                        slot['facultyName'] = s['actualFaculty'];
+                      }
+                   }
                 }
              }
            }
@@ -246,18 +275,26 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                          height: 100, // Fixed height for uniformity
                          padding: const EdgeInsets.all(12),
                          decoration: BoxDecoration(
-                           color: cardColor,
-                           border: Border.all(color: hasClass ? tint.withValues(alpha: 0.3) : iconBg),
-                           borderRadius: BorderRadius.circular(16),
-                           boxShadow: [
-                             if (hasClass)
-                               BoxShadow(
-                                 color: tint.withValues(alpha: 0.1),
-                                 blurRadius: 8,
-                                 offset: const Offset(0, 4),
-                               )
-                           ]
-                         ),
+                            color: cardColor,
+                            border: Border.all(
+                              color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.5) :
+                                     (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.5) :
+                                      (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.5) :
+                                       (hasClass ? tint.withValues(alpha: 0.3) : iconBg)))
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: [
+                              if (hasClass)
+                                BoxShadow(
+                                  color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.1) :
+                                         (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.1) :
+                                          (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.1) :
+                                           tint.withValues(alpha: 0.1))),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 4),
+                                )
+                            ]
+                          ),
                          child: Stack(
                            clipBehavior: Clip.none,
                            children: [

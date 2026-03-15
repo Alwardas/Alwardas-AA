@@ -48,7 +48,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final _dobController = TextEditingController();
 
   // Options
-  final List<String> _roles = ['Student', 'Parent', 'Faculty', 'HOD', 'Coordinator', 'Principal', 'Admin'];
+  final List<String> _roles = ['Student', 'Parent', 'Faculty', 'HOD', 'Coordinator', 'Principal', 'Admin', 'Incharge'];
   List<String> _branches = [
     'Computer Engineering',
     'Civil Engineering',
@@ -202,7 +202,7 @@ class _SignupScreenState extends State<SignupScreen> {
       }
 
       // 2. Branch Check
-      bool isBranchRequired = ['Student', 'Faculty', 'HOD'].contains(_selectedRole);
+      bool isBranchRequired = ['Student', 'Faculty', 'HOD', 'Incharge'].contains(_selectedRole);
       if (isBranchRequired && _selectedBranch == null) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please select a Branch')));
         return;
@@ -245,13 +245,13 @@ class _SignupScreenState extends State<SignupScreen> {
         }
       }
       
-      bool isDobRequired = ['Student', 'Faculty', 'HOD', 'Coordinator', 'Principal'].contains(_selectedRole);
+      bool isDobRequired = ['Student', 'Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);
       if (isDobRequired && _dobController.text.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Date of Birth')));
         return;
       }
       
-      bool isProfessionalDetailsRequired = ['Faculty', 'HOD', 'Coordinator', 'Principal'].contains(_selectedRole);
+      bool isProfessionalDetailsRequired = ['Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);
       if (isProfessionalDetailsRequired) {
         if (_experienceController.text.isEmpty) {
            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Years of Experience')));
@@ -578,13 +578,13 @@ class _SignupScreenState extends State<SignupScreen> {
     // (Collapsed for brevity, keep existing logic)
     
      // Visibility Logic
-    bool showBranch = ['Student', 'Faculty', 'HOD'].contains(_selectedRole);
+    bool showBranch = ['Student', 'Faculty', 'HOD', 'Incharge'].contains(_selectedRole);
     bool showYear = ['Student'].contains(_selectedRole);
     // bool showSemester = same as showYear
-    bool showDob = ['Student', 'Faculty', 'HOD', 'Coordinator', 'Principal'].contains(_selectedRole);
-    bool showProfessional = ['Faculty', 'HOD', 'Coordinator', 'Principal'].contains(_selectedRole);
-    bool showEmail = ['Student', 'Parent', 'Faculty', 'HOD', 'Coordinator', 'Principal'].contains(_selectedRole);
-    bool showPhone = ['Student', 'Parent', 'Faculty', 'HOD', 'Coordinator', 'Principal'].contains(_selectedRole);
+    bool showDob = ['Student', 'Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);
+    bool showProfessional = ['Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);
+    bool showEmail = ['Student', 'Parent', 'Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);
+    bool showPhone = ['Student', 'Parent', 'Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);
     bool showSection = ['Student'].contains(_selectedRole);
 
     return Column(

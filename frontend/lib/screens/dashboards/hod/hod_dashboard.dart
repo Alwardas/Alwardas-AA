@@ -50,12 +50,17 @@ class _HodDashboardState extends State<HodDashboard> {
   List<dynamic> _absentStudents = [];
   bool _isLoadingAttendance = false;
 
+  // Daily Activity Report
+  Map<String, dynamic>? _dailyReport;
+  bool _isLoadingReport = false;
+
   @override
   void initState() {
     super.initState();
     _startNotificationPolling();
     _setupClassReminders();
     _fetchTodayAttendance();
+    _fetchDailyReport();
   }
 
   @override
@@ -272,6 +277,32 @@ class _HodDashboardState extends State<HodDashboard> {
     }
   }
 
+  Future<void> _fetchDailyReport() async {
+    if (mounted) setState(() => _isLoadingReport = true);
+    try {
+      final user = await AuthService.getUserSession();
+      if (user == null) return;
+      final branch = user['branch'] ?? 'Computer Engineering';
+      final dateStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
+
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/hod/daily-activity-report').replace(queryParameters: {
+        'branch': branch,
+        'date': dateStr,
+      });
+      final res = await http.get(uri);
+
+      if (res.statusCode == 200 && mounted) {
+        setState(() {
+          _dailyReport = json.decode(res.body);
+        });
+      }
+    } catch (e) {
+      debugPrint("Error fetching daily report: $e");
+    } finally {
+      if (mounted) setState(() => _isLoadingReport = false);
+    }
+  }
+
   void _showAbsentList() {
     if (_absentStudents.isEmpty && _absentCount == 0) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("No attendance records for today yet.")));
@@ -440,7 +471,11 @@ class _HodDashboardState extends State<HodDashboard> {
                 children: [
                   // 2. Announcements
                   SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'HOD'),
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 24),
+
+                  // Daily Activity Report Card
+                  _buildDailyActivityCard(textColor, isDark),
+                  const SizedBox(height: 24),
 
 
                   // 3. Quick Access
@@ -821,6 +856,92 @@ class _HodDashboardState extends State<HodDashboard> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildDailyActivityCard(Color textColor, bool isDark) {
+    if (_dailyReport == null) return const SizedBox.shrink();
+
+    final conducted = _dailyReport!['conducted'] ?? 0;
+    final substitute = _dailyReport!['substitute'] ?? 0;
+    final notConducted = _dailyReport!['notConducted'] ?? 0;
+    final total = _dailyReport!['totalClasses'] ?? 0;
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
+          )
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Daily Class Activity",
+                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: textColor),
+              ),
+              Text(
+                DateFormat('MMM dd, yyyy').format(DateTime.now()),
+                style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _buildReportStat("Conducted", conducted.toString(), Colors.green),
+              _buildReportStat("Substitute", substitute.toString(), Colors.orange),
+              _buildReportStat("Missed", notConducted.toString(), Colors.red),
+            ],
+          ),
+          if (total > 0) ...[
+            const SizedBox(height: 20),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: LinearProgressIndicator(
+                value: conducted / total,
+                backgroundColor: Colors.grey.withValues(alpha: 0.1),
+                valueColor: const AlwaysStoppedAnimation<Color>(Colors.green),
+                minHeight: 8,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Center(
+              child: Text(
+                "${((conducted / total) * 100).toStringAsFixed(0)}% Classes Conducted",
+                style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey, fontWeight: FontWeight.w500),
+              ),
+            ),
+          ]
+        ],
+      ),
+    );
+  }
+
+  Widget _buildReportStat(String label, String value, Color color) {
+    return Column(
+      children: [
+        Text(
+          value,
+          style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold, color: color),
+        ),
+        Text(
+          label,
+          style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey, fontWeight: FontWeight.w500),
+        ),
+      ],
     );
   }
 }

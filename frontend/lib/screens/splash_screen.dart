@@ -12,6 +12,7 @@ import 'package:provider/provider.dart';
 import '../core/providers/theme_provider.dart';
 import 'dashboards/admin/admin_dashboard.dart';
 import 'dashboards/coordinator/coordinator_dashboard.dart';
+import 'dashboards/incharge/incharge_dashboard.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -107,6 +108,7 @@ class _SplashScreenState extends State<SplashScreen> {
         case 'Principal': destination = PrincipalDashboard(userData: userData); break;
         case 'Admin': destination = AdminDashboard(userData: userData); break;
         case 'Coordinator': destination = CoordinatorDashboard(userData: userData); break; // Added Coordinator
+        case 'Incharge': destination = InchargeDashboard(userData: userData); break; // Added Incharge
         default: 
            debugPrint("Unknown Role in Session: $role");
            destination = const LoginScreen();
