@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
 import '../../../theme/theme_constants.dart';
+import '../../../widgets/skeleton_loader.dart';
 import 'hod_syllabus_year_selection_screen.dart';
 
 class HodSyllabusManagementScreen extends StatefulWidget {
@@ -67,7 +68,7 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
         ),
         child: SafeArea(
           child: _isLoading 
-            ? const Center(child: CircularProgressIndicator())
+            ? _buildSkeletonList(isDark)
             : _courses.isEmpty
                 ? Center(child: Text("No courses found.", style: GoogleFonts.poppins(color: subTextColor)))
                 : Column(
@@ -137,6 +138,38 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
               ),
             ),
             Icon(Icons.arrow_forward_ios, size: 16, color: textColor.withValues(alpha: 0.5)),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSkeletonList(bool isDark) {
+    return ListView.builder(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      itemCount: 5,
+      itemBuilder: (context, index) => Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.purple.withValues(alpha: 0.1)),
+        ),
+        child: Row(
+          children: [
+            SkeletonLoader(width: 52, height: 52, borderRadius: BorderRadius.circular(26)),
+            const SizedBox(width: 20),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SkeletonLoader(width: 60, height: 14, borderRadius: BorderRadius.circular(4)),
+                  const SizedBox(height: 8),
+                  SkeletonLoader(width: double.infinity, height: 20, borderRadius: BorderRadius.circular(4)),
+                ],
+              ),
+            ),
           ],
         ),
       ),

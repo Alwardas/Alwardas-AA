@@ -8,6 +8,7 @@ import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../data/courses_data.dart';
+import '../../../widgets/skeleton_loader.dart';
 // Keep for reference or remove if unused
 import 'faculty_lesson_plan_screen.dart';
 import '../../../core/theme/app_theme.dart';
@@ -250,7 +251,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
           )
         ),
         child: _loading 
-              ? const Center(child: CircularProgressIndicator())
+              ? _buildSkeletonList(isDark)
               : _facultySubjects.isEmpty
                 ? _buildEmptyState(tint, textColor, subTextColor)
                 : _buildSubjectsList(isDark, textColor, subTextColor, tint),
@@ -342,8 +343,21 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
         final subtitleColor = isDark ? Colors.white70 : Colors.grey[600]!;
         final courseIdColor = const Color(0xFF4B7FFB);
         
-        String statusText = isPending ? "Pending Approval" : "On Track";
-        Color statusColor = isPending ? Colors.orange : const Color(0xFF34C759);
+        String statusText;
+        Color statusColor;
+
+        if (isPending) {
+           statusText = "Pending Approval";
+           statusColor = Colors.orange;
+        } else {
+           statusText = item['progressStatus'] ?? "On Track";
+           switch (statusText) {
+             case "Lagging": statusColor = Colors.red; break;
+             case "Overfast": statusColor = Colors.orangeAccent; break;
+             default: statusColor = const Color(0xFF34C759);
+           }
+        }
+        
         final progress = item['completionPercentage'] ?? 0;
 
         return GestureDetector(
@@ -513,6 +527,51 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
           ),
         );
       },
+    );
+  }
+
+  Widget _buildSkeletonList(bool isDark) {
+    return ListView.builder(
+      padding: const EdgeInsets.fromLTRB(20, 120, 20, 20),
+      itemCount: 4,
+      itemBuilder: (context, index) => Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.all(18),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E1E2C) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                SkeletonLoader(width: 40, height: 13, borderRadius: BorderRadius.circular(4)),
+                const SizedBox(width: 8),
+                SkeletonLoader(width: 100, height: 12, borderRadius: BorderRadius.circular(4)),
+              ],
+            ),
+            const SizedBox(height: 12),
+            SkeletonLoader(width: double.infinity, height: 18, borderRadius: BorderRadius.circular(4)),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                SkeletonLoader(width: 8, height: 8, borderRadius: BorderRadius.circular(4)),
+                const SizedBox(width: 8),
+                SkeletonLoader(width: 80, height: 12, borderRadius: BorderRadius.circular(4)),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(child: SkeletonLoader(width: double.infinity, height: 6, borderRadius: BorderRadius.circular(4))),
+                const SizedBox(width: 12),
+                SkeletonLoader(width: 30, height: 12, borderRadius: BorderRadius.circular(4)),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 

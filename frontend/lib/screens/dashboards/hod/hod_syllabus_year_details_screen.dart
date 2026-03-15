@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
+import '../../../widgets/skeleton_loader.dart';
 import 'hod_syllabus_subjects_screen.dart';
 
 class HodSyllabusYearDetailsScreen extends StatefulWidget {
@@ -135,7 +136,7 @@ class _HodSyllabusYearDetailsScreenState extends State<HodSyllabusYearDetailsScr
                 _buildSectionHeader('Select Section', textColor),
                 const SizedBox(height: 15),
                 _loadingSections 
-                    ? const Center(child: CircularProgressIndicator())
+                    ? _buildSkeletonGrid(isDark)
                     : _sections.isEmpty
                         ? Center(child: Text("No sections found.", style: GoogleFonts.poppins(color: subTextColor)))
                         : GridView.builder(
@@ -230,6 +231,44 @@ class _HodSyllabusYearDetailsScreenState extends State<HodSyllabusYearDetailsScr
             ),
             const SizedBox(width: 10),
             Icon(Icons.arrow_forward_ios, size: 14, color: textColor.withValues(alpha: 0.3)),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSkeletonGrid(bool isDark) {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 1,
+        childAspectRatio: 4,
+        mainAxisSpacing: 12,
+      ),
+      itemCount: 4,
+      itemBuilder: (context, index) => Container(
+        padding: const EdgeInsets.all(15),
+        decoration: BoxDecoration(
+          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.green.withValues(alpha: 0.1)),
+        ),
+        child: Row(
+          children: [
+            SkeletonLoader(width: 44, height: 44, borderRadius: BorderRadius.circular(22)),
+            const SizedBox(width: 15),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SkeletonLoader(width: 80, height: 16, borderRadius: BorderRadius.circular(4)),
+                  const SizedBox(height: 10),
+                  SkeletonLoader(width: double.infinity, height: 4, borderRadius: BorderRadius.circular(2)),
+                ],
+              ),
+            ),
           ],
         ),
       ),

@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
+import '../../../widgets/skeleton_loader.dart';
 import 'hod_syllabus_year_details_screen.dart';
 
 class HodSyllabusYearSelectionScreen extends StatefulWidget {
@@ -93,7 +94,7 @@ class _HodSyllabusYearSelectionScreenState extends State<HodSyllabusYearSelectio
         ),
         child: SafeArea(
           child: _isLoading 
-            ? const Center(child: CircularProgressIndicator())
+            ? _buildSkeletonList(isDark)
             : Column(
                 children: [
                   Padding(
@@ -256,6 +257,66 @@ class _HodSyllabusYearSelectionScreenState extends State<HodSyllabusYearSelectio
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildSkeletonList(bool isDark) {
+    return ListView.builder(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      itemCount: 4,
+      itemBuilder: (context, index) {
+        if (index < 3) {
+          return Container(
+            margin: const EdgeInsets.only(bottom: 15),
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: Colors.blue.withValues(alpha: 0.1)),
+            ),
+            child: Row(
+              children: [
+                SkeletonLoader(width: 52, height: 52, borderRadius: BorderRadius.circular(26)),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SkeletonLoader(width: 100, height: 18, borderRadius: BorderRadius.circular(4)),
+                      const SizedBox(height: 12),
+                      SkeletonLoader(width: double.infinity, height: 8, borderRadius: BorderRadius.circular(4)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        } else {
+          return Container(
+            margin: const EdgeInsets.symmetric(vertical: 20),
+            padding: const EdgeInsets.all(25),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+              borderRadius: BorderRadius.circular(25),
+              border: Border.all(color: Colors.purple.withValues(alpha: 0.2)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SkeletonLoader(width: 200, height: 20, borderRadius: BorderRadius.circular(4)),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SkeletonLoader(width: 80, height: 36, borderRadius: BorderRadius.circular(4)),
+                    SkeletonLoader(width: 100, height: 10, borderRadius: BorderRadius.circular(5)),
+                  ],
+                ),
+              ],
+            ),
+          );
+        }
+      },
     );
   }
 }

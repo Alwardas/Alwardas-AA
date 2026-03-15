@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
+import '../../../widgets/skeleton_loader.dart';
 
 class HodSyllabusLessonTopicsScreen extends StatefulWidget {
   final String subjectId;
@@ -137,7 +138,7 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
         ),
         child: SafeArea(
           child: _isLoading 
-            ? const Center(child: CircularProgressIndicator())
+            ? _buildSkeletonList(isDark)
             : Column(
                 children: [
                    Padding(
@@ -286,6 +287,43 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(20), border: Border.all(color: color.withValues(alpha: 0.3))),
       child: Text(label, style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: color)),
+    );
+  }
+
+  Widget _buildSkeletonList(bool isDark) {
+    return ListView.builder(
+      padding: const EdgeInsets.all(20),
+      itemCount: 6,
+      itemBuilder: (context, index) => Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SkeletonLoader(width: 50, height: 12, borderRadius: BorderRadius.circular(4)),
+                  const SizedBox(height: 8),
+                  SkeletonLoader(width: 200, height: 16, borderRadius: BorderRadius.circular(4)),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      SkeletonLoader(width: 100, height: 28, borderRadius: BorderRadius.circular(8)),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SkeletonLoader(width: 40, height: 40, borderRadius: BorderRadius.circular(20)),
+          ],
+        ),
+      ),
     );
   }
 }

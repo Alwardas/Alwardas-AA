@@ -561,6 +561,7 @@ pub struct FacultySubjectResponse {
     pub subject_id: String,
     #[sqlx(default)]
     pub completion_percentage: i32,
+    pub progress_status: Option<String>,
 }
 
 #[derive(Deserialize)]

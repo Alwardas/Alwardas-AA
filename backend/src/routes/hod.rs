@@ -458,7 +458,7 @@ pub async fn get_section_subjects_progress_handler(
 
 // --- Internal Calculation Helpers ---
 
-async fn calculate_year_progress(pool: &sqlx::PgPool, branch: &str, course_id: &str, year: &str) -> Option<i32> {
+pub async fn calculate_year_progress(pool: &sqlx::PgPool, branch: &str, course_id: &str, year: &str) -> Option<i32> {
     let mut sections: Vec<String> = sqlx::query_scalar("SELECT section_name FROM sections WHERE branch = $1 AND year = $2")
         .bind(branch)
         .bind(year)
@@ -486,7 +486,7 @@ async fn calculate_year_progress(pool: &sqlx::PgPool, branch: &str, course_id: &
     Some((total / sections.len() as f64).round() as i32)
 }
 
-async fn calculate_section_progress(pool: &sqlx::PgPool, branch: &str, course_id: &str, year: &str, section: &str) -> Option<i32> {
+pub async fn calculate_section_progress(pool: &sqlx::PgPool, branch: &str, course_id: &str, year: &str, section: &str) -> Option<i32> {
     #[derive(sqlx::FromRow)]
     struct SubjectIdOnly { id: String }
 
@@ -513,7 +513,7 @@ async fn calculate_section_progress(pool: &sqlx::PgPool, branch: &str, course_id
     Some((total / subjects.len() as f64).round() as i32)
 }
 
-async fn calculate_subject_progress(pool: &sqlx::PgPool, subject_id: &str, section: &str) -> (i32, String) {
+pub async fn calculate_subject_progress(pool: &sqlx::PgPool, subject_id: &str, section: &str) -> (i32, String) {
     let stats = sqlx::query(
         r#"
         SELECT 
@@ -542,7 +542,7 @@ async fn calculate_subject_progress(pool: &sqlx::PgPool, subject_id: &str, secti
         let status = if completed < scheduled {
             "Lagging".to_string()
         } else if completed > scheduled {
-            "Over Fast".to_string()
+            "Overfast".to_string()
         } else {
             "On Track".to_string()
         };

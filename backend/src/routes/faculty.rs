@@ -89,7 +89,16 @@ pub async fn get_faculty_subjects_handler(
         StatusCode::INTERNAL_SERVER_ERROR
     })?;
 
-    Ok(Json(subjects))
+    let mut final_subjects = Vec::new();
+    for mut sub in subjects {
+        let section = sub.section.as_ref().map(|s| s.as_str()).unwrap_or("Section A");
+        let (perc, status) = crate::routes::hod::calculate_subject_progress(&state.pool, &sub.subject_id, section).await;
+        sub.completion_percentage = perc;
+        sub.progress_status = Some(status);
+        final_subjects.push(sub);
+    }
+
+    Ok(Json(final_subjects))
 }
 
 pub async fn add_faculty_subject_handler(

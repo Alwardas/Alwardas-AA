@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
+import '../../../widgets/skeleton_loader.dart';
 import 'hod_syllabus_lesson_topics_screen.dart';
 
 class HodSyllabusSubjectsScreen extends StatefulWidget {
@@ -97,7 +98,7 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
               const SizedBox(height: 10),
               Expanded(
                 child: _isLoading 
-                  ? const Center(child: CircularProgressIndicator())
+                  ? _buildSkeletonList(isDark)
                   : _subjects.isEmpty
                       ? Center(child: Text("No subjects found for this semester.", style: GoogleFonts.poppins(color: subTextColor)))
                       : ListView.builder(
@@ -124,6 +125,7 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
     Color statusColor;
     switch (status) {
       case 'Lagging': statusColor = Colors.red; break;
+      case 'Overfast': 
       case 'Over Fast': statusColor = Colors.orange; break;
       default: statusColor = Colors.green;
     }
@@ -206,6 +208,54 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
               borderRadius: BorderRadius.circular(10),
               minHeight: 8,
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSkeletonList(bool isDark) {
+    return ListView.builder(
+      padding: const EdgeInsets.all(20),
+      itemCount: 4,
+      itemBuilder: (context, index) => Container(
+        margin: const EdgeInsets.only(bottom: 20),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                SkeletonLoader(width: 48, height: 48, borderRadius: BorderRadius.circular(24)),
+                const SizedBox(width: 15),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SkeletonLoader(width: 150, height: 18, borderRadius: BorderRadius.circular(4)),
+                      const SizedBox(height: 8),
+                      SkeletonLoader(width: 80, height: 12, borderRadius: BorderRadius.circular(4)),
+                    ],
+                  ),
+                ),
+                SkeletonLoader(width: 60, height: 20, borderRadius: BorderRadius.circular(10)),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SkeletonLoader(width: 120, height: 13, borderRadius: BorderRadius.circular(4)),
+                SkeletonLoader(width: 40, height: 13, borderRadius: BorderRadius.circular(4)),
+              ],
+            ),
+            const SizedBox(height: 8),
+            SkeletonLoader(width: double.infinity, height: 8, borderRadius: BorderRadius.circular(10)),
           ],
         ),
       ),

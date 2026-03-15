@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
+import '../../../widgets/skeleton_loader.dart';
 
 class FacultyLessonPlanScreen extends StatefulWidget {
   final String subjectId;
@@ -190,7 +191,7 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
         ),
       ),
       body: _loading
-          ? Center(child: CircularProgressIndicator())
+          ? _buildSkeletonList()
           : _data.isEmpty
               ? Center(child: Text("No lesson plan available", style: GoogleFonts.poppins(color: text)))
               : ListView.builder(
@@ -360,6 +361,44 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
                  ],
                ),
             )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSkeletonList() {
+    return ListView.builder(
+      padding: const EdgeInsets.all(20),
+      itemCount: 5,
+      itemBuilder: (context, index) => Container(
+        margin: const EdgeInsets.only(bottom: 20),
+        decoration: BoxDecoration(
+          color: Theme.of(context).brightness == Brightness.dark ? Colors.grey[900] : Colors.white,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              decoration: BoxDecoration(
+                color: Colors.grey.withValues(alpha: 0.05),
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+              ),
+              child: Row(
+                children: [
+                  SkeletonLoader(width: 20, height: 20, borderRadius: BorderRadius.circular(4)),
+                  const SizedBox(width: 12),
+                  SkeletonLoader(width: 80, height: 16, borderRadius: BorderRadius.circular(4)),
+                  const Spacer(),
+                  SkeletonLoader(width: 100, height: 12, borderRadius: BorderRadius.circular(4)),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: SkeletonLoader(width: double.infinity, height: 40, borderRadius: BorderRadius.circular(8)),
+            ),
           ],
         ),
       ),
@@ -577,6 +616,39 @@ class _FeedbackListState extends State<_FeedbackList> {
       }
   }
 
+  Widget _buildSkeletonList() {
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: 3,
+      separatorBuilder: (_, __) => const SizedBox(height: 15),
+      itemBuilder: (_, __) => Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Theme.of(context).cardColor,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SkeletonLoader(width: 60, height: 12, borderRadius: BorderRadius.circular(4)),
+                SkeletonLoader(width: 80, height: 10, borderRadius: BorderRadius.circular(4)),
+              ],
+            ),
+            const SizedBox(height: 12),
+            SkeletonLoader(width: double.infinity, height: 14, borderRadius: BorderRadius.circular(4)),
+            const SizedBox(height: 6),
+            SkeletonLoader(width: 200, height: 14, borderRadius: BorderRadius.circular(4)),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -591,7 +663,7 @@ class _FeedbackListState extends State<_FeedbackList> {
            
            Expanded(
              child: _isLoading 
-                ? const Center(child: CircularProgressIndicator())
+                ? _buildSkeletonList()
                 : _error != null 
                     ? Center(child: Text(_error!))
                     : _feedbacks.isEmpty
