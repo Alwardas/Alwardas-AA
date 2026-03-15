@@ -1,6 +1,7 @@
 pub mod admin;
 pub mod faculty;
 pub mod student;
+pub mod incharge;
 pub mod parent;
 pub mod principal;
 pub mod coordinator;
@@ -210,7 +211,7 @@ pub async fn signup_handler(
                 } else if payload.role == "Principal" {
                     // Send to Coordinator
                     query_builder.bind(None::<String>).bind("UNREAD").bind(Some("COORDINATOR_RECIPIENT"))
-                } else if payload.role == "Coordinator" {
+                } else if payload.role == "Coordinator" || payload.role == "Incharge" {
                     // Send to Principal
                     query_builder.bind(None::<String>).bind("UNREAD").bind(Some("PRINCIPAL_RECIPIENT"))
                 } else {
@@ -690,7 +691,7 @@ pub async fn get_notifications_handler(
             "Principal" => {
                 conditions.push("(recipient_id = 'PRINCIPAL_RECIPIENT' OR (recipient_id IS NULL AND branch IS NULL))".to_string());
             },
-            "Coordinator" => {
+            "Coordinator" | "Incharge" => {
                 conditions.push("(recipient_id = 'COORDINATOR_RECIPIENT' OR (recipient_id IS NULL AND branch IS NULL))".to_string());
             },
             "Admin" => {

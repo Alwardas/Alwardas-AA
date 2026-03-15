@@ -281,6 +281,27 @@ async fn main() {
         )
     ").execute(&pool).await.err();
 
+    // CLASS PERIOD STATUS TABLE (Smart Timetable Tracking)
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS class_period_status (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            branch TEXT NOT NULL,
+            year TEXT NOT NULL,
+            section TEXT NOT NULL,
+            day TEXT NOT NULL,
+            period_index INT NOT NULL,
+            status_date DATE NOT NULL DEFAULT CURRENT_DATE,
+            original_subject TEXT NOT NULL,
+            original_faculty TEXT NOT NULL,
+            actual_subject TEXT NOT NULL,
+            actual_faculty TEXT NOT NULL,
+            status TEXT NOT NULL, -- 'conducted', 'substitute', 'not_conducted'
+            updated_by UUID REFERENCES users(id),
+            updated_at TIMESTAMPTZ DEFAULT NOW(),
+            UNIQUE(branch, year, section, day, period_index, status_date)
+        )
+    ").execute(&pool).await.err();
+
     // LESSON TOPICS TABLE
     let _ = sqlx::query("
         CREATE TABLE IF NOT EXISTS lesson_topics (
@@ -501,6 +522,10 @@ async fn main() {
         .route("/api/hod/syllabus/branch-progress", get(hod::get_branch_progress_handler))
         .route("/api/hod/syllabus/year-sections-progress", get(hod::get_year_sections_progress_handler))
         .route("/api/hod/syllabus/section-subjects-progress", get(hod::get_section_subjects_progress_handler))
+        .route("/api/incharge/timetable-lookup", get(incharge::incharge_timetable_lookup_handler))
+        .route("/api/incharge/update-status", post(incharge::update_class_status_handler))
+        .route("/api/incharge/class-status", get(incharge::get_section_class_status_handler))
+        .route("/api/hod/daily-activity-report", get(incharge::get_daily_activity_report_handler))
         .with_state(AppState { pool })
         .fallback(move |req: axum::extract::Request| {
             let mut grpc_service = grpc_service.clone();

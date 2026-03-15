@@ -1015,3 +1015,67 @@ pub struct SubjectProgressResponse {
     pub percentage: i32,
     pub status: String,
 }
+
+// --- Incharge Smart Timetable Tracking ---
+
+#[derive(Deserialize)]
+pub struct InchargeTimetableLookupQuery {
+    pub branch: String,
+    pub year: String,
+    pub section: String,
+    pub day: String,
+    pub period_index: i32,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct UpdateClassStatusRequest {
+    pub branch: String,
+    pub year: String,
+    pub section: String,
+    pub day: String,
+    pub period_index: i32,
+    pub status_date: String, // YYYY-MM-DD
+    pub original_subject: String,
+    pub original_faculty: String,
+    pub actual_subject: String,
+    pub actual_faculty: String,
+    pub status: String, // 'conducted', 'substitute', 'not_conducted'
+    pub updated_by: Uuid,
+}
+
+#[derive(Serialize, FromRow, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct ClassPeriodStatus {
+    pub id: Uuid,
+    pub branch: String,
+    pub year: String,
+    pub section: String,
+    pub day: String,
+    pub period_index: i32,
+    pub status_date: chrono::NaiveDate,
+    pub original_subject: String,
+    pub original_faculty: String,
+    pub actual_subject: String,
+    pub actual_faculty: String,
+    pub status: String,
+    pub updated_by: Option<Uuid>,
+    pub updated_at: DateTime<Utc>,
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct DailyClassActivityReport {
+    pub day: String,
+    pub date: String,
+    pub total_classes: i64,
+    pub conducted: i64,
+    pub substitute: i64,
+    pub not_conducted: i64,
+}
+
+#[derive(Deserialize)]
+pub struct DailyReportQuery {
+    pub branch: String,
+    pub date: String,
+}
