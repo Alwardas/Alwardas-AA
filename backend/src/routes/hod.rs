@@ -301,6 +301,7 @@ pub async fn get_master_timetable_handler(
 // --- Syllabus Progress System ---
 
 #[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct BranchProgressQuery {
     pub branch: String,
     pub course_id: String,
@@ -335,6 +336,7 @@ pub async fn get_branch_progress_handler(
 }
 
 #[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct YearSectionsProgressQuery {
     pub branch: String,
     pub year: String,
@@ -381,6 +383,7 @@ pub async fn get_year_sections_progress_handler(
 }
 
 #[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct SectionSubjectsProgressQuery {
     pub branch: String,
     pub year: String,
