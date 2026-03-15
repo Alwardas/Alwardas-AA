@@ -289,6 +289,7 @@ async fn main() {
     let _ = sqlx::query("ALTER TABLE issues RENAME COLUMN responded_by TO assigned_to").execute(&pool).await;
 
     sqlx::query("
+    
         CREATE TABLE IF NOT EXISTS issues (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
             title VARCHAR(255) NOT NULL,
@@ -459,6 +460,9 @@ async fn main() {
         .route("/api/hod/subjects", get(hod::get_hod_subjects_handler))
         .route("/api/hod/course-subjects", post(hod::add_course_subject_handler).get(hod::get_added_course_subjects_handler))
         .route("/api/hod/master-timetable", get(hod::get_master_timetable_handler))
+        .route("/api/hod/syllabus/branch-progress", get(hod::get_branch_progress_handler))
+        .route("/api/hod/syllabus/year-sections-progress", get(hod::get_year_sections_progress_handler))
+        .route("/api/hod/syllabus/section-subjects-progress", get(hod::get_section_subjects_progress_handler))
         .with_state(AppState { pool })
         .fallback(move |req: axum::extract::Request| {
             let mut grpc_service = grpc_service.clone();

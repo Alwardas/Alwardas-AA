@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import '../../../core/providers/theme_provider.dart';
+import '../../../core/api_constants.dart';
 import 'hod_syllabus_year_details_screen.dart';
 
-class HodSyllabusYearSelectionScreen extends StatelessWidget {
+class HodSyllabusYearSelectionScreen extends StatefulWidget {
   final String courseId;
   final String courseName;
   final Map<String, dynamic> userData;
@@ -15,6 +18,51 @@ class HodSyllabusYearSelectionScreen extends StatelessWidget {
     required this.courseName,
     required this.userData,
   });
+
+  @override
+  State<HodSyllabusYearSelectionScreen> createState() => _HodSyllabusYearSelectionScreenState();
+}
+
+class _HodSyllabusYearSelectionScreenState extends State<HodSyllabusYearSelectionScreen> {
+  bool _isLoading = true;
+  Map<String, int> _yearProgress = {};
+  int _overallPercentage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchProgress();
+  }
+
+  Future<void> _fetchProgress() async {
+    final branch = widget.userData['branch'] ?? 'Computer Engineering';
+    try {
+      final response = await http.get(Uri.parse(
+        '${ApiConstants.baseUrl}/api/hod/syllabus/branch-progress?branch=${Uri.encodeComponent(branch)}&courseId=${Uri.encodeComponent(widget.courseId)}'
+      ));
+      
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        final List<dynamic> yearsData = data['years'];
+        
+        Map<String, int> progressMap = {};
+        for (var y in yearsData) {
+          progressMap[y['year']] = (y['percentage'] as num).toInt();
+        }
+
+        setState(() {
+          _yearProgress = progressMap;
+          _overallPercentage = (data['overallPercentage'] as num).toInt();
+          _isLoading = false;
+        });
+      } else {
+        setState(() => _isLoading = false);
+      }
+    } catch (e) {
+      debugPrint("Error fetching progress: $e");
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,53 +92,58 @@ class HodSyllabusYearSelectionScreen extends StatelessWidget {
           gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: SafeArea(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  children: [
-                    Text(courseName, style: GoogleFonts.poppins(fontSize: 16, color: textColor.withValues(alpha: 0.7))),
-                    const SizedBox(height: 10),
-                    Text("Select Academic Year", style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold, color: textColor)),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: GridView.builder(
-                  padding: const EdgeInsets.all(20),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1,
-                    childAspectRatio: 3,
-                    mainAxisSpacing: 15,
+          child: _isLoading 
+            ? const Center(child: CircularProgressIndicator())
+            : Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        Text(widget.courseName, style: GoogleFonts.poppins(fontSize: 16, color: textColor.withValues(alpha: 0.7))),
+                        const SizedBox(height: 10),
+                        Text("Select Academic Year", style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold, color: textColor)),
+                      ],
+                    ),
                   ),
-                  itemCount: years.length,
-                  itemBuilder: (context, index) {
-                    final year = years[index];
-                    return _buildYearCard(context, year, isDark, textColor);
-                  },
-                ),
+                  Expanded(
+                    child: ListView.builder(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      itemCount: years.length + 1, // +1 for Overall Branch
+                      itemBuilder: (context, index) {
+                        if (index < years.length) {
+                          final year = years[index];
+                          final label = year['label'] as String;
+                          final progress = _yearProgress[label] ?? 0;
+                          return _buildYearCard(context, year, progress, isDark, textColor);
+                        } else {
+                          // Overall Branch Card
+                          return _buildOverallCard(context, isDark, textColor);
+                        }
+                      },
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
         ),
       ),
     );
   }
 
-  Widget _buildYearCard(BuildContext context, Map<String, dynamic> year, bool isDark, Color textColor) {
+  Widget _buildYearCard(BuildContext context, Map<String, dynamic> year, int progress, bool isDark, Color textColor) {
     final cardColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white;
 
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusYearDetailsScreen(
-          courseId: courseId,
-          courseName: courseName,
+          courseId: widget.courseId,
+          courseName: widget.courseName,
           year: year['label'],
-          userData: userData,
+          userData: widget.userData,
         )));
       },
       child: Container(
+        margin: const EdgeInsets.only(bottom: 15),
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: cardColor,
@@ -108,15 +161,102 @@ class HodSyllabusYearSelectionScreen extends StatelessWidget {
               child: Icon(year['icon'] as IconData, color: Colors.blue, size: 28),
             ),
             const SizedBox(width: 20),
-            Text(
-              year['label'] as String,
-              style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   Text(
+                    year['label'] as String,
+                    style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
+                  ),
+                  const SizedBox(height: 4),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: LinearProgressIndicator(
+                          value: progress / 100,
+                          backgroundColor: Colors.blue.withValues(alpha: 0.1),
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(10),
+                          minHeight: 6,
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Text("$progress%", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            const Spacer(),
+            const SizedBox(width: 10),
             Icon(Icons.arrow_forward_ios, size: 16, color: textColor.withValues(alpha: 0.5)),
           ],
         ),
       ),
     );
   }
+
+  Widget _buildOverallCard(BuildContext context, bool isDark, Color textColor) {
+    final cardColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white;
+
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.all(25),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.purple, Colors.purple.shade700],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(25),
+        boxShadow: [
+          BoxShadow(color: Colors.purple.withValues(alpha: 0.3), blurRadius: 15, offset: const Offset(0, 8))
+        ]
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(12)),
+                child: const Icon(Icons.analytics, color: Colors.white, size: 24),
+              ),
+              const SizedBox(width: 15),
+              Text(
+                "Overall Branch Progress",
+                style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("$_overallPercentage%", style: GoogleFonts.poppins(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.white)),
+              SizedBox(
+                width: 100,
+                height: 10,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: LinearProgressIndicator(
+                    value: _overallPercentage / 100,
+                    backgroundColor: Colors.white.withValues(alpha: 0.2),
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 5),
+          Text(
+            "Average of all academic years",
+            style: GoogleFonts.poppins(fontSize: 12, color: Colors.white.withValues(alpha: 0.8)),
+          ),
+        ],
+      ),
+    );
+  }
 }
+

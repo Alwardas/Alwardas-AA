@@ -8,8 +8,13 @@ use crate::models::AppState;
 use uuid::Uuid;
 use serde_json::json;
 use sqlx::{Row, Postgres};
-use crate::models::{MasterTimetableQuery, MasterTimetableResponse, MasterTimetableRow, FacultyClash, TimetableEntry, normalize_branch};
+use crate::models::{
+    MasterTimetableQuery, MasterTimetableResponse, MasterTimetableRow, FacultyClash, 
+    TimetableEntry, normalize_branch, BranchProgressResponse, YearProgressResponse,
+    SectionProgressResponse, SubjectProgressResponse
+};
 use std::collections::HashMap;
+use chrono::Utc;
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -291,4 +296,197 @@ pub async fn get_master_timetable_handler(
         lab_rows,
         faculty_clashes,
     }))
+}
+
+// --- Syllabus Progress System ---
+
+#[derive(Deserialize)]
+pub struct BranchProgressQuery {
+    pub branch: String,
+    pub course_id: String,
+}
+
+pub async fn get_branch_progress_handler(
+    State(data): State<AppState>,
+    Query(params): Query<BranchProgressQuery>,
+) -> Result<Json<BranchProgressResponse>, StatusCode> {
+    let branch_norm = normalize_branch(&params.branch);
+    let years = vec!["1st Year", "2nd Year", "3rd Year"];
+    let mut year_responses = Vec::new();
+    let mut total_avg = 0.0;
+
+    for year in years {
+        // Average progress of sections in this year
+        let progress = calculate_year_progress(&data.pool, &branch_norm, &params.course_id, year).await.unwrap_or(0);
+        year_responses.push(YearProgressResponse {
+            year: year.to_string(),
+            percentage: progress,
+        });
+        total_avg += progress as f64;
+    }
+
+    let overall = (total_avg / 3.0).round() as i32;
+
+    Ok(Json(BranchProgressResponse {
+        branch: branch_norm,
+        years: year_responses,
+        overall_percentage: overall,
+    }))
+}
+
+#[derive(Deserialize)]
+pub struct YearSectionsProgressQuery {
+    pub branch: String,
+    pub year: String,
+    pub course_id: String,
+}
+
+pub async fn get_year_sections_progress_handler(
+    State(data): State<AppState>,
+    Query(params): Query<YearSectionsProgressQuery>,
+) -> Result<Json<Vec<SectionProgressResponse>>, StatusCode> {
+    let branch_norm = normalize_branch(&params.branch);
+    
+    // Get sections for this branch/year
+    let sections: Vec<String> = sqlx::query_scalar("SELECT section_name FROM sections WHERE branch = $1 AND year = $2")
+        .bind(&branch_norm)
+        .bind(&params.year)
+        .fetch_all(&data.pool)
+        .await
+        .unwrap_or_default();
+
+    let mut responses = Vec::new();
+    for section in sections {
+        let progress = calculate_section_progress(&data.pool, &branch_norm, &params.course_id, &params.year, &section).await.unwrap_or(0);
+        responses.push(SectionProgressResponse {
+            section_name: section,
+            percentage: progress,
+        });
+    }
+
+    Ok(Json(responses))
+}
+
+#[derive(Deserialize)]
+pub struct SectionSubjectsProgressQuery {
+    pub branch: String,
+    pub year: String,
+    pub section: String,
+    pub course_id: String,
+}
+
+pub async fn get_section_subjects_progress_handler(
+    State(data): State<AppState>,
+    Query(params): Query<SectionSubjectsProgressQuery>,
+) -> Result<Json<Vec<SubjectProgressResponse>>, StatusCode> {
+    let branch_norm = normalize_branch(&params.branch);
+    
+    let subjects = sqlx::query!(
+        "SELECT id, name FROM subjects WHERE branch = $1 AND (course_id = $2 OR course_id IS NULL) AND (semester LIKE $3 OR semester LIKE $4 OR semester LIKE $5)",
+        branch_norm,
+        params.course_id,
+        format!("{}%", params.year),
+        if params.year == "1st Year" { "1st Semester%" } else if params.year == "2nd Year" { "3rd Semester%" } else { "5th Semester%" },
+        if params.year == "1st Year" { "2nd Semester%" } else if params.year == "2nd Year" { "4th Semester%" } else { "6th Semester%" }
+    )
+    .fetch_all(&data.pool)
+    .await
+    .unwrap_or_default();
+
+    let mut responses = Vec::new();
+    for sub in subjects {
+        let (progress, status) = calculate_subject_progress(&data.pool, &sub.id, &params.section).await;
+        responses.push(SubjectProgressResponse {
+            subject_id: sub.id,
+            subject_name: sub.name,
+            percentage: progress,
+            status,
+        });
+    }
+
+    Ok(Json(responses))
+}
+
+// --- Internal Calculation Helpers ---
+
+async fn calculate_year_progress(pool: &sqlx::PgPool, branch: &str, course_id: &str, year: &str) -> Option<i32> {
+    let sections: Vec<String> = sqlx::query_scalar("SELECT section_name FROM sections WHERE branch = $1 AND year = $2")
+        .bind(branch)
+        .bind(year)
+        .fetch_all(pool)
+        .await
+        .unwrap_or_default();
+
+    if sections.is_empty() { return Some(0); }
+
+    let mut total = 0.0;
+    for section in &sections {
+        total += calculate_section_progress(pool, branch, course_id, year, section).await.unwrap_or(0) as f64;
+    }
+
+    Some((total / sections.len() as f64).round() as i32)
+}
+
+async fn calculate_section_progress(pool: &sqlx::PgPool, branch: &str, course_id: &str, year: &str, section: &str) -> Option<i32> {
+    let subjects = sqlx::query!(
+        "SELECT id FROM subjects WHERE branch = $1 AND (course_id = $2 OR course_id IS NULL) AND (semester LIKE $3 OR semester LIKE $4 OR semester LIKE $5)",
+        branch,
+        course_id,
+        format!("{}%", year),
+        if year == "1st Year" { "1st Semester%" } else if year == "2nd Year" { "3rd Semester%" } else { "5th Semester%" },
+        if year == "1st Year" { "2nd Semester%" } else if year == "2nd Year" { "4th Semester%" } else { "6th Semester%" }
+    )
+    .fetch_all(pool)
+    .await
+    .unwrap_or_default();
+
+    if subjects.is_empty() { return Some(0); }
+
+    let mut total = 0.0;
+    for sub in &subjects {
+        let (progress, _) = calculate_subject_progress(pool, &sub.id, section).await;
+        total += progress as f64;
+    }
+
+    Some((total / subjects.len() as f64).round() as i32)
+}
+
+async fn calculate_subject_progress(pool: &sqlx::PgPool, subject_id: &str, section: &str) -> (i32, String) {
+    let stats = sqlx::query!(
+        r#"
+        SELECT 
+            COUNT(lpi.id) as total_topics,
+            COUNT(CASE WHEN lp.completed = TRUE THEN 1 END) as completed_topics,
+            COUNT(CASE WHEN ls.schedule_date <= NOW() THEN 1 END) as scheduled_topics
+        FROM lesson_plan_items lpi
+        LEFT JOIN lesson_plan_progress lp ON lpi.id = lp.item_id AND lp.section = $2
+        LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id AND ls.section = $2
+        WHERE lpi.subject_id = $1
+        "#,
+        subject_id,
+        section
+    )
+    .fetch_one(pool)
+    .await
+    .ok();
+
+    if let Some(s) = stats {
+        let total = s.total_topics.unwrap_or(0);
+        let completed = s.completed_topics.unwrap_or(0);
+        let scheduled = s.scheduled_topics.unwrap_or(0);
+
+        let percentage = if total > 0 { (completed as f64 * 100.0 / total as f64).round() as i32 } else { 0 };
+        
+        let status = if completed < scheduled {
+            "Lagging".to_string()
+        } else if completed > scheduled {
+            "Over Fast".to_string()
+        } else {
+            "On Track".to_string()
+        };
+
+        (percentage, status)
+    } else {
+        (0, "On Track".to_string())
+    }
 }

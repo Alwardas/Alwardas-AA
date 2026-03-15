@@ -27,7 +27,7 @@ class HodSyllabusYearDetailsScreen extends StatefulWidget {
 
 class _HodSyllabusYearDetailsScreenState extends State<HodSyllabusYearDetailsScreen> {
   bool _loadingSections = true;
-  List<String> _sections = [];
+  List<Map<String, dynamic>> _sections = [];
   String? _selectedSemester;
 
   @override
@@ -54,12 +54,12 @@ class _HodSyllabusYearDetailsScreenState extends State<HodSyllabusYearDetailsScr
     final branch = widget.userData['branch'] ?? 'Computer Engineering';
     try {
       final response = await http.get(Uri.parse(
-        '${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}'
+        '${ApiConstants.baseUrl}/api/hod/syllabus/year-sections-progress?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&courseId=${Uri.encodeComponent(widget.courseId)}'
       ));
       if (response.statusCode == 200) {
         final List<dynamic> fetched = json.decode(response.body);
         setState(() {
-          _sections = fetched.map((e) => e.toString()).toList();
+          _sections = fetched.map((e) => e as Map<String, dynamic>).toList();
           _loadingSections = false;
         });
       } else {
@@ -142,15 +142,14 @@ class _HodSyllabusYearDetailsScreenState extends State<HodSyllabusYearDetailsScr
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
                             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              childAspectRatio: 2.2,
-                              crossAxisSpacing: 12,
+                              crossAxisCount: 1,
+                              childAspectRatio: 4,
                               mainAxisSpacing: 12,
                             ),
                             itemCount: _sections.length,
                             itemBuilder: (context, index) {
-                              final sectionName = _sections[index];
-                              return _buildSectionCard(sectionName, isDark, textColor);
+                              final section = _sections[index];
+                              return _buildSectionCard(section, isDark, textColor);
                             },
                           ),
               ],
@@ -165,7 +164,9 @@ class _HodSyllabusYearDetailsScreenState extends State<HodSyllabusYearDetailsScr
     return Text(title, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor));
   }
 
-  Widget _buildSectionCard(String sectionName, bool isDark, Color textColor) {
+  Widget _buildSectionCard(Map<String, dynamic> section, bool isDark, Color textColor) {
+    final sectionName = section['sectionName'];
+    final percentage = (section['percentage'] as num).toInt();
     final cardColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white;
 
     return GestureDetector(
@@ -183,10 +184,10 @@ class _HodSyllabusYearDetailsScreenState extends State<HodSyllabusYearDetailsScr
         )));
       },
       child: Container(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
           color: cardColor,
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(20),
           border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
           boxShadow: [
             BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 5, offset: const Offset(0, 3))
@@ -195,21 +196,44 @@ class _HodSyllabusYearDetailsScreenState extends State<HodSyllabusYearDetailsScr
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), shape: BoxShape.circle),
-              child: const Icon(Icons.class_, color: Colors.green, size: 18),
+              child: const Icon(Icons.class_, color: Colors.green, size: 24),
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: 15),
             Expanded(
-              child: Text(
-                sectionName,
-                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 13),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   Text(
+                    sectionName,
+                    style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 16),
+                  ),
+                   Row(
+                    children: [
+                      Expanded(
+                        child: LinearProgressIndicator(
+                          value: percentage / 100,
+                          backgroundColor: Colors.green.withValues(alpha: 0.1),
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(10),
+                          minHeight: 4,
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Text("$percentage%", style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.green)),
+                    ],
+                  ),
+                ],
               ),
             ),
-            Icon(Icons.arrow_forward_ios, size: 10, color: textColor.withValues(alpha: 0.3)),
+            const SizedBox(width: 10),
+            Icon(Icons.arrow_forward_ios, size: 14, color: textColor.withValues(alpha: 0.3)),
           ],
         ),
       ),
     );
   }
 }
+

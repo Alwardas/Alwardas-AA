@@ -40,7 +40,7 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
   Future<void> _fetchSubjects() async {
     final branch = widget.userData['branch'] ?? 'Computer Engineering';
     final url = Uri.parse(
-      '${ApiConstants.baseUrl}/api/faculty/hod-semester-subjects?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&semester=${Uri.encodeComponent(widget.semester)}'
+      '${ApiConstants.baseUrl}/api/hod/syllabus/section-subjects-progress?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&section=${Uri.encodeComponent(widget.section)}&courseId=${Uri.encodeComponent(widget.courseId)}'
     );
     
     try {
@@ -82,18 +82,35 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
           gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: SafeArea(
-          child: _isLoading 
-            ? const Center(child: CircularProgressIndicator())
-            : _subjects.isEmpty
-                ? Center(child: Text("No subjects found for this semester.", style: GoogleFonts.poppins(color: subTextColor)))
-                : ListView.builder(
-                    padding: const EdgeInsets.all(20),
-                    itemCount: _subjects.length,
-                    itemBuilder: (context, index) {
-                      final subject = _subjects[index];
-                      return _buildSubjectCard(subject, isDark, textColor, subTextColor);
-                    },
-                  ),
+          child: Column(
+            children: [
+               Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  children: [
+                    const Icon(Icons.location_on, size: 16, color: Colors.orange),
+                    const SizedBox(width: 5),
+                    Text("${widget.year} - ${widget.section}", style: GoogleFonts.poppins(fontSize: 14, color: textColor.withValues(alpha: 0.7))),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              Expanded(
+                child: _isLoading 
+                  ? const Center(child: CircularProgressIndicator())
+                  : _subjects.isEmpty
+                      ? Center(child: Text("No subjects found for this semester.", style: GoogleFonts.poppins(color: subTextColor)))
+                      : ListView.builder(
+                          padding: const EdgeInsets.all(20),
+                          itemCount: _subjects.length,
+                          itemBuilder: (context, index) {
+                            final subject = _subjects[index];
+                            return _buildSubjectCard(subject, isDark, textColor, subTextColor);
+                          },
+                        ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -101,11 +118,20 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
 
   Widget _buildSubjectCard(dynamic subject, bool isDark, Color textColor, Color subTextColor) {
     final cardColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white;
+    final status = subject['status'] ?? 'On Track';
+    final percentage = (subject['percentage'] as num).toInt();
+
+    Color statusColor;
+    switch (status) {
+      case 'Lagging': statusColor = Colors.red; break;
+      case 'Over Fast': statusColor = Colors.orange; break;
+      default: statusColor = Colors.green;
+    }
 
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusLessonTopicsScreen(
-          subjectId: subject['id'],
+          subjectId: subject['subjectId'],
           subjectName: subject['subjectName'],
           year: widget.year,
           semester: widget.semester,
@@ -114,44 +140,76 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
         )));
       },
       child: Container(
-        margin: const EdgeInsets.only(bottom: 15),
+        margin: const EdgeInsets.only(bottom: 20),
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: cardColor,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
+          border: Border.all(color: statusColor.withValues(alpha: 0.3)),
           boxShadow: [
             BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
           ]
         ),
-        child: Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(color: Colors.orange.withValues(alpha: 0.1), shape: BoxShape.circle),
-              child: const Icon(Icons.book, color: Colors.orange, size: 24),
-            ),
-            const SizedBox(width: 20),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "${subject['id']} - ${subject['subjectName']}",
-                    style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 16),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(color: statusColor.withValues(alpha: 0.1), shape: BoxShape.circle),
+                  child: Icon(Icons.book, color: statusColor, size: 24),
+                ),
+                const SizedBox(width: 15),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        subject['subjectName'],
+                        style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 18),
+                      ),
+                      Text(
+                        "Code: ${subject['subjectId']}",
+                        style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 4),
-                  Text(
-                    "Assign lesson plan schedule",
-                    style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: statusColor.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                ],
-              ),
+                  child: Text(
+                    status,
+                    style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: statusColor),
+                  ),
+                ),
+              ],
             ),
-            Icon(Icons.calendar_month, color: Colors.orange.withValues(alpha: 0.7), size: 20),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Completion Progress", style: GoogleFonts.poppins(fontSize: 13, color: subTextColor)),
+                Text("$percentage%", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: textColor)),
+              ],
+            ),
+            const SizedBox(height: 8),
+            LinearProgressIndicator(
+              value: percentage / 100,
+              backgroundColor: statusColor.withValues(alpha: 0.1),
+              color: statusColor,
+              borderRadius: BorderRadius.circular(10),
+              minHeight: 8,
+            ),
           ],
         ),
       ),
     );
   }
 }
+

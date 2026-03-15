@@ -973,3 +973,41 @@ pub struct ParentRequestQuery {
     pub branch: Option<String>,
 }
 
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct SyllabusProgressSummary {
+    pub percentage: i32,
+    pub status: String, // "On Track", "Lagging", "Over Fast"
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct SectionProgressResponse {
+    pub section_name: String,
+    pub percentage: i32,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct YearProgressResponse {
+    pub year: String,
+    pub percentage: i32,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct BranchProgressResponse {
+    pub branch: String,
+    pub years: Vec<YearProgressResponse>,
+    pub overall_percentage: i32,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct SubjectProgressResponse {
+    pub subject_id: String,
+    pub subject_name: String,
+    pub percentage: i32,
+    pub status: String,
+}
