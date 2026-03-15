@@ -202,7 +202,7 @@ class _SignupScreenState extends State<SignupScreen> {
       }
 
       // 2. Branch Check
-      bool isBranchRequired = ['Student', 'Faculty', 'HOD', 'Incharge'].contains(_selectedRole);
+      bool isBranchRequired = ['Student', 'Faculty', 'HOD'].contains(_selectedRole);
       if (isBranchRequired && _selectedBranch == null) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please select a Branch')));
         return;
@@ -229,7 +229,7 @@ class _SignupScreenState extends State<SignupScreen> {
         return;
       }
       
-      bool isPhoneRequired = ['Student', 'Parent', 'Faculty', 'HOD', 'Coordinator', 'Principal'].contains(_selectedRole);
+      bool isPhoneRequired = ['Student', 'Parent', 'Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);
       if (isPhoneRequired) {
         if (_phoneController.text.isEmpty) {
            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Phone Number')));
@@ -237,7 +237,7 @@ class _SignupScreenState extends State<SignupScreen> {
         }
       }
       
-      bool isEmailRequired = ['Student', 'Parent', 'Faculty', 'HOD', 'Coordinator', 'Principal'].contains(_selectedRole);
+      bool isEmailRequired = ['Student', 'Parent', 'Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);
       if (isEmailRequired) {
         if (_emailController.text.isEmpty) {
            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Email ID')));
@@ -578,7 +578,7 @@ class _SignupScreenState extends State<SignupScreen> {
     // (Collapsed for brevity, keep existing logic)
     
      // Visibility Logic
-    bool showBranch = ['Student', 'Faculty', 'HOD', 'Incharge'].contains(_selectedRole);
+    bool showBranch = ['Student', 'Faculty', 'HOD'].contains(_selectedRole);
     bool showYear = ['Student'].contains(_selectedRole);
     // bool showSemester = same as showYear
     bool showDob = ['Student', 'Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);

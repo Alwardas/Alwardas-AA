@@ -8,6 +8,11 @@ import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../widgets/custom_modal_dropdown.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:path_provider/path_provider.dart';
+import 'package:open_filex/open_filex.dart';
+import 'dart:io';
 
 class InchargeTrackingScreen extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -126,6 +131,9 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
     setState(() => _isLoading = true);
     try {
       final periodIndex = _periods.indexOf(_selectedPeriod!);
+      final actualSub = subSubject ?? _originalSubject;
+      final actualFac = subFaculty ?? _originalFaculty;
+      
       final payload = {
         "branch": _selectedBranch,
         "year": _selectedYear,
@@ -135,8 +143,8 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
         "statusDate": DateFormat('yyyy-MM-dd').format(DateTime.now()),
         "originalSubject": _originalSubject,
         "originalFaculty": _originalFaculty,
-        "actualSubject": subSubject ?? _originalSubject,
-        "actualFaculty": subFaculty ?? _originalFaculty,
+        "actualSubject": actualSub,
+        "actualFaculty": actualFac,
         "status": status,
         "updatedBy": user['id'],
       };
@@ -148,18 +156,234 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
       );
 
       if (response.statusCode == 200) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text("Class status marked as ${status.replaceAll('_', ' ')}"),
-          backgroundColor: status == 'conducted' ? Colors.green : (status == 'substitute' ? Colors.orange : Colors.red),
-        ));
+        if (mounted) {
+           _showConfirmationDialog(
+              status: status,
+              actualFaculty: actualFac,
+           );
+        }
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to update status")));
+        if (mounted) {
+           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to update status")));
+        }
       }
     } catch (e) {
       debugPrint("Update Error: $e");
     } finally {
-      setState(() => _isLoading = false);
+      if (mounted) setState(() => _isLoading = false);
     }
+  }
+
+  Future<void> _generateDailyReportPDF() async {
+    if (_selectedBranch == null) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please select a branch first")));
+      return;
+    }
+
+    setState(() => _isLoading = true);
+    try {
+      final dateStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/incharge/branch-daily-detail-report?branch=$_selectedBranch&date=$dateStr');
+      final response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        
+        // Group by Class (Year + Section)
+        Map<String, List<dynamic>> grouped = {};
+        for (var item in data) {
+           String key = "${item['year']} - ${item['section']}";
+           grouped.putIfAbsent(key, () => List.filled(8, null, growable: false));
+           int idx = item['periodIndex'];
+           if (idx >= 0 && idx < 8) {
+              grouped[key]![idx] = item;
+           }
+        }
+
+        final pdf = pw.Document();
+        pdf.addPage(
+          pw.MultiPage(
+            pageFormat: PdfPageFormat.a4.landscape,
+            margin: const pw.EdgeInsets.all(32),
+            build: (pw.Context context) {
+              return [
+                pw.Header(
+                  level: 0,
+                  child: pw.Column(
+                    crossAxisAlignment: pw.CrossAxisAlignment.start,
+                    children: [
+                       pw.Text("ALWARDAS POLYTECHNIC", style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+                       pw.Text("BRANCH: ${_selectedBranch!.toUpperCase()}", style: pw.TextStyle(fontSize: 14, fontWeight: pw.FontWeight.bold)),
+                       pw.SizedBox(height: 5),
+                       pw.Row(
+                         mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                         children: [
+                           pw.Text("Daily Class Execution Report", style: pw.TextStyle(fontSize: 20, fontWeight: pw.FontWeight.bold)),
+                           pw.Text("Date: $dateStr (${_currentDay})", style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
+                         ]
+                       ),
+                       pw.SizedBox(height: 20),
+                    ]
+                  )
+                ),
+                pw.Table(
+                  border: pw.TableBorder.all(color: PdfColors.black, width: 0.5),
+                  columnWidths: {
+                    0: const pw.FixedColumnWidth(100),
+                    for (int i=1; i<=8; i++) i: const pw.FlexColumnWidth(1),
+                  },
+                  children: [
+                    pw.TableRow(
+                      decoration: const pw.BoxDecoration(color: PdfColors.grey300),
+                      children: [
+                        pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text("Year - Section", style: pw.TextStyle(fontWeight: pw.FontWeight.bold, fontSize: 10))),
+                        ...List.generate(8, (i) => pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text("P${i + 1}", style: pw.TextStyle(fontWeight: pw.FontWeight.bold, fontSize: 10)))),
+                      ],
+                    ),
+                    for (var entry in grouped.entries)
+                      pw.TableRow(
+                        children: [
+                          pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text(entry.key, style: pw.TextStyle(fontSize: 9, fontWeight: pw.FontWeight.bold))),
+                          ...entry.value.map((p) {
+                            if (p == null) return pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text("-", textAlign: pw.TextAlign.center, style: const pw.TextStyle(fontSize: 8)));
+                            
+                            // Determine Color & Status Text
+                            PdfColor bgColor = PdfColors.white;
+                            String statusText = "";
+                            PdfColor textColor = PdfColors.black;
+
+                            if (p['status'] == 'conducted') {
+                               bgColor = PdfColor.fromHex("#E8F5E9"); // Very light green
+                               statusText = "CONDUCTED";
+                               textColor = PdfColors.green;
+                            } else if (p['status'] == 'substitute') {
+                               bgColor = PdfColor.fromHex("#FFF3E0"); // Very light orange
+                               statusText = "SUBSTITUTE";
+                               textColor = PdfColors.orange;
+                            } else if (p['status'] == 'not_conducted') {
+                               bgColor = PdfColor.fromHex("#FFEBEE"); // Very light red
+                               statusText = "NOT CONDUCTED";
+                               textColor = PdfColors.red;
+                            } else {
+                               statusText = "PENDING";
+                               textColor = PdfColors.grey;
+                            }
+
+                            return pw.Container(
+                              color: bgColor,
+                              padding: const pw.EdgeInsets.all(4),
+                              decoration: pw.BoxDecoration(
+                                border: pw.Border.all(color: PdfColors.grey300, width: 0.2),
+                              ),
+                              child: pw.Column(
+                                crossAxisAlignment: pw.CrossAxisAlignment.start,
+                                mainAxisAlignment: pw.MainAxisAlignment.center,
+                                children: [
+                                  pw.Text(p['actualSubject'] ?? p['subject'], style: pw.TextStyle(fontSize: 7, fontWeight: pw.FontWeight.bold)),
+                                  pw.Text(p['actualFaculty'] ?? p['originalFaculty'], style: const pw.TextStyle(fontSize: 6.5)),
+                                  pw.SizedBox(height: 2),
+                                  pw.Text(statusText, style: pw.TextStyle(fontSize: 6, fontWeight: pw.FontWeight.bold, color: textColor)),
+                                ],
+                              ),
+                            );
+                          }).toList(),
+                        ],
+                      ),
+                  ],
+                ),
+                pw.SizedBox(height: 30),
+                pw.Row(
+                  mainAxisAlignment: pw.MainAxisAlignment.end,
+                  children: [
+                    pw.Column(
+                      children: [
+                        pw.SizedBox(height: 40),
+                        pw.Container(width: 150, border: const pw.Border(top: pw.BorderSide())),
+                        pw.Text("Incharge Signature", style: const pw.TextStyle(fontSize: 10)),
+                      ]
+                    )
+                  ]
+                )
+              ];
+            },
+          ),
+        );
+
+        final dir = await getExternalStorageDirectory();
+        final file = File("${dir!.path}/Daily_Report_${_selectedBranch}_$dateStr.pdf");
+        await file.writeAsBytes(await pdf.save());
+        await OpenFilex.open(file.path);
+      }
+    } catch (e) {
+      debugPrint("PDF Error: $e");
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
+
+  void _showConfirmationDialog({required String status, required String actualFaculty}) {
+    String displayStatus = status.replaceAll('_', ' ').toUpperCase();
+    Color statusColor = status == 'conducted' ? Colors.green : (status == 'substitute' ? Colors.orange : Colors.red);
+    IconData statusIcon = status == 'conducted' ? Icons.check_circle : (status == 'substitute' ? Icons.swap_horiz : Icons.cancel);
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: statusColor.withOpacity(0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(statusIcon, color: statusColor, size: 48),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              "Status Updated Successfully!",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
+            const SizedBox(height: 24),
+            _buildDialogDetailRow("Branch", _selectedBranch ?? "N/A"),
+            _buildDialogDetailRow("Year", _selectedYear ?? "N/A"),
+            _buildDialogDetailRow("Section", _selectedSection ?? "N/A"),
+            _buildDialogDetailRow("Faculty Status", "$actualFaculty ($displayStatus)"),
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: statusColor,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                ),
+                onPressed: () => Navigator.pop(context),
+                child: const Text("OK", style: TextStyle(fontWeight: FontWeight.bold)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDialogDetailRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("$label: ", style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey)),
+          Expanded(child: Text(value, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600))),
+        ],
+      ),
+    );
   }
 
   @override
@@ -177,6 +401,11 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
         backgroundColor: Colors.transparent,
         foregroundColor: textColor,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.picture_as_pdf_outlined),
+            onPressed: _generateDailyReportPDF,
+            tooltip: 'Download Daily Report',
+          ),
           Padding(
             padding: const EdgeInsets.only(right: 16),
             child: Center(

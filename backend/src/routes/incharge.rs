@@ -168,3 +168,56 @@ pub async fn get_daily_activity_report_handler(
         not_conducted: stats.get("not_conducted"),
     }))
 }
+pub async fn get_branch_daily_detail_report_handler(
+    State(data): State<AppState>,
+    Query(params): Query<DailyReportQuery>,
+) -> Result<Json<Vec<serde_json::Value>>, StatusCode> {
+    let branch_norm = normalize_branch(&params.branch);
+    let date = NaiveDate::parse_from_str(&params.date, "%Y-%m-%d")
+        .map_err(|_| StatusCode::BAD_REQUEST)?;
+    
+    let day = date.format("%A").to_string();
+
+    // Fetch all schedule entries and join with their execution status for that day/date
+    let rows = sqlx::query(
+        r#"
+        SELECT 
+            t.year, t.section, t.period_index, t.subject, t.faculty_id,
+            u.full_name as original_faculty,
+            s.actual_subject, s.actual_faculty, s.status
+        FROM timetable_entries t
+        LEFT JOIN users u ON t.faculty_id = u.login_id
+        LEFT JOIN class_period_status s ON 
+            t.branch = s.branch AND t.year = s.year AND t.section = s.section 
+            AND t.day = s.day AND t.period_index = s.period_index 
+            AND s.status_date = $2
+        WHERE t.branch = $1 AND t.day = $3
+        ORDER BY t.year, t.section, t.period_index
+        "#
+    )
+    .bind(branch_norm)
+    .bind(date)
+    .bind(day)
+    .fetch_all(&data.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Branch Daily Detail Error: {:?}", e);
+        StatusCode::INTERNAL_SERVER_ERROR
+    })?;
+
+    let mut result = Vec::new();
+    for row in rows {
+        result.push(json!({
+            "year": row.get::<String, _>("year"),
+            "section": row.get::<String, _>("section"),
+            "periodIndex": row.get::<i32, _>("period_index"),
+            "subject": row.get::<String, _>("subject"),
+            "originalFaculty": row.get::<Option<String>, _>("original_faculty").unwrap_or_else(|| row.get::<String, _>("faculty_id")),
+            "actualSubject": row.get::<Option<String>, _>("actual_subject"),
+            "actualFaculty": row.get::<Option<String>, _>("actual_faculty"),
+            "status": row.get::<Option<String>, _>("status"),
+        }));
+    }
+
+    Ok(Json(result))
+}

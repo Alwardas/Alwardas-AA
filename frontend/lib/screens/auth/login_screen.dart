@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -18,6 +18,7 @@ import '../dashboards/hod/hod_dashboard.dart';
 import '../dashboards/principal/principal_dashboard.dart';
 import '../dashboards/admin/admin_dashboard.dart';
 import '../dashboards/coordinator/coordinator_dashboard.dart';
+import '../dashboards/incharge/incharge_dashboard.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -324,6 +325,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (normalizedRole.toLowerCase() == 'principal') return PrincipalDashboard(userData: userData);
     if (normalizedRole.toLowerCase() == 'admin') return AdminDashboard(userData: userData);
     if (normalizedRole.toLowerCase() == 'coordinator') return CoordinatorDashboard(userData: userData);
+    if (normalizedRole.toLowerCase() == 'incharge') return InchargeDashboard(userData: userData);
 
     return Scaffold(
       appBar: AppBar(title: const Text("Unknown Role")),
