@@ -6,6 +6,7 @@ import '../../../theme/theme_constants.dart';
 import '../../../core/services/auth_service.dart';
 import 'hod_class_timetable_screen.dart'; // New Screen
 import 'hod_department_timing_screen.dart'; // Added
+import 'hod_master_timetable_screen.dart'; // Added
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../../../core/api_constants.dart';
@@ -328,7 +329,9 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
                 ],
               ),
             
-            _buildBigCard(context, "Master Timetable", Icons.grid_view_rounded, Colors.purple, () => setState(() => _currentView = TimetableView.master)),
+            _buildBigCard(context, "Master Timetable", Icons.grid_view_rounded, Colors.purple, () {
+               Navigator.push(context, MaterialPageRoute(builder: (_) => HodMasterTimetableScreen(branch: _userBranch ?? '')));
+            }),
             const SizedBox(height: 20),
             _buildBigCard(context, "Timings", Icons.access_time_filled_outlined, Colors.teal, () {
                Navigator.push(context, MaterialPageRoute(builder: (_) => HodDepartmentTimingScreen(branch: _userBranch ?? 'Computer Engineering')));
@@ -463,7 +466,7 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
           "Master Timetable - ${year.name}", 
           "Consolidated View", 
           Icons.grid_on,
-          () => _openTimetable(year.name, "All Sections")
+          () => Navigator.push(context, MaterialPageRoute(builder: (_) => HodMasterTimetableScreen(branch: _userBranch ?? '')))
         );
       },
     );

@@ -8,6 +8,8 @@ use crate::models::AppState;
 use uuid::Uuid;
 use serde_json::json;
 use sqlx::Row;
+use crate::models::{MasterTimetableQuery, MasterTimetableResponse, MasterTimetableRow, FacultyClash, TimetableEntry, normalize_branch};
+use std::collections::HashMap;
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -146,4 +148,121 @@ pub async fn get_added_course_subjects_handler(
     }).collect();
 
     Ok(Json(json!(subjects)))
+}
+
+pub async fn get_master_timetable_handler(
+    State(data): State<AppState>,
+    Query(params): Query<MasterTimetableQuery>,
+) -> Result<Json<MasterTimetableResponse>, StatusCode> {
+    let branch_norm = normalize_branch(&params.branch);
+    let day = &params.day;
+
+    // 1. Get all year + section combinations for this branch
+    // Check 'sections' table first, fallback to users if needed
+    let mut class_combos: Vec<(String, String)> = sqlx::query_as::<(String, String)>(
+        "SELECT year, section_name FROM sections WHERE branch = $1 ORDER BY year ASC, section_name ASC"
+    )
+    .bind(&branch_norm)
+    .fetch_all(&data.pool)
+    .await
+    .unwrap_or_default();
+
+    if class_combos.is_empty() {
+        // Fallback to distinct year/section from users table
+        class_combos = sqlx::query_as::<(String, String)>(
+            "SELECT DISTINCT year, section FROM users WHERE role = 'Student' AND branch = $1 AND year IS NOT NULL AND section IS NOT NULL ORDER BY year ASC, section ASC"
+        )
+        .bind(&branch_norm)
+        .fetch_all(&data.pool)
+        .await
+        .unwrap_or_default();
+    }
+
+    if class_combos.is_empty() {
+        // Final fallback if no students/sections exist
+        return Ok(Json(MasterTimetableResponse { rows: vec![], faculty_clashes: vec![] }));
+    }
+
+    // 2. Fetch all timetable entries for this branch and day
+    let entries = sqlx::query_as::<Postgres, TimetableEntry>(
+        r#"
+        SELECT 
+            t.id, t.faculty_id, t.branch, t.year, t.section, t.day, t.period_index, t.subject, t.subject_code,
+            u.full_name as faculty_name, u.email as faculty_email, u.phone_number as faculty_phone, u.branch as faculty_department
+        FROM timetable_entries t
+        LEFT JOIN users u ON t.faculty_id = u.login_id
+        WHERE t.branch = $1 AND t.day = $2
+        "#
+    )
+    .bind(&branch_norm)
+    .bind(day)
+    .fetch_all(&data.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Master Timetable Fetch Error: {:?}", e);
+        StatusCode::INTERNAL_SERVER_ERROR
+    })?;
+
+    // 3. Build group map for fast lookup
+    // Map: (Year, Section) -> Map: PeriodIndex -> Entry
+    let mut entries_map: HashMap<(String, String), HashMap<i32, TimetableEntry>> = HashMap::new();
+    for entry in entries {
+        entries_map
+            .entry((entry.year.clone(), entry.section.clone()))
+            .or_default()
+            .insert(entry.period_index, entry);
+    }
+
+    // 4. Transform into Rows
+    let mut rows = Vec::new();
+    for (year, section) in class_combos {
+        let mut periods = Vec::new();
+        // Assuming 8 periods as per requirement
+        for p in 0..8 {
+            let entry = entries_map.get(&(year.clone(), section.clone())).and_then(|m| m.get(&p).cloned());
+            periods.push(entry);
+        }
+
+        rows.push(MasterTimetableRow {
+            class_name: format!("{} - {}", year, section),
+            year,
+            section,
+            periods,
+        });
+    }
+
+    // 5. Detect Faculty Clashes
+    // Clashes happen if same faculty is assigned to multiple classes in the same period
+    // Map: (PeriodIndex, FacultyID) -> Vec<ClassName>
+    let mut faculty_occupancy: HashMap<(i32, String), Vec<String>> = HashMap::new();
+    let mut faculty_names: HashMap<String, String> = HashMap::new();
+
+    for row in &rows {
+        for (idx, period) in row.periods.iter().enumerate() {
+            if let Some(entry) = period {
+                let key = (idx as i32, entry.faculty_id.clone());
+                faculty_occupancy.entry(key).or_default().push(row.class_name.clone());
+                if let Some(name) = &entry.faculty_name {
+                    faculty_names.insert(entry.faculty_id.clone(), name.clone());
+                }
+            }
+        }
+    }
+
+    let mut faculty_clashes = Vec::new();
+    for ((period_idx, faculty_id), classes) in faculty_occupancy {
+        if classes.len() > 1 {
+            faculty_clashes.push(FacultyClash {
+                faculty_name: faculty_names.get(&faculty_id).cloned().unwrap_or(faculty_id),
+                day: day.clone(),
+                period_index: period_idx,
+                classes,
+            });
+        }
+    }
+
+    Ok(Json(MasterTimetableResponse {
+        rows,
+        faculty_clashes,
+    }))
 }

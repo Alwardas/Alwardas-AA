@@ -558,7 +558,8 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
                           child: Text(
                             value,
                             textAlign: TextAlign.right,
-                            softWrap: true,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                             style: GoogleFonts.inter(
                               color: isDark ? Colors.white : const Color(0xFF1E293B),
                               fontSize: 13,

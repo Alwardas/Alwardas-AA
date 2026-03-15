@@ -149,6 +149,37 @@ pub struct DepartmentTiming {
     pub slot_config: Option<serde_json::Value>, 
 }
 
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct MasterTimetableResponse {
+    pub rows: Vec<MasterTimetableRow>,
+    pub faculty_clashes: Vec<FacultyClash>,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct MasterTimetableRow {
+    pub class_name: String,
+    pub year: String,
+    pub section: String,
+    pub periods: Vec<Option<TimetableEntry>>,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct FacultyClash {
+    pub faculty_name: String,
+    pub day: String,
+    pub period_index: i32,
+    pub classes: Vec<String>,
+}
+
+#[derive(Deserialize)]
+pub struct MasterTimetableQuery {
+    pub branch: String,
+    pub day: String,
+}
+
 #[derive(Deserialize)]
 pub struct NotificationQuery {
     #[serde(rename = "userId")]

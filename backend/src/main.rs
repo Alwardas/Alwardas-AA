@@ -445,6 +445,7 @@ async fn main() {
         .route("/api/hod/sections", get(hod::get_hod_sections_handler))
         .route("/api/hod/subjects", get(hod::get_hod_subjects_handler))
         .route("/api/hod/course-subjects", post(hod::add_course_subject_handler).get(hod::get_added_course_subjects_handler))
+        .route("/api/hod/master-timetable", get(hod::get_master_timetable_handler))
         .with_state(AppState { pool })
         .fallback(move |req: axum::extract::Request| {
             let mut grpc_service = grpc_service.clone();
