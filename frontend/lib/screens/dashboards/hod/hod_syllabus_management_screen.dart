@@ -20,11 +20,29 @@ class HodSyllabusManagementScreen extends StatefulWidget {
 class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScreen> {
   bool _isLoading = true;
   List<dynamic> _courses = [];
+  Map<String, dynamic>? _branchProgress;
 
   @override
   void initState() {
     super.initState();
     _fetchCourses();
+    _fetchBranchProgress();
+  }
+
+  Future<void> _fetchBranchProgress() async {
+    try {
+      final String branch = widget.userData['branch'] ?? 'Computer Engineering';
+      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/hod/branch-progress?branch=${Uri.encodeComponent(branch)}&courseId=C-23'));
+      if (response.statusCode == 200) {
+        if (mounted) {
+          setState(() {
+            _branchProgress = json.decode(response.body);
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching branch progress: $e");
+    }
   }
 
   Future<void> _fetchCourses() async {
@@ -73,21 +91,23 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
                 ? Center(child: Text("No courses found.", style: GoogleFonts.poppins(color: subTextColor)))
                 : Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Text(
-                          "Select Course to Begin",
-                          style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: textColor),
-                        ),
-                      ),
                       Expanded(
-                        child: ListView.builder(
+                        child: ListView(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
-                          itemCount: _courses.length,
-                          itemBuilder: (context, index) {
-                            final course = _courses[index];
-                            return _buildCourseCard(course, isDark);
-                          },
+                          children: [
+                            const SizedBox(height: 10),
+                            if (_branchProgress != null)
+                              _buildBranchProgressCard(_branchProgress!, isDark),
+                            
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 20.0),
+                              child: Text(
+                                "Select Course to Begin",
+                                style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: textColor),
+                              ),
+                            ),
+                            ..._courses.map((course) => _buildCourseCard(course, isDark)),
+                          ],
                         ),
                       ),
                     ],
@@ -95,6 +115,107 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
         ),
       ),
     );
+  }
+
+  Widget _buildBranchProgressCard(Map<String, dynamic> data, bool isDark) {
+    final int overall = data['overallPercentage'] ?? 0;
+    final List<dynamic> years = data['years'] ?? [];
+    final textColor = isDark ? Colors.white : const Color(0xFF1E293B);
+    final subTextColor = isDark ? Colors.white70 : const Color(0xFF64748B);
+    final accentColor = _getAccentColor(overall / 100.0);
+
+    return Container(
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+        borderRadius: BorderRadius.circular(28),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 20, offset: const Offset(0, 10))
+        ],
+        border: Border.all(color: accentColor.withValues(alpha: 0.2)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Overall Branch Progress", 
+                style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                decoration: BoxDecoration(color: accentColor.withOpacity(0.1), borderRadius: BorderRadius.circular(12)),
+                child: Text(overall >= 75 ? "On Track" : "In Progress", 
+                  style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.bold, color: accentColor)
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("$overall% Completed", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
+              Icon(Icons.auto_graph_rounded, color: accentColor, size: 24),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Stack(
+            children: [
+              Container(
+                height: 10,
+                width: double.infinity,
+                decoration: BoxDecoration(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05), borderRadius: BorderRadius.circular(5)),
+              ),
+              FractionallySizedBox(
+                widthFactor: (overall / 100.0).clamp(0.0, 1.0),
+                child: Container(
+                  height: 10,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [accentColor.withOpacity(0.7), accentColor]),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 24),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: years.map((y) => _buildYearMiniProgress(y, textColor)).toList(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildYearMiniProgress(dynamic yearData, Color textColor) {
+    final String year = yearData['year']?.toString().split(' ')[0] ?? '';
+    final int percentage = yearData['percentage'] ?? 0;
+    final color = _getAccentColor(percentage / 100.0);
+
+    return Column(
+      children: [
+        Container(
+          height: 40,
+          width: 40,
+          decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: color.withOpacity(0.2), width: 2)),
+          child: Center(
+            child: Text("$percentage%", style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: textColor)),
+          ),
+        ),
+        const SizedBox(height: 6),
+        Text("$year Yr", style: GoogleFonts.poppins(fontSize: 10, color: textColor.withOpacity(0.6))),
+      ],
+    );
+  }
+
+  Color _getAccentColor(double progress) {
+    if (progress >= 0.8) return const Color(0xFF10B981);
+    if (progress >= 0.5) return const Color(0xFF6366F1);
+    if (progress >= 0.3) return const Color(0xFFF59E0B);
+    return const Color(0xFFEF4444);
   }
 
   Widget _buildCourseCard(dynamic course, bool isDark) {
