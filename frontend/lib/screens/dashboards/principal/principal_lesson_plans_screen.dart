@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:math';
+import '../../../widgets/skeleton_loader.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
@@ -99,7 +100,7 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
         centerTitle: true,
       ),
       body: isLoading 
-        ? Center(child: CircularProgressIndicator(color: ThemeColors.accentBlue))
+        ? _buildSkeletonLoader(isDark)
         : RefreshIndicator(
             onRefresh: _fetchBranches,
             color: ThemeColors.accentBlue,
@@ -113,6 +114,51 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
               ],
             ),
           ),
+    );
+  }
+
+  Widget _buildSkeletonLoader(bool isDark) {
+    return ListView.builder(
+      padding: const EdgeInsets.all(24),
+      itemCount: 4,
+      itemBuilder: (context, index) {
+        return Container(
+          margin: const EdgeInsets.only(bottom: 24),
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: isDark ? Colors.white.withOpacity(0.05) : Colors.white,
+            borderRadius: BorderRadius.circular(28),
+            border: Border.all(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                   SkeletonLoader(width: 140, height: 20, borderRadius: BorderRadius.circular(4)),
+                   SkeletonLoader(width: 80, height: 24, borderRadius: BorderRadius.circular(12)),
+                ],
+              ),
+              const SizedBox(height: 20),
+              SkeletonLoader(width: 120, height: 24, borderRadius: BorderRadius.circular(4)),
+              const SizedBox(height: 12),
+              SkeletonLoader(width: double.infinity, height: 10, borderRadius: BorderRadius.circular(5)),
+              const SizedBox(height: 24),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: List.generate(3, (i) => Column(
+                  children: [
+                    SkeletonLoader(width: 40, height: 40, borderRadius: BorderRadius.circular(20)),
+                    const SizedBox(height: 8),
+                    SkeletonLoader(width: 30, height: 10, borderRadius: BorderRadius.circular(4)),
+                  ],
+                )),
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 
