@@ -344,6 +344,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
         
         String statusText = isPending ? "Pending Approval" : "On Track";
         Color statusColor = isPending ? Colors.orange : const Color(0xFF34C759);
+        final progress = item['completionPercentage'] ?? 0;
 
         return GestureDetector(
           onTap: () {
