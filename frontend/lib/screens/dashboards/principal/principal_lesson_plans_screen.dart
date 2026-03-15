@@ -99,10 +99,10 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
         centerTitle: true,
       ),
       body: isLoading 
-        ? Center(child: CircularProgressIndicator(color: ThemeColors.primary))
+        ? Center(child: CircularProgressIndicator(color: ThemeColors.accentBlue))
         : RefreshIndicator(
             onRefresh: _fetchBranches,
-            color: ThemeColors.primary,
+            color: ThemeColors.accentBlue,
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
               children: [

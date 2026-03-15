@@ -298,7 +298,7 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
                     pw.Column(
                       children: [
                         pw.SizedBox(height: 40),
-                        pw.Container(width: 150, border: const pw.Border(top: pw.BorderSide())),
+                        pw.Container(width: 150, decoration: const pw.BoxDecoration(border: pw.Border(top: pw.BorderSide()))),
                         pw.Text("Incharge Signature", style: const pw.TextStyle(fontSize: 10)),
                       ]
                     )

@@ -84,7 +84,7 @@ class _InchargeReportsScreenState extends State<InchargeReportsScreen> {
         return Theme(
           data: Theme.of(context).copyWith(
             colorScheme: ColorScheme.light(
-              primary: ThemeColors.primary,
+              primary: ThemeColors.accentBlue,
               onPrimary: Colors.white,
               onSurface: Colors.black,
             ),
@@ -217,7 +217,7 @@ class _InchargeReportsScreenState extends State<InchargeReportsScreen> {
                     pw.Column(
                       children: [
                         pw.SizedBox(height: 40),
-                        pw.Container(width: 150, border: const pw.Border(top: pw.BorderSide())),
+                        pw.Container(width: 150, decoration: const pw.BoxDecoration(border: pw.Border(top: pw.BorderSide()))),
                         pw.Text("Incharge Signature", style: const pw.TextStyle(fontSize: 10)),
                       ]
                     )
@@ -294,9 +294,9 @@ class _InchargeReportsScreenState extends State<InchargeReportsScreen> {
           Text("Select Branch", style: GoogleFonts.poppins(fontSize: 12, color: textColor.withOpacity(0.6))),
           const SizedBox(height: 8),
           CustomModalDropdown(
-            hint: "Select Branch",
+            label: "Branch",
             value: _selectedBranch,
-            items: _branches,
+            options: _branches,
             onChanged: (val) {
               setState(() {
                 _selectedBranch = val;
@@ -322,7 +322,7 @@ class _InchargeReportsScreenState extends State<InchargeReportsScreen> {
               ),
               child: Row(
                 children: [
-                  Icon(Icons.calendar_today_rounded, size: 18, color: ThemeColors.primary),
+                  Icon(Icons.calendar_today_rounded, size: 18, color: ThemeColors.accentBlue),
                   const SizedBox(width: 12),
                   Text(
                     DateFormat('dd MMMM, yyyy').format(_selectedDate),
@@ -401,7 +401,7 @@ class _InchargeReportsScreenState extends State<InchargeReportsScreen> {
                 : const Icon(Icons.picture_as_pdf_outlined),
             label: Text(_isLoading ? "Generating..." : "Download Daily Detailed PDF", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16)),
             style: ElevatedButton.styleFrom(
-              backgroundColor: ThemeColors.primary,
+              backgroundColor: ThemeColors.accentBlue,
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
               elevation: 0,
