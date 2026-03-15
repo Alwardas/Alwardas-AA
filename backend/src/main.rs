@@ -39,8 +39,14 @@ async fn main() {
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
 
     dotenv().ok();
-    let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
-    let trimmed_url = database_url.trim();
+    let raw_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    
+    // Robust parsing: strip "DATABASE_URL=" prefix if it exists (common copy-paste error)
+    let trimmed_url = if raw_url.trim().starts_with("DATABASE_URL=") {
+        raw_url.trim().strip_prefix("DATABASE_URL=").unwrap().trim()
+    } else {
+        raw_url.trim()
+    };
 
     // Redact password for logging
     let redacted_url = if let Some(at_pos) = trimmed_url.find('@') {
