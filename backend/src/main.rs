@@ -51,7 +51,7 @@ async fn main() {
     let max_retries = 5;
     let pool = loop {
         match PgPoolOptions::new()
-            .max_connections(50)
+            .max_connections(20)
             .acquire_timeout(std::time::Duration::from_secs(30)) 
             .connect_with(options.clone())
             .await 
