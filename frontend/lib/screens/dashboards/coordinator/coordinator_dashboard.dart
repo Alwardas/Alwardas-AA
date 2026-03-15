@@ -392,7 +392,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                           'title': 'Syllabus Management',
                           'subtitle': 'Track Progress',
                           'color': const Color(0xFF66BB6A), // Green
-                          'route': const PrincipalLessonPlansScreen(),
+                          'route': PrincipalLessonPlansScreen(userData: widget.userData),
                         },
                         {
                           'icon': Icons.assignment_turned_in,

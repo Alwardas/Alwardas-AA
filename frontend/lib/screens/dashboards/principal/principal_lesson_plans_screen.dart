@@ -111,7 +111,7 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
               children: [
                 _buildHeader(textColor, subTextColor),
                 const SizedBox(height: 30),
-                ...deptProgress.map((d) => _buildEnhancedDeptCard(d, cardColor, textColor, subTextColor, isDark)),
+                ...deptProgress.map((d) => _buildEnhancedDeptCard(d, isDark)),
                 const SizedBox(height: 80),
               ],
             ),
