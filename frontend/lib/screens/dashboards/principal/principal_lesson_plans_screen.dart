@@ -8,9 +8,11 @@ import '../../../widgets/skeleton_loader.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
+import '../hod/hod_syllabus_management_screen.dart';
 
 class PrincipalLessonPlansScreen extends StatefulWidget {
-  const PrincipalLessonPlansScreen({super.key});
+  final Map<String, dynamic> userData;
+  const PrincipalLessonPlansScreen({super.key, required this.userData});
 
   @override
   _PrincipalLessonPlansScreenState createState() => _PrincipalLessonPlansScreenState();
@@ -178,114 +180,87 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
     );
   }
 
-  Widget _buildEnhancedDeptCard(Map<String, dynamic> d, Color cardColor, Color textColor, Color subTextColor, bool isDark) {
-    final double overallProgress = d['progress'];
-    final List<dynamic> years = d['years'];
-    final accentColor = _getAccentColor(overallProgress);
+  Widget _buildEnhancedDeptCard(Map<String, dynamic> dept, bool isDark) {
+    final String name = dept['branch'] ?? 'Unknown';
+    final int progress = dept['overallPercentage'] ?? 0;
+    final List<dynamic> years = dept['years'] ?? [];
+    final textColor = isDark ? Colors.white : const Color(0xFF1E293B);
+    final accentColor = _getAccentColor(progress / 100.0);
 
-    return Container(
-      margin: const EdgeInsets.only(bottom: 24),
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: cardColor,
-        borderRadius: BorderRadius.circular(28),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.3 : 0.05),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
-        border: Border.all(
-          color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.03),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusManagementScreen(
+          userData: widget.userData,
+          branchOverride: name,
+        )));
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 24),
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: isDark ? Colors.white.withOpacity(0.05) : Colors.white,
+          borderRadius: BorderRadius.circular(28),
+          boxShadow: [
+            BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 20, offset: const Offset(0, 10))
+          ],
+          border: Border.all(color: accentColor.withOpacity(0.2)),
         ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(d['dept'].toUpperCase(), 
-                      style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: accentColor, letterSpacing: 1.1)
-                    ),
-                    const SizedBox(height: 4),
-                    Text("Overall Syllabus Progress", 
-                      style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: accentColor.withOpacity(0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(Icons.analytics_rounded, color: accentColor, size: 24),
-              ),
-            ],
-          ),
-          const SizedBox(height: 25),
-          
-          // Overall Progress Bar
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("${(overallProgress * 100).toInt()}% Completed", 
-                style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: textColor)
-              ),
-              Text(overallProgress >= 0.75 ? "On Track" : (overallProgress >= 0.5 ? "In Progress" : "Needs Attention"),
-                style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600, color: accentColor)
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Stack(
-            children: [
-              Container(
-                height: 10,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: isDark ? Colors.white10 : Colors.grey[200],
-                  borderRadius: BorderRadius.circular(5),
-                ),
-              ),
-              FractionallySizedBox(
-                widthFactor: overallProgress.clamp(0.0, 1.0),
-                child: Container(
-                  height: 10,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [accentColor.withOpacity(0.7), accentColor]),
-                    borderRadius: BorderRadius.circular(5),
-                    boxShadow: [
-                      BoxShadow(color: accentColor.withOpacity(0.3), blurRadius: 4, offset: const Offset(0, 2)),
-                    ],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Text(name, 
+                    overflow: TextOverflow.ellipsis,
+                    style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)
                   ),
                 ),
-              ),
-            ],
-          ),
-          
-          const SizedBox(height: 24),
-          Divider(color: isDark ? Colors.white10 : Colors.black12, height: 1),
-          const SizedBox(height: 20),
-          
-          // Yearly Breakdown
-          Text("Yearly Breakdown", 
-            style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: textColor.withOpacity(0.7))
-          ),
-          const SizedBox(height: 12),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: years.map((y) => _buildYearMiniProgress(y, textColor, isDark)).toList(),
-          ),
-        ],
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(color: accentColor.withOpacity(0.1), borderRadius: BorderRadius.circular(12)),
+                  child: Text(progress >= 75 ? "On Track" : "In Progress", 
+                    style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.bold, color: accentColor)
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("$progress% Overall", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
+                Icon(Icons.auto_graph_rounded, color: accentColor, size: 24),
+              ],
+            ),
+            const SizedBox(height: 12),
+            Stack(
+              children: [
+                Container(
+                  height: 10,
+                  width: double.infinity,
+                  decoration: BoxDecoration(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05), borderRadius: BorderRadius.circular(5)),
+                ),
+                FractionallySizedBox(
+                  widthFactor: (progress / 100.0).clamp(0.0, 1.0),
+                  child: Container(
+                    height: 10,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [accentColor.withOpacity(0.7), accentColor]),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: years.map((y) => _buildYearMiniProgress(y, textColor, isDark)).toList(),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -293,7 +268,7 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
   Widget _buildYearMiniProgress(dynamic yearData, Color textColor, bool isDark) {
     final String year = yearData['year']?.toString().split(' ')[0] ?? '';
     final int percentage = yearData['percentage'] ?? 0;
-    final color = _getAccentColor(percentage / 100.0);
+    final color = _getStatusColor(percentage);
 
     return Column(
       children: [
@@ -303,10 +278,11 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(color: color.withOpacity(0.2), width: 2),
+            color: color.withOpacity(0.1),
           ),
           child: Center(
             child: Text("$percentage%", 
-              style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.bold, color: textColor)
+              style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.bold, color: color)
             ),
           ),
         ),
@@ -318,10 +294,13 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
     );
   }
 
+  Color _getStatusColor(int percentage) {
+    if (percentage >= 85) return const Color(0xFFF59E0B); // Orange (Overfast/Ahead)
+    if (percentage >= 60) return const Color(0xFF10B981); // Green (On Track)
+    return const Color(0xFFEF4444); // Red (Lagging)
+  }
+
   Color _getAccentColor(double progress) {
-    if (progress >= 0.8) return const Color(0xFF10B981); // Emerald
-    if (progress >= 0.5) return const Color(0xFF6366F1); // Indigo
-    if (progress >= 0.3) return const Color(0xFFF59E0B); // Amber
-    return const Color(0xFFEF4444); // Red
+    return _getStatusColor((progress * 100).toInt());
   }
 }

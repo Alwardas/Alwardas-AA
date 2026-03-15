@@ -383,7 +383,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                           const Color(0xFF38ef7d),
                           textColor,
                           subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalLessonPlansScreen())),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => PrincipalLessonPlansScreen(userData: widget.userData))),
                         ),
                         _buildQuickAccessCard(
                           Icons.access_time,

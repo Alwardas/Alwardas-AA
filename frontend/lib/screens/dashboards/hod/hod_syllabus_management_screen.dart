@@ -11,7 +11,8 @@ import 'hod_syllabus_year_selection_screen.dart';
 
 class HodSyllabusManagementScreen extends StatefulWidget {
   final Map<String, dynamic> userData;
-  const HodSyllabusManagementScreen({super.key, required this.userData});
+  final String? branchOverride;
+  const HodSyllabusManagementScreen({super.key, required this.userData, this.branchOverride});
 
   @override
   State<HodSyllabusManagementScreen> createState() => _HodSyllabusManagementScreenState();
@@ -31,7 +32,7 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
 
   Future<void> _fetchBranchProgress() async {
     try {
-      final String branch = widget.userData['branch'] ?? 'Computer Engineering';
+      final String branch = widget.branchOverride ?? widget.userData['branch'] ?? 'Computer Engineering';
       final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/hod/branch-progress?branch=${Uri.encodeComponent(branch)}&courseId=C-23'));
       if (response.statusCode == 200) {
         if (mounted) {
@@ -193,16 +194,20 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
   Widget _buildYearMiniProgress(dynamic yearData, Color textColor) {
     final String year = yearData['year']?.toString().split(' ')[0] ?? '';
     final int percentage = yearData['percentage'] ?? 0;
-    final color = _getAccentColor(percentage / 100.0);
+    final color = _getStatusColor(percentage);
 
     return Column(
       children: [
         Container(
           height: 40,
           width: 40,
-          decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: color.withOpacity(0.2), width: 2)),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle, 
+            border: Border.all(color: color.withOpacity(0.2), width: 2),
+            color: color.withOpacity(0.1),
+          ),
           child: Center(
-            child: Text("$percentage%", style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: textColor)),
+            child: Text("$percentage%", style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: color)),
           ),
         ),
         const SizedBox(height: 6),
@@ -211,11 +216,14 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
     );
   }
 
+  Color _getStatusColor(int percentage) {
+    if (percentage >= 85) return const Color(0xFFF59E0B); // Orange (Overfast/Ahead)
+    if (percentage >= 60) return const Color(0xFF10B981); // Green (On Track)
+    return const Color(0xFFEF4444); // Red (Lagging)
+  }
+
   Color _getAccentColor(double progress) {
-    if (progress >= 0.8) return const Color(0xFF10B981);
-    if (progress >= 0.5) return const Color(0xFF6366F1);
-    if (progress >= 0.3) return const Color(0xFFF59E0B);
-    return const Color(0xFFEF4444);
+    return _getStatusColor((progress * 100).toInt());
   }
 
   Widget _buildCourseCard(dynamic course, bool isDark) {
@@ -227,7 +235,10 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
         Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusYearSelectionScreen(
           courseId: course['courseId'],
           courseName: course['courseName'],
-          userData: widget.userData,
+          userData: {
+            ...widget.userData,
+            if (widget.branchOverride != null) 'branch': widget.branchOverride,
+          },
         )));
       },
       child: Container(

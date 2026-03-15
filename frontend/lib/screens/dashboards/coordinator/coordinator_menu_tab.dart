@@ -32,7 +32,7 @@ class CoordinatorMenuTab extends StatelessWidget {
       {'label': 'Attendance Monitor', 'icon': Icons.calendar_today, 'route': const PrincipalAttendanceScreen(), 'color': ThemeColors.accentBlue},
       {'label': 'Faculty Directory', 'icon': Icons.people, 'route': const PrincipalFacultyScreen(), 'color': ThemeColors.accentCyan},
       {'label': 'Master Timetables', 'icon': Icons.access_time, 'route': const PrincipalTimetablesScreen(), 'color': ThemeColors.accentGreen},
-      {'label': 'Syllabus Management', 'icon': Icons.book, 'route': const PrincipalLessonPlansScreen(), 'color': ThemeColors.accentGreen},
+      {'label': 'Syllabus Management', 'icon': Icons.book, 'route': PrincipalLessonPlansScreen(userData: userData), 'color': ThemeColors.accentGreen},
       {'label': 'Issues', 'icon': Icons.report_problem_outlined, 'route': IssueManagementScreen(userData: userData), 'color': ThemeColors.accentGold},
       {'label': 'Requests', 'icon': Icons.request_page_outlined, 'route': const CoordinatorRequestsScreen(), 'color': ThemeColors.accentCyan},
       {'label': 'Departments', 'icon': Icons.business, 'route': const CoordinatorDepartmentScreen(), 'color': ThemeColors.accentBlue},
