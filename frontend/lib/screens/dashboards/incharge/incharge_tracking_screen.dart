@@ -39,11 +39,8 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
   // Timetable lookup results
   String _originalSubject = "---";
   String _originalFaculty = "---";
+  String? _existingStatus;
   bool _isLoadingTimetable = false;
-
-  // Manual / Substitute fields
-  final TextEditingController _actualSubjectController = TextEditingController();
-  final TextEditingController _actualFacultyController = TextEditingController();
 
   bool _isLoading = false;
 
@@ -108,9 +105,29 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
         setState(() {
           _originalSubject = data['subject'];
           _originalFaculty = data['faculty'];
-          _actualSubjectController.text = _originalSubject;
-          _actualFacultyController.text = _originalFaculty;
         });
+      }
+
+      // Fetch current status for this section to see if it's already updated
+      final dateStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
+      final statusUrl = Uri.parse('${ApiConstants.baseUrl}/api/incharge/get-section-status?branch=$_selectedBranch&year=$_selectedYear&section=$_selectedSection&date=$dateStr');
+      final statusResp = await http.get(statusUrl);
+      
+      if (statusResp.statusCode == 200) {
+        final List<dynamic> statuses = json.decode(statusResp.body);
+        final currentPeriodIdx = _periods.indexOf(_selectedPeriod!) + 1;
+        
+        // Find if this specific period has a status
+        final existing = statuses.firstWhere(
+          (s) => s['period_index'] == currentPeriodIdx,
+          orElse: () => null,
+        );
+        
+        setState(() {
+          _existingStatus = existing?['status'];
+        });
+      } else {
+        setState(() => _existingStatus = null);
       }
     } catch (e) {
       debugPrint("Lookup Error: $e");
@@ -131,8 +148,8 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
     setState(() => _isLoading = true);
     try {
       final periodIndex = _periods.indexOf(_selectedPeriod!) + 1;
-      final actualSub = _actualSubjectController.text.isNotEmpty ? _actualSubjectController.text : (_originalSubject != "---" ? _originalSubject : "");
-      final actualFac = _actualFacultyController.text.isNotEmpty ? _actualFacultyController.text : (_originalFaculty != "---" ? _originalFaculty : "");
+      final actualSub = subSubject ?? _originalSubject;
+      final actualFac = subFaculty ?? _originalFaculty;
       
       final payload = {
         "branch": _selectedBranch,
@@ -161,6 +178,7 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
               status: status,
               actualFaculty: actualFac,
            );
+           _lookupTimetable(); // Refresh existing status
         }
       } else {
         if (mounted) {
@@ -648,57 +666,32 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
             
             const SizedBox(height: 24),
 
-            // Manual Override Section
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: theme.primaryColor.withOpacity(0.1)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Actual Execution Details", 
-                    style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w600)),
-                  const SizedBox(height: 16),
-                  TextField(
-                    controller: _actualSubjectController,
-                    style: GoogleFonts.poppins(fontSize: 14),
-                    decoration: InputDecoration(
-                      labelText: "Actual Subject",
-                      labelStyle: const TextStyle(fontSize: 12),
-                      prefixIcon: const Icon(Icons.book, size: 20),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  TextField(
-                    controller: _actualFacultyController,
-                    style: GoogleFonts.poppins(fontSize: 14),
-                    decoration: InputDecoration(
-                      labelText: "Actual Faculty",
-                      labelStyle: const TextStyle(fontSize: 12),
-                      prefixIcon: const Icon(Icons.person, size: 20),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const SizedBox(height: 24),
             
-            const SizedBox(height: 40),
-            
-            Text("Update Actual Status", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
+            if (_existingStatus != null && !_isLoadingTimetable)
+              Container(
+                margin: const EdgeInsets.only(bottom: 24),
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.blue.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.blue.withOpacity(0.3)),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(Icons.info_outline, color: Colors.blue),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        "Status already updated to '${_existingStatus!.replaceAll('_', ' ').toUpperCase()}'. If you want to change it, please recorrect it by tapping a button below.",
+                        style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.blue[800]),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+            Text("Update Status", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor)),
             const SizedBox(height: 20),
             
             // Action Buttons
