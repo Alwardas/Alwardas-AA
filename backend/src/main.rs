@@ -35,9 +35,6 @@ async fn main() {
     println!("🚀 Server listening on {}", addr);
     println!("v1.5 - Sections Fix");
     
-    // Bind early to ensure Railway sees the port open
-    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
-
     dotenv().ok();
     let raw_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
     
@@ -76,7 +73,7 @@ async fn main() {
     let max_retries = 5;
     let pool = loop {
         match PgPoolOptions::new()
-            .max_connections(10)
+            .max_connections(50)
             .acquire_timeout(std::time::Duration::from_secs(60)) 
             .connect_with(options.clone())
             .await 
@@ -562,6 +559,7 @@ async fn main() {
         .layer(CorsLayer::permissive());
 
     println!("✅ Server ready");
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
 

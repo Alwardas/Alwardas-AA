@@ -573,12 +573,25 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
           child: Icon(icon, color: color, size: 20),
         ),
         const SizedBox(width: 16),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(label, style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey)),
-            Text(value, style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold)),
-          ],
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                label,
+                style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey),
+              ),
+              Text(
+                value,
+                style: GoogleFonts.poppins(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+                softWrap: true,
+              ),
+            ],
+          ),
         ),
       ],
     );

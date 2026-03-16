@@ -164,6 +164,8 @@ pub async fn signup_handler(
         }
     }
 
+    let normalized_login_id = payload.login_id.trim().to_lowercase();
+
     // NEW USER -> INSERT
     let row = sqlx::query(
             "INSERT INTO users (full_name, role, login_id, password_hash, branch, year, phone_number, dob, is_approved, experience, email, semester, batch_no, section, title) 
@@ -172,8 +174,8 @@ pub async fn signup_handler(
         )
         .bind(&payload.full_name)
         .bind(&payload.role)
-        .bind(&payload.login_id)
-        .bind(&payload.password)
+        .bind(&normalized_login_id)
+        .bind(&payload.password.trim())
         .bind(&final_branch) 
         .bind(&final_year)   
         .bind(&payload.phone_number)
@@ -442,17 +444,36 @@ pub async fn login_handler(
         section: Option<String>,
     }
 
+    let normalized_id = payload.login_id.trim().to_lowercase();
+    println!("DEBUG: Login attempt for ID: {}", normalized_id);
+
     let user_result: Option<UserRow> = sqlx::query_as(
-        "SELECT id, full_name, role, password_hash, is_approved, login_id, branch, year, semester, batch_no, section FROM users WHERE login_id = $1"
+        "SELECT id, full_name, role, password_hash, is_approved, login_id, branch, year, semester, batch_no, section FROM users WHERE LOWER(login_id) = $1"
     )
-    .bind(&payload.login_id)
+    .bind(&normalized_id)
     .fetch_optional(&state.pool)
     .await
-    .unwrap_or(None);
+    .map_err(|e| {
+        eprintln!("Login DB Error for {}: {:?}", normalized_id, e);
+        (StatusCode::INTERNAL_SERVER_ERROR, Json(AuthResponse { 
+            id: None,
+            message: format!("Database Error: {}", e), 
+            role: None, 
+            full_name: None,
+            login_id: None,
+            branch: None,
+            year: None,
+            semester: None,
+            batch_no: None,
+            section: None
+        }))
+    })?;
 
     if let Some(user) = user_result {
-        if user.password_hash == payload.password {
+        // Trim both just in case of trailing spaces in DB or payload
+        if user.password_hash.trim() == payload.password.trim() {
              if !user.is_approved.unwrap_or(false) {
+                 println!("DEBUG: Login 403 - User {} not approved", normalized_id);
                  return Err((StatusCode::FORBIDDEN, Json(AuthResponse { 
                      id: None,
                      message: "Account pending approval".to_string(), 
@@ -466,6 +487,7 @@ pub async fn login_handler(
                      section: None
                  })));
              }
+             println!("DEBUG: Login 200 - User {} success", normalized_id);
              return Ok(Json(AuthResponse { 
                  id: Some(user.id.to_string()),
                  message: "Login Successful".to_string(), 
@@ -478,7 +500,11 @@ pub async fn login_handler(
                  batch_no: user.batch_no,
                  section: user.section,
              }));
+        } else {
+             println!("DEBUG: Login 401 - Password mismatch for {}", normalized_id);
         }
+    } else {
+        println!("DEBUG: Login 401 - User not found: {}", normalized_id);
     }
 
     Err((StatusCode::UNAUTHORIZED, Json(AuthResponse { 
@@ -652,74 +678,73 @@ pub async fn get_notifications_handler(
     State(state): State<AppState>,
     Query(params): Query<NotificationQuery>,
 ) -> Result<Json<Vec<Notification>>, StatusCode> {
-    println!("DEBUG: Fetch notifications for role={:?} branch={:?} user_id={:?}", params.role, params.branch, params.user_id);
-    
-    let mut query = "SELECT id, type, message, sender_id, recipient_id, branch, status, created_at FROM notifications".to_string();
-    let mut conditions = Vec::new();
+    let mut query_builder = sqlx::QueryBuilder::<Postgres>::new(
+        "SELECT id, type, message, sender_id, recipient_id, branch, status, created_at FROM notifications WHERE 1=1"
+    );
 
     if let Some(role) = &params.role {
         match role.as_str() {
             "Student" => {
-                 if let Some(uid) = &params.user_id {
-                    conditions.push(format!("(recipient_id = '{}' OR recipient_id = 'STUDENT_RECIPIENT' OR recipient_id IS NULL)", uid));
-                 } else {
-                    conditions.push("(recipient_id = 'STUDENT_RECIPIENT' OR recipient_id IS NULL)".to_string());
-                 }
+                query_builder.push(" AND (recipient_id = ");
+                query_builder.push_bind(params.user_id.clone().unwrap_or_default());
+                query_builder.push(" OR recipient_id = 'STUDENT_RECIPIENT' OR recipient_id IS NULL)");
             },
             "Faculty" => {
-                if let Some(uid) = &params.user_id {
-                    conditions.push(format!("(recipient_id = '{}' OR recipient_id = 'FACULTY_RECIPIENT' OR (recipient_id IS NULL AND (branch = '{}' OR branch IS NULL)))", 
-                        uid, params.branch.as_deref().unwrap_or("")));
-                } else {
-                    conditions.push("(recipient_id = 'FACULTY_RECIPIENT' OR recipient_id IS NULL)".to_string());
-                }
+                query_builder.push(" AND (recipient_id = ");
+                query_builder.push_bind(params.user_id.clone().unwrap_or_default());
+                query_builder.push(" OR recipient_id = 'FACULTY_RECIPIENT' OR (recipient_id IS NULL AND (branch = ");
+                query_builder.push_bind(params.branch.clone().unwrap_or_default());
+                query_builder.push(" OR branch IS NULL)))");
             },
             "Parent" => {
-                if let Some(uid) = &params.user_id {
-                    conditions.push(format!("(recipient_id = '{}' OR recipient_id = 'PARENT_RECIPIENT' OR recipient_id IS NULL)", uid));
-                 } else {
-                    conditions.push("(recipient_id = 'PARENT_RECIPIENT' OR recipient_id IS NULL)".to_string());
-                 }
+                query_builder.push(" AND (recipient_id = ");
+                query_builder.push_bind(params.user_id.clone().unwrap_or_default());
+                query_builder.push(" OR recipient_id = 'PARENT_RECIPIENT' OR recipient_id IS NULL)");
             },
             "HOD" => {
                 if let Some(branch) = &params.branch {
-                    conditions.push(format!("(recipient_id = 'HOD_RECIPIENT' AND (branch = '{}' OR branch IS NULL)) OR (recipient_id IS NULL AND (branch = '{}' OR branch IS NULL))", branch, branch));
+                    query_builder.push(" AND ((recipient_id = 'HOD_RECIPIENT' AND (branch = ");
+                    query_builder.push_bind(branch);
+                    query_builder.push(" OR branch IS NULL)) OR (recipient_id IS NULL AND (branch = ");
+                    query_builder.push_bind(branch);
+                    query_builder.push(" OR branch IS NULL)))");
                 } else if let Some(uid) = &params.user_id {
-                     conditions.push(format!("(recipient_id = '{}' OR recipient_id = 'HOD_RECIPIENT' OR recipient_id IS NULL)", uid));
+                    query_builder.push(" AND (recipient_id = ");
+                    query_builder.push_bind(uid);
+                    query_builder.push(" OR recipient_id = 'HOD_RECIPIENT' OR recipient_id IS NULL)");
                 }
             },
             "Principal" => {
-                conditions.push("(recipient_id = 'PRINCIPAL_RECIPIENT' OR (recipient_id IS NULL AND branch IS NULL))".to_string());
+                query_builder.push(" AND (recipient_id = 'PRINCIPAL_RECIPIENT' OR (recipient_id IS NULL AND branch IS NULL))");
             },
             "Coordinator" | "Incharge" => {
-                conditions.push("(recipient_id = 'COORDINATOR_RECIPIENT' OR (recipient_id IS NULL AND branch IS NULL))".to_string());
+                query_builder.push(" AND (recipient_id = 'COORDINATOR_RECIPIENT' OR (recipient_id IS NULL AND branch IS NULL))");
             },
             "Admin" => {
-                conditions.push("(recipient_id = 'ADMIN_RECIPIENT' OR recipient_id IS NULL)".to_string());
+                query_builder.push(" AND (recipient_id = 'ADMIN_RECIPIENT' OR recipient_id IS NULL)");
             },
             _ => {
                 if let Some(uid) = &params.user_id {
-                    conditions.push(format!("(recipient_id = '{}' OR (recipient_id IS NULL AND (branch = '{}' OR branch IS NULL)))", 
-                        uid, params.branch.as_deref().unwrap_or("")));
+                    query_builder.push(" AND (recipient_id = ");
+                    query_builder.push_bind(uid);
+                    query_builder.push(" OR (recipient_id IS NULL AND (branch = ");
+                    query_builder.push_bind(params.branch.clone().unwrap_or_default());
+                    query_builder.push(" OR branch IS NULL)))");
                 }
             }
         }
     } else if let Some(uid) = &params.user_id {
-        conditions.push(format!("recipient_id = '{}'", uid));
-    }
-
-    if !conditions.is_empty() {
-        query.push_str(" WHERE ");
-        query.push_str(&conditions.join(" AND "));
+        query_builder.push(" AND recipient_id = ");
+        query_builder.push_bind(uid);
     }
     
-    query.push_str(" ORDER BY created_at DESC");
+    query_builder.push(" ORDER BY created_at DESC");
 
-    let notifications = sqlx::query_as::<Postgres, Notification>(&query)
+    let notifications = query_builder.build_query_as::<Notification>()
         .fetch_all(&state.pool)
         .await
         .map_err(|e| {
-            println!("Get Notifications Error: {:?}", e);
+            eprintln!("Get Notifications Error: {:?}", e);
             StatusCode::INTERNAL_SERVER_ERROR
         })?;
 
