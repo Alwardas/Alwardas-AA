@@ -108,20 +108,40 @@ class _InchargeReportsScreenState extends State<InchargeReportsScreen> {
     try {
       final dateStr = DateFormat('yyyy-MM-dd').format(_selectedDate);
       final dayName = DateFormat('EEEE').format(_selectedDate);
-      final url = Uri.parse('${ApiConstants.baseUrl}/api/incharge/branch-daily-detail-report?branch=$_selectedBranch&date=$dateStr');
-      final response = await http.get(url);
+      
+      final queryParams = {
+        'branch': _selectedBranch!,
+        'date': dateStr,
+      };
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/incharge/branch-daily-detail-report')
+          .replace(queryParameters: queryParams);
+
+      debugPrint("Fetching PDF data from: $uri");
+      final response = await http.get(uri).timeout(const Duration(seconds: 20));
 
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
         
+        if (data.isEmpty) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text("No timetable data found for the selected date"))
+            );
+          }
+          return;
+        }
+        
         // Group by Class
         Map<String, List<dynamic>> grouped = {};
         for (var item in data) {
-           String key = "${item['year']} - ${item['section']}";
+           String key = "${item['year'] ?? ''} - ${item['section'] ?? ''}";
            grouped.putIfAbsent(key, () => List.filled(8, null, growable: false));
-           int idx = item['periodIndex'];
-           if (idx >= 0 && idx < 8) {
-              grouped[key]![idx] = item;
+           int? pIdx = item['periodIndex'] is int ? item['periodIndex'] as int : int.tryParse(item['periodIndex']?.toString() ?? '');
+           if (pIdx != null) {
+              int idx = pIdx - 1;
+              if (idx >= 0 && idx < 8) {
+                 grouped[key]![idx] = item;
+              }
            }
         }
 
@@ -191,15 +211,17 @@ class _InchargeReportsScreenState extends State<InchargeReportsScreen> {
                             }
 
                             return pw.Container(
-                              color: bgColor,
+                              decoration: pw.BoxDecoration(
+                                color: bgColor,
+                                border: pw.Border.all(color: PdfColors.grey300, width: 0.2),
+                              ),
                               padding: const pw.EdgeInsets.all(4),
-                              decoration: pw.BoxDecoration(border: pw.Border.all(color: PdfColors.grey300, width: 0.2)),
                               child: pw.Column(
                                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                                 mainAxisAlignment: pw.MainAxisAlignment.center,
                                 children: [
-                                  pw.Text(p['actualSubject'] ?? p['subject'], style: pw.TextStyle(fontSize: 7, fontWeight: pw.FontWeight.bold), maxLines: 1, overflow: pw.TextOverflow.clip),
-                                  pw.Text(p['actualFaculty'] ?? p['originalFaculty'], style: const pw.TextStyle(fontSize: 6.5), maxLines: 1, overflow: pw.TextOverflow.clip),
+                                  pw.Text(p['actualSubject'] ?? p['subject'] ?? "---", style: pw.TextStyle(fontSize: 7, fontWeight: pw.FontWeight.bold), maxLines: 1, overflow: pw.TextOverflow.clip),
+                                  pw.Text(p['actualFaculty'] ?? p['originalFaculty'] ?? "---", style: const pw.TextStyle(fontSize: 6.5), maxLines: 1, overflow: pw.TextOverflow.clip),
                                   pw.SizedBox(height: 2),
                                   pw.Text(statusText, style: pw.TextStyle(fontSize: 6, fontWeight: pw.FontWeight.bold, color: textColor)),
                                 ],
@@ -228,14 +250,34 @@ class _InchargeReportsScreenState extends State<InchargeReportsScreen> {
           ),
         );
 
-        final dir = await getExternalStorageDirectory();
-        final file = File("${dir!.path}/Daily_Report_${_selectedBranch}_$dateStr.pdf");
+        Directory? dir;
+        if (Platform.isAndroid) {
+          dir = await getExternalStorageDirectory();
+        } else {
+          dir = await getApplicationDocumentsDirectory();
+        }
+        if (dir == null) dir = await getApplicationDocumentsDirectory();
+
+        final sanitizedBranch = _selectedBranch!.replaceAll(RegExp(r'[^a-zA-Z0-9]'), '_');
+        final filePath = "${dir.path}/Detailed_Report_${sanitizedBranch}_$dateStr.pdf";
+        final file = File(filePath);
+        
         await file.writeAsBytes(await pdf.save());
         await OpenFilex.open(file.path);
+      } else {
+        if (mounted) {
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text("Error: ${response.statusCode} - ${response.body}"))
+           );
+        }
       }
     } catch (e) {
       debugPrint("PDF Error: $e");
-    } finally {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Error: ${e.toString()}"))
+        );
+      }
       setState(() => _isLoading = false);
     }
   }
