@@ -238,6 +238,23 @@ class _StudentDashboardState extends State<StudentDashboard> {
       if (scheduleRes.statusCode != 200) return;
       final List<dynamic> schedule = json.decode(scheduleRes.body);
 
+      // New: Fetch Today's Execution Status 
+      final todayDateStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
+      final statusUri = Uri.parse('${ApiConstants.baseUrl}/api/incharge/class-status').replace(queryParameters: {
+        'branch': branch,
+        'year': year,
+        'section': section,
+        'date': todayDateStr,
+      });
+      final statusRes = await http.get(statusUri);
+      Map<int, dynamic> statusMap = {};
+      if (statusRes.statusCode == 200) {
+        final List<dynamic> sData = json.decode(statusRes.body);
+        for (var s in sData) {
+          statusMap[s['periodIndex']] = s;
+        }
+      }
+
       // 4. Schedule Notifications
       const mapDays = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6};
       
@@ -279,12 +296,18 @@ class _StudentDashboardState extends State<StudentDashboard> {
                String hourStr = startTime.hour > 12 ? (startTime.hour - 12).toString() : (startTime.hour == 0 ? "12" : startTime.hour.toString());
                String amPmStr = startTime.hour >= 12 ? 'PM' : 'AM';
                String classTime = "$hourStr:${startTime.minute.toString().padLeft(2, '0')} $amPmStr";
-               Map<String, dynamic> classData = {
-                 'subject': item['subject'],
-                 'time': classTime,
-                 'faculty': item['faculty_name'] ?? '',
-                 'pIndex': pIndex,
-               };
+                Map<String, dynamic> classData = {
+                  'subject': item['subject'],
+                  'time': classTime,
+                  'faculty': item['faculty_name'] ?? '',
+                  'pIndex': pIndex,
+                  'status': statusMap[pIndex]?['status'],
+                };
+                
+                if (statusMap[pIndex]?['status'] == 'substitute') {
+                   classData['subject'] = statusMap[pIndex]['actualSubject'];
+                   classData['faculty'] = statusMap[pIndex]['actualFaculty'];
+                }
                
                 tempNormal.add(classData);
                 if (item['subject'].toString().toLowerCase().contains('practical') || item['subject'].toString().toLowerCase().contains('lab')) {
@@ -764,16 +787,27 @@ class _StudentDashboardState extends State<StudentDashboard> {
       margin: const EdgeInsets.only(bottom: 15),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: cls['status'] == 'conducted' ? Colors.green.withOpacity(0.15) :
+               (cls['status'] == 'substitute' ? Colors.orange.withOpacity(0.15) :
+                (cls['status'] == 'not_conducted' ? Colors.red.withOpacity(0.15) :
+                 (isDark ? const Color(0xFF1E293B) : Colors.white))),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
+            color: cls['status'] == 'conducted' ? Colors.green.withOpacity(0.1) :
+                   (cls['status'] == 'substitute' ? Colors.orange.withOpacity(0.1) :
+                    (cls['status'] == 'not_conducted' ? Colors.red.withOpacity(0.1) :
+                     Colors.black.withValues(alpha: 0.05))),
             blurRadius: 10,
             offset: const Offset(0, 5),
           ),
         ],
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+        border: Border.all(
+          color: cls['status'] == 'conducted' ? Colors.green.withOpacity(0.5) :
+                 (cls['status'] == 'substitute' ? Colors.orange.withOpacity(0.5) :
+                  (cls['status'] == 'not_conducted' ? Colors.red.withOpacity(0.5) :
+                   (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)))),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

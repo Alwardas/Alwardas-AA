@@ -274,15 +274,18 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                          width: width,
                          height: 100, // Fixed height for uniformity
                          padding: const EdgeInsets.all(12),
-                         decoration: BoxDecoration(
-                            color: cardColor,
-                            border: Border.all(
-                              color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.5) :
-                                     (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.5) :
-                                      (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.5) :
-                                       (hasClass ? tint.withValues(alpha: 0.3) : iconBg)))
-                            ),
-                            borderRadius: BorderRadius.circular(16),
+                          decoration: BoxDecoration(
+                             color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.2) :
+                                    (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.2) :
+                                     (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.2) :
+                                      cardColor)),
+                             border: Border.all(
+                               color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.6) :
+                                      (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.6) :
+                                       (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.6) :
+                                        (hasClass ? tint.withValues(alpha: 0.3) : iconBg)))
+                             ),
+                             borderRadius: BorderRadius.circular(16),
                             boxShadow: [
                               if (hasClass)
                                 BoxShadow(
