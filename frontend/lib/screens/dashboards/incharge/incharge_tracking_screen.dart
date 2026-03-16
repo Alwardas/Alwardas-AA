@@ -131,8 +131,8 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
     setState(() => _isLoading = true);
     try {
       final periodIndex = _periods.indexOf(_selectedPeriod!) + 1;
-      final actualSub = subSubject ?? _originalSubject;
-      final actualFac = subFaculty ?? _originalFaculty;
+      final actualSub = _actualSubjectController.text.isNotEmpty ? _actualSubjectController.text : (_originalSubject != "---" ? _originalSubject : "");
+      final actualFac = _actualFacultyController.text.isNotEmpty ? _actualFacultyController.text : (_originalFaculty != "---" ? _originalFaculty : "");
       
       final payload = {
         "branch": _selectedBranch,
@@ -183,106 +183,192 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
     setState(() => _isLoading = true);
     try {
       final dateStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
-      final url = Uri.parse('${ApiConstants.baseUrl}/api/incharge/branch-daily-detail-report?branch=$_selectedBranch&date=$dateStr');
-      final response = await http.get(url);
+      // Proper URL encoding
+      final queryParams = {
+        'branch': _selectedBranch!,
+        'date': dateStr,
+      };
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/incharge/branch-daily-detail-report')
+          .replace(queryParameters: queryParams);
+
+      debugPrint("Fetching PDF data from: $uri");
+      
+      final response = await http.get(uri).timeout(const Duration(seconds: 20));
 
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
+        debugPrint("Received ${data.length} entries for report");
+        
+        if (data.isEmpty) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text("No timetable data found for today's report"))
+            );
+          }
+          return;
+        }
         
         // Group by Class (Year + Section)
         Map<String, List<dynamic>> grouped = {};
         for (var item in data) {
-           String key = "${item['year']} - ${item['section']}";
+           String key = "${item['year'] ?? ''} - ${item['section'] ?? ''}";
            grouped.putIfAbsent(key, () => List.filled(8, null, growable: false));
-           int idx = (item['periodIndex'] as int) - 1;
-           if (idx >= 0 && idx < 8) {
-              grouped[key]![idx] = item;
+           int? pIdx = item['periodIndex'] is int ? item['periodIndex'] as int : int.tryParse(item['periodIndex']?.toString() ?? '');
+           if (pIdx != null) {
+             int idx = pIdx - 1;
+             if (idx >= 0 && idx < 8) {
+                grouped[key]![idx] = item;
+             }
            }
         }
 
+        debugPrint("Generating PDF document...");
         final pdf = pw.Document();
         pdf.addPage(
           pw.MultiPage(
             pageFormat: PdfPageFormat.a4.landscape,
             margin: const pw.EdgeInsets.all(32),
+            header: (context) => pw.Column(
+              crossAxisAlignment: pw.CrossAxisAlignment.start,
+              children: [
+                pw.Row(
+                  mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                  children: [
+                    pw.Column(
+                      crossAxisAlignment: pw.CrossAxisAlignment.start,
+                      children: [
+                        pw.Text("ALWARDAS POLYTECHNIC",
+                            style: pw.TextStyle(
+                                fontSize: 18,
+                                fontWeight: pw.FontWeight.bold,
+                                color: PdfColors.blue800)),
+                        pw.Text("BRANCH: ${_selectedBranch!.toUpperCase()}",
+                            style: pw.TextStyle(
+                                fontSize: 12,
+                                fontWeight: pw.FontWeight.bold,
+                                color: PdfColors.grey700)),
+                      ],
+                    ),
+                    pw.Column(
+                      crossAxisAlignment: pw.CrossAxisAlignment.end,
+                      children: [
+                        pw.Text("Daily Class Execution Report",
+                            style: pw.TextStyle(
+                                fontSize: 16, fontWeight: pw.FontWeight.bold)),
+                        pw.Text("Date: $dateStr (${_currentDay})",
+                            style: pw.TextStyle(
+                                fontSize: 11, fontWeight: pw.FontWeight.bold)),
+                      ],
+                    ),
+                  ],
+                ),
+                pw.SizedBox(height: 10),
+                pw.Divider(color: PdfColors.grey400, thickness: 0.5),
+                pw.SizedBox(height: 15),
+              ],
+            ),
             build: (pw.Context context) {
               return [
-                pw.Header(
-                  level: 0,
-                  child: pw.Column(
-                    crossAxisAlignment: pw.CrossAxisAlignment.start,
-                    children: [
-                       pw.Text("ALWARDAS POLYTECHNIC", style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
-                       pw.Text("BRANCH: ${_selectedBranch!.toUpperCase()}", style: pw.TextStyle(fontSize: 14, fontWeight: pw.FontWeight.bold)),
-                       pw.SizedBox(height: 5),
-                       pw.Row(
-                         mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                         children: [
-                           pw.Text("Daily Class Execution Report", style: pw.TextStyle(fontSize: 20, fontWeight: pw.FontWeight.bold)),
-                           pw.Text("Date: $dateStr (${_currentDay})", style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
-                         ]
-                       ),
-                       pw.SizedBox(height: 20),
-                    ]
-                  )
-                ),
                 pw.Table(
-                  border: pw.TableBorder.all(color: PdfColors.black, width: 0.5),
+                  border: pw.TableBorder.all(color: PdfColors.grey400, width: 0.5),
                   columnWidths: {
-                    0: const pw.FixedColumnWidth(100),
-                    for (int i=1; i<=8; i++) i: const pw.FlexColumnWidth(1),
+                    0: const pw.FixedColumnWidth(110),
+                    for (int i = 1; i <= 8; i++) i: const pw.FlexColumnWidth(1),
                   },
                   children: [
                     pw.TableRow(
-                      decoration: const pw.BoxDecoration(color: PdfColors.grey300),
+                      decoration: const pw.BoxDecoration(color: PdfColors.blue50),
                       children: [
-                        pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text("Year - Section", style: pw.TextStyle(fontWeight: pw.FontWeight.bold, fontSize: 10))),
-                        ...List.generate(8, (i) => pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text("P${i + 1}", style: pw.TextStyle(fontWeight: pw.FontWeight.bold, fontSize: 10)))),
+                        pw.Padding(
+                          padding: const pw.EdgeInsets.all(8),
+                          child: pw.Text("Year - Section",
+                              style: pw.TextStyle(
+                                  fontWeight: pw.FontWeight.bold,
+                                  fontSize: 10,
+                                  color: PdfColors.blue800)),
+                        ),
+                        ...List.generate(
+                          8,
+                          (i) => pw.Padding(
+                            padding: const pw.EdgeInsets.all(8),
+                            child: pw.Text("Period ${i + 1}",
+                                textAlign: pw.TextAlign.center,
+                                style: pw.TextStyle(
+                                    fontWeight: pw.FontWeight.bold,
+                                    fontSize: 10,
+                                    color: PdfColors.blue800)),
+                          ),
+                        ),
                       ],
                     ),
                     for (var entry in grouped.entries)
                       pw.TableRow(
                         children: [
-                          pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text(entry.key, style: pw.TextStyle(fontSize: 9, fontWeight: pw.FontWeight.bold))),
+                          pw.Padding(
+                            padding: const pw.EdgeInsets.all(8),
+                            child: pw.Text(entry.key,
+                                style: pw.TextStyle(
+                                    fontSize: 9,
+                                    fontWeight: pw.FontWeight.bold,
+                                    color: PdfColors.grey800)),
+                          ),
                           ...entry.value.map((p) {
-                            if (p == null) return pw.Padding(padding: const pw.EdgeInsets.all(5), child: pw.Text("-", textAlign: pw.TextAlign.center, style: const pw.TextStyle(fontSize: 8)));
-                            
+                            if (p == null) {
+                              return pw.Padding(
+                                padding: const pw.EdgeInsets.all(8),
+                                child: pw.Text("-",
+                                    textAlign: pw.TextAlign.center,
+                                    style: pw.TextStyle(
+                                        fontSize: 8, color: PdfColors.grey400)),
+                              );
+                            }
+
                             // Determine Color & Status Text
                             PdfColor bgColor = PdfColors.white;
-                            String statusText = "";
-                            PdfColor textColor = PdfColors.black;
+                            String statusText = "PENDING";
+                            PdfColor textColor = PdfColors.grey600;
 
                             if (p['status'] == 'conducted') {
-                               bgColor = PdfColor.fromHex("#E8F5E9"); // Very light green
-                               statusText = "CONDUCTED";
-                               textColor = PdfColors.green;
+                              bgColor = PdfColor.fromHex("#E8F5E9");
+                              statusText = "CONDUCTED";
+                              textColor = PdfColors.green800;
                             } else if (p['status'] == 'substitute') {
-                               bgColor = PdfColor.fromHex("#FFF3E0"); // Very light orange
-                               statusText = "SUBSTITUTE";
-                               textColor = PdfColors.orange;
+                              bgColor = PdfColor.fromHex("#FFF3E0");
+                              statusText = "SUBSTITUTE";
+                              textColor = PdfColors.orange800;
                             } else if (p['status'] == 'not_conducted') {
-                               bgColor = PdfColor.fromHex("#FFEBEE"); // Very light red
-                               statusText = "NOT CONDUCTED";
-                               textColor = PdfColors.red;
-                            } else {
-                               statusText = "PENDING";
-                               textColor = PdfColors.grey;
+                              bgColor = PdfColor.fromHex("#FFEBEE");
+                              statusText = "NOT CONDUCTED";
+                              textColor = PdfColors.red800;
                             }
 
                             return pw.Container(
-                              color: bgColor,
-                              padding: const pw.EdgeInsets.all(4),
                               decoration: pw.BoxDecoration(
-                                border: pw.Border.all(color: PdfColors.grey300, width: 0.2),
+                                color: bgColor,
+                                border: pw.Border.all(
+                                    color: PdfColors.grey200, width: 0.1),
                               ),
+                              padding: const pw.EdgeInsets.all(6),
                               child: pw.Column(
                                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                                 mainAxisAlignment: pw.MainAxisAlignment.center,
                                 children: [
-                                  pw.Text(p['actualSubject'] ?? p['subject'], style: pw.TextStyle(fontSize: 7, fontWeight: pw.FontWeight.bold)),
-                                  pw.Text(p['actualFaculty'] ?? p['originalFaculty'], style: const pw.TextStyle(fontSize: 6.5)),
-                                  pw.SizedBox(height: 2),
-                                  pw.Text(statusText, style: pw.TextStyle(fontSize: 6, fontWeight: pw.FontWeight.bold, color: textColor)),
+                                  pw.Text(p['actualSubject'] ?? p['subject'] ?? "---",
+                                      style: pw.TextStyle(
+                                          fontSize: 7.5,
+                                          fontWeight: pw.FontWeight.bold,
+                                          color: PdfColors.black)),
+                                  pw.Text(
+                                      p['actualFaculty'] ?? p['originalFaculty'] ?? "---",
+                                      style: pw.TextStyle(
+                                          fontSize: 6.5,
+                                          color: PdfColors.grey700)),
+                                  pw.SizedBox(height: 3),
+                                  pw.Text(statusText,
+                                      style: pw.TextStyle(
+                                          fontSize: 5.5,
+                                          fontWeight: pw.FontWeight.bold,
+                                          color: textColor)),
                                 ],
                               ),
                             );
@@ -291,31 +377,70 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
                       ),
                   ],
                 ),
-                pw.SizedBox(height: 30),
-                pw.Row(
-                  mainAxisAlignment: pw.MainAxisAlignment.end,
-                  children: [
-                    pw.Column(
-                      children: [
-                        pw.SizedBox(height: 40),
-                        pw.Container(width: 150, decoration: const pw.BoxDecoration(border: pw.Border(top: pw.BorderSide()))),
-                        pw.Text("Incharge Signature", style: const pw.TextStyle(fontSize: 10)),
-                      ]
-                    )
-                  ]
-                )
               ];
             },
+            footer: (context) => pw.Column(
+              children: [
+                pw.SizedBox(height: 20),
+                pw.Divider(color: PdfColors.grey300, thickness: 0.5),
+                pw.Row(
+                  mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                  children: [
+                    pw.Text("System Generated Report",
+                        style: pw.TextStyle(
+                            fontSize: 8, color: PdfColors.grey500)),
+                    pw.Column(
+                      children: [
+                        pw.SizedBox(height: 30),
+                        pw.Container(
+                            width: 120,
+                            decoration: const pw.BoxDecoration(
+                                border:
+                                    pw.Border(top: pw.BorderSide(width: 0.5)))),
+                        pw.Text("Authorized Signature",
+                            style: const pw.TextStyle(fontSize: 10)),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         );
 
-        final dir = await getExternalStorageDirectory();
-        final file = File("${dir!.path}/Daily_Report_${_selectedBranch}_$dateStr.pdf");
-        await file.writeAsBytes(await pdf.save());
-        await OpenFilex.open(file.path);
+        Directory? dir;
+        if (Platform.isAndroid) {
+          dir = await getExternalStorageDirectory();
+        } else {
+          dir = await getApplicationDocumentsDirectory();
+        }
+        
+        if (dir == null) dir = await getApplicationDocumentsDirectory();
+
+        final sanitizedBranch = _selectedBranch!.replaceAll(RegExp(r'[^a-zA-Z0-9]'), '_');
+        final filePath = "${dir.path}/Report_${sanitizedBranch}_$dateStr.pdf";
+        final file = File(filePath);
+        
+        debugPrint("Saving PDF to: $filePath");
+        final pdfBytes = await pdf.save();
+        await file.writeAsBytes(pdfBytes);
+        
+        debugPrint("Opening PDF...");
+        final result = await OpenFilex.open(filePath);
+        debugPrint("Open Result: ${result.message}");
+      } else {
+        if (mounted) {
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text("Server Error: ${response.statusCode} - ${response.body}"))
+           );
+        }
       }
     } catch (e) {
       debugPrint("PDF Error: $e");
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("Error: ${e.toString()}")));
+      }
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
@@ -517,6 +642,56 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
                         _buildDetailRow("Faculty", _originalFaculty, Icons.person_rounded, const Color(0xFF10B981)),
                       ],
                     ),
+                ],
+              ),
+            ),
+            
+            const SizedBox(height: 24),
+
+            // Manual Override Section
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: theme.primaryColor.withOpacity(0.1)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Actual Execution Details", 
+                    style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w600)),
+                  const SizedBox(height: 16),
+                  TextField(
+                    controller: _actualSubjectController,
+                    style: GoogleFonts.poppins(fontSize: 14),
+                    decoration: InputDecoration(
+                      labelText: "Actual Subject",
+                      labelStyle: const TextStyle(fontSize: 12),
+                      prefixIcon: const Icon(Icons.book, size: 20),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  TextField(
+                    controller: _actualFacultyController,
+                    style: GoogleFonts.poppins(fontSize: 14),
+                    decoration: InputDecoration(
+                      labelText: "Actual Faculty",
+                      labelStyle: const TextStyle(fontSize: 12),
+                      prefixIcon: const Icon(Icons.person, size: 20),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    ),
+                  ),
                 ],
               ),
             ),
