@@ -100,7 +100,7 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
     
     setState(() => _isLoadingTimetable = true);
     try {
-      final periodIndex = _periods.indexOf(_selectedPeriod!);
+      final periodIndex = _periods.indexOf(_selectedPeriod!) + 1;
       final url = Uri.parse('${ApiConstants.baseUrl}/api/incharge/timetable-lookup?branch=$_selectedBranch&year=$_selectedYear&section=$_selectedSection&day=$_currentDay&period_index=$periodIndex');
       final response = await http.get(url);
       if (response.statusCode == 200) {
@@ -130,7 +130,7 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
 
     setState(() => _isLoading = true);
     try {
-      final periodIndex = _periods.indexOf(_selectedPeriod!);
+      final periodIndex = _periods.indexOf(_selectedPeriod!) + 1;
       final actualSub = subSubject ?? _originalSubject;
       final actualFac = subFaculty ?? _originalFaculty;
       
@@ -139,7 +139,7 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
         "year": _selectedYear,
         "section": _selectedSection,
         "day": _currentDay,
-        "periodIndex": periodIndex,
+        "periodIndex": _periods.indexOf(_selectedPeriod!) + 1,
         "statusDate": DateFormat('yyyy-MM-dd').format(DateTime.now()),
         "originalSubject": _originalSubject,
         "originalFaculty": _originalFaculty,
@@ -194,7 +194,7 @@ class _InchargeTrackingScreenState extends State<InchargeTrackingScreen> {
         for (var item in data) {
            String key = "${item['year']} - ${item['section']}";
            grouped.putIfAbsent(key, () => List.filled(8, null, growable: false));
-           int idx = item['periodIndex'];
+           int idx = (item['periodIndex'] as int) - 1;
            if (idx >= 0 && idx < 8) {
               grouped[key]![idx] = item;
            }

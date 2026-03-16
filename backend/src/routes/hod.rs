@@ -47,6 +47,8 @@ pub async fn get_hod_departments_handler(
         "SELECT DISTINCT branch FROM (
             SELECT branch FROM department_timings
             UNION
+            SELECT branch FROM sections
+            UNION
             SELECT branch FROM users WHERE branch IS NOT NULL AND branch != ''
         ) as combined_branches ORDER BY branch ASC"
     )
@@ -229,7 +231,7 @@ pub async fn get_master_timetable_handler(
     for (year, section) in class_combos {
         let mut periods = Vec::new();
         for p in 0..8 {
-            let entry = entries_map.get(&(year.clone(), section.clone())).and_then(|m| m.get(&p).cloned());
+            let entry = entries_map.get(&(year.clone(), section.clone())).and_then(|m| m.get(&(p + 1)).cloned());
             periods.push(entry);
         }
 
@@ -254,7 +256,7 @@ pub async fn get_master_timetable_handler(
     for lab_name in lab_names {
         let mut periods = Vec::new();
         for p in 0..8 {
-            let entry = entries_map.get(&("Lab".to_string(), lab_name.clone())).and_then(|m| m.get(&p).cloned());
+            let entry = entries_map.get(&("Lab".to_string(), lab_name.clone())).and_then(|m| m.get(&(p + 1)).cloned());
             periods.push(entry);
         }
 
@@ -291,7 +293,7 @@ pub async fn get_master_timetable_handler(
             faculty_clashes.push(FacultyClash {
                 faculty_name: faculty_names.get(&faculty_id).cloned().unwrap_or(faculty_id),
                 day: day.clone(),
-                period_index: period_idx,
+                period_index: period_idx + 1,
                 classes,
             });
         }

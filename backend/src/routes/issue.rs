@@ -69,24 +69,32 @@ pub async fn get_issues_handler(
     // Coordinator sees all issues.
     
     match params.role.as_str() {
-        "Student" | "Parent" | "Faculty" => {
+        "Student" | "Parent" => {
             query.push(" AND i.created_by = ");
             query.push_bind(user_uuid);
         }
+        "Faculty" => {
+            // Faculty see issues they created or assigned to them
+            query.push(" AND (i.created_by = ");
+            query.push_bind(user_uuid);
+            query.push(" OR i.assigned_to = ");
+            query.push_bind(user_uuid);
+            query.push(")");
+        }
         "HOD" => {
-            // HOD see issues from their branch or assigned to them
+            // HOD see issues from their branch, assigned to them, or created by Coordinator
             if let Some(branch) = &params.branch {
                 query.push(" AND (u_creator.branch = ");
                 query.push_bind(branch);
                 query.push(" OR i.assigned_to = ");
                 query.push_bind(user_uuid);
-                query.push(")");
+                query.push(" OR u_creator.role = 'Coordinator')");
             } else {
                 query.push(" AND (i.created_by = ");
                 query.push_bind(user_uuid);
                 query.push(" OR i.assigned_to = ");
                 query.push_bind(user_uuid);
-                query.push(")");
+                query.push(" OR u_creator.role = 'Coordinator')");
             }
         }
         "Principal" | "Coordinator" | "Admin" => {
@@ -230,6 +238,32 @@ pub async fn update_issue_status_handler(
         .ok();
 
     tx.commit().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Commit failed"}))))?;
+
+    Ok(StatusCode::OK)
+}
+
+
+pub async fn delete_issue_handler(
+    State(state): State<AppState>,
+    Path(issue_id): Path<Uuid>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    // Delete comments first due to foreign key constraints if any
+    sqlx::query("DELETE FROM issue_comments WHERE issue_id = $1")
+        .bind(issue_id)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("Failed to delete comments: {}", e)}))))?;
+
+    // Delete the issue
+    let result = sqlx::query("DELETE FROM issues WHERE id = $1")
+        .bind(issue_id)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("Failed to delete issue: {}", e)}))))?;
+
+    if result.rows_affected() == 0 {
+        return Err((StatusCode::NOT_FOUND, Json(serde_json::json!({"error": "Issue not found"}))));
+    }
 
     Ok(StatusCode::OK)
 }

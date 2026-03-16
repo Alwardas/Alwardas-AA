@@ -457,6 +457,7 @@ async fn main() {
         .route("/api/issues/comments/submit", post(issue::submit_comment_handler))
         .route("/api/issues/:id/assign", post(issue::assign_issue_handler))
         .route("/api/issues/:id/status", post(issue::update_issue_status_handler))
+        .route("/api/issues/:id", axum::routing::delete(issue::delete_issue_handler))
         .route("/api/user/request-update", post(student::request_profile_update_handler))
         .route("/api/user/request-attendance-correction", post(student::request_attendance_correction_handler))
         .route("/api/user/attendance-correction-requests", get(student::get_attendance_correction_requests_handler))

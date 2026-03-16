@@ -242,6 +242,8 @@ pub async fn get_all_branches_syllabus_progress_handler(
         "SELECT DISTINCT branch FROM (
             SELECT branch FROM department_timings
             UNION
+            SELECT branch FROM sections
+            UNION
             SELECT branch FROM users WHERE branch IS NOT NULL AND branch != ''
         ) as combined_branches ORDER BY branch ASC"
     )

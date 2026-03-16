@@ -137,6 +137,14 @@ class _IssueDetailScreenState extends State<IssueDetailScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
+        actions: [
+          if (widget.userData['id'] == _currentIssue.createdBy || 
+              role == 'Admin' || role == 'Coordinator' || role == 'Principal' || role == 'HOD')
+            IconButton(
+              icon: const Icon(Icons.delete_outline, color: Colors.redAccent),
+              onPressed: () => _confirmDelete(),
+            ),
+        ],
       ),
       extendBodyBehindAppBar: true,
       body: Container(
@@ -172,6 +180,40 @@ class _IssueDetailScreenState extends State<IssueDetailScreen> {
         ),
       ),
     );
+  }
+
+  void _confirmDelete() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Delete Issue", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        content: Text("Are you sure you want to delete this issue? This action cannot be undone.", style: GoogleFonts.poppins()),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: Text("Cancel", style: GoogleFonts.poppins())),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _deleteIssue();
+            }, 
+            child: Text("Delete", style: GoogleFonts.poppins(color: Colors.redAccent, fontWeight: FontWeight.bold))
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _deleteIssue() async {
+    try {
+      final response = await http.delete(Uri.parse(ApiConstants.getIssueDetails(_currentIssue.id)));
+      if (response.statusCode == 200) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Issue deleted successfully"), backgroundColor: Colors.green));
+        Navigator.pop(context, true); // Return true to refresh list
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to delete issue: ${response.statusCode}"), backgroundColor: Colors.red));
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e"), backgroundColor: Colors.red));
+    }
   }
 
   Widget _buildIssueCard(Color cardColor, Color textColor, Color subTextColor, bool isAdmin) {

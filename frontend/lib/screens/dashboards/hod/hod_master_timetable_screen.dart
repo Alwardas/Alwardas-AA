@@ -250,7 +250,7 @@ class _HodMasterTimetableScreenState extends State<HodMasterTimetableScreen> {
           ..._clashes.map((c) => Padding(
             padding: const EdgeInsets.only(bottom: 4),
             child: Text(
-              "• ${c['facultyName']} is assigned to ${c['classes'].join(', ')} in Period ${c['periodIndex'] + 1}",
+              "• ${c['facultyName']} is assigned to ${c['classes'].join(', ')} in Period ${c['periodIndex']}",
               style: GoogleFonts.poppins(color: Colors.red, fontSize: 12),
             ),
           )).toList(),
