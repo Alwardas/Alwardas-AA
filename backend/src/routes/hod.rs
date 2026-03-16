@@ -43,13 +43,19 @@ pub struct SubjectQuery {
 pub async fn get_hod_departments_handler(
     State(data): State<AppState>,
 ) -> Result<Json<Vec<String>>, StatusCode> {
-    let result = sqlx::query_scalar("SELECT branch FROM department_timings")
-        .fetch_all(&data.pool)
-        .await
-        .map_err(|e| {
-            eprintln!("Failed to fetch department branches: {:?}", e);
-            StatusCode::INTERNAL_SERVER_ERROR
-        })?;
+    let result = sqlx::query_scalar(
+        "SELECT DISTINCT branch FROM (
+            SELECT branch FROM department_timings
+            UNION
+            SELECT branch FROM users WHERE branch IS NOT NULL AND branch != ''
+        ) as combined_branches ORDER BY branch ASC"
+    )
+    .fetch_all(&data.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Failed to fetch department branches: {:?}", e);
+        StatusCode::INTERNAL_SERVER_ERROR
+    })?;
 
     Ok(Json(result))
 }
@@ -478,9 +484,16 @@ pub async fn calculate_year_progress(pool: &sqlx::PgPool, branch: &str, course_i
 
     if sections.is_empty() { return Some(0); }
 
-    let mut total = 0.0;
+    use futures::future::join_all;
+    let mut futures = Vec::new();
     for section in &sections {
-        total += calculate_section_progress(pool, branch, course_id, year, section).await.unwrap_or(0) as f64;
+        futures.push(calculate_section_progress(pool, branch, course_id, year, section));
+    }
+
+    let results = join_all(futures).await;
+    let mut total = 0.0;
+    for res in results {
+        total += res.unwrap_or(0) as f64;
     }
 
     Some((total / sections.len() as f64).round() as i32)
@@ -504,9 +517,15 @@ pub async fn calculate_section_progress(pool: &sqlx::PgPool, branch: &str, cours
 
     if subjects.is_empty() { return Some(0); }
 
-    let mut total = 0.0;
+    use futures::future::join_all;
+    let mut futures = Vec::new();
     for sub in &subjects {
-        let (progress, _) = calculate_subject_progress(pool, &sub.id, section).await;
+        futures.push(calculate_subject_progress(pool, &sub.id, section));
+    }
+
+    let results = join_all(futures).await;
+    let mut total = 0.0;
+    for (progress, _) in results {
         total += progress as f64;
     }
 

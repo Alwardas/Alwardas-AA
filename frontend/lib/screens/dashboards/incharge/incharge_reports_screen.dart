@@ -43,7 +43,7 @@ class _InchargeReportsScreenState extends State<InchargeReportsScreen> {
       if (res.statusCode == 200) {
         final List<dynamic> data = json.decode(res.body);
         setState(() {
-          _branches = data.map((d) => d['branch_name'].toString()).toList();
+          _branches = data.map((d) => d.toString()).toList();
           if (_branches.isNotEmpty) {
             _selectedBranch = _branches[0];
             _fetchDailySummary();

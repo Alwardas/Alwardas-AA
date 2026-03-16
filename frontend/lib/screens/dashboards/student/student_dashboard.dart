@@ -128,7 +128,11 @@ class _StudentDashboardState extends State<StudentDashboard> {
         for (var record in data) {
           String rawDate = record['date']?.toString() ?? '';
           String recordDateStr = rawDate.split('T')[0];
-          String recordStatus = (record['status'] ?? '').toString().toUpperCase();
+          String statusRaw = (record['status'] ?? '').toString().toUpperCase();
+          // Normalize status
+          String recordStatus = (statusRaw.startsWith('H') || statusRaw.contains('HOLIDAY')) 
+              ? 'HOLIDAY' 
+              : (statusRaw.startsWith('P') ? 'PRESENT' : 'ABSENT');
 
           if (recordDateStr == todayStr) {
             if (record['session'] == 'MORNING') {
@@ -139,7 +143,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
               afternoonStatus = recordStatus;
             }
             
-            if (recordStatus.contains('HOLIDAY') || recordStatus.startsWith('H')) {
+            if (recordStatus == 'HOLIDAY') {
               dayIsHoliday = true;
             }
           }
@@ -710,7 +714,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                   // Today's Schedule
                   if (_todaySchedule.isNotEmpty) ...[
                       Text(
-                        "Today's Practical Schedule",
+                        "Today's Schedule",
                         style: GoogleFonts.poppins(
                           color: textColor,
                           fontSize: 16,
@@ -721,7 +725,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                       ..._todaySchedule.map((cls) => _buildClassCard(cls, isDark, textColor, subTextColor)),
                   ] else ...[
                       Text(
-                        "Today's Practical Schedule",
+                        "Today's Schedule",
                         style: GoogleFonts.poppins(
                           color: textColor,
                           fontSize: 16,

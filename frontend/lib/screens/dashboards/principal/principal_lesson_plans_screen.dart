@@ -37,8 +37,8 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
           setState(() {
             deptProgress = data.map((d) {
               return {
-                 'dept': d['branch']?.toString() ?? '', 
-                 'progress': (d['overallPercentage'] ?? 0) / 100.0,
+                 'branch': d['branch']?.toString() ?? 'Unknown', 
+                 'overallPercentage': d['overallPercentage'] ?? 0,
                  'years': d['years'] ?? [],
               };
             }).toList();

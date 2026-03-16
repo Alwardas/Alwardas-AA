@@ -90,7 +90,11 @@ class _ParentDashboardState extends State<ParentDashboard> {
         for (var record in data) {
           String rawDate = record['date']?.toString() ?? '';
           String recordDateStr = rawDate.split('T')[0];
-          String recordStatus = (record['status'] ?? '').toString().toUpperCase();
+          String statusRaw = (record['status'] ?? '').toString().toUpperCase();
+          // Normalize status
+          String recordStatus = (statusRaw.startsWith('H') || statusRaw.contains('HOLIDAY')) 
+              ? 'HOLIDAY' 
+              : (statusRaw.startsWith('P') ? 'PRESENT' : 'ABSENT');
 
           if (recordDateStr == todayStr) {
             if (record['session'] == 'MORNING') {
@@ -102,7 +106,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
             }
             
             // Comprehensive holiday check
-            if (recordStatus.contains('HOLIDAY') || recordStatus.startsWith('H')) {
+            if (recordStatus == 'HOLIDAY') {
               dayIsHoliday = true;
             }
           }
