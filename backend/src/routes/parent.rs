@@ -234,23 +234,21 @@ pub async fn get_parent_requests_handler(
                     if let Some(u_uuid) = u_uuid_opt {
                          query.push(" AND (pr.assigned_to = ");
                          query.push_bind(u_uuid);
-                         if role == "HOD" || role == "Coordinator" || role == "Incharge" {
-                            query.push(" OR (pr.assigned_to IS NULL AND u_student.branch = ");
-                            query.push_bind(params.branch.clone().unwrap_or_default());
-                            query.push(")");
-                         }
-                         query.push(")");
+                         // Faculty also gets branch-level unassigned visibility
+                         query.push(" OR (pr.assigned_to IS NULL AND u_student.branch ILIKE ");
+                         query.push_bind(params.branch.clone().unwrap_or_default().trim());
+                         query.push("))");
                     } else {
                         // If no user found by login_id, maybe fallback to branch?
                         if let Some(branch) = &params.branch {
-                            query.push(" AND (u_student.branch = ");
-                            query.push_bind(branch);
+                            query.push(" AND (u_student.branch ILIKE ");
+                            query.push_bind(branch.trim());
                             query.push(")");
                         }
                     }
                 } else if let Some(branch) = &params.branch {
-                    query.push(" AND (u_student.branch = ");
-                    query.push_bind(branch);
+                    query.push(" AND (u_student.branch ILIKE ");
+                    query.push_bind(branch.trim());
                     query.push(")");
                 }
             }

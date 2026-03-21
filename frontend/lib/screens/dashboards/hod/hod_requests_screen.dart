@@ -22,15 +22,18 @@ class HodRequestsScreen extends StatefulWidget {
 
 class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  List<dynamic> _facultyRequests = [];
+  List<dynamic> _facultyRequests = []; // Subject approvals
+  List<dynamic> _facultySignups = [];   // New account signups
   bool _loading = true;
+  bool _loadingSignups = true;
   final Map<String, String> _nameCache = {};
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
     _fetchRequests();
+    _fetchSignups();
   }
 
   Future<void> _fetchRequests() async {
@@ -105,6 +108,33 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
     }
   }
 
+  Future<void> _fetchSignups() async {
+    final user = widget.userData;
+    final branch = user['branch']?.toString() ?? '';
+    if (branch.isEmpty) return;
+
+    try {
+       final response = await http.get(
+         Uri.parse('${ApiConstants.baseUrl}/api/admin/users?role=Faculty&is_approved=false&branch=${Uri.encodeComponent(branch)}'),
+       );
+
+       if (response.statusCode == 200) {
+          final List<dynamic> data = json.decode(response.body);
+          if (mounted) {
+            setState(() {
+              _facultySignups = data;
+              _loadingSignups = false;
+            });
+          }
+       } else {
+          if (mounted) setState(() => _loadingSignups = false);
+       }
+    } catch (e) {
+       debugPrint("Error fetching signups: $e");
+       if (mounted) setState(() => _loadingSignups = false);
+    }
+  }
+
   Future<void> _fetchFacultyNames(String branch) async {
     try {
       final response = await http.get(
@@ -175,6 +205,28 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
     }
   }
 
+  Future<void> _handleSignupAction(String userId, String action) async {
+     try {
+       final response = await http.post(
+         Uri.parse('${ApiConstants.baseUrl}/api/admin/users/approve'),
+         headers: {'Content-Type': 'application/json'},
+         body: json.encode({
+           'user_id': userId,
+           'action': action
+         }),
+       );
+
+       if (response.statusCode == 200) {
+          _showSnackBar("Account ${action == 'APPROVE' ? 'Approved' : 'Rejected'}!");
+          _fetchSignups();
+       } else {
+          _showSnackBar("Failed: ${response.body}");
+       }
+     } catch (e) {
+        _showSnackBar("Network Error");
+     }
+  }
+
   void _showSnackBar(String text) {
     if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
   }
@@ -210,7 +262,8 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
             unselectedLabelColor: subTextColor,
             indicatorColor: tint,
             tabs: const [
-              Tab(text: "Faculty Requests"),
+              Tab(text: "Faculty Signups"),
+              Tab(text: "Subject Requests"),
               Tab(text: "Parent Requests"),
             ],
           ),
@@ -223,7 +276,37 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
             child: TabBarView(
               controller: _tabController,
               children: [
-                // Faculty Requests Tab
+                // Tab 1: Faculty Signups
+                _loadingSignups
+                  ? const Center(child: CircularProgressIndicator())
+                  : _facultySignups.isEmpty
+                  ? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.person_add_disabled_outlined, size: 64, color: subTextColor),
+                          const SizedBox(height: 20),
+                          Text("No pending signups", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
+                        ],
+                      ),
+                    )
+                  : ListView.builder(
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      itemCount: _facultySignups.length,
+                      itemBuilder: (ctx, index) {
+                        final u = _facultySignups[index];
+                        return _SignupCard(
+                          u: u,
+                          cardColor: cardColor,
+                          textColor: textColor,
+                          subTextColor: subTextColor,
+                          tint: tint,
+                          onAction: _handleSignupAction,
+                        );
+                      },
+                    ),
+
+                // Tab 2: Faculty Subject Requests
                 _loading
                   ? const Center(child: CircularProgressIndicator())
                   : _facultyRequests.isEmpty
@@ -253,7 +336,7 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
                       },
                     ),
                 
-                // Parent Requests Tab
+                // Tab 3: Parent Requests
                 ParentRequestsViewer(userData: widget.userData),
               ],
             ),
@@ -264,6 +347,95 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
   }
 }
 
+class _SignupCard extends StatelessWidget {
+  final dynamic u;
+  final Color cardColor;
+  final Color textColor;
+  final Color subTextColor;
+  final Color tint;
+  final Function(String, String) onAction;
+
+  const _SignupCard({
+    required this.u,
+    required this.cardColor,
+    required this.textColor,
+    required this.subTextColor,
+    required this.tint,
+    required this.onAction,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.only(bottom: 20),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 15, offset: const Offset(0, 5)),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+               Icon(Icons.person_add_outlined, color: tint, size: 28),
+               const SizedBox(width: 12),
+               Text(
+                 "Faculty Signup",
+                 style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
+               ),
+               const Spacer(),
+               Text(u['login_id'] ?? '', style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            u['full_name'] ?? 'Unknown',
+            style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
+          ),
+          Text(
+            "Branch: ${u['branch'] ?? 'N/A'}",
+            style: GoogleFonts.poppins(fontSize: 13, color: subTextColor),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              Expanded(
+                child: OutlinedButton(
+                  onPressed: () => onAction(u['id'], 'REJECT'),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: Colors.red,
+                    side: const BorderSide(color: Colors.red),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  ),
+                  child: const Text('Reject'),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () => onAction(u['id'], 'APPROVE'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                    elevation: 0,
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  ),
+                  child: const Text('Approve'),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 class _RequestCard extends StatelessWidget {
   final dynamic r;

@@ -193,7 +193,7 @@ class _ParentRequestsViewerState extends State<ParentRequestsViewer> {
                     ),
                   ),
                 const SizedBox(height: 20),
-                if (isPending)
+                if (isPending && widget.userData['role'] != 'Parent')
                 Row(
                   children: [
                     Expanded(

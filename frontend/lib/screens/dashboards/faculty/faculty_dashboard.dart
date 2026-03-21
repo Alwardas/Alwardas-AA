@@ -832,7 +832,7 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
         'icon': Icons.request_page_outlined,
         'title': 'Requests',
         'color': const Color(0xFF9B59B6),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyRequestsScreen())),
+        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyRequestsScreen(userData: widget.userData))),
       },
       {
         'icon': Icons.rate_review_outlined,

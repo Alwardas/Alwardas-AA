@@ -1,40 +1,68 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../widgets/parent_requests_viewer.dart';
 
-class FacultyRequestsScreen extends StatelessWidget {
-  const FacultyRequestsScreen({super.key});
+class FacultyRequestsScreen extends StatefulWidget {
+  final Map<String, dynamic> userData;
+  const FacultyRequestsScreen({super.key, required this.userData});
+
+  @override
+  State<FacultyRequestsScreen> createState() => _FacultyRequestsScreenState();
+}
+
+class _FacultyRequestsScreenState extends State<FacultyRequestsScreen> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 1, vsync: this); // For now just Parent Requests, can add more later
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    final textColor = isDark ? Colors.white : Colors.black;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("Requests", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        title: Text("Requests", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
         centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.request_page_outlined, size: 80, color: Colors.grey[400]),
-            const SizedBox(height: 16),
-            Text(
-              "No Pending Requests",
-              style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.grey[600]),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              "View and manage requests here.",
-              style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[500]),
-            ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: textColor),
+        bottom: TabBar(
+          controller: _tabController,
+          labelColor: Theme.of(context).primaryColor,
+          unselectedLabelColor: Colors.grey,
+          indicatorColor: Theme.of(context).primaryColor,
+          tabs: const [
+            Tab(text: "Parent Requests"),
           ],
         ),
       ),
-       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("New Request feature coming soon!")));
-        },
-        child: const Icon(Icons.add),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: isDark 
+                ? [const Color(0xFF0F172A), const Color(0xFF1E293B)] 
+                : [Colors.grey[50]!, Colors.white],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: TabBarView(
+          controller: _tabController,
+          children: [
+            ParentRequestsViewer(userData: widget.userData),
+          ],
+        ),
       ),
     );
   }
