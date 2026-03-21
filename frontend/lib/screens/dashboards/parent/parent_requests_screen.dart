@@ -5,6 +5,12 @@ import 'dart:convert';
 import '../../../core/api_constants.dart';
 import '../../../core/models/parent_request_model.dart';
 import 'package:intl/intl.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:record/record.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
+import 'package:path/path.dart' as p;
 
 class ParentRequestsScreen extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -30,6 +36,17 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
   String _selectedType = "Leave Application";
   bool _isSubmitting = false;
 
+  late stt.SpeechToText _speech;
+  bool _isListening = false;
+  double _confidence = 1.0;
+
+  late AudioRecorder _recorder;
+  late AudioPlayer _player;
+  bool _isRecording = false;
+  String? _recordedFilePath;
+  bool _isPlaying = false;
+  String? _recordedVoiceBase64;
+
   final List<String> _requestTypes = [
     "Leave Application",
     "Late Arrival Permission",
@@ -48,7 +65,136 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    _speech = stt.SpeechToText();
+    _recorder = AudioRecorder();
+    _player = AudioPlayer();
     _fetchRequests();
+  }
+
+  @override
+  void dispose() {
+    _recorder.dispose();
+    _player.dispose();
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _startRecording() async {
+    try {
+      if (await _recorder.hasPermission()) {
+        final dir = await getTemporaryDirectory();
+        final path = p.join(dir.path, 'voice_request_${DateTime.now().millisecondsSinceEpoch}.m4a');
+        
+        await _recorder.start(const RecordConfig(), path: path);
+        setState(() {
+          _isRecording = true;
+          _recordedFilePath = null;
+          _recordedVoiceBase64 = null;
+        });
+      }
+    } catch (e) {
+      debugPrint("Start recording error: $e");
+    }
+  }
+
+  Future<void> _stopRecording() async {
+    try {
+      final path = await _recorder.stop();
+      if (path != null) {
+        final File file = File(path);
+        final bytes = await file.readAsBytes();
+        setState(() {
+          _isRecording = false;
+          _recordedFilePath = path;
+          _recordedVoiceBase64 = base64Encode(bytes);
+        });
+      }
+    } catch (e) {
+      debugPrint("Stop recording error: $e");
+    }
+  }
+
+  Future<void> _playRecordedAudio() async {
+    if (_recordedFilePath != null) {
+      if (_isPlaying) {
+        await _player.stop();
+        setState(() => _isPlaying = false);
+      } else {
+        await _player.play(DeviceFileSource(_recordedFilePath!));
+        setState(() => _isPlaying = true);
+        _player.onPlayerComplete.listen((event) {
+          if (mounted) setState(() => _isPlaying = false);
+        });
+      }
+    }
+  }
+
+  void _deleteRecording() {
+    setState(() {
+      _recordedFilePath = null;
+      _recordedVoiceBase64 = null;
+      _isPlaying = false;
+    });
+    _player.stop();
+  }
+
+  Future<void> _playVoiceNote(String base64Audio) async {
+    try {
+      final bytes = base64Decode(base64Audio);
+      final dir = await getTemporaryDirectory();
+      final file = File(p.join(dir.path, 'temp_voice_${DateTime.now().millisecondsSinceEpoch}.m4a'));
+      await file.writeAsBytes(bytes);
+      await _player.play(DeviceFileSource(file.path));
+    } catch (e) {
+      debugPrint("Play voice note error: $e");
+    }
+  }
+
+  String _baselineText = "";
+
+  void _listen(TextEditingController controller) async {
+    if (!_isListening) {
+      bool available = await _speech.initialize(
+        onStatus: (val) {
+           debugPrint('onStatus: $val');
+           if (val == 'done' || val == 'notListening') {
+             setState(() {
+               _isListening = false;
+               _baselineText = "";
+             });
+           }
+        },
+        onError: (val) {
+          debugPrint('onError: $val');
+          setState(() {
+            _isListening = false;
+            _baselineText = "";
+          });
+        },
+      );
+      if (available) {
+        setState(() {
+          _isListening = true;
+          _baselineText = controller.text;
+        });
+        _speech.listen(
+          onResult: (val) => setState(() {
+            if (val.recognizedWords.isNotEmpty) {
+               // Combine baseline text with current recognized words
+               String newWords = val.recognizedWords;
+               if (_baselineText.isEmpty) {
+                 controller.text = newWords;
+               } else {
+                 controller.text = _baselineText + ( _baselineText.endsWith(' ') ? '' : ' ') + newWords;
+               }
+            }
+          }),
+        );
+      }
+    } else {
+      setState(() => _isListening = false);
+      _speech.stop();
+    }
   }
 
   Future<void> _fetchRequests() async {
@@ -130,6 +276,7 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
           'dateDuration': _durationController.text,
           'targetRoles': _selectedRoles.isNotEmpty ? _selectedRoles : null,
           'targetFacultyIds': _selectedFacultyIds.isNotEmpty ? _selectedFacultyIds : null,
+          'voiceNote': _recordedVoiceBase64,
         }),
       );
 
@@ -140,6 +287,8 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
         setState(() {
            _selectedRoles.clear();
            _selectedFacultyIds.clear();
+           _recordedFilePath = null;
+           _recordedVoiceBase64 = null;
         });
         _fetchRequests();
         ScaffoldMessenger.of(context).showSnackBar(
@@ -233,13 +382,29 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(req.dateDuration, style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w500)),
-                                  Text(DateFormat('dd MMM yyyy').format(req.createdAt), style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey)),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(DateFormat('dd MMM yyyy').format(req.createdAt), style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey)),
+                                      if (req.voiceNote != null)
+                                        IconButton(
+                                          visualDensity: VisualDensity.compact,
+                                          icon: Icon(Icons.volume_up, color: Colors.blue[700], size: 18),
+                                          onPressed: () => _playVoiceNote(req.voiceNote!),
+                                          tooltip: "Play Voice Message",
+                                        ),
+                                    ],
+                                  ),
+                                  if (req.assignedName != null && req.assignedName != 'Unknown')
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8.0),
+                                      child: Text("Sent to: ${req.assignedName}", style: GoogleFonts.poppins(fontSize: 11, fontStyle: FontStyle.italic, color: Colors.blue)),
+                                    ),
                                 ],
                               ),
-                            ],
-                          ),
-                        );
+                                ],
+                              ),
+                            );
                       },
                     ),
                   ),
@@ -256,9 +421,11 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
                   const SizedBox(height: 20),
                   _buildDropdown("Request Type", _requestTypes),
                   const SizedBox(height: 20),
-                  _buildTextField("Subject", "Brief subject of the request", _subjectController),
+                   _buildTextField("Subject", "Brief reason for request", _subjectController, isSpeechEnabled: true),
                   const SizedBox(height: 20),
-                  _buildTextField("Description", "Detailed explanation...", _descriptionController, maxLines: 4),
+                  _buildTextField("Description", "Detailed explanation...", _descriptionController, maxLines: 4, isSpeechEnabled: true),
+                  const SizedBox(height: 20),
+                  _buildVoiceRecorder(),
                   const SizedBox(height: 20),
                    _buildTextField("Date/Duration", "e.g. 12th Oct to 14th Oct", _durationController),
                   const SizedBox(height: 20),
@@ -288,11 +455,45 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
     );
   }
 
-  Widget _buildTextField(String label, String hint, TextEditingController controller, {int maxLines = 1}) {
+  Widget _buildTextField(String label, String hint, TextEditingController controller, {int maxLines = 1, bool isSpeechEnabled = false}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 14)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(label, style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 14)),
+            if (isSpeechEnabled)
+              GestureDetector(
+                onTap: () => _listen(controller),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: _isListening && controller.text.isNotEmpty ? Colors.red.withOpacity(0.1) : Colors.blue.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        _isListening ? Icons.mic : Icons.mic_none,
+                        size: 16,
+                        color: _isListening ? Colors.red : Colors.blue,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        _isListening ? "Listening..." : "Speak",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w500,
+                          color: _isListening ? Colors.red : Colors.blue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+          ],
+        ),
         const SizedBox(height: 8),
         TextFormField(
           controller: controller,
@@ -303,7 +504,11 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
             filled: true,
             fillColor: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF2C2C2E) : Colors.grey[100],
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
-            contentPadding: const EdgeInsets.all(16)
+            contentPadding: const EdgeInsets.all(16),
+            suffixIcon: isSpeechEnabled ? IconButton(
+              icon: Icon(_isListening ? Icons.graphic_eq : Icons.mic_rounded, color: _isListening ? Colors.red : Colors.grey),
+              onPressed: () => _listen(controller),
+            ) : null,
           ),
           validator: (v) => v!.isEmpty ? "Required" : null,
         ),
@@ -337,6 +542,99 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildVoiceRecorder() {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF2C2C2E) : Colors.blue.withOpacity(0.05),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.blue.withOpacity(0.2)),
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Icon(Icons.mic, color: Colors.blue[700], size: 20),
+              const SizedBox(width: 8),
+              Text(
+                "Voice Message",
+                style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue[700]),
+              ),
+              const Spacer(),
+              if (_recordedFilePath != null)
+                IconButton(
+                  icon: const Icon(Icons.delete_outline, color: Colors.red, size: 20),
+                  onPressed: _deleteRecording,
+                ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          if (_isRecording)
+             Column(
+               children: [
+                 const LinearProgressIndicator(minHeight: 2),
+                 const SizedBox(height: 12),
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                      Container(
+                        width: 10, height: 10,
+                        decoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
+                      ),
+                      const SizedBox(width: 8),
+                      Text("Recording...", style: GoogleFonts.poppins(color: Colors.red, fontWeight: FontWeight.w600)),
+                   ],
+                 ),
+                 const SizedBox(height: 16),
+                 ElevatedButton.icon(
+                   onPressed: _stopRecording,
+                   icon: const Icon(Icons.stop),
+                   label: const Text("Stop Recording"),
+                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red, foregroundColor: Colors.white),
+                 ),
+               ],
+             )
+          else if (_recordedFilePath != null)
+             Row(
+               children: [
+                 Expanded(
+                   child: Container(
+                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                     decoration: BoxDecoration(
+                       color: Colors.blue.withOpacity(0.1),
+                       borderRadius: BorderRadius.circular(30),
+                     ),
+                     child: Row(
+                       children: [
+                         IconButton(
+                           icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow, color: Colors.blue[700]),
+                           onPressed: _playRecordedAudio,
+                         ),
+                         Text("Recording Saved", style: GoogleFonts.poppins(fontSize: 12, color: Colors.blue[700])),
+                         const Spacer(),
+                         Icon(Icons.check_circle, color: Colors.green[700], size: 16),
+                       ],
+                     ),
+                   ),
+                 ),
+               ],
+             )
+          else
+             ElevatedButton.icon(
+                onPressed: _startRecording,
+                icon: const Icon(Icons.mic_none),
+                label: const Text("Record Voice Message"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue[700],
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                ),
+             )
+        ],
+      ),
     );
   }
 
@@ -400,7 +698,7 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
           child: Column(
             children: _facultyList.map((fac) {
               final id = fac['id'].toString();
-              final name = fac['full_name'] ?? 'Unknown';
+              final name = fac['fullName'] ?? 'Unknown';
               final isSelected = _selectedFacultyIds.contains(id);
               
               return CheckboxListTile(

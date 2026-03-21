@@ -224,7 +224,8 @@ class _ParentDashboardState extends State<ParentDashboard> {
               _children = [
                 {
                   "name": student['fullName'] ?? "N/A",
-                  "id": student['loginId'] ?? "N/A",
+                  "id": student['id'] ?? student['loginId'] ?? "N/A", // Use UUID if available
+                  "login_id": student['loginId'] ?? "N/A",
                   "branch": student['branch'] ?? "N/A",
                   "batch_no":
                       student['batchNo'], // Mapped for Attendance Screen

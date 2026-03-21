@@ -235,9 +235,15 @@ async fn main() {
             status VARCHAR(50) NOT NULL DEFAULT 'Pending',
             created_at TIMESTAMPTZ DEFAULT NOW(),
             updated_at TIMESTAMPTZ DEFAULT NOW(),
-            assigned_to UUID REFERENCES users(id)
+            assigned_to UUID REFERENCES users(id),
+            voice_note TEXT
         )
-    ").execute(&pool).await.err();
+    ").execute(&pool).await.map_err(|e| eprintln!("Force Fix Parent Requests Failed: {:?}", e));
+    
+    let _ = sqlx::query("ALTER TABLE parent_requests ADD COLUMN IF NOT EXISTS voice_note TEXT")
+        .execute(&pool)
+        .await
+        .map_err(|e| eprintln!("Add voice_note to parent_requests failed: {:?}", e));
     
     let _ = sqlx::query("CREATE INDEX IF NOT EXISTS idx_parent_requests_parent_id ON parent_requests(parent_id)").execute(&pool).await.err();
     let _ = sqlx::query("CREATE INDEX IF NOT EXISTS idx_parent_requests_student_id ON parent_requests(student_id)").execute(&pool).await.err();

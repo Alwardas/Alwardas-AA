@@ -42,7 +42,7 @@ pub async fn get_parent_profile_handler(
     };
 
     let student_opt = sqlx::query_as::<_, StudentDetails>(
-        "SELECT u.full_name, u.login_id, u.branch, u.year, u.semester, u.batch_no 
+        "SELECT u.id, u.full_name, u.login_id, u.branch, u.year, u.semester, u.batch_no 
          FROM users u
          JOIN parent_student ps ON u.login_id = ps.student_id
          WHERE ps.parent_id = $1 AND u.role = 'Student'
@@ -62,7 +62,7 @@ pub async fn get_parent_profile_handler(
         };
         
         sqlx::query_as::<_, StudentDetails>(
-            "SELECT full_name, login_id, branch, year, semester, batch_no FROM users WHERE login_id = $1 AND role = 'Student'"
+            "SELECT id, full_name, login_id, branch, year, semester, batch_no FROM users WHERE login_id = $1 AND role = 'Student'"
         )
         .bind(&legacy_id)
         .fetch_optional(&state.pool)
@@ -134,8 +134,8 @@ pub async fn submit_parent_request_handler(
 
     if target_uuids.is_empty() {
         sqlx::query(
-            "INSERT INTO parent_requests (parent_id, student_id, request_type, subject, description, date_duration, status) 
-             VALUES ($1, $2, $3, $4, $5, $6, 'Pending')"
+            "INSERT INTO parent_requests (parent_id, student_id, request_type, subject, description, date_duration, status, voice_note) 
+             VALUES ($1, $2, $3, $4, $5, $6, 'Pending', $7)"
         )
         .bind(parent_uuid)
         .bind(student_uuid)
@@ -143,6 +143,7 @@ pub async fn submit_parent_request_handler(
         .bind(&payload.subject)
         .bind(&payload.description)
         .bind(&payload.date_duration)
+        .bind(&payload.voice_note)
         .execute(&state.pool)
         .await
         .map_err(|e| {
@@ -152,8 +153,8 @@ pub async fn submit_parent_request_handler(
     } else {
         for assigned_to in target_uuids {
             sqlx::query(
-                 "INSERT INTO parent_requests (parent_id, student_id, request_type, subject, description, date_duration, status, assigned_to) 
-                  VALUES ($1, $2, $3, $4, $5, $6, 'Pending', $7)"
+                 "INSERT INTO parent_requests (parent_id, student_id, request_type, subject, description, date_duration, status, assigned_to, voice_note) 
+                  VALUES ($1, $2, $3, $4, $5, $6, 'Pending', $7, $8)"
              )
              .bind(parent_uuid)
              .bind(student_uuid)
@@ -162,6 +163,7 @@ pub async fn submit_parent_request_handler(
              .bind(&payload.description)
              .bind(&payload.date_duration)
              .bind(assigned_to)
+             .bind(&payload.voice_note)
              .execute(&state.pool)
              .await
              .map_err(|e| {
@@ -181,7 +183,7 @@ pub async fn get_parent_requests_handler(
     
     let mut query = sqlx::QueryBuilder::new(r#"
         SELECT 
-            pr.id, pr.parent_id, pr.student_id, pr.request_type, pr.subject, pr.description, pr.date_duration, pr.status, pr.created_at, pr.updated_at, pr.assigned_to,
+            pr.id, pr.parent_id, pr.student_id, pr.request_type, pr.subject, pr.description, pr.date_duration, pr.status, pr.created_at, pr.updated_at, pr.assigned_to, pr.voice_note,
             u_parent.full_name as parent_name,
             u_student.full_name as student_name,
             u_assigned.full_name as assigned_name
@@ -196,6 +198,10 @@ pub async fn get_parent_requests_handler(
         if let Ok(p_uuid) = Uuid::parse_str(parent_id) {
             query.push(" AND pr.parent_id = ");
             query.push_bind(p_uuid);
+        } else {
+             query.push(" AND pr.parent_id = (SELECT id FROM users WHERE login_id = ");
+             query.push_bind(parent_id);
+             query.push(" LIMIT 1)");
         }
     }
 
@@ -203,6 +209,11 @@ pub async fn get_parent_requests_handler(
         if let Ok(s_uuid) = Uuid::parse_str(student_id) {
             query.push(" AND pr.student_id = ");
             query.push_bind(s_uuid);
+        } else {
+            // Fallback: lookup user by login_id
+            query.push(" AND pr.student_id = (SELECT id FROM users WHERE login_id = ");
+            query.push_bind(student_id);
+            query.push(" LIMIT 1)");
         }
     }
 

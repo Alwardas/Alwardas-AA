@@ -400,6 +400,7 @@ pub struct ParentProfileResponse {
 #[derive(Serialize, FromRow)]
 #[serde(rename_all = "camelCase")]
 pub struct StudentDetails {
+    pub id: Uuid,
     pub full_name: String,
     pub login_id: String,
     pub branch: Option<String>,
@@ -949,6 +950,7 @@ pub struct ParentRequest {
     pub student_name: Option<String>,
     #[sqlx(default)]
     pub assigned_name: Option<String>,
+    pub voice_note: Option<String>,
 }
 
 #[derive(Deserialize, Debug)]
@@ -962,6 +964,7 @@ pub struct SubmitParentRequest {
     pub date_duration: String,
     pub target_roles: Option<Vec<String>>,
     pub target_faculty_ids: Option<Vec<String>>,
+    pub voice_note: Option<String>,
 }
 
 #[derive(Deserialize, Debug)]
