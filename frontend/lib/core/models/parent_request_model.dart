@@ -15,6 +15,7 @@ class ParentRequest {
   final String? parentName;
   final String? studentName;
   final String? assignedName;
+  final String? voiceNote;
 
   ParentRequest({
     required this.id,
@@ -31,6 +32,7 @@ class ParentRequest {
     this.parentName,
     this.studentName,
     this.assignedName,
+    this.voiceNote,
   });
 
   factory ParentRequest.fromJson(Map<String, dynamic> json) {
@@ -49,6 +51,7 @@ class ParentRequest {
       parentName: json['parentName'],
       studentName: json['studentName'],
       assignedName: json['assignedName'],
+      voiceNote: json['voiceNote'],
     );
   }
 
@@ -68,6 +71,7 @@ class ParentRequest {
       'parentName': parentName,
       'studentName': studentName,
       'assignedName': assignedName,
+      'voiceNote': voiceNote,
     };
   }
 }

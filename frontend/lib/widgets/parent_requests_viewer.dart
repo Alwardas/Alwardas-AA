@@ -5,6 +5,10 @@ import 'dart:convert';
 import '../core/api_constants.dart';
 import '../core/models/parent_request_model.dart';
 import 'package:intl/intl.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
+import 'package:path/path.dart' as p;
 
 class ParentRequestsViewer extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -18,11 +22,31 @@ class _ParentRequestsViewerState extends State<ParentRequestsViewer> {
   List<ParentRequest> _requests = [];
   bool _isLoading = true;
   String? _error;
+  late AudioPlayer _audioPlayer;
 
   @override
   void initState() {
     super.initState();
+    _audioPlayer = AudioPlayer();
     _fetchRequests();
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose();
+    super.dispose();
+  }
+
+  Future<void> _playVoiceNote(String base64Audio) async {
+    try {
+      final bytes = base64Decode(base64Audio);
+      final dir = await getTemporaryDirectory();
+      final file = File(p.join(dir.path, 'temp_voice_viewer_${DateTime.now().millisecondsSinceEpoch}.m4a'));
+      await file.writeAsBytes(bytes);
+      await _audioPlayer.play(DeviceFileSource(file.path));
+    } catch (e) {
+      debugPrint("Play voice note error: $e");
+    }
   }
 
   Future<void> _fetchRequests() async {
@@ -37,6 +61,7 @@ class _ParentRequestsViewerState extends State<ParentRequestsViewer> {
       
       final Map<String, String> queryParameters = {
         'role': role.toString(),
+        'userId': widget.userData['id']?.toString() ?? widget.userData['userId']?.toString() ?? '',
       };
       if (branch != null) {
         queryParameters['branch'] = branch.toString();
@@ -152,6 +177,21 @@ class _ParentRequestsViewerState extends State<ParentRequestsViewer> {
                 Text(req.description, style: GoogleFonts.poppins(color: Colors.grey, fontSize: 13)),
                 const SizedBox(height: 8),
                 Text("Duration: ${req.dateDuration}", style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w500, color: textColor)),
+                if (req.voiceNote != null)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15.0),
+                    child: ElevatedButton.icon(
+                      onPressed: () => _playVoiceNote(req.voiceNote!),
+                      icon: const Icon(Icons.play_circle_fill, size: 20),
+                      label: const Text("Listen to Voice Message"),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue[700],
+                        foregroundColor: Colors.white,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      ),
+                    ),
+                  ),
                 const SizedBox(height: 20),
                 if (isPending)
                 Row(

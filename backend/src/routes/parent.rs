@@ -219,8 +219,53 @@ pub async fn get_parent_requests_handler(
 
     if let Some(role) = &params.role {
         match role.as_str() {
-            "Faculty" | "HOD" | "Principal" | "Coordinator" => {
-                if let Some(branch) = &params.branch {
+            "Faculty" | "HOD" | "Coordinator" | "Incharge" => {
+                if let Some(uid) = &params.user_id {
+                    let u_uuid_opt = if let Ok(u) = Uuid::parse_str(uid) {
+                        Some(u)
+                    } else {
+                        sqlx::query_scalar("SELECT id FROM users WHERE login_id = $1")
+                            .bind(uid)
+                            .fetch_optional(&state.pool)
+                            .await
+                            .unwrap_or(None)
+                    };
+
+                    if let Some(u_uuid) = u_uuid_opt {
+                         query.push(" AND (pr.assigned_to = ");
+                         query.push_bind(u_uuid);
+                         if role == "HOD" || role == "Coordinator" || role == "Incharge" {
+                            query.push(" OR (pr.assigned_to IS NULL AND u_student.branch = ");
+                            query.push_bind(params.branch.clone().unwrap_or_default());
+                            query.push(")");
+                         }
+                         query.push(")");
+                    } else {
+                        // If no user found by login_id, maybe fallback to branch?
+                        if let Some(branch) = &params.branch {
+                            query.push(" AND (u_student.branch = ");
+                            query.push_bind(branch);
+                            query.push(")");
+                        }
+                    }
+                } else if let Some(branch) = &params.branch {
+                    query.push(" AND (u_student.branch = ");
+                    query.push_bind(branch);
+                    query.push(")");
+                }
+            }
+            "Principal" | "Admin" => {
+                 // Principal/Admin see everything or by branch if provided
+                 if let Some(uid) = &params.user_id {
+                    if let Ok(u_uuid) = Uuid::parse_str(uid) {
+                         query.push(" AND (pr.assigned_to = ");
+                         query.push_bind(u_uuid);
+                         query.push(" OR 1=1)"); // Principal/Admin basically see everything anyway, but this highlights assigned ones?
+                         // Actually, let's keep it simple for Principal: see everything.
+                         // But if they WANT to filter by branch:
+                    }
+                 }
+                 if let Some(branch) = &params.branch {
                     query.push(" AND (u_student.branch = ");
                     query.push_bind(branch);
                     query.push(")");

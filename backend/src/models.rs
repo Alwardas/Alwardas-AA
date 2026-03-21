@@ -983,6 +983,8 @@ pub struct ParentRequestQuery {
     pub role: Option<String>,
     #[serde(rename = "branch")]
     pub branch: Option<String>,
+    #[serde(rename = "userId")]
+    pub user_id: Option<String>,
 }
 
 
