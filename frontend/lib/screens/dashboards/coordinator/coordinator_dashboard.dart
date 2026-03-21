@@ -34,6 +34,7 @@ import 'coordinator_menu_tab.dart';
 import 'coordinator_profile_tab.dart';
 import 'coordinator_announcements_screen.dart';
 import 'coordinator_create_announcement_screen.dart';
+import 'coordinator_reports_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
 import '../../../widgets/shared_dashboard_announcements.dart';
 import 'dart:async';
@@ -416,6 +417,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                   // Row 1: Events & Activities (Coordinator Special)
                   GridView.builder(
                     shrinkWrap: true,
+                    padding: EdgeInsets.zero,
                     physics: const NeverScrollableScrollPhysics(),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
@@ -432,7 +434,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                           'title': 'Attendance',
                           'subtitle': 'Monitor All',
                           'color': const Color(0xFF29B6F6), // Cyan
-                          'route': const PrincipalAttendanceScreen(),
+                          'route': CoordinatorReportsScreen(userData: widget.userData),
                         },
                         {
                           'icon': Icons.menu_book,

@@ -403,6 +403,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                   const SizedBox(height: 15),
                   GridView(
                     shrinkWrap: true,
+                    padding: EdgeInsets.zero,
                     physics: const NeverScrollableScrollPhysics(),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
