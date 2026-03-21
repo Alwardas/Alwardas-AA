@@ -1239,9 +1239,8 @@ class _AIExplanationModalState extends State<AIExplanationModal> {
            }
        }
 
-       // 2. If exact match fails (e.g. syllabus topic is a long sentence), fallback to a smart search
+       // 2. If exact match fails (e.g. syllabus topic is a long sentence), fallback to a smart search over the entire topic
        String cleanTopic = widget.topic.replaceAll(RegExp(r'[^a-zA-Z0-9\s]'), ' ').trim();
-       if (cleanTopic.length > 60) cleanTopic = cleanTopic.substring(0, 60);
 
        final searchUrl = Uri.parse('https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${Uri.encodeComponent(cleanTopic)}&utf8=&format=json');
        final searchResponse = await http.get(searchUrl).timeout(const Duration(seconds: 10));
@@ -1249,25 +1248,31 @@ class _AIExplanationModalState extends State<AIExplanationModal> {
        if (searchResponse.statusCode == 200 && mounted) {
           final searchData = json.decode(searchResponse.body);
           if (searchData['query'] != null && searchData['query']['search'].isNotEmpty) {
-             final bestMatchTitle = searchData['query']['search'][0]['title'];
              
-             final summaryUrl = Uri.parse('https://en.wikipedia.org/api/rest_v1/page/summary/${Uri.encodeComponent(bestMatchTitle)}');
-             final summaryResponse = await http.get(summaryUrl).timeout(const Duration(seconds: 10));
-             
-             if (summaryResponse.statusCode == 200 && mounted) {
-                 final summaryData = json.decode(summaryResponse.body);
+             String aggregatedSummary = "";
+             int count = 0;
+             // Take snippets from the top 3 relevant articles
+             for (var result in searchData['query']['search']) {
+                 if (count >= 3) break;
+                 String snippet = result['snippet'] ?? '';
+                 // Remove HTML tags highlighting the search match
+                 snippet = snippet.replaceAll(RegExp(r'<[^>]*>'), '').replaceAll('&quot;', '"');
+                 if (snippet.isNotEmpty) {
+                     aggregatedSummary += "• ${result['title']}:\n$snippet...\n\n";
+                     count++;
+                 }
+             }
+
+             if (aggregatedSummary.isNotEmpty) {
                  setState(() {
                     _loading = false;
-                    if (summaryData['extract'] != null && summaryData['extract'].toString().isNotEmpty) {
-                        _explanation = "AI Topic Summary ('$bestMatchTitle'):\n\n${summaryData['extract']}";
-                    } else {
-                        _explanation = "We couldn't find a direct AI summary for '${widget.topic}'.\n\nThis topic covers essential concepts in your syllabus. Make sure to refer to your main textbook or consult the faculty for detailed aspects and derivations."; 
-                    }
+                    _explanation = "Search Results for '${widget.topic}':\n\n$aggregatedSummary";
                  });
                  return;
              }
           }
        }
+
        
        // Fallback if no search results or network timeout
        if (mounted) {
