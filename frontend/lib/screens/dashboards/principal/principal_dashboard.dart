@@ -492,7 +492,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                         ),
                     ],
                   ),
-
+                  const SizedBox(height: 100), // Additional bottom spacing
                 ],
               ),
             ),

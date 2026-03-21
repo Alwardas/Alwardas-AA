@@ -487,7 +487,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                       );
                     },
                   ),
-                  
+                  const SizedBox(height: 100), // Additional bottom spacing
                 ],
               ),
             ),
