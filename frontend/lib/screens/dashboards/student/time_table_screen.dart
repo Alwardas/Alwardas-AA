@@ -10,7 +10,9 @@ import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 
 class TimeTableScreen extends StatefulWidget {
-  const TimeTableScreen({super.key});
+  final Map<String, dynamic>? studentData;
+
+  const TimeTableScreen({super.key, this.studentData});
 
   @override
   _TimeTableScreenState createState() => _TimeTableScreenState();
@@ -62,6 +64,21 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
   }
 
   Future<void> _fetchStudentProfile() async {
+    if (widget.studentData != null) {
+      if (mounted) {
+        setState(() {
+          _studentYear = widget.studentData!['year'] ?? '';
+          _studentBranch = widget.studentData!['branch'];
+          _studentSection = widget.studentData!['section'] ?? 'Section A';
+        });
+        
+        if (_studentYear != null && _studentBranch != null) {
+           _fetchTimetableForYear(_studentYear!, _studentBranch!, _studentSection!);
+        }
+      }
+      return;
+    }
+
     final user = await AuthService.getUserSession();
     if (user != null) {
       if (mounted) {

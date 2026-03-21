@@ -15,6 +15,7 @@ import '../student/attendance_screen.dart';
 import '../student/student_notifications_screen.dart';
 import '../student/student_marks_screen.dart';
 import '../student/my_courses_screen.dart';
+import '../student/time_table_screen.dart';
 import 'parent_profile_tab.dart';
 import 'parent_menu_tab.dart';
 import 'parent_requests_screen.dart';
@@ -58,6 +59,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
           "branch": "",
           "batch": "",
           "year": "",
+          "section": "",
           "sem": ""
         },
       ];
@@ -227,6 +229,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
                   "batch_no":
                       student['batchNo'], // Mapped for Attendance Screen
                   "year": student['year'] ?? "N/A",
+                  "section": student['section'] ?? "Section A",
                   "semester": student['semester'] ?? ""
                 }
               ];
@@ -247,6 +250,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
               "branch": "",
               "batch": "",
               "year": "",
+              "section": "",
               "sem": ""
             }
           ];
@@ -646,6 +650,20 @@ class _ParentDashboardState extends State<ParentDashboard> {
                                 builder: (_) => AttendanceScreen(
                                     userData: currentChild,
                                     onBack: () => Navigator.pop(context)))),
+                      ),
+                      _buildQuickAccessCard(
+                        Icons.access_time,
+                        'Time Table',
+                        'Weekly Schedule',
+                        cardColor,
+                        const Color(0xFF3498db).withValues(alpha: 0.1),
+                        const Color(0xFF3498db),
+                        textColor,
+                        subTextColor,
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => TimeTableScreen(studentData: currentChild))),
                       ),
                       _buildQuickAccessCard(
                         Icons.assignment_ind_outlined,

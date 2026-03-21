@@ -10,6 +10,7 @@ import '../student/student_notifications_screen.dart';
 import '../student/student_marks_screen.dart';
 import '../student/my_courses_screen.dart';
 import '../student/student_announcements_screen.dart';
+import '../student/time_table_screen.dart';
 import 'parent_requests_screen.dart';
 import '../../common/issue_management_screen.dart';
 
@@ -51,6 +52,15 @@ class ParentMenuTab extends StatelessWidget {
                 builder: (_) => AttendanceScreen(
                     userData: currentChild,
                     onBack: () => Navigator.pop(context)))),
+      },
+      {
+        'title': 'Time Table',
+        'icon': Icons.access_time_filled,
+        'color': const Color(0xFF3498db),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => TimeTableScreen(studentData: currentChild))),
       },
       {
         'title': 'My Courses',
