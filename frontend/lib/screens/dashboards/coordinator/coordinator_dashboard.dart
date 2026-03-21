@@ -266,7 +266,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
         Container(
           padding: EdgeInsets.only(
             top: MediaQuery.of(context).padding.top + 10, 
-            bottom: 30, 
+            bottom: 20, 
             left: 24, 
             right: 24
           ),
@@ -281,63 +281,100 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
               bottomRight: Radius.circular(40),
             ),
           ),
-          child: Column(
-             children: [
-               Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   Expanded(
-                     child: Column(
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                         Text(
-                           'Welcome Back,', 
-                            style: GoogleFonts.poppins(
-                              color: ThemeColors.accentBlue, // Accent Blue (Header Text Main)
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                         ),
-                         FittedBox(
-                           fit: BoxFit.scaleDown,
-                           alignment: Alignment.centerLeft,
-                           child: Text(
-                             widget.userData['full_name'] ?? 'Coordinator',
-                              style: GoogleFonts.poppins(
-                                color: const Color(0xFFE5E7EB), // Primary Text
-                                fontSize: 26,
-                                fontWeight: FontWeight.bold,
-                              ),
-                           ),
-                         ),
-                         const SizedBox(height: 4),
-                         Text(
-                           'Alwardas Campus - Coordinator',
-                            style: GoogleFonts.poppins(
-                              color: const Color(0xFF94A3B8), // Text Sub
-                              fontSize: 14,
-                            ),
-                         ),
-                       ],
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                     Text(
+                       'Welcome Back,',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white.withValues(alpha: 0.9),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
                      ),
-                   ),
-                   Row(
-                     children: [
-                       GestureDetector(
-                         onTap: () => themeProvider.toggleTheme(),
-                         child: _buildHeaderIcon(themeProvider.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round),
+                     const SizedBox(height: 2),
+                     FittedBox(
+                       fit: BoxFit.scaleDown,
+                       alignment: Alignment.centerLeft,
+                       child: Text(
+                         widget.userData['full_name']?.toString().toUpperCase() ?? 'COORDINATOR', 
+                          style: GoogleFonts.poppins(
+                            color: Colors.white, 
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 0.5,
+                          ),
                        ),
-                       const SizedBox(width: 10),
-                       GestureDetector(
-                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalNotificationsScreen())),
-                         child: _buildHeaderIcon(Icons.notifications_none),
-                       ),
-                     ],
-                   ),
-                 ],
-               )
-             ],
-           ),
+                     ),
+                     const SizedBox(height: 2),
+                     Text(
+                       'ID: ${widget.userData['login_id'] ?? 'N/A'}',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white.withValues(alpha: 0.9), 
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                        ),
+                     ),
+                     const SizedBox(height: 2),
+                     Text(
+                       widget.userData['role'] ?? 'Administration',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white.withValues(alpha: 0.8), 
+                          fontSize: 13,
+                        ),
+                     ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.4), width: 1),
+                  color: Colors.white.withValues(alpha: 0.1),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalNotificationsScreen())),
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          const Icon(Icons.notifications_none, color: Colors.white, size: 22),
+                          Positioned(
+                            right: 0,
+                            top: 0,
+                            child: Container(
+                              width: 8, height: 8,
+                              decoration: const BoxDecoration(
+                                color: Colors.redAccent,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    GestureDetector(
+                      onTap: () => themeProvider.toggleTheme(),
+                      child: Icon(
+                        isDark ? Icons.wb_sunny : Icons.nightlight_round, 
+                        color: Colors.white, 
+                        size: 20
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
 
         // 2. Scrollable Body
@@ -354,17 +391,27 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                   SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'Coordinator'),
                   const SizedBox(height: 15),
 
-
                   // Quick Access: Coordinator Specific
-                  Text(
-                    'Administration Side',
-                    style: GoogleFonts.poppins(
-                      color: textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        'Quick Access',
+                        style: GoogleFonts.poppins(
+                          color: textColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Container(
+                          height: 1,
+                          color: Colors.grey.withValues(alpha: 0.2),
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 15),
 
                   // Row 1: Events & Activities (Coordinator Special)
                   GridView.builder(
@@ -374,7 +421,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                       crossAxisCount: 2,
                       crossAxisSpacing: 15,
                       mainAxisSpacing: 15,
-                      childAspectRatio: 1.2,
+                      childAspectRatio: 1.4,
                     ),
                     itemCount: 6,
                     itemBuilder: (context, index) {
