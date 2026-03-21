@@ -9,8 +9,9 @@ import 'package:intl/intl.dart';
 class ParentRequestsScreen extends StatefulWidget {
   final Map<String, dynamic> userData;
   final String? studentId;
+  final String? studentBranch;
 
-  const ParentRequestsScreen({super.key, required this.userData, this.studentId});
+  const ParentRequestsScreen({super.key, required this.userData, this.studentId, this.studentBranch});
 
   @override
   State<ParentRequestsScreen> createState() => _ParentRequestsScreenState();
@@ -36,6 +37,12 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
     "Meeting Request",
     "Other"
   ];
+
+  List<String> _selectedRoles = [];
+  List<Map<String, dynamic>> _facultyList = [];
+  List<String> _selectedFacultyIds = [];
+  bool _isLoadingFaculty = false;
+  final List<String> _availableRoles = ["Faculty", "HOD", "Principal", "Coordinator"];
 
   @override
   void initState() {
@@ -78,6 +85,29 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
     }
   }
 
+  Future<void> _fetchFacultyMembers() async {
+    if (widget.studentBranch == null || widget.studentBranch!.isEmpty) return;
+    setState(() => _isLoadingFaculty = true);
+    try {
+      final uri = Uri.parse(ApiConstants.facultyByBranch).replace(queryParameters: {
+        'branch': widget.studentBranch
+      });
+      final response = await http.get(uri);
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        if (mounted) {
+          setState(() {
+            _facultyList = data.map((e) => e as Map<String, dynamic>).toList();
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching faculty: $e");
+    } finally {
+      if (mounted) setState(() => _isLoadingFaculty = false);
+    }
+  }
+
   Future<void> _submitRequest() async {
     if (!_formKey.currentState!.validate()) return;
     if (widget.studentId == null) {
@@ -98,6 +128,8 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
           'subject': _subjectController.text,
           'description': _descriptionController.text,
           'dateDuration': _durationController.text,
+          'targetRoles': _selectedRoles.isNotEmpty ? _selectedRoles : null,
+          'targetFacultyIds': _selectedFacultyIds.isNotEmpty ? _selectedFacultyIds : null,
         }),
       );
 
@@ -105,6 +137,10 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
         _subjectController.clear();
         _descriptionController.clear();
         _durationController.clear();
+        setState(() {
+           _selectedRoles.clear();
+           _selectedFacultyIds.clear();
+        });
         _fetchRequests();
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text("Request Submitted Successfully!"), backgroundColor: Colors.green),
@@ -225,6 +261,12 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
                   _buildTextField("Description", "Detailed explanation...", _descriptionController, maxLines: 4),
                   const SizedBox(height: 20),
                    _buildTextField("Date/Duration", "e.g. 12th Oct to 14th Oct", _durationController),
+                  const SizedBox(height: 20),
+                  _buildRoleSelector(),
+                  if (_selectedRoles.contains('Faculty')) ...[
+                     const SizedBox(height: 20),
+                     _buildFacultySelector(),
+                  ],
                   const SizedBox(height: 30),
                   ElevatedButton(
                     onPressed: _isSubmitting ? null : _submitRequest,
@@ -297,5 +339,90 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
       ],
     );
   }
-}
 
+  Widget _buildRoleSelector() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text("Send Request To", style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 14)),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: _availableRoles.map((role) {
+            final isSelected = _selectedRoles.contains(role);
+            return FilterChip(
+              label: Text(role, style: GoogleFonts.poppins(color: isSelected ? Colors.white : (Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black87))),
+              selected: isSelected,
+              selectedColor: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF2C2C2E) : Colors.grey.withOpacity(0.1),
+              onSelected: (bool selected) {
+                setState(() {
+                  if (selected) {
+                    _selectedRoles.add(role);
+                    if (role == 'Faculty' && _facultyList.isEmpty) {
+                      _fetchFacultyMembers();
+                    }
+                  } else {
+                    _selectedRoles.remove(role);
+                    if (role == 'Faculty') {
+                      _selectedFacultyIds.clear();
+                    }
+                  }
+                });
+              },
+            );
+          }).toList(),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildFacultySelector() {
+    if (_isLoadingFaculty) {
+      return const Center(child: Padding(padding: EdgeInsets.all(10), child: CircularProgressIndicator()));
+    }
+    if (_facultyList.isEmpty) {
+      return Text("No faculty members found for this branch.", style: GoogleFonts.poppins(color: Colors.red));
+    }
+    
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text("Select Faculty Member(s)", style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 14)),
+        const SizedBox(height: 8),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+           decoration: BoxDecoration(
+             color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF2C2C2E) : Colors.grey[100],
+             borderRadius: BorderRadius.circular(12)
+          ),
+          child: Column(
+            children: _facultyList.map((fac) {
+              final id = fac['id'].toString();
+              final name = fac['full_name'] ?? 'Unknown';
+              final isSelected = _selectedFacultyIds.contains(id);
+              
+              return CheckboxListTile(
+                contentPadding: EdgeInsets.zero,
+                dense: true,
+                title: Text(name, style: GoogleFonts.poppins(fontSize: 14)),
+                value: isSelected,
+                activeColor: Theme.of(context).primaryColor,
+                onChanged: (bool? val) {
+                  setState(() {
+                    if (val == true) {
+                      _selectedFacultyIds.add(id);
+                    } else {
+                      _selectedFacultyIds.remove(id);
+                    }
+                  });
+                },
+              );
+            }).toList(),
+          )
+        )
+      ],
+    );
+  }
+}

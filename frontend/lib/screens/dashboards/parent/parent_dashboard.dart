@@ -677,7 +677,11 @@ class _ParentDashboardState extends State<ParentDashboard> {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) => ParentRequestsScreen(userData: widget.userData))),
+                                builder: (_) => ParentRequestsScreen(
+                                      userData: widget.userData,
+                                      studentId: currentChild['id'],
+                                      studentBranch: currentChild['branch']
+                                    ))),
                       ),
                       _buildQuickAccessCard(
                         Icons.menu_book_rounded,

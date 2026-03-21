@@ -97,6 +97,7 @@ class ParentMenuTab extends StatelessWidget {
                 builder: (_) => ParentRequestsScreen(
                       userData: userData,
                       studentId: currentChild['id'],
+                      studentBranch: currentChild['branch'],
                     ))),
       },
       {

@@ -87,22 +87,89 @@ pub async fn submit_parent_request_handler(
     let parent_uuid = Uuid::parse_str(&payload.parent_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid Parent ID"}))))?;
     let student_uuid = Uuid::parse_str(&payload.student_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid Student ID"}))))?;
 
-    sqlx::query(
-        "INSERT INTO parent_requests (parent_id, student_id, request_type, subject, description, date_duration, status) 
-         VALUES ($1, $2, $3, $4, $5, $6, 'Pending')"
-    )
-    .bind(parent_uuid)
-    .bind(student_uuid)
-    .bind(&payload.request_type)
-    .bind(&payload.subject)
-    .bind(&payload.description)
-    .bind(&payload.date_duration)
-    .execute(&state.pool)
-    .await
-    .map_err(|e| {
-        eprintln!("Submit Parent Request Error: {:?}", e);
-        (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to submit request"})))
-    })?;
+    let student_branch: Option<String> = sqlx::query_scalar("SELECT branch FROM users WHERE id = $1")
+        .bind(student_uuid)
+        .fetch_optional(&state.pool)
+        .await
+        .unwrap_or(None);
+        
+    let mut target_uuids = std::collections::HashSet::new();
+
+    if let Some(fac_ids) = &payload.target_faculty_ids {
+        for f_id in fac_ids {
+            if let Ok(u) = Uuid::parse_str(f_id) {
+                target_uuids.insert(u);
+            }
+        }
+    }
+
+    if let Some(roles) = &payload.target_roles {
+        for role in roles {
+            match role.as_str() {
+                "HOD" => {
+                    if let Some(ref branch) = student_branch {
+                        let hod_id: Option<Uuid> = sqlx::query_scalar("SELECT id FROM users WHERE role = 'HOD' AND branch = $1 LIMIT 1")
+                            .bind(branch)
+                            .fetch_optional(&state.pool).await.unwrap_or(None);
+                        if let Some(id) = hod_id { target_uuids.insert(id); }
+                    }
+                },
+                "Coordinator" => {
+                    if let Some(ref branch) = student_branch {
+                         let coord_id: Option<Uuid> = sqlx::query_scalar("SELECT id FROM users WHERE role = 'Coordinator' AND branch = $1 LIMIT 1")
+                            .bind(branch)
+                            .fetch_optional(&state.pool).await.unwrap_or(None);
+                        if let Some(id) = coord_id { target_uuids.insert(id); }
+                    }
+                },
+                "Principal" => {
+                    let prin_id: Option<Uuid> = sqlx::query_scalar("SELECT id FROM users WHERE role = 'Principal' LIMIT 1")
+                        .fetch_optional(&state.pool).await.unwrap_or(None);
+                    if let Some(id) = prin_id { target_uuids.insert(id); }
+                },
+                _ => {}
+            }
+        }
+    }
+
+    if target_uuids.is_empty() {
+        sqlx::query(
+            "INSERT INTO parent_requests (parent_id, student_id, request_type, subject, description, date_duration, status) 
+             VALUES ($1, $2, $3, $4, $5, $6, 'Pending')"
+        )
+        .bind(parent_uuid)
+        .bind(student_uuid)
+        .bind(&payload.request_type)
+        .bind(&payload.subject)
+        .bind(&payload.description)
+        .bind(&payload.date_duration)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Submit Parent Request Error: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to submit request"})))
+        })?;
+    } else {
+        for assigned_to in target_uuids {
+            sqlx::query(
+                 "INSERT INTO parent_requests (parent_id, student_id, request_type, subject, description, date_duration, status, assigned_to) 
+                  VALUES ($1, $2, $3, $4, $5, $6, 'Pending', $7)"
+             )
+             .bind(parent_uuid)
+             .bind(student_uuid)
+             .bind(&payload.request_type)
+             .bind(&payload.subject)
+             .bind(&payload.description)
+             .bind(&payload.date_duration)
+             .bind(assigned_to)
+             .execute(&state.pool)
+             .await
+             .map_err(|e| {
+                 eprintln!("Submit Parent Request Error: {:?}", e);
+                 (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to submit request"})))
+             })?;
+        }
+    }
 
     Ok(StatusCode::OK)
 }

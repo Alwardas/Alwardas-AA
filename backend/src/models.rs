@@ -960,6 +960,8 @@ pub struct SubmitParentRequest {
     pub subject: String,
     pub description: String,
     pub date_duration: String,
+    pub target_roles: Option<Vec<String>>,
+    pub target_faculty_ids: Option<Vec<String>>,
 }
 
 #[derive(Deserialize, Debug)]
