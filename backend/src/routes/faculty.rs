@@ -52,53 +52,65 @@ pub async fn get_faculty_subjects_handler(
     Query(params): Query<FacultyQueryParams>,
 ) -> Result<Json<Vec<FacultySubjectResponse>>, StatusCode> {
     // Union existing faculty_subjects with new course_subjects added by this user
-    let subjects = sqlx::query_as::<Postgres, FacultySubjectResponse>(
+    let subjects: Vec<FacultySubjectResponse> = sqlx::query_as::<Postgres, FacultySubjectResponse>(
         r#"
+        WITH combined_subjects AS (
+            SELECT 
+                fs.subject_id as id, 
+                COALESCE(s.name, fs.subject_name) as name, 
+                COALESCE(s.branch, fs.branch) as branch, 
+                COALESCE(s.semester, 'Unknown') as semester, 
+                fs.status as status,
+                fs.subject_id as subject_id,
+                fs.section as section
+            FROM faculty_subjects fs
+            LEFT JOIN subjects s ON fs.subject_id = s.id::text
+            WHERE fs.user_id = $1
+            UNION ALL
+            SELECT
+                cs.id::text as id,
+                cs.subject_name as name,
+                cs.branch as branch,
+                cs.year as semester,
+                'APPROVED' as status,
+                COALESCE(cs.subject_code, cs.id::text) as subject_id,
+                cs.section as section
+            FROM course_subjects cs
+            WHERE cs.created_by = $1::text
+        )
         SELECT 
-            fs.subject_id as id, 
-            COALESCE(s.name, fs.subject_name) as name, 
-            COALESCE(s.branch, fs.branch) as branch, 
-            COALESCE(s.semester, 'Unknown') as semester, 
-            fs.status,
-            fs.subject_id,
-            fs.section,
-            0 as completion_percentage
-        FROM faculty_subjects fs
-        LEFT JOIN subjects s ON fs.subject_id = s.id::text
-        WHERE fs.user_id = $1
-        UNION ALL
-        SELECT
-            cs.id::text as id,
-            cs.subject_name as name,
-            cs.branch,
-            cs.year as semester,
-            'APPROVED' as status,
-            COALESCE(cs.subject_code, cs.id::text) as subject_id,
-            cs.section,
-            0 as completion_percentage
-        FROM course_subjects cs
-        WHERE cs.created_by = $1::text
-        ORDER BY subject_id ASC
+            cs.*,
+            COALESCE((
+                SELECT ROUND(COUNT(CASE WHEN lp.completed = TRUE THEN 1 END) * 100.0 / NULLIF(COUNT(lpi.id), 0))::int
+                FROM lesson_plan_items lpi
+                LEFT JOIN lesson_plan_progress lp ON lpi.id = lp.item_id AND lp.section = cs.section
+                WHERE lpi.subject_id = cs.subject_id
+            ), 0) as completion_percentage,
+            (
+                SELECT 
+                    CASE 
+                        WHEN COUNT(lpi.id) = 0 THEN 'On Track'
+                        WHEN COUNT(CASE WHEN ls.schedule_date <= NOW() THEN 1 END) <= COUNT(CASE WHEN lp.completed = TRUE THEN 1 END) THEN 'On Track'
+                        ELSE 'Delayed'
+                    END
+                FROM lesson_plan_items lpi
+                LEFT JOIN lesson_plan_progress lp ON lpi.id = lp.item_id AND lp.section = cs.section
+                LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id AND ls.section = cs.section
+                WHERE lpi.subject_id = cs.subject_id
+            ) as progress_status
+        FROM combined_subjects cs
+        ORDER BY cs.subject_id ASC
         "#
     )
     .bind(params.user_id)
     .fetch_all(&state.pool)
     .await
     .map_err(|e| {
-        eprintln!("Fetch Faculty Subjects Error: {:?}", e);
+        eprintln!("Fetch Faculty Subjects Optimized Error: {:?}", e);
         StatusCode::INTERNAL_SERVER_ERROR
     })?;
 
-    let mut final_subjects = Vec::new();
-    for mut sub in subjects {
-        let section = sub.section.as_ref().map(|s| s.as_str()).unwrap_or("Section A");
-        let (perc, status) = crate::routes::hod::calculate_subject_progress(&state.pool, &sub.subject_id, section).await;
-        sub.completion_percentage = perc;
-        sub.progress_status = Some(status);
-        final_subjects.push(sub);
-    }
-
-    Ok(Json(final_subjects))
+    Ok(Json(subjects))
 }
 
 pub async fn add_faculty_subject_handler(

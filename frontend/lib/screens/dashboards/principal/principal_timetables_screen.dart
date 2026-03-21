@@ -9,6 +9,8 @@ import 'dart:convert';
 import '../../../core/api_constants.dart';
 import 'principal_labs_screen.dart';
 import 'principal_master_timetable_screen.dart';
+import '../coordinator/coordinator_reports_screen.dart';
+import '../../../core/services/auth_service.dart';
 
 class PrincipalTimetablesScreen extends StatefulWidget {
   const PrincipalTimetablesScreen({super.key});
@@ -19,11 +21,22 @@ class PrincipalTimetablesScreen extends StatefulWidget {
 
 class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
   List<String> branches = [];
+  Map<String, dynamic>? userData;
 
   @override
   void initState() {
     super.initState();
     _fetchBranches();
+    _fetchUserData();
+  }
+
+  Future<void> _fetchUserData() async {
+    final user = await AuthService.getUserSession();
+    if (mounted) {
+      setState(() {
+        userData = user;
+      });
+    }
   }
 
   Future<void> _fetchBranches() async {
@@ -166,7 +179,41 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
                          ),
                       ),
                     ),
-                    // Master Table removed as per requested
+                    const SizedBox(width: 15),
+                    Expanded(
+                      child: GestureDetector(
+                         onTap: () {
+                           if (userData != null) {
+                             Navigator.push(
+                               context, 
+                               MaterialPageRoute(
+                                 builder: (_) => CoordinatorReportsScreen(userData: userData!)
+                               )
+                             );
+                           } else {
+                             ScaffoldMessenger.of(context).showSnackBar(
+                               const SnackBar(content: Text("User session not loaded yet."))
+                             );
+                           }
+                         },
+                         child: Container(
+                           padding: const EdgeInsets.all(20),
+                           decoration: BoxDecoration(
+                             color: cardColor,
+                             borderRadius: BorderRadius.circular(15),
+                             border: Border.all(color: Colors.teal.withValues(alpha: 0.5)),
+                             boxShadow: [if(isDark) BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 5)]
+                           ),
+                           child: Column(
+                             children: [
+                               Icon(Icons.assessment_outlined, color: Colors.teal, size: 30),
+                               const SizedBox(height: 10),
+                               Text("Reports", style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold))
+                             ]
+                           ),
+                         ),
+                      ),
+                    ),
                   ],
                 ),
                 

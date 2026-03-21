@@ -94,13 +94,18 @@ async fn main() {
     println!("✅ Successfully connected to the database!");
 
     // Run migrations
-    // Run migrations
+    println!("🔧 Running migrations with extended timeout...");
+    let _ = sqlx::query("SET statement_timeout = '300s'").execute(&pool).await; 
+    
     match sqlx::migrate!("./migrations").run(&pool).await {
         Ok(_) => println!("✅ Migrations complete!"),
         Err(e) => {
             eprintln!("⚠️ Migration warning: {}. The app will try to continue.", e);
         }
     }
+    
+    // Reset timeout
+    let _ = sqlx::query("SET statement_timeout = '30s'").execute(&pool).await;
     
     // FORCE FIX SCHEMA
     println!("🔧 Attempting to force-fix schema...");

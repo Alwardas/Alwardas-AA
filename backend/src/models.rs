@@ -146,7 +146,9 @@ pub struct DepartmentTiming {
     pub class_duration: i32,
     pub short_break_duration: i32,
     pub lunch_duration: i32,
+    #[sqlx(default)]
     pub short_code: Option<String>,
+    #[sqlx(default)]
     pub slot_config: Option<serde_json::Value>, 
 }
 
@@ -555,6 +557,7 @@ pub struct FacultySubjectResponse {
     pub name: String,
     pub branch: String,
     pub semester: String,
+    #[sqlx(default)]
     pub section: Option<String>,
     pub status: String,
     #[sqlx(rename = "subject_id")] 
