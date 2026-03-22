@@ -241,9 +241,14 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
       }
     }
     
-    final completedDateStr = isCompleted && topic['completedDate'] != null 
-        ? DateFormat('dd/MM/yyyy').format(DateTime.parse(topic['completedDate']).toLocal()) 
-        : "";
+    String completedDateStr = "";
+    if (isCompleted && topic['completedDate'] != null) {
+      try {
+        completedDateStr = DateFormat('dd/MM/yyyy').format(DateTime.parse(topic['completedDate']).toLocal());
+      } catch (e) {
+        completedDateStr = "Err";
+      }
+    }
 
     return Container(
       margin: const EdgeInsets.only(bottom: 12),

@@ -255,13 +255,12 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
             Navigator.push(
               context,
               MaterialPageRoute(builder: (_) => HodSyllabusLessonTopicsScreen(
-                subjectId: subjectId, 
-                subjectName: subjectName,
-                // These are needed by the topics screen. 
-                // In HOD view, we try to extract them from the course JSON.
-                year: course['semester'] ?? 'Year', 
-                semester: course['semester'] ?? 'Sem',
-                section: course['section'] ?? 'Section A',
+                subjectId: subjectId.toString(), 
+                subjectName: subjectName.toString(),
+                // Ensure String types for constructor parameters
+                year: (course['semester'] ?? 'Year').toString(), 
+                semester: (course['semester'] ?? 'Sem').toString(),
+                section: (course['section'] ?? 'Section A').toString(),
                 userData: {
                   'branch': widget.branch,
                   'login_id': widget.faculty.loginId,
