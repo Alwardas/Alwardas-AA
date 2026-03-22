@@ -7,7 +7,7 @@ async function check() {
     await client.connect();
     
     // Check data
-    const res = await client.query("SELECT * FROM lesson_plan_items LIMIT 20");
+    const res = await client.query("SELECT id, type, sno, topic, text, order_index FROM lesson_plan_items WHERE subject_id = '1' ORDER BY order_index ASC");
     console.log(JSON.stringify(res.rows, null, 2));
     
     await client.end();

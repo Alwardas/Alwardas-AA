@@ -33,7 +33,6 @@ class HodSyllabusLessonTopicsScreen extends StatefulWidget {
 class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsScreen> {
   bool _isLoading = true;
   List<dynamic> _topics = [];
-  Map<String, List<dynamic>> _groupedTopics = {};
 
   @override
   void initState() {
@@ -49,17 +48,9 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
       if (response.statusCode == 200) {
         final List<dynamic> fetched = json.decode(response.body);
         
-        // Grouping logic
-        Map<String, List<dynamic>> grouped = {};
-        for (var topic in fetched) {
-          final unit = topic['unit'] ?? 'Unknown Unit';
-          grouped.putIfAbsent(unit, () => []).add(topic);
-        }
-
         if (mounted) {
           setState(() {
             _topics = fetched;
-            _groupedTopics = grouped;
             _isLoading = false;
           });
         }
@@ -180,44 +171,38 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
                     ),
                   ),
                   Expanded(
-                    child: _groupedTopics.isEmpty
+                    child: _topics.isEmpty
                         ? Center(child: Text("No topics found for this subject.", style: GoogleFonts.poppins(color: subTextColor)))
                         : ListView.builder(
                             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                            itemCount: _groupedTopics.keys.length,
-                            itemBuilder: (context, groupIndex) {
-                              final unit = _groupedTopics.keys.elementAt(groupIndex);
-                              final topics = _groupedTopics[unit]!;
+                            itemCount: _topics.length,
+                            itemBuilder: (context, index) {
+                              final topic = _topics[index];
                               
+                              // Check if we need a Unit Header if the unit column exists but no explicit unit row
+                              bool showUnitDivider = false;
+                              if (index == 0) {
+                                showUnitDivider = true;
+                              } else {
+                                final prevUnit = _topics[index - 1]['unit'];
+                                final currUnit = topic['unit'];
+                                if (currUnit != prevUnit && currUnit != null) {
+                                  showUnitDivider = true;
+                                }
+                              }
+
                               return Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          padding: const EdgeInsets.all(8),
-                                          decoration: BoxDecoration(
-                                            color: Colors.deepPurple.withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(8),
-                                          ),
-                                          child: const Icon(Icons.bookmark, color: Colors.deepPurple, size: 18),
-                                        ),
-                                        const SizedBox(width: 12),
-                                        Text(
-                                          unit,
-                                          style: GoogleFonts.poppins(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                            color: isDark ? Colors.deepPurpleAccent : Colors.deepPurple,
-                                          ),
-                                        ),
-                                      ],
+                                  if (showUnitDivider && topic['type']?.toString().toLowerCase() != 'unit') 
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 20, bottom: 10, left: 8),
+                                      child: Text(
+                                        topic['unit'] ?? '',
+                                        style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey),
+                                      ),
                                     ),
-                                  ),
-                                  ...topics.map((topic) => _buildTopicCard(topic, isDark, textColor, subTextColor)).toList(),
-                                  const SizedBox(height: 10),
+                                  _buildTopicCard(topic, isDark, textColor, subTextColor),
                                 ],
                               );
                             },
