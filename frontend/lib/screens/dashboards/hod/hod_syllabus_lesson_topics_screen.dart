@@ -165,7 +165,15 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Syllabus Breakdown", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Syllabus Breakdown", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                              Text("ID: ${widget.subjectId}", style: TextStyle(fontSize: 10, color: subTextColor)),
+                            ],
+                          ),
+                        ),
                         _buildInfoBadge(widget.section, Colors.purple),
                       ],
                     ),

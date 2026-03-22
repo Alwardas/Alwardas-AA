@@ -1569,12 +1569,15 @@ pub async fn get_lesson_topics_handler(
             lp.completed_date,
             lpi.type as item_type
         FROM lesson_plan_items lpi
+        LEFT JOIN subjects s ON TRIM(lpi.subject_id) = TRIM(s.id)
         LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id 
             AND (TRIM(ls.section) = TRIM($2) OR $2 IS NULL)
             AND (ls.branch = $3 OR $3 IS NULL)
         LEFT JOIN lesson_plan_progress lp ON lpi.id = lp.item_id
             AND (TRIM(lp.section) = TRIM($2) OR $2 IS NULL)
-        WHERE TRIM(lpi.subject_id) ILIKE TRIM($1)
+        WHERE TRIM(lpi.subject_id) ILIKE TRIM($1) 
+           OR TRIM(s.id) ILIKE TRIM($1)
+           OR TRIM(s.name) ILIKE TRIM($1)
         ORDER BY lpi.order_index
     "#;
 
