@@ -33,6 +33,7 @@ class HodSyllabusLessonTopicsScreen extends StatefulWidget {
 class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsScreen> {
   bool _isLoading = true;
   List<dynamic> _topics = [];
+  Map<String, List<dynamic>> _groupedTopics = {};
 
   @override
   void initState() {
@@ -46,12 +47,24 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
     try {
       final response = await http.get(url);
       if (response.statusCode == 200) {
-        setState(() {
-          _topics = json.decode(response.body);
-          _isLoading = false;
-        });
+        final List<dynamic> fetched = json.decode(response.body);
+        
+        // Grouping logic
+        Map<String, List<dynamic>> grouped = {};
+        for (var topic in fetched) {
+          final unit = topic['unit'] ?? 'Unknown Unit';
+          grouped.putIfAbsent(unit, () => []).add(topic);
+        }
+
+        if (mounted) {
+          setState(() {
+            _topics = fetched;
+            _groupedTopics = grouped;
+            _isLoading = false;
+          });
+        }
       } else {
-        setState(() => _isLoading = false);
+        if (mounted) setState(() => _isLoading = false);
       }
     } catch (e) {
       debugPrint("Error fetching topics: $e");
@@ -60,9 +73,21 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
   }
 
   Future<void> _pickDate(Map<String, dynamic> topic) async {
+    // Safety check for date parsing
+    DateTime initial;
+    try {
+      if (topic['scheduleDate'] != null) {
+        initial = DateTime.parse(topic['scheduleDate']).toLocal();
+      } else {
+        initial = DateTime.now();
+      }
+    } catch (e) {
+      initial = DateTime.now();
+    }
+
     final DateTime? picked = await showDatePicker(
       context: context,
-      initialDate: topic['scheduleDate'] != null ? DateTime.parse(topic['scheduleDate']) : DateTime.now(),
+      initialDate: initial,
       firstDate: DateTime(2023),
       lastDate: DateTime(2030),
       builder: (context, child) {
@@ -88,14 +113,17 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
     final branch = widget.userData['branch'] ?? 'Computer Engineering';
     
     try {
+      // Format as YYYY-MM-DD to avoid timezone shifting
+      final dateStr = DateFormat('yyyy-MM-dd').format(date);
+      
       final response = await http.post(
         url,
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'subjectId': widget.subjectId,
           'topicId': topicId,
-          'scheduleDate': date.toUtc().toIso8601String(),
-          'facultyId': widget.userData['login_id'], // Or null, but usually we know who is assigning
+          'scheduleDate': dateStr, // Sending formatted date
+          'facultyId': widget.userData['login_id'],
           'branch': branch,
           'year': widget.year,
           'semester': widget.semester,
@@ -104,10 +132,10 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
       );
 
       if (response.statusCode == 200) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Schedule assigned!")));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Schedule updated successfully!")));
         _fetchTopics(); // Refresh
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to assign schedule.")));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to update schedule.")));
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Network error.")));
@@ -146,20 +174,52 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Topics List", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                        Text("Syllabus Breakdown", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
                         _buildInfoBadge(widget.section, Colors.purple),
                       ],
                     ),
                   ),
                   Expanded(
-                    child: _topics.isEmpty
+                    child: _groupedTopics.isEmpty
                         ? Center(child: Text("No topics found for this subject.", style: GoogleFonts.poppins(color: subTextColor)))
                         : ListView.builder(
-                            padding: const EdgeInsets.all(20),
-                            itemCount: _topics.length,
-                            itemBuilder: (context, index) {
-                              final topic = _topics[index];
-                              return _buildTopicCard(topic, isDark, textColor, subTextColor);
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            itemCount: _groupedTopics.keys.length,
+                            itemBuilder: (context, groupIndex) {
+                              final unit = _groupedTopics.keys.elementAt(groupIndex);
+                              final topics = _groupedTopics[unit]!;
+                              
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          padding: const EdgeInsets.all(8),
+                                          decoration: BoxDecoration(
+                                            color: Colors.deepPurple.withValues(alpha: 0.1),
+                                            borderRadius: BorderRadius.circular(8),
+                                          ),
+                                          child: const Icon(Icons.bookmark, color: Colors.deepPurple, size: 18),
+                                        ),
+                                        const SizedBox(width: 12),
+                                        Text(
+                                          unit,
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            color: isDark ? Colors.deepPurpleAccent : Colors.deepPurple,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  ...topics.map((topic) => _buildTopicCard(topic, isDark, textColor, subTextColor)).toList(),
+                                  const SizedBox(height: 10),
+                                ],
+                              );
                             },
                           ),
                   ),
@@ -172,112 +232,114 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
 
   Widget _buildTopicCard(dynamic topic, bool isDark, Color textColor, Color subTextColor) {
     final cardColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white;
-    final bool hasSchedule = topic['scheduleDate'] != null;
+    final hasSchedule = topic['scheduleDate'] != null;
     final bool isCompleted = topic['completed'] == true;
-    final dateStr = hasSchedule ? DateFormat('dd/MM/yyyy').format(DateTime.parse(topic['scheduleDate'])) : "Not Scheduled";
+    
+    String dateStr = "Assign Date";
+    if (hasSchedule) {
+      try {
+        dateStr = DateFormat('dd/MM/yyyy').format(DateTime.parse(topic['scheduleDate']).toLocal());
+      } catch (e) {
+        dateStr = "Error";
+      }
+    }
+    
     final completedDateStr = isCompleted && topic['completedDate'] != null 
-        ? DateFormat('dd/MM/yyyy').format(DateTime.parse(topic['completedDate'])) 
+        ? DateFormat('dd/MM/yyyy').format(DateTime.parse(topic['completedDate']).toLocal()) 
         : "";
 
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: cardColor,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: isCompleted 
-            ? Colors.green.withValues(alpha: 0.3) 
-            : (hasSchedule ? Colors.deepPurple.withValues(alpha: 0.3) : Colors.grey.withValues(alpha: 0.2))
+            ? Colors.green.withValues(alpha: 0.2) 
+            : (hasSchedule ? Colors.deepPurple.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1))
         ),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 4, offset: const Offset(0, 2))
+        ]
       ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: IntrinsicHeight(
+        child: Row(
+          children: [
+            Container(
+              width: 5,
+              decoration: BoxDecoration(
+                color: isCompleted ? Colors.green : (hasSchedule ? Colors.deepPurple : Colors.grey.withValues(alpha: 0.3)),
+                borderRadius: const BorderRadius.only(topLeft: Radius.circular(16), bottomLeft: Radius.circular(16)),
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      topic['unit'] ?? 'Unit X',
-                      style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: isCompleted ? Colors.green : Colors.deepPurpleAccent),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            topic['topicName'] ?? 'Unnamed Topic',
+                            style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600, color: textColor),
+                          ),
+                        ),
+                        if (isCompleted)
+                          const Icon(Icons.check_circle, color: Colors.green, size: 18),
+                      ],
                     ),
-                    if (isCompleted)
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                        decoration: BoxDecoration(
-                          color: Colors.green.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Text(
-                          "Completed",
-                          style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.green),
-                        ),
-                      ),
+                    const SizedBox(height: 12),
+                    Row(
+                       children: [
+                          _buildActionButton(
+                            label: dateStr,
+                            icon: Icons.calendar_today,
+                            color: hasSchedule ? Colors.deepPurple : Colors.grey,
+                            onTap: () => _pickDate(topic),
+                          ),
+                          if (isCompleted) ...[
+                            const SizedBox(width: 8),
+                            _buildActionButton(
+                              label: completedDateStr,
+                              icon: Icons.done_all,
+                              color: Colors.green,
+                              onTap: null,
+                            ),
+                          ],
+                       ],
+                    ),
                   ],
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  topic['topicName'] ?? 'Unnamed Topic',
-                  style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600, color: textColor),
-                ),
-                const SizedBox(height: 10),
-                Row(
-                   children: [
-                      GestureDetector(
-                        onTap: () => _pickDate(topic),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                          decoration: BoxDecoration(
-                            color: hasSchedule ? Colors.deepPurple.withValues(alpha: 0.1) : Colors.grey.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(Icons.calendar_today, size: 14, color: hasSchedule ? Colors.deepPurple : subTextColor),
-                              const SizedBox(width: 6),
-                              Text(
-                                dateStr,
-                                style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: hasSchedule ? Colors.deepPurple : subTextColor),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      if (isCompleted) ...[
-                        const SizedBox(width: 10),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                          decoration: BoxDecoration(
-                            color: Colors.green.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const Icon(Icons.check_circle, size: 14, color: Colors.green),
-                              const SizedBox(width: 6),
-                              Text(
-                                completedDateStr,
-                                style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.green),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                   ],
-                ),
-              ],
+              ),
             ),
-          ),
-          IconButton(
-            icon: Icon(Icons.edit_calendar, color: Colors.deepPurple.withValues(alpha: 0.7)),
-            onPressed: () => _pickDate(topic),
-          ),
-        ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildActionButton({required String label, required IconData icon, required Color color, VoidCallback? onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 12, color: color),
+            const SizedBox(width: 6),
+            Text(
+              label,
+              style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.bold, color: color),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -302,25 +364,18 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
           borderRadius: BorderRadius.circular(16),
           border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
         ),
-        child: Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SkeletonLoader(width: 50, height: 12, borderRadius: BorderRadius.circular(4)),
-                  const SizedBox(height: 8),
-                  SkeletonLoader(width: 200, height: 16, borderRadius: BorderRadius.circular(4)),
-                  const SizedBox(height: 12),
-                  Row(
-                    children: [
-                      SkeletonLoader(width: 100, height: 28, borderRadius: BorderRadius.circular(8)),
-                    ],
-                  ),
-                ],
-              ),
+            SkeletonLoader(width: 100, height: 12, borderRadius: BorderRadius.circular(4)),
+            const SizedBox(height: 12),
+            SkeletonLoader(width: double.infinity, height: 16, borderRadius: BorderRadius.circular(4)),
+            const SizedBox(height: 15),
+            Row(
+              children: [
+                SkeletonLoader(width: 120, height: 28, borderRadius: BorderRadius.circular(8)),
+              ],
             ),
-            SkeletonLoader(width: 40, height: 40, borderRadius: BorderRadius.circular(20)),
           ],
         ),
       ),

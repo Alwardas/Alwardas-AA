@@ -1593,7 +1593,7 @@ pub async fn get_lesson_topics_handler(
 pub struct AssignLessonScheduleRequest {
     pub subject_id: String,
     pub topic_id: String,
-    pub schedule_date: chrono::DateTime<Utc>,
+    pub schedule_date: chrono::NaiveDate, // Use NaiveDate to avoid timezone shifts
     pub faculty_id: Option<String>,
     pub branch: String,
     pub year: String,
