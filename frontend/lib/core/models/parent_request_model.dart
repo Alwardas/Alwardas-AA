@@ -13,7 +13,9 @@ class ParentRequest {
   final DateTime updatedAt;
   final String? assignedTo;
   final String? parentName;
+  final String? parentRole;
   final String? studentName;
+  final String? studentLoginId;
   final String? assignedName;
   final String? voiceNote;
 
@@ -30,7 +32,9 @@ class ParentRequest {
     required this.updatedAt,
     this.assignedTo,
     this.parentName,
+    this.parentRole,
     this.studentName,
+    this.studentLoginId,
     this.assignedName,
     this.voiceNote,
   });
@@ -49,7 +53,9 @@ class ParentRequest {
       updatedAt: DateTime.parse(json['updatedAt']),
       assignedTo: json['assignedTo'],
       parentName: json['parentName'],
+      parentRole: json['parentRole'],
       studentName: json['studentName'],
+      studentLoginId: json['studentLoginId'],
       assignedName: json['assignedName'],
       voiceNote: json['voiceNote'],
     );
@@ -69,7 +75,9 @@ class ParentRequest {
       'updatedAt': updatedAt.toIso8601String(),
       'assignedTo': assignedTo,
       'parentName': parentName,
+      'parentRole': parentRole,
       'studentName': studentName,
+      'studentLoginId': studentLoginId,
       'assignedName': assignedName,
       'voiceNote': voiceNote,
     };

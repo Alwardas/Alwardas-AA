@@ -337,7 +337,7 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
                     ),
                 
                 // Tab 3: Parent Requests
-                ParentRequestsViewer(userData: widget.userData),
+                ParentRequestsViewer(userData: widget.userData, requestFrom: 'Parent'),
               ],
             ),
           ),

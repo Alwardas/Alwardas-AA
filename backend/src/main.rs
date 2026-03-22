@@ -477,6 +477,7 @@ async fn main() {
         .route("/api/parent/profile", get(parent::get_parent_profile_handler))
         .route("/api/parent/requests/submit", post(parent::submit_parent_request_handler))
         .route("/api/parent/requests", get(parent::get_parent_requests_handler))
+        .route("/api/parent/requests/:id", axum::routing::delete(parent::delete_parent_request_handler))
         .route("/api/parent/requests/:id/status", post(parent::update_parent_request_status_handler))
         .route("/api/faculty/profile", get(faculty::get_faculty_profile_handler))
         .route("/api/faculty/subjects", get(faculty::get_faculty_subjects_handler))

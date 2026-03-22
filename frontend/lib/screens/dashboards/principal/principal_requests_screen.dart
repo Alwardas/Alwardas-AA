@@ -151,7 +151,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> with 
                     ),
                 
                 // Parent Requests Tab
-                ParentRequestsViewer(userData: widget.userData),
+                ParentRequestsViewer(userData: widget.userData, requestFrom: 'Parent'),
               ],
             ),
           ),

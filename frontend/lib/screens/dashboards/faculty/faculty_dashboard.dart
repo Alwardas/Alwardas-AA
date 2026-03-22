@@ -606,14 +606,14 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                       const SizedBox(width: 15),
                       Expanded(
                         child: _buildHorizontalCard(
-                          Icons.rate_review_outlined,
-                          'Feedbacks',
+                          Icons.request_page_outlined,
+                          'Requests',
                           '',
-                          const Color(0xFF1ABC9C),
+                          const Color(0xFF9B59B6),
                           cardColor,
                           textColor,
                           subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyReviewsScreen())),
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyRequestsScreen(userData: widget.userData))),
                         ),
                       ),
                     ],

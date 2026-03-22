@@ -185,7 +185,9 @@ pub async fn get_parent_requests_handler(
         SELECT 
             pr.id, pr.parent_id, pr.student_id, pr.request_type, pr.subject, pr.description, pr.date_duration, pr.status, pr.created_at, pr.updated_at, pr.assigned_to, pr.voice_note,
             u_parent.full_name as parent_name,
+            u_parent.role as parent_role,
             u_student.full_name as student_name,
+            u_student.login_id as student_login_id,
             u_assigned.full_name as assigned_name
         FROM parent_requests pr
         LEFT JOIN users u_parent ON pr.parent_id = u_parent.id
@@ -300,6 +302,22 @@ pub async fn update_parent_request_status_handler(
         .map_err(|e| {
             eprintln!("Update Parent Request Status Error: {:?}", e);
             (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to update status"})))
+        })?;
+
+    Ok(StatusCode::OK)
+}
+
+pub async fn delete_parent_request_handler(
+    State(state): State<AppState>,
+    axum::extract::Path(request_id): axum::extract::Path<Uuid>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    sqlx::query("DELETE FROM parent_requests WHERE id = $1")
+        .bind(request_id)
+        .execute(&state.pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Delete Parent Request Error: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to delete request"})))
         })?;
 
     Ok(StatusCode::OK)

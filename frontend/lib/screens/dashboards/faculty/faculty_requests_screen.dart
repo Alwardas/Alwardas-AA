@@ -16,7 +16,7 @@ class _FacultyRequestsScreenState extends State<FacultyRequestsScreen> with Sing
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 1, vsync: this); // For now just Parent Requests, can add more later
+    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
@@ -44,6 +44,7 @@ class _FacultyRequestsScreenState extends State<FacultyRequestsScreen> with Sing
           indicatorColor: Theme.of(context).primaryColor,
           tabs: const [
             Tab(text: "Parent Requests"),
+            Tab(text: "Student Requests"),
           ],
         ),
       ),
@@ -60,7 +61,8 @@ class _FacultyRequestsScreenState extends State<FacultyRequestsScreen> with Sing
         child: TabBarView(
           controller: _tabController,
           children: [
-            ParentRequestsViewer(userData: widget.userData),
+            ParentRequestsViewer(userData: widget.userData, requestFrom: 'Parent'),
+            ParentRequestsViewer(userData: widget.userData, requestFrom: 'Student'),
           ],
         ),
       ),

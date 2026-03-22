@@ -947,7 +947,11 @@ pub struct ParentRequest {
     #[sqlx(default)]
     pub parent_name: Option<String>,
     #[sqlx(default)]
+    pub parent_role: Option<String>,
+    #[sqlx(default)]
     pub student_name: Option<String>,
+    #[sqlx(default)]
+    pub student_login_id: Option<String>,
     #[sqlx(default)]
     pub assigned_name: Option<String>,
     pub voice_note: Option<String>,
