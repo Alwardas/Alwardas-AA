@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -133,7 +133,7 @@ class _HodFacultyScreenState extends State<HodFacultyScreen> {
                               onTap: () {
                                 Navigator.push(
                                   context, 
-                                  MaterialPageRoute(builder: (_) => HodFacultyDetailScreen(faculty: faculty))
+                                  MaterialPageRoute(builder: (_) => HodFacultyDetailScreen(faculty: faculty, branch: widget.branch))
                                 );
                               },
                               child: Container(

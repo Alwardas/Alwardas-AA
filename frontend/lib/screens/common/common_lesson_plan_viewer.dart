@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -184,6 +184,14 @@ class _CommonLessonPlanViewerState extends State<CommonLessonPlanViewer> {
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
+                                          if (item['scheduled_date'] != null)
+                                            Padding(
+                                              padding: const EdgeInsets.only(bottom: 4),
+                                              child: Text(
+                                                "Target: ${item['scheduled_date'].toString().split('T')[0]}",
+                                                style: TextStyle(color: tint.withValues(alpha: 0.7), fontSize: 10, fontWeight: FontWeight.bold),
+                                              ),
+                                            ),
                                           Text(
                                             item['topic'] ?? 'No Topic',
                                             style: GoogleFonts.poppins(

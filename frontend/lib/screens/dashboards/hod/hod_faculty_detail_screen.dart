@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/models/faculty_model.dart';
@@ -10,10 +10,13 @@ import 'package:http/http.dart' as http;
 import '../../../core/api_constants.dart';
 import '../../common/common_lesson_plan_viewer.dart';
 
+import 'hod_syllabus_lesson_topics_screen.dart';
+
 class HodFacultyDetailScreen extends StatefulWidget {
   final BackendFacultyMember faculty;
+  final String branch;
 
-  const HodFacultyDetailScreen({super.key, required this.faculty});
+  const HodFacultyDetailScreen({super.key, required this.faculty, required this.branch});
 
   @override
   State<HodFacultyDetailScreen> createState() => _HodFacultyDetailScreenState();
@@ -248,13 +251,21 @@ class _HodFacultyDetailScreenState extends State<HodFacultyDetailScreen> with Si
 
         return GestureDetector(
           onTap: () {
-            // Navigate to Lesson Plan View
+            // Navigate to Lesson Plan Management View
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => CommonLessonPlanViewer(
+              MaterialPageRoute(builder: (_) => HodSyllabusLessonTopicsScreen(
                 subjectId: subjectId, 
                 subjectName: subjectName,
-                facultyName: widget.faculty.name,
+                // These are needed by the topics screen. 
+                // In HOD view, we try to extract them from the course JSON.
+                year: course['semester'] ?? 'Year', 
+                semester: course['semester'] ?? 'Sem',
+                section: course['section'] ?? 'Section A',
+                userData: {
+                  'branch': widget.branch,
+                  'login_id': widget.faculty.loginId,
+                },
               ))
             );
           },
