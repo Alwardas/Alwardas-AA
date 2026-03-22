@@ -238,7 +238,8 @@ pub async fn get_parent_requests_handler(
                          query.push_bind(u_uuid);
                          // Faculty also gets branch-level unassigned visibility
                          query.push(" OR (pr.assigned_to IS NULL AND u_student.branch ILIKE ");
-                         query.push_bind(params.branch.clone().unwrap_or_default().trim());
+                         let branch_to_bind = params.branch.clone().unwrap_or_default();
+                         query.push_bind(branch_to_bind.trim().to_string());
                          query.push("))");
                     } else {
                         // If no user found by login_id, maybe fallback to branch?
