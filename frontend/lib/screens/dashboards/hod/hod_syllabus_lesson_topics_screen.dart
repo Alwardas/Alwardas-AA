@@ -231,9 +231,21 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
   }
 
   Widget _buildTopicCard(dynamic topic, bool isDark, Color textColor, Color subTextColor) {
+    final String type = topic['type']?.toString().toLowerCase() ?? 'topic';
     final cardColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white;
     final hasSchedule = topic['scheduleDate'] != null;
     final bool isCompleted = topic['completed'] == true;
+    
+    // Non-topic items (headings, unit ends, etc.) should not have date assignment
+    if (type == 'unit' || type == 'unitend' || type == 'heading') {
+       return Padding(
+         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+         child: Text(
+           topic['topicName'] ?? 'Heading',
+           style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.deepPurple, fontStyle: FontStyle.italic),
+         ),
+       );
+    }
     
     String dateStr = "Assign Date";
     if (hasSchedule) {

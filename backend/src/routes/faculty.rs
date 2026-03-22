@@ -1548,6 +1548,9 @@ pub struct LessonTopicResponse {
     pub schedule_date: Option<chrono::DateTime<Utc>>,
     pub completed: Option<bool>,
     pub completed_date: Option<chrono::DateTime<Utc>>,
+    #[sqlx(rename = "item_type")]
+    #[serde(rename = "type")]
+    pub item_type: String,
 }
 
 pub async fn get_lesson_topics_handler(
@@ -1563,7 +1566,8 @@ pub async fn get_lesson_topics_handler(
             COALESCE(lpi.topic, lpi.text) as topic_name, 
             ls.schedule_date,
             COALESCE(lp.completed, FALSE) as completed,
-            lp.completed_date
+            lp.completed_date,
+            lpi.type as item_type
         FROM lesson_plan_items lpi
         LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id 
             AND (TRIM(ls.section) = TRIM($2) OR $2 IS NULL)
