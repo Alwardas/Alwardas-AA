@@ -92,7 +92,7 @@ pub async fn get_announcements_handler(
     Query(params): Query<GetAnnouncementsQuery>,
 ) -> impl IntoResponse {
     let (query, binds_needed) = match params.role.as_deref() {
-        Some("Admin") | Some("Principal") | Some("Coordinator") => {
+        Some("Admin") | Some("Principal") | Some("Coordinator") | Some("HOD") => {
             // High-privileged roles see everything
             ("SELECT * FROM announcements WHERE end_date >= NOW() ORDER BY is_pinned DESC, created_at DESC", 0)
         }
