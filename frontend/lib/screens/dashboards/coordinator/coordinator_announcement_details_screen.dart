@@ -1,8 +1,12 @@
 import 'dart:ui';
+import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:open_filex/open_filex.dart';
 import '../../../../core/providers/theme_provider.dart';
 import '../../../../core/helpers/announcement_theme_helper.dart';
 import 'coordinator_announcements_screen.dart';
@@ -243,41 +247,69 @@ class CoordinatorAnnouncementDetailsScreen extends StatelessWidget {
                           ),
                         ),
 
-                        // Optional Attachment (Simulated as per screenshot)
-                        if (announcement.type == AnnouncementType.exam || announcement.type == AnnouncementType.urgent) ...[
+                        // Real Attachment Section
+                        if (announcement.attachmentUrl != null && announcement.attachmentUrl!.isNotEmpty) ...[
                           const SizedBox(height: 24),
                           Divider(color: Colors.white.withOpacity(0.1), height: 1),
                           const SizedBox(height: 20),
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                                decoration: BoxDecoration(
-                                  color: const Color(0xFFE53935),
-                                  borderRadius: BorderRadius.circular(8),
+                          InkWell(
+                            onTap: () async {
+                               try {
+                                 final base64Content = announcement.attachmentUrl!;
+                                 final bytes = base64Decode(base64Content);
+                                 final tempDir = await getTemporaryDirectory();
+                                 String ext = 'pdf';
+                                 if (base64Content.length > 20) {
+                                    final header = base64Content.substring(0, 20);
+                                    if (header.contains('/9j/')) ext = 'jpg';
+                                    else if (header.contains('iVBORw0KGgo')) ext = 'png';
+                                 }
+                                 final file = File('${tempDir.path}/attachment_${announcement.id}.$ext');
+                                 await file.writeAsBytes(bytes);
+                                 await OpenFilex.open(file.path);
+                               } catch (e) {
+                                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+                               }
+                            },
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(0.1),
+                                    borderRadius: BorderRadius.circular(12),
+                                    border: Border.all(color: Colors.white.withOpacity(0.2)),
+                                  ),
+                                  child: Icon(
+                                    announcement.attachmentUrl!.length > 100 && announcement.attachmentUrl!.substring(0, 30).contains('/9j/') 
+                                      ? Icons.image 
+                                      : Icons.picture_as_pdf, 
+                                    color: Colors.white, 
+                                    size: 20
+                                  ),
                                 ),
-                                child: Text('PDF', style: GoogleFonts.inter(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
-                              ),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      announcement.type == AnnouncementType.exam ? 'Final_Exam_Timetable.pdf' : 'Mock_Exam_Schedule.pdf',
-                                      style: GoogleFonts.inter(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w600),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                    const SizedBox(height: 2),
-                                    Text(
-                                      '2.4 MB',
-                                      style: GoogleFonts.inter(color: Colors.white.withOpacity(0.6), fontSize: 12),
-                                    ),
-                                  ],
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'View Attachment',
+                                        style: GoogleFonts.inter(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      const SizedBox(height: 2),
+                                      Text(
+                                        'Tap to open and view',
+                                        style: GoogleFonts.inter(color: Colors.white.withOpacity(0.6), fontSize: 12),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                const Icon(Icons.open_in_new, color: Colors.white54, size: 18),
+                              ],
+                            ),
                           )
                         ]
                       ],

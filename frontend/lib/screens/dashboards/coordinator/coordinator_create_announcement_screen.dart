@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:io';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -44,6 +46,7 @@ class _CoordinatorCreateAnnouncementScreenState
   // UI State
   bool _isAutoSaving = false;
   Timer? _autoSaveTimer;
+  PlatformFile? _pickedAttachment;
 
   // Constants
   final List<String> _audienceOptions = [
@@ -102,6 +105,29 @@ class _CoordinatorCreateAnnouncementScreenState
       _descController.text.isNotEmpty &&
       _selectedAudience.isNotEmpty;
 
+  Future<void> _pickAttachment() async {
+    try {
+      final result = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: ['pdf', 'jpg', 'jpeg', 'png'],
+      );
+      if (result != null) {
+        final file = result.files.first;
+        if (file.size! > 2 * 1024 * 1024) { // file.size is nullable, added !
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('File size must be less than 2MB'))
+            );
+          }
+          return;
+        }
+        setState(() => _pickedAttachment = file);
+      }
+    } catch (e) {
+       debugPrint("Pick error: $e");
+    }
+  }
+
   Future<void> _handlePublish() async {
     setState(() => _isAutoSaving = true);
 
@@ -129,6 +155,12 @@ class _CoordinatorCreateAnnouncementScreenState
          if (_selectedSections.isNotEmpty) finalAudience.add("Sections: ${_selectedSections.join(', ')}");
       }
 
+      String? attachmentBase64;
+      if (_pickedAttachment != null && _pickedAttachment!.path != null) {
+         final bytes = await File(_pickedAttachment!.path!).readAsBytes();
+         attachmentBase64 = base64Encode(bytes);
+      }
+
       final body = {
         "title": _titleController.text,
         "description": _descController.text,
@@ -139,6 +171,7 @@ class _CoordinatorCreateAnnouncementScreenState
         "end_date": endDateTime,
         "isPinned": false,
         "creatorId": creatorId,
+        "attachmentUrl": attachmentBase64, // Using the field to store base64 string
         "sendPush": _sendPush,
         "sendInApp": _sendInApp
       };
@@ -407,6 +440,50 @@ class _CoordinatorCreateAnnouncementScreenState
                        ],
                      ),
                   ]
+                ],
+                isDark),
+
+            const SizedBox(height: 20),
+
+            _buildFormSection(
+                "Attachment (Max 2MB)",
+                [
+                  Row(
+                    children: [
+                      ElevatedButton.icon(
+                        onPressed: _pickAttachment,
+                        icon: const Icon(Icons.attach_file, size: 18, color: Colors.white),
+                        label: Text(
+                          _pickedAttachment == null ? "Attach PDF/Image" : "Change File",
+                          style: GoogleFonts.poppins(color: Colors.white, fontSize: 13),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blueGrey,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                        ),
+                      ),
+                      if (_pickedAttachment != null) ...[
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Text(
+                            _pickedAttachment!.name,
+                            style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () => setState(() => _pickedAttachment = null),
+                          icon: const Icon(Icons.close, size: 18, color: Colors.red),
+                        ),
+                      ],
+                    ],
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    "Supports: PDF, JPG, JPEG, PNG",
+                    style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey[500]),
+                  ),
                 ],
                 isDark),
 

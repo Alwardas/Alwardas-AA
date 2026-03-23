@@ -749,6 +749,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                 onTap: (mAbsent || aAbsent) && !isHolidayDay ? () => _handleDayTap(dateStr, morning, afternoon) : null,
                 child: Container(
                   alignment: Alignment.center,
+                  clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
                     color: isHolidayDay ? Colors.grey.withValues(alpha: 0.05) : Colors.white,
                     borderRadius: BorderRadius.circular(8),

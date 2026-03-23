@@ -620,6 +620,7 @@ class Announcement {
   final DateTime createdAt;
   final bool isNew;
   final bool isPinned;
+  final String? attachmentUrl;
 
   Announcement({
     required this.id,
@@ -633,6 +634,7 @@ class Announcement {
     required this.createdAt,
     this.isNew = false,
     this.isPinned = false,
+    this.attachmentUrl,
   });
 
   factory Announcement.fromJson(Map<String, dynamic> json) {
@@ -654,6 +656,7 @@ class Announcement {
       createdAt: DateTime.parse(json['created_at']),
       isNew: DateTime.now().difference(DateTime.parse(json['created_at'])).inHours < 24,
       isPinned: json['is_pinned'] ?? false,
+      attachmentUrl: json['attachment_url'],
     );
   }
 }

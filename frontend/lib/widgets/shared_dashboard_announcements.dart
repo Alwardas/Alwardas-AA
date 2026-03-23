@@ -55,6 +55,10 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
 
   @override
   Widget build(BuildContext context) {
+    if (!_isLoadingAnnouncements && _dashboardAnnouncements.isEmpty) {
+      return const SizedBox.shrink();
+    }
+
     final theme = Theme.of(context);
     final themeProvider = Provider.of<ThemeProvider>(context);
     final isDark = themeProvider.isDarkMode;
@@ -79,8 +83,6 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
             if (isCoordinator)
                GestureDetector(
                  onTap: () async {
-                    // Quick add logic for coordinator handled in coordinator_dashboard natively,
-                    // but we can route them to the main announcements page.
                     Navigator.push(context, MaterialPageRoute(builder: (_) => CoordinatorAnnouncementsScreen(isReadOnly: false))).then((_) => _fetchDashboardAnnouncements());
                  },
                  child: Container(
@@ -98,15 +100,8 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
         else
             Builder(
               builder: (context) {
-                // Filter by role (if not coordinator/admin/principal)
-                List<Announcement> filteredList = List.from(_dashboardAnnouncements);
-                if (!isCoordinator && widget.userRole.toLowerCase() != 'admin' && widget.userRole.toLowerCase() != 'principal') {
-                    // Note: This relies on the backend or frontend to filter correctly. 
-                    // Actually, let's keep it simple: Show them all since the user requested: 
-                    // "display on the all users dashboard page like coordinator dashboard annoncemnt view exactly"
-                }
-
                 // Sort by pinned, then date (same logic as main screen)
+                List<Announcement> filteredList = List.from(_dashboardAnnouncements);
                 filteredList.sort((a, b) {
                   if (a.isPinned && !b.isPinned) return -1;
                   if (!a.isPinned && b.isPinned) return 1;
@@ -117,10 +112,7 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
                 final hasMore = filteredList.length > 3;
 
                 if (displayList.isEmpty) {
-                  return Center(child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text("No upcoming announcements", style: GoogleFonts.poppins(color: subTextColor)),
-                  ));
+                  return const SizedBox.shrink();
                 }
 
                 return SingleChildScrollView(
@@ -153,6 +145,7 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
                 );
               }
             ),
+        const SizedBox(height: 25), // Bottom gap only if shown
       ],
     );
   }
@@ -261,11 +254,22 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            announcement.title,
-                            style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  announcement.title,
+                                  style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              if (announcement.attachmentUrl != null && announcement.attachmentUrl!.isNotEmpty)
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 4),
+                                  child: Icon(Icons.attach_file, color: Colors.white70, size: 14),
+                                ),
+                            ],
                           ),
                           Text(
                             audience,

@@ -734,38 +734,15 @@ class _StudentDashboardState extends State<StudentDashboard> {
 
                   const SizedBox(height: 20),
 
-                  // Today's Schedule
-                  if (_todaySchedule.isNotEmpty) ...[
-                      Text(
-                        "Today's Schedule",
-                        style: GoogleFonts.poppins(
-                          color: textColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      ..._todaySchedule.map((cls) => _buildClassCard(cls, isDark, textColor, subTextColor)),
-                  ] else ...[
-                      Text(
-                        "Today's Schedule",
-                        style: GoogleFonts.poppins(
-                          color: textColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text("No classes scheduled for today.", style: GoogleFonts.poppins(color: subTextColor)),
-                  ],
+                  // Removed Today's Schedule block as requested
 
                   if (_todayPracticals.isNotEmpty) ...[
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 10),
                       Text(
                         "Today's Practical Schedule",
                         style: GoogleFonts.poppins(
                           color: textColor,
-                          fontSize: 16,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -784,58 +761,83 @@ class _StudentDashboardState extends State<StudentDashboard> {
 
   Widget _buildClassCard(Map<String, dynamic> cls, bool isDark, Color textColor, Color subTextColor) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 15),
-      padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
-        color: cls['status'] == 'conducted' ? Colors.green.withOpacity(0.15) :
-               (cls['status'] == 'substitute' ? Colors.orange.withOpacity(0.15) :
-                (cls['status'] == 'not_conducted' ? Colors.red.withOpacity(0.15) :
+        color: cls['status'] == 'conducted' ? Colors.green.withOpacity(0.12) :
+               (cls['status'] == 'substitute' ? Colors.orange.withOpacity(0.12) :
+                (cls['status'] == 'not_conducted' ? Colors.red.withOpacity(0.12) :
                  (isDark ? const Color(0xFF1E293B) : Colors.white))),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: cls['status'] == 'conducted' ? Colors.green.withOpacity(0.1) :
-                   (cls['status'] == 'substitute' ? Colors.orange.withOpacity(0.1) :
-                    (cls['status'] == 'not_conducted' ? Colors.red.withOpacity(0.1) :
-                     Colors.black.withValues(alpha: 0.05))),
-            blurRadius: 10,
-            offset: const Offset(0, 5),
+            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.05),
+            blurRadius: 8,
+            offset: const Offset(0, 4),
           ),
         ],
         border: Border.all(
-          color: cls['status'] == 'conducted' ? Colors.green.withOpacity(0.5) :
-                 (cls['status'] == 'substitute' ? Colors.orange.withOpacity(0.5) :
-                  (cls['status'] == 'not_conducted' ? Colors.red.withOpacity(0.5) :
+          color: cls['status'] == 'conducted' ? Colors.green.withOpacity(0.4) :
+                 (cls['status'] == 'substitute' ? Colors.orange.withOpacity(0.4) :
+                  (cls['status'] == 'not_conducted' ? Colors.red.withOpacity(0.4) :
                    (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)))),
         ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            cls['time'] ?? '',
-            style: GoogleFonts.poppins(
-              color: const Color(0xFF00d2ff),
-              fontSize: 13,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 0.5,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                cls['time'] ?? '',
+                style: GoogleFonts.poppins(
+                  color: const Color(0xFF00d2ff),
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.5,
+                ),
+              ),
+              if (cls['status'] != null && cls['status'].toString().isNotEmpty)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: cls['status'] == 'conducted' ? Colors.green.withOpacity(0.2) :
+                           (cls['status'] == 'substitute' ? Colors.orange.withOpacity(0.2) : Colors.red.withOpacity(0.2)),
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: Text(
+                    cls['status'].toString().toUpperCase(),
+                    style: TextStyle(
+                      color: cls['status'] == 'conducted' ? Colors.green :
+                             (cls['status'] == 'substitute' ? Colors.orange : Colors.red),
+                      fontSize: 9,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+            ],
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 6),
           Text(
             cls['subject'] ?? '',
             style: GoogleFonts.poppins(
               color: textColor,
-              fontSize: 20,
+              fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
           if (cls['faculty'] != null && cls['faculty'].toString().isNotEmpty && cls['faculty'] != '---')
-             Text(
-               'Faculty: ${cls['faculty']}',
-               style: GoogleFonts.poppins(
-                 color: subTextColor,
-                 fontSize: 14,
+             Padding(
+               padding: const EdgeInsets.only(top: 2),
+               child: Text(
+                 'Faculty: ${cls['faculty']}',
+                 style: GoogleFonts.poppins(
+                   color: subTextColor,
+                   fontSize: 12,
+                 ),
                ),
              ),
         ],
