@@ -151,8 +151,8 @@ class AbsentStudentsScreen extends StatelessWidget {
                    ),
                    alignment: Alignment.center,
                    child: Text(
-                     id.toString().substring(id.toString().length > 2 ? id.toString().length - 2 : 0),
-                     style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 11),
+                     id.toString().length > 3 ? id.toString().substring(id.toString().length - 3) : id.toString().padLeft(3, '0'),
+                     style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 10),
                    ),
                  ),
                  const SizedBox(width: 12),

@@ -163,6 +163,79 @@ pub async fn get_added_course_subjects_handler(
     Ok(Json(json!(subjects)))
 }
 
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct FacultyAssignmentQuery {
+    pub subject_name: String,
+    pub branch: String,
+    pub year: String,
+    pub section: String,
+}
+
+pub async fn get_faculty_assignment_handler(
+    State(data): State<AppState>,
+    Query(params): Query<FacultyAssignmentQuery>,
+) -> Result<Json<serde_json::Value>, StatusCode> {
+    let branch_norm = normalize_branch(&params.branch);
+
+    // Look in faculty_subjects for an approved assignment
+    // Use like check for subject_name to be flexible
+    let row = sqlx::query(
+        r#"
+        SELECT u.login_id, u.full_name 
+        FROM faculty_subjects fs
+        JOIN users u ON fs.user_id = u.id
+        WHERE (fs.subject_name ILIKE $1 OR fs.subject_id = $1)
+        AND fs.branch = $2 
+        AND fs.section = $3
+        AND fs.status = 'APPROVED'
+        LIMIT 1
+        "#
+    )
+    .bind(&params.subject_name)
+    .bind(branch_norm)
+    .bind(&params.section)
+    .fetch_optional(&data.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Fetch Faculty Assignment Error: {:?}", e);
+        StatusCode::INTERNAL_SERVER_ERROR
+    })?;
+
+    if let Some(r) = row {
+        Ok(Json(json!({
+            "facultyId": r.get::<String, _>("login_id"),
+            "facultyName": r.get::<String, _>("full_name")
+        })))
+    } else {
+        Ok(Json(json!({ "facultyId": null, "facultyName": null })))
+    }
+}
+
+pub async fn get_all_staff_handler(
+    State(data): State<AppState>,
+) -> Result<Json<Vec<serde_json::Value>>, StatusCode> {
+    let result = sqlx::query(
+        "SELECT login_id, full_name, role FROM users WHERE role IN ('Faculty', 'HOD', 'Principal', 'Coordinator', 'Incharge') ORDER BY full_name ASC"
+    )
+    .fetch_all(&data.pool)
+    .await
+    .map_err(|e| {
+        eprintln!("Failed to fetch staff list: {:?}", e);
+        StatusCode::INTERNAL_SERVER_ERROR
+    })?;
+
+    let staff: Vec<serde_json::Value> = result.into_iter().map(|row| {
+        json!({
+            "id": row.get::<String, _>("login_id"),
+            "name": row.get::<String, _>("full_name"),
+            "role": row.get::<String, _>("role")
+        })
+    }).collect();
+
+    Ok(Json(staff))
+}
+
 pub async fn get_master_timetable_handler(
     State(data): State<AppState>,
     Query(params): Query<MasterTimetableQuery>,

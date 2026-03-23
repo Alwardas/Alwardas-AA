@@ -49,29 +49,32 @@ pub async fn create_announcement_handler(
                 let msg = format!("{}: {}", body.title, body.description);
                 
                 for audience_role in &body.audience {
-                    let recipient_label = match audience_role.as_str() {
-                        "All" => None,
-                        "Students" => Some("STUDENT_RECIPIENT"),
-                        "Faculty" => Some("FACULTY_RECIPIENT"),
-                        "Parents" => Some("PARENT_RECIPIENT"),
-                        "HODs" => Some("HOD_RECIPIENT"),
-                        "Principal" => Some("PRINCIPAL_RECIPIENT"),
-                        "Coordinator" => Some("COORDINATOR_RECIPIENT"),
-                        _ => None,
+                    let (recipient_label, is_broadcast) = match audience_role.as_str() {
+                        "All" => (None, true),
+                        "Students" => (Some("STUDENT_RECIPIENT"), false),
+                        "Faculty" => (Some("FACULTY_RECIPIENT"), false),
+                        "Parents" => (Some("PARENT_RECIPIENT"), false),
+                        "HODs" => (Some("HOD_RECIPIENT"), false),
+                        "Principal" => (Some("PRINCIPAL_RECIPIENT"), false),
+                        "Coordinator" => (Some("COORDINATOR_RECIPIENT"), false),
+                        "Incharge" | "Incharges" => (Some("COORDINATOR_RECIPIENT"), false), // Incharges usually map to coordinator notifications in this app
+                        _ => (None, false), // Custom filter strings like "Branches: CME" should not trigger a new notification row
                     };
 
-                    // Insert notification
-                    let _ = sqlx::query(
-                        "INSERT INTO notifications (type, message, sender_id, recipient_id, status, created_at) 
-                         VALUES ($1, $2, $3, $4, 'UNREAD', $5)"
-                    )
-                    .bind("ANNOUNCEMENT")
-                    .bind(&msg)
-                    .bind(&body.creator_id)
-                    .bind(recipient_label)
-                    .bind(Utc::now())
-                    .execute(&data.pool)
-                    .await;
+                    // Only insert if it's 'All' or we found a specific recipient label
+                    if is_broadcast || recipient_label.is_some() {
+                        let _ = sqlx::query(
+                            "INSERT INTO notifications (type, message, sender_id, recipient_id, status, created_at) 
+                             VALUES ($1, $2, $3, $4, 'UNREAD', $5)"
+                        )
+                        .bind("ANNOUNCEMENT")
+                        .bind(&msg)
+                        .bind(&body.creator_id)
+                        .bind(recipient_label)
+                        .bind(Utc::now())
+                        .execute(&data.pool)
+                        .await;
+                    }
                 }
             }
 
@@ -88,21 +91,33 @@ pub async fn get_announcements_handler(
     State(data): State<AppState>,
     Query(params): Query<GetAnnouncementsQuery>,
 ) -> impl IntoResponse {
-    let result = if let Some(role) = params.role {
+    let (query, binds_needed) = match params.role.as_deref() {
+        Some("Admin") | Some("Principal") | Some("Coordinator") => {
+            // High-privileged roles see everything
+            ("SELECT * FROM announcements WHERE end_date >= NOW() ORDER BY is_pinned DESC, created_at DESC", 0)
+        }
+        Some(role) => {
+            // Specific role provided: Filter by All, Role, or Role+s
+            ("SELECT * FROM announcements WHERE end_date >= NOW() AND ('All' = ANY(audience) OR $1 = ANY(audience) OR $2 = ANY(audience)) ORDER BY is_pinned DESC, created_at DESC", 2)
+        }
+        None => {
+            // No role provided: Only show public announcements
+            ("SELECT * FROM announcements WHERE end_date >= NOW() AND 'All' = ANY(audience) ORDER BY is_pinned DESC, created_at DESC", 0)
+        }
+    };
+
+    let result = if binds_needed == 2 {
+        let role = params.role.as_ref().unwrap();
         let role_plural = format!("{}s", role);
-        sqlx::query_as::<_, Announcement>(
-            "SELECT * FROM announcements WHERE end_date >= NOW() AND ('All' = ANY(audience) OR $1 = ANY(audience) OR $2 = ANY(audience)) ORDER BY is_pinned DESC, created_at DESC"
-        )
-        .bind(role)
-        .bind(role_plural)
-        .fetch_all(&data.pool)
-        .await
+        sqlx::query_as::<_, Announcement>(query)
+            .bind(role)
+            .bind(role_plural)
+            .fetch_all(&data.pool)
+            .await
     } else {
-        sqlx::query_as::<_, Announcement>(
-            "SELECT * FROM announcements WHERE end_date >= NOW() ORDER BY is_pinned DESC, created_at DESC"
-        )
-        .fetch_all(&data.pool)
-        .await
+        sqlx::query_as::<_, Announcement>(query)
+            .fetch_all(&data.pool)
+            .await
     };
 
     match result {

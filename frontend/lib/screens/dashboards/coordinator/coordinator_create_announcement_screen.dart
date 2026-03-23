@@ -51,7 +51,9 @@ class _CoordinatorCreateAnnouncementScreenState
     'Faculty',
     'HODs',
     'Principal',
-    'Coordinator', 'Parents',
+    'Coordinator',
+    'Incharges',
+    'Parents',
     'All'
   ];
 
@@ -136,7 +138,6 @@ class _CoordinatorCreateAnnouncementScreenState
         "start_date": startDateTime,
         "end_date": endDateTime,
         "isPinned": false,
-        "creatorId": creatorId,
         "creatorId": creatorId,
         "sendPush": _sendPush,
         "sendInApp": _sendInApp

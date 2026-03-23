@@ -538,6 +538,8 @@ async fn main() {
         .route("/api/incharge/class-status", get(incharge::get_section_class_status_handler))
         .route("/api/hod/daily-activity-report", get(incharge::get_daily_activity_report_handler))
         .route("/api/incharge/branch-daily-detail-report", get(incharge::get_branch_daily_detail_report_handler))
+        .route("/api/staff/all", get(hod::get_all_staff_handler))
+        .route("/api/hod/faculty-assignment", get(hod::get_faculty_assignment_handler))
         .with_state(AppState { pool })
         .fallback(move |req: axum::extract::Request| {
             let mut grpc_service = grpc_service.clone();

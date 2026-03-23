@@ -31,7 +31,8 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
 
   Future<void> _fetchDashboardAnnouncements() async {
     try {
-      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement')).timeout(
+      final role = widget.userRole;
+      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement?role=$role')).timeout(
         const Duration(seconds: 5),
         onTimeout: () => http.Response('[]', 408),
       );

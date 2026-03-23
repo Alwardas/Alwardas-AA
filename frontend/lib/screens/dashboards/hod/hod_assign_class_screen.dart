@@ -43,6 +43,9 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
   List<int> _availablePeriods = [1, 2, 3, 4, 5, 6, 7, 8];
   Map<int, Map<String, String>> _periodTimes = {};
   List<Map<String, String>> _fetchedSubjects = [];
+  List<Map<String, dynamic>> _allStaff = [];
+  String? _selectedFacultyId;
+  bool _fetchingFaculty = false;
   
   String? _selectedBranch;
   String? _selectedYear;
@@ -69,6 +72,7 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
     _fetchTimings();
     _fetchSections();
     _loadSubjectsFromJson();
+    _fetchAllStaff();
   }
 
   Future<void> _fetchSections() async {
@@ -81,8 +85,13 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
         setState(() {
           _sectionsList = fetched.map((e) => e.toString()).toList();
           if (_sectionsList.isEmpty) _sectionsList = ["A"];
+          
           if (!_sectionsList.contains(_selectedSection)) {
             _selectedSection = _sectionsList.first;
+          }
+
+          if (_subjectController.text.isNotEmpty || _manualSubjectController.text.isNotEmpty) {
+            _fetchFacultyAssignment(_subjectController.text.isNotEmpty ? _subjectController.text : _manualSubjectController.text);
           }
         });
       }
@@ -206,13 +215,50 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
     }
   }
 
+  Future<void> _fetchAllStaff() async {
+    try {
+      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/staff/all'));
+      if (res.statusCode == 200) {
+        if (mounted) setState(() => _allStaff = List<Map<String, dynamic>>.from(json.decode(res.body)));
+      }
+    } catch (e) {
+      debugPrint("Error fetching staff: $e");
+    }
+  }
+
+  Future<void> _fetchFacultyAssignment(String subjectName) async {
+    if (subjectName.isEmpty) return;
+    setState(() => _fetchingFaculty = true);
+
+    try {
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/hod/faculty-assignment').replace(queryParameters: {
+        'subjectName': subjectName,
+        'branch': _selectedBranch!,
+        'year': _selectedYear!,
+        'section': _selectedSection!,
+      });
+      
+      final res = await http.get(uri);
+      if (res.statusCode == 200) {
+        final data = json.decode(res.body);
+        if (data['facultyId'] != null) {
+          if (mounted) setState(() => _selectedFacultyId = data['facultyId']);
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching faculty assignment: $e");
+    } finally {
+      if (mounted) setState(() => _fetchingFaculty = false);
+    }
+  }
+
   Future<void> _handleAssign() async {
     final String subject = _manualSubjectController.text.isNotEmpty 
         ? _manualSubjectController.text 
         : _subjectController.text;
 
-    if (_selectedDay == null || _selectedPeriod == null || subject.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please select Day, Period and Subject")));
+    if (_selectedDay == null || _selectedPeriod == null || subject.isEmpty || _selectedFacultyId == null) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please select Day, Period, Subject and Faculty")));
       return;
     }
 
@@ -223,7 +269,7 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
       if (user == null) return;
       
       final body = {
-        'facultyId': user['login_id'] ?? user['id'], // Set HOD as faculty
+        'facultyId': _selectedFacultyId, 
         'branch': _selectedBranch,
         'year': _selectedYear,
         'section': _selectedSection,
@@ -377,13 +423,15 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
                          child: _buildDropdown(
                            label: "Year", 
                            value: _selectedYear, 
-                           items: _yearsList, 
-                           onChanged: (val) {
-                             setState(() => _selectedYear = val);
-                             _fetchSections();
-                             _loadSubjectsFromJson();
-                           },
-                           cardColor: cardColor, tint: tint, textColor: textColor
+                        items: _yearsList, 
+                        onChanged: (val) {
+                           setState(() => _selectedYear = val);
+                           _fetchSections();
+                           if (_subjectController.text.isNotEmpty || _manualSubjectController.text.isNotEmpty) {
+                              _fetchFacultyAssignment(_subjectController.text.isNotEmpty ? _subjectController.text : _manualSubjectController.text);
+                           }
+                        },
+                        cardColor: cardColor, tint: tint, textColor: textColor
                          ),
                        ),
                        const SizedBox(width: 12),
@@ -392,7 +440,12 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
                            label: "Section", 
                            value: _selectedSection, 
                            items: _sectionsList.isEmpty ? ["A"] : _sectionsList, 
-                           onChanged: (val) => setState(() => _selectedSection = val),
+                           onChanged: (val) {
+                             setState(() => _selectedSection = val!);
+                             if (_subjectController.text.isNotEmpty || _manualSubjectController.text.isNotEmpty) {
+                                _fetchFacultyAssignment(_subjectController.text.isNotEmpty ? _subjectController.text : _manualSubjectController.text);
+                             }
+                           },
                            cardColor: cardColor, tint: tint, textColor: textColor
                          ),
                        ),
@@ -462,6 +515,7 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
               onSelected: (selection) => setState(() {
                 _subjectController.text = selection['name']!;
                 _manualSubjectController.clear();
+                _fetchFacultyAssignment(selection['name']!);
               }),
               fieldViewBuilder: (context, controller, focusNode, onFieldSubmitted) {
                 if (controller.text.isEmpty && _subjectController.text.isNotEmpty) {
@@ -543,7 +597,10 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
               controller: _manualSubjectController,
               style: TextStyle(color: textColor),
               onChanged: (val) {
-                if (val.isNotEmpty) _subjectController.clear();
+                if (val.isNotEmpty) {
+                   _subjectController.clear();
+                   if (val.length > 3) _fetchFacultyAssignment(val); 
+                }
               },
               decoration: InputDecoration(
                 hintText: "e.g. Special Lecture",
@@ -553,6 +610,27 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: tint.withOpacity(0.2))),
                 enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: tint.withOpacity(0.2))),
               ),
+            ),
+
+            const SizedBox(height: 30),
+
+            // Faculty Selection
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Select Faculty", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 14)),
+                if (_fetchingFaculty)
+                  const SizedBox(height: 15, width: 15, child: CircularProgressIndicator(strokeWidth: 2)),
+              ],
+            ),
+            const SizedBox(height: 12),
+            _buildDropdown(
+               label: "Faculty Name", 
+               value: _selectedFacultyId, 
+               items: _allStaff.map((e) => e['id'].toString()).toList(), 
+               itemLabels: _allStaff.map((e) => "${e['name']} (${e['role']})").toList(),
+               onChanged: (val) => setState(() => _selectedFacultyId = val),
+               cardColor: cardColor, tint: tint, textColor: textColor
             ),
 
             const SizedBox(height: 40),
@@ -583,6 +661,7 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
     required String label, 
     required String? value, 
     required List<String> items, 
+    List<String>? itemLabels,
     required Function(String?) onChanged,
     required Color cardColor, required Color tint, required Color textColor
   }) {
@@ -604,7 +683,10 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
               isExpanded: true,
               dropdownColor: cardColor,
               icon: Icon(Icons.keyboard_arrow_down, color: tint),
-              items: items.map((e) => DropdownMenuItem(value: e, child: Text(e, style: TextStyle(color: textColor, fontSize: 14)))).toList(),
+              items: List.generate(items.length, (i) => DropdownMenuItem(
+                value: items[i], 
+                child: Text(itemLabels != null ? itemLabels[i] : items[i], style: TextStyle(color: textColor, fontSize: 14))
+              )),
               onChanged: onChanged,
             ),
           ),

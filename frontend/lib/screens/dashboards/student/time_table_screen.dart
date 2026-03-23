@@ -264,111 +264,117 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
               Expanded(
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.fromLTRB(20, 10, 20, 120),
-                  child: Wrap(
-                    spacing: 12,
-                    runSpacing: 12,
-                    children: currentSchedule.map((item) {
-                       final width = (MediaQuery.of(context).size.width - 40 - 12) / 2; 
-                       
-                       if (item['type'] != 'class') {
-                         return Container(
-                           width: double.infinity,
-                           padding: const EdgeInsets.symmetric(vertical: 8),
-                           margin: const EdgeInsets.symmetric(vertical: 10),
-                           decoration: BoxDecoration(
-                             border: Border.all(color: tint.withValues(alpha: 0.5)),
-                             borderRadius: BorderRadius.circular(50),
-                           ),
-                           alignment: Alignment.center,
-                           child: Text(item['label'], style: GoogleFonts.poppins(color: tint, fontWeight: FontWeight.bold, letterSpacing: 4)),
-                         );
-                       }
-
-                       // Class Item (Read Only)
-                       final hasClass = item['subject'] != '---';
-                       
-                       return Container(
-                         width: width,
-                         height: 100, // Fixed height for uniformity
-                         padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                             color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.2) :
-                                    (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.2) :
-                                     (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.2) :
-                                      cardColor)),
-                             border: Border.all(
-                               color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.6) :
-                                      (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.6) :
-                                       (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.6) :
-                                        (hasClass ? tint.withValues(alpha: 0.3) : iconBg)))
-                             ),
-                             borderRadius: BorderRadius.circular(16),
-                            boxShadow: [
-                              if (hasClass)
-                                BoxShadow(
-                                  color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.1) :
-                                         (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.1) :
-                                          (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.1) :
-                                           tint.withValues(alpha: 0.1))),
-                                  blurRadius: 8,
-                                  offset: const Offset(0, 4),
-                                )
-                            ]
-                          ),
-                         child: Stack(
-                           clipBehavior: Clip.none,
-                           children: [
-                             Positioned(
-                               top: 0,
-                               left: 0,
-                               child: Container(
-                                 padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                 decoration: BoxDecoration(
-                                   color: tint.withValues(alpha: 0.1),
-                                   borderRadius: BorderRadius.circular(4)
-                                 ),
-                                 child: Text("P${item['number']} • ${item['time']}", style: GoogleFonts.poppins(color: tint, fontWeight: FontWeight.bold, fontSize: 9)),
+                  child: Column(
+                    children: [
+                      Wrap(
+                        spacing: 12,
+                        runSpacing: 12,
+                        children: currentSchedule.map((item) {
+                           final width = (MediaQuery.of(context).size.width - 40 - 12) / 2; 
+                           
+                           if (item['type'] != 'class') {
+                             return Container(
+                               width: double.infinity,
+                               padding: const EdgeInsets.symmetric(vertical: 8),
+                               margin: const EdgeInsets.symmetric(vertical: 10),
+                               decoration: BoxDecoration(
+                                 border: Border.all(color: tint.withValues(alpha: 0.5)),
+                                 borderRadius: BorderRadius.circular(50),
                                ),
-                             ),
-                             Center(
-                               child: Padding(
-                                 padding: const EdgeInsets.only(top: 14.0),
-                                 child: Column(
-                                   mainAxisSize: MainAxisSize.min,
-                                   children: [
-                                     Text(
-                                       item['subject'], 
-                                       style: GoogleFonts.poppins(
-                                         color: hasClass ? textColor : subTextColor.withValues(alpha: 0.5), 
-                                         fontSize: item['subject'].length > 20 ? 10 : 12, 
-                                         fontWeight: FontWeight.bold,
-                                         height: 1.1,
-                                       ),
-                                       textAlign: TextAlign.center,
-                                       maxLines: item['subject'].length > 20 ? 2 : 1,
-                                       overflow: TextOverflow.ellipsis
+                               alignment: Alignment.center,
+                               child: Text(item['label'], style: GoogleFonts.poppins(color: tint, fontWeight: FontWeight.bold, letterSpacing: 4)),
+                             );
+                           }
+    
+                           // Class Item (Read Only)
+                           final hasClass = item['subject'] != '---';
+                           
+                           return Container(
+                             width: width,
+                             height: 100, // Fixed height for uniformity
+                             padding: const EdgeInsets.all(12),
+                              decoration: BoxDecoration(
+                                 color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.2) :
+                                        (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.2) :
+                                         (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.2) :
+                                          cardColor)),
+                                 border: Border.all(
+                                   color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.6) :
+                                          (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.6) :
+                                           (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.6) :
+                                            (hasClass ? tint.withValues(alpha: 0.3) : iconBg)))
+                                 ),
+                                 borderRadius: BorderRadius.circular(16),
+                                boxShadow: [
+                                  if (hasClass)
+                                    BoxShadow(
+                                      color: item['status'] == 'conducted' ? Colors.green.withOpacity(0.1) :
+                                             (item['status'] == 'substitute' ? Colors.orange.withOpacity(0.1) :
+                                              (item['status'] == 'not_conducted' ? Colors.red.withOpacity(0.1) :
+                                               tint.withValues(alpha: 0.1))),
+                                      blurRadius: 8,
+                                      offset: const Offset(0, 4),
+                                    )
+                                ]
+                              ),
+                             child: Stack(
+                               clipBehavior: Clip.none,
+                               children: [
+                                 Positioned(
+                                   top: 0,
+                                   left: 0,
+                                   child: Container(
+                                     padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                     decoration: BoxDecoration(
+                                       color: tint.withValues(alpha: 0.1),
+                                       borderRadius: BorderRadius.circular(4)
                                      ),
-                                     if (hasClass && item['facultyName'] != null && item['facultyName'].toString().isNotEmpty) ...[
-                                       const SizedBox(height: 4),
-                                       GestureDetector(
-                                         onTap: () => _showFacultyDetails(context, item['facultyName'], item['facultyDept'], item['facultyEmail'], item['facultyPhone']),
-                                         child: Text(
-                                           item['facultyName'], 
-                                           textAlign: TextAlign.center, 
-                                           style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 10, fontWeight: FontWeight.w600), 
-                                           maxLines: 1, 
+                                     child: Text("P${item['number']} • ${item['time']}", style: GoogleFonts.poppins(color: tint, fontWeight: FontWeight.bold, fontSize: 9)),
+                                   ),
+                                 ),
+                                 Center(
+                                   child: Padding(
+                                     padding: const EdgeInsets.only(top: 14.0),
+                                     child: Column(
+                                       mainAxisSize: MainAxisSize.min,
+                                       children: [
+                                         Text(
+                                           item['subject'], 
+                                           style: GoogleFonts.poppins(
+                                             color: hasClass ? textColor : subTextColor.withValues(alpha: 0.5), 
+                                             fontSize: item['subject'].length > 20 ? 10 : 12, 
+                                             fontWeight: FontWeight.bold,
+                                             height: 1.1,
+                                           ),
+                                           textAlign: TextAlign.center,
+                                           maxLines: item['subject'].length > 20 ? 2 : 1,
                                            overflow: TextOverflow.ellipsis
                                          ),
-                                       ),
-                                     ]
-                                   ],
+                                         if (hasClass && item['facultyName'] != null && item['facultyName'].toString().isNotEmpty) ...[
+                                           const SizedBox(height: 4),
+                                           GestureDetector(
+                                             onTap: () => _showFacultyDetails(context, item['facultyName'], item['facultyDept'], item['facultyEmail'], item['facultyPhone']),
+                                             child: Text(
+                                               item['facultyName'], 
+                                               textAlign: TextAlign.center, 
+                                               style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 10, fontWeight: FontWeight.w600), 
+                                               maxLines: 1, 
+                                               overflow: TextOverflow.ellipsis
+                                             ),
+                                           ),
+                                         ]
+                                       ],
+                                     ),
+                                   ),
                                  ),
-                               ),
+                               ],
                              ),
-                           ],
-                         ),
-                       );
-                    }).toList(),
+                           );
+                        }).toList(),
+                      ),
+                      const SizedBox(height: 30),
+                      _buildTimeTableLegend(textColor),
+                    ],
                   ),
                 ),
               )
@@ -376,6 +382,36 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildTimeTableLegend(Color textColor) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildLegendItem(Colors.green, Icons.check_circle, "Green", "Class Conducted", textColor),
+        const SizedBox(height: 10),
+        _buildLegendItem(Colors.orange, Icons.error, "Orange", "Substitute Class", textColor),
+        const SizedBox(height: 10),
+        _buildLegendItem(Colors.red, Icons.cancel, "Red", "Class Not Conducted", textColor),
+      ],
+    );
+  }
+
+  Widget _buildLegendItem(Color color, IconData icon, String colorName, String description, Color textColor) {
+    return Row(
+      children: [
+        Icon(icon, color: color, size: 20),
+        const SizedBox(width: 8),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(text: colorName, style: GoogleFonts.poppins(color: color, fontWeight: FontWeight.bold, fontSize: 13)),
+              TextSpan(text: " — $description", style: GoogleFonts.poppins(color: textColor.withOpacity(0.8), fontWeight: FontWeight.bold, fontSize: 13)),
+            ],
+          ),
+        ),
+      ],
     );
   }
 

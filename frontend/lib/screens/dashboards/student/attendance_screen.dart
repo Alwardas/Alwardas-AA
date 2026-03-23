@@ -474,6 +474,8 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                         ),
                       ),
                     
+                    const SizedBox(height: 15),
+                    _buildLegend(textColor),
                     const SizedBox(height: 40), 
                   ],
                 ),
@@ -743,73 +745,85 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
              Color morningColor = mRecorded ? (mPresent ? Colors.green.withValues(alpha: 0.9) : Colors.red.withValues(alpha: 0.9)) : Colors.transparent;
              Color afternoonColor = aRecorded ? (aPresent ? Colors.green.withValues(alpha: 0.9) : Colors.red.withValues(alpha: 0.9)) : Colors.transparent;
 
-             return GestureDetector(
-               onTap: (mAbsent || aAbsent) && !isHolidayDay ? () => _handleDayTap(dateStr, morning, afternoon) : null,
-               child: Stack(
-                 children: [
-                   Container(
-                     alignment: Alignment.center,
-                     decoration: BoxDecoration(
-                       borderRadius: BorderRadius.circular(8),
-                        color: isHolidayDay 
-                            ? Colors.grey.withValues(alpha: 0.1) 
-                            : (fullPresent 
-                                ? Colors.green.withValues(alpha: 0.9) 
-                                : (fullAbsent 
-                                    ? Colors.red.withValues(alpha: 0.9) 
-                                    : null)),
-                       gradient: partial ? LinearGradient(
-                          colors: [morningColor, afternoonColor],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          stops: const [0.5, 0.5] 
-                       ) : null,
-                       border: Border.all(
-                         color: isSelected ? Colors.blue : borderColor, 
-                         width: isSelected ? 3 : 1,
-                       )
-                     ),
-                      child: isHolidayDay 
-                        ? Container(
-                            width: 32,
-                            height: 32,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.2),
-                              shape: BoxShape.circle,
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              "H",
-                              style: GoogleFonts.poppins(
-                                color: Colors.grey.shade600,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                              ),
-                            ),
-                          )
-                        : Text(
-                            "$dayNum",
-                            style: GoogleFonts.poppins(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
+              return GestureDetector(
+                onTap: (mAbsent || aAbsent) && !isHolidayDay ? () => _handleDayTap(dateStr, morning, afternoon) : null,
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: isHolidayDay ? Colors.grey.withValues(alpha: 0.05) : Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: isSelected ? Colors.blue : borderColor, 
+                      width: isSelected ? 3 : 1,
                     ),
-                   if (isHolidayDay)
-                      const Positioned(
-                        bottom: 2,
-                        right: 2,
-                        child: Icon(Icons.beach_access, color: Colors.blueAccent, size: 12),
-                      ),
-                   if (isSelected)
-                     const Positioned(
-                       top: 2,
-                       right: 2,
-                       child: Icon(Icons.check_circle, color: Colors.blue, size: 16),
-                     )
-                 ],
-               ),
-             );
+                  ),
+                  child: Stack(
+                    children: [
+                     if (!isHolidayDay) ...[
+                       // Morning (Top Left)
+                       if (mPresent || mAbsent)
+                         Positioned.fill(
+                           child: ClipPath(
+                             clipper: CornerClipper(isTop: true),
+                             child: Container(color: mPresent ? Colors.green : Colors.red),
+                           ),
+                         ),
+                       // Afternoon (Bottom Right)
+                       if (aPresent || aAbsent)
+                         Positioned.fill(
+                           child: ClipPath(
+                             clipper: CornerClipper(isTop: false),
+                             child: Container(color: aPresent ? Colors.green : Colors.red),
+                           ),
+                         ),
+                     ],
+                     
+                     if (isHolidayDay) ...[
+                       Center(
+                         child: Container(
+                           width: 25,
+                           height: 25,
+                           decoration: BoxDecoration(
+                             color: Colors.grey.withOpacity(0.2),
+                             shape: BoxShape.circle,
+                           ),
+                           alignment: Alignment.center,
+                           child: Text(
+                             "H",
+                             style: GoogleFonts.poppins(
+                               color: Colors.grey.shade600,
+                               fontWeight: FontWeight.bold,
+                               fontSize: 12,
+                             ),
+                           ),
+                         ),
+                       ),
+                        const Positioned(
+                          bottom: 2,
+                          right: 2,
+                          child: Icon(Icons.beach_access, color: Colors.blueAccent, size: 12),
+                        ),
+                     ] else
+                       Center(
+                         child: Text(
+                           "$dayNum",
+                           style: GoogleFonts.poppins(
+                             color: (mRecorded || aRecorded) ? Colors.black : textColor.withOpacity(0.8),
+                             fontWeight: FontWeight.w600,
+                           ),
+                         ),
+                       ),
+
+                     if (isSelected)
+                       const Positioned(
+                         top: 2,
+                         right: 2,
+                         child: Icon(Icons.check_circle, color: Colors.blue, size: 16),
+                       )
+                    ],
+                  ),
+                ),
+              );
            },
         ),
       ],
@@ -998,12 +1012,57 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
        ),
     );
   }
+
   void _showTrackRequestsModal() {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) => TrackRequestsSheet(userData: widget.userData),
+    );
+  }
+
+  Widget _buildLegend(Color textColor) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          _buildLegendItem(Colors.green, "For PRESENT", textColor),
+          _buildLegendItem(Colors.red, "For ABSENT", textColor),
+          _buildLegendItem(null, "HOLIDAY", textColor, isHoliday: true),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLegendItem(Color? color, String text, Color textColor, {bool isHoliday = false}) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (isHoliday)
+          Container(
+            width: 20,
+            height: 20,
+            decoration: BoxDecoration(
+              color: Colors.grey.withOpacity(0.2),
+              shape: BoxShape.circle,
+            ),
+            alignment: Alignment.center,
+            child: Text("H", style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey[700])),
+          )
+        else
+          Container(
+            width: 14,
+            height: 14,
+            decoration: BoxDecoration(
+              color: color,
+              shape: BoxShape.circle,
+            ),
+          ),
+        const SizedBox(width: 8),
+        Text(text.toUpperCase(), style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.w900, color: textColor)),
+      ],
     );
   }
 }
@@ -1215,4 +1274,28 @@ class _TrackRequestsSheetState extends State<TrackRequestsSheet> {
       ),
     );
   }
+}
+
+class CornerClipper extends CustomClipper<Path> {
+  final bool isTop;
+  CornerClipper({required this.isTop});
+
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    if (isTop) {
+      path.moveTo(0, 0);
+      path.lineTo(size.width, 0);
+      path.lineTo(0, size.height);
+    } else {
+      path.moveTo(size.width, 0);
+      path.lineTo(size.width, size.height);
+      path.lineTo(0, size.height);
+    }
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
