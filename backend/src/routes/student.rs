@@ -52,9 +52,17 @@ pub async fn request_profile_update_handler(
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
     let user_uuid = Uuid::parse_str(&payload.user_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
 
-    let branch_str = payload.new_branch.clone().or(payload.branch.clone()).unwrap_or_default();
+    let mut mutable_payload = payload;
+    if let Some(ref b) = mutable_payload.branch {
+        mutable_payload.branch = Some(normalize_branch(b));
+    }
+    if let Some(ref b) = mutable_payload.new_branch {
+        mutable_payload.new_branch = Some(normalize_branch(b));
+    }
     
-    let json_data = serde_json::to_value(&payload).map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to serialize data"}))))?;
+    let branch_str = mutable_payload.new_branch.clone().or(mutable_payload.branch.clone()).unwrap_or_default();
+    
+    let json_data = serde_json::to_value(&mutable_payload).map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to serialize data"}))))?;
 
     let mut tx = state.pool.begin().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Failed to start transaction"}))))?;
 
@@ -85,12 +93,12 @@ pub async fn request_profile_update_handler(
         branch_str
     };
 
-    let (role_label, distinct_id, name) = if let Some(sid) = &payload.new_student_id {
-        ("Student", sid.clone(), payload.new_full_name.clone().unwrap_or_default())
-    } else if let Some(fid) = &payload.faculty_id {
-        ("Faculty", fid.clone(), payload.full_name.clone().unwrap_or_default())
+    let (role_label, distinct_id, name) = if let Some(sid) = &mutable_payload.new_student_id {
+        ("Student", sid.clone(), mutable_payload.new_full_name.clone().unwrap_or_default())
+    } else if let Some(fid) = &mutable_payload.faculty_id {
+        ("Faculty", fid.clone(), mutable_payload.full_name.clone().unwrap_or_default())
     } else {
-        ("User", payload.user_id.clone(), "Unknown".to_string())
+        ("User", mutable_payload.user_id.clone(), "Unknown".to_string())
     };
 
     let msg = format!("{} {} ({}) requested profile update.", role_label, name, distinct_id);
@@ -143,7 +151,11 @@ pub async fn get_student_courses_handler(
     let branch_norm = normalize_branch(&user.branch.unwrap_or_default());
     let year_str = user.year.unwrap_or_default();
     let sem_str = user.semester.unwrap_or_default();
-    let section = user.section.unwrap_or_else(|| "Section A".to_string());
+
+    let section = match user.section {
+        Some(s) if !s.trim().is_empty() => s,
+        _ => return Ok(Json(Vec::new())), // Return empty list rather than defaulting to 'Section A' if section is not set
+    };
 
     // Normalize Semester Search 
     // If student is 1st Year, they usually take "1st Year" subjects (common for both sems)
@@ -162,13 +174,12 @@ pub async fn get_student_courses_handler(
     
     println!("DEBUG: Fetching courses for Branch='{}', Semester='{}', Section='{}'", branch_norm, semester_key, section);
 
-    println!("DEBUG: Fetching courses for Branch='{}', Semester='{}', Section='{}'", branch_norm, semester_key, section);
-
     #[derive(sqlx::FromRow, Debug)]
     struct SubjectData {
         id: String,
         name: String,
         subject_type: String,
+        credit: Option<i32>,
         resolved_faculty_name: Option<String>,
         faculty_email: Option<String>,
         faculty_phone: Option<String>,
@@ -181,6 +192,7 @@ pub async fn get_student_courses_handler(
             s.id, 
             s.name, 
             s.type as subject_type,
+            s.credit,
             COALESCE(u.full_name, s.faculty_name, 'TBA') as resolved_faculty_name,
             u.email as faculty_email,
             u.phone_number as faculty_phone,
@@ -240,7 +252,7 @@ pub async fn get_student_courses_handler(
             "On Track".to_string()
         };
 
-        let credits = if s.name.len() % 2 == 0 { 4 } else { 3 }; // Existing logic
+        let credits = s.credit.unwrap_or(3);
 
         courses.push(StudentCourse {
             id: s.id,
@@ -268,24 +280,39 @@ pub async fn get_student_lesson_plan_handler(
     println!("DEBUG: Request for subject_id: {}", params.subject_id);
     let subject_id = params.subject_id.trim();
 
+    // Pre-parse the user UUID to avoid silent fallback to zero UUID
+    let user_uuid_opt = match &params.user_id {
+        Some(uid_str) => Some(Uuid::parse_str(uid_str).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?),
+        None => None,
+    };
+
     // Determine section
     let section = if let Some(s) = &params.section {
          s.clone()
-    } else if let Some(uid_str) = &params.user_id {
+    } else if let Some(uid) = user_uuid_opt {
          let section_opt: Option<String> = sqlx::query_scalar("SELECT section FROM users WHERE id = $1")
-             .bind(Uuid::parse_str(uid_str).unwrap_or_default())
+             .bind(uid)
              .fetch_optional(&state.pool).await.unwrap_or(None);
-         section_opt.unwrap_or_else(|| "Section A".to_string())
+         section_opt.unwrap_or_else(|| "".to_string())
     } else {
-         "Section A".to_string()
+         "".to_string()
     };
+
+    if section.is_empty() {
+        return Ok(Json(LessonPlanResponse {
+            percentage: 0,
+            status: "NO_SECTION".to_string(),
+            warning: Some("Section not assigned".to_string()),
+            items: vec![],
+        }));
+    }
 
     // Determine branch
     let branch_norm = if let Some(b) = &params.branch {
         Some(normalize_branch(b))
-    } else if let Some(uid_str) = &params.user_id {
+    } else if let Some(uid) = user_uuid_opt {
          let branch_opt: Option<String> = sqlx::query_scalar("SELECT branch FROM users WHERE id = $1")
-             .bind(Uuid::parse_str(uid_str).unwrap_or_default())
+             .bind(uid)
              .fetch_optional(&state.pool).await.unwrap_or(None);
          branch_opt.map(|b| normalize_branch(&b))
     } else {

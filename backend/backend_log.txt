@@ -1,2 +1,0 @@
-﻿≡ƒÜÇ Server listening on 0.0.0.0:3001
-v1.5 - Sections Fix

@@ -13,7 +13,7 @@ pub struct AppState {
 pub fn normalize_branch(input: &str) -> String {
     match input.trim() {
         // Computer
-        "CME" | "CM" | "Cme" | "Computer" => "Computer Engineering".to_string(),
+        "CSE" | "CME" | "CM" | "Cme" | "Computer" => "Computer Engineering".to_string(),
         // ECE
         "ECE" | "EC" | "Ece" => "Electronics & Communication Engineering".to_string(),
         // EEE
