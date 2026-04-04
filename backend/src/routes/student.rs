@@ -11,6 +11,18 @@ use std::collections::HashMap;
 
 use crate::routes::faculty::resolve_user_id;
 
+fn get_expected_progress() -> i32 {
+    use chrono::{Datelike, Utc};
+    match Utc::now().month() {
+        1 | 8 => 15,
+        2 | 9 => 35,
+        3 | 10 => 60,
+        4 | 11 => 85,
+        5 | 12 => 100,
+        _ => 50,
+    }
+}
+
 // --- Profile ---
 
 pub async fn get_student_profile_handler(
@@ -243,7 +255,7 @@ pub async fn get_student_courses_handler(
             0
         } as i32;
 
-        let expected_progress = 30; // Mock expectation for now, can be dynamic later
+        let expected_progress = get_expected_progress();
         let status = if progress < expected_progress - 10 {
             "Lagging".to_string()
         } else if progress > expected_progress + 10 {
@@ -356,7 +368,7 @@ pub async fn get_student_lesson_plan_handler(
     let completed = items.iter().filter(|i| i.completed.unwrap_or(false)).count();
     let percentage = if total > 0 { (completed * 100) / total } else { 0 } as i32;
     
-    let expected = 30; // Mock
+    let expected = get_expected_progress();
     let status = if percentage < expected - 10 {
         "LAGGING".to_string()
     } else if percentage > expected + 10 {
