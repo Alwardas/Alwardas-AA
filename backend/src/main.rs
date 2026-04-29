@@ -426,11 +426,11 @@ async fn main() {
 
     println!("🔧 Schema fix & Data distribution complete.");
 
-    // Fix Branch Names (Moved to separate migration, disabling from startup)
-    // let fix_pool = pool.clone();
-    // tokio::spawn(async move {
-    //     fix_branch_names(&fix_pool).await;
-    // });
+    // Fix Branch Names (Run in background)
+    let fix_pool = pool.clone();
+    tokio::spawn(async move {
+        fix_branch_names(&fix_pool).await;
+    });
 
     // --- MULTIPLEXING SETUP ---
     let grpc_pool = pool.clone();
@@ -570,26 +570,11 @@ async fn main() {
                 }
             }
         })
-        .layer(tower_http::cors::CorsLayer::new()
-            .allow_origin([
-                "http://localhost:3000".parse::<axum::http::HeaderValue>().unwrap(),
-                "https://alwardas-admin.web.app".parse::<axum::http::HeaderValue>().unwrap(),
-            ])
-            .allow_methods(tower_http::cors::Any)
-            .allow_headers(tower_http::cors::Any));
+        .layer(CorsLayer::permissive());
 
     println!("✅ Server ready");
-    let listener = match tokio::net::TcpListener::bind(addr).await {
-        Ok(l) => l,
-        Err(e) => {
-            eprintln!("❌ CRITICAL: Failed to bind to addr {}: {}", addr, e);
-            std::process::exit(1);
-        }
-    };
-    if let Err(e) = axum::serve(listener, app).await {
-        eprintln!("❌ CRITICAL: Server crashed: {}", e);
-        std::process::exit(1);
-    }
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
+    axum::serve(listener, app).await.unwrap();
 }
 
 async fn root() -> &'static str {

@@ -48,7 +48,8 @@ class NotificationService {
     required String body,
     required DateTime scheduledTime,
   }) async {
-    await _instance._notificationsPlugin.zonedSchedule(
+    final service = NotificationService();
+    await service._notificationsPlugin.zonedSchedule(
       id,
       title,
       body,
@@ -74,7 +75,8 @@ class NotificationService {
     required String body,
     String? payload,
   }) async {
-    await _instance._notificationsPlugin.show(
+    final service = NotificationService();
+    await service._notificationsPlugin.show(
       id,
       title,
       body,
@@ -93,6 +95,7 @@ class NotificationService {
   }
 
   static Future<void> cancelNotification(int id) async {
-      await _instance._notificationsPlugin.cancel(id);
+      final service = NotificationService();
+      await service._notificationsPlugin.cancel(id);
   }
 }

@@ -1,0 +1,388 @@
+{
+  "1st Year": {
+    "cme": [
+      {
+        "pin": "25315-CM-004",
+        "name": "BEESETTI AKSHITH"
+      },
+      {
+        "pin": "25315-CM-006",
+        "name": "BUTTHALA KUMAR"
+      },
+      {
+        "pin": "25315-CM-007",
+        "name": "CHANSIKA MAHARANA"
+      },
+      {
+        "pin": "25315-CM-008",
+        "name": "CHITTURU DEVI PRASAD"
+      },
+      {
+        "pin": "25315-CM-011",
+        "name": "DALI BHARGAVI"
+      },
+      {
+        "pin": "25315-CM-014",
+        "name": "ELLAPU GAYATRI"
+      },
+      {
+        "pin": "25315-CM-016",
+        "name": "GANDREDDY NANDINI"
+      },
+      {
+        "pin": "25315-CM-017",
+        "name": "GANISETTI DEEPIKA"
+      },
+      {
+        "pin": "25315-CM-018",
+        "name": "GANISETTI LAKSHMAN SAAHITH"
+      },
+      {
+        "pin": "25315-CM-019",
+        "name": "GANISETTI RAMASANDEEP"
+      },
+      {
+        "pin": "25315-CM-024",
+        "name": "GULIPILLI CHETANA"
+      },
+      {
+        "pin": "25315-CM-026",
+        "name": "ILLA CHARAN"
+      },
+      {
+        "pin": "25315-CM-028",
+        "name": "KALLEPALLI INDUMATHI"
+      },
+      {
+        "pin": "25315-CM-030",
+        "name": "KARRI YESASWINI"
+      },
+      {
+        "pin": "25315-CM-032",
+        "name": "KOLA KUSUMA PRIYA (GOVT)"
+      },
+      {
+        "pin": "25315-CM-033",
+        "name": "KOSURU HEMA SRI"
+      },
+      {
+        "pin": "25315-CM-034",
+        "name": "KOTANA ROOPESH"
+      },
+      {
+        "pin": "25315-CM-036",
+        "name": "LANKI GHYANAVI"
+      },
+      {
+        "pin": "25315-CM-038",
+        "name": "MAKKA VIGNESH KUMAR REDDY (GOVT)"
+      },
+      {
+        "pin": "25315-CM-040",
+        "name": "MASABATHULA PRAVALIKA"
+      },
+      {
+        "pin": "25315-CM-047",
+        "name": "NEELI NAVYA SREE"
+      },
+      {
+        "pin": "25315-CM-050",
+        "name": "PALLAMKURTHI ASWINI"
+      },
+      {
+        "pin": "25315-CM-052",
+        "name": "PARAVADA VIJAYA SRI"
+      },
+      {
+        "pin": "25315-CM-053",
+        "name": "PATHRAPILLI NIHARIKA"
+      },
+      {
+        "pin": "25315-CM-061",
+        "name": "PRATAPARAO CHANDRIKA"
+      },
+      {
+        "pin": "25315-CM-065",
+        "name": "SAMBARAPU RAVITEJA"
+      },
+      {
+        "pin": "25315-CM-066",
+        "name": "SAMMINGA BUJJI"
+      },
+      {
+        "pin": "25315-CM-069",
+        "name": "SHIDAGAM MEENAKSHI"
+      },
+      {
+        "pin": "25315-CM-070",
+        "name": "SRUTHI PATNAIK"
+      },
+      {
+        "pin": "25315-CM-071",
+        "name": "SURADA ANVITHA"
+      }
+    ],
+    "ece": [
+      {
+        "pin": "25315-EC-001",
+        "name": "ADARI JOTHSANA"
+      },
+      {
+        "pin": "25315-EC-002",
+        "name": "ADARI NISSY GRACE"
+      },
+      {
+        "pin": "25315-EC-003",
+        "name": "APPIKONDA MOUNIKA"
+      },
+      {
+        "pin": "25315-EC-004",
+        "name": "BALIVADA JOSHNA"
+      },
+      {
+        "pin": "25315-EC-005",
+        "name": "BALLA JESWANTH"
+      },
+      {
+        "pin": "25315-EC-007",
+        "name": "BEHARA HARI CHANDANA HARISHITHA"
+      },
+      {
+        "pin": "25315-EC-008",
+        "name": "BONI YUVAN"
+      },
+      {
+        "pin": "25315-EC-010",
+        "name": "CHIKKAM DINESH"
+      },
+      {
+        "pin": "25315-EC-013",
+        "name": "DIKKOLU PRIYAVARSHINI"
+      },
+      {
+        "pin": "25315-EC-014",
+        "name": "GEDALA AASHISH KUMAR"
+      },
+      {
+        "pin": "25315-EC-015",
+        "name": "GEDALA HEMA SIRI (GOVT)"
+      },
+      {
+        "pin": "25315-EC-018",
+        "name": "JADUPALLI RENUKA"
+      },
+      {
+        "pin": "25315-EC-019",
+        "name": "KARASU HARIKA"
+      },
+      {
+        "pin": "25315-EC-021",
+        "name": "KASIMKOTA RAKESH BABU"
+      },
+      {
+        "pin": "25315-EC-023",
+        "name": "KSHATRI JOGESWAR SINGH"
+      },
+      {
+        "pin": "25315-EC-024",
+        "name": "KURAM MANIKANTA"
+      },
+      {
+        "pin": "25315-EC-025",
+        "name": "KURAMDASU KEERTHANA"
+      },
+      {
+        "pin": "25315-EC-027",
+        "name": "MADUGULA USHA SRI BHANU"
+      },
+      {
+        "pin": "25315-EC-028",
+        "name": "MAJJI RENUKA SRI"
+      },
+      {
+        "pin": "25315-EC-029",
+        "name": "MALLA RISHITHA"
+      },
+      {
+        "pin": "25315-EC-030",
+        "name": "MALLAREDDY KEERTHANA"
+      },
+      {
+        "pin": "25315-EC-031",
+        "name": "MANDALA GEETHA SRI (GOVT)"
+      },
+      {
+        "pin": "25315-EC-032",
+        "name": "MANDALA TARUN KUMAR"
+      },
+      {
+        "pin": "25315-EC-033",
+        "name": "MEESALA SIMHACHALAM"
+      },
+      {
+        "pin": "25315-EC-037",
+        "name": "NADUPURI BHANU PRASAD"
+      },
+      {
+        "pin": "25315-EC-040",
+        "name": "OMMI NARENDRA"
+      },
+      {
+        "pin": "25315-EC-042",
+        "name": "PAPPALA SANTHI KUMARI"
+      },
+      {
+        "pin": "25315-EC-043",
+        "name": "PINAGADI VYSHNAVI"
+      },
+      {
+        "pin": "25315-EC-044",
+        "name": "POTNURU DHILLISWARI"
+      },
+      {
+        "pin": "25315-EC-046",
+        "name": "SARIPILLI MADHUSUDHAN"
+      },
+      {
+        "pin": "25315-EC-050",
+        "name": "SIDDNATHI SAI GEERISH"
+      },
+      {
+        "pin": "25315-EC-052",
+        "name": "VADISA SRISANTH"
+      },
+      {
+        "pin": "25315-EC-054",
+        "name": "YENNI MANOHAR"
+      },
+      {
+        "pin": "25315-EC-055",
+        "name": "YERRA HARSHITH"
+      },
+      {
+        "pin": "25315-EC-056",
+        "name": "YERRIPILLI RENUKA"
+      },
+      {
+        "pin": "25315-EC-057",
+        "name": "CHEEKATI YASWANTH SIDDARDHA (MQ)"
+      },
+      {
+        "pin": "25315-EC-058",
+        "name": "RASURI NITYA ANANDA RAJU (MQ)"
+      }
+    ],
+    "eee": [
+      {
+        "pin": "25315-EE-005",
+        "name": "APPARI SRI SAI CHARAN"
+      },
+      {
+        "pin": "25315-EE-011",
+        "name": "BORA MOHAN SAI"
+      },
+      {
+        "pin": "25315-EE-013",
+        "name": "KALLA DHANUNJAY"
+      },
+      {
+        "pin": "25315-EE-017",
+        "name": "MEDISETTY SHYAM"
+      },
+      {
+        "pin": "25315-EE-020",
+        "name": "PANDA ROHITH"
+      },
+      {
+        "pin": "25315-EE-025",
+        "name": "PUSARLA MOHITH KUMAR"
+      },
+      {
+        "pin": "25315-EE-026",
+        "name": "REDDI JOSHNA"
+      },
+      {
+        "pin": "25315-EE-027",
+        "name": "SANDHI KIRAN KUMAR"
+      },
+      {
+        "pin": "25315-EE-028",
+        "name": "SANGANI PHANWI DHARMA"
+      },
+      {
+        "pin": "25315-EE-032",
+        "name": "SURINI VIVEK NAGA SAI"
+      }
+    ],
+    "mech": [
+      {
+        "pin": "25315-M-003",
+        "name": "AVALA CHARAN"
+      },
+      {
+        "pin": "25315-M-004",
+        "name": "BEHARA SHARAN"
+      },
+      {
+        "pin": "25315-M-005",
+        "name": "BHEEMIREDDY MAHENDRA"
+      },
+      {
+        "pin": "25315-M-006",
+        "name": "BISETTY KESAVA SAI MANIKANTA"
+      },
+      {
+        "pin": "25315-M-008",
+        "name": "CHITTURI SATYA DURGA PRASAD"
+      },
+      {
+        "pin": "25315-M-013",
+        "name": "KANTUMUCHU VIMAL KUMAR"
+      },
+      {
+        "pin": "25315-M-015",
+        "name": "KODI GREESHMAN"
+      },
+      {
+        "pin": "25315-M-017",
+        "name": "KOTHAPALLI CHARAN"
+      },
+      {
+        "pin": "25315-M-020",
+        "name": "MATTA SIMHACHALAM"
+      },
+      {
+        "pin": "25315-M-021",
+        "name": "MORADALAI BALU"
+      },
+      {
+        "pin": "25315-M-023",
+        "name": "NANIPALLI HEMANTH KUMAR"
+      },
+      {
+        "pin": "25315-M-027",
+        "name": "RAJANA KOTESWAR"
+      },
+      {
+        "pin": "25315-M-030",
+        "name": "SHETTY CHARAN TEJA"
+      },
+      {
+        "pin": "25315-M-032",
+        "name": "VADADA RAHUL (GOVT)"
+      },
+      {
+        "pin": "25315-M-034",
+        "name": "YERRA HARSHA VARDHAN"
+      },
+      {
+        "pin": "25315-M-036",
+        "name": "KONDA SHYAM CHANDRA (MQ)"
+      },
+      {
+        "pin": "25315-M-038",
+        "name": "SHAIK MOHAMMAD RAFI (MQ)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1542 @@
+{
+  "1st Year": {
+    "civil": [
+      {
+        "pin": "25634-C-001",
+        "name": "ALLU ROHIT"
+      },
+      {
+        "pin": "25634-C-002",
+        "name": "ATHAVA DEELIP KUMAR"
+      },
+      {
+        "pin": "25634-C-003",
+        "name": "BODDETI MOHITH"
+      },
+      {
+        "pin": "25634-C-004",
+        "name": "BOMMADA SHYAM"
+      },
+      {
+        "pin": "25634-C-005",
+        "name": "CHANDAKA HEMALATHA"
+      },
+      {
+        "pin": "25634-C-006",
+        "name": "CHUKKA SAI KUMAR"
+      },
+      {
+        "pin": "25634-C-007",
+        "name": "GORLE GREESHMA"
+      },
+      {
+        "pin": "25634-C-008",
+        "name": "GUVIVADA VARUN TEJA (N/E SCH)"
+      },
+      {
+        "pin": "25634-C-009",
+        "name": "KALLA MOUNISHA"
+      },
+      {
+        "pin": "25634-C-010",
+        "name": "KARI RAMU"
+      },
+      {
+        "pin": "25634-C-011",
+        "name": "KARRI DILEEP NAIDU"
+      },
+      {
+        "pin": "25634-C-012",
+        "name": "KARRI MANIKANTA"
+      },
+      {
+        "pin": "25634-C-013",
+        "name": "LANDA JANAKI RAM"
+      },
+      {
+        "pin": "25634-C-014",
+        "name": "LANKAPALLI CHANDU"
+      },
+      {
+        "pin": "25634-C-015",
+        "name": "LENKA HARIKA"
+      },
+      {
+        "pin": "25634-C-016",
+        "name": "MUCHHI PALLI SOM SEKHAR"
+      },
+      {
+        "pin": "25634-C-017",
+        "name": "MUKKA RUPA DEVI"
+      },
+      {
+        "pin": "25634-C-018",
+        "name": "NEMANI V S S SRI HARSHA RAGHUNATH"
+      },
+      {
+        "pin": "25634-C-019",
+        "name": "NISTALA SRI DHARMA (GOVT)"
+      },
+      {
+        "pin": "25634-C-020",
+        "name": "RANDI NIKHIL KUMAR"
+      },
+      {
+        "pin": "25634-C-021",
+        "name": "SABBAVARAPU RAM NITESH"
+      },
+      {
+        "pin": "25634-C-022",
+        "name": "SADARABOINA RAJA NANDHINI"
+      },
+      {
+        "pin": "25634-C-023",
+        "name": "SARLINGI GLORY"
+      },
+      {
+        "pin": "25634-C-024",
+        "name": "SHAIK ANUSHA"
+      },
+      {
+        "pin": "25634-C-025",
+        "name": "TAMMINENI PUNYAVATHI"
+      },
+      {
+        "pin": "25634-C-026",
+        "name": "VELAMALA JESWANTH NAIDU"
+      },
+      {
+        "pin": "25634-C-027",
+        "name": "CHANNAMALA MAMATHA SRI (MQ)"
+      },
+      {
+        "pin": "25634-C-028",
+        "name": "POLAMARASETTI KIRAN (MQ)"
+      },
+      {
+        "pin": "25634-C-029",
+        "name": "RAYAPUREDDI DEEPU KUMAR (MQ)"
+      }
+    ],
+    "cme": [
+      {
+        "pin": "25634-CM-001",
+        "name": "ABDUL BASHEERUNISHA"
+      },
+      {
+        "pin": "25634-CM-002",
+        "name": "ALAMANDA BHARAT BABU"
+      },
+      {
+        "pin": "25634-CM-003",
+        "name": "AMBATI DILIP"
+      },
+      {
+        "pin": "25634-CM-004",
+        "name": "BADI HARI"
+      },
+      {
+        "pin": "25634-CM-005",
+        "name": "BAKKA PAVITHRA"
+      },
+      {
+        "pin": "25634-CM-006",
+        "name": "BALAGA GAYATRI DEVI"
+      },
+      {
+        "pin": "25634-CM-007",
+        "name": "BALASA VARSHITA"
+      },
+      {
+        "pin": "25634-CM-008",
+        "name": "BALIREDDY TEJA SRI SANTHI"
+      },
+      {
+        "pin": "25634-CM-009",
+        "name": "BARIKA DHEERAJ KUMAR"
+      },
+      {
+        "pin": "25634-CM-010",
+        "name": "BELLANNA VARA PRASAD"
+      },
+      {
+        "pin": "25634-CM-011",
+        "name": "BHEEMISETTY THANMAYI"
+      },
+      {
+        "pin": "25634-CM-012",
+        "name": "BODDEPALLI CHARAN SAI"
+      },
+      {
+        "pin": "25634-CM-013",
+        "name": "BODDETI JATHIN KANAKARAJU"
+      },
+      {
+        "pin": "25634-CM-014",
+        "name": "BONI HANI MADHURI"
+      },
+      {
+        "pin": "25634-CM-015",
+        "name": "CHAPPA KRISHNA"
+      },
+      {
+        "pin": "25634-CM-016",
+        "name": "CHINTA HARSHA"
+      },
+      {
+        "pin": "25634-CM-017",
+        "name": "CHINTALAPUDI DEVAMANI"
+      },
+      {
+        "pin": "25634-CM-018",
+        "name": "CHOPPA BHARATHI"
+      },
+      {
+        "pin": "25634-CM-019",
+        "name": "DARLA NISHANTH"
+      },
+      {
+        "pin": "25634-CM-020",
+        "name": "DASARI KARTHIK"
+      },
+      {
+        "pin": "25634-CM-021",
+        "name": "DASARI VENKATA SAI YOUSHITHA"
+      },
+      {
+        "pin": "25634-CM-022",
+        "name": "DEVALLA ANANYA"
+      },
+      {
+        "pin": "25634-CM-023",
+        "name": "DIVVELA CHANDANA"
+      },
+      {
+        "pin": "25634-CM-024",
+        "name": "DUNNA THANUSRI"
+      },
+      {
+        "pin": "25634-CM-025",
+        "name": "DURGAVAJJULA KRISHNA SUSWANTHI"
+      },
+      {
+        "pin": "25634-CM-026",
+        "name": "EJJIGIRI JASHWANTH SAI"
+      },
+      {
+        "pin": "25634-CM-027",
+        "name": "GANAGALLA GANESH"
+      },
+      {
+        "pin": "25634-CM-028",
+        "name": "GANDEPALLI AHALYA"
+      },
+      {
+        "pin": "25634-CM-029",
+        "name": "GANDREDDI PRANEETHA LAKSHMI"
+      },
+      {
+        "pin": "25634-CM-030",
+        "name": "GANDRETI HARSHA VARDHAN"
+      },
+      {
+        "pin": "25634-CM-031",
+        "name": "GARIKINA HARSHA VARDHAN"
+      },
+      {
+        "pin": "25634-CM-032",
+        "name": "GAVARA SRAVAN KUMAR"
+      },
+      {
+        "pin": "25634-CM-033",
+        "name": "GEDELA LEELA VYSHNAVI"
+      },
+      {
+        "pin": "25634-CM-034",
+        "name": "GIDUTHURI JAHNAVI"
+      },
+      {
+        "pin": "25634-CM-035",
+        "name": "GOBBALA LEELA VENKATESWARI"
+      },
+      {
+        "pin": "25634-CM-036",
+        "name": "GOKEDA AKHIL"
+      },
+      {
+        "pin": "25634-CM-037",
+        "name": "GOLAGANI YAMINI"
+      },
+      {
+        "pin": "25634-CM-038",
+        "name": "GOLAGANI YASASWANI"
+      },
+      {
+        "pin": "25634-CM-039",
+        "name": "GOLLU PRAVEEN KUMAR"
+      },
+      {
+        "pin": "25634-CM-040",
+        "name": "GORLE SESHAA SHRAVANI (GOVT)"
+      },
+      {
+        "pin": "25634-CM-041",
+        "name": "GUDE YERNI GOWTHAM"
+      },
+      {
+        "pin": "25634-CM-042",
+        "name": "GUMMUDI ROHINI"
+      },
+      {
+        "pin": "25634-CM-043",
+        "name": "ITLA VENKATA SAI"
+      },
+      {
+        "pin": "25634-CM-044",
+        "name": "JAKKULA ABHINAVA TEJ (GOVT)"
+      },
+      {
+        "pin": "25634-CM-045",
+        "name": "JALEM LOKESH"
+      },
+      {
+        "pin": "25634-CM-046",
+        "name": "JUREDDY VINAY"
+      },
+      {
+        "pin": "25634-CM-047",
+        "name": "KALAVALA SAI NIHARIKA"
+      },
+      {
+        "pin": "25634-CM-048",
+        "name": "KANAPARTHI LAKSHMI PRANATI"
+      },
+      {
+        "pin": "25634-CM-049",
+        "name": "KANTAMSETTY NEELU AMRUTHA (GOVT)"
+      },
+      {
+        "pin": "25634-CM-050",
+        "name": "KANURI PRAVALIKA"
+      },
+      {
+        "pin": "25634-CM-051",
+        "name": "KARRI VAMSESWAR ABHINAVA REDDY"
+      },
+      {
+        "pin": "25634-CM-052",
+        "name": "KATTA AKHIL"
+      },
+      {
+        "pin": "25634-CM-053",
+        "name": "KINTHALI VAISHNAVI"
+      },
+      {
+        "pin": "25634-CM-054",
+        "name": "KODALI MONISH SAI"
+      },
+      {
+        "pin": "25634-CM-055",
+        "name": "KOILKANDADAI RSVL NAMRATHA"
+      },
+      {
+        "pin": "25634-CM-056",
+        "name": "KOLATI GEETHA SRI"
+      },
+      {
+        "pin": "25634-CM-057",
+        "name": "KOMARAPURI ESWARAMMA"
+      },
+      {
+        "pin": "25634-CM-058",
+        "name": "KORAPAKA PAVANI"
+      },
+      {
+        "pin": "25634-CM-059",
+        "name": "KOSETTI HARINI"
+      },
+      {
+        "pin": "25634-CM-060",
+        "name": "KUSUMA VIDYAN PRANADEEP"
+      },
+      {
+        "pin": "25634-CM-061",
+        "name": "LANDA DHANA RAJYA LAXMI"
+      },
+      {
+        "pin": "25634-CM-062",
+        "name": "MALLA YAKSHITHABHUVANESWARI"
+      },
+      {
+        "pin": "25634-CM-063",
+        "name": "MAMIDI GOUTHAM CHARAN"
+      },
+      {
+        "pin": "25634-CM-064",
+        "name": "MANDADI SAI YUKTHA"
+      },
+      {
+        "pin": "25634-CM-065",
+        "name": "MARADAPUDI SHRADDHA"
+      },
+      {
+        "pin": "25634-CM-066",
+        "name": "MATTURTHI JASWANTH SAI ROHITH"
+      },
+      {
+        "pin": "25634-CM-067",
+        "name": "MATURI NAGALAKSHMI"
+      },
+      {
+        "pin": "25634-CM-068",
+        "name": "MIRIYALA VAMSI KRISHNA VARSHITH"
+      },
+      {
+        "pin": "25634-CM-069",
+        "name": "MOHAMMAD THOUKIR ALAM"
+      },
+      {
+        "pin": "25634-CM-070",
+        "name": "MUGADA HARSHA"
+      },
+      {
+        "pin": "25634-CM-071",
+        "name": "MUSHINI MAHIMA TEJA"
+      },
+      {
+        "pin": "25634-CM-072",
+        "name": "MUSINANI HEMANTH"
+      },
+      {
+        "pin": "25634-CM-073",
+        "name": "NAZIYAH TAMANNA"
+      },
+      {
+        "pin": "25634-CM-074",
+        "name": "NEELACHALAM YASASWINI"
+      },
+      {
+        "pin": "25634-CM-075",
+        "name": "NEELAPU ASWINI"
+      },
+      {
+        "pin": "25634-CM-076",
+        "name": "NEELAPU YAMUNA KEERTHI"
+      },
+      {
+        "pin": "25634-CM-077",
+        "name": "NOONELA SAI YASHWANTH"
+      },
+      {
+        "pin": "25634-CM-078",
+        "name": "PALAPARTI TRISHA"
+      },
+      {
+        "pin": "25634-CM-079",
+        "name": "PANDRANKI HARSHINI"
+      },
+      {
+        "pin": "25634-CM-080",
+        "name": "PANDURI SANDEEP"
+      },
+      {
+        "pin": "25634-CM-081",
+        "name": "PANGI JASWANTH SAI (N/E SCH)"
+      },
+      {
+        "pin": "25634-CM-082",
+        "name": "PATNANA USHA"
+      },
+      {
+        "pin": "25634-CM-083",
+        "name": "PATTA LAVANYA"
+      },
+      {
+        "pin": "25634-CM-084",
+        "name": "PENKI HEMANTH KUMAR"
+      },
+      {
+        "pin": "25634-CM-085",
+        "name": "PENUGONDA VENKATA YASWANTHINI"
+      },
+      {
+        "pin": "25634-CM-086",
+        "name": "PERAMBADURU KEERTHANA"
+      },
+      {
+        "pin": "25634-CM-087",
+        "name": "PILLA SANJAY PRAKASH (GOVT)"
+      },
+      {
+        "pin": "25634-CM-088",
+        "name": "PILLAI MANOJ"
+      },
+      {
+        "pin": "25634-CM-089",
+        "name": "PINNINTI NARENDRA KUMAR"
+      },
+      {
+        "pin": "25634-CM-090",
+        "name": "PINNINTI SRUJANA"
+      },
+      {
+        "pin": "25634-CM-091",
+        "name": "PONNADA HARIKA"
+      },
+      {
+        "pin": "25634-CM-092",
+        "name": "PONUGUPATY SAI ADITI (GOVT)"
+      },
+      {
+        "pin": "25634-CM-093",
+        "name": "RAGOLU MOHAN SAI"
+      },
+      {
+        "pin": "25634-CM-094",
+        "name": "RAMALAVALASA RAJESH"
+      },
+      {
+        "pin": "25634-CM-095",
+        "name": "RANDHI NAYONIKHA"
+      },
+      {
+        "pin": "25634-CM-096",
+        "name": "REBAKA JYOTHSNA"
+      },
+      {
+        "pin": "25634-CM-097",
+        "name": "REDDI PAVAN"
+      },
+      {
+        "pin": "25634-CM-098",
+        "name": "SADI CHARAN TEJ"
+      },
+      {
+        "pin": "25634-CM-099",
+        "name": "SAGIPILLI PAVANI"
+      },
+      {
+        "pin": "25634-CM-100",
+        "name": "SAMMIDI DEEKSHITHA"
+      },
+      {
+        "pin": "25634-CM-101",
+        "name": "SAMMIDI KIRANMAYI"
+      },
+      {
+        "pin": "25634-CM-102",
+        "name": "SAMMIDI PADHVIN"
+      },
+      {
+        "pin": "25634-CM-103",
+        "name": "SANABOINA MONISHA"
+      },
+      {
+        "pin": "25634-CM-104",
+        "name": "SARAGADAM SATVIKA"
+      },
+      {
+        "pin": "25634-CM-105",
+        "name": "SATTI NAVYA SREE"
+      },
+      {
+        "pin": "25634-CM-106",
+        "name": "SEELA SASI TEJASWINI"
+      },
+      {
+        "pin": "25634-CM-107",
+        "name": "SEELA VAMSI"
+      },
+      {
+        "pin": "25634-CM-108",
+        "name": "SHAIK GOUSE MOHIDDIN"
+      },
+      {
+        "pin": "25634-CM-109",
+        "name": "SHAKE HUSSEN BEEBI"
+      },
+      {
+        "pin": "25634-CM-110",
+        "name": "SILAM BHAVANI"
+      },
+      {
+        "pin": "25634-CM-111",
+        "name": "SIMMA VIJAYA LAKSHMI"
+      },
+      {
+        "pin": "25634-CM-112",
+        "name": "SIMMITI KARTHIK"
+      },
+      {
+        "pin": "25634-CM-113",
+        "name": "SIRIKI HARSINI"
+      },
+      {
+        "pin": "25634-CM-114",
+        "name": "SRAVANTHI LANKA"
+      },
+      {
+        "pin": "25634-CM-115",
+        "name": "SYED ABDUL SATTAR AHAMED SIDDIQUE"
+      },
+      {
+        "pin": "25634-CM-116",
+        "name": "TAMADA HARINI"
+      },
+      {
+        "pin": "25634-CM-117",
+        "name": "THAMPALA GNANESWARI GNAPIKA"
+      },
+      {
+        "pin": "25634-CM-118",
+        "name": "TIRUMULARAJU MOURYA VARMA"
+      },
+      {
+        "pin": "25634-CM-119",
+        "name": "TORLAPATI SUMA"
+      },
+      {
+        "pin": "25634-CM-120",
+        "name": "VANAGALI JASWANTH KUMAR"
+      },
+      {
+        "pin": "25634-CM-121",
+        "name": "VANDANI VENKATESH KARTHIK"
+      },
+      {
+        "pin": "25634-CM-122",
+        "name": "VANKA SWAPNA"
+      },
+      {
+        "pin": "25634-CM-123",
+        "name": "VECHALAPU NIKHIL SWAROOP (N/E SCH)"
+      },
+      {
+        "pin": "25634-CM-124",
+        "name": "VENTURI NAVYA SRI LAKSHMI"
+      },
+      {
+        "pin": "25634-CM-125",
+        "name": "VOLISETTY RAGADARSHINI"
+      },
+      {
+        "pin": "25634-CM-126",
+        "name": "VURUKOOTI POOJITHA"
+      },
+      {
+        "pin": "25634-CM-127",
+        "name": "YANDAKURTHI GNAPIKA"
+      },
+      {
+        "pin": "25634-CM-128",
+        "name": "YARRARAPU JEEVAN PREM KUMAR"
+      },
+      {
+        "pin": "25634-CM-129",
+        "name": "YERIPILLI ARAVIND"
+      },
+      {
+        "pin": "25634-CM-130",
+        "name": "YERRA HEMANTH SRINIVAS"
+      },
+      {
+        "pin": "25634-CM-131",
+        "name": "BORA KISHORE (MQ)"
+      },
+      {
+        "pin": "25634-CM-132",
+        "name": "SHAIK ASIM MUHAMMAD (MQ)"
+      }
+    ],
+    "ece": [
+      {
+        "pin": "25634-EC-001",
+        "name": "ADDURI SHANMUKHA PRIYA"
+      },
+      {
+        "pin": "25634-EC-002",
+        "name": "AKULA RASHMITHA (GOVT)"
+      },
+      {
+        "pin": "25634-EC-003",
+        "name": "BADARI HARIKA (N/E SCH)"
+      },
+      {
+        "pin": "25634-EC-004",
+        "name": "BALAGA JASWANTH"
+      },
+      {
+        "pin": "25634-EC-005",
+        "name": "BALAGA PRASANTH"
+      },
+      {
+        "pin": "25634-EC-006",
+        "name": "BALIREDDY NEERAJA"
+      },
+      {
+        "pin": "25634-EC-007",
+        "name": "BALIREDDY TARUN SRI RAMA SAI"
+      },
+      {
+        "pin": "25634-EC-008",
+        "name": "BANKAPALLI RISHITA"
+      },
+      {
+        "pin": "25634-EC-009",
+        "name": "BATTINA KEERTHANA"
+      },
+      {
+        "pin": "25634-EC-010",
+        "name": "BODDANA PRIYA DARSHINI"
+      },
+      {
+        "pin": "25634-EC-011",
+        "name": "BODI DIVYA PRANATHI"
+      },
+      {
+        "pin": "25634-EC-012",
+        "name": "BONGU ANITHA"
+      },
+      {
+        "pin": "25634-EC-013",
+        "name": "BURALI AASIS"
+      },
+      {
+        "pin": "25634-EC-014",
+        "name": "CHALAPAKA AKSHARA PRAVEENA"
+      },
+      {
+        "pin": "25634-EC-015",
+        "name": "CHANDAKA MANIKANTA"
+      },
+      {
+        "pin": "25634-EC-016",
+        "name": "CHELLI SALOMI GRACE"
+      },
+      {
+        "pin": "25634-EC-017",
+        "name": "CHIKKALA AMRUTHA"
+      },
+      {
+        "pin": "25634-EC-018",
+        "name": "CHILAKA DEBORAH KHYATI"
+      },
+      {
+        "pin": "25634-EC-019",
+        "name": "CHINTALAPUDI THERISSA"
+      },
+      {
+        "pin": "25634-EC-020",
+        "name": "CHINTAPALLI MANIKANTA"
+      },
+      {
+        "pin": "25634-EC-021",
+        "name": "DODDI VARAHA SAI AMRUTHA VARSHINI"
+      },
+      {
+        "pin": "25634-EC-022",
+        "name": "DODDI VARAHAGIRI SURYA ASIWINIDUTT"
+      },
+      {
+        "pin": "25634-EC-023",
+        "name": "DONIPATI VEDANTA KUMAR"
+      },
+      {
+        "pin": "25634-EC-024",
+        "name": "DUDI BHUPINDRA NAIDU"
+      },
+      {
+        "pin": "25634-EC-025",
+        "name": "DUMMETI REVANTH"
+      },
+      {
+        "pin": "25634-EC-026",
+        "name": "DUNDU JAYANTHI"
+      },
+      {
+        "pin": "25634-EC-027",
+        "name": "GAJULA BHANU VISHWADEV (GOVT)"
+      },
+      {
+        "pin": "25634-EC-028",
+        "name": "GANDRETI POORNA"
+      },
+      {
+        "pin": "25634-EC-029",
+        "name": "GANGIREDDI PRUDHVI"
+      },
+      {
+        "pin": "25634-EC-030",
+        "name": "GARIKINA JYOTHSNA"
+      },
+      {
+        "pin": "25634-EC-031",
+        "name": "GIDITHURI NIKHIL"
+      },
+      {
+        "pin": "25634-EC-032",
+        "name": "LEBARTHI CHANDHINI"
+      },
+      {
+        "pin": "25634-EC-033",
+        "name": "GOKETI DEEPIKA PYDAMMA"
+      },
+      {
+        "pin": "25634-EC-034",
+        "name": "GOLUSU JASMINEPRIYA"
+      },
+      {
+        "pin": "25634-EC-035",
+        "name": "GONTU SARIKA"
+      },
+      {
+        "pin": "25634-EC-036",
+        "name": "GULLIPALLI DURGA BHAVANI"
+      },
+      {
+        "pin": "25634-EC-037",
+        "name": "GURUGUBELLI VENKATAMMA (GOVT)"
+      },
+      {
+        "pin": "25634-EC-038",
+        "name": "JANTHALA DELHIESWARI"
+      },
+      {
+        "pin": "25634-EC-039",
+        "name": "JOMMALA JASMITHA"
+      },
+      {
+        "pin": "25634-EC-040",
+        "name": "KALAGA DANIEL SHOMRON"
+      },
+      {
+        "pin": "25634-EC-041",
+        "name": "KALINGI VINAY KUMAR"
+      },
+      {
+        "pin": "25634-EC-042",
+        "name": "KANAPARTHI GEETHA SREE"
+      },
+      {
+        "pin": "25634-EC-043",
+        "name": "KANITHI KUSUMA"
+      },
+      {
+        "pin": "25634-EC-044",
+        "name": "KANKIPATI MOHANTH"
+      },
+      {
+        "pin": "25634-EC-045",
+        "name": "KARI BHANU PRATAP"
+      },
+      {
+        "pin": "25634-EC-046",
+        "name": "KATTIRA HANSIKA"
+      },
+      {
+        "pin": "25634-EC-047",
+        "name": "KAVALA ARUN KUMAR"
+      },
+      {
+        "pin": "25634-EC-048",
+        "name": "KOLA CHANDRA VARDHAN"
+      },
+      {
+        "pin": "25634-EC-049",
+        "name": "KOLA NEELIMA"
+      },
+      {
+        "pin": "25634-EC-050",
+        "name": "KOLUSU MUKESH KUMAR"
+      },
+      {
+        "pin": "25634-EC-051",
+        "name": "KOMMANAPALLI VRUSHANK"
+      },
+      {
+        "pin": "25634-EC-052",
+        "name": "KONDALA CHANDRA SEKHAR (GOVT)"
+      },
+      {
+        "pin": "25634-EC-053",
+        "name": "KOTA PAVITRA"
+      },
+      {
+        "pin": "25634-EC-054",
+        "name": "KOTANA ANKITH BABU"
+      },
+      {
+        "pin": "25634-EC-055",
+        "name": "KUNCHANGI KEERTHANA"
+      },
+      {
+        "pin": "25634-EC-056",
+        "name": "KURAMDASU SRIRAM"
+      },
+      {
+        "pin": "25634-EC-057",
+        "name": "GIDITHURI VENKATA NIKHILA"
+      },
+      {
+        "pin": "25634-EC-058",
+        "name": "LEKKALA PUJITHA"
+      },
+      {
+        "pin": "25634-EC-059",
+        "name": "MAVURI THANOOJA"
+      },
+      {
+        "pin": "25634-EC-060",
+        "name": "MERAPALA KUNDANA SRI"
+      },
+      {
+        "pin": "25634-EC-061",
+        "name": "MUCHU VAISHNAVI"
+      },
+      {
+        "pin": "25634-EC-062",
+        "name": "MULAMPAKA DEEPAK"
+      },
+      {
+        "pin": "25634-EC-063",
+        "name": "MUMMANA PAVANI SRILAKSHMI DEVI"
+      },
+      {
+        "pin": "25634-EC-064",
+        "name": "NAKHSTRA DEEPIKA"
+      },
+      {
+        "pin": "25634-EC-065",
+        "name": "NARAVA JOSH KISHORE"
+      },
+      {
+        "pin": "25634-EC-066",
+        "name": "NEBARTHI HASINI"
+      },
+      {
+        "pin": "25634-EC-067",
+        "name": "NOWPADA RAKSHITHA"
+      },
+      {
+        "pin": "25634-EC-068",
+        "name": "PACHILA MOUNIKA SRI"
+      },
+      {
+        "pin": "25634-EC-069",
+        "name": "PALABOINA YAMUNA"
+      },
+      {
+        "pin": "25634-EC-070",
+        "name": "PANGI GEETHISH VINAY"
+      },
+      {
+        "pin": "25634-EC-071",
+        "name": "PEDADA LOHITHA"
+      },
+      {
+        "pin": "25634-EC-072",
+        "name": "PENTAKOTA NEEHARIKA"
+      },
+      {
+        "pin": "25634-EC-073",
+        "name": "PENUMATSA YASWANTH VARMA"
+      },
+      {
+        "pin": "25634-EC-074",
+        "name": "PILLA LOKESH SURYA MANIKANTA"
+      },
+      {
+        "pin": "25634-EC-075",
+        "name": "PUSARLA HASINI"
+      },
+      {
+        "pin": "25634-EC-076",
+        "name": "RAPETI DHANUSH RAJU"
+      },
+      {
+        "pin": "25634-EC-077",
+        "name": "RAYETHI TARUN"
+      },
+      {
+        "pin": "25634-EC-078",
+        "name": "REDDY HASINI"
+      },
+      {
+        "pin": "25634-EC-079",
+        "name": "ROUTHU KOWSALYA"
+      },
+      {
+        "pin": "25634-EC-080",
+        "name": "SINGIPILLI RAHUL"
+      },
+      {
+        "pin": "25634-EC-081",
+        "name": "SOLA VIMALA"
+      },
+      {
+        "pin": "25634-EC-082",
+        "name": "SRIKAKULAPU GIRI"
+      },
+      {
+        "pin": "25634-EC-083",
+        "name": "TANUKU LALITHA"
+      },
+      {
+        "pin": "25634-EC-084",
+        "name": "THUMMAPALLI SRAVANI"
+      },
+      {
+        "pin": "25634-EC-085",
+        "name": "TULASI TEJASWINI"
+      },
+      {
+        "pin": "25634-EC-086",
+        "name": "UPPADA PRANEETHA"
+      },
+      {
+        "pin": "25634-EC-087",
+        "name": "UPPARAPALLI JAGAN"
+      },
+      {
+        "pin": "25634-EC-088",
+        "name": "URUKUTI MOULI PRIYA"
+      },
+      {
+        "pin": "25634-EC-089",
+        "name": "VADRA PREETHI"
+      },
+      {
+        "pin": "25634-EC-090",
+        "name": "VANAMALE RAVI VARMA"
+      },
+      {
+        "pin": "25634-EC-091",
+        "name": "VANAMALI YESHICA VARSHINI"
+      },
+      {
+        "pin": "25634-EC-092",
+        "name": "VANAPALLI SHANMUKHI PRIYA (GOVT)"
+      },
+      {
+        "pin": "25634-EC-093",
+        "name": "VASAMSETTI DINESH KARTHIK"
+      },
+      {
+        "pin": "25634-EC-094",
+        "name": "VASAMSETTI MOON MUKESH"
+      },
+      {
+        "pin": "25634-EC-095",
+        "name": "YALAGADA YOHAN"
+      }
+    ],
+    "eee": [
+      {
+        "pin": "25634-EE-001",
+        "name": "ALETI DOLASANKAR"
+      },
+      {
+        "pin": "25634-EE-002",
+        "name": "AMALAPURAM TEJASWINI"
+      },
+      {
+        "pin": "25634-EE-003",
+        "name": "BAGADI NAVEEN"
+      },
+      {
+        "pin": "25634-EE-004",
+        "name": "BANDARU NITHISH"
+      },
+      {
+        "pin": "25634-EE-005",
+        "name": "BASA CHARAN"
+      },
+      {
+        "pin": "25634-EE-006",
+        "name": "BASIWADA VAMANA KRISHNA"
+      },
+      {
+        "pin": "25634-EE-007",
+        "name": "BASWANA MANOJ KUMAR"
+      },
+      {
+        "pin": "25634-EE-008",
+        "name": "BOMMIDI LAHARI"
+      },
+      {
+        "pin": "25634-EE-009",
+        "name": "BONDAPALLI HARIKA"
+      },
+      {
+        "pin": "25634-EE-010",
+        "name": "BORA SAI"
+      },
+      {
+        "pin": "25634-EE-011",
+        "name": "BOYADAPU GURUNADH"
+      },
+      {
+        "pin": "25634-EE-012",
+        "name": "BUDDA HEMANTH"
+      },
+      {
+        "pin": "25634-EE-013",
+        "name": "CHALLA YOGENDRA"
+      },
+      {
+        "pin": "25634-EE-014",
+        "name": "CHETLA SHANMUKHARAJU"
+      },
+      {
+        "pin": "25634-EE-015",
+        "name": "CHITRI HARSHA VARDHAN"
+      },
+      {
+        "pin": "25634-EE-016",
+        "name": "CHITTIBOINA MANOJ KUMAR"
+      },
+      {
+        "pin": "25634-EE-017",
+        "name": "D MAHA LAKSHMI"
+      },
+      {
+        "pin": "25634-EE-018",
+        "name": "DUNGA AKSHAYA"
+      },
+      {
+        "pin": "25634-EE-019",
+        "name": "ELLA MEGHANA"
+      },
+      {
+        "pin": "25634-EE-020",
+        "name": "GANTA NAGA CHAITANYA"
+      },
+      {
+        "pin": "25634-EE-021",
+        "name": "GEDDU REVANTH KUMAR"
+      },
+      {
+        "pin": "25634-EE-022",
+        "name": "GENJI POORNA CHANDRARAO"
+      },
+      {
+        "pin": "25634-EE-023",
+        "name": "GODDU KUMAR"
+      },
+      {
+        "pin": "25634-EE-024",
+        "name": "GOMPA HARSHA VARDHAN"
+      },
+      {
+        "pin": "25634-EE-025",
+        "name": "GORSA DEEPAK"
+      },
+      {
+        "pin": "25634-EE-026",
+        "name": "IMANDI SHYAM DHANVANTH (GOVT)"
+      },
+      {
+        "pin": "25634-EE-027",
+        "name": "JADA NAVEEN (GOVT)"
+      },
+      {
+        "pin": "25634-EE-028",
+        "name": "JAMI AARUDRA"
+      },
+      {
+        "pin": "25634-EE-029",
+        "name": "JOGA SANJANA"
+      },
+      {
+        "pin": "25634-EE-030",
+        "name": "KANCHIPATI ROSHITH NAIDU"
+      },
+      {
+        "pin": "25634-EE-031",
+        "name": "KARI BHANU PRAKASH"
+      },
+      {
+        "pin": "25634-EE-032",
+        "name": "KARI JANAKI RAM"
+      },
+      {
+        "pin": "25634-EE-033",
+        "name": "KOLLI JAHNAVI JASMIN (GOVT)"
+      },
+      {
+        "pin": "25634-EE-034",
+        "name": "KOTTURU HEMACHAND"
+      },
+      {
+        "pin": "25634-EE-035",
+        "name": "MADDALA VAIBHAVI"
+      },
+      {
+        "pin": "25634-EE-036",
+        "name": "MADEM ADITYA CHAITANYA"
+      },
+      {
+        "pin": "25634-EE-037",
+        "name": "MAILIPILLI BHASKAR"
+      },
+      {
+        "pin": "25634-EE-038",
+        "name": "MALYAKULA UJWALA SAI"
+      },
+      {
+        "pin": "25634-EE-039",
+        "name": "MAMIDI YERNI SRINIVAS KARTHIK"
+      },
+      {
+        "pin": "25634-EE-040",
+        "name": "MENDA SANTHOSH"
+      },
+      {
+        "pin": "25634-EE-041",
+        "name": "NAMMI KARTHIK"
+      },
+      {
+        "pin": "25634-EE-042",
+        "name": "NANDEDI JESIKHA"
+      },
+      {
+        "pin": "25634-EE-043",
+        "name": "PATNALA DINESH"
+      },
+      {
+        "pin": "25634-EE-044",
+        "name": "PEDDADA JASWANTH"
+      },
+      {
+        "pin": "25634-EE-045",
+        "name": "PEDIREDLA YASWANTH BHARDWAJ"
+      },
+      {
+        "pin": "25634-EE-046",
+        "name": "PILLI SRINIVAS"
+      },
+      {
+        "pin": "25634-EE-047",
+        "name": "PONNA DISHITA"
+      },
+      {
+        "pin": "25634-EE-048",
+        "name": "PUTTA KUNDHANA"
+      },
+      {
+        "pin": "25634-EE-049",
+        "name": "RAYAPUREDDY DEEPANKAR"
+      },
+      {
+        "pin": "25634-EE-050",
+        "name": "SABBI KUMAR"
+      },
+      {
+        "pin": "25634-EE-051",
+        "name": "SAMMIDI MAHARUSHI"
+      },
+      {
+        "pin": "25634-EE-052",
+        "name": "SENAPATHI UNNATHI SRI"
+      },
+      {
+        "pin": "25634-EE-053",
+        "name": "SHAIK TAJUDDIN"
+      },
+      {
+        "pin": "25634-EE-054",
+        "name": "SYED REHAN RAZA"
+      },
+      {
+        "pin": "25634-EE-055",
+        "name": "TEPPALA JASWANTH"
+      },
+      {
+        "pin": "25634-EE-056",
+        "name": "TERUKUTI DINESH"
+      },
+      {
+        "pin": "25634-EE-057",
+        "name": "TIRUMALANADHUNI PREM KUMAR"
+      },
+      {
+        "pin": "25634-EE-058",
+        "name": "UGGINA REVANTH"
+      },
+      {
+        "pin": "25634-EE-059",
+        "name": "VADIGONDA THARUN TEJ"
+      },
+      {
+        "pin": "25634-EE-060",
+        "name": "YAGATI SAIRAM"
+      },
+      {
+        "pin": "25634-EE-061",
+        "name": "YERRAMSETTI SHALEM"
+      },
+      {
+        "pin": "25634-EE-062",
+        "name": "KOLASANI GOWTHAM KUMAR (MQ)"
+      }
+    ],
+    "mech": [
+      {
+        "pin": "25634-M-001",
+        "name": "AIRERI YASWANTH BABU"
+      },
+      {
+        "pin": "25634-M-002",
+        "name": "ANANDARAO SAI VIJAY"
+      },
+      {
+        "pin": "25634-M-003",
+        "name": "BADAMPUDI SHEKHAR"
+      },
+      {
+        "pin": "25634-M-004",
+        "name": "BAIREDDI HARSHA GURU VARDHAN REDDY"
+      },
+      {
+        "pin": "25634-M-005",
+        "name": "BALAGA MADHAN"
+      },
+      {
+        "pin": "25634-M-006",
+        "name": "BANDAM UDHAY"
+      },
+      {
+        "pin": "25634-M-007",
+        "name": "BATHINA AKHILVARDHAN (GOVT)"
+      },
+      {
+        "pin": "25634-M-008",
+        "name": "BATTINA VARA PRASAD"
+      },
+      {
+        "pin": "25634-M-009",
+        "name": "BODDU JAYANTH"
+      },
+      {
+        "pin": "25634-M-010",
+        "name": "BOTTA DURGA PRASAD"
+      },
+      {
+        "pin": "25634-M-011",
+        "name": "BUSI VINAY (N/E SCH)"
+      },
+      {
+        "pin": "25634-M-012",
+        "name": "BUTTALA BHAVANI PRASAD"
+      },
+      {
+        "pin": "25634-M-013",
+        "name": "CHENNA PRASANTH"
+      },
+      {
+        "pin": "25634-M-014",
+        "name": "CHINIPILLI KAILAS REDDY"
+      },
+      {
+        "pin": "25634-M-015",
+        "name": "CHUKKA PAVAN"
+      },
+      {
+        "pin": "25634-M-016",
+        "name": "DAMARA SINGH CHANIKYA"
+      },
+      {
+        "pin": "25634-M-017",
+        "name": "DHANALA PAVAN (GOVT)"
+      },
+      {
+        "pin": "25634-M-018",
+        "name": "ESUKAPALLI PREM SAGAR (N/E SCH)"
+      },
+      {
+        "pin": "25634-M-019",
+        "name": "GOKEDA DURGAPRASAD"
+      },
+      {
+        "pin": "25634-M-020",
+        "name": "GOLLAMALA BHARAT VINAY"
+      },
+      {
+        "pin": "25634-M-021",
+        "name": "INDUGUBILLI JASWANTH (GOVT)"
+      },
+      {
+        "pin": "25634-M-022",
+        "name": "KALLA DEEPAK"
+      },
+      {
+        "pin": "25634-M-023",
+        "name": "KALLA DURGA MAHESH"
+      },
+      {
+        "pin": "25634-M-024",
+        "name": "KALLA VENKATACHAITANYA"
+      },
+      {
+        "pin": "25634-M-025",
+        "name": "KALLEPALLI UPENDRA"
+      },
+      {
+        "pin": "25634-M-026",
+        "name": "KANISETTI SREE RAM PAVAN KUMAR"
+      },
+      {
+        "pin": "25634-M-027",
+        "name": "KANNURU DURGA SAI"
+      },
+      {
+        "pin": "25634-M-028",
+        "name": "KARRI DEEPAK SAI"
+      },
+      {
+        "pin": "25634-M-029",
+        "name": "KARRI SYAM VARDHAN"
+      },
+      {
+        "pin": "25634-M-030",
+        "name": "KINTHADA HARSHAVARDHAN"
+      },
+      {
+        "pin": "25634-M-031",
+        "name": "KOPPALA UDAY KIRAN (GOVT)"
+      },
+      {
+        "pin": "25634-M-032",
+        "name": "MADE TEENEJ KUMAR"
+      },
+      {
+        "pin": "25634-M-033",
+        "name": "MADEM RAKSHITH"
+      },
+      {
+        "pin": "25634-M-034",
+        "name": "MAJJI KARTHIK"
+      },
+      {
+        "pin": "25634-M-035",
+        "name": "MARGANA YOGI SAI"
+      },
+      {
+        "pin": "25634-M-036",
+        "name": "MUSINANI CHARAN"
+      },
+      {
+        "pin": "25634-M-037",
+        "name": "NAKKA MAHESH BABU"
+      },
+      {
+        "pin": "25634-M-038",
+        "name": "NAMBADA PRANAYA KUMAR"
+      },
+      {
+        "pin": "25634-M-039",
+        "name": "NELLI LOKESH"
+      },
+      {
+        "pin": "25634-M-040",
+        "name": "NIMMADA PAVAN KALYAN"
+      },
+      {
+        "pin": "25634-M-041",
+        "name": "PATNALA HARSHAVARDHAN (GOVT)"
+      },
+      {
+        "pin": "25634-M-042",
+        "name": "PENTAKOTA PRANEETH"
+      },
+      {
+        "pin": "25634-M-043",
+        "name": "PUREDDY SAI HARSHA REDDY"
+      },
+      {
+        "pin": "25634-M-044",
+        "name": "PYDADA NOHIT"
+      },
+      {
+        "pin": "25634-M-045",
+        "name": "RADI MANOHAR"
+      },
+      {
+        "pin": "25634-M-046",
+        "name": "RAYALA VISHNU"
+      },
+      {
+        "pin": "25634-M-047",
+        "name": "SAPPA ANIRUDH"
+      },
+      {
+        "pin": "25634-M-048",
+        "name": "SASUBILLI YASWANTH KUMAR"
+      },
+      {
+        "pin": "25634-M-049",
+        "name": "SEEPANA VENU GOPAL"
+      },
+      {
+        "pin": "25634-M-050",
+        "name": "SHAIK FAYIAZ AHMED"
+      },
+      {
+        "pin": "25634-M-051",
+        "name": "SHAIK OSIM SAYYAD"
+      },
+      {
+        "pin": "25634-M-052",
+        "name": "SHAIK SHAFI"
+      },
+      {
+        "pin": "25634-M-053",
+        "name": "SUJAN SAHA"
+      },
+      {
+        "pin": "25634-M-054",
+        "name": "TALARI MANOJ"
+      },
+      {
+        "pin": "25634-M-055",
+        "name": "TATIPAKA HUTESH"
+      },
+      {
+        "pin": "25634-M-056",
+        "name": "TELAGARAPU TARUN SAI"
+      },
+      {
+        "pin": "25634-M-057",
+        "name": "THAMBURI SUVEER SAKET"
+      },
+      {
+        "pin": "25634-M-058",
+        "name": "UPPILI UDAY KUMAR"
+      },
+      {
+        "pin": "25634-M-059",
+        "name": "VANGAPANDU GOWTHAM KRISHNA"
+      },
+      {
+        "pin": "25634-M-060",
+        "name": "VANTAKU UDAY KUMAR"
+      },
+      {
+        "pin": "25634-M-061",
+        "name": "VULUSU JEEVAN KUMAR"
+      },
+      {
+        "pin": "25634-M-062",
+        "name": "YAMMALA HEMANTH"
+      },
+      {
+        "pin": "25634-M-063",
+        "name": "YERRAMSETTI SAMPATH VINAY"
+      },
+      {
+        "pin": "25634-M-064",
+        "name": "SEERAPU DURGA REDDY (MQ)"
+      }
+    ]
+  }
+}

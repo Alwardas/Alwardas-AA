@@ -1,4 +1,4 @@
-package com.alwardas.academics
+package com.example.frontend
 
 import io.flutter.embedding.android.FlutterActivity
 

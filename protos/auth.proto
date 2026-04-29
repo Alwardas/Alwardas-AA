@@ -27,15 +27,7 @@ message SignupRequest {
   string password = 3;
   string branch = 4;
   string year = 5;
-  string role = 6;
-  string section = 7;
-  string phone_number = 8;
-  string dob = 9;
-  string experience = 10;
-  string email = 11;
-  string semester = 12;
-  string batch_no = 13;
-  string title = 14;
+  // Add other fields as needed matching the database
 }
 
 message SignupResponse {

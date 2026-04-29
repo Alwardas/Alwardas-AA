@@ -1,0 +1,963 @@
+[
+    {
+        "branch_name": "Civil Engineering",
+        "semesters": {
+            "1st Year": {
+                "theory": [
+                    {
+                        "id": "C-101",
+                        "name": "English"
+                    },
+                    {
+                        "id": "C-102",
+                        "name": "Engineering Mathematics I"
+                    },
+                    {
+                        "id": "C-103",
+                        "name": "Engineering Physics"
+                    },
+                    {
+                        "id": "C-104",
+                        "name": "Engineering Chemistry and Environmental studies"
+                    },
+                    {
+                        "id": "C-105",
+                        "name": "Engineering Mechanics"
+                    },
+                    {
+                        "id": "C-106",
+                        "name": "Surveying-I"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "C-107",
+                        "name": "Engineering Drawing"
+                    },
+                    {
+                        "id": "C-108",
+                        "name": "Surveying - I Practice & Plotting"
+                    },
+                    {
+                        "id": "C-109",
+                        "name": "Physics Laboratory"
+                    },
+                    {
+                        "id": "C-110",
+                        "name": "Chemistry Laboratory"
+                    },
+                    {
+                        "id": "C-111",
+                        "name": "Computer Fundamentals Practice"
+                    }
+                ]
+            },
+            "3rd Semester": {
+                "theory": [
+                    {
+                        "id": "C-301",
+                        "name": "Engineering Mathematics -II"
+                    },
+                    {
+                        "id": "C-302",
+                        "name": "Mechanics of Solids & Theory Of Structures"
+                    },
+                    {
+                        "id": "C-303",
+                        "name": "Hydraulics"
+                    },
+                    {
+                        "id": "C-304",
+                        "name": "Surveying-II"
+                    },
+                    {
+                        "id": "C-305",
+                        "name": "Construction Materials"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "C-306",
+                        "name": "Civil Engineering Drawing-I"
+                    },
+                    {
+                        "id": "C-307",
+                        "name": "CAD Practice-I"
+                    },
+                    {
+                        "id": "C-308",
+                        "name": "Surveying - II Practice& Plotting"
+                    },
+                    {
+                        "id": "C-309",
+                        "name": "Material Testing Practice"
+                    },
+                    {
+                        "id": "C-310",
+                        "name": "Hydraulics Practice"
+                    }
+                ]
+            },
+            "4th Semester": {
+                "theory": [
+                    {
+                        "id": "C-401",
+                        "name": "Construction Technology & Valuation"
+                    },
+                    {
+                        "id": "C-402",
+                        "name": "Design and Detailing of R.C. Structures"
+                    },
+                    {
+                        "id": "C-403",
+                        "name": "Construction Practice"
+                    },
+                    {
+                        "id": "C-404",
+                        "name": "Transportation Engineering"
+                    },
+                    {
+                        "id": "C-405",
+                        "name": "Irrigation Engineering"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "C-406",
+                        "name": "Civil Engineering Drawing-II"
+                    },
+                    {
+                        "id": "C-407",
+                        "name": "Concrete & Soil Testing Practice"
+                    },
+                    {
+                        "id": "C-408",
+                        "name": "Communication Skills"
+                    },
+                    {
+                        "id": "C-409",
+                        "name": "Surveying-III Practice"
+                    },
+                    {
+                        "id": "C-410",
+                        "name": "CAD Practice-II"
+                    }
+                ]
+            },
+            "5th Semester": {
+                "theory": [
+                    {
+                        "id": "C-501",
+                        "name": "Steel Structures"
+                    },
+                    {
+                        "id": "C-502",
+                        "name": "Environmental Engineering"
+                    },
+                    {
+                        "id": "C-503",
+                        "name": "Quantity Surveying"
+                    },
+                    {
+                        "id": "C-504",
+                        "name": "Advanced Civil Engineering Technologies"
+                    },
+                    {
+                        "id": "C-505",
+                        "name": "Construction Management &Entrepreneurship"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "C-506",
+                        "name": "Structural Engineering Drawing"
+                    },
+                    {
+                        "id": "C-507",
+                        "name": "Field Practices"
+                    },
+                    {
+                        "id": "C-508",
+                        "name": "Life Skills"
+                    },
+                    {
+                        "id": "C-509",
+                        "name": "Computer Applications in Civil Engineering"
+                    },
+                    {
+                        "id": "C-510",
+                        "name": "Project work"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "branch_name": "Computer Engineering",
+        "semesters": {
+            "1st Year": {
+                "theory": [
+                    {
+                        "id": "CM-101",
+                        "name": "English-I"
+                    },
+                    {
+                        "id": "CM-102",
+                        "name": "Engineering Mathematics-I"
+                    },
+                    {
+                        "id": "CM-103",
+                        "name": "Engineering Physics"
+                    },
+                    {
+                        "id": "CM-104",
+                        "name": "Engineering Chemistry and Environmental studies"
+                    },
+                    {
+                        "id": "CM-105",
+                        "name": "Basics of Computer Engineering"
+                    },
+                    {
+                        "id": "CM-106",
+                        "name": "Programming in C"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "CM-107",
+                        "name": "Engineering Drawing"
+                    },
+                    {
+                        "id": "CM-108",
+                        "name": "Programming in C Lab"
+                    },
+                    {
+                        "id": "CM-109",
+                        "name": "Physics Lab"
+                    },
+                    {
+                        "id": "CM-110",
+                        "name": "Chemistry Lab"
+                    },
+                    {
+                        "id": "CM-111",
+                        "name": "Computer Fundamentals Lab"
+                    }
+                ]
+            },
+            "3rd Semester": {
+                "theory": [
+                    {
+                        "id": "CM-301",
+                        "name": "Mathematics-II"
+                    },
+                    {
+                        "id": "CM-302",
+                        "name": "Digital Electronics"
+                    },
+                    {
+                        "id": "CM-303",
+                        "name": "Operating systems"
+                    },
+                    {
+                        "id": "CM-304",
+                        "name": "Data Structures through C"
+                    },
+                    {
+                        "id": "CM-305",
+                        "name": "DBMS"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "CM-306",
+                        "name": "Digital Electronics Lab"
+                    },
+                    {
+                        "id": "CM-307",
+                        "name": "Data Structures Through C Lab"
+                    },
+                    {
+                        "id": "CM-308",
+                        "name": "DBMS Lab"
+                    },
+                    {
+                        "id": "CM-309",
+                        "name": "Multimedia Lab"
+                    }
+                ]
+            },
+            "4th Semester": {
+                "theory": [
+                    {
+                        "id": "CM-401",
+                        "name": "Software Engineering"
+                    },
+                    {
+                        "id": "CM-402",
+                        "name": "Web Technologies"
+                    },
+                    {
+                        "id": "CM-403",
+                        "name": "Computer Organization And Microprocessors"
+                    },
+                    {
+                        "id": "CM-404",
+                        "name": "OOP through Java"
+                    },
+                    {
+                        "id": "CM-405",
+                        "name": "Computer Networks &Cyber Security"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "CM-406",
+                        "name": "Web Technologies Lab"
+                    },
+                    {
+                        "id": "CM-407",
+                        "name": "Java Lab"
+                    },
+                    {
+                        "id": "CM-408",
+                        "name": "Communication Skills"
+                    },
+                    {
+                        "id": "CM-409",
+                        "name": "Computer Networking & Cyber Security Lab"
+                    }
+                ]
+            },
+            "5th Semester": {
+                "theory": [
+                    {
+                        "id": "CM-501",
+                        "name": "Industrial Management and Entrepreneurship"
+                    },
+                    {
+                        "id": "CM-502",
+                        "name": "Big Data & Cloud Computing"
+                    },
+                    {
+                        "id": "CM-503",
+                        "name": "Android Programming"
+                    },
+                    {
+                        "id": "CM-504",
+                        "name": "Internet Of Things"
+                    },
+                    {
+                        "id": "CM-505",
+                        "name": "Python programming"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "CM-506",
+                        "name": "Android Programming Lab"
+                    },
+                    {
+                        "id": "CM-507",
+                        "name": "Python Programming Lab"
+                    },
+                    {
+                        "id": "CM-508",
+                        "name": "Life Skills"
+                    },
+                    {
+                        "id": "CM-509",
+                        "name": "Project work"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "branch_name": "Electronics & Communication Engineering",
+        "semesters": {
+            "1st Year": {
+                "theory": [
+                    {
+                        "id": "EC-101",
+                        "name": "English"
+                    },
+                    {
+                        "id": "EC-102",
+                        "name": "Engineering Mathematics - I"
+                    },
+                    {
+                        "id": "EC-103",
+                        "name": "Engineering Physics"
+                    },
+                    {
+                        "id": "EC-104",
+                        "name": "Engineering Chemistry &Environmental Studies"
+                    },
+                    {
+                        "id": "EC-105",
+                        "name": "Electronic Components and Devices"
+                    },
+                    {
+                        "id": "EC-106",
+                        "name": "Elements of Electrical Engineering"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "EC-107",
+                        "name": "Engineering Drawing"
+                    },
+                    {
+                        "id": "EC-108",
+                        "name": "Electronic components and Devices Lab"
+                    },
+                    {
+                        "id": "EC-109",
+                        "name": "Physics Lab"
+                    },
+                    {
+                        "id": "EC-110",
+                        "name": "Chemistry Lab"
+                    },
+                    {
+                        "id": "EC-111",
+                        "name": "Computer Fundamentals Lab"
+                    },
+                    {
+                        "id": "EC-112",
+                        "name": "Electrical Engineering Lab"
+                    }
+                ]
+            },
+            "3rd Semester": {
+                "theory": [
+                    {
+                        "id": "EC-301",
+                        "name": "Engineering Mathematics - II"
+                    },
+                    {
+                        "id": "EC-302",
+                        "name": "Electronic Circuits -1"
+                    },
+                    {
+                        "id": "EC-303",
+                        "name": "Digital Electronics"
+                    },
+                    {
+                        "id": "EC-304",
+                        "name": "Analog and Digital Communication Systems"
+                    },
+                    {
+                        "id": "EC-305",
+                        "name": "Network Analysis"
+                    },
+                    {
+                        "id": "EC-306",
+                        "name": "Programming in C and MATLAB"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "EC-307",
+                        "name": "Electronic Circuits- & Network Analysis Lab"
+                    },
+                    {
+                        "id": "EC-308",
+                        "name": "Digital Electronics lab"
+                    },
+                    {
+                        "id": "EC-309",
+                        "name": "Analog and Digital Communication systems Lab"
+                    },
+                    {
+                        "id": "EC-310",
+                        "name": "Programming in C and MATLAB Practice Lab"
+                    }
+                ]
+            },
+            "4th Semester": {
+                "theory": [
+                    {
+                        "id": "EC-401",
+                        "name": "Electronic Circuits-II"
+                    },
+                    {
+                        "id": "EC-402",
+                        "name": "Microcontrollers and Interfacing"
+                    },
+                    {
+                        "id": "EC-403",
+                        "name": "Microwave & Satellite Communication systems"
+                    },
+                    {
+                        "id": "EC-404",
+                        "name": "IoT and Sensors"
+                    },
+                    {
+                        "id": "EC-405",
+                        "name": "Digital Logic Design through Verilog HDL"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "EC-406",
+                        "name": "Electronic Circuits-II Lab"
+                    },
+                    {
+                        "id": "EC-407",
+                        "name": "Microcontrollers and Interfacing Lab"
+                    },
+                    {
+                        "id": "EC-408",
+                        "name": "Communication skills Lab"
+                    },
+                    {
+                        "id": "EC-409",
+                        "name": "IoT and Sensors Lab"
+                    },
+                    {
+                        "id": "EC-410",
+                        "name": "Digital Logic Design through Verilog HDL Lab"
+                    }
+                ]
+            },
+            "5th Semester": {
+                "theory": [
+                    {
+                        "id": "EC-501",
+                        "name": "Industrial Management and Entrepreneurship"
+                    },
+                    {
+                        "id": "EC-502",
+                        "name": "Embedded Systems"
+                    },
+                    {
+                        "id": "EC-503",
+                        "name": "Optical & Mobile Communications"
+                    },
+                    {
+                        "id": "EC-504",
+                        "name": "Industrial Electronics and Automation"
+                    },
+                    {
+                        "id": "EC-505",
+                        "name": "Data Communication and Computer Networks"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "EC-506",
+                        "name": "Embedded Systems Lab"
+                    },
+                    {
+                        "id": "EC-507",
+                        "name": "Industrial Electronics and Automation Lab"
+                    },
+                    {
+                        "id": "EC-508",
+                        "name": "Life Skills"
+                    },
+                    {
+                        "id": "EC-509",
+                        "name": "Advanced Communication and Networking Lab"
+                    },
+                    {
+                        "id": "EC-510",
+                        "name": "Project Work"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "branch_name": "Electrical and Electronics Engineering",
+        "semesters": {
+            "1st Year": {
+                "theory": [
+                    {
+                        "id": "EE-101",
+                        "name": "English"
+                    },
+                    {
+                        "id": "EE-102",
+                        "name": "Engineering Mathematics - I"
+                    },
+                    {
+                        "id": "EE-103",
+                        "name": "Engineering Physics"
+                    },
+                    {
+                        "id": "EE-104",
+                        "name": "Engineering chemistry & Environmental studies"
+                    },
+                    {
+                        "id": "EE-105",
+                        "name": "Electrical Engineering Material Science"
+                    },
+                    {
+                        "id": "EE-106",
+                        "name": "Basic Electrical Technology"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "EE-107",
+                        "name": "EngineeringDrawing -."
+                    },
+                    {
+                        "id": "EE-108",
+                        "name": "Electrical Wiring Laboratory"
+                    },
+                    {
+                        "id": "EE-109",
+                        "name": "Physics Lab"
+                    },
+                    {
+                        "id": "EE-110",
+                        "name": "Chemistry Lab"
+                    },
+                    {
+                        "id": "EE-111",
+                        "name": "Computer Fundamentals Laboratory"
+                    }
+                ]
+            },
+            "3rd Semester": {
+                "theory": [
+                    {
+                        "id": "EE-301",
+                        "name": "Engineering Mathematics - II"
+                    },
+                    {
+                        "id": "EE-302",
+                        "name": "Electrical Machines- I"
+                    },
+                    {
+                        "id": "EE-303",
+                        "name": "A.C. Circuits & Transformers"
+                    },
+                    {
+                        "id": "EE-304",
+                        "name": "Electronics Engineering"
+                    },
+                    {
+                        "id": "EE-305",
+                        "name": "Programming in \"C\""
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "EE-306",
+                        "name": "Electrical CAD Laboratory"
+                    },
+                    {
+                        "id": "EE-307",
+                        "name": "Electrical Machines - I Laboratory"
+                    },
+                    {
+                        "id": "EE-308",
+                        "name": "Circuits & Transformers Laboratory"
+                    },
+                    {
+                        "id": "EE-309",
+                        "name": "Electronics Engineering Laboratory"
+                    },
+                    {
+                        "id": "EE-310",
+                        "name": "Programming in \"C\" Laboratory"
+                    }
+                ]
+            },
+            "4th Semester": {
+                "theory": [
+                    {
+                        "id": "EE-401",
+                        "name": "Electrical Installation & Estimation"
+                    },
+                    {
+                        "id": "EE-402",
+                        "name": "Electrical Machines- II"
+                    },
+                    {
+                        "id": "EE-403",
+                        "name": "Power Systems - I"
+                    },
+                    {
+                        "id": "EE-404",
+                        "name": "Power Electronics & PLC"
+                    },
+                    {
+                        "id": "EE-405",
+                        "name": "General Mechanical Engineering"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "EE-406",
+                        "name": "Electrical Engineering Drawing"
+                    },
+                    {
+                        "id": "EE-407",
+                        "name": "Electrical Machines- II Laboratory"
+                    },
+                    {
+                        "id": "EE-408",
+                        "name": "Communications Skills Laboratory"
+                    },
+                    {
+                        "id": "EE-409",
+                        "name": "Power Electronics Laboratory"
+                    },
+                    {
+                        "id": "EE-410",
+                        "name": "Hybrid Power Systems Laboratory"
+                    }
+                ]
+            },
+            "5th Semester": {
+                "theory": [
+                    {
+                        "id": "EE-501",
+                        "name": "Industrial Management &Smart Technologies"
+                    },
+                    {
+                        "id": "EE-502",
+                        "name": "Electric Vehicle Technology"
+                    },
+                    {
+                        "id": "EE-503",
+                        "name": "Power Systems - II"
+                    },
+                    {
+                        "id": "EE-504",
+                        "name": "Digital Electronics & Micro Controllers"
+                    },
+                    {
+                        "id": "EE-505",
+                        "name": "Electrical Utilisation & Traction"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "EE-506",
+                        "name": "MATLAB Practice Laboratory"
+                    },
+                    {
+                        "id": "EE-507",
+                        "name": "PLC & SCADA Laboratory"
+                    },
+                    {
+                        "id": "EE-508",
+                        "name": "Life Skills"
+                    },
+                    {
+                        "id": "EE-509",
+                        "name": "Digital Electronics & Micro Controllers Laboratory"
+                    },
+                    {
+                        "id": "EE-510",
+                        "name": "Project Work"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "branch_name": "Mechanical Engineering",
+        "semesters": {
+            "1st Year": {
+                "theory": [
+                    {
+                        "id": "M-101",
+                        "name": "English"
+                    },
+                    {
+                        "id": "M-102",
+                        "name": "Engineering Mathematics-I"
+                    },
+                    {
+                        "id": "M-103",
+                        "name": "Engineering Physics"
+                    },
+                    {
+                        "id": "M-104",
+                        "name": "Engineering Chemistry & Environmental Studies"
+                    },
+                    {
+                        "id": "M-105",
+                        "name": "Engineering Mechanics"
+                    },
+                    {
+                        "id": "M-106",
+                        "name": "Basic Manufacturing Processes"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "M-107",
+                        "name": "Engineering Drawing"
+                    },
+                    {
+                        "id": "M-108",
+                        "name": "Basic Workshop Practices"
+                    },
+                    {
+                        "id": "M-109",
+                        "name": "Physics Lab"
+                    },
+                    {
+                        "id": "M-110",
+                        "name": "Chemistry Lab"
+                    },
+                    {
+                        "id": "M-111",
+                        "name": "Computer Fundamentals Lab"
+                    }
+                ]
+            },
+            "3rd Semester": {
+                "theory": [
+                    {
+                        "id": "M-301",
+                        "name": "Engineering Mathematics - II"
+                    },
+                    {
+                        "id": "M-302",
+                        "name": "Applied Electrical & Electronics"
+                    },
+                    {
+                        "id": "M-303",
+                        "name": "Thermal Engineering - I"
+                    },
+                    {
+                        "id": "M-304",
+                        "name": "Strength of Materials"
+                    },
+                    {
+                        "id": "M-305",
+                        "name": "Manufacturing Technology -I"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "M-306",
+                        "name": "Machine Drawing"
+                    },
+                    {
+                        "id": "M-307",
+                        "name": "Material Testing Lab"
+                    },
+                    {
+                        "id": "M-308",
+                        "name": "Applied Electrical & Electronics Lab"
+                    },
+                    {
+                        "id": "M-309",
+                        "name": "Fuels Lab"
+                    },
+                    {
+                        "id": "M-310",
+                        "name": "Fabrication Lab Practice"
+                    }
+                ]
+            },
+            "4th Semester": {
+                "theory": [
+                    {
+                        "id": "M-401",
+                        "name": "Design of Machine Elements"
+                    },
+                    {
+                        "id": "M-402",
+                        "name": "Hydraulics & Fluid Power Systems"
+                    },
+                    {
+                        "id": "M-403",
+                        "name": "Thermal Engineering -II"
+                    },
+                    {
+                        "id": "M-404",
+                        "name": "Engineering Materials"
+                    },
+                    {
+                        "id": "M-405",
+                        "name": "Manufacturing Technology -II"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "M-406",
+                        "name": "Production Drawing"
+                    },
+                    {
+                        "id": "M-407",
+                        "name": "Thermal Engineering Lab"
+                    },
+                    {
+                        "id": "M-408",
+                        "name": "Communication Skills Lab"
+                    },
+                    {
+                        "id": "M-409",
+                        "name": "Hydraulics & Fluid Power Systems Lab"
+                    },
+                    {
+                        "id": "M-410",
+                        "name": "Machining & Metrology Lab"
+                    }
+                ]
+            },
+            "5th Semester": {
+                "theory": [
+                    {
+                        "id": "M-501",
+                        "name": "Industrial Management and Entrepreneurship"
+                    },
+                    {
+                        "id": "M-502",
+                        "name": "Industrial Engineering and Quality Control"
+                    },
+                    {
+                        "id": "M-503",
+                        "name": "Green Energy & Thermal Systems"
+                    },
+                    {
+                        "id": "M-504",
+                        "name": "Industrial Automation & 3D Printing"
+                    },
+                    {
+                        "id": "M-505",
+                        "name": "Refrigeration and Air Conditioning"
+                    }
+                ],
+                "practical": [
+                    {
+                        "id": "M-506",
+                        "name": "CAD Lab Practice"
+                    },
+                    {
+                        "id": "M-507",
+                        "name": "CAM Lab Practice"
+                    },
+                    {
+                        "id": "M-508",
+                        "name": "Life Skills Lab"
+                    },
+                    {
+                        "id": "M-509",
+                        "name": "Refrigeration and Air Conditioning Lab"
+                    },
+                    {
+                        "id": "M-510",
+                        "name": "Training cum Production Workshop"
+                    },
+                    {
+                        "id": "M-511",
+                        "name": "Project Work"
+                    }
+                ]
+            }
+        }
+    }
+]
