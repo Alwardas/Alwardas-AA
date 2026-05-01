@@ -1,3 +1,23 @@
+import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:provider/provider.dart';
+import '../../../core/providers/theme_provider.dart';
+
+class CoordinatorDashboardFragment extends StatelessWidget {
+  const CoordinatorDashboardFragment({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDark = themeProvider.isDarkMode;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildAnnouncementsLoadingState(isDark),
+      ],
+    );
+  }
 
   Widget _buildAnnouncementsLoadingState(bool isDark) {
     return SingleChildScrollView(
@@ -23,3 +43,4 @@
       ),
     );
   }
+}

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../../core/providers/theme_provider.dart';
-import '../../../theme/theme_constants.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/api_constants.dart';
 import 'package:http/http.dart' as http;
@@ -13,7 +12,7 @@ class RaiseIssueScreen extends StatefulWidget {
   const RaiseIssueScreen({super.key, required this.userData});
 
   @override
-  _RaiseIssueScreenState createState() => _RaiseIssueScreenState();
+  State<RaiseIssueScreen> createState() => _RaiseIssueScreenState();
 }
 
 class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
@@ -22,11 +21,10 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
   final TextEditingController _descriptionController = TextEditingController();
   
   String? _selectedCategory;
-  List<String> _selectedTargets = [];
+  final List<String> _selectedTargets = [];
   bool _isSubmitting = false;
 
   final List<String> _categories = ['Attendance', 'Marks', 'Academic', 'Other'];
-  final List<String> _targets = ['HOD', 'Principal', 'Coordinator', 'Parent', 'Course Faculty', 'Branch Faculty'];
 
   // Dynamic Faculty Dropdown Support
   List<dynamic> _studentCourses = [];
@@ -36,7 +34,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
   bool _isLoadingBranchFaculties = false;
   
   // For multiple select
-  List<String> _selectedFaculties = [];
+  final List<String> _selectedFaculties = [];
 
   @override
   void initState() {
@@ -120,7 +118,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse(ApiConstants.studentSubmitIssue),
+        Uri.parse(ApiConstants.submitIssue),
         body: json.encode({
           'userId': userId,
           'subject': _titleController.text, 
@@ -213,7 +211,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
               checkmarkColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
-                side: BorderSide(color: isSelected ? theme.primaryColor : subTextColor.withOpacity(0.3)),
+                side: BorderSide(color: isSelected ? theme.primaryColor : subTextColor.withValues(alpha: 0.3)),
               ),
               onSelected: (bool selected) {
                 setState(() {
@@ -285,7 +283,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
               checkmarkColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
-                side: BorderSide(color: isSelected ? theme.primaryColor : subTextColor.withOpacity(0.3)),
+                side: BorderSide(color: isSelected ? theme.primaryColor : subTextColor.withValues(alpha: 0.3)),
               ),
               onSelected: (bool selected) {
                 setState(() {
@@ -340,7 +338,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
                 borderRadius: BorderRadius.circular(20),
                  boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     )
@@ -353,7 +351,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
                   children: [
                     // Category Dropdown
                     DropdownButtonFormField<String>(
-                      value: _selectedCategory,
+                      initialValue: _selectedCategory,
                       decoration: InputDecoration(
                         labelText: "Category",
                         labelStyle: GoogleFonts.poppins(color: subTextColor),
@@ -385,7 +383,7 @@ class _RaiseIssueScreenState extends State<RaiseIssueScreen> {
                           checkmarkColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
-                            side: BorderSide(color: isSelected ? theme.primaryColor : subTextColor.withOpacity(0.3)),
+                            side: BorderSide(color: isSelected ? theme.primaryColor : subTextColor.withValues(alpha: 0.3)),
                           ),
                           onSelected: (bool selected) {
                             setState(() {
