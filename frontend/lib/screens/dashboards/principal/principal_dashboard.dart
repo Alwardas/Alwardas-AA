@@ -191,8 +191,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    final isDark = themeProvider.isDarkMode;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final Color bgColor = theme.scaffoldBackgroundColor;
     final Color cardColor = isDark ? const Color(0xFF222240) : Colors.white;
@@ -248,7 +247,6 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
   Widget _buildHomeTab(BuildContext context, Color cardColor, Color textColor, Color subTextColor, bool isDark) {
     // Principal Header Gradient ['#8E2DE2', '#4A00E0']
     final List<Color> headerGradient = [const Color(0xFF8E2DE2), const Color(0xFF4A00E0)];
-    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
 
     return Column(
       children: [
@@ -340,15 +338,6 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    GestureDetector(
-                      onTap: () => themeProvider.toggleTheme(),
-                      child: Icon(
-                        isDark ? Icons.wb_sunny : Icons.nightlight_round, 
-                        color: Colors.white, 
-                        size: 20
                       ),
                     ),
                   ],

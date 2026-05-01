@@ -201,8 +201,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    final isDark = themeProvider.isDarkMode;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final Color bgColor = theme.scaffoldBackgroundColor;
     final Color cardColor = isDark ? ThemeColors.darkCardBg : Colors.white;
@@ -258,7 +257,6 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
   Widget _buildHomeTab(BuildContext context, Color cardColor, Color textColor, Color subTextColor, bool isDark) {
     // Coordinator Header Gradient (Futuristic Theme)
     final List<Color> headerGradient = ThemeColors.headerGradient; 
-    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
     final theme = Theme.of(context);
 
     return Column(
@@ -351,15 +349,6 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    GestureDetector(
-                      onTap: () => themeProvider.toggleTheme(),
-                      child: Icon(
-                        isDark ? Icons.wb_sunny : Icons.nightlight_round, 
-                        color: Colors.white, 
-                        size: 20
                       ),
                     ),
                   ],

@@ -364,8 +364,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    final isDark = themeProvider.isDarkMode;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     // Derived Colors based on Theme
     final Color bgColor = theme.scaffoldBackgroundColor;
@@ -430,8 +429,6 @@ class _StudentDashboardState extends State<StudentDashboard> {
   }
 
   Widget _buildHomeTab(BuildContext context, Color bgColor, Color cardColor, Color accentBlue, Color textColor, Color subTextColor, bool isDark) {
-    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
-
     return Column(
       children: [
         // 1. Header Section
@@ -532,15 +529,6 @@ class _StudentDashboardState extends State<StudentDashboard> {
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    GestureDetector(
-                      onTap: () => themeProvider.toggleTheme(),
-                      child: Icon(
-                        isDark ? Icons.wb_sunny : Icons.nightlight_round, 
-                        color: Colors.white, 
-                        size: 20
                       ),
                     ),
                   ],

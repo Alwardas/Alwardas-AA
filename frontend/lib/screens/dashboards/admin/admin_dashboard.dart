@@ -133,8 +133,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    final isDark = themeProvider.isDarkMode;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final Color textColor = theme.colorScheme.onSurface;
     final Color subTextColor = theme.colorScheme.secondary;
@@ -215,11 +214,6 @@ class _AdminDashboardState extends State<AdminDashboard> {
                        ),
                        Row(
                          children: [
-                           GestureDetector(
-                             onTap: () => themeProvider.toggleTheme(),
-                             child: _buildHeaderIcon(themeProvider.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round),
-                           ),
-                           const SizedBox(width: 10),
                            GestureDetector(
                              onTap: () => _logout(context),
                              child: _buildHeaderIcon(Icons.logout),

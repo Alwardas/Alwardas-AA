@@ -115,7 +115,7 @@ pub async fn submit_attendance_batch(pool: &PgPool, payload: BatchAttendanceRequ
 }
 
 pub async fn check_attendance_status(pool: &PgPool, params: CheckAttendanceQuery) -> Result<serde_json::Value, StatusCode> {
-    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM attendance WHERE date = $1 AND session = $2 AND section = $3")
+    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM attendance WHERE date = $1::DATE AND session = $2 AND (section = $3 OR ($3 IS NULL AND section IS NULL))")
         .bind(&params.date).bind(&params.session).bind(&params.section)
         .fetch_one(pool).await.unwrap_or(0);
     
@@ -123,20 +123,34 @@ pub async fn check_attendance_status(pool: &PgPool, params: CheckAttendanceQuery
 }
 
 pub async fn get_class_attendance_record(pool: &PgPool, params: ClassRecordQuery) -> Result<crate::models::ClassRecordResponse, StatusCode> {
+    println!("DEBUG: Fetching class record for branch: {}, year: {}, session: {}, date: {}, section: {:?}", 
+        params.branch, params.year, params.session, params.date, params.section);
+
+    let branch_variations = crate::models::get_branch_variations(&params.branch);
+    
     let mut query = sqlx::QueryBuilder::new("SELECT u.login_id as student_id, u.full_name, a.status FROM users u LEFT JOIN attendance a ON u.id = a.student_uuid AND a.date = ");
     query.push_bind(&params.date);
-    query.push(" AND a.session = ");
+    query.push("::DATE AND a.session = ");
     query.push_bind(&params.session);
-    query.push(" WHERE u.role = 'Student' AND u.branch = ");
-    query.push_bind(&params.branch);
-    query.push(" AND u.year = ");
+    query.push(" WHERE u.role = 'Student' AND u.branch = ANY(");
+    query.push_bind(&branch_variations);
+    query.push(") AND u.year = ");
     query.push_bind(&params.year);
-    query.push(" AND u.section = ");
-    query.push_bind(&params.section);
+    
+    if let Some(sec) = &params.section {
+        if !sec.is_empty() {
+            query.push(" AND u.section = ");
+            query.push_bind(sec);
+        }
+    }
+    
     query.push(" ORDER BY u.login_id ASC");
 
     use sqlx::Row;
-    let rows = query.build().fetch_all(pool).await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+    let rows = query.build().fetch_all(pool).await.map_err(|e| {
+        eprintln!("ERROR: get_class_attendance_record query failed: {:?}", e);
+        StatusCode::INTERNAL_SERVER_ERROR
+    })?;
     
     let students: Vec<crate::models::StudentAttendanceItem> = rows.into_iter().map(|r| crate::models::StudentAttendanceItem {
         id: Uuid::nil(), // Not needed here
@@ -144,6 +158,8 @@ pub async fn get_class_attendance_record(pool: &PgPool, params: ClassRecordQuery
         full_name: r.get("full_name"),
         status: r.get::<Option<String>, _>("status").unwrap_or_else(|| "not marked".to_string())
     }).collect();
+
+    println!("DEBUG: Found {} students", students.len());
 
     Ok(crate::models::ClassRecordResponse { 
         marked: !students.is_empty() && students.iter().any(|s| s.status != "not marked"),

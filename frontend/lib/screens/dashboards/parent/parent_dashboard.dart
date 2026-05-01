@@ -359,8 +359,7 @@ class _ParentDashboardState extends State<ParentDashboard> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    final isDark = themeProvider.isDarkMode;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final Color bgColor = theme.scaffoldBackgroundColor;
     final Color cardColor = isDark ? const Color(0xFF222240) : Colors.white;
@@ -429,7 +428,6 @@ class _ParentDashboardState extends State<ParentDashboard> {
 
   Widget _buildHomeTab(BuildContext context, Color bgColor, Color cardColor,
       Color accentBlue, Color textColor, Color subTextColor, bool isDark) {
-    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
     final currentChild = _children[_selectedChildIndex];
 
     return Column(
@@ -508,27 +506,16 @@ class _ParentDashboardState extends State<ParentDashboard> {
                       ],
                     ),
                   ),
-                  Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () => themeProvider.toggleTheme(),
-                        child: _buildHeaderIcon(themeProvider.isDarkMode
-                            ? Icons.wb_sunny_outlined
-                            : Icons.nightlight_round),
-                      ),
-                      const SizedBox(width: 10),
-                      GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => StudentNotificationsScreen(
-                                    userId: currentChild['id']))),
-                        child: _buildHeaderIcon(Icons.notifications_none),
-                      ),
-                    ],
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => StudentNotificationsScreen(
+                                userId: currentChild['id']))),
+                    child: _buildHeaderIcon(Icons.notifications_none),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

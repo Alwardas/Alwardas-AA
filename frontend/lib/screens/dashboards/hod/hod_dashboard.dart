@@ -293,8 +293,7 @@ class _HodDashboardState extends State<HodDashboard> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    final isDark = themeProvider.isDarkMode;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final Color bgColor = theme.scaffoldBackgroundColor;
     final Color cardColor = isDark ? const Color(0xFF222240) : Colors.white;
@@ -349,7 +348,6 @@ class _HodDashboardState extends State<HodDashboard> {
 
   Widget _buildHomeTab(BuildContext context, Color cardColor, Color textColor, Color subTextColor, bool isDark) {
     // Determine Header Icons based on theme
-    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
 
     return Column(
       children: [
@@ -412,21 +410,16 @@ class _HodDashboardState extends State<HodDashboard> {
                        ],
                      ),
                    ),
-                   Row(
-                     children: [
-                       GestureDetector(
-                         onTap: () => themeProvider.toggleTheme(),
-                         child: _buildHeaderIcon(themeProvider.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round),
-                       ),
-                       const SizedBox(width: 10),
-                       GestureDetector(
-                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodNotificationsScreen())),
-                         child: _buildHeaderIcon(Icons.notifications_none),
-                       ),
-                     ],
-                   ),
-                 ],
-               )
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodNotificationsScreen())),
+                          child: _buildHeaderIcon(Icons.notifications_none),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
              ],
            ),
         ),
