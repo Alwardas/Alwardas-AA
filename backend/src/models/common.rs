@@ -1,7 +1,6 @@
 use serde::{Deserialize, Serialize};
 use sqlx::{Pool, Postgres, FromRow};
 use uuid::Uuid;
-// HashMap removed
 
 use chrono::{DateTime, Utc};
 
@@ -50,43 +49,7 @@ pub fn get_branch_variations(input: &str) -> Vec<String> {
     variations
 }
 
-#[derive(Serialize, Deserialize, Debug)]
-pub struct SignupRequest {
-    pub full_name: String,
-    pub role: String,
-    pub login_id: String,       // Maps to studentId, facultyId, etc. from frontend
-    pub password: String,
-    pub branch: Option<String>,
-    pub year: Option<String>,
-    pub section: Option<String>,
-    pub phone_number: Option<String>,
-    pub dob: Option<String>, // "YYYY-MM-DD"
-    pub experience: Option<String>,
-    pub email: Option<String>,
-    pub semester: Option<String>,
-    pub batch_no: Option<String>,
-    pub title: Option<String>,
-}
 
-#[derive(Serialize, Deserialize, Debug)]
-pub struct LoginRequest {
-    pub login_id: String,
-    pub password: String,
-}
-
-#[derive(Serialize, Debug)]
-pub struct AuthResponse {
-    pub id: Option<String>,
-    pub message: String,
-    pub role: Option<String>,
-    pub full_name: Option<String>,
-    pub login_id: Option<String>,
-    pub branch: Option<String>,
-    pub year: Option<String>,
-    pub semester: Option<String>,
-    pub batch_no: Option<String>,
-    pub section: Option<String>,
-}
 
 #[derive(Serialize, Deserialize, Debug, FromRow)]
 pub struct Notification {
@@ -199,6 +162,8 @@ pub struct DeleteNotificationsRequest {
 
 #[derive(Deserialize)]
 pub struct ApprovalRequest {
+    #[serde(rename = "userId")]
+    pub user_id: Uuid,
     #[serde(rename = "requestId")]
     pub request_id: Uuid,
     #[serde(rename = "senderId")]
@@ -366,10 +331,12 @@ pub struct StudentBasicInfo {
     pub section: Option<String>,
 }
 
+
 #[derive(Deserialize)]
 pub struct StudentsQuery {
-    pub branch: String,
-    pub year: String,
+    pub branch: Option<String>,
+    pub year: Option<String>,
+    pub semester: Option<String>,
     pub section: Option<String>,
 }
 
@@ -487,6 +454,22 @@ pub struct LessonPlanFeedbackResponse {
     #[sqlx(rename = "replied_at")]
     #[serde(rename = "repliedAt")]
     pub replied_at: Option<DateTime<Utc>>,
+}
+
+#[derive(Serialize, FromRow, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct FacultyFeedbackResponse {
+    pub id: Uuid,
+    pub rating: i32,
+    pub issue_type: String,
+    pub comment: String,
+    pub created_at: DateTime<Utc>,
+    pub reply: Option<String>,
+    pub replied_at: Option<DateTime<Utc>>,
+    pub topic: String,
+    pub subject_code: String,
+    pub subject_name: String,
+    pub student_name: String,
 }
 
 #[derive(Serialize, FromRow)]
@@ -640,6 +623,8 @@ pub struct ProfileUpdateRequestData {
 
 #[derive(Deserialize)]
 pub struct ApproveProfileChangeRequest {
+    #[serde(rename = "userId")]
+    pub user_id: Uuid,
     #[serde(rename = "notificationId")]
     pub notification_id: Uuid,
     #[serde(rename = "senderId")]
@@ -709,7 +694,7 @@ pub struct ClassRecordResponse {
     pub students: Vec<StudentAttendanceItem>,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, FromRow)]
 #[serde(rename_all = "camelCase")]
 pub struct StudentAttendanceItem {
     pub id: Uuid,
@@ -724,6 +709,7 @@ pub struct StudentAttendanceItem {
 pub struct BatchAttendanceRequest {
     pub session: Option<String>,
     pub date: String,
+    pub section: String,
     #[serde(rename = "markedBy")]
     pub marked_by: String, 
     pub records: Vec<BatchRecord>
@@ -745,7 +731,7 @@ pub struct AttendanceStatsQuery {
     pub section: Option<String>,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct AttendanceStatsResponse {
     pub total_students: i64,
@@ -769,6 +755,8 @@ pub struct AttendanceCorrectionRequestData {
 
 #[derive(Deserialize, Debug)]
 pub struct ApproveAttendanceCorrectionData {
+    #[serde(rename = "requestId")]
+    pub request_id: Uuid,
     #[serde(rename = "senderId")]
     pub sender_id: Uuid, 
     #[serde(rename = "notificationId")]
@@ -1092,4 +1080,181 @@ pub struct DailyClassActivityReport {
 pub struct DailyReportQuery {
     pub branch: String,
     pub date: String,
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SubjectMarkResponse {
+    pub subject_id: String,
+    pub subject_name: String,
+    pub marks: Option<i32>,
+    pub credit: i32,
+    pub grade: Option<String>,
+    pub grade_points: Option<i32>,
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SemesterAcademicsResponse {
+    pub semester_name: String,
+    pub year_label: String,
+    pub is_ongoing: bool,
+    pub subjects: Vec<SubjectMarkResponse>,
+    pub sgpa: Option<f64>,
+}
+
+#[derive(Serialize, FromRow)]
+#[serde(rename_all = "camelCase")]
+pub struct CourseResponse {
+    pub id: String,
+    pub name: String,
+}
+
+#[derive(Deserialize)]
+pub struct SemesterSubjectsQuery {
+    pub branch: String,
+    pub semester: String,
+    pub course_id: Option<String>,
+}
+
+#[derive(Serialize, FromRow)]
+#[serde(rename_all = "camelCase")]
+pub struct SemesterSubjectResponse {
+    pub id: String,
+    pub name: String,
+    #[sqlx(rename = "type")]
+    pub subject_type: String,
+    pub faculty_name: Option<String>,
+}
+
+#[derive(Deserialize)]
+pub struct LessonTopicsQuery {
+    pub subject_id: String,
+    pub section: Option<String>,
+    pub branch: Option<String>,
+}
+
+#[derive(Serialize, FromRow)]
+#[serde(rename_all = "camelCase")]
+pub struct LessonTopicResponse {
+    pub id: Uuid,
+    pub topic: String,
+    pub sno: Option<String>,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AssignLessonScheduleRequest {
+    pub schedules: Vec<LessonScheduleItem>,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct LessonScheduleItem {
+    pub topic_id: Uuid,
+    pub branch: String,
+    pub section: String,
+    pub schedule_date: String, // YYYY-MM-DD
+}
+
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct MoveStudentsRequest {
+    pub student_ids: Vec<String>,
+    pub target_branch: String,
+    pub target_year: String,
+    pub target_section: Option<String>,
+}
+
+#[derive(Deserialize)]
+pub struct SectionsQuery {
+    pub branch: String,
+    pub year: String,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct UpdateSectionsRequest {
+    pub branch: String,
+    pub year: String,
+    pub sections: Vec<String>,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct RenameSectionRequest {
+    pub branch: String,
+    pub year: String,
+    pub old_name: String,
+    pub new_name: String,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct DeleteStudentRequest {
+    pub student_id: String,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AddCourseSubjectRequest {
+    pub branch: String,
+    pub year: String,
+    pub section: String,
+    pub subject_name: String,
+    pub subject_code: Option<String>,
+    pub created_by: String,
+    pub course_id: Option<String>,
+}
+
+#[derive(Deserialize)]
+pub struct SectionQuery {
+    pub branch: String,
+    pub year: String,
+    pub section: Option<String>,
+}
+
+#[derive(Deserialize)]
+pub struct SubjectQuery {
+    pub branch: String,
+    pub year: String,
+}
+
+#[derive(Deserialize)]
+pub struct FacultyAssignmentQuery {
+    pub branch: String,
+    pub year: String,
+    pub section: String,
+    pub subject_name: Option<String>,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BranchProgressQuery {
+    pub branch: String,
+    pub course_id: String,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct YearSectionsProgressQuery {
+    pub branch: String,
+    pub year: String,
+    pub course_id: String,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SectionSubjectsProgressQuery {
+    pub branch: String,
+    pub year: String,
+    pub section: String,
+    pub course_id: String,
+    pub semester: Option<String>,
+}
+
+#[derive(Deserialize)]
+pub struct FacultyFeedbackQuery {
+    pub faculty_id: Uuid,
 }

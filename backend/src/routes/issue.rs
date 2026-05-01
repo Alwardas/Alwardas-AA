@@ -3,7 +3,6 @@ use axum::{
     Json,
     http::StatusCode,
 };
-use sqlx::Postgres;
 use crate::models::*;
 use uuid::Uuid;
 
@@ -11,181 +10,50 @@ pub async fn submit_issue_handler(
     State(state): State<AppState>,
     Json(payload): Json<SubmitIssueRequest>,
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
-    let created_by = Uuid::parse_str(&payload.created_by).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
-
-    // Routing Logic:
-    // Attendance issue → Faculty / HOD
-    // Academic issue → Faculty / HOD
-    // Technical issue → Coordinator
-    // Facilities issue → Coordinator / Principal
-    // General issue → HOD
-    
-    // For now we just store it. Assignment can be manual or automated.
-    // The requirement says "automatically assigned based on the category".
-    // We need to find a suitable user to assign to. 
-    // This is tricky without knowing who is the HOD of what branch.
-    // I'll implement a simple version where we assign based on role if possible.
-
-    sqlx::query(
-        "INSERT INTO issues (title, description, category, priority, status, created_by, user_role) 
-         VALUES ($1, $2, $3, $4, 'Open', $5, $6)"
-    )
-    .bind(&payload.title)
-    .bind(&payload.description)
-    .bind(&payload.category)
-    .bind(&payload.priority)
-    .bind(created_by)
-    .bind(&payload.user_role)
-    .execute(&state.pool)
-    .await
-    .map_err(|e| {
-        eprintln!("Submit Issue Error: {:?}", e);
-        (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("Failed to submit issue: {}", e)})))
-    })?;
-
-    Ok(StatusCode::OK)
+    match crate::services::issue_service::submit_issue(&state.pool, payload).await {
+        Ok(_) => Ok(StatusCode::OK),
+        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+    }
 }
 
 pub async fn get_issues_handler(
     State(state): State<AppState>,
     Query(params): Query<GetIssuesQuery>,
 ) -> Result<Json<Vec<Issue>>, (StatusCode, Json<serde_json::Value>)> {
-    let user_uuid = Uuid::parse_str(&params.user_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
-
-    let mut query = sqlx::QueryBuilder::new(r#"
-        SELECT 
-            i.id, i.title, i.description, i.category, i.priority, i.status, i.created_by, i.user_role, i.assigned_to, i.created_date,
-            u_creator.full_name as creator_name,
-            u_assigned.full_name as assigned_name
-        FROM issues i
-        LEFT JOIN users u_creator ON i.created_by = u_creator.id
-        LEFT JOIN users u_assigned ON i.assigned_to = u_assigned.id
-        WHERE 1=1
-    "#);
-
-    // Filter Logic:
-    // Users see their own issues.
-    // HOD / Principal / Coordinator see department issues.
-    // Coordinator sees all issues.
-    
-    match params.role.as_str() {
-        "Student" | "Parent" => {
-            query.push(" AND i.created_by = ");
-            query.push_bind(user_uuid);
-        }
-        "Faculty" => {
-            // Faculty see issues they created or assigned to them
-            query.push(" AND (i.created_by = ");
-            query.push_bind(user_uuid);
-            query.push(" OR i.assigned_to = ");
-            query.push_bind(user_uuid);
-            query.push(")");
-        }
-        "HOD" => {
-            // HOD see issues from their branch, assigned to them, or created by Coordinator
-            if let Some(branch) = &params.branch {
-                query.push(" AND (u_creator.branch = ");
-                query.push_bind(branch);
-                query.push(" OR i.assigned_to = ");
-                query.push_bind(user_uuid);
-                query.push(" OR u_creator.role = 'Coordinator')");
-            } else {
-                query.push(" AND (i.created_by = ");
-                query.push_bind(user_uuid);
-                query.push(" OR i.assigned_to = ");
-                query.push_bind(user_uuid);
-                query.push(" OR u_creator.role = 'Coordinator')");
-            }
-        }
-        "Principal" | "Coordinator" | "Admin" => {
-            // Principal/Coordinator/Admin see all issues
-        }
-        _ => {
-            query.push(" AND i.created_by = ");
-            query.push_bind(user_uuid);
-        }
+    match crate::services::issue_service::get_issues(&state.pool, params).await {
+        Ok(res) => Ok(Json(res)),
+        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
     }
-
-    query.push(" ORDER BY i.created_date DESC");
-
-    let issues = query.build_query_as::<Issue>()
-        .fetch_all(&state.pool)
-        .await
-        .map_err(|e| {
-            eprintln!("Get Issues Error: {:?}", e);
-            let err_msg = e.to_string();
-            (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("Database error: {}", err_msg)})))
-        })?;
-
-    Ok(Json(issues))
 }
 
 pub async fn get_issue_details_handler(
     State(state): State<AppState>,
     Path(issue_id): Path<Uuid>,
 ) -> Result<Json<Issue>, (StatusCode, Json<serde_json::Value>)> {
-    let issue = sqlx::query_as::<Postgres, Issue>(
-        r#"
-        SELECT 
-            i.id, i.title, i.description, i.category, i.priority, i.status, i.created_by, i.user_role, i.assigned_to, i.created_date,
-            u_creator.full_name as creator_name,
-            u_assigned.full_name as assigned_name
-        FROM issues i
-        LEFT JOIN users u_creator ON i.created_by = u_creator.id
-        LEFT JOIN users u_assigned ON i.assigned_to = u_assigned.id
-        WHERE i.id = $1
-        "#
-    )
-    .bind(issue_id)
-    .fetch_optional(&state.pool)
-    .await
-    .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?
-    .ok_or((StatusCode::NOT_FOUND, Json(serde_json::json!({"error": "Issue not found"}))))?;
-
-    Ok(Json(issue))
+    match crate::services::issue_service::get_issue_details(&state.pool, issue_id).await {
+        Ok(res) => Ok(Json(res)),
+        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+    }
 }
 
 pub async fn get_issue_comments_handler(
     State(state): State<AppState>,
     Path(issue_id): Path<Uuid>,
 ) -> Result<Json<Vec<IssueComment>>, (StatusCode, Json<serde_json::Value>)> {
-    let comments = sqlx::query_as::<Postgres, IssueComment>(
-        r#"
-        SELECT 
-            c.id, c.issue_id, c.comment, c.comment_by, c.comment_date,
-            u.full_name as user_name
-        FROM issue_comments c
-        LEFT JOIN users u ON c.comment_by = u.id
-        WHERE c.issue_id = $1
-        ORDER BY c.comment_date ASC
-        "#
-    )
-    .bind(issue_id)
-    .fetch_all(&state.pool)
-    .await
-    .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
-
-    Ok(Json(comments))
+    match crate::services::issue_service::get_issue_comments(&state.pool, issue_id).await {
+        Ok(res) => Ok(Json(res)),
+        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+    }
 }
 
 pub async fn submit_comment_handler(
     State(state): State<AppState>,
     Json(payload): Json<SubmitCommentRequest>,
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
-    let issue_id = Uuid::parse_str(&payload.issue_id).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid Issue ID"}))))?;
-    let comment_by = Uuid::parse_str(&payload.comment_by).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
-
-    sqlx::query(
-        "INSERT INTO issue_comments (issue_id, comment, comment_by) VALUES ($1, $2, $3)"
-    )
-    .bind(issue_id)
-    .bind(&payload.comment)
-    .bind(comment_by)
-    .execute(&state.pool)
-    .await
-    .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
-
-    Ok(StatusCode::OK)
+    match crate::services::issue_service::submit_comment(&state.pool, payload).await {
+        Ok(_) => Ok(StatusCode::OK),
+        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+    }
 }
 
 pub async fn assign_issue_handler(
@@ -193,16 +61,10 @@ pub async fn assign_issue_handler(
     Path(issue_id): Path<Uuid>,
     Json(payload): Json<AssignIssueRequest>,
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
-    let assigned_to = Uuid::parse_str(&payload.assigned_to).map_err(|_| (StatusCode::BAD_REQUEST, Json(serde_json::json!({"error": "Invalid User ID"}))))?;
-
-    sqlx::query("UPDATE issues SET assigned_to = $1, status = 'In Progress' WHERE id = $2")
-        .bind(assigned_to)
-        .bind(issue_id)
-        .execute(&state.pool)
-        .await
-        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
-
-    Ok(StatusCode::OK)
+    match crate::services::issue_service::assign_issue(&state.pool, issue_id, payload).await {
+        Ok(_) => Ok(StatusCode::OK),
+        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+    }
 }
 
 pub async fn update_issue_status_handler(
@@ -210,60 +72,18 @@ pub async fn update_issue_status_handler(
     Path(issue_id): Path<Uuid>,
     Json(payload): Json<UpdateIssueStatusRequest>,
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
-    
-    let mut tx = state.pool.begin().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Transaction failed"}))))?;
-
-    sqlx::query("UPDATE issues SET status = $1 WHERE id = $2")
-        .bind(&payload.status)
-        .bind(issue_id)
-        .execute(&mut *tx)
-        .await
-        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
-
-    // Notify creator
-    let issue_info: (Uuid, String) = sqlx::query_as("SELECT created_by, title FROM issues WHERE id = $1")
-        .bind(issue_id)
-        .fetch_one(&mut *tx)
-        .await
-        .map_err(|_| (StatusCode::NOT_FOUND, Json(serde_json::json!({"error": "Issue not found"}))))?;
-
-    let msg = format!("Your issue '{}' has been {}.", issue_info.1, payload.status.to_lowercase());
-
-    sqlx::query("INSERT INTO notifications (type, message, recipient_id, status) VALUES ($1, $2, $3, 'UNREAD')")
-        .bind("ISSUE_STATUS_UPDATE")
-        .bind(msg)
-        .bind(issue_info.0.to_string())
-        .execute(&mut *tx)
-        .await
-        .ok();
-
-    tx.commit().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": "Commit failed"}))))?;
-
-    Ok(StatusCode::OK)
+    match crate::services::issue_service::update_issue_status(&state.pool, issue_id, payload).await {
+        Ok(_) => Ok(StatusCode::OK),
+        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+    }
 }
-
 
 pub async fn delete_issue_handler(
     State(state): State<AppState>,
     Path(issue_id): Path<Uuid>,
 ) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
-    // Delete comments first due to foreign key constraints if any
-    sqlx::query("DELETE FROM issue_comments WHERE issue_id = $1")
-        .bind(issue_id)
-        .execute(&state.pool)
-        .await
-        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("Failed to delete comments: {}", e)}))))?;
-
-    // Delete the issue
-    let result = sqlx::query("DELETE FROM issues WHERE id = $1")
-        .bind(issue_id)
-        .execute(&state.pool)
-        .await
-        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": format!("Failed to delete issue: {}", e)}))))?;
-
-    if result.rows_affected() == 0 {
-        return Err((StatusCode::NOT_FOUND, Json(serde_json::json!({"error": "Issue not found"}))));
+    match crate::services::issue_service::delete_issue(&state.pool, issue_id).await {
+        Ok(_) => Ok(StatusCode::OK),
+        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
     }
-
-    Ok(StatusCode::OK)
 }
