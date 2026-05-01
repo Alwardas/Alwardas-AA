@@ -311,7 +311,8 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
 
     final payload = {
       'session': _selectedSession,
-      'date': _selectedDate.toIso8601String(),
+      'date': _selectedDate.toIso8601String().split('T')[0],
+      'section': _selectedSection,
       'markedBy': _facultyId,
       'records': records
     };

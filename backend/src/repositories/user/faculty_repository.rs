@@ -118,7 +118,7 @@ pub async fn find_attendance_status(pool: &PgPool, branch: &str, year: &str, sec
 
     let mut query = QueryBuilder::new("SELECT COUNT(*) FROM attendance WHERE date = ");
     query.push_bind(date);
-    query.push(" AND (status = 'present' OR status = 'P' OR status = 'PRESENT') AND student_uuid IN (SELECT id FROM users WHERE branch = ANY(");
+    query.push("::DATE AND (status = 'present' OR status = 'P' OR status = 'PRESENT') AND student_uuid IN (SELECT id FROM users WHERE branch = ANY(");
     query.push_bind(&variations);
     query.push(") AND year = ");
     query.push_bind(year);
@@ -156,7 +156,7 @@ pub async fn find_absent_students(pool: &PgPool, branch: &str, year: &str, secti
     query.push(" AND id NOT IN (
         SELECT student_uuid FROM attendance WHERE date = ");
     query.push_bind(date);
-    query.push(" AND (status = 'present' OR status = 'P' OR status = 'PRESENT')");
+    query.push("::DATE AND (status = 'present' OR status = 'P' OR status = 'PRESENT')");
     
     if let Some(s) = session {
         query.push(" AND session = ");
