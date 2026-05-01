@@ -109,6 +109,26 @@ pub async fn submit_attendance_batch(pool: &PgPool, payload: BatchAttendanceRequ
         (StatusCode::BAD_REQUEST, format!("Invalid Faculty ID: {}", payload.marked_by))
     })?;
 
+    // Optimize: Fetch all student UUIDs in one query
+    let student_ids: Vec<String> = payload.records.iter().map(|r| r.student_id.clone()).collect();
+    let student_map_rows = sqlx::query("SELECT id, login_id FROM users WHERE login_id = ANY($1) AND role = 'Student'")
+        .bind(&student_ids)
+        .fetch_all(pool)
+        .await
+        .map_err(|e| {
+            eprintln!("ERROR: Failed to fetch student map: {:?}", e);
+            (StatusCode::INTERNAL_SERVER_ERROR, "Database error during student resolution".to_string())
+        })?;
+
+    use std::collections::HashMap;
+    let mut student_id_to_uuid = HashMap::new();
+    for row in student_map_rows {
+        use sqlx::Row;
+        let id: Uuid = row.get("id");
+        let login_id: String = row.get("login_id");
+        student_id_to_uuid.insert(login_id, id);
+    }
+
     let mut tx = pool.begin().await.map_err(|e| {
         eprintln!("ERROR: Failed to start transaction: {:?}", e);
         (StatusCode::INTERNAL_SERVER_ERROR, "Failed to start transaction".to_string())
@@ -117,10 +137,13 @@ pub async fn submit_attendance_batch(pool: &PgPool, payload: BatchAttendanceRequ
     let session = payload.session.unwrap_or_else(|| "1".to_string());
     
     for record in payload.records {
-        let user_uuid = resolve_user_id(&record.student_id, "Student", pool).await.map_err(|e| {
-            eprintln!("ERROR: Failed to resolve student ID {}: {:?}", record.student_id, e);
-            (StatusCode::BAD_REQUEST, format!("Invalid Student ID: {}", record.student_id))
-        })?;
+        let user_uuid = match student_id_to_uuid.get(&record.student_id) {
+            Some(uuid) => *uuid,
+            None => {
+                eprintln!("ERROR: Student login ID not found: {}", record.student_id);
+                return Err((StatusCode::BAD_REQUEST, format!("Student not found: {}", record.student_id)));
+            }
+        };
         
         faculty_repository::insert_attendance(&mut tx, user_uuid, &record.student_id, faculty_uuid, &payload.date, &record.status, &session, &payload.section)
             .await
