@@ -87,10 +87,12 @@ pub async fn move_students(pool: &PgPool, payload: MoveStudentsRequest) -> Resul
 pub async fn submit_attendance(pool: &PgPool, payload: SubmitAttendanceRequest) -> Result<(), (StatusCode, String)> {
     let mut tx = pool.begin().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, "Failed to start transaction".to_string()))?;
     
-    let user_uuid = resolve_user_id(&payload.student_id, "Student", pool).await.map_err(|_| (StatusCode::BAD_REQUEST, format!("Invalid Student ID: {}", payload.student_id)))?;
+    let student_uuid = resolve_user_id(&payload.student_id, "Student", pool).await.map_err(|_| (StatusCode::BAD_REQUEST, format!("Invalid Student ID: {}", payload.student_id)))?;
+    let faculty_uuid = resolve_user_id(&payload.faculty_id, "Faculty", pool).await.map_err(|_| (StatusCode::BAD_REQUEST, format!("Invalid Faculty ID: {}", payload.faculty_id)))?;
+    
     let session = payload.session.as_deref().unwrap_or("1");
     
-    faculty_repository::insert_attendance(&mut tx, user_uuid, &payload.date, &payload.status, session, "")
+    faculty_repository::insert_attendance(&mut tx, student_uuid, &payload.student_id, faculty_uuid, &payload.date, &payload.status, session, "")
         .await
         .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
 
@@ -99,18 +101,41 @@ pub async fn submit_attendance(pool: &PgPool, payload: SubmitAttendanceRequest) 
 }
 
 pub async fn submit_attendance_batch(pool: &PgPool, payload: BatchAttendanceRequest) -> Result<serde_json::Value, (StatusCode, String)> {
-    let mut tx = pool.begin().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, "Failed to start transaction".to_string()))?;
+    println!("DEBUG: Submitting batch attendance: session={}, date={}, section={}, marked_by={}, count={}", 
+        payload.session.as_deref().unwrap_or("1"), payload.date, payload.section, payload.marked_by, payload.records.len());
+
+    let faculty_uuid = resolve_user_id(&payload.marked_by, "Faculty", pool).await.map_err(|e| {
+        eprintln!("ERROR: Failed to resolve faculty ID {}: {:?}", payload.marked_by, e);
+        (StatusCode::BAD_REQUEST, format!("Invalid Faculty ID: {}", payload.marked_by))
+    })?;
+
+    let mut tx = pool.begin().await.map_err(|e| {
+        eprintln!("ERROR: Failed to start transaction: {:?}", e);
+        (StatusCode::INTERNAL_SERVER_ERROR, "Failed to start transaction".to_string())
+    })?;
     
     let session = payload.session.unwrap_or_else(|| "1".to_string());
     
     for record in payload.records {
-        let user_uuid = resolve_user_id(&record.student_id, "Student", pool).await.map_err(|_| (StatusCode::BAD_REQUEST, format!("Invalid Student ID: {}", record.student_id)))?;
-        faculty_repository::insert_attendance(&mut tx, user_uuid, &payload.date, &record.status, &session, &payload.section)
+        let user_uuid = resolve_user_id(&record.student_id, "Student", pool).await.map_err(|e| {
+            eprintln!("ERROR: Failed to resolve student ID {}: {:?}", record.student_id, e);
+            (StatusCode::BAD_REQUEST, format!("Invalid Student ID: {}", record.student_id))
+        })?;
+        
+        faculty_repository::insert_attendance(&mut tx, user_uuid, &record.student_id, faculty_uuid, &payload.date, &record.status, &session, &payload.section)
             .await
-            .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
+            .map_err(|e| {
+                eprintln!("ERROR: Failed to insert attendance for {}: {:?}", record.student_id, e);
+                (StatusCode::INTERNAL_SERVER_ERROR, e.to_string())
+            })?;
     }
 
-    tx.commit().await.map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, "Failed to commit transaction".to_string()))?;
+    tx.commit().await.map_err(|e| {
+        eprintln!("ERROR: Failed to commit transaction: {:?}", e);
+        (StatusCode::INTERNAL_SERVER_ERROR, "Failed to commit transaction".to_string())
+    })?;
+    
+    println!("DEBUG: Batch attendance submitted successfully");
     Ok(serde_json::json!({"message": "Batch attendance submitted"}))
 }
 
@@ -244,13 +269,17 @@ pub async fn approve_attendance_correction(pool: &PgPool, payload: ApproveAttend
     if payload.action == "APPROVE" {
         let request = faculty_repository::find_correction_request(pool, payload.request_id).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?.ok_or((StatusCode::NOT_FOUND, "Request not found".to_string()))?;
         let user_uuid = request["user_id"].as_str().and_then(|s| Uuid::parse_str(s).ok()).unwrap_or_default();
+        
+        let student_login_id: String = sqlx::query_scalar("SELECT login_id FROM users WHERE id = $1")
+            .bind(user_uuid).fetch_one(pool).await.unwrap_or_else(|_| "".to_string());
+
         let dates = request["dates"].as_array().cloned().unwrap_or_default();
 
         for d in dates {
             let date_str = d["date"].as_str().unwrap_or_default();
             let session = d["session"].as_str().unwrap_or_default();
             let section = d["section"].as_str().unwrap_or_default();
-            faculty_repository::insert_attendance(&mut tx, user_uuid, date_str, "present", session, section).await.ok();
+            faculty_repository::insert_attendance(&mut tx, user_uuid, &student_login_id, payload.sender_id, date_str, "present", session, section).await.ok();
         }
     }
 

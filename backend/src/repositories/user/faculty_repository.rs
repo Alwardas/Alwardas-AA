@@ -100,13 +100,28 @@ pub async fn update_students_section(pool: &PgPool, student_ids: &[String], new_
         .execute(pool).await.map(|r| r.rows_affected())
 }
 
-pub async fn insert_attendance(executor: &mut sqlx::Transaction<'_, Postgres>, student_uuid: Uuid, date: &str, status: &str, session: &str, section: &str) -> Result<u64, sqlx::Error> {
+pub async fn insert_attendance(
+    executor: &mut sqlx::Transaction<'_, Postgres>, 
+    student_uuid: Uuid, 
+    student_login_id: &str,
+    faculty_uuid: Uuid,
+    date: &str, 
+    status: &str, 
+    session: &str, 
+    section: &str
+) -> Result<u64, sqlx::Error> {
     sqlx::query(
-        "INSERT INTO attendance (student_uuid, date, status, session, section) 
-         VALUES ($1, $2::DATE, $3, $4, $5) 
-         ON CONFLICT (student_uuid, date, session) DO UPDATE SET status = $3"
+        "INSERT INTO attendance (student_uuid, student_login_id, faculty_uuid, date, status, session, section) 
+         VALUES ($1, $2, $3, $4::DATE, $5, $6, $7) 
+         ON CONFLICT (student_login_id, date, session) DO UPDATE SET status = $5"
     )
-    .bind(student_uuid).bind(date).bind(status).bind(session).bind(section)
+    .bind(student_uuid)
+    .bind(student_login_id)
+    .bind(faculty_uuid)
+    .bind(date)
+    .bind(status)
+    .bind(session)
+    .bind(section)
     .execute(&mut **executor).await.map(|r| r.rows_affected())
 }
 
