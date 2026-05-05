@@ -2,8 +2,6 @@
 .git
 .gitignore
 
-# Ignore Frontend (Huge!)
-frontend/
 
 # Ignore Target folders (Huge!)
 target/
