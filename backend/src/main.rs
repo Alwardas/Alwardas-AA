@@ -173,10 +173,8 @@ async fn main() {
                         }
                     }
                 } else {
-                    // Fallback for Web/SPA: Try to serve the static file, else return index.html
                     let path = req.uri().path();
                     
-                    // If it's an API route that reached here, it's a real 404
                     if path.starts_with("/api") {
                         return axum::http::Response::builder()
                             .status(axum::http::StatusCode::NOT_FOUND)
@@ -184,7 +182,24 @@ async fn main() {
                             .unwrap();
                     }
 
-                    // Otherwise, serve index.html for Flutter's client-side routing
+                    // 1. Try to serve the exact file from static/
+                    let file_path = format!("static{}", path);
+                    let normalized_path = if file_path.ends_with("/") {
+                        format!("{}index.html", file_path)
+                    } else {
+                        file_path
+                    };
+
+                    if let Ok(content) = tokio::fs::read(&normalized_path).await {
+                        let mime = mime_guess::from_path(&normalized_path).first_or_octet_stream();
+                        return axum::http::Response::builder()
+                            .header("content-type", mime.to_string())
+                            .status(axum::http::StatusCode::OK)
+                            .body(Body::from(content))
+                            .unwrap();
+                    }
+
+                    // 2. If file not found, serve index.html (for SPA routing)
                     match tokio::fs::read_to_string("static/index.html").await {
                         Ok(content) => axum::http::Response::builder()
                             .header("content-type", "text/html")
@@ -193,7 +208,7 @@ async fn main() {
                             .unwrap(),
                         Err(_) => axum::http::Response::builder()
                             .status(axum::http::StatusCode::NOT_FOUND)
-                            .body(Body::from("Frontend not found. Did you build the web app?"))
+                            .body(Body::from("Frontend not found."))
                             .unwrap(),
                     }
                 }
