@@ -353,55 +353,57 @@ class _LoginScreenState extends State<LoginScreen> {
 
           
           // 2. Scrollable Content (Logo + Card)
-          Center(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom + 20,
-                top: 20,
-                left: 20,
-                right: 20,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 40),
-                  // App Logo in the middle area
-                  Image.asset(
-                    'assets/images/logo.png',
-                    height: 140,
-                    fit: BoxFit.contain,
-                    errorBuilder: (context, error, stackTrace) =>
-                        const Icon(Icons.school, size: 80, color: Colors.white),
-                  ),
-                  
-                  const SizedBox(height: 40),
-                  
-                  // Login Fields Card at Bottom
-                  Container(
-                    width: double.infinity,
-                    constraints: const BoxConstraints(maxWidth: 400),
-                    padding: const EdgeInsets.all(32),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(35),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.12),
-                          blurRadius: 15,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
+          SafeArea(
+            child: Center(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom + 20,
+                  top: 20,
+                  left: 20,
+                  right: 20,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 20),
+                    // App Logo in the middle area
+                    Image.asset(
+                      'assets/images/logo.png',
+                      height: 140,
+                      fit: BoxFit.contain,
+                      errorBuilder: (context, error, stackTrace) =>
+                          const Icon(Icons.school, size: 80, color: Colors.white),
                     ),
-                    child: _LoginFields(
-                      loginIdController: _loginIdController,
-                      passwordController: _passwordController,
-                      isLoading: _isLoading,
-                      onLogin: _handleLogin,
-                      isDark: isDark,
+                    
+                    const SizedBox(height: 40),
+                    
+                    // Login Fields Card at Bottom
+                    Container(
+                      width: double.infinity,
+                      constraints: const BoxConstraints(maxWidth: 400),
+                      padding: const EdgeInsets.all(32),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(35),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.12),
+                            blurRadius: 15,
+                            offset: const Offset(0, 8),
+                          ),
+                        ],
+                      ),
+                      child: _LoginFields(
+                        loginIdController: _loginIdController,
+                        passwordController: _passwordController,
+                        isLoading: _isLoading,
+                        onLogin: _handleLogin,
+                        isDark: isDark,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 20),
-                ],
+                    const SizedBox(height: 20),
+                  ],
+                ),
               ),
             ),
           ),
