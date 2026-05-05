@@ -50,7 +50,6 @@ async fn main() {
 
 
     let app = Router::new()
-        .route("/", get(root))
         .route("/health", get(health_check))
         .route("/api/signup", post(signup_handler))
         .route("/api/login", post(login_handler))
