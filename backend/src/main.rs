@@ -150,10 +150,13 @@ async fn main() {
         .route("/api/staff/all", get(hod::get_all_staff_handler))
         .route("/api/hod/faculty-assignment", get(hod::get_faculty_assignment_handler))
         .with_state(AppState { pool })
+        .nest_service("/web", tower_http::services::ServeDir::new("static"))
         .fallback(move |req: axum::extract::Request| {
             let mut grpc_service = grpc_service.clone();
             async move {
-                if req.headers().get("content-type").map_or(false, |v| v.as_bytes().starts_with(b"application/grpc")) {
+                let is_grpc = req.headers().get("content-type").map_or(false, |v| v.as_bytes().starts_with(b"application/grpc"));
+                
+                if is_grpc {
                     use http_body_util::BodyExt;
                     let (parts, body) = req.into_parts();
                     let body = body.map_err(|e| tonic::Status::internal(e.to_string())).boxed_unsync();
@@ -171,11 +174,29 @@ async fn main() {
                         }
                     }
                 } else {
-                    println!("DEBUG: 404 Not Found: {} {}", req.method(), req.uri());
-                    axum::http::Response::builder()
-                        .status(axum::http::StatusCode::NOT_FOUND)
-                        .body(Body::from("Route Not Found"))
-                        .unwrap()
+                    // Fallback for Web/SPA: Try to serve the static file, else return index.html
+                    let path = req.uri().path();
+                    
+                    // If it's an API route that reached here, it's a real 404
+                    if path.starts_with("/api") {
+                        return axum::http::Response::builder()
+                            .status(axum::http::StatusCode::NOT_FOUND)
+                            .body(Body::from("API Route Not Found"))
+                            .unwrap();
+                    }
+
+                    // Otherwise, serve index.html for Flutter's client-side routing
+                    match tokio::fs::read_to_string("static/index.html").await {
+                        Ok(content) => axum::http::Response::builder()
+                            .header("content-type", "text/html")
+                            .status(axum::http::StatusCode::OK)
+                            .body(Body::from(content))
+                            .unwrap(),
+                        Err(_) => axum::http::Response::builder()
+                            .status(axum::http::StatusCode::NOT_FOUND)
+                            .body(Body::from("Frontend not found. Did you build the web app?"))
+                            .unwrap(),
+                    }
                 }
             }
         })

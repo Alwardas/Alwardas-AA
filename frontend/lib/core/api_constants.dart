@@ -6,10 +6,17 @@ class ApiConstants {
   static const String _prodGrpcHost = 'alwardas-aa-production-e288.up.railway.app';
 
   static String get baseUrl {
+    if (kIsWeb) {
+      // In web, use the current origin (e.g., https://your-app.up.railway.app)
+      return Uri.base.origin;
+    }
     return _prodUrl; 
   }
   
   static String get grpcHost {
+    if (kIsWeb) {
+      return Uri.base.host;
+    }
      return _prodGrpcHost; 
   }
 
