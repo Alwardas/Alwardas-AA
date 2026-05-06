@@ -8,7 +8,7 @@ use crate::models::{
 
 pub async fn find_profile_by_id(pool: &PgPool, user_uuid: Uuid) -> Result<Option<FacultyProfileResponse>, sqlx::Error> {
     sqlx::query_as::<Postgres, FacultyProfileResponse>(
-        "SELECT full_name, login_id, role, branch, phone_number, dob, experience, email, title FROM users WHERE id = $1"
+        "SELECT full_name, login_id as faculty_id, branch, email, phone_number, experience, dob FROM users WHERE id = $1"
     )
     .bind(user_uuid)
     .fetch_optional(pool)
