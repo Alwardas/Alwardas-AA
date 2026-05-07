@@ -439,14 +439,21 @@ class _StudentDashboardState extends State<StudentDashboard> {
             left: 24, 
             right: 24
           ),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFF6B48FF), Color(0xFF4B83FF), Color(0xFF1EC9F8)],
-              stops: [0.0, 0.5, 1.0],
+              colors: isDark ? AppTheme.darkHeaderGradient : [const Color(0xFF6B48FF), const Color(0xFF4B83FF), const Color(0xFF1EC9F8)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
-            borderRadius: BorderRadius.only(
+            border: isDark ? Border(bottom: BorderSide(color: Colors.white.withOpacity(0.1), width: 1)) : null,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(isDark ? 0.4 : 0.1),
+                blurRadius: 25,
+                offset: const Offset(0, 12),
+              ),
+            ],
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40),
             ),

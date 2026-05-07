@@ -246,7 +246,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
 
   Widget _buildHomeTab(BuildContext context, Color cardColor, Color textColor, Color subTextColor, bool isDark) {
     // Principal Header Gradient ['#8E2DE2', '#4A00E0']
-    final List<Color> headerGradient = [const Color(0xFF8E2DE2), const Color(0xFF4A00E0)];
+    final List<Color> headerGradient = isDark ? AppTheme.darkHeaderGradient : [const Color(0xFF8E2DE2), const Color(0xFF4A00E0)];
 
     return Column(
       children: [
@@ -264,6 +264,14 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
+            border: isDark ? Border(bottom: BorderSide(color: Colors.white.withOpacity(0.1), width: 1)) : null,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(isDark ? 0.4 : 0.1),
+                blurRadius: 25,
+                offset: const Offset(0, 12),
+              ),
+            ],
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40),
@@ -314,8 +322,8 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  border: Border.all(color: Colors.white.withValues(alpha: 0.4), width: 1),
-                  color: Colors.white.withValues(alpha: 0.1),
+                  border: Border.all(color: Colors.white.withOpacity(0.4), width: 1),
+                  color: Colors.white.withOpacity(0.1),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,

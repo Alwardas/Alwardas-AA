@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class ThemeColors {
   // Futuristic Dark Theme
@@ -19,8 +19,8 @@ class ThemeColors {
   static const Color darkTextMuted = Color(0xFF64748B);
   static const Color darkTextOnAccent = Color(0xFF020617);
 
-  // Header Gradient
-  static const List<Color> headerGradient = [Color(0xFF1E1B4B), Color(0xFF312E81)];
+  // Header Gradient (Ultra Visible Dark Theme Version)
+  static const List<Color> headerGradient = [Color(0xFF6366F1), Color(0xFF4F46E5)]; // Brighter Indigo transition
   
   // Announcement Gradients
   static const List<Color> examGradient = [Color(0xFF2563EB), Color(0xFF38BDF8)];

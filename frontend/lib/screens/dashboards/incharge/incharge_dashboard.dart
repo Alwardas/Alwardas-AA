@@ -10,6 +10,7 @@ import 'incharge_tracking_screen.dart';
 import 'incharge_reports_screen.dart';
 import '../../auth/login_screen.dart';
 import 'package:flutter/services.dart';
+import '../../../core/theme/app_theme.dart';
 
 class InchargeDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -78,13 +79,21 @@ class _InchargeDashboardState extends State<InchargeDashboard> {
             left: 24,
             right: 24,
           ),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+              colors: isDark ? AppTheme.darkHeaderGradient : [const Color(0xFF6366F1), const Color(0xFF8B5CF6)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
-            borderRadius: BorderRadius.only(
+            border: isDark ? Border(bottom: BorderSide(color: Colors.white.withOpacity(0.1), width: 1)) : null,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(isDark ? 0.4 : 0.1),
+                blurRadius: 15,
+                offset: const Offset(0, 8),
+              ),
+            ],
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(30),
               bottomRight: Radius.circular(30),
             ),

@@ -37,15 +37,14 @@ class FacultyDashboard extends StatefulWidget {
   State<FacultyDashboard> createState() => _FacultyDashboardState();
 }
 
-
 class _FacultyDashboardState extends State<FacultyDashboard> {
   int _selectedIndex = 1; // Default to Home
   Timer? _notificationTimer;
   String? _lastNotifiedId;
-  
+
   List<Map<String, dynamic>> _todaySchedule = [];
   List<Map<String, dynamic>> _todayPracticals = [];
-  
+
   // Attendance Stats
   int _absentCount = 0;
   List<dynamic> _absentStudents = [];
@@ -128,19 +127,22 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
       final String branch = user['branch'] ?? 'Computer Engineering';
 
       // 1. Fetch Timings
-      final timingUri = Uri.parse('${ApiConstants.baseUrl}/api/department/timing').replace(queryParameters: {'branch': branch});
+      final timingUri =
+          Uri.parse('${ApiConstants.baseUrl}/api/department/timing')
+              .replace(queryParameters: {'branch': branch});
       final timingRes = await http.get(timingUri);
       if (timingRes.statusCode != 200) return;
       final List<dynamic> timings = json.decode(timingRes.body);
       if (timings.isEmpty) return;
-      
+
       final t = timings[0];
       int startHour = t['start_hour'] ?? 9;
       int startMinute = t['start_minute'] ?? 0;
       int classDuration = t['class_duration'] ?? 50;
       int breakDuration = t['short_break_duration'] ?? 10;
       int lunchDuration = t['lunch_duration'] ?? 50;
-      List<dynamic> slotConfig = List<dynamic>.from(t['slot_config'] ?? ['P','P','SB','P','P','LB','P','P','SB','P','P']);
+      List<dynamic> slotConfig = List<dynamic>.from(t['slot_config'] ??
+          ['P', 'P', 'SB', 'P', 'P', 'LB', 'P', 'P', 'SB', 'P', 'P']);
 
       // 2. Map period index to start time
       Map<int, TimeOfDay> periodStartTimes = {};
@@ -148,7 +150,8 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
       int pNum = 1;
       for (var type in slotConfig) {
         if (type == 'P') {
-          periodStartTimes[pNum] = TimeOfDay(hour: currentTime.hour, minute: currentTime.minute);
+          periodStartTimes[pNum] =
+              TimeOfDay(hour: currentTime.hour, minute: currentTime.minute);
           currentTime = currentTime.add(Duration(minutes: classDuration));
           pNum++;
         } else if (type == 'SB') {
@@ -159,14 +162,22 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
       }
 
       // 3. Fetch My Schedule
-      final scheduleUri = Uri.parse('${ApiConstants.baseUrl}/api/timetable').replace(queryParameters: {'facultyId': fid});
+      final scheduleUri = Uri.parse('${ApiConstants.baseUrl}/api/timetable')
+          .replace(queryParameters: {'facultyId': fid});
       final scheduleRes = await http.get(scheduleUri);
       if (scheduleRes.statusCode != 200) return;
       final List<dynamic> schedule = json.decode(scheduleRes.body);
 
       // 4. Schedule Notifications & Display
-      const mapDays = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6};
-      
+      const mapDays = {
+        'Monday': 1,
+        'Tuesday': 2,
+        'Wednesday': 3,
+        'Thursday': 4,
+        'Friday': 5,
+        'Saturday': 6
+      };
+
       String todayStr = DateFormat('EEEE').format(DateTime.now());
       List<Map<String, dynamic>> tempNormal = [];
       List<Map<String, dynamic>> tempPractical = [];
@@ -181,57 +192,68 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
             DateTime now = DateTime.now();
             int daysUntil = targetDay - now.weekday;
             if (daysUntil < 0) daysUntil += 7;
-            
-            DateTime scheduledDateTime = DateTime(
-              now.year, now.month, now.day,
-              startTime.hour, startTime.minute
-            ).add(Duration(days: daysUntil));
+
+            DateTime scheduledDateTime = DateTime(now.year, now.month, now.day,
+                    startTime.hour, startTime.minute)
+                .add(Duration(days: daysUntil));
 
             // Set to 1 minute before
-            scheduledDateTime = scheduledDateTime.subtract(const Duration(minutes: 1));
+            scheduledDateTime =
+                scheduledDateTime.subtract(const Duration(minutes: 1));
 
             // If the time for today has already passed, move to next week's occurrence
             if (scheduledDateTime.isBefore(now)) {
-              scheduledDateTime = scheduledDateTime.add(const Duration(days: 7));
+              scheduledDateTime =
+                  scheduledDateTime.add(const Duration(days: 7));
             }
 
             await NotificationService.scheduleClassNotification(
               id: 'class_${item['id']}'.hashCode,
               title: 'Class Reminder (1 min to go)',
-              body: 'Upcoming: ${item['subject']} for ${item['branch']} ${item['year']} ${item['section']}',
+              body:
+                  'Upcoming: ${item['subject']} for ${item['branch']} ${item['year']} ${item['section']}',
               scheduledTime: scheduledDateTime,
             );
 
             if (dayStr == todayStr) {
-               String hourStr = startTime.hour > 12 ? (startTime.hour - 12).toString() : (startTime.hour == 0 ? "12" : startTime.hour.toString());
-               String amPmStr = startTime.hour >= 12 ? 'PM' : 'AM';
-               String classTime = "$hourStr:${startTime.minute.toString().padLeft(2, '0')} $amPmStr";
-               Map<String, dynamic> classData = {
-                 'subject': item['subject'],
-                 'time': classTime,
-                 'year': item['year'] ?? '',
-                 'branch': item['branch'] ?? '',
-                 'section': item['section'] ?? '',
-                 'pIndex': pIndex,
-               };
-               
-                tempNormal.add(classData);
-                if (item['subject'].toString().toLowerCase().contains('practical') || item['subject'].toString().toLowerCase().contains('lab')) {
-                   tempPractical.add(classData);
-                }
+              String hourStr = startTime.hour > 12
+                  ? (startTime.hour - 12).toString()
+                  : (startTime.hour == 0 ? "12" : startTime.hour.toString());
+              String amPmStr = startTime.hour >= 12 ? 'PM' : 'AM';
+              String classTime =
+                  "$hourStr:${startTime.minute.toString().padLeft(2, '0')} $amPmStr";
+              Map<String, dynamic> classData = {
+                'subject': item['subject'],
+                'time': classTime,
+                'year': item['year'] ?? '',
+                'branch': item['branch'] ?? '',
+                'section': item['section'] ?? '',
+                'pIndex': pIndex,
+              };
+
+              tempNormal.add(classData);
+              if (item['subject']
+                      .toString()
+                      .toLowerCase()
+                      .contains('practical') ||
+                  item['subject'].toString().toLowerCase().contains('lab')) {
+                tempPractical.add(classData);
+              }
             }
           }
         }
       }
 
-      tempNormal.sort((a, b) => (a['pIndex'] as int).compareTo(b['pIndex'] as int));
-      tempPractical.sort((a, b) => (a['pIndex'] as int).compareTo(b['pIndex'] as int));
+      tempNormal
+          .sort((a, b) => (a['pIndex'] as int).compareTo(b['pIndex'] as int));
+      tempPractical
+          .sort((a, b) => (a['pIndex'] as int).compareTo(b['pIndex'] as int));
 
       if (mounted) {
-         setState(() {
-            _todaySchedule = tempNormal;
-            _todayPracticals = tempPractical;
-         });
+        setState(() {
+          _todaySchedule = tempNormal;
+          _todayPracticals = tempPractical;
+        });
       }
     } catch (e) {
       debugPrint("Setup Class Reminders Error (Faculty): $e");
@@ -247,21 +269,26 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
       final dateStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
       // Try Morning session by default
-      final statsUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
+      final statsUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats')
+          .replace(queryParameters: {
         'branch': branch,
         'date': dateStr,
         'session': 'Morning'
       });
       final statsRes = await http.get(statsUri);
-      
-      final absentUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/absents').replace(queryParameters: {
-        'branch': branch,
-        'date': dateStr,
-        'session': 'Morning'
-      });
+
+      final absentUri =
+          Uri.parse('${ApiConstants.baseUrl}/api/attendance/absents').replace(
+              queryParameters: {
+            'branch': branch,
+            'date': dateStr,
+            'session': 'Morning'
+          });
       final absentRes = await http.get(absentUri);
 
-      if (statsRes.statusCode == 200 && absentRes.statusCode == 200 && mounted) {
+      if (statsRes.statusCode == 200 &&
+          absentRes.statusCode == 200 &&
+          mounted) {
         final stats = json.decode(statsRes.body);
         final absents = json.decode(absentRes.body);
         setState(() {
@@ -278,7 +305,8 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
 
   void _showAbsentList() {
     if (_absentStudents.isEmpty && _absentCount == 0) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("No attendance records for today yet.")));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text("No attendance records for today yet.")));
       return;
     }
     Navigator.push(
@@ -310,15 +338,15 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
   }
 
   void _logout() async {
-     _notificationTimer?.cancel();
-     await AuthService.logout();
-     if (mounted) {
-       Navigator.pushAndRemoveUntil(
-         context,
-         MaterialPageRoute(builder: (context) => const LoginScreen()),
-         (route) => false,
-       );
-     }
+    _notificationTimer?.cancel();
+    await AuthService.logout();
+    if (mounted) {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        (route) => false,
+      );
+    }
   }
 
   @override
@@ -334,7 +362,8 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
 
     // Status Bar Logic - Index 1 is Home
     final bool isHomeTab = _selectedIndex == 1;
-    SystemUiOverlayStyle overlayStyle = AppTheme.getAdaptiveOverlayStyle(isHomeTab || isDark);
+    SystemUiOverlayStyle overlayStyle =
+        AppTheme.getAdaptiveOverlayStyle(isHomeTab || isDark);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: overlayStyle,
@@ -350,7 +379,9 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
           body: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient,
+                colors: isDark
+                    ? AppTheme.darkBodyGradient
+                    : AppTheme.lightBodyGradient,
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -358,8 +389,10 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
             child: IndexedStack(
               index: _selectedIndex,
               children: [
-                _buildMenuTab(context, isDark, textColor, subTextColor, cardColor),
-                _buildHomeTab(context, isDark, textColor, subTextColor, cardColor),
+                _buildMenuTab(
+                    context, isDark, textColor, subTextColor, cardColor),
+                _buildHomeTab(
+                    context, isDark, textColor, subTextColor, cardColor),
                 FacultyProfileScreen(userData: widget.userData),
               ],
             ),
@@ -371,9 +404,12 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
             unselectedItemColor: Colors.grey,
             backgroundColor: isDark ? const Color(0xFF1C1C2E) : Colors.white,
             items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.grid_view_rounded), label: 'Menu'),
-              BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: 'Home'),
-              BottomNavigationBarItem(icon: Icon(Icons.person_rounded), label: 'Profile'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.grid_view_rounded), label: 'Menu'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home_rounded), label: 'Home'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person_rounded), label: 'Profile'),
             ],
           ),
         ),
@@ -381,26 +417,32 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
     );
   }
 
-  Widget _buildHomeTab(BuildContext context, bool isDark, Color textColor, Color subTextColor, Color cardColor) {
-
+  Widget _buildHomeTab(BuildContext context, bool isDark, Color textColor,
+      Color subTextColor, Color cardColor) {
     return Column(
       children: [
         // 1. Header Section
         Container(
           padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top + 10, 
-            bottom: 20, 
-            left: 24, 
-            right: 24
-          ),
-          decoration: const BoxDecoration(
+              top: MediaQuery.of(context).padding.top + 10,
+              bottom: 20,
+              left: 24,
+              right: 24),
+          decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFF6B48FF), Color(0xFF4B83FF), Color(0xFF1EC9F8)],
-              stops: [0.0, 0.5, 1.0],
+              colors: isDark ? AppTheme.darkHeaderGradient : [const Color(0xFF6B48FF), const Color(0xFF4B83FF), const Color(0xFF1EC9F8)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
-            borderRadius: BorderRadius.only(
+            border: isDark ? Border(bottom: BorderSide(color: Colors.white.withOpacity(0.1), width: 1)) : null,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(isDark ? 0.4 : 0.1),
+                blurRadius: 25,
+                offset: const Offset(0, 12),
+              ),
+            ],
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40),
             ),
@@ -413,60 +455,71 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                     Text(
-                       'Welcome Back,',
+                    Text(
+                      'Welcome Back,',
+                      style: GoogleFonts.poppins(
+                        color: Colors.white.withValues(alpha: 0.9),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        widget.userData['full_name']
+                                ?.toString()
+                                .toUpperCase() ??
+                            'FACULTY',
                         style: GoogleFonts.poppins(
-                          color: Colors.white.withValues(alpha: 0.9),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 0.5,
                         ),
-                     ),
-                     const SizedBox(height: 2),
-                     FittedBox(
-                       fit: BoxFit.scaleDown,
-                       alignment: Alignment.centerLeft,
-                       child: Text(
-                         widget.userData['full_name']?.toString().toUpperCase() ?? 'FACULTY', 
-                          style: GoogleFonts.poppins(
-                            color: Colors.white, 
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 0.5,
-                          ),
-                       ),
-                     ),
-                     const SizedBox(height: 4),
-                     Text(
-                       '${widget.userData['branch'] ?? 'Department'} ( Faculty )',
-                        style: GoogleFonts.poppins(
-                          color: Colors.white.withValues(alpha: 0.8), 
-                          fontSize: 13,
-                        ),
-                     ),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      '${widget.userData['branch'] ?? 'Department'} ( Faculty )',
+                      style: GoogleFonts.poppins(
+                        color: Colors.white.withValues(alpha: 0.8),
+                        fontSize: 13,
+                      ),
+                    ),
                   ],
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  border: Border.all(color: Colors.white.withValues(alpha: 0.4), width: 1),
-                  color: Colors.white.withValues(alpha: 0.1),
+                  border: Border.all(
+                      color: Colors.white.withOpacity(0.4), width: 1),
+                  color: Colors.white.withOpacity(0.1),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyNotificationsScreen())),
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) =>
+                                  const FacultyNotificationsScreen())),
                       child: Stack(
                         clipBehavior: Clip.none,
                         children: [
-                           const Icon(Icons.notifications_none, color: Colors.white, size: 22),
-                           Positioned(
+                          const Icon(Icons.notifications_none,
+                              color: Colors.white, size: 22),
+                          Positioned(
                             right: 0,
                             top: 0,
                             child: Container(
-                              width: 8, height: 8,
+                              width: 8,
+                              height: 8,
                               decoration: const BoxDecoration(
                                 color: Colors.redAccent,
                                 shape: BoxShape.circle,
@@ -492,9 +545,9 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'Faculty'),
+                  SharedDashboardAnnouncements(
+                      userRole: widget.userData['role'] ?? 'Faculty'),
                   const SizedBox(height: 15),
-
 
                   // Quick Access
                   Row(
@@ -522,7 +575,8 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     padding: EdgeInsets.zero,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 15,
                       mainAxisSpacing: 15,
@@ -538,7 +592,10 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                         const Color(0xFF3b5998),
                         textColor,
                         subTextColor,
-                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const FacultyClassesScreen())),
                       ),
                       _buildQuickAccessCard(
                         Icons.schedule,
@@ -549,7 +606,10 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                         const Color(0xFF9b59b6),
                         textColor,
                         subTextColor,
-                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const FacultyScheduleScreen())),
                       ),
                       _buildQuickAccessCard(
                         Icons.check_circle_outline,
@@ -560,7 +620,11 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                         const Color(0xFF2ecc71),
                         textColor,
                         subTextColor,
-                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyAttendanceScreen(userData: widget.userData))),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => FacultyAttendanceScreen(
+                                    userData: widget.userData))),
                       ),
                       _buildQuickAccessCard(
                         Icons.people_outline,
@@ -571,12 +635,16 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                         const Color(0xFF3498db),
                         textColor,
                         subTextColor,
-                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorStudentsScreen())),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) =>
+                                    const CoordinatorStudentsScreen())),
                       ),
                     ],
                   ),
                   const SizedBox(height: 15),
-                  
+
                   // Bottom Horizontal Cards
                   Row(
                     children: [
@@ -589,7 +657,11 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           cardColor,
                           textColor,
                           subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => IssueManagementScreen(
+                                      userData: widget.userData))),
                         ),
                       ),
                       const SizedBox(width: 15),
@@ -602,7 +674,11 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                           cardColor,
                           textColor,
                           subTextColor,
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyRequestsScreen(userData: widget.userData))),
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => FacultyRequestsScreen(
+                                      userData: widget.userData))),
                         ),
                       ),
                     ],
@@ -611,41 +687,44 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
 
                   // Today's Schedule
                   if (_todaySchedule.isNotEmpty) ...[
-                      Text(
-                        "Today's Schedule",
-                        style: GoogleFonts.poppins(
-                          color: textColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    Text(
+                      "Today's Schedule",
+                      style: GoogleFonts.poppins(
+                        color: textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
                       ),
-                      const SizedBox(height: 8),
-                      ..._todaySchedule.map((cls) => _buildClassCard(cls, isDark, textColor, subTextColor)),
+                    ),
+                    const SizedBox(height: 8),
+                    ..._todaySchedule.map((cls) =>
+                        _buildClassCard(cls, isDark, textColor, subTextColor)),
                   ] else ...[
-                      Text(
-                        "Today's Schedule",
-                        style: GoogleFonts.poppins(
-                          color: textColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    Text(
+                      "Today's Schedule",
+                      style: GoogleFonts.poppins(
+                        color: textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
                       ),
-                      const SizedBox(height: 8),
-                      Text("No classes scheduled for today.", style: GoogleFonts.poppins(color: subTextColor)),
+                    ),
+                    const SizedBox(height: 8),
+                    Text("No classes scheduled for today.",
+                        style: GoogleFonts.poppins(color: subTextColor)),
                   ],
 
                   if (_todayPracticals.isNotEmpty) ...[
-                      const SizedBox(height: 15),
-                      Text(
-                        "Today's Practical Schedule",
-                        style: GoogleFonts.poppins(
-                          color: textColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    const SizedBox(height: 15),
+                    Text(
+                      "Today's Practical Schedule",
+                      style: GoogleFonts.poppins(
+                        color: textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
                       ),
-                      const SizedBox(height: 8),
-                      ..._todayPracticals.map((cls) => _buildClassCard(cls, isDark, textColor, subTextColor)),
+                    ),
+                    const SizedBox(height: 8),
+                    ..._todayPracticals.map((cls) =>
+                        _buildClassCard(cls, isDark, textColor, subTextColor)),
                   ],
 
                   const SizedBox(height: 100),
@@ -658,23 +737,31 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
     );
   }
 
-
   Widget _buildHeaderIcon(IconData icon) {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.2),
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 1),
+        border:
+            Border.all(color: Colors.white.withValues(alpha: 0.5), width: 1),
       ),
       child: Icon(icon, color: Colors.white, size: 20),
     );
   }
 
-
-
-  Widget _buildQuickAccessCard(IconData icon, String title, String subtitle, Color cardColor, Color iconBgColor, Color iconColor, Color textColor, Color subTextColor, {VoidCallback? onTap}) {
-    final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
+  Widget _buildQuickAccessCard(
+      IconData icon,
+      String title,
+      String subtitle,
+      Color cardColor,
+      Color iconBgColor,
+      Color iconColor,
+      Color textColor,
+      Color subTextColor,
+      {VoidCallback? onTap}) {
+    final isDark =
+        Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -683,12 +770,15 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
-             width: 1,
+            color:
+                isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
+            width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
+              color: isDark
+                  ? Colors.black.withValues(alpha: 0.2)
+                  : Colors.grey.withValues(alpha: 0.1),
               blurRadius: 15,
               offset: const Offset(0, 8),
             ),
@@ -711,7 +801,10 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
               child: Text(
                 title,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.w600, fontSize: 13),
+                style: GoogleFonts.poppins(
+                    color: textColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13),
               ),
             ),
             const SizedBox(height: 2),
@@ -730,8 +823,11 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
     );
   }
 
-  Widget _buildHorizontalCard(IconData icon, String title, String subtitle, Color color, Color cardColor, Color textColor, Color subTextColor, {VoidCallback? onTap}) {
-    final isDark = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
+  Widget _buildHorizontalCard(IconData icon, String title, String subtitle,
+      Color color, Color cardColor, Color textColor, Color subTextColor,
+      {VoidCallback? onTap}) {
+    final isDark =
+        Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -740,12 +836,15 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
-             width: 1,
+            color:
+                isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
+            width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1),
+              color: isDark
+                  ? Colors.black.withValues(alpha: 0.2)
+                  : Colors.grey.withValues(alpha: 0.1),
               blurRadius: 15,
               offset: const Offset(0, 8),
             ),
@@ -769,12 +868,16 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                 children: [
                   Text(
                     title,
-                    style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 13),
+                    style: GoogleFonts.poppins(
+                        color: textColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13),
                   ),
                   if (subtitle.isNotEmpty)
                     Text(
                       subtitle,
-                      style: GoogleFonts.poppins(color: subTextColor, fontSize: 10),
+                      style: GoogleFonts.poppins(
+                          color: subTextColor, fontSize: 10),
                     ),
                 ],
               ),
@@ -785,55 +888,78 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
       ),
     );
   }
-  Widget _buildMenuTab(BuildContext context, bool isDark, Color textColor, Color subTextColor, Color cardColor) {
+
+  Widget _buildMenuTab(BuildContext context, bool isDark, Color textColor,
+      Color subTextColor, Color cardColor) {
     final List<Map<String, dynamic>> menuItems = [
       {
         'icon': Icons.menu_book_outlined,
         'title': 'Classes',
         'color': const Color(0xFF3b5998),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
+        'onTap': () => Navigator.push(context,
+            MaterialPageRoute(builder: (_) => const FacultyClassesScreen())),
       },
       {
         'icon': Icons.schedule,
         'title': 'Schedule',
         'color': const Color(0xFF9b59b6),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
+        'onTap': () => Navigator.push(context,
+            MaterialPageRoute(builder: (_) => const FacultyScheduleScreen())),
       },
       {
         'icon': Icons.check_circle_outline,
         'title': 'Attendance',
         'color': const Color(0xFF2ecc71),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyAttendanceScreen(userData: widget.userData))),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) =>
+                    FacultyAttendanceScreen(userData: widget.userData))),
       },
       {
         'icon': Icons.campaign_outlined,
         'title': 'Announcements',
         'color': const Color(0xFFF39C12),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyAnnouncementsScreen())),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => const FacultyAnnouncementsScreen())),
       },
       {
         'icon': Icons.report_problem_outlined,
         'title': 'Issues',
         'color': const Color(0xFFE74C3C),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData))),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) =>
+                    IssueManagementScreen(userData: widget.userData))),
       },
       {
         'icon': Icons.request_page_outlined,
         'title': 'Requests',
         'color': const Color(0xFF9B59B6),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => FacultyRequestsScreen(userData: widget.userData))),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) =>
+                    FacultyRequestsScreen(userData: widget.userData))),
       },
       {
         'icon': Icons.rate_review_outlined,
         'title': 'Feedbacks',
         'color': const Color(0xFF1ABC9C),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FacultyReviewsScreen())),
+        'onTap': () => Navigator.push(context,
+            MaterialPageRoute(builder: (_) => const FacultyReviewsScreen())),
       },
       {
         'icon': Icons.people_outline,
         'title': 'Students',
         'color': const Color(0xFF3498db),
-        'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CoordinatorStudentsScreen())),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => const CoordinatorStudentsScreen())),
       },
     ];
 
@@ -869,7 +995,9 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                       color: cardColor,
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
-                        color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+                        color: isDark
+                            ? Colors.white10
+                            : Colors.black.withValues(alpha: 0.05),
                         width: 1,
                       ),
                       boxShadow: [
@@ -885,10 +1013,12 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                         Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
-                            color: (item['color'] as Color).withValues(alpha: 0.1),
+                            color:
+                                (item['color'] as Color).withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(14),
                           ),
-                          child: Icon(item['icon'] as IconData, color: item['color'] as Color, size: 28),
+                          child: Icon(item['icon'] as IconData,
+                              color: item['color'] as Color, size: 28),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
@@ -916,7 +1046,9 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
       ),
     );
   }
-  Widget _buildClassCard(Map<String, dynamic> cls, bool isDark, Color textColor, Color subTextColor) {
+
+  Widget _buildClassCard(Map<String, dynamic> cls, bool isDark, Color textColor,
+      Color subTextColor) {
     return Container(
       margin: const EdgeInsets.only(bottom: 15),
       padding: const EdgeInsets.all(20),
@@ -930,7 +1062,9 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
             offset: const Offset(0, 5),
           ),
         ],
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+        border: Border.all(
+            color:
+                isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -954,13 +1088,13 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
             ),
           ),
           if (cls['year'] != null && cls['year'].toString().isNotEmpty)
-             Text(
-               'For: ${cls['branch']} ${cls['year']} ${cls['section']}',
-               style: GoogleFonts.poppins(
-                 color: subTextColor,
-                 fontSize: 14,
-               ),
-             ),
+            Text(
+              'For: ${cls['branch']} ${cls['year']} ${cls['section']}',
+              style: GoogleFonts.poppins(
+                color: subTextColor,
+                fontSize: 14,
+              ),
+            ),
         ],
       ),
     );

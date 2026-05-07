@@ -256,7 +256,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
 
   Widget _buildHomeTab(BuildContext context, Color cardColor, Color textColor, Color subTextColor, bool isDark) {
     // Coordinator Header Gradient (Futuristic Theme)
-    final List<Color> headerGradient = ThemeColors.headerGradient; 
+    final List<Color> headerGradient = isDark ? ThemeColors.headerGradient : AppTheme.lightHeaderGradient; 
     final theme = Theme.of(context);
 
     return Column(
@@ -275,6 +275,14 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
+            border: isDark ? Border(bottom: BorderSide(color: Colors.white.withOpacity(0.1), width: 1)) : null,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(isDark ? 0.4 : 0.1),
+                blurRadius: 25,
+                offset: const Offset(0, 12),
+              ),
+            ],
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40),
@@ -325,8 +333,8 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  border: Border.all(color: Colors.white.withValues(alpha: 0.4), width: 1),
-                  color: Colors.white.withValues(alpha: 0.1),
+                  border: Border.all(color: Colors.white.withOpacity(0.4), width: 1),
+                  color: Colors.white.withOpacity(0.1),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
