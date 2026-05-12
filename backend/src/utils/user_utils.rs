@@ -7,12 +7,21 @@ pub async fn resolve_user_id(id_str: &str, role_hint: &str, pool: &PgPool) -> Re
         return Ok(u);
     }
 
-    let row = sqlx::query("SELECT id FROM users WHERE login_id = $1 AND role = $2")
+    let mut row = sqlx::query("SELECT id FROM users WHERE login_id = $1 AND role = $2")
         .bind(id_str)
         .bind(role_hint)
         .fetch_optional(pool)
         .await
         .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
+
+    // Fallback: If not found with specific role, try without role hint (for HODs/Coordinators acting as Faculty)
+    if row.is_none() {
+        row = sqlx::query("SELECT id FROM users WHERE login_id = $1")
+            .bind(id_str)
+            .fetch_optional(pool)
+            .await
+            .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({"error": e.to_string()}))))?;
+    }
 
     match row {
         Some(r) => Ok(r.get("id")),
