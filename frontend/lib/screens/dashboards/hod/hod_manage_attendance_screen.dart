@@ -58,13 +58,13 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
       final amRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=MORNING&date=$dateStr&section=${Uri.encodeComponent(section)}'));
       if (amRes.statusCode == 200) {
         final data = json.decode(amRes.body);
-        setState(() => _morningMarked = data['submitted']);
+        setState(() => _morningMarked = data['marked'] ?? false);
       }
       
       final pmRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=AFTERNOON&date=$dateStr&section=${Uri.encodeComponent(section)}'));
       if (pmRes.statusCode == 200) {
         final data = json.decode(pmRes.body);
-        setState(() => _afternoonMarked = data['submitted']);
+        setState(() => _afternoonMarked = data['marked'] ?? false);
       }
     } catch (e) {
       debugPrint("Status check error: $e");
