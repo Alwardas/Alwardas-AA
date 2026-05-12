@@ -175,8 +175,9 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
          headers: {'Content-Type': 'application/json'},
          body: json.encode({
            'records': records,
-           'date': _date.toIso8601String(),
+           'date': _date.toIso8601String().split('T')[0], // Ensure YYYY-MM-DD
            'session': _session,
+           'section': widget.section ?? 'Section A',
            'markedBy': user?['login_id']
          })
        );
