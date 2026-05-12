@@ -63,7 +63,6 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
     final themeProvider = Provider.of<ThemeProvider>(context);
     final isDark = themeProvider.isDarkMode;
     final Color textColor = theme.colorScheme.onSurface;
-    final Color subTextColor = theme.colorScheme.secondary;
     final bool isCoordinator = widget.userRole.toLowerCase() == 'coordinator';
 
     return Column(

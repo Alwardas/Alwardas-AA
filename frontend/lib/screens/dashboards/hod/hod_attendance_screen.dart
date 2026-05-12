@@ -126,32 +126,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
     final dateStr = DateFormat('yyyy-MM-dd').format(_selectedDate); 
     
     try {
-      // 1. Fetch Overall Stats (Independent)
-      final overallUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats')
-          .replace(queryParameters: {
-            'branch': branch,
-            'date': dateStr,
-            'session': _selectedSession
-          });
-
-      // 1. Update overall stats first
-      try {
-        final res = await http.get(overallUri);
-        if (res.statusCode == 200 && mounted) {
-          final data = json.decode(res.body);
-          setState(() {
-            _stats = {
-                'totalStudents': data['totalStudents'] ?? 0,
-                'totalPresent': data['totalPresent'] ?? 0,
-                'totalAbsent': data['totalAbsent'] ?? 0
-            };
-          });
-          final prefs = await SharedPreferences.getInstance();
-          await prefs.setString('hod_overall_stats', json.encode(_stats));
-        }
-      } catch (e) {
-        debugPrint("Error fetching overall stats: $e");
-      }
+      // We will aggregate overall stats locally to avoid backend default parameter bugs
 
       // 2. Fetch Sections for Target or ALL years
       final yearsToProcess = targetYear != null ? [targetYear] : ['1st Year', '2nd Year', '3rd Year'];
@@ -176,20 +151,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
             });
           }
 
-          // Fetch Year Stats
-          final yearUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
-               'branch': branch,
-               'year': year,
-               'date': dateStr,
-               'session': _selectedSession
-          });
-          
-          final yearStatsRes = await http.get(yearUri);
-          if (yearStatsRes.statusCode == 200 && mounted) {
-            setState(() {
-              _detailedStats[year]['stats'] = json.decode(yearStatsRes.body);
-            });
-          }
+          // We will aggregate year stats from section results
 
           // Fetch Stats for Each Section
           final sectionFutures = sections.map((section) {
@@ -207,6 +169,9 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
           
           Map<String, dynamic> sectionStatsMap = {};
           bool yearAllMarked = true;
+          int yearTotalStudents = 0;
+          int yearTotalPresent = 0;
+          int yearTotalAbsent = 0;
 
           for (var entry in sectionResults) {
                final section = entry.key;
@@ -214,22 +179,41 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                
                if (sRes.statusCode == 200) {
                    final sData = json.decode(sRes.body);
-                   bool isMarked = (sData['totalPresent'] as int) + (sData['totalAbsent'] as int) > 0;
+                   int tStudents = int.tryParse(sData['totalStudents']?.toString() ?? '0') ?? 0;
+                   int tPresent = int.tryParse(sData['totalPresent']?.toString() ?? '0') ?? 0;
+                   int tAbsent = int.tryParse(sData['totalAbsent']?.toString() ?? '0') ?? 0;
+                   
+                   yearTotalStudents += tStudents;
+                   yearTotalPresent += tPresent;
+                   yearTotalAbsent += tAbsent;
+                   
+                   bool isMarked = sData['isMarked'] == true || (tPresent + tAbsent) > 0;
                    if (!isMarked) yearAllMarked = false;
                    
                    sectionStatsMap[section] = {
-                     'stats': sData,
+                     'stats': {
+                         'totalStudents': tStudents,
+                         'totalPresent': tPresent,
+                         'totalAbsent': tAbsent,
+                     },
                      'isMarked': isMarked
                    };
                } else {
                  yearAllMarked = false;
                }
           }
+          
+          if (sections.isEmpty) yearAllMarked = false;
 
           if (mounted) {
             setState(() {
               _detailedStats[year]['sections'] = sectionStatsMap;
               _detailedStats[year]['allMarked'] = yearAllMarked;
+              _detailedStats[year]['stats'] = {
+                  'totalStudents': yearTotalStudents,
+                  'totalPresent': yearTotalPresent,
+                  'totalAbsent': yearTotalAbsent,
+              };
               _fetchingYears.remove(year);
             });
             
@@ -240,6 +224,31 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
           debugPrint("Error fetching year stats for $year: $e");
           if (mounted) setState(() => _fetchingYears.remove(year));
         }
+      }
+
+      // Finalize Overall Aggregation
+      if (mounted) {
+          int overallTotalStudents = 0;
+          int overallTotalPresent = 0;
+          int overallTotalAbsent = 0;
+
+          for (String y in ['1st Year', '2nd Year', '3rd Year']) {
+              final s = _detailedStats[y]?['stats'] ?? {};
+              overallTotalStudents += (s['totalStudents'] as int?) ?? 0;
+              overallTotalPresent += (s['totalPresent'] as int?) ?? 0;
+              overallTotalAbsent += (s['totalAbsent'] as int?) ?? 0;
+          }
+
+          setState(() {
+              _stats = {
+                  'totalStudents': overallTotalStudents,
+                  'totalPresent': overallTotalPresent,
+                  'totalAbsent': overallTotalAbsent,
+              };
+          });
+          
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setString('hod_overall_stats', json.encode(_stats));
       }
 
     } catch (e) {

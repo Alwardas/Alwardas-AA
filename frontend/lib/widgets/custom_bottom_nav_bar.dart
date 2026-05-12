@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../core/providers/theme_provider.dart';
 
@@ -103,8 +102,8 @@ class CustomBottomNavBar extends StatelessWidget {
                                   color: isSelected ? Colors.white : inactiveColor,
                                   size: 28 + (4 * value), 
                                 ),
-                                child: isSelected && item.activeIcon != null 
-                                    ? item.activeIcon! 
+                                child: isSelected 
+                                    ? item.activeIcon 
                                     : item.icon,
                               ),
                             ),

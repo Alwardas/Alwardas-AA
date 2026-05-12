@@ -100,7 +100,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
         if (data['students'] != null) {
             fetched = List<dynamic>.from(data['students']).map((s) => <String, dynamic>{
               ...s,
-              'status': (s['status'] == 'PENDING') ? 'PRESENT' : s['status'],
+              'status': (s['status']?.toString().toUpperCase() == 'PENDING' || s['status'] == null) ? 'PRESENT' : s['status'].toString().toUpperCase(),
               'studentId': (s['student_id'] ?? s['studentId'] ?? '').toString(), 
               'fullName': s['fullName'] ?? s['full_name'] ?? 'Unknown'
             }).toList();

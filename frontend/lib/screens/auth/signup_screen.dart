@@ -246,9 +246,15 @@ class _SignupScreenState extends State<SignupScreen> {
       }
       
       bool isDobRequired = ['Student', 'Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);
-      if (isDobRequired && _dobController.text.isEmpty) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Date of Birth')));
-        return;
+      if (isDobRequired) {
+        if (_dobController.text.isEmpty) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter Date of Birth')));
+          return;
+        }
+        if (_dobController.text.length < 10) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please enter a valid Date of Birth (DD/MM/YYYY)')));
+          return;
+        }
       }
       
       bool isProfessionalDetailsRequired = ['Faculty', 'HOD', 'Coordinator', 'Principal', 'Incharge'].contains(_selectedRole);
@@ -394,6 +400,8 @@ class _SignupScreenState extends State<SignupScreen> {
 
   bool _checkingUser = false;
   bool _userFound = false;
+  bool _isDobReadOnly = false;
+  bool _isNameReadOnly = false;
 
   Future<void> _checkUserExistence() async {
      // ... (Validations)
@@ -421,6 +429,7 @@ class _SignupScreenState extends State<SignupScreen> {
           if (data['exists'] == true) {
              setState(() {
                _userFound = true;
+               _isNameReadOnly = (data['fullName'] != null && data['fullName'].toString().trim().isNotEmpty);
                _fullNameController.text = data['fullName'] ?? '';
 
                if (data['branch'] != null) _selectedBranch = data['branch'];
@@ -442,6 +451,8 @@ class _SignupScreenState extends State<SignupScreen> {
                if (data['phone'] != null) _phoneController.text = data['phone'];
                if (data['email'] != null) _emailController.text = data['email'];
                if (data['dob'] != null) {
+                  // Always allow users to modify or correct their DOB
+                  _isDobReadOnly = false;
                   try {
                       final parts = data['dob'].toString().split('-');
                       if (parts.length == 3) {
@@ -493,12 +504,14 @@ class _SignupScreenState extends State<SignupScreen> {
           } else {
              setState(() {
                _userFound = false;
+               _isDobReadOnly = false;
+               _isNameReadOnly = false;
                _fullNameController.clear();
              });
              _moveToStep2();
           }
        } else {
-          setState(() { _userFound = false; });
+          setState(() { _userFound = false; _isDobReadOnly = false; _isNameReadOnly = false; });
           _moveToStep2();
        }
 
@@ -528,6 +541,8 @@ class _SignupScreenState extends State<SignupScreen> {
                 _selectedBranch = null;
                 _selectedYear = null;
                 _userFound = false;
+                _isDobReadOnly = false;
+                _isNameReadOnly = false;
                 _fullNameController.clear();
                 _idController.clear();
                 _selectedSection = null; // Reset
@@ -604,7 +619,7 @@ class _SignupScreenState extends State<SignupScreen> {
           label: _selectedRole == 'Parent' ? 'Parent Name' : 'Full Name', 
           placeholder: _selectedRole == 'Parent' ? 'Enter Parent Name' : 'Enter Full Name', 
           controller: _fullNameController,
-          readOnly: _userFound,
+          readOnly: _isNameReadOnly,
         ),
         if (_userFound)
           Padding(
@@ -680,7 +695,7 @@ class _SignupScreenState extends State<SignupScreen> {
             label: 'Date of Birth',
             placeholder: 'DD/MM/YYYY',
             controller: _dobController,
-            readOnly: _userFound,
+            readOnly: _isDobReadOnly,
             keyboardType: TextInputType.number,
             inputFormatters: [
                FilteringTextInputFormatter.allow(RegExp(r'[0-9/]')),
@@ -689,7 +704,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ],
             suffixIcon: IconButton(
                icon: const Icon(Icons.calendar_today, color: Color(0xFF666666)),
-               onPressed: _userFound ? null : () => _selectDate(context),
+               onPressed: _isDobReadOnly ? null : () => _selectDate(context),
             ),
           ),
           
@@ -994,48 +1009,41 @@ class DateTextFormatter extends TextInputFormatter {
     }
 
     String text = newValue.text.replaceAll(RegExp(r'[^0-9]'), '');
-    
-    // Prevent typing more than 8 digits
-    if (text.length > 8) return oldValue;
+    if (text.length > 8) text = text.substring(0, 8);
 
     final buffer = StringBuffer();
     
     for (int i = 0; i < text.length; i++) {
         int digit = int.parse(text[i]);
         
-        // Validate Day (First 2 digits)
-        if (i == 0) {
-           if (digit > 3) return oldValue; // First digit of day max 3
+        // Validate Day
+        if (i == 0 && digit > 3) {
+            buffer.write('0$digit/');
+            continue;
         }
         if (i == 1) {
            int day = int.parse(text.substring(0, 2));
-           if (day == 0 || day > 31) return oldValue; // Day must be 01-31
+           if (day == 0 || day > 31) return oldValue;
         }
         
-        // Validate Month (Next 2 digits)
-        if (i == 2) {
-           if (digit > 1) return oldValue; // First digit of month max 1
+        // Validate Month
+        if (i == 2 && digit > 1) {
+            buffer.write('0$digit/');
+            continue;
         }
         if (i == 3) {
            int month = int.parse(text.substring(2, 4));
-           if (month == 0 || month > 12) return oldValue; // Month must be 01-12
+           if (month == 0 || month > 12) return oldValue; 
         }
         
         buffer.write(text[i]);
 
-        // Add slash after Day and Month
-        // Add slash only if we have typed the full segment or moving to next
-        // Logic: if index is 1 (end of day) and we are continuing, add slash. 
-        // Or if we just finished typing 2nd char.
         if (i == 1 || i == 3) {
             buffer.write('/');
         }
     }
     
     String finalString = buffer.toString();
-    
-    // Handle edge case where slash might be added but we want to allow typing to continue cleanly?
-    // Actually standard behavior is fine.
     
     return TextEditingValue(
         text: finalString,

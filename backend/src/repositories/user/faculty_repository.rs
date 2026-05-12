@@ -147,12 +147,27 @@ pub async fn find_attendance_status(pool: &PgPool, branch: &str, year: &str, sec
     }
     
     let total_present: i64 = query.build_query_scalar().fetch_one(pool).await?;
-    let total_absent = total_students - total_present;
+    
+    // Check if it's marked
+    let mut check_query = QueryBuilder::new("SELECT COUNT(*) FROM attendance WHERE date = ");
+    check_query.push_bind(date);
+    check_query.push("::DATE AND section = ");
+    check_query.push_bind(section);
+    if let Some(s) = session {
+        check_query.push(" AND session = ");
+        check_query.push_bind(s);
+    }
+    
+    let is_marked_count: i64 = check_query.build_query_scalar().fetch_one(pool).await.unwrap_or(0);
+    let is_marked = is_marked_count > 0;
+    
+    let total_absent = if is_marked { total_students - total_present } else { 0 };
 
     Ok(serde_json::json!({
         "totalStudents": total_students,
         "totalPresent": total_present,
-        "totalAbsent": total_absent
+        "totalAbsent": total_absent,
+        "isMarked": is_marked
     }))
 }
 

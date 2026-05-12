@@ -15,7 +15,9 @@ Future<void> main() async {
   // Initialize Notifications asynchronously to avoid blocking the main UI startup (critical if system overlays are restricted during calls)
   NotificationService().init().then((_) {
      NotificationService().requestPermissions();
-  }).catchError((e) => debugPrint("Notification Async Init Error: $e"));
+  }).catchError((e) {
+    debugPrint("Notification Async Init Error: $e");
+  });
 
   // Hard reset API URL to production to clear any legacy local IPs stored in device cache
   try {
