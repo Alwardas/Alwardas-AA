@@ -39,8 +39,8 @@ pub async fn init_db() -> Pool<Postgres> {
     let max_retries = 5;
     let pool = loop {
         match PgPoolOptions::new()
-            .max_connections(150) // Increased for high concurrency
-            .min_connections(10)  // Keep connections ready
+            .max_connections(10) // Respect Supabase pool_size limit (max 15)
+            .min_connections(2)  // Keep some connections ready
             .acquire_timeout(std::time::Duration::from_secs(30)) 
             .idle_timeout(std::time::Duration::from_secs(600))
             .max_lifetime(std::time::Duration::from_secs(1800))
