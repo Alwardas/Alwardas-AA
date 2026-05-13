@@ -13,58 +13,58 @@
                 {
                     "id": "cm101-1.1",
                     "sno": "1.1",
-                    "topic": "Importance of communication skills for employability",
+                    "topic": "Introduction to communication in English for employability",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "cm101-1.2",
                     "sno": "1.2",
-                    "topic": "Need for English communication in workplace",
+                    "topic": "Importance of English in the professional world",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "cm101-1.3",
                     "sno": "1.3",
-                    "topic": "Usage of adjectives in sentences",
+                    "topic": "Adjectives: Usage and examples",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-1.4",
                     "sno": "1.4",
-                    "topic": "Degrees of comparison",
+                    "topic": "Articles: Usage and examples",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-1.5",
                     "sno": "1.5",
-                    "topic": "Articles and sentence construction",
+                    "topic": "Speaking practice with adjectives and articles",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-1.6",
                     "sno": "1.6",
                     "topic": "Writing simple sentences",
                     "period": 1,
-                    "type": "writing"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-1.7",
                     "sno": "1.7",
-                    "topic": "Revision of Unit 1 concepts",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-1.8",
                     "sno": "1.8",
-                    "topic": "Assessment and practice session",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "practice"
                 }
             ]
         },
@@ -76,58 +76,58 @@
                 {
                     "id": "cm101-2.1",
                     "sno": "2.1",
-                    "topic": "Positive self-esteem and harmonious relationships",
+                    "topic": "Introduction to positive self-esteem and harmonious relationships",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "cm101-2.2",
                     "sno": "2.2",
-                    "topic": "Building confidence through communication",
+                    "topic": "Vocabulary building: Affixation to form new words",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "cm101-2.3",
                     "sno": "2.3",
-                    "topic": "Affixation and word formation",
+                    "topic": "Practice: Forming and using new words with affixes",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-2.4",
                     "sno": "2.4",
-                    "topic": "Prefixes and suffixes practice",
+                    "topic": "Prepositions: Usage and context",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-2.5",
                     "sno": "2.5",
-                    "topic": "Usage of prepositions",
+                    "topic": "Phrasal verbs: Introduction and examples",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-2.6",
                     "sno": "2.6",
-                    "topic": "Phrasal verbs in conversations",
+                    "topic": "Practice: Contextual usage of prepositions and phrasal verbs",
                     "period": 1,
-                    "type": "communication"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-2.7",
                     "sno": "2.7",
-                    "topic": "Revision of Unit 2 concepts",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-2.8",
                     "sno": "2.8",
-                    "topic": "Assessment and practice session",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "practice"
                 }
             ]
         },
@@ -139,58 +139,58 @@
                 {
                     "id": "cm101-3.1",
                     "sno": "3.1",
-                    "topic": "Responsible usage of social media",
+                    "topic": "Social media usage and discretion",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "cm101-3.2",
                     "sno": "3.2",
-                    "topic": "Digital communication etiquette",
+                    "topic": "Speaking practice: Expressing abilities and possibilities",
                     "period": 1,
-                    "type": "communication"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-3.3",
                     "sno": "3.3",
-                    "topic": "Expressing abilities and possibilities",
+                    "topic": "Making requests and expressing obligations",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-3.4",
                     "sno": "3.4",
-                    "topic": "Usage of modal verbs",
+                    "topic": "Grammar: Modal verbs and main verbs",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-3.5",
                     "sno": "3.5",
-                    "topic": "Making requests and expressing obligations",
+                    "topic": "Dialogue writing: Everyday situations",
                     "period": 1,
-                    "type": "communication"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-3.6",
                     "sno": "3.6",
-                    "topic": "Writing short dialogues for everyday situations",
+                    "topic": "Practice: Roleplay and dialogue writing",
                     "period": 1,
-                    "type": "writing"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-3.7",
                     "sno": "3.7",
-                    "topic": "Revision of Unit 3 concepts",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-3.8",
                     "sno": "3.8",
-                    "topic": "Assessment and practice session",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "practice"
                 }
             ]
         },
@@ -202,58 +202,58 @@
                 {
                     "id": "cm101-4.1",
                     "sno": "4.1",
-                    "topic": "Importance of humour in healthy living",
+                    "topic": "Importance of humour for healthy living & vocabulary related to the theme",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "cm101-4.2",
                     "sno": "4.2",
-                    "topic": "Vocabulary related to humour and emotions",
+                    "topic": "Reading and speaking skills practice",
                     "period": 1,
-                    "type": "vocabulary"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-4.3",
                     "sno": "4.3",
-                    "topic": "Reading humorous passages",
+                    "topic": "Grammar: Subject-Verb agreement rules",
                     "period": 1,
-                    "type": "reading"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-4.4",
                     "sno": "4.4",
-                    "topic": "Speaking activities with humour",
+                    "topic": "Grammar practice: Framing sentences with proper Subject-Verb agreement",
                     "period": 1,
-                    "type": "communication"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-4.5",
                     "sno": "4.5",
-                    "topic": "Subject and verb agreement",
+                    "topic": "Paragraph writing: Features of a good paragraph",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-4.6",
                     "sno": "4.6",
-                    "topic": "Writing a structured paragraph",
+                    "topic": "Paragraph writing: Gathering ideas and drafting",
                     "period": 1,
-                    "type": "writing"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-4.7",
                     "sno": "4.7",
-                    "topic": "Revision of Unit 4 concepts",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-4.8",
                     "sno": "4.8",
-                    "topic": "Assessment and practice session",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "practice"
                 }
             ]
         },
@@ -265,58 +265,450 @@
                 {
                     "id": "cm101-5.1",
                     "sno": "5.1",
-                    "topic": "Learning from failures",
+                    "topic": "Reading and Discussion: Dealing with failures in life",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "cm101-5.2",
                     "sno": "5.2",
-                    "topic": "Motivation and persistence",
+                    "topic": "Grammar: Present tense forms and usage",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "cm101-5.3",
                     "sno": "5.3",
-                    "topic": "Usage of present tense in communication",
+                    "topic": "Speaking practice: Routines and professions using present tense",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-5.4",
                     "sno": "5.4",
-                    "topic": "Present tense for routines and professions",
+                    "topic": "Writing practice: Scientific descriptions and sports commentary",
                     "period": 1,
-                    "type": "grammar"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-5.5",
                     "sno": "5.5",
-                    "topic": "Scientific descriptions and sports commentary",
+                    "topic": "Paragraph writing: Coherence and structure",
                     "period": 1,
-                    "type": "communication"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-5.6",
                     "sno": "5.6",
-                    "topic": "Writing coherent paragraphs",
+                    "topic": "Paragraph writing practice",
                     "period": 1,
-                    "type": "writing"
+                    "type": "practice"
                 },
                 {
                     "id": "cm101-5.7",
                     "sno": "5.7",
-                    "topic": "Revision of Unit 5 concepts",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory"
                 },
                 {
                     "id": "cm101-5.8",
                     "sno": "5.8",
-                    "topic": "Assessment and practice session",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "practice"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Preserve or Perish",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "cm101-6.1",
+                    "sno": "6.1",
+                    "topic": "Ecological challenges and environmental protection",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-6.2",
+                    "sno": "6.2",
+                    "topic": "Vocabulary related to environment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-6.3",
+                    "sno": "6.3",
+                    "topic": "Grammar: Narrating and reporting past events",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-6.4",
+                    "sno": "6.4",
+                    "topic": "Grammar: Talking about future actions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-6.5",
+                    "sno": "6.5",
+                    "topic": "Speaking and Writing practice: Past and future events",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-6.6",
+                    "sno": "6.6",
+                    "topic": "E-mail writing: Format and etiquette",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-6.7",
+                    "sno": "6.7",
+                    "topic": "E-mail writing practice",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-6.8",
+                    "sno": "6.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-6.9",
+                    "sno": "6.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "The Rainbow of Diversity",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "cm101-7.1",
+                    "sno": "7.1",
+                    "topic": "Multi-cultural workspace and valuing other cultures",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-7.2",
+                    "sno": "7.2",
+                    "topic": "Grammar: Different types of sentences",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-7.3",
+                    "sno": "7.3",
+                    "topic": "Communication: Asking for and giving directions/information",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-7.4",
+                    "sno": "7.4",
+                    "topic": "Communication: Expressing emotions in various situations",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-7.5",
+                    "sno": "7.5",
+                    "topic": "Letter writing: Formal and informal formats",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-7.6",
+                    "sno": "7.6",
+                    "topic": "Letter writing practice: Real-life situations",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-7.7",
+                    "sno": "7.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-7.8",
+                    "sno": "7.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "New Challenges - Newer Ideas",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "cm101-8.1",
+                    "sno": "8.1",
+                    "topic": "Reading and Discussion: Latest innovations and motivation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-8.2",
+                    "sno": "8.2",
+                    "topic": "Grammar: Active vs. Passive Voice",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-8.3",
+                    "sno": "8.3",
+                    "topic": "Grammar practice: Using Passive Voice in speech and writing",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-8.4",
+                    "sno": "8.4",
+                    "topic": "Essay writing: Major parts of an essay",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-8.5",
+                    "sno": "8.5",
+                    "topic": "Essay writing: Salient features and structure",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-8.6",
+                    "sno": "8.6",
+                    "topic": "Essay writing practice",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-8.7",
+                    "sno": "8.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-8.8",
+                    "sno": "8.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
+                }
+            ]
+        },
+        {
+            "unitNo": 9,
+            "title": "The End Point First",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "cm101-9.1",
+                    "sno": "9.1",
+                    "topic": "Importance of goal setting & vocabulary related to goal setting",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-9.2",
+                    "sno": "9.2",
+                    "topic": "Speaking practice: Goal setting conversations",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-9.3",
+                    "sno": "9.3",
+                    "topic": "Grammar: Direct and Indirect Speech (Reporting)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-9.4",
+                    "sno": "9.4",
+                    "topic": "Practice: Reporting speech in speaking and writing",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-9.5",
+                    "sno": "9.5",
+                    "topic": "Essay writing: Cohesive and comprehensive structure",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-9.6",
+                    "sno": "9.6",
+                    "topic": "Essay writing practice: Goal setting themes",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-9.7",
+                    "sno": "9.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-9.8",
+                    "sno": "9.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
+                }
+            ]
+        },
+        {
+            "unitNo": 10,
+            "title": "The Equal Halves",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "cm101-10.1",
+                    "sno": "10.1",
+                    "topic": "Gender sensitivity and developing a gender-balanced view",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-10.2",
+                    "sno": "10.2",
+                    "topic": "Grammar: Conjunctions and synthesising sentences",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-10.3",
+                    "sno": "10.3",
+                    "topic": "Writing practice: Sentences to compare and contrast ideas",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-10.4",
+                    "sno": "10.4",
+                    "topic": "Writing practice: Synthesising sentences",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-10.5",
+                    "sno": "10.5",
+                    "topic": "Revising and rewriting short essays",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-10.6",
+                    "sno": "10.6",
+                    "topic": "Developing discourses in speech and writing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-10.7",
+                    "sno": "10.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-10.8",
+                    "sno": "10.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
+                }
+            ]
+        },
+        {
+            "unitNo": 11,
+            "title": "Dealing with Disaster",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "cm101-11.1",
+                    "sno": "11.1",
+                    "topic": "Introduction to disasters and disaster management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-11.2",
+                    "sno": "11.2",
+                    "topic": "Vocabulary related to disaster management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-11.3",
+                    "sno": "11.3",
+                    "topic": "Grammar: Error analysis in sentences",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-11.4",
+                    "sno": "11.4",
+                    "topic": "Grammar practice: Correcting sentence errors",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-11.5",
+                    "sno": "11.5",
+                    "topic": "Report writing: Introduction and different kinds of reports",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-11.6",
+                    "sno": "11.6",
+                    "topic": "Report writing: Format and structure",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-11.7",
+                    "sno": "11.7",
+                    "topic": "Report writing practice",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm101-11.8",
+                    "sno": "11.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-11.9",
+                    "sno": "11.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
                 }
             ]
         }

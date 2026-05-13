@@ -1,0 +1,1094 @@
+{
+    "subjectCode": "CM-105",
+    "subjectName": "Basics of Computer Engineering",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 150,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Fundamentals of Computers",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "cm105-1.1",
+                    "sno": "1.1",
+                    "topic": "Introduction to computers: definitions of Computer, Hardware, Software",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.2",
+                    "sno": "1.2",
+                    "topic": "Definitions of Firmware, High Level Language, Low Level Language",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.3",
+                    "sno": "1.3",
+                    "topic": "Block diagram of a digital computer: Functional overview",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.4",
+                    "sno": "1.4",
+                    "topic": "Functional blocks of a CPU: ALU and Control unit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.5",
+                    "sno": "1.5",
+                    "topic": "Functional parameters of CPU: Clock speed and word length",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.6",
+                    "sno": "1.6",
+                    "topic": "Current family of CPUs used in Computers: Intel, AMD, etc.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.7",
+                    "sno": "1.7",
+                    "topic": "Evolution of CPUs and their characteristics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.8",
+                    "sno": "1.8",
+                    "topic": "Primary memory: RAM and ROM differences and types",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.9",
+                    "sno": "1.9",
+                    "topic": "Secondary storage devices: Hard Disks, SSDs, Optical Drives",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.10",
+                    "sno": "1.10",
+                    "topic": "Memory hierarchy and access speeds",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.11",
+                    "sno": "1.11",
+                    "topic": "Cache memory: Purpose, levels (L1, L2, L3) and importance",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.12",
+                    "sno": "1.12",
+                    "topic": "Generations of computers: First and Second generations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.13",
+                    "sno": "1.13",
+                    "topic": "Generations of computers: Third and Fourth generations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.14",
+                    "sno": "1.14",
+                    "topic": "Generations of computers: Fifth generation and beyond",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.15",
+                    "sno": "1.15",
+                    "topic": "Classification of computers based on size: Micro, Mini, Mainframe, Supercomputer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.16",
+                    "sno": "1.16",
+                    "topic": "Classification of computers based on processor and architecture",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.17",
+                    "sno": "1.17",
+                    "topic": "Number systems introduction: Decimal and Binary",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.18",
+                    "sno": "1.18",
+                    "topic": "Importance of binary number system for use in Digital Computers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.19",
+                    "sno": "1.19",
+                    "topic": "Input devices: Keyboard, Mouse, Scanners, etc.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.20",
+                    "sno": "1.20",
+                    "topic": "Output devices: Monitors, Printers, Plotters, etc.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.21",
+                    "sno": "1.21",
+                    "topic": "System bus, Address bus, Data bus concepts",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.22",
+                    "sno": "1.22",
+                    "topic": "Motherboard components and architecture",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.23",
+                    "sno": "1.23",
+                    "topic": "Introduction to ports and interfaces (USB, HDMI, etc.)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.24",
+                    "sno": "1.24",
+                    "topic": "Software classifications: System software vs Application software",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.25",
+                    "sno": "1.25",
+                    "topic": "Real-time application of computer classifications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.26",
+                    "sno": "1.26",
+                    "topic": "Performance evaluation of computer systems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.27",
+                    "sno": "1.27",
+                    "topic": "Summary of Computer Fundamentals",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.28",
+                    "sno": "1.28",
+                    "topic": "Practice questions on computer fundamentals",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-1.29",
+                    "sno": "1.29",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-1.30",
+                    "sno": "1.30",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Programming Methodology",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "cm105-2.1",
+                    "sno": "2.1",
+                    "topic": "Steps involved in problem solving using computers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-2.2",
+                    "sno": "2.2",
+                    "topic": "Algorithm: Definition and basic concepts",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-2.3",
+                    "sno": "2.3",
+                    "topic": "Characteristics of a good algorithm",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-2.4",
+                    "sno": "2.4",
+                    "topic": "Program: Definition and relationship with algorithm",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-2.5",
+                    "sno": "2.5",
+                    "topic": "Difference between program and algorithm",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-2.6",
+                    "sno": "2.6",
+                    "topic": "Steps involved in algorithm development",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-2.7",
+                    "sno": "2.7",
+                    "topic": "Developing algorithms for simple mathematical problems",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-2.8",
+                    "sno": "2.8",
+                    "topic": "Developing algorithms for logical problems",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-2.9",
+                    "sno": "2.9",
+                    "topic": "Flowchart: Definition and basic symbols",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-2.10",
+                    "sno": "2.10",
+                    "topic": "Flowchart vs Algorithm: Differences and use cases",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-2.11",
+                    "sno": "2.11",
+                    "topic": "Drawing flowcharts for simple mathematical operations",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-2.12",
+                    "sno": "2.12",
+                    "topic": "Drawing flowcharts for decision-making (branching) problems",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-2.13",
+                    "sno": "2.13",
+                    "topic": "Drawing flowcharts for iterative (looping) problems",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-2.14",
+                    "sno": "2.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-2.15",
+                    "sno": "2.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Operating System basics",
+            "totalPeriods": 35,
+            "topics": [
+                {
+                    "id": "cm105-3.1",
+                    "sno": "3.1",
+                    "topic": "Need for an Operating System and its primary functions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.2",
+                    "sno": "3.2",
+                    "topic": "List of various operating systems used presently (Windows, Linux, macOS)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.3",
+                    "sno": "3.3",
+                    "topic": "Introduction to DOS (Disk Operating System) and command line interface",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.4",
+                    "sno": "3.4",
+                    "topic": "Types of DOS commands: Internal vs External commands",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.5",
+                    "sno": "3.5",
+                    "topic": "DOS Internal Commands - Part 1 (DIR, CLS, DATE, TIME, VER)",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.6",
+                    "sno": "3.6",
+                    "topic": "DOS Internal Commands - Part 2 (MD, CD, RD, COPY CON, TYPE)",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.7",
+                    "sno": "3.7",
+                    "topic": "DOS External Commands (TREE, FORMAT, CHKDSK, DISKCOPY, ATTRIB)",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.8",
+                    "sno": "3.8",
+                    "topic": "Practice: Working with DOS commands",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.9",
+                    "sno": "3.9",
+                    "topic": "Introduction to Windows OS and Desktop features",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.10",
+                    "sno": "3.10",
+                    "topic": "Components of a Window: Title bar, Menu bar, Toolbars, Status bar",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.11",
+                    "sno": "3.11",
+                    "topic": "Functions of Window components",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.12",
+                    "sno": "3.12",
+                    "topic": "Starting a program using the Start button and run command",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.13",
+                    "sno": "3.13",
+                    "topic": "Window controls: Maximize, minimize, restore down, and close buttons",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.14",
+                    "sno": "3.14",
+                    "topic": "Concept of Files, Folders, and Directories",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.15",
+                    "sno": "3.15",
+                    "topic": "Naming conventions and file extensions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.16",
+                    "sno": "3.16",
+                    "topic": "Viewing contents of hard disk drive using Windows Explorer",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.17",
+                    "sno": "3.17",
+                    "topic": "File/Folder operations: Create, Copy, Move, Delete, Rename",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.18",
+                    "sno": "3.18",
+                    "topic": "Method of finding a file using search option",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.19",
+                    "sno": "3.19",
+                    "topic": "Control Panel: Overview and system settings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.20",
+                    "sno": "3.20",
+                    "topic": "Installing new software using Control Panel",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.21",
+                    "sno": "3.21",
+                    "topic": "Uninstalling software using Control Panel",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.22",
+                    "sno": "3.22",
+                    "topic": "Installing and configuring new hardware",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.23",
+                    "sno": "3.23",
+                    "topic": "Uninstalling hardware devices",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.24",
+                    "sno": "3.24",
+                    "topic": "Changing system date, time, and regional settings",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.25",
+                    "sno": "3.25",
+                    "topic": "Installing and configuring a printer",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.26",
+                    "sno": "3.26",
+                    "topic": "System Tools: Checking drive space and disk cleanup",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.27",
+                    "sno": "3.27",
+                    "topic": "System Tools: Disk defragmentation process and importance",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.28",
+                    "sno": "3.28",
+                    "topic": "Display Properties: Changing screen resolution",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.29",
+                    "sno": "3.29",
+                    "topic": "Display Properties: Changing color depth and appearance",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.30",
+                    "sno": "3.30",
+                    "topic": "Display Properties: Setting and customizing screensavers",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.31",
+                    "sno": "3.31",
+                    "topic": "Practice: Windows OS file management and configuration",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.32",
+                    "sno": "3.32",
+                    "topic": "Practice: System tools and Control panel usage",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.33",
+                    "sno": "3.33",
+                    "topic": "Formatting a floppy disk / USB drive using explore option",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-3.34",
+                    "sno": "3.34",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-3.35",
+                    "sno": "3.35",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Computer Hardware and Networking Basics",
+            "totalPeriods": 35,
+            "topics": [
+                {
+                    "id": "cm105-4.1",
+                    "sno": "4.1",
+                    "topic": "Hardware Basics: Identification of Input devices",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.2",
+                    "sno": "4.2",
+                    "topic": "Hardware Basics: Identification of Output devices",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.3",
+                    "sno": "4.3",
+                    "topic": "Inside the computer case: Power supply, drive bays, cooling system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.4",
+                    "sno": "4.4",
+                    "topic": "System board components: CPU socket, RAM slots, expansion slots",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.5",
+                    "sno": "4.5",
+                    "topic": "System board communication: Buses and chipsets (Northbridge/Southbridge)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.6",
+                    "sno": "4.6",
+                    "topic": "Introduction to Software categories",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.7",
+                    "sno": "4.7",
+                    "topic": "ROM BIOS: Concept, location, and functions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.8",
+                    "sno": "4.8",
+                    "topic": "Operating System and Application software distinctions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.9",
+                    "sno": "4.9",
+                    "topic": "The Boot Process: Step-by-step explanation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.10",
+                    "sno": "4.10",
+                    "topic": "Power-On Self-Test (POST): Sequence and purpose",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.11",
+                    "sno": "4.11",
+                    "topic": "Understanding POST error messages and important beep codes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.12",
+                    "sno": "4.12",
+                    "topic": "PC Connectors: Serial, Parallel, VGA, DVI, HDMI ports",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.13",
+                    "sno": "4.13",
+                    "topic": "PC Connectors: USB, RJ-45, Audio jacks, PS/2",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.14",
+                    "sno": "4.14",
+                    "topic": "Practice: Identifying internal and external hardware parts",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-4.15",
+                    "sno": "4.15",
+                    "topic": "Networking Basics: Meaning and purpose of a computer network",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.16",
+                    "sno": "4.16",
+                    "topic": "Types of networks: Local Area Network (LAN)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.17",
+                    "sno": "4.17",
+                    "topic": "Types of networks: Wide Area Network (WAN) and MAN",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.18",
+                    "sno": "4.18",
+                    "topic": "Network topologies: Star, Bus, Ring, Mesh",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.19",
+                    "sno": "4.19",
+                    "topic": "Networking devices: Hub, Switch, Router",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.20",
+                    "sno": "4.20",
+                    "topic": "Concept of Intranet and its uses",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.21",
+                    "sno": "4.21",
+                    "topic": "Concept of Internet and comparing Internet vs Intranet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.22",
+                    "sno": "4.22",
+                    "topic": "Internet Service Provider (ISP): Role and examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.23",
+                    "sno": "4.23",
+                    "topic": "Role of a Modem in accessing the Internet (Modulation/Demodulation)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.24",
+                    "sno": "4.24",
+                    "topic": "Introduction to network addressing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.25",
+                    "sno": "4.25",
+                    "topic": "IP address: IPv4 format, classes, and structure",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.26",
+                    "sno": "4.26",
+                    "topic": "Introduction to MAC addresses",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.27",
+                    "sno": "4.27",
+                    "topic": "Web Browser: Definition, functions, and list of various browsers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.28",
+                    "sno": "4.28",
+                    "topic": "Search Engines: Role, functioning, and examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.29",
+                    "sno": "4.29",
+                    "topic": "Introduction to Internet Security",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.30",
+                    "sno": "4.30",
+                    "topic": "Common security threats: Viruses, Malware, Phishing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.31",
+                    "sno": "4.31",
+                    "topic": "Security measures: Antivirus, Firewalls, secure browsing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.32",
+                    "sno": "4.32",
+                    "topic": "Practice: Checking IP address and network connectivity (ping, ipconfig)",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-4.33",
+                    "sno": "4.33",
+                    "topic": "Practice: Browser settings and safe search practices",
+                    "period": 1,
+                    "type": "practice"
+                },
+                {
+                    "id": "cm105-4.34",
+                    "sno": "4.34",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-4.35",
+                    "sno": "4.35",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Emerging Trends in Computer Technologies",
+            "totalPeriods": 35,
+            "topics": [
+                {
+                    "id": "cm105-5.1",
+                    "sno": "5.1",
+                    "topic": "Introduction to Machine Learning: Definition and scope",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.2",
+                    "sno": "5.2",
+                    "topic": "Comparing Traditional Programming with Machine Learning",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.3",
+                    "sno": "5.3",
+                    "topic": "Key elements of Machine Learning models",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.4",
+                    "sno": "5.4",
+                    "topic": "Applications of Machine Learning in real world",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.5",
+                    "sno": "5.5",
+                    "topic": "Classification of Machine Learning: Supervised learning",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.6",
+                    "sno": "5.6",
+                    "topic": "Classification of Machine Learning: Unsupervised and Reinforcement learning",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.7",
+                    "sno": "5.7",
+                    "topic": "Machine Learning Terms: Decision tree learning and Association rule learning",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.8",
+                    "sno": "5.8",
+                    "topic": "Machine Learning Terms: Artificial Neural Networks (ANN)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.9",
+                    "sno": "5.9",
+                    "topic": "Machine Learning Terms: Deep Learning vs Machine Learning",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.10",
+                    "sno": "5.10",
+                    "topic": "Machine Learning Terms: Inductive Learning detailed explanation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.11",
+                    "sno": "5.11",
+                    "topic": "Machine Learning Terms: Genetic algorithms and Clustering",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.12",
+                    "sno": "5.12",
+                    "topic": "Introduction to Blockchain Technology: Definition and concepts",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.13",
+                    "sno": "5.13",
+                    "topic": "Importance of Blockchain with real-world examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.14",
+                    "sno": "5.14",
+                    "topic": "Characteristics and Features of Blockchain",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.15",
+                    "sno": "5.15",
+                    "topic": "Types of Blockchain: Public, Private, Consortium",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.16",
+                    "sno": "5.16",
+                    "topic": "Advantages of Blockchain technology",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.17",
+                    "sno": "5.17",
+                    "topic": "List and explanation of applications of Blockchain",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.18",
+                    "sno": "5.18",
+                    "topic": "Basics of Ethical Hacking: Definition and purpose",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.19",
+                    "sno": "5.19",
+                    "topic": "Categories of Hackers: White hat, Black hat, Grey hat",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.20",
+                    "sno": "5.20",
+                    "topic": "Roles and responsibilities of Ethical Hackers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.21",
+                    "sno": "5.21",
+                    "topic": "Phases in Ethical Hacking: Reconnaissance and Scanning",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.22",
+                    "sno": "5.22",
+                    "topic": "Phases in Ethical Hacking: Gaining access, Maintaining access, Clearing tracks",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.23",
+                    "sno": "5.23",
+                    "topic": "Introduction to Penetration testing and its importance",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.24",
+                    "sno": "5.24",
+                    "topic": "Virtual Reality Concepts: Definition of Virtual Reality (VR)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.25",
+                    "sno": "5.25",
+                    "topic": "VR terminology: Tele presence and Cyberspace",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.26",
+                    "sno": "5.26",
+                    "topic": "VR terminology: Tel existence and HCI (Human-Computer Interaction)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.27",
+                    "sno": "5.27",
+                    "topic": "Concept of Haptics and Haptics technologies in VR",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.28",
+                    "sno": "5.28",
+                    "topic": "Introduction to Augmented Reality (AR)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.29",
+                    "sno": "5.29",
+                    "topic": "Introduction to Mixed Reality (MR)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.30",
+                    "sno": "5.30",
+                    "topic": "Differences between VR, AR, and MR",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.31",
+                    "sno": "5.31",
+                    "topic": "Discuss the evolution of Virtual Reality",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.32",
+                    "sno": "5.32",
+                    "topic": "Applications of VR, AR, and MR in modern engineering and life",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.33",
+                    "sno": "5.33",
+                    "topic": "Summary of emerging trends and their future scope",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.34",
+                    "sno": "5.34",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm105-5.35",
+                    "sno": "5.35",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "practice"
+                }
+            ]
+        }
+    ]
+}
