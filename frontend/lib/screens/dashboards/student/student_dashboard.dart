@@ -18,6 +18,7 @@ import 'package:intl/intl.dart';
 import '../../../core/api_constants.dart';
 import 'student_feedback_screen.dart';
 import '../../../widgets/custom_bottom_nav_bar.dart';
+import '../../../core/api_config.dart';
 import '../../../widgets/shared_dashboard_announcements.dart';
 import 'student_announcements_screen.dart';
 import 'dart:async';
@@ -70,11 +71,11 @@ class _StudentDashboardState extends State<StudentDashboard> {
       final user = await AuthService.getUserSession();
       if (user == null) return;
 
-      final response = await http.get(Uri.parse(
-          '${ApiConstants.baseUrl}/api/notifications?role=Student&userId=${user['id']}'));
+      final result = await ApiConfig.get(
+          '${ApiConstants.baseUrl}/api/notifications?role=Student&userId=${user['id']}');
 
-      if (response.statusCode == 200) {
-        final List<dynamic> notifications = json.decode(response.body);
+      if (result.success && result.data != null) {
+        final List<dynamic> notifications = result.data;
         if (notifications.isEmpty) return;
 
         final latest = notifications.first;
@@ -112,10 +113,10 @@ class _StudentDashboardState extends State<StudentDashboard> {
     if (studentId == null) return;
     
     try {
-      final url = Uri.parse('${ApiConstants.baseUrl}/api/attendance?studentId=$studentId');
-      final response = await http.get(url);
-      if (response.statusCode == 200) {
-        final Map<String, dynamic> dataMap = json.decode(response.body);
+      final url = '${ApiConstants.baseUrl}/api/attendance?studentId=$studentId';
+      final result = await ApiConfig.get(url);
+      if (result.success && result.data != null) {
+        final Map<String, dynamic> dataMap = result.data;
         final List<dynamic> data = dataMap['history'] ?? [];
         final String todayStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
         

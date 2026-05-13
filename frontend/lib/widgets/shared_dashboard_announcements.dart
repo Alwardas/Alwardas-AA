@@ -7,6 +7,7 @@ import 'dart:convert';
 import 'package:shimmer/shimmer.dart';
 import '../core/api_constants.dart';
 import '../core/providers/theme_provider.dart';
+import '../core/api_config.dart';
 import '../screens/dashboards/coordinator/coordinator_announcements_screen.dart';
 import '../screens/dashboards/coordinator/coordinator_announcement_details_screen.dart';
 
@@ -32,12 +33,10 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
   Future<void> _fetchDashboardAnnouncements() async {
     try {
       final role = widget.userRole;
-      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/announcement?role=$role')).timeout(
-        const Duration(seconds: 5),
-        onTimeout: () => http.Response('[]', 408),
-      );
-      if (response.statusCode == 200) {
-        final List<dynamic> data = jsonDecode(response.body);
+      final result = await ApiConfig.getWithRetry('${ApiConstants.baseUrl}/api/announcement?role=$role');
+      
+      if (result.success && result.data != null) {
+        final List<dynamic> data = result.data;
         if (mounted) {
           setState(() {
             _dashboardAnnouncements = data.map((json) => Announcement.fromJson(json)).toList();

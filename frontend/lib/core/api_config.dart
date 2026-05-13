@@ -24,6 +24,23 @@ class ApiConfig {
     }
   }
 
+  /// GET request with automatic retry for transient failures
+  static Future<ApiResponse<dynamic>> getWithRetry(String endpoint, {int retries = 2, Map<String, String>? headers}) async {
+    for (int i = 0; i <= retries; i++) {
+       final result = await get(endpoint, headers: headers);
+       if (result.success) return result;
+       
+       // If it's the last retry, return the result anyway
+       if (i == retries) return result;
+       
+       // Exponential backoff
+       final waitSeconds = (i + 1) * 2;
+       if (kDebugMode) print('Retry $i failed for $endpoint. Waiting ${waitSeconds}s...');
+       await Future.delayed(Duration(seconds: waitSeconds));
+    }
+    return ApiResponse(success: false, message: 'Max retries reached');
+  }
+
   /// Centralized POST request
   static Future<ApiResponse<dynamic>> post(String endpoint, {Map<String, String>? headers, dynamic body}) async {
     try {

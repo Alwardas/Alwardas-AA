@@ -36,10 +36,24 @@ pub async fn get_student_profile_handler(
 pub async fn request_profile_update_handler(
     State(state): State<AppState>,
     Json(payload): Json<ProfileUpdateRequestData>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match student_service::request_profile_update(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+        Ok(res) => {
+            println!("REQUEST Profile Update Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Update request submitted successfully",
+                "data": res
+            })))
+        },
+        Err((c, msg)) => {
+            println!("REQUEST Profile Update Error: {:?}", msg);
+            Err((c, Json(json!({
+                "success": false,
+                "message": msg,
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -48,8 +62,22 @@ pub async fn get_student_courses_handler(
     Query(params): Query<ProfileQuery>,
 ) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match student_service::get_student_courses(&state.pool, &params.user_id).await {
-        Ok(courses) => Ok(Json(serde_json::json!(courses))),
-        Err(status) => Err((status, Json(serde_json::json!({"error": "Courses not found"})))),
+        Ok(courses) => {
+            println!("GET Student Courses Result: {:?}", courses.len());
+            Ok(Json(json!({
+                "success": true,
+                "message": "Courses fetched successfully",
+                "data": courses
+            })))
+        },
+        Err(status) => {
+            println!("GET Student Courses Error: {:?}", status);
+            Err((status, Json(json!({
+                "success": false,
+                "message": "Courses not found",
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -64,36 +92,96 @@ pub async fn get_student_lesson_plan_handler(
         params.branch, 
         params.user_id
     ).await {
-        Ok(res) => Ok(Json(serde_json::json!(res))),
-        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+        Ok(res) => {
+            println!("GET Lesson Plan Result: {:?}", res.percentage);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Lesson plan fetched",
+                "data": res
+            })))
+        },
+        Err((c, msg)) => {
+            println!("GET Lesson Plan Error: {:?}", msg);
+            Err((c, Json(json!({
+                "success": false,
+                "message": msg,
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn submit_lesson_plan_feedback_handler(
     State(state): State<AppState>,
     Json(payload): Json<LessonPlanFeedbackRequest>,
-) -> Result<StatusCode, StatusCode> {
-    student_service::submit_lesson_plan_feedback(&state.pool, payload).await?;
-    Ok(StatusCode::OK)
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match student_service::submit_lesson_plan_feedback(&state.pool, payload).await {
+        Ok(res) => {
+            println!("SUBMIT Feedback Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Feedback submitted successfully",
+                "data": res
+            })))
+        },
+        Err(status) => {
+            println!("SUBMIT Feedback Error: {:?}", status);
+            Err((status, Json(json!({
+                "success": false,
+                "message": "Failed to submit feedback",
+                "data": null
+            }))))
+        },
+    }
 }
 
 pub async fn delete_lesson_plan_feedback_handler(
     State(state): State<AppState>,
     Query(params): Query<crate::models::DeleteFeedbackQuery>,
     axum::extract::Path(feedback_id): axum::extract::Path<uuid::Uuid>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match student_service::delete_lesson_plan_feedback(&state.pool, feedback_id, params.user_id).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+        Ok(res) => {
+            println!("DELETE Feedback Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Feedback deleted successfully",
+                "data": res
+            })))
+        },
+        Err((c, msg)) => {
+            println!("DELETE Feedback Error: {:?}", msg);
+            Err((c, Json(json!({
+                "success": false,
+                "message": msg,
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn get_lesson_plan_feedback_handler(
     State(state): State<AppState>,
     Query(params): Query<crate::models::GetFeedbackQuery>,
-) -> Result<Json<serde_json::Value>, StatusCode> {
-    let feedbacks = student_service::get_lesson_plan_feedback(&state.pool, &params.lesson_plan_id).await?;
-    Ok(Json(serde_json::json!(feedbacks)))
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match student_service::get_lesson_plan_feedback(&state.pool, &params.lesson_plan_id).await {
+        Ok(feedbacks) => {
+            println!("GET LP Feedbacks Result: {:?}", feedbacks.len());
+            Ok(Json(json!({
+                "success": true,
+                "message": "Feedbacks fetched successfully",
+                "data": feedbacks
+            })))
+        },
+        Err(status) => {
+            println!("GET LP Feedbacks Error: {:?}", status);
+            Err((status, Json(json!({
+                "success": false,
+                "message": "Feedbacks not found",
+                "data": null
+            }))))
+        },
+    }
 }
 
 pub async fn get_student_all_feedbacks_handler(
@@ -101,8 +189,22 @@ pub async fn get_student_all_feedbacks_handler(
     Query(params): Query<ProfileQuery>,
 ) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match student_service::get_student_all_feedbacks(&state.pool, &params.user_id).await {
-        Ok(res) => Ok(Json(serde_json::json!(res))),
-        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+        Ok(res) => {
+            println!("GET All Feedbacks Result: {:?}", res.len());
+            Ok(Json(json!({
+                "success": true,
+                "message": "All feedbacks fetched",
+                "data": res
+            })))
+        },
+        Err((c, msg)) => {
+            println!("GET All Feedbacks Error: {:?}", msg);
+            Err((c, Json(json!({
+                "success": false,
+                "message": msg,
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -159,19 +261,47 @@ pub async fn get_attendance_correction_requests_handler(
     Query(params): Query<ProfileQuery>,
 ) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match student_service::get_attendance_correction_requests(&state.pool, &params.user_id).await {
-        Ok(res) => Ok(Json(serde_json::json!(res))),
-        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+        Ok(res) => {
+            println!("GET Correction Requests Result: {:?}", res.len());
+            Ok(Json(json!({
+                "success": true,
+                "message": "Correction requests fetched",
+                "data": res
+            })))
+        },
+        Err((c, msg)) => {
+            println!("GET Correction Requests Error: {:?}", msg);
+            Err((c, Json(json!({
+                "success": false,
+                "message": msg,
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn delete_attendance_correction_requests_handler(
     State(state): State<AppState>,
     Json(payload): Json<DeleteCorrectionRequestsRequest>,
-) -> Result<StatusCode, StatusCode> {
-    student_service::delete_attendance_correction_requests(&state.pool, payload.ids)
-        .await
-        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
-    Ok(StatusCode::OK)
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match student_service::delete_attendance_correction_requests(&state.pool, payload.ids).await {
+        Ok(res) => {
+            println!("DELETE Correction Requests Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Requests deleted successfully",
+                "data": res
+            })))
+        },
+        Err(status) => {
+            println!("DELETE Correction Requests Error: {:?}", status);
+            Err((status, Json(json!({
+                "success": false,
+                "message": "Failed to delete requests",
+                "data": null
+            }))))
+        },
+    }
 }
 
 // --- Academics ---
@@ -179,9 +309,23 @@ pub async fn delete_attendance_correction_requests_handler(
 pub async fn get_student_academics_handler(
     State(state): State<AppState>,
     Query(params): Query<ProfileQuery>,
-) -> Result<Json<Vec<SemesterAcademicsResponse>>, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match student_service::get_student_academics(&state.pool, &params.user_id).await {
-        Ok(res) => Ok(Json(res)),
-        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+        Ok(res) => {
+            println!("GET Student Academics Result: {:?}", res.len());
+            Ok(Json(json!({
+                "success": true,
+                "message": "Academics fetched successfully",
+                "data": res
+            })))
+        },
+        Err((c, msg)) => {
+            println!("GET Student Academics Error: {:?}", msg);
+            Err((c, Json(json!({
+                "success": false,
+                "message": msg,
+                "data": null
+            }))))
+        },
     }
 }
