@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
 import '../../../widgets/skeleton_loader.dart';
+import '../../../core/api_config.dart';
 import 'hod_syllabus_subjects_screen.dart';
 
 class HodSyllabusYearDetailsScreen extends StatefulWidget {
@@ -54,17 +55,17 @@ class _HodSyllabusYearDetailsScreenState extends State<HodSyllabusYearDetailsScr
   Future<void> _fetchSections() async {
     final branch = widget.userData['branch'] ?? 'Computer Engineering';
     try {
-      final response = await http.get(Uri.parse(
+      final response = await ApiConfig.get(
         '${ApiConstants.baseUrl}/api/hod/syllabus/year-sections-progress?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&courseId=${Uri.encodeComponent(widget.courseId)}'
-      ));
-      if (response.statusCode == 200) {
-        final List<dynamic> fetched = json.decode(response.body);
+      );
+      if (response.success && response.data != null) {
+        final List<dynamic> fetched = response.data;
         setState(() {
           _sections = fetched.map((e) => e as Map<String, dynamic>).toList();
           _loadingSections = false;
         });
       } else {
-        setState(() => _loadingSections = false);
+        if (mounted) setState(() => _loadingSections = false);
       }
     } catch (e) {
       debugPrint("Error fetching sections: $e");

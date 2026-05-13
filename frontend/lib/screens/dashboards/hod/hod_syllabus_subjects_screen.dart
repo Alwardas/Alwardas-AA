@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
 import '../../../widgets/skeleton_loader.dart';
+import '../../../core/api_config.dart';
 import 'hod_syllabus_lesson_topics_screen.dart';
 
 class HodSyllabusSubjectsScreen extends StatefulWidget {
@@ -40,19 +41,17 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
 
   Future<void> _fetchSubjects() async {
     final branch = widget.userData['branch'] ?? 'Computer Engineering';
-    final url = Uri.parse(
-      '${ApiConstants.baseUrl}/api/hod/syllabus/section-subjects-progress?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&section=${Uri.encodeComponent(widget.section)}&courseId=${Uri.encodeComponent(widget.courseId)}&semester=${Uri.encodeComponent(widget.semester)}'
-    );
+    final url = '${ApiConstants.baseUrl}/api/hod/syllabus/section-subjects-progress?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&section=${Uri.encodeComponent(widget.section)}&courseId=${Uri.encodeComponent(widget.courseId)}&semester=${Uri.encodeComponent(widget.semester)}';
     
     try {
-      final response = await http.get(url);
-      if (response.statusCode == 200) {
+      final response = await ApiConfig.get(url);
+      if (response.success && response.data != null) {
         setState(() {
-          _subjects = json.decode(response.body);
+          _subjects = response.data;
           _isLoading = false;
         });
       } else {
-        setState(() => _isLoading = false);
+        if (mounted) setState(() => _isLoading = false);
       }
     } catch (e) {
       debugPrint("Error fetching subjects: $e");

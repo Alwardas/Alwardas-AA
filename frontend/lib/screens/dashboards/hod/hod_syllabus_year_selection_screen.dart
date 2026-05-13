@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
 import '../../../widgets/skeleton_loader.dart';
+import '../../../core/api_config.dart';
 import 'hod_syllabus_year_details_screen.dart';
 
 class HodSyllabusYearSelectionScreen extends StatefulWidget {
@@ -37,14 +38,13 @@ class _HodSyllabusYearSelectionScreenState extends State<HodSyllabusYearSelectio
 
   Future<void> _fetchProgress() async {
     final branch = widget.userData['branch'] ?? 'Computer Engineering';
+    final url = '${ApiConstants.baseUrl}/api/hod/syllabus/branch-progress?branch=${Uri.encodeComponent(branch)}&courseId=${Uri.encodeComponent(widget.courseId)}';
     try {
-      final response = await http.get(Uri.parse(
-        '${ApiConstants.baseUrl}/api/hod/syllabus/branch-progress?branch=${Uri.encodeComponent(branch)}&courseId=${Uri.encodeComponent(widget.courseId)}'
-      ));
+      final response = await ApiConfig.get(url);
       
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        final List<dynamic> yearsData = data['years'];
+      if (response.success && response.data != null) {
+        final data = response.data;
+        final List<dynamic> yearsData = data['years'] ?? [];
         
         Map<String, int> progressMap = {};
         for (var y in yearsData) {
@@ -57,7 +57,7 @@ class _HodSyllabusYearSelectionScreenState extends State<HodSyllabusYearSelectio
           _isLoading = false;
         });
       } else {
-        setState(() => _isLoading = false);
+        if (mounted) setState(() => _isLoading = false);
       }
     } catch (e) {
       debugPrint("Error fetching progress: $e");
