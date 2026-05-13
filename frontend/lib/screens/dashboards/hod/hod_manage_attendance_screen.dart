@@ -519,7 +519,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
                             padding: const EdgeInsets.all(15),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(color: Colors.grey.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(12)),
-                            child: Text("Attendance Marked by $_markedBy", style: TextStyle(color: textColor, fontWeight: FontWeight.bold)),
+                            child: Text("Attendance Marked by ${_markedBy ?? 'Unknown'}", style: TextStyle(color: textColor, fontWeight: FontWeight.bold)),
                          )
                    ],
                  ),

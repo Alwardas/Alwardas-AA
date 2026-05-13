@@ -177,7 +177,7 @@ pub async fn get_class_attendance_record(pool: &PgPool, params: ClassRecordQuery
 
     let branch_variations = crate::models::get_branch_variations(&params.branch);
     
-    let mut query = sqlx::QueryBuilder::new("SELECT u.login_id as student_id, u.full_name, a.status FROM users u LEFT JOIN attendance a ON u.id = a.student_uuid AND a.date = ");
+    let mut query = sqlx::QueryBuilder::new("SELECT u.login_id as student_id, u.full_name, a.status, (SELECT full_name FROM users WHERE id = a.faculty_uuid) as faculty_name FROM users u LEFT JOIN attendance a ON u.id = a.student_uuid AND a.date = ");
     query.push_bind(&params.date);
     query.push("::DATE AND a.session = ");
     query.push_bind(&params.session);
@@ -201,18 +201,24 @@ pub async fn get_class_attendance_record(pool: &PgPool, params: ClassRecordQuery
         StatusCode::INTERNAL_SERVER_ERROR
     })?;
     
-    let students: Vec<crate::models::StudentAttendanceItem> = rows.into_iter().map(|r| crate::models::StudentAttendanceItem {
-        id: Uuid::nil(), // Not needed here
-        student_id: r.get("student_id"),
-        full_name: r.get("full_name"),
-        status: r.get::<Option<String>, _>("status").unwrap_or_else(|| "not marked".to_string())
+    let mut marked_by = None;
+    let students: Vec<crate::models::StudentAttendanceItem> = rows.into_iter().map(|r| {
+        if marked_by.is_none() {
+            marked_by = r.get::<Option<String>, _>("faculty_name");
+        }
+        crate::models::StudentAttendanceItem {
+            id: Uuid::nil(),
+            student_id: r.get("student_id"),
+            full_name: r.get("full_name"),
+            status: r.get::<Option<String>, _>("status").unwrap_or_else(|| "not marked".to_string())
+        }
     }).collect();
 
-    println!("DEBUG: Found {} students", students.len());
+    println!("DEBUG: Found {} students, marked by: {:?}", students.len(), marked_by);
 
     Ok(crate::models::ClassRecordResponse { 
         marked: !students.is_empty() && students.iter().any(|s| s.status != "not marked"),
-        marked_by: None,
+        marked_by,
         students 
     })
 }

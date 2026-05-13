@@ -169,6 +169,11 @@ pub async fn find_attendance_status(pool: &PgPool, branch: &str, year: &str, sec
         check_query.push(" AND session = ");
         check_query.push_bind(s);
     }
+    check_query.push(" AND student_uuid IN (SELECT id FROM users WHERE role = 'Student' AND branch = ANY(");
+    check_query.push_bind(&variations);
+    check_query.push(") AND year = ");
+    check_query.push_bind(year);
+    check_query.push(")");
     
     let is_marked_count: i64 = check_query.build_query_scalar().fetch_one(pool).await.unwrap_or(0);
     let is_marked = is_marked_count > 0;

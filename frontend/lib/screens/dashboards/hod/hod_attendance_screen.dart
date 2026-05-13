@@ -176,12 +176,12 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                    int tStudents = int.tryParse(sData['totalStudents']?.toString() ?? '0') ?? 0;
                    int tPresent = int.tryParse(sData['totalPresent']?.toString() ?? '0') ?? 0;
                    int tAbsent = int.tryParse(sData['totalAbsent']?.toString() ?? '0') ?? 0;
+                   bool isMarked = sData['isMarked'] == true;
                    
                    yearTotalStudents += tStudents;
                    yearTotalPresent += tPresent;
                    yearTotalAbsent += tAbsent;
                    
-                   bool isMarked = sData['isMarked'] == true || (tPresent + tAbsent) > 0;
                    if (!isMarked) yearAllMarked = false;
                    
                    sectionStatsMap[section] = {
@@ -525,11 +525,9 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                        final rawSections = data['sectionList'] as List?;
                        final sections = rawSections?.map((e) => e.toString()).toList() ?? ['Section A'];
 
-                       bool yearNoAtt = (stats['totalPresent'] == 0 && stats['totalAbsent'] == 0);
-                       String yearAbsentStr = yearNoAtt && (stats['totalStudents'] ?? 0) > 0 ? "-" : stats['totalAbsent'].toString();
-                       
-                       // If loading and values are 0, might show placeholder, but keeping 0 is also acceptable "numeric digit" behavior
-                       // Optimization: If stats are empty, use 0.
+                       bool yearMarked = allMarked || (stats['totalPresent'] + stats['totalAbsent'] > 0);
+                       String yearAbsentStr = yearMarked ? stats['totalAbsent'].toString() : "-";
+                       String yearPresentStr = yearMarked ? stats['totalPresent'].toString() : "-";
 
                        return Container(
                            margin: const EdgeInsets.only(bottom: 15),
@@ -589,7 +587,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                            children: [
                                              _buildMiniStat("Total", stats['totalStudents'].toString(), subTextColor),
                                              Container(height: 20, width: 1, color: iconBg),
-                                             _buildMiniStat("Present", stats['totalPresent'].toString(), Colors.green),
+                                             _buildMiniStat("Present", yearPresentStr, Colors.green),
                                              Container(height: 20, width: 1, color: iconBg),
                                              _buildMiniStat("Absent", yearAbsentStr, Colors.red, onTap: () => _viewAbsentStudents(year: year)),
                                            ],
@@ -692,8 +690,9 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                      final isMarked = sInfo['isMarked'] == true;
                      final stats = sInfo['stats'] ?? {};
                      
-                     bool secNoAtt = ((stats['totalPresent'] ?? 0) == 0 && (stats['totalAbsent'] ?? 0) == 0);
-                     String secAbsentStr = secNoAtt && (stats['totalStudents'] ?? 0) > 0 ? "-" : stats['totalAbsent'].toString();
+                     bool secMarked = isMarked || ((stats['totalPresent'] ?? 0) + (stats['totalAbsent'] ?? 0) > 0);
+                     String secPresentStr = secMarked ? (stats['totalPresent'] ?? 0).toString() : "-";
+                     String secAbsentStr = secMarked ? (stats['totalAbsent'] ?? 0).toString() : "-";
 
                      return Container(
                        margin: const EdgeInsets.only(bottom: 12),
@@ -720,7 +719,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                mainAxisAlignment: MainAxisAlignment.spaceAround,
                                children: [
                                   _buildMiniStat("Total", (stats['totalStudents'] ?? 0).toString(), Colors.grey[800]!),
-                                  _buildMiniStat("Present", (stats['totalPresent'] ?? 0).toString(), Colors.green),
+                                  _buildMiniStat("Present", secPresentStr, Colors.green),
                                   _buildMiniStat("Absent", secAbsentStr, Colors.red, onTap: () => _viewAbsentStudents(year: year, section: section)),
                                ],
                              ),
@@ -750,7 +749,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         child: Column(
           children: [
             Text(
-              value == "0" || value == "-" ? "-" : value, 
+              value, 
               style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: color)
             ),
             Text(label, style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
