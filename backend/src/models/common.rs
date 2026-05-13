@@ -364,7 +364,7 @@ pub struct ParentProfileResponse {
     pub student: Option<StudentDetails>,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct StudentDetails {
     pub id: Uuid,
@@ -643,7 +643,7 @@ pub struct SubmitAttendanceRequest {
     pub session: Option<String>,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct AttendanceRecord {
     pub id: Uuid,
