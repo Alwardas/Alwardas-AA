@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shimmer/shimmer.dart';
 import '../../../core/api_constants.dart';
+import '../../../core/api_config.dart';
 
 class AttendanceScreen extends StatefulWidget {
   final VoidCallback? onBack;
@@ -341,13 +342,12 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
         'reason': _disputeReasonController.text
       };
 
-      final response = await http.post(
-         Uri.parse('${ApiConstants.baseUrl}/api/user/request-attendance-correction'),
-         headers: {'Content-Type': 'application/json'},
-         body: json.encode(body)
+      final response = await ApiConfig.post(
+         '${ApiConstants.baseUrl}/api/user/request-attendance-correction',
+         body: body
       );
 
-      if (response.statusCode == 200) {
+      if (response.success) {
          if (mounted) {
             setState(() {
               _submitting = false;
@@ -359,7 +359,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
          }
       } else {
          if(mounted) setState(() => _submitting = false);
-         if(mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed: ${response.statusCode}")));
+         if(mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed: ${response.message}")));
       }
     } catch (e) {
       if(mounted) setState(() => _submitting = false);
@@ -1096,11 +1096,11 @@ class _TrackRequestsSheetState extends State<TrackRequestsSheet> {
     }
 
     try {
-      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/user/attendance-correction-requests?studentId=$studentId'));
-      if (response.statusCode == 200) {
+      final response = await ApiConfig.get('${ApiConstants.baseUrl}/api/user/attendance-correction-requests?userId=$studentId');
+      if (response.success) {
         if (mounted) {
           setState(() {
-            _requests = json.decode(response.body);
+            _requests = response.data;
             _loading = false;
           });
         }
@@ -1117,13 +1117,12 @@ class _TrackRequestsSheetState extends State<TrackRequestsSheet> {
     if (_selectedIds.isEmpty) return;
 
     try {
-      final response = await http.post(
-        Uri.parse('${ApiConstants.baseUrl}/api/user/attendance-correction-requests/delete'),
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode({'ids': _selectedIds.toList()}),
+      final response = await ApiConfig.post(
+        '${ApiConstants.baseUrl}/api/user/attendance-correction-requests/delete',
+        body: {'ids': _selectedIds.toList()},
       );
 
-      if (response.statusCode == 200) {
+      if (response.success) {
         if (mounted) {
           setState(() {
             _requests.removeWhere((r) => _selectedIds.contains(r['id']));
@@ -1133,7 +1132,7 @@ class _TrackRequestsSheetState extends State<TrackRequestsSheet> {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Deleted successfully")));
         }
       } else {
-        if(mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to delete")));
+        if(mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(response.message)));
       }
     } catch (e) {
       if(mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));

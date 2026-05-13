@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
-import '../../../core/api_constants.dart'; 
+import '../../../core/api_constants.dart';
+import '../../../core/api_config.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import 'hod_faculty_detail_screen.dart';
@@ -36,19 +37,19 @@ class _HodFacultyScreenState extends State<HodFacultyScreen> {
 
   Future<void> _fetchFaculty() async {
     try {
-      final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/faculty/by-branch?branch=${widget.branch}'),
+      final response = await ApiConfig.get(
+        '${ApiConstants.baseUrl}/api/faculty/by-branch?branch=${widget.branch}',
       );
 
-      if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
+      if (response.success) {
+        final List<dynamic> data = response.data is List ? response.data : [];
         setState(() {
           _facultyList = data.map((json) => BackendFacultyMember.fromJson(json)).toList();
           _isLoading = false;
         });
       } else {
         setState(() {
-          _error = "Failed to load faculty: ${response.statusCode}";
+          _error = response.message;
           _isLoading = false;
         });
       }

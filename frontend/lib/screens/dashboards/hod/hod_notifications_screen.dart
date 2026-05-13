@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +8,7 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
+import '../../../core/api_config.dart';
 import '../../../core/services/auth_service.dart';
 
 class HodNotificationsScreen extends StatefulWidget {
@@ -205,18 +206,16 @@ class _HodNotificationsScreenState extends State<HodNotificationsScreen> {
     }
 
     try {
-      final response = await http.post(
-        Uri.parse('${ApiConstants.baseUrl}$endpoint'),
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode(body),
+      final response = await ApiConfig.post(
+        '${ApiConstants.baseUrl}$endpoint',
+        body: body,
       );
 
-      if (response.statusCode == 200) {
+      if (response.success) {
         _showSnackBar("Request ${action == 'APPROVE' ? 'Approved' : 'Rejected'}");
         _fetchNotifications();
       } else {
-        final err = json.decode(response.body);
-        _showSnackBar(err['error'] ?? "Failed to process request");
+        _showSnackBar(response.message);
       }
     } catch (e) {
       _showSnackBar("Network Error");

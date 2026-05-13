@@ -6,6 +6,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../../../core/api_constants.dart';
+import '../../../core/api_config.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/services/auth_service.dart';
@@ -278,13 +279,12 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
         'subject': subject,
       };
 
-      final res = await http.post(
-        Uri.parse('${ApiConstants.baseUrl}/api/timetable/assign'),
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode(body)
+      final res = await ApiConfig.post(
+        '${ApiConstants.baseUrl}/api/timetable/assign',
+        body: body
       );
 
-      if (res.statusCode == 200) {
+      if (res.success) {
         try {
            await _scheduleNotification();
         } catch (e) {
@@ -292,7 +292,7 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
         }
         Navigator.pop(context, true);
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to assign class")));
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(res.message)));
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Network Error")));

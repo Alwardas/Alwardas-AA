@@ -554,7 +554,7 @@ pub struct FacultySubjectResponse {
 #[derive(Deserialize)]
 pub struct FacultyQueryParams {
     #[serde(rename = "userId")]
-    pub user_id: Uuid,
+    pub user_id: String,
 }
 
 #[derive(Deserialize)]
@@ -737,6 +737,7 @@ pub struct AttendanceStatsResponse {
     pub total_students: i64,
     pub total_present: i64,
     pub total_absent: i64,
+    pub is_marked: bool,
 }
 
 #[derive(Deserialize, Serialize, Debug)]
@@ -1106,7 +1107,11 @@ pub struct SemesterAcademicsResponse {
 #[derive(Serialize, FromRow)]
 #[serde(rename_all = "camelCase")]
 pub struct CourseResponse {
+    #[serde(rename = "courseId")]
+    #[sqlx(rename = "id")]
     pub id: String,
+    #[serde(rename = "courseName")]
+    #[sqlx(rename = "name")]
     pub name: String,
 }
 

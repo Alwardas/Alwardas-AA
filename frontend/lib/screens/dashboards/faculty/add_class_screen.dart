@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import '../../../core/api_constants.dart';
+import '../../../core/api_config.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import 'package:provider/provider.dart';
@@ -305,13 +306,12 @@ class _AddClassScreenState extends State<AddClassScreen> {
         'endTime': times['end']
       };
 
-      final res = await http.post(
-        Uri.parse('${ApiConstants.baseUrl}/api/timetable/assign'),
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode(body)
+      final res = await ApiConfig.post(
+        '${ApiConstants.baseUrl}/api/timetable/assign',
+        body: body
       );
 
-      if (res.statusCode == 200) {
+      if (res.success) {
         try {
            await _scheduleNotification();
         } catch (e) {
@@ -320,7 +320,7 @@ class _AddClassScreenState extends State<AddClassScreen> {
 
         Navigator.pop(context, true);
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed: ${res.statusCode}")));
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed: ${res.message}")));
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));

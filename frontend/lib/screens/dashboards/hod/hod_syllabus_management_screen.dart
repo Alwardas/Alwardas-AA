@@ -9,6 +9,8 @@ import '../../../theme/theme_constants.dart';
 import '../../../widgets/skeleton_loader.dart';
 import 'hod_syllabus_year_selection_screen.dart';
 
+import '../../../core/api_config.dart';
+
 class HodSyllabusManagementScreen extends StatefulWidget {
   final Map<String, dynamic> userData;
   final String? branchOverride;
@@ -33,11 +35,11 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
   Future<void> _fetchBranchProgress() async {
     try {
       final String branch = widget.branchOverride ?? widget.userData['branch'] ?? 'Computer Engineering';
-      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/hod/branch-progress?branch=${Uri.encodeComponent(branch)}&courseId=C-23'));
-      if (response.statusCode == 200) {
+      final response = await ApiConfig.get('${ApiConstants.baseUrl}/api/hod/branch-progress?branch=${Uri.encodeComponent(branch)}&courseId=C-23');
+      if (response.success) {
         if (mounted) {
           setState(() {
-            _branchProgress = json.decode(response.body);
+            _branchProgress = response.data is Map ? response.data : null;
           });
         }
       }
@@ -48,14 +50,16 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
 
   Future<void> _fetchCourses() async {
     try {
-      final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/faculty/hod-courses'));
-      if (response.statusCode == 200) {
-        setState(() {
-          _courses = json.decode(response.body);
-          _isLoading = false;
-        });
+      final response = await ApiConfig.get('${ApiConstants.baseUrl}/api/faculty/hod-courses');
+      if (response.success) {
+        if (mounted) {
+          setState(() {
+            _courses = response.data is List ? response.data : [];
+            _isLoading = false;
+          });
+        }
       } else {
-        setState(() => _isLoading = false);
+        if (mounted) setState(() => _isLoading = false);
       }
     } catch (e) {
       debugPrint("Error fetching courses: $e");

@@ -55,9 +55,13 @@ pub async fn add_course_subject_handler(
 pub async fn get_added_course_subjects_handler(
     State(data): State<AppState>,
     Query(params): Query<crate::models::ProfileQuery>,
-) -> Result<Json<Vec<serde_json::Value>>, StatusCode> {
+) -> Result<Json<serde_json::Value>, StatusCode> {
     match hod_service::get_added_course_subjects(&data.pool, &params.user_id).await {
-        Ok(res) => Ok(Json(res)),
+        Ok(res) => Ok(Json(json!({
+            "success": true,
+            "message": "Subjects fetched successfully",
+            "data": res
+        }))),
         Err(e) => Err(e),
     }
 }

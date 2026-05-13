@@ -55,7 +55,10 @@ pub async fn add_course_subject(pool: &PgPool, payload: AddCourseSubjectRequest)
 }
 
 pub async fn get_added_course_subjects(pool: &PgPool, user_id: &str) -> Result<Vec<serde_json::Value>, StatusCode> {
-    hod_repository::find_added_course_subjects(pool, user_id)
+    let resolved_uuid = crate::utils::user_utils::resolve_user_id(user_id, "HOD", pool).await.ok();
+    let uuid_str = resolved_uuid.map(|u| u.to_string());
+    
+    hod_repository::find_added_course_subjects(pool, user_id, uuid_str.as_deref())
         .await
         .map_err(|e| {
             eprintln!("Failed to fetch added course subjects: {:?}", e);

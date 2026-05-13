@@ -112,9 +112,9 @@ pub async fn request_attendance_correction_handler(
 
 pub async fn get_attendance_correction_requests_handler(
     State(state): State<AppState>,
-    axum::extract::Path(student_id): axum::extract::Path<String>,
+    Query(params): Query<ProfileQuery>,
 ) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
-    match student_service::get_attendance_correction_requests(&state.pool, &student_id).await {
+    match student_service::get_attendance_correction_requests(&state.pool, &params.user_id).await {
         Ok(res) => Ok(Json(serde_json::json!(res))),
         Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
     }

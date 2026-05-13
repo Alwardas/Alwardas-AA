@@ -119,10 +119,10 @@ pub async fn get_faculty_by_branch_handler(
 pub async fn move_students_handler(
     State(state): State<AppState>,
     Json(payload): Json<MoveStudentsRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::move_students(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err(e) => Err((e, Json(json!({"error": "Failed to move students"})))),
+        Ok(_) => Ok(Json(json!({"success": true, "message": "Students moved successfully"}))),
+        Err(e) => Err((e, Json(json!({"success": false, "message": "Failed to move students"})))),
     }
 }
 
@@ -193,9 +193,9 @@ pub async fn get_absent_students_handler(
 pub async fn approve_handler(
     State(state): State<AppState>,
     Json(payload): Json<ApprovalRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::approve_user(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
+        Ok(_) => Ok(Json(json!({"success": true, "message": "Approved successfully"}))),
         Err(e) => Err((e, Json(json!({"error": "Failed to approve user"})))),
     }
 }
@@ -203,9 +203,9 @@ pub async fn approve_handler(
 pub async fn approve_subject_handler(
     State(state): State<AppState>,
     Json(payload): Json<ApproveSubjectRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::approve_subject(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
+        Ok(_) => Ok(Json(json!({"success": true, "message": "Subject approved"}))),
         Err((c, msg)) => Err((c, Json(json!({"error": msg})))),
     }
 }
@@ -213,9 +213,9 @@ pub async fn approve_subject_handler(
 pub async fn approve_profile_change_handler(
     State(state): State<AppState>,
     Json(payload): Json<ApproveProfileChangeRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::approve_profile_change(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
+        Ok(_) => Ok(Json(json!({"success": true, "message": "Profile change approved"}))),
         Err((c, msg)) => Err((c, Json(json!({"error": msg})))),
     }
 }
@@ -298,9 +298,9 @@ pub async fn rename_section_handler(
 pub async fn assign_class_handler(
     State(state): State<AppState>,
     Json(payload): Json<AssignClassRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::assign_class(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
+        Ok(_) => Ok(Json(json!({"success": true, "message": "Class assigned successfully"}))),
         Err(e) => Err((e, Json(json!({"error": "Failed to assign class"})))),
     }
 }

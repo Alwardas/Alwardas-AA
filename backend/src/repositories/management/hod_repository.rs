@@ -38,9 +38,11 @@ pub async fn insert_course_subject(pool: &PgPool, branch: &str, year: &str, sect
         .execute(pool).await.map(|r| r.rows_affected())
 }
 
-pub async fn find_added_course_subjects(pool: &PgPool, user_id: &str) -> Result<Vec<serde_json::Value>, sqlx::Error> {
-    let rows = sqlx::query("SELECT id, branch, year, section, subject_name, subject_code FROM course_subjects WHERE created_by = $1 ORDER BY subject_code ASC, subject_name ASC")
-        .bind(user_id).fetch_all(pool).await?;
+pub async fn find_added_course_subjects(pool: &PgPool, user_id: &str, resolved_uuid: Option<&str>) -> Result<Vec<serde_json::Value>, sqlx::Error> {
+    let rows = sqlx::query("SELECT id, branch, year, section, subject_name, subject_code FROM course_subjects WHERE created_by = $1 OR created_by = $2 ORDER BY subject_code ASC, subject_name ASC")
+        .bind(user_id)
+        .bind(resolved_uuid.unwrap_or(user_id))
+        .fetch_all(pool).await?;
     
     Ok(rows.into_iter().map(|row| serde_json::json!({
         "id": row.get::<Uuid, _>("id"),

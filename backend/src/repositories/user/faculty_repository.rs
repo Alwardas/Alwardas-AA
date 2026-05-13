@@ -17,7 +17,19 @@ pub async fn find_profile_by_id(pool: &PgPool, user_uuid: Uuid) -> Result<Option
 
 pub async fn find_subjects_by_user_id(pool: &PgPool, user_uuid: Uuid) -> Result<Vec<FacultySubjectResponse>, sqlx::Error> {
     sqlx::query_as::<Postgres, FacultySubjectResponse>(
-        "SELECT id, subject_id, subject_name, branch, section, status, created_at FROM faculty_subjects WHERE user_id = $1"
+        "SELECT 
+            s.id as id, 
+            fs.subject_name as name, 
+            fs.branch, 
+            s.semester, 
+            fs.section, 
+            fs.status, 
+            fs.subject_id as subject_id, 
+            0 as completion_percentage, 
+            'On Track' as progress_status
+         FROM faculty_subjects fs
+         JOIN subjects s ON fs.subject_id = s.id::text
+         WHERE fs.user_id = $1"
     )
     .bind(user_uuid)
     .fetch_all(pool)
@@ -89,7 +101,7 @@ pub async fn find_students(pool: &PgPool, params: StudentsQuery) -> Result<Vec<S
 
 pub async fn find_faculty_by_branch(pool: &PgPool, params: FacultyByBranchQuery) -> Result<Vec<FacultyListDTO>, sqlx::Error> {
     sqlx::query_as::<Postgres, FacultyListDTO>(
-        "SELECT login_id as faculty_id, full_name, branch, email, phone_number FROM users WHERE role = 'Faculty' AND (branch = $1 OR $1 IS NULL) ORDER BY full_name ASC"
+        "SELECT id, full_name, login_id, email, phone_number, experience, branch, role FROM users WHERE role IN ('Faculty', 'HOD', 'Incharge') AND (branch = $1 OR $1 IS NULL) ORDER BY full_name ASC"
     )
     .bind(params.branch).fetch_all(pool).await
 }
@@ -293,9 +305,17 @@ pub async fn update_users_section_name(pool: &PgPool, branch: &str, year: &str, 
 }
 
 pub async fn insert_timetable_entry(pool: &PgPool, payload: &crate::models::AssignClassRequest) -> Result<u64, sqlx::Error> {
-    sqlx::query("INSERT INTO timetable_entries (faculty_id, branch, year, section, day, period_index, subject) VALUES ($1, $2, $3, $4, $5, $6, $7)")
+    let mut tx = pool.begin().await?;
+    sqlx::query("DELETE FROM timetable_entries WHERE branch = $1 AND year = $2 AND section = $3 AND day = $4 AND period_index = $5")
+        .bind(&payload.branch).bind(&payload.year).bind(&payload.section).bind(&payload.day).bind(payload.period_index)
+        .execute(&mut *tx).await?;
+        
+    let res = sqlx::query("INSERT INTO timetable_entries (faculty_id, branch, year, section, day, period_index, subject) VALUES ($1, $2, $3, $4, $5, $6, $7)")
         .bind(&payload.faculty_id).bind(&payload.branch).bind(&payload.year).bind(&payload.section).bind(&payload.day).bind(payload.period_index).bind(&payload.subject)
-        .execute(pool).await.map(|r| r.rows_affected())
+        .execute(&mut *tx).await.map(|r| r.rows_affected())?;
+        
+    tx.commit().await?;
+    Ok(res)
 }
 
 pub async fn find_timetable(pool: &PgPool, params: &std::collections::HashMap<String, String>) -> Result<Vec<crate::models::TimetableEntry>, sqlx::Error> {

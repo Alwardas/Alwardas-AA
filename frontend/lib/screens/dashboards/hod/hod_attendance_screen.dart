@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
+import '../../../core/api_config.dart';
 import '../../../core/services/auth_service.dart';
 import 'hod_manage_attendance_screen.dart';
 import '../../../services/pdf_service.dart';
@@ -136,12 +137,11 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
 
         // Fetch Section List for this Year
         try {
-          final secUri = Uri.parse('${ApiConstants.baseUrl}/api/sections').replace(queryParameters: {'branch': branch, 'year': year});
-          final secRes = await http.get(secUri);
+          final secRes = await ApiConfig.get('${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(year)}');
           
           List<String> sections = ['Section A'];
-          if (secRes.statusCode == 200) {
-             sections = List<String>.from(json.decode(secRes.body));
+          if (secRes.success && secRes.data != null) {
+             sections = List<String>.from(secRes.data);
           }
           if (sections.isEmpty) sections = ['Section A'];
 
@@ -151,18 +151,12 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
             });
           }
 
-          // We will aggregate year stats from section results
-
-          // Fetch Stats for Each Section
-          final sectionFutures = sections.map((section) {
-               final secStatUri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/stats').replace(queryParameters: {
-                   'branch': branch,
-                   'year': year,
-                   'section': section,
-                   'date': dateStr,
-                   'session': _selectedSession
-               });
-               return http.get(secStatUri).then((res) => MapEntry(section, res));
+          // Fetch Stats for Each Section sequentially or with Future.wait using ApiConfig
+          final sectionFutures = sections.map((section) async {
+               final statRes = await ApiConfig.get(
+                   '${ApiConstants.baseUrl}/api/attendance/stats?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(year)}&section=${Uri.encodeComponent(section)}&date=$dateStr&session=$_selectedSession'
+               );
+               return MapEntry(section, statRes);
           });
 
           final sectionResults = await Future.wait(sectionFutures);
@@ -177,8 +171,8 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                final section = entry.key;
                final sRes = entry.value;
                
-               if (sRes.statusCode == 200) {
-                   final sData = json.decode(sRes.body);
+               if (sRes.success && sRes.data != null) {
+                   final sData = sRes.data;
                    int tStudents = int.tryParse(sData['totalStudents']?.toString() ?? '0') ?? 0;
                    int tPresent = int.tryParse(sData['totalPresent']?.toString() ?? '0') ?? 0;
                    int tAbsent = int.tryParse(sData['totalAbsent']?.toString() ?? '0') ?? 0;

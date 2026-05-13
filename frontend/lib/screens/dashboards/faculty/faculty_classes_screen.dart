@@ -6,6 +6,7 @@ import 'dart:convert';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
+import '../../../core/api_config.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../data/courses_data.dart';
 import '../../../widgets/skeleton_loader.dart';
@@ -64,14 +65,14 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
          });
       }
       
-      final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/faculty/subjects?userId=${user['id']}'));
-      if (res.statusCode == 200) {
-        if (mounted) setState(() => _facultySubjects = json.decode(res.body));
+      final res = await ApiConfig.get('${ApiConstants.baseUrl}/api/faculty/subjects?userId=${user['id']}');
+      if (res.success) {
+        if (mounted) setState(() => _facultySubjects = res.data ?? []);
       } else {
-        debugPrint("Failed to fetch subjects: ${res.statusCode} ${res.body}");
+        debugPrint("Failed to fetch subjects: ${res.message}");
         if (mounted) {
            ScaffoldMessenger.of(context).showSnackBar(
-             SnackBar(content: Text('Failed to load courses: Server Error ${res.statusCode}'))
+             SnackBar(content: Text('Failed to load courses: ${res.message}'))
            );
            setState(() => _facultySubjects = []);
         }
@@ -113,25 +114,24 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
     
     try {
        for (var d in subjectDetails) {
-          final response = await http.post(
-            Uri.parse('${ApiConstants.baseUrl}/api/faculty/subjects'),
-            headers: {'Content-Type': 'application/json'},
-            body: json.encode({
+          final response = await ApiConfig.post(
+            '${ApiConstants.baseUrl}/api/faculty/subjects',
+            body: {
               'userId': user['id'],
               'subjectId': d['id'],
               'subjectName': d['name'],
               'branch': d['branch'],
               'year': d['year'],
               'section': d['section']
-            })
+            }
           );
           
-          if (response.statusCode != 200) {
-             throw Exception('Failed to add subject: ${response.body}');
+          if (!response.success) {
+             throw Exception('Failed to add subject: ${response.message}');
           }
        }
     } catch (e) {
-      _showSnackBar("Network Error: ${e.toString()}");
+      _showSnackBar("Error: ${e.toString()}");
     }
   }
 
@@ -171,10 +171,13 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
     
     try {
       for (var id in _idsToDelete) {
-         final request = http.Request('DELETE', Uri.parse('${ApiConstants.baseUrl}/api/faculty/subjects'));
-         request.headers['Content-Type'] = 'application/json';
-         request.body = json.encode({'userId': user['id'], 'subjectId': id});
-         await request.send();
+         final response = await ApiConfig.delete(
+           '${ApiConstants.baseUrl}/api/faculty/subjects',
+           body: {'userId': user['id'], 'subjectId': id}
+         );
+         if (!response.success) {
+           throw Exception('Failed to delete subject');
+         }
       }
       _showSnackBar("Selected subjects removed.");
       _idsToDelete.clear();

@@ -8,6 +8,7 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
+import '../../../core/api_config.dart';
 import '../../../core/services/auth_service.dart';
 
 import '../../../widgets/parent_requests_viewer.dart';
@@ -177,17 +178,16 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
     final request = _facultyRequests[index];
 
     try {
-       final response = await http.post(
-         Uri.parse('${ApiConstants.baseUrl}/api/hod/approve-subject'),
-         headers: {'Content-Type': 'application/json'},
-         body: json.encode({
+       final response = await ApiConfig.post(
+         '${ApiConstants.baseUrl}/api/hod/approve-subject',
+         body: {
            'notificationId': requestId, 
            'senderId': request['senderId'],
            'action': action
-         }),
+         },
        );
 
-       if (response.statusCode == 200) {
+       if (response.success) {
           setState(() {
              if (action == 'APPROVE') {
                 _facultyRequests[index]['status'] = 'APPROVED';
@@ -198,7 +198,7 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
              }
           });
        } else {
-          _showSnackBar("Failed: ${response.body}");
+          _showSnackBar("Failed: ${response.message}");
        }
     } catch (e) {
        _showSnackBar("Network Error");
@@ -207,20 +207,19 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
 
   Future<void> _handleSignupAction(String userId, String action) async {
      try {
-       final response = await http.post(
-         Uri.parse('${ApiConstants.baseUrl}/api/admin/users/approve'),
-         headers: {'Content-Type': 'application/json'},
-         body: json.encode({
+       final response = await ApiConfig.post(
+         '${ApiConstants.baseUrl}/api/admin/users/approve',
+         body: {
            'user_id': userId,
            'action': action
-         }),
+         },
        );
 
-       if (response.statusCode == 200) {
+       if (response.success) {
           _showSnackBar("Account ${action == 'APPROVE' ? 'Approved' : 'Rejected'}!");
           _fetchSignups();
        } else {
-          _showSnackBar("Failed: ${response.body}");
+          _showSnackBar("Failed: ${response.message}");
        }
      } catch (e) {
         _showSnackBar("Network Error");

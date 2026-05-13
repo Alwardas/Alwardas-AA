@@ -25,8 +25,9 @@ pub async fn get_faculty_profile(pool: &PgPool, user_id: &str) -> Result<Faculty
         .ok_or(StatusCode::NOT_FOUND)
 }
 
-pub async fn get_faculty_subjects(pool: &PgPool, user_id: Uuid) -> Result<Vec<FacultySubjectResponse>, StatusCode> {
-    faculty_repository::find_subjects_by_user_id(pool, user_id)
+pub async fn get_faculty_subjects(pool: &PgPool, user_id: String) -> Result<Vec<FacultySubjectResponse>, StatusCode> {
+    let user_uuid = resolve_user_id(&user_id, "Faculty", pool).await.map_err(|_| StatusCode::BAD_REQUEST)?;
+    faculty_repository::find_subjects_by_user_id(pool, user_uuid)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
 }
