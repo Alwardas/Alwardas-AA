@@ -245,10 +245,14 @@ pub async fn init_db() -> Pool<Postgres> {
     // COURSES TABLE
     let _ = sqlx::query("
         CREATE TABLE IF NOT EXISTS courses (
-            course_id TEXT PRIMARY KEY,
-            course_name TEXT NOT NULL
+            id TEXT PRIMARY KEY,
+            name TEXT NOT NULL
         )
     ").execute(&pool).await.err();
+
+    // Migration: Rename columns if they exist from older version
+    let _ = sqlx::query("ALTER TABLE courses RENAME COLUMN course_id TO id").execute(&pool).await.err();
+    let _ = sqlx::query("ALTER TABLE courses RENAME COLUMN course_name TO name").execute(&pool).await.err();
 
     // CLASS PERIOD STATUS TABLE (Smart Timetable Tracking)
     let _ = sqlx::query("
@@ -344,7 +348,7 @@ pub async fn init_db() -> Pool<Postgres> {
             let courses_count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM courses")
                 .fetch_one(&mut *tx).await.unwrap_or(0);
             if courses_count == 0 {
-                let _ = sqlx::query("INSERT INTO courses (course_id, course_name) VALUES ('C-23', 'Computer Engineering (C-23)'), ('C-26', 'Computer Engineering (C-26)')")
+                let _ = sqlx::query("INSERT INTO courses (id, name) VALUES ('C-23', 'Computer Engineering (C-23)'), ('C-26', 'Computer Engineering (C-26)')")
                     .execute(&mut *tx).await;
             }
             let _ = tx.commit().await;

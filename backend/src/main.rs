@@ -141,6 +141,10 @@ async fn main() {
         .route("/api/hod/syllabus/branch-progress", get(hod::get_branch_progress_handler))
         .route("/api/hod/syllabus/year-sections-progress", get(hod::get_year_sections_progress_handler))
         .route("/api/hod/syllabus/section-subjects-progress", get(hod::get_section_subjects_progress_handler))
+        // Fallback for older/inconsistent frontend routes
+        .route("/api/hod/branch-progress", get(hod::get_branch_progress_handler))
+        .route("/api/hod/year-sections-progress", get(hod::get_year_sections_progress_handler))
+        .route("/api/hod/section-subjects-progress", get(hod::get_section_subjects_progress_handler))
         .route("/api/incharge/timetable-lookup", get(incharge::incharge_timetable_lookup_handler))
         .route("/api/incharge/update-status", post(incharge::update_class_status_handler))
         .route("/api/incharge/class-status", get(incharge::get_section_class_status_handler))

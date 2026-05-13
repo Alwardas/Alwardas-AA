@@ -58,75 +58,14 @@ class _CoordinatorAnnouncementsScreenState extends State<CoordinatorAnnouncement
         }
       } else {
         debugPrint("Failed api call: ${response.body}");
-        _loadMock();
+        if (mounted) setState(() => _isLoading = false);
       }
     } catch (e) {
        debugPrint("Error fetching announcements: $e");
-       _loadMock();
+       if (mounted) setState(() => _isLoading = false);
     }
-  }
+}
 
-  void _loadMock() {
-      if (mounted) {
-          setState(() {
-            _announcements = _getMockAnnouncements();
-            _isLoading = false;
-          });
-      }
-  }
-
-  List<Announcement> _getMockAnnouncements() {
-    return [
-      Announcement(
-        id: '1',
-        title: 'Examination Schedule Released',
-        description: 'The final examination schedule has been released for all departments. Please review matches.',
-        type: AnnouncementType.exam,
-        audience: ['All Departments'],
-        priority: AnnouncementPriority.urgent,
-        startDate: DateTime.now().add(const Duration(days: 5)),
-        endDate: DateTime.now().add(const Duration(days: 10)),
-        createdAt: DateTime.now(),
-        isNew: true,
-        isPinned: true,
-      ),
-      // ... keep existing mocks ...
-      Announcement(
-        id: '2',
-        title: 'Cultural Fest Announcement',
-        description: 'Get ready for the biggest cultural fest of the year!',
-        type: AnnouncementType.event,
-        audience: ['Students'],
-        priority: AnnouncementPriority.important,
-        startDate: DateTime.now().subtract(const Duration(days: 1)),
-        endDate: DateTime.now().add(const Duration(days: 3)),
-        createdAt: DateTime.now().subtract(const Duration(hours: 2)),
-      ),
-      Announcement(
-        id: '3',
-        title: 'Faculty Meeting at 2 PM',
-        description: 'Mandatory faculty meeting in the conference hall.',
-        type: AnnouncementType.faculty,
-        audience: ['Faculty'],
-        priority: AnnouncementPriority.normal,
-        startDate: DateTime.now(),
-        endDate: DateTime.now().add(const Duration(hours: 4)),
-        createdAt: DateTime.now().subtract(const Duration(hours: 5)),
-        isPinned: true,
-      ),
-       Announcement(
-        id: '4',
-        title: 'System Maintenance at Midnight',
-        description: 'Server will be down for maintenance.',
-        type: AnnouncementType.urgent,
-        audience: ['All Departments'],
-        priority: AnnouncementPriority.urgent,
-        startDate: DateTime.now().add(const Duration(days: 8)),
-        endDate: DateTime.now().add(const Duration(days: 9)),
-        createdAt: DateTime.now().subtract(const Duration(days: 1)),
-      ),
-    ];
-  }
 
 // ... existing code ...
 
