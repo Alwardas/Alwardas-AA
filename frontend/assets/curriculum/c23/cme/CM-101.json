@@ -1,0 +1,324 @@
+{
+    "subjectCode": "CM-101",
+    "subjectName": "English-I",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 90,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "English for Employability",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "cm101-1.1",
+                    "sno": "1.1",
+                    "topic": "Importance of communication skills for employability",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-1.2",
+                    "sno": "1.2",
+                    "topic": "Need for English communication in workplace",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-1.3",
+                    "sno": "1.3",
+                    "topic": "Usage of adjectives in sentences",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-1.4",
+                    "sno": "1.4",
+                    "topic": "Degrees of comparison",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-1.5",
+                    "sno": "1.5",
+                    "topic": "Articles and sentence construction",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-1.6",
+                    "sno": "1.6",
+                    "topic": "Writing simple sentences",
+                    "period": 1,
+                    "type": "writing"
+                },
+                {
+                    "id": "cm101-1.7",
+                    "sno": "1.7",
+                    "topic": "Revision of Unit 1 concepts",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "cm101-1.8",
+                    "sno": "1.8",
+                    "topic": "Assessment and practice session",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Living in Harmony",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "cm101-2.1",
+                    "sno": "2.1",
+                    "topic": "Positive self-esteem and harmonious relationships",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-2.2",
+                    "sno": "2.2",
+                    "topic": "Building confidence through communication",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-2.3",
+                    "sno": "2.3",
+                    "topic": "Affixation and word formation",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-2.4",
+                    "sno": "2.4",
+                    "topic": "Prefixes and suffixes practice",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-2.5",
+                    "sno": "2.5",
+                    "topic": "Usage of prepositions",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-2.6",
+                    "sno": "2.6",
+                    "topic": "Phrasal verbs in conversations",
+                    "period": 1,
+                    "type": "communication"
+                },
+                {
+                    "id": "cm101-2.7",
+                    "sno": "2.7",
+                    "topic": "Revision of Unit 2 concepts",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "cm101-2.8",
+                    "sno": "2.8",
+                    "topic": "Assessment and practice session",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Connect with Care",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "cm101-3.1",
+                    "sno": "3.1",
+                    "topic": "Responsible usage of social media",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-3.2",
+                    "sno": "3.2",
+                    "topic": "Digital communication etiquette",
+                    "period": 1,
+                    "type": "communication"
+                },
+                {
+                    "id": "cm101-3.3",
+                    "sno": "3.3",
+                    "topic": "Expressing abilities and possibilities",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-3.4",
+                    "sno": "3.4",
+                    "topic": "Usage of modal verbs",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-3.5",
+                    "sno": "3.5",
+                    "topic": "Making requests and expressing obligations",
+                    "period": 1,
+                    "type": "communication"
+                },
+                {
+                    "id": "cm101-3.6",
+                    "sno": "3.6",
+                    "topic": "Writing short dialogues for everyday situations",
+                    "period": 1,
+                    "type": "writing"
+                },
+                {
+                    "id": "cm101-3.7",
+                    "sno": "3.7",
+                    "topic": "Revision of Unit 3 concepts",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "cm101-3.8",
+                    "sno": "3.8",
+                    "topic": "Assessment and practice session",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Humour for Happiness",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "cm101-4.1",
+                    "sno": "4.1",
+                    "topic": "Importance of humour in healthy living",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-4.2",
+                    "sno": "4.2",
+                    "topic": "Vocabulary related to humour and emotions",
+                    "period": 1,
+                    "type": "vocabulary"
+                },
+                {
+                    "id": "cm101-4.3",
+                    "sno": "4.3",
+                    "topic": "Reading humorous passages",
+                    "period": 1,
+                    "type": "reading"
+                },
+                {
+                    "id": "cm101-4.4",
+                    "sno": "4.4",
+                    "topic": "Speaking activities with humour",
+                    "period": 1,
+                    "type": "communication"
+                },
+                {
+                    "id": "cm101-4.5",
+                    "sno": "4.5",
+                    "topic": "Subject and verb agreement",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-4.6",
+                    "sno": "4.6",
+                    "topic": "Writing a structured paragraph",
+                    "period": 1,
+                    "type": "writing"
+                },
+                {
+                    "id": "cm101-4.7",
+                    "sno": "4.7",
+                    "topic": "Revision of Unit 4 concepts",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "cm101-4.8",
+                    "sno": "4.8",
+                    "topic": "Assessment and practice session",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Never Ever Give Up!",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "cm101-5.1",
+                    "sno": "5.1",
+                    "topic": "Learning from failures",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-5.2",
+                    "sno": "5.2",
+                    "topic": "Motivation and persistence",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "cm101-5.3",
+                    "sno": "5.3",
+                    "topic": "Usage of present tense in communication",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-5.4",
+                    "sno": "5.4",
+                    "topic": "Present tense for routines and professions",
+                    "period": 1,
+                    "type": "grammar"
+                },
+                {
+                    "id": "cm101-5.5",
+                    "sno": "5.5",
+                    "topic": "Scientific descriptions and sports commentary",
+                    "period": 1,
+                    "type": "communication"
+                },
+                {
+                    "id": "cm101-5.6",
+                    "sno": "5.6",
+                    "topic": "Writing coherent paragraphs",
+                    "period": 1,
+                    "type": "writing"
+                },
+                {
+                    "id": "cm101-5.7",
+                    "sno": "5.7",
+                    "topic": "Revision of Unit 5 concepts",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "cm101-5.8",
+                    "sno": "5.8",
+                    "topic": "Assessment and practice session",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}
