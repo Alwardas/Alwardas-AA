@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart'; // Persistence
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -43,7 +43,8 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
+        final responseData = json.decode(response.body);
+        final List<dynamic> data = responseData['data'] ?? [];
         if (data.isNotEmpty) {
            setState(() {
              _sections = data.map((e) => e.toString()).toList();
@@ -234,11 +235,12 @@ class _HodYearSectionsScreenState extends State<HodYearSectionsScreen> {
       final url = Uri.parse('${ApiConstants.baseUrl}/api/students?branch=${Uri.encodeComponent(widget.branch)}&year=${widget.yearData['year']}&section=${Uri.encodeComponent(sectionName)}');
       final response = await http.get(url);
       if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
+        final responseData = json.decode(response.body);
+        final List<dynamic> data = responseData['data'] ?? [];
         if (data.isNotEmpty) {
            hasStudents = true;
            // Assuming login_id is key. Adapt if needed.
-           studentIds = data.map((s) => s['login_id']?.toString() ?? s['id'].toString()).toList(); 
+           studentIds = data.map((s) => s['loginId']?.toString() ?? s['login_id']?.toString() ?? s['id'].toString()).toList(); 
         }
       }
     } catch (e) {

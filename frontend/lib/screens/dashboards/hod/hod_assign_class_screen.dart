@@ -82,7 +82,8 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
       final url = Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(_selectedBranch!)}&year=${Uri.encodeComponent(_selectedYear!)}');
       final res = await http.get(url);
       if (res.statusCode == 200) {
-        final List<dynamic> fetched = json.decode(res.body);
+        final responseData = json.decode(res.body);
+        final List<dynamic> fetched = responseData['data'] ?? [];
         setState(() {
           _sectionsList = fetched.map((e) => e.toString()).toList();
           if (_sectionsList.isEmpty) _sectionsList = ["A"];
@@ -115,7 +116,8 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
       List<dynamic> slotConfig = [];
 
       if (res.statusCode == 200) {
-        final List<dynamic> listData = json.decode(res.body);
+        final responseData = json.decode(res.body);
+        final List<dynamic> listData = responseData['data'] ?? [];
         if (listData.isNotEmpty) {
           final data = listData[0];
           startHour = data['start_hour'] ?? 9;
@@ -220,7 +222,8 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
     try {
       final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/staff/all'));
       if (res.statusCode == 200) {
-        if (mounted) setState(() => _allStaff = List<Map<String, dynamic>>.from(json.decode(res.body)));
+        final responseData = json.decode(res.body);
+        if (mounted) setState(() => _allStaff = List<Map<String, dynamic>>.from(responseData['data'] ?? []));
       }
     } catch (e) {
       debugPrint("Error fetching staff: $e");
@@ -241,7 +244,8 @@ class _HodAssignClassScreenState extends State<HodAssignClassScreen> {
       
       final res = await http.get(uri);
       if (res.statusCode == 200) {
-        final data = json.decode(res.body);
+        final responseData = json.decode(res.body);
+        final data = responseData['data'] ?? {};
         if (data['facultyId'] != null) {
           if (mounted) setState(() => _selectedFacultyId = data['facultyId']);
         }

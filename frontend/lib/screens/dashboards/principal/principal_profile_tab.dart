@@ -53,25 +53,46 @@ class _PrincipalProfileTabState extends State<PrincipalProfileTab> {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        setState(() {
-          _profileData = data;
-          _fullNameController.text = data['fullName'] ?? '';
-          _phoneController.text = data['phoneNumber'] ?? '';
-          _experienceController.text = data['experience'] ?? '';
-          _idController.text = 'ID-${data['facultyId'] ?? data['login_id'] ?? data['id'] ?? ''}';
-          _deptController.text = data['branch'] ?? 'All Branches';
-          _emailController.text = data['email'] ?? '';
-          if (data['dob'] != null && data['dob'].toString().isNotEmpty) {
-            try {
-               _dobController.text = DateFormat('dd MMM yyyy').format(DateTime.parse(data['dob']));
-            } catch (e) {
-               _dobController.text = data['dob'];
+        final responseData = json.decode(response.body);
+        if (responseData['success'] == true && responseData['data'] != null) {
+          final data = responseData['data'];
+          setState(() {
+            _profileData = data;
+            _fullNameController.text = data['fullName'] ?? '';
+            _phoneController.text = data['phoneNumber'] ?? '';
+            _experienceController.text = data['experience'] ?? '';
+            _idController.text = 'ID-${data['facultyId'] ?? data['login_id'] ?? data['id'] ?? ''}';
+            _deptController.text = data['branch'] ?? 'All Branches';
+            _emailController.text = data['email'] ?? '';
+            if (data['dob'] != null && data['dob'].toString().isNotEmpty) {
+              try {
+                 _dobController.text = DateFormat('dd MMM yyyy').format(DateTime.parse(data['dob']));
+              } catch (e) {
+                 _dobController.text = data['dob'];
+              }
+            } else {
+               _dobController.text = '';
             }
-          } else {
-             _dobController.text = '';
-          }
-        });
+          });
+        } else {
+           // Fallback to widget.userData
+           setState(() {
+             _profileData = widget.userData;
+             _fullNameController.text = widget.userData['full_name'] ?? '';
+             _idController.text = 'ID-${widget.userData['login_id'] ?? ''}';
+             _phoneController.text = widget.userData['phone'] ?? '';
+             _emailController.text = widget.userData['email'] ?? '';
+             _deptController.text = widget.userData['branch'] ?? 'All Branches';
+             _experienceController.text = widget.userData['experience'] ?? '25';
+             if (widget.userData['dob'] != null && widget.userData['dob'].toString().isNotEmpty) {
+               try {
+                  _dobController.text = DateFormat('dd MMM yyyy').format(DateTime.parse(widget.userData['dob']));
+               } catch (e) {
+                  _dobController.text = widget.userData['dob'];
+               }
+             }
+           });
+        }
       } else {
          // Fallback to widget.userData
          setState(() {

@@ -67,19 +67,25 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
       );
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
+        final responseData = jsonDecode(response.body);
+        if (responseData['success'] == true && responseData['data'] != null) {
+          final data = responseData['data'];
+          setState(() {
+            _profileData = data;
+            // Map API response keys to what controllers expect
+            _profileData!['full_name'] = data['fullName'];
+            _profileData!['phone'] = data['phoneNumber'] ?? '';
 
-        setState(() {
-          _profileData = data;
-          // Map API response keys to what controllers expect
-          _profileData!['full_name'] = data['fullName'];
-          _profileData!['phone'] = data['phoneNumber'] ?? '';
-
-          if (data['student'] != null) {
-            _studentData = data['student'];
-          }
-        });
-        _populateControllers();
+            if (data['student'] != null) {
+              _studentData = data['student'];
+            }
+          });
+          _populateControllers();
+        } else {
+          // Fallback
+          _profileData = widget.userData;
+          _populateControllers();
+        }
       } else {
         debugPrint("Failed to fetch profile: ${response.statusCode}");
         // Fallback to widget data if API fails

@@ -73,13 +73,14 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
       final response = await http.get(uri);
       
       if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
+        final responseData = json.decode(response.body);
+        final List<dynamic> data = responseData['data'] ?? [];
         
         for (var s in data) {
            currentSectionStudents.add({
              'dbId': s['id'] ?? '', // Store DB UUID for profile view mapping
              'fullName': s['fullName'] ?? s['full_name'] ?? 'Unknown',
-             'studentId': s['studentId'] ?? s['student_id'] ?? s['login_id'] ?? 'Unknown',
+             'studentId': s['studentId'] ?? s['student_id'] ?? s['loginId'] ?? s['login_id'] ?? 'Unknown',
              'section': s['section'] ?? widget.section, 
              'branch': s['branch'] ?? widget.branch,
              'year': s['year'] ?? widget.year,

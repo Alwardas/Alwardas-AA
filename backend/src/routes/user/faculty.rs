@@ -241,18 +241,34 @@ pub async fn submit_attendance_batch_handler(
     Json(payload): Json<BatchAttendanceRequest>,
 ) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::submit_attendance_batch(&state.pool, payload).await {
-        Ok(res) => Ok(Json(res)),
-        Err((c, msg)) => Err((c, Json(json!({"error": msg})))),
+        Ok(res) => Ok(Json(json!({
+            "success": true,
+            "message": "Batch attendance submitted",
+            "data": res
+        }))),
+        Err((c, msg)) => Err((c, Json(json!({
+            "success": false,
+            "message": msg,
+            "data": null
+        })))),
     }
 }
 
 pub async fn check_attendance_status_handler(
     State(state): State<AppState>,
     Query(params): Query<CheckAttendanceQuery>,
-) -> Result<Json<serde_json::Value>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::check_attendance_status(&state.pool, params).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => Ok(Json(json!({
+            "success": true,
+            "message": "Status checked",
+            "data": res
+        }))),
+        Err(e) => Err((e, Json(json!({
+            "success": false,
+            "message": "Failed to check status",
+            "data": null
+        })))),
     }
 }
 

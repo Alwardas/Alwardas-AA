@@ -53,24 +53,34 @@ class _CoordinatorProfileTabState extends State<CoordinatorProfileTab> {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        setState(() {
-          _profileData = data;
-          _fullNameController.text = data['fullName'] ?? '';
-          _phoneController.text = data['phoneNumber'] ?? '';
-          _experienceController.text = data['experience'] ?? '';
-          _idController.text = 'ID-${data['facultyId'] ?? ''}';
-          _emailController.text = data['email'] ?? '';
-          if (data['dob'] != null && data['dob'].toString().isNotEmpty) {
-            try {
-               _dobController.text = DateFormat('dd MMM yyyy').format(DateTime.parse(data['dob']));
-            } catch (e) {
-               _dobController.text = data['dob'];
+        final responseData = json.decode(response.body);
+        if (responseData['success'] == true && responseData['data'] != null) {
+          final data = responseData['data'];
+          setState(() {
+            _profileData = data;
+            _fullNameController.text = data['fullName'] ?? '';
+            _phoneController.text = data['phoneNumber'] ?? '';
+            _experienceController.text = data['experience'] ?? '';
+            _idController.text = 'ID-${data['facultyId'] ?? ''}';
+            _emailController.text = data['email'] ?? '';
+            if (data['dob'] != null && data['dob'].toString().isNotEmpty) {
+              try {
+                 _dobController.text = DateFormat('dd MMM yyyy').format(DateTime.parse(data['dob']));
+              } catch (e) {
+                 _dobController.text = data['dob'];
+              }
+            } else {
+               _dobController.text = '';
             }
-          } else {
-             _dobController.text = '';
-          }
-        });
+          });
+        } else {
+           // Fallback to widget.userData
+           setState(() {
+             _profileData = widget.userData;
+             _fullNameController.text = widget.userData['full_name'] ?? '';
+             _idController.text = 'ID-${widget.userData['login_id'] ?? ''}';
+           });
+        }
       } else {
          // Fallback to widget.userData
          setState(() {

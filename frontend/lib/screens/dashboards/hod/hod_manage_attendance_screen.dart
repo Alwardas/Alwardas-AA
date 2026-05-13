@@ -57,13 +57,15 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
     try {
       final amRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=MORNING&date=$dateStr&section=${Uri.encodeComponent(section)}'));
       if (amRes.statusCode == 200) {
-        final data = json.decode(amRes.body);
+        final responseData = json.decode(amRes.body);
+        final data = responseData['data'] ?? {};
         setState(() => _morningMarked = data['marked'] ?? false);
       }
       
       final pmRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=AFTERNOON&date=$dateStr&section=${Uri.encodeComponent(section)}'));
       if (pmRes.statusCode == 200) {
-        final data = json.decode(pmRes.body);
+        final responseData = json.decode(pmRes.body);
+        final data = responseData['data'] ?? {};
         setState(() => _afternoonMarked = data['marked'] ?? false);
       }
     } catch (e) {
@@ -78,7 +80,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
     setState(() => _loading = true);
     final user = await AuthService.getUserSession();
     final branch = widget.branchOverride ?? user?['branch'] ?? '';
-    final dateStr = _date.toIso8601String();
+    final dateStr = _date.toIso8601String().split('T')[0]; // Use YYYY-MM-DD for consistency
     final section = widget.section ?? 'Section A';
 
     try {
@@ -94,7 +96,8 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
       final res = await http.get(uri);
       
       if (res.statusCode == 200) {
-        final data = json.decode(res.body);
+        final responseData = json.decode(res.body);
+        final data = responseData['data'] ?? {};
         
         List<dynamic> fetched = [];
         if (data['students'] != null) {
@@ -105,8 +108,6 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
               'fullName': s['fullName'] ?? s['full_name'] ?? 'Unknown'
             }).toList();
         }
-
-
 
         fetched.sort((a, b) {
             final idA = int.tryParse(a['studentId'].toString().replaceAll(RegExp(r'[^0-9]'), ''));
@@ -209,7 +210,7 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
         } else {
           try {
             final body = json.decode(res.body);
-            _showSnackBar(body['error'] ?? "Submission failed");
+            _showSnackBar(body['message'] ?? body['error'] ?? "Submission failed");
           } catch (_) {
              _showSnackBar("Submission failed: ${res.statusCode}");
           }

@@ -118,11 +118,19 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
       debugPrint("Profile API Body: ${response.body}");
 
       if (response.statusCode == 200) {
-        _profileData = json.decode(response.body);
-        if (_profileData!['pendingUpdate'] == true) {
-             _pendingRequest = {'status': 'PENDING'};
+        final responseData = json.decode(response.body);
+        if (responseData['success'] == true && responseData['data'] != null) {
+          _profileData = responseData['data'];
+          if (_profileData!['pendingUpdate'] == true) {
+               _pendingRequest = {'status': 'PENDING'};
+          } else {
+               _pendingRequest = null;
+          }
         } else {
-             _pendingRequest = null;
+          // Fallback to locally available data
+          debugPrint("API Success but success flag false or data null, using local userData");
+          _profileData = widget.userData;
+          _pendingRequest = null;
         }
       } else {
         // Fallback to locally available data

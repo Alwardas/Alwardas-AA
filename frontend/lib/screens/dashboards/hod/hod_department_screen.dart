@@ -308,7 +308,8 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
         final response = await http.get(url);
         
         if (response.statusCode == 200) {
-          final List<dynamic> fetched = json.decode(response.body);
+          final responseData = json.decode(response.body);
+          final List<dynamic> fetched = responseData['data'] ?? [];
           if (fetched.isNotEmpty) {
             yearData['sections'] = fetched.map((e) => e.toString()).toList();
             prefs.setStringList('sections_${branch}_$yearName', yearData['sections']);
@@ -458,7 +459,8 @@ class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
         final response = await http.get(url);
         
         if (response.statusCode == 200) {
-          final List<dynamic> fetched = json.decode(response.body);
+          final responseData = json.decode(response.body);
+          final List<dynamic> fetched = responseData['data'] ?? [];
           if (fetched.isNotEmpty) {
             yearData['sections'] = fetched.map((e) => e.toString()).toList();
             prefs.setStringList('sections_${branch}_$yearName', yearData['sections']);

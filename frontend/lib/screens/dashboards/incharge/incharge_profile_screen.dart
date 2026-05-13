@@ -56,28 +56,39 @@ class _InchargeProfileScreenState extends State<InchargeProfileScreen> {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        setState(() {
-          _profileData = data;
-          _fullNameController.text = data['fullName'] ?? '';
-          _phoneController.text = data['phoneNumber'] ?? '';
-          _experienceController.text = data['experience'] ?? '';
-          _idController.text = data['facultyId'] ?? widget.userData['login_id'] ?? '';
-          if (!_idController.text.startsWith('ID-')) {
-             _idController.text = 'ID-${_idController.text}';
-          }
-          _deptController.text = data['branch'] ?? '';
-          _emailController.text = data['email'] ?? '';
-          if (data['dob'] != null && data['dob'].toString().isNotEmpty) {
-            try {
-               _dobController.text = DateFormat('dd/MM/yyyy').format(DateTime.parse(data['dob']));
-            } catch (e) {
-               _dobController.text = data['dob'];
+        final responseData = json.decode(response.body);
+        if (responseData['success'] == true && responseData['data'] != null) {
+          final data = responseData['data'];
+          setState(() {
+            _profileData = data;
+            _fullNameController.text = data['fullName'] ?? '';
+            _phoneController.text = data['phoneNumber'] ?? '';
+            _experienceController.text = data['experience'] ?? '';
+            _idController.text = data['facultyId'] ?? widget.userData['login_id'] ?? '';
+            if (!_idController.text.startsWith('ID-')) {
+               _idController.text = 'ID-${_idController.text}';
             }
-          } else {
-             _dobController.text = '';
-          }
-        });
+            _deptController.text = data['branch'] ?? '';
+            _emailController.text = data['email'] ?? '';
+            if (data['dob'] != null && data['dob'].toString().isNotEmpty) {
+              try {
+                 _dobController.text = DateFormat('dd/MM/yyyy').format(DateTime.parse(data['dob']));
+              } catch (e) {
+                 _dobController.text = data['dob'];
+              }
+            } else {
+               _dobController.text = '';
+            }
+          });
+        } else {
+           // Fallback to widget.userData
+           setState(() {
+             _profileData = widget.userData;
+             _fullNameController.text = widget.userData['full_name'] ?? '';
+             _idController.text = 'ID-${widget.userData['login_id'] ?? ''}';
+             _deptController.text = widget.userData['branch'] ?? '';
+           });
+        }
       } else {
          // Fallback to widget.userData
          setState(() {

@@ -55,39 +55,54 @@ class _HodProfileTabState extends State<HodProfileTab> {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        setState(() {
-          _profileData = data;
-          _fullNameController.text = data['fullName'] ?? '';
-          _phoneController.text = data['phoneNumber'] ?? '';
-          _experienceController.text = data['experience'] ?? '';
-          _idController.text = 'ID-${data['facultyId'] ?? ''}';
-          _deptController.text = data['branch'] ?? '';
-          _emailController.text = data['email'] ?? '';
-          if (data['dob'] != null && data['dob'].toString().isNotEmpty) {
-            try {
-               _dobController.text = DateFormat('dd/MM/yyyy').format(DateTime.parse(data['dob']));
-            } catch (e) {
-               _dobController.text = data['dob'];
+        final responseData = json.decode(response.body);
+        if (responseData['success'] == true && responseData['data'] != null) {
+          final data = responseData['data'];
+          setState(() {
+            _profileData = data;
+            _fullNameController.text = data['fullName']?.toString() ?? widget.userData['full_name']?.toString() ?? '';
+            _phoneController.text = data['phoneNumber']?.toString() ?? '';
+            _experienceController.text = data['experience']?.toString() ?? '';
+            _idController.text = 'ID-${data['facultyId'] ?? widget.userData['login_id'] ?? ''}';
+            _deptController.text = data['branch']?.toString() ?? widget.userData['branch']?.toString() ?? '';
+            _emailController.text = data['email']?.toString() ?? '';
+            
+            final dobVal = data['dob'];
+            if (dobVal != null && dobVal.toString().isNotEmpty) {
+              try {
+                 _dobController.text = DateFormat('dd/MM/yyyy').format(DateTime.parse(dobVal.toString()));
+              } catch (e) {
+                 _dobController.text = dobVal.toString();
+              }
+            } else {
+               _dobController.text = '';
             }
-          } else {
-             _dobController.text = '';
-          }
-        });
+          });
+        } else {
+           _applyFallback();
+        }
       } else {
-         // Fallback to widget.userData
-         setState(() {
-           _profileData = widget.userData;
-           _fullNameController.text = widget.userData['full_name'] ?? '';
-           _idController.text = 'ID-${widget.userData['login_id'] ?? ''}';
-           _deptController.text = widget.userData['branch'] ?? '';
-         });
+         _applyFallback();
       }
     } catch (e) {
       debugPrint("Error fetching profile: $e");
+      _applyFallback();
     } finally {
       if (mounted) setState(() => _loading = false);
     }
+  }
+
+  void _applyFallback() {
+    if (!mounted) return;
+    setState(() {
+      _profileData = widget.userData;
+      _fullNameController.text = widget.userData['full_name']?.toString() ?? '';
+      _idController.text = 'ID-${widget.userData['login_id']?.toString() ?? ''}';
+      _deptController.text = widget.userData['branch']?.toString() ?? '';
+      // Also try to get other fields if they exist in userData (unlikely from login, but for safety)
+      _phoneController.text = widget.userData['phone_number']?.toString() ?? '';
+      _emailController.text = widget.userData['email']?.toString() ?? '';
+    });
   }
 
   Future<void> _saveChanges(Map<String, String> updates) async {
@@ -340,9 +355,11 @@ class _HodProfileTabState extends State<HodProfileTab> {
   }
 
   Widget _buildProfileCard(Color textColor, Color subTextColor, bool isDark) {
-    final contact = _phoneController.text.isNotEmpty ? _phoneController.text : '+91 XXXXX XXXXX';
-    final email = _emailController.text.isNotEmpty ? _emailController.text : 'Not Provided';
-    final String displayName = _fullNameController.text.toUpperCase();
+    final String contact = _phoneController.text.isNotEmpty ? _phoneController.text : 'Not Provided';
+    final String email = _emailController.text.isNotEmpty ? _emailController.text : 'Not Provided';
+    final String nameText = _fullNameController.text.trim();
+    final String displayName = nameText.isNotEmpty ? nameText.toUpperCase() : (widget.userData['full_name']?.toString().toUpperCase() ?? 'N/A');
+    
     String rawRole = widget.userData['role'] ?? 'HOD';
     final String role = rawRole.toUpperCase() == 'HOD' ? 'Head of the Department' : rawRole;
     final String department = _deptController.text.isNotEmpty ? _deptController.text : 'N/A';

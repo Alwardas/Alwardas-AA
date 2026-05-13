@@ -128,7 +128,8 @@ class _HodTimetablesScreenState extends State<HodTimetablesScreen> {
         final response = await http.get(url);
         
         if (response.statusCode == 200) {
-          final List<dynamic> fetched = json.decode(response.body);
+          final responseData = json.decode(response.body);
+          final List<dynamic> fetched = responseData['data'] ?? [];
           if (fetched.isNotEmpty) {
             for (var sec in fetched) {
                sectionsForYear.add(SectionData(branch: _userBranch!, label: sec.toString()));

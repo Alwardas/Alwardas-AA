@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -34,9 +34,12 @@ class _PrincipalProfileScreenState extends State<PrincipalProfileScreen> {
     try {
       final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/user/profile?userId=${user['id']}'));
       if (response.statusCode == 200) {
-        setState(() {
-          _profileData = json.decode(response.body);
-        });
+        final responseData = json.decode(response.body);
+        if (responseData['success'] == true && responseData['data'] != null) {
+          setState(() {
+            _profileData = responseData['data'];
+          });
+        }
       }
     } catch (e) {
       debugPrint("Error fetching profile: $e");

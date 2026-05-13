@@ -47,8 +47,9 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
     try {
       final response = await http.get(Uri.parse(ApiConstants.hodGetDepartments));
       if (response.statusCode == 200) {
+        final responseData = json.decode(response.body);
         setState(() {
-          _branches = List<String>.from(json.decode(response.body));
+          _branches = List<String>.from(responseData['data'] ?? []);
           _loadingBranches = false;
         });
       }
@@ -70,8 +71,9 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
         Uri.parse("${ApiConstants.baseUrl}/api/sections?branch=$_selectedBranch&year=$_selectedYear"),
       );
       if (response.statusCode == 200) {
+        final responseData = json.decode(response.body);
         setState(() {
-          final List<dynamic> data = json.decode(response.body);
+          final List<dynamic> data = responseData['data'] ?? [];
           _sections = data.map((e) => e.toString()).toList();
           _loadingSections = false;
         });
