@@ -16,6 +16,7 @@ class ApiConfig {
         headers: headers ?? {'Content-Type': 'application/json'},
       ).timeout(timeout);
 
+      if (kDebugMode) print('RESPONSE FROM $endpoint: ${response.body}');
       return _processResponse(response);
     } catch (e) {
       if (kDebugMode) print('GET Error ($endpoint): $e');
@@ -36,9 +37,52 @@ class ApiConfig {
         body: body != null ? json.encode(body) : null,
       ).timeout(timeout);
 
+      if (kDebugMode) print('RESPONSE FROM $endpoint: ${response.body}');
       return _processResponse(response);
     } catch (e) {
       if (kDebugMode) print('POST Error ($endpoint): $e');
+      return ApiResponse(success: false, message: 'Network error: $e');
+    }
+  }
+
+  /// Centralized PUT request
+  static Future<ApiResponse<dynamic>> put(String endpoint, {Map<String, String>? headers, dynamic body}) async {
+    try {
+      if (kDebugMode) {
+        print('PUT: $endpoint');
+        print('Body: $body');
+      }
+      final response = await http.put(
+        Uri.parse(endpoint),
+        headers: headers ?? {'Content-Type': 'application/json'},
+        body: body != null ? json.encode(body) : null,
+      ).timeout(timeout);
+
+      if (kDebugMode) print('RESPONSE FROM $endpoint: ${response.body}');
+      return _processResponse(response);
+    } catch (e) {
+      if (kDebugMode) print('PUT Error ($endpoint): $e');
+      return ApiResponse(success: false, message: 'Network error: $e');
+    }
+  }
+
+  /// Centralized PATCH request
+  static Future<ApiResponse<dynamic>> patch(String endpoint, {Map<String, String>? headers, dynamic body}) async {
+    try {
+      if (kDebugMode) {
+        print('PATCH: $endpoint');
+        print('Body: $body');
+      }
+      final response = await http.patch(
+        Uri.parse(endpoint),
+        headers: headers ?? {'Content-Type': 'application/json'},
+        body: body != null ? json.encode(body) : null,
+      ).timeout(timeout);
+
+      if (kDebugMode) print('RESPONSE FROM $endpoint: ${response.body}');
+      return _processResponse(response);
+    } catch (e) {
+      if (kDebugMode) print('PATCH Error ($endpoint): $e');
       return ApiResponse(success: false, message: 'Network error: $e');
     }
   }
@@ -59,6 +103,7 @@ class ApiConfig {
       final streamedResponse = await request.send().timeout(timeout);
       final response = await http.Response.fromStream(streamedResponse);
 
+      if (kDebugMode) print('RESPONSE FROM $endpoint: ${response.body}');
       return _processResponse(response);
     } catch (e) {
       if (kDebugMode) print('DELETE Error ($endpoint): $e');

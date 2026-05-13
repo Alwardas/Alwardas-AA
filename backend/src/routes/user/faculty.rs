@@ -21,10 +21,24 @@ use serde_json::json;
 pub async fn get_faculty_profile_handler(
     State(state): State<AppState>,
     Query(params): Query<ProfileQuery>,
-) -> Result<Json<crate::models::FacultyProfileResponse>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_faculty_profile(&state.pool, &params.user_id).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Profile Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Profile fetched successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Profile Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch profile",
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -33,30 +47,72 @@ pub async fn get_faculty_profile_handler(
 pub async fn get_faculty_subjects_handler(
     State(state): State<AppState>,
     Query(params): Query<FacultyQueryParams>,
-) -> Result<Json<Vec<crate::models::FacultySubjectResponse>>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_faculty_subjects(&state.pool, params.user_id).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Subjects Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Subjects fetched successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Subjects Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch subjects",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn add_faculty_subject_handler(
     State(state): State<AppState>,
     Json(payload): Json<AddFacultySubjectRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::add_faculty_subject(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err(e) => Err((e, Json(json!({"error": "Failed to add subject"})))),
+        Ok(res) => {
+            println!("ADD Subject Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Subject added successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("ADD Subject Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to add subject",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn remove_faculty_subject_handler(
     State(state): State<AppState>,
     Json(payload): Json<RemoveFacultySubjectRequest>,
-) -> Result<StatusCode, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::remove_faculty_subject(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("REMOVE Subject Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Subject removed successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("REMOVE Subject Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to remove subject",
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -65,10 +121,24 @@ pub async fn remove_faculty_subject_handler(
 pub async fn mark_lesson_plan_complete_handler(
     State(state): State<AppState>,
     Json(payload): Json<MarkCompleteRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::mark_lesson_plan_complete(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err(e) => Err((e, Json(json!({"error": "Failed to mark complete"})))),
+        Ok(res) => {
+            println!("MARK Complete Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Lesson plan marked complete",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("MARK Complete Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to mark complete",
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -99,10 +169,24 @@ pub async fn get_faculty_feedbacks_handler(
 pub async fn get_students_handler(
     State(state): State<AppState>,
     Query(params): Query<StudentsQuery>,
-) -> Result<Json<Vec<crate::models::StudentBasicInfo>>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_students(&state.pool, params).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Students Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Students fetched successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Students Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch students",
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -131,10 +215,24 @@ pub async fn move_students_handler(
 pub async fn submit_attendance_handler(
     State(state): State<AppState>,
     Json(payload): Json<SubmitAttendanceRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::submit_attendance(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err((c, msg)) => Err((c, Json(json!({"error": msg})))),
+        Ok(res) => {
+            println!("SUBMIT Attendance Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Attendance submitted successfully",
+                "data": res
+            })))
+        },
+        Err((c, msg)) => {
+            println!("SUBMIT Attendance Error: {:?}", msg);
+            Err((c, Json(json!({
+                "success": false,
+                "message": msg,
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -161,30 +259,72 @@ pub async fn check_attendance_status_handler(
 pub async fn get_class_attendance_record_handler(
     State(state): State<AppState>,
     Query(params): Query<ClassRecordQuery>,
-) -> Result<Json<crate::models::ClassRecordResponse>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_class_attendance_record(&state.pool, params).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Class Record Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Class record fetched successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Class Record Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch class record",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn get_attendance_stats_handler(
     State(state): State<AppState>,
     Query(params): Query<AttendanceStatsQuery>,
-) -> Result<Json<crate::models::AttendanceStatsResponse>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_attendance_stats_v2(&state.pool, params).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Attendance Stats Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Attendance stats fetched successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Attendance Stats Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch attendance stats",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn get_absent_students_handler(
     State(state): State<AppState>,
     Query(params): Query<AttendanceStatsQuery>,
-) -> Result<Json<Vec<crate::models::StudentAttendanceItem>>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_absent_students(&state.pool, params).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Absents Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Absent students fetched",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Absents Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch absents",
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -235,61 +375,152 @@ pub async fn approve_attendance_correction_handler(
 pub async fn create_student_handler(
     State(state): State<AppState>,
     Json(payload): Json<CreateStudentRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::create_student(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::CREATED),
-        Err(e) => Err((e, Json(json!({"error": "Failed to create student"})))),
+        Ok(res) => {
+            println!("CREATE Student Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Student created successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("CREATE Student Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to create student",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn bulk_create_students_handler(
     State(state): State<AppState>,
     Json(payloads): Json<Vec<CreateStudentRequest>>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::bulk_create_students(&state.pool, payloads).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err(e) => Err((e, Json(json!({"error": "Failed to bulk create students"})))),
+        Ok(res) => {
+            println!("BULK CREATE Students Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Students created successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("BULK CREATE Students Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to bulk create students",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn get_sections_handler(
     State(state): State<AppState>,
     Query(params): Query<SectionsQuery>,
-) -> Result<Json<Vec<String>>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_sections(&state.pool, params).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Sections Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Sections fetched successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Sections Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch sections",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn update_sections_handler(
     State(state): State<AppState>,
     Json(payload): Json<UpdateSectionsRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::update_sections(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err(e) => Err((e, Json(json!({"error": "Failed to update sections"})))),
+        Ok(res) => {
+            println!("UPDATE Sections Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Sections updated successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("UPDATE Sections Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to update sections",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn delete_student_handler(
     State(state): State<AppState>,
     Json(payload): Json<DeleteStudentRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::delete_user(&state.pool, &payload.student_id).await {
-        Ok(affected) if affected > 0 => Ok(StatusCode::OK),
-        Ok(_) => Err((StatusCode::NOT_FOUND, Json(json!({"error": "Student not found"})))),
-        Err(e) => Err((e, Json(json!({"error": "Failed to delete student"})))),
+        Ok(affected) if affected > 0 => {
+            println!("DELETE Student Affected: {}", affected);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Student deleted successfully",
+                "data": affected
+            })))
+        },
+        Ok(_) => {
+            println!("DELETE Student Not Found");
+            Err((StatusCode::NOT_FOUND, Json(json!({
+                "success": false,
+                "message": "Student not found",
+                "data": null
+            }))))
+        },
+        Err(e) => {
+            println!("DELETE Student Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to delete student",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn rename_section_handler(
     State(state): State<AppState>,
     Json(payload): Json<RenameSectionRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::rename_section(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err(e) => Err((e, Json(json!({"error": "Failed to rename section"})))),
+        Ok(res) => {
+            println!("RENAME Section Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Section renamed successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("RENAME Section Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to rename section",
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -308,20 +539,48 @@ pub async fn assign_class_handler(
 pub async fn get_timetable_handler(
     State(state): State<AppState>,
     Query(params): Query<std::collections::HashMap<String, String>>,
-) -> Result<Json<Vec<crate::models::TimetableEntry>>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_timetable(&state.pool, params).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Timetable Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Timetable fetched successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Timetable Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch timetable",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn clear_class_handler(
     State(state): State<AppState>,
     Json(payload): Json<AssignClassRequest>,
-) -> Result<StatusCode, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::clear_class(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("CLEAR Class Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Class cleared successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("CLEAR Class Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to clear class",
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -330,20 +589,48 @@ pub async fn clear_class_handler(
 pub async fn get_department_timings(
     State(state): State<AppState>,
     Query(params): Query<std::collections::HashMap<String, String>>,
-) -> Result<Json<Vec<crate::models::DepartmentTiming>>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_department_timings(&state.pool, params.get("branch").map(|s| s.as_str())).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Timings Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Timings fetched successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Timings Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch timings",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn update_department_timings(
     State(state): State<AppState>,
     Json(payload): Json<serde_json::Value>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::update_department_timings(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err(e) => Err((e, Json(json!({"error": "Failed to update"})))),
+        Ok(res) => {
+            println!("UPDATE Timings Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Timings updated successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("UPDATE Timings Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to update timings",
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -351,39 +638,95 @@ pub async fn update_department_timings(
 
 pub async fn get_courses_handler(
     State(state): State<AppState>,
-) -> Result<Json<Vec<crate::models::CourseResponse>>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_courses(&state.pool).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Courses Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Courses fetched successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Courses Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch courses",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn get_semester_subjects_handler(
     State(state): State<AppState>,
     Query(params): Query<SemesterSubjectsQuery>,
-) -> Result<Json<Vec<crate::models::SemesterSubjectResponse>>, StatusCode> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_semester_subjects(&state.pool, params).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err(e),
+        Ok(res) => {
+            println!("GET Sem Subjects Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Semester subjects fetched",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Sem Subjects Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch semester subjects",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn get_lesson_topics_handler(
     State(state): State<AppState>,
     Query(params): Query<LessonTopicsQuery>,
-) -> Result<Json<Vec<crate::models::LessonTopicResponse>>, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::get_lesson_topics(&state.pool, params).await {
-        Ok(res) => Ok(Json(res)),
-        Err(e) => Err((e, Json(json!({"error": "DB Error"})))),
+        Ok(res) => {
+            println!("GET Topics Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Lesson topics fetched",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("GET Topics Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to fetch topics",
+                "data": null
+            }))))
+        },
     }
 }
 
 pub async fn assign_lesson_schedule_handler(
     State(state): State<AppState>,
     Json(payload): Json<AssignLessonScheduleRequest>,
-) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match crate::services::user::faculty_service::assign_lesson_schedule(&state.pool, payload).await {
-        Ok(_) => Ok(StatusCode::OK),
-        Err(e) => Err((e, Json(json!({"error": "Failed to assign schedule"})))),
+        Ok(res) => {
+            println!("ASSIGN Schedule Result: {:?}", res);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Lesson schedule assigned successfully",
+                "data": res
+            })))
+        },
+        Err(e) => {
+            println!("ASSIGN Schedule Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to assign schedule",
+                "data": null
+            }))))
+        },
     }
 }

@@ -14,8 +14,22 @@ pub async fn get_student_profile_handler(
     Query(params): Query<ProfileQuery>,
 ) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match student_service::get_student_profile(&state.pool, &params.user_id).await {
-        Ok(profile) => Ok(Json(serde_json::to_value(profile).unwrap())),
-        Err(status) => Err((status, Json(serde_json::json!({"error": "Profile not found"})))),
+        Ok(profile) => {
+            println!("GET Student Profile Result: {:?}", profile);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Profile fetched successfully",
+                "data": profile
+            })))
+        },
+        Err(status) => {
+            println!("GET Student Profile Error: {:?}", status);
+            Err((status, Json(json!({
+                "success": false,
+                "message": "Profile not found",
+                "data": null
+            }))))
+        },
     }
 }
 
@@ -95,9 +109,25 @@ pub async fn get_student_all_feedbacks_handler(
 pub async fn get_student_attendance_handler(
     State(state): State<AppState>,
     Query(params): Query<AttendanceQuery>,
-) -> Result<Json<serde_json::Value>, StatusCode> {
-    let summary = student_service::get_student_attendance(&state.pool, &params.student_id).await?;
-    Ok(Json(serde_json::to_value(summary).unwrap()))
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match student_service::get_student_attendance(&state.pool, &params.student_id).await {
+        Ok(summary) => {
+            println!("GET Student Attendance Result: {:?}", summary);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Attendance summary fetched successfully",
+                "data": summary
+            })))
+        },
+        Err(status) => {
+            println!("GET Student Attendance Error: {:?}", status);
+            Err((status, Json(json!({
+                "success": false,
+                "message": "Attendance summary not found",
+                "data": null
+            }))))
+        },
+    }
 }
 
 pub async fn request_attendance_correction_handler(
@@ -105,8 +135,22 @@ pub async fn request_attendance_correction_handler(
     Json(payload): Json<AttendanceCorrectionRequestData>,
 ) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
     match student_service::request_attendance_correction(&state.pool, payload).await {
-        Ok(id) => Ok(Json(serde_json::json!({"id": id}))),
-        Err((c, msg)) => Err((c, Json(serde_json::json!({"error": msg})))),
+        Ok(id) => {
+            println!("REQUEST Attendance Correction Result: {:?}", id);
+            Ok(Json(json!({
+                "success": true,
+                "message": "Attendance correction requested successfully",
+                "data": {"id": id}
+            })))
+        },
+        Err((c, msg)) => {
+            println!("REQUEST Attendance Correction Error: {:?}", msg);
+            Err((c, Json(json!({
+                "success": false,
+                "message": msg,
+                "data": null
+            }))))
+        },
     }
 }
 
