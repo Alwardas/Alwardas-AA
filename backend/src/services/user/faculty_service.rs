@@ -66,7 +66,12 @@ pub async fn get_faculty_feedbacks(pool: &PgPool, faculty_id: String) -> Result<
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
 }
 
-pub async fn get_students(pool: &PgPool, params: StudentsQuery) -> Result<Vec<StudentBasicInfo>, StatusCode> {
+pub async fn get_students(pool: &PgPool, mut params: StudentsQuery) -> Result<Vec<StudentBasicInfo>, StatusCode> {
+    if let Some(sec) = &params.section {
+        if sec.to_uppercase() == "ALL" || sec.is_empty() {
+            params.section = None;
+        }
+    }
     faculty_repository::find_students(pool, params)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
@@ -202,7 +207,7 @@ pub async fn get_class_attendance_record(pool: &PgPool, params: ClassRecordQuery
     query.push_bind(&params.year);
     
     if let Some(sec) = &params.section {
-        if !sec.is_empty() {
+        if !sec.is_empty() && sec.to_uppercase() != "ALL" {
             query.push(" AND u.section = ");
             query.push_bind(sec);
         }
@@ -256,8 +261,9 @@ pub async fn bulk_create_students(pool: &PgPool, payloads: Vec<CreateStudentRequ
 
 pub async fn get_attendance_stats_v2(pool: &PgPool, params: AttendanceStatsQuery) -> Result<AttendanceStatsResponse, StatusCode> {
     let session = params.session.as_deref().map(|s| s.to_uppercase());
+    let section = params.section.as_deref().and_then(|s| if s.to_uppercase() == "ALL" || s.is_empty() { None } else { Some(s) });
     
-    let stats = faculty_repository::find_attendance_status(pool, &params.branch, params.year.as_deref(), params.section.as_deref(), &params.date, session.as_deref())
+    let stats = faculty_repository::find_attendance_status(pool, &params.branch, params.year.as_deref(), section, &params.date, session.as_deref())
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
     
@@ -266,8 +272,9 @@ pub async fn get_attendance_stats_v2(pool: &PgPool, params: AttendanceStatsQuery
 
 pub async fn get_absent_students(pool: &PgPool, params: AttendanceStatsQuery) -> Result<Vec<StudentAttendanceItem>, StatusCode> {
     let session = params.session.as_deref().map(|s| s.to_uppercase());
+    let section = params.section.as_deref().and_then(|s| if s.to_uppercase() == "ALL" || s.is_empty() { None } else { Some(s) });
     
-    faculty_repository::find_absent_students(pool, &params.branch, params.year.as_deref(), params.section.as_deref(), &params.date, session.as_deref())
+    faculty_repository::find_absent_students(pool, &params.branch, params.year.as_deref(), section, &params.date, session.as_deref())
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
 }

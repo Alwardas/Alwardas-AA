@@ -972,24 +972,25 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                 } else {
                     // Fallback fetch sections
                     try {
-                       final secRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/sections?branch=$branch&year=$year'));
-                       if (secRes.statusCode == 200) sections = List<String>.from(json.decode(secRes.body));
+                       final secUrl = '${ApiConstants.baseUrl}/api/sections?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(year)}';
+                       final secRes = await ApiConfig.get(secUrl);
+                       if (secRes.success && secRes.data != null) {
+                          sections = List<String>.from(secRes.data);
+                       }
                     } catch (_) {}
                 }
                 
                 // Fetch students for each section
                 for (var section in sections) {
-                    final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record').replace(queryParameters: {
-                       'branch': branch, 'year': year, 'section': section, 'date': dateIso, 'session': 'MORNING' 
-                    });
+                    final recordUrl = '${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(year)}&section=${Uri.encodeComponent(section)}&date=$dateIso&session=MORNING';
                     
-                    final res = await http.get(uri);
-                    if (res.statusCode == 200) {
-                        final data = json.decode(res.body);
+                    final res = await ApiConfig.get(recordUrl);
+                    if (res.success && res.data != null) {
+                        final data = res.data;
                         if (data['students'] != null) {
                             for(var s in data['students']) {
                                allStudents.add({
-                                 'studentId': (s['studentId'] ?? s['student_id']).toString(),
+                                 'studentId': (s['studentId'] ?? s['student_id'] ?? '').toString(),
                                  'status': 'HOLIDAY'
                                });
                             }
@@ -1118,18 +1119,18 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
 
       // 1. Fetch ALL Students for the class
       try {
-          final stuUri = Uri.parse('${ApiConstants.baseUrl}/api/students').replace(queryParameters: {
-              'branch': config.branch,
-              'year': config.year,
-              if (config.section.isNotEmpty && config.section != 'All') 'section': config.section,
-          });
-          final stuRes = await http.get(stuUri);
-          if (stuRes.statusCode == 200) {
-              final List<dynamic> sList = json.decode(stuRes.body);
+          final stuUrl = '${ApiConstants.baseUrl}/api/students?branch=${Uri.encodeComponent(config.branch)}&year=${Uri.encodeComponent(config.year)}' +
+              (config.section.isNotEmpty && config.section != 'All' ? '&section=${Uri.encodeComponent(config.section)}' : '');
+          
+          final stuRes = await ApiConfig.get(stuUrl);
+          if (stuRes.success && stuRes.data != null) {
+              final List<dynamic> sList = List<dynamic>.from(stuRes.data);
               for (var s in sList) {
-                  final sId = s['studentId'].toString();
-                  globalIds.add(sId);
-                  globalNames[sId] = s['fullName'].toString();
+                  final sId = (s['studentId'] ?? s['student_id'] ?? '').toString();
+                  if (sId.isNotEmpty) {
+                    globalIds.add(sId);
+                    globalNames[sId] = (s['fullName'] ?? s['full_name'] ?? 'Unknown').toString();
+                  }
               }
           }
       } catch (e) {
@@ -1227,30 +1228,28 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                fullAttendanceData[key] = {};
 
                Future<void> fetch(String session) async {
-                   final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record')
-                    .replace(queryParameters: {
-                      'branch': branch, 'year': year, 'section': section,
-                      'date': dateStr, 'session': session
-                    });
+                   final url = '${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(year)}&section=${Uri.encodeComponent(section)}&date=$dateStr&session=$session';
                    try {
-                     final res = await http.get(uri);
-                     if (res.statusCode == 200) {
-                        final d = json.decode(res.body);
-                        if (d['students'] != null) {
-                           for (var s in d['students']) {
-                              final sid = (s['studentId'] ?? s['student_id']).toString();
-                              final sname = (s['fullName'] ?? s['full_name']).toString();
-                              if (!studentNames.containsKey(sid)) {
-                                 studentNames[sid] = sname;
-                                 studentIds.add(sid);
-                              }
-                              fullAttendanceData[key]!.putIfAbsent(sid, () => {});
-                              fullAttendanceData[key]![sid]![session == 'MORNING' ? 'AM' : 'PM'] = s['status'] ?? '-';
+                     final res = await ApiConfig.get(url);
+                     if (res.success && res.data != null) {
+                        final data = res.data;
+                        if (data['students'] != null) {
+                           for (var s in data['students']) {
+                               final sid = (s['studentId'] ?? s['student_id'] ?? '').toString();
+                               final sname = (s['fullName'] ?? s['full_name'] ?? 'Unknown').toString();
+                               if (sid.isNotEmpty) {
+                                 if (!studentNames.containsKey(sid)) {
+                                    studentNames[sid] = sname;
+                                    studentIds.add(sid);
+                                 }
+                                 fullAttendanceData[key]!.putIfAbsent(sid, () => {});
+                                 fullAttendanceData[key]![sid]![session == 'MORNING' ? 'AM' : 'PM'] = s['status'] ?? '-';
+                               }
                            }
                         }
                      }
                    } catch (_) {}
-               }
+                }
                tasks.add(fetch('MORNING'));
                tasks.add(fetch('AFTERNOON'));
            }
