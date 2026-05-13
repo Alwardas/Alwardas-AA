@@ -91,9 +91,9 @@ pub async fn submit_attendance(pool: &PgPool, payload: SubmitAttendanceRequest) 
     let student_uuid = resolve_user_id(&payload.student_id, "Student", pool).await.map_err(|_| (StatusCode::BAD_REQUEST, format!("Invalid Student ID: {}", payload.student_id)))?;
     let faculty_uuid = resolve_user_id(&payload.faculty_id, "Faculty", pool).await.map_err(|_| (StatusCode::BAD_REQUEST, format!("Invalid Faculty ID: {}", payload.faculty_id)))?;
     
-    let session = payload.session.as_deref().unwrap_or("1");
+    let session = payload.session.as_deref().unwrap_or("MORNING").to_uppercase();
     
-    faculty_repository::insert_attendance(&mut tx, student_uuid, &payload.student_id, faculty_uuid, &payload.date, &payload.status, session, "")
+    faculty_repository::insert_attendance(&mut tx, student_uuid, &payload.student_id, faculty_uuid, &payload.date, &payload.status, &session, "")
         .await
         .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
 
@@ -135,7 +135,7 @@ pub async fn submit_attendance_batch(pool: &PgPool, payload: BatchAttendanceRequ
         (StatusCode::INTERNAL_SERVER_ERROR, "Failed to start transaction".to_string())
     })?;
     
-    let session = payload.session.unwrap_or_else(|| "1".to_string());
+    let session = payload.session.unwrap_or_else(|| "MORNING".to_string()).to_uppercase();
     
     for record in payload.records {
         let user_uuid = match student_id_to_uuid.get(&record.student_id) {
@@ -164,9 +164,23 @@ pub async fn submit_attendance_batch(pool: &PgPool, payload: BatchAttendanceRequ
 }
 
 pub async fn check_attendance_status(pool: &PgPool, params: CheckAttendanceQuery) -> Result<serde_json::Value, StatusCode> {
-    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM attendance WHERE date = $1::DATE AND session = $2 AND (section = $3 OR ($3 IS NULL AND section IS NULL))")
-        .bind(&params.date).bind(&params.session).bind(&params.section)
-        .fetch_one(pool).await.unwrap_or(0);
+    let session = params.session.to_uppercase();
+    let branch_variations = crate::models::get_branch_variations(&params.branch);
+    
+    let count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(*) FROM attendance 
+         WHERE date = $1::DATE AND session = $2 
+         AND student_uuid IN (
+             SELECT id FROM users 
+             WHERE role = 'Student' AND branch = ANY($3) AND year = $4 AND (section = $5 OR $5 IS NULL)
+         )"
+    )
+    .bind(&params.date)
+    .bind(&session)
+    .bind(&branch_variations)
+    .bind(&params.year)
+    .bind(&params.section)
+    .fetch_one(pool).await.unwrap_or(0);
     
     Ok(serde_json::json!({ "marked": count > 0 }))
 }
@@ -176,11 +190,12 @@ pub async fn get_class_attendance_record(pool: &PgPool, params: ClassRecordQuery
         params.branch, params.year, params.session, params.date, params.section);
 
     let branch_variations = crate::models::get_branch_variations(&params.branch);
+    let session = params.session.to_uppercase();
     
     let mut query = sqlx::QueryBuilder::new("SELECT u.login_id as student_id, u.full_name, a.status, (SELECT full_name FROM users WHERE id = a.faculty_uuid) as faculty_name FROM users u LEFT JOIN attendance a ON u.id = a.student_uuid AND a.date = ");
     query.push_bind(&params.date);
     query.push("::DATE AND a.session = ");
-    query.push_bind(&params.session);
+    query.push_bind(&session);
     query.push(" WHERE u.role = 'Student' AND u.branch = ANY(");
     query.push_bind(&branch_variations);
     query.push(") AND u.year = ");
@@ -242,7 +257,9 @@ pub async fn bulk_create_students(pool: &PgPool, payloads: Vec<CreateStudentRequ
 pub async fn get_attendance_stats_v2(pool: &PgPool, params: AttendanceStatsQuery) -> Result<AttendanceStatsResponse, StatusCode> {
     let year = params.year.as_deref().unwrap_or("Unknown");
     let section = params.section.as_deref().unwrap_or("Section A");
-    let stats = faculty_repository::find_attendance_status(pool, &params.branch, year, section, &params.date, params.session.as_deref())
+    let session = params.session.as_deref().map(|s| s.to_uppercase());
+    
+    let stats = faculty_repository::find_attendance_status(pool, &params.branch, year, section, &params.date, session.as_deref())
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
     
@@ -252,7 +269,9 @@ pub async fn get_attendance_stats_v2(pool: &PgPool, params: AttendanceStatsQuery
 pub async fn get_absent_students(pool: &PgPool, params: AttendanceStatsQuery) -> Result<Vec<StudentAttendanceItem>, StatusCode> {
     let year = params.year.as_deref().unwrap_or("Unknown");
     let section = params.section.as_deref().unwrap_or("Section A");
-    faculty_repository::find_absent_students(pool, &params.branch, year, section, &params.date, params.session.as_deref())
+    let session = params.session.as_deref().map(|s| s.to_uppercase());
+    
+    faculty_repository::find_absent_students(pool, &params.branch, year, section, &params.date, session.as_deref())
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
 }

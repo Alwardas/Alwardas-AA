@@ -125,7 +125,7 @@ pub async fn insert_attendance(
     sqlx::query(
         "INSERT INTO attendance (student_uuid, student_login_id, faculty_uuid, date, status, session, section) 
          VALUES ($1, $2, $3, $4::DATE, $5, $6, $7) 
-         ON CONFLICT (student_login_id, date, session) DO UPDATE SET status = $5"
+         ON CONFLICT (student_login_id, date, session) DO UPDATE SET status = $5, section = $7"
     )
     .bind(student_uuid)
     .bind(student_login_id)
@@ -163,17 +163,18 @@ pub async fn find_attendance_status(pool: &PgPool, branch: &str, year: &str, sec
     // Check if it's marked
     let mut check_query = QueryBuilder::new("SELECT COUNT(*) FROM attendance WHERE date = ");
     check_query.push_bind(date);
-    check_query.push("::DATE AND section = ");
+    check_query.push("::DATE AND student_uuid IN (SELECT id FROM users WHERE role = 'Student' AND branch = ANY(");
+    check_query.push_bind(&variations);
+    check_query.push(") AND year = ");
+    check_query.push_bind(year);
+    check_query.push(" AND section = ");
     check_query.push_bind(section);
+    check_query.push(")");
+    
     if let Some(s) = session {
         check_query.push(" AND session = ");
         check_query.push_bind(s);
     }
-    check_query.push(" AND student_uuid IN (SELECT id FROM users WHERE role = 'Student' AND branch = ANY(");
-    check_query.push_bind(&variations);
-    check_query.push(") AND year = ");
-    check_query.push_bind(year);
-    check_query.push(")");
     
     let is_marked_count: i64 = check_query.build_query_scalar().fetch_one(pool).await.unwrap_or(0);
     let is_marked = is_marked_count > 0;

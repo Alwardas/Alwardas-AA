@@ -39,7 +39,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
   bool _loading = false;
   
   // Filters
-  String _selectedSession = 'Morning'; // Morning | Afternoon
+  String _selectedSession = 'MORNING'; // MORNING | AFTERNOON
   DateTime _selectedDate = DateTime.now();
 
   // Modal State
@@ -418,34 +418,34 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
                                 border: Border.all(color: iconBg)
                               ),
                               child: Row(
-                                children: ['Morning', 'Afternoon'].map((session) {
-                                  final isSelected = _selectedSession == session;
-                                  return Expanded(
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        setState(() => _selectedSession = session);
-                                        _fetchStats();
-                                      },
-                                      child: AnimatedContainer(
-                                        duration: const Duration(milliseconds: 200),
-                                        padding: const EdgeInsets.symmetric(vertical: 10),
-                                        alignment: Alignment.center,
-                                        decoration: BoxDecoration(
-                                          color: isSelected ? tint : Colors.transparent,
-                                          borderRadius: BorderRadius.circular(20),
-                                        ),
-                                        child: Text(
-                                          session, 
-                                          style: GoogleFonts.poppins(
-                                            color: isSelected ? Colors.white : textColor,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 14
-                                          )
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                }).toList(),
+                                 children: ['MORNING', 'AFTERNOON'].map((session) {
+                                   final isSelected = _selectedSession == session;
+                                   return Expanded(
+                                     child: GestureDetector(
+                                       onTap: () {
+                                         setState(() => _selectedSession = session);
+                                         _fetchStats();
+                                       },
+                                       child: AnimatedContainer(
+                                         duration: const Duration(milliseconds: 200),
+                                         padding: const EdgeInsets.symmetric(vertical: 10),
+                                         alignment: Alignment.center,
+                                         decoration: BoxDecoration(
+                                           color: isSelected ? tint : Colors.transparent,
+                                           borderRadius: BorderRadius.circular(20),
+                                         ),
+                                         child: Text(
+                                           session[0] + session.substring(1).toLowerCase(), 
+                                           style: GoogleFonts.poppins(
+                                             color: isSelected ? Colors.white : textColor,
+                                             fontWeight: FontWeight.bold,
+                                             fontSize: 14
+                                           )
+                                         ),
+                                       ),
+                                     ),
+                                   );
+                                 }).toList(),
                               ),
                             ),
                           ),
