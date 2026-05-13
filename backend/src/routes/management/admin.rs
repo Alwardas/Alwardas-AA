@@ -3,7 +3,7 @@ use axum::{
     Json,
     http::StatusCode,
 };
-use crate::models::{AppState, AdminUserQuery, AdminUserDTO, AdminStats, AdminApprovalRequest};
+use crate::models::{AppState, AdminUserQuery, AdminApprovalRequest};
 
 pub async fn get_admin_users_handler(
     State(state): State<AppState>,

@@ -5,9 +5,10 @@ use axum::{
 use crate::models::{
     AppState, ProfileQuery, ProfileUpdateRequestData, LessonPlanQuery, 
     LessonPlanFeedbackRequest, AttendanceQuery, AttendanceCorrectionRequestData,
-    DeleteCorrectionRequestsRequest, SemesterAcademicsResponse
+    DeleteCorrectionRequestsRequest
 };
 use crate::services::user::student_service;
+use serde_json::json;
 
 pub async fn get_student_profile_handler(
     State(state): State<AppState>,

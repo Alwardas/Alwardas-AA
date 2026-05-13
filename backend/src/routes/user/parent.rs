@@ -3,7 +3,7 @@ use axum::{
     Json,
     http::StatusCode,
 };
-use crate::models::{AppState, ProfileQuery, ParentProfileResponse, ParentRequest, ParentRequestQuery, SubmitParentRequest, UpdateParentRequestStatus};
+use crate::models::{AppState, ProfileQuery, ParentRequestQuery, SubmitParentRequest, UpdateParentRequestStatus};
 use uuid::Uuid;
 
 pub async fn get_parent_profile_handler(

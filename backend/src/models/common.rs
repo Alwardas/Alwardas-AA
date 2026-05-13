@@ -293,7 +293,7 @@ pub struct ChangePasswordRequest {
     pub new_password: String,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct StudentProfileResponse {
     pub full_name: String,
@@ -320,7 +320,7 @@ pub struct ProfileQuery {
     pub user_id: String,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct StudentBasicInfo {
     pub id: Uuid,
@@ -355,7 +355,7 @@ pub struct StudentCourse {
     pub status: Option<String>,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ParentProfileResponse {
     pub full_name: String,
@@ -522,7 +522,7 @@ pub struct MarkCompleteRequest {
     pub section: Option<String>,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct FacultyProfileResponse {
     pub full_name: String,
@@ -534,7 +534,7 @@ pub struct FacultyProfileResponse {
     pub dob: Option<chrono::NaiveDate>,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct FacultySubjectResponse {
     pub id: String,
@@ -652,7 +652,7 @@ pub struct AttendanceRecord {
     pub session: Option<String>, 
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct AttendanceSummary {
     pub total_classes: i64,
@@ -686,7 +686,7 @@ pub struct ClassRecordQuery {
     pub section: Option<String>,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ClassRecordResponse {
     pub marked: bool,
@@ -694,7 +694,7 @@ pub struct ClassRecordResponse {
     pub students: Vec<StudentAttendanceItem>,
 }
 
-#[derive(Serialize, Deserialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct StudentAttendanceItem {
     pub id: Uuid,
@@ -789,7 +789,7 @@ pub struct AdminUserQuery {
     pub is_approved: Option<bool>,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 pub struct AdminUserDTO {
     pub id: Uuid,
     pub full_name: String,
@@ -800,7 +800,7 @@ pub struct AdminUserDTO {
     pub is_approved: Option<bool>,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct AdminStats {
     pub total_users: i64,
     pub pending_approvals: i64,
@@ -1104,7 +1104,7 @@ pub struct SemesterAcademicsResponse {
     pub sgpa: Option<f64>,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct CourseResponse {
     #[serde(rename = "courseId")]
@@ -1122,7 +1122,7 @@ pub struct SemesterSubjectsQuery {
     pub course_id: Option<String>,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct SemesterSubjectResponse {
     pub id: String,
@@ -1139,7 +1139,7 @@ pub struct LessonTopicsQuery {
     pub branch: Option<String>,
 }
 
-#[derive(Serialize, FromRow)]
+#[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct LessonTopicResponse {
     pub id: Uuid,

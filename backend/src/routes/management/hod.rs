@@ -5,9 +5,7 @@ use axum::{
 };
 use serde_json::json;
 use crate::models::{
-    AppState, MasterTimetableQuery, MasterTimetableResponse, 
-    BranchProgressResponse, SectionProgressResponse, 
-    SubjectProgressResponse, AddCourseSubjectRequest, SectionQuery, 
+    AppState, MasterTimetableQuery, AddCourseSubjectRequest, SectionQuery, 
     SubjectQuery, FacultyAssignmentQuery, BranchProgressQuery, 
     YearSectionsProgressQuery, SectionSubjectsProgressQuery
 };

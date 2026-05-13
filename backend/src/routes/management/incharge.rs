@@ -4,7 +4,7 @@ use axum::{
     http::StatusCode,
 };
 use crate::models::{
-    AppState, InchargeTimetableLookupQuery, UpdateClassStatusRequest, ClassPeriodStatus, DailyReportQuery, DailyClassActivityReport
+    AppState, InchargeTimetableLookupQuery, UpdateClassStatusRequest, DailyReportQuery
 };
 use serde_json::json;
 
