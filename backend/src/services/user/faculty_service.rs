@@ -255,11 +255,9 @@ pub async fn bulk_create_students(pool: &PgPool, payloads: Vec<CreateStudentRequ
 }
 
 pub async fn get_attendance_stats_v2(pool: &PgPool, params: AttendanceStatsQuery) -> Result<AttendanceStatsResponse, StatusCode> {
-    let year = params.year.as_deref().unwrap_or("Unknown");
-    let section = params.section.as_deref().unwrap_or("Section A");
     let session = params.session.as_deref().map(|s| s.to_uppercase());
     
-    let stats = faculty_repository::find_attendance_status(pool, &params.branch, year, section, &params.date, session.as_deref())
+    let stats = faculty_repository::find_attendance_status(pool, &params.branch, params.year.as_deref(), params.section.as_deref(), &params.date, session.as_deref())
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
     
@@ -267,11 +265,9 @@ pub async fn get_attendance_stats_v2(pool: &PgPool, params: AttendanceStatsQuery
 }
 
 pub async fn get_absent_students(pool: &PgPool, params: AttendanceStatsQuery) -> Result<Vec<StudentAttendanceItem>, StatusCode> {
-    let year = params.year.as_deref().unwrap_or("Unknown");
-    let section = params.section.as_deref().unwrap_or("Section A");
     let session = params.session.as_deref().map(|s| s.to_uppercase());
     
-    faculty_repository::find_absent_students(pool, &params.branch, year, section, &params.date, session.as_deref())
+    faculty_repository::find_absent_students(pool, &params.branch, params.year.as_deref(), params.section.as_deref(), &params.date, session.as_deref())
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
 }

@@ -137,20 +137,35 @@ pub async fn insert_attendance(
     .execute(&mut **executor).await.map(|r| r.rows_affected())
 }
 
-pub async fn find_attendance_status(pool: &PgPool, branch: &str, year: &str, section: &str, date: &str, session: Option<&str>) -> Result<serde_json::Value, sqlx::Error> {
+pub async fn find_attendance_status(pool: &PgPool, branch: &str, year: Option<&str>, section: Option<&str>, date: &str, session: Option<&str>) -> Result<serde_json::Value, sqlx::Error> {
     let variations = crate::models::get_branch_variations(branch);
     
-    let total_students: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM users WHERE role = 'Student' AND branch = ANY($1) AND year = $2 AND section = $3")
-        .bind(&variations).bind(year).bind(section).fetch_one(pool).await?;
+    let mut total_students_query = QueryBuilder::new("SELECT COUNT(*) FROM users WHERE role = 'Student' AND branch = ANY(");
+    total_students_query.push_bind(&variations);
+    total_students_query.push(")");
+    if let Some(y) = year {
+        total_students_query.push(" AND year = ");
+        total_students_query.push_bind(y);
+    }
+    if let Some(s) = section {
+        total_students_query.push(" AND section = ");
+        total_students_query.push_bind(s);
+    }
+    let total_students: i64 = total_students_query.build_query_scalar().fetch_one(pool).await?;
 
     let mut query = QueryBuilder::new("SELECT COUNT(*) FROM attendance WHERE date = ");
     query.push_bind(date);
     query.push("::DATE AND (status = 'present' OR status = 'P' OR status = 'PRESENT') AND student_uuid IN (SELECT id FROM users WHERE branch = ANY(");
     query.push_bind(&variations);
-    query.push(") AND year = ");
-    query.push_bind(year);
-    query.push(" AND section = ");
-    query.push_bind(section);
+    query.push(")");
+    if let Some(y) = year {
+        query.push(" AND year = ");
+        query.push_bind(y);
+    }
+    if let Some(s) = section {
+        query.push(" AND section = ");
+        query.push_bind(s);
+    }
     query.push(")");
     
     if let Some(s) = session {
@@ -165,10 +180,15 @@ pub async fn find_attendance_status(pool: &PgPool, branch: &str, year: &str, sec
     check_query.push_bind(date);
     check_query.push("::DATE AND student_uuid IN (SELECT id FROM users WHERE role = 'Student' AND branch = ANY(");
     check_query.push_bind(&variations);
-    check_query.push(") AND year = ");
-    check_query.push_bind(year);
-    check_query.push(" AND section = ");
-    check_query.push_bind(section);
+    check_query.push(")");
+    if let Some(y) = year {
+        check_query.push(" AND year = ");
+        check_query.push_bind(y);
+    }
+    if let Some(s) = section {
+        check_query.push(" AND section = ");
+        check_query.push_bind(s);
+    }
     check_query.push(")");
     
     if let Some(s) = session {
@@ -189,7 +209,7 @@ pub async fn find_attendance_status(pool: &PgPool, branch: &str, year: &str, sec
     }))
 }
 
-pub async fn find_absent_students(pool: &PgPool, branch: &str, year: &str, section: &str, date: &str, session: Option<&str>) -> Result<Vec<StudentAttendanceItem>, sqlx::Error> {
+pub async fn find_absent_students(pool: &PgPool, branch: &str, year: Option<&str>, section: Option<&str>, date: &str, session: Option<&str>) -> Result<Vec<StudentAttendanceItem>, sqlx::Error> {
     let variations = crate::models::get_branch_variations(branch);
     
     let mut query = QueryBuilder::new(r#"
@@ -197,14 +217,20 @@ pub async fn find_absent_students(pool: &PgPool, branch: &str, year: &str, secti
         FROM users 
         WHERE role = 'Student' AND branch = ANY("#);
     query.push_bind(&variations);
-    query.push(") AND year = ");
-    query.push_bind(year);
-    query.push(" AND section = ");
-    query.push_bind(section);
+    query.push(")");
+    if let Some(y) = year {
+        query.push(" AND year = ");
+        query.push_bind(y);
+    }
+    if let Some(s) = section {
+        query.push(" AND section = ");
+        query.push_bind(s);
+    }
+    
     query.push(" AND id NOT IN (
         SELECT student_uuid FROM attendance WHERE date = ");
     query.push_bind(date);
-    query.push("::DATE AND (status = 'present' OR status = 'P' OR status = 'PRESENT')");
+    query.push("::DATE AND (status = 'present' OR status = 'P' OR status = 'PRESENT' OR status = 'HOLIDAY')");
     
     if let Some(s) = session {
         query.push(" AND session = ");

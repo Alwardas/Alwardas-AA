@@ -158,11 +158,22 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
       final absentRes = await http.get(absentUri);
 
       if (statsRes.statusCode == 200 && absentRes.statusCode == 200 && mounted) {
-        final stats = json.decode(statsRes.body);
-        final absents = json.decode(absentRes.body);
+        final statsData = json.decode(statsRes.body);
+        final absentData = json.decode(absentRes.body);
+        
+        final List<dynamic> sortedAbsents = List<dynamic>.from(absentData['data'] ?? []);
+        sortedAbsents.sort((a, b) {
+            final idA = (a['studentId'] ?? a['student_id'] ?? '').toString();
+            final idB = (b['studentId'] ?? b['student_id'] ?? '').toString();
+            final numA = int.tryParse(idA.replaceAll(RegExp(r'[^0-9]'), ''));
+            final numB = int.tryParse(idB.replaceAll(RegExp(r'[^0-9]'), ''));
+            if (numA != null && numB != null) return numA.compareTo(numB);
+            return idA.compareTo(idB);
+        });
+
         setState(() {
-          _absentCount = stats['totalAbsent'] ?? 0;
-          _absentStudents = absents;
+          _absentCount = statsData['data']?['totalAbsent'] ?? 0;
+          _absentStudents = sortedAbsents;
         });
       }
     } catch (e) {

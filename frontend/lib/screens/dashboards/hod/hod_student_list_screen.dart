@@ -91,7 +91,14 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
          debugPrint("API Error: ${response.statusCode}");
       }
       
-      currentSectionStudents.sort((a, b) => a['studentId'].toString().compareTo(b['studentId'].toString()));
+      currentSectionStudents.sort((a, b) {
+          final idA = a['studentId'].toString();
+          final idB = b['studentId'].toString();
+          final numA = int.tryParse(idA.replaceAll(RegExp(r'[^0-9]'), ''));
+          final numB = int.tryParse(idB.replaceAll(RegExp(r'[^0-9]'), ''));
+          if (numA != null && numB != null) return numA.compareTo(numB);
+          return idA.compareTo(idB);
+      });
 
       setState(() {
          _studentList = currentSectionStudents;

@@ -343,19 +343,25 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
     );
 
     try {
-      final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/absents').replace(queryParameters: {
-        'branch': branch,
-        'date': dateStr,
-        'session': _selectedSession,
-        if (year != null) 'year': year,
-        if (section != null) 'section': section,
-      });
+      final endpoint = '${ApiConstants.baseUrl}/api/attendance/absents?branch=${Uri.encodeComponent(branch)}&date=$dateStr&session=$_selectedSession' +
+          (year != null ? '&year=${Uri.encodeComponent(year)}' : '') +
+          (section != null ? '&section=${Uri.encodeComponent(section)}' : '');
       
-      final res = await http.get(uri);
+      final res = await ApiConfig.get(endpoint);
       if (mounted) Navigator.pop(context); // close loading
 
-      if (res.statusCode == 200) {
-        final List<dynamic> absents = json.decode(res.body);
+      if (res.success && res.data != null) {
+        final List<dynamic> absents = List<dynamic>.from(res.data);
+        
+        // Sort numerically by student ID
+        absents.sort((a, b) {
+            final idA = (a['studentId'] ?? a['student_id'] ?? '').toString();
+            final idB = (b['studentId'] ?? b['student_id'] ?? '').toString();
+            final numA = int.tryParse(idA.replaceAll(RegExp(r'[^0-9]'), ''));
+            final numB = int.tryParse(idB.replaceAll(RegExp(r'[^0-9]'), ''));
+            if (numA != null && numB != null) return numA.compareTo(numB);
+            return idA.compareTo(idB);
+        });
         String title = "Absent Students";
         if (year != null) title += " - $year";
         if (section != null) title += " ($section)";
@@ -364,7 +370,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
            AbsentStudentsPopup.show(context, absents, title, date: _selectedDate);
         }
       } else {
-        _showSnackBar("Failed to fetch absents");
+        _showSnackBar(res.message);
       }
     } catch (e) {
       if (mounted) Navigator.pop(context); // close loading

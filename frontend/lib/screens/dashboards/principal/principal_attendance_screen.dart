@@ -188,7 +188,8 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
       
       if (statsRes.statusCode == 200) {
          try {
-           final data = json.decode(statsRes.body);
+           final responseData = json.decode(statsRes.body);
+           final data = responseData['data'] ?? {};
            stats = {
              'total': (data['totalStudents'] as int? ?? 0),
              'present': (data['totalPresent'] as int? ?? 0),
@@ -205,8 +206,9 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
          final res = results[i];
          if (res.statusCode == 200) {
             try {
-               final data = json.decode(res.body);
-               if (data['submitted'] != true) {
+               final responseData = json.decode(res.body);
+               final data = responseData['data'] ?? {};
+               if (data['marked'] != true) {
                   allYearsMarked = false;
                   break; 
                }
@@ -268,7 +270,18 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
       if (mounted) Navigator.pop(context); // close loading
 
       if (res.statusCode == 200) {
-        final List<dynamic> absents = json.decode(res.body);
+        final responseData = json.decode(res.body);
+        final List<dynamic> absents = List<dynamic>.from(responseData['data'] ?? []);
+        
+        // Sort numerically by student ID
+        absents.sort((a, b) {
+            final idA = (a['studentId'] ?? a['student_id'] ?? '').toString();
+            final idB = (b['studentId'] ?? b['student_id'] ?? '').toString();
+            final numA = int.tryParse(idA.replaceAll(RegExp(r'[^0-9]'), ''));
+            final numB = int.tryParse(idB.replaceAll(RegExp(r'[^0-9]'), ''));
+            if (numA != null && numB != null) return numA.compareTo(numB);
+            return idA.compareTo(idB);
+        });
         String title = "Absent Students";
         if (branch != null) title += " - $branch";
         

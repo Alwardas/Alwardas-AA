@@ -8,6 +8,7 @@ import 'dart:convert';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
+import '../../../core/api_config.dart';
 import '../../../core/services/auth_service.dart';
 
 class HODManageAttendanceScreen extends StatefulWidget {
@@ -51,22 +52,18 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
   Future<void> _checkDailyStatus() async {
     final user = await AuthService.getUserSession();
     final branch = widget.branchOverride ?? user?['branch'] ?? '';
-    final dateStr = _date.toIso8601String();
+    final dateStr = _date.toIso8601String().split('T')[0];
     final section = widget.section ?? 'Section A';
 
     try {
-      final amRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=MORNING&date=$dateStr&section=${Uri.encodeComponent(section)}'));
-      if (amRes.statusCode == 200) {
-        final responseData = json.decode(amRes.body);
-        final data = responseData['data'] ?? {};
-        setState(() => _morningMarked = data['marked'] ?? false);
+      final amRes = await ApiConfig.get('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=MORNING&date=$dateStr&section=${Uri.encodeComponent(section)}');
+      if (amRes.success && amRes.data != null) {
+        setState(() => _morningMarked = amRes.data['marked'] ?? false);
       }
       
-      final pmRes = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=AFTERNOON&date=$dateStr&section=${Uri.encodeComponent(section)}'));
-      if (pmRes.statusCode == 200) {
-        final responseData = json.decode(pmRes.body);
-        final data = responseData['data'] ?? {};
-        setState(() => _afternoonMarked = data['marked'] ?? false);
+      final pmRes = await ApiConfig.get('${ApiConstants.baseUrl}/api/attendance/check?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=AFTERNOON&date=$dateStr&section=${Uri.encodeComponent(section)}');
+      if (pmRes.success && pmRes.data != null) {
+        setState(() => _afternoonMarked = pmRes.data['marked'] ?? false);
       }
     } catch (e) {
       debugPrint("Status check error: $e");
@@ -80,24 +77,16 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
     setState(() => _loading = true);
     final user = await AuthService.getUserSession();
     final branch = widget.branchOverride ?? user?['branch'] ?? '';
-    final dateStr = _date.toIso8601String().split('T')[0]; // Use YYYY-MM-DD for consistency
+    final dateStr = _date.toIso8601String().split('T')[0];
     final section = widget.section ?? 'Section A';
 
     try {
-      final uri = Uri.parse('${ApiConstants.baseUrl}/api/attendance/class-record')
-          .replace(queryParameters: {
-            'branch': branch,
-            'year': widget.year,
-            'session': _session,
-            'date': dateStr,
-            'section': section
-          });
+      final url = '${ApiConstants.baseUrl}/api/attendance/class-record?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&session=$_session&date=$dateStr&section=${Uri.encodeComponent(section)}';
 
-      final res = await http.get(uri);
+      final res = await ApiConfig.get(url);
       
-      if (res.statusCode == 200) {
-        final responseData = json.decode(res.body);
-        final data = responseData['data'] ?? {};
+      if (res.success && res.data != null) {
+        final data = res.data;
         
         List<dynamic> fetched = [];
         if (data['students'] != null) {
@@ -133,12 +122,12 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
           _loading = false;
         });
       } else {
-         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to fetch records: ${res.statusCode}")));
+         _showSnackBar(res.message);
          setState(() { _students = []; _originalStudents = []; _loading = false; });
       }
 
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Network Error: $e")));
+      _showSnackBar("Error: $e");
       setState(() { _loading = false; _students = []; });
     }
   }
@@ -519,7 +508,10 @@ class _HODManageAttendanceScreenState extends State<HODManageAttendanceScreen> {
                             padding: const EdgeInsets.all(15),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(color: Colors.grey.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(12)),
-                            child: Text("Attendance Marked by ${_markedBy ?? 'Unknown'}", style: TextStyle(color: textColor, fontWeight: FontWeight.bold)),
+                            child: Text(
+                               "Attendance Marked by ${_markedBy == null ? 'Unknown' : (_markedBy!.toUpperCase().startsWith('HOD') ? 'HOD (${_markedBy})' : _markedBy)}", 
+                               style: TextStyle(color: textColor, fontWeight: FontWeight.bold)
+                             ),
                          )
                    ],
                  ),
