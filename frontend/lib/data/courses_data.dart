@@ -21,7 +21,7 @@ class CoursesData {
       
       // Filter for files in assets/curriculum/ that are .json
       final List<String> curriculumFiles = manifest.keys
-          .where((path) => (path.toLowerCase().startsWith('assets/curriculum/') || path.toLowerCase().startsWith('assets\\curriculum\\')) && path.toLowerCase().endsWith('.json'))
+          .where((path) => path.toLowerCase().contains('assets/curriculum/') && path.toLowerCase().endsWith('.json'))
           .toList();
 
       debugPrint("Found ${curriculumFiles.length} curriculum files dynamically.");
@@ -39,12 +39,20 @@ class CoursesData {
           final List<String> parts = normalizedPath.split('/');
           
           // Fallback values if path structure differs
-          String branch = _normalizeBranch(data['branch'] ?? (parts.length > 3 ? parts[3] : 'Unknown'));
-          String regulation = data['regulation'] ?? (parts.length > 2 ? parts[2] : 'C23');
-          String type = data['type'] ?? (parts.length > 5 ? parts[5] : 'Theory');
-          
-          // Normalize semester to match the format expected by UI screens
-          String semester = _normalizeSemester(data['semester']?.toString() ?? (parts.length > 4 ? parts[4] : ''));
+          final curriculumIndex = parts.indexOf('curriculum');
+          String branch = 'Unknown';
+          String regulation = 'C23';
+          String semester = '';
+          String type = 'Theory';
+
+          if (curriculumIndex != -1) {
+              regulation = data['regulation'] ?? (parts.length > curriculumIndex + 1 ? parts[curriculumIndex + 1] : 'C23');
+              branch = _normalizeBranch(data['branch'] ?? (parts.length > curriculumIndex + 2 ? parts[curriculumIndex + 2] : 'Unknown'));
+              semester = _normalizeSemester(data['semester']?.toString() ?? (parts.length > curriculumIndex + 3 ? parts[curriculumIndex + 3] : ''));
+              // Type might be at index + 4 or might be the file name parent
+              type = data['type'] ?? (parts.length > curriculumIndex + 4 ? parts[curriculumIndex + 4] : 'Theory');
+              if (type.toLowerCase().endsWith('.json')) type = 'Theory'; // Handle cases where type is missing
+          }
 
           if (data['subjectCode'] != null) {
             all.add({
