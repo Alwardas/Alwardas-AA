@@ -1,0 +1,104 @@
+{
+    "subjectCode": "CM-303",
+    "subjectName": "Operating systems",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 60,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction to Operating Systems",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm303-1.1", "sno": "1.1", "topic": "Definition and Objectives of Operating System", "period": 1, "type": "theory" },
+                { "id": "cm303-1.2", "sno": "1.2", "topic": "Services provided by Operating System", "period": 1, "type": "theory" },
+                { "id": "cm303-1.3", "sno": "1.3", "topic": "Evolution of OS: Batch, Multi-programming, Time-sharing", "period": 1, "type": "theory" },
+                { "id": "cm303-1.4", "sno": "1.4", "topic": "Real-time, Distributed and Mobile Operating Systems", "period": 1, "type": "theory" },
+                { "id": "cm303-1.5", "sno": "1.5", "topic": "OS Structure: Monolithic, Layered, Micro-kernel", "period": 1, "type": "theory" },
+                { "id": "cm303-1.6", "sno": "1.6", "topic": "System Calls: Introduction and types", "period": 1, "type": "theory" },
+                { "id": "cm303-1.7", "sno": "1.7", "topic": "OS Interface: CLI and GUI", "period": 1, "type": "theory" },
+                { "id": "cm303-1.8", "sno": "1.8", "topic": "Booting process: BIOS, POST and Loading OS", "period": 1, "type": "theory" },
+                { "id": "cm303-1.9", "sno": "1.9", "topic": "Revision of OS Basics", "period": 1, "type": "revision" },
+                { "id": "cm303-1.10", "sno": "1.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Process Management",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm303-2.1", "sno": "2.1", "topic": "Concept of Process: PCB and Process States", "period": 1, "type": "theory" },
+                { "id": "cm303-2.2", "sno": "2.2", "topic": "Process Scheduling: Queues and Schedulers", "period": 1, "type": "theory" },
+                { "id": "cm303-2.3", "sno": "2.3", "topic": "Context Switching mechanism", "period": 1, "type": "theory" },
+                { "id": "cm303-2.4", "sno": "2.4", "topic": "CPU Scheduling Algorithms: FCFS and SJF", "period": 1, "type": "theory" },
+                { "id": "cm303-2.5", "sno": "2.5", "topic": "Priority Scheduling and Round Robin", "period": 1, "type": "theory" },
+                { "id": "cm303-2.6", "sno": "2.6", "topic": "Numerical problems on CPU Scheduling", "period": 1, "type": "theory" },
+                { "id": "cm303-2.7", "sno": "2.7", "topic": "Inter-process Communication (IPC): Shared memory and Message passing", "period": 1, "type": "theory" },
+                { "id": "cm303-2.8", "sno": "2.8", "topic": "Threads: Concepts and benefits", "period": 1, "type": "theory" },
+                { "id": "cm303-2.9", "sno": "2.9", "topic": "Process Synchronization: Critical Section problem", "period": 1, "type": "theory" },
+                { "id": "cm303-2.10", "sno": "2.10", "topic": "Semaphores and Mutex concepts", "period": 1, "type": "theory" },
+                { "id": "cm303-2.11", "sno": "2.11", "topic": "Deadlocks: Characterization and prevention", "period": 1, "type": "theory" },
+                { "id": "cm303-2.12", "sno": "2.12", "topic": "Deadlock Avoidance: Banker's Algorithm", "period": 1, "type": "theory" },
+                { "id": "cm303-2.13", "sno": "2.13", "topic": "Tutorial on Process Management", "period": 1, "type": "theory" },
+                { "id": "cm303-2.14", "sno": "2.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm303-2.15", "sno": "2.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Storage Management",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm303-3.1", "sno": "3.1", "topic": "Memory Management: Background and Logical vs Physical address", "period": 1, "type": "theory" },
+                { "id": "cm303-3.2", "sno": "3.2", "topic": "Contiguous Memory Allocation: MFT and MVT", "period": 1, "type": "theory" },
+                { "id": "cm303-3.3", "sno": "3.3", "topic": "Fragmentation: Internal and External", "period": 1, "type": "theory" },
+                { "id": "cm303-3.4", "sno": "3.4", "topic": "Paging: Concepts and Hardware support", "period": 1, "type": "theory" },
+                { "id": "cm303-3.5", "sno": "3.5", "topic": "Segmentation: Basic method", "period": 1, "type": "theory" },
+                { "id": "cm303-3.6", "sno": "3.6", "topic": "Virtual Memory: Introduction and Demand Paging", "period": 1, "type": "theory" },
+                { "id": "cm303-3.7", "sno": "3.7", "topic": "Page Replacement Algorithms: FIFO and Optimal", "period": 1, "type": "theory" },
+                { "id": "cm303-3.8", "sno": "3.8", "topic": "Page Replacement Algorithms: LRU", "period": 1, "type": "theory" },
+                { "id": "cm303-3.9", "sno": "3.9", "topic": "Numerical problems on Page Replacement", "period": 1, "type": "theory" },
+                { "id": "cm303-3.10", "sno": "3.10", "topic": "Thrashing: Causes and solutions", "period": 1, "type": "theory" },
+                { "id": "cm303-3.11", "sno": "3.11", "topic": "Disk Structure and Management", "period": 1, "type": "theory" },
+                { "id": "cm303-3.12", "sno": "3.12", "topic": "Disk Scheduling Algorithms: FCFS, SSTF, SCAN", "period": 1, "type": "theory" },
+                { "id": "cm303-3.13", "sno": "3.13", "topic": "Tutorial on Memory and Disk scheduling", "period": 1, "type": "theory" },
+                { "id": "cm303-3.14", "sno": "3.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm303-3.15", "sno": "3.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "File and I/O Management",
+            "totalPeriods": 12,
+            "topics": [
+                { "id": "cm303-4.1", "sno": "4.1", "topic": "File Concept: Attributes and Operations", "period": 1, "type": "theory" },
+                { "id": "cm303-4.2", "sno": "4.2", "topic": "Access Methods: Sequential and Direct access", "period": 1, "type": "theory" },
+                { "id": "cm303-4.3", "sno": "4.3", "topic": "Directory Structure: Single level, Two level and Tree structured", "period": 1, "type": "theory" },
+                { "id": "cm303-4.4", "sno": "4.4", "topic": "Allocation Methods: Contiguous, Linked and Indexed", "period": 1, "type": "theory" },
+                { "id": "cm303-4.5", "sno": "4.5", "topic": "Free Space Management: Bit vector and Linked list", "period": 1, "type": "theory" },
+                { "id": "cm303-4.6", "sno": "4.6", "topic": "I/O Hardware: Principles of I/O hardware", "period": 1, "type": "theory" },
+                { "id": "cm303-4.7", "sno": "4.7", "topic": "I/O Interface: Polling and Interrupts", "period": 1, "type": "theory" },
+                { "id": "cm303-4.8", "sno": "4.8", "topic": "DMA (Direct Memory Access) mechanism", "period": 1, "type": "theory" },
+                { "id": "cm303-4.9", "sno": "4.9", "topic": "Device Drivers: Concept and role", "period": 1, "type": "theory" },
+                { "id": "cm303-4.10", "sno": "4.10", "topic": "Kernel I/O Subsystem: Buffering and Caching", "period": 1, "type": "theory" },
+                { "id": "cm303-4.11", "sno": "4.11", "topic": "Revision of File and I/O", "period": 1, "type": "revision" },
+                { "id": "cm303-4.12", "sno": "4.12", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Security and Protection",
+            "totalPeriods": 8,
+            "topics": [
+                { "id": "cm303-5.1", "sno": "5.1", "topic": "Security Goals and Threats in OS", "period": 1, "type": "theory" },
+                { "id": "cm303-5.2", "sno": "5.2", "topic": "User Authentication methods", "period": 1, "type": "theory" },
+                { "id": "cm303-5.3", "sno": "5.3", "topic": "Malicious Software: Virus, Worms, Trojan horses", "period": 1, "type": "theory" },
+                { "id": "cm303-5.4", "sno": "5.4", "topic": "Protection Mechanisms: Access Matrix", "period": 1, "type": "theory" },
+                { "id": "cm303-5.5", "sno": "5.5", "topic": "Firewalls and Intrusion Detection Systems (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm303-5.6", "sno": "5.6", "topic": "Case Study: Windows vs Linux Security", "period": 1, "type": "theory" },
+                { "id": "cm303-5.7", "sno": "5.7", "topic": "Revision of OS Security", "period": 1, "type": "revision" },
+                { "id": "cm303-5.8", "sno": "5.8", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,119 @@
+{
+    "subjectCode": "CM-304",
+    "subjectName": "Data Structures through C",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction to Data Structures and Recursion",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm304-1.1", "sno": "1.1", "topic": "Definition and Importance of Data Structures", "period": 1, "type": "theory" },
+                { "id": "cm304-1.2", "sno": "1.2", "topic": "Classification of Data Structures: Linear and Non-linear", "period": 1, "type": "theory" },
+                { "id": "cm304-1.3", "sno": "1.3", "topic": "Abstract Data Types (ADT) concept", "period": 1, "type": "theory" },
+                { "id": "cm304-1.4", "sno": "1.4", "topic": "Algorithm Analysis: Space and Time complexity", "period": 1, "type": "theory" },
+                { "id": "cm304-1.5", "sno": "1.5", "topic": "Big-O Notation: Concepts and examples", "period": 1, "type": "theory" },
+                { "id": "cm304-1.6", "sno": "1.6", "topic": "Recursion: Principle and types (Direct and Indirect)", "period": 1, "type": "theory" },
+                { "id": "cm304-1.7", "sno": "1.7", "topic": "Recursion examples: Factorial and Fibonacci", "period": 1, "type": "theory" },
+                { "id": "cm304-1.8", "sno": "1.8", "topic": "Iterative vs Recursive approaches", "period": 1, "type": "theory" },
+                { "id": "cm304-1.9", "sno": "1.9", "topic": "Revision of DS Fundamentals", "period": 1, "type": "revision" },
+                { "id": "cm304-1.10", "sno": "1.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Linked Lists",
+            "totalPeriods": 20,
+            "topics": [
+                { "id": "cm304-2.1", "sno": "2.1", "topic": "Limitations of Arrays and Need for Linked Lists", "period": 1, "type": "theory" },
+                { "id": "cm304-2.2", "sno": "2.2", "topic": "Singly Linked List: Representation and Node structure", "period": 1, "type": "theory" },
+                { "id": "cm304-2.3", "sno": "2.3", "topic": "Singly Linked List: Memory allocation (malloc)", "period": 1, "type": "theory" },
+                { "id": "cm304-2.4", "sno": "2.4", "topic": "Insertion at Beginning of Singly Linked List", "period": 1, "type": "theory" },
+                { "id": "cm304-2.5", "sno": "2.5", "topic": "Insertion at End of Singly Linked List", "period": 1, "type": "theory" },
+                { "id": "cm304-2.6", "sno": "2.6", "topic": "Insertion at a given position in Singly Linked List", "period": 1, "type": "theory" },
+                { "id": "cm304-2.7", "sno": "2.7", "topic": "Deletion from Beginning of Singly Linked List", "period": 1, "type": "theory" },
+                { "id": "cm304-2.8", "sno": "2.8", "topic": "Deletion from End of Singly Linked List", "period": 1, "type": "theory" },
+                { "id": "cm304-2.9", "sno": "2.9", "topic": "Deletion of a specific node in Singly Linked List", "period": 1, "type": "theory" },
+                { "id": "cm304-2.10", "sno": "2.10", "topic": "Searching and Traversal in Singly Linked List", "period": 1, "type": "theory" },
+                { "id": "cm304-2.11", "sno": "2.11", "topic": "Circular Linked List: Concepts and operations", "period": 1, "type": "theory" },
+                { "id": "cm304-2.12", "sno": "2.12", "topic": "Doubly Linked List: Representation and operations", "period": 1, "type": "theory" },
+                { "id": "cm304-2.13", "sno": "2.13", "topic": "Insertion and Deletion in Doubly Linked List", "period": 1, "type": "theory" },
+                { "id": "cm304-2.14", "sno": "2.14", "topic": "Header Linked Lists: Introduction", "period": 1, "type": "theory" },
+                { "id": "cm304-2.15", "sno": "2.15", "topic": "Applications of Linked Lists", "period": 1, "type": "theory" },
+                { "id": "cm304-2.16", "sno": "2.16", "topic": "Solving problems on Linked Lists", "period": 1, "type": "theory" },
+                { "id": "cm304-2.17", "sno": "2.17", "topic": "Tutorial on Linked List operations", "period": 1, "type": "theory" },
+                { "id": "cm304-2.18", "sno": "2.18", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm304-2.19", "sno": "2.19", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm304-2.20", "sno": "2.20", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Stacks and Queues",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm304-3.1", "sno": "3.1", "topic": "Stack ADT: LIFO Principle", "period": 1, "type": "theory" },
+                { "id": "cm304-3.2", "sno": "3.2", "topic": "Array Implementation of Stack: Push and Pop", "period": 1, "type": "theory" },
+                { "id": "cm304-3.3", "sno": "3.3", "topic": "Linked List Implementation of Stack", "period": 1, "type": "theory" },
+                { "id": "cm304-3.4", "sno": "3.4", "topic": "Applications of Stack: Expression evaluation", "period": 1, "type": "theory" },
+                { "id": "cm304-3.5", "sno": "3.5", "topic": "Infix, Prefix and Postfix expressions", "period": 1, "type": "theory" },
+                { "id": "cm304-3.6", "sno": "3.6", "topic": "Conversion of Infix to Postfix using Stack", "period": 1, "type": "theory" },
+                { "id": "cm304-3.7", "sno": "3.7", "topic": "Queue ADT: FIFO Principle", "period": 1, "type": "theory" },
+                { "id": "cm304-3.8", "sno": "3.8", "topic": "Array Implementation of Queue: Enqueue and Dequeue", "period": 1, "type": "theory" },
+                { "id": "cm304-3.9", "sno": "3.9", "topic": "Linked List Implementation of Queue", "period": 1, "type": "theory" },
+                { "id": "cm304-3.10", "sno": "3.10", "topic": "Circular Queue: Need and implementation", "period": 1, "type": "theory" },
+                { "id": "cm304-3.11", "sno": "3.11", "topic": "Double Ended Queue (DEQUEUE) and Priority Queue", "period": 1, "type": "theory" },
+                { "id": "cm304-3.12", "sno": "3.12", "topic": "Applications of Queues", "period": 1, "type": "theory" },
+                { "id": "cm304-3.13", "sno": "3.13", "topic": "Tutorial on Stacks and Queues", "period": 1, "type": "theory" },
+                { "id": "cm304-3.14", "sno": "3.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm304-3.15", "sno": "3.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Trees",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm304-4.1", "sno": "4.1", "topic": "Introduction to Trees: Terminology and representation", "period": 1, "type": "theory" },
+                { "id": "cm304-4.2", "sno": "4.2", "topic": "Binary Tree: Properties and types", "period": 1, "type": "theory" },
+                { "id": "cm304-4.3", "sno": "4.3", "topic": "Binary Tree Representation: Array and Linked list", "period": 1, "type": "theory" },
+                { "id": "cm304-4.4", "sno": "4.4", "topic": "Binary Tree Traversal: In-order, Pre-order and Post-order", "period": 1, "type": "theory" },
+                { "id": "cm304-4.5", "sno": "4.5", "topic": "Recursive algorithms for Tree Traversals", "period": 1, "type": "theory" },
+                { "id": "cm304-4.6", "sno": "4.6", "topic": "Binary Search Tree (BST): Definition and properties", "period": 1, "type": "theory" },
+                { "id": "cm304-4.7", "sno": "4.7", "topic": "Searching an element in BST", "period": 1, "type": "theory" },
+                { "id": "cm304-4.8", "sno": "4.8", "topic": "Insertion into BST", "period": 1, "type": "theory" },
+                { "id": "cm304-4.9", "sno": "4.9", "topic": "Deletion from BST: Case 1, 2 and 3", "period": 1, "type": "theory" },
+                { "id": "cm304-4.10", "sno": "4.10", "topic": "Balanced Binary Trees (AVL Intro)", "period": 1, "type": "theory" },
+                { "id": "cm304-4.11", "sno": "4.11", "topic": "Heap Data Structure: Min-heap and Max-heap", "period": 1, "type": "theory" },
+                { "id": "cm304-4.12", "sno": "4.12", "topic": "Solving problems on Trees", "period": 1, "type": "theory" },
+                { "id": "cm304-4.13", "sno": "4.13", "topic": "Tutorial on BST operations", "period": 1, "type": "theory" },
+                { "id": "cm304-4.14", "sno": "4.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm304-4.15", "sno": "4.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Searching and Sorting",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm304-5.1", "sno": "5.1", "topic": "Searching: Linear Search and Binary Search (Review)", "period": 1, "type": "theory" },
+                { "id": "cm304-5.2", "sno": "5.2", "topic": "Analysis of Searching algorithms", "period": 1, "type": "theory" },
+                { "id": "cm304-5.3", "sno": "5.3", "topic": "Sorting: Basic concepts and stability", "period": 1, "type": "theory" },
+                { "id": "cm304-5.4", "sno": "5.4", "topic": "Bubble Sort and Selection Sort (Review)", "period": 1, "type": "theory" },
+                { "id": "cm304-5.5", "sno": "5.5", "topic": "Insertion Sort algorithm", "period": 1, "type": "theory" },
+                { "id": "cm304-5.6", "sno": "5.6", "topic": "Quick Sort algorithm: Partitioning and recursion", "period": 1, "type": "theory" },
+                { "id": "cm304-5.7", "sno": "5.7", "topic": "Merge Sort algorithm: Divide and Conquer", "period": 1, "type": "theory" },
+                { "id": "cm304-5.8", "sno": "5.8", "topic": "Analysis of Sorting algorithms: O(n log n)", "period": 1, "type": "theory" },
+                { "id": "cm304-5.9", "sno": "5.9", "topic": "Hashing: Hash functions and Collision resolution", "period": 1, "type": "theory" },
+                { "id": "cm304-5.10", "sno": "5.10", "topic": "Chaining and Open addressing", "period": 1, "type": "theory" },
+                { "id": "cm304-5.11", "sno": "5.11", "topic": "Graph: Basics, Representation (Adjacency Matrix/List)", "period": 1, "type": "theory" },
+                { "id": "cm304-5.12", "sno": "5.12", "topic": "Graph Traversal: BFS and DFS (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm304-5.13", "sno": "5.13", "topic": "Tutorial on Sorting and Hashing", "period": 1, "type": "theory" },
+                { "id": "cm304-5.14", "sno": "5.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm304-5.15", "sno": "5.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

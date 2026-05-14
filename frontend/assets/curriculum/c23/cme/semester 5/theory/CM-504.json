@@ -1,0 +1,104 @@
+{
+    "subjectCode": "CM-504",
+    "subjectName": "Internet Of Things",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 60,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction to IoT",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm504-1.1", "sno": "1.1", "topic": "Definition and Basic characteristics of IoT", "period": 1, "type": "theory" },
+                { "id": "cm504-1.2", "sno": "1.2", "topic": "Physical and Logical design of IoT", "period": 1, "type": "theory" },
+                { "id": "cm504-1.3", "sno": "1.3", "topic": "IoT Enabling Technologies: Sensors, Connectivity, Big Data", "period": 1, "type": "theory" },
+                { "id": "cm504-1.4", "sno": "1.4", "topic": "IoT Levels and Deployment Templates", "period": 1, "type": "theory" },
+                { "id": "cm504-1.5", "sno": "1.5", "topic": "Domain specific IoTs: Home, City, Environment", "period": 1, "type": "theory" },
+                { "id": "cm504-1.6", "sno": "1.6", "topic": "Difference between IoT and M2M", "period": 1, "type": "theory" },
+                { "id": "cm504-1.7", "sno": "1.7", "topic": "IoT vs SDN and NFV (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm504-1.8", "sno": "1.8", "topic": "Benefits and Challenges of IoT", "period": 1, "type": "theory" },
+                { "id": "cm504-1.9", "sno": "1.9", "topic": "Revision of IoT Basics", "period": 1, "type": "revision" },
+                { "id": "cm504-1.10", "sno": "1.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "IoT Architecture and Protocols",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm504-2.1", "sno": "2.1", "topic": "IoT Reference Architecture: Layers and Functions", "period": 1, "type": "theory" },
+                { "id": "cm504-2.2", "sno": "2.2", "topic": "Device Layer, Network Layer and Application Layer", "period": 1, "type": "theory" },
+                { "id": "cm504-2.3", "sno": "2.3", "topic": "Connectivity Protocols: IEEE 802.15.4, ZigBee", "period": 1, "type": "theory" },
+                { "id": "cm504-2.4", "sno": "2.4", "topic": "Connectivity Protocols: LoRaWAN and 6LoWPAN", "period": 1, "type": "theory" },
+                { "id": "cm504-2.5", "sno": "2.5", "topic": "Communication Protocols: CoAP (Constrained Application Protocol)", "period": 1, "type": "theory" },
+                { "id": "cm504-2.6", "sno": "2.6", "topic": "MQTT (Message Queuing Telemetry Transport) protocol", "period": 1, "type": "theory" },
+                { "id": "cm504-2.7", "sno": "2.7", "topic": "Publish-Subscribe architecture in MQTT", "period": 1, "type": "theory" },
+                { "id": "cm504-2.8", "sno": "2.8", "topic": "HTTP and XMPP in IoT context", "period": 1, "type": "theory" },
+                { "id": "cm504-2.9", "sno": "2.9", "topic": "Network Layer Protocols: IPv4/IPv6 adaptation", "period": 1, "type": "theory" },
+                { "id": "cm504-2.10", "sno": "2.10", "topic": "Data Serialization formats: JSON and CBOR", "period": 1, "type": "theory" },
+                { "id": "cm504-2.11", "sno": "2.11", "topic": "Gateways and Edge Computing in IoT", "period": 1, "type": "theory" },
+                { "id": "cm504-2.12", "sno": "2.12", "topic": "Tutorial on IoT Protocols", "period": 1, "type": "theory" },
+                { "id": "cm504-2.13", "sno": "2.13", "topic": "Practice: Comparing MQTT and CoAP", "period": 1, "type": "theory" },
+                { "id": "cm504-2.14", "sno": "2.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm504-2.15", "sno": "2.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Microcontrollers for IoT (Arduino/ESP8266)",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm504-3.1", "sno": "3.1", "topic": "Introduction to Microcontrollers: Arduino Uno features", "period": 1, "type": "theory" },
+                { "id": "cm504-3.2", "sno": "3.2", "topic": "Arduino Hardware: Pins, Power and Programming port", "period": 1, "type": "theory" },
+                { "id": "cm504-3.3", "sno": "3.3", "topic": "Arduino IDE: Installation and Sketch structure", "period": 1, "type": "theory" },
+                { "id": "cm504-3.4", "sno": "3.4", "topic": "Programming basics: setup() and loop() functions", "period": 1, "type": "theory" },
+                { "id": "cm504-3.5", "sno": "3.5", "topic": "Digital I/O: pinMode, digitalWrite, digitalRead", "period": 1, "type": "theory" },
+                { "id": "cm504-3.6", "sno": "3.6", "topic": "Analog I/O: analogRead, analogWrite (PWM)", "period": 1, "type": "theory" },
+                { "id": "cm504-3.7", "sno": "3.7", "topic": "Introduction to ESP8266/NodeMCU: Wi-Fi integration", "period": 1, "type": "theory" },
+                { "id": "cm504-3.8", "sno": "3.8", "topic": "ESP8266 Hardware and Pinout", "period": 1, "type": "theory" },
+                { "id": "cm504-3.9", "sno": "3.9", "topic": "Connecting ESP8266 to Wi-Fi networks", "period": 1, "type": "theory" },
+                { "id": "cm504-3.10", "sno": "3.10", "topic": "Introduction to Raspberry Pi (Overview)", "period": 1, "type": "theory" },
+                { "id": "cm504-3.11", "sno": "3.11", "topic": "Programming Raspberry Pi with Python (intro)", "period": 1, "type": "theory" },
+                { "id": "cm504-3.12", "sno": "3.12", "topic": "Tutorial on Arduino programming", "period": 1, "type": "theory" },
+                { "id": "cm504-3.13", "sno": "3.13", "topic": "Practice: Simulation using Tinkercad/Wokwi (demo)", "period": 1, "type": "theory" },
+                { "id": "cm504-3.14", "sno": "3.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm504-3.15", "sno": "3.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Sensors, Actuators and Interfacing",
+            "totalPeriods": 12,
+            "topics": [
+                { "id": "cm504-4.1", "sno": "4.1", "topic": "Introduction to Sensors: Light, Temperature, Humidity", "period": 1, "type": "theory" },
+                { "id": "cm504-4.2", "sno": "4.2", "topic": "Motion sensors: PIR, Ultrasonic distance sensors", "period": 1, "type": "theory" },
+                { "id": "cm504-4.3", "sno": "4.3", "topic": "Interfacing Analog Sensors with Arduino", "period": 1, "type": "theory" },
+                { "id": "cm504-4.4", "sno": "4.4", "topic": "Introduction to Actuators: LEDs, Buzzers", "period": 1, "type": "theory" },
+                { "id": "cm504-4.5", "sno": "4.5", "topic": "Working with Relays and Motors (Servo, DC)", "period": 1, "type": "theory" },
+                { "id": "cm504-4.6", "sno": "4.6", "topic": "I2C and SPI communication protocols (intro)", "period": 1, "type": "theory" },
+                { "id": "cm504-4.7", "sno": "4.7", "topic": "Interfacing LCD displays with Arduino", "period": 1, "type": "theory" },
+                { "id": "cm504-4.8", "sno": "4.8", "topic": "Serial Communication with PC", "period": 1, "type": "theory" },
+                { "id": "cm504-4.9", "sno": "4.9", "topic": "Reading sensor data and displaying on Serial Monitor", "period": 1, "type": "theory" },
+                { "id": "cm504-4.10", "sno": "4.10", "topic": "Practice: Interfacing a DHT11 sensor", "period": 1, "type": "theory" },
+                { "id": "cm504-4.11", "sno": "4.11", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm504-4.12", "sno": "4.12", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "IoT Applications and Security",
+            "totalPeriods": 8,
+            "topics": [
+                { "id": "cm504-5.1", "sno": "5.1", "topic": "Smart Home: Automation and Monitoring", "period": 1, "type": "theory" },
+                { "id": "cm504-5.2", "sno": "5.2", "topic": "Smart Agriculture: Soil moisture and Irrigation", "period": 1, "type": "theory" },
+                { "id": "cm504-5.3", "sno": "5.3", "topic": "Industrial IoT (IIoT): Monitoring and Control", "period": 1, "type": "theory" },
+                { "id": "cm504-5.4", "sno": "5.4", "topic": "Cloud Platforms for IoT: Thingspeak, Adafruit.io", "period": 1, "type": "theory" },
+                { "id": "cm504-5.5", "sno": "5.5", "topic": "Security in IoT: Challenges and Vulnerabilities", "period": 1, "type": "theory" },
+                { "id": "cm504-5.6", "sno": "5.6", "topic": "IoT Security best practices and Privacy", "period": 1, "type": "theory" },
+                { "id": "cm504-5.7", "sno": "5.7", "topic": "Revision of IoT Applications", "period": 1, "type": "revision" },
+                { "id": "cm504-5.8", "sno": "5.8", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

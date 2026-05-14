@@ -12,6 +12,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/services/notification_service.dart';
 import '../../../../core/services/auth_service.dart';
 import 'package:intl/intl.dart';
+import '../../data/courses_data.dart';
 
 class AddClassScreen extends StatefulWidget {
   final Map<String, dynamic>? initialData;
@@ -178,57 +179,25 @@ class _AddClassScreenState extends State<AddClassScreen> {
     if (_selectedBranch == null || _selectedYear == null) return;
     
     try {
-      final String response = await rootBundle.loadString('assets/data/json/subject.json');
-      final List<dynamic> data = json.decode(response);
+      final allCourses = await CoursesData.getAllCourses();
       
       String fullBranch = _mapBranchToFull(_selectedBranch!);
-      
-      final branchData = data.firstWhere(
-        (b) => b['branch_name'] == fullBranch,
-        orElse: () => null
-      );
-      
-      if (branchData != null && branchData['semesters'] != null) {
-        List<String> semestersToLoad = [];
-        if (_selectedYear == "1st Year") {
-            semestersToLoad.add("1st Year");
-        } else if (_selectedYear == "2nd Year") {
-            semestersToLoad.addAll(["3rd Semester", "4th Semester"]);
-        } else if (_selectedYear == "3rd Year") {
-            semestersToLoad.addAll(["5th Semester", "6th Semester"]);
-        }
+      String yearMatch = _selectedYear!;
 
-        List<Map<String, String>> subjects = [];
-        for (var semKey in semestersToLoad) {
-            final semesterData = branchData['semesters'][semKey];
-            if (semesterData != null) {
-                if (semesterData['theory'] != null) {
-                    for (var s in semesterData['theory']) {
-                        subjects.add({
-                            'id': s['id'].toString(), 
-                            'name': s['name'].toString(),
-                            'sem': semKey
-                        });
-                    }
-                }
-                if (semesterData['practical'] != null) {
-                    for (var s in semesterData['practical']) {
-                        subjects.add({
-                            'id': s['id'].toString(), 
-                            'name': s['name'].toString(),
-                            'sem': semKey
-                        });
-                    }
-                }
-            }
-        }
+      final List<Map<String, String>> subjects = allCourses
+          .where((c) => c['branch'] == fullBranch && c['semester'].toString().contains(yearMatch.substring(0, 1)))
+          .map((c) => {
+                'id': c['id'].toString(), 
+                'name': c['name'].toString(),
+                'sem': c['semester'].toString()
+              })
+          .toList();
 
-        setState(() {
-            _fetchedSubjects = subjects;
-        });
-      }
+      setState(() {
+          _fetchedSubjects = subjects;
+      });
     } catch (e) {
-      debugPrint("Error loading subjects from JSON: $e");
+      debugPrint("Error loading subjects from CoursesData: $e");
     }
   }
 

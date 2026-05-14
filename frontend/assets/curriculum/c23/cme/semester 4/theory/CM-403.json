@@ -1,0 +1,119 @@
+{
+    "subjectCode": "CM-403",
+    "subjectName": "Computer Organization And Microprocessors",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Basic Computer Organization and CPU",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm403-1.1", "sno": "1.1", "topic": "Evolution of Computers and Computer Architecture", "period": 1, "type": "theory" },
+                { "id": "cm403-1.2", "sno": "1.2", "topic": "Von-Neumann Architecture and Harvard Architecture", "period": 1, "type": "theory" },
+                { "id": "cm403-1.3", "sno": "1.3", "topic": "Computer System Bus: Data, Address and Control bus", "period": 1, "type": "theory" },
+                { "id": "cm403-1.4", "sno": "1.4", "topic": "CPU Organization: General Register Organization", "period": 1, "type": "theory" },
+                { "id": "cm403-1.5", "sno": "1.5", "topic": "Stack Organization and Accumulator based CPU", "period": 1, "type": "theory" },
+                { "id": "cm403-1.6", "sno": "1.6", "topic": "Instruction Formats: 0, 1, 2 and 3 Address instructions", "period": 1, "type": "theory" },
+                { "id": "cm403-1.7", "sno": "1.7", "topic": "Addressing Modes: Immediate, Direct, Indirect, Indexed", "period": 1, "type": "theory" },
+                { "id": "cm403-1.8", "sno": "1.8", "topic": "Data Transfer and Manipulation instructions", "period": 1, "type": "theory" },
+                { "id": "cm403-1.9", "sno": "1.9", "topic": "Program Control instructions and Subroutines", "period": 1, "type": "theory" },
+                { "id": "cm403-1.10", "sno": "1.10", "topic": "CISC vs RISC Architectures: Key differences", "period": 1, "type": "theory" },
+                { "id": "cm403-1.11", "sno": "1.11", "topic": "Pipelining concepts: Parallel processing", "period": 1, "type": "theory" },
+                { "id": "cm403-1.12", "sno": "1.12", "topic": "Tutorial on Addressing modes", "period": 1, "type": "theory" },
+                { "id": "cm403-1.13", "sno": "1.13", "topic": "Solving problems on Instruction formats", "period": 1, "type": "theory" },
+                { "id": "cm403-1.14", "sno": "1.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm403-1.15", "sno": "1.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Control Unit and Memory Organization",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm403-2.1", "sno": "2.1", "topic": "Control Unit: Function and structure", "period": 1, "type": "theory" },
+                { "id": "cm403-2.2", "sno": "2.2", "topic": "Hardwired Control Unit vs Microprogrammed Control", "period": 1, "type": "theory" },
+                { "id": "cm403-2.3", "sno": "2.3", "topic": "Micro-instructions and Control Memory", "period": 1, "type": "theory" },
+                { "id": "cm403-2.4", "sno": "2.4", "topic": "Memory Hierarchy: Need and levels", "period": 1, "type": "theory" },
+                { "id": "cm403-2.5", "sno": "2.5", "topic": "Main Memory: RAM (SRAM, DRAM) and ROM", "period": 1, "type": "theory" },
+                { "id": "cm403-2.6", "sno": "2.6", "topic": "Auxiliary Memory: Magnetic disks, Tape, Optical storage", "period": 1, "type": "theory" },
+                { "id": "cm403-2.7", "sno": "2.7", "topic": "Cache Memory: Principles and mapping techniques", "period": 1, "type": "theory" },
+                { "id": "cm403-2.8", "sno": "2.8", "topic": "Direct, Associative and Set-associative mapping", "period": 1, "type": "theory" },
+                { "id": "cm403-2.9", "sno": "2.9", "topic": "Cache writing policies: Write-through and Write-back", "period": 1, "type": "theory" },
+                { "id": "cm403-2.10", "sno": "2.10", "topic": "Virtual Memory: Paging and Segmentation concepts", "period": 1, "type": "theory" },
+                { "id": "cm403-2.11", "sno": "2.11", "topic": "Memory Management Unit (MMU) functions", "period": 1, "type": "theory" },
+                { "id": "cm403-2.12", "sno": "2.12", "topic": "Tutorial on Cache mapping", "period": 1, "type": "theory" },
+                { "id": "cm403-2.13", "sno": "2.13", "topic": "Solving problems on Memory address decoding", "period": 1, "type": "theory" },
+                { "id": "cm403-2.14", "sno": "2.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm403-2.15", "sno": "2.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Input-Output Organization",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm403-3.1", "sno": "3.1", "topic": "Peripheral Devices and I/O Interface", "period": 1, "type": "theory" },
+                { "id": "cm403-3.2", "sno": "3.2", "topic": "I/O vs Memory Bus and Isolated vs Memory mapped I/O", "period": 1, "type": "theory" },
+                { "id": "cm403-3.3", "sno": "3.3", "topic": "Asynchronous Data Transfer: Strobe and Handshaking", "period": 1, "type": "theory" },
+                { "id": "cm403-3.4", "sno": "3.4", "topic": "Modes of Transfer: Programmed I/O and Interrupt-driven I/O", "period": 1, "type": "theory" },
+                { "id": "cm403-3.5", "sno": "3.5", "topic": "DMA (Direct Memory Access): Controller and Transfer", "period": 1, "type": "theory" },
+                { "id": "cm403-3.6", "sno": "3.6", "topic": "Interrupts: Priority Interrupt and Daisy Chaining", "period": 1, "type": "theory" },
+                { "id": "cm403-3.7", "sno": "3.7", "topic": "I/O Processor (IOP) and Serial Communication", "period": 1, "type": "theory" },
+                { "id": "cm403-3.8", "sno": "3.8", "topic": "Tutorial on I/O organization", "period": 1, "type": "theory" },
+                { "id": "cm403-3.9", "sno": "3.9", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm403-3.10", "sno": "3.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "8086 Microprocessor Architecture",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm403-4.1", "sno": "4.1", "topic": "Introduction to Microprocessors and Microcontrollers", "period": 1, "type": "theory" },
+                { "id": "cm403-4.2", "sno": "4.2", "topic": "Architecture of 8086 Microprocessor", "period": 1, "type": "theory" },
+                { "id": "cm403-4.3", "sno": "4.3", "topic": "BIU and EU: Functional units and Pipelining", "period": 1, "type": "theory" },
+                { "id": "cm403-4.4", "sno": "4.4", "topic": "8086 Register Organization: General, Segment, Index", "period": 1, "type": "theory" },
+                { "id": "cm403-4.5", "sno": "4.5", "topic": "8086 Flag Register: Status and Control flags", "period": 1, "type": "theory" },
+                { "id": "cm403-4.6", "sno": "4.6", "topic": "8086 Memory Segmentation: Logic vs Physical address", "period": 1, "type": "theory" },
+                { "id": "cm403-4.7", "sno": "4.7", "topic": "Physical Address calculation in 8086", "period": 1, "type": "theory" },
+                { "id": "cm403-4.8", "sno": "4.8", "topic": "8086 Pin Diagram: Signal descriptions", "period": 1, "type": "theory" },
+                { "id": "cm403-4.9", "sno": "4.9", "topic": "Minimum and Maximum mode configurations", "period": 1, "type": "theory" },
+                { "id": "cm403-4.10", "sno": "4.10", "topic": "8086 Bus cycles: Read and Write cycles", "period": 1, "type": "theory" },
+                { "id": "cm403-4.11", "sno": "4.11", "topic": "8086 Interrupts and Interrupt Vector Table (IVT)", "period": 1, "type": "theory" },
+                { "id": "cm403-4.12", "sno": "4.12", "topic": "Tutorial on 8086 Architecture", "period": 1, "type": "theory" },
+                { "id": "cm403-4.13", "sno": "4.13", "topic": "Practice: Solving address calculation problems", "period": 1, "type": "theory" },
+                { "id": "cm403-4.14", "sno": "4.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm403-4.15", "sno": "4.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "8086 Instruction Set and Programming",
+            "totalPeriods": 20,
+            "topics": [
+                { "id": "cm403-5.1", "sno": "5.1", "topic": "8086 Addressing Modes: Register, Immediate, Direct", "period": 1, "type": "theory" },
+                { "id": "cm403-5.2", "sno": "5.2", "topic": "8086 Addressing Modes: Indirect, Indexed, Based", "period": 1, "type": "theory" },
+                { "id": "cm403-5.3", "sno": "5.3", "topic": "Data Transfer Instructions: MOV, PUSH, POP, XCHG", "period": 1, "type": "theory" },
+                { "id": "cm403-5.4", "sno": "5.4", "topic": "Arithmetic Instructions: ADD, SUB, INC, DEC, MUL, DIV", "period": 1, "type": "theory" },
+                { "id": "cm403-5.5", "sno": "5.5", "topic": "Logical and Shift Instructions: AND, OR, XOR, SHL, SHR", "period": 1, "type": "theory" },
+                { "id": "cm403-5.6", "sno": "5.6", "topic": "Branch and Loop Instructions: JMP, JZ, JNZ, LOOP", "period": 1, "type": "theory" },
+                { "id": "cm403-5.7", "sno": "5.7", "topic": "String Instructions: MOVS, CMPS, SCAS", "period": 1, "type": "theory" },
+                { "id": "cm403-5.8", "sno": "5.8", "topic": "Process Control Instructions and Assembler Directives", "period": 1, "type": "theory" },
+                { "id": "cm403-5.9", "sno": "5.9", "topic": "Assembly Language Programming (ALP) basics", "period": 1, "type": "theory" },
+                { "id": "cm403-5.10", "sno": "5.10", "topic": "ALP for Addition and Subtraction of 16-bit numbers", "period": 1, "type": "theory" },
+                { "id": "cm403-5.11", "sno": "5.11", "topic": "ALP for Largest and Smallest number in an array", "period": 1, "type": "theory" },
+                { "id": "cm403-5.12", "sno": "5.12", "topic": "ALP for Sorting numbers in Ascending order", "period": 1, "type": "theory" },
+                { "id": "cm403-5.13", "sno": "5.13", "topic": "Tutorial on 8086 ALP", "period": 1, "type": "theory" },
+                { "id": "cm403-5.14", "sno": "5.14", "topic": "Solving programming problems - Part 1", "period": 1, "type": "theory" },
+                { "id": "cm403-5.15", "sno": "5.15", "topic": "Solving programming problems - Part 2", "period": 1, "type": "theory" },
+                { "id": "cm403-5.16", "sno": "5.16", "topic": "Instruction timing and execution (demo)", "period": 1, "type": "theory" },
+                { "id": "cm403-5.17", "sno": "5.17", "topic": "Introduction to 80286/386 (Brief overview)", "period": 1, "type": "theory" },
+                { "id": "cm403-5.18", "sno": "5.18", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm403-5.19", "sno": "5.19", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm403-5.20", "sno": "5.20", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

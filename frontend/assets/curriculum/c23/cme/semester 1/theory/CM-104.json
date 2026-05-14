@@ -1,0 +1,155 @@
+{
+    "subjectCode": "CM-104",
+    "subjectName": "Engineering Chemistry and Environmental Studies",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 90,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Fundamentals of Chemistry",
+            "totalPeriods": 14,
+            "topics": [
+                { "id": "cm104-1.1", "sno": "1.1", "topic": "Fundamental particles of an atom: Charge and Mass", "period": 1, "type": "theory" },
+                { "id": "cm104-1.2", "sno": "1.2", "topic": "Bohr's atomic theory: Postulates and limitations", "period": 1, "type": "theory" },
+                { "id": "cm104-1.3", "sno": "1.3", "topic": "Quantum numbers: Significance and types", "period": 1, "type": "theory" },
+                { "id": "cm104-1.4", "sno": "1.4", "topic": "Atomic structures of Silicon and Germanium", "period": 1, "type": "theory" },
+                { "id": "cm104-1.5", "sno": "1.5", "topic": "Orbitals: Shapes of s, p and d orbitals", "period": 1, "type": "theory" },
+                { "id": "cm104-1.6", "sno": "1.6", "topic": "Aufbau principle and Pauli's exclusion principle", "period": 1, "type": "theory" },
+                { "id": "cm104-1.7", "sno": "1.7", "topic": "Hund's rule and Electronic configuration (up to Z=30)", "period": 1, "type": "theory" },
+                { "id": "cm104-1.8", "sno": "1.8", "topic": "Chemical bonding: Postulates of electronic theory", "period": 1, "type": "theory" },
+                { "id": "cm104-1.9", "sno": "1.9", "topic": "Ionic bond: Formation of NaCl and properties", "period": 1, "type": "theory" },
+                { "id": "cm104-1.10", "sno": "1.10", "topic": "Covalent bond: Formation of H2, O2, N2 and properties", "period": 1, "type": "theory" },
+                { "id": "cm104-1.11", "sno": "1.11", "topic": "Distinction between ionic and covalent compounds", "period": 1, "type": "theory" },
+                { "id": "cm104-1.12", "sno": "1.12", "topic": "Tutorial on Atomic Structure and Bonding", "period": 1, "type": "problem solving" },
+                { "id": "cm104-1.13", "sno": "1.13", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm104-1.14", "sno": "1.14", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Solutions, Acids and Bases",
+            "totalPeriods": 16,
+            "topics": [
+                { "id": "cm104-2.1", "sno": "2.1", "topic": "Solution, Solute, Solvent and Solubility concepts", "period": 1, "type": "theory" },
+                { "id": "cm104-2.2", "sno": "2.2", "topic": "Atomic, Molecular and Equivalent weights calculation", "period": 1, "type": "problem solving" },
+                { "id": "cm104-2.3", "sno": "2.3", "topic": "Mole concept and numerical problems", "period": 1, "type": "problem solving" },
+                { "id": "cm104-2.4", "sno": "2.4", "topic": "Molarity: Definition and numerical problems", "period": 1, "type": "problem solving" },
+                { "id": "cm104-2.5", "sno": "2.5", "topic": "Normality: Definition and numerical problems", "period": 1, "type": "problem solving" },
+                { "id": "cm104-2.6", "sno": "2.6", "topic": "Dilution problems and weight of solute calculation", "period": 1, "type": "problem solving" },
+                { "id": "cm104-2.7", "sno": "2.7", "topic": "Arrhenius theory of Acids and Bases - Limitations", "period": 1, "type": "theory" },
+                { "id": "cm104-2.8", "sno": "2.8", "topic": "Ionic product of water and pH scale", "period": 1, "type": "theory" },
+                { "id": "cm104-2.9", "sno": "2.9", "topic": "Numerical problems on pH of strong acids and bases", "period": 1, "type": "problem solving" },
+                { "id": "cm104-2.10", "sno": "2.10", "topic": "Buffer solutions: Classification and examples", "period": 1, "type": "theory" },
+                { "id": "cm104-2.11", "sno": "2.11", "topic": "Applications of buffer solutions", "period": 1, "type": "theory" },
+                { "id": "cm104-2.12", "sno": "2.12", "topic": "Tutorial on Concentration of solutions", "period": 1, "type": "problem solving" },
+                { "id": "cm104-2.13", "sno": "2.13", "topic": "Tutorial on pH and Buffers", "period": 1, "type": "problem solving" },
+                { "id": "cm104-2.14", "sno": "2.14", "topic": "Revision of Unit 2", "period": 1, "type": "revision" },
+                { "id": "cm104-2.15", "sno": "2.15", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm104-2.16", "sno": "2.16", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Electrochemistry",
+            "totalPeriods": 12,
+            "topics": [
+                { "id": "cm104-3.1", "sno": "3.1", "topic": "Conductors, Semiconductors, Insulators and Electrolytes", "period": 1, "type": "theory" },
+                { "id": "cm104-3.2", "sno": "3.2", "topic": "Metallic vs. Electrolytic conduction", "period": 1, "type": "theory" },
+                { "id": "cm104-3.3", "sno": "3.3", "topic": "Electrolysis of fused NaCl and applications", "period": 1, "type": "theory" },
+                { "id": "cm104-3.4", "sno": "3.4", "topic": "Galvanic cell: Construction and working", "period": 1, "type": "theory" },
+                { "id": "cm104-3.5", "sno": "3.5", "topic": "Electrolytic cell vs. Galvanic cell", "period": 1, "type": "theory" },
+                { "id": "cm104-3.6", "sno": "3.6", "topic": "Batteries: Primary and Secondary batteries", "period": 1, "type": "theory" },
+                { "id": "cm104-3.7", "sno": "3.7", "topic": "Dry cell (Leclanche cell) and Lead storage battery", "period": 1, "type": "theory" },
+                { "id": "cm104-3.8", "sno": "3.8", "topic": "Lithium-Ion battery and H2-O2 Fuel cell", "period": 1, "type": "theory" },
+                { "id": "cm104-3.9", "sno": "3.9", "topic": "Applications of batteries and fuel cells", "period": 1, "type": "theory" },
+                { "id": "cm104-3.10", "sno": "3.10", "topic": "Tutorial on Electrochemistry", "period": 1, "type": "problem solving" },
+                { "id": "cm104-3.11", "sno": "3.11", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm104-3.12", "sno": "3.12", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Corrosion",
+            "totalPeriods": 8,
+            "topics": [
+                { "id": "cm104-4.1", "sno": "4.1", "topic": "Corrosion: Definition and factors influencing rate", "period": 1, "type": "theory" },
+                { "id": "cm104-4.2", "sno": "4.2", "topic": "Composition cell, stress cell and concentration cell", "period": 1, "type": "theory" },
+                { "id": "cm104-4.3", "sno": "4.3", "topic": "Rusting of iron: Mechanism", "period": 1, "type": "theory" },
+                { "id": "cm104-4.4", "sno": "4.4", "topic": "Prevention: Protective coatings (anodic/cathodic)", "period": 1, "type": "theory" },
+                { "id": "cm104-4.5", "sno": "4.5", "topic": "Cathodic protection: Sacrificial anode and impressed voltage", "period": 1, "type": "theory" },
+                { "id": "cm104-4.6", "sno": "4.6", "topic": "Practice problems on corrosion inhibition", "period": 1, "type": "problem solving" },
+                { "id": "cm104-4.7", "sno": "4.7", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm104-4.8", "sno": "4.8", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Water Treatment",
+            "totalPeriods": 8,
+            "topics": [
+                { "id": "cm104-5.1", "sno": "5.1", "topic": "Soft water and Hard water concepts", "period": 1, "type": "theory" },
+                { "id": "cm104-5.2", "sno": "5.2", "topic": "Hardness: Classification and causing salts", "period": 1, "type": "theory" },
+                { "id": "cm104-5.3", "sno": "5.3", "topic": "Disadvantages of hard water in industries", "period": 1, "type": "theory" },
+                { "id": "cm104-5.4", "sno": "5.4", "topic": "Units of hardness (ppm, mg/L) and problems", "period": 1, "type": "problem solving" },
+                { "id": "cm104-5.5", "sno": "5.5", "topic": "Softening: Ion-exchange process", "period": 1, "type": "theory" },
+                { "id": "cm104-5.6", "sno": "5.6", "topic": "Softening: Reverse Osmosis (RO) process", "period": 1, "type": "theory" },
+                { "id": "cm104-5.7", "sno": "5.7", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm104-5.8", "sno": "5.8", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Polymers& Engineering Materials",
+            "totalPeriods": 12,
+            "topics": [
+                { "id": "cm104-6.1", "sno": "6.1", "topic": "Polymerization: Addition (Ethylene) and Condensation (Bakelite)", "period": 1, "type": "theory" },
+                { "id": "cm104-6.2", "sno": "6.2", "topic": "Plastics: Preparation and uses of PVC and Teflon", "period": 1, "type": "theory" },
+                { "id": "cm104-6.3", "sno": "6.3", "topic": "Plastics: Polystyrene and Nylon 6,6", "period": 1, "type": "theory" },
+                { "id": "cm104-6.4", "sno": "6.4", "topic": "Elastomers: Buna-S and Neoprene", "period": 1, "type": "theory" },
+                { "id": "cm104-6.5", "sno": "6.5", "topic": "Alloys: Nichrome, Duralumin and Stainless Steel", "period": 1, "type": "theory" },
+                { "id": "cm104-6.6", "sno": "6.6", "topic": "Composite Materials: Properties and applications", "period": 1, "type": "theory" },
+                { "id": "cm104-6.7", "sno": "6.7", "topic": "Liquid Crystals: Properties and applications", "period": 1, "type": "theory" },
+                { "id": "cm104-6.8", "sno": "6.8", "topic": "Nano Materials: Properties and applications", "period": 1, "type": "theory" },
+                { "id": "cm104-6.9", "sno": "6.9", "topic": "Tutorial on Polymers and Materials", "period": 1, "type": "problem solving" },
+                { "id": "cm104-6.10", "sno": "6.10", "topic": "Tutorial on Alloys and Nanomaterials", "period": 1, "type": "problem solving" },
+                { "id": "cm104-6.11", "sno": "6.11", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm104-6.12", "sno": "6.12", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Fuels",
+            "totalPeriods": 6,
+            "topics": [
+                { "id": "cm104-7.1", "sno": "7.1", "topic": "Classification of fuels based on occurrence", "period": 1, "type": "theory" },
+                { "id": "cm104-7.2", "sno": "7.2", "topic": "LPG, CNG and Biogas: Composition and uses", "period": 1, "type": "theory" },
+                { "id": "cm104-7.3", "sno": "7.3", "topic": "Power alcohol and Hydrogen as future fuel", "period": 1, "type": "theory" },
+                { "id": "cm104-7.4", "sno": "7.4", "topic": "Advantages and disadvantages of Hydrogen fuel", "period": 1, "type": "theory" },
+                { "id": "cm104-7.5", "sno": "7.5", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm104-7.6", "sno": "7.6", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Environmental Studies",
+            "totalPeriods": 14,
+            "topics": [
+                { "id": "cm104-8.1", "sno": "8.1", "topic": "Scope and Importance of environmental studies", "period": 1, "type": "theory" },
+                { "id": "cm104-8.2", "sno": "8.2", "topic": "Segments of environment: Litho, Hydro, Atmo, Biosphere", "period": 1, "type": "theory" },
+                { "id": "cm104-8.3", "sno": "8.3", "topic": "Pollutant, Contaminant, Sink, TLV, BOD, COD concepts", "period": 1, "type": "theory" },
+                { "id": "cm104-8.4", "sno": "8.4", "topic": "Eco system: Producers, Consumers, Decomposers", "period": 1, "type": "theory" },
+                { "id": "cm104-8.5", "sno": "8.5", "topic": "Renewable and Non-renewable energy sources", "period": 1, "type": "theory" },
+                { "id": "cm104-8.6", "sno": "8.6", "topic": "Deforestation: Causes and effects", "period": 1, "type": "theory" },
+                { "id": "cm104-8.7", "sno": "8.7", "topic": "Air pollution: Greenhouse effect, Ozone depletion, Acid rain", "period": 1, "type": "theory" },
+                { "id": "cm104-8.8", "sno": "8.8", "topic": "Water pollution: Causes, effects and control methods", "period": 1, "type": "theory" },
+                { "id": "cm104-8.9", "sno": "8.9", "topic": "e-Pollution: Sources of e-waste and health effects", "period": 1, "type": "theory" },
+                { "id": "cm104-8.10", "sno": "8.10", "topic": "Green Chemistry: Principles and benefits", "period": 1, "type": "theory" },
+                { "id": "cm104-8.11", "sno": "8.11", "topic": "Case studies on local environmental issues", "period": 1, "type": "theory" },
+                { "id": "cm104-8.12", "sno": "8.12", "topic": "Tutorial on Environmental pollution control", "period": 1, "type": "problem solving" },
+                { "id": "cm104-8.13", "sno": "8.13", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm104-8.14", "sno": "8.14", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

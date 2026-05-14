@@ -1,0 +1,119 @@
+{
+    "subjectCode": "CM-405",
+    "subjectName": "Computer Networks & Cyber Security",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction to Networks",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm405-1.1", "sno": "1.1", "topic": "Basic Concepts of Computer Networks", "period": 1, "type": "theory" },
+                { "id": "cm405-1.2", "sno": "1.2", "topic": "Network Topologies: Star, Bus, Ring, Mesh", "period": 1, "type": "theory" },
+                { "id": "cm405-1.3", "sno": "1.3", "topic": "Types of Networks: LAN, MAN, WAN, PAN", "period": 1, "type": "theory" },
+                { "id": "cm405-1.4", "sno": "1.4", "topic": "Network Cables and Connectors", "period": 1, "type": "theory" },
+                { "id": "cm405-1.5", "sno": "1.5", "topic": "OSI Model: Layers 1-3 (Physical, Data Link, Network)", "period": 1, "type": "theory" },
+                { "id": "cm405-1.6", "sno": "1.6", "topic": "OSI Model: Layers 4-7 (Transport, Session, Presentation, Application)", "period": 1, "type": "theory" },
+                { "id": "cm405-1.7", "sno": "1.7", "topic": "TCP/IP Model Overview and Architecture", "period": 1, "type": "theory" },
+                { "id": "cm405-1.8", "sno": "1.8", "topic": "Comparison of OSI and TCP/IP Models", "period": 1, "type": "theory" },
+                { "id": "cm405-1.9", "sno": "1.9", "topic": "Network Devices: Hubs, Switches, Routers, Gateways", "period": 1, "type": "theory" },
+                { "id": "cm405-1.10", "sno": "1.10", "topic": "Network Tools: Crimping Tool, Cable Tester", "period": 1, "type": "theory" },
+                { "id": "cm405-1.11", "sno": "1.11", "topic": "Application Layer Protocols: HTTP, FTP, SMTP", "period": 1, "type": "theory" },
+                { "id": "cm405-1.12", "sno": "1.12", "topic": "Network Layer Protocols: ARP, RARP, ICMP", "period": 1, "type": "theory" },
+                { "id": "cm405-1.13", "sno": "1.13", "topic": "SNMP Protocol and Network Management", "period": 1, "type": "theory" },
+                { "id": "cm405-1.14", "sno": "1.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm405-1.15", "sno": "1.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Network Addressing and Management",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm405-2.1", "sno": "2.1", "topic": "IP Addressing Formats: IPv4 and IPv6", "period": 1, "type": "theory" },
+                { "id": "cm405-2.2", "sno": "2.2", "topic": "Comparison: IPv4 vs IPv6 Architecture", "period": 1, "type": "theory" },
+                { "id": "cm405-2.3", "sno": "2.3", "topic": "IPv4 Addressing Classes and Subnetting", "period": 1, "type": "theory" },
+                { "id": "cm405-2.4", "sno": "2.4", "topic": "Classless Inter-Domain Routing (CIDR)", "period": 1, "type": "theory" },
+                { "id": "cm405-2.5", "sno": "2.5", "topic": "Dynamic Host Configuration Protocol (DHCP)", "period": 1, "type": "theory" },
+                { "id": "cm405-2.6", "sno": "2.6", "topic": "Domain Name System (DNS) Working", "period": 1, "type": "theory" },
+                { "id": "cm405-2.7", "sno": "2.7", "topic": "Network Administration Basics", "period": 1, "type": "theory" },
+                { "id": "cm405-2.8", "sno": "2.8", "topic": "Network Traffic Monitoring Techniques", "period": 1, "type": "theory" },
+                { "id": "cm405-2.9", "sno": "2.9", "topic": "Protocol Analyzers: Wireshark Introduction", "period": 1, "type": "theory" },
+                { "id": "cm405-2.10", "sno": "2.10", "topic": "Troubleshooting Network Connectivity Issues", "period": 1, "type": "theory" },
+                { "id": "cm405-2.11", "sno": "2.11", "topic": "Network Configuration and Management", "period": 1, "type": "theory" },
+                { "id": "cm405-2.12", "sno": "2.12", "topic": "Routing Protocols Overview (RIP, OSPF)", "period": 1, "type": "theory" },
+                { "id": "cm405-2.13", "sno": "2.13", "topic": "Virtual Private Networks (VPN) Basics", "period": 1, "type": "theory" },
+                { "id": "cm405-2.14", "sno": "2.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm405-2.15", "sno": "2.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Introduction to Cyber Security",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm405-3.1", "sno": "3.1", "topic": "Definition: Security and Network Security", "period": 1, "type": "theory" },
+                { "id": "cm405-3.2", "sno": "3.2", "topic": "OSI Security Architecture (X.800)", "period": 1, "type": "theory" },
+                { "id": "cm405-3.3", "sno": "3.3", "topic": "Security Goals: Confidentiality, Integrity, Availability", "period": 1, "type": "theory" },
+                { "id": "cm405-3.4", "sno": "3.4", "topic": "Introduction to Cryptography and Terminology", "period": 1, "type": "theory" },
+                { "id": "cm405-3.5", "sno": "3.5", "topic": "Crypto System Components and Models", "period": 1, "type": "theory" },
+                { "id": "cm405-3.6", "sno": "3.6", "topic": "Authentication, Authorization and Accounting (AAA)", "period": 1, "type": "theory" },
+                { "id": "cm405-3.7", "sno": "3.7", "topic": "Passive Security Threats and Attacks", "period": 1, "type": "theory" },
+                { "id": "cm405-3.8", "sno": "3.8", "topic": "Active Security Threats and Attacks", "period": 1, "type": "theory" },
+                { "id": "cm405-3.9", "sno": "3.9", "topic": "Security Services: Data Integrity, Confidentiality", "period": 1, "type": "theory" },
+                { "id": "cm405-3.10", "sno": "3.10", "topic": "Security Mechanisms: Encipherment, Digital Signature", "period": 1, "type": "theory" },
+                { "id": "cm405-3.11", "sno": "3.11", "topic": "Model for Network Security and its Components", "period": 1, "type": "theory" },
+                { "id": "cm405-3.12", "sno": "3.12", "topic": "Block Diagram of Network Security Model", "period": 1, "type": "theory" },
+                { "id": "cm405-3.13", "sno": "3.13", "topic": "Social Engineering and Phishing Attacks", "period": 1, "type": "theory" },
+                { "id": "cm405-3.14", "sno": "3.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm405-3.15", "sno": "3.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Encryption Techniques",
+            "totalPeriods": 20,
+            "topics": [
+                { "id": "cm405-4.1", "sno": "4.1", "topic": "Definition of Encryption and Decryption", "period": 1, "type": "theory" },
+                { "id": "cm405-4.2", "sno": "4.2", "topic": "Symmetric Cipher Model and Ingredients", "period": 1, "type": "theory" },
+                { "id": "cm405-4.3", "sno": "4.3", "topic": "Functions used in Encryption Algorithms", "period": 1, "type": "theory" },
+                { "id": "cm405-4.4", "sno": "4.4", "topic": "Key Distribution and Management", "period": 1, "type": "theory" },
+                { "id": "cm405-4.5", "sno": "4.5", "topic": "General Approaches to Cryptanalysis", "period": 1, "type": "theory" },
+                { "id": "cm405-4.6", "sno": "4.6", "topic": "Classical Ciphers: Caesar Cipher", "period": 1, "type": "theory" },
+                { "id": "cm405-4.7", "sno": "4.7", "topic": "Mono-alphabetic and Poly-alphabetic Ciphers", "period": 1, "type": "theory" },
+                { "id": "cm405-4.8", "sno": "4.8", "topic": "Playfair Cipher: Construction and Rules", "period": 1, "type": "theory" },
+                { "id": "cm405-4.9", "sno": "4.9", "topic": "Hill Cipher and Transposition Ciphers", "period": 1, "type": "theory" },
+                { "id": "cm405-4.10", "sno": "4.10", "topic": "One-Time-Pad: Principle and Limitations", "period": 1, "type": "theory" },
+                { "id": "cm405-4.11", "sno": "4.11", "topic": "Block Cipher Principles and DES Overview", "period": 1, "type": "theory" },
+                { "id": "cm405-4.12", "sno": "4.12", "topic": "Advanced Encryption Standard (AES) Introduction", "period": 1, "type": "theory" },
+                { "id": "cm405-4.13", "sno": "4.13", "topic": "Public Key Cryptography Principles", "period": 1, "type": "theory" },
+                { "id": "cm405-4.14", "sno": "4.14", "topic": "RSA Algorithm: Key Generation and Encryption", "period": 1, "type": "theory" },
+                { "id": "cm405-4.15", "sno": "4.15", "topic": "Diffie-Hellman Key Exchange Basics", "period": 1, "type": "theory" },
+                { "id": "cm405-4.16", "sno": "4.16", "topic": "Digital Signatures and Hash Functions", "period": 1, "type": "theory" },
+                { "id": "cm405-4.17", "sno": "4.17", "topic": "Steganography: Hiding Information in Media", "period": 1, "type": "theory" },
+                { "id": "cm405-4.18", "sno": "4.18", "topic": "Message Authentication Codes (MAC)", "period": 1, "type": "theory" },
+                { "id": "cm405-4.19", "sno": "4.19", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm405-4.20", "sno": "4.20", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "System Security",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm405-5.1", "sno": "5.1", "topic": "Intrusion Detection Systems (IDS) Principles", "period": 1, "type": "theory" },
+                { "id": "cm405-5.2", "sno": "5.2", "topic": "Firewall: Design Principles and Packet Filtering", "period": 1, "type": "theory" },
+                { "id": "cm405-5.3", "sno": "5.3", "topic": "Application Level Gateways and Proxy Servers", "period": 1, "type": "theory" },
+                { "id": "cm405-5.4", "sno": "5.4", "topic": "Virus and Malware: Types and Protection", "period": 1, "type": "theory" },
+                { "id": "cm405-5.5", "sno": "5.5", "topic": "Password Management and Authentication Policies", "period": 1, "type": "theory" },
+                { "id": "cm405-5.6", "sno": "5.6", "topic": "Cyber Laws and Ethics in Information Security", "period": 1, "type": "theory" },
+                { "id": "cm405-5.7", "sno": "5.7", "topic": "Secure Socket Layer (SSL) and HTTPS", "period": 1, "type": "theory" },
+                { "id": "cm405-5.8", "sno": "5.8", "topic": "Security Auditing and Incident Response", "period": 1, "type": "theory" },
+                { "id": "cm405-5.9", "sno": "5.9", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm405-5.10", "sno": "5.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

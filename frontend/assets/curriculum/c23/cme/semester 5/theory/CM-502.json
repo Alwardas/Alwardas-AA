@@ -1,0 +1,119 @@
+{
+    "subjectCode": "CM-502",
+    "subjectName": "Big Data & Cloud Computing",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction to Big Data",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm502-1.1", "sno": "1.1", "topic": "Definition and 5 V's of Big Data (Volume, Velocity, Variety, Veracity, Value)", "period": 1, "type": "theory" },
+                { "id": "cm502-1.2", "sno": "1.2", "topic": "Importance and Challenges of Big Data", "period": 1, "type": "theory" },
+                { "id": "cm502-1.3", "sno": "1.3", "topic": "Big Data Sources and Types: Structured, Semi-structured, Unstructured", "period": 1, "type": "theory" },
+                { "id": "cm502-1.4", "sno": "1.4", "topic": "Traditional vs Big Data Environment", "period": 1, "type": "theory" },
+                { "id": "cm502-1.5", "sno": "1.5", "topic": "Big Data Analytics: Descriptive, Predictive, Prescriptive", "period": 1, "type": "theory" },
+                { "id": "cm502-1.6", "sno": "1.6", "topic": "Big Data Technology Stack (Overview)", "period": 1, "type": "theory" },
+                { "id": "cm502-1.7", "sno": "1.7", "topic": "Data Science vs Big Data", "period": 1, "type": "theory" },
+                { "id": "cm502-1.8", "sno": "1.8", "topic": "Use cases of Big Data in various industries", "period": 1, "type": "theory" },
+                { "id": "cm502-1.9", "sno": "1.9", "topic": "Ethical and Privacy issues in Big Data", "period": 1, "type": "theory" },
+                { "id": "cm502-1.10", "sno": "1.10", "topic": "Data Preprocessing and Data Cleaning for Big Data", "period": 1, "type": "theory" },
+                { "id": "cm502-1.11", "sno": "1.11", "topic": "Introduction to Data Visualization for Big Data", "period": 1, "type": "theory" },
+                { "id": "cm502-1.12", "sno": "1.12", "topic": "Tutorial on Big Data concepts", "period": 1, "type": "theory" },
+                { "id": "cm502-1.13", "sno": "1.13", "topic": "Case study on Big Data implementation", "period": 1, "type": "theory" },
+                { "id": "cm502-1.14", "sno": "1.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm502-1.15", "sno": "1.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Hadoop and MapReduce",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm502-2.1", "sno": "2.1", "topic": "Introduction to Hadoop and its History", "period": 1, "type": "theory" },
+                { "id": "cm502-2.2", "sno": "2.2", "topic": "Hadoop Ecosystem: Core Components (HDFS, YARN, MapReduce)", "period": 1, "type": "theory" },
+                { "id": "cm502-2.3", "sno": "2.3", "topic": "HDFS Architecture: NameNode and DataNode", "period": 1, "type": "theory" },
+                { "id": "cm502-2.4", "sno": "2.4", "topic": "Data Replication and Fault Tolerance in HDFS", "period": 1, "type": "theory" },
+                { "id": "cm502-2.5", "sno": "2.5", "topic": "Read and Write operations in HDFS", "period": 1, "type": "theory" },
+                { "id": "cm502-2.6", "sno": "2.6", "topic": "MapReduce Programming Model: Concepts", "period": 1, "type": "theory" },
+                { "id": "cm502-2.7", "sno": "2.7", "topic": "Mapper and Reducer functions and their roles", "period": 1, "type": "theory" },
+                { "id": "cm502-2.8", "sno": "2.8", "topic": "Shuffling and Sorting in MapReduce", "period": 1, "type": "theory" },
+                { "id": "cm502-2.9", "sno": "2.9", "topic": "Writing a WordCount MapReduce program", "period": 1, "type": "theory" },
+                { "id": "cm502-2.10", "sno": "2.10", "topic": "YARN (Yet Another Resource Negotiator) Architecture", "period": 1, "type": "theory" },
+                { "id": "cm502-2.11", "sno": "2.11", "topic": "Hadoop Distribution: Cloudera and Hortonworks (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm502-2.12", "sno": "2.12", "topic": "Tutorial on Hadoop commands", "period": 1, "type": "theory" },
+                { "id": "cm502-2.13", "sno": "2.13", "topic": "Solving problems on MapReduce logic", "period": 1, "type": "theory" },
+                { "id": "cm502-2.14", "sno": "2.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm502-2.15", "sno": "2.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "NoSQL Databases",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm502-3.1", "sno": "3.1", "topic": "Introduction to NoSQL: Limitation of RDBMS", "period": 1, "type": "theory" },
+                { "id": "cm502-3.2", "sno": "3.2", "topic": "NoSQL Data Models: Key-Value and Document store", "period": 1, "type": "theory" },
+                { "id": "cm502-3.3", "sno": "3.3", "topic": "NoSQL Data Models: Column-family and Graph databases", "period": 1, "type": "theory" },
+                { "id": "cm502-3.4", "sno": "3.4", "topic": "CAP Theorem: Consistency, Availability, Partition tolerance", "period": 1, "type": "theory" },
+                { "id": "cm502-3.5", "sno": "3.5", "topic": "BASE Properties vs ACID Properties", "period": 1, "type": "theory" },
+                { "id": "cm502-3.6", "sno": "3.6", "topic": "Introduction to MongoDB: Features and Installation", "period": 1, "type": "theory" },
+                { "id": "cm502-3.7", "sno": "3.7", "topic": "MongoDB CRUD Operations: Create and Read", "period": 1, "type": "theory" },
+                { "id": "cm502-3.8", "sno": "3.8", "topic": "MongoDB CRUD Operations: Update and Delete", "period": 1, "type": "theory" },
+                { "id": "cm502-3.9", "sno": "3.9", "topic": "Indexing and Aggregation in MongoDB", "period": 1, "type": "theory" },
+                { "id": "cm502-3.10", "sno": "3.10", "topic": "Introduction to Apache Cassandra (Overview)", "period": 1, "type": "theory" },
+                { "id": "cm502-3.11", "sno": "3.11", "topic": "Introduction to Redis (Overview)", "period": 1, "type": "theory" },
+                { "id": "cm502-3.12", "sno": "3.12", "topic": "Tutorial on MongoDB Shell commands", "period": 1, "type": "theory" },
+                { "id": "cm502-3.13", "sno": "3.13", "topic": "Practice: Design a schema for a NoSQL db", "period": 1, "type": "theory" },
+                { "id": "cm502-3.14", "sno": "3.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm502-3.15", "sno": "3.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Introduction to Cloud Computing",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm502-4.1", "sno": "4.1", "topic": "Cloud Computing: Definition and History", "period": 1, "type": "theory" },
+                { "id": "cm502-4.2", "sno": "4.2", "topic": "Essential Characteristics of Cloud Computing (NIST)", "period": 1, "type": "theory" },
+                { "id": "cm502-4.3", "sno": "4.3", "topic": "Benefits and Risks of Cloud Computing", "period": 1, "type": "theory" },
+                { "id": "cm502-4.4", "sno": "4.4", "topic": "Cloud Service Models: IaaS (Infrastructure as a Service)", "period": 1, "type": "theory" },
+                { "id": "cm502-4.5", "sno": "4.5", "topic": "Cloud Service Models: PaaS (Platform as a Service)", "period": 1, "type": "theory" },
+                { "id": "cm502-4.6", "sno": "4.6", "topic": "Cloud Service Models: SaaS (Software as a Service)", "period": 1, "type": "theory" },
+                { "id": "cm502-4.7", "sno": "4.7", "topic": "Comparison of SPI models", "period": 1, "type": "theory" },
+                { "id": "cm502-4.8", "sno": "4.8", "topic": "Cloud Deployment Models: Public and Private Cloud", "period": 1, "type": "theory" },
+                { "id": "cm502-4.9", "sno": "4.9", "topic": "Cloud Deployment Models: Community and Hybrid Cloud", "period": 1, "type": "theory" },
+                { "id": "cm502-4.10", "sno": "4.10", "topic": "Cloud Virtualization: Concepts and Types (Full vs Para)", "period": 1, "type": "theory" },
+                { "id": "cm502-4.11", "sno": "4.11", "topic": "Hypervisors: Type-1 and Type-2", "period": 1, "type": "theory" },
+                { "id": "cm502-4.12", "sno": "4.12", "topic": "Tutorial on Virtualization techniques", "period": 1, "type": "theory" },
+                { "id": "cm502-4.13", "sno": "4.13", "topic": "Practice: Using Oracle VirtualBox (demo)", "period": 1, "type": "theory" },
+                { "id": "cm502-4.14", "sno": "4.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm502-4.15", "sno": "4.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Cloud Services and Security",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm502-5.1", "sno": "5.1", "topic": "Major Cloud Providers: Amazon Web Services (AWS)", "period": 1, "type": "theory" },
+                { "id": "cm502-5.2", "sno": "5.2", "topic": "AWS Core Services: EC2, S3, RDS", "period": 1, "type": "theory" },
+                { "id": "cm502-5.3", "sno": "5.3", "topic": "Microsoft Azure and Google Cloud Platform (Overview)", "period": 1, "type": "theory" },
+                { "id": "cm502-5.4", "sno": "5.4", "topic": "Cloud Storage: Block, File and Object storage", "period": 1, "type": "theory" },
+                { "id": "cm502-5.5", "sno": "5.5", "topic": "Cloud Interoperability and Portability", "period": 1, "type": "theory" },
+                { "id": "cm502-5.6", "sno": "5.6", "topic": "Cloud Security: Shared Responsibility Model", "period": 1, "type": "theory" },
+                { "id": "cm502-5.7", "sno": "5.7", "topic": "Security Threats and Challenges in Cloud", "period": 1, "type": "theory" },
+                { "id": "cm502-5.8", "sno": "5.8", "topic": "Identity and Access Management (IAM) in Cloud", "period": 1, "type": "theory" },
+                { "id": "cm502-5.9", "sno": "5.9", "topic": "Data Encryption and Privacy in Cloud", "period": 1, "type": "theory" },
+                { "id": "cm502-5.10", "sno": "5.10", "topic": "Serverless Computing and Microservices (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm502-5.11", "sno": "5.11", "topic": "Future Trends in Cloud Computing", "period": 1, "type": "theory" },
+                { "id": "cm502-5.12", "sno": "5.12", "topic": "Tutorial on AWS Console (demo)", "period": 1, "type": "theory" },
+                { "id": "cm502-5.13", "sno": "5.13", "topic": "Practice: Deploying a simple web app to Cloud (intro)", "period": 1, "type": "theory" },
+                { "id": "cm502-5.14", "sno": "5.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm502-5.15", "sno": "5.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

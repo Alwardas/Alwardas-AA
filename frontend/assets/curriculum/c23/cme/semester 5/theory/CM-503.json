@@ -1,0 +1,104 @@
+{
+    "subjectCode": "CM-503",
+    "subjectName": "Android Programming",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 60,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Android Basics and Anatomy",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm503-1.1", "sno": "1.1", "topic": "Mobile Phone Generations and Smartphones", "period": 1, "type": "theory" },
+                { "id": "cm503-1.2", "sno": "1.2", "topic": "Android Architecture and Core Layers", "period": 1, "type": "theory" },
+                { "id": "cm503-1.3", "sno": "1.3", "topic": "Android Versions and Evolution of Features", "period": 1, "type": "theory" },
+                { "id": "cm503-1.4", "sno": "1.4", "topic": "Android SDK Tools and Development Environment", "period": 1, "type": "theory" },
+                { "id": "cm503-1.5", "sno": "1.5", "topic": "Android Virtual Devices (AVD) Configuration", "period": 1, "type": "theory" },
+                { "id": "cm503-1.6", "sno": "1.6", "topic": "Anatomy of Android Application: Files and Folders", "period": 1, "type": "theory" },
+                { "id": "cm503-1.7", "sno": "1.7", "topic": "Manifest, R, Strings, and Layout Files", "period": 1, "type": "theory" },
+                { "id": "cm503-1.8", "sno": "1.8", "topic": "Dalvik Virtual Machine (DVM) vs ART", "period": 1, "type": "theory" },
+                { "id": "cm503-1.9", "sno": "1.9", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm503-1.10", "sno": "1.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Components, Activity Life Cycle, Intents",
+            "totalPeriods": 12,
+            "topics": [
+                { "id": "cm503-2.1", "sno": "2.1", "topic": "Android Application Components: Activities", "period": 1, "type": "theory" },
+                { "id": "cm503-2.2", "sno": "2.2", "topic": "Services and Content Providers Overview", "period": 1, "type": "theory" },
+                { "id": "cm503-2.3", "sno": "2.3", "topic": "Broadcast Receivers and Notification Manager", "period": 1, "type": "theory" },
+                { "id": "cm503-2.4", "sno": "2.4", "topic": "Activity Life Cycle: States and Transitions", "period": 1, "type": "theory" },
+                { "id": "cm503-2.5", "sno": "2.5", "topic": "Activity Life Cycle: Callback Methods", "period": 1, "type": "theory" },
+                { "id": "cm503-2.6", "sno": "2.6", "topic": "Introduction to Intents and Intent Objects", "period": 1, "type": "theory" },
+                { "id": "cm503-2.7", "sno": "2.7", "topic": "Explicit vs Implicit Intents with Examples", "period": 1, "type": "theory" },
+                { "id": "cm503-2.8", "sno": "2.8", "topic": "Linking Activities and Passing Data", "period": 1, "type": "theory" },
+                { "id": "cm503-2.9", "sno": "2.9", "topic": "Intent Filters and Intent Resolution", "period": 1, "type": "theory" },
+                { "id": "cm503-2.10", "sno": "2.10", "topic": "Developing Multi-Activity Android Apps", "period": 1, "type": "theory" },
+                { "id": "cm503-2.11", "sno": "2.11", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm503-2.12", "sno": "2.12", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Android – User Interface Controls",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm503-3.1", "sno": "3.1", "topic": "User Interface Layouts: Linear and Relative", "period": 1, "type": "theory" },
+                { "id": "cm503-3.2", "sno": "3.2", "topic": "UI Layouts: Frame, Table and Constraint Layout", "period": 1, "type": "theory" },
+                { "id": "cm503-3.3", "sno": "3.3", "topic": "UI Widgets: TextView, EditText and Buttons", "period": 1, "type": "theory" },
+                { "id": "cm503-3.4", "sno": "3.4", "topic": "Selection Widgets: CheckBox and RadioButtons", "period": 1, "type": "theory" },
+                { "id": "cm503-3.5", "sno": "3.5", "topic": "Spinner and ListView for Data Display", "period": 1, "type": "theory" },
+                { "id": "cm503-3.6", "sno": "3.6", "topic": "Date and Time Picker Dialogs", "period": 1, "type": "theory" },
+                { "id": "cm503-3.7", "sno": "3.7", "topic": "Handling User Events and Click Listeners", "period": 1, "type": "theory" },
+                { "id": "cm503-3.8", "sno": "3.8", "topic": "Toast Messages for User Feedback", "period": 1, "type": "theory" },
+                { "id": "cm503-3.9", "sno": "3.9", "topic": "Android Menus: Option and Context Menus", "period": 1, "type": "theory" },
+                { "id": "cm503-3.10", "sno": "3.10", "topic": "Introduction to Android Fragments", "period": 1, "type": "theory" },
+                { "id": "cm503-3.11", "sno": "3.11", "topic": "Fragment Life Cycle and Communication", "period": 1, "type": "theory" },
+                { "id": "cm503-3.12", "sno": "3.12", "topic": "Adapters and Data Binding to UI", "period": 1, "type": "theory" },
+                { "id": "cm503-3.13", "sno": "3.13", "topic": "Designing Responsive User Interfaces", "period": 1, "type": "theory" },
+                { "id": "cm503-3.14", "sno": "3.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm503-3.15", "sno": "3.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Android Advanced Concepts",
+            "totalPeriods": 13,
+            "topics": [
+                { "id": "cm503-4.1", "sno": "4.1", "topic": "Image Processing: Bitmap and Image Effects", "period": 1, "type": "theory" },
+                { "id": "cm503-4.2", "sno": "4.2", "topic": "Image Switcher and Image Gallery Implementation", "period": 1, "type": "theory" },
+                { "id": "cm503-4.3", "sno": "4.3", "topic": "Messaging: Sending and Receiving SMS via App", "period": 1, "type": "theory" },
+                { "id": "cm503-4.4", "sno": "4.4", "topic": "Telephony Manager: Making Phone Calls", "period": 1, "type": "theory" },
+                { "id": "cm503-4.5", "sno": "4.5", "topic": "Sending E-mails using Android Intents", "period": 1, "type": "theory" },
+                { "id": "cm503-4.6", "sno": "4.6", "topic": "Location Based Services: GPS and Network Provider", "period": 1, "type": "theory" },
+                { "id": "cm503-4.7", "sno": "4.7", "topic": "Google Maps Integration in Android Apps", "period": 1, "type": "theory" },
+                { "id": "cm503-4.8", "sno": "4.8", "topic": "Multimedia: Audio and Video Playback", "period": 1, "type": "theory" },
+                { "id": "cm503-4.9", "sno": "4.9", "topic": "Camera API: Capturing Photos and Videos", "period": 1, "type": "theory" },
+                { "id": "cm503-4.10", "sno": "4.10", "topic": "Services: Background Tasks and Notifications", "period": 1, "type": "theory" },
+                { "id": "cm503-4.11", "sno": "4.11", "topic": "Web Services Integration: Introduction to Retrofit", "period": 1, "type": "theory" },
+                { "id": "cm503-4.12", "sno": "4.12", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm503-4.13", "sno": "4.13", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Database Connectivity and Deployment",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm503-5.1", "sno": "5.1", "topic": "Introduction to SQLite Database in Android", "period": 1, "type": "theory" },
+                { "id": "cm503-5.2", "sno": "5.2", "topic": "SQLiteOpenHelper: onCreate() and onUpgrade()", "period": 1, "type": "theory" },
+                { "id": "cm503-5.3", "sno": "5.3", "topic": "Database Operations: Create and Open", "period": 1, "type": "theory" },
+                { "id": "cm503-5.4", "sno": "5.4", "topic": "CRUD Operations: Insert and Update Data", "period": 1, "type": "theory" },
+                { "id": "cm503-5.5", "sno": "5.5", "topic": "CRUD Operations: Delete and Select Queries", "period": 1, "type": "theory" },
+                { "id": "cm503-5.6", "sno": "5.6", "topic": "Content Providers for Data Sharing", "period": 1, "type": "theory" },
+                { "id": "cm503-5.7", "sno": "5.7", "topic": "Shared Preferences for Simple Data Storage", "period": 1, "type": "theory" },
+                { "id": "cm503-5.8", "sno": "5.8", "topic": "Publishing and Deploying Android Apps (APK)", "period": 1, "type": "theory" },
+                { "id": "cm503-5.9", "sno": "5.9", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm503-5.10", "sno": "5.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

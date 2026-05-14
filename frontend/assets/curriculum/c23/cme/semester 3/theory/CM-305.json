@@ -1,0 +1,119 @@
+{
+    "subjectCode": "CM-305",
+    "subjectName": "DBMS",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Database System Concepts",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm305-1.1", "sno": "1.1", "topic": "Introduction to DBMS: Purpose and Limitations of File systems", "period": 1, "type": "theory" },
+                { "id": "cm305-1.2", "sno": "1.2", "topic": "Advantages of DBMS and Data Abstraction", "period": 1, "type": "theory" },
+                { "id": "cm305-1.3", "sno": "1.3", "topic": "Database Users and Administrators (DBA)", "period": 1, "type": "theory" },
+                { "id": "cm305-1.4", "sno": "1.4", "topic": "Three Schema Architecture and Data Independence", "period": 1, "type": "theory" },
+                { "id": "cm305-1.5", "sno": "1.5", "topic": "Database System Architecture: Centralized, Client-Server", "period": 1, "type": "theory" },
+                { "id": "cm305-1.6", "sno": "1.6", "topic": "Classification of DBMS and Data Models", "period": 1, "type": "theory" },
+                { "id": "cm305-1.7", "sno": "1.7", "topic": "Schema, Instance and Metadata concepts", "period": 1, "type": "theory" },
+                { "id": "cm305-1.8", "sno": "1.8", "topic": "Database Languages: DDL, DML, DCL, TCL", "period": 1, "type": "theory" },
+                { "id": "cm305-1.9", "sno": "1.9", "topic": "Revision of DBMS Basics", "period": 1, "type": "revision" },
+                { "id": "cm305-1.10", "sno": "1.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "E-R Modeling",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm305-2.1", "sno": "2.1", "topic": "Entity-Relationship (E-R) Model: Introduction", "period": 1, "type": "theory" },
+                { "id": "cm305-2.2", "sno": "2.2", "topic": "Entities and Attributes: Simple, Composite, Multi-valued", "period": 1, "type": "theory" },
+                { "id": "cm305-2.3", "sno": "2.3", "topic": "Derived attributes and Null values", "period": 1, "type": "theory" },
+                { "id": "cm305-2.4", "sno": "2.4", "topic": "Relationships and Relationship Sets", "period": 1, "type": "theory" },
+                { "id": "cm305-2.5", "sno": "2.5", "topic": "Degree of a relationship: Binary, Ternary", "period": 1, "type": "theory" },
+                { "id": "cm305-2.6", "sno": "2.6", "topic": "Mapping Cardinalities (Constraints)", "period": 1, "type": "theory" },
+                { "id": "cm305-2.7", "sno": "2.7", "topic": "Keys: Candidate, Primary, Super and Composite", "period": 1, "type": "theory" },
+                { "id": "cm305-2.8", "sno": "2.8", "topic": "Strong and Weak Entity sets", "period": 1, "type": "theory" },
+                { "id": "cm305-2.9", "sno": "2.9", "topic": "Extended E-R Features: Specialization and Generalization", "period": 1, "type": "theory" },
+                { "id": "cm305-2.10", "sno": "2.10", "topic": "Aggregation in E-R model", "period": 1, "type": "theory" },
+                { "id": "cm305-2.11", "sno": "2.11", "topic": "Drawing E-R diagrams for real-world scenarios - Part 1", "period": 1, "type": "theory" },
+                { "id": "cm305-2.12", "sno": "2.12", "topic": "Drawing E-R diagrams for real-world scenarios - Part 2", "period": 1, "type": "theory" },
+                { "id": "cm305-2.13", "sno": "2.13", "topic": "Tutorial on E-R Modeling", "period": 1, "type": "theory" },
+                { "id": "cm305-2.14", "sno": "2.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm305-2.15", "sno": "2.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Relational Model and Algebra",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm305-3.1", "sno": "3.1", "topic": "Relational Model: Structure and Terminology", "period": 1, "type": "theory" },
+                { "id": "cm305-3.2", "sno": "3.2", "topic": "Relational Integrity Constraints: Entity, Referential", "period": 1, "type": "theory" },
+                { "id": "cm305-3.3", "sno": "3.3", "topic": "Foreign Key concept and cascade operations", "period": 1, "type": "theory" },
+                { "id": "cm305-3.4", "sno": "3.4", "topic": "Relational Algebra: Selection (Sigma) and Projection (Pi)", "period": 1, "type": "theory" },
+                { "id": "cm305-3.5", "sno": "3.5", "topic": "Relational Algebra: Union, Intersection and Difference", "period": 1, "type": "theory" },
+                { "id": "cm305-3.6", "sno": "3.6", "topic": "Relational Algebra: Cartesian Product and Rename", "period": 1, "type": "theory" },
+                { "id": "cm305-3.7", "sno": "3.7", "topic": "Relational Algebra: Join operations (Natural, Inner, Outer)", "period": 1, "type": "theory" },
+                { "id": "cm305-3.8", "sno": "3.8", "topic": "Relational Calculus: Introduction (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm305-3.9", "sno": "3.9", "topic": "Mapping E-R model to Relational tables - Part 1", "period": 1, "type": "theory" },
+                { "id": "cm305-3.10", "sno": "3.10", "topic": "Mapping E-R model to Relational tables - Part 2", "period": 1, "type": "theory" },
+                { "id": "cm305-3.11", "sno": "3.11", "topic": "Mapping Specialized/Generalized entities", "period": 1, "type": "theory" },
+                { "id": "cm305-3.12", "sno": "3.12", "topic": "Solving Relational Algebra queries", "period": 1, "type": "theory" },
+                { "id": "cm305-3.13", "sno": "3.13", "topic": "Tutorial on Relational Model", "period": 1, "type": "theory" },
+                { "id": "cm305-3.14", "sno": "3.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm305-3.15", "sno": "3.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "SQL (Structured Query Language)",
+            "totalPeriods": 20,
+            "topics": [
+                { "id": "cm305-4.1", "sno": "4.1", "topic": "Introduction to SQL: Data Types and Commands", "period": 1, "type": "theory" },
+                { "id": "cm305-4.2", "sno": "4.2", "topic": "DDL Commands: CREATE, ALTER, DROP, TRUNCATE", "period": 1, "type": "theory" },
+                { "id": "cm305-4.3", "sno": "4.3", "topic": "DML Commands: INSERT, UPDATE, DELETE", "period": 1, "type": "theory" },
+                { "id": "cm305-4.4", "sno": "4.4", "topic": "SQL constraints: NOT NULL, UNIQUE, PRIMARY KEY", "period": 1, "type": "theory" },
+                { "id": "cm305-4.5", "sno": "4.5", "topic": "SQL constraints: FOREIGN KEY and CHECK", "period": 1, "type": "theory" },
+                { "id": "cm305-4.6", "sno": "4.6", "topic": "Basic SELECT query: WHERE, ORDER BY clauses", "period": 1, "type": "theory" },
+                { "id": "cm305-4.7", "sno": "4.7", "topic": "SQL Operators: Arithmetic, Comparison, Logical", "period": 1, "type": "theory" },
+                { "id": "cm305-4.8", "sno": "4.8", "topic": "SQL Operators: LIKE, BETWEEN, IN, IS NULL", "period": 1, "type": "theory" },
+                { "id": "cm305-4.9", "sno": "4.9", "topic": "Aggregate Functions: COUNT, SUM, AVG, MIN, MAX", "period": 1, "type": "theory" },
+                { "id": "cm305-4.10", "sno": "4.10", "topic": "Grouping results: GROUP BY and HAVING clauses", "period": 1, "type": "theory" },
+                { "id": "cm305-4.11", "sno": "4.11", "topic": "Join Queries: Inner Join and Left Outer Join", "period": 1, "type": "theory" },
+                { "id": "cm305-4.12", "sno": "4.12", "topic": "Join Queries: Right Outer Join and Full Outer Join", "period": 1, "type": "theory" },
+                { "id": "cm305-4.13", "sno": "4.13", "topic": "Self Join and Cross Join", "period": 1, "type": "theory" },
+                { "id": "cm305-4.14", "sno": "4.14", "topic": "Subqueries (Nested queries) in SQL", "period": 1, "type": "theory" },
+                { "id": "cm305-4.15", "sno": "4.15", "topic": "SQL Views: Creation and advantages", "period": 1, "type": "theory" },
+                { "id": "cm305-4.16", "sno": "4.16", "topic": "SQL Triggers and Stored Procedures (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm305-4.17", "sno": "4.17", "topic": "Tutorial on SQL Queries", "period": 1, "type": "theory" },
+                { "id": "cm305-4.18", "sno": "4.18", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm305-4.19", "sno": "4.19", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm305-4.20", "sno": "4.20", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Normalization and Transaction Management",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm305-5.1", "sno": "5.1", "topic": "Normalization: Need for normalization (Redundancy, Anomalies)", "period": 1, "type": "theory" },
+                { "id": "cm305-5.2", "sno": "5.2", "topic": "Functional Dependency (FD) concepts", "period": 1, "type": "theory" },
+                { "id": "cm305-5.3", "sno": "5.3", "topic": "First Normal Form (1NF)", "period": 1, "type": "theory" },
+                { "id": "cm305-5.4", "sno": "5.4", "topic": "Second Normal Form (2NF)", "period": 1, "type": "theory" },
+                { "id": "cm305-5.5", "sno": "5.5", "topic": "Third Normal Form (3NF)", "period": 1, "type": "theory" },
+                { "id": "cm305-5.6", "sno": "5.6", "topic": "Boyce-Codd Normal Form (BCNF)", "period": 1, "type": "theory" },
+                { "id": "cm305-5.7", "sno": "5.7", "topic": "Transaction Management: ACID properties", "period": 1, "type": "theory" },
+                { "id": "cm305-5.8", "sno": "5.8", "topic": "Transaction States and Lifecycle", "period": 1, "type": "theory" },
+                { "id": "cm305-5.9", "sno": "5.9", "topic": "Concurrency Control: Lock-based protocols", "period": 1, "type": "theory" },
+                { "id": "cm305-5.10", "sno": "5.10", "topic": "Concurrency Control: Timestamp-based protocols", "period": 1, "type": "theory" },
+                { "id": "cm305-5.11", "sno": "5.11", "topic": "Database Recovery Techniques (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm305-5.12", "sno": "5.12", "topic": "Case Study: Modern NoSQL databases (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm305-5.13", "sno": "5.13", "topic": "Tutorial on Normalization", "period": 1, "type": "theory" },
+                { "id": "cm305-5.14", "sno": "5.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm305-5.15", "sno": "5.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

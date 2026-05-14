@@ -1,86 +1,65 @@
-﻿import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class CoursesData {
   static List<dynamic>? _cachedCourses;
 
-  /// Loads all courses from multiple JSON files.
-  /// Branches: Civil, CME, ECE, EEE, Mech
+  /// Loads all courses dynamically from the assets/curriculum/ directory.
+  /// Traverses regulations, branches, semesters, and subject types.
   static Future<List<dynamic>> getAllCourses() async {
     if (_cachedCourses != null) return _cachedCourses!;
 
     List<dynamic> all = [];
-    final branches = ['civil.json', 'cme.json', 'ece.json', 'eee.json', 'mech.json'];
+    
+    try {
+      // Use AssetManifest to find all files in the curriculum folder
+      final String manifestContent = await rootBundle.loadString('AssetManifest.json');
+      final Map<String, dynamic> manifest = json.decode(manifestContent);
+      
+      // Filter for files in assets/curriculum/ that are .json
+      final List<String> curriculumFiles = manifest.keys
+          .where((path) => path.startsWith('assets/curriculum/') && path.endsWith('.json'))
+          .toList();
 
-    debugPrint("Loading courses from ${branches.length} files...");
-    for (String file in branches) {
-      try {
-        final String content = await rootBundle.loadString('assets/data/json/$file');
-        final Map<String, dynamic> data = json.decode(content);
-        final String branchName = data['branch_name'] ?? 'Unknown';
-        int subjectsCount = 0;
-        
-        if (data['semesters'] != null) {
-          final Map<String, dynamic> semesters = data['semesters'];
-          semesters.forEach((semName, types) {
-             // Normalize semester name (e.g., "1st year" -> "1st Year")
-             String normalizedSem = semName.toLowerCase();
-             if (normalizedSem.contains("1st")) {
-               normalizedSem = "1st Year";
-             } else if (normalizedSem.contains("2nd")) normalizedSem = "2nd Semester";
-             else if (normalizedSem.contains("3rd")) normalizedSem = "3rd Semester";
-             else if (normalizedSem.contains("4th")) normalizedSem = "4th Semester";
-             else if (normalizedSem.contains("5th")) normalizedSem = "5th Semester";
-             else if (normalizedSem.contains("6th")) normalizedSem = "6th Semester";
-             else normalizedSem = semName; 
+      debugPrint("Found ${curriculumFiles.length} curriculum files dynamically.");
 
-             if (types is Map<String, dynamic>) {
-               // Theory
-               if (types['theory'] != null && types['theory'] is List) {
-                 for (var sub in types['theory']) {
-                    if (sub is Map && sub['id'] != null) {
-                      all.add({
-                        'id': sub['id'],
-                        'code': sub['id'],
-                        'name': sub['name'] ?? 'Unnamed Subject',
-                        'branch': branchName,
-                        'semester': normalizedSem,
-                        'type': 'Theory'
-                      });
-                      subjectsCount++;
-                    }
-                 }
-               }
-               // Practical
-               if (types['practical'] != null && types['practical'] is List) {
-                 for (var sub in types['practical']) {
-                    if (sub is Map && sub['id'] != null) {
-                      all.add({
-                        'id': sub['id'],
-                        'code': sub['id'],
-                        'name': sub['name'] ?? 'Unnamed Subject',
-                        'branch': branchName,
-                        'semester': normalizedSem,
-                        'type': 'Practical'
-                      });
-                      subjectsCount++;
-                    }
-                 }
-               }
-             }
-          });
+      for (String path in curriculumFiles) {
+        try {
+          final String content = await rootBundle.loadString(path);
+          final Map<String, dynamic> data = json.decode(content);
+          
+          // Path structure: assets/curriculum/{regulation}/{branch}/{semester}/{type}/{subject}.json
+          final List<String> parts = path.split('/');
+          
+          // Fallback values if path structure differs
+          String branch = _normalizeBranch(data['branch'] ?? (parts.length > 3 ? parts[3] : 'Unknown'));
+          String regulation = data['regulation'] ?? (parts.length > 2 ? parts[2] : 'C23');
+          String type = data['type'] ?? (parts.length > 5 ? parts[5] : 'Theory');
+          
+          // Normalize semester to match the format expected by UI screens
+          String semester = _normalizeSemester(data['semester']?.toString() ?? (parts.length > 4 ? parts[4] : ''));
+
+          if (data['subjectCode'] != null) {
+            all.add({
+              'id': data['subjectCode'],
+              'code': data['subjectCode'],
+              'name': data['subjectName'] ?? 'Unnamed Subject',
+              'branch': branch,
+              'semester': semester,
+              'regulation': regulation.toUpperCase(),
+              'type': _capitalize(type)
+            });
+          }
+        } catch (e) {
+          debugPrint("Error parsing curriculum file at $path: $e");
         }
-        debugPrint("Loaded $subjectsCount subjects from $file ($branchName)");
-      } catch (e) {
-        debugPrint("Error loading course data from $file: $e");
-        debugPrint("Make sure $file exists in assets/data/json/ and is listed in pubspec.yaml assets.");
       }
+    } catch (e) {
+      debugPrint("Error loading asset manifest for curriculum: $e");
+      // Fallback to empty list or handled error
     }
 
-    // Secondary processing: Ensure IDs are unique if branches share codes (though usually branch specific)
-    // Actually, the teacher might teach different subjects, so they should be unique in the list.
-    
     // Sort by Branch, then Semester, then Name
     all.sort((a, b) {
       int cmp = a['branch'].compareTo(b['branch']);
@@ -92,6 +71,31 @@ class CoursesData {
 
     _cachedCourses = all;
     return all;
+  }
+
+  static String _normalizeBranch(String b) {
+    String upper = b.toUpperCase();
+    if (upper == 'CME' || upper.contains('COMPUTER')) return 'Computer Engineering';
+    if (upper == 'CIV' || upper == 'CIVIL') return 'Civil Engineering';
+    if (upper == 'ECE' || upper.contains('ELECTRONICS')) return 'Electronics & Communication Engineering';
+    if (upper == 'EEE' || upper.contains('ELECTRICAL')) return 'Electrical and Electronics Engineering';
+    if (upper == 'MECH' || upper == 'MEC' || upper.contains('MECHANICAL')) return 'Mechanical Engineering';
+    return b;
+  }
+
+  static String _normalizeSemester(String sem) {
+    String s = sem.toLowerCase();
+    if (s.contains('1') && !s.contains('3') && !s.contains('5')) return '1st Year';
+    if (s.contains('3')) return '3rd Semester';
+    if (s.contains('4')) return '4th Semester';
+    if (s.contains('5')) return '5th Semester';
+    if (s.contains('6')) return '6th Semester';
+    return sem;
+  }
+
+  static String _capitalize(String s) {
+    if (s.isEmpty) return s;
+    return s[0].toUpperCase() + s.substring(1).toLowerCase();
   }
 }
 

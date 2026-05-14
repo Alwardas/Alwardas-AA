@@ -1,0 +1,119 @@
+{
+    "subjectCode": "CM-402",
+    "subjectName": "Web Technologies",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction to Web Technologies and HTML",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm402-1.1", "sno": "1.1", "topic": "Introduction to Internet, WWW and Web Browsers", "period": 1, "type": "theory" },
+                { "id": "cm402-1.2", "sno": "1.2", "topic": "Web Architecture: 2-tier and 3-tier", "period": 1, "type": "theory" },
+                { "id": "cm402-1.3", "sno": "1.3", "topic": "HTTP Protocol: Request and Response", "period": 1, "type": "theory" },
+                { "id": "cm402-1.4", "sno": "1.4", "topic": "Introduction to HTML5: Basic structure and tags", "period": 1, "type": "theory" },
+                { "id": "cm402-1.5", "sno": "1.5", "topic": "Formatting tags: Headings, Paragraphs, Line breaks", "period": 1, "type": "theory" },
+                { "id": "cm402-1.6", "sno": "1.6", "topic": "Lists in HTML: Ordered, Unordered and Definition lists", "period": 1, "type": "theory" },
+                { "id": "cm402-1.7", "sno": "1.7", "topic": "Working with Images and Multimedia in HTML", "period": 1, "type": "theory" },
+                { "id": "cm402-1.8", "sno": "1.8", "topic": "Creating Links: Internal, External and Email links", "period": 1, "type": "theory" },
+                { "id": "cm402-1.9", "sno": "1.9", "topic": "Creating Tables: Rows, Columns, Spanning", "period": 1, "type": "theory" },
+                { "id": "cm402-1.10", "sno": "1.10", "topic": "HTML Forms: Input types (text, password, radio, checkbox)", "period": 1, "type": "theory" },
+                { "id": "cm402-1.11", "sno": "1.11", "topic": "HTML Forms: Select, Textarea and Submit/Reset buttons", "period": 1, "type": "theory" },
+                { "id": "cm402-1.12", "sno": "1.12", "topic": "Introduction to HTML Semantic elements", "period": 1, "type": "theory" },
+                { "id": "cm402-1.13", "sno": "1.13", "topic": "Tutorial on HTML layout design", "period": 1, "type": "theory" },
+                { "id": "cm402-1.14", "sno": "1.14", "topic": "Revision of HTML", "period": 1, "type": "revision" },
+                { "id": "cm402-1.15", "sno": "1.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "CSS (Cascading Style Sheets)",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm402-2.1", "sno": "2.1", "topic": "Introduction to CSS: Advantages and Syntax", "period": 1, "type": "theory" },
+                { "id": "cm402-2.2", "sno": "2.2", "topic": "Types of CSS: Inline, Internal and External", "period": 1, "type": "theory" },
+                { "id": "cm402-2.3", "sno": "2.3", "topic": "CSS Selectors: Element, ID, Class and Grouping", "period": 1, "type": "theory" },
+                { "id": "cm402-2.4", "sno": "2.4", "topic": "Pseudo-classes and Pseudo-elements", "period": 1, "type": "theory" },
+                { "id": "cm402-2.5", "sno": "2.5", "topic": "CSS Colors, Backgrounds and Borders", "period": 1, "type": "theory" },
+                { "id": "cm402-2.6", "sno": "2.6", "topic": "CSS Box Model: Margin, Border, Padding and Content", "period": 1, "type": "theory" },
+                { "id": "cm402-2.7", "sno": "2.7", "topic": "CSS Text and Font properties", "period": 1, "type": "theory" },
+                { "id": "cm402-2.8", "sno": "2.8", "topic": "Positioning in CSS: Static, Relative, Absolute and Fixed", "period": 1, "type": "theory" },
+                { "id": "cm402-2.9", "sno": "2.9", "topic": "Floating and Clearing elements", "period": 1, "type": "theory" },
+                { "id": "cm402-2.10", "sno": "2.10", "topic": "Introduction to CSS Flexbox layout", "period": 1, "type": "theory" },
+                { "id": "cm402-2.11", "sno": "2.11", "topic": "Introduction to CSS Grid layout", "period": 1, "type": "theory" },
+                { "id": "cm402-2.12", "sno": "2.12", "topic": "Responsive Web Design using Media Queries", "period": 1, "type": "theory" },
+                { "id": "cm402-2.13", "sno": "2.13", "topic": "Tutorial on CSS layouts", "period": 1, "type": "theory" },
+                { "id": "cm402-2.14", "sno": "2.14", "topic": "Revision of CSS", "period": 1, "type": "revision" },
+                { "id": "cm402-2.15", "sno": "2.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "JavaScript Fundamentals",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm402-3.1", "sno": "3.1", "topic": "Introduction to JavaScript: Features and Usage", "period": 1, "type": "theory" },
+                { "id": "cm402-3.2", "sno": "3.2", "topic": "Variables, Data Types and Operators in JS", "period": 1, "type": "theory" },
+                { "id": "cm402-3.3", "sno": "3.3", "topic": "Control Structures: If-Else and Switch", "period": 1, "type": "theory" },
+                { "id": "cm402-3.4", "sno": "3.4", "topic": "Looping: For, While and Do-While loops", "period": 1, "type": "theory" },
+                { "id": "cm402-3.5", "sno": "3.5", "topic": "Functions: Definition, Calling and Parameters", "period": 1, "type": "theory" },
+                { "id": "cm402-3.6", "sno": "3.6", "topic": "JavaScript Events: onclick, onmouseover, onload", "period": 1, "type": "theory" },
+                { "id": "cm402-3.7", "sno": "3.7", "topic": "JavaScript Objects: String and Date objects", "period": 1, "type": "theory" },
+                { "id": "cm402-3.8", "sno": "3.8", "topic": "Array object and common methods", "period": 1, "type": "theory" },
+                { "id": "cm402-3.9", "sno": "3.9", "topic": "Math and Boolean objects", "period": 1, "type": "theory" },
+                { "id": "cm402-3.10", "sno": "3.10", "topic": "Dialog Boxes: Alert, Confirm and Prompt", "period": 1, "type": "theory" },
+                { "id": "cm402-3.11", "sno": "3.11", "topic": "Form Validation using JavaScript", "period": 1, "type": "theory" },
+                { "id": "cm402-3.12", "sno": "3.12", "topic": "Browser Object Model (BOM): Window and Location", "period": 1, "type": "theory" },
+                { "id": "cm402-3.13", "sno": "3.13", "topic": "Tutorial on JS programming", "period": 1, "type": "theory" },
+                { "id": "cm402-3.14", "sno": "3.14", "topic": "Revision of JavaScript", "period": 1, "type": "revision" },
+                { "id": "cm402-3.15", "sno": "3.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced JavaScript and XML",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm402-4.1", "sno": "4.1", "topic": "DOM (Document Object Model): Introduction and nodes", "period": 1, "type": "theory" },
+                { "id": "cm402-4.2", "sno": "4.2", "topic": "Accessing elements using DOM methods", "period": 1, "type": "theory" },
+                { "id": "cm402-4.3", "sno": "4.3", "topic": "Changing content and styles dynamically", "period": 1, "type": "theory" },
+                { "id": "cm402-4.4", "sno": "4.4", "topic": "Handling events using event listeners", "period": 1, "type": "theory" },
+                { "id": "cm402-4.5", "sno": "4.5", "topic": "Introduction to AJAX: Concepts and benefits", "period": 1, "type": "theory" },
+                { "id": "cm402-4.6", "sno": "4.6", "topic": "JSON (JavaScript Object Notation): Syntax and parsing", "period": 1, "type": "theory" },
+                { "id": "cm402-4.7", "sno": "4.7", "topic": "Introduction to XML: Syntax and Rules", "period": 1, "type": "theory" },
+                { "id": "cm402-4.8", "sno": "4.8", "topic": "XML DTD (Document Type Definition) and Schema", "period": 1, "type": "theory" },
+                { "id": "cm402-4.9", "sno": "4.9", "topic": "Displaying XML using CSS and XSLT", "period": 1, "type": "theory" },
+                { "id": "cm402-4.10", "sno": "4.10", "topic": "Introduction to jQuery and its selectors", "period": 1, "type": "theory" },
+                { "id": "cm402-4.11", "sno": "4.11", "topic": "jQuery Effects and Animations", "period": 1, "type": "theory" },
+                { "id": "cm402-4.12", "sno": "4.12", "topic": "Introduction to Bootstrap framework", "period": 1, "type": "theory" },
+                { "id": "cm402-4.13", "sno": "4.13", "topic": "Tutorial on DOM and XML", "period": 1, "type": "theory" },
+                { "id": "cm402-4.14", "sno": "4.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm402-4.15", "sno": "4.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Introduction to PHP and Server Side Scripting",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm402-5.1", "sno": "5.1", "topic": "Server Side Scripting vs Client Side Scripting", "period": 1, "type": "theory" },
+                { "id": "cm402-5.2", "sno": "5.2", "topic": "Introduction to PHP: Syntax and basic tags", "period": 1, "type": "theory" },
+                { "id": "cm402-5.3", "sno": "5.3", "topic": "Variables and Data Types in PHP", "period": 1, "type": "theory" },
+                { "id": "cm402-5.4", "sno": "5.4", "topic": "Operators and Control Structures in PHP", "period": 1, "type": "theory" },
+                { "id": "cm402-5.5", "sno": "5.5", "topic": "Arrays in PHP: Index, Associative and Multidimensional", "period": 1, "type": "theory" },
+                { "id": "cm402-5.6", "sno": "5.6", "topic": "PHP Functions and String handling", "period": 1, "type": "theory" },
+                { "id": "cm402-5.7", "sno": "5.7", "topic": "Handling HTML Forms with PHP: GET and POST", "period": 1, "type": "theory" },
+                { "id": "cm402-5.8", "sno": "5.8", "topic": "Introduction to PHP Sessions and Cookies", "period": 1, "type": "theory" },
+                { "id": "cm402-5.9", "sno": "5.9", "topic": "PHP and MySQL database connectivity", "period": 1, "type": "theory" },
+                { "id": "cm402-5.10", "sno": "5.10", "topic": "Executing SQL queries from PHP", "period": 1, "type": "theory" },
+                { "id": "cm402-5.11", "sno": "5.11", "topic": "Fetching data and displaying in HTML tables", "period": 1, "type": "theory" },
+                { "id": "cm402-5.12", "sno": "5.12", "topic": "Introduction to PHP Frameworks (Laravel intro)", "period": 1, "type": "theory" },
+                { "id": "cm402-5.13", "sno": "5.13", "topic": "Tutorial on PHP", "period": 1, "type": "theory" },
+                { "id": "cm402-5.14", "sno": "5.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm402-5.15", "sno": "5.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,119 @@
+{
+    "subjectCode": "CM-404",
+    "subjectName": "OOP through Java",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction to Java and Basics",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm404-1.1", "sno": "1.1", "topic": "Object Oriented Programming Paradigm: Principles", "period": 1, "type": "theory" },
+                { "id": "cm404-1.2", "sno": "1.2", "topic": "Java Evolution and Features (Java Buzzwords)", "period": 1, "type": "theory" },
+                { "id": "cm404-1.3", "sno": "1.3", "topic": "Java Virtual Machine (JVM) and Bytecode", "period": 1, "type": "theory" },
+                { "id": "cm404-1.4", "sno": "1.4", "topic": "Java Development Kit (JDK) and Runtime Environment (JRE)", "period": 1, "type": "theory" },
+                { "id": "cm404-1.5", "sno": "1.5", "topic": "Basic structure of a Java program", "period": 1, "type": "theory" },
+                { "id": "cm404-1.6", "sno": "1.6", "topic": "Java Tokens: Keywords, Identifiers, Literals", "period": 1, "type": "theory" },
+                { "id": "cm404-1.7", "sno": "1.7", "topic": "Data Types: Primitive and Reference types", "period": 1, "type": "theory" },
+                { "id": "cm404-1.8", "sno": "1.8", "topic": "Variables and Type Casting in Java", "period": 1, "type": "theory" },
+                { "id": "cm404-1.9", "sno": "1.9", "topic": "Operators and Expressions in Java", "period": 1, "type": "theory" },
+                { "id": "cm404-1.10", "sno": "1.10", "topic": "Control Structures: Decision making and Looping", "period": 1, "type": "theory" },
+                { "id": "cm404-1.11", "sno": "1.11", "topic": "Introduction to Java Arrays: 1D and 2D", "period": 1, "type": "theory" },
+                { "id": "cm404-1.12", "sno": "1.12", "topic": "Command line arguments in Java", "period": 1, "type": "theory" },
+                { "id": "cm404-1.13", "sno": "1.13", "topic": "Tutorial on Java basics", "period": 1, "type": "theory" },
+                { "id": "cm404-1.14", "sno": "1.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm404-1.15", "sno": "1.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Classes, Objects and Methods",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm404-2.1", "sno": "2.1", "topic": "Defining a Class and Creating Objects", "period": 1, "type": "theory" },
+                { "id": "cm404-2.2", "sno": "2.2", "topic": "Methods in Java: Definition and calling", "period": 1, "type": "theory" },
+                { "id": "cm404-2.3", "sno": "2.3", "topic": "Constructors: Default, Parameterized and Overloaded", "period": 1, "type": "theory" },
+                { "id": "cm404-2.4", "sno": "2.4", "topic": "Method Overloading and its significance", "period": 1, "type": "theory" },
+                { "id": "cm404-2.5", "sno": "2.5", "topic": "Static members: Static variables and Static methods", "period": 1, "type": "theory" },
+                { "id": "cm404-2.6", "sno": "2.6", "topic": "The 'this' keyword and its usage", "period": 1, "type": "theory" },
+                { "id": "cm404-2.7", "sno": "2.7", "topic": "Garbage Collection and finalize() method", "period": 1, "type": "theory" },
+                { "id": "cm404-2.8", "sno": "2.8", "topic": "Working with String and StringBuffer classes", "period": 1, "type": "theory" },
+                { "id": "cm404-2.9", "sno": "2.9", "topic": "String operations and common methods", "period": 1, "type": "theory" },
+                { "id": "cm404-2.10", "sno": "2.10", "topic": "Wrapper Classes and Autoboxing/Unboxing", "period": 1, "type": "theory" },
+                { "id": "cm404-2.11", "sno": "2.11", "topic": "Vector class and Enumerations (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm404-2.12", "sno": "2.12", "topic": "Tutorial on Classes and Objects", "period": 1, "type": "theory" },
+                { "id": "cm404-2.13", "sno": "2.13", "topic": "Practice: Writing Java classes for real-world entities", "period": 1, "type": "theory" },
+                { "id": "cm404-2.14", "sno": "2.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm404-2.15", "sno": "2.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Inheritance, Packages and Interfaces",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm404-3.1", "sno": "3.1", "topic": "Inheritance: Types (Single, Multilevel, Hierarchical)", "period": 1, "type": "theory" },
+                { "id": "cm404-3.2", "sno": "3.2", "topic": "Member Access and Inheritance: Public, Private, Protected", "period": 1, "type": "theory" },
+                { "id": "cm404-3.3", "sno": "3.3", "topic": "Using 'super' keyword for constructors and members", "period": 1, "type": "theory" },
+                { "id": "cm404-3.4", "sno": "3.4", "topic": "Method Overriding and Dynamic Method Dispatch", "period": 1, "type": "theory" },
+                { "id": "cm404-3.5", "sno": "3.5", "topic": "Final variables, methods and classes", "period": 1, "type": "theory" },
+                { "id": "cm404-3.6", "sno": "3.6", "topic": "Abstract classes and methods", "period": 1, "type": "theory" },
+                { "id": "cm404-3.7", "sno": "3.7", "topic": "Interfaces: Defining and Implementing", "period": 1, "type": "theory" },
+                { "id": "cm404-3.8", "sno": "3.8", "topic": "Multiple Inheritance using Interfaces", "period": 1, "type": "theory" },
+                { "id": "cm404-3.9", "sno": "3.9", "topic": "Packages: System packages and User defined packages", "period": 1, "type": "theory" },
+                { "id": "cm404-3.10", "sno": "3.10", "topic": "Creating and Importing packages", "period": 1, "type": "theory" },
+                { "id": "cm404-3.11", "sno": "3.11", "topic": "Access Protection in packages", "period": 1, "type": "theory" },
+                { "id": "cm404-3.12", "sno": "3.12", "topic": "Tutorial on Inheritance and Interfaces", "period": 1, "type": "theory" },
+                { "id": "cm404-3.13", "sno": "3.13", "topic": "Practice: Package implementation", "period": 1, "type": "theory" },
+                { "id": "cm404-3.14", "sno": "3.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm404-3.15", "sno": "3.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Exception Handling and Multithreading",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm404-4.1", "sno": "4.1", "topic": "Exception Handling: Background and Benefits", "period": 1, "type": "theory" },
+                { "id": "cm404-4.2", "sno": "4.2", "topic": "Exception Types: Checked and Unchecked exceptions", "period": 1, "type": "theory" },
+                { "id": "cm404-4.3", "sno": "4.3", "topic": "Using try and catch blocks", "period": 1, "type": "theory" },
+                { "id": "cm404-4.4", "sno": "4.4", "topic": "Multiple catch blocks and Nested try", "period": 1, "type": "theory" },
+                { "id": "cm404-4.5", "sno": "4.5", "topic": "Throw, Throws and Finally keywords", "period": 1, "type": "theory" },
+                { "id": "cm404-4.6", "sno": "4.6", "topic": "User Defined Exceptions: Creation and usage", "period": 1, "type": "theory" },
+                { "id": "cm404-4.7", "sno": "4.7", "topic": "Multithreading: Thread concept and lifecycle", "period": 1, "type": "theory" },
+                { "id": "cm404-4.8", "sno": "4.8", "topic": "Creating Threads: Thread class and Runnable interface", "period": 1, "type": "theory" },
+                { "id": "cm404-4.9", "sno": "4.9", "topic": "Thread Priorities and Scheduling", "period": 1, "type": "theory" },
+                { "id": "cm404-4.10", "sno": "4.10", "topic": "Thread Synchronization and Inter-thread communication", "period": 1, "type": "theory" },
+                { "id": "cm404-4.11", "sno": "4.11", "topic": "Suspending and Resuming threads", "period": 1, "type": "theory" },
+                { "id": "cm404-4.12", "sno": "4.12", "topic": "Tutorial on Exceptions and Threads", "period": 1, "type": "theory" },
+                { "id": "cm404-4.13", "sno": "4.13", "topic": "Practice: Multithreaded application examples", "period": 1, "type": "theory" },
+                { "id": "cm404-4.14", "sno": "4.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm404-4.15", "sno": "4.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Streams, Applets and AWT/Swing",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm404-5.1", "sno": "5.1", "topic": "Java I/O Streams: Byte streams and Character streams", "period": 1, "type": "theory" },
+                { "id": "cm404-5.2", "sno": "5.2", "topic": "File Handling in Java: Reading and Writing files", "period": 1, "type": "theory" },
+                { "id": "cm404-5.3", "sno": "5.3", "topic": "Serialization and Deserialization concepts", "period": 1, "type": "theory" },
+                { "id": "cm404-5.4", "sno": "5.4", "topic": "Introduction to Applets: Lifecycle and structure", "period": 1, "type": "theory" },
+                { "id": "cm404-5.5", "sno": "5.5", "topic": "Creating and Running an Applet (HTML integration)", "period": 1, "type": "theory" },
+                { "id": "cm404-5.6", "sno": "5.6", "topic": "Introduction to AWT: Components and Containers", "period": 1, "type": "theory" },
+                { "id": "cm404-5.7", "sno": "5.7", "topic": "AWT Controls: Label, Button, TextField, Checkbox", "period": 1, "type": "theory" },
+                { "id": "cm404-5.8", "sno": "5.8", "topic": "Event Handling: Delegation Event Model", "period": 1, "type": "theory" },
+                { "id": "cm404-5.9", "sno": "5.9", "topic": "Introduction to Swing: Components vs AWT", "period": 1, "type": "theory" },
+                { "id": "cm404-5.10", "sno": "5.10", "topic": "Layout Managers: Flow, Border and Grid layouts", "period": 1, "type": "theory" },
+                { "id": "cm404-5.11", "sno": "5.11", "topic": "Java Database Connectivity (JDBC) introduction", "period": 1, "type": "theory" },
+                { "id": "cm404-5.12", "sno": "5.12", "topic": "Tutorial on GUI programming in Java", "period": 1, "type": "theory" },
+                { "id": "cm404-5.13", "sno": "5.13", "topic": "Practice: Building a simple GUI application", "period": 1, "type": "theory" },
+                { "id": "cm404-5.14", "sno": "5.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm404-5.15", "sno": "5.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

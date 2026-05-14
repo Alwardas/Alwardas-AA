@@ -1,0 +1,119 @@
+{
+    "subjectCode": "CM-302",
+    "subjectName": "Digital Electronics",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Number Systems and Codes",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm302-1.1", "sno": "1.1", "topic": "Introduction to Digital Electronics and Number Systems", "period": 1, "type": "theory" },
+                { "id": "cm302-1.2", "sno": "1.2", "topic": "Binary, Octal, Decimal and Hexadecimal systems", "period": 1, "type": "theory" },
+                { "id": "cm302-1.3", "sno": "1.3", "topic": "Number system conversions: Part 1", "period": 1, "type": "theory" },
+                { "id": "cm302-1.4", "sno": "1.4", "topic": "Number system conversions: Part 2", "period": 1, "type": "theory" },
+                { "id": "cm302-1.5", "sno": "1.5", "topic": "Binary Arithmetic: Addition, Subtraction (1's and 2's complement)", "period": 1, "type": "theory" },
+                { "id": "cm302-1.6", "sno": "1.6", "topic": "Binary Codes: BCD, Gray, Excess-3 and ASCII", "period": 1, "type": "theory" },
+                { "id": "cm302-1.7", "sno": "1.7", "topic": "Weighted and Non-weighted codes", "period": 1, "type": "theory" },
+                { "id": "cm302-1.8", "sno": "1.8", "topic": "Error detection and correction codes (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm302-1.9", "sno": "1.9", "topic": "Revision of Number systems", "period": 1, "type": "revision" },
+                { "id": "cm302-1.10", "sno": "1.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Logic Gates and Boolean Algebra",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm302-2.1", "sno": "2.1", "topic": "Basic Gates: AND, OR, NOT (Symbols and Truth Tables)", "period": 1, "type": "theory" },
+                { "id": "cm302-2.2", "sno": "2.2", "topic": "Universal Gates: NAND and NOR", "period": 1, "type": "theory" },
+                { "id": "cm302-2.3", "sno": "2.3", "topic": "Special Purpose Gates: EX-OR and EX-NOR", "period": 1, "type": "theory" },
+                { "id": "cm302-2.4", "sno": "2.4", "topic": "Realization of gates using NAND and NOR gates", "period": 1, "type": "theory" },
+                { "id": "cm302-2.5", "sno": "2.5", "topic": "Boolean Algebra Laws and Theorems", "period": 1, "type": "theory" },
+                { "id": "cm302-2.6", "sno": "2.6", "topic": "De-Morgan's Theorems and their verification", "period": 1, "type": "theory" },
+                { "id": "cm302-2.7", "sno": "2.7", "topic": "Simplification of Boolean expressions using laws", "period": 1, "type": "theory" },
+                { "id": "cm302-2.8", "sno": "2.8", "topic": "SOP and POS forms of expressions", "period": 1, "type": "theory" },
+                { "id": "cm302-2.9", "sno": "2.9", "topic": "Minterms and Maxterms concept", "period": 1, "type": "theory" },
+                { "id": "cm302-2.10", "sno": "2.10", "topic": "Karnaugh Map (K-Map): 2-variable and 3-variable", "period": 1, "type": "theory" },
+                { "id": "cm302-2.11", "sno": "2.11", "topic": "K-Map: 4-variable simplification", "period": 1, "type": "theory" },
+                { "id": "cm302-2.12", "sno": "2.12", "topic": "Simplification using K-Map with Don't care conditions", "period": 1, "type": "theory" },
+                { "id": "cm302-2.13", "sno": "2.13", "topic": "Tutorial on K-Map simplification", "period": 1, "type": "theory" },
+                { "id": "cm302-2.14", "sno": "2.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm302-2.15", "sno": "2.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Combinational Logic Circuits",
+            "totalPeriods": 20,
+            "topics": [
+                { "id": "cm302-3.1", "sno": "3.1", "topic": "Introduction to Combinational Circuits", "period": 1, "type": "theory" },
+                { "id": "cm302-3.2", "sno": "3.2", "topic": "Half Adder: Circuit and Truth Table", "period": 1, "type": "theory" },
+                { "id": "cm302-3.3", "sno": "3.3", "topic": "Full Adder: Circuit and Truth Table", "period": 1, "type": "theory" },
+                { "id": "cm302-3.4", "sno": "3.4", "topic": "Half Subtractor and Full Subtractor", "period": 1, "type": "theory" },
+                { "id": "cm302-3.5", "sno": "3.5", "topic": "Parallel Binary Adder (4-bit)", "period": 1, "type": "theory" },
+                { "id": "cm302-3.6", "sno": "3.6", "topic": "Multiplexers (MUX): 2:1 and 4:1 MUX", "period": 1, "type": "theory" },
+                { "id": "cm302-3.7", "sno": "3.7", "topic": "MUX applications and 8:1 MUX (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm302-3.8", "sno": "3.8", "topic": "Demultiplexers (DEMUX): 1:2 and 1:4 DEMUX", "period": 1, "type": "theory" },
+                { "id": "cm302-3.9", "sno": "3.9", "topic": "Decoders: 2:4 and 3:8 Line decoders", "period": 1, "type": "theory" },
+                { "id": "cm302-3.10", "sno": "3.10", "topic": "Encoders: 4:2 and 8:3 Line encoders", "period": 1, "type": "theory" },
+                { "id": "cm302-3.11", "sno": "3.11", "topic": "Priority Encoder and Decimal to BCD encoder", "period": 1, "type": "theory" },
+                { "id": "cm302-3.12", "sno": "3.12", "topic": "Code Converters: Binary to Gray and Gray to Binary", "period": 1, "type": "theory" },
+                { "id": "cm302-3.13", "sno": "3.13", "topic": "Magnitude Comparator: 1-bit and 2-bit", "period": 1, "type": "theory" },
+                { "id": "cm302-3.14", "sno": "3.14", "topic": "Seven Segment Display and Decoder", "period": 1, "type": "theory" },
+                { "id": "cm302-3.15", "sno": "3.15", "topic": "Programmable Logic Devices: PROM, PLA, PAL (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm302-3.16", "sno": "3.16", "topic": "Solving problems on combinational circuits", "period": 1, "type": "theory" },
+                { "id": "cm302-3.17", "sno": "3.17", "topic": "Tutorial on Combinational Circuits", "period": 1, "type": "theory" },
+                { "id": "cm302-3.18", "sno": "3.18", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm302-3.19", "sno": "3.19", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm302-3.20", "sno": "3.20", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Sequential Logic Circuits",
+            "totalPeriods": 20,
+            "topics": [
+                { "id": "cm302-4.1", "sno": "4.1", "topic": "Introduction to Sequential Circuits and Latches", "period": 1, "type": "theory" },
+                { "id": "cm302-4.2", "sno": "4.2", "topic": "Flip-Flops: SR Flip-Flop using NAND and NOR", "period": 1, "type": "theory" },
+                { "id": "cm302-4.3", "sno": "4.3", "topic": "Clocked SR Flip-Flop", "period": 1, "type": "theory" },
+                { "id": "cm302-4.4", "sno": "4.4", "topic": "JK Flip-Flop: Circuit and Truth Table", "period": 1, "type": "theory" },
+                { "id": "cm302-4.5", "sno": "4.5", "topic": "Race around condition in JK and Master-Slave JK FF", "period": 1, "type": "theory" },
+                { "id": "cm302-4.6", "sno": "4.6", "topic": "D Flip-Flop and T Flip-Flop", "period": 1, "type": "theory" },
+                { "id": "cm302-4.7", "sno": "4.7", "topic": "Triggering methods: Edge and Level triggering", "period": 1, "type": "theory" },
+                { "id": "cm302-4.8", "sno": "4.8", "topic": "Asynchronous and Synchronous inputs in FF", "period": 1, "type": "theory" },
+                { "id": "cm302-4.9", "sno": "4.9", "topic": "Realization of one Flip-Flop using other", "period": 1, "type": "theory" },
+                { "id": "cm302-4.10", "sno": "4.10", "topic": "State Diagram and State Table concept", "period": 1, "type": "theory" },
+                { "id": "cm302-4.11", "sno": "4.11", "topic": "Shift Registers: Introduction and types", "period": 1, "type": "theory" },
+                { "id": "cm302-4.12", "sno": "4.12", "topic": "SISO and SIPO Shift Registers", "period": 1, "type": "theory" },
+                { "id": "cm302-4.13", "sno": "4.13", "topic": "PISO and PIPO Shift Registers", "period": 1, "type": "theory" },
+                { "id": "cm302-4.14", "sno": "4.14", "topic": "Universal Shift Register (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm302-4.15", "sno": "4.15", "topic": "Bidirectional Shift Register", "period": 1, "type": "theory" },
+                { "id": "cm302-4.16", "sno": "4.16", "topic": "Solving problems on flip-flops", "period": 1, "type": "theory" },
+                { "id": "cm302-4.17", "sno": "4.17", "topic": "Tutorial on Sequential Circuits", "period": 1, "type": "theory" },
+                { "id": "cm302-4.18", "sno": "4.18", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm302-4.19", "sno": "4.19", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm302-4.20", "sno": "4.20", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Registers and Counters",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm302-5.1", "sno": "5.1", "topic": "Introduction to Counters: Asynchronous and Synchronous", "period": 1, "type": "theory" },
+                { "id": "cm302-5.2", "sno": "5.2", "topic": "Asynchronous 3-bit and 4-bit Up counter", "period": 1, "type": "theory" },
+                { "id": "cm302-5.3", "sno": "5.3", "topic": "Asynchronous Down counter and Up/Down counter", "period": 1, "type": "theory" },
+                { "id": "cm302-5.4", "sno": "5.4", "topic": "Decade Counter (Mod-10 counter)", "period": 1, "type": "theory" },
+                { "id": "cm302-5.5", "sno": "5.5", "topic": "Synchronous counters: Design approach (Intro)", "period": 1, "type": "theory" },
+                { "id": "cm302-5.6", "sno": "5.6", "topic": "Ring Counter and Johnson Counter", "period": 1, "type": "theory" },
+                { "id": "cm302-5.7", "sno": "5.7", "topic": "Applications of counters in digital systems", "period": 1, "type": "theory" },
+                { "id": "cm302-5.8", "sno": "5.8", "topic": "A/D and D/A converters: Introduction and types", "period": 1, "type": "theory" },
+                { "id": "cm302-5.9", "sno": "5.9", "topic": "Revision of Counters", "period": 1, "type": "revision" },
+                { "id": "cm302-5.10", "sno": "5.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

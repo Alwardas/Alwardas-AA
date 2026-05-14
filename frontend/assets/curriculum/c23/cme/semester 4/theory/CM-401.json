@@ -1,0 +1,119 @@
+{
+    "subjectCode": "CM-401",
+    "subjectName": "Software Engineering",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Basics of Software Engineering Designs & Life Cycle Models",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm401-1.1", "sno": "1.1", "topic": "Evolution and Impact of Software Engineering", "period": 1, "type": "theory" },
+                { "id": "cm401-1.2", "sno": "1.2", "topic": "Evolution from Art to Engineering Discipline", "period": 1, "type": "theory" },
+                { "id": "cm401-1.3", "sno": "1.3", "topic": "Software Crisis and Solutions", "period": 1, "type": "theory" },
+                { "id": "cm401-1.4", "sno": "1.4", "topic": "Difference between Programs and Software Products", "period": 1, "type": "theory" },
+                { "id": "cm401-1.5", "sno": "1.5", "topic": "Evolution of Software Engineering Design", "period": 1, "type": "theory" },
+                { "id": "cm401-1.6", "sno": "1.6", "topic": "Programming Paradigms: Control Flow, Data Structure, Data Flow", "period": 1, "type": "theory" },
+                { "id": "cm401-1.7", "sno": "1.7", "topic": "Object Oriented Design & Other Developments", "period": 1, "type": "theory" },
+                { "id": "cm401-1.8", "sno": "1.8", "topic": "Software Life Cycle Models: Waterfall & Iterative Waterfall", "period": 1, "type": "theory" },
+                { "id": "cm401-1.9", "sno": "1.9", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm401-1.10", "sno": "1.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Software Project Management",
+            "totalPeriods": 18,
+            "topics": [
+                { "id": "cm401-2.1", "sno": "2.1", "topic": "Responsibilities of a Software Project Manager", "period": 1, "type": "theory" },
+                { "id": "cm401-2.2", "sno": "2.2", "topic": "Skills Necessary for Software Project Management", "period": 1, "type": "theory" },
+                { "id": "cm401-2.3", "sno": "2.3", "topic": "Software Project Planning & SPMP Document", "period": 1, "type": "theory" },
+                { "id": "cm401-2.4", "sno": "2.4", "topic": "Metrics for Project Size Estimation: Lines of Code", "period": 1, "type": "theory" },
+                { "id": "cm401-2.5", "sno": "2.5", "topic": "Function Point Metric", "period": 1, "type": "theory" },
+                { "id": "cm401-2.6", "sno": "2.6", "topic": "Project Estimation Techniques: Empirical Estimation", "period": 1, "type": "theory" },
+                { "id": "cm401-2.7", "sno": "2.7", "topic": "Heuristic Techniques: COCOMO Model", "period": 1, "type": "theory" },
+                { "id": "cm401-2.8", "sno": "2.8", "topic": "Staffing Level Estimations: Norden’s Work", "period": 1, "type": "theory" },
+                { "id": "cm401-2.9", "sno": "2.9", "topic": "Putnam’s Work", "period": 1, "type": "theory" },
+                { "id": "cm401-2.10", "sno": "2.10", "topic": "Scheduling: Work Break Down Structure", "period": 1, "type": "theory" },
+                { "id": "cm401-2.11", "sno": "2.11", "topic": "Activity Networks and Critical Path", "period": 1, "type": "theory" },
+                { "id": "cm401-2.12", "sno": "2.12", "topic": "Gantt Charts & PERT Charts", "period": 1, "type": "theory" },
+                { "id": "cm401-2.13", "sno": "2.13", "topic": "Staffing and Team Management", "period": 1, "type": "theory" },
+                { "id": "cm401-2.14", "sno": "2.14", "topic": "Risk Management: Identification & Assessment", "period": 1, "type": "theory" },
+                { "id": "cm401-2.15", "sno": "2.15", "topic": "Risk Containment and Mitigation", "period": 1, "type": "theory" },
+                { "id": "cm401-2.16", "sno": "2.16", "topic": "Project Monitoring and Control", "period": 1, "type": "theory" },
+                { "id": "cm401-2.17", "sno": "2.17", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm401-2.18", "sno": "2.18", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Requirement Analysis & Specifications",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm401-3.1", "sno": "3.1", "topic": "Requirement Gathering and Analysis Process", "period": 1, "type": "theory" },
+                { "id": "cm401-3.2", "sno": "3.2", "topic": "Software Requirements Specification (SRS) Document", "period": 1, "type": "theory" },
+                { "id": "cm401-3.3", "sno": "3.3", "topic": "Characteristics of Good SRS", "period": 1, "type": "theory" },
+                { "id": "cm401-3.4", "sno": "3.4", "topic": "Organization of SRS Document", "period": 1, "type": "theory" },
+                { "id": "cm401-3.5", "sno": "3.5", "topic": "Techniques for Requirement Analysis", "period": 1, "type": "theory" },
+                { "id": "cm401-3.6", "sno": "3.6", "topic": "Decision Trees and Decision Tables", "period": 1, "type": "theory" },
+                { "id": "cm401-3.7", "sno": "3.7", "topic": "Data Flow Diagrams (DFD): Level 0 and Level 1", "period": 1, "type": "theory" },
+                { "id": "cm401-3.8", "sno": "3.8", "topic": "DFD Leveling and Consistency", "period": 1, "type": "theory" },
+                { "id": "cm401-3.9", "sno": "3.9", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm401-3.10", "sno": "3.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Software Design, Coding & UML",
+            "totalPeriods": 22,
+            "topics": [
+                { "id": "cm401-4.1", "sno": "4.1", "topic": "Characteristics of Good Software Design", "period": 1, "type": "theory" },
+                { "id": "cm401-4.2", "sno": "4.2", "topic": "Cohesion Concepts and Classification", "period": 1, "type": "theory" },
+                { "id": "cm401-4.3", "sno": "4.3", "topic": "Coupling Concepts and Classification", "period": 1, "type": "theory" },
+                { "id": "cm401-4.4", "sno": "4.4", "topic": "Software Design Approaches: Function Oriented Design", "period": 1, "type": "theory" },
+                { "id": "cm401-4.5", "sno": "4.5", "topic": "Object Oriented Design Overview", "period": 1, "type": "theory" },
+                { "id": "cm401-4.6", "sno": "4.6", "topic": "User Interface Design: GUI Principles", "period": 1, "type": "theory" },
+                { "id": "cm401-4.7", "sno": "4.7", "topic": "Software Coding: Standards and Guidelines", "period": 1, "type": "theory" },
+                { "id": "cm401-4.8", "sno": "4.8", "topic": "Code Review: Inspections and Walkthroughs", "period": 1, "type": "theory" },
+                { "id": "cm401-4.9", "sno": "4.9", "topic": "Introduction to UML and its Goals", "period": 1, "type": "theory" },
+                { "id": "cm401-4.10", "sno": "4.10", "topic": "Role of UML in Object Oriented Design", "period": 1, "type": "theory" },
+                { "id": "cm401-4.11", "sno": "4.11", "topic": "Building Blocks of UML: Things and Relationships", "period": 1, "type": "theory" },
+                { "id": "cm401-4.12", "sno": "4.12", "topic": "Building Blocks of UML: Diagrams", "period": 1, "type": "theory" },
+                { "id": "cm401-4.13", "sno": "4.13", "topic": "Symbols used in UML Notation", "period": 1, "type": "theory" },
+                { "id": "cm401-4.14", "sno": "4.14", "topic": "UML Class Diagram: Purpose and Notation", "period": 1, "type": "theory" },
+                { "id": "cm401-4.15", "sno": "4.15", "topic": "Drawing Class Diagrams for Systems", "period": 1, "type": "theory" },
+                { "id": "cm401-4.16", "sno": "4.16", "topic": "Use Case Diagram: Actors and Use Cases", "period": 1, "type": "theory" },
+                { "id": "cm401-4.17", "sno": "4.17", "topic": "Drawing Use Case Diagrams", "period": 1, "type": "theory" },
+                { "id": "cm401-4.18", "sno": "4.18", "topic": "Interaction Diagrams: Sequence Diagrams", "period": 1, "type": "theory" },
+                { "id": "cm401-4.19", "sno": "4.19", "topic": "Interaction Diagrams: Collaboration Diagrams", "period": 1, "type": "theory" },
+                { "id": "cm401-4.20", "sno": "4.20", "topic": "Drawing Interaction Diagrams", "period": 1, "type": "theory" },
+                { "id": "cm401-4.21", "sno": "4.21", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm401-4.22", "sno": "4.22", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Software Testing, Quality & Maintenance",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm401-5.1", "sno": "5.1", "topic": "Software Testing Fundamentals and Objectives", "period": 1, "type": "theory" },
+                { "id": "cm401-5.2", "sno": "5.2", "topic": "Design of Test Cases", "period": 1, "type": "theory" },
+                { "id": "cm401-5.3", "sno": "5.3", "topic": "Black-box Testing Techniques", "period": 1, "type": "theory" },
+                { "id": "cm401-5.4", "sno": "5.4", "topic": "White-box Testing Techniques", "period": 1, "type": "theory" },
+                { "id": "cm401-5.5", "sno": "5.5", "topic": "Testing Levels: Unit and Integration Testing", "period": 1, "type": "theory" },
+                { "id": "cm401-5.6", "sno": "5.6", "topic": "System Testing and Acceptance Testing", "period": 1, "type": "theory" },
+                { "id": "cm401-5.7", "sno": "5.7", "topic": "Debugging Approaches and Tools", "period": 1, "type": "theory" },
+                { "id": "cm401-5.8", "sno": "5.8", "topic": "Software Reliability & Quality Metrics", "period": 1, "type": "theory" },
+                { "id": "cm401-5.9", "sno": "5.9", "topic": "Quality Management System (QMS)", "period": 1, "type": "theory" },
+                { "id": "cm401-5.10", "sno": "5.10", "topic": "ISO 9000 Certification for Software", "period": 1, "type": "theory" },
+                { "id": "cm401-5.11", "sno": "5.11", "topic": "SEI Capability Maturity Model (CMM)", "period": 1, "type": "theory" },
+                { "id": "cm401-5.12", "sno": "5.12", "topic": "Software Maintenance Process and Types", "period": 1, "type": "theory" },
+                { "id": "cm401-5.13", "sno": "5.13", "topic": "Software Configuration Management", "period": 1, "type": "theory" },
+                { "id": "cm401-5.14", "sno": "5.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm401-5.15", "sno": "5.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

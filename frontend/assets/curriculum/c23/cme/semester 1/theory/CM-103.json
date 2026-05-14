@@ -1,0 +1,155 @@
+{
+    "subjectCode": "CM-103",
+    "subjectName": "Engineering Physics",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 90,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Units and measurements",
+            "totalPeriods": 9,
+            "topics": [
+                { "id": "cm103-1.1", "sno": "1.1", "topic": "Physical quantities: Fundamental and Derived", "period": 1, "type": "theory" },
+                { "id": "cm103-1.2", "sno": "1.2", "topic": "SI units with symbols and rules for writing", "period": 1, "type": "theory" },
+                { "id": "cm103-1.3", "sno": "1.3", "topic": "Multiples and Submultiples in SI system", "period": 1, "type": "theory" },
+                { "id": "cm103-1.4", "sno": "1.4", "topic": "Accuracy, Least count and Error in measurement", "period": 1, "type": "theory" },
+                { "id": "cm103-1.5", "sno": "1.5", "topic": "Absolute, Relative and Percentage errors - Formulae", "period": 1, "type": "theory" },
+                { "id": "cm103-1.6", "sno": "1.6", "topic": "Problems on calculation of various errors", "period": 1, "type": "problem solving" },
+                { "id": "cm103-1.7", "sno": "1.7", "topic": "Direct and Indirect measurements - Examples", "period": 1, "type": "theory" },
+                { "id": "cm103-1.8", "sno": "1.8", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm103-1.9", "sno": "1.9", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Statics",
+            "totalPeriods": 11,
+            "topics": [
+                { "id": "cm103-2.1", "sno": "2.1", "topic": "Scalar and Vector quantities with examples", "period": 1, "type": "theory" },
+                { "id": "cm103-2.2", "sno": "2.2", "topic": "Representation of vectors and types of vectors", "period": 1, "type": "theory" },
+                { "id": "cm103-2.3", "sno": "2.3", "topic": "Resolution of a vector into rectangular components", "period": 1, "type": "theory" },
+                { "id": "cm103-2.4", "sno": "2.4", "topic": "Triangle law and Parallelogram law of vectors", "period": 1, "type": "theory" },
+                { "id": "cm103-2.5", "sno": "2.5", "topic": "Magnitude and Direction of resultant - Expressions", "period": 1, "type": "theory" },
+                { "id": "cm103-2.6", "sno": "2.6", "topic": "Lami's theorem and concurrent forces", "period": 1, "type": "theory" },
+                { "id": "cm103-2.7", "sno": "2.7", "topic": "Moment of force and Couple - Definition and units", "period": 1, "type": "theory" },
+                { "id": "cm103-2.8", "sno": "2.8", "topic": "Problems on resolution of force and vector laws", "period": 1, "type": "problem solving" },
+                { "id": "cm103-2.9", "sno": "2.9", "topic": "Illustrations of parallelogram law of forces", "period": 1, "type": "theory" },
+                { "id": "cm103-2.10", "sno": "2.10", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm103-2.11", "sno": "2.11", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Gravitation",
+            "totalPeriods": 12,
+            "topics": [
+                { "id": "cm103-3.1", "sno": "3.1", "topic": "Newton's universal law of gravitation and G", "period": 1, "type": "theory" },
+                { "id": "cm103-3.2", "sno": "3.2", "topic": "Acceleration due to gravity (g) and its value", "period": 1, "type": "theory" },
+                { "id": "cm103-3.3", "sno": "3.3", "topic": "Relationship between g and G", "period": 1, "type": "theory" },
+                { "id": "cm103-3.4", "sno": "3.4", "topic": "Factors affecting the value of g", "period": 1, "type": "theory" },
+                { "id": "cm103-3.5", "sno": "3.5", "topic": "Kepler's laws of planetary motion", "period": 1, "type": "theory" },
+                { "id": "cm103-3.6", "sno": "3.6", "topic": "Satellites: Natural and Artificial with examples", "period": 1, "type": "theory" },
+                { "id": "cm103-3.7", "sno": "3.7", "topic": "Orbital velocity and Escape velocity - Formulae", "period": 1, "type": "theory" },
+                { "id": "cm103-3.8", "sno": "3.8", "topic": "Polar and Geo-stationary satellites", "period": 1, "type": "theory" },
+                { "id": "cm103-3.9", "sno": "3.9", "topic": "Applications of artificial satellites", "period": 1, "type": "theory" },
+                { "id": "cm103-3.10", "sno": "3.10", "topic": "Problems on gravitation and velocities", "period": 1, "type": "problem solving" },
+                { "id": "cm103-3.11", "sno": "3.11", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm103-3.12", "sno": "3.12", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Concepts of energy",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm103-4.1", "sno": "4.1", "topic": "Work done and Energy - Definitions and units", "period": 1, "type": "theory" },
+                { "id": "cm103-4.2", "sno": "4.2", "topic": "Potential Energy: Equation and examples", "period": 1, "type": "theory" },
+                { "id": "cm103-4.3", "sno": "4.3", "topic": "Kinetic Energy: Equation and examples", "period": 1, "type": "theory" },
+                { "id": "cm103-4.4", "sno": "4.4", "topic": "Relationship between K.E and Momentum", "period": 1, "type": "theory" },
+                { "id": "cm103-4.5", "sno": "4.5", "topic": "Law of conservation of energy with examples", "period": 1, "type": "theory" },
+                { "id": "cm103-4.6", "sno": "4.6", "topic": "Solar energy: Thermal and Photo-voltaic conversion", "period": 1, "type": "theory" },
+                { "id": "cm103-4.7", "sno": "4.7", "topic": "Problems on Work, P.E and K.E", "period": 1, "type": "problem solving" },
+                { "id": "cm103-4.8", "sno": "4.8", "topic": "Problems on K.E and Momentum relation", "period": 1, "type": "problem solving" },
+                { "id": "cm103-4.9", "sno": "4.9", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm103-4.10", "sno": "4.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Thermal physics",
+            "totalPeriods": 10,
+            "topics": [
+                { "id": "cm103-5.1", "sno": "5.1", "topic": "Modes of transmission of heat: Conduction, Convection, Radiation", "period": 1, "type": "theory" },
+                { "id": "cm103-5.2", "sno": "5.2", "topic": "Expansion of Gases: Boyle's Law", "period": 1, "type": "theory" },
+                { "id": "cm103-5.3", "sno": "5.3", "topic": "Absolute zero and Absolute scale of temperature", "period": 1, "type": "theory" },
+                { "id": "cm103-5.4", "sno": "5.4", "topic": "Inter-conversion of temperature scales: C, K, F", "period": 1, "type": "problem solving" },
+                { "id": "cm103-5.5", "sno": "5.5", "topic": "Charle's Law and Gay-Lussac's Law", "period": 1, "type": "theory" },
+                { "id": "cm103-5.6", "sno": "5.6", "topic": "Ideal Gas Equation and Universal Gas Constant (R)", "period": 1, "type": "theory" },
+                { "id": "cm103-5.7", "sno": "5.7", "topic": "Problems on Gas laws and Ideal gas equation", "period": 1, "type": "problem solving" },
+                { "id": "cm103-5.8", "sno": "5.8", "topic": "Tutorial on Thermodynamics", "period": 1, "type": "problem solving" },
+                { "id": "cm103-5.9", "sno": "5.9", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm103-5.10", "sno": "5.10", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Sound",
+            "totalPeriods": 12,
+            "topics": [
+                { "id": "cm103-6.1", "sno": "6.1", "topic": "Longitudinal and Transverse wave motion", "period": 1, "type": "theory" },
+                { "id": "cm103-6.2", "sno": "6.2", "topic": "Factors affecting the velocity of sound in air", "period": 1, "type": "theory" },
+                { "id": "cm103-6.3", "sno": "6.3", "topic": "Musical sound and Noise - Noise pollution", "period": 1, "type": "theory" },
+                { "id": "cm103-6.4", "sno": "6.4", "topic": "Effects and minimizing methods of noise pollution", "period": 1, "type": "theory" },
+                { "id": "cm103-6.5", "sno": "6.5", "topic": "Doppler effect: Definition and applications", "period": 1, "type": "theory" },
+                { "id": "cm103-6.6", "sno": "6.6", "topic": "Reverberation and Reverberation time - Sabine's formula", "period": 1, "type": "theory" },
+                { "id": "cm103-6.7", "sno": "6.7", "topic": "Echoes: Conditions for hearing and applications", "period": 1, "type": "theory" },
+                { "id": "cm103-6.8", "sno": "6.8", "topic": "Ultrasonics: Definition and applications (SONAR)", "period": 1, "type": "theory" },
+                { "id": "cm103-6.9", "sno": "6.9", "topic": "Problems on echo and sound wave velocity", "period": 1, "type": "problem solving" },
+                { "id": "cm103-6.10", "sno": "6.10", "topic": "Tutorial on Sound and Ultrasonics", "period": 1, "type": "problem solving" },
+                { "id": "cm103-6.11", "sno": "6.11", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm103-6.12", "sno": "6.12", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Electricity & Magnetism",
+            "totalPeriods": 13,
+            "topics": [
+                { "id": "cm103-7.1", "sno": "7.1", "topic": "Concept of P.D, EMF and Ohm's law", "period": 1, "type": "theory" },
+                { "id": "cm103-7.2", "sno": "7.2", "topic": "Resistance and Specific Resistance - Units", "period": 1, "type": "theory" },
+                { "id": "cm103-7.3", "sno": "7.3", "topic": "Kirchoff's first and second laws", "period": 1, "type": "theory" },
+                { "id": "cm103-7.4", "sno": "7.4", "topic": "Wheatstone bridge: Construction and balancing condition", "period": 1, "type": "theory" },
+                { "id": "cm103-7.5", "sno": "7.5", "topic": "Meter bridge experiment: Resistance calculation", "period": 1, "type": "theory" },
+                { "id": "cm103-7.6", "sno": "7.6", "topic": "Magnetic field and Magnetic lines of force", "period": 1, "type": "theory" },
+                { "id": "cm103-7.7", "sno": "7.7", "topic": "Coulomb's inverse square law of magnetism", "period": 1, "type": "theory" },
+                { "id": "cm103-7.8", "sno": "7.8", "topic": "Magnetic permeability and types of materials", "period": 1, "type": "theory" },
+                { "id": "cm103-7.9", "sno": "7.9", "topic": "Para, Dia and Ferro magnetic materials", "period": 1, "type": "theory" },
+                { "id": "cm103-7.10", "sno": "7.10", "topic": "Problems on Ohm's law and Kirchoff's laws", "period": 1, "type": "problem solving" },
+                { "id": "cm103-7.11", "sno": "7.11", "topic": "Problems on Wheatstone and Meter bridge", "period": 1, "type": "problem solving" },
+                { "id": "cm103-7.12", "sno": "7.12", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm103-7.13", "sno": "7.13", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Modern physics",
+            "totalPeriods": 13,
+            "topics": [
+                { "id": "cm103-8.1", "sno": "8.1", "topic": "Photo-electric effect: Einstein's equation", "period": 1, "type": "theory" },
+                { "id": "cm103-8.2", "sno": "8.2", "topic": "Laws of photo electric effect and Photo cell", "period": 1, "type": "theory" },
+                { "id": "cm103-8.3", "sno": "8.3", "topic": "Total Internal Reflection and Critical angle", "period": 1, "type": "theory" },
+                { "id": "cm103-8.4", "sno": "8.4", "topic": "Optical Fiber: Principle, working and applications", "period": 1, "type": "theory" },
+                { "id": "cm103-8.5", "sno": "8.5", "topic": "Energy band structure: Conductors, Semiconductors, Insulators", "period": 1, "type": "theory" },
+                { "id": "cm103-8.6", "sno": "8.6", "topic": "Doping, Hole concept, Intrinsic and Extrinsic semiconductors", "period": 1, "type": "theory" },
+                { "id": "cm103-8.7", "sno": "8.7", "topic": "n-type and p-type semiconductors and applications", "period": 1, "type": "theory" },
+                { "id": "cm103-8.8", "sno": "8.8", "topic": "Superconductor and Superconductivity", "period": 1, "type": "theory" },
+                { "id": "cm103-8.9", "sno": "8.9", "topic": "Nanotechnology: Definition, materials and applications", "period": 1, "type": "theory" },
+                { "id": "cm103-8.10", "sno": "8.10", "topic": "Tutorial on Modern Physics", "period": 1, "type": "problem solving" },
+                { "id": "cm103-8.11", "sno": "8.11", "topic": "Revision of Unit 8", "period": 1, "type": "revision" },
+                { "id": "cm103-8.12", "sno": "8.12", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm103-8.13", "sno": "8.13", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}

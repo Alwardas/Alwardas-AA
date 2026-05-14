@@ -1,0 +1,119 @@
+{
+    "subjectCode": "CM-501",
+    "subjectName": "Industrial Management and Entrepreneurship",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Principles of Management and Organization",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm501-1.1", "sno": "1.1", "topic": "Introduction to Management: Definition and Features", "period": 1, "type": "theory" },
+                { "id": "cm501-1.2", "sno": "1.2", "topic": "Functions of Management: Planning and Organizing", "period": 1, "type": "theory" },
+                { "id": "cm501-1.3", "sno": "1.3", "topic": "Functions of Management: Staffing, Directing and Controlling", "period": 1, "type": "theory" },
+                { "id": "cm501-1.4", "sno": "1.4", "topic": "Principles of Management: Henry Fayol's 14 principles", "period": 1, "type": "theory" },
+                { "id": "cm501-1.5", "sno": "1.5", "topic": "Scientific Management: F.W. Taylor's approach", "period": 1, "type": "theory" },
+                { "id": "cm501-1.6", "sno": "1.6", "topic": "Types of Business Organizations: Sole Proprietorship", "period": 1, "type": "theory" },
+                { "id": "cm501-1.7", "sno": "1.7", "topic": "Partnership and Joint Stock Companies", "period": 1, "type": "theory" },
+                { "id": "cm501-1.8", "sno": "1.8", "topic": "Public Sector Enterprises and Cooperatives", "period": 1, "type": "theory" },
+                { "id": "cm501-1.9", "sno": "1.9", "topic": "Organizational Structure: Line, Staff and Functional", "period": 1, "type": "theory" },
+                { "id": "cm501-1.10", "sno": "1.10", "topic": "Departmentation and Span of Control", "period": 1, "type": "theory" },
+                { "id": "cm501-1.11", "sno": "1.11", "topic": "Authority, Responsibility and Delegation", "period": 1, "type": "theory" },
+                { "id": "cm501-1.12", "sno": "1.12", "topic": "Tutorial on Management Principles", "period": 1, "type": "theory" },
+                { "id": "cm501-1.13", "sno": "1.13", "topic": "Case study on Organizational Structure", "period": 1, "type": "theory" },
+                { "id": "cm501-1.14", "sno": "1.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm501-1.15", "sno": "1.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Production and Materials Management",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm501-2.1", "sno": "2.1", "topic": "Production Management: Objectives and Scope", "period": 1, "type": "theory" },
+                { "id": "cm501-2.2", "sno": "2.2", "topic": "Types of Production: Job, Batch and Mass production", "period": 1, "type": "theory" },
+                { "id": "cm501-2.3", "sno": "2.3", "topic": "Production Planning and Control (PPC): Functions", "period": 1, "type": "theory" },
+                { "id": "cm501-2.4", "sno": "2.4", "topic": "Plant Location and Plant Layout principles", "period": 1, "type": "theory" },
+                { "id": "cm501-2.5", "sno": "2.5", "topic": "Inventory Management: Classification and Objectives", "period": 1, "type": "theory" },
+                { "id": "cm501-2.6", "sno": "2.6", "topic": "ABC Analysis and Economic Order Quantity (EOQ)", "period": 1, "type": "theory" },
+                { "id": "cm501-2.7", "sno": "2.7", "topic": "Numerical problems on EOQ", "period": 1, "type": "theory" },
+                { "id": "cm501-2.8", "sno": "2.8", "topic": "Purchasing Procedures and Vendor Selection", "period": 1, "type": "theory" },
+                { "id": "cm501-2.9", "sno": "2.9", "topic": "Store Keeping: Functions and Records", "period": 1, "type": "theory" },
+                { "id": "cm501-2.10", "sno": "2.10", "topic": "Modern trends: JIT, MRP and Lean manufacturing", "period": 1, "type": "theory" },
+                { "id": "cm501-2.11", "sno": "2.11", "topic": "Supply Chain Management basics", "period": 1, "type": "theory" },
+                { "id": "cm501-2.12", "sno": "2.12", "topic": "Tutorial on Inventory control", "period": 1, "type": "theory" },
+                { "id": "cm501-2.13", "sno": "2.13", "topic": "Solving problems on PPC", "period": 1, "type": "theory" },
+                { "id": "cm501-2.14", "sno": "2.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm501-2.15", "sno": "2.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Financial and Marketing Management",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm501-3.1", "sno": "3.1", "topic": "Financial Management: Objectives and Sources of Finance", "period": 1, "type": "theory" },
+                { "id": "cm501-3.2", "sno": "3.2", "topic": "Capital: Fixed and Working capital concepts", "period": 1, "type": "theory" },
+                { "id": "cm501-3.3", "sno": "3.3", "topic": "Basics of Accounting: Double entry system", "period": 1, "type": "theory" },
+                { "id": "cm501-3.4", "sno": "3.4", "topic": "Journal, Ledger and Trial Balance", "period": 1, "type": "theory" },
+                { "id": "cm501-3.5", "sno": "3.5", "topic": "Final Accounts: Profit and Loss A/c and Balance Sheet", "period": 1, "type": "theory" },
+                { "id": "cm501-3.6", "sno": "3.6", "topic": "Depreciation: Concept and methods (Straight line)", "period": 1, "type": "theory" },
+                { "id": "cm501-3.7", "sno": "3.7", "topic": "Marketing Management: Definition and Functions", "period": 1, "type": "theory" },
+                { "id": "cm501-3.8", "sno": "3.8", "topic": "Marketing Mix: 4 P's (Product, Price, Place, Promotion)", "period": 1, "type": "theory" },
+                { "id": "cm501-3.9", "sno": "3.9", "topic": "Product Life Cycle and Market Segmentation", "period": 1, "type": "theory" },
+                { "id": "cm501-3.10", "sno": "3.10", "topic": "Sales Promotion and Advertising techniques", "period": 1, "type": "theory" },
+                { "id": "cm501-3.11", "sno": "3.11", "topic": "Digital Marketing: Introduction and trends", "period": 1, "type": "theory" },
+                { "id": "cm501-3.12", "sno": "3.12", "topic": "Tutorial on Financial statements", "period": 1, "type": "theory" },
+                { "id": "cm501-3.13", "sno": "3.13", "topic": "Practice: Analyzing a simple balance sheet", "period": 1, "type": "theory" },
+                { "id": "cm501-3.14", "sno": "3.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm501-3.15", "sno": "3.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Human Resource Management and Industrial Safety",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm501-4.1", "sno": "4.1", "topic": "HRM: Definition, Scope and Importance", "period": 1, "type": "theory" },
+                { "id": "cm501-4.2", "sno": "4.2", "topic": "Recruitment and Selection process", "period": 1, "type": "theory" },
+                { "id": "cm501-4.3", "sno": "4.3", "topic": "Training and Development: Types and methods", "period": 1, "type": "theory" },
+                { "id": "cm501-4.4", "sno": "4.4", "topic": "Performance Appraisal and Compensation", "period": 1, "type": "theory" },
+                { "id": "cm501-4.5", "sno": "4.5", "topic": "Motivation Theories: Maslow and Herzberg", "period": 1, "type": "theory" },
+                { "id": "cm501-4.6", "sno": "4.6", "topic": "Leadership Styles and Communication in industry", "period": 1, "type": "theory" },
+                { "id": "cm501-4.7", "sno": "4.7", "topic": "Industrial Relations and Trade Unions", "period": 1, "type": "theory" },
+                { "id": "cm501-4.8", "sno": "4.8", "topic": "Industrial Safety: Causes of Accidents and Prevention", "period": 1, "type": "theory" },
+                { "id": "cm501-4.9", "sno": "4.9", "topic": "Safety Measures: Protective equipment and First aid", "period": 1, "type": "theory" },
+                { "id": "cm501-4.10", "sno": "4.10", "topic": "Industrial Acts: Factories Act, Workmen's Compensation Act", "period": 1, "type": "theory" },
+                { "id": "cm501-4.11", "sno": "4.11", "topic": "Environment and Health aspects in industry", "period": 1, "type": "theory" },
+                { "id": "cm501-4.12", "sno": "4.12", "topic": "Tutorial on Human behavior in industry", "period": 1, "type": "theory" },
+                { "id": "cm501-4.13", "sno": "4.13", "topic": "Practice: Designing a safety chart for a lab", "period": 1, "type": "theory" },
+                { "id": "cm501-4.14", "sno": "4.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm501-4.15", "sno": "4.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Entrepreneurship and ISO 9000",
+            "totalPeriods": 15,
+            "topics": [
+                { "id": "cm501-5.1", "sno": "5.1", "topic": "Entrepreneurship: Definition and Characteristics", "period": 1, "type": "theory" },
+                { "id": "cm501-5.2", "sno": "5.2", "topic": "Role of Entrepreneurs in Economic Development", "period": 1, "type": "theory" },
+                { "id": "cm501-5.3", "sno": "5.3", "topic": "Entrepreneurial Motivation and Training", "period": 1, "type": "theory" },
+                { "id": "cm501-5.4", "sno": "5.4", "topic": "Steps in starting a Small Scale Industry (SSI)", "period": 1, "type": "theory" },
+                { "id": "cm501-5.5", "sno": "5.5", "topic": "Project Report Preparation and Feasibility study", "period": 1, "type": "theory" },
+                { "id": "cm501-5.6", "sno": "5.6", "topic": "Institutional support for Entrepreneurs: DIC, MSME, Banks", "period": 1, "type": "theory" },
+                { "id": "cm501-5.7", "sno": "5.7", "topic": "Introduction to Intellectual Property Rights (IPR)", "period": 1, "type": "theory" },
+                { "id": "cm501-5.8", "sno": "5.8", "topic": "Total Quality Management (TQM) and its concepts", "period": 1, "type": "theory" },
+                { "id": "cm501-5.9", "sno": "5.9", "topic": "ISO 9000 Quality System: Features and certification", "period": 1, "type": "theory" },
+                { "id": "cm501-5.10", "sno": "5.10", "topic": "Basics of Intellectual Property: Patents, Copyrights", "period": 1, "type": "theory" },
+                { "id": "cm501-5.11", "sno": "5.11", "topic": "Self-employment schemes and Government policies", "period": 1, "type": "theory" },
+                { "id": "cm501-5.12", "sno": "5.12", "topic": "Tutorial on Business Plan development", "period": 1, "type": "theory" },
+                { "id": "cm501-5.13", "sno": "5.13", "topic": "Practice: Writing a sample project proposal", "period": 1, "type": "theory" },
+                { "id": "cm501-5.14", "sno": "5.14", "topic": "Revision", "period": 1, "type": "revision" },
+                { "id": "cm501-5.15", "sno": "5.15", "topic": "Assessment / Practice / Problem Solving", "period": 1, "type": "assessment" }
+            ]
+        }
+    ]
+}
