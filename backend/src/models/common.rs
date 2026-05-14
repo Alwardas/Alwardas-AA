@@ -9,6 +9,13 @@ pub struct AppState {
     pub pool: Pool<Postgres>,
 }
 
+#[derive(Serialize, Deserialize, Debug)]
+pub struct ApiResponse<T> {
+    pub success: bool,
+    pub message: String,
+    pub data: Option<T>,
+}
+
 pub fn normalize_branch(input: &str) -> String {
     match input.trim() {
         // Computer

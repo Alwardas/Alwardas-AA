@@ -152,6 +152,10 @@ async fn main() {
         .route("/api/incharge/branch-daily-detail-report", get(incharge::get_branch_daily_detail_report_handler))
         .route("/api/staff/all", get(hod::get_all_staff_handler))
         .route("/api/hod/faculty-assignment", get(hod::get_faculty_assignment_handler))
+        // Curriculum Integration Routes
+        .route("/api/curriculum/merged", get(curriculum::get_merged_curriculum_handler))
+        .route("/api/curriculum/progress", post(curriculum::update_progress_handler))
+        .route("/api/curriculum/feedback", post(curriculum::submit_feedback_handler))
         .with_state(AppState { pool })
         .nest_service("/web", tower_http::services::ServeDir::new("static"))
         .fallback(move |req: axum::extract::Request| {

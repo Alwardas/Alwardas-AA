@@ -11,6 +11,7 @@ use crate::models::{
 };
 use crate::utils::user_utils::resolve_user_id;
 use crate::repositories::user::student_repository;
+use crate::services::curriculum_service;
 
 fn get_expected_progress() -> i32 {
     use chrono::Datelike;
@@ -101,9 +102,28 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
         else { "1st Year".to_string() }
     };
 
-    let subjects = student_repository::find_subjects_by_branch_and_semester(pool, &branch_norm, &semester_key, &section_str)
+    let mut subjects = student_repository::find_subjects_by_branch_and_semester(pool, &branch_norm, &semester_key, &section_str)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+
+    // Fallback: If DB returns empty, try to fetch from Assets
+    if subjects.is_empty() {
+        let sem_int = match semester_key.to_lowercase().as_str() {
+            s if s.contains('1') => 1,
+            s if s.contains('2') => 2,
+            s if s.contains('3') => 3,
+            s if s.contains('4') => 4,
+            s if s.contains('5') => 5,
+            s if s.contains('6') => 6,
+            _ => 1
+        };
+        
+        if let Ok(asset_subjects) = curriculum_service::get_subjects_from_assets(&branch_norm, sem_int, "C23").await {
+            for (code, name, stype) in asset_subjects {
+                subjects.push((code, name, stype, None, None, None, None));
+            }
+        }
+    }
 
     let mut courses = Vec::new();
     let expected_progress = get_expected_progress();
