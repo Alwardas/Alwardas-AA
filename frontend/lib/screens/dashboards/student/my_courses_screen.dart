@@ -163,13 +163,51 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
   }
 
   String _normalizeSemester(String sem) {
-    String s = sem.toLowerCase();
-    if (s.contains('1') && !s.contains('3') && !s.contains('5')) return 'Semester 1';
-    if (s.contains('2') && !s.contains('4') && !s.contains('6')) return 'Semester 2';
-    if (s.contains('3')) return 'Semester 3';
-    if (s.contains('4')) return 'Semester 4';
-    if (s.contains('5')) return 'Semester 5';
-    if (s.contains('6')) return 'Semester 6';
+    String s = sem.toLowerCase().trim();
+    
+    // Explicit Semester strings
+    if (s.contains('semester')) {
+      if (s.contains('1')) return 'Semester 1';
+      if (s.contains('2')) return 'Semester 2';
+      if (s.contains('3')) return 'Semester 3';
+      if (s.contains('4')) return 'Semester 4';
+      if (s.contains('5')) return 'Semester 5';
+      if (s.contains('6')) return 'Semester 6';
+    }
+
+    // Handle "1st Year", "2nd Year" etc. by guessing semester based on current month
+    if (s.contains('1st year') || s.contains('1st yr')) {
+      final month = DateTime.now().month;
+      // Jan-June: 2nd Sem, July-Dec: 1st Sem
+      return (month >= 1 && month <= 6) ? 'Semester 2' : 'Semester 1';
+    }
+    if (s.contains('2nd year') || s.contains('2nd yr')) {
+      final month = DateTime.now().month;
+      // Jan-June: 4th Sem, July-Dec: 3rd Sem
+      return (month >= 1 && month <= 6) ? 'Semester 4' : 'Semester 3';
+    }
+    if (s.contains('3rd year') || s.contains('3rd yr')) {
+      final month = DateTime.now().month;
+      // Jan-June: 6th Sem, July-Dec: 5th Sem
+      return (month >= 1 && month <= 6) ? 'Semester 6' : 'Semester 5';
+    }
+
+    // Handle Ordinals
+    if (s.contains('1st')) return 'Semester 1';
+    if (s.contains('2nd')) return 'Semester 2';
+    if (s.contains('3rd')) return 'Semester 3';
+    if (s.contains('4th')) return 'Semester 4';
+    if (s.contains('5th')) return 'Semester 5';
+    if (s.contains('6th')) return 'Semester 6';
+
+    // Handle just numbers
+    if (s == '1') return 'Semester 1';
+    if (s == '2') return 'Semester 2';
+    if (s == '3') return 'Semester 3';
+    if (s == '4') return 'Semester 4';
+    if (s == '5') return 'Semester 5';
+    if (s == '6') return 'Semester 6';
+    
     return sem.trim();
   }
 
