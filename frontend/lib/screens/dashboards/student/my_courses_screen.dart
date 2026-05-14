@@ -155,12 +155,12 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
   String _normalizeSemester(String sem) {
     String s = sem.toLowerCase();
-    if (s.contains('1') && !s.contains('3') && !s.contains('5')) return '1st Year';
-    if (s.contains('2') && !s.contains('4') && !s.contains('6')) return '2nd Semester'; // Handle 2nd semester specifically if needed
-    if (s.contains('3')) return '3rd Semester';
-    if (s.contains('4')) return '4th Semester';
-    if (s.contains('5')) return '5th Semester';
-    if (s.contains('6')) return '6th Semester';
+    if (s.contains('1') && !s.contains('3') && !s.contains('5')) return 'Semester 1';
+    if (s.contains('2') && !s.contains('4') && !s.contains('6')) return 'Semester 2';
+    if (s.contains('3')) return 'Semester 3';
+    if (s.contains('4')) return 'Semester 4';
+    if (s.contains('5')) return 'Semester 5';
+    if (s.contains('6')) return 'Semester 6';
     return sem.trim();
   }
 
