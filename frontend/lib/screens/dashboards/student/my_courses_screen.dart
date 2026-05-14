@@ -144,23 +144,24 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
   // Helper normalizers to match CoursesData logic
   String _normalizeBranch(String b) {
-    String upper = b.toUpperCase();
-    if (upper == 'CME' || upper.contains('COMPUTER')) return 'Computer Engineering';
-    if (upper == 'CIV' || upper == 'CIVIL') return 'Civil Engineering';
-    if (upper == 'ECE' || upper.contains('ELECTRONICS')) return 'Electronics & Communication Engineering';
-    if (upper == 'EEE' || upper.contains('ELECTRICAL')) return 'Electrical and Electronics Engineering';
-    if (upper == 'MECH' || upper == 'MEC' || upper.contains('MECHANICAL')) return 'Mechanical Engineering';
-    return b;
+    String upper = b.trim().toUpperCase();
+    if (upper == 'CME' || upper == 'CM' || upper.contains('COMPUTER')) return 'Computer Engineering';
+    if (upper == 'CIV' || upper == 'CIVIL' || upper == 'CE') return 'Civil Engineering';
+    if (upper == 'ECE' || upper == 'EC' || upper.contains('ELECTRONICS')) return 'Electronics & Communication Engineering';
+    if (upper == 'EEE' || upper == 'EE' || upper.contains('ELECTRICAL')) return 'Electrical and Electronics Engineering';
+    if (upper == 'MECH' || upper == 'MEC' || upper == 'ME' || upper.contains('MECHANICAL')) return 'Mechanical Engineering';
+    return b.trim();
   }
 
   String _normalizeSemester(String sem) {
     String s = sem.toLowerCase();
     if (s.contains('1') && !s.contains('3') && !s.contains('5')) return '1st Year';
+    if (s.contains('2') && !s.contains('4') && !s.contains('6')) return '2nd Semester'; // Handle 2nd semester specifically if needed
     if (s.contains('3')) return '3rd Semester';
     if (s.contains('4')) return '4th Semester';
     if (s.contains('5')) return '5th Semester';
     if (s.contains('6')) return '6th Semester';
-    return sem;
+    return sem.trim();
   }
 
   @override
@@ -183,10 +184,10 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
     // Filter Logic
     // Backend returns 'subjectType' as 'Theory' or 'Practical'. 
-    // If backend returns lowercase, handle case insensitively if needed, but 'Theory' is expected.
+    // We'll use a case-insensitive match for robustness.
     final displayedCourses = _courses.where((c) {
-       final type = c['subjectType'] as String? ?? 'Theory';
-       return type == _selectedFilter;
+       final type = (c['subjectType'] ?? c['type'] ?? 'Theory').toString();
+       return type.toLowerCase() == _selectedFilter.toLowerCase();
     }).toList();
     
     // Ensure gradient covers the entire screen including behind AppBar
