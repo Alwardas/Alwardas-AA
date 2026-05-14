@@ -19,9 +19,9 @@ class CoursesData {
       
       debugPrint("AssetManifest contains ${manifest.keys.length} keys.");
       
-      // Filter for files in assets/curriculum/ that are .json
+      // Filter for files in curriculum folder that are .json
       final List<String> curriculumFiles = manifest.keys
-          .where((path) => path.toLowerCase().contains('assets/curriculum/') && path.toLowerCase().endsWith('.json'))
+          .where((path) => path.toLowerCase().contains('curriculum/') && path.toLowerCase().endsWith('.json'))
           .toList();
 
       debugPrint("Found ${curriculumFiles.length} curriculum files dynamically.");
@@ -47,8 +47,8 @@ class CoursesData {
 
           if (curriculumIndex != -1) {
               regulation = data['regulation'] ?? (parts.length > curriculumIndex + 1 ? parts[curriculumIndex + 1] : 'C23');
-              branch = _normalizeBranch(data['branch'] ?? (parts.length > curriculumIndex + 2 ? parts[curriculumIndex + 2] : 'Unknown'));
-              semester = _normalizeSemester(data['semester']?.toString() ?? (parts.length > curriculumIndex + 3 ? parts[curriculumIndex + 3] : ''));
+              branch = normalizeBranch(data['branch'] ?? (parts.length > curriculumIndex + 2 ? parts[curriculumIndex + 2] : 'Unknown'));
+              semester = normalizeSemester(data['semester']?.toString() ?? (parts.length > curriculumIndex + 3 ? parts[curriculumIndex + 3] : ''));
               // Type might be at index + 4 or might be the file name parent
               type = data['type'] ?? (parts.length > curriculumIndex + 4 ? parts[curriculumIndex + 4] : 'Theory');
               if (type.toLowerCase().endsWith('.json')) type = 'Theory'; // Handle cases where type is missing
@@ -87,7 +87,7 @@ class CoursesData {
     return all;
   }
 
-  static String _normalizeBranch(String b) {
+  static String normalizeBranch(String b) {
     String upper = b.trim().toUpperCase();
     if (upper == 'CME' || upper == 'CM' || upper.contains('COMPUTER')) return 'Computer Engineering';
     if (upper == 'CIV' || upper == 'CIVIL' || upper == 'CE') return 'Civil Engineering';
@@ -97,7 +97,7 @@ class CoursesData {
     return b.trim();
   }
 
-  static String _normalizeSemester(String sem) {
+  static String normalizeSemester(String sem) {
     String s = sem.toLowerCase().trim();
     
     // Explicit Semester strings

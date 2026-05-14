@@ -78,14 +78,14 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
       
       // Filter by student's branch and semester
       // Normalize values for comparison
-      final normalizedBranch = _normalizeBranch(studentBranch);
-      final normalizedSemester = _normalizeSemester(studentSemester);
+      final normalizedBranch = CoursesData.normalizeBranch(studentBranch);
+      final normalizedSemester = CoursesData.normalizeSemester(studentSemester);
       
       debugPrint("Normalized: Branch=$normalizedBranch, Semester=$normalizedSemester");
 
       final List<dynamic> localCourses = allCurriculumCourses.where((c) {
-        final localBranch = _normalizeBranch(c['branch']?.toString() ?? '');
-        final localSem = _normalizeSemester(c['semester']?.toString() ?? '');
+        final localBranch = CoursesData.normalizeBranch(c['branch']?.toString() ?? '');
+        final localSem = CoursesData.normalizeSemester(c['semester']?.toString() ?? '');
         return localBranch == normalizedBranch && localSem == normalizedSemester;
       }).toList();
 
@@ -151,65 +151,6 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
     }
   }
 
-  // Helper normalizers to match CoursesData logic
-  String _normalizeBranch(String b) {
-    String upper = b.trim().toUpperCase();
-    if (upper == 'CME' || upper == 'CM' || upper.contains('COMPUTER')) return 'Computer Engineering';
-    if (upper == 'CIV' || upper == 'CIVIL' || upper == 'CE') return 'Civil Engineering';
-    if (upper == 'ECE' || upper == 'EC' || upper.contains('ELECTRONICS')) return 'Electronics & Communication Engineering';
-    if (upper == 'EEE' || upper == 'EE' || upper.contains('ELECTRICAL')) return 'Electrical and Electronics Engineering';
-    if (upper == 'MECH' || upper == 'MEC' || upper == 'ME' || upper.contains('MECHANICAL')) return 'Mechanical Engineering';
-    return b.trim();
-  }
-
-  String _normalizeSemester(String sem) {
-    String s = sem.toLowerCase().trim();
-    
-    // Explicit Semester strings
-    if (s.contains('semester')) {
-      if (s.contains('1')) return 'Semester 1';
-      if (s.contains('2')) return 'Semester 2';
-      if (s.contains('3')) return 'Semester 3';
-      if (s.contains('4')) return 'Semester 4';
-      if (s.contains('5')) return 'Semester 5';
-      if (s.contains('6')) return 'Semester 6';
-    }
-
-    // Handle "1st Year", "2nd Year" etc. by guessing semester based on current month
-    if (s.contains('1st year') || s.contains('1st yr')) {
-      final month = DateTime.now().month;
-      // Jan-June: 2nd Sem, July-Dec: 1st Sem
-      return (month >= 1 && month <= 6) ? 'Semester 2' : 'Semester 1';
-    }
-    if (s.contains('2nd year') || s.contains('2nd yr')) {
-      final month = DateTime.now().month;
-      // Jan-June: 4th Sem, July-Dec: 3rd Sem
-      return (month >= 1 && month <= 6) ? 'Semester 4' : 'Semester 3';
-    }
-    if (s.contains('3rd year') || s.contains('3rd yr')) {
-      final month = DateTime.now().month;
-      // Jan-June: 6th Sem, July-Dec: 5th Sem
-      return (month >= 1 && month <= 6) ? 'Semester 6' : 'Semester 5';
-    }
-
-    // Handle Ordinals
-    if (s.contains('1st')) return 'Semester 1';
-    if (s.contains('2nd')) return 'Semester 2';
-    if (s.contains('3rd')) return 'Semester 3';
-    if (s.contains('4th')) return 'Semester 4';
-    if (s.contains('5th')) return 'Semester 5';
-    if (s.contains('6th')) return 'Semester 6';
-
-    // Handle just numbers
-    if (s == '1') return 'Semester 1';
-    if (s == '2') return 'Semester 2';
-    if (s == '3') return 'Semester 3';
-    if (s == '4') return 'Semester 4';
-    if (s == '5') return 'Semester 5';
-    if (s == '6') return 'Semester 6';
-    
-    return sem.trim();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -406,8 +347,9 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
           ),
            const SizedBox(height: 10),
            Text(
-             "Branch: $_headerSubtitle", 
-             style: GoogleFonts.poppins(color: subHeadingColor, fontSize: 12),
+             "Debug Info:\nProfile Branch: $_headerSubtitle\nNormalized Branch: ${CoursesData.normalizeBranch(_headerSubtitle.split(' • ')[0])}\nNormalized Semester: ${CoursesData.normalizeSemester(_headerSubtitle.split(' • ').length > 1 ? _headerSubtitle.split(' • ')[1] : '')}", 
+             textAlign: TextAlign.center,
+             style: GoogleFonts.poppins(color: subHeadingColor.withValues(alpha: 0.5), fontSize: 10),
            ),
           const SizedBox(height: 20),
           ElevatedButton(
