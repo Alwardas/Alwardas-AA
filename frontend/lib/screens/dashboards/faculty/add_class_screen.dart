@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/services/notification_service.dart';
 import '../../../../core/services/auth_service.dart';
 import 'package:intl/intl.dart';
-import '../../data/courses_data.dart';
+import '../../../data/courses_data.dart';
 
 class AddClassScreen extends StatefulWidget {
   final Map<String, dynamic>? initialData;
