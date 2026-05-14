@@ -9,6 +9,7 @@ import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import 'student_lesson_plan_screen.dart'; // Keep this for navigation
+import '../../../data/courses_data.dart';
 
 class MyCoursesScreen extends StatefulWidget {
   final String? userId;
@@ -55,38 +56,111 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
           setState(() => _isLoading = false);
           return;
       }
-      // Update header subtitle with user details if available
-      if (user['branch'] != null && user['year'] != null) {
-         String subtitle = "${user['branch']} • ${user['year']}";
-         if (user['semester'] != null && user['semester'].toString().isNotEmpty && user['semester'] != user['year']) {
-             subtitle += " • ${user['semester']}";
-         }
-         // Add Section on new line
-         if (user['section'] != null && user['section'].toString().isNotEmpty) {
-             subtitle += "\n${user['section']}";
-         }
-         setState(() {
-           _headerSubtitle = subtitle;
-         });
-      }
+      
+      // Get student info from session
+      final studentBranch = user['branch'] ?? '';
+      final studentSemester = user['semester'] ?? user['year'] ?? '';
+      final studentSection = user['section'] ?? 'Section A';
 
+      // Update header subtitle
+      String subtitle = "$studentBranch • $studentSemester";
+      if (studentSection.isNotEmpty) {
+          subtitle += "\n$studentSection";
+      }
+      setState(() {
+        _headerSubtitle = subtitle;
+      });
+
+      // 1. Load curriculum from local assets (Source of Truth)
+      final allCurriculumCourses = await CoursesData.getAllCourses();
+      
+      // Filter by student's branch and semester
+      // Normalize values for comparison
+      final normalizedBranch = _normalizeBranch(studentBranch);
+      final normalizedSemester = _normalizeSemester(studentSemester);
+      
+      final List<dynamic> localCourses = allCurriculumCourses.where((c) {
+        return c['branch'] == normalizedBranch && c['semester'] == normalizedSemester;
+      }).toList();
+
+      debugPrint("Local courses found for $normalizedBranch / $normalizedSemester: ${localCourses.length}");
+
+      // 2. Fetch assigned courses and progress from API
       final response = await http.get(
         Uri.parse('${ApiConstants.baseUrl}/api/student/courses?userId=$userId'),
       );
 
+      List<dynamic> apiCourses = [];
       if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
-        setState(() {
-          _courses = data;
-        });
-      } else {
-        debugPrint("Failed to fetch courses: ${response.statusCode}");
+        final dynamic decoded = json.decode(response.body);
+        if (decoded is List) {
+          apiCourses = decoded;
+        } else if (decoded is Map && decoded['success'] == true) {
+          apiCourses = decoded['data'] ?? [];
+        }
       }
+
+      // 3. Merge: Local subjects + API progress/faculty
+      final List<dynamic> mergedCourses = localCourses.map((local) {
+        // Try to find matching course in API results
+        final apiMatch = apiCourses.firstWhere(
+          (api) => api['subjectCode'] == local['code'] || api['id'] == local['id'],
+          orElse: () => null,
+        );
+
+        if (apiMatch != null) {
+          return {
+            ...local,
+            'facultyName': apiMatch['facultyName'] ?? apiMatch['faculty_name'] ?? 'TBA',
+            'progress': apiMatch['progress'] ?? 0,
+            'status': apiMatch['status'] ?? 'On Track',
+            'subjectType': apiMatch['subjectType'] ?? local['type'] ?? 'Theory',
+            'facultyEmail': apiMatch['facultyEmail'],
+            'facultyPhone': apiMatch['facultyPhone'],
+            'facultyDepartment': apiMatch['facultyDepartment'],
+          };
+        } else {
+          // Subject exists in curriculum but not yet assigned/tracked in DB
+          return {
+            ...local,
+            'facultyName': 'TBA',
+            'progress': 0,
+            'status': 'On Track',
+            'subjectType': local['type'] ?? 'Theory',
+          };
+        }
+      }).toList();
+
+      setState(() {
+        _courses = mergedCourses;
+      });
+      
     } catch (e) {
       debugPrint("Error fetching courses: $e");
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
+  }
+
+  // Helper normalizers to match CoursesData logic
+  String _normalizeBranch(String b) {
+    String upper = b.toUpperCase();
+    if (upper == 'CME' || upper.contains('COMPUTER')) return 'Computer Engineering';
+    if (upper == 'CIV' || upper == 'CIVIL') return 'Civil Engineering';
+    if (upper == 'ECE' || upper.contains('ELECTRONICS')) return 'Electronics & Communication Engineering';
+    if (upper == 'EEE' || upper.contains('ELECTRICAL')) return 'Electrical and Electronics Engineering';
+    if (upper == 'MECH' || upper == 'MEC' || upper.contains('MECHANICAL')) return 'Mechanical Engineering';
+    return b;
+  }
+
+  String _normalizeSemester(String sem) {
+    String s = sem.toLowerCase();
+    if (s.contains('1') && !s.contains('3') && !s.contains('5')) return '1st Year';
+    if (s.contains('3')) return '3rd Semester';
+    if (s.contains('4')) return '4th Semester';
+    if (s.contains('5')) return '5th Semester';
+    if (s.contains('6')) return '6th Semester';
+    return sem;
   }
 
   @override

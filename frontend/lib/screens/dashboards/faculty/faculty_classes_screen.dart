@@ -373,7 +373,10 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
                    subjectId: item['subjectId']?.toString() ?? item['id'].toString(), 
                    subjectName: item['name'] ?? 'Subject',
                    facultyName: _facultyName.isNotEmpty ? _facultyName : 'You',
-                   section: item['section'],
+                   branch: item['branch'] ?? 'Computer Engineering',
+                   year: item['year'] ?? '1st Year',
+                   semester: int.tryParse(item['semester']?.toString() ?? '1') ?? 1,
+                   section: item['section'] ?? 'Section A',
                  ),
                ),
              );
