@@ -132,7 +132,7 @@ fn _map_to_short_branch(branch: &str) -> &str {
     match branch {
         "Computer Engineering" => "cme",
         "Electronics & Communication Engineering" => "ece",
-        "Electrical and Electronics Engineering" => "eee",
+        "Electrical & Electronics Engineering" => "eee",
         "Mechanical Engineering" => "mech",
         "Civil Engineering" => "civ",
         _ => "cme",

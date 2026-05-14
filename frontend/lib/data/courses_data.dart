@@ -92,7 +92,7 @@ class CoursesData {
     if (upper == 'CME' || upper == 'CM' || upper.contains('COMPUTER')) return 'Computer Engineering';
     if (upper == 'CIV' || upper == 'CIVIL' || upper == 'CE') return 'Civil Engineering';
     if (upper == 'ECE' || upper == 'EC' || upper.contains('ELECTRONICS')) return 'Electronics & Communication Engineering';
-    if (upper == 'EEE' || upper == 'EE' || upper.contains('ELECTRICAL')) return 'Electrical and Electronics Engineering';
+    if (upper == 'EEE' || upper == 'EE' || upper.contains('ELECTRICAL')) return 'Electrical & Electronics Engineering';
     if (upper == 'MECH' || upper == 'MEC' || upper == 'ME' || upper.contains('MECHANICAL')) return 'Mechanical Engineering';
     return b.trim();
   }

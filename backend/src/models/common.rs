@@ -17,19 +17,21 @@ pub struct ApiResponse<T> {
 }
 
 pub fn normalize_branch(input: &str) -> String {
-    match input.trim() {
+    let binding = input.trim().to_uppercase();
+    let upper = binding.as_str();
+    match upper {
         // Computer
-        "CME" | "CM" | "Cme" | "Computer" => "Computer Engineering".to_string(),
+        "CME" | "CM" | "COMPUTER" | "COMPUTER ENGINEERING" => "Computer Engineering".to_string(),
         // ECE
-        "ECE" | "EC" | "Ece" => "Electronics & Communication Engineering".to_string(),
+        "ECE" | "EC" | "ELECTRONICS & COMMUNICATION ENGINEERING" => "Electronics & Communication Engineering".to_string(),
         // EEE
-        "EEE" | "EE" | "Eee" => "Electrical & Electronics Engineering".to_string(),
+        "EEE" | "EE" | "ELECTRICAL & ELECTRONICS ENGINEERING" | "ELECTRICAL AND ELECTRONICS ENGINEERING" => "Electrical & Electronics Engineering".to_string(),
         // Mechanical
-        "ME" | "MEC" | "MECH" | "Mech" | "Mechanical" | "M" => "Mechanical Engineering".to_string(),
+        "ME" | "MEC" | "MECH" | "MECHANICAL" | "MECHANICAL ENGINEERING" => "Mechanical Engineering".to_string(),
         // Civil
-        "CE" | "CIV" | "CIVIL" | "Civil" => "Civil Engineering".to_string(),
+        "CE" | "CIV" | "CIVIL" | "CIVIL ENGINEERING" => "Civil Engineering".to_string(),
         // BS & H / General
-        "BS & H" | "BS&H" | "BSH" | "General" | "Basic Science" => "General".to_string(),
+        "BS & H" | "BS&H" | "BSH" | "GENERAL" | "BASIC SCIENCE" => "General".to_string(),
         // Default
         _ => input.trim().to_string(),
     }
