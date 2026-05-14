@@ -6,18 +6,28 @@ import 'package:intl/intl.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
+import '../../../core/services/curriculum_service.dart';
+import '../../../core/models/curriculum_merged.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class StudentLessonPlanScreen extends StatefulWidget {
   final String subjectId;
   final String subjectName; 
   final String facultyName;
+  final String branch;
+  final String? section;
+  final String? year;
+  final int semester;
 
   const StudentLessonPlanScreen({
     super.key, 
     required this.subjectId, 
     this.subjectName = 'Lesson Plan',
     this.facultyName = 'Unknown Faculty',
+    required this.branch,
+    this.section,
+    this.year,
+    this.semester = 1,
   });
 
   @override
@@ -25,58 +35,42 @@ class StudentLessonPlanScreen extends StatefulWidget {
 }
 
 class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
-  List<dynamic> _data = [];
+  CurriculumMerged? _curriculum;
   bool _loading = true;
-  
-  // Dashboard Status Data
-  int _percentage = 0;
-  String _status = "NORMAL"; // 'LAGGING', 'OVERFAST', 'NORMAL'
+  String? _error;
 
   @override
   void initState() {
     super.initState();
-    _fetchLessonPlan();
+    _fetchCurriculum();
   }
 
-  Future<void> _fetchLessonPlan() async {
-    final user = await AuthService.getUserSession();
-    if (user == null) return;
-
-    final branch = user['branch'] ?? '';
+  Future<void> _fetchCurriculum() async {
     try {
-      final url = '${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&userId=${user['id']}&branch=${Uri.encodeComponent(branch)}';
-      debugPrint("DEBUG: Fetching Lesson Plan from $url");
-      
-      final response = await http.get(Uri.parse(url));
-      
-      debugPrint("DEBUG: Lesson Plan Response: ${response.statusCode} - ${response.body}");
+      final response = await CurriculumService.getMergedCurriculum(
+        branch: widget.branch,
+        semester: widget.semester,
+        subjectCode: widget.subjectId,
+        section: widget.section ?? 'Section A',
+        year: widget.year ?? '1st Year',
+      );
 
-      if (response.statusCode == 200) {
-        final decoded = json.decode(response.body);
+      if (response.success && response.data != null) {
         if (mounted) {
           setState(() {
-            if (decoded is Map<String, dynamic>) {
-              if (decoded.containsKey('items')) {
-                _data = decoded['items'];
-              }
-              _percentage = decoded['percentage'] ?? 0;
-              _status = decoded['status'] ?? 'NORMAL';
-            } else if (decoded is List) {
-              _data = decoded;
-            } else {
-              _data = []; 
-            }
+            _curriculum = CurriculumMerged.fromJson(response.data);
             _loading = false;
           });
         }
       } else {
-        throw Exception('Failed to load lesson plan: ${response.statusCode}');
+        throw Exception(response.message);
       }
     } catch (e) {
-      debugPrint("Error fetching lesson plan: $e");
       if (mounted) {
-        setState(() => _loading = false);
-        _showSnackBar("Could not load lesson plan.");
+        setState(() {
+          _error = e.toString();
+          _loading = false;
+        });
       }
     }
   }
@@ -85,28 +79,35 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
   }
 
-  void _openFeedbackModal(Map<String, dynamic> item) {
+  void _openFeedbackModal(CurriculumTopic topic) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) => FeedbackModal(
-        item: item,
+        topic: topic,
+        subjectCode: widget.subjectId,
         onSubmit: _handleFeedbackSubmit,
       ),
     );
   }
 
-  void _openAIHelpModal(Map<String, dynamic> item) {
+  void _openAIHelpModal(CurriculumTopic topic) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (context) => AIExplanationModal(topic: item['topic'] ?? 'Topic'),
+      builder: (context) => AIExplanationModal(topic: topic.topic),
     );
   }
 
-  Future<void> _handleFeedbackSubmit(String lessonPlanId, int rating, String issueType, String comment) async {
+  Future<void> _handleFeedbackSubmit({
+    required String topicId,
+    required String subjectCode,
+    required int rating,
+    required String issueType,
+    required String comment,
+  }) async {
       final user = await AuthService.getUserSession();
       if (user == null || user['id'] == null) {
           _showSnackBar("Session expired. Please login again.");
@@ -114,26 +115,24 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
       }
 
       try {
-        final response = await http.post(
-          Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan/feedback'),
-          headers: {'Content-Type': 'application/json'},
-          body: json.encode({
-            'user_id': user['id'],
-            'lesson_plan_id': lessonPlanId,
-            'rating': rating,
-            'issue_type': issueType,
-            'comment': comment,
-          }),
+        final response = await CurriculumService.submitFeedback(
+          topicId: topicId,
+          subjectCode: subjectCode,
+          studentId: user['login_id'] ?? user['id'].toString(),
+          rating: rating,
+          issueType: issueType,
+          comment: comment,
         );
 
-        if (response.statusCode == 200 || response.statusCode == 201) {
+        if (response.success) {
            Navigator.pop(context); 
            _showSnackBar("Feedback submitted successfully!");
+           _fetchCurriculum();
         } else {
-           _showSnackBar("Failed to submit feedback. Status: ${response.statusCode}");
+           _showSnackBar("Failed: ${response.message}");
         }
       } catch (e) {
-           _showSnackBar("Error submitting feedback: $e");
+           _showSnackBar("Error: $e");
       }
   }
 
@@ -154,71 +153,84 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text("Syllabus & Lesson Plan", style: GoogleFonts.poppins(color: text, fontWeight: FontWeight.bold, fontSize: 18)),
-        actions: [
-            IconButton(
-                icon: Icon(Icons.calendar_today, color: text, size: 20),
-                tooltip: "Completed Today",
-                onPressed: _showTodayCompletedTopics,
-            ),
-            const SizedBox(width: 10),
-        ],
       ),
       body: _loading
           ? Center(child: CircularProgressIndicator())
-          : _data.isEmpty
-              ? Center(child: Text("No lesson plan available", style: GoogleFonts.poppins(color: text)))
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverPadding(
-                      padding: const EdgeInsets.all(20),
-                      sliver: SliverToBoxAdapter(
-                        child: _buildSubjectHeaderCard(context),
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                        child: Text("TOPIC LIST", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.grey, letterSpacing: 1.2)),
-                      ),
-                    ),
-                    SliverPadding(
-                      padding: const EdgeInsets.fromLTRB(20, 15, 20, 40),
-                      sliver: SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) {
-                            return AnimationConfiguration.staggeredList(
-                              position: index,
-                              duration: const Duration(milliseconds: 375),
-                              child: SlideAnimation(
-                                verticalOffset: 50.0,
-                                child: FadeInAnimation(
-                                  child: _buildLessonItem(_data[index]),
+          : _error != null
+              ? Center(child: Text("Error: $_error", style: GoogleFonts.poppins(color: Colors.red)))
+              : _curriculum == null || _curriculum!.units.isEmpty
+                  ? Center(child: Text("No curriculum data found", style: GoogleFonts.poppins(color: text)))
+                  : CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverPadding(
+                          padding: const EdgeInsets.all(20),
+                          sliver: SliverToBoxAdapter(
+                            child: _buildSubjectHeaderCard(context),
+                          ),
+                        ),
+                        ..._curriculum!.units.map((unit) {
+                          return SliverMainAxisGroup(
+                            slivers: [
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                                  child: Text(
+                                    "UNIT ${unit.unitNo}: ${unit.title.toUpperCase()}",
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.grey,
+                                      letterSpacing: 1.2,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            );
-                          },
-                          childCount: _data.length,
-                        ),
-                      ),
+                              SliverPadding(
+                                padding: const EdgeInsets.symmetric(horizontal: 20),
+                                sliver: SliverList(
+                                  delegate: SliverChildBuilderDelegate(
+                                    (context, index) {
+                                      final topic = unit.topics[index];
+                                      return AnimationConfiguration.staggeredList(
+                                        position: index,
+                                        duration: const Duration(milliseconds: 375),
+                                        child: SlideAnimation(
+                                          verticalOffset: 50.0,
+                                          child: FadeInAnimation(
+                                            child: _buildLessonItem(topic),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    childCount: unit.topics.length,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
+                        }).toList(),
+                        const SliverToBoxAdapter(child: SizedBox(height: 40)),
+                      ],
                     ),
-                  ],
-                ),
     );
   }
 
   void _showTodayCompletedTopics() {
+      if (_curriculum == null) return;
       final now = DateTime.now();
       
-      final todayItems = _data.where((item) {
-          if (item['completed'] != true || item['completedAt'] == null) return false;
-          try {
-             DateTime completedDate = DateTime.parse(item['completedAt']).toLocal();
-             return completedDate.year == now.year && completedDate.month == now.month && completedDate.day == now.day;
-          } catch(e) {
-             return false;
+      final List<CurriculumTopic> todayItems = [];
+      for (var unit in _curriculum!.units) {
+        for (var topic in unit.topics) {
+          if (topic.status == 'completed' && topic.completedDate != null) {
+            final completedDate = topic.completedDate!.toLocal();
+            if (completedDate.year == now.year && completedDate.month == now.month && completedDate.day == now.day) {
+              todayItems.add(topic);
+            }
           }
-      }).toList();
+        }
+      }
 
       showDialog(
           context: context,
@@ -277,13 +289,8 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                                         separatorBuilder: (_, __) => const SizedBox(height: 10),
                                         itemBuilder: (context, index) {
                                             final item = todayItems[index];
-                                            String displayTopic = item['topic'] ?? item['text'] ?? "Unknown";
-                                            String completedDateStr = "";
-                                            try {
-                                              completedDateStr = DateFormat('dd/MM/yyyy').format(DateTime.parse(item['completedAt']).toLocal());
-                                            } catch (e) {
-                                              completedDateStr = item['completedAt'].toString().split('T')[0];
-                                            }
+                                            String displayTopic = item.topic;
+                                            String completedDateStr = DateFormat('dd/MM/yyyy').format(item.completedDate!.toLocal());
 
                                             return Container(
                                                 padding: const EdgeInsets.all(12),
@@ -300,7 +307,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                                                           child: SizedBox(
                                                               width: 30,
                                                               child: Text(
-                                                                  "${item['sNo'] ?? item['s_no'] ?? ''}",
+                                                                  item.sno,
                                                                   style: GoogleFonts.poppins(fontWeight: FontWeight.w600, color: Colors.grey, fontSize: 12),
                                                               ),
                                                           ),
@@ -354,23 +361,14 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
       final cardBg = isDark ? const Color(0xFF1E1E24) : Colors.white;
       final text = isDark ? Colors.white : const Color(0xFF2D3748);
       
-      Color statusColor;
-      String statusText;
-      Color statusBg;
-
-      if (_status == 'LAGGING') {
-          statusColor = const Color(0xFFFF4B4B);
-          statusText = "Lagging";
-          statusBg = const Color(0xFFFF4B4B).withValues(alpha: 0.1);
-      } else if (_status == 'OVERFAST') {
-          statusColor = Colors.orange;
-          statusText = "Overfast";
-          statusBg = Colors.orange.withValues(alpha: 0.1);
-      } else {
-          statusColor = const Color(0xFF34C759);
-          statusText = "On Track";
-          statusBg = const Color(0xFF34C759).withValues(alpha: 0.1);
+      // Calculate completion percentage
+      int totalTopics = 0;
+      int completedTopics = 0;
+      for (var unit in _curriculum!.units) {
+        totalTopics += unit.topics.length;
+        completedTopics += unit.topics.where((t) => t.status == 'completed').length;
       }
+      final percentage = totalTopics > 0 ? (completedTopics * 100 ~/ totalTopics) : 0;
 
       return Container(
           padding: const EdgeInsets.all(24),
@@ -399,15 +397,15 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                                 decoration: BoxDecoration(
-                                  color: statusBg,
+                                  color: Colors.green.withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Icon(Icons.check_circle, size: 16, color: statusColor),
+                                    Icon(Icons.check_circle, size: 16, color: Colors.green),
                                     const SizedBox(width: 6),
-                                    Text(statusText, style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600, color: statusColor)),
+                                    Text("On Track", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.green)),
                                   ],
                                 ),
                               )
@@ -415,80 +413,57 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                       ),
                   ),
                   const SizedBox(width: 15),
-                  Stack(
-                      alignment: Alignment.center,
-                      children: [
-                          SizedBox(
-                              width: 70,
-                              height: 70,
-                              child: CircularProgressIndicator(
-                                  value: _percentage / 100.0,
-                                  backgroundColor: isDark ? Colors.grey[800] : Colors.grey[200],
-                                  valueColor: AlwaysStoppedAnimation<Color>(statusColor),
-                                  strokeWidth: 6,
-                                  strokeCap: StrokeCap.round,
-                                  
-                              ),
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text("$_percentage%", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: text)),
-                              Text("Done", style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
-                            ],
-                          ),
-                      ],
+                  GestureDetector(
+                    onTap: _showTodayCompletedTopics,
+                    child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                            SizedBox(
+                                width: 70,
+                                height: 70,
+                                child: CircularProgressIndicator(
+                                    value: percentage / 100.0,
+                                    backgroundColor: isDark ? Colors.grey[800] : Colors.grey[200],
+                                    valueColor: const AlwaysStoppedAnimation<Color>(Colors.green),
+                                    strokeWidth: 6,
+                                    strokeCap: StrokeCap.round,
+                                ),
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text("$percentage%", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: text)),
+                                Text("Done", style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
+                              ],
+                            ),
+                        ],
+                    ),
                   )
               ],
           ),
       );
   }
 
-  Widget _buildLessonItem(Map<String, dynamic> item) {
+  Widget _buildLessonItem(CurriculumTopic topic) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final text = isDark ? Colors.white : const Color(0xFF2D3748);
     final tint = Theme.of(context).primaryColor;
 
-    final isUnit = item['type'].toString().toLowerCase() == 'unit';
-    final isUnitEnd = item['type'].toString().toLowerCase() == 'unitend';
-    final isCompleted = item['completed'] == true;
+    final isCompleted = topic.status == 'completed';
     
-    // Green Water Tinge Effect
     final bgColor = isCompleted 
-        ? const Color(0xFF34C759).withValues(alpha: 0.1) // Green Water
+        ? const Color(0xFF34C759).withValues(alpha: 0.1) 
         : Colors.transparent;
     
-    if (isUnit) {
-        return Padding(
-          padding: const EdgeInsets.only(top: 25, bottom: 15),
-          child: Text(
-              item['text'] ?? item['topic'] ?? "Unit",
-              style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: tint),
-          ),
-        );
-    }
-    
-    // Determine display text and if interaction acts should be shown
-    String displayTopic = item['topic'] ?? item['text'] ?? 'No Topic';
-    bool showIcons = !isUnitEnd && item['topic'] != null && displayTopic != 'No Topic';
-    String? completedDate;
-    
     // Date Parsing Logic
-    String? scheduledDate;
-    if (item['scheduledDate'] != null) {
-      try {
-         scheduledDate = DateFormat('dd/MM/yyyy').format(DateTime.parse(item['scheduledDate']).toLocal());
-      } catch (e) {
-         scheduledDate = item['scheduledDate'].toString().split('T')[0];
-      }
+    String? assignedDateStr;
+    if (topic.assignedDate != null) {
+       assignedDateStr = DateFormat('dd/MM/yyyy').format(topic.assignedDate!.toLocal());
     }
 
-    if (item['completedAt'] != null) {
-      try {
-         completedDate = DateFormat('dd/MM/yyyy').format(DateTime.parse(item['completedAt']).toLocal());
-      } catch (e) {
-         completedDate = item['completedAt'].toString().split('T')[0];
-      }
+    String? completedDateStr;
+    if (topic.completedDate != null) {
+       completedDateStr = DateFormat('dd/MM/yyyy').format(topic.completedDate!.toLocal());
     }
 
     return Container(
@@ -507,53 +482,47 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
               child: SizedBox(
                   width: 35,
                   child: Text(
-                      "${item['sNo'] ?? item['s_no'] ?? ''}",
+                      topic.sno,
                       style: GoogleFonts.poppins(fontWeight: FontWeight.w600, color: Colors.grey, fontSize: 13),
                   ),
               ),
             ),
             
-            // AI Icon (Always shown, even if completed)
-            if (showIcons)
-              Padding(
-                padding: const EdgeInsets.only(right: 12, top: 0),
-                child: GestureDetector(
-                  onTap: () => _openAIHelpModal(item),
-                  child: Icon(Icons.auto_awesome, color: tint, size: 20),
-                ),
+            Padding(
+              padding: const EdgeInsets.only(right: 12, top: 0),
+              child: GestureDetector(
+                onTap: () => _openAIHelpModal(topic),
+                child: Icon(Icons.auto_awesome, color: tint, size: 20),
               ),
+            ),
 
             Expanded(
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                       // Scheduled Date Watermark
-                       if (scheduledDate != null)
+                       if (assignedDateStr != null)
                           Padding(
                               padding: const EdgeInsets.only(bottom: 2),
                               child: Text(
-                                  "Target: $scheduledDate",
+                                  "Target: $assignedDateStr",
                                   style: GoogleFonts.poppins(fontSize: 10, color: tint.withValues(alpha: 0.7), fontWeight: FontWeight.bold),
                               ),
                           ),
-                       // Completed Date Watermark (Visible only if completed)
-                       if (isCompleted && completedDate != null)
+                       if (isCompleted && completedDateStr != null)
                           Padding(
                               padding: const EdgeInsets.only(bottom: 4),
                               child: Text(
-                                  "Completed: $completedDate",
+                                  "Completed: $completedDateStr",
                                   style: GoogleFonts.poppins(fontSize: 10, color: const Color(0xFF34C759), fontWeight: FontWeight.w600, letterSpacing: 0.5),
                               ),
                           ),
-                       // Topic Text
                        Text(
-                          displayTopic,
+                          topic.topic,
                           style: GoogleFonts.poppins(
                              fontWeight: FontWeight.w500, 
                              color: text, 
                              fontSize: 14, 
                              height: 1.4,
-                             decoration: isCompleted ? TextDecoration.none : null 
                           ),
                        ),
                     ],
@@ -562,31 +531,27 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
             
             const SizedBox(width: 10),
 
-             // Feedback Icon (Visible for all valid topics)
-              if (showIcons) 
-               IconButton(
-                   icon: Icon(
-                     Icons.chat_bubble_outline, 
-                     color: isCompleted ? tint : Colors.grey.withValues(alpha: 0.3), 
-                     size: 20
-                   ),
-                   tooltip: isCompleted ? "Report Issue" : "Topic not yet completed",
-                   padding: EdgeInsets.zero,
-                   constraints: const BoxConstraints(),
-                   onPressed: isCompleted 
-                     ? () => _openFeedbackModal(item)
-                     : () {
-                         ScaffoldMessenger.of(context).showSnackBar(
-                           SnackBar(
-                             content: Text("Topic not yet completed", style: GoogleFonts.poppins()),
-                             duration: const Duration(seconds: 2),
-                             backgroundColor: Colors.grey[800],
-                           )
-                         );
-                     },
-               )
-             else 
-               const SizedBox(width: 20),
+             IconButton(
+                 icon: Icon(
+                   Icons.chat_bubble_outline, 
+                   color: isCompleted ? tint : Colors.grey.withValues(alpha: 0.3), 
+                   size: 20
+                 ),
+                 tooltip: isCompleted ? "Report Issue" : "Topic not yet completed",
+                 padding: EdgeInsets.zero,
+                 constraints: const BoxConstraints(),
+                 onPressed: isCompleted 
+                   ? () => _openFeedbackModal(topic)
+                   : () {
+                       ScaffoldMessenger.of(context).showSnackBar(
+                         SnackBar(
+                           content: Text("Topic not yet completed", style: GoogleFonts.poppins()),
+                           duration: const Duration(seconds: 2),
+                           backgroundColor: Colors.grey[800],
+                         )
+                       );
+                   },
+             )
         ],
       ),
     );
@@ -594,10 +559,22 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
 }
 
 class FeedbackModal extends StatefulWidget {
-  final Map<String, dynamic> item;
-  final Function(String, int, String, String) onSubmit;
+  final CurriculumTopic topic;
+  final String subjectCode;
+  final Function({
+    required String topicId,
+    required String subjectCode,
+    required int rating,
+    required String issueType,
+    required String comment,
+  }) onSubmit;
 
-  const FeedbackModal({super.key, required this.item, required this.onSubmit});
+  const FeedbackModal({
+    super.key, 
+    required this.topic, 
+    required this.subjectCode,
+    required this.onSubmit,
+  });
 
   @override
   _FeedbackModalState createState() => _FeedbackModalState();
@@ -625,8 +602,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
   Future<void> _fetchCurrentUser() async {
       final user = await AuthService.getUserSession();
       if(mounted && user != null) {
-          debugPrint("DEBUG: Current User ID: ${user['id']}");
-          setState(() => _currentUserId = user['id']);
+          setState(() => _currentUserId = user['login_id'] ?? user['id'].toString());
       }
   }
 
@@ -639,9 +615,10 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
   
   Future<void> _fetchComments() async {
       setState(() => _loadingComments = true);
-      debugPrint("DEBUG: Fetching comments for item ${widget.item['id']}... CurrentUser: $_currentUserId");
       try {
-          final response = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan/feedback?lessonPlanId=${widget.item['id']}'));
+          final response = await http.get(
+            Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan/feedback?topicId=${widget.topic.id}&subjectCode=${widget.subjectCode}')
+          );
           if (response.statusCode == 200) {
               setState(() {
                   _comments = json.decode(response.body);
@@ -651,19 +628,23 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
               setState(() => _loadingComments = false);
           }
       } catch (e) {
-          debugPrint("Error fetching comments: $e");
           setState(() => _loadingComments = false);
       }
   }
 
   Future<void> _handleSubmit() async {
       setState(() => _submitting = true);
-      await widget.onSubmit(widget.item['id'].toString(), _rating, _issueType, _commentController.text);
+      await widget.onSubmit(
+        topicId: widget.topic.id,
+        subjectCode: widget.subjectCode,
+        rating: _rating,
+        issueType: _issueType,
+        comment: _commentController.text,
+      );
       if(mounted) {
           setState(() => _submitting = false);
           _rating = 0;
           _commentController.clear();
-          // Switch to view tab and refresh
           _tabController.animateTo(1); 
           _fetchComments();
       }
@@ -722,7 +703,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
                                 children: [
                                     Text("Feedback", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
                                     const SizedBox(height: 4),
-                                    Text(widget.item['topic'] ?? '', style: GoogleFonts.poppins(fontSize: 12, color: subTextColor), maxLines: 1, overflow: TextOverflow.ellipsis),
+                                    Text(widget.topic.topic, style: GoogleFonts.poppins(fontSize: 12, color: subTextColor), maxLines: 1, overflow: TextOverflow.ellipsis),
                                 ],
                             ),
                         ),

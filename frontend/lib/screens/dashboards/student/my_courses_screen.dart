@@ -363,7 +363,10 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
         borderRadius: BorderRadius.circular(20),
         child: InkWell(
           borderRadius: BorderRadius.circular(20),
-          onTap: () {
+          onTap: () async {
+            final user = await AuthService.getUserSession();
+            if (!mounted) return;
+            
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -371,6 +374,10 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                   subjectId: course['id'] ?? '',
                   subjectName: course['name'] ?? 'Lesson Plan',
                   facultyName: facultyName,
+                  branch: user?['branch'] ?? 'Computer Engineering',
+                  section: user?['section'],
+                  year: user?['year'],
+                  semester: int.tryParse(user?['semester']?.toString() ?? '1') ?? 1,
                 ),
               ),
             );

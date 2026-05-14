@@ -5,6 +5,8 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
+import '../../../core/services/curriculum_service.dart';
+import '../../../core/models/curriculum_merged.dart';
 import '../../../widgets/skeleton_loader.dart';
 
 class FacultyLessonPlanScreen extends StatefulWidget {
@@ -12,6 +14,9 @@ class FacultyLessonPlanScreen extends StatefulWidget {
   final String subjectName; 
   final String facultyName;
   final String? section;
+  final String? year;
+  final int semester;
+  final String branch;
 
   const FacultyLessonPlanScreen({
     super.key, 
@@ -19,6 +24,9 @@ class FacultyLessonPlanScreen extends StatefulWidget {
     this.subjectName = 'Lesson Plan',
     this.facultyName = 'Unknown Faculty',
     this.section,
+    this.year,
+    this.semester = 1,
+    this.branch = 'Computer Engineering',
   });
 
   @override
@@ -26,68 +34,57 @@ class FacultyLessonPlanScreen extends StatefulWidget {
 }
 
 class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
-  List<dynamic> _data = [];
+  CurriculumMerged? _curriculum;
   bool _loading = true;
-  
-  // Dashboard Status Data
-  int _percentage = 0;
-  String _status = "NORMAL"; // 'LAGGING', 'OVERFAST', 'NORMAL'
+  String? _error;
 
   @override
   void initState() {
     super.initState();
-    _fetchLessonPlan();
+    _fetchCurriculum();
   }
 
-  Future<void> _fetchLessonPlan() async {
-    final user = await AuthService.getUserSession();
-    if (user == null) return;
-
-    final branch = user['branch'] ?? '';
+  Future<void> _fetchCurriculum() async {
     try {
-      String url = '${ApiConstants.baseUrl}/api/student/lesson-plan?subjectId=${widget.subjectId}&branch=${Uri.encodeComponent(branch)}';
-      if (widget.section != null) {
-        url += '&section=${widget.section}';
-      }
-      final response = await http.get(Uri.parse(url));
-      if (response.statusCode == 200) {
-        final decoded = json.decode(response.body);
+      final response = await CurriculumService.getMergedCurriculum(
+        branch: widget.branch,
+        semester: widget.semester,
+        subjectCode: widget.subjectId,
+        section: widget.section ?? 'Section A',
+        year: widget.year ?? '1st Year',
+      );
+
+      if (response.success && response.data != null) {
         if (mounted) {
           setState(() {
-            if (decoded is Map<String, dynamic>) {
-              if (decoded.containsKey('items')) {
-                _data = decoded['items'];
-              }
-              _percentage = decoded['percentage'] ?? 0;
-              _status = decoded['status'] ?? 'NORMAL';
-            } else if (decoded is List) {
-              _data = decoded;
-            } else {
-              _data = []; 
-            }
+            _curriculum = CurriculumMerged.fromJson(response.data);
             _loading = false;
           });
         }
       } else {
-        debugPrint("Failed to load lesson plan. Status Code: ${response.statusCode}, Body: ${response.body}");
-        throw Exception('Failed to load lesson plan');
+        throw Exception(response.message);
       }
     } catch (e) {
-      debugPrint("Error fetching lesson plan: $e");
       if (mounted) {
-        setState(() => _loading = false);
-        _showSnackBar("Could not load lesson plan: $e");
+        setState(() {
+          _error = e.toString();
+          _loading = false;
+        });
       }
     }
   }
   
-  Future<void> _markAsCompleted(String itemId, bool currentStatus) async {
-      // Show confirmation dialog
+  Future<void> _markAsCompleted(CurriculumTopic topic) async {
+      final isCompleted = topic.status == 'completed';
+      
       bool? confirm = await showDialog(
         context: context, 
         builder: (context) => AlertDialog(
-          title: Text("Mark Compliance", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-          content: Text(currentStatus ? "Mark this topic as incomplete?" : "Mark this topic as COMPLETED? This will record the current date.", style: GoogleFonts.poppins()),
+          title: Text(isCompleted ? "Mark Pending" : "Mark Completed", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+          content: Text(isCompleted 
+            ? "Revert this topic to pending?" 
+            : "Mark this topic as COMPLETED? This will record the current date.", 
+            style: GoogleFonts.poppins()),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context, false), 
@@ -104,22 +101,26 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
       if (confirm != true) return;
 
       try {
-        final newStatus = !currentStatus;
-        final response = await http.post(
-          Uri.parse('${ApiConstants.baseUrl}/api/faculty/lesson-plan/complete'),
-          headers: {'Content-Type': 'application/json'},
-          body: jsonEncode({
-            'itemId': itemId,
-            'completed': newStatus,
-            'section': widget.section
-          })
+        final user = await AuthService.getUserSession();
+        final facultyId = user?['login_id'] ?? '';
+        
+        final response = await CurriculumService.updateProgress(
+          topicId: topic.id,
+          subjectCode: widget.subjectId,
+          facultyId: facultyId,
+          branch: widget.branch,
+          section: widget.section ?? 'Section A',
+          year: widget.year ?? '1st Year',
+          semester: widget.semester,
+          status: isCompleted ? 'pending' : 'completed',
+          completedDate: isCompleted ? null : DateTime.now().toIso8601String(),
         );
         
-        if (response.statusCode == 200) {
-           _fetchLessonPlan(); // Refresh data
-           _showSnackBar(newStatus ? "Topic marked as Completed!" : "Topic marked as Incomplete.");
+        if (response.success) {
+           _fetchCurriculum();
+           _showSnackBar(isCompleted ? "Topic reverted to Pending" : "Topic marked as Completed!");
         } else {
-           _showSnackBar("Failed: ${response.body}");
+           _showSnackBar("Failed: ${response.message}");
         }
       } catch(e) {
         _showSnackBar("Error: $e");
@@ -130,7 +131,7 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
   }
 
-  void _showReviewsModal(Map<String, dynamic> item) {
+  void _showReviewsModal(CurriculumTopic topic) {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
@@ -145,18 +146,22 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
           children: [
             const SizedBox(height: 12),
             Center(
-             child: Container(
-               width: 50,
-               height: 5,
-               decoration: BoxDecoration(color: Colors.grey[300], borderRadius: BorderRadius.circular(10)),
-             ),
-           ),
-           Expanded(
-            child: _FeedbackList(
-               lessonPlanId: item['id'].toString(), 
-               topicName: item['topic'] ?? 'Topic',
+              child: Container(
+                width: 50,
+                height: 5,
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
             ),
-           ),
+            Expanded(
+              child: _FeedbackList(
+                topicId: topic.id,
+                subjectCode: widget.subjectId,
+                topicName: topic.topic,
+              ),
+            ),
           ],
         ),
       ),
@@ -165,7 +170,6 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // ... Implementation of build method for FacultyLessonPlanScreen ...
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bg = isDark ? const Color(0xFF151517) : const Color(0xFFF5F7FA);
     final text = isDark ? Colors.white : const Color(0xFF2D3748);
@@ -192,17 +196,35 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
       ),
       body: _loading
           ? _buildSkeletonList()
-          : _data.isEmpty
-              ? Center(child: Text("No lesson plan available", style: GoogleFonts.poppins(color: text)))
-              : ListView.builder(
-                  physics: const BouncingScrollPhysics(),
-                  padding: const EdgeInsets.all(20),
-                  itemCount: _data.length,
-                  itemBuilder: (context, index) {
-                    final item = _data[index];
-                    return _buildFacultyLessonItem(item);
-                  },
-                ),
+          : _error != null
+              ? Center(child: Text("Error: $_error", style: GoogleFonts.poppins(color: Colors.red)))
+              : _curriculum == null || _curriculum!.units.isEmpty
+                  ? Center(child: Text("No curriculum data found", style: GoogleFonts.poppins(color: text)))
+                  : ListView.builder(
+                      physics: const BouncingScrollPhysics(),
+                      padding: const EdgeInsets.all(20),
+                      itemCount: _curriculum!.units.length,
+                      itemBuilder: (context, index) {
+                        final unit = _curriculum!.units[index];
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 25, bottom: 15),
+                              child: Text(
+                                "Unit ${unit.unitNo}: ${unit.title}",
+                                style: GoogleFonts.poppins(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                              ),
+                            ),
+                            ...unit.topics.map((topic) => _buildFacultyTopicItem(topic)).toList(),
+                          ],
+                        );
+                      },
+                    ),
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Theme.of(context).primaryColor,
         icon: const Icon(Icons.picture_as_pdf, color: Colors.white),
@@ -236,28 +258,17 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
     );
   }
 
-  Widget _buildFacultyLessonItem(Map<String, dynamic> item) {
+  Widget _buildFacultyTopicItem(CurriculumTopic topic) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final text = isDark ? Colors.white : const Color(0xFF2D3748);
-    final isCompleted = item['completed'] == true;
-    final isUnit = item['type'] == 'unit';
-    
-    if (isUnit) {
-        return Padding(
-          padding: const EdgeInsets.only(top: 25, bottom: 15),
-          child: Text(
-              item['text'] ?? item['topic'] ?? "Unit",
-              style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
-          ),
-        );
-    }
+    final isCompleted = topic.status == 'completed';
     
     // Dates
-    final scheduledDate = item['scheduled_date'] != null 
-        ? DateFormat('dd-MM-yyyy').format(DateTime.parse(item['scheduled_date']).toLocal()) 
+    final assignedDateStr = topic.assignedDate != null 
+        ? DateFormat('dd-MM-yyyy').format(topic.assignedDate!.toLocal()) 
         : "Not Scheduled";
-    final completedDate = isCompleted && item['completed_at'] != null 
-        ? DateFormat('dd-MM-yyyy').format(DateTime.parse(item['completed_at']).toLocal()) 
+    final completedDateStr = isCompleted && topic.completedDate != null 
+        ? DateFormat('dd-MM-yyyy').format(topic.completedDate!.toLocal()) 
         : "Pending"; 
 
     return Opacity(
@@ -279,7 +290,6 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Top Bar: S.No | Checkbox | Dates | Comment Icon
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
@@ -288,16 +298,13 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
               ),
               child: Row(
                 children: [
-                   // S.No
                    Text(
-                     "${item['sno'] ?? item['s_no'] ?? ''}",
+                     topic.sno,
                      style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.grey),
                    ),
                    const SizedBox(width: 12),
-
-                   // Checkbox Area
                    InkWell(
-                     onTap: () => _markAsCompleted(item['id'].toString(), isCompleted),
+                     onTap: () => _markAsCompleted(topic),
                      child: Row(
                        children: [
                          Icon(
@@ -313,51 +320,67 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
                        ],
                      ),
                    ),
-                   
                    const Spacer(),
-                   
-                   // Dates
                    Column(
                      crossAxisAlignment: CrossAxisAlignment.end,
                      children: [
-                       Text("Scheduled: $scheduledDate", style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
+                       Text("Assigned: $assignedDateStr", style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey)),
                        if(isCompleted)
-                        Text("Finished: $completedDate", style: GoogleFonts.poppins(fontSize: 10, color: Colors.green, fontWeight: FontWeight.bold)),
+                        Text("Finished: $completedDateStr", style: GoogleFonts.poppins(fontSize: 10, color: Colors.green, fontWeight: FontWeight.bold)),
                      ],
                    ),
-                   
                    const SizedBox(width: 8),
-
-                   // Comment Icon moved strictly right of dates
                    IconButton(
-                      icon: const Icon(Icons.comment_outlined, size: 20, color: Colors.blueGrey),
-                      onPressed: () => _showReviewsModal(item),
+                      icon: Stack(
+                        children: [
+                          const Icon(Icons.comment_outlined, size: 20, color: Colors.blueGrey),
+                          if (topic.feedback_count > 0)
+                            Positioned(
+                              right: 0,
+                              top: 0,
+                              child: Container(
+                                padding: const EdgeInsets.all(2),
+                                decoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
+                                child: Text("${topic.feedback_count}", style: const TextStyle(fontSize: 8, color: Colors.white)),
+                              ),
+                            ),
+                        ],
+                      ),
+                      onPressed: () => _showReviewsModal(topic),
                       constraints: const BoxConstraints(),
                       tooltip: "View Reviews",
                    ),
-
                 ],
               ),
             ),
-            
-            // Content
             Padding(
                padding: const EdgeInsets.all(16),
-               child: Row(
+               child: Column(
                  crossAxisAlignment: CrossAxisAlignment.start,
                  children: [
-                    Expanded(
-                      child: Text(
-                        item['topic'] ?? "No Topic",
-                        style: GoogleFonts.poppins(
-                             fontSize: 14, 
-                             color: text, 
-                             fontWeight: FontWeight.w500,
-                             decoration: isCompleted ? TextDecoration.lineThrough : null,
-                             height: 1.4,
-                        ),
+                    Text(
+                      topic.topic,
+                      style: GoogleFonts.poppins(
+                           fontSize: 14, 
+                           color: text, 
+                           fontWeight: FontWeight.w500,
+                           decoration: isCompleted ? TextDecoration.lineThrough : null,
+                           height: 1.4,
                       ),
                     ),
+                    if (topic.feedback_count > 0) ...[
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Icon(Icons.thumb_up_outlined, size: 12, color: Colors.blue[300]),
+                          const SizedBox(width: 4),
+                          Text(
+                            "${topic.understoodPercentage.toStringAsFixed(0)}% Understood by Students",
+                            style: GoogleFonts.poppins(fontSize: 11, color: Colors.blue[300]),
+                          ),
+                        ],
+                      ),
+                    ],
                  ],
                ),
             )
@@ -407,11 +430,13 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
 }
 
 class _FeedbackList extends StatefulWidget {
-  final String lessonPlanId;
+  final String topicId;
+  final String subjectCode;
   final String topicName;
 
   const _FeedbackList({
-    required this.lessonPlanId, 
+    required this.topicId, 
+    required this.subjectCode,
     required this.topicName,
   });
 
@@ -427,7 +452,6 @@ class _FeedbackListState extends State<_FeedbackList> {
   @override
   void initState() {
     super.initState();
-    // Delay fetch slightly to allow animation to complete smoothly
     Future.delayed(const Duration(milliseconds: 300), () {
       if(mounted) _fetchFeedback();
     });
@@ -435,8 +459,10 @@ class _FeedbackListState extends State<_FeedbackList> {
 
   Future<void> _fetchFeedback() async {
     try {
+      // For now, we reuse the existing endpoint or create a new one. 
+      // The user wants a clean integration, so let's assume we update the backend to support these filters.
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan/feedback?lessonPlanId=${widget.lessonPlanId}'),
+        Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan/feedback?topicId=${widget.topicId}&subjectCode=${widget.subjectCode}'),
       );
       
       if (response.statusCode == 200) {
