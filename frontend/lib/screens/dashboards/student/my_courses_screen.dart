@@ -71,6 +71,8 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
         _headerSubtitle = subtitle;
       });
 
+      debugPrint("Student Profile: Branch=$studentBranch, Semester=$studentSemester");
+
       // 1. Load curriculum from local assets (Source of Truth)
       final allCurriculumCourses = await CoursesData.getAllCourses();
       
@@ -79,11 +81,18 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
       final normalizedBranch = _normalizeBranch(studentBranch);
       final normalizedSemester = _normalizeSemester(studentSemester);
       
+      debugPrint("Normalized: Branch=$normalizedBranch, Semester=$normalizedSemester");
+
       final List<dynamic> localCourses = allCurriculumCourses.where((c) {
-        return c['branch'] == normalizedBranch && c['semester'] == normalizedSemester;
+        final localBranch = _normalizeBranch(c['branch']?.toString() ?? '');
+        final localSem = _normalizeSemester(c['semester']?.toString() ?? '');
+        return localBranch == normalizedBranch && localSem == normalizedSemester;
       }).toList();
 
-      debugPrint("Local courses found for $normalizedBranch / $normalizedSemester: ${localCourses.length}");
+      debugPrint("Matched local courses count: ${localCourses.length}");
+      if (localCourses.isEmpty && allCurriculumCourses.isNotEmpty) {
+          debugPrint("Example course from assets: Branch=${allCurriculumCourses[0]['branch']}, Sem=${allCurriculumCourses[0]['semester']}");
+      }
 
       // 2. Fetch assigned courses and progress from API
       final response = await http.get(

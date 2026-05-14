@@ -17,20 +17,26 @@ class CoursesData {
       final String manifestContent = await rootBundle.loadString('AssetManifest.json');
       final Map<String, dynamic> manifest = json.decode(manifestContent);
       
+      debugPrint("AssetManifest contains ${manifest.keys.length} keys.");
+      
       // Filter for files in assets/curriculum/ that are .json
       final List<String> curriculumFiles = manifest.keys
-          .where((path) => path.startsWith('assets/curriculum/') && path.endsWith('.json'))
+          .where((path) => (path.toLowerCase().startsWith('assets/curriculum/') || path.toLowerCase().startsWith('assets\\curriculum\\')) && path.toLowerCase().endsWith('.json'))
           .toList();
 
       debugPrint("Found ${curriculumFiles.length} curriculum files dynamically.");
+      if (curriculumFiles.isEmpty) {
+          debugPrint("First 10 manifest keys: ${manifest.keys.take(10).toList()}");
+      }
 
       for (String path in curriculumFiles) {
         try {
           final String content = await rootBundle.loadString(path);
           final Map<String, dynamic> data = json.decode(content);
           
-          // Path structure: assets/curriculum/{regulation}/{branch}/{semester}/{type}/{subject}.json
-          final List<String> parts = path.split('/');
+          // Handle Windows paths by normalizing backslashes to forward slashes
+          final normalizedPath = path.replaceAll('\\', '/');
+          final List<String> parts = normalizedPath.split('/');
           
           // Fallback values if path structure differs
           String branch = _normalizeBranch(data['branch'] ?? (parts.length > 3 ? parts[3] : 'Unknown'));
