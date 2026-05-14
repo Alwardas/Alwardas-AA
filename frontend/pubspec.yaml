@@ -95,7 +95,30 @@ flutter:
     - assets/images/
     - assets/1766819269806.mp4
     - assets/data/json/
-    - assets/curriculum/
+    - assets/curriculum/c23/civ/semester 1/
+    - assets/curriculum/c23/civ/semester 3/
+    - assets/curriculum/c23/civ/semester 4/
+    - assets/curriculum/c23/civ/semester 5/
+    - assets/curriculum/c23/cme/semester 1/practical/
+    - assets/curriculum/c23/cme/semester 1/theory/
+    - assets/curriculum/c23/cme/semester 3/practical/
+    - assets/curriculum/c23/cme/semester 3/theory/
+    - assets/curriculum/c23/cme/semester 4/practical/
+    - assets/curriculum/c23/cme/semester 4/theory/
+    - assets/curriculum/c23/cme/semester 5/practical/
+    - assets/curriculum/c23/cme/semester 5/theory/
+    - assets/curriculum/c23/ece/semester 1/
+    - assets/curriculum/c23/ece/semester 3/
+    - assets/curriculum/c23/ece/semester 4/
+    - assets/curriculum/c23/ece/semester 5/
+    - assets/curriculum/c23/eee/semester 1/
+    - assets/curriculum/c23/eee/semester 3/
+    - assets/curriculum/c23/eee/semester 4/
+    - assets/curriculum/c23/eee/semester 5/
+    - assets/curriculum/c23/mech/semester 1/
+    - assets/curriculum/c23/mech/semester 3/
+    - assets/curriculum/c23/mech/semester 4/
+    - assets/curriculum/c23/mech/semester 5/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
