@@ -809,7 +809,9 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                          child: Text(
                            "$dayNum",
                            style: GoogleFonts.poppins(
-                             color: (mRecorded || aRecorded) ? Colors.white : (Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black87),
+                             color: Theme.of(context).brightness == Brightness.dark 
+                                 ? ((mRecorded || aRecorded) ? Colors.white : Colors.white70) 
+                                 : Colors.black87,
                              fontWeight: FontWeight.w600,
                            ),
                          ),
