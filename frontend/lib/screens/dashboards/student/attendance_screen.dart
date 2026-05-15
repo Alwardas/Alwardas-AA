@@ -751,7 +751,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                   alignment: Alignment.center,
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
-                    color: isHolidayDay ? Colors.grey.withValues(alpha: 0.05) : Colors.white,
+                    color: isHolidayDay ? Colors.grey.withValues(alpha: 0.05) : Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: isSelected ? Colors.blue : borderColor, 
@@ -809,7 +809,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                          child: Text(
                            "$dayNum",
                            style: GoogleFonts.poppins(
-                             color: (mRecorded || aRecorded) ? Colors.black : textColor.withOpacity(0.8),
+                             color: (mRecorded || aRecorded) ? Colors.white : (Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black87),
                              fontWeight: FontWeight.w600,
                            ),
                          ),
@@ -840,7 +840,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map((d) => 
-              Expanded(child: Container(height: 20, margin: const EdgeInsets.symmetric(horizontal: 10), color: Colors.white))
+              Expanded(child: Container(height: 20, margin: const EdgeInsets.symmetric(horizontal: 10), decoration: BoxDecoration(color: textColor.withOpacity(0.1), borderRadius: BorderRadius.circular(4))))
             ).toList(),
           ),
           const SizedBox(height: 10),
@@ -857,7 +857,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
             itemBuilder: (context, index) {
               return Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: textColor.withOpacity(0.05),
                   borderRadius: BorderRadius.circular(8),
                 ),
               );
