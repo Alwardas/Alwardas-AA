@@ -141,11 +141,11 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
     }
 
     try {
-      final url = Uri.parse('${ApiConstants.baseUrl}/api/attendance?studentId=$studentId');
-      final response = await http.get(url);
+      final url = '${ApiConstants.baseUrl}/api/attendance?studentId=$studentId';
+      final response = await ApiConfig.get(url);
 
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body);
+      if (response.success && response.data != null) {
+        final data = response.data;
         final List<dynamic> history = data['history'] ?? [];
         final List<Map<String, dynamic>> mappedHistory = [];
         
@@ -242,7 +242,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
           });
         }
       } else {
-         debugPrint("Failed to fetch attendance: ${response.statusCode}");
+         debugPrint("Failed to fetch attendance: ${response.message}");
          if (mounted) setState(() => _loading = false);
       }
     } catch (e) {
