@@ -30,13 +30,14 @@ class CoordinatorMenuTab extends StatelessWidget {
 
     final List<Map<String, dynamic>> menuItems = [
       {'label': 'Announcements', 'icon': Icons.campaign, 'route': const CoordinatorAnnouncementsScreen(), 'color': ThemeColors.accentPurple},
-      {'label': 'Attendance Monitor', 'icon': Icons.calendar_today, 'route': CoordinatorReportsScreen(userData: userData), 'color': ThemeColors.accentBlue},
+      {'label': 'Attendance Monitor', 'icon': Icons.calendar_today, 'route': const PrincipalAttendanceScreen(), 'color': ThemeColors.accentBlue},
       {'label': 'Faculty Directory', 'icon': Icons.people, 'route': const PrincipalFacultyScreen(), 'color': ThemeColors.accentCyan},
       {'label': 'Master Timetables', 'icon': Icons.access_time, 'route': const PrincipalTimetablesScreen(), 'color': ThemeColors.accentGreen},
       {'label': 'Syllabus Management', 'icon': Icons.book, 'route': PrincipalLessonPlansScreen(userData: userData), 'color': ThemeColors.accentGreen},
       {'label': 'Issues', 'icon': Icons.report_problem_outlined, 'route': IssueManagementScreen(userData: userData), 'color': ThemeColors.accentGold},
       {'label': 'Requests', 'icon': Icons.request_page_outlined, 'route': const CoordinatorRequestsScreen(), 'color': ThemeColors.accentCyan},
       {'label': 'Departments', 'icon': Icons.business, 'route': const CoordinatorDepartmentScreen(), 'color': ThemeColors.accentBlue},
+      {'label': 'Daily Reports', 'icon': Icons.description_outlined, 'route': CoordinatorReportsScreen(userData: userData), 'color': ThemeColors.accentPurple},
     ];
 
     return SafeArea(

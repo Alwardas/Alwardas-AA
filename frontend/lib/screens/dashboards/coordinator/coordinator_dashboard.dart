@@ -422,7 +422,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                           'title': 'Attendance',
                           'subtitle': 'Monitor All',
                           'color': const Color(0xFF29B6F6), // Cyan
-                          'route': CoordinatorReportsScreen(userData: widget.userData),
+                          'route': const PrincipalAttendanceScreen(),
                         },
                         {
                           'icon': Icons.menu_book,
