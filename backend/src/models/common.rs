@@ -1159,16 +1159,14 @@ pub struct LessonTopicResponse {
 #[derive(Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AssignLessonScheduleRequest {
-    pub schedules: Vec<LessonScheduleItem>,
-}
-
-#[derive(Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct LessonScheduleItem {
-    pub topic_id: Uuid,
+    pub subject_id: String,
+    pub topic_id: String,
+    pub schedule_date: String,
+    pub faculty_id: String,
     pub branch: String,
+    pub year: String,
+    pub semester: String,
     pub section: String,
-    pub schedule_date: String, // YYYY-MM-DD
 }
 
 

@@ -13,20 +13,15 @@ class CoursesData {
     List<dynamic> all = [];
     
     try {
-      // Use AssetManifest to find all files in the curriculum folder
-      final String manifestContent = await rootBundle.loadString('AssetManifest.json');
-      final Map<String, dynamic> manifest = json.decode(manifestContent);
+      final AssetManifest assetManifest = await AssetManifest.loadFromAssetBundle(rootBundle);
       
-      debugPrint("AssetManifest contains ${manifest.keys.length} keys.");
-      
-      // Filter for files in curriculum folder that are .json
-      final List<String> curriculumFiles = manifest.keys
+      final List<String> curriculumFiles = assetManifest.listAssets()
           .where((path) => path.toLowerCase().contains('curriculum/') && path.toLowerCase().endsWith('.json'))
           .toList();
 
       debugPrint("Found ${curriculumFiles.length} curriculum files dynamically.");
       if (curriculumFiles.isEmpty) {
-          debugPrint("First 10 manifest keys: ${manifest.keys.take(10).toList()}");
+          debugPrint("Asset manifest returned empty for curriculum/");
       }
 
       for (String path in curriculumFiles) {
@@ -85,6 +80,31 @@ class CoursesData {
 
     _cachedCourses = all;
     return all;
+  }
+
+  static Future<Map<String, dynamic>?> getSubjectDetails(String subjectCode) async {
+    try {
+      final AssetManifest assetManifest = await AssetManifest.loadFromAssetBundle(rootBundle);
+      
+      final List<String> curriculumFiles = assetManifest.listAssets()
+          .where((path) => path.toLowerCase().contains('curriculum/') && path.toLowerCase().endsWith('.json'))
+          .toList();
+
+      for (String path in curriculumFiles) {
+        try {
+          final String content = await rootBundle.loadString(path);
+          final Map<String, dynamic> data = json.decode(content);
+          if (data['subjectCode']?.toString().toUpperCase() == subjectCode.toUpperCase()) {
+            return data;
+          }
+        } catch (e) {
+          // Skip invalid files quietly
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching subject details for $subjectCode: $e");
+    }
+    return null;
   }
 
   static String normalizeBranch(String b) {

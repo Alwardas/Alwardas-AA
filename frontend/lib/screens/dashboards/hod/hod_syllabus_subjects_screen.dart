@@ -7,6 +7,7 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
 import '../../../widgets/skeleton_loader.dart';
 import '../../../core/api_config.dart';
+import '../../../data/courses_data.dart';
 import 'hod_syllabus_lesson_topics_screen.dart';
 
 class HodSyllabusSubjectsScreen extends StatefulWidget {
@@ -43,18 +44,53 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
     final branch = widget.userData['branch'] ?? 'Computer Engineering';
     final url = '${ApiConstants.baseUrl}/api/hod/syllabus/section-subjects-progress?branch=${Uri.encodeComponent(branch)}&year=${Uri.encodeComponent(widget.year)}&section=${Uri.encodeComponent(widget.section)}&courseId=${Uri.encodeComponent(widget.courseId)}&semester=${Uri.encodeComponent(widget.semester)}';
     
+    Map<String, dynamic> apiProgressMap = {};
+
     try {
       final response = await ApiConfig.get(url);
-      if (response.success && response.data != null) {
-        setState(() {
-          _subjects = response.data;
-          _isLoading = false;
-        });
-      } else {
-        if (mounted) setState(() => _isLoading = false);
+      if (response.success && response.data != null && (response.data as List).isNotEmpty) {
+        for (var item in response.data) {
+          apiProgressMap[item['subjectId'].toString().toLowerCase()] = {
+            'status': item['status'],
+            'percentage': item['percentage'],
+          };
+        }
       }
     } catch (e) {
-      debugPrint("Error fetching subjects: $e");
+      debugPrint("Error fetching subjects progress: $e");
+    }
+
+    try {
+      final allCourses = await CoursesData.getAllCourses();
+      
+      final filtered = allCourses.where((c) {
+        bool matchCourse = c['regulation'].toString().toUpperCase() == widget.courseId.toUpperCase().replaceAll('-', '');
+        bool matchBranch = CoursesData.normalizeBranch(c['branch']) == CoursesData.normalizeBranch(branch);
+        bool matchSem = CoursesData.normalizeSemester(c['semester']) == CoursesData.normalizeSemester(widget.semester);
+        return matchCourse && matchBranch && matchSem;
+      }).toList();
+
+      List<dynamic> localSubjects = filtered.map((c) {
+        final subjIdLower = c['id'].toString().toLowerCase();
+        final progressData = apiProgressMap[subjIdLower];
+        return {
+          'subjectId': c['id'],
+          'subjectName': c['name'],
+          'status': progressData != null ? progressData['status'] : 'On Track',
+          'percentage': progressData != null ? progressData['percentage'] : 0,
+        };
+      }).toList();
+
+      localSubjects.sort((a, b) => (a['subjectId'] as String).compareTo(b['subjectId'] as String));
+
+      if (mounted) {
+        setState(() {
+          _subjects = localSubjects;
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      debugPrint("Error fetching local subjects: $e");
       if (mounted) setState(() => _isLoading = false);
     }
   }

@@ -51,19 +51,31 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
   Future<void> _fetchCourses() async {
     try {
       final response = await ApiConfig.get('${ApiConstants.baseUrl}/api/faculty/hod-courses');
-      if (response.success) {
+      if (response.success && response.data is List && (response.data as List).isNotEmpty) {
         if (mounted) {
           setState(() {
-            _courses = response.data is List ? response.data : [];
+            _courses = response.data;
             _isLoading = false;
           });
         }
       } else {
-        if (mounted) setState(() => _isLoading = false);
+        _loadLocalCourses();
       }
     } catch (e) {
       debugPrint("Error fetching courses: $e");
-      if (mounted) setState(() => _isLoading = false);
+      _loadLocalCourses();
+    }
+  }
+
+  void _loadLocalCourses() {
+    if (mounted) {
+      setState(() {
+        _courses = [
+          {'courseId': 'C-23', 'courseName': 'C-23 Regulation'},
+          {'courseId': 'C-26', 'courseName': 'C-26 Regulation'},
+        ];
+        _isLoading = false;
+      });
     }
   }
 

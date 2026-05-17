@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
 import '../../../widgets/skeleton_loader.dart';
+import '../../../data/courses_data.dart';
 
 class HodSyllabusLessonTopicsScreen extends StatefulWidget {
   final String subjectId;
@@ -43,22 +44,63 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
   Future<void> _fetchTopics() async {
     final branch = widget.userData['branch'] ?? 'Computer Engineering';
     final url = Uri.parse('${ApiConstants.baseUrl}/api/faculty/hod-lesson-topics?subject_id=${Uri.encodeComponent(widget.subjectId)}&section=${Uri.encodeComponent(widget.section)}&branch=${Uri.encodeComponent(branch)}');
+    
+    Map<String, dynamic> apiTopicsMap = {};
+
     try {
       final response = await http.get(url);
       if (response.statusCode == 200) {
-        final List<dynamic> fetched = json.decode(response.body);
-        
-        if (mounted) {
-          setState(() {
-            _topics = fetched;
-            _isLoading = false;
-          });
+        final Map<String, dynamic> decoded = json.decode(response.body);
+        if (decoded['success'] == true && decoded['data'] is List) {
+          final List<dynamic> fetched = decoded['data'];
+          for (var t in fetched) {
+            if (t['id'] != null) {
+              apiTopicsMap[t['id'].toString().toLowerCase()] = t;
+            }
+          }
         }
-      } else {
-        if (mounted) setState(() => _isLoading = false);
       }
     } catch (e) {
-      debugPrint("Error fetching topics: $e");
+      debugPrint("Error fetching API topics: $e");
+    }
+
+    try {
+      final subjectDetails = await CoursesData.getSubjectDetails(widget.subjectId);
+      List<dynamic> localTopics = [];
+
+      if (subjectDetails != null && subjectDetails['units'] != null) {
+        for (var unit in subjectDetails['units']) {
+          localTopics.add({
+            'type': 'unit',
+            'topicName': 'Unit ${unit['unitNo']}: ${unit['title']}',
+            'unit': 'Unit ${unit['unitNo']}',
+          });
+
+          if (unit['topics'] != null) {
+            for (var t in unit['topics']) {
+              final apiData = apiTopicsMap[t['id'].toString().toLowerCase()];
+              localTopics.add({
+                'id': t['id'],
+                'type': t['type'] ?? 'topic',
+                'topicName': t['topic'],
+                'unit': 'Unit ${unit['unitNo']}',
+                'scheduleDate': apiData?['scheduleDate'],
+                'completed': apiData?['completed'] ?? false,
+                'completedDate': apiData?['completedDate'],
+              });
+            }
+          }
+        }
+      }
+
+      if (mounted) {
+        setState(() {
+          _topics = localTopics;
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      debugPrint("Error loading local topics: $e");
       if (mounted) setState(() => _isLoading = false);
     }
   }
