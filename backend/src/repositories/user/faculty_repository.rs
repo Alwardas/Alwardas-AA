@@ -392,8 +392,8 @@ pub async fn find_lesson_topics(pool: &PgPool, params: crate::models::LessonTopi
         .bind(params.subject_id).fetch_all(pool).await
 }
 
-pub async fn insert_lesson_schedule(executor: &mut sqlx::Transaction<'_, Postgres>, topic_id: &str, schedule_date: &str, branch: &str, year: &str, section: &str) -> Result<u64, sqlx::Error> {
-    sqlx::query("INSERT INTO lesson_schedule (topic_id, schedule_date, branch, year, section) VALUES ($1, $2::DATE, $3, $4, $5) ON CONFLICT (topic_id, section) DO UPDATE SET schedule_date = $2::DATE")
-        .bind(topic_id).bind(schedule_date).bind(branch).bind(year).bind(section)
+pub async fn insert_lesson_schedule(executor: &mut sqlx::Transaction<'_, Postgres>, subject_id: &str, topic_id: &str, schedule_date: &str, branch: &str, year: &str, section: &str) -> Result<u64, sqlx::Error> {
+    sqlx::query("INSERT INTO lesson_schedule (subject_id, topic_id, schedule_date, branch, year, section) VALUES ($1, $2, $3::DATE, $4, $5, $6) ON CONFLICT (subject_id, topic_id, section, branch) DO UPDATE SET schedule_date = $3::DATE")
+        .bind(subject_id).bind(topic_id).bind(schedule_date).bind(branch).bind(year).bind(section)
         .execute(&mut **executor).await.map(|r| r.rows_affected())
 }

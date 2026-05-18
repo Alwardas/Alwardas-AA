@@ -429,7 +429,7 @@ pub async fn get_lesson_topics(pool: &PgPool, params: LessonTopicsQuery) -> Resu
 
 pub async fn assign_lesson_schedule(pool: &PgPool, payload: AssignLessonScheduleRequest) -> Result<(), StatusCode> {
     let mut tx = pool.begin().await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
-    faculty_repository::insert_lesson_schedule(&mut tx, &payload.topic_id, &payload.schedule_date, &payload.branch, &payload.year, &payload.section)
+    faculty_repository::insert_lesson_schedule(&mut tx, &payload.subject_id, &payload.topic_id, &payload.schedule_date, &payload.branch, &payload.year, &payload.section)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
     tx.commit().await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
