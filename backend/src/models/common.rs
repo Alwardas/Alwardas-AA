@@ -1151,9 +1151,12 @@ pub struct LessonTopicsQuery {
 #[derive(Serialize, Deserialize, Debug, FromRow, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct LessonTopicResponse {
-    pub id: Uuid,
+    pub id: String,
     pub topic: String,
     pub sno: Option<String>,
+    pub completed: bool,
+    pub completed_date: Option<chrono::DateTime<chrono::Utc>>,
+    pub schedule_date: Option<chrono::DateTime<chrono::Utc>>,
 }
 
 #[derive(Deserialize)]

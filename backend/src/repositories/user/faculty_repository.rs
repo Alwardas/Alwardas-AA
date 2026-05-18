@@ -388,8 +388,27 @@ pub async fn find_semester_subjects(pool: &PgPool, params: crate::models::Semest
 }
 
 pub async fn find_lesson_topics(pool: &PgPool, params: crate::models::LessonTopicsQuery) -> Result<Vec<crate::models::LessonTopicResponse>, sqlx::Error> {
-    sqlx::query_as::<Postgres, crate::models::LessonTopicResponse>("SELECT id, topic, text as description, sno FROM lesson_plan_items WHERE subject_id = $1 ORDER BY order_index ASC")
-        .bind(params.subject_id).fetch_all(pool).await
+    sqlx::query_as::<Postgres, crate::models::LessonTopicResponse>(
+        r#"
+        SELECT 
+            lpi.id::TEXT as id, 
+            lpi.topic, 
+            lpi.sno, 
+            COALESCE(lpp.completed, FALSE) as completed,
+            lpp.completed_date,
+            ls.schedule_date
+        FROM lesson_plan_items lpi
+        LEFT JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id AND (TRIM(lpp.section) = TRIM($2) OR $2 IS NULL)
+        LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id AND (TRIM(ls.section) = TRIM($2) OR $2 IS NULL) AND (ls.branch = $3 OR $3 IS NULL)
+        WHERE TRIM(lpi.subject_id) ILIKE TRIM($1)
+        ORDER BY lpi.order_index ASC
+        "#
+    )
+    .bind(&params.subject_id)
+    .bind(params.section.as_deref())
+    .bind(params.branch.as_deref())
+    .fetch_all(pool)
+    .await
 }
 
 pub async fn insert_lesson_schedule(executor: &mut sqlx::Transaction<'_, Postgres>, subject_id: &str, topic_id: &str, schedule_date: &str, branch: &str, year: &str, semester: &str, section: &str) -> Result<u64, sqlx::Error> {
