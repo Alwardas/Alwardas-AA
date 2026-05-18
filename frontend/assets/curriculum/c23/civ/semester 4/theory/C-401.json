@@ -1,0 +1,464 @@
+{
+    "subjectCode": "C-401",
+    "subjectName": "Construction Technology & Valuation",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 60,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Concrete Technology",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "c401-1.1",
+                    "sno": "1.1",
+                    "topic": "State the ingredients of Concrete.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.2",
+                    "sno": "1.2",
+                    "topic": "Define",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.3",
+                    "sno": "1.3",
+                    "topic": "Explain the relation between strength of concrete,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.4",
+                    "sno": "1.4",
+                    "topic": "Understand ‘Grades’ of concrete.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.5",
+                    "sno": "1.5",
+                    "topic": "state the grades of concrete recommended for different",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.6",
+                    "sno": "1.6",
+                    "topic": "Differentiate ‘Normal strength concrete and High strength",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.7",
+                    "sno": "1.7",
+                    "topic": "Differentiate between ‘Ordinary Concrete and Controlled",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.8",
+                    "sno": "1.8",
+                    "topic": "State the functions of Ad mixtures in concrete",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.9",
+                    "sno": "1.9",
+                    "topic": "List out different ad mixtures being used.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.10",
+                    "sno": "1.10",
+                    "topic": "State the Principles of Concrete Mix Design.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.11",
+                    "sno": "1.11",
+                    "topic": "State the factors affecting variability of concrete strength.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.12",
+                    "sno": "1.12",
+                    "topic": "Explain the procedure of Concrete Mix design using IS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.13",
+                    "sno": "1.13",
+                    "topic": "Understand the following special concretes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-1.14",
+                    "sno": "1.14",
+                    "topic": "Revision of Concrete Technology",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c401-1.15",
+                    "sno": "1.15",
+                    "topic": "Assessment / Practice / Problem Solving on Concrete Technology",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Construction Machinery and Equipment",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "c401-2.1",
+                    "sno": "2.1",
+                    "topic": "Understand the need for mechanization and construction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-2.2",
+                    "sno": "2.2",
+                    "topic": "State different types of construction equipment with help",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-2.3",
+                    "sno": "2.3",
+                    "topic": "Explain the uses of different construction equipment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-2.4",
+                    "sno": "2.4",
+                    "topic": "State the factors to be considered for the selection of type",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-2.5",
+                    "sno": "2.5",
+                    "topic": "Problem solving & numerical analysis of Understand the need for mechanization and construction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-2.6",
+                    "sno": "2.6",
+                    "topic": "Case study and practical applications of State different types of construction equipment with help",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-2.7",
+                    "sno": "2.7",
+                    "topic": "Tutorial / Practice session on Explain the uses of different construction equipment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-2.8",
+                    "sno": "2.8",
+                    "topic": "Problem solving & numerical analysis of State the factors to be considered for the selection of type",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-2.9",
+                    "sno": "2.9",
+                    "topic": "Revision of Construction Machinery and Equipment",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c401-2.10",
+                    "sno": "2.10",
+                    "topic": "Assessment / Practice / Problem Solving on Construction Machinery and Equipment",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Building Services",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "c401-3.1",
+                    "sno": "3.1",
+                    "topic": "Explain the hot water supply distribution using solar",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-3.2",
+                    "sno": "3.2",
+                    "topic": "State the requirements of good lighting in building.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-3.3",
+                    "sno": "3.3",
+                    "topic": "Define the terms 1. Glare and 2. Day light factor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-3.4",
+                    "sno": "3.4",
+                    "topic": "State the precautions to be taken to avoid glare in building",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-3.5",
+                    "sno": "3.5",
+                    "topic": "State the requirements of good electrical wiring.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-3.6",
+                    "sno": "3.6",
+                    "topic": "List the power rating of different domestic electrical",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-3.7",
+                    "sno": "3.7",
+                    "topic": "List the different types of electrical wirings.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-3.8",
+                    "sno": "3.8",
+                    "topic": "State the objectives of electrical earthing.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision of Building Services",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c401-3.10",
+                    "sno": "3.10",
+                    "topic": "Assessment / Practice / Problem Solving on Building Services",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Earthquake Resistant Structures",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "c401-4.1",
+                    "sno": "4.1",
+                    "topic": "List causes seismic waves, basic terminology",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-4.2",
+                    "sno": "4.2",
+                    "topic": "Explain 1. Magnitude, 2. Intensity and 3. Energy release",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-4.3",
+                    "sno": "4.3",
+                    "topic": "Characteristics of earthquake",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-4.4",
+                    "sno": "4.4",
+                    "topic": "Understand basic terminology of earthquake",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-4.5",
+                    "sno": "4.5",
+                    "topic": "Explain seismic zoning",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-4.6",
+                    "sno": "4.6",
+                    "topic": "Explain seismic construction with brick stone masonry",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-4.7",
+                    "sno": "4.7",
+                    "topic": "Explain seismic construction with stone masonry",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-4.8",
+                    "sno": "4.8",
+                    "topic": "Understand seismic construction and detailing of R.C.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-4.9",
+                    "sno": "4.9",
+                    "topic": "Revision of Earthquake Resistant Structures",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c401-4.10",
+                    "sno": "4.10",
+                    "topic": "Assessment / Practice / Problem Solving on Earthquake Resistant Structures",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Building Valuation",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "c401-5.1",
+                    "sno": "5.1",
+                    "topic": "State the need for valuation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.2",
+                    "sno": "5.2",
+                    "topic": "Explain the following terms:",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.3",
+                    "sno": "5.3",
+                    "topic": "Lists different methods of valuation of buildings.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.4",
+                    "sno": "5.4",
+                    "topic": "Explains different methods of valuation of buildings.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.5",
+                    "sno": "5.5",
+                    "topic": "State methods of rent fixation of building.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.6",
+                    "sno": "5.6",
+                    "topic": "Explain methods of rent fixation of building.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.7",
+                    "sno": "5.7",
+                    "topic": "Tutorial / Practice session on State the need for valuation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.8",
+                    "sno": "5.8",
+                    "topic": "Problem solving & numerical analysis of Explain the following terms:",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.9",
+                    "sno": "5.9",
+                    "topic": "Case study and practical applications of Lists different methods of valuation of buildings.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.10",
+                    "sno": "5.10",
+                    "topic": "Tutorial / Practice session on Explains different methods of valuation of buildings.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.11",
+                    "sno": "5.11",
+                    "topic": "Problem solving & numerical analysis of State methods of rent fixation of building.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.12",
+                    "sno": "5.12",
+                    "topic": "Case study and practical applications of Explain methods of rent fixation of building.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.13",
+                    "sno": "5.13",
+                    "topic": "Tutorial / Practice session on State the need for valuation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c401-5.14",
+                    "sno": "5.14",
+                    "topic": "Revision of Building Valuation",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c401-5.15",
+                    "sno": "5.15",
+                    "topic": "Assessment / Practice / Problem Solving on Building Valuation",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

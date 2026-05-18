@@ -1,0 +1,884 @@
+{
+    "subjectCode": "C-106",
+    "subjectName": "Surveying-I",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 120,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction to Surveying",
+            "totalPeriods": 7,
+            "topics": [
+                {
+                    "id": "c106-1.1",
+                    "sno": "1.1",
+                    "topic": "State the concept of surveying.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-1.2",
+                    "sno": "1.2",
+                    "topic": "State the purpose of surveying.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-1.3",
+                    "sno": "1.3",
+                    "topic": "Distinguish between 1. Plane and 2. Geodetic surveying.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-1.4",
+                    "sno": "1.4",
+                    "topic": "State the units of linear and angular measurements in",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-1.5",
+                    "sno": "1.5",
+                    "topic": "List the instruments used for taking linear and angular",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-1.6",
+                    "sno": "1.6",
+                    "topic": "Revision of Introduction to Surveying",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c106-1.7",
+                    "sno": "1.7",
+                    "topic": "Assessment / Practice / Problem Solving on Introduction to Surveying",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Chain Surveying",
+            "totalPeriods": 27,
+            "topics": [
+                {
+                    "id": "c106-2.1",
+                    "sno": "2.1",
+                    "topic": "State the purpose and principle of Chain surveying and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.2",
+                    "sno": "2.2",
+                    "topic": "List different instruments used in Chain Surveying and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.3",
+                    "sno": "2.3",
+                    "topic": "List the six points to be followed while selecting the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.4",
+                    "sno": "2.4",
+                    "topic": "Define ranging and explain methods of ranging a line.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.5",
+                    "sno": "2.5",
+                    "topic": "State the duties of leader and follower while Chaining a",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.6",
+                    "sno": "2.6",
+                    "topic": "Describe in detail the method of setting out right angles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.7",
+                    "sno": "2.7",
+                    "topic": "Explain Field work procedure in Chain survey and Method",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.8",
+                    "sno": "2.8",
+                    "topic": "List different sign conventions used in chain survey.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.9",
+                    "sno": "2.9",
+                    "topic": "Explain the methods of overcoming different obstacles in",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.10",
+                    "sno": "2.10",
+                    "topic": "Calculate the areas of irregular boundaries using Average",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.11",
+                    "sno": "2.11",
+                    "topic": "Select the correct instruments to draw the different lines /",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.12",
+                    "sno": "2.12",
+                    "topic": "Use correct grade of pencil to draw different types of lines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.13",
+                    "sno": "2.13",
+                    "topic": "Select and use appropriate scales for a given application.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.14",
+                    "sno": "2.14",
+                    "topic": "Identify different drawing sheet sizes as per I.S. and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.15",
+                    "sno": "2.15",
+                    "topic": "Prepare Title block as per B.I.S. Specifications.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.16",
+                    "sno": "2.16",
+                    "topic": "Identify the steps to be taken to keep the drawing clean",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.17",
+                    "sno": "2.17",
+                    "topic": "Identify the parts of a prismatic Compass",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.18",
+                    "sno": "2.18",
+                    "topic": "Set up the compass at a station and carry out temporary",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.19",
+                    "sno": "2.19",
+                    "topic": "Take bearings of two points from instrument station and calculate the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.20",
+                    "sno": "2.20",
+                    "topic": "Perform an open traverse with Compass and Chain.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.21",
+                    "sno": "2.21",
+                    "topic": "Perform a closed traverse with compass and chain.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.22",
+                    "sno": "2.22",
+                    "topic": "Tutorial / Practice session on State the purpose and principle of Chain surveying and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.23",
+                    "sno": "2.23",
+                    "topic": "Problem solving & numerical analysis of List different instruments used in Chain Surveying and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.24",
+                    "sno": "2.24",
+                    "topic": "Case study and practical applications of List the six points to be followed while selecting the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.25",
+                    "sno": "2.25",
+                    "topic": "Tutorial / Practice session on Define ranging and explain methods of ranging a line.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-2.26",
+                    "sno": "2.26",
+                    "topic": "Revision of Chain Surveying",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c106-2.27",
+                    "sno": "2.27",
+                    "topic": "Assessment / Practice / Problem Solving on Chain Surveying",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Compass Surveying",
+            "totalPeriods": 35,
+            "topics": [
+                {
+                    "id": "c106-3.1",
+                    "sno": "3.1",
+                    "topic": "State the purpose and principles of Compass surveying.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.2",
+                    "sno": "3.2",
+                    "topic": "Identify the parts of Prismatic Compass and state their",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.3",
+                    "sno": "3.3",
+                    "topic": "Define -Whole Circle Bearing, Quadrantal Bearing, True",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.4",
+                    "sno": "3.4",
+                    "topic": "Convert Whole Circle Bearing in to Quadrantal Bearing and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.5",
+                    "sno": "3.5",
+                    "topic": "Explain local attraction and its effects.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.6",
+                    "sno": "3.6",
+                    "topic": "Compute the included angles of lines in a Compass",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.7",
+                    "sno": "3.7",
+                    "topic": "Explain the operations involved in field in compass",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.8",
+                    "sno": "3.8",
+                    "topic": "Explain methods of recording field notes and plotting",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.9",
+                    "sno": "3.9",
+                    "topic": "Explain errors in Compass surveying.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.10",
+                    "sno": "3.10",
+                    "topic": "Write titles using sloping lettering and numerals of 7mm,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.11",
+                    "sno": "3.11",
+                    "topic": "Write titles using vertical lettering and numerals of 7mm,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.12",
+                    "sno": "3.12",
+                    "topic": "Select suitable sizes of lettering for different layouts and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.13",
+                    "sno": "3.13",
+                    "topic": "Identify the component parts of a dumpy level / Auto level and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.14",
+                    "sno": "3.14",
+                    "topic": "Perform temporary adjustments of a dumpy level / Auto level for",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.15",
+                    "sno": "3.15",
+                    "topic": "Take staff readings for differential levelling and Compute the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.16",
+                    "sno": "3.16",
+                    "topic": "Conduct profile levelling along a route and compute the RLs at various",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.17",
+                    "sno": "3.17",
+                    "topic": "Conduct profile levelling by taking cross sections across a route and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.18",
+                    "sno": "3.18",
+                    "topic": "Conduct profile levelling along a route by taking readings along both",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.19",
+                    "sno": "3.19",
+                    "topic": "Conduct block levelling for the given area",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.20",
+                    "sno": "3.20",
+                    "topic": "Locate the contour Points by Radial method in the field",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.21",
+                    "sno": "3.21",
+                    "topic": "Case study and practical applications of State the purpose and principles of Compass surveying.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.22",
+                    "sno": "3.22",
+                    "topic": "Tutorial / Practice session on Identify the parts of Prismatic Compass and state their",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.23",
+                    "sno": "3.23",
+                    "topic": "Problem solving & numerical analysis of Define -Whole Circle Bearing, Quadrantal Bearing, True",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.24",
+                    "sno": "3.24",
+                    "topic": "Case study and practical applications of Convert Whole Circle Bearing in to Quadrantal Bearing and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.25",
+                    "sno": "3.25",
+                    "topic": "Tutorial / Practice session on Explain local attraction and its effects.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.26",
+                    "sno": "3.26",
+                    "topic": "Problem solving & numerical analysis of Compute the included angles of lines in a Compass",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.27",
+                    "sno": "3.27",
+                    "topic": "Case study and practical applications of Explain the operations involved in field in compass",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.28",
+                    "sno": "3.28",
+                    "topic": "Tutorial / Practice session on Explain methods of recording field notes and plotting",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.29",
+                    "sno": "3.29",
+                    "topic": "Problem solving & numerical analysis of Explain errors in Compass surveying.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.30",
+                    "sno": "3.30",
+                    "topic": "Case study and practical applications of Write titles using sloping lettering and numerals of 7mm,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.31",
+                    "sno": "3.31",
+                    "topic": "Tutorial / Practice session on Write titles using vertical lettering and numerals of 7mm,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.32",
+                    "sno": "3.32",
+                    "topic": "Problem solving & numerical analysis of Select suitable sizes of lettering for different layouts and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.33",
+                    "sno": "3.33",
+                    "topic": "Case study and practical applications of Identify the component parts of a dumpy level / Auto level and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-3.34",
+                    "sno": "3.34",
+                    "topic": "Revision of Compass Surveying",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c106-3.35",
+                    "sno": "3.35",
+                    "topic": "Assessment / Practice / Problem Solving on Compass Surveying",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Levelling",
+            "totalPeriods": 48,
+            "topics": [
+                {
+                    "id": "c106-4.1",
+                    "sno": "4.1",
+                    "topic": "Define levelling and List the types of levelling instruments,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.2",
+                    "sno": "4.2",
+                    "topic": "List the component parts of a dumpy level and their",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.3",
+                    "sno": "4.3",
+                    "topic": "List different types of levelling staves, tabulate the levelling",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.4",
+                    "sno": "4.4",
+                    "topic": "List the different types of Levelling and describe in detail",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.5",
+                    "sno": "4.5",
+                    "topic": "State the Errors in levelling and the Precautions to be taken",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.6",
+                    "sno": "4.6",
+                    "topic": "List the errors eliminated in reciprocal levelling, Derive the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.7",
+                    "sno": "4.7",
+                    "topic": "List the fundamental lines of dumpy level and state the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.8",
+                    "sno": "4.8",
+                    "topic": "Define Contour, Contour interval and Horizontal",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.9",
+                    "sno": "4.9",
+                    "topic": "Acquaint with the conventions, notations, rules and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.10",
+                    "sno": "4.10",
+                    "topic": "Dimension a given drawing using standard notations and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.11",
+                    "sno": "4.11",
+                    "topic": "Understand the importance and relation between field",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.12",
+                    "sno": "4.12",
+                    "topic": "Case study and practical applications of Define levelling and List the types of levelling instruments,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.13",
+                    "sno": "4.13",
+                    "topic": "Tutorial / Practice session on List the component parts of a dumpy level and their",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.14",
+                    "sno": "4.14",
+                    "topic": "Problem solving & numerical analysis of List different types of levelling staves, tabulate the levelling",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.15",
+                    "sno": "4.15",
+                    "topic": "Case study and practical applications of List the different types of Levelling and describe in detail",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.16",
+                    "sno": "4.16",
+                    "topic": "Tutorial / Practice session on State the Errors in levelling and the Precautions to be taken",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.17",
+                    "sno": "4.17",
+                    "topic": "Problem solving & numerical analysis of List the errors eliminated in reciprocal levelling, Derive the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.18",
+                    "sno": "4.18",
+                    "topic": "Case study and practical applications of List the fundamental lines of dumpy level and state the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.19",
+                    "sno": "4.19",
+                    "topic": "Tutorial / Practice session on Define Contour, Contour interval and Horizontal",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.20",
+                    "sno": "4.20",
+                    "topic": "Problem solving & numerical analysis of Acquaint with the conventions, notations, rules and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.21",
+                    "sno": "4.21",
+                    "topic": "Case study and practical applications of Dimension a given drawing using standard notations and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.22",
+                    "sno": "4.22",
+                    "topic": "Tutorial / Practice session on Understand the importance and relation between field",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.23",
+                    "sno": "4.23",
+                    "topic": "Problem solving & numerical analysis of Define levelling and List the types of levelling instruments,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.24",
+                    "sno": "4.24",
+                    "topic": "Case study and practical applications of List the component parts of a dumpy level and their",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.25",
+                    "sno": "4.25",
+                    "topic": "Tutorial / Practice session on List different types of levelling staves, tabulate the levelling",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.26",
+                    "sno": "4.26",
+                    "topic": "Problem solving & numerical analysis of List the different types of Levelling and describe in detail",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.27",
+                    "sno": "4.27",
+                    "topic": "Case study and practical applications of State the Errors in levelling and the Precautions to be taken",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.28",
+                    "sno": "4.28",
+                    "topic": "Tutorial / Practice session on List the errors eliminated in reciprocal levelling, Derive the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.29",
+                    "sno": "4.29",
+                    "topic": "Problem solving & numerical analysis of List the fundamental lines of dumpy level and state the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.30",
+                    "sno": "4.30",
+                    "topic": "Case study and practical applications of Define Contour, Contour interval and Horizontal",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.31",
+                    "sno": "4.31",
+                    "topic": "Tutorial / Practice session on Acquaint with the conventions, notations, rules and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.32",
+                    "sno": "4.32",
+                    "topic": "Problem solving & numerical analysis of Dimension a given drawing using standard notations and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.33",
+                    "sno": "4.33",
+                    "topic": "Case study and practical applications of Understand the importance and relation between field",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.34",
+                    "sno": "4.34",
+                    "topic": "Tutorial / Practice session on Define levelling and List the types of levelling instruments,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.35",
+                    "sno": "4.35",
+                    "topic": "Problem solving & numerical analysis of List the component parts of a dumpy level and their",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.36",
+                    "sno": "4.36",
+                    "topic": "Case study and practical applications of List different types of levelling staves, tabulate the levelling",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.37",
+                    "sno": "4.37",
+                    "topic": "Tutorial / Practice session on List the different types of Levelling and describe in detail",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.38",
+                    "sno": "4.38",
+                    "topic": "Problem solving & numerical analysis of State the Errors in levelling and the Precautions to be taken",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.39",
+                    "sno": "4.39",
+                    "topic": "Case study and practical applications of List the errors eliminated in reciprocal levelling, Derive the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.40",
+                    "sno": "4.40",
+                    "topic": "Tutorial / Practice session on List the fundamental lines of dumpy level and state the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.41",
+                    "sno": "4.41",
+                    "topic": "Problem solving & numerical analysis of Define Contour, Contour interval and Horizontal",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.42",
+                    "sno": "4.42",
+                    "topic": "Case study and practical applications of Acquaint with the conventions, notations, rules and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.43",
+                    "sno": "4.43",
+                    "topic": "Tutorial / Practice session on Dimension a given drawing using standard notations and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.44",
+                    "sno": "4.44",
+                    "topic": "Problem solving & numerical analysis of Understand the importance and relation between field",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.45",
+                    "sno": "4.45",
+                    "topic": "Case study and practical applications of Define levelling and List the types of levelling instruments,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.46",
+                    "sno": "4.46",
+                    "topic": "Tutorial / Practice session on List the component parts of a dumpy level and their",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-4.47",
+                    "sno": "4.47",
+                    "topic": "Revision of Levelling",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c106-4.48",
+                    "sno": "4.48",
+                    "topic": "Assessment / Practice / Problem Solving on Levelling",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Minor Instruments",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "c106-5.1",
+                    "sno": "5.1",
+                    "topic": "Explain the need for using Minor instruments",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c106-5.2",
+                    "sno": "5.2",
+                    "topic": "Revision of Minor Instruments",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c106-5.3",
+                    "sno": "5.3",
+                    "topic": "Assessment / Practice / Problem Solving on Minor Instruments",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,471 @@
+{
+    "subjectCode": "C-403",
+    "subjectName": "Construction Practice",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 60,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Classification, Planning of buildings and foundations",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "c403-1.1",
+                    "sno": "1.1",
+                    "topic": "List the components of a building. Explain the functions of",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-1.2",
+                    "sno": "1.2",
+                    "topic": "Classify the buildings according to National Building Code",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-1.3",
+                    "sno": "1.3",
+                    "topic": "Explain the investigations required for foundation as per",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-1.4",
+                    "sno": "1.4",
+                    "topic": "Describe line diagrams of Spread footings, Raft foundation,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-1.5",
+                    "sno": "1.5",
+                    "topic": "Explain the terms Bearing capacity, Safe bearing capacity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-1.6",
+                    "sno": "1.6",
+                    "topic": "State the loads to be considered in design of foundation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-1.7",
+                    "sno": "1.7",
+                    "topic": "List rules for minimum depth, width of foundation and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-1.8",
+                    "sno": "1.8",
+                    "topic": "Explain the method of constructing spread footing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-1.9",
+                    "sno": "1.9",
+                    "topic": "Lists the causes of dampness at basement level. Lists the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-1.10",
+                    "sno": "1.10",
+                    "topic": "Introduction to Physical factors in designing a building.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-1.11",
+                    "sno": "1.11",
+                    "topic": "Revision of Classification, Planning of buildings and foundations",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c403-1.12",
+                    "sno": "1.12",
+                    "topic": "Assessment / Practice / Problem Solving on Classification, Planning of buildings and foundations",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Masonry",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "c403-2.1",
+                    "sno": "2.1",
+                    "topic": "List different types of stone masonry.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-2.2",
+                    "sno": "2.2",
+                    "topic": "Explain the different types of stone masonry.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-2.3",
+                    "sno": "2.3",
+                    "topic": "State the general principles to be observed in stone masonry",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-2.4",
+                    "sno": "2.4",
+                    "topic": "Explain Bond, Course, Header and Stretcher in brick",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-2.5",
+                    "sno": "2.5",
+                    "topic": "List general principles of brick masonry.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-2.6",
+                    "sno": "2.6",
+                    "topic": "Explain with sketches, English bond for alternate layers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-2.7",
+                    "sno": "2.7",
+                    "topic": "Explain masonry with Pre-cast concrete solid blocks, Hollow",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-2.8",
+                    "sno": "2.8",
+                    "topic": "Problem solving & numerical analysis of List different types of stone masonry.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-2.9",
+                    "sno": "2.9",
+                    "topic": "Revision of Masonry",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c403-2.10",
+                    "sno": "2.10",
+                    "topic": "Assessment / Practice / Problem Solving on Masonry",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Doors, Windows and Lintels, Sunshades",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "c403-3.1",
+                    "sno": "3.1",
+                    "topic": "State the principles of locating doors, windows and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-3.2",
+                    "sno": "3.2",
+                    "topic": "Explain with sketches common and special types of doors,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-3.3",
+                    "sno": "3.3",
+                    "topic": "List the uses of different types of doors, windows and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-3.4",
+                    "sno": "3.4",
+                    "topic": "Explain the fittings and fastenings of doors, windows and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-3.5",
+                    "sno": "3.5",
+                    "topic": "Explain the functions and types of lintels.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-3.6",
+                    "sno": "3.6",
+                    "topic": "Explain the functions of sunshades, canopy, sun-breakers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-3.7",
+                    "sno": "3.7",
+                    "topic": "Explain about thin lintel developed by CBRI with simple",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-3.8",
+                    "sno": "3.8",
+                    "topic": "Problem solving & numerical analysis of State the principles of locating doors, windows and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision of Doors, Windows and Lintels, Sunshades",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c403-3.10",
+                    "sno": "3.10",
+                    "topic": "Assessment / Practice / Problem Solving on Doors, Windows and Lintels, Sunshades",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Roofs, Floorings and Stair Cases",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "c403-4.1",
+                    "sno": "4.1",
+                    "topic": "State the functions and classification of roofs.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-4.2",
+                    "sno": "4.2",
+                    "topic": "State the classification of trusses based on material and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-4.3",
+                    "sno": "4.3",
+                    "topic": "Explain with sketches king post truss, queen post truss, fan",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-4.4",
+                    "sno": "4.4",
+                    "topic": "Explain with sketches A type, B type steel trusses using",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-4.5",
+                    "sno": "4.5",
+                    "topic": "State the common and decorative ceilings used in",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-4.6",
+                    "sno": "4.6",
+                    "topic": "State the component parts and functions of flooring. List the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-4.7",
+                    "sno": "4.7",
+                    "topic": "Explain method of construction of C.C flooring, stone slab",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-4.8",
+                    "sno": "4.8",
+                    "topic": "Explain terms: rise, tread, landing, flight, going, hand rail,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-4.9",
+                    "sno": "4.9",
+                    "topic": "Draw the line diagrams of different stairs.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-4.10",
+                    "sno": "4.10",
+                    "topic": "Tutorial / Practice session on State the functions and classification of roofs.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-4.11",
+                    "sno": "4.11",
+                    "topic": "Revision of Roofs, Floorings and Stair Cases",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c403-4.12",
+                    "sno": "4.12",
+                    "topic": "Assessment / Practice / Problem Solving on Roofs, Floorings and Stair Cases",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Scaffolding and Form work",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "c403-5.1",
+                    "sno": "5.1",
+                    "topic": "State the purpose of scaffolding.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-5.2",
+                    "sno": "5.2",
+                    "topic": "Define scaffolding and mention the types.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-5.3",
+                    "sno": "5.3",
+                    "topic": "List the component parts of tubular scaffolding.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-5.4",
+                    "sno": "5.4",
+                    "topic": "Sketch and explain about tubular scaffolding.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-5.5",
+                    "sno": "5.5",
+                    "topic": "Revision of Scaffolding and Form work",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c403-5.6",
+                    "sno": "5.6",
+                    "topic": "Assessment / Practice / Problem Solving on Scaffolding and Form work",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Protective, decorative finishes and Termite proofing",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "c403-6.1",
+                    "sno": "6.1",
+                    "topic": "State the objects and methods of plastering. State the steps in",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-6.2",
+                    "sno": "6.2",
+                    "topic": "State the use of wall putty as a decorative finish on masonry",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-6.3",
+                    "sno": "6.3",
+                    "topic": "State the objects and types of pointing.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-6.4",
+                    "sno": "6.4",
+                    "topic": "State the objects of painting. Explain the method of painting",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-6.5",
+                    "sno": "6.5",
+                    "topic": "Explain briefly the method of white washing, colour",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-6.6",
+                    "sno": "6.6",
+                    "topic": "Define termite proofing. Explain the method of termite",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-6.7",
+                    "sno": "6.7",
+                    "topic": "Tutorial / Practice session on State the objects and methods of plastering. State the steps in",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-6.8",
+                    "sno": "6.8",
+                    "topic": "Problem solving & numerical analysis of State the use of wall putty as a decorative finish on masonry",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c403-6.9",
+                    "sno": "6.9",
+                    "topic": "Revision of Protective, decorative finishes and Termite proofing",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c403-6.10",
+                    "sno": "6.10",
+                    "topic": "Assessment / Practice / Problem Solving on Protective, decorative finishes and Termite proofing",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

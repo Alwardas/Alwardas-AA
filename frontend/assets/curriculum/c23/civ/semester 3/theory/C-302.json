@@ -1,0 +1,576 @@
+{
+    "subjectCode": "C-302",
+    "subjectName": "Mechanics of Solids & Theory of Structures",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Theory of simple bending",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "c302-1.1",
+                    "sno": "1.1",
+                    "topic": "Define simple / pure bending and explain the process of",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.2",
+                    "sno": "1.2",
+                    "topic": "Define",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.3",
+                    "sno": "1.3",
+                    "topic": "List the assumptions made in the theory of simple bending",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.4",
+                    "sno": "1.4",
+                    "topic": "Explain and Sketch bending stress distribution across the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.5",
+                    "sno": "1.5",
+                    "topic": "Define Modulus of section and Flexural rigidity and derive",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.6",
+                    "sno": "1.6",
+                    "topic": "Solve problems on theory of simple bending for",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.7",
+                    "sno": "1.7",
+                    "topic": "State formula for calculation of Shear Stress in any layer of a",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.8",
+                    "sno": "1.8",
+                    "topic": "Determine shear stress at any layer and draw shear stress",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.9",
+                    "sno": "1.9",
+                    "topic": "Determine the maximum shear stress in circular,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.10",
+                    "sno": "1.10",
+                    "topic": "Tutorial / Practice session on Define simple / pure bending and explain the process of",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.11",
+                    "sno": "1.11",
+                    "topic": "Problem solving & numerical analysis of Define",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.12",
+                    "sno": "1.12",
+                    "topic": "Case study and practical applications of List the assumptions made in the theory of simple bending",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.13",
+                    "sno": "1.13",
+                    "topic": "Tutorial / Practice session on Explain and Sketch bending stress distribution across the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-1.14",
+                    "sno": "1.14",
+                    "topic": "Revision of Theory of simple bending",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c302-1.15",
+                    "sno": "1.15",
+                    "topic": "Assessment / Practice / Problem Solving on Theory of simple bending",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Deflection of beams",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "c302-2.1",
+                    "sno": "2.1",
+                    "topic": "Draw the deflected shapes of different types of beams (like",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.2",
+                    "sno": "2.2",
+                    "topic": "Distinguish between strength and stiffness of a beam.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.3",
+                    "sno": "2.3",
+                    "topic": "Derive relation between slope, deflection and radius of",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.4",
+                    "sno": "2.4",
+                    "topic": "Derive the equations for maximum slope and deflection by",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.5",
+                    "sno": "2.5",
+                    "topic": "Calculate the maximum slope and deflection in simply",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.6",
+                    "sno": "2.6",
+                    "topic": "Explain Macaulay’s method (for Simply supported beams)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.7",
+                    "sno": "2.7",
+                    "topic": "Compute the maximum slope and deflection for Simply",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.8",
+                    "sno": "2.8",
+                    "topic": "Explain the moment area method for slope and deflection",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.9",
+                    "sno": "2.9",
+                    "topic": "Derive formulae for maximum slope and deflection of",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.10",
+                    "sno": "2.10",
+                    "topic": "Compute the maximum slope and deflections for Cantilever",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.11",
+                    "sno": "2.11",
+                    "topic": "Problem solving & numerical analysis of Draw the deflected shapes of different types of beams (like",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.12",
+                    "sno": "2.12",
+                    "topic": "Case study and practical applications of Distinguish between strength and stiffness of a beam.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.13",
+                    "sno": "2.13",
+                    "topic": "Tutorial / Practice session on Derive relation between slope, deflection and radius of",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-2.14",
+                    "sno": "2.14",
+                    "topic": "Revision of Deflection of beams",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c302-2.15",
+                    "sno": "2.15",
+                    "topic": "Assessment / Practice / Problem Solving on Deflection of beams",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Columns and Struts",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "c302-3.1",
+                    "sno": "3.1",
+                    "topic": "Define: i) Compression member ii) Axial Loading iii) List",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-3.2",
+                    "sno": "3.2",
+                    "topic": "Calculate least radius of gyration for solid/hollow circular,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-3.3",
+                    "sno": "3.3",
+                    "topic": "List different end conditions used for a column,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-3.4",
+                    "sno": "3.4",
+                    "topic": "Define i) Effective/equivalent length",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-3.5",
+                    "sno": "3.5",
+                    "topic": "List the effective lengths of columns for different end",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-3.6",
+                    "sno": "3.6",
+                    "topic": "State Euler’s formula for crippling load of a column/strut",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-3.7",
+                    "sno": "3.7",
+                    "topic": "Explain the validity of Rankine’s formula for short and long",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-3.8",
+                    "sno": "3.8",
+                    "topic": "Calculate the ratio of strengths of hollow and solid circular",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision of Columns and Struts",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c302-3.10",
+                    "sno": "3.10",
+                    "topic": "Assessment / Practice / Problem Solving on Columns and Struts",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Dams and Retaining walls",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "c302-4.1",
+                    "sno": "4.1",
+                    "topic": "Define a dam/retaining wall; List the forces acting on a",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.2",
+                    "sno": "4.2",
+                    "topic": "Derive the formula for maximum and minimum stress",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.3",
+                    "sno": "4.3",
+                    "topic": "List the conditions for stability of a dam/retaining wall,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.4",
+                    "sno": "4.4",
+                    "topic": "Explain the procedure to find the stresses at the base of a dam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.5",
+                    "sno": "4.5",
+                    "topic": "Define: i) Angle of repose of soil",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.6",
+                    "sno": "4.6",
+                    "topic": "Compute the lateral earth pressure on a retaining wall",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.7",
+                    "sno": "4.7",
+                    "topic": "Calculate the stresses at the base of a retaining wall for the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.8",
+                    "sno": "4.8",
+                    "topic": "Check the stability of a retaining wall with soil face vertical",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.9",
+                    "sno": "4.9",
+                    "topic": "State Rankine’s formula for minimum depth of foundation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.10",
+                    "sno": "4.10",
+                    "topic": "Tutorial / Practice session on Define a dam/retaining wall; List the forces acting on a",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.11",
+                    "sno": "4.11",
+                    "topic": "Problem solving & numerical analysis of Derive the formula for maximum and minimum stress",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.12",
+                    "sno": "4.12",
+                    "topic": "Case study and practical applications of List the conditions for stability of a dam/retaining wall,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.13",
+                    "sno": "4.13",
+                    "topic": "Tutorial / Practice session on Explain the procedure to find the stresses at the base of a dam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-4.14",
+                    "sno": "4.14",
+                    "topic": "Revision of Dams and Retaining walls",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c302-4.15",
+                    "sno": "4.15",
+                    "topic": "Assessment / Practice / Problem Solving on Dams and Retaining walls",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Statically indeterminate beams",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "c302-5.1",
+                    "sno": "5.1",
+                    "topic": "Differentiate between a statically determinate and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-5.2",
+                    "sno": "5.2",
+                    "topic": "Calculate prop reaction of propped cantilever subjected to",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-5.3",
+                    "sno": "5.3",
+                    "topic": "State the merits and demerits of fixed beams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-5.4",
+                    "sno": "5.4",
+                    "topic": "State the merits and demerits of continuous beams and the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-5.5",
+                    "sno": "5.5",
+                    "topic": "Problem solving & numerical analysis of Differentiate between a statically determinate and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-5.6",
+                    "sno": "5.6",
+                    "topic": "Case study and practical applications of Calculate prop reaction of propped cantilever subjected to",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-5.7",
+                    "sno": "5.7",
+                    "topic": "Tutorial / Practice session on State the merits and demerits of fixed beams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-5.8",
+                    "sno": "5.8",
+                    "topic": "Problem solving & numerical analysis of State the merits and demerits of continuous beams and the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-5.9",
+                    "sno": "5.9",
+                    "topic": "Revision of Statically indeterminate beams",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c302-5.10",
+                    "sno": "5.10",
+                    "topic": "Assessment / Practice / Problem Solving on Statically indeterminate beams",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Stresses in frames",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "c302-6.1",
+                    "sno": "6.1",
+                    "topic": "Define a frame.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-6.2",
+                    "sno": "6.2",
+                    "topic": "Classify the fames based on a) Number of members and b)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-6.3",
+                    "sno": "6.3",
+                    "topic": "Show the sign convention for different types of stresses in",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-6.4",
+                    "sno": "6.4",
+                    "topic": "Explain the rules for assuming the direction of stresses in the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-6.5",
+                    "sno": "6.5",
+                    "topic": "Explain the method of calculating stresses/forces in the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-6.6",
+                    "sno": "6.6",
+                    "topic": "Calculate the forces in the members of a simply supported or",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-6.7",
+                    "sno": "6.7",
+                    "topic": "Differentiate method of joints and method of sections.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-6.8",
+                    "sno": "6.8",
+                    "topic": "Problem solving & numerical analysis of Define a frame.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c302-6.9",
+                    "sno": "6.9",
+                    "topic": "Revision of Stresses in frames",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c302-6.10",
+                    "sno": "6.10",
+                    "topic": "Assessment / Practice / Problem Solving on Stresses in frames",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,471 @@
+{
+    "subjectCode": "C-304",
+    "subjectName": "Surveying-II",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 60,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Theodolite Survey",
+            "totalPeriods": 14,
+            "topics": [
+                {
+                    "id": "c304-1.1",
+                    "sno": "1.1",
+                    "topic": "List the uses and types of a Theodolite, differentiate between",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.2",
+                    "sno": "1.2",
+                    "topic": "Define the terms Face left observation, Face right observation,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.3",
+                    "sno": "1.3",
+                    "topic": "Explain the method of measuring the horizontal angle by",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.4",
+                    "sno": "1.4",
+                    "topic": "Explain the method of measuring of horizontal angle by",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.5",
+                    "sno": "1.5",
+                    "topic": "Explain the method of measurement of Direct angles and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.6",
+                    "sno": "1.6",
+                    "topic": "Explain the methods of measurement of vertical angles, magnetic",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.7",
+                    "sno": "1.7",
+                    "topic": "Explain the method of conducting traverse survey by Included",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.8",
+                    "sno": "1.8",
+                    "topic": "Define Latitude and Departure of a line, Compute the latitudes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.9",
+                    "sno": "1.9",
+                    "topic": "Enumerate the difference between consecutive and independent",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.10",
+                    "sno": "1.10",
+                    "topic": "List the types of errors in theodolite surveying.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.11",
+                    "sno": "1.11",
+                    "topic": "Problem solving & numerical analysis of List the uses and types of a Theodolite, differentiate between",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.12",
+                    "sno": "1.12",
+                    "topic": "Case study and practical applications of Define the terms Face left observation, Face right observation,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-1.13",
+                    "sno": "1.13",
+                    "topic": "Revision of Theodolite Survey",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c304-1.14",
+                    "sno": "1.14",
+                    "topic": "Assessment / Practice / Problem Solving on Theodolite Survey",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Trigonometric levelling",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "c304-2.1",
+                    "sno": "2.1",
+                    "topic": "Define trigonometrical levelling",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-2.2",
+                    "sno": "2.2",
+                    "topic": "Explain different cases that occur in trigonometrical levelling to",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-2.3",
+                    "sno": "2.3",
+                    "topic": "Derive formula for finding height and elevation of an object when",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-2.4",
+                    "sno": "2.4",
+                    "topic": "Calculate the height and elevation of an object when the base of",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-2.5",
+                    "sno": "2.5",
+                    "topic": "Derive the formula to find the distance and elevation of the object",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-2.6",
+                    "sno": "2.6",
+                    "topic": "Calculate the distance and elevation of the object when the base of",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-2.7",
+                    "sno": "2.7",
+                    "topic": "Describe the procedure to find the distance and elevation of the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-2.8",
+                    "sno": "2.8",
+                    "topic": "Revision of Trigonometric levelling",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c304-2.9",
+                    "sno": "2.9",
+                    "topic": "Assessment / Practice / Problem Solving on Trigonometric levelling",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Tacheometry",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "c304-3.1",
+                    "sno": "3.1",
+                    "topic": "Define tacheometry and uses of tacheometry and explain the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-3.2",
+                    "sno": "3.2",
+                    "topic": "List the constants of tacheometry in stadia tacheometry",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-3.3",
+                    "sno": "3.3",
+                    "topic": "Derive the formulae to determine the horizontal distance of staff",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-3.4",
+                    "sno": "3.4",
+                    "topic": "Derive the formulae to determine the elevation of the staff station",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-3.5",
+                    "sno": "3.5",
+                    "topic": "Explain the procedure for determining tacheometric constants,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-3.6",
+                    "sno": "3.6",
+                    "topic": "Write the formulae to determine the horizontal distance of staff",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-3.7",
+                    "sno": "3.7",
+                    "topic": "Calculate the horizontal distance of staff station from the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-3.8",
+                    "sno": "3.8",
+                    "topic": "Revision of Tacheometry",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c304-3.9",
+                    "sno": "3.9",
+                    "topic": "Assessment / Practice / Problem Solving on Tacheometry",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Curves",
+            "totalPeriods": 14,
+            "topics": [
+                {
+                    "id": "c304-4.1",
+                    "sno": "4.1",
+                    "topic": "List the types of horizontal curves",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.2",
+                    "sno": "4.2",
+                    "topic": "Define Simple curve",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.3",
+                    "sno": "4.3",
+                    "topic": "Define degree of curve and state the relation between the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.4",
+                    "sno": "4.4",
+                    "topic": "Sketch a simple circular curve and show its elements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.5",
+                    "sno": "4.5",
+                    "topic": "Define various elements of a simple circular curve",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.6",
+                    "sno": "4.6",
+                    "topic": "Compute the length of curve, tangent length, length of long",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.7",
+                    "sno": "4.7",
+                    "topic": "List the linear and angular methods of curve setting",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.8",
+                    "sno": "4.8",
+                    "topic": "Explain the procedure for setting out a curve by linear",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.9",
+                    "sno": "4.9",
+                    "topic": "Case study and practical applications of List the types of horizontal curves",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.10",
+                    "sno": "4.10",
+                    "topic": "Tutorial / Practice session on Define Simple curve",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.11",
+                    "sno": "4.11",
+                    "topic": "Problem solving & numerical analysis of Define degree of curve and state the relation between the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.12",
+                    "sno": "4.12",
+                    "topic": "Case study and practical applications of Sketch a simple circular curve and show its elements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-4.13",
+                    "sno": "4.13",
+                    "topic": "Revision of Curves",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c304-4.14",
+                    "sno": "4.14",
+                    "topic": "Assessment / Practice / Problem Solving on Curves",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Advanced surveying using GPS and GIS",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "c304-5.1",
+                    "sno": "5.1",
+                    "topic": "List the modern surveying techniques",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-5.2",
+                    "sno": "5.2",
+                    "topic": "Define GPS and explain the working principle of GPS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-5.3",
+                    "sno": "5.3",
+                    "topic": "Explain the segments of GPS and Enumerate the types of GPS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-5.4",
+                    "sno": "5.4",
+                    "topic": "Explain taking coordinates of various points using GPS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-5.5",
+                    "sno": "5.5",
+                    "topic": "List the applications of GPS in civil Engineering",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-5.6",
+                    "sno": "5.6",
+                    "topic": "List merits and demerits of GPS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-5.7",
+                    "sno": "5.7",
+                    "topic": "Define GIS and State the components of GIS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-5.8",
+                    "sno": "5.8",
+                    "topic": "Revision of Advanced surveying using GPS and GIS",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c304-5.9",
+                    "sno": "5.9",
+                    "topic": "Assessment / Practice / Problem Solving on Advanced surveying using GPS and GIS",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Introduction to Drone Surveying",
+            "totalPeriods": 5,
+            "topics": [
+                {
+                    "id": "c304-6.1",
+                    "sno": "6.1",
+                    "topic": "State the purpose and principle of Drone Surveying",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-6.2",
+                    "sno": "6.2",
+                    "topic": "State the History of drones/UAAS/UAVs",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-6.3",
+                    "sno": "6.3",
+                    "topic": "Explain the application of drone in surveying, Mapping,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c304-6.4",
+                    "sno": "6.4",
+                    "topic": "Revision of Introduction to Drone Surveying",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c304-6.5",
+                    "sno": "6.5",
+                    "topic": "Assessment / Practice / Problem Solving on Introduction to Drone Surveying",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

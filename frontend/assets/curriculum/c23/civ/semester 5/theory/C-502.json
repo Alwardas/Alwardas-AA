@@ -1,0 +1,590 @@
+{
+    "subjectCode": "C-502",
+    "subjectName": "Environmental Engineering",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Water Supply Scheme & Sources and Conveyance of Water",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "c502-1.1",
+                    "sno": "1.1",
+                    "topic": "Explain the importance and development of water supply",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-1.2",
+                    "sno": "1.2",
+                    "topic": "States the need for protected water supply, objectives of protected water",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-1.3",
+                    "sno": "1.3",
+                    "topic": "List the factors affecting per capita demand of a town/city and state the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-1.4",
+                    "sno": "1.4",
+                    "topic": "Estimate the quantity of water required by different towns, State the need",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-1.5",
+                    "sno": "1.5",
+                    "topic": "State the common sources of water for a water supply scheme,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-1.6",
+                    "sno": "1.6",
+                    "topic": "Define Aquifer, Aquiclude and Ground water table, classify wells",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-1.7",
+                    "sno": "1.7",
+                    "topic": "Explain with sketches: Infiltration galleries and Infiltration wells",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-1.8",
+                    "sno": "1.8",
+                    "topic": "Explain intakes for collection of water (reservoir intake, river intake,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-1.9",
+                    "sno": "1.9",
+                    "topic": "Explain different methods of conveyance of water, merits and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-1.10",
+                    "sno": "1.10",
+                    "topic": "Tutorial / Practice session on Explain the importance and development of water supply",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-1.11",
+                    "sno": "1.11",
+                    "topic": "Revision of Water Supply Scheme & Sources and Conveyance of Water",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c502-1.12",
+                    "sno": "1.12",
+                    "topic": "Assessment / Practice / Problem Solving on Water Supply Scheme & Sources and Conveyance of Water",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Quality and Purification of Water",
+            "totalPeriods": 16,
+            "topics": [
+                {
+                    "id": "c502-2.1",
+                    "sno": "2.1",
+                    "topic": "State different types of impurities, need for laboratory tests, explain the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.2",
+                    "sno": "2.2",
+                    "topic": "Define: Ecoli index and Most Probable Number (MPN), State the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.3",
+                    "sno": "2.3",
+                    "topic": "State the various water borne diseases in India, State the maximum",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.4",
+                    "sno": "2.4",
+                    "topic": "State the objectives of treatment of water, Sketch the layout of a water",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.5",
+                    "sno": "2.5",
+                    "topic": "State the objectives and explain the process of Aeration, Plain",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.6",
+                    "sno": "2.6",
+                    "topic": "Describe different types of sedimentation tanks.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.7",
+                    "sno": "2.7",
+                    "topic": "Describe the construction and operation of slow sand filters, Rapid",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.8",
+                    "sno": "2.8",
+                    "topic": "Define disinfection of water, Explain the need for disinfecting water,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.9",
+                    "sno": "2.9",
+                    "topic": "List the substances responsible for causing colour, taste and odour,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.10",
+                    "sno": "2.10",
+                    "topic": "Tutorial / Practice session on State different types of impurities, need for laboratory tests, explain the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.11",
+                    "sno": "2.11",
+                    "topic": "Problem solving & numerical analysis of Define: Ecoli index and Most Probable Number (MPN), State the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.12",
+                    "sno": "2.12",
+                    "topic": "Case study and practical applications of State the various water borne diseases in India, State the maximum",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.13",
+                    "sno": "2.13",
+                    "topic": "Tutorial / Practice session on State the objectives of treatment of water, Sketch the layout of a water",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.14",
+                    "sno": "2.14",
+                    "topic": "Problem solving & numerical analysis of State the objectives and explain the process of Aeration, Plain",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-2.15",
+                    "sno": "2.15",
+                    "topic": "Revision of Quality and Purification of Water",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c502-2.16",
+                    "sno": "2.16",
+                    "topic": "Assessment / Practice / Problem Solving on Quality and Purification of Water",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Distribution system and water supply arrangements in a Building",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "c502-3.1",
+                    "sno": "3.1",
+                    "topic": "State the requirements and classification of distribution system, explain",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-3.2",
+                    "sno": "3.2",
+                    "topic": "List and explain the different methods of water supply system and state their",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-3.3",
+                    "sno": "3.3",
+                    "topic": "State the necessity for service reservoirs, Draw sketches of rectangular",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-3.4",
+                    "sno": "3.4",
+                    "topic": "Explain with sketches the different layouts in distribution system,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-3.5",
+                    "sno": "3.5",
+                    "topic": "List and Explains with sketches the location and functioning of",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-3.6",
+                    "sno": "3.6",
+                    "topic": "Explain methods of detecting leakages, methods of rectification and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-3.7",
+                    "sno": "3.7",
+                    "topic": "Revision of Distribution system and water supply arrangements in a Building",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c502-3.8",
+                    "sno": "3.8",
+                    "topic": "Assessment / Practice / Problem Solving on Distribution system and water supply arrangements in a Building",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Introduction to Sanitary Engineering & Quantity of Sewage",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "c502-4.1",
+                    "sno": "4.1",
+                    "topic": "State the objectives of sewage disposal works.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-4.2",
+                    "sno": "4.2",
+                    "topic": "Define the terms: Sewage, Sewer and Sullage, Sewerage, Refuse and Garbage",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-4.3",
+                    "sno": "4.3",
+                    "topic": "List the objectives of sewerage works and explain various methods of sewage",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-4.4",
+                    "sno": "4.4",
+                    "topic": "Explain the different sewerage systems, compare them, discus their",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-4.5",
+                    "sno": "4.5",
+                    "topic": "Revision of Introduction to Sanitary Engineering & Quantity of Sewage",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c502-4.6",
+                    "sno": "4.6",
+                    "topic": "Assessment / Practice / Problem Solving on Introduction to Sanitary Engineering & Quantity of Sewage",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Laying of Sewers & Sewer appurtenances",
+            "totalPeriods": 7,
+            "topics": [
+                {
+                    "id": "c502-5.1",
+                    "sno": "5.1",
+                    "topic": "State various shapes of sewers, explain them with sketch, discuss their",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-5.2",
+                    "sno": "5.2",
+                    "topic": "Mention different materials used for sewers discuss their merits and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-5.3",
+                    "sno": "5.3",
+                    "topic": "Explain the method of laying the sewers as per given alignment, the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-5.4",
+                    "sno": "5.4",
+                    "topic": "Explain the construction, function and location of the different sewer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-5.5",
+                    "sno": "5.5",
+                    "topic": "State the situations under which sewage pumping is",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-5.6",
+                    "sno": "5.6",
+                    "topic": "Revision of Laying of Sewers & Sewer appurtenances",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c502-5.7",
+                    "sno": "5.7",
+                    "topic": "Assessment / Practice / Problem Solving on Laying of Sewers & Sewer appurtenances",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Characteristics of sewage, Treatment and disposal",
+            "totalPeriods": 16,
+            "topics": [
+                {
+                    "id": "c502-6.1",
+                    "sno": "6.1",
+                    "topic": "Define strength of sewage, describe the method of sampling sewage.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.2",
+                    "sno": "6.2",
+                    "topic": "State the physical, chemical and biological characteristics of sewage.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.3",
+                    "sno": "6.3",
+                    "topic": "Define C.O.D and B.O.D. State the significance of tests like i) Total",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.4",
+                    "sno": "6.4",
+                    "topic": "State the characteristics of industrial waste water, explain the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.5",
+                    "sno": "6.5",
+                    "topic": "State the objects of sewage treatment. Draw the conventional sewage",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.6",
+                    "sno": "6.6",
+                    "topic": "State the function of screens, skimming tanks and grit chambers and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.7",
+                    "sno": "6.7",
+                    "topic": "Explain with sketch wherever necessary the treatment works:",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.8",
+                    "sno": "6.8",
+                    "topic": "Compare activated sludge process and trickling filters. List out",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.9",
+                    "sno": "6.9",
+                    "topic": "Explain with sketch the treatment of sewage by septic tank and soak",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.10",
+                    "sno": "6.10",
+                    "topic": "List and explain the various methods of sewage disposal.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.11",
+                    "sno": "6.11",
+                    "topic": "Problem solving & numerical analysis of Define strength of sewage, describe the method of sampling sewage.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.12",
+                    "sno": "6.12",
+                    "topic": "Case study and practical applications of State the physical, chemical and biological characteristics of sewage.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.13",
+                    "sno": "6.13",
+                    "topic": "Tutorial / Practice session on Define C.O.D and B.O.D. State the significance of tests like i) Total",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.14",
+                    "sno": "6.14",
+                    "topic": "Problem solving & numerical analysis of State the characteristics of industrial waste water, explain the",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-6.15",
+                    "sno": "6.15",
+                    "topic": "Revision of Characteristics of sewage, Treatment and disposal",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c502-6.16",
+                    "sno": "6.16",
+                    "topic": "Assessment / Practice / Problem Solving on Characteristics of sewage, Treatment and disposal",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Rural water supply and sanitation",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "c502-7.1",
+                    "sno": "7.1",
+                    "topic": "Explain the process of disinfection of wells by two pot method.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-7.2",
+                    "sno": "7.2",
+                    "topic": "Explain the methods of rural sanitation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-7.3",
+                    "sno": "7.3",
+                    "topic": "Describe with sketches the construction of sanitary latrines in rural",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-7.4",
+                    "sno": "7.4",
+                    "topic": "State the advantages of biogas plant, factors on which the production",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-7.5",
+                    "sno": "7.5",
+                    "topic": "Revision of Rural water supply and sanitation",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c502-7.6",
+                    "sno": "7.6",
+                    "topic": "Assessment / Practice / Problem Solving on Rural water supply and sanitation",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Air pollution",
+            "totalPeriods": 4,
+            "topics": [
+                {
+                    "id": "c502-8.1",
+                    "sno": "8.1",
+                    "topic": "Define the term air pollution, state and explain the sources of air",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-8.2",
+                    "sno": "8.2",
+                    "topic": "Explain the effects of air pollution on human health & vegetation and",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "c502-8.3",
+                    "sno": "8.3",
+                    "topic": "Revision of Air pollution",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "c502-8.4",
+                    "sno": "8.4",
+                    "topic": "Assessment / Practice / Problem Solving on Air pollution",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}
