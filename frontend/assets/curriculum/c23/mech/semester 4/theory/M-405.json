@@ -1,0 +1,373 @@
+{
+    "subjectCode": "M-405",
+    "subjectName": "Manufacturing Technology -II",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Grinding",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "m405-1.1",
+                    "sno": "1.1",
+                    "topic": "Principles of Grinding.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-1.2",
+                    "sno": "1.2",
+                    "topic": "Grinding wheels: Abrasives, Bonds, Grit, Grade, Structure.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-1.3",
+                    "sno": "1.3",
+                    "topic": "Selection of Grinding wheels.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-1.4",
+                    "sno": "1.4",
+                    "topic": "Mounting, Dressing, Truing and Balancing of Grinding wheels.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-1.5",
+                    "sno": "1.5",
+                    "topic": "Types of Grinding machines: Surface, Cylindrical, Centreless.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-1.6",
+                    "sno": "1.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m405-1.7",
+                    "sno": "1.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Finishing Processes",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "m405-2.1",
+                    "sno": "2.1",
+                    "topic": "Lapping: Process and Machines.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-2.2",
+                    "sno": "2.2",
+                    "topic": "Honing: Process and Machines.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-2.3",
+                    "sno": "2.3",
+                    "topic": "Super finishing.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-2.4",
+                    "sno": "2.4",
+                    "topic": "Polishing and Buffing.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-2.5",
+                    "sno": "2.5",
+                    "topic": "Electroplating and Galvanizing.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m405-2.6",
+                    "sno": "2.6",
+                    "topic": "Metal Spraying.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m405-2.7",
+                    "sno": "2.7",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m405-2.8",
+                    "sno": "2.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Modern Machining Processes",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "m405-3.1",
+                    "sno": "3.1",
+                    "topic": "Introduction to Unconventional Machining Processes.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-3.2",
+                    "sno": "3.2",
+                    "topic": "Electric Discharge Machining (EDM).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-3.3",
+                    "sno": "3.3",
+                    "topic": "Wire Cut EDM.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-3.4",
+                    "sno": "3.4",
+                    "topic": "Ultrasonic Machining (USM).",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m405-3.5",
+                    "sno": "3.5",
+                    "topic": "Abrasive Jet Machining (AJM).",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m405-3.6",
+                    "sno": "3.6",
+                    "topic": "Laser Beam Machining (LBM).",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m405-3.7",
+                    "sno": "3.7",
+                    "topic": "Plasma Arc Machining (PAM).",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m405-3.8",
+                    "sno": "3.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m405-3.9",
+                    "sno": "3.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Milling",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "id": "m405-4.1",
+                    "sno": "4.1",
+                    "topic": "Working principle of Milling.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-4.2",
+                    "sno": "4.2",
+                    "topic": "Classification of Milling machines.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-4.3",
+                    "sno": "4.3",
+                    "topic": "Constructional details of Horizontal and Vertical Milling machines.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-4.4",
+                    "sno": "4.4",
+                    "topic": "Milling cutters.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-4.5",
+                    "sno": "4.5",
+                    "topic": "Milling operations: Plain, Face, Side, Straddle, Gang milling.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-4.6",
+                    "sno": "4.6",
+                    "topic": "Indexing methods: Simple, Compound, Differential.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m405-4.7",
+                    "sno": "4.7",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m405-4.8",
+                    "sno": "4.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Gear Manufacturing",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "id": "m405-5.1",
+                    "sno": "5.1",
+                    "topic": "Gear generating methods.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m405-5.2",
+                    "sno": "5.2",
+                    "topic": "Gear shaping.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m405-5.3",
+                    "sno": "5.3",
+                    "topic": "Gear hobbing.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m405-5.4",
+                    "sno": "5.4",
+                    "topic": "Gear finishing methods: Shaving, Grinding, Lapping.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-5.5",
+                    "sno": "5.5",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m405-5.6",
+                    "sno": "5.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "CNC Machines",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "id": "m405-6.1",
+                    "sno": "6.1",
+                    "topic": "Introduction to NC, CNC and DNC.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-6.2",
+                    "sno": "6.2",
+                    "topic": "Components of CNC machines.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-6.3",
+                    "sno": "6.3",
+                    "topic": "Coordinate systems in CNC.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-6.4",
+                    "sno": "6.4",
+                    "topic": "G-codes and M-codes.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-6.5",
+                    "sno": "6.5",
+                    "topic": "Part programming for simple components.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m405-6.6",
+                    "sno": "6.6",
+                    "topic": "Advantages and applications of CNC machines.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m405-6.7",
+                    "sno": "6.7",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m405-6.8",
+                    "sno": "6.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

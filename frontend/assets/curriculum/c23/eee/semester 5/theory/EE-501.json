@@ -1,0 +1,401 @@
+{
+    "subjectCode": "EE-501",
+    "subjectName": "Industrial Management & Smart Technologies",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 60,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Basics of Industrial Management and Organisation structure",
+            "totalPeriods": 17,
+            "topics": [
+                {
+                    "id": "ee5011.1",
+                    "sno": "1.1",
+                    "topic": "Define industry, commerce (Trade) and business.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5011.2",
+                    "sno": "1.2",
+                    "topic": "Know the need for management.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5011.3",
+                    "sno": "1.3",
+                    "topic": "Explain the principles of scientific management.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5011.4",
+                    "sno": "1.4",
+                    "topic": "Differentiate between supervisory, middle and Top-level management",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5011.5",
+                    "sno": "1.5",
+                    "topic": "Explain the importance of managerial skills (Technical, Human, Conceptual)",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5011.6",
+                    "sno": "1.6",
+                    "topic": "Understand the philosophy and need of organisation structure of an industry.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5011.7",
+                    "sno": "1.7",
+                    "topic": "Understand the line, staff and Line & staff (Functional)organisations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5011.8",
+                    "sno": "1.8",
+                    "topic": "Explain the factors of effective organisation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5011.10",
+                    "sno": "1.10",
+                    "topic": "State Maslow's Hierarchy of needs.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee501-1.10",
+                    "sno": "1.10",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee501-1.11",
+                    "sno": "1.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Material management and industrial safety management",
+            "totalPeriods": 17,
+            "topics": [
+                {
+                    "id": "ee5012.1",
+                    "sno": "2.1",
+                    "topic": "Define production",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5012.2",
+                    "sno": "2.2",
+                    "topic": "Explain the stages of Production, planning and control.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5012.3",
+                    "sno": "2.3",
+                    "topic": "Know the basic methods demand forecasting",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5012.4",
+                    "sno": "2.4",
+                    "topic": "Explain Break Even Analysis",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5012.5",
+                    "sno": "2.5",
+                    "topic": "Draw PERT/CPM networks.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5012.6",
+                    "sno": "2.6",
+                    "topic": "Solve the critical path in simple project",
+                    "period": 1,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee5012.7",
+                    "sno": "2.7",
+                    "topic": "Know Functions of Materials Management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5012.8",
+                    "sno": "2.8",
+                    "topic": "Explain ABC analysis.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5012.9",
+                    "sno": "2.9",
+                    "topic": "Define safety stock and reorder level.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5012.10",
+                    "sno": "2.10",
+                    "topic": "Explain the importance of safety at Work place.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5012.11",
+                    "sno": "2.11",
+                    "topic": "Explain hazard and accident.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5012.13",
+                    "sno": "2.13",
+                    "topic": "Explain the causes of accidents.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee501-2.13",
+                    "sno": "2.13",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee501-2.14",
+                    "sno": "2.14",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Entrepreneurship Development",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "ee5013.1",
+                    "sno": "3.1",
+                    "topic": "Define the word entrepreneur.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5013.2",
+                    "sno": "3.2",
+                    "topic": "Explain the requirements of an entrepreneur.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5013.3",
+                    "sno": "3.3",
+                    "topic": "Determine the role of entrepreneurs in promoting Small Scale Industries.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5013.4",
+                    "sno": "3.4",
+                    "topic": "Describe the details of self-employment schemes.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5013.5",
+                    "sno": "3.5",
+                    "topic": "List out the organisations that help an entrepreneur",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5013.6",
+                    "sno": "3.6",
+                    "topic": "Understand the concept of make in India, Zero defect and zero effect",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5013.7",
+                    "sno": "3.7",
+                    "topic": "Understand the importance of startups",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5013.8",
+                    "sno": "3.8",
+                    "topic": "Explain the conduct of demand and market surveys",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5013.9",
+                    "sno": "3.9",
+                    "topic": "Prepare feasibility report of any start-up plant/processing industry",
+                    "period": 0,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Total Quality Management",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "ee5014.1",
+                    "sno": "4.1",
+                    "topic": "Explain the concept of quality.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5014.2",
+                    "sno": "4.2",
+                    "topic": "List the quality systems and elements of quality systems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5014.3",
+                    "sno": "4.3",
+                    "topic": "State the principles of qualityAssurance.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5014.4",
+                    "sno": "4.4",
+                    "topic": "Understand the basic concepts ofTQM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5014.5",
+                    "sno": "4.5",
+                    "topic": "Know the Pillars ofTQM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5014.6",
+                    "sno": "4.6",
+                    "topic": "Explain ISO standards and ISO 9000 series of qualitysystems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5014.7",
+                    "sno": "4.7",
+                    "topic": "List the beneficiaries of ISO9000.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5014.8",
+                    "sno": "4.8",
+                    "topic": "Explain the concepts of ISO14000",
+                    "period": 1,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Smart Technologies",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "ee5015.1",
+                    "sno": "5.1",
+                    "topic": "Get an overview ofIoT",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5015.2",
+                    "sno": "5.2",
+                    "topic": "Define the termIoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5015.3",
+                    "sno": "5.3",
+                    "topic": "Know how IoTwork",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5015.4",
+                    "sno": "5.4",
+                    "topic": "List the key features ofIoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5015.5",
+                    "sno": "5.5",
+                    "topic": "List the components of IoT : hardware, software, technology and protocols",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5015.6",
+                    "sno": "5.6",
+                    "topic": "List the advantages and disadvantages ofIoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5015.7",
+                    "sno": "5.7",
+                    "topic": "Smart Energy and the Smart Grid",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee501-5.8",
+                    "sno": "5.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee501-5.9",
+                    "sno": "5.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

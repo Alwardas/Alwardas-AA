@@ -1,0 +1,520 @@
+{
+    "subjectCode": "EE-504",
+    "subjectName": "Digital Electronics & Micro Controllers",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Basics of Digital Electronics",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "ee5041.1",
+                    "sno": "1.1",
+                    "topic": "Explain Binary, Octal, Hexadecimal number systems and compare them with Decimal system.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5041.2",
+                    "sno": "1.2",
+                    "topic": "Perform binary addition, subtraction, Multiplication and Division.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5041.3",
+                    "sno": "1.3",
+                    "topic": "Explain about BCD.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5041.4",
+                    "sno": "1.4",
+                    "topic": "Write 1's complement and 2's complement numbers for a given binary number",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5041.5",
+                    "sno": "1.5",
+                    "topic": "Perform subtraction of binary numbers in 2's complement method.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5041.6",
+                    "sno": "1.6",
+                    "topic": "Explain the importance of parity Bit.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5041.7",
+                    "sno": "1.7",
+                    "topic": "State different postulates and De-Morgan 's theorems in Boolean algebra.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5041.8",
+                    "sno": "1.8",
+                    "topic": "Explain AND, OR, NOT, NAND, NOR and EX-OR gates with truth table.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5041.9",
+                    "sno": "1.9",
+                    "topic": "Realize AND, OR, NOT operations using NAND, NOR gates.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5041.10",
+                    "sno": "1.10",
+                    "topic": "Classify digital logic families.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5041.11",
+                    "sno": "1.11",
+                    "topic": "Give IC numbers for different digital Logic gates.",
+                    "period": 0,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Combinational Logic circuits",
+            "totalPeriods": 17,
+            "topics": [
+                {
+                    "id": "ee5042.1",
+                    "sno": "2.1",
+                    "topic": "Give the concept of combinational logic circuits.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.2",
+                    "sno": "2.2",
+                    "topic": "Draw the Half adder circuit and verify its functionality using truth table.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.3",
+                    "sno": "2.3",
+                    "topic": "Realize a Half-adder using NAND gates only.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.4",
+                    "sno": "2.4",
+                    "topic": "Draw the full adder circuit and explain its operation with truth table.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.5",
+                    "sno": "2.5",
+                    "topic": "Realize full-adder using two Half-adders and an OR \u2013 gate and write truth table",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.6",
+                    "sno": "2.6",
+                    "topic": "Draw and explain a 4 Bit parallel adder using full \u2013 adders.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.7",
+                    "sno": "2.7",
+                    "topic": "Explain the working of a serial adder with a Block diagram.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.8",
+                    "sno": "2.8",
+                    "topic": "Draw and explain the operation of 4 X 1 Multiplexers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.9",
+                    "sno": "2.9",
+                    "topic": "Draw and explain the operation of 1 to 4 demultiplexer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.10",
+                    "sno": "2.10",
+                    "topic": "Draw and explain 3 X 8 decoder.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.11",
+                    "sno": "2.11",
+                    "topic": "List any three applications of multiplexers and decoders.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5042.12",
+                    "sno": "2.12",
+                    "topic": "Draw and explain One-bit digital comparator.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee504-2.13",
+                    "sno": "2.13",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee504-2.14",
+                    "sno": "2.14",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Sequential Logic Circuits",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "ee5043.1",
+                    "sno": "3.1",
+                    "topic": "Give the idea of Sequential logic circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.2",
+                    "sno": "3.2",
+                    "topic": "Explain NAND and NOR latches with truth tables",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.3",
+                    "sno": "3.3",
+                    "topic": "State the necessity of clock and give the concept of level clocking and edge triggering,",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.4",
+                    "sno": "3.4",
+                    "topic": "Draw and explain clocked SR flip flop with preset and clear inputs.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.5",
+                    "sno": "3.5",
+                    "topic": "Construct level clocked JK flip flop using S-R flip-flop and explain with truth table",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.6",
+                    "sno": "3.6",
+                    "topic": "Write the truth tables of edge triggered D and T flip flops and draw their symbols.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.7",
+                    "sno": "3.7",
+                    "topic": "List the applications of flip flops.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.8",
+                    "sno": "3.8",
+                    "topic": "Define modulus of a counter",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.9",
+                    "sno": "3.9",
+                    "topic": "Explain with block diagrams and timing diagrams (i) 4-bit asynchronous counter (ii) 4-bit synchronous counter.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.10",
+                    "sno": "3.10",
+                    "topic": "State the need for a Register and list the types of registers.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.11",
+                    "sno": "3.11",
+                    "topic": "Draw and explain the working of 4 bit shift left and shift right registers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.12",
+                    "sno": "3.12",
+                    "topic": "Explain the working of ring counter and list its applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.13",
+                    "sno": "3.13",
+                    "topic": "State memory read operation, write operation, access time, memory capacity, address lines and word length.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5043.14",
+                    "sno": "3.14",
+                    "topic": "Distinguish between (a) EEPROM and UVEPROM (b) static RAM and dynamic RAM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee504-3.15",
+                    "sno": "3.15",
+                    "topic": "Revision and Assessment",
+                    "period": 1,
+                    "type": "revision"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "8051 Microcontroller",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "ee5044.1",
+                    "sno": "4.1",
+                    "topic": "Explain the concept of Micro controllers.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5044.2",
+                    "sno": "4.2",
+                    "topic": "Compare Embedded with External memory devices.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5044.3",
+                    "sno": "4.3",
+                    "topic": "List the three commonly used Commercial Microcontroller Device families.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5044.4",
+                    "sno": "4.4",
+                    "topic": "Draw the block diagram of a microcontroller and explain the function of each block.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5044.5",
+                    "sno": "4.5",
+                    "topic": "Explain the register structure of 8051.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5044.6",
+                    "sno": "4.6",
+                    "topic": "Explain the functions of various special function registers.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5044.7",
+                    "sno": "4.7",
+                    "topic": "Draw the pin diagram of 8051 micro controller and specify the purpose of each pin.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5044.8",
+                    "sno": "4.8",
+                    "topic": "Explain internal memory, external memory and ports of 8051.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5044.9",
+                    "sno": "4.9",
+                    "topic": "List interrupts in 8051",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee504-4.10",
+                    "sno": "4.10",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee504-4.11",
+                    "sno": "4.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "8051 instruction set and programming",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "ee5045.1",
+                    "sno": "5.1",
+                    "topic": "State the need for an instruction set.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.2",
+                    "sno": "5.2",
+                    "topic": "Explain the instruction format of 8051.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.3",
+                    "sno": "5.3",
+                    "topic": "Explain fetch cycle, execution cycle and instruction cycle.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.4",
+                    "sno": "5.4",
+                    "topic": "Define the terms machine language, assembly language, and mnemonics.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.5",
+                    "sno": "5.5",
+                    "topic": "Differentiate between machine level and assembly level programming.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.6",
+                    "sno": "5.6",
+                    "topic": "List the major groups in the instruction set along with examples.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.7",
+                    "sno": "5.7",
+                    "topic": "Explain the terms operation code, operand and illustrate these terms by writing an instruction.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.8",
+                    "sno": "5.8",
+                    "topic": "Explain the data manipulation functions data transfer, arithmetic, logic and branching.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.9",
+                    "sno": "5.9",
+                    "topic": "Explain the addressing modes of 8051.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.10",
+                    "sno": "5.10",
+                    "topic": "Explain data transfer instructions of 8051.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.11",
+                    "sno": "5.11",
+                    "topic": "Explain the arithmetic instructions and recognize the flags that are set or reset for given data conditions.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.12",
+                    "sno": "5.12",
+                    "topic": "Explain the logic instructions and recognize the flags that are set or reset for given data conditions.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.13",
+                    "sno": "5.13",
+                    "topic": "Explain unconditional and conditional jump and how flags are used to change the sequence of program.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.14",
+                    "sno": "5.14",
+                    "topic": "Define subroutine and explain its use.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5045.15",
+                    "sno": "5.15",
+                    "topic": "Write program to perform (i) Single byte & Multi byte addition (ii) Summing-up of given N numbers (iii) Multiplication of two 8-bit numbers using MUL instruction Note :1. This Subject is to be taught by Electronics & Communication Engg. faculty Communication Engg Faculty.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee504-5.16",
+                    "sno": "5.16",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee504-5.17",
+                    "sno": "5.17",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

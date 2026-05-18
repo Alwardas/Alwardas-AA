@@ -1,0 +1,401 @@
+{
+    "subjectCode": "M-106",
+    "subjectName": "Basic Manufacturing Processes",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 150,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Carpentry",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "m106-1.1",
+                    "sno": "1.1",
+                    "topic": "State various types of manufacturing processes with examples",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m106-1.2",
+                    "sno": "1.2",
+                    "topic": "Identify various carpentry tools.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m106-1.3",
+                    "sno": "1.3",
+                    "topic": "Distinguish between marking tools, measuring tools and cutting tools.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m106-1.4",
+                    "sno": "1.4",
+                    "topic": "List out various work holding devices.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m106-1.5",
+                    "sno": "1.5",
+                    "topic": "Explain wood working processes viz., sawing, chiselling and planning.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m106-1.6",
+                    "sno": "1.6",
+                    "topic": "Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m106-1.7",
+                    "sno": "1.7",
+                    "topic": "Explain the working of wood working machines.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m106-1.8",
+                    "sno": "1.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m106-1.9",
+                    "sno": "1.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Fitting",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "m106-2.1",
+                    "sno": "2.1",
+                    "topic": "List out various marking and measuring tools.",
+                    "type": "theory",
+                    "period": 6
+                },
+                {
+                    "id": "m106-2.2",
+                    "sno": "2.2",
+                    "topic": "List out various cutting tools",
+                    "type": "theory",
+                    "period": 6
+                },
+                {
+                    "id": "m106-2.3",
+                    "sno": "2.3",
+                    "topic": "List out various work holding devices.",
+                    "type": "theory",
+                    "period": 6
+                },
+                {
+                    "id": "m106-2.4",
+                    "sno": "2.4",
+                    "topic": "Explain fitting operations such as marking, sawing, chipping, filing, grinding, drilling and tapping with legible sketches.",
+                    "type": "theory",
+                    "period": 5
+                },
+                {
+                    "id": "m106-2.5",
+                    "sno": "2.5",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m106-2.6",
+                    "sno": "2.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Forging",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "m106-3.1",
+                    "sno": "3.1",
+                    "topic": "List various tools used in black-smithy.",
+                    "type": "theory",
+                    "period": 5
+                },
+                {
+                    "id": "m106-3.2",
+                    "sno": "3.2",
+                    "topic": "List equipment used in a forging shop.",
+                    "type": "theory",
+                    "period": 5
+                },
+                {
+                    "id": "m106-3.3",
+                    "sno": "3.3",
+                    "topic": "Explain the important smithy operations.",
+                    "type": "theory",
+                    "period": 5
+                },
+                {
+                    "id": "m106-3.4",
+                    "sno": "3.4",
+                    "topic": "Explain forging operations such as upsetting, drawing Down, settting down, fullering, flattering, swaging, bending, punching and drifting with legible sketches.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m106-3.5",
+                    "sno": "3.5",
+                    "topic": "Explain the working principle of pneumatic hammer, board drop hammer and forging press with legible sketches.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m106-3.6",
+                    "sno": "3.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m106-3.7",
+                    "sno": "3.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Sheet Metal",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "m106-4.1",
+                    "sno": "4.1",
+                    "topic": "List various marking tools in sheet metal work.",
+                    "type": "theory",
+                    "period": 5
+                },
+                {
+                    "id": "m106-4.2",
+                    "sno": "4.2",
+                    "topic": "List various stakes.",
+                    "type": "theory",
+                    "period": 5
+                },
+                {
+                    "id": "m106-4.3",
+                    "sno": "4.3",
+                    "topic": "List various sheet metal joints.",
+                    "type": "theory",
+                    "period": 5
+                },
+                {
+                    "id": "m106-4.5",
+                    "sno": "4.5",
+                    "topic": "Describe sheet metal operations such as shearing, bending drawing and squeezing.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m106-4.6",
+                    "sno": "4.6",
+                    "topic": "Differentiate between riveting, soldering & brazing.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m106-4.6",
+                    "sno": "4.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m106-4.7",
+                    "sno": "4.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Drilling & Jig boring",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "m106-5.1",
+                    "sno": "5.1",
+                    "topic": "State the working principle of drilling",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.2",
+                    "sno": "5.2",
+                    "topic": "List out various types of drilling machines",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.3",
+                    "sno": "5.3",
+                    "topic": "Describe the Sensitive drilling machine with line diagram",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.4",
+                    "sno": "5.4",
+                    "topic": "Describe the radial drilling machine with line diagram",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.5",
+                    "sno": "5.5",
+                    "topic": "Mention the specifications of drilling machine",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.6",
+                    "sno": "5.6",
+                    "topic": "Explain the nomenclature of the drill bit",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.7",
+                    "sno": "5.7",
+                    "topic": "Explain different operations on drilling machine",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.8",
+                    "sno": "5.8",
+                    "topic": "Differentiate between jigs and fixtures",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.9",
+                    "sno": "5.9",
+                    "topic": "List different types of Jigs and fixtures.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.10",
+                    "sno": "5.10",
+                    "topic": "State the principle of working of a jig boring machine.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.11",
+                    "sno": "5.11",
+                    "topic": "Classify the jig boring machines.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m106-5.12",
+                    "sno": "5.12",
+                    "topic": "Describe the constructional details of open front and cross rail type jig boring machines with the help of legible sketches.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m106-5.13",
+                    "sno": "5.13",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m106-5.14",
+                    "sno": "5.14",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Mechanical working of metals",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "m106-6.1",
+                    "sno": "6.1",
+                    "topic": "Define Mechanical working of metals",
+                    "type": "theory",
+                    "period": 5
+                },
+                {
+                    "id": "m106-6.2",
+                    "sno": "6.2",
+                    "topic": "Explain Hot working of metals with advantages and disadvantages",
+                    "type": "theory",
+                    "period": 5
+                },
+                {
+                    "id": "m106-6.3",
+                    "sno": "6.3",
+                    "topic": "Explain various hot working processes such as hot rolling, Piercing, Spinning, and hot extrusion processes.",
+                    "type": "theory",
+                    "period": 5
+                },
+                {
+                    "id": "m106-6.4",
+                    "sno": "6.4",
+                    "topic": "Explain cold working of metals with advantages and disadvantages.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m106-6.5",
+                    "sno": "6.5",
+                    "topic": "Explain various cold working processes such as cold rolling, wire drawing, tube drawing, bending, squeezing and cold heading.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m106-6.6",
+                    "sno": "6.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m106-6.7",
+                    "sno": "6.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

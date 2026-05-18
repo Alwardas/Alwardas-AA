@@ -1,0 +1,303 @@
+{
+    "subjectCode": "M-302",
+    "subjectName": "Applied Electrical & Electronics",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Fundamentals of DC Circuits",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m302-1.1",
+                    "sno": "1.1",
+                    "topic": "Definitions of Current, Voltage, Power, Energy and their units.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-1.2",
+                    "sno": "1.2",
+                    "topic": "State and Explain Ohm's Law and its limitations.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-1.3",
+                    "sno": "1.3",
+                    "topic": "State and Explain Kirchhoff's Laws (KCL & KVL).",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-1.4",
+                    "sno": "1.4",
+                    "topic": "Simple problems on Ohm's Law and Kirchhoff's Laws.",
+                    "type": "problem solving",
+                    "period": 2
+                },
+                {
+                    "id": "m302-1.5",
+                    "sno": "1.5",
+                    "topic": "Resistance in Series, Parallel and Series-Parallel combinations.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-1.6",
+                    "sno": "1.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m302-1.7",
+                    "sno": "1.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "AC Circuits",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m302-2.1",
+                    "sno": "2.1",
+                    "topic": "Fundamentals of AC voltage and current: Peak, Average, RMS values, Form factor, Peak factor.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-2.2",
+                    "sno": "2.2",
+                    "topic": "Concept of Phase, Phase difference and Phasor representation.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-2.3",
+                    "sno": "2.3",
+                    "topic": "AC through pure Resistance, Inductance and Capacitance.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-2.4",
+                    "sno": "2.4",
+                    "topic": "Concept of Impedance, Power factor, Active, Reactive and Apparent power.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-2.5",
+                    "sno": "2.5",
+                    "topic": "Simple problems on AC circuits.",
+                    "type": "problem solving",
+                    "period": 2
+                },
+                {
+                    "id": "m302-2.6",
+                    "sno": "2.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m302-2.7",
+                    "sno": "2.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "DC Machines",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m302-3.1",
+                    "sno": "3.1",
+                    "topic": "Constructional details and working principle of DC Generator.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-3.2",
+                    "sno": "3.2",
+                    "topic": "EMF equation of DC Generator (Derivation not required).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-3.3",
+                    "sno": "3.3",
+                    "topic": "Types of DC Generators and their applications.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-3.4",
+                    "sno": "3.4",
+                    "topic": "Working principle of DC Motor.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-3.5",
+                    "sno": "3.5",
+                    "topic": "Back EMF, Torque equation and Types of DC Motors.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-3.6",
+                    "sno": "3.6",
+                    "topic": "Speed control methods of DC Shunt Motor.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-3.7",
+                    "sno": "3.7",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m302-3.8",
+                    "sno": "3.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "AC Machines",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m302-4.1",
+                    "sno": "4.1",
+                    "topic": "Construction and working principle of Transformer.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-4.2",
+                    "sno": "4.2",
+                    "topic": "EMF equation of Transformer, Voltage and Current transformation ratios.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-4.3",
+                    "sno": "4.3",
+                    "topic": "Losses and Efficiency of Transformer.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-4.4",
+                    "sno": "4.4",
+                    "topic": "Construction and working of 3-Phase Induction Motor.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-4.5",
+                    "sno": "4.5",
+                    "topic": "Types of 3-Phase Induction Motors and their applications.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-4.6",
+                    "sno": "4.6",
+                    "topic": "Working principle of Alternator.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-4.7",
+                    "sno": "4.7",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m302-4.8",
+                    "sno": "4.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Basic Electronics",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m302-5.1",
+                    "sno": "5.1",
+                    "topic": "Semiconductor materials: N-type and P-type.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-5.2",
+                    "sno": "5.2",
+                    "topic": "PN Junction Diode: Construction, Working and V-I Characteristics.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-5.3",
+                    "sno": "5.3",
+                    "topic": "Rectifiers: Half wave, Full wave and Bridge Rectifiers (Working only).",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m302-5.4",
+                    "sno": "5.4",
+                    "topic": "Transistors: PNP and NPN transistors, symbols and working.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-5.5",
+                    "sno": "5.5",
+                    "topic": "Electrical Safety: Electric shock, Precautions, Earthing.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m302-5.6",
+                    "sno": "5.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m302-5.7",
+                    "sno": "5.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

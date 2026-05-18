@@ -1,0 +1,478 @@
+{
+    "subjectCode": "EE-403",
+    "subjectName": "Power Systems - I",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 60,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Sources of Electrical Energy",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "ee4031.1",
+                    "sno": "1.1",
+                    "topic": "Know the different sources of energy and classify them into conventional and Non-conventional types.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4031.2",
+                    "sno": "1.2",
+                    "topic": "State necessity of developing non-conventional methods of power generation.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4031.3",
+                    "sno": "1.3",
+                    "topic": "Describe the method of power generation by (i) Solar Power plant(ii) Tidal Power plant (iii) Wind Power plant(iv) Biomass Power plant",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4031.4",
+                    "sno": "1.4",
+                    "topic": "State the relative merits and limitations of Conventional and Non- Conventional types of sources",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4031.5",
+                    "sno": "1.5",
+                    "topic": "Appreciate the need of energy conservation and its methods.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee403-1.6",
+                    "sno": "1.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee403-1.7",
+                    "sno": "1.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Thermal, Hydro Electrical, Nuclear & Gas Power Stations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "ee4032.1",
+                    "sno": "2.1",
+                    "topic": "State working principle of Thermal power plant.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.2",
+                    "sno": "2.2",
+                    "topic": "State the factors required for selection of site.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.3",
+                    "sno": "2.3",
+                    "topic": "Draw the detailed line diagram of a condensing type thermal power station and explain the working of each component of thermal power station.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.4",
+                    "sno": "2.4",
+                    "topic": "State the advantages of(i) Pulverisation and the machine used for it(ii) Cooling towers and their types.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.5",
+                    "sno": "2.5",
+                    "topic": "State the causes of pollution and methods to control them.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.6",
+                    "sno": "2.6",
+                    "topic": "State the advantages and disadvantages of Thermal power plants.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.7",
+                    "sno": "2.7",
+                    "topic": "State the principle of working of Hydro power station.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.8",
+                    "sno": "2.8",
+                    "topic": "State the factors required for selection of site for Hydro power station.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.9",
+                    "sno": "2.9",
+                    "topic": "Explain Hydrograph.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.10",
+                    "sno": "2.10",
+                    "topic": "Define various hydraulic terms",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.11",
+                    "sno": "2.11",
+                    "topic": "Write water power equation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.12",
+                    "sno": "2.12",
+                    "topic": "Classify the Hydro Electric Plants based upon head, duty, location and hydraulic considerations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.13",
+                    "sno": "2.13",
+                    "topic": "Explain with layout diagram working of i) High Head ii) Medium Head iii) Low Head Power stations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.14",
+                    "sno": "2.14",
+                    "topic": "Explain the need and working of (i) Surge Tank ii) Forebay iii) Spill gates.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.15",
+                    "sno": "2.15",
+                    "topic": "State the advantages and disadvantages of hydroelectric power station.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.16",
+                    "sno": "2.16",
+                    "topic": "State merits and risks involved in using nuclear energy",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.17",
+                    "sno": "2.17",
+                    "topic": "List out the nuclear fuels.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.18",
+                    "sno": "2.18",
+                    "topic": "Explain fission and fusion reactions.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.19",
+                    "sno": "2.19",
+                    "topic": "Explain sustained chain reaction.",
+                    "period": 0,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.20",
+                    "sno": "2.20",
+                    "topic": "Explain the working of a moderate type nuclear power station with a block diagram.",
+                    "period": 0,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.21",
+                    "sno": "2.21",
+                    "topic": "Explain the need and working of coolant, reflector, and control rods. Mention the materials used for them",
+                    "period": 0,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.22",
+                    "sno": "2.22",
+                    "topic": "List the types of Reactors used in Nuclear Power Station",
+                    "period": 0,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4032.23",
+                    "sno": "2.23",
+                    "topic": "Explain the principle of working of gas power station with the help of schematic diagram and mention its merits and demerits",
+                    "period": 0,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Combined Operation and Economics",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "ee4033.1",
+                    "sno": "3.1",
+                    "topic": "State the need for integrated operation of power plants and list the merits of it.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4033.2",
+                    "sno": "3.2",
+                    "topic": "Differentiate between isolated operation and integrated operation of power stations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4033.3",
+                    "sno": "3.3",
+                    "topic": "Understand the concept of load dispatching and its process.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4033.4",
+                    "sno": "3.4",
+                    "topic": "List the various charges and expenses in power station and classify them as fixed and running.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4033.5",
+                    "sno": "3.5",
+                    "topic": "Define the terms load curve, connected load, Maximum demand, Demand factor, load factor, diversity factor, capacity factor and plant use factor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4033.6",
+                    "sno": "3.6",
+                    "topic": "Comprehend the cost of generation and effects of load factor and diversity factor on it.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4033.7",
+                    "sno": "3.7",
+                    "topic": "Solve problems on above topics.",
+                    "period": 1,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee4033.8",
+                    "sno": "3.8",
+                    "topic": "Explain various types of consumer tariffs and compare them.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4033.9",
+                    "sno": "3.9",
+                    "topic": "List the causes of lower power factor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4033.10",
+                    "sno": "3.10",
+                    "topic": "State the effects of power factor (p.f.) on electricity charges and mention the methods to improve it.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee403-3.11",
+                    "sno": "3.11",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee403-3.12",
+                    "sno": "3.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Switchgear and Reactors",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "ee4034.1",
+                    "sno": "4.1",
+                    "topic": "Define faults and list types if faults in power systems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4034.2",
+                    "sno": "4.2",
+                    "topic": "Define and classify switchgear.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4034.3",
+                    "sno": "4.3",
+                    "topic": "Define isolators, air break switches, their uses and limitations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4034.4",
+                    "sno": "4.4",
+                    "topic": "Explain the phenomenon of arc, arc voltage, arc current and its effects.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4034.5",
+                    "sno": "4.5",
+                    "topic": "List the methods of arc quenching.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4034.6",
+                    "sno": "4.6",
+                    "topic": "Classify the circuit breakers based upon medium of arc quenching.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4034.7",
+                    "sno": "4.7",
+                    "topic": "State the principle of M.O.C. Band explain its working.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4034.8",
+                    "sno": "4.8",
+                    "topic": "StatepropertiesofSF6gas and explain the workingofSF6circuitbreaker.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4034.9",
+                    "sno": "4.9",
+                    "topic": "Explain working principle of Vacuum circuit breaker (V.C.B).",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4034.10",
+                    "sno": "4.10",
+                    "topic": "Define current limiting reactors and state their importance.",
+                    "period": 1,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Protective relays and Circuit Breakers",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "ee4035.1",
+                    "sno": "5.1",
+                    "topic": "Define relay and State the basic requirements of relays.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4035.2",
+                    "sno": "5.2",
+                    "topic": "Classify there lays based upon(i) Principle of operation(ii)Time of operation(iii)Duty",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4035.3",
+                    "sno": "5.3",
+                    "topic": "Define current setting and time setting.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4035.4",
+                    "sno": "5.4",
+                    "topic": "State the applications of (i) Induction type over current relay(ii) Directional over current induction type relay(iii)Distance relay (iv)Differential Relay",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4035.5",
+                    "sno": "5.5",
+                    "topic": "List the probable faults in Stator and rotor of Alternator.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4035.6",
+                    "sno": "5.6",
+                    "topic": "Explain the differential protection for alternator stator.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4035.7",
+                    "sno": "5.7",
+                    "topic": "List the possible faults and their types in a transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4035.8",
+                    "sno": "5.8",
+                    "topic": "Explain the working of Buchholz relay in a transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee403-5.9",
+                    "sno": "5.9",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee403-5.10",
+                    "sno": "5.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

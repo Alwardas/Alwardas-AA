@@ -1,0 +1,541 @@
+{
+    "subjectCode": "M-105",
+    "subjectName": "Engineering Mechanics",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 150,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Statics",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "m105-1.1",
+                    "sno": "1.1",
+                    "topic": "Explain the importance of Engineering Mechanics in real world",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-1.2",
+                    "sno": "1.2",
+                    "topic": "Explain the concept of force",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-1.3",
+                    "sno": "1.3",
+                    "topic": "Classify the system of forces.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-1.4",
+                    "sno": "1.4",
+                    "topic": "Explain the system of forces",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-1.5",
+                    "sno": "1.5",
+                    "topic": "Explain Composition and Resolution of forces and resultant of concurrent coplanar forces.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-1.6",
+                    "sno": "1.6",
+                    "topic": "State parallelogram law, triangle law, polygon law of forces and Lami's theorem.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-1.7",
+                    "sno": "1.7",
+                    "topic": "Problems on parallelogram law and Lami's theorem.",
+                    "type": "problem solving",
+                    "period": 2
+                },
+                {
+                    "id": "m105-1.8",
+                    "sno": "1.8",
+                    "topic": "Explain the concept of equilibrium.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-1.9",
+                    "sno": "1.9",
+                    "topic": "State the conditions of equilibrium of a body acted upon by a number of co-planar forces.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-1.10",
+                    "sno": "1.10",
+                    "topic": "Solve the problems on equilibrium of a body subjected to a number of concurrent coplanar forces.",
+                    "type": "problem solving",
+                    "period": 2
+                },
+                {
+                    "id": "m105-1.11",
+                    "sno": "1.11",
+                    "topic": "Explain moment of force and couple.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-1.12",
+                    "sno": "1.12",
+                    "topic": "State Varignon's theorem.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-1.13",
+                    "sno": "1.13",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m105-1.14",
+                    "sno": "1.14",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Friction",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "m105-2.1",
+                    "sno": "2.1",
+                    "topic": "Explain the concept of friction",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m105-2.2",
+                    "sno": "2.2",
+                    "topic": "State the laws of friction",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m105-2.3",
+                    "sno": "2.3",
+                    "topic": "Define i) angle of friction ii) angle of repose",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m105-2.4",
+                    "sno": "2.4",
+                    "topic": "Identify the machine members in which friction is desirable.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m105-2.5",
+                    "sno": "2.5",
+                    "topic": "Resolve the forces acting on bodies moving on horizontal plane.",
+                    "type": "problem solving",
+                    "period": 3
+                },
+                {
+                    "id": "m105-2.6",
+                    "sno": "2.6",
+                    "topic": "Resolve the forces acting on bodies moving up on an inclined plane",
+                    "type": "problem solving",
+                    "period": 3
+                },
+                {
+                    "id": "m105-2.7",
+                    "sno": "2.7",
+                    "topic": "Resolve the forces acting on bodies moving down on an inclined plane",
+                    "type": "problem solving",
+                    "period": 3
+                },
+                {
+                    "id": "m105-2.8",
+                    "sno": "2.8",
+                    "topic": "Solve the related numerical problems of the above cases.",
+                    "type": "problem solving",
+                    "period": 3
+                },
+                {
+                    "id": "m105-2.9",
+                    "sno": "2.9",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m105-2.10",
+                    "sno": "2.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Geometrical Properties of Sections",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "m105-3.1",
+                    "sno": "3.1",
+                    "topic": "Define the terms i) centre of gravity ii) centroid.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m105-3.2",
+                    "sno": "3.2",
+                    "topic": "Write the differences among centre of gravity and centroid.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-3.3",
+                    "sno": "3.3",
+                    "topic": "State the need for finding the centroid and centre of gravity for various engineering applications.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-3.4",
+                    "sno": "3.4",
+                    "topic": "Explain the method of determining the centroid by Method of moments",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-3.5",
+                    "sno": "3.5",
+                    "topic": "Determine the position of centroid of standard sections like -T, L, I, Channel section.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-3.6",
+                    "sno": "3.6",
+                    "topic": "Explain the meaning of the terms i) moment of Inertia ii) Polar moment of inertia iii) Radius of gyration.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-3.7",
+                    "sno": "3.7",
+                    "topic": "State the necessity of finding Moment of Inertia for various engineering applications",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-3.8",
+                    "sno": "3.8",
+                    "topic": "Statements of (a) Parallel axes theorem and (b) Perpendicular axes theorem",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-3.9",
+                    "sno": "3.9",
+                    "topic": "Determine Moment of Inertia and Radius of gyration for standard sections like T, L, I, Channel section.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-3.10",
+                    "sno": "3.10",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m105-3.11",
+                    "sno": "3.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Dynamics",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "m105-4.1",
+                    "sno": "4.1",
+                    "topic": "Define the terms Kinematics and Kinetics",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-4.2",
+                    "sno": "4.2",
+                    "topic": "Classify the types of motion",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-4.3",
+                    "sno": "4.3",
+                    "topic": "Define the terms displacement, velocity and acceleration",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-4.4",
+                    "sno": "4.4",
+                    "topic": "Write equations of motion (without derivation)",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-4.5",
+                    "sno": "4.5",
+                    "topic": "Solve the problems related to the rectilinear motion of a particle.",
+                    "type": "problem solving",
+                    "period": 2
+                },
+                {
+                    "id": "m105-4.6",
+                    "sno": "4.6",
+                    "topic": "Definition of energy and momentum",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-4.7",
+                    "sno": "4.7",
+                    "topic": "State with expressions Newton's laws of motion.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-4.8",
+                    "sno": "4.8",
+                    "topic": "State the law of conservation of energy",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-4.9",
+                    "sno": "4.9",
+                    "topic": "Explain the Work-Energy principle.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-4.10",
+                    "sno": "4.10",
+                    "topic": "State law of conservation of momentum.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m105-4.11",
+                    "sno": "4.11",
+                    "topic": "Explain the Impulse-momentum equation",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m105-4.12",
+                    "sno": "4.12",
+                    "topic": "Solve problems using the above principles.",
+                    "type": "problem solving",
+                    "period": 1
+                },
+                {
+                    "id": "m105-4.13",
+                    "sno": "4.13",
+                    "topic": "Explain rotary motion terms involved in rotary motion of a particle.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m105-4.14",
+                    "sno": "4.14",
+                    "topic": "Express the equations of rotary motion of a particle.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m105-4.15",
+                    "sno": "4.15",
+                    "topic": "Differentiate centripetal force and centrifugal force.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m105-4.16",
+                    "sno": "4.16",
+                    "topic": "Solve simple problems on rotary motion.",
+                    "type": "problem solving",
+                    "period": 1
+                },
+                {
+                    "id": "m105-4.17",
+                    "sno": "4.17",
+                    "topic": "Describe simple harmonic motion with engineering applications.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m105-4.18",
+                    "sno": "4.18",
+                    "topic": "Define the terms related to SHM.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m105-4.19",
+                    "sno": "4.19",
+                    "topic": "Solve simple problems on simple harmonic motion.",
+                    "type": "problem solving",
+                    "period": 1
+                },
+                {
+                    "id": "m105-4.20",
+                    "sno": "4.20",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m105-4.21",
+                    "sno": "4.21",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Simple Mechanisms & Machines",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "m105-5.1",
+                    "sno": "5.1",
+                    "topic": "Define the terms i) kinematic link ii) kinematic pair iii) Kinematic chain iv) Mechanism v) Machine vi) Structure vii) inversion of mechanism.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-5.2",
+                    "sno": "5.2",
+                    "topic": "Write classification of kinematic pairs on different criteria.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m105-5.3",
+                    "sno": "5.3",
+                    "topic": "Describe the working principle of Quadratic cycle chain.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.4",
+                    "sno": "5.4",
+                    "topic": "Explain with legible sketches the important inversions of quadric cycle chain.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.5",
+                    "sno": "5.5",
+                    "topic": "Define the important terms related to Simple machines",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.6",
+                    "sno": "5.6",
+                    "topic": "Illustrate the use of three classes of simple lever.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.7",
+                    "sno": "5.7",
+                    "topic": "Explain the working and write mathematical expressions for the velocity ratio of simple machines",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.8",
+                    "sno": "5.8",
+                    "topic": "Calculate the efficiency of the given machine.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.9",
+                    "sno": "5.9",
+                    "topic": "Calculate the effort required to raise and lower the load on screw jack under given conditions.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.10",
+                    "sno": "5.10",
+                    "topic": "Explain Law of simple machine.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.11",
+                    "sno": "5.11",
+                    "topic": "Explain the conditions for self-locking.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.12",
+                    "sno": "5.12",
+                    "topic": "State the conditions for reversibility.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.13",
+                    "sno": "5.13",
+                    "topic": "Numerical problems on the above simple machines",
+                    "type": "problem solving",
+                    "period": 2
+                },
+                {
+                    "id": "m105-5.14",
+                    "sno": "5.14",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m105-5.15",
+                    "sno": "5.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

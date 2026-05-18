@@ -1,0 +1,310 @@
+{
+    "subjectCode": "M-501",
+    "subjectName": "Industrial Management and Entrepreneurship",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Principles of Management & Organisation Structure",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m501-1.1",
+                    "sno": "1.1",
+                    "topic": "Definition of Management, Administration and Organisation.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-1.2",
+                    "sno": "1.2",
+                    "topic": "Functions of Management (Planning, Organising, Directing, Controlling).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-1.3",
+                    "sno": "1.3",
+                    "topic": "Principles of Scientific Management (F.W. Taylor).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-1.4",
+                    "sno": "1.4",
+                    "topic": "Principles of Management (Henry Fayol).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-1.5",
+                    "sno": "1.5",
+                    "topic": "Types of Organisation: Line, Line and Staff, Functional.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-1.6",
+                    "sno": "1.6",
+                    "topic": "Organisational Behaviour: Motivation theories (Maslow's).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-1.7",
+                    "sno": "1.7",
+                    "topic": "Leadership Styles.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m501-1.8",
+                    "sno": "1.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m501-1.9",
+                    "sno": "1.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Production & Materials Management",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m501-2.1",
+                    "sno": "2.1",
+                    "topic": "Functions of Production Planning and Control (PPC).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-2.2",
+                    "sno": "2.2",
+                    "topic": "Plant Layout: Types and factors affecting layout.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-2.3",
+                    "sno": "2.3",
+                    "topic": "Inventory Control: ABC Analysis.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-2.4",
+                    "sno": "2.4",
+                    "topic": "Economic Order Quantity (EOQ).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-2.5",
+                    "sno": "2.5",
+                    "topic": "Purchasing procedure and Stores management.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-2.6",
+                    "sno": "2.6",
+                    "topic": "Break Even Analysis.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-2.7",
+                    "sno": "2.7",
+                    "topic": "Project Management: CPM and PERT (Simple problems).",
+                    "type": "problem solving",
+                    "period": 1
+                },
+                {
+                    "id": "m501-2.8",
+                    "sno": "2.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m501-2.9",
+                    "sno": "2.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Industrial Safety and Legislations",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m501-3.1",
+                    "sno": "3.1",
+                    "topic": "Importance of Safety at workplace.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m501-3.2",
+                    "sno": "3.2",
+                    "topic": "Causes of accidents and prevention methods.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m501-3.3",
+                    "sno": "3.3",
+                    "topic": "Fire hazards and Fire extinguishers.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m501-3.4",
+                    "sno": "3.4",
+                    "topic": "Salient features of Factories Act 1948.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-3.5",
+                    "sno": "3.5",
+                    "topic": "Industrial Dispute Act and Workmen's Compensation Act.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-3.6",
+                    "sno": "3.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m501-3.7",
+                    "sno": "3.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Entrepreneurship Development",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m501-4.1",
+                    "sno": "4.1",
+                    "topic": "Concept of Entrepreneurship and qualities of an Entrepreneur.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m501-4.2",
+                    "sno": "4.2",
+                    "topic": "Role of SSI (Small Scale Industries) in economic development.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m501-4.3",
+                    "sno": "4.3",
+                    "topic": "Institutional support for Entrepreneurs (DIC, SFC, SIDBI).",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m501-4.4",
+                    "sno": "4.4",
+                    "topic": "Market Survey and Demand Forecasting.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-4.5",
+                    "sno": "4.5",
+                    "topic": "Project Report preparation.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m501-4.6",
+                    "sno": "4.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m501-4.7",
+                    "sno": "4.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Total Quality Management",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m501-5.1",
+                    "sno": "5.1",
+                    "topic": "Concept of Quality and TQM.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m501-5.2",
+                    "sno": "5.2",
+                    "topic": "PDCA Cycle and 5S concept.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m501-5.3",
+                    "sno": "5.3",
+                    "topic": "ISO 9000 Series and ISO 14000 Series.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m501-5.4",
+                    "sno": "5.4",
+                    "topic": "Kaizen and Six Sigma.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m501-5.5",
+                    "sno": "5.5",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m501-5.6",
+                    "sno": "5.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,401 @@
+{
+    "subjectCode": "EE-401",
+    "subjectName": "Electrical Installation & Estimation",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 60,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Wiring Systems",
+            "totalPeriods": 7,
+            "topics": [
+                {
+                    "id": "ee4011.1",
+                    "sno": "1.1",
+                    "topic": "Mention the use of wires, cables, Types of Installations and wiring Accessories.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4011.2",
+                    "sno": "1.2",
+                    "topic": "Explain (i) Surface conduit system (ii) Concealed wiring system.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4011.3",
+                    "sno": "1.3",
+                    "topic": "State merits and demerits of (i) Surface conduit system (ii) Concealed wiring system.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4011.4",
+                    "sno": "1.4",
+                    "topic": "List different types of knife switches.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4011.5",
+                    "sno": "1.5",
+                    "topic": "List the MCB types with specifications and mention their applications (MCCB,ELCB AND RCCB)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4011.6",
+                    "sno": "1.6",
+                    "topic": "List the different types of fuses and specify the materials used.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4011.7",
+                    "sno": "1.7",
+                    "topic": "List different ratings of fuses and state their applications.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4011.8",
+                    "sno": "1.8",
+                    "topic": "State the reasons for not using fuse in Neutral wire",
+                    "period": 0,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Estimation of Lighting and Power Loads",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "ee4012.1",
+                    "sno": "2.1",
+                    "topic": "Define service mains and explain different types of service mains",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4012.2",
+                    "sno": "2.2",
+                    "topic": "List the electrical material used in wiring the service mains.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4012.3",
+                    "sno": "2.3",
+                    "topic": "List the schedule of rates used in preparing estimate for house wiring and service mains",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4012.4",
+                    "sno": "2.4",
+                    "topic": "Estimate the material requirement with cost for (i) PVC conduit wiring and (ii) PVC casing -capping wiring for the given plan of abuilding.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4012.5",
+                    "sno": "2.5",
+                    "topic": "Draw the wiring layout for a big office building, workshop/ Electrical Laboratory",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4012.6",
+                    "sno": "2.6",
+                    "topic": "Prepare layout and draw single line wiring diagrams as per standard practice for a given set of machines in aworkshop.",
+                    "period": 2,
+                    "type": "practice"
+                },
+                {
+                    "id": "ee4012.7",
+                    "sno": "2.7",
+                    "topic": "Prepare the estimate of the materials for the complete installation of machines in a work shop / laboratory as per standard practice",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4012.8",
+                    "sno": "2.8",
+                    "topic": "Select the type of wiring and service mains used for the irrigation pump set.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4012.9",
+                    "sno": "2.9",
+                    "topic": "Prepare an estimate for electrifying the irrigation pump set scheme",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4012.10",
+                    "sno": "2.10",
+                    "topic": "Prepare estimation for submersible pump installation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee401-2.11",
+                    "sno": "2.11",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee401-2.12",
+                    "sno": "2.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Estimation of OH Lines and Earthing systems",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "ee4013.1",
+                    "sno": "3.1",
+                    "topic": "Select the type of insulators to be used for over headlines",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4013.2",
+                    "sno": "3.2",
+                    "topic": "Calculate the total number of insulators required for the givenOH Line",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4013.3",
+                    "sno": "3.3",
+                    "topic": "Select the type, size and number of cross arms required for the overheadline",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4013.4",
+                    "sno": "3.4",
+                    "topic": "Determine the size and total length of overhead conductor required for the line giving due Consideration for the sag to be allowed",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4013.5",
+                    "sno": "3.5",
+                    "topic": "Estimate the quantity of all materials required for given 11 kV and 400V over headlines",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4013.6",
+                    "sno": "3.6",
+                    "topic": "Draw and explain plinth and Pole Mounted transformer substations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4013.7",
+                    "sno": "3.7",
+                    "topic": "Estimate the quantity of all the electrical accessories and components required for the given (i) Pole mounted transformer (ii) Plinth mounted transformer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4013.8",
+                    "sno": "3.8",
+                    "topic": "State the purpose of Earthing and mention its types that are normally used.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4013.9",
+                    "sno": "3.9",
+                    "topic": "Select the suitable type of Earthing for a given installation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4013.10",
+                    "sno": "3.10",
+                    "topic": "Draw and explain (i) pipe earthing (ii) plateEarthing with neat sketches.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4013.11",
+                    "sno": "3.11",
+                    "topic": "Estimate the materials required for pipe and plateearthing.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee401-3.12",
+                    "sno": "3.12",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee401-3.13",
+                    "sno": "3.13",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Departmental Tests",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "ee4014.1",
+                    "sno": "4.1",
+                    "topic": "Describe the departmental procedure for obtaining a service connection",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4014.2",
+                    "sno": "4.2",
+                    "topic": "Specify insulation resistance desirable for a given electrical installation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4014.3",
+                    "sno": "4.3",
+                    "topic": "Specify the value of earth resistance to be maintained for a given electrical Installations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4014.4",
+                    "sno": "4.4",
+                    "topic": "List different tests to be conducted before energizing a newly constructed electrical installation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4014.5",
+                    "sno": "4.5",
+                    "topic": "Describe the test procedure for continuity of wiring in an electrical installation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4014.6",
+                    "sno": "4.6",
+                    "topic": "Explain the procedure for conducting insulation test of domestic wiring",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4014.7",
+                    "sno": "4.7",
+                    "topic": "Explain the Sureyof load particulars in a villagefor (i) Domestic(ii)industrial (iii) agriculturalloads.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4014.8",
+                    "sno": "4.8",
+                    "topic": "Calculate the capacity of a transformer required assuming suitable diversity factor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4014.9",
+                    "sno": "4.9",
+                    "topic": "Determine the location point of transformer and calculate the tail end voltage regulations",
+                    "period": 1,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Electrical Safety",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "ee4015.1",
+                    "sno": "5.1",
+                    "topic": "State the importance of electrical safety.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4015.2",
+                    "sno": "5.2",
+                    "topic": "State the common electrical hazards.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4015.3",
+                    "sno": "5.3",
+                    "topic": "Define electric shock and state the effects of electric shock on human body.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4015.4",
+                    "sno": "5.4",
+                    "topic": "State the safety precautions to be taken to avoid electric shock.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4015.5",
+                    "sno": "5.5",
+                    "topic": "List safety equipments used while working with electricity.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4015.6",
+                    "sno": "5.6",
+                    "topic": "Describe the procedure of first aid for shock treatment to an electrocuted person.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4015.7",
+                    "sno": "5.7",
+                    "topic": "State the reasons for fire accidents and state the prevention techniques.",
+                    "period": 0,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4015.8",
+                    "sno": "5.8",
+                    "topic": "Define fire extinguisher and State fire extinguishing techniques.",
+                    "period": 0,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee4015.9",
+                    "sno": "5.9",
+                    "topic": "List different fire extinguishers in common use.",
+                    "period": 0,
+                    "type": "theory"
+                }
+            ]
+        }
+    ]
+}

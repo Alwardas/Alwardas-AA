@@ -1,0 +1,366 @@
+{
+    "subjectCode": "EE-106",
+    "subjectName": "Basic Electrical Technology",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 180,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Basic Principles of Electricity",
+            "totalPeriods": 35,
+            "topics": [
+                {
+                    "id": "ee1061.1",
+                    "sno": "1.1",
+                    "topic": "Define Electric Current, Potential difference, Voltage and EMF",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.2",
+                    "sno": "1.2",
+                    "topic": "State Ohm's Law and solve problems",
+                    "period": 2,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee1061.3",
+                    "sno": "1.3",
+                    "topic": "List the limitations of Ohm's Law",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.4",
+                    "sno": "1.4",
+                    "topic": "Define the terms i) Specific resistance ii)Conductanceiii)Conductivity",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.5",
+                    "sno": "1.5",
+                    "topic": "Derive the relation R =\ud835\udf0c\ud835\udc59/\ud835\udc4e and solve the problems",
+                    "period": 2,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee1061.6",
+                    "sno": "1.6",
+                    "topic": "Explain the effects of temperature on resistance",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.7",
+                    "sno": "1.7",
+                    "topic": "Develop the expression for resistance at any temperature as R t = Ro (1+\u03b1ot)",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.8",
+                    "sno": "1.8",
+                    "topic": "Define temperature Co-efficient of resistance and give its unit",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.9",
+                    "sno": "1.9",
+                    "topic": "Write the formula for Co-efficient of resistance at any temperatures\ud835\udf36\ud835\udc95 = \ud835\udf36\ud835\udfce \ud835\udfcf+\ud835\udf36\ud835\udfce\ud835\udc95",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.1",
+                    "sno": "1.1",
+                    "topic": "Develop the expressions for equivalent Resistance with simple SERIES and PARALLEL connections",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.2",
+                    "sno": "1.2",
+                    "topic": "Solve problems on equivalent resistance in case of Series- Parallel networks",
+                    "period": 2,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee1061.3",
+                    "sno": "1.3",
+                    "topic": "State the concept of division of current when two Resistors are connected in parallel and solve the problems",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.4",
+                    "sno": "1.4",
+                    "topic": "Differentiate between active and passive circuits.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.5",
+                    "sno": "1.5",
+                    "topic": "Define junction, branch and loop in circuits",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.6",
+                    "sno": "1.6",
+                    "topic": "State (i) Kirchhoff's current law (KCL) ( ii) Kirchhoff's voltage law (KVL)",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1061.7",
+                    "sno": "1.7",
+                    "topic": "Solve problems by applying branch current method only",
+                    "period": 2,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee106-1.17",
+                    "sno": "1.17",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee106-1.18",
+                    "sno": "1.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Resistive Circuits",
+            "totalPeriods": 40,
+            "topics": [
+                {
+                    "id": "ee106-2.1",
+                    "sno": "2.1",
+                    "topic": "Introduction and details of Resistive Circuits",
+                    "period": 40,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Work, Power, Energy and Heating effects of Electric Current",
+            "totalPeriods": 40,
+            "topics": [
+                {
+                    "id": "ee1063.1",
+                    "sno": "3.1",
+                    "topic": "State and explain electric Work, Power and Energy",
+                    "period": 5,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1063.2",
+                    "sno": "3.2",
+                    "topic": "Solve problems on Work, Power and Energy",
+                    "period": 5,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee1063.3",
+                    "sno": "3.3",
+                    "topic": "Mention the typical power ratings of home appliances like Electric lamps(Incandescent, fluorescent, CFL & LED), Water heater, Electric Iron, Fans, Refrigerators, Air and Water coolers, Television sets, Air Conditioners, Water Pumps, Computers, Printers etc.",
+                    "period": 5,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1063.4",
+                    "sno": "3.4",
+                    "topic": "Calculate Electricity bill of domestic consumers as per the Electricity Tariff",
+                    "period": 5,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1063.5",
+                    "sno": "3.5",
+                    "topic": "Define Joule's law and state its expression.",
+                    "period": 5,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1063.6",
+                    "sno": "3.6",
+                    "topic": "Define Thermal efficiency",
+                    "period": 5,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1063.7",
+                    "sno": "3.7",
+                    "topic": "Solve problems on Electric heating",
+                    "period": 4,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee1063.8",
+                    "sno": "3.8",
+                    "topic": "Explain the applications of heat produced due to Electric current in (i) Metal Filament lamp (ii) Electric kettle (iii) Electric Cooker (iv) Geyser",
+                    "period": 4,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee106-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee106-3.10",
+                    "sno": "3.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Conversion Techniques",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "ee1064.1",
+                    "sno": "4.1",
+                    "topic": "Explain star and delta circuits",
+                    "period": 4,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1064.2",
+                    "sno": "4.2",
+                    "topic": "Explain the concept of circuit transformation and equivalent circuits",
+                    "period": 4,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1064.3",
+                    "sno": "4.3",
+                    "topic": "Develop transformation formulae for star- delta transformations and vice-versa",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1064.4",
+                    "sno": "4.4",
+                    "topic": "Solve problems on Star Delta Transformation.",
+                    "period": 3,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee1064.5",
+                    "sno": "4.5",
+                    "topic": "Explain ideal voltage source & ideal current source",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1064.6",
+                    "sno": "4.6",
+                    "topic": "Explain Source transformation technique",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1064.7",
+                    "sno": "4.7",
+                    "topic": "Solve simple problems on Source transformation technique",
+                    "period": 3,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee106-4.8",
+                    "sno": "4.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee106-4.9",
+                    "sno": "4.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Network Theorems",
+            "totalPeriods": 40,
+            "topics": [
+                {
+                    "id": "ee1065.1",
+                    "sno": "5.1",
+                    "topic": "State the need for network theorems",
+                    "period": 7,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1065.2",
+                    "sno": "5.2",
+                    "topic": "list different types of theorems applied to DC circuits",
+                    "period": 7,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1065.3",
+                    "sno": "5.3",
+                    "topic": "State and explain Super position theorem.",
+                    "period": 6,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1065.4",
+                    "sno": "5.4",
+                    "topic": "State and explain Thevenin's theorem.",
+                    "period": 6,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1065.5",
+                    "sno": "5.5",
+                    "topic": "State and explain Norton's theorem",
+                    "period": 6,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee1065.6",
+                    "sno": "5.6",
+                    "topic": "State and explain Maximum power transfer theorem.",
+                    "period": 6,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee106-5.7",
+                    "sno": "5.7",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee106-5.8",
+                    "sno": "5.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,415 @@
+{
+    "subjectCode": "EE-305",
+    "subjectName": "Programming in ''C''",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Basics of 'C' Programming",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "ee3051.1",
+                    "sno": "1.1",
+                    "topic": "State the Importance of 'C'",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.2",
+                    "sno": "1.2",
+                    "topic": "Explain the basic structure of 'C' Programming",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.3",
+                    "sno": "1.3",
+                    "topic": "KnowtheProgrammingstylewithsample program",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.4",
+                    "sno": "1.4",
+                    "topic": "Executea'C' Program",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.5",
+                    "sno": "1.5",
+                    "topic": "Knowaboutthecharacter set",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.6",
+                    "sno": "1.6",
+                    "topic": "Knowaboutconstants,variables, keywords&identifiers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.7",
+                    "sno": "1.7",
+                    "topic": "Listvariousdatatypeswith examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.8",
+                    "sno": "1.8",
+                    "topic": "Explain different arithmetic operators, relational operators and logical operatorswith theirprecedence",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.9",
+                    "sno": "1.9",
+                    "topic": "Explaintheassignment statements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.10",
+                    "sno": "1.10",
+                    "topic": "Explainthe increment& decrement operators",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.11",
+                    "sno": "1.11",
+                    "topic": "IdentifythecompoundAssignment operators",
+                    "period": 0,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.12",
+                    "sno": "1.12",
+                    "topic": "Explaintheinputfunctionsprintfand scanf",
+                    "period": 0,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3051.13",
+                    "sno": "1.13",
+                    "topic": "Knowvarioustypeconversion techniques",
+                    "period": 0,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Decision & Loop Control Statements",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "ee3052.1",
+                    "sno": "2.1",
+                    "topic": "StatetheImportanceofconditional expressions",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3052.2",
+                    "sno": "2.2",
+                    "topic": "List andexplainthevariousconditional statements",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3052.3",
+                    "sno": "2.3",
+                    "topic": "Explaintheswitch statement",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3052.4",
+                    "sno": "2.4",
+                    "topic": "Listthe different iterativeloopsandexplainthem(for,do,while statements)",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3052.5",
+                    "sno": "2.5",
+                    "topic": "Definenestingandimplementwithsimple programs",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3052.6",
+                    "sno": "2.6",
+                    "topic": "Differentiate 'break' and 'continue' statements with programs",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3052.7",
+                    "sno": "2.7",
+                    "topic": "Mentionaboutthenullstatementsandcomma operator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee305-2.8",
+                    "sno": "2.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee305-2.9",
+                    "sno": "2.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Arrays & Strings",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "ee3053.1",
+                    "sno": "3.1",
+                    "topic": "Define1-D and2-D Arrays.",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3053.2",
+                    "sno": "3.2",
+                    "topic": "Knowhow to initializeabove arraysandaccessarray elements",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3053.3",
+                    "sno": "3.3",
+                    "topic": "Explainsimpleprogramsusing arrays",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3053.4",
+                    "sno": "3.4",
+                    "topic": "Define 'string'",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3053.5",
+                    "sno": "3.5",
+                    "topic": "Knowhow todeclareandinitialize string variables",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3053.6",
+                    "sno": "3.6",
+                    "topic": "Understandvariousstringhandling functions",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3053.7",
+                    "sno": "3.7",
+                    "topic": "Implementprogramsusingstring functions",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee305-3.8",
+                    "sno": "3.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee305-3.9",
+                    "sno": "3.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "User defined Functions",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "ee3054.1",
+                    "sno": "4.1",
+                    "topic": "Define 'function'",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3054.2",
+                    "sno": "4.2",
+                    "topic": "Understandtheneedfor Userdefined functions",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3054.3",
+                    "sno": "4.3",
+                    "topic": "Knowthe returnvaluesandtheir types",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3054.4",
+                    "sno": "4.4",
+                    "topic": "Listthe fourstorageclassessupportedby C",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3054.5",
+                    "sno": "4.5",
+                    "topic": "Discusstheimportanceoffunctionprototypes in programming",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3054.6",
+                    "sno": "4.6",
+                    "topic": "Differentiatelocalandexternal variables",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3054.7",
+                    "sno": "4.7",
+                    "topic": "Identifyautomatic and static variablesanddiscussthemin detail.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee305-4.8",
+                    "sno": "4.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee305-4.9",
+                    "sno": "4.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Structures, Unions & Pointers",
+            "totalPeriods": 17,
+            "topics": [
+                {
+                    "id": "ee3055.1",
+                    "sno": "5.1",
+                    "topic": "Definea structure",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3055.2",
+                    "sno": "5.2",
+                    "topic": "Describeaboutstructure variable",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3055.3",
+                    "sno": "5.3",
+                    "topic": "Explain initialization of structures",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3055.4",
+                    "sno": "5.4",
+                    "topic": "Knowtheaccessingofmembersofa structure.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3055.5",
+                    "sno": "5.5",
+                    "topic": "Illustrate concept ofstructure assignment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3055.6",
+                    "sno": "5.6",
+                    "topic": "Explainhowtofindsizeofa structure.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3055.7",
+                    "sno": "5.7",
+                    "topic": "Knowpassingofindividualmembersofa structuretoa function",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3055.8",
+                    "sno": "5.8",
+                    "topic": "DefineUnionandIllustrateuseof union",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3055.9",
+                    "sno": "5.9",
+                    "topic": "Declarepointer,assignpointer,andinitialize pointer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3055.10",
+                    "sno": "5.10",
+                    "topic": "Discusspointer arithmetic.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee3055.11",
+                    "sno": "5.11",
+                    "topic": "Illustrate with example how pointer can be used to realize the effect ofparameter",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee305-5.12",
+                    "sno": "5.12",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee305-5.13",
+                    "sno": "5.13",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

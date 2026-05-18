@@ -1,0 +1,373 @@
+{
+    "subjectCode": "M-305",
+    "subjectName": "Manufacturing Technology -I",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Lathe and Lathe Work",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "m305-1.1",
+                    "sno": "1.1",
+                    "topic": "Working principle of Lathe.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-1.2",
+                    "sno": "1.2",
+                    "topic": "Classification of Lathes.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-1.3",
+                    "sno": "1.3",
+                    "topic": "Constructional details of Engine Lathe.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-1.4",
+                    "sno": "1.4",
+                    "topic": "Lathe operations (Turning, Facing, Knurling, Thread cutting, etc.).",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-1.5",
+                    "sno": "1.5",
+                    "topic": "Lathe accessories and attachments.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-1.6",
+                    "sno": "1.6",
+                    "topic": "Capstan and Turret Lathes.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-1.7",
+                    "sno": "1.7",
+                    "topic": "Automatic Lathes.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-1.8",
+                    "sno": "1.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m305-1.9",
+                    "sno": "1.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Shaper, Slotter and Planer",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "m305-2.1",
+                    "sno": "2.1",
+                    "topic": "Working principle of Shaper.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-2.2",
+                    "sno": "2.2",
+                    "topic": "Construction and operations of Shaper.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-2.3",
+                    "sno": "2.3",
+                    "topic": "Quick return mechanisms.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-2.4",
+                    "sno": "2.4",
+                    "topic": "Working principle of Slotter.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-2.5",
+                    "sno": "2.5",
+                    "topic": "Construction and operations of Slotter.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-2.6",
+                    "sno": "2.6",
+                    "topic": "Working principle of Planer.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-2.7",
+                    "sno": "2.7",
+                    "topic": "Difference between Shaper, Slotter and Planer.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-2.8",
+                    "sno": "2.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m305-2.9",
+                    "sno": "2.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Broaching Machine",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "m305-3.1",
+                    "sno": "3.1",
+                    "topic": "Introduction to Broaching.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m305-3.2",
+                    "sno": "3.2",
+                    "topic": "Types of Broaching machines.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m305-3.3",
+                    "sno": "3.3",
+                    "topic": "Broach tool nomenclature.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-3.4",
+                    "sno": "3.4",
+                    "topic": "Advantages and applications of Broaching.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-3.5",
+                    "sno": "3.5",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m305-3.6",
+                    "sno": "3.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Cutting Fluids and Coolants",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "id": "m305-4.1",
+                    "sno": "4.1",
+                    "topic": "Functions of cutting fluids.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m305-4.2",
+                    "sno": "4.2",
+                    "topic": "Properties of good cutting fluid.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m305-4.3",
+                    "sno": "4.3",
+                    "topic": "Types of cutting fluids and coolants.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m305-4.4",
+                    "sno": "4.4",
+                    "topic": "Selection of cutting fluids for different materials.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-4.5",
+                    "sno": "4.5",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m305-4.6",
+                    "sno": "4.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Welding",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "id": "m305-5.1",
+                    "sno": "5.1",
+                    "topic": "Introduction and Classification of Welding.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-5.2",
+                    "sno": "5.2",
+                    "topic": "Arc Welding: Principle, Equipment, Electrodes.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-5.3",
+                    "sno": "5.3",
+                    "topic": "Gas Welding: Principle, Equipment, Flames.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-5.4",
+                    "sno": "5.4",
+                    "topic": "Resistance Welding: Types (Spot, Seam, Butt, Projection).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-5.5",
+                    "sno": "5.5",
+                    "topic": "Special Welding Processes (TIG, MIG, Laser, etc.).",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-5.6",
+                    "sno": "5.6",
+                    "topic": "Soldering and Brazing.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-5.7",
+                    "sno": "5.7",
+                    "topic": "Welding Defects and Testing.",
+                    "type": "theory",
+                    "period": 1
+                },
+                {
+                    "id": "m305-5.8",
+                    "sno": "5.8",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m305-5.9",
+                    "sno": "5.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Metrology",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "id": "m305-6.1",
+                    "sno": "6.1",
+                    "topic": "Linear Measurement: Steel rule, Callipers, Vernier Calliper, Micrometer.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m305-6.2",
+                    "sno": "6.2",
+                    "topic": "Angular Measurement: Bevel Protractor, Sine Bar.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-6.3",
+                    "sno": "6.3",
+                    "topic": "Comparators: Types and Working.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-6.4",
+                    "sno": "6.4",
+                    "topic": "Surface Finish Measurement.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-6.5",
+                    "sno": "6.5",
+                    "topic": "Limits, Fits and Tolerances.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m305-6.6",
+                    "sno": "6.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m305-6.7",
+                    "sno": "6.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

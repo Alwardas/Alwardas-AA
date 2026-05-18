@@ -1,0 +1,520 @@
+{
+    "subjectCode": "EE-503",
+    "subjectName": "Power Systems - II",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Transmission lines",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "ee5031.1",
+                    "sno": "1.1",
+                    "topic": "State the need of transmission lines and distribution lines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.2",
+                    "sno": "1.2",
+                    "topic": "Explain A.C and D.C transmission supply systems and state its advantages and disadvantages",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.3",
+                    "sno": "1.3",
+                    "topic": "State the various supply systems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.4",
+                    "sno": "1.4",
+                    "topic": "Compare the supply systems based on the conductor material required for overhead lines and underground cables for the following systems: i) DC \u2013 2 wire system ii) AC - 1 ph 2 wire system iii) AC - 3 ph 3 wire system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.5",
+                    "sno": "1.5",
+                    "topic": "Explain the effects of supply frequency on Transmission lines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.6",
+                    "sno": "1.6",
+                    "topic": "State the effects of using higher transmission voltage on (i) Line efficiency (ii)Voltage drop iii) Line loss (iv)Active &reactive Power (v)Volume of conductor material (vi)Cost of-transformers, insulators, switchgear, supports etc.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.7",
+                    "sno": "1.7",
+                    "topic": "State the empirical formula for determining the system voltage",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.8",
+                    "sno": "1.8",
+                    "topic": "State the relative merits and demerits for the following conductors; a) Solid b) Stranded c) Hollow d) Bundled conductors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.9",
+                    "sno": "1.9",
+                    "topic": "Explain the current distortion effects (i) Skin effect(ii) Proximity effect (iii) Spirality effect",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.10",
+                    "sno": "1.10",
+                    "topic": "Give expression for inductance of 1- phase system and 3-phase system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.11",
+                    "sno": "1.11",
+                    "topic": "Give the expressions for capacitance of1 phase system and 3-phase system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.12",
+                    "sno": "1.12",
+                    "topic": "State the need for transposition of overhead lines and explain its effects.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.13",
+                    "sno": "1.13",
+                    "topic": "Define short, medium and longlines.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.14",
+                    "sno": "1.14",
+                    "topic": "Define `regulation' and derive the approximate formula for percentage regulation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.15",
+                    "sno": "1.15",
+                    "topic": "Explain short transmission lines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.16",
+                    "sno": "1.16",
+                    "topic": "Solve simple problems on regulation and efficiency for short line",
+                    "period": 1,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee5031.17",
+                    "sno": "1.17",
+                    "topic": "Explain (i) Nominal T-method (ii) Nominal \u03c0 \u2013method for a medium transmission lines and solve simple problems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.18",
+                    "sno": "1.18",
+                    "topic": "State `Ferranti' effect",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.19",
+                    "sno": "1.19",
+                    "topic": "Define Corona, State the factors affecting it and list the methods of reducing corona",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.20",
+                    "sno": "1.20",
+                    "topic": "Explain the concept and applications of hot line technique",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.21",
+                    "sno": "1.21",
+                    "topic": "State basic concepts of HVDC transmission",
+                    "period": 0,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.22",
+                    "sno": "1.22",
+                    "topic": "List the types of HVDC transmission systems.",
+                    "period": 0,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5031.23",
+                    "sno": "1.23",
+                    "topic": "State the advantages and disadvantages of HVDC transmission",
+                    "period": 0,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Line structures for transmission and Underground cables",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "ee5032.1",
+                    "sno": "2.1",
+                    "topic": "State the main components of overhead lines",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.2",
+                    "sno": "2.2",
+                    "topic": "State the requirements of line supports and List the types of line supports",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.3",
+                    "sno": "2.3",
+                    "topic": "List the common conductor spacing and ground clearances adopted for 66 kV, 33kV, 11 kV and LT line",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.4",
+                    "sno": "2.4",
+                    "topic": "Define 'sag' and state the factors affecting the sag",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.5",
+                    "sno": "2.5",
+                    "topic": "Derive an equation for the approximate method of calculating sag when the supports are at the same level (a) instiller (b) with the effect of wind and ice and solve problems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.6",
+                    "sno": "2.6",
+                    "topic": "State the disadvantages of loose spans(sag more than prescribed value)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.7",
+                    "sno": "2.7",
+                    "topic": "State the purpose of insulators and its requirements.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.8",
+                    "sno": "2.8",
+                    "topic": "State applications of the following insulators. (i) Pin type (ii)Strain type (iii)Suspension type(iv)Shackle type",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.9",
+                    "sno": "2.9",
+                    "topic": "Compare pin type insulator and suspension type insulators.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.10",
+                    "sno": "2.10",
+                    "topic": "Define the terms ( i) Flashover (ii)Puncture (iii)String-efficiency",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.11",
+                    "sno": "2.11",
+                    "topic": "Solve problems on distribution of voltage across string and string efficiency",
+                    "period": 1,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee5032.12",
+                    "sno": "2.12",
+                    "topic": "List the methods of improving string efficiency",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.13",
+                    "sno": "2.13",
+                    "topic": "State the need for arcing horns and guard rings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.14",
+                    "sno": "2.14",
+                    "topic": "List causes of failure of insulators in transmission and distribution lines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.15",
+                    "sno": "2.15",
+                    "topic": "Define cables and explain the general construction of cables.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.16",
+                    "sno": "2.16",
+                    "topic": "Compare overhead lines with underground cables",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.17",
+                    "sno": "2.17",
+                    "topic": "Classify the cables based on (i) Number of conductors (ii) Voltage (iii) Insulation and lead sheathing (iv) The methods of improving the dielectric stress",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.18",
+                    "sno": "2.18",
+                    "topic": "Derive an equation for the insulation resistance of acable",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5032.19",
+                    "sno": "2.19",
+                    "topic": "Solve problems on insulation resistance.",
+                    "period": 1,
+                    "type": "problem solving"
+                },
+                {
+                    "id": "ee503-2.20",
+                    "sno": "2.20",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee503-2.21",
+                    "sno": "2.21",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Substations and Distribution",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "ee5033.1",
+                    "sno": "3.1",
+                    "topic": "Explain the need for substations",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5033.2",
+                    "sno": "3.2",
+                    "topic": "State the merits of indoor substation and outdoor substation",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5033.3",
+                    "sno": "3.3",
+                    "topic": "State the purpose of the following equipment used in substation. (i) Busbars (ii) Insulators (iii)Transformers (iv) Switchgear (v) Indicating and Metering equipment (vi) Protective relays (vii) Lightning arrestors (viii) C a b l e s (ix) Firefighting equipment",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5033.5",
+                    "sno": "3.5",
+                    "topic": "State the need for auxiliary supply in Substations",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5033.6",
+                    "sno": "3.6",
+                    "topic": "Draw the schematic diagram of 33kV / 11kVsubstation and label the parts.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5033.7",
+                    "sno": "3.7",
+                    "topic": "Draw the schematic diagram of 220kV / 132kVsubstation and label the parts.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5033.8",
+                    "sno": "3.8",
+                    "topic": "Define Feeder, distributors and service mains",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5033.9",
+                    "sno": "3.9",
+                    "topic": "Explain radial and ring-main distribution systems and state their advantages and disadvantages",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee503-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee503-3.10",
+                    "sno": "3.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Protection of Transmission lines",
+            "totalPeriods": 7,
+            "topics": [
+                {
+                    "id": "ee5034.1",
+                    "sno": "4.1",
+                    "topic": "State the necessity of bus-bar protection, causes of bus-bar faults.",
+                    "period": 2,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5034.2",
+                    "sno": "4.2",
+                    "topic": "Describe the transmission line protection.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5034.3",
+                    "sno": "4.3",
+                    "topic": "Explain the protection of transmission lines using distance relays.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5034.4",
+                    "sno": "4.4",
+                    "topic": "Explain pilot wires",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee503-4.5",
+                    "sno": "4.5",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee503-4.6",
+                    "sno": "4.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Modern Trends in power systems",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "ee5035.1",
+                    "sno": "5.1",
+                    "topic": "Define Smart Grid and state its need",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5035.2",
+                    "sno": "5.2",
+                    "topic": "Explain the working of SMARTGRID",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5035.3",
+                    "sno": "5.3",
+                    "topic": "Define Micro Grid and explain its operation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5035.4",
+                    "sno": "5.4",
+                    "topic": "Define FACTS(Flexible AC transmission systems) and state its applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5035.5",
+                    "sno": "5.5",
+                    "topic": "State the Basic concept of WiTricity (wireless power transmission)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee5035.6",
+                    "sno": "5.6",
+                    "topic": "Define distributed generation (Distributed energy resources).",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ee503-5.7",
+                    "sno": "5.7",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ee503-5.8",
+                    "sno": "5.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

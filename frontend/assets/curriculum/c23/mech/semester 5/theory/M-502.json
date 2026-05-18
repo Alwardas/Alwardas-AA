@@ -1,0 +1,296 @@
+{
+    "subjectCode": "M-502",
+    "subjectName": "Industrial Engineering and Quality Control",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Method Study",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m502-1.1",
+                    "sno": "1.1",
+                    "topic": "Introduction to Industrial Engineering and Productivity.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-1.2",
+                    "sno": "1.2",
+                    "topic": "Objectives and procedure of Method Study.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-1.3",
+                    "sno": "1.3",
+                    "topic": "Recording techniques: Charts (Operation process, Flow process, Two-handed).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-1.4",
+                    "sno": "1.4",
+                    "topic": "Flow diagrams and String diagrams.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-1.5",
+                    "sno": "1.5",
+                    "topic": "Therbligs and SIMO chart.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-1.6",
+                    "sno": "1.6",
+                    "topic": "Principles of Motion Economy.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-1.7",
+                    "sno": "1.7",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m502-1.8",
+                    "sno": "1.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Work Measurement",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m502-2.1",
+                    "sno": "2.1",
+                    "topic": "Objectives and procedure of Work Measurement (Time Study).",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-2.2",
+                    "sno": "2.2",
+                    "topic": "Stop watch time study equipment.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-2.3",
+                    "sno": "2.3",
+                    "topic": "Standard time calculation: Rating factor, Allowances.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-2.4",
+                    "sno": "2.4",
+                    "topic": "Work sampling: Principle and advantages.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-2.5",
+                    "sno": "2.5",
+                    "topic": "PMTS (Predetermined Motion Time Systems).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-2.6",
+                    "sno": "2.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m502-2.7",
+                    "sno": "2.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Fundamentals of Inspection & S.Q.C",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m502-3.1",
+                    "sno": "3.1",
+                    "topic": "Definition and objectives of Inspection.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-3.2",
+                    "sno": "3.2",
+                    "topic": "Types of Inspection (Incoming, In-process, Final).",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-3.3",
+                    "sno": "3.3",
+                    "topic": "Statistical Quality Control (SQC): Terminology.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-3.4",
+                    "sno": "3.4",
+                    "topic": "Frequency distribution and Normal distribution curve.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-3.5",
+                    "sno": "3.5",
+                    "topic": "Causes of variation: Chance and Assignable causes.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-3.6",
+                    "sno": "3.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m502-3.7",
+                    "sno": "3.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Control Charts",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m502-4.1",
+                    "sno": "4.1",
+                    "topic": "Control charts for Variables: X-bar and R charts.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-4.2",
+                    "sno": "4.2",
+                    "topic": "Interpretation of Control charts.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-4.3",
+                    "sno": "4.3",
+                    "topic": "Control charts for Attributes: P-chart, C-chart.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-4.4",
+                    "sno": "4.4",
+                    "topic": "Process Capability.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-4.5",
+                    "sno": "4.5",
+                    "topic": "Simple problems on Control charts.",
+                    "type": "problem solving",
+                    "period": 2
+                },
+                {
+                    "id": "m502-4.6",
+                    "sno": "4.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m502-4.7",
+                    "sno": "4.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Acceptance Sampling",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m502-5.1",
+                    "sno": "5.1",
+                    "topic": "Concept of Acceptance Sampling.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-5.2",
+                    "sno": "5.2",
+                    "topic": "Sampling Plans: Single, Double and Multiple sampling.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-5.3",
+                    "sno": "5.3",
+                    "topic": "OC Curve (Operating Characteristic Curve).",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m502-5.4",
+                    "sno": "5.4",
+                    "topic": "Producer's risk and Consumer's risk.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-5.5",
+                    "sno": "5.5",
+                    "topic": "AQL, LTPD, IQL.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m502-5.6",
+                    "sno": "5.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m502-5.7",
+                    "sno": "5.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

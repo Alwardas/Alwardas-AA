@@ -1,0 +1,282 @@
+{
+    "subjectCode": "M-505",
+    "subjectName": "Refrigeration and Air Conditioning",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Fundamentals of Refrigeration",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m505-1.1",
+                    "sno": "1.1",
+                    "topic": "Definition and Methods of Refrigeration.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-1.2",
+                    "sno": "1.2",
+                    "topic": "Unit of Refrigeration (Ton) and COP.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-1.3",
+                    "sno": "1.3",
+                    "topic": "Reversed Carnot Cycle.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-1.4",
+                    "sno": "1.4",
+                    "topic": "Bell-Coleman (Air) Refrigeration Cycle.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m505-1.5",
+                    "sno": "1.5",
+                    "topic": "Refrigerants: Classification and Properties.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m505-1.6",
+                    "sno": "1.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m505-1.7",
+                    "sno": "1.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Vapour Compression Refrigeration System",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m505-2.1",
+                    "sno": "2.1",
+                    "topic": "Principle and Components of VCR System.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-2.2",
+                    "sno": "2.2",
+                    "topic": "Analysis of VCR cycle using P-H and T-S diagrams.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-2.3",
+                    "sno": "2.3",
+                    "topic": "Effect of superheating and subcooling.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-2.4",
+                    "sno": "2.4",
+                    "topic": "Calculation of COP.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m505-2.5",
+                    "sno": "2.5",
+                    "topic": "Types of Compressors, Condensers, Evaporators.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m505-2.6",
+                    "sno": "2.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m505-2.7",
+                    "sno": "2.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Vapour Absorption Refrigeration System",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m505-3.1",
+                    "sno": "3.1",
+                    "topic": "Principle of Vapour Absorption System.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-3.2",
+                    "sno": "3.2",
+                    "topic": "Simple Ammonia-Water System.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-3.3",
+                    "sno": "3.3",
+                    "topic": "Practical Ammonia-Water System.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-3.4",
+                    "sno": "3.4",
+                    "topic": "Electrolux (Three fluid) System.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m505-3.5",
+                    "sno": "3.5",
+                    "topic": "Comparison of VCR and VAR systems.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m505-3.6",
+                    "sno": "3.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m505-3.7",
+                    "sno": "3.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Refrigeration Equipment and Controls",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m505-4.1",
+                    "sno": "4.1",
+                    "topic": "Expansion devices: Capillary tube, Thermostatic expansion valve.",
+                    "type": "theory",
+                    "period": 4
+                },
+                {
+                    "id": "m505-4.2",
+                    "sno": "4.2",
+                    "topic": "Safety controls: Pressure switches, Thermostats.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-4.3",
+                    "sno": "4.3",
+                    "topic": "Domestic Refrigerator and Water Cooler.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-4.4",
+                    "sno": "4.4",
+                    "topic": "Cold Storage.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-4.5",
+                    "sno": "4.5",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m505-4.6",
+                    "sno": "4.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Air Conditioning",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "m505-5.1",
+                    "sno": "5.1",
+                    "topic": "Psychrometry: Properties of air, Psychrometric chart.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-5.2",
+                    "sno": "5.2",
+                    "topic": "Psychrometric processes (Sensible heating/cooling, Humidification/Dehumidification).",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-5.3",
+                    "sno": "5.3",
+                    "topic": "Human comfort conditions.",
+                    "type": "theory",
+                    "period": 3
+                },
+                {
+                    "id": "m505-5.4",
+                    "sno": "5.4",
+                    "topic": "Air Conditioning Systems: Window AC, Split AC.",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m505-5.5",
+                    "sno": "5.5",
+                    "topic": "Central Air Conditioning (Basics).",
+                    "type": "theory",
+                    "period": 2
+                },
+                {
+                    "id": "m505-5.6",
+                    "sno": "5.6",
+                    "topic": "Revision of the Unit",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "m505-5.7",
+                    "sno": "5.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}
