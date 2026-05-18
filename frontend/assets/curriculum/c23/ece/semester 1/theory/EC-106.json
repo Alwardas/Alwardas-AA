@@ -1,0 +1,1108 @@
+{
+    "subjectCode": "EC-106",
+    "subjectName": "Elements of Electrical Engineering",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 150,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Basics of Electrical Engineering",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "ec-106-1.1",
+                    "sno": "1.1",
+                    "topic": "Explain the concept of lines of force & magnetic Field.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.2",
+                    "sno": "1.2",
+                    "topic": "Define the terms magnetic field intensity, magnetic potential, Magnetic Flux, magnetic flux density.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.3",
+                    "sno": "1.3",
+                    "topic": "Define the terms absolute permeability and relative permeability.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.4",
+                    "sno": "1.4",
+                    "topic": "State Faraday’s laws of electro - magnetic induction.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.5",
+                    "sno": "1.5",
+                    "topic": "Explain dynamically and statically induced E.M.F.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.6",
+                    "sno": "1.6",
+                    "topic": "Define the term self-inductance, mutual inductance and co-efficient of coupling.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.7",
+                    "sno": "1.7",
+                    "topic": "i) State expression for equivalent inductance of inductors connected in series and solve simple problems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.8",
+                    "sno": "1.8",
+                    "topic": "ii) State expression for equivalent inductance of inductors connected in parallel and solve simple problems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.9",
+                    "sno": "1.9",
+                    "topic": "Explain the concept of electrostatic field.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.10",
+                    "sno": "1.10",
+                    "topic": "Define the terms absolute permittivity and relative permittivity.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.11",
+                    "sno": "1.11",
+                    "topic": "Define the terms electric potential and potential difference, voltage, current and power.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.12",
+                    "sno": "1.12",
+                    "topic": "Define the terms electric field intensity, electric flux, electric flux density.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.13",
+                    "sno": "1.13",
+                    "topic": "i) State expression for equivalent capacitance of capacitors connected in series and solve simple problems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.14",
+                    "sno": "1.14",
+                    "topic": "ii) State expression for equivalent capacitance of capacitors connected in parallel and solve simple problems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.15",
+                    "sno": "1.15",
+                    "topic": "Explain charging and discharging of capacitor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.16",
+                    "sno": "1.16",
+                    "topic": "Detailed discussion and applications of: Explain the concept of lines of force & magnetic Field.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.17",
+                    "sno": "1.17",
+                    "topic": "Detailed discussion and applications of: Define the terms magnetic field intensity, magnetic potential, Magnetic Flux, magnetic flux density.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.18",
+                    "sno": "1.18",
+                    "topic": "Detailed discussion and applications of: Define the terms absolute permeability and relative permeability.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.19",
+                    "sno": "1.19",
+                    "topic": "Detailed discussion and applications of: State Faraday’s laws of electro - magnetic induction.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.20",
+                    "sno": "1.20",
+                    "topic": "Detailed discussion and applications of: Explain dynamically and statically induced E.M.F.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.21",
+                    "sno": "1.21",
+                    "topic": "Detailed discussion and applications of: Define the term self-inductance, mutual inductance and co-efficient of coupling.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.22",
+                    "sno": "1.22",
+                    "topic": "Detailed discussion and applications of: i) State expression for equivalent inductance of inductors connected in series and solve simple problems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.23",
+                    "sno": "1.23",
+                    "topic": "Detailed discussion and applications of: ii) State expression for equivalent inductance of inductors connected in parallel and solve simple problems.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-1.24",
+                    "sno": "1.24",
+                    "topic": "Revision of Basics of Electrical Engineering",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-106-1.25",
+                    "sno": "1.25",
+                    "topic": "Assessment / Unit Test on Basics of Electrical Engineering",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Basic Electrical circuits",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "ec-106-2.1",
+                    "sno": "2.1",
+                    "topic": "Distinguish between active and passive elements.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.2",
+                    "sno": "2.2",
+                    "topic": "Explain the terms Ideal voltage source and Ideal current source.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.3",
+                    "sno": "2.3",
+                    "topic": "State Ohm’s Law and its limitations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.4",
+                    "sno": "2.4",
+                    "topic": "State Kirchhoff’s current law and Kirchhoff’s voltage law.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.5",
+                    "sno": "2.5",
+                    "topic": "Derive an expression for equivalent resistance of resistors connected in series.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.6",
+                    "sno": "2.6",
+                    "topic": "Derive an expression for equivalent resistance of resistors connected in parallel.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.7",
+                    "sno": "2.7",
+                    "topic": "Explain current division rule for a two-branch parallel resistive network.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.8",
+                    "sno": "2.8",
+                    "topic": "Solve simple problems on current division rule.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.9",
+                    "sno": "2.9",
+                    "topic": "Detailed discussion and applications of: Distinguish between active and passive elements.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.10",
+                    "sno": "2.10",
+                    "topic": "Detailed discussion and applications of: Explain the terms Ideal voltage source and Ideal current source.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.11",
+                    "sno": "2.11",
+                    "topic": "Detailed discussion and applications of: State Ohm’s Law and its limitations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.12",
+                    "sno": "2.12",
+                    "topic": "Detailed discussion and applications of: State Kirchhoff’s current law and Kirchhoff’s voltage law.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.13",
+                    "sno": "2.13",
+                    "topic": "Detailed discussion and applications of: Derive an expression for equivalent resistance of resistors connected in series.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.14",
+                    "sno": "2.14",
+                    "topic": "Detailed discussion and applications of: Derive an expression for equivalent resistance of resistors connected in parallel.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.15",
+                    "sno": "2.15",
+                    "topic": "Detailed discussion and applications of: Explain current division rule for a two-branch parallel resistive network.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.16",
+                    "sno": "2.16",
+                    "topic": "Detailed discussion and applications of: Solve simple problems on current division rule.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.17",
+                    "sno": "2.17",
+                    "topic": "Detailed discussion and applications of: Distinguish between active and passive elements.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.18",
+                    "sno": "2.18",
+                    "topic": "Detailed discussion and applications of: Explain the terms Ideal voltage source and Ideal current source.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.19",
+                    "sno": "2.19",
+                    "topic": "Detailed discussion and applications of: State Ohm’s Law and its limitations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.20",
+                    "sno": "2.20",
+                    "topic": "Detailed discussion and applications of: State Kirchhoff’s current law and Kirchhoff’s voltage law.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.21",
+                    "sno": "2.21",
+                    "topic": "Detailed discussion and applications of: Derive an expression for equivalent resistance of resistors connected in series.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.22",
+                    "sno": "2.22",
+                    "topic": "Detailed discussion and applications of: Derive an expression for equivalent resistance of resistors connected in parallel.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.23",
+                    "sno": "2.23",
+                    "topic": "Detailed discussion and applications of: Explain current division rule for a two-branch parallel resistive network.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-2.24",
+                    "sno": "2.24",
+                    "topic": "Revision of Basic Electrical circuits",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-106-2.25",
+                    "sno": "2.25",
+                    "topic": "Assessment / Unit Test on Basic Electrical circuits",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "AC Fundamentals",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "ec-106-3.1",
+                    "sno": "3.1",
+                    "topic": "Explain the effect of AC flowing through Pure Resistance, Inductance and Capacitance with vector diagrams.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.2",
+                    "sno": "3.2",
+                    "topic": "Explain mathematical representation of vectors in a) symbolic notation b) trigonometric c) exponential and polar forms.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.3",
+                    "sno": "3.3",
+                    "topic": "Define the terms reactance, Impedance, admittance, conductance and power factor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.4",
+                    "sno": "3.4",
+                    "topic": "Explain active and reactive components of AC current.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.5",
+                    "sno": "3.5",
+                    "topic": "Explain active, reactive and apparent power in AC circuit.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.6",
+                    "sno": "3.6",
+                    "topic": "Define Q factor of a coil.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.7",
+                    "sno": "3.7",
+                    "topic": "Explain series RL, RC and RLC circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.8",
+                    "sno": "3.8",
+                    "topic": "Solve problems on series RL and RC circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.9",
+                    "sno": "3.9",
+                    "topic": "Explain parallel RL, RC and RLC circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.10",
+                    "sno": "3.10",
+                    "topic": "Explain admittance method for solving parallel RL, RC and RLC circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.11",
+                    "sno": "3.11",
+                    "topic": "Detailed discussion and applications of: Explain the effect of AC flowing through Pure Resistance, Inductance and Capacitance with vector diagrams.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.12",
+                    "sno": "3.12",
+                    "topic": "Detailed discussion and applications of: Explain mathematical representation of vectors in a) symbolic notation b) trigonometric c) exponential and polar forms.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.13",
+                    "sno": "3.13",
+                    "topic": "Detailed discussion and applications of: Define the terms reactance, Impedance, admittance, conductance and power factor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.14",
+                    "sno": "3.14",
+                    "topic": "Detailed discussion and applications of: Explain active and reactive components of AC current.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.15",
+                    "sno": "3.15",
+                    "topic": "Detailed discussion and applications of: Explain active, reactive and apparent power in AC circuit.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.16",
+                    "sno": "3.16",
+                    "topic": "Detailed discussion and applications of: Define Q factor of a coil.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.17",
+                    "sno": "3.17",
+                    "topic": "Detailed discussion and applications of: Explain series RL, RC and RLC circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.18",
+                    "sno": "3.18",
+                    "topic": "Detailed discussion and applications of: Solve problems on series RL and RC circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.19",
+                    "sno": "3.19",
+                    "topic": "Detailed discussion and applications of: Explain parallel RL, RC and RLC circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.20",
+                    "sno": "3.20",
+                    "topic": "Detailed discussion and applications of: Explain admittance method for solving parallel RL, RC and RLC circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.21",
+                    "sno": "3.21",
+                    "topic": "Detailed discussion and applications of: Explain the effect of AC flowing through Pure Resistance, Inductance and Capacitance with vector diagrams.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.22",
+                    "sno": "3.22",
+                    "topic": "Detailed discussion and applications of: Explain mathematical representation of vectors in a) symbolic notation b) trigonometric c) exponential and polar forms.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.23",
+                    "sno": "3.23",
+                    "topic": "Detailed discussion and applications of: Define the terms reactance, Impedance, admittance, conductance and power factor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.24",
+                    "sno": "3.24",
+                    "topic": "Detailed discussion and applications of: Explain active and reactive components of AC current.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.25",
+                    "sno": "3.25",
+                    "topic": "Detailed discussion and applications of: Explain active, reactive and apparent power in AC circuit.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.26",
+                    "sno": "3.26",
+                    "topic": "Detailed discussion and applications of: Define Q factor of a coil.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.27",
+                    "sno": "3.27",
+                    "topic": "Detailed discussion and applications of: Explain series RL, RC and RLC circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.28",
+                    "sno": "3.28",
+                    "topic": "Detailed discussion and applications of: Solve problems on series RL and RC circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-3.29",
+                    "sno": "3.29",
+                    "topic": "Revision of AC Fundamentals",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-106-3.30",
+                    "sno": "3.30",
+                    "topic": "Assessment / Unit Test on AC Fundamentals",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Transformers",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "ec-106-4.1",
+                    "sno": "4.1",
+                    "topic": "Explain the working principle of transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.2",
+                    "sno": "4.2",
+                    "topic": "Classify transformers based on power rating, construction and applications.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.3",
+                    "sno": "4.3",
+                    "topic": "Give reasons for using laminations in transformer core.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.4",
+                    "sno": "4.4",
+                    "topic": "State voltage transformation ratio.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.5",
+                    "sno": "4.5",
+                    "topic": "Explain the losses in a transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.6",
+                    "sno": "4.6",
+                    "topic": "Define efficiency and regulation of transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.7",
+                    "sno": "4.7",
+                    "topic": "Explain the construction and working of an auto transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.8",
+                    "sno": "4.8",
+                    "topic": "Explain the applications of transformer as a) Potential transformer. b) Current transformer. c) Impedance matching transformer. d) Isolation transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.9",
+                    "sno": "4.9",
+                    "topic": "List important specifications of a transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.10",
+                    "sno": "4.10",
+                    "topic": "Detailed discussion and applications of: Explain the working principle of transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.11",
+                    "sno": "4.11",
+                    "topic": "Detailed discussion and applications of: Classify transformers based on power rating, construction and applications.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.12",
+                    "sno": "4.12",
+                    "topic": "Detailed discussion and applications of: Give reasons for using laminations in transformer core.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.13",
+                    "sno": "4.13",
+                    "topic": "Detailed discussion and applications of: State voltage transformation ratio.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.14",
+                    "sno": "4.14",
+                    "topic": "Detailed discussion and applications of: Explain the losses in a transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.15",
+                    "sno": "4.15",
+                    "topic": "Detailed discussion and applications of: Define efficiency and regulation of transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.16",
+                    "sno": "4.16",
+                    "topic": "Detailed discussion and applications of: Explain the construction and working of an auto transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.17",
+                    "sno": "4.17",
+                    "topic": "Detailed discussion and applications of: Explain the applications of transformer as a) Potential transformer. b) Current transformer. c) Impedance matching transformer. d) Isolation transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.18",
+                    "sno": "4.18",
+                    "topic": "Detailed discussion and applications of: List important specifications of a transformer.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-4.19",
+                    "sno": "4.19",
+                    "topic": "Revision of Transformers",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-106-4.20",
+                    "sno": "4.20",
+                    "topic": "Assessment / Unit Test on Transformers",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Motors",
+            "totalPeriods": 17,
+            "topics": [
+                {
+                    "id": "ec-106-5.1",
+                    "sno": "5.1",
+                    "topic": "Explain the principle of operation of DC Motor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.2",
+                    "sno": "5.2",
+                    "topic": "Explain the significance of back EMF.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.3",
+                    "sno": "5.3",
+                    "topic": "State the equations for speed of a) DC series motor b) DC shunt motor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.4",
+                    "sno": "5.4",
+                    "topic": "Compare DC series motor and DC shunt motor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.5",
+                    "sno": "5.5",
+                    "topic": "List specifications of DC motor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.6",
+                    "sno": "5.6",
+                    "topic": "Explain the need for starter.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.7",
+                    "sno": "5.7",
+                    "topic": "Explain the principle of operation of single-phase induction motor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.8",
+                    "sno": "5.8",
+                    "topic": "Explain the principle of operation of stepper motor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.9",
+                    "sno": "5.9",
+                    "topic": "List the applications of stepper motor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.10",
+                    "sno": "5.10",
+                    "topic": "Detailed discussion and applications of: Explain the principle of operation of DC Motor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.11",
+                    "sno": "5.11",
+                    "topic": "Detailed discussion and applications of: Explain the significance of back EMF.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.12",
+                    "sno": "5.12",
+                    "topic": "Detailed discussion and applications of: State the equations for speed of a) DC series motor b) DC shunt motor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.13",
+                    "sno": "5.13",
+                    "topic": "Detailed discussion and applications of: Compare DC series motor and DC shunt motor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.14",
+                    "sno": "5.14",
+                    "topic": "Detailed discussion and applications of: List specifications of DC motor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.15",
+                    "sno": "5.15",
+                    "topic": "Detailed discussion and applications of: Explain the need for starter.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-5.16",
+                    "sno": "5.16",
+                    "topic": "Revision of Motors",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-106-5.17",
+                    "sno": "5.17",
+                    "topic": "Assessment / Unit Test on Motors",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Measuring and Test Instruments",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "ec-106-6.1",
+                    "sno": "6.1",
+                    "topic": "List the characteristics of ideal voltmeter and ideal Ammeter.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.2",
+                    "sno": "6.2",
+                    "topic": "Explain the construction and principle of operation of PMMC instrument.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.3",
+                    "sno": "6.3",
+                    "topic": "Explain the working of rectifier type voltmeter.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.4",
+                    "sno": "6.4",
+                    "topic": "List the advantages of digital instruments over analog instruments.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.5",
+                    "sno": "6.5",
+                    "topic": "Explain the working of Ramp type digital voltmeter with block diagram.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.6",
+                    "sno": "6.6",
+                    "topic": "State the use of analog/digital multimeters.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.7",
+                    "sno": "6.7",
+                    "topic": "State the specifications of digital multimeters such as Accuracy, Resolution, Range, Precision, and Display Digits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.8",
+                    "sno": "6.8",
+                    "topic": "Explain the working of function generator with block diagram.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.9",
+                    "sno": "6.9",
+                    "topic": "Detailed discussion and applications of: List the characteristics of ideal voltmeter and ideal Ammeter.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.10",
+                    "sno": "6.10",
+                    "topic": "Detailed discussion and applications of: Explain the construction and principle of operation of PMMC instrument.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.11",
+                    "sno": "6.11",
+                    "topic": "Detailed discussion and applications of: Explain the working of rectifier type voltmeter.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.12",
+                    "sno": "6.12",
+                    "topic": "Detailed discussion and applications of: List the advantages of digital instruments over analog instruments.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.13",
+                    "sno": "6.13",
+                    "topic": "Detailed discussion and applications of: Explain the working of Ramp type digital voltmeter with block diagram.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.14",
+                    "sno": "6.14",
+                    "topic": "Detailed discussion and applications of: State the use of analog/digital multimeters.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.15",
+                    "sno": "6.15",
+                    "topic": "Detailed discussion and applications of: State the specifications of digital multimeters such as Accuracy, Resolution, Range, Precision, and Display Digits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.16",
+                    "sno": "6.16",
+                    "topic": "Detailed discussion and applications of: Explain the working of function generator with block diagram.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-6.17",
+                    "sno": "6.17",
+                    "topic": "Revision of Measuring and Test Instruments",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-106-6.18",
+                    "sno": "6.18",
+                    "topic": "Assessment / Unit Test on Measuring and Test Instruments",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Batteries",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "ec-106-7.1",
+                    "sno": "7.1",
+                    "topic": "Define the terms ‘Cell’ and ‘battery’.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.2",
+                    "sno": "7.2",
+                    "topic": "State the differences between Cells and Batteries.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.3",
+                    "sno": "7.3",
+                    "topic": "Classify different types of batteries.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.4",
+                    "sno": "7.4",
+                    "topic": "Explain the construction and working of sealed Lead Acid battery.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.5",
+                    "sno": "7.5",
+                    "topic": "List the advantages, limitations and applications of Lead acid batteries.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.6",
+                    "sno": "7.6",
+                    "topic": "Explain the working Principle of Nickel-cadmium (Ni-Cd) batteries",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.7",
+                    "sno": "7.7",
+                    "topic": "List the advantages, limitations and applications of Ni-Cd Batteries.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.8",
+                    "sno": "7.8",
+                    "topic": "Explain the construction and working of lithium-ion batteries",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.9",
+                    "sno": "7.9",
+                    "topic": "List the applications of Lithium-ion batteries.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.10",
+                    "sno": "7.10",
+                    "topic": "State the important technical specifications of batteries.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.11",
+                    "sno": "7.11",
+                    "topic": "Detailed discussion and applications of: Define the terms ‘Cell’ and ‘battery’.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.12",
+                    "sno": "7.12",
+                    "topic": "Detailed discussion and applications of: State the differences between Cells and Batteries.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.13",
+                    "sno": "7.13",
+                    "topic": "Detailed discussion and applications of: Classify different types of batteries.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-106-7.14",
+                    "sno": "7.14",
+                    "topic": "Revision of Batteries",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-106-7.15",
+                    "sno": "7.15",
+                    "topic": "Assessment / Unit Test on Batteries",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,569 @@
+{
+    "subjectCode": "EC-505",
+    "subjectName": "Data Communication and Computer Networks",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 75,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Basics of Data communication and OSI Reference Model",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "id": "ec-505-1.1",
+                    "sno": "1.1",
+                    "topic": "Define data and information",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.2",
+                    "sno": "1.2",
+                    "topic": "Define data communication",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.3",
+                    "sno": "1.3",
+                    "topic": "State the characteristics of data communication",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.4",
+                    "sno": "1.4",
+                    "topic": "State the components of data communication",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.5",
+                    "sno": "1.5",
+                    "topic": "Explain briefly about data representation of numbers, text, images, audio and video",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.6",
+                    "sno": "1.6",
+                    "topic": "Define the different modes of data flow (simplex, half duplex and full duplex)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.7",
+                    "sno": "1.7",
+                    "topic": "Distinguish between serial communication and parallel communication",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.8",
+                    "sno": "1.8",
+                    "topic": "Define computer network and state its use",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.9",
+                    "sno": "1.9",
+                    "topic": "State the need for data communication networking.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.10",
+                    "sno": "1.10",
+                    "topic": "Define network topology",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.11",
+                    "sno": "1.11",
+                    "topic": "List different network topologies",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-1.12",
+                    "sno": "1.12",
+                    "topic": "Revision of Basics of Data communication and OSI Reference Model",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-505-1.13",
+                    "sno": "1.13",
+                    "topic": "Assessment / Unit Test on Basics of Data communication and OSI Reference Model",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Physical Layer and Data Link Layer",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "ec-505-2.1",
+                    "sno": "2.1",
+                    "topic": "List the different types of physical transmission media used in networking",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.2",
+                    "sno": "2.2",
+                    "topic": "Explain the cross-sectional diagrams of UTP, STP, Coaxial and Fiber optic cables and their use in networking.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.3",
+                    "sno": "2.3",
+                    "topic": "List the three types of switching techniques used in networking",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.4",
+                    "sno": "2.4",
+                    "topic": "Explain circuit switching and packet switching",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.5",
+                    "sno": "2.5",
+                    "topic": "Define virtual circuit and datagram approaches in packet switching",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.6",
+                    "sno": "2.6",
+                    "topic": "State the use of repeater/ hub b) Data Link Layer:",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.7",
+                    "sno": "2.7",
+                    "topic": "Define the word protocolused in computer networks",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.8",
+                    "sno": "2.8",
+                    "topic": "State the need for protocols in computer networks.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.9",
+                    "sno": "2.9",
+                    "topic": "Explain CSMA/CD, CSMA/CA",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.10",
+                    "sno": "2.10",
+                    "topic": "Explain Ethernet LAN",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.11",
+                    "sno": "2.11",
+                    "topic": "Give the frame format for Ethernet and State the different fields in it.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.12",
+                    "sno": "2.12",
+                    "topic": "Explain the working of token ring network",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.13",
+                    "sno": "2.13",
+                    "topic": "Detailed discussion and applications of: List the different types of physical transmission media used in networking",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-2.14",
+                    "sno": "2.14",
+                    "topic": "Revision of Physical Layer and Data Link Layer",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-505-2.15",
+                    "sno": "2.15",
+                    "topic": "Assessment / Unit Test on Physical Layer and Data Link Layer",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Network Layer, Transport Layer and Application Layer",
+            "totalPeriods": 28,
+            "topics": [
+                {
+                    "id": "ec-505-3.1",
+                    "sno": "3.1",
+                    "topic": "Define the terms Internet and Intranet.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.2",
+                    "sno": "3.2",
+                    "topic": "Explain classful addressing in IPv4.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.3",
+                    "sno": "3.3",
+                    "topic": "Explain classless addressing (CIDR) in IPv4.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.4",
+                    "sno": "3.4",
+                    "topic": "State the use of routers in networking",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.5",
+                    "sno": "3.5",
+                    "topic": "Explain the concept of routers and routing packets in computer networks",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.6",
+                    "sno": "3.6",
+                    "topic": "Distinguish among cut through, store-and-forward and adaptive switch mechanisms.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.7",
+                    "sno": "3.7",
+                    "topic": "Explain the packet transfer mechanism using routers and IP address. b) Transport Layer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.8",
+                    "sno": "3.8",
+                    "topic": "List the features of Transmission Control Protocol (TCP)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.9",
+                    "sno": "3.9",
+                    "topic": "Explain the flow control in TCP",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.10",
+                    "sno": "3.10",
+                    "topic": "Explain error control in TCP",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.11",
+                    "sno": "3.11",
+                    "topic": "Explain the connectivity of systems using TCP (Three-way hand shake)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.12",
+                    "sno": "3.12",
+                    "topic": "Explain end-to-end connectivity in TCP using ports and sockets.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.13",
+                    "sno": "3.13",
+                    "topic": "Describe the features of User Datagram Protocol (UDP)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.14",
+                    "sno": "3.14",
+                    "topic": "Compare the features of TCP and UDP",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.15",
+                    "sno": "3.15",
+                    "topic": "State the use of Gateway Router. c) Application Layer:",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.16",
+                    "sno": "3.16",
+                    "topic": "Mention the role of DNS server",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.17",
+                    "sno": "3.17",
+                    "topic": "Explain how email is transferred",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.18",
+                    "sno": "3.18",
+                    "topic": "Discuss POP server and SMTP server",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.19",
+                    "sno": "3.19",
+                    "topic": "Explain file transfer operation using FTP",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.20",
+                    "sno": "3.20",
+                    "topic": "Explain the working of Web server",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.21",
+                    "sno": "3.21",
+                    "topic": "Describe the web browser architecture",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.22",
+                    "sno": "3.22",
+                    "topic": "Explain the internal architecture of ISP",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.23",
+                    "sno": "3.23",
+                    "topic": "Write the purpose of proxy server",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.24",
+                    "sno": "3.24",
+                    "topic": "Explain remote login",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.25",
+                    "sno": "3.25",
+                    "topic": "Detailed discussion and applications of: Define the terms Internet and Intranet.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.26",
+                    "sno": "3.26",
+                    "topic": "Detailed discussion and applications of: Explain classful addressing in IPv4.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-3.27",
+                    "sno": "3.27",
+                    "topic": "Revision of Network Layer, Transport Layer and Application Layer",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-505-3.28",
+                    "sno": "3.28",
+                    "topic": "Assessment / Unit Test on Network Layer, Transport Layer and Application Layer",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Wireless Network Protocols",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "ec-505-4.1",
+                    "sno": "4.1",
+                    "topic": "Define the term Wireless LAN.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-4.2",
+                    "sno": "4.2",
+                    "topic": "List the advantages of WLAN.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-4.3",
+                    "sno": "4.3",
+                    "topic": "Explain the topology of wireless LAN and its frame format (IEEE 802.11)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-4.4",
+                    "sno": "4.4",
+                    "topic": "State the features of Bluetooth technology.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-4.5",
+                    "sno": "4.5",
+                    "topic": "State the applications of Bluetooth technology.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-4.6",
+                    "sno": "4.6",
+                    "topic": "Compare the features of IEEE 802.11n and IEEE 802.11b.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-4.7",
+                    "sno": "4.7",
+                    "topic": "State the necessity of Low-rate WPAN (IEEE 802.15.4)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-4.8",
+                    "sno": "4.8",
+                    "topic": "Explain the Low-WPAN (IEEE 802.15.4) device architecture.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-4.9",
+                    "sno": "4.9",
+                    "topic": "Explain the features of Zigbee Technology and its topologies.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-4.10",
+                    "sno": "4.10",
+                    "topic": "Explain the architecture ofLoWPAN and its protocol stack.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-4.11",
+                    "sno": "4.11",
+                    "topic": "Revision of Wireless Network Protocols",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-505-4.12",
+                    "sno": "4.12",
+                    "topic": "Assessment / Unit Test on Wireless Network Protocols",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Cyber Security",
+            "totalPeriods": 7,
+            "topics": [
+                {
+                    "id": "ec-505-5.1",
+                    "sno": "5.1",
+                    "topic": "Define the term Cyber Security.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-5.2",
+                    "sno": "5.2",
+                    "topic": "State the necessity of Cyber Security.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-5.3",
+                    "sno": "5.3",
+                    "topic": "State the fundamentals of Cyber Securtiy.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-5.4",
+                    "sno": "5.4",
+                    "topic": "List the layers of Cyber Securty.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-5.5",
+                    "sno": "5.5",
+                    "topic": "Explain the active and passive attacks in Cyber attacks.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-505-5.6",
+                    "sno": "5.6",
+                    "topic": "Revision of Cyber Security",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-505-5.7",
+                    "sno": "5.7",
+                    "topic": "Assessment / Unit Test on Cyber Security",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

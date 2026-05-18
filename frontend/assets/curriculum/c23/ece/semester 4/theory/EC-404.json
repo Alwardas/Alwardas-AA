@@ -1,0 +1,464 @@
+{
+    "subjectCode": "EC-404",
+    "subjectName": "IoT and Sensors",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 60,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction to Industry 4.0 and Internet of Things",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "ec-404-1.1",
+                    "sno": "1.1",
+                    "topic": "Explain the concept of Industry 4.0 and its benefits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-1.2",
+                    "sno": "1.2",
+                    "topic": "Explain the components of futuristic industrial plant in industry 4.0 with a block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-1.3",
+                    "sno": "1.3",
+                    "topic": "Define IoT and state its role in Industry 4.0",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-1.4",
+                    "sno": "1.4",
+                    "topic": "List the goals of industry 4.0",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-1.5",
+                    "sno": "1.5",
+                    "topic": "List the advantages of industry 4.0",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-1.6",
+                    "sno": "1.6",
+                    "topic": "Explain what technologies are driving industry 4.0",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-1.7",
+                    "sno": "1.7",
+                    "topic": "Explain various challenges in industry 4.0",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-1.8",
+                    "sno": "1.8",
+                    "topic": "State the impact of IoT on businesses and society",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-1.9",
+                    "sno": "1.9",
+                    "topic": "List the applications of IoT in different industries.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-1.10",
+                    "sno": "1.10",
+                    "topic": "Explain the concepts of differentIoT enabling Technologies such as: i) Wireless Sensor networks ii) Cloud Computing iii) Big Data Analytics iv) Communication Protocols iv)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-1.11",
+                    "sno": "1.11",
+                    "topic": "Revision of Introduction to Industry 4.0 and Internet of Things",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-404-1.12",
+                    "sno": "1.12",
+                    "topic": "Assessment / Unit Test on Introduction to Industry 4.0 and Internet of Things",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Elements of IoT",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "ec-404-2.1",
+                    "sno": "2.1",
+                    "topic": "State the elements of IoT such as: i) Sensors & Actuators ii) Edge Gateway iii) Communication Protocols iv) computing hardware v) Software components and their use",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-2.2",
+                    "sno": "2.2",
+                    "topic": "Classify sensors used in IoT based on i) Passive & Active ii) Analog& digital iii) Scalar & vector and give examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-2.3",
+                    "sno": "2.3",
+                    "topic": "List the common actuators used in IoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-2.4",
+                    "sno": "2.4",
+                    "topic": "State the role of edge gateway in IoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-2.5",
+                    "sno": "2.5",
+                    "topic": "State the function of computing hardware in IoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-2.6",
+                    "sno": "2.6",
+                    "topic": "Stae the purpose of communication protocols used in IoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-2.7",
+                    "sno": "2.7",
+                    "topic": "List different communication protocols used in IoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-2.8",
+                    "sno": "2.8",
+                    "topic": "List different software components used in IoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-2.9",
+                    "sno": "2.9",
+                    "topic": "Revision of Elements of IoT",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-404-2.10",
+                    "sno": "2.10",
+                    "topic": "Assessment / Unit Test on Elements of IoT",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Sensors and Actuators",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "ec-404-3.1",
+                    "sno": "3.1",
+                    "topic": "List the common analog sensors used in IoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-3.2",
+                    "sno": "3.2",
+                    "topic": "List the common digital sensors used in IoT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-3.3",
+                    "sno": "3.3",
+                    "topic": "State the functions and applications the following sensors: i) Temperature sensors ii) Pressure sensors ii) Motion sensors iii) Level sensors iv) Image sensors v) Proximity sensors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-3.4",
+                    "sno": "3.4",
+                    "topic": "State the specifications of DHT11 temperature and humidity sensor module For Arduino Raspberry Pi",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-3.5",
+                    "sno": "3.5",
+                    "topic": "State the specifications of BMP280 Pressure Sensor Module High Precision Arduino",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-3.6",
+                    "sno": "3.6",
+                    "topic": "State the specifications of MQ-2 Smoke/Gas Sensor Module for Arduino",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-3.7",
+                    "sno": "3.7",
+                    "topic": "State the specifications of HC-SR501 Adjust IrPyroelectric Infrared PIR Motion Sensor Module for Arduino, ARM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-3.8",
+                    "sno": "3.8",
+                    "topic": "State the function of the following actuators:i) Hydraulic Actuators ii) Pneumatic Actuators",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision of Sensors and Actuators",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-404-3.10",
+                    "sno": "3.10",
+                    "topic": "Assessment / Unit Test on Sensors and Actuators",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Connectivity Technologies, computing hardware and Software components",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "id": "ec-404-4.1",
+                    "sno": "4.1",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 1",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.2",
+                    "sno": "4.2",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 2",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.3",
+                    "sno": "4.3",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.4",
+                    "sno": "4.4",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.5",
+                    "sno": "4.5",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.6",
+                    "sno": "4.6",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 6",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.7",
+                    "sno": "4.7",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 7",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.8",
+                    "sno": "4.8",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.9",
+                    "sno": "4.9",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 9",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.10",
+                    "sno": "4.10",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 10",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.11",
+                    "sno": "4.11",
+                    "topic": "Concepts of Connectivity Technologies, computing hardware and Software components - Part 11",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-4.12",
+                    "sno": "4.12",
+                    "topic": "Revision of Connectivity Technologies, computing hardware and Software components",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-404-4.13",
+                    "sno": "4.13",
+                    "topic": "Assessment / Unit Test on Connectivity Technologies, computing hardware and Software components",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "IoT Case Studies",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "ec-404-5.1",
+                    "sno": "5.1",
+                    "topic": "Explain the IoT based system for Home Automation with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.2",
+                    "sno": "5.2",
+                    "topic": "Explain the IoT based system for Smart lighting with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.3",
+                    "sno": "5.3",
+                    "topic": "Explain the IoT based system for home intrusion detection with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.4",
+                    "sno": "5.4",
+                    "topic": "Explain the IoT based system for Air pollution monitoring system with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.5",
+                    "sno": "5.5",
+                    "topic": "Explain the IoT based system for Smart irrigation with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.6",
+                    "sno": "5.6",
+                    "topic": "Explain the IoT based system for healthcare with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.7",
+                    "sno": "5.7",
+                    "topic": "Detailed discussion and applications of: Explain the IoT based system for Home Automation with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.8",
+                    "sno": "5.8",
+                    "topic": "Detailed discussion and applications of: Explain the IoT based system for Smart lighting with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.9",
+                    "sno": "5.9",
+                    "topic": "Detailed discussion and applications of: Explain the IoT based system for home intrusion detection with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.10",
+                    "sno": "5.10",
+                    "topic": "Detailed discussion and applications of: Explain the IoT based system for Air pollution monitoring system with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.11",
+                    "sno": "5.11",
+                    "topic": "Detailed discussion and applications of: Explain the IoT based system for Smart irrigation with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.12",
+                    "sno": "5.12",
+                    "topic": "Detailed discussion and applications of: Explain the IoT based system for healthcare with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.13",
+                    "sno": "5.13",
+                    "topic": "Detailed discussion and applications of: Explain the IoT based system for Home Automation with block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-404-5.14",
+                    "sno": "5.14",
+                    "topic": "Revision of IoT Case Studies",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-404-5.15",
+                    "sno": "5.15",
+                    "topic": "Assessment / Unit Test on IoT Case Studies",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}

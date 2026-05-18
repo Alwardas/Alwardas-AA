@@ -1,0 +1,1115 @@
+{
+    "subjectCode": "EC-105",
+    "subjectName": "Electronic Components and Devices",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 150,
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Passive Components",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "ec-105-1.1",
+                    "sno": "1.1",
+                    "topic": "i) Define the term resistance",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.2",
+                    "sno": "1.2",
+                    "topic": "Define the term resistor & classify resistors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.3",
+                    "sno": "1.3",
+                    "topic": "Draw the circuit symbols of fixed and variable resistors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.4",
+                    "sno": "1.4",
+                    "topic": "List the specifications of a resistor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.5",
+                    "sno": "1.5",
+                    "topic": "State the physical factors that affect the value of a resistor and calculate resistance value by using colour Code.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.6",
+                    "sno": "1.6",
+                    "topic": "Compare the features of carbon and wire wound potentiometers.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.7",
+                    "sno": "1.7",
+                    "topic": "Explain the working of rheostat and mention its applications.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.8",
+                    "sno": "1.8",
+                    "topic": "Define temperature co-efficient of resistance and explain the effects of temperature on resistance.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.9",
+                    "sno": "1.9",
+                    "topic": "Explain the working of thermistor and sensistor and mention their applications.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.10",
+                    "sno": "1.10",
+                    "topic": "i) Define the term inductance.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.11",
+                    "sno": "1.11",
+                    "topic": "Define the term inductor & classify inductors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.12",
+                    "sno": "1.12",
+                    "topic": "Draw the circuit symbols of different types of inductors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.13",
+                    "sno": "1.13",
+                    "topic": "List the specifications of an inductor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.14",
+                    "sno": "1.14",
+                    "topic": "Define the term Stray inductance.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.15",
+                    "sno": "1.15",
+                    "topic": "List various core materials used in the construction of inductors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.16",
+                    "sno": "1.16",
+                    "topic": "Explain the use of Ferrites in the construction of high frequency inductors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.17",
+                    "sno": "1.17",
+                    "topic": "List the applications of A.F. and R.F chokes.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.18",
+                    "sno": "1.18",
+                    "topic": "i) Define the term capacitance.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-1.19",
+                    "sno": "1.19",
+                    "topic": "Revision of Passive Components",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-105-1.20",
+                    "sno": "1.20",
+                    "topic": "Assessment / Unit Test on Passive Components",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Switches, Connectors, Relays and PCBs",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "ec-105-2.1",
+                    "sno": "2.1",
+                    "topic": "Classify switches according to poles and throws (SPST, SPDT, DPST, DPDT, Multi-pole multi- throw)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.2",
+                    "sno": "2.2",
+                    "topic": "Sketch the I.S.I symbols of various switches.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.3",
+                    "sno": "2.3",
+                    "topic": "State the need of fuse in electronic equipment.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.4",
+                    "sno": "2.4",
+                    "topic": "Mention different types of fuses.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.5",
+                    "sno": "2.5",
+                    "topic": "State the necessity of connectors in electronic circuits.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.6",
+                    "sno": "2.6",
+                    "topic": "List different types of connectors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.7",
+                    "sno": "2.7",
+                    "topic": "State the use of MCB.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.8",
+                    "sno": "2.8",
+                    "topic": "Define a relay.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.9",
+                    "sno": "2.9",
+                    "topic": "Classify different relays based on principle of operation, polarization and application.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.10",
+                    "sno": "2.10",
+                    "topic": "List the specifications and applications of relays.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.11",
+                    "sno": "2.11",
+                    "topic": "Explain the working of general-purpose electromagnetic relay.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.12",
+                    "sno": "2.12",
+                    "topic": "Explain the need of PCB in electronic equipment.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.13",
+                    "sno": "2.13",
+                    "topic": "Classify PCBs and list the types of laminates used in PCBs.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.14",
+                    "sno": "2.14",
+                    "topic": "List the methods of transferring layout on to the copper clad sheet.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.15",
+                    "sno": "2.15",
+                    "topic": "List the materials used in screen-printing.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.16",
+                    "sno": "2.16",
+                    "topic": "List the steps involved in screen-printing for making PCBs.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.17",
+                    "sno": "2.17",
+                    "topic": "Explain the methods of etching, cleaning and drilling of PCB.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.18",
+                    "sno": "2.18",
+                    "topic": "Explain the steps involved in making double-sided PCB.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-2.19",
+                    "sno": "2.19",
+                    "topic": "Revision of Switches, Connectors, Relays and PCBs",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-105-2.20",
+                    "sno": "2.20",
+                    "topic": "Assessment / Unit Test on Switches, Connectors, Relays and PCBs",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Semiconductor Physics",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "ec-105-3.1",
+                    "sno": "3.1",
+                    "topic": "Define the terms conductivity and resistivity and give their equations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.2",
+                    "sno": "3.2",
+                    "topic": "Define Valance band, Conduction band and Forbidden energy gap.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.3",
+                    "sno": "3.3",
+                    "topic": "Explain Energy Band diagrams of conductors, semiconductors and Insulators.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.4",
+                    "sno": "3.4",
+                    "topic": "Define Intrinsic Semiconductors and Fermi level.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.5",
+                    "sno": "3.5",
+                    "topic": "Define electron current and hole current.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.6",
+                    "sno": "3.6",
+                    "topic": "Explain the bipolar nature of semiconductors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.7",
+                    "sno": "3.7",
+                    "topic": "State the need for doping.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.8",
+                    "sno": "3.8",
+                    "topic": "Distinguish between intrinsic and extrinsic semiconductor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.9",
+                    "sno": "3.9",
+                    "topic": "Explain the formation of P type and N type semiconductor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.10",
+                    "sno": "3.10",
+                    "topic": "Compare P-type and N-type semiconductors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.11",
+                    "sno": "3.11",
+                    "topic": "Explain Drift and Diffusion currents.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.12",
+                    "sno": "3.12",
+                    "topic": "Detailed discussion and applications of: Define the terms conductivity and resistivity and give their equations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.13",
+                    "sno": "3.13",
+                    "topic": "Detailed discussion and applications of: Define Valance band, Conduction band and Forbidden energy gap.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-3.14",
+                    "sno": "3.14",
+                    "topic": "Revision of Semiconductor Physics",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-105-3.15",
+                    "sno": "3.15",
+                    "topic": "Assessment / Unit Test on Semiconductor Physics",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Semiconductor Diodes",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "ec-105-4.1",
+                    "sno": "4.1",
+                    "topic": "Explain the formation of PN junction diode.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.2",
+                    "sno": "4.2",
+                    "topic": "Explain the working of PN junction Diode with forward & reverse biasing.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.3",
+                    "sno": "4.3",
+                    "topic": "Draw the VI characteristics of a diode.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.4",
+                    "sno": "4.4",
+                    "topic": "State diode current equation.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.5",
+                    "sno": "4.5",
+                    "topic": "List the important specifications of a diode.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.6",
+                    "sno": "4.6",
+                    "topic": "Mention the applications of diode.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.7",
+                    "sno": "4.7",
+                    "topic": "Explain reverse breakdown phenomenon.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.8",
+                    "sno": "4.8",
+                    "topic": "Explain the construction and working of Zener diode.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.9",
+                    "sno": "4.9",
+                    "topic": "Draw the forward &reverse bias characteristics of Zener diode.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.10",
+                    "sno": "4.10",
+                    "topic": "Explain Zener breakdown phenomenon.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.11",
+                    "sno": "4.11",
+                    "topic": "Distinguish between Avalanche &Zener breakdowns.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.12",
+                    "sno": "4.12",
+                    "topic": "Mention the applications of Zener diode.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.13",
+                    "sno": "4.13",
+                    "topic": "Explain the working principle of Varactor diode.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-4.14",
+                    "sno": "4.14",
+                    "topic": "Revision of Semiconductor Diodes",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-105-4.15",
+                    "sno": "4.15",
+                    "topic": "Assessment / Unit Test on Semiconductor Diodes",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Bipolar Junction Transistor",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "ec-105-5.1",
+                    "sno": "5.1",
+                    "topic": "Explain the formation of bipolar junction transistor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.2",
+                    "sno": "5.2",
+                    "topic": "Explain the working of PNP and NPN Transistors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.3",
+                    "sno": "5.3",
+                    "topic": "Draw the circuit symbols of NPN and PNP transistor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.4",
+                    "sno": "5.4",
+                    "topic": "Draw the different transistor configurations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.5",
+                    "sno": "5.5",
+                    "topic": "Sketch the input/output characteristics of CB, CE and CC configurations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.6",
+                    "sno": "5.6",
+                    "topic": "Identify the cut-off, saturation and active regions in output characteristics of CB, CE and CC Configurations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.7",
+                    "sno": "5.7",
+                    "topic": "Define alpha, beta and gamma factors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.8",
+                    "sno": "5.8",
+                    "topic": "Derive the relations among alpha, beta and gamma factors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.9",
+                    "sno": "5.9",
+                    "topic": "Write collector current expression in CB and CE modes of transistor in terms of α, β, IE, IB, ICand",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.10",
+                    "sno": "5.10",
+                    "topic": "Compare CB, CE and CC configurations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.11",
+                    "sno": "5.11",
+                    "topic": "Detailed discussion and applications of: Explain the formation of bipolar junction transistor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.12",
+                    "sno": "5.12",
+                    "topic": "Detailed discussion and applications of: Explain the working of PNP and NPN Transistors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.13",
+                    "sno": "5.13",
+                    "topic": "Detailed discussion and applications of: Draw the circuit symbols of NPN and PNP transistor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.14",
+                    "sno": "5.14",
+                    "topic": "Detailed discussion and applications of: Draw the different transistor configurations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.15",
+                    "sno": "5.15",
+                    "topic": "Detailed discussion and applications of: Sketch the input/output characteristics of CB, CE and CC configurations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.16",
+                    "sno": "5.16",
+                    "topic": "Detailed discussion and applications of: Identify the cut-off, saturation and active regions in output characteristics of CB, CE and CC Configurations.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.17",
+                    "sno": "5.17",
+                    "topic": "Detailed discussion and applications of: Define alpha, beta and gamma factors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.18",
+                    "sno": "5.18",
+                    "topic": "Detailed discussion and applications of: Derive the relations among alpha, beta and gamma factors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-5.19",
+                    "sno": "5.19",
+                    "topic": "Revision of Bipolar Junction Transistor",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-105-5.20",
+                    "sno": "5.20",
+                    "topic": "Assessment / Unit Test on Bipolar Junction Transistor",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Field Effect Transistor",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "ec-105-6.1",
+                    "sno": "6.1",
+                    "topic": "Classify Field Effect Transistors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.2",
+                    "sno": "6.2",
+                    "topic": "Explain the construction and working principle of N-channel JFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.3",
+                    "sno": "6.3",
+                    "topic": "Draw and explain the drain characteristics of JFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.4",
+                    "sno": "6.4",
+                    "topic": "Draw and explain the transfer characteristics of JFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.5",
+                    "sno": "6.5",
+                    "topic": "Define the parameters of JFET and obtain the relation among them.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.6",
+                    "sno": "6.6",
+                    "topic": "List the advantages of FET over BJT.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.7",
+                    "sno": "6.7",
+                    "topic": "Explain the construction & working of N-channel Enhancement type MOSFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.8",
+                    "sno": "6.8",
+                    "topic": "Explain the construction & working of N-channel Depletion type MOSFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.9",
+                    "sno": "6.9",
+                    "topic": "Draw the Drain characteristics of N-channel Depletion MOSFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.10",
+                    "sno": "6.10",
+                    "topic": "Compare JFET and MOSFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.11",
+                    "sno": "6.11",
+                    "topic": "Detailed discussion and applications of: Classify Field Effect Transistors.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.12",
+                    "sno": "6.12",
+                    "topic": "Detailed discussion and applications of: Explain the construction and working principle of N-channel JFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.13",
+                    "sno": "6.13",
+                    "topic": "Detailed discussion and applications of: Draw and explain the drain characteristics of JFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.14",
+                    "sno": "6.14",
+                    "topic": "Detailed discussion and applications of: Draw and explain the transfer characteristics of JFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.15",
+                    "sno": "6.15",
+                    "topic": "Detailed discussion and applications of: Define the parameters of JFET and obtain the relation among them.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.16",
+                    "sno": "6.16",
+                    "topic": "Detailed discussion and applications of: List the advantages of FET over BJT.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.17",
+                    "sno": "6.17",
+                    "topic": "Detailed discussion and applications of: Explain the construction & working of N-channel Enhancement type MOSFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.18",
+                    "sno": "6.18",
+                    "topic": "Detailed discussion and applications of: Explain the construction & working of N-channel Depletion type MOSFET.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-6.19",
+                    "sno": "6.19",
+                    "topic": "Revision of Field Effect Transistor",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-105-6.20",
+                    "sno": "6.20",
+                    "topic": "Assessment / Unit Test on Field Effect Transistor",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Opto Electronic Devices",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "ec-105-7.1",
+                    "sno": "7.1",
+                    "topic": "Explain the principle of LDR and list the applications of LDR.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.2",
+                    "sno": "7.2",
+                    "topic": "Explain the structure, working principle and characteristics of LED.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.3",
+                    "sno": "7.3",
+                    "topic": "List the applications of LED.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.4",
+                    "sno": "7.4",
+                    "topic": "Explain the structure, operation and characteristics of photo diode.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.5",
+                    "sno": "7.5",
+                    "topic": "Explain the structure, operation and characteristics of photo transistor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.6",
+                    "sno": "7.6",
+                    "topic": "List the applications of photo diode and photo transistor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.7",
+                    "sno": "7.7",
+                    "topic": "Explain the working of opto-coupler.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.8",
+                    "sno": "7.8",
+                    "topic": "List the applications of opto-couplers.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.9",
+                    "sno": "7.9",
+                    "topic": "Explain the working principle of LCD.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.10",
+                    "sno": "7.10",
+                    "topic": "List the applications of LCD.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.11",
+                    "sno": "7.11",
+                    "topic": "Detailed discussion and applications of: Explain the principle of LDR and list the applications of LDR.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.12",
+                    "sno": "7.12",
+                    "topic": "Detailed discussion and applications of: Explain the structure, working principle and characteristics of LED.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.13",
+                    "sno": "7.13",
+                    "topic": "Detailed discussion and applications of: List the applications of LED.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.14",
+                    "sno": "7.14",
+                    "topic": "Detailed discussion and applications of: Explain the structure, operation and characteristics of photo diode.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.15",
+                    "sno": "7.15",
+                    "topic": "Detailed discussion and applications of: Explain the structure, operation and characteristics of photo transistor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.16",
+                    "sno": "7.16",
+                    "topic": "Detailed discussion and applications of: List the applications of photo diode and photo transistor.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.17",
+                    "sno": "7.17",
+                    "topic": "Detailed discussion and applications of: Explain the working of opto-coupler.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.18",
+                    "sno": "7.18",
+                    "topic": "Detailed discussion and applications of: List the applications of opto-couplers.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-7.19",
+                    "sno": "7.19",
+                    "topic": "Revision of Opto Electronic Devices",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-105-7.20",
+                    "sno": "7.20",
+                    "topic": "Assessment / Unit Test on Opto Electronic Devices",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Audio Systems",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "ec-105-8.1",
+                    "sno": "8.1",
+                    "topic": "Explain the working of carbon, condenser, Crystal and dynamic microphones along with them polar characteristics.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.2",
+                    "sno": "8.2",
+                    "topic": "Explain the constructional features and principle of operation of PMMC Loudspeaker and its ratings.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.3",
+                    "sno": "8.3",
+                    "topic": "Mention the use of woofers and tweeters.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.4",
+                    "sno": "8.4",
+                    "topic": "State the need for Horn loud speaker.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.5",
+                    "sno": "8.5",
+                    "topic": "Explain the construction and working of Horn loud speaker with suitable diagram.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.6",
+                    "sno": "8.6",
+                    "topic": "Explain the principle, construction and working of magnetic and crystal headphones and their uses.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.7",
+                    "sno": "8.7",
+                    "topic": "List the specifications of Loudspeaker and Microphones.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.8",
+                    "sno": "8.8",
+                    "topic": "Define the terms: speech, music and noise.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.9",
+                    "sno": "8.9",
+                    "topic": "Define the terms: Hi-Fi and Stereo related to audio system.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.10",
+                    "sno": "8.10",
+                    "topic": "State the features of home theatre sound system.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.11",
+                    "sno": "8.11",
+                    "topic": "Detailed discussion and applications of: Explain the working of carbon, condenser, Crystal and dynamic microphones along with them polar characteristics.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.12",
+                    "sno": "8.12",
+                    "topic": "Detailed discussion and applications of: Explain the constructional features and principle of operation of PMMC Loudspeaker and its ratings.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.13",
+                    "sno": "8.13",
+                    "topic": "Detailed discussion and applications of: Mention the use of woofers and tweeters.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.14",
+                    "sno": "8.14",
+                    "topic": "Detailed discussion and applications of: State the need for Horn loud speaker.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.15",
+                    "sno": "8.15",
+                    "topic": "Detailed discussion and applications of: Explain the construction and working of Horn loud speaker with suitable diagram.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.16",
+                    "sno": "8.16",
+                    "topic": "Detailed discussion and applications of: Explain the principle, construction and working of magnetic and crystal headphones and their uses.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.17",
+                    "sno": "8.17",
+                    "topic": "Detailed discussion and applications of: List the specifications of Loudspeaker and Microphones.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.18",
+                    "sno": "8.18",
+                    "topic": "Detailed discussion and applications of: Define the terms: speech, music and noise.",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "ec-105-8.19",
+                    "sno": "8.19",
+                    "topic": "Revision of Audio Systems",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "ec-105-8.20",
+                    "sno": "8.20",
+                    "topic": "Assessment / Unit Test on Audio Systems",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        }
+    ]
+}
