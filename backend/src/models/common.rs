@@ -1152,9 +1152,9 @@ pub struct LessonTopicsQuery {
 #[serde(rename_all = "camelCase")]
 pub struct LessonTopicResponse {
     pub id: String,
-    pub topic: String,
+    pub topic: Option<String>,
     pub sno: Option<String>,
-    pub completed: bool,
+    pub completed: Option<bool>,
     pub completed_date: Option<chrono::DateTime<chrono::Utc>>,
     pub schedule_date: Option<chrono::DateTime<chrono::Utc>>,
 }

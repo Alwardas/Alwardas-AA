@@ -424,7 +424,10 @@ pub async fn get_semester_subjects(pool: &PgPool, params: SemesterSubjectsQuery)
 pub async fn get_lesson_topics(pool: &PgPool, params: LessonTopicsQuery) -> Result<Vec<LessonTopicResponse>, StatusCode> {
     faculty_repository::find_lesson_topics(pool, params)
         .await
-        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
+        .map_err(|e| {
+            eprintln!("DATABASE ERROR in get_lesson_topics: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })
 }
 
 pub async fn assign_lesson_schedule(pool: &PgPool, payload: AssignLessonScheduleRequest) -> Result<(), StatusCode> {
