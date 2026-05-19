@@ -620,8 +620,19 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
             Uri.parse('${ApiConstants.baseUrl}/api/student/lesson-plan/feedback?topicId=${widget.topic.id}&subjectCode=${widget.subjectCode}')
           );
           if (response.statusCode == 200) {
+              final decoded = json.decode(response.body);
+              List<dynamic> commentsList = [];
+              if (decoded is Map<String, dynamic>) {
+                if (decoded['data'] is List) {
+                  commentsList = decoded['data'];
+                } else if (decoded['feedbacks'] is List) {
+                  commentsList = decoded['feedbacks'];
+                }
+              } else if (decoded is List) {
+                commentsList = decoded;
+              }
               setState(() {
-                  _comments = json.decode(response.body);
+                  _comments = commentsList;
                   _loadingComments = false;
               });
           } else {

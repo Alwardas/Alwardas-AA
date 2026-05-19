@@ -52,11 +52,22 @@ class _HodLessonPlanScreenState extends State<HodLessonPlanScreen> {
         if (mounted) {
           setState(() {
             if (decoded is Map<String, dynamic>) {
-              if (decoded.containsKey('items')) {
-                _data = decoded['items'];
+              final dataObj = decoded['data'] ?? decoded;
+              if (dataObj is Map<String, dynamic>) {
+                if (dataObj.containsKey('items')) {
+                  _data = dataObj['items'];
+                } else if (decoded.containsKey('items')) {
+                  _data = decoded['items'];
+                } else {
+                  _data = [];
+                }
+                _percentage = dataObj['percentage'] ?? decoded['percentage'] ?? 0;
+                _status = dataObj['status'] ?? decoded['status'] ?? 'NORMAL';
+              } else if (dataObj is List) {
+                _data = dataObj;
+              } else {
+                _data = [];
               }
-              _percentage = decoded['percentage'] ?? 0;
-              _status = decoded['status'] ?? 'NORMAL';
             } else if (decoded is List) {
               _data = decoded;
             } else {
@@ -398,7 +409,17 @@ class _FeedbackListState extends State<_FeedbackList> {
       );
       
       if (response.statusCode == 200) {
-         final List<dynamic> data = json.decode(response.body);
+         final decoded = json.decode(response.body);
+         List<dynamic> data = [];
+         if (decoded is Map<String, dynamic>) {
+           if (decoded['data'] is List) {
+             data = decoded['data'];
+           } else if (decoded['feedbacks'] is List) {
+             data = decoded['feedbacks'];
+           }
+         } else if (decoded is List) {
+           data = decoded;
+         }
          if (mounted) {
            setState(() {
              _feedbacks = data;
