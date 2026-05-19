@@ -1,49 +1,62 @@
-
 use sqlx::postgres::PgPoolOptions;
 use dotenvy::dotenv;
 use std::env;
 use std::fs;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use serde::Deserialize;
-use std::collections::HashMap;
-use chrono::TimeZone;
 
 #[derive(Debug, Deserialize)]
-struct CourseData {
-    branch_name: String,
-    semesters: Option<HashMap<String, CategoryData>>,
-    lesson_plans: Option<HashMap<String, Vec<LessonPlanItemJson>>>,
+struct CurriculumJson {
+    #[serde(rename = "subjectCode")]
+    subject_code: String,
+    #[serde(rename = "subjectName")]
+    subject_name: String,
+    regulation: String,
+    semester: i32,
+    units: Vec<UnitJson>,
 }
 
 #[derive(Debug, Deserialize)]
-struct CategoryData {
-    theory: Option<Vec<SubjectJson>>,
-    practical: Option<Vec<SubjectJson>>,
+struct UnitJson {
+    #[serde(rename = "unitNo")]
+    unit_no: i32,
+    title: String,
+    topics: Vec<TopicJson>,
 }
 
 #[derive(Debug, Deserialize)]
-struct SubjectJson {
+struct TopicJson {
     id: String,
-    name: String,
-    faculty: Option<String>,
+    sno: Option<String>,
+    topic: String,
+    #[serde(rename = "type")]
+    topic_type: Option<String>,
 }
 
-#[derive(Debug, Deserialize)]
-struct LessonPlanItemJson {
-    id: Option<String>,
-    #[serde(rename = "type")]
-    item_type: String,
-    text: Option<String>,
-    topic: Option<String>,
-    sno: Option<String>,
-    completed: Option<bool>,
-    #[serde(rename = "completedDate")]
-    completed_date: Option<String>,
-    #[serde(rename = "targetDate")]
-    target_date: Option<String>,
-    review: Option<String>,
-    #[serde(rename = "studentReview")]
-    student_review: Option<String>,
+fn traverse_dir(dir: &Path, files: &mut Vec<PathBuf>) -> Result<(), std::io::Error> {
+    if dir.is_dir() {
+        for entry in fs::read_dir(dir)? {
+            let entry = entry?;
+            let path = entry.path();
+            if path.is_dir() {
+                traverse_dir(&path, files)?;
+            } else if path.extension().and_then(|s| s.to_str()) == Some("json") {
+                files.push(path);
+            }
+        }
+    }
+    Ok(())
+}
+
+fn map_branch(branch_code: &str) -> &str {
+    match branch_code.to_lowercase().as_str() {
+        "cme" => "Computer Engineering",
+        "civ" => "Civil Engineering",
+        "ece" => "Electronics & Communication Engineering",
+        "eee" => "Electrical & Electronics Engineering",
+        "mech" => "Mechanical Engineering",
+        _ => "Computer Engineering",
+    }
 }
 
 #[tokio::main]
@@ -58,158 +71,109 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Connected to database.");
 
-    // Path to JSON data
-    // The script is running from backend/, so path is ../frontend/data/json
-    let data_dir = Path::new("../frontend/data/json");
-    if !data_dir.exists() {
-        eprintln!("Data directory not found: {:?}", data_dir);
+    // Path to newly created curriculum folders
+    let cur_dir = Path::new("../frontend/assets/curriculum");
+    if !cur_dir.exists() {
+        eprintln!("Curriculum directory not found: {:?}", cur_dir);
         return Ok(());
     }
 
-    let entries = fs::read_dir(data_dir)?;
+    let mut json_files = Vec::new();
+    traverse_dir(cur_dir, &mut json_files)?;
 
-    for entry in entries {
-        let entry = entry?;
-        let path = entry.path();
-        if path.extension().and_then(|s| s.to_str()) == Some("json") {
-            println!("Processing {:?}", path.file_name().unwrap());
-            let content = fs::read_to_string(&path)?;
-            
-            // Allow loose parsing (ignore unknown fields)
-            let data: CourseData = match serde_json::from_str(&content) {
-                Ok(d) => d,
-                Err(e) => {
-                    eprintln!("Failed to parse {:?}: {}", path, e);
-                    continue;
-                }
-            };
+    println!("Found {} curriculum JSON files to seed.", json_files.len());
 
-            seed_branch(&pool, data).await?;
-        }
-    }
-
-    Ok(())
-}
-
-async fn seed_branch(pool: &sqlx::Pool<sqlx::Postgres>, data: CourseData) -> Result<(), Box<dyn std::error::Error>> {
-    let branch = data.branch_name;
-
-    // 1. Seed Subjects
-    if let Some(semesters) = data.semesters {
-        for (sem_name, categories) in semesters {
-            if let Some(theory) = categories.theory {
-                for subj in theory {
-                    upsert_subject(pool, subj, &sem_name, "THEORY", &branch).await?;
-                }
+    for path in json_files {
+        println!("Processing file: {:?}", path);
+        let content = fs::read_to_string(&path)?;
+        
+        let curriculum: CurriculumJson = match serde_json::from_str(&content) {
+            Ok(c) => c,
+            Err(e) => {
+                eprintln!("Failed to parse {:?}: {}", path, e);
+                continue;
             }
-            if let Some(practical) = categories.practical {
-                for subj in practical {
-                    upsert_subject(pool, subj, &sem_name, "PRACTICAL", &branch).await?;
-                }
-            }
+        };
+
+        // Extract branch and type from path components
+        // Path matches format: .../curriculum/{regulation}/{branch}/{semester}/{type}/{subject}.json
+        let components: Vec<String> = path
+            .components()
+            .map(|c| c.as_os_str().to_string_lossy().into_owned())
+            .collect();
+        
+        let mut branch_code = "cme";
+        let mut type_code = "theory";
+        
+        if components.len() >= 3 {
+            type_code = &components[components.len() - 2]; // e.g. "theory" or "practical"
+            branch_code = &components[components.len() - 4]; // e.g. "cme"
         }
-    }
 
-    // 2. Seed Lesson Plans
-    if let Some(plans) = data.lesson_plans {
-        for (subject_id, items) in plans {
-            seed_lesson_plan(pool, &subject_id, items).await?;
-        }
-    }
+        let branch_name = map_branch(branch_code);
+        let subject_type = type_code.to_uppercase();
+        let semester_name = format!("Semester {}", curriculum.semester);
 
-    Ok(())
-}
+        println!(
+            "Seeding subject: {} ({}) | Branch: {} | Type: {} | Sem: {}",
+            curriculum.subject_code, curriculum.subject_name, branch_name, subject_type, semester_name
+        );
 
-async fn upsert_subject(
-    pool: &sqlx::Pool<sqlx::Postgres>, 
-    subj: SubjectJson, 
-    semester: &str, 
-    rtype: &str, 
-    branch: &str
-) -> Result<(), Box<dyn std::error::Error>> {
-    sqlx::query(
-        "INSERT INTO subjects (id, name, semester, type, branch, faculty_name) 
-         VALUES ($1, $2, $3, $4, $5, $6)
-         ON CONFLICT (id) DO UPDATE 
-         SET name = $2, semester = $3, type = $4, branch = $5, faculty_name = $6"
-    )
-    .bind(&subj.id)
-    .bind(&subj.name)
-    .bind(semester)
-    .bind(rtype)
-    .bind(branch)
-    .bind(&subj.faculty)
-    .execute(pool)
-    .await?;
-    
-    Ok(())
-}
-
-async fn seed_lesson_plan(
-    pool: &sqlx::Pool<sqlx::Postgres>,
-    subject_id: &str,
-    items: Vec<LessonPlanItemJson>
-) -> Result<(), Box<dyn std::error::Error>> {
-    // Check subject exists first (Foreign Key constraint)
-    let exists: Option<(String,)> = sqlx::query_as("SELECT id FROM subjects WHERE id = $1")
-        .bind(subject_id)
-        .fetch_optional(pool)
-        .await?;
-    
-    if exists.is_none() {
-        println!("Skipping lesson plan for unknown subject: {}", subject_id);
-        return Ok(());
-    }
-
-    // Clear existing items for this subject
-    sqlx::query("DELETE FROM lesson_plan_items WHERE subject_id = $1")
-        .bind(subject_id)
-        .execute(pool)
-        .await?;
-
-    let mut order_counter = 0;
-    for item in items {
-        order_counter += 1;
-        let item_id = item.id.clone().unwrap_or_else(|| format!("{}-auto-{}", subject_id, order_counter));
-
-        let target_date = item.target_date.as_deref().and_then(parse_date_string);
-        let completed_date = item.completed_date.as_deref().and_then(parse_date_string);
-
+        // 1. Seed Subject
         sqlx::query(
-            "INSERT INTO lesson_plan_items (id, subject_id, type, text, topic, sno, order_index, completed, completed_date, target_date, review, student_review)
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)"
+            "INSERT INTO subjects (id, name, semester, type, branch, faculty_name) 
+             VALUES ($1, $2, $3, $4, $5, $6)
+             ON CONFLICT (id) DO UPDATE 
+             SET name = $2, semester = $3, type = $4, branch = $5"
         )
-        .bind(item_id)
-        .bind(subject_id)
-        .bind(item.item_type.to_uppercase())
-        .bind(item.text)
-        .bind(item.topic)
-        .bind(item.sno)
-        .bind(order_counter)
-        .bind(item.completed.unwrap_or(false))
-        .bind(completed_date)
-        .bind(target_date)
-        .bind(item.review)
-        .bind(item.student_review)
-        .execute(pool)
-        .await
-        .map_err(|e| println!("Error inserting item: {}", e))
-        .ok();
+        .bind(&curriculum.subject_code)
+        .bind(&curriculum.subject_name)
+        .bind(&semester_name)
+        .bind(&subject_type)
+        .bind(branch_name)
+        .bind(None::<String>)
+        .execute(&pool)
+        .await?;
+
+        // 2. Clear existing lesson plan items for this subject to prevent duplicates/conflicts
+        sqlx::query("DELETE FROM lesson_plan_items WHERE subject_id = $1")
+            .bind(&curriculum.subject_code)
+            .execute(&pool)
+            .await?;
+
+        // 3. Seed new lesson plan items
+        let mut order_counter = 0;
+        for unit in &curriculum.units {
+            for topic in &unit.topics {
+                order_counter += 1;
+                let topic_type = topic.topic_type.clone().unwrap_or_else(|| "theory".to_string()).to_uppercase();
+                let topic_sno = topic.sno.clone().unwrap_or_else(|| format!("{}.{}", unit.unit_no, order_counter));
+                let db_topic_id = format!("{}-{}-{}", curriculum.subject_code.to_uppercase(), topic.id, order_counter);
+
+                sqlx::query(
+                    "INSERT INTO lesson_plan_items (id, subject_id, type, text, topic, sno, order_index, completed, completed_date, target_date, review, student_review)
+                     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)"
+                )
+                .bind(&db_topic_id)
+                .bind(&curriculum.subject_code)
+                .bind(&topic_type)
+                .bind(None::<String>)
+                .bind(&topic.topic)
+                .bind(&topic_sno)
+                .bind(order_counter)
+                .bind(false)
+                .bind(None::<chrono::DateTime<chrono::Utc>>)
+                .bind(None::<chrono::DateTime<chrono::Utc>>)
+                .bind(None::<String>)
+                .bind(None::<String>)
+                .execute(&pool)
+                .await?;
+            }
+        }
+        
+        println!("Successfully seeded {} topics for {}", order_counter, curriculum.subject_code);
     }
-    
+
+    println!("All curriculum files successfully seeded!");
     Ok(())
-}
-
-fn parse_date_string(date_str: &str) -> Option<chrono::DateTime<chrono::Utc>> {
-    // Try standard ISO 8601
-    if let Ok(dt) = chrono::DateTime::parse_from_rfc3339(date_str) {
-        return Some(dt.with_timezone(&chrono::Utc));
-    }
-    
-    // Try YYYY-MM-DD
-    if let Ok(d) = chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d") {
-        return chrono::Utc.from_local_datetime(&d.and_hms_opt(0,0,0)?).single();
-    }
-
-    None
 }
