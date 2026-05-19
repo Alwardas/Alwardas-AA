@@ -179,8 +179,8 @@ pub async fn get_student_lesson_plan(pool: &PgPool, subject_id: &str, section_pa
         .await
         .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
 
-    let total = items.len();
-    let completed = items.iter().filter(|i| i.completed.unwrap_or(false)).count();
+    let total = items.iter().filter(|i| i.item_type.to_lowercase() != "unit").count();
+    let completed = items.iter().filter(|i| i.item_type.to_lowercase() != "unit" && i.completed.unwrap_or(false)).count();
     let percentage = if total > 0 { (completed * 100) / total } else { 0 } as i32;
     let expected = get_expected_progress();
     let status = if percentage < expected - 10 { "LAGGING".to_string() } else if percentage > expected + 10 { "OVERFAST".to_string() } else { "NORMAL".to_string() };

@@ -108,14 +108,14 @@ pub async fn find_subjects_by_branch_and_semester(pool: &PgPool, branch: &str, s
 }
 
 pub async fn count_lesson_plan_items(pool: &PgPool, subject_id: &str) -> Result<i64, sqlx::Error> {
-    sqlx::query_scalar("SELECT COUNT(*) FROM lesson_plan_items WHERE subject_id = $1")
+    sqlx::query_scalar("SELECT COUNT(*) FROM lesson_plan_items WHERE subject_id = $1 AND LOWER(type) != 'unit'")
         .bind(subject_id)
         .fetch_one(pool)
         .await
 }
 
 pub async fn count_completed_lesson_plan_items(pool: &PgPool, subject_id: &str, section: &str) -> Result<i64, sqlx::Error> {
-    sqlx::query_scalar("SELECT COUNT(*) FROM lesson_plan_items lpi JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id WHERE lpi.subject_id = $1 AND lpp.section = $2 AND lpp.completed = TRUE")
+    sqlx::query_scalar("SELECT COUNT(*) FROM lesson_plan_items lpi JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id WHERE lpi.subject_id = $1 AND lpp.section = $2 AND lpp.completed = TRUE AND LOWER(lpi.type) != 'unit'")
         .bind(subject_id)
         .bind(section)
         .fetch_one(pool)

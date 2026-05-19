@@ -400,7 +400,7 @@ pub async fn find_lesson_topics(pool: &PgPool, params: crate::models::LessonTopi
         FROM lesson_plan_items lpi
         LEFT JOIN lesson_plan_progress lpp ON lpi.id = lpp.item_id AND (TRIM(lpp.section) = TRIM($2) OR $2 IS NULL)
         LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id AND (TRIM(ls.section) = TRIM($2) OR $2 IS NULL) AND (ls.branch = $3 OR $3 IS NULL)
-        WHERE TRIM(lpi.subject_id) ILIKE TRIM($1)
+        WHERE TRIM(lpi.subject_id) ILIKE TRIM($1) AND LOWER(lpi.type) != 'unit'
         ORDER BY lpi.order_index ASC
         "#
     )

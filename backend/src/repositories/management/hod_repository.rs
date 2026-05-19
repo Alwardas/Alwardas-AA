@@ -147,11 +147,11 @@ pub async fn get_subject_progress_stats(pool: &PgPool, subject_id: &str, section
         SELECT 
             COUNT(lpi.id) as total_topics,
             COUNT(CASE WHEN lp.completed = TRUE THEN 1 END) as completed_topics,
-            COUNT(CASE WHEN ls.schedule_date <= NOW() THEN 1 END) as scheduled_topics
+            COUNT(CASE WHEN ls.schedule_date <= NOW() AND LOWER(lpi.type) != 'unit' THEN 1 END) as scheduled_topics
         FROM lesson_plan_items lpi
         LEFT JOIN lesson_plan_progress lp ON lpi.id = lp.item_id AND lp.section = $2
         LEFT JOIN lesson_schedule ls ON lpi.id = ls.topic_id AND ls.section = $2
-        WHERE lpi.subject_id = $1
+        WHERE lpi.subject_id = $1 AND LOWER(lpi.type) != 'unit'
         "#
     )
     .bind(subject_id).bind(section).fetch_one(pool).await?;

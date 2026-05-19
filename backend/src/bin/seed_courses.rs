@@ -144,6 +144,30 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // 3. Seed new lesson plan items
         let mut order_counter = 0;
         for unit in &curriculum.units {
+            // Seed unit header row
+            order_counter += 1;
+            let unit_id = format!("{}-UNIT-{}", curriculum.subject_code.to_uppercase(), unit.unit_no);
+            let unit_title = format!("Unit {}: {}", unit.unit_no, unit.title);
+
+            sqlx::query(
+                "INSERT INTO lesson_plan_items (id, subject_id, type, text, topic, sno, order_index, completed, completed_date, target_date, review, student_review)
+                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)"
+            )
+            .bind(&unit_id)
+            .bind(&curriculum.subject_code)
+            .bind("unit")
+            .bind(&unit_title)
+            .bind(&unit_title)
+            .bind(None::<String>)
+            .bind(order_counter)
+            .bind(false)
+            .bind(None::<chrono::DateTime<chrono::Utc>>)
+            .bind(None::<chrono::DateTime<chrono::Utc>>)
+            .bind(None::<String>)
+            .bind(None::<String>)
+            .execute(&pool)
+            .await?;
+
             for topic in &unit.topics {
                 order_counter += 1;
                 let topic_type = topic.topic_type.clone().unwrap_or_else(|| "theory".to_string()).to_uppercase();
