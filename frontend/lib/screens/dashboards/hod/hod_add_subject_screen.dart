@@ -95,11 +95,24 @@ class _HodAddSubjectScreenState extends State<HodAddSubjectScreen> {
     else if (_selectedYear == "2nd Year") targetSems.addAll(["3", "4", "Semester 3", "Semester 4"]);
     else if (_selectedYear == "3rd Year") targetSems.addAll(["5", "6", "Semester 5", "Semester 6"]);
 
+    String norm(String b) {
+      String upper = b.trim().toUpperCase();
+      if (upper == 'CME' || upper == 'CM' || upper.contains('COMPUTER')) return 'computer engineering';
+      if (upper == 'CIV' || upper == 'CIVIL' || upper == 'CE') return 'civil engineering';
+      if (upper == 'ECE' || upper == 'EC' || upper.contains('ELECTRONICS')) return 'electronics & communication engineering';
+      if (upper == 'EEE' || upper == 'EE' || upper.contains('ELECTRICAL')) return 'electrical & electronics engineering';
+      if (upper == 'MECH' || upper == 'MEC' || upper == 'ME' || upper.contains('MECHANICAL')) return 'mechanical engineering';
+      return upper.toLowerCase();
+    }
+
+    final selBranchNorm = norm(_selectedBranch!);
+
     final filtered = widget.allCourses.where((c) {
-      final b = c['branch'] ?? '';
+      final b = c['branch']?.toString() ?? '';
       final s = c['semester']?.toString() ?? '';
       
-      bool branchMatch = b == _selectedBranch || b.contains(_selectedBranch!);
+      final bNorm = norm(b);
+      bool branchMatch = bNorm == selBranchNorm || bNorm.contains(selBranchNorm) || selBranchNorm.contains(bNorm);
       if (!branchMatch) return false;
 
       bool semMatch = targetSems.any((ts) => s.toLowerCase().contains(ts.toLowerCase()));
