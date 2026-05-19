@@ -262,3 +262,27 @@ pub async fn get_section_subjects_progress_handler(
         },
     }
 }
+
+pub async fn delete_course_subject_handler(
+    State(data): State<AppState>,
+    Json(payload): Json<crate::models::DeleteCourseSubjectRequest>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match hod_service::delete_course_subject(&data.pool, payload.subject_id).await {
+        Ok(_) => {
+            println!("DELETE Course Subject Result: Success");
+            Ok(Json(json!({
+                "success": true,
+                "message": "Subject removed successfully",
+                "data": null
+            })))
+        },
+        Err(e) => {
+            println!("DELETE Course Subject Error: {:?}", e);
+            Err((e, Json(json!({
+                "success": false,
+                "message": "Failed to remove subject",
+                "data": null
+            }))))
+        },
+    }
+}

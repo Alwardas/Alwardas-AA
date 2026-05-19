@@ -318,3 +318,13 @@ pub async fn calculate_subject_progress(pool: &PgPool, subject_id: &str, section
         (0, "On Track".to_string())
     }
 }
+
+pub async fn delete_course_subject(pool: &PgPool, id: uuid::Uuid) -> Result<(), StatusCode> {
+    hod_repository::delete_course_subject(pool, id)
+        .await
+        .map(|_| ())
+        .map_err(|e| {
+            eprintln!("Failed to delete course subject: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })
+}

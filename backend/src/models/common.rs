@@ -1223,6 +1223,14 @@ pub struct AddCourseSubjectRequest {
     pub course_id: Option<String>,
 }
 
+#[derive(Deserialize, Debug)]
+pub struct DeleteCourseSubjectRequest {
+    #[serde(rename = "userId")]
+    pub user_id: Option<String>,
+    #[serde(rename = "subjectId")]
+    pub subject_id: Uuid,
+}
+
 #[derive(Deserialize)]
 pub struct SectionQuery {
     pub branch: String,

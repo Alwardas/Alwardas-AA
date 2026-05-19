@@ -175,3 +175,11 @@ pub async fn find_faculty_assignment(pool: &PgPool, branch: &str, year: &str, se
 
     Ok(row.map(|r| (r.get("login_id"), r.get("full_name"))))
 }
+
+pub async fn delete_course_subject(pool: &PgPool, id: Uuid) -> Result<u64, sqlx::Error> {
+    sqlx::query("DELETE FROM course_subjects WHERE id = $1")
+        .bind(id)
+        .execute(pool)
+        .await
+        .map(|r| r.rows_affected())
+}

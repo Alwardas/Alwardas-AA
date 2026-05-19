@@ -50,11 +50,12 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
 
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}/api/faculty/subjects?userId=${user['id']}'),
+        Uri.parse('${ApiConstants.hodCourseSubjects}?userId=${user['id']}'),
       );
       if (response.statusCode == 200) {
+        final resMap = json.decode(response.body);
         setState(() {
-          _mySubjects = json.decode(response.body);
+          _mySubjects = resMap['data'] ?? [];
           _loading = false;
         });
       } else {
@@ -102,7 +103,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
     try {
       for (String id in _selectedForDelete) {
         await http.delete(
-          Uri.parse('${ApiConstants.baseUrl}/api/faculty/subjects'),
+          Uri.parse(ApiConstants.hodCourseSubjects),
           headers: {'Content-Type': 'application/json'},
           body: json.encode({'userId': user['id'], 'subjectId': id}),
         );
@@ -205,6 +206,8 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
     final percentage = item['completionPercentage'] ?? item['percentage'] ?? 0;
     final statusTag = item['statusTag'] ?? item['status'] ?? 'NORMAL';
     final displayId = item['subjectId'] ?? item['subject_id'] ?? item['id'];
+    final subjectName = item['subjectName'] ?? item['name'] ?? 'Untitled Subject';
+    final displaySemester = item['semester'] ?? item['year'] ?? '';
 
     Color statusColor = Colors.green;
     if (statusTag == 'LAGGING') statusColor = Colors.red;
@@ -217,7 +220,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
         } else {
           Navigator.push(context, MaterialPageRoute(builder: (_) => HodLessonPlanScreen(
             subjectId: displayId, 
-            subjectName: item['name'],
+            subjectName: subjectName,
             section: item['section'] ?? 'Section A',
           )));
         }
@@ -268,7 +271,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
             ),
             const SizedBox(height: 12),
             Text(
-              "${displayId} - ${item['name']}", 
+              "${displayId} - ${subjectName}", 
               style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600, color: textColor),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -279,7 +282,7 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
               child: Row(
                 children: [
                   _buildTag(
-                    "${item['branch']} · ${item['semester']} · ${item['section']?.toString().replaceAll('Section', 'Sec') ?? ''}",
+                    "${item['branch']} · ${displaySemester} · ${item['section']?.toString().replaceAll('Section', 'Sec') ?? ''}",
                     tint.withValues(alpha: 0.1),
                     subTextColor.withValues(alpha: 0.8),
                   ),

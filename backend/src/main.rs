@@ -136,7 +136,7 @@ async fn main() {
         .route("/api/hod/departments", get(hod::get_hod_departments_handler))
         .route("/api/hod/sections", get(hod::get_hod_sections_handler))
         .route("/api/hod/subjects", get(hod::get_hod_subjects_handler))
-        .route("/api/hod/course-subjects", post(hod::add_course_subject_handler).get(hod::get_added_course_subjects_handler))
+        .route("/api/hod/course-subjects", post(hod::add_course_subject_handler).get(hod::get_added_course_subjects_handler).delete(hod::delete_course_subject_handler))
         .route("/api/hod/master-timetable", get(hod::get_master_timetable_handler))
         .route("/api/hod/syllabus/branch-progress", get(hod::get_branch_progress_handler))
         .route("/api/hod/syllabus/year-sections-progress", get(hod::get_year_sections_progress_handler))
