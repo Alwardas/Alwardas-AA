@@ -62,19 +62,11 @@ pub async fn get_all_departments_handler(
     match crate::services::management::coordinator_service::get_all_departments(&state.pool).await {
         Ok(departments) => {
             println!("GET All Departments Result: {:?}", departments.len());
-            Ok(Json(json!({
-                "success": true,
-                "message": "Departments fetched successfully",
-                "data": departments
-            })))
+            Ok(Json(json!(departments)))
         },
         Err(_) => {
             println!("GET All Departments Error");
-            Err((StatusCode::INTERNAL_SERVER_ERROR, Json(json!({
-                "success": false,
-                "message": "Failed to fetch departments",
-                "data": null
-            }))))
+            Err((StatusCode::INTERNAL_SERVER_ERROR, Json(json!([]))))
         },
     }
 }

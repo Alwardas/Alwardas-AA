@@ -12,19 +12,11 @@ pub async fn get_admin_users_handler(
     match crate::services::management::admin_service::get_admin_users(&state.pool, params).await {
         Ok(res) => {
             println!("GET Admin Users Result: {:?}", res);
-            Ok(Json(serde_json::json!({
-                "success": true,
-                "message": "Users fetched successfully",
-                "data": res
-            })))
+            Ok(Json(serde_json::json!(res)))
         },
         Err(e) => {
             println!("GET Admin Users Error: {:?}", e);
-            Err((e, Json(serde_json::json!({
-                "success": false,
-                "message": "Failed to fetch users",
-                "data": null
-            }))))
+            Err((e, Json(serde_json::json!([]))))
         },
     }
 }
@@ -35,19 +27,11 @@ pub async fn get_admin_stats_handler(
     match crate::services::management::admin_service::get_admin_stats(&state.pool).await {
         Ok(res) => {
             println!("GET Admin Stats Result: {:?}", res);
-            Ok(Json(serde_json::json!({
-                "success": true,
-                "message": "Stats fetched successfully",
-                "data": res
-            })))
+            Ok(Json(serde_json::json!(res)))
         },
         Err(e) => {
             println!("GET Admin Stats Error: {:?}", e);
-            Err((e, Json(serde_json::json!({
-                "success": false,
-                "message": "Failed to fetch stats",
-                "data": null
-            }))))
+            Err((e, Json(serde_json::json!({}))))
         },
     }
 }

@@ -443,19 +443,11 @@ pub async fn get_sections_handler(
     match crate::services::user::faculty_service::get_sections(&state.pool, params).await {
         Ok(res) => {
             println!("GET Sections Result: {:?}", res);
-            Ok(Json(json!({
-                "success": true,
-                "message": "Sections fetched successfully",
-                "data": res
-            })))
+            Ok(Json(json!(res)))
         },
         Err(e) => {
             println!("GET Sections Error: {:?}", e);
-            Err((e, Json(json!({
-                "success": false,
-                "message": "Failed to fetch sections",
-                "data": null
-            }))))
+            Err((e, Json(json!([]))))
         },
     }
 }
