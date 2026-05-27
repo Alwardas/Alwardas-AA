@@ -337,13 +337,11 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
                         Expanded(
                           child: Text(
                             topic['topicName'] ?? 'Unnamed Topic',
-                            style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600, color: textColor),
+                            style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600, color: textColor),
                           ),
                         ),
                         if (isCompleted)
-                          const Icon(Icons.check_circle, color: Colors.green, size: 18)
-                        else
-                          Text("Not Completed", style: GoogleFonts.poppins(fontSize: 11, color: subTextColor, fontWeight: FontWeight.w500)),
+                          const Icon(Icons.check_circle, color: Colors.green, size: 18),
                       ],
                     ),
                     const SizedBox(height: 12),
@@ -363,6 +361,9 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
                               color: Colors.green,
                               onTap: null,
                             ),
+                          ] else ...[
+                            const SizedBox(width: 8),
+                            Text("Not Completed", style: GoogleFonts.poppins(fontSize: 11, color: subTextColor, fontWeight: FontWeight.w500)),
                           ],
                        ],
                     ),
