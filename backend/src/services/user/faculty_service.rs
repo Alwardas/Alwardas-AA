@@ -77,7 +77,12 @@ pub async fn get_students(pool: &PgPool, mut params: StudentsQuery) -> Result<Ve
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
 }
 
-pub async fn get_faculty_by_branch(pool: &PgPool, params: FacultyByBranchQuery) -> Result<Vec<FacultyListDTO>, StatusCode> {
+pub async fn get_faculty_by_branch(pool: &PgPool, mut params: FacultyByBranchQuery) -> Result<Vec<FacultyListDTO>, StatusCode> {
+    if let Some(b) = &params.branch {
+        if b.eq_ignore_ascii_case("all") {
+            params.branch = None;
+        }
+    }
     faculty_repository::find_faculty_by_branch(pool, params)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)

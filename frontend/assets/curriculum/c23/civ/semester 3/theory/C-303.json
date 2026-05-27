@@ -1,597 +1,597 @@
 {
-    "subjectCode": "C-303",
-    "subjectName": "Hydraulics",
-    "regulation": "C23",
-    "semester": 3,
-    "totalPeriods": 75,
-    "units": [
+  "subjectCode": "C-303",
+  "subjectName": "Hydraulics",
+  "regulation": "C23",
+  "semester": 3,
+  "totalPeriods": 75,
+  "units": [
+    {
+      "unitNo": 1,
+      "title": "Properties of liquids",
+      "totalPeriods": 4,
+      "topics": [
         {
-            "unitNo": 1,
-            "title": "Properties of Fluids",
-            "totalPeriods": 4,
-            "topics": [
-                {
-                    "id": "c303-1.1",
-                    "sno": "1.1",
-                    "topic": "Explain the term fluid and give an example",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-1.2",
-                    "sno": "1.2",
-                    "topic": "Differentiate ideal and real fluids.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-1.3",
-                    "sno": "1.3",
-                    "topic": "Revision of Properties of Fluids",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c303-1.4",
-                    "sno": "1.4",
-                    "topic": "Assessment / Practice / Problem Solving on Properties of Fluids",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "c303-1.1",
+          "sno": "1.1",
+          "topic": "Explain the term fluid and give an example",
+          "period": 1,
+          "type": "theory"
         },
         {
-            "unitNo": 2,
-            "title": "Fluid pressure and its measurements",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "id": "c303-2.1",
-                    "sno": "2.1",
-                    "topic": "Define the terms: Atmospheric pressure, Gauge pressure and",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-2.2",
-                    "sno": "2.2",
-                    "topic": "State the relation between the above three pressures.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-2.3",
-                    "sno": "2.3",
-                    "topic": "Describe the following pressure measuring instruments:",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-2.4",
-                    "sno": "2.4",
-                    "topic": "Compute the pressure of a flowing fluid given the readings on",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-2.5",
-                    "sno": "2.5",
-                    "topic": "Define Total Pressure and Centre of Pressure. State the formulae",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-2.6",
-                    "sno": "2.6",
-                    "topic": "Calculate total pressure and centre of pressure for the above",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-2.7",
-                    "sno": "2.7",
-                    "topic": "Tutorial / Practice session on Define the terms: Atmospheric pressure, Gauge pressure and",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-2.8",
-                    "sno": "2.8",
-                    "topic": "Revision of Fluid pressure and its measurements",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c303-2.9",
-                    "sno": "2.9",
-                    "topic": "Assessment / Practice / Problem Solving on Fluid pressure and its measurements",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "c303-1.2",
+          "sno": "1.2",
+          "topic": "Differentiate ideal and real fluids.",
+          "period": 1,
+          "type": "theory"
         },
         {
-            "unitNo": 3,
-            "title": "Flow of Fluids",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "id": "c303-3.1",
-                    "sno": "3.1",
-                    "topic": "State the different types of flow of liquids",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-3.2",
-                    "sno": "3.2",
-                    "topic": "Define :",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-3.3",
-                    "sno": "3.3",
-                    "topic": "Distinguish between different types of flow of liquids.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-3.4",
-                    "sno": "3.4",
-                    "topic": "Define discharge, State units of discharge",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-3.5",
-                    "sno": "3.5",
-                    "topic": "State one dimensional continuity equation.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-3.6",
-                    "sno": "3.6",
-                    "topic": "Compute the discharge/velocity at a section of flowing liquid in",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-3.7",
-                    "sno": "3.7",
-                    "topic": "Explain the following energies of liquid in motion",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-3.8",
-                    "sno": "3.8",
-                    "topic": "Revision of Flow of Fluids",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c303-3.9",
-                    "sno": "3.9",
-                    "topic": "Assessment / Practice / Problem Solving on Flow of Fluids",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "c303-1.3",
+          "sno": "1.3",
+          "topic": "Revision of Properties of Fluids",
+          "period": 1,
+          "type": "revision"
         },
         {
-            "unitNo": 4,
-            "title": "Flow through orifice and mouth pieces",
-            "totalPeriods": 10,
-            "topics": [
-                {
-                    "id": "c303-4.1",
-                    "sno": "4.1",
-                    "topic": "Define orifice. List different types of orifices. Differentiate large",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-4.2",
-                    "sno": "4.2",
-                    "topic": "Define the terms: Vena-contracta, Cc, Cv, Cd and Cr (Hydraulic",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-4.3",
-                    "sno": "4.3",
-                    "topic": "State the formula for theoretical discharge through small orifice",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-4.4",
-                    "sno": "4.4",
-                    "topic": "Calculate the discharge, Cc, Cv,Cd and Cr for given conditions-",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-4.5",
-                    "sno": "4.5",
-                    "topic": "State the discharge through the large rectangular for given",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-4.6",
-                    "sno": "4.6",
-                    "topic": "State the equations with standard notations for discharge",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-4.7",
-                    "sno": "4.7",
-                    "topic": "State the formula for time of emptying of a prismatic tank by an",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-4.8",
-                    "sno": "4.8",
-                    "topic": "Define mouth piece. Differentiate mouth piece and orifice.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-4.9",
-                    "sno": "4.9",
-                    "topic": "Revision of Flow through orifice and mouth pieces",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c303-4.10",
-                    "sno": "4.10",
-                    "topic": "Assessment / Practice / Problem Solving on Flow through orifice and mouth pieces",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Flow over notches and weirs",
-            "totalPeriods": 10,
-            "topics": [
-                {
-                    "id": "c303-5.1",
-                    "sno": "5.1",
-                    "topic": "Define a notch. List different types of notches.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-5.2",
-                    "sno": "5.2",
-                    "topic": "State the formulae for the discharge through Rectangular Notch,",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-5.3",
-                    "sno": "5.3",
-                    "topic": "Define weir. List different types of weirs. State the formulae for",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-5.4",
-                    "sno": "5.4",
-                    "topic": "State the formulae for discharge over above weirs with",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-5.5",
-                    "sno": "5.5",
-                    "topic": "Determine the discharge over sharp crested and broad crested",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-5.6",
-                    "sno": "5.6",
-                    "topic": "Write the formulae to determine the discharge for rectangular",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-5.7",
-                    "sno": "5.7",
-                    "topic": "Tutorial / Practice session on Define a notch. List different types of notches.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-5.8",
-                    "sno": "5.8",
-                    "topic": "Problem solving & numerical analysis of State the formulae for the discharge through Rectangular Notch,",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-5.9",
-                    "sno": "5.9",
-                    "topic": "Revision of Flow over notches and weirs",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c303-5.10",
-                    "sno": "5.10",
-                    "topic": "Assessment / Practice / Problem Solving on Flow over notches and weirs",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 6,
-            "title": "Flow through pipes",
-            "totalPeriods": 10,
-            "topics": [
-                {
-                    "id": "c303-6.1",
-                    "sno": "6.1",
-                    "topic": "List various losses that occur when water flow through pipes.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-6.2",
-                    "sno": "6.2",
-                    "topic": "Differentiate Major loss and Minor losses.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-6.3",
-                    "sno": "6.3",
-                    "topic": "State formulae to compute loss of head due to friction using",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-6.4",
-                    "sno": "6.4",
-                    "topic": "Solve numerical problems in pipes based on the above two",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-6.5",
-                    "sno": "6.5",
-                    "topic": "State formulae for head loss due to various minor losses.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-6.6",
-                    "sno": "6.6",
-                    "topic": "Compute the above minor losses of head for given data –",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-6.7",
-                    "sno": "6.7",
-                    "topic": "Define the terms: Hydraulic gradient line and Total energy line.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-6.8",
-                    "sno": "6.8",
-                    "topic": "Calculate the discharge through Parallel and Compound (series)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-6.9",
-                    "sno": "6.9",
-                    "topic": "Revision of Flow through pipes",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c303-6.10",
-                    "sno": "6.10",
-                    "topic": "Assessment / Practice / Problem Solving on Flow through pipes",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 7,
-            "title": "Flow through open channels",
-            "totalPeriods": 12,
-            "topics": [
-                {
-                    "id": "c303-7.1",
-                    "sno": "7.1",
-                    "topic": "Define open channel flow. Differentiate open channel flow and",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-7.2",
-                    "sno": "7.2",
-                    "topic": "Define the terms: Wetted perimeter and Hydraulic mean depth.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-7.3",
-                    "sno": "7.3",
-                    "topic": "State Chezy’s formula and Manning’s formula for uniform flow",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-7.4",
-                    "sno": "7.4",
-                    "topic": "List the Values of ‘C’ for different surfaces. State the following",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-7.5",
-                    "sno": "7.5",
-                    "topic": "Calculate Velocity and Discharge in a channel using Chezy’s",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-7.6",
-                    "sno": "7.6",
-                    "topic": "Define most economical section of a channel.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-7.7",
-                    "sno": "7.7",
-                    "topic": "List the conditions for most economical section of Rectangular",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-7.8",
-                    "sno": "7.8",
-                    "topic": "Design rectangular section for the given conditions",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-7.9",
-                    "sno": "7.9",
-                    "topic": "Design Trapezoidal section for the given conditions",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-7.10",
-                    "sno": "7.10",
-                    "topic": "Tutorial / Practice session on Define open channel flow. Differentiate open channel flow and",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-7.11",
-                    "sno": "7.11",
-                    "topic": "Revision of Flow through open channels",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c303-7.12",
-                    "sno": "7.12",
-                    "topic": "Assessment / Practice / Problem Solving on Flow through open channels",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 8,
-            "title": "Pumps and Turbines",
-            "totalPeriods": 8,
-            "topics": [
-                {
-                    "id": "c303-8.1",
-                    "sno": "8.1",
-                    "topic": "Define a Pump. List different types of Pumps. Describe the parts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-8.2",
-                    "sno": "8.2",
-                    "topic": "Describe the working principle of Single acting and Double",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-8.3",
-                    "sno": "8.3",
-                    "topic": "List the functions of air vessels in reciprocating pumps.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-8.4",
-                    "sno": "8.4",
-                    "topic": "Describes the different parts of centrifugal pumps. Explain the",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-8.5",
-                    "sno": "8.5",
-                    "topic": "List the pumps to be used for the condition of low head and",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-8.6",
-                    "sno": "8.6",
-                    "topic": "Define Turbine. List types of turbines. List the examples of",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-8.7",
-                    "sno": "8.7",
-                    "topic": "Revision of Pumps and Turbines",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c303-8.8",
-                    "sno": "8.8",
-                    "topic": "Assessment / Practice / Problem Solving on Pumps and Turbines",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 9,
-            "title": "Hydroelectric power plants",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "c303-9.1",
-                    "sno": "9.1",
-                    "topic": "Sketch a typical layout of hydro-electric power plant",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c303-9.2",
-                    "sno": "9.2",
-                    "topic": "Revision of Hydroelectric power plants",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c303-9.3",
-                    "sno": "9.3",
-                    "topic": "Assessment / Practice / Problem Solving on Hydroelectric power plants",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "c303-1.4",
+          "sno": "1.4",
+          "topic": "Assessment / Practice / Problem Solving on Properties of Fluids",
+          "period": 1,
+          "type": "assessment"
         }
-    ]
+      ]
+    },
+    {
+      "unitNo": 2,
+      "title": "Liquid pressure and its measurement",
+      "totalPeriods": 9,
+      "topics": [
+        {
+          "id": "c303-2.1",
+          "sno": "2.1",
+          "topic": "Define the terms: Atmospheric pressure, Gauge pressure and",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-2.2",
+          "sno": "2.2",
+          "topic": "State the relation between the above three pressures.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-2.3",
+          "sno": "2.3",
+          "topic": "Describe the following pressure measuring instruments:",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-2.4",
+          "sno": "2.4",
+          "topic": "Compute the pressure of a flowing fluid given the readings on",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-2.5",
+          "sno": "2.5",
+          "topic": "Define Total Pressure and Centre of Pressure. State the formulae",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-2.6",
+          "sno": "2.6",
+          "topic": "Calculate total pressure and centre of pressure for the above",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-2.7",
+          "sno": "2.7",
+          "topic": "Tutorial / Practice session on Define the terms: Atmospheric pressure, Gauge pressure and",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-2.8",
+          "sno": "2.8",
+          "topic": "Revision of Fluid pressure and its measurements",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c303-2.9",
+          "sno": "2.9",
+          "topic": "Assessment / Practice / Problem Solving on Fluid pressure and its measurements",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 3,
+      "title": "Flow of liquids",
+      "totalPeriods": 9,
+      "topics": [
+        {
+          "id": "c303-3.1",
+          "sno": "3.1",
+          "topic": "State the different types of flow of liquids",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-3.2",
+          "sno": "3.2",
+          "topic": "Define :",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-3.3",
+          "sno": "3.3",
+          "topic": "Distinguish between different types of flow of liquids.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-3.4",
+          "sno": "3.4",
+          "topic": "Define discharge, State units of discharge",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-3.5",
+          "sno": "3.5",
+          "topic": "State one dimensional continuity equation.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-3.6",
+          "sno": "3.6",
+          "topic": "Compute the discharge/velocity at a section of flowing liquid in",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-3.7",
+          "sno": "3.7",
+          "topic": "Explain the following energies of liquid in motion",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-3.8",
+          "sno": "3.8",
+          "topic": "Revision of Flow of Fluids",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c303-3.9",
+          "sno": "3.9",
+          "topic": "Assessment / Practice / Problem Solving on Flow of Fluids",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 4,
+      "title": "Flow through Orifices and Mouth Pieces",
+      "totalPeriods": 10,
+      "topics": [
+        {
+          "id": "c303-4.1",
+          "sno": "4.1",
+          "topic": "Define orifice. List different types of orifices. Differentiate large",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-4.2",
+          "sno": "4.2",
+          "topic": "Define the terms: Vena-contracta, Cc, Cv, Cd and Cr (Hydraulic",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-4.3",
+          "sno": "4.3",
+          "topic": "State the formula for theoretical discharge through small orifice",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-4.4",
+          "sno": "4.4",
+          "topic": "Calculate the discharge, Cc, Cv,Cd and Cr for given conditions-",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-4.5",
+          "sno": "4.5",
+          "topic": "State the discharge through the large rectangular for given",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-4.6",
+          "sno": "4.6",
+          "topic": "State the equations with standard notations for discharge",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-4.7",
+          "sno": "4.7",
+          "topic": "State the formula for time of emptying of a prismatic tank by an",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-4.8",
+          "sno": "4.8",
+          "topic": "Define mouth piece. Differentiate mouth piece and orifice.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-4.9",
+          "sno": "4.9",
+          "topic": "Revision of Flow through orifice and mouth pieces",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c303-4.10",
+          "sno": "4.10",
+          "topic": "Assessment / Practice / Problem Solving on Flow through orifice and mouth pieces",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 5,
+      "title": "Flow over Notches and Weirs",
+      "totalPeriods": 10,
+      "topics": [
+        {
+          "id": "c303-5.1",
+          "sno": "5.1",
+          "topic": "Define a notch. List different types of notches.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-5.2",
+          "sno": "5.2",
+          "topic": "State the formulae for the discharge through Rectangular Notch,",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-5.3",
+          "sno": "5.3",
+          "topic": "Define weir. List different types of weirs. State the formulae for",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-5.4",
+          "sno": "5.4",
+          "topic": "State the formulae for discharge over above weirs with",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-5.5",
+          "sno": "5.5",
+          "topic": "Determine the discharge over sharp crested and broad crested",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-5.6",
+          "sno": "5.6",
+          "topic": "Write the formulae to determine the discharge for rectangular",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-5.7",
+          "sno": "5.7",
+          "topic": "Tutorial / Practice session on Define a notch. List different types of notches.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-5.8",
+          "sno": "5.8",
+          "topic": "Problem solving & numerical analysis of State the formulae for the discharge through Rectangular Notch,",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-5.9",
+          "sno": "5.9",
+          "topic": "Revision of Flow over notches and weirs",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c303-5.10",
+          "sno": "5.10",
+          "topic": "Assessment / Practice / Problem Solving on Flow over notches and weirs",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 6,
+      "title": "Flow thorough pipes",
+      "totalPeriods": 10,
+      "topics": [
+        {
+          "id": "c303-6.1",
+          "sno": "6.1",
+          "topic": "List various losses that occur when water flow through pipes.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-6.2",
+          "sno": "6.2",
+          "topic": "Differentiate Major loss and Minor losses.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-6.3",
+          "sno": "6.3",
+          "topic": "State formulae to compute loss of head due to friction using",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-6.4",
+          "sno": "6.4",
+          "topic": "Solve numerical problems in pipes based on the above two",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-6.5",
+          "sno": "6.5",
+          "topic": "State formulae for head loss due to various minor losses.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-6.6",
+          "sno": "6.6",
+          "topic": "Compute the above minor losses of head for given data \u2013",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-6.7",
+          "sno": "6.7",
+          "topic": "Define the terms: Hydraulic gradient line and Total energy line.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-6.8",
+          "sno": "6.8",
+          "topic": "Calculate the discharge through Parallel and Compound (series)",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-6.9",
+          "sno": "6.9",
+          "topic": "Revision of Flow through pipes",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c303-6.10",
+          "sno": "6.10",
+          "topic": "Assessment / Practice / Problem Solving on Flow through pipes",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 7,
+      "title": "Flow through open Channels",
+      "totalPeriods": 12,
+      "topics": [
+        {
+          "id": "c303-7.1",
+          "sno": "7.1",
+          "topic": "Define open channel flow. Differentiate open channel flow and",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-7.2",
+          "sno": "7.2",
+          "topic": "Define the terms: Wetted perimeter and Hydraulic mean depth.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-7.3",
+          "sno": "7.3",
+          "topic": "State Chezy\u2019s formula and Manning\u2019s formula for uniform flow",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-7.4",
+          "sno": "7.4",
+          "topic": "List the Values of \u2018C\u2019 for different surfaces. State the following",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-7.5",
+          "sno": "7.5",
+          "topic": "Calculate Velocity and Discharge in a channel using Chezy\u2019s",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-7.6",
+          "sno": "7.6",
+          "topic": "Define most economical section of a channel.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-7.7",
+          "sno": "7.7",
+          "topic": "List the conditions for most economical section of Rectangular",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-7.8",
+          "sno": "7.8",
+          "topic": "Design rectangular section for the given conditions",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-7.9",
+          "sno": "7.9",
+          "topic": "Design Trapezoidal section for the given conditions",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-7.10",
+          "sno": "7.10",
+          "topic": "Tutorial / Practice session on Define open channel flow. Differentiate open channel flow and",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-7.11",
+          "sno": "7.11",
+          "topic": "Revision of Flow through open channels",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c303-7.12",
+          "sno": "7.12",
+          "topic": "Assessment / Practice / Problem Solving on Flow through open channels",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 8,
+      "title": "Pumps and Turbines",
+      "totalPeriods": 8,
+      "topics": [
+        {
+          "id": "c303-8.1",
+          "sno": "8.1",
+          "topic": "Define a Pump. List different types of Pumps. Describe the parts",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-8.2",
+          "sno": "8.2",
+          "topic": "Describe the working principle of Single acting and Double",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-8.3",
+          "sno": "8.3",
+          "topic": "List the functions of air vessels in reciprocating pumps.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-8.4",
+          "sno": "8.4",
+          "topic": "Describes the different parts of centrifugal pumps. Explain the",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-8.5",
+          "sno": "8.5",
+          "topic": "List the pumps to be used for the condition of low head and",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-8.6",
+          "sno": "8.6",
+          "topic": "Define Turbine. List types of turbines. List the examples of",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-8.7",
+          "sno": "8.7",
+          "topic": "Revision of Pumps and Turbines",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c303-8.8",
+          "sno": "8.8",
+          "topic": "Assessment / Practice / Problem Solving on Pumps and Turbines",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 9,
+      "title": "Hydro-electric Installation",
+      "totalPeriods": 3,
+      "topics": [
+        {
+          "id": "c303-9.1",
+          "sno": "9.1",
+          "topic": "Sketch a typical layout of hydro-electric power plant",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c303-9.2",
+          "sno": "9.2",
+          "topic": "Revision of Hydroelectric power plants",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c303-9.3",
+          "sno": "9.3",
+          "topic": "Assessment / Practice / Problem Solving on Hydroelectric power plants",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    }
+  ]
 }

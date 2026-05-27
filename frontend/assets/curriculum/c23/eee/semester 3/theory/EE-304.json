@@ -1,380 +1,380 @@
 {
-    "subjectCode": "EE-304",
-    "subjectName": "Electronics Engineering",
-    "regulation": "C23",
-    "semester": 3,
-    "totalPeriods": 60,
-    "units": [
+  "subjectCode": "EE-304",
+  "subjectName": "Electronics Engineering",
+  "regulation": "C23",
+  "semester": 3,
+  "totalPeriods": 60,
+  "units": [
+    {
+      "unitNo": 1,
+      "title": "Semi- conductor devices",
+      "totalPeriods": 16,
+      "topics": [
         {
-            "unitNo": 1,
-            "title": "Semi-conductor devices",
-            "totalPeriods": 16,
-            "topics": [
-                {
-                    "id": "ee3041.1",
-                    "sno": "1.1",
-                    "topic": "DefinePNJunctionDiodeandexplainits formation.",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3041.2",
-                    "sno": "1.2",
-                    "topic": "ExplaintheworkingofPNJunctiondiodewithnobias,forward bias and reverse bias.",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3041.3",
-                    "sno": "1.3",
-                    "topic": "DrawtheVIcharacteristicsofPNJunctionDiode.",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3041.4",
-                    "sno": "1.4",
-                    "topic": "ExplaintheworkingofZenerdiode.",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3041.5",
-                    "sno": "1.5",
-                    "topic": "Drawthe VIcharacteristicsof Zener diode.",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3041.6",
-                    "sno": "1.6",
-                    "topic": "ExplainformationofPNPandNPNtransistors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3041.7",
-                    "sno": "1.7",
-                    "topic": "Statethedifferentconfigurationsoftransistors.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3041.8",
-                    "sno": "1.8",
-                    "topic": "PlottheInput/OutputcharacteristicsofatTransistorinCEconfiguration.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3041.9",
-                    "sno": "1.9",
-                    "topic": "ExplaintheworkingandVIcharacteristicsof (a) FET (b) MOSFET (c) IGBT . Mention their applications.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee304-1.10",
-                    "sno": "1.10",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "ee304-1.11",
-                    "sno": "1.11",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "ee3041.1",
+          "sno": "1.1",
+          "topic": "DefinePNJunctionDiodeandexplainits formation.",
+          "period": 2,
+          "type": "theory"
         },
         {
-            "unitNo": 2,
-            "title": "Power Supplies",
-            "totalPeriods": 8,
-            "topics": [
-                {
-                    "id": "ee3042.1",
-                    "sno": "2.1",
-                    "topic": "Define Rectifier.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3042.2",
-                    "sno": "2.2",
-                    "topic": "Explaintheworkingand,drawthecircuitdiagramsandwaveforms of: (a) HalfWaveRectifier (b)FullWave Rectifier (c) BridgeRectifier",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3042.3",
-                    "sno": "2.3",
-                    "topic": "Statetheneedoffilterinpowersupplies.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3042.4",
-                    "sno": "2.4",
-                    "topic": "Listthe differenttypesof filtersusedinpowersupplies.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3042.5",
-                    "sno": "2.5",
-                    "topic": "ExplaintheworkingofZenerdiodeasaVoltage regulatorina powersupply.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3042.6",
-                    "sno": "2.6",
-                    "topic": "Explaintheworkingofvoltageregulatedpowersupply.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee304-2.7",
-                    "sno": "2.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "ee304-2.8",
-                    "sno": "2.8",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "ee3041.2",
+          "sno": "1.2",
+          "topic": "ExplaintheworkingofPNJunctiondiodewithnobias,forward bias and reverse bias.",
+          "period": 2,
+          "type": "theory"
         },
         {
-            "unitNo": 3,
-            "title": "Amplifiers",
-            "totalPeriods": 16,
-            "topics": [
-                {
-                    "id": "ee3043.1",
-                    "sno": "3.1",
-                    "topic": "DefineAmplifier",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3043.2",
-                    "sno": "3.2",
-                    "topic": "Explaintheoperationoftransistorasanamplifier.",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3043.3",
-                    "sno": "3.3",
-                    "topic": "Listtheapplicationsofamplifiers.",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3043.4",
-                    "sno": "3.4",
-                    "topic": "Listthe differenttypesofcouplingmethods inamplifiers",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3043.5",
-                    "sno": "3.5",
-                    "topic": "Explaintheworkingof RC coupled amplifier with the circuit diagram and draw the frequencyresponsecurves.",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3043.6",
-                    "sno": "3.6",
-                    "topic": "Explain the need for power amplifier.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3043.7",
-                    "sno": "3.7",
-                    "topic": "Distinguishbetweenvoltageamplifierandpoweramplifier.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3043.8",
-                    "sno": "3.8",
-                    "topic": "Definetheterms(a)feedback (b)feedbackfactor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3043.9",
-                    "sno": "3.9",
-                    "topic": "Explaintheeffectoffeedbackongain, bandwidth andnoise",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee304-3.10",
-                    "sno": "3.10",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "ee304-3.11",
-                    "sno": "3.11",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "ee3041.3",
+          "sno": "1.3",
+          "topic": "DrawtheVIcharacteristicsofPNJunctionDiode.",
+          "period": 2,
+          "type": "theory"
         },
         {
-            "unitNo": 4,
-            "title": "Oscillators",
-            "totalPeriods": 8,
-            "topics": [
-                {
-                    "id": "ee3044.1",
-                    "sno": "4.1",
-                    "topic": "DefineOscillatorandclassifydifferenttypesofoscillators",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3044.2",
-                    "sno": "4.2",
-                    "topic": "Statetheconditionsrequiredforsustainedoscillations",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3044.3",
-                    "sno": "4.3",
-                    "topic": "Statetheneed of(a) AFOscillator(b)RF Oscillator(c) SquareWaveOscillator",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3044.4",
-                    "sno": "4.4",
-                    "topic": "Drawthe circuit diagram andexplaintheworkingof (a) RCPhaseShiftOscillator(b)HartleyOscillator(c)Colpitt'sOscillator",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3044.5",
-                    "sno": "4.5",
-                    "topic": "Listtheapplicationsofoscillators.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee304-4.6",
-                    "sno": "4.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "ee304-4.7",
-                    "sno": "4.7",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "ee3041.4",
+          "sno": "1.4",
+          "topic": "ExplaintheworkingofZenerdiode.",
+          "period": 2,
+          "type": "theory"
         },
         {
-            "unitNo": 5,
-            "title": "Linear Integrated Circuits",
-            "totalPeriods": 12,
-            "topics": [
-                {
-                    "id": "ee3045.1",
-                    "sno": "5.1",
-                    "topic": "DefineIntegratedCircuit.",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3045.2",
-                    "sno": "5.2",
-                    "topic": "Listthe advantagesofIntegratedCircuitsoverDiscrete Circuits.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3045.3",
-                    "sno": "5.3",
-                    "topic": "ExplaintheoperationofDifferentialAmplifier.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3045.4",
-                    "sno": "5.4",
-                    "topic": "ListthecharacteristicsofanIdealOperationalAmplifier.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3045.5",
-                    "sno": "5.5",
-                    "topic": "ExplaintheworkingofOperationalAmplifier.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3045.6",
-                    "sno": "5.6",
-                    "topic": "ExplaintheworkingofOpAmp invertingAmplifier.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3045.7",
-                    "sno": "5.7",
-                    "topic": "Statethe conceptofvirtualground.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3045.8",
-                    "sno": "5.8",
-                    "topic": "ExplaintheOperationalAmplifieras (a) summer (b)integrator (c)differentiator (d)inverter.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee3045.9",
-                    "sno": "5.9",
-                    "topic": "Draw the Pin Diagram of 741 IC and state its important specifications and function of each pin.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee304-5.10",
-                    "sno": "5.10",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "ee304-5.11",
-                    "sno": "5.11",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "ee3041.5",
+          "sno": "1.5",
+          "topic": "Drawthe VIcharacteristicsof Zener diode.",
+          "period": 2,
+          "type": "theory"
+        },
+        {
+          "id": "ee3041.6",
+          "sno": "1.6",
+          "topic": "ExplainformationofPNPandNPNtransistors",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3041.7",
+          "sno": "1.7",
+          "topic": "Statethedifferentconfigurationsoftransistors.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3041.8",
+          "sno": "1.8",
+          "topic": "PlottheInput/OutputcharacteristicsofatTransistorinCEconfiguration.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3041.9",
+          "sno": "1.9",
+          "topic": "ExplaintheworkingandVIcharacteristicsof (a) FET (b) MOSFET (c) IGBT . Mention their applications.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee304-1.10",
+          "sno": "1.10",
+          "topic": "Revision of the Unit",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "ee304-1.11",
+          "sno": "1.11",
+          "topic": "Assessment / Practice / Problem Solving",
+          "period": 1,
+          "type": "assessment"
         }
-    ]
+      ]
+    },
+    {
+      "unitNo": 2,
+      "title": "Power Supplies",
+      "totalPeriods": 8,
+      "topics": [
+        {
+          "id": "ee3042.1",
+          "sno": "2.1",
+          "topic": "Define Rectifier.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3042.2",
+          "sno": "2.2",
+          "topic": "Explaintheworkingand,drawthecircuitdiagramsandwaveforms of: (a) HalfWaveRectifier (b)FullWave Rectifier (c) BridgeRectifier",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3042.3",
+          "sno": "2.3",
+          "topic": "Statetheneedoffilterinpowersupplies.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3042.4",
+          "sno": "2.4",
+          "topic": "Listthe differenttypesof filtersusedinpowersupplies.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3042.5",
+          "sno": "2.5",
+          "topic": "ExplaintheworkingofZenerdiodeasaVoltage regulatorina powersupply.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3042.6",
+          "sno": "2.6",
+          "topic": "Explaintheworkingofvoltageregulatedpowersupply.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee304-2.7",
+          "sno": "2.7",
+          "topic": "Revision of the Unit",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "ee304-2.8",
+          "sno": "2.8",
+          "topic": "Assessment / Practice / Problem Solving",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 3,
+      "title": "Amplifiers",
+      "totalPeriods": 16,
+      "topics": [
+        {
+          "id": "ee3043.1",
+          "sno": "3.1",
+          "topic": "DefineAmplifier",
+          "period": 2,
+          "type": "theory"
+        },
+        {
+          "id": "ee3043.2",
+          "sno": "3.2",
+          "topic": "Explaintheoperationoftransistorasanamplifier.",
+          "period": 2,
+          "type": "theory"
+        },
+        {
+          "id": "ee3043.3",
+          "sno": "3.3",
+          "topic": "Listtheapplicationsofamplifiers.",
+          "period": 2,
+          "type": "theory"
+        },
+        {
+          "id": "ee3043.4",
+          "sno": "3.4",
+          "topic": "Listthe differenttypesofcouplingmethods inamplifiers",
+          "period": 2,
+          "type": "theory"
+        },
+        {
+          "id": "ee3043.5",
+          "sno": "3.5",
+          "topic": "Explaintheworkingof RC coupled amplifier with the circuit diagram and draw the frequencyresponsecurves.",
+          "period": 2,
+          "type": "theory"
+        },
+        {
+          "id": "ee3043.6",
+          "sno": "3.6",
+          "topic": "Explain the need for power amplifier.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3043.7",
+          "sno": "3.7",
+          "topic": "Distinguishbetweenvoltageamplifierandpoweramplifier.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3043.8",
+          "sno": "3.8",
+          "topic": "Definetheterms(a)feedback (b)feedbackfactor",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3043.9",
+          "sno": "3.9",
+          "topic": "Explaintheeffectoffeedbackongain, bandwidth andnoise",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee304-3.10",
+          "sno": "3.10",
+          "topic": "Revision of the Unit",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "ee304-3.11",
+          "sno": "3.11",
+          "topic": "Assessment / Practice / Problem Solving",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 4,
+      "title": "Oscillators",
+      "totalPeriods": 8,
+      "topics": [
+        {
+          "id": "ee3044.1",
+          "sno": "4.1",
+          "topic": "DefineOscillatorandclassifydifferenttypesofoscillators",
+          "period": 2,
+          "type": "theory"
+        },
+        {
+          "id": "ee3044.2",
+          "sno": "4.2",
+          "topic": "Statetheconditionsrequiredforsustainedoscillations",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3044.3",
+          "sno": "4.3",
+          "topic": "Statetheneed of(a) AFOscillator(b)RF Oscillator(c) SquareWaveOscillator",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3044.4",
+          "sno": "4.4",
+          "topic": "Drawthe circuit diagram andexplaintheworkingof (a) RCPhaseShiftOscillator(b)HartleyOscillator(c)Colpitt'sOscillator",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3044.5",
+          "sno": "4.5",
+          "topic": "Listtheapplicationsofoscillators.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee304-4.6",
+          "sno": "4.6",
+          "topic": "Revision of the Unit",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "ee304-4.7",
+          "sno": "4.7",
+          "topic": "Assessment / Practice / Problem Solving",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 5,
+      "title": "Linear Integrated Circuits",
+      "totalPeriods": 12,
+      "topics": [
+        {
+          "id": "ee3045.1",
+          "sno": "5.1",
+          "topic": "DefineIntegratedCircuit.",
+          "period": 2,
+          "type": "theory"
+        },
+        {
+          "id": "ee3045.2",
+          "sno": "5.2",
+          "topic": "Listthe advantagesofIntegratedCircuitsoverDiscrete Circuits.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3045.3",
+          "sno": "5.3",
+          "topic": "ExplaintheoperationofDifferentialAmplifier.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3045.4",
+          "sno": "5.4",
+          "topic": "ListthecharacteristicsofanIdealOperationalAmplifier.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3045.5",
+          "sno": "5.5",
+          "topic": "ExplaintheworkingofOperationalAmplifier.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3045.6",
+          "sno": "5.6",
+          "topic": "ExplaintheworkingofOpAmp invertingAmplifier.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3045.7",
+          "sno": "5.7",
+          "topic": "Statethe conceptofvirtualground.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3045.8",
+          "sno": "5.8",
+          "topic": "ExplaintheOperationalAmplifieras (a) summer (b)integrator (c)differentiator (d)inverter.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee3045.9",
+          "sno": "5.9",
+          "topic": "Draw the Pin Diagram of 741 IC and state its important specifications and function of each pin.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ee304-5.10",
+          "sno": "5.10",
+          "topic": "Revision of the Unit",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "ee304-5.11",
+          "sno": "5.11",
+          "topic": "Assessment / Practice / Problem Solving",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    }
+  ]
 }

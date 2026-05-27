@@ -1,464 +1,464 @@
 {
-    "subjectCode": "EC-303",
-    "subjectName": "Digital Electronics",
-    "regulation": "C23",
-    "semester": 3,
-    "totalPeriods": 60,
-    "units": [
+  "subjectCode": "EC-303",
+  "subjectName": "Digital Electronics",
+  "regulation": "C23",
+  "semester": 3,
+  "totalPeriods": 60,
+  "units": [
+    {
+      "unitNo": 1,
+      "title": "Basics of Digital Electronics.",
+      "totalPeriods": 15,
+      "topics": [
         {
-            "unitNo": 1,
-            "title": "Basics of Digital Electronics",
-            "totalPeriods": 15,
-            "topics": [
-                {
-                    "id": "ec-303-1.1",
-                    "sno": "1.1",
-                    "topic": "i) Explain Binary, Octal, Hexadecimal number systems.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.2",
-                    "sno": "1.2",
-                    "topic": "Convert a given decimal number into Binary, Octal, and Hexadecimal number and vice versa",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.3",
-                    "sno": "1.3",
-                    "topic": "Convert a given binary number into octal and hexadecimal number and vice versa",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.4",
-                    "sno": "1.4",
-                    "topic": "Perform binary addition, subtraction, multiplication and division.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.5",
-                    "sno": "1.5",
-                    "topic": "i) Write 1’s complement and 2’s complement numbers for a given binary number.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.6",
-                    "sno": "1.6",
-                    "topic": "Perform subtraction of binary numbers in 2’s complement method.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.7",
-                    "sno": "1.7",
-                    "topic": "Compare weighted and Un-weighted codes.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.8",
-                    "sno": "1.8",
-                    "topic": "Write Binary equivalent number for a number in 8421, Excess-3 and Gray Code and vice- versa.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.9",
-                    "sno": "1.9",
-                    "topic": "Mention the use of alphanumeric codes (ASCII & EBCDIC)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.10",
-                    "sno": "1.10",
-                    "topic": "State different postulates in Boolean algebra",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.11",
-                    "sno": "1.11",
-                    "topic": "Explain the basic logic gates AND, OR, NOT gates with their truth tables",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.12",
-                    "sno": "1.12",
-                    "topic": "Explain the working of universal logic gates (NAND, NOR gates) with truth tables",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.13",
-                    "sno": "1.13",
-                    "topic": "Explain the working of an Exclusive–OR gate with truth table",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-1.14",
-                    "sno": "1.14",
-                    "topic": "Revision of Basics of Digital Electronics",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "ec-303-1.15",
-                    "sno": "1.15",
-                    "topic": "Assessment / Unit Test on Basics of Digital Electronics",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "ec-303-1.1",
+          "sno": "1.1",
+          "topic": "i) Explain Binary, Octal, Hexadecimal number systems.",
+          "period": 1,
+          "type": "theory"
         },
         {
-            "unitNo": 2,
-            "title": "Logic Families",
-            "totalPeriods": 7,
-            "topics": [
-                {
-                    "id": "ec-303-2.1",
-                    "sno": "2.1",
-                    "topic": "Classify logic families",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-2.2",
-                    "sno": "2.2",
-                    "topic": "List the important characteristics of Digital ICs of different logic families.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-2.3",
-                    "sno": "2.3",
-                    "topic": "Define the terms: propagation delay, Noise margin, Fan-in, Fan-out and Power dissipation of digital ICs.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-2.4",
-                    "sno": "2.4",
-                    "topic": "State the voltage and current logic levels of TTL and CMOS ICs.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-2.5",
-                    "sno": "2.5",
-                    "topic": "Explain the working of Totem-pole output TTL NAND gate with circuit diagram.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-2.6",
-                    "sno": "2.6",
-                    "topic": "Revision of Logic Families",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "ec-303-2.7",
-                    "sno": "2.7",
-                    "topic": "Assessment / Unit Test on Logic Families",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "ec-303-1.2",
+          "sno": "1.2",
+          "topic": "Convert a given decimal number into Binary, Octal, and Hexadecimal number and vice versa",
+          "period": 1,
+          "type": "theory"
         },
         {
-            "unitNo": 3,
-            "title": "Combinational Logic circuits",
-            "totalPeriods": 15,
-            "topics": [
-                {
-                    "id": "ec-303-3.1",
-                    "sno": "3.1",
-                    "topic": "State the concept of combinational logic circuit.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.2",
-                    "sno": "3.2",
-                    "topic": "i) Explain Half adder circuit using Ex-OR, AND gates",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.3",
-                    "sno": "3.3",
-                    "topic": "Realize Half-adder using i) NAND gates only and ii) NOR gates only.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.4",
-                    "sno": "3.4",
-                    "topic": "i) Explain the operation of Full adder circuit with truth table using Ex-OR gate and basic gates. ii)Realize full-adder using two Half-adders and an OR gate",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.5",
-                    "sno": "3.5",
-                    "topic": "Explain the working of 4 Bit parallel adder using full adders.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.6",
-                    "sno": "3.6",
-                    "topic": "Explain the logic circuit of 4-bit 2’s compliment adder/subtractor.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.7",
-                    "sno": "3.7",
-                    "topic": "Explain the working of 4-bit serial adder with block diagram.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.8",
-                    "sno": "3.8",
-                    "topic": "Compare the performance of serial and parallel adders",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.9",
-                    "sno": "3.9",
-                    "topic": "Explain 4x1 Multiplexer with logic circuit",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.10",
-                    "sno": "3.10",
-                    "topic": "Mention any 3 applications of multiplexers",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.11",
-                    "sno": "3.11",
-                    "topic": "Explain 1x4 De-multiplexer with logic circuit",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.12",
-                    "sno": "3.12",
-                    "topic": "Mention any 3 applications of De-multiplexers.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.13",
-                    "sno": "3.13",
-                    "topic": "Explain the working of 8x3 encoder",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-3.14",
-                    "sno": "3.14",
-                    "topic": "Revision of Combinational Logic circuits",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "ec-303-3.15",
-                    "sno": "3.15",
-                    "topic": "Assessment / Unit Test on Combinational Logic circuits",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "ec-303-1.3",
+          "sno": "1.3",
+          "topic": "Convert a given binary number into octal and hexadecimal number and vice versa",
+          "period": 1,
+          "type": "theory"
         },
         {
-            "unitNo": 4,
-            "title": "Sequential Logic Circuits",
-            "totalPeriods": 15,
-            "topics": [
-                {
-                    "id": "ec-303-4.1",
-                    "sno": "4.1",
-                    "topic": "State the concept of Sequential logic circuits.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.2",
-                    "sno": "4.2",
-                    "topic": "Distinguish between combinational and sequential logic circuits",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.3",
-                    "sno": "4.3",
-                    "topic": "Explain NAND and NOR latches with truth tables.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.4",
-                    "sno": "4.4",
-                    "topic": "i)State the necessity of clock in digital circuits",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.5",
-                    "sno": "4.5",
-                    "topic": "Differentiate between level triggering and edge triggering",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.6",
-                    "sno": "4.6",
-                    "topic": "Explain clocked SR flip flop using NAND gates.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.7",
-                    "sno": "4.7",
-                    "topic": "State the need for preset and clear inputs.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.8",
-                    "sno": "4.8",
-                    "topic": "i) Explain level clocked JK flip flop (using S-R flip-flops) with truth table.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.9",
-                    "sno": "4.9",
-                    "topic": "State race around condition in JK flipflops",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.10",
-                    "sno": "4.10",
-                    "topic": "Explain the logic circuits of D-Flipflop and T-Flipflops with truth tables",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.11",
-                    "sno": "4.11",
-                    "topic": "Explain the master slave JK flip flop with necessary diagrams.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.12",
-                    "sno": "4.12",
-                    "topic": "i) Give the concept of edge triggering.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.13",
-                    "sno": "4.13",
-                    "topic": "Draw the symbols of edge triggered D and T flip flops.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-4.14",
-                    "sno": "4.14",
-                    "topic": "Revision of Sequential Logic Circuits",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "ec-303-4.15",
-                    "sno": "4.15",
-                    "topic": "Assessment / Unit Test on Sequential Logic Circuits",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "ec-303-1.4",
+          "sno": "1.4",
+          "topic": "Perform binary addition, subtraction, multiplication and division.",
+          "period": 1,
+          "type": "theory"
         },
         {
-            "unitNo": 5,
-            "title": "Semiconductor memories",
-            "totalPeriods": 8,
-            "topics": [
-                {
-                    "id": "ec-303-5.1",
-                    "sno": "5.1",
-                    "topic": "Classify different types of semiconductor memories",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-5.2",
-                    "sno": "5.2",
-                    "topic": "Define the terms: i) memory read operation; ii) memory write operation; iii) access time;",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-5.3",
-                    "sno": "5.3",
-                    "topic": "memory capacity; v) address lines; vi) word length related to memories",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-5.4",
-                    "sno": "5.4",
-                    "topic": "Differentiate:",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-5.5",
-                    "sno": "5.5",
-                    "topic": "Read Only Memory & Read write memory;",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-5.6",
-                    "sno": "5.6",
-                    "topic": "Sequential access memory & Random Access Memory",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ec-303-5.7",
-                    "sno": "5.7",
-                    "topic": "Revision of Semiconductor memories",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "ec-303-5.8",
-                    "sno": "5.8",
-                    "topic": "Assessment / Unit Test on Semiconductor memories",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "ec-303-1.5",
+          "sno": "1.5",
+          "topic": "i) Write 1\u2019s complement and 2\u2019s complement numbers for a given binary number.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-1.6",
+          "sno": "1.6",
+          "topic": "Perform subtraction of binary numbers in 2\u2019s complement method.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-1.7",
+          "sno": "1.7",
+          "topic": "Compare weighted and Un-weighted codes.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-1.8",
+          "sno": "1.8",
+          "topic": "Write Binary equivalent number for a number in 8421, Excess-3 and Gray Code and vice- versa.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-1.9",
+          "sno": "1.9",
+          "topic": "Mention the use of alphanumeric codes (ASCII & EBCDIC)",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-1.10",
+          "sno": "1.10",
+          "topic": "State different postulates in Boolean algebra",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-1.11",
+          "sno": "1.11",
+          "topic": "Explain the basic logic gates AND, OR, NOT gates with their truth tables",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-1.12",
+          "sno": "1.12",
+          "topic": "Explain the working of universal logic gates (NAND, NOR gates) with truth tables",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-1.13",
+          "sno": "1.13",
+          "topic": "Explain the working of an Exclusive\u2013OR gate with truth table",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-1.14",
+          "sno": "1.14",
+          "topic": "Revision of Basics of Digital Electronics",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "ec-303-1.15",
+          "sno": "1.15",
+          "topic": "Assessment / Unit Test on Basics of Digital Electronics",
+          "period": 1,
+          "type": "assessment"
         }
-    ]
+      ]
+    },
+    {
+      "unitNo": 2,
+      "title": "Logic Families",
+      "totalPeriods": 7,
+      "topics": [
+        {
+          "id": "ec-303-2.1",
+          "sno": "2.1",
+          "topic": "Classify logic families",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-2.2",
+          "sno": "2.2",
+          "topic": "List the important characteristics of Digital ICs of different logic families.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-2.3",
+          "sno": "2.3",
+          "topic": "Define the terms: propagation delay, Noise margin, Fan-in, Fan-out and Power dissipation of digital ICs.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-2.4",
+          "sno": "2.4",
+          "topic": "State the voltage and current logic levels of TTL and CMOS ICs.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-2.5",
+          "sno": "2.5",
+          "topic": "Explain the working of Totem-pole output TTL NAND gate with circuit diagram.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-2.6",
+          "sno": "2.6",
+          "topic": "Revision of Logic Families",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "ec-303-2.7",
+          "sno": "2.7",
+          "topic": "Assessment / Unit Test on Logic Families",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 3,
+      "title": "Combinational Logic circuits.",
+      "totalPeriods": 15,
+      "topics": [
+        {
+          "id": "ec-303-3.1",
+          "sno": "3.1",
+          "topic": "State the concept of combinational logic circuit.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.2",
+          "sno": "3.2",
+          "topic": "i) Explain Half adder circuit using Ex-OR, AND gates",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.3",
+          "sno": "3.3",
+          "topic": "Realize Half-adder using i) NAND gates only and ii) NOR gates only.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.4",
+          "sno": "3.4",
+          "topic": "i) Explain the operation of Full adder circuit with truth table using Ex-OR gate and basic gates. ii)Realize full-adder using two Half-adders and an OR gate",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.5",
+          "sno": "3.5",
+          "topic": "Explain the working of 4 Bit parallel adder using full adders.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.6",
+          "sno": "3.6",
+          "topic": "Explain the logic circuit of 4-bit 2\u2019s compliment adder/subtractor.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.7",
+          "sno": "3.7",
+          "topic": "Explain the working of 4-bit serial adder with block diagram.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.8",
+          "sno": "3.8",
+          "topic": "Compare the performance of serial and parallel adders",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.9",
+          "sno": "3.9",
+          "topic": "Explain 4x1 Multiplexer with logic circuit",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.10",
+          "sno": "3.10",
+          "topic": "Mention any 3 applications of multiplexers",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.11",
+          "sno": "3.11",
+          "topic": "Explain 1x4 De-multiplexer with logic circuit",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.12",
+          "sno": "3.12",
+          "topic": "Mention any 3 applications of De-multiplexers.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.13",
+          "sno": "3.13",
+          "topic": "Explain the working of 8x3 encoder",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-3.14",
+          "sno": "3.14",
+          "topic": "Revision of Combinational Logic circuits",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "ec-303-3.15",
+          "sno": "3.15",
+          "topic": "Assessment / Unit Test on Combinational Logic circuits",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 4,
+      "title": "Sequential Logic Circuits.",
+      "totalPeriods": 15,
+      "topics": [
+        {
+          "id": "ec-303-4.1",
+          "sno": "4.1",
+          "topic": "State the concept of Sequential logic circuits.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.2",
+          "sno": "4.2",
+          "topic": "Distinguish between combinational and sequential logic circuits",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.3",
+          "sno": "4.3",
+          "topic": "Explain NAND and NOR latches with truth tables.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.4",
+          "sno": "4.4",
+          "topic": "i)State the necessity of clock in digital circuits",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.5",
+          "sno": "4.5",
+          "topic": "Differentiate between level triggering and edge triggering",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.6",
+          "sno": "4.6",
+          "topic": "Explain clocked SR flip flop using NAND gates.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.7",
+          "sno": "4.7",
+          "topic": "State the need for preset and clear inputs.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.8",
+          "sno": "4.8",
+          "topic": "i) Explain level clocked JK flip flop (using S-R flip-flops) with truth table.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.9",
+          "sno": "4.9",
+          "topic": "State race around condition in JK flipflops",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.10",
+          "sno": "4.10",
+          "topic": "Explain the logic circuits of D-Flipflop and T-Flipflops with truth tables",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.11",
+          "sno": "4.11",
+          "topic": "Explain the master slave JK flip flop with necessary diagrams.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.12",
+          "sno": "4.12",
+          "topic": "i) Give the concept of edge triggering.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.13",
+          "sno": "4.13",
+          "topic": "Draw the symbols of edge triggered D and T flip flops.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-4.14",
+          "sno": "4.14",
+          "topic": "Revision of Sequential Logic Circuits",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "ec-303-4.15",
+          "sno": "4.15",
+          "topic": "Assessment / Unit Test on Sequential Logic Circuits",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 5,
+      "title": "Semiconductor memories.",
+      "totalPeriods": 8,
+      "topics": [
+        {
+          "id": "ec-303-5.1",
+          "sno": "5.1",
+          "topic": "Classify different types of semiconductor memories",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-5.2",
+          "sno": "5.2",
+          "topic": "Define the terms: i) memory read operation; ii) memory write operation; iii) access time;",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-5.3",
+          "sno": "5.3",
+          "topic": "memory capacity; v) address lines; vi) word length related to memories",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-5.4",
+          "sno": "5.4",
+          "topic": "Differentiate:",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-5.5",
+          "sno": "5.5",
+          "topic": "Read Only Memory & Read write memory;",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-5.6",
+          "sno": "5.6",
+          "topic": "Sequential access memory & Random Access Memory",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "ec-303-5.7",
+          "sno": "5.7",
+          "topic": "Revision of Semiconductor memories",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "ec-303-5.8",
+          "sno": "5.8",
+          "topic": "Assessment / Unit Test on Semiconductor memories",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    }
+  ]
 }

@@ -1,373 +1,373 @@
 {
-    "subjectCode": "C-505",
-    "subjectName": "Construction Management & Entrepreneurship",
-    "regulation": "C23",
-    "semester": 5,
-    "totalPeriods": 45,
-    "units": [
+  "subjectCode": "C-505",
+  "subjectName": "Construction Management & Entrepreneurship",
+  "regulation": "C23",
+  "semester": 5,
+  "totalPeriods": 45,
+  "units": [
+    {
+      "unitNo": 1,
+      "title": "Introduction",
+      "totalPeriods": 3,
+      "topics": [
         {
-            "unitNo": 1,
-            "title": "Introduction",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "c505-1.1",
-                    "sno": "1.1",
-                    "topic": "Define Management.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-1.2",
-                    "sno": "1.2",
-                    "topic": "Revision of Introduction",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c505-1.3",
-                    "sno": "1.3",
-                    "topic": "Assessment / Practice / Problem Solving on Introduction",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "c505-1.1",
+          "sno": "1.1",
+          "topic": "Define Management.",
+          "period": 1,
+          "type": "theory"
         },
         {
-            "unitNo": 2,
-            "title": "Organizational Aspects",
-            "totalPeriods": 6,
-            "topics": [
-                {
-                    "id": "c505-2.1",
-                    "sno": "2.1",
-                    "topic": "Explain the organizational structure of any Engineering",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-2.2",
-                    "sno": "2.2",
-                    "topic": "List the duties of different officers of an Engineering",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-2.3",
-                    "sno": "2.3",
-                    "topic": "Define Preliminary estimate, Detailed estimate,",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-2.4",
-                    "sno": "2.4",
-                    "topic": "State the limit of powers of sanction by various officers in",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-2.5",
-                    "sno": "2.5",
-                    "topic": "Revision of Organizational Aspects",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c505-2.6",
-                    "sno": "2.6",
-                    "topic": "Assessment / Practice / Problem Solving on Organizational Aspects",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "c505-1.2",
+          "sno": "1.2",
+          "topic": "Revision of Introduction",
+          "period": 1,
+          "type": "revision"
         },
         {
-            "unitNo": 3,
-            "title": "Management Tools",
-            "totalPeriods": 8,
-            "topics": [
-                {
-                    "id": "c505-3.1",
-                    "sno": "3.1",
-                    "topic": "Define CPM and PERT.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-3.2",
-                    "sno": "3.2",
-                    "topic": "State the advantages of CPM and PERT.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-3.3",
-                    "sno": "3.3",
-                    "topic": "Explain the use of bar chart and its limitations",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-3.4",
-                    "sno": "3.4",
-                    "topic": "Define Network, Activity, Event, Activity duration, Dummy",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-3.5",
-                    "sno": "3.5",
-                    "topic": "Prepare Network diagram using basic rules of network",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-3.6",
-                    "sno": "3.6",
-                    "topic": "Calculate Project duration using CPM network identifying",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-3.7",
-                    "sno": "3.7",
-                    "topic": "Revision of Management Tools",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c505-3.8",
-                    "sno": "3.8",
-                    "topic": "Assessment / Practice / Problem Solving on Management Tools",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "Contracts and Tenders and Arbitration",
-            "totalPeriods": 10,
-            "topics": [
-                {
-                    "id": "c505-4.1",
-                    "sno": "4.1",
-                    "topic": "Define contract, State the contents of a contract document, and",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-4.2",
-                    "sno": "4.2",
-                    "topic": "List the merits and limitations of each of the contract systems,",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-4.3",
-                    "sno": "4.3",
-                    "topic": "Define tender, Explain the need for calling of tenders, List the",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-4.4",
-                    "sno": "4.4",
-                    "topic": "Draft a tender notice for a work, Prepare tender documents.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-4.5",
-                    "sno": "4.5",
-                    "topic": "Explain the need of earnest money and security deposits.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-4.6",
-                    "sno": "4.6",
-                    "topic": "Prepare a comparative statement.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-4.7",
-                    "sno": "4.7",
-                    "topic": "Explain the method of selecting a contractor from the tenders,",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-4.8",
-                    "sno": "4.8",
-                    "topic": "Define the terms Dispute and Arbitration, Explain the scope",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-4.9",
-                    "sno": "4.9",
-                    "topic": "Revision of Contracts and Tenders and Arbitration",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c505-4.10",
-                    "sno": "4.10",
-                    "topic": "Assessment / Practice / Problem Solving on Contracts and Tenders and Arbitration",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Management of Resources in Construction",
-            "totalPeriods": 8,
-            "topics": [
-                {
-                    "id": "c505-5.1",
-                    "sno": "5.1",
-                    "topic": "Explain the scope of materials management, Classify the",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-5.2",
-                    "sno": "5.2",
-                    "topic": "Explain the points to be observed in the storage of perishable",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-5.3",
-                    "sno": "5.3",
-                    "topic": "Explain the need for mechanization, Explain the need for",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-5.4",
-                    "sno": "5.4",
-                    "topic": "Explain about the preventive maintenance of plant and",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-5.5",
-                    "sno": "5.5",
-                    "topic": "Explain the importance of training of operators.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-5.6",
-                    "sno": "5.6",
-                    "topic": "Explain the need for overhauling or replacement.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-5.7",
-                    "sno": "5.7",
-                    "topic": "Revision of Management of Resources in Construction",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c505-5.8",
-                    "sno": "5.8",
-                    "topic": "Assessment / Practice / Problem Solving on Management of Resources in Construction",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 6,
-            "title": "Entrepreneurship",
-            "totalPeriods": 6,
-            "topics": [
-                {
-                    "id": "c505-6.1",
-                    "sno": "6.1",
-                    "topic": "Define 1. Entrepreneur and 2. Entrepreneurship.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-6.2",
-                    "sno": "6.2",
-                    "topic": "Outline the concepts of entrepreneurship.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-6.3",
-                    "sno": "6.3",
-                    "topic": "State the role of entrepreneur in economic development.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-6.4",
-                    "sno": "6.4",
-                    "topic": "List the characteristics of an entrepreneur.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-6.5",
-                    "sno": "6.5",
-                    "topic": "Revision of Entrepreneurship",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c505-6.6",
-                    "sno": "6.6",
-                    "topic": "Assessment / Practice / Problem Solving on Entrepreneurship",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 7,
-            "title": "Human Relations and Professional Ethics",
-            "totalPeriods": 4,
-            "topics": [
-                {
-                    "id": "c505-7.1",
-                    "sno": "7.1",
-                    "topic": "State role of Human relations and Performance in",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-7.2",
-                    "sno": "7.2",
-                    "topic": "State the role of Interpersonal relationship for effective work",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "c505-7.3",
-                    "sno": "7.3",
-                    "topic": "Revision of Human Relations and Professional Ethics",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "c505-7.4",
-                    "sno": "7.4",
-                    "topic": "Assessment / Practice / Problem Solving on Human Relations and Professional Ethics",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
+          "id": "c505-1.3",
+          "sno": "1.3",
+          "topic": "Assessment / Practice / Problem Solving on Introduction",
+          "period": 1,
+          "type": "assessment"
         }
-    ]
+      ]
+    },
+    {
+      "unitNo": 2,
+      "title": "Organizational Aspects",
+      "totalPeriods": 6,
+      "topics": [
+        {
+          "id": "c505-2.1",
+          "sno": "2.1",
+          "topic": "Explain the organizational structure of any Engineering",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-2.2",
+          "sno": "2.2",
+          "topic": "List the duties of different officers of an Engineering",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-2.3",
+          "sno": "2.3",
+          "topic": "Define Preliminary estimate, Detailed estimate,",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-2.4",
+          "sno": "2.4",
+          "topic": "State the limit of powers of sanction by various officers in",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-2.5",
+          "sno": "2.5",
+          "topic": "Revision of Organizational Aspects",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c505-2.6",
+          "sno": "2.6",
+          "topic": "Assessment / Practice / Problem Solving on Organizational Aspects",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 3,
+      "title": "Management Tools",
+      "totalPeriods": 8,
+      "topics": [
+        {
+          "id": "c505-3.1",
+          "sno": "3.1",
+          "topic": "Define CPM and PERT.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-3.2",
+          "sno": "3.2",
+          "topic": "State the advantages of CPM and PERT.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-3.3",
+          "sno": "3.3",
+          "topic": "Explain the use of bar chart and its limitations",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-3.4",
+          "sno": "3.4",
+          "topic": "Define Network, Activity, Event, Activity duration, Dummy",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-3.5",
+          "sno": "3.5",
+          "topic": "Prepare Network diagram using basic rules of network",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-3.6",
+          "sno": "3.6",
+          "topic": "Calculate Project duration using CPM network identifying",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-3.7",
+          "sno": "3.7",
+          "topic": "Revision of Management Tools",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c505-3.8",
+          "sno": "3.8",
+          "topic": "Assessment / Practice / Problem Solving on Management Tools",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 4,
+      "title": "Contracts, Tenders and Arbitration",
+      "totalPeriods": 10,
+      "topics": [
+        {
+          "id": "c505-4.1",
+          "sno": "4.1",
+          "topic": "Define contract, State the contents of a contract document, and",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-4.2",
+          "sno": "4.2",
+          "topic": "List the merits and limitations of each of the contract systems,",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-4.3",
+          "sno": "4.3",
+          "topic": "Define tender, Explain the need for calling of tenders, List the",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-4.4",
+          "sno": "4.4",
+          "topic": "Draft a tender notice for a work, Prepare tender documents.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-4.5",
+          "sno": "4.5",
+          "topic": "Explain the need of earnest money and security deposits.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-4.6",
+          "sno": "4.6",
+          "topic": "Prepare a comparative statement.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-4.7",
+          "sno": "4.7",
+          "topic": "Explain the method of selecting a contractor from the tenders,",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-4.8",
+          "sno": "4.8",
+          "topic": "Define the terms Dispute and Arbitration, Explain the scope",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-4.9",
+          "sno": "4.9",
+          "topic": "Revision of Contracts and Tenders and Arbitration",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c505-4.10",
+          "sno": "4.10",
+          "topic": "Assessment / Practice / Problem Solving on Contracts and Tenders and Arbitration",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 5,
+      "title": "Management of Resources in Construction Industry",
+      "totalPeriods": 8,
+      "topics": [
+        {
+          "id": "c505-5.1",
+          "sno": "5.1",
+          "topic": "Explain the scope of materials management, Classify the",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-5.2",
+          "sno": "5.2",
+          "topic": "Explain the points to be observed in the storage of perishable",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-5.3",
+          "sno": "5.3",
+          "topic": "Explain the need for mechanization, Explain the need for",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-5.4",
+          "sno": "5.4",
+          "topic": "Explain about the preventive maintenance of plant and",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-5.5",
+          "sno": "5.5",
+          "topic": "Explain the importance of training of operators.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-5.6",
+          "sno": "5.6",
+          "topic": "Explain the need for overhauling or replacement.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-5.7",
+          "sno": "5.7",
+          "topic": "Revision of Management of Resources in Construction",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c505-5.8",
+          "sno": "5.8",
+          "topic": "Assessment / Practice / Problem Solving on Management of Resources in Construction",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 6,
+      "title": "Entrepreneurship",
+      "totalPeriods": 6,
+      "topics": [
+        {
+          "id": "c505-6.1",
+          "sno": "6.1",
+          "topic": "Define 1. Entrepreneur and 2. Entrepreneurship.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-6.2",
+          "sno": "6.2",
+          "topic": "Outline the concepts of entrepreneurship.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-6.3",
+          "sno": "6.3",
+          "topic": "State the role of entrepreneur in economic development.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-6.4",
+          "sno": "6.4",
+          "topic": "List the characteristics of an entrepreneur.",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-6.5",
+          "sno": "6.5",
+          "topic": "Revision of Entrepreneurship",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c505-6.6",
+          "sno": "6.6",
+          "topic": "Assessment / Practice / Problem Solving on Entrepreneurship",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    },
+    {
+      "unitNo": 7,
+      "title": "Human Relations and Professional Ethics",
+      "totalPeriods": 4,
+      "topics": [
+        {
+          "id": "c505-7.1",
+          "sno": "7.1",
+          "topic": "State role of Human relations and Performance in",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-7.2",
+          "sno": "7.2",
+          "topic": "State the role of Interpersonal relationship for effective work",
+          "period": 1,
+          "type": "theory"
+        },
+        {
+          "id": "c505-7.3",
+          "sno": "7.3",
+          "topic": "Revision of Human Relations and Professional Ethics",
+          "period": 1,
+          "type": "revision"
+        },
+        {
+          "id": "c505-7.4",
+          "sno": "7.4",
+          "topic": "Assessment / Practice / Problem Solving on Human Relations and Professional Ethics",
+          "period": 1,
+          "type": "assessment"
+        }
+      ]
+    }
+  ]
 }
