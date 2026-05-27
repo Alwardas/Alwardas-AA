@@ -9,6 +9,7 @@ import '../../../widgets/skeleton_loader.dart';
 import '../../../core/api_config.dart';
 import '../../../data/courses_data.dart';
 import 'hod_syllabus_lesson_topics_screen.dart';
+import '../../../services/pdf_service.dart';
 
 class HodSyllabusSubjectsScreen extends StatefulWidget {
   final String courseId;
@@ -214,16 +215,23 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
                     ],
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  decoration: BoxDecoration(
-                    color: statusColor.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text(
-                    status,
-                    style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: statusColor),
-                  ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    _PdfDownloadButton(subject: subject, parentWidget: widget),
+                    const SizedBox(width: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      decoration: BoxDecoration(
+                        color: statusColor.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        status,
+                        style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold, color: statusColor),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -295,6 +303,52 @@ class _HodSyllabusSubjectsScreenState extends State<HodSyllabusSubjectsScreen> {
         ),
       ),
     );
+  }
+}
+
+class _PdfDownloadButton extends StatefulWidget {
+  final dynamic subject;
+  final HodSyllabusSubjectsScreen parentWidget;
+  const _PdfDownloadButton({required this.subject, required this.parentWidget});
+
+  @override
+  State<_PdfDownloadButton> createState() => _PdfDownloadButtonState();
+}
+
+class _PdfDownloadButtonState extends State<_PdfDownloadButton> {
+  bool _isGenerating = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return _isGenerating 
+      ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2))
+      : GestureDetector(
+          onTap: () async {
+            setState(() => _isGenerating = true);
+            final role = widget.parentWidget.userData['role'] ?? '';
+            final facultyName = role == 'Faculty' ? (widget.parentWidget.userData['full_name'] ?? 'Faculty') : 'Assigned Faculty';
+            await PdfService.generateLessonPlanPdf(
+              context: context,
+              subjectId: widget.subject['subjectId'],
+              subjectName: widget.subject['subjectName'],
+              status: widget.subject['status'] ?? 'On Track',
+              percentage: (widget.subject['percentage'] as num).toInt(),
+              facultyName: facultyName,
+              academicYear: "2025-26", 
+              branch: widget.parentWidget.userData['branch'] ?? 'Computer Engineering',
+              section: widget.parentWidget.section,
+            );
+            if (mounted) setState(() => _isGenerating = false);
+          },
+          child: Container(
+             padding: const EdgeInsets.all(6),
+             decoration: BoxDecoration(
+               color: Colors.red.withValues(alpha: 0.1),
+               borderRadius: BorderRadius.circular(8),
+             ),
+             child: const Icon(Icons.picture_as_pdf, color: Colors.red, size: 18),
+          ),
+        );
   }
 }
 

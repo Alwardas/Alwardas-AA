@@ -1,5 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'dart:io';
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -7,6 +10,9 @@ import 'package:path_provider/path_provider.dart';
 import 'package:open_filex/open_filex.dart'; 
 import 'package:permission_handler/permission_handler.dart';
 import 'package:intl/intl.dart';
+
+import '../core/api_constants.dart';
+import '../data/courses_data.dart';
 
 class PdfService {
 
@@ -347,5 +353,240 @@ class PdfService {
     } catch (e) {
       debugPrint("Error saving PDF: $e");
     }
+  }
+
+  static Future<void> generateLessonPlanPdf({
+    required BuildContext context,
+    required String subjectId,
+    required String subjectName,
+    required String status,
+    required int percentage,
+    required String facultyName,
+    required String academicYear,
+    required String branch,
+    required String section,
+  }) async {
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/faculty/hod-lesson-topics?subject_id=${Uri.encodeComponent(subjectId)}&section=${Uri.encodeComponent(section)}&branch=${Uri.encodeComponent(branch)}');
+      
+      Map<String, dynamic> apiTopicsMap = {};
+      try {
+        final response = await http.get(url);
+        if (response.statusCode == 200) {
+          final Map<String, dynamic> decoded = json.decode(response.body);
+          if (decoded['success'] == true && decoded['data'] is List) {
+            for (var t in decoded['data']) {
+              if (t['id'] != null) {
+                apiTopicsMap[t['id'].toString().toLowerCase()] = t;
+              }
+            }
+          }
+        }
+      } catch (e) {
+        debugPrint("Error fetching API topics for PDF: $e");
+      }
+
+      final subjectDetails = await CoursesData.getSubjectDetails(subjectId);
+      List<dynamic> localTopics = [];
+
+      if (subjectDetails != null && subjectDetails['units'] != null) {
+        for (var unit in subjectDetails['units']) {
+          localTopics.add({
+            'type': 'unit',
+            'topicName': 'Unit ${unit['unitNo']}: ${unit['title']}',
+            'unitNo': unit['unitNo'],
+          });
+
+          if (unit['topics'] != null) {
+            for (var t in unit['topics']) {
+              final apiData = apiTopicsMap[t['id'].toString().toLowerCase()];
+              localTopics.add({
+                'id': t['id'],
+                'type': t['type'] ?? 'topic',
+                'topicName': t['topic'],
+                'unitNo': unit['unitNo'],
+                'scheduleDate': apiData?['scheduleDate'],
+                'completed': apiData?['completed'] ?? false,
+                'completedDate': apiData?['completedDate'],
+              });
+            }
+          }
+        }
+      }
+
+      if (localTopics.isEmpty) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("No syllabus data available to generate PDF.")));
+        }
+        return;
+      }
+
+      ByteData? fontRegular;
+      try { fontRegular = await rootBundle.load("assets/fonts/Poppins-Regular.ttf"); } catch (_) {}
+      ByteData? fontBold;
+      try { fontBold = await rootBundle.load("assets/fonts/Poppins-Bold.ttf"); } catch (_) {}
+
+      final ttfRegular = fontRegular != null ? pw.Font.ttf(fontRegular) : pw.Font.courier();
+      final ttfBold = fontBold != null ? pw.Font.ttf(fontBold) : pw.Font.courierBold();
+
+      final pdf = pw.Document();
+      
+      PdfColor statusColor = PdfColors.green;
+      if (status.toLowerCase() == 'lagging') statusColor = PdfColors.red;
+      if (status.toLowerCase().contains('fast')) statusColor = PdfColors.orange;
+
+      Map<int, List<dynamic>> unitsMap = {};
+      for (var t in localTopics) {
+        final int uNo = t['unitNo'] ?? 1;
+        unitsMap.putIfAbsent(uNo, () => []);
+        unitsMap[uNo]!.add(t);
+      }
+
+      for (var unitNo in unitsMap.keys.toList()..sort()) {
+        final items = unitsMap[unitNo]!;
+        final unitHeader = items.firstWhere((e) => e['type'] == 'unit', orElse: () => null);
+        final unitTitle = unitHeader != null ? unitHeader['topicName'] : 'UNIT $unitNo';
+        
+        int sNo = 1;
+        int totalPeriods = 0;
+        for(var t in items.where((e) => e['type'] != 'unit')) totalPeriods++;
+
+        pdf.addPage(
+          pw.MultiPage(
+            pageFormat: PdfPageFormat.a4,
+            margin: const pw.EdgeInsets.all(32),
+            header: (pw.Context pdfContext) {
+              if (pdfContext.pageNumber != 1) return pw.SizedBox();
+              return pw.Column(
+                crossAxisAlignment: pw.CrossAxisAlignment.start,
+                children: [
+                  pw.Row(
+                    mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                    children: [
+                      pw.Text(
+                        'NAME OF THE FACULTY: ${facultyName.toUpperCase()}',
+                        style: pw.TextStyle(font: ttfBold, fontSize: 12),
+                      ),
+                      pw.Container(
+                        padding: const pw.EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: pw.BoxDecoration(
+                          border: pw.Border.all(color: statusColor, width: 1.5),
+                          borderRadius: const pw.BorderRadius.all(pw.Radius.circular(4)),
+                        ),
+                        child: pw.Text(
+                          '$status | $percentage%',
+                          style: pw.TextStyle(font: ttfBold, fontSize: 10, color: statusColor),
+                        ),
+                      ),
+                    ],
+                  ),
+                  pw.SizedBox(height: 8),
+                  pw.Text(
+                    'Lesson Plan: $subjectName ($subjectId) Academic Year: $academicYear',
+                    style: pw.TextStyle(font: ttfBold, fontSize: 12),
+                  ),
+                  pw.SizedBox(height: 16),
+                ],
+              );
+            },
+            build: (pw.Context pdfContext) {
+              return [
+                pw.Container(
+                  decoration: pw.BoxDecoration(border: pw.Border.all(color: PdfColors.black, width: 0.5)),
+                  child: pw.Column(
+                    children: [
+                      pw.Container(
+                        width: double.infinity,
+                        padding: const pw.EdgeInsets.all(6),
+                        decoration: const pw.BoxDecoration(border: pw.Border(bottom: pw.BorderSide(color: PdfColors.black, width: 0.5))),
+                        child: pw.Text(
+                          '$unitTitle ($totalPeriods Periods)',
+                          textAlign: pw.TextAlign.center,
+                          style: pw.TextStyle(font: ttfBold, fontSize: 12),
+                        ),
+                      ),
+                      pw.Table(
+                        border: const pw.TableBorder.symmetric(inside: pw.BorderSide(color: PdfColors.black, width: 0.5)),
+                        columnWidths: {
+                          0: const pw.FlexColumnWidth(1),
+                          1: const pw.FlexColumnWidth(2),
+                          2: const pw.FlexColumnWidth(6),
+                          3: const pw.FlexColumnWidth(1.5),
+                          4: const pw.FlexColumnWidth(2),
+                        },
+                        children: [
+                          pw.TableRow(
+                            children: [
+                              _lpCell('S.No', true, true, ttfBold, ttfRegular),
+                              _lpCell('Date', true, true, ttfBold, ttfRegular),
+                              _lpCell('Name of the topic to be covered', true, true, ttfBold, ttfRegular),
+                              _lpCell('No. Of\nPeriods', true, true, ttfBold, ttfRegular),
+                              _lpCell('Completed\nDate', true, true, ttfBold, ttfRegular),
+                            ],
+                          ),
+                          ...items.where((e) => e['type'] != 'unit').map((t) {
+                            String dateStr = '';
+                            if (t['scheduleDate'] != null) {
+                              try { dateStr = DateFormat('dd/MM/yyyy').format(DateTime.parse(t['scheduleDate']).toLocal()); } catch (_) {}
+                            }
+                            String completedDateStr = '';
+                            if (t['completed'] == true && t['completedDate'] != null) {
+                              try { completedDateStr = DateFormat('dd/MM/yyyy').format(DateTime.parse(t['completedDate']).toLocal()); } catch (_) {}
+                            }
+                            return pw.TableRow(
+                              children: [
+                                _lpCell('${sNo++}', false, true, ttfBold, ttfRegular),
+                                _lpCell(dateStr, false, true, ttfBold, ttfRegular),
+                                _lpCell(t['topicName'] ?? '', false, false, ttfBold, ttfRegular),
+                                _lpCell('1', false, true, ttfBold, ttfRegular),
+                                _lpCell(completedDateStr, false, true, ttfBold, ttfRegular),
+                              ],
+                            );
+                          }),
+                        ],
+                      ),
+                      pw.Container(
+                        width: double.infinity,
+                        padding: const pw.EdgeInsets.all(6),
+                        decoration: const pw.BoxDecoration(border: pw.Border(top: pw.BorderSide(color: PdfColors.black, width: 0.5))),
+                        child: pw.Row(
+                           children: [
+                             pw.Expanded(flex: 9, child: pw.Text('(UNIT $unitNo END)', textAlign: pw.TextAlign.center, style: pw.TextStyle(font: ttfBold, fontSize: 10))),
+                             pw.Expanded(flex: 3, child: pw.Text('Total\n$totalPeriods Periods', textAlign: pw.TextAlign.center, style: pw.TextStyle(font: ttfBold, fontSize: 10))),
+                           ]
+                        )
+                      )
+                    ],
+                  ),
+                ),
+                pw.SizedBox(height: 20),
+              ];
+            },
+          ),
+        );
+      }
+
+      await _saveAndLaunchPdf(pdf, "LessonPlan_${subjectId}_$section.pdf");
+
+    } catch (e) {
+      debugPrint("PDF Generation error: $e");
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to generate PDF.")));
+      }
+    }
+  }
+
+  static pw.Widget _lpCell(String text, bool isHeader, bool isCenter, pw.Font fb, pw.Font fr) {
+    return pw.Container(
+      padding: const pw.EdgeInsets.all(6),
+      alignment: isCenter ? pw.Alignment.center : pw.Alignment.centerLeft,
+      child: pw.Text(
+        text,
+        style: pw.TextStyle(
+          font: isHeader ? fb : fr,
+          fontSize: 10,
+        ),
+      ),
+    );
   }
 }
