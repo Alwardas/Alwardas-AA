@@ -506,7 +506,7 @@ class PdfService {
                         ),
                       ),
                       pw.Table(
-                        border: const pw.TableBorder.symmetric(inside: pw.BorderSide(color: PdfColors.black, width: 0.5)),
+                        border: pw.TableBorder.symmetric(inside: const pw.BorderSide(color: PdfColors.black, width: 0.5)),
                         columnWidths: {
                           0: const pw.FlexColumnWidth(1),
                           1: const pw.FlexColumnWidth(2),
