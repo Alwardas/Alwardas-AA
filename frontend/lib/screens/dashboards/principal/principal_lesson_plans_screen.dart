@@ -256,9 +256,13 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
               ],
             ),
             const SizedBox(height: 24),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: years.map((y) => _buildYearMiniProgress(y, textColor, isDark)).toList(),
+            SizedBox(
+              width: double.infinity,
+              child: Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                runSpacing: 16,
+                children: years.map<Widget>((y) => _buildYearMiniProgress(y, textColor, isDark)).toList(),
+              ),
             ),
           ],
         ),
