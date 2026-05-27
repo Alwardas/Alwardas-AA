@@ -32,7 +32,8 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
     try {
       final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/coordinator/overall-syllabus-progress'));
       if (res.statusCode == 200) {
-        final List<dynamic> data = json.decode(res.body);
+        final Map<String, dynamic> responseData = json.decode(res.body);
+        final List<dynamic> data = responseData['data'] ?? [];
         if (mounted) {
           setState(() {
             deptProgress = data.map((d) {
@@ -59,8 +60,8 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
     setState(() {
       deptProgress = [
         {
-          'dept': 'Computer Engineering', 
-          'progress': 0.75, 
+          'branch': 'Computer Engineering', 
+          'overallPercentage': 75, 
           'years': [
             {'year': '1st Year', 'percentage': 80},
             {'year': '2nd Year', 'percentage': 70},
@@ -68,8 +69,8 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
           ]
         },
         {
-          'dept': 'Civil Engineering', 
-          'progress': 0.60, 
+          'branch': 'Civil Engineering', 
+          'overallPercentage': 60, 
           'years': [
             {'year': '1st Year', 'percentage': 60},
             {'year': '2nd Year', 'percentage': 55},
