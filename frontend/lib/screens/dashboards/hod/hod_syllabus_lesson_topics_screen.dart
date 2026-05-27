@@ -266,6 +266,8 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
   }
 
   Widget _buildTopicCard(dynamic topic, bool isDark, Color textColor, Color subTextColor) {
+    final String role = widget.userData['role'] ?? '';
+    final bool isReadOnly = role == 'Principal' || role == 'Coordinator';
     final String type = topic['type']?.toString().toLowerCase() ?? 'topic';
     final cardColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white;
     final hasSchedule = topic['scheduleDate'] != null;
@@ -282,7 +284,7 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
        );
     }
     
-    String dateStr = "Assign Date";
+    String dateStr = isReadOnly ? "Not Assigned" : "Assign Date";
     if (hasSchedule) {
       try {
         dateStr = DateFormat('dd/MM/yyyy').format(DateTime.parse(topic['scheduleDate']).toLocal());
@@ -303,11 +305,11 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: cardColor,
+        color: isCompleted ? Colors.green.withValues(alpha: 0.1) : cardColor,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: isCompleted 
-            ? Colors.green.withValues(alpha: 0.2) 
+            ? Colors.green.withValues(alpha: 0.5) 
             : (hasSchedule ? Colors.deepPurple.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.1))
         ),
         boxShadow: [
@@ -339,7 +341,9 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
                           ),
                         ),
                         if (isCompleted)
-                          const Icon(Icons.check_circle, color: Colors.green, size: 18),
+                          const Icon(Icons.check_circle, color: Colors.green, size: 18)
+                        else
+                          Text("Not Completed", style: GoogleFonts.poppins(fontSize: 10, color: Colors.redAccent, fontWeight: FontWeight.bold)),
                       ],
                     ),
                     const SizedBox(height: 12),
@@ -349,7 +353,7 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
                             label: dateStr,
                             icon: Icons.calendar_today,
                             color: hasSchedule ? Colors.deepPurple : Colors.grey,
-                            onTap: () => _pickDate(topic),
+                            onTap: isReadOnly ? null : () => _pickDate(topic),
                           ),
                           if (isCompleted) ...[
                             const SizedBox(width: 8),
