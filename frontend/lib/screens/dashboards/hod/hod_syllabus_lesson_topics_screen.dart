@@ -343,7 +343,7 @@ class _HodSyllabusLessonTopicsScreenState extends State<HodSyllabusLessonTopicsS
                         if (isCompleted)
                           const Icon(Icons.check_circle, color: Colors.green, size: 18)
                         else
-                          Text("Not Completed", style: GoogleFonts.poppins(fontSize: 10, color: Colors.redAccent, fontWeight: FontWeight.bold)),
+                          Text("Not Completed", style: GoogleFonts.poppins(fontSize: 11, color: subTextColor, fontWeight: FontWeight.w500)),
                       ],
                     ),
                     const SizedBox(height: 12),
