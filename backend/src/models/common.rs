@@ -321,6 +321,10 @@ pub struct StudentProfileResponse {
     pub parent_name: Option<String>,
     pub parent_phone: Option<String>,
     pub parent_email: Option<String>,
+    #[sqlx(default)]
+    pub status: Option<String>,
+    #[sqlx(default)]
+    pub admission_year: Option<i32>,
 }
 
 #[derive(Deserialize)]
@@ -338,6 +342,10 @@ pub struct StudentBasicInfo {
     pub branch: Option<String>,
     pub year: Option<String>,
     pub section: Option<String>,
+    #[sqlx(default)]
+    pub status: Option<String>,
+    #[sqlx(default)]
+    pub admission_year: Option<i32>,
 }
 
 
@@ -347,6 +355,7 @@ pub struct StudentsQuery {
     pub year: Option<String>,
     pub semester: Option<String>,
     pub section: Option<String>,
+    pub status: Option<String>,
 }
 
 #[derive(Serialize)]
@@ -628,6 +637,10 @@ pub struct ProfileUpdateRequestData {
     pub new_dob: Option<String>,
     #[serde(rename = "newBatchNo")]
     pub new_batch_no: Option<String>,
+    #[serde(rename = "newStatus")]
+    pub new_status: Option<String>,
+    #[serde(rename = "newAdmissionYear")]
+    pub new_admission_year: Option<i32>,
 }
 
 #[derive(Deserialize)]

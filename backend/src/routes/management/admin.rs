@@ -59,3 +59,12 @@ pub async fn admin_approve_user_handler(
         },
     }
 }
+
+pub async fn promote_students_handler(
+    State(state): State<AppState>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match crate::services::management::admin_service::promote_students(&state.pool).await {
+        Ok(res) => Ok(Json(res)),
+        Err(e) => Err((e, Json(serde_json::json!({ "success": false, "message": "Promotion failed" })))),
+    }
+}

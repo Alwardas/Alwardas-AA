@@ -83,7 +83,7 @@ pub async fn find_feedbacks_by_faculty_id(pool: &PgPool, faculty_id: &str) -> Re
 }
 
 pub async fn find_students(pool: &PgPool, params: StudentsQuery) -> Result<Vec<StudentBasicInfo>, sqlx::Error> {
-    let mut query = QueryBuilder::new("SELECT id, login_id as student_id, full_name, branch, year, semester, section FROM users WHERE role = 'Student'");
+    let mut query = QueryBuilder::new("SELECT id, login_id as student_id, full_name, branch, year, semester, section, status, admission_year FROM users WHERE role = 'Student'");
     
     if let Some(b) = &params.branch { 
         let variations = crate::models::get_branch_variations(b);
@@ -94,6 +94,15 @@ pub async fn find_students(pool: &PgPool, params: StudentsQuery) -> Result<Vec<S
     if let Some(y) = &params.year { query.push(" AND year = "); query.push_bind(y); }
     if let Some(s) = &params.semester { query.push(" AND semester = "); query.push_bind(s); }
     if let Some(sec) = &params.section { query.push(" AND section = "); query.push_bind(sec); }
+    
+    if let Some(status) = &params.status {
+        if status != "All" {
+            query.push(" AND status = "); query.push_bind(status);
+        }
+    } else {
+        // Default to Active if not specified
+        query.push(" AND status = 'Active'");
+    }
     
     query.push(" ORDER BY login_id ASC");
     query.build_query_as::<StudentBasicInfo>().fetch_all(pool).await

@@ -35,3 +35,17 @@ pub async fn admin_approve_user(pool: &PgPool, payload: AdminApprovalRequest) ->
     }
     Ok(())
 }
+
+pub async fn promote_students(pool: &PgPool) -> Result<serde_json::Value, StatusCode> {
+    match admin_repository::promote_students(pool).await {
+        Ok(affected) => Ok(serde_json::json!({
+            "success": true,
+            "message": format!("Successfully promoted {} students", affected),
+            "affectedRows": affected
+        })),
+        Err(e) => {
+            eprintln!("Promote Students Error: {:?}", e);
+            Err(StatusCode::INTERNAL_SERVER_ERROR)
+        }
+    }
+}

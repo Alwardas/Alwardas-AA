@@ -126,6 +126,7 @@ async fn main() {
         .route("/api/admin/users", get(admin::get_admin_users_handler))
         .route("/api/admin/stats", get(admin::get_admin_stats_handler))
         .route("/api/admin/users/approve", post(admin::admin_approve_user_handler))
+        .route("/api/admin/promote", post(admin::promote_students_handler))
         .route("/api/principal/approve-hod", post(principal::principal_approve_hod_handler))
         .route("/api/announcement", post(coordinator::create_announcement_handler).get(coordinator::get_announcements_handler))
         .route("/api/announcement/delete", post(coordinator::delete_announcement_handler))

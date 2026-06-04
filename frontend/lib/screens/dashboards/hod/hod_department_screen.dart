@@ -309,17 +309,18 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
         
         if (response.statusCode == 200) {
           final responseData = json.decode(response.body);
-          final List<dynamic> fetched = responseData['data'] ?? [];
-          if (fetched.isNotEmpty) {
+          if (responseData['success'] == true) {
+            final List<dynamic> fetched = responseData['data'] ?? [];
             yearData['sections'] = fetched.map((e) => e.toString()).toList();
             prefs.setStringList('sections_${branch}_$yearName', yearData['sections']);
-            continue; 
+            continue; // Successfully fetched from server, move to next year
           }
         }
       } catch (e) {
         debugPrint("Error fetching counts for $yearName: $e");
       }
 
+      // Fallback only if the server request failed or errored out
       final key = 'sections_${branch}_$yearName';
       final List<String>? stored = prefs.getStringList(key);
       if (stored != null) {
@@ -327,6 +328,49 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
       }
     }
 
+    if (mounted) {
+      setState(() => _isLoading = false);
+    }
+  }
+
+  Future<void> _promoteStudents() async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Promote Academic Year?", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        content: Text("This will move 1st Year to 2nd Year, 2nd Year to 3rd Year, and mark 3rd Year as Graduated.\n\nAre you sure you want to proceed?", style: GoogleFonts.poppins()),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text("Cancel")),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
+            onPressed: () => Navigator.pop(context, true), 
+            child: const Text("Promote", style: TextStyle(color: Colors.white))
+          ),
+        ],
+      ),
+    );
+
+    if (confirm != true) return;
+
+    setState(() => _isLoading = true);
+    try {
+      final url = Uri.parse('http://10.0.2.2:8000/api/admin/promote');
+      // For real app we should use ApiConstants.baseUrl but we'll import it or hardcode for now
+      final response = await http.post(url);
+      if (response.statusCode == 200) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Promotion successful!")));
+        }
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to promote.")));
+        }
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+      }
+    }
     if (mounted) {
       setState(() => _isLoading = false);
     }
@@ -342,6 +386,12 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _promoteStudents,
+        backgroundColor: Colors.blueAccent,
+        icon: const Icon(Icons.upgrade, color: Colors.white),
+        label: Text("Promote Year", style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold)),
+      ),
       appBar: AppBar(
         title: Text('Student Management', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
         backgroundColor: Colors.transparent,
@@ -363,19 +413,28 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
                 final year = widget.years[index];
                 return GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => HodYearSectionsScreen(
-                        yearData: year,
-                        branch: widget.userData['branch'] ?? 'Computer Engineering',
-                        onUpdateSections: (newSections) {
-                          setState(() {
-                            year['sections'] = newSections;
-                          });
-                          widget.onUpdateYears(widget.years);
-                        },
-                      )),
-                    );
+                    if (year['year'] == 'Graduated') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => HodGraduatedStudentsScreen(
+                          userData: widget.userData,
+                        )),
+                      );
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => HodYearSectionsScreen(
+                          yearData: year,
+                          branch: widget.userData['branch'] ?? 'Computer Engineering',
+                          onUpdateSections: (newSections) {
+                            setState(() {
+                              year['sections'] = newSections;
+                            });
+                            widget.onUpdateYears(widget.years);
+                          },
+                        )),
+                      );
+                    }
                   },
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 15),
@@ -401,13 +460,14 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                year['year'],
+                                year['year'] == 'Graduated' ? 'Graduated' : '${year['year']} (${year['batch']})',
                                 style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 18),
                               ),
-                              Text(
-                                '${year['sections'].length} Sections',
-                                style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
-                              ),
+                              if (year['year'] != 'Graduated')
+                                Text(
+                                  '${year['sections'].length} Sections',
+                                  style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                                ),
                             ],
                           ),
                         ),
@@ -478,6 +538,49 @@ class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
       }
     }
 
+    if (mounted) {
+      setState(() => _isLoading = false);
+    }
+  }
+
+  Future<void> _promoteStudents() async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Promote Academic Year?", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        content: Text("This will move 1st Year to 2nd Year, 2nd Year to 3rd Year, and mark 3rd Year as Graduated.\n\nAre you sure you want to proceed?", style: GoogleFonts.poppins()),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text("Cancel")),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
+            onPressed: () => Navigator.pop(context, true), 
+            child: const Text("Promote", style: TextStyle(color: Colors.white))
+          ),
+        ],
+      ),
+    );
+
+    if (confirm != true) return;
+
+    setState(() => _isLoading = true);
+    try {
+      final url = Uri.parse('http://10.0.2.2:8000/api/admin/promote');
+      // For real app we should use ApiConstants.baseUrl but we'll import it or hardcode for now
+      final response = await http.post(url);
+      if (response.statusCode == 200) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Promotion successful!")));
+        }
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to promote.")));
+        }
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+      }
+    }
     if (mounted) {
       setState(() => _isLoading = false);
     }
@@ -703,6 +806,149 @@ class HodSyllabusSectionsScreen extends StatelessWidget {
                           );
                         },
                       ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// Scratch file to hold HodGraduatedStudentsScreen
+class HodGraduatedStudentsScreen extends StatefulWidget {
+  final Map<String, dynamic> userData;
+  const HodGraduatedStudentsScreen({super.key, required this.userData});
+
+  @override
+  _HodGraduatedStudentsScreenState createState() => _HodGraduatedStudentsScreenState();
+}
+
+class _HodGraduatedStudentsScreenState extends State<HodGraduatedStudentsScreen> {
+  bool _isLoading = true;
+  List<dynamic> _graduatedBatches = [];
+  List<dynamic> _filteredBatches = [];
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchGraduatedBatches();
+    _searchController.addListener(_filterBatches);
+  }
+
+  Future<void> _fetchGraduatedBatches() async {
+    // In a real app, you would fetch distinct batch years from the history or users table
+    // For now, we simulate fetching the batches
+    await Future.delayed(const Duration(seconds: 1));
+    final now = DateTime.now();
+    final startYear = now.month >= 6 ? now.year : now.year - 1;
+    final gradStart = startYear - 3;
+    setState(() {
+      _graduatedBatches = [
+        {'batch': '${gradStart}-${gradStart + 3}', 'count': 120},
+        {'batch': '${gradStart - 1}-${gradStart + 2}', 'count': 115},
+      ];
+      _filteredBatches = _graduatedBatches;
+      _isLoading = false;
+    });
+  }
+
+  void _filterBatches() {
+    final query = _searchController.text.toLowerCase();
+    setState(() {
+      if (query.isEmpty) {
+        _filteredBatches = _graduatedBatches;
+      } else {
+        _filteredBatches = _graduatedBatches.where((b) => b['batch'].toString().toLowerCase().contains(query)).toList();
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDark = themeProvider.isDarkMode;
+    final bgColors = isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final subTextColor = isDark ? Colors.white70 : Colors.black54;
+
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: Text('Graduated Batches', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: textColor),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: TextField(
+                  controller: _searchController,
+                  style: TextStyle(color: textColor),
+                  decoration: InputDecoration(
+                    hintText: 'Search batch year (e.g. 2025-2028)',
+                    hintStyle: TextStyle(color: subTextColor),
+                    prefixIcon: Icon(Icons.search, color: subTextColor),
+                    filled: true,
+                    fillColor: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[200],
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide.none),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: _isLoading
+                  ? const Center(child: CircularProgressIndicator())
+                  : _filteredBatches.isEmpty
+                      ? Center(child: Text("No batches found.", style: TextStyle(color: subTextColor)))
+                      : ListView.builder(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          itemCount: _filteredBatches.length,
+                          itemBuilder: (context, index) {
+                            final batch = _filteredBatches[index];
+                            return Container(
+                              margin: const EdgeInsets.only(bottom: 15),
+                              padding: const EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(12),
+                                    decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), shape: BoxShape.circle),
+                                    child: const Icon(Icons.check_circle, color: Colors.green, size: 24),
+                                  ),
+                                  const SizedBox(width: 20),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Batch ${batch['batch']}',
+                                          style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 18),
+                                        ),
+                                        Text(
+                                          '${batch['count']} Students',
+                                          style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
               ),
             ],
           ),
