@@ -843,16 +843,11 @@ class _HodGraduatedStudentsScreenState extends State<HodGraduatedStudentsScreen>
   }
 
   Future<void> _fetchGraduatedBatches() async {
-    // In a real app, you would fetch distinct batch years from the history or users table
-    // For now, we simulate fetching the batches
+    // Simulated fetch for the currently graduated batch
     await Future.delayed(const Duration(seconds: 1));
-    final now = DateTime.now();
-    final startYear = now.month >= 6 ? now.year : now.year - 1;
-    final gradStart = startYear - 3;
     setState(() {
       _graduatedBatches = [
-        {'batch': '${gradStart}-${gradStart + 3}', 'count': 120},
-        {'batch': '${gradStart - 1}-${gradStart + 2}', 'count': 115},
+        {'batch': '2023-2026', 'count': 120}, // Currently the only graduated batch
       ];
       _filteredBatches = _graduatedBatches;
       _isLoading = false;
