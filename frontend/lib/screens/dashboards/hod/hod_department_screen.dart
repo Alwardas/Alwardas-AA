@@ -47,6 +47,23 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     }
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    // Dynamically calculate batches
+    final now = DateTime.now();
+    final startYear = now.month >= 6 ? now.year : now.year - 1;
+    for (var year in _years) {
+      if (year['year'] == '1st Year') {
+        year['batch'] = '$startYear-${startYear + 3}';
+      } else if (year['year'] == '2nd Year') {
+        year['batch'] = '${startYear - 1}-${startYear + 2}';
+      } else if (year['year'] == '3rd Year') {
+        year['batch'] = '${startYear - 2}-${startYear + 1}';
+      }
+    }
+  }
+
   void _addSection(int yearIndex) {
     TextEditingController controller = TextEditingController();
     showDialog(
@@ -90,6 +107,46 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     );
   }
 
+  void _promoteYear() async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Promote Academic Year?", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        content: Text("This will move 1st Year to 2nd Year, 2nd Year to 3rd Year, and mark 3rd Year as Graduated.\n\nAre you sure you want to proceed?", style: GoogleFonts.poppins()),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text("Cancel")),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.purpleAccent),
+            onPressed: () => Navigator.pop(context, true), 
+            child: const Text("Promote", style: TextStyle(color: Colors.white))
+          ),
+        ],
+      ),
+    );
+
+    if (confirm != true) return;
+
+    try {
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/admin/promote');
+      final response = await http.post(url);
+      if (response.statusCode == 200) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Promotion successful!")));
+          // Refresh state if needed
+          setState((){});
+        }
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to promote students.")));
+        }
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -106,6 +163,13 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
         centerTitle: false,
+        actions: [
+          IconButton(
+            tooltip: 'Promote Academic Year',
+            icon: Icon(Icons.upgrade, color: Colors.purple.shade400),
+            onPressed: _promoteYear,
+          ),
+        ],
       ),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
