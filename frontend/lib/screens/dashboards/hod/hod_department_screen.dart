@@ -40,6 +40,11 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
       'sections': ['Section A'],
       'isExpanded': false,
     },
+    {
+      'year': 'Graduated',
+      'sections': [],
+      'isExpanded': false,
+    }
   ];
 
   void _addSection(int yearIndex) {

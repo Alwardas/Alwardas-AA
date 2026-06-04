@@ -100,14 +100,18 @@ class _HodStudentListScreenState extends State<HodStudentListScreen> {
           return idA.compareTo(idB);
       });
 
-      setState(() {
-         _studentList = currentSectionStudents;
-         _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+           _studentList = currentSectionStudents;
+           _isLoading = false;
+        });
+      }
 
     } catch (e) {
       debugPrint("Error loading students: $e");
-      setState(() { _studentList = []; _isLoading = false; });
+      if (mounted) {
+        setState(() { _studentList = []; _isLoading = false; });
+      }
     }
   }
 

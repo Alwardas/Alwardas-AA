@@ -83,7 +83,7 @@ pub async fn find_feedbacks_by_faculty_id(pool: &PgPool, faculty_id: &str) -> Re
 }
 
 pub async fn find_students(pool: &PgPool, params: StudentsQuery) -> Result<Vec<StudentBasicInfo>, sqlx::Error> {
-    let mut query = QueryBuilder::new("SELECT id, login_id as student_id, full_name, branch, year, semester, section, status, admission_year FROM users WHERE role = 'Student'");
+    let mut query = QueryBuilder::new("SELECT id, login_id as student_id, full_name, branch, year, section, status, admission_year FROM users WHERE role = 'Student'");
     
     if let Some(b) = &params.branch { 
         let variations = crate::models::get_branch_variations(b);
