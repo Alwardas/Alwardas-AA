@@ -21,7 +21,9 @@ pub async fn get_merged_curriculum(
     let branch_short = _map_to_short_branch(branch);
     let semester_dir = format!("semester {}", semester);
     
-    let root_dir = if Path::new("./static/assets/curriculum").exists() {
+    let root_dir = if Path::new("./static/assets/assets/curriculum").exists() {
+        "./static/assets/assets"
+    } else if Path::new("./static/assets/curriculum").exists() {
         "./static/assets"
     } else {
         "../frontend/assets"
@@ -91,7 +93,9 @@ pub async fn get_subjects_from_assets(
     let branch_short = _map_to_short_branch(branch);
     let semester_dir = format!("semester {}", semester);
     
-    let root_dir = if Path::new("./static/assets/curriculum").exists() {
+    let root_dir = if Path::new("./static/assets/assets/curriculum").exists() {
+        "./static/assets/assets"
+    } else if Path::new("./static/assets/curriculum").exists() {
         "./static/assets"
     } else {
         "../frontend/assets"
