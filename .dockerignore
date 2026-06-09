@@ -22,7 +22,7 @@ frontend/.pub/
 *.ps1
 
 # Ignore local scratch and temporary files
-backend/scratch.rs
+backend/src/bin/scratch.rs
 backend/src/scratch_promotion.rs
 *.py
 *.log
