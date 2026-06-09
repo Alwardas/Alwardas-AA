@@ -19,9 +19,10 @@ pub async fn get_merged_curriculum(
     // We need to find the file. We can search in theory and practical folders.
     
     let branch_short = _map_to_short_branch(branch);
-    let semester_dir = format!("semester {}", semester);
+    let mut semester_dir = format!("semester {}", semester);
     
     let root_dir = if Path::new("./static/assets/assets/curriculum").exists() {
+        semester_dir = format!("semester%20{}", semester);
         "./static/assets/assets"
     } else if Path::new("./static/assets/curriculum").exists() {
         "./static/assets"
@@ -51,7 +52,7 @@ pub async fn get_merged_curriculum(
         }
     }
 
-    let json_str = json_content.ok_or_else(|| format!("Curriculum JSON not found for {}", subject_code))?;
+    let json_str = json_content.ok_or_else(|| format!("Curriculum JSON not found for {}. Tried: {} and {}", subject_code, theory_path, practical_path))?;
     let mut curriculum: CurriculumJson = serde_json::from_str(&json_str)?;
 
     // 2. Fetch Progress from DB
@@ -91,9 +92,10 @@ pub async fn get_subjects_from_assets(
     regulation: &str,
 ) -> Result<Vec<(String, String, String)>, Box<dyn std::error::Error>> {
     let branch_short = _map_to_short_branch(branch);
-    let semester_dir = format!("semester {}", semester);
+    let mut semester_dir = format!("semester {}", semester);
     
     let root_dir = if Path::new("./static/assets/assets/curriculum").exists() {
+        semester_dir = format!("semester%20{}", semester);
         "./static/assets/assets"
     } else if Path::new("./static/assets/curriculum").exists() {
         "./static/assets"
