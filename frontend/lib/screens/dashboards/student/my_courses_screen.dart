@@ -438,10 +438,10 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                   subjectId: course['id'] ?? '',
                   subjectName: course['name'] ?? 'Lesson Plan',
                   facultyName: facultyName,
-                  branch: user?['branch'] ?? 'Computer Engineering',
+                  branch: course['branch'] ?? user?['branch'] ?? 'Computer Engineering',
                   section: user?['section'],
                   year: user?['year'],
-                  semester: int.tryParse(user?['semester']?.toString() ?? '1') ?? 1,
+                  semester: int.tryParse(course['semester']?.toString().replaceAll(RegExp(r'[^0-9]'), '') ?? '1') ?? 1,
                 ),
               ),
             );

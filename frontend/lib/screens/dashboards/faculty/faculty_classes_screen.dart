@@ -375,7 +375,7 @@ class _FacultyClassesScreenState extends State<FacultyClassesScreen> {
                    facultyName: _facultyName.isNotEmpty ? _facultyName : 'You',
                    branch: item['branch'] ?? 'Computer Engineering',
                    year: item['year'] ?? '1st Year',
-                   semester: int.tryParse(item['semester']?.toString() ?? '1') ?? 1,
+                   semester: int.tryParse(item['semester']?.toString().replaceAll(RegExp(r'[^0-9]'), '') ?? '1') ?? 1,
                    section: item['section'] ?? 'Section A',
                  ),
                ),
