@@ -141,6 +141,58 @@ pub async fn init_db() -> Pool<Postgres> {
         )
     ").execute(&pool).await.err();
 
+    // FORCE FIX SCHEMA - CURRICULUM INTEGRATION
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS curriculum_progress (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            topic_id TEXT NOT NULL,
+            subject_code TEXT NOT NULL,
+            faculty_id UUID NOT NULL REFERENCES users(id),
+            branch TEXT NOT NULL,
+            section VARCHAR(50) NOT NULL,
+            year VARCHAR(50) NOT NULL,
+            semester INTEGER NOT NULL,
+            assigned_date DATE,
+            completed_date DATE,
+            status TEXT DEFAULT 'pending',
+            remarks TEXT,
+            created_at TIMESTAMPTZ DEFAULT NOW(),
+            updated_at TIMESTAMPTZ DEFAULT NOW(),
+            UNIQUE(topic_id, subject_code, branch, section, year, semester)
+        )
+    ").execute(&pool).await.map_err(|e| eprintln!("Force Fix Curriculum Progress Table Failed: {:?}", e));
+
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS student_curriculum_feedback (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            topic_id TEXT NOT NULL,
+            subject_code TEXT NOT NULL,
+            student_id UUID NOT NULL REFERENCES users(id),
+            understood BOOLEAN DEFAULT TRUE,
+            rating INTEGER,
+            issue_type TEXT,
+            comment TEXT,
+            created_at TIMESTAMPTZ DEFAULT NOW()
+        )
+    ").execute(&pool).await.map_err(|e| eprintln!("Force Fix Student Curriculum Feedback Table Failed: {:?}", e));
+
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS curriculum_completion_logs (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            progress_id UUID REFERENCES curriculum_progress(id) ON DELETE CASCADE,
+            action TEXT NOT NULL,
+            changed_by UUID REFERENCES users(id),
+            timestamp TIMESTAMPTZ DEFAULT NOW()
+        )
+    ").execute(&pool).await.map_err(|e| eprintln!("Force Fix Curriculum Completion Logs Table Failed: {:?}", e));
+
+    let _ = sqlx::query("CREATE INDEX IF NOT EXISTS idx_curriculum_progress_lookup ON curriculum_progress(subject_code, branch, section, year)")
+        .execute(&pool).await.map_err(|e| eprintln!("Create idx_curriculum_progress_lookup failed: {:?}", e));
+
+    let _ = sqlx::query("CREATE INDEX IF NOT EXISTS idx_curriculum_feedback_topic ON student_curriculum_feedback(topic_id, subject_code)")
+        .execute(&pool).await.map_err(|e| eprintln!("Create idx_curriculum_feedback_topic failed: {:?}", e));
+
+
     // DEPARTMENT TIMINGS TABLE
     let _ = sqlx::query("
         CREATE TABLE IF NOT EXISTS department_timings (
