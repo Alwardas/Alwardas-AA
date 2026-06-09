@@ -668,7 +668,7 @@ pub struct ProfileUpdateRequestData {
 #[derive(Deserialize)]
 pub struct ApproveProfileChangeRequest {
     #[serde(rename = "userId")]
-    pub user_id: Uuid,
+    pub user_id: Option<Uuid>,
     #[serde(rename = "notificationId")]
     pub notification_id: Uuid,
     #[serde(rename = "senderId")]

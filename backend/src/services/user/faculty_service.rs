@@ -328,16 +328,26 @@ pub async fn approve_subject(pool: &PgPool, payload: ApproveSubjectRequest) -> R
 pub async fn approve_profile_change(pool: &PgPool, payload: ApproveProfileChangeRequest) -> Result<(), (StatusCode, String)> {
     let mut tx = pool.begin().await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
     
+    let user_uuid = match payload.user_id {
+        Some(id) => id,
+        None => {
+            resolve_user_id(&payload.sender_id, "Faculty", pool)
+                .await
+                .map_err(|_| (StatusCode::BAD_REQUEST, "Invalid sender".to_string()))?
+        }
+    };
+
     if payload.action == "APPROVE" {
-        let new_data = faculty_repository::find_profile_update_request(pool, payload.user_id).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?.ok_or((StatusCode::NOT_FOUND, "Request not found".to_string()))?;
+        let new_data = faculty_repository::find_profile_update_request(pool, user_uuid).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?.ok_or((StatusCode::NOT_FOUND, "Request not found".to_string()))?;
         
         let profile_data: crate::models::ProfileUpdateRequestData = serde_json::from_value(new_data).map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
-        faculty_repository::update_user_profile(&mut tx, payload.user_id, &profile_data).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
+        faculty_repository::update_user_profile(&mut tx, user_uuid, &profile_data).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
     }
 
-    faculty_repository::update_profile_request_status(&mut tx, payload.user_id, if payload.action == "APPROVE" { "APPROVED" } else { "REJECTED" }).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
-
+    faculty_repository::update_profile_request_status(&mut tx, user_uuid, if payload.action == "APPROVE" { "APPROVED" } else { "REJECTED" }).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
+    
     tx.commit().await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
+    faculty_repository::delete_notification(pool, payload.notification_id).await.ok();
     Ok(())
 }
 
