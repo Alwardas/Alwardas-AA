@@ -39,19 +39,31 @@ pub async fn insert_course_subject(pool: &PgPool, branch: &str, year: &str, sect
 }
 
 pub async fn find_added_course_subjects(pool: &PgPool, user_id: &str, resolved_uuid: Option<&str>) -> Result<Vec<serde_json::Value>, sqlx::Error> {
-    let rows = sqlx::query("SELECT id, branch, year, section, subject_name, subject_code FROM course_subjects WHERE created_by = $1 OR created_by = $2 ORDER BY subject_code ASC, subject_name ASC")
-        .bind(user_id)
-        .bind(resolved_uuid.unwrap_or(user_id))
-        .fetch_all(pool).await?;
+    let rows = sqlx::query(
+        r#"
+        SELECT cs.id, cs.branch, cs.year, cs.section, cs.subject_name, cs.subject_code, s.semester
+        FROM course_subjects cs
+        LEFT JOIN subjects s ON (cs.subject_code = s.id OR cs.subject_name = s.name) AND cs.branch = s.branch
+        WHERE cs.created_by = $1 OR cs.created_by = $2
+        ORDER BY cs.subject_code ASC, cs.subject_name ASC
+        "#
+    )
+    .bind(user_id)
+    .bind(resolved_uuid.unwrap_or(user_id))
+    .fetch_all(pool).await?;
     
-    Ok(rows.into_iter().map(|row| serde_json::json!({
-        "id": row.get::<Uuid, _>("id"),
-        "branch": row.get::<String, _>("branch"),
-        "year": row.get::<String, _>("year"),
-        "section": row.get::<String, _>("section"),
-        "subjectName": row.get::<String, _>("subject_name"),
-        "subject_id": row.get::<Option<String>, _>("subject_code").unwrap_or_default(),
-    })).collect())
+    Ok(rows.into_iter().map(|row| {
+        let sem: Option<String> = row.try_get("semester").unwrap_or(None);
+        serde_json::json!({
+            "id": row.get::<Uuid, _>("id"),
+            "branch": row.get::<String, _>("branch"),
+            "year": row.get::<String, _>("year"),
+            "section": row.get::<String, _>("section"),
+            "subjectName": row.get::<String, _>("subject_name"),
+            "subject_id": row.get::<Option<String>, _>("subject_code").unwrap_or_default(),
+            "semester": sem.unwrap_or_default(),
+        })
+    }).collect())
 }
 
 pub async fn find_all_staff(pool: &PgPool) -> Result<Vec<serde_json::Value>, sqlx::Error> {

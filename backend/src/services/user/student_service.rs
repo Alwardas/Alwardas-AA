@@ -177,6 +177,35 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
                     fe_val = row.try_get::<Option<String>, _>("email").unwrap_or(None);
                     fp_val = row.try_get::<Option<String>, _>("phone_number").unwrap_or(None);
                     fd_val = row.try_get::<Option<String>, _>("department").unwrap_or(None);
+                } else {
+                    // Try course_subjects
+                    let cs_row = sqlx::query(
+                        r#"
+                        SELECT u.full_name, u.email, u.phone_number, u.branch as department
+                        FROM course_subjects cs
+                        JOIN users u ON (u.id::text = cs.created_by OR u.login_id = cs.created_by)
+                        WHERE (cs.subject_code = $1 OR cs.subject_name = $1)
+                          AND cs.branch = $2 AND cs.section = $3
+                        LIMIT 1
+                        "#
+                    )
+                    .bind(&sid)
+                    .bind(&branch_norm)
+                    .bind(&section_str)
+                    .fetch_optional(pool)
+                    .await
+                    .unwrap_or(None);
+
+                    if let Some(row) = cs_row {
+                        if let Ok(name) = row.try_get::<String, _>("full_name") {
+                            rfn_val = name;
+                        } else if let Ok(Some(name)) = row.try_get::<Option<String>, _>("full_name") {
+                            rfn_val = name;
+                        }
+                        fe_val = row.try_get::<Option<String>, _>("email").unwrap_or(None);
+                        fp_val = row.try_get::<Option<String>, _>("phone_number").unwrap_or(None);
+                        fd_val = row.try_get::<Option<String>, _>("department").unwrap_or(None);
+                    }
                 }
             }
         }

@@ -80,10 +80,10 @@ pub async fn find_subjects_by_branch_and_semester(pool: &PgPool, branch: &str, s
         r#"
         SELECT 
             s.id, s.name, s.type as subject_type,
-            COALESCE(u1.full_name, u2.full_name, s.faculty_name, 'TBA') as resolved_faculty_name,
-            COALESCE(u1.email, u2.email) as faculty_email,
-            COALESCE(u1.phone_number, u2.phone_number) as faculty_phone,
-            COALESCE(u1.branch, u2.branch) as faculty_department
+            COALESCE(u1.full_name, u2.full_name, u3.full_name, s.faculty_name, 'TBA') as resolved_faculty_name,
+            COALESCE(u1.email, u2.email, u3.email) as faculty_email,
+            COALESCE(u1.phone_number, u2.phone_number, u3.phone_number) as faculty_phone,
+            COALESCE(u1.branch, u2.branch, u3.branch) as faculty_department
         FROM subjects s
         LEFT JOIN faculty_subjects fs ON s.id = fs.subject_id AND fs.branch = s.branch AND fs.section = $3
           AND (fs.status = 'APPROVED' OR (fs.status = 'PENDING' AND fs.user_id IN (SELECT id FROM users WHERE role IN ('HOD', 'Incharge', 'Coordinator'))))
@@ -95,6 +95,8 @@ pub async fn find_subjects_by_branch_and_semester(pool: &PgPool, branch: &str, s
             LIMIT 1
         ) t ON TRUE
         LEFT JOIN users u2 ON t.faculty_id = u2.login_id
+        LEFT JOIN course_subjects cs ON (cs.subject_code = s.id OR cs.subject_name = s.name) AND cs.branch = s.branch AND cs.section = $3
+        LEFT JOIN users u3 ON (u3.id::text = cs.created_by OR u3.login_id = cs.created_by)
         WHERE s.branch = $1 AND s.semester = $2
         ORDER BY s.id ASC
         "#

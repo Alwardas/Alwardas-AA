@@ -118,7 +118,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
         final response = await CurriculumService.submitFeedback(
           topicId: topicId,
           subjectCode: subjectCode,
-          studentId: user['login_id'] ?? user['id'].toString(),
+          studentId: user['id'] ?? '',
           rating: rating,
           issueType: issueType,
           comment: comment,
@@ -633,7 +633,7 @@ class _FeedbackModalState extends State<FeedbackModal> with SingleTickerProvider
   Future<void> _fetchCurrentUser() async {
       final user = await AuthService.getUserSession();
       if(mounted && user != null) {
-          setState(() => _currentUserId = user['login_id'] ?? user['id'].toString());
+          setState(() => _currentUserId = user['id']?.toString() ?? '');
       }
   }
 

@@ -441,7 +441,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                   branch: course['branch'] ?? user?['branch'] ?? 'Computer Engineering',
                   section: user?['section'],
                   year: user?['year'],
-                  semester: int.tryParse(course['semester']?.toString().replaceAll(RegExp(r'[^0-9]'), '') ?? '1') ?? 1,
+                  semester: int.tryParse((course['semester'] ?? user?['semester'])?.toString().replaceAll(RegExp(r'[^0-9]'), '') ?? '1') ?? 1,
                 ),
               ),
             );

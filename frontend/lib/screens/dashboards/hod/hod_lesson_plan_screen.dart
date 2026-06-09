@@ -102,7 +102,7 @@ class _HodLessonPlanScreenState extends State<HodLessonPlanScreen> {
 
       try {
         final user = await AuthService.getUserSession();
-        final facultyId = user?['login_id'] ?? '';
+        final facultyId = user?['id'] ?? '';
         
         final response = await CurriculumService.updateProgress(
           topicId: topic.id,
