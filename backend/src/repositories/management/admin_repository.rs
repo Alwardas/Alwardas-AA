@@ -95,10 +95,10 @@ pub async fn promote_students(pool: &PgPool, branch_filter: Option<&str>) -> Res
     let u1_sql = format!("UPDATE users SET status = 'Graduated', year = 'Graduated', semester = NULL WHERE role = 'Student' AND year = '3rd Year' AND status = 'Active' {}", branch_condition);
 
     let q2_sql = format!("INSERT INTO student_academic_history (student_id, academic_year, study_year, semester) SELECT id, $1, '2nd Year', semester FROM users WHERE role = 'Student' AND year = '2nd Year' AND status = 'Active' {}", branch_condition);
-    let u2_sql = format!("UPDATE users SET year = '3rd Year' WHERE role = 'Student' AND year = '2nd Year' AND status = 'Active' {}", branch_condition);
+    let u2_sql = format!("UPDATE users SET year = '3rd Year', semester = '5th Semester' WHERE role = 'Student' AND year = '2nd Year' AND status = 'Active' {}", branch_condition);
 
     let q3_sql = format!("INSERT INTO student_academic_history (student_id, academic_year, study_year, semester) SELECT id, $1, '1st Year', semester FROM users WHERE role = 'Student' AND year = '1st Year' AND status = 'Active' {}", branch_condition);
-    let u3_sql = format!("UPDATE users SET year = '2nd Year' WHERE role = 'Student' AND year = '1st Year' AND status = 'Active' {}", branch_condition);
+    let u3_sql = format!("UPDATE users SET year = '2nd Year', semester = '3rd Semester' WHERE role = 'Student' AND year = '1st Year' AND status = 'Active' {}", branch_condition);
 
     if let Some(b) = branch_filter {
         sqlx::query(&q1_sql).bind(&academic_year_label).bind(b).execute(&mut *tx).await?;
