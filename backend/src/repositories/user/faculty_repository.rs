@@ -311,6 +311,17 @@ pub async fn find_correction_request(pool: &PgPool, id: Uuid) -> Result<Option<s
     })))
 }
 
+pub async fn find_pending_correction_request_by_user(pool: &PgPool, user_id: Uuid) -> Result<Option<serde_json::Value>, sqlx::Error> {
+    let row = sqlx::query("SELECT id, dates FROM attendance_correction_requests WHERE user_id = $1 AND status = 'PENDING' LIMIT 1")
+        .bind(user_id)
+        .fetch_optional(pool)
+        .await?;
+    Ok(row.map(|r| serde_json::json!({
+        "id": r.get::<Uuid, _>("id"),
+        "dates": r.get::<serde_json::Value, _>("dates")
+    })))
+}
+
 pub async fn update_correction_request_status(executor: &mut sqlx::Transaction<'_, Postgres>, id: Uuid, status: &str) -> Result<u64, sqlx::Error> {
     sqlx::query("UPDATE attendance_correction_requests SET status = $1 WHERE id = $2").bind(status).bind(id).execute(&mut **executor).await.map(|r| r.rows_affected())
 }

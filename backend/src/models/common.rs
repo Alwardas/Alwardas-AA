@@ -801,9 +801,9 @@ pub struct AttendanceCorrectionRequestData {
 #[derive(Deserialize, Debug)]
 pub struct ApproveAttendanceCorrectionData {
     #[serde(rename = "requestId")]
-    pub request_id: Uuid,
+    pub request_id: Option<Uuid>,
     #[serde(rename = "senderId")]
-    pub sender_id: Uuid, 
+    pub sender_id: String, 
     #[serde(rename = "notificationId")]
     pub notification_id: Option<Uuid>,
     pub action: String, // "APPROVE" or "REJECT"

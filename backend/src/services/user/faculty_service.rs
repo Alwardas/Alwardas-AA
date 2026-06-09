@@ -354,26 +354,36 @@ pub async fn approve_profile_change(pool: &PgPool, payload: ApproveProfileChange
 pub async fn approve_attendance_correction(pool: &PgPool, payload: ApproveAttendanceCorrectionData) -> Result<(), (StatusCode, String)> {
     let mut tx = pool.begin().await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
     
+    // Resolve student's user_uuid from payload.sender_id (which is their login_id)
+    let user_uuid = resolve_user_id(&payload.sender_id, "Student", pool).await.map_err(|_| (StatusCode::BAD_REQUEST, "Invalid sender".to_string()))?;
+
+    let (request_id, dates) = if let Some(rid) = payload.request_id {
+        let req = faculty_repository::find_correction_request(pool, rid).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?.ok_or((StatusCode::NOT_FOUND, "Request not found".to_string()))?;
+        (rid, req["dates"].as_array().cloned().unwrap_or_default())
+    } else {
+        let req = faculty_repository::find_pending_correction_request_by_user(pool, user_uuid).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?.ok_or((StatusCode::NOT_FOUND, "Request not found".to_string()))?;
+        (req["id"].as_str().and_then(|s| Uuid::parse_str(s).ok()).unwrap_or_default(), req["dates"].as_array().cloned().unwrap_or_default())
+    };
+
     if payload.action == "APPROVE" {
-        let request = faculty_repository::find_correction_request(pool, payload.request_id).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?.ok_or((StatusCode::NOT_FOUND, "Request not found".to_string()))?;
-        let user_uuid = request["user_id"].as_str().and_then(|s| Uuid::parse_str(s).ok()).unwrap_or_default();
-        
-        let student_login_id: String = sqlx::query_scalar("SELECT login_id FROM users WHERE id = $1")
-            .bind(user_uuid).fetch_one(pool).await.unwrap_or_else(|_| "".to_string());
-
-        let dates = request["dates"].as_array().cloned().unwrap_or_default();
-
         for d in dates {
             let date_str = d["date"].as_str().unwrap_or_default();
             let session = d["session"].as_str().unwrap_or_default();
             let section = d["section"].as_str().unwrap_or_default();
-            faculty_repository::insert_attendance(&mut tx, user_uuid, &student_login_id, payload.sender_id, date_str, "present", session, section).await.ok();
+            
+            // Note: passing Uuid::nil() as the faculty who approved it, since it's the HOD and we don't have their UUID in the payload right now.
+            faculty_repository::insert_attendance(&mut tx, user_uuid, &payload.sender_id, Uuid::nil(), date_str, "present", session, section).await.ok();
         }
     }
 
-    faculty_repository::update_correction_request_status(&mut tx, payload.request_id, if payload.action == "APPROVE" { "APPROVED" } else { "REJECTED" }).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
+    faculty_repository::update_correction_request_status(&mut tx, request_id, if payload.action == "APPROVE" { "APPROVED" } else { "REJECTED" }).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
 
     tx.commit().await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
+    
+    if let Some(nid) = payload.notification_id {
+        faculty_repository::delete_notification(pool, nid).await.ok();
+    }
+    
     Ok(())
 }
 
