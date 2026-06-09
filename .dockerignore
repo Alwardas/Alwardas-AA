@@ -1,12 +1,34 @@
-# Ignore git itself
+# Ignore git metadata
 .git
 .gitignore
+.gitattributes
 
-
-# Ignore Target folders (Huge!)
+# Ignore backend build artifacts
 target/
 backend/target/
 
-# Ignore other non-backend files
-monitor_apk.ps1
-README.md
+# Ignore frontend build and tool artifacts (local)
+frontend/build/
+frontend/.dart_tool/
+frontend/.packages
+frontend/.pub-cache/
+frontend/.pub/
+
+# Ignore large documents and assets in root
+*.pdf
+*.docx
+*.zip
+*.bat
+*.ps1
+
+# Ignore local scratch and temporary files
+backend/scratch.rs
+backend/src/scratch_promotion.rs
+*.py
+*.log
+
+# Ignore IDE / OS config directories
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
