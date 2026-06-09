@@ -1194,7 +1194,7 @@ class _HodGraduatedSectionsScreenState extends State<HodGraduatedSectionsScreen>
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Section $sectionName',
+                                        sectionName.toLowerCase().startsWith('section') ? sectionName : 'Section $sectionName',
                                         style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600, color: textColor),
                                       ),
                                       Text(
@@ -1318,7 +1318,7 @@ class _HodGraduatedStudentListScreenState extends State<HodGraduatedStudentListS
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Graduated Students', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
-            Text('Batch ${widget.batch} - Section ${widget.section}', style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
+            Text('Batch ${widget.batch} - ${widget.section.toLowerCase().startsWith('section') ? widget.section : 'Section ${widget.section}'}', style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
           ],
         ),
         backgroundColor: Colors.transparent,
