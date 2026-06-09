@@ -1294,3 +1294,21 @@ pub struct SectionSubjectsProgressQuery {
 pub struct FacultyFeedbackQuery {
     pub faculty_id: Uuid,
 }
+
+#[derive(Deserialize)]
+pub struct GraduatedBatchesQuery {
+    pub branch: String,
+}
+
+#[derive(Deserialize)]
+pub struct GraduatedSectionsQuery {
+    pub branch: String,
+    pub batch: String,
+}
+
+#[derive(Deserialize)]
+pub struct GraduatedStudentsQuery {
+    pub branch: String,
+    pub batch: String,
+    pub section: String,
+}

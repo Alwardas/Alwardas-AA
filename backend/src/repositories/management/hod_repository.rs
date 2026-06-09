@@ -183,3 +183,74 @@ pub async fn delete_course_subject(pool: &PgPool, id: Uuid) -> Result<u64, sqlx:
         .await
         .map(|r| r.rows_affected())
 }
+
+pub async fn find_graduated_batches(pool: &PgPool, branch: &str) -> Result<Vec<serde_json::Value>, sqlx::Error> {
+    let variations = crate::models::get_branch_variations(branch);
+    let rows = sqlx::query(
+        "SELECT batch_no as batch, COUNT(*) as count 
+         FROM users 
+         WHERE role = 'Student' 
+           AND status = 'Graduated' 
+           AND branch = ANY($1)
+           AND batch_no IS NOT NULL 
+         GROUP BY batch_no 
+         ORDER BY batch_no DESC"
+    )
+    .bind(&variations)
+    .fetch_all(pool)
+    .await?;
+    
+    Ok(rows.into_iter().map(|r| serde_json::json!({
+        "batch": r.get::<Option<String>, _>("batch").unwrap_or_default(),
+        "count": r.get::<i64, _>("count")
+    })).collect())
+}
+
+pub async fn find_graduated_sections(pool: &PgPool, branch: &str, batch: &str) -> Result<Vec<serde_json::Value>, sqlx::Error> {
+    let variations = crate::models::get_branch_variations(branch);
+    let rows = sqlx::query(
+        "SELECT section, COUNT(*) as count 
+         FROM users 
+         WHERE role = 'Student' 
+           AND status = 'Graduated' 
+           AND branch = ANY($1) 
+           AND batch_no = $2 
+           AND section IS NOT NULL 
+         GROUP BY section 
+         ORDER BY section ASC"
+    )
+    .bind(&variations)
+    .bind(batch)
+    .fetch_all(pool)
+    .await?;
+    
+    Ok(rows.into_iter().map(|r| serde_json::json!({
+        "section": r.get::<Option<String>, _>("section").unwrap_or_default(),
+        "count": r.get::<i64, _>("count")
+    })).collect())
+}
+
+pub async fn find_graduated_students(pool: &PgPool, branch: &str, batch: &str, section: &str) -> Result<Vec<serde_json::Value>, sqlx::Error> {
+    let variations = crate::models::get_branch_variations(branch);
+    let rows = sqlx::query(
+        "SELECT id, login_id as student_id, full_name 
+         FROM users 
+         WHERE role = 'Student' 
+           AND status = 'Graduated' 
+           AND branch = ANY($1) 
+           AND batch_no = $2 
+           AND section = $3 
+         ORDER BY login_id ASC"
+    )
+    .bind(&variations)
+    .bind(batch)
+    .bind(section)
+    .fetch_all(pool)
+    .await?;
+    
+    Ok(rows.into_iter().map(|r| serde_json::json!({
+        "id": r.get::<Uuid, _>("id").to_string(),
+        "studentId": r.get::<String, _>("student_id"),
+        "fullName": r.get::<String, _>("full_name")
+    })).collect())
+}

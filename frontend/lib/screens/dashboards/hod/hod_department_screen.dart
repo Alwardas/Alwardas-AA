@@ -11,6 +11,7 @@ import 'hod_syllabus_management_screen.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../../core/api_constants.dart';
+import 'hod_student_profile_screen.dart';
 
 
 class HodDepartmentScreen extends StatefulWidget {
@@ -906,16 +907,42 @@ class _HodGraduatedStudentsScreenState extends State<HodGraduatedStudentsScreen>
     _searchController.addListener(_filterBatches);
   }
 
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
   Future<void> _fetchGraduatedBatches() async {
-    // Simulated fetch for the currently graduated batch
-    await Future.delayed(const Duration(seconds: 1));
-    setState(() {
-      _graduatedBatches = [
-        {'batch': '2023-2026', 'count': 120}, // Currently the only graduated batch
-      ];
-      _filteredBatches = _graduatedBatches;
-      _isLoading = false;
-    });
+    setState(() => _isLoading = true);
+    try {
+      final branch = widget.userData['branch'] ?? 'Computer Engineering';
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/hod/graduated-batches')
+          .replace(queryParameters: {'branch': branch});
+      final response = await http.get(uri);
+      
+      if (response.statusCode == 200) {
+        final responseData = json.decode(response.body);
+        final List<dynamic> data = responseData['data'] ?? [];
+        if (mounted) {
+          setState(() {
+            _graduatedBatches = data;
+            _filteredBatches = data;
+            _isLoading = false;
+          });
+        }
+      } else {
+        debugPrint("API Error: ${response.statusCode}");
+        if (mounted) {
+          setState(() => _isLoading = false);
+        }
+      }
+    } catch (e) {
+      debugPrint("Error loading graduated batches: $e");
+      if (mounted) {
+        setState(() => _isLoading = false);
+      }
+    }
   }
 
   void _filterBatches() {
@@ -977,42 +1004,420 @@ class _HodGraduatedStudentsScreenState extends State<HodGraduatedStudentsScreen>
                           itemCount: _filteredBatches.length,
                           itemBuilder: (context, index) {
                             final batch = _filteredBatches[index];
-                            return Container(
-                              margin: const EdgeInsets.only(bottom: 15),
-                              padding: const EdgeInsets.all(20),
-                              decoration: BoxDecoration(
-                                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                                border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
-                              ),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(12),
-                                    decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), shape: BoxShape.circle),
-                                    child: const Icon(Icons.check_circle, color: Colors.green, size: 24),
-                                  ),
-                                  const SizedBox(width: 20),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Batch ${batch['batch']}',
-                                          style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 18),
-                                        ),
-                                        Text(
-                                          '${batch['count']} Students',
-                                          style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
-                                        ),
-                                      ],
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => HodGraduatedSectionsScreen(
+                                      userData: widget.userData,
+                                      batch: batch['batch'].toString(),
                                     ),
                                   ),
-                                ],
+                                );
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.only(bottom: 15),
+                                padding: const EdgeInsets.all(20),
+                                decoration: BoxDecoration(
+                                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(12),
+                                      decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), shape: BoxShape.circle),
+                                      child: const Icon(Icons.check_circle, color: Colors.green, size: 24),
+                                    ),
+                                    const SizedBox(width: 20),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Batch ${batch['batch']}',
+                                            style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 18),
+                                          ),
+                                          Text(
+                                            '${batch['count']} Students',
+                                            style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Icon(Icons.chevron_right, color: subTextColor),
+                                  ],
+                                ),
                               ),
                             );
                           },
                         ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class HodGraduatedSectionsScreen extends StatefulWidget {
+  final Map<String, dynamic> userData;
+  final String batch;
+  const HodGraduatedSectionsScreen({super.key, required this.userData, required this.batch});
+
+  @override
+  _HodGraduatedSectionsScreenState createState() => _HodGraduatedSectionsScreenState();
+}
+
+class _HodGraduatedSectionsScreenState extends State<HodGraduatedSectionsScreen> {
+  bool _isLoading = true;
+  List<dynamic> _sections = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchSections();
+  }
+
+  Future<void> _fetchSections() async {
+    setState(() => _isLoading = true);
+    try {
+      final branch = widget.userData['branch'] ?? 'Computer Engineering';
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/hod/graduated-sections')
+          .replace(queryParameters: {
+            'branch': branch,
+            'batch': widget.batch,
+          });
+      final response = await http.get(uri);
+      
+      if (response.statusCode == 200) {
+        final responseData = json.decode(response.body);
+        final List<dynamic> data = responseData['data'] ?? [];
+        if (mounted) {
+          setState(() {
+            _sections = data;
+            _isLoading = false;
+          });
+        }
+      } else {
+        debugPrint("API Error: ${response.statusCode}");
+        if (mounted) {
+          setState(() => _isLoading = false);
+        }
+      }
+    } catch (e) {
+      debugPrint("Error loading graduated sections: $e");
+      if (mounted) {
+        setState(() => _isLoading = false);
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDark = themeProvider.isDarkMode;
+    final bgColors = isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final subTextColor = isDark ? Colors.white70 : Colors.black54;
+
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Graduated Sections', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+            Text('Batch ${widget.batch}', style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
+          ],
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: textColor),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
+        ),
+        child: SafeArea(
+          child: _isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : _sections.isEmpty
+                  ? Center(child: Text("No sections found for this batch.", style: TextStyle(color: subTextColor)))
+                  : ListView.builder(
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      itemCount: _sections.length,
+                      itemBuilder: (context, index) {
+                        final sec = _sections[index];
+                        final sectionName = sec['section'] ?? '';
+                        final studentCount = sec['count'] ?? 0;
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => HodGraduatedStudentListScreen(
+                                  userData: widget.userData,
+                                  batch: widget.batch,
+                                  section: sectionName,
+                                ),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(bottom: 15),
+                            padding: const EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                              border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+                              boxShadow: [
+                                BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 5, offset: const Offset(0, 2))
+                              ],
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.blueAccent.withValues(alpha: 0.1),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: const Icon(Icons.class_outlined, color: Colors.blueAccent),
+                                ),
+                                const SizedBox(width: 15),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Section $sectionName',
+                                        style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600, color: textColor),
+                                      ),
+                                      Text(
+                                        '$studentCount Students',
+                                        style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Icon(Icons.chevron_right, color: subTextColor),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+        ),
+      ),
+    );
+  }
+}
+
+class HodGraduatedStudentListScreen extends StatefulWidget {
+  final Map<String, dynamic> userData;
+  final String batch;
+  final String section;
+
+  const HodGraduatedStudentListScreen({
+    super.key,
+    required this.userData,
+    required this.batch,
+    required this.section,
+  });
+
+  @override
+  _HodGraduatedStudentListScreenState createState() => _HodGraduatedStudentListScreenState();
+}
+
+class _HodGraduatedStudentListScreenState extends State<HodGraduatedStudentListScreen> {
+  bool _isLoading = true;
+  List<dynamic> _students = [];
+  List<dynamic> _filteredStudents = [];
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchStudents();
+    _searchController.addListener(_filterStudentsList);
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _fetchStudents() async {
+    setState(() => _isLoading = true);
+    try {
+      final branch = widget.userData['branch'] ?? 'Computer Engineering';
+      final uri = Uri.parse('${ApiConstants.baseUrl}/api/hod/graduated-students')
+          .replace(queryParameters: {
+            'branch': branch,
+            'batch': widget.batch,
+            'section': widget.section,
+          });
+      final response = await http.get(uri);
+      
+      if (response.statusCode == 200) {
+        final responseData = json.decode(response.body);
+        final List<dynamic> data = responseData['data'] ?? [];
+        if (mounted) {
+          setState(() {
+            _students = data;
+            _filteredStudents = data;
+            _isLoading = false;
+          });
+        }
+      } else {
+        debugPrint("API Error: ${response.statusCode}");
+        if (mounted) {
+          setState(() => _isLoading = false);
+        }
+      }
+    } catch (e) {
+      debugPrint("Error loading graduated students: $e");
+      if (mounted) {
+        setState(() => _isLoading = false);
+      }
+    }
+  }
+
+  void _filterStudentsList() {
+    final query = _searchController.text.toLowerCase();
+    setState(() {
+      if (query.isEmpty) {
+        _filteredStudents = _students;
+      } else {
+        _filteredStudents = _students.where((s) {
+          final name = (s['fullName'] ?? '').toString().toLowerCase();
+          final id = (s['studentId'] ?? '').toString().toLowerCase();
+          return name.contains(query) || id.contains(query);
+        }).toList();
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDark = themeProvider.isDarkMode;
+    final bgColors = isDark ? AppTheme.darkBodyGradient : AppTheme.lightBodyGradient;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final subTextColor = isDark ? Colors.white70 : Colors.black54;
+
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Graduated Students', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
+            Text('Batch ${widget.batch} - Section ${widget.section}', style: GoogleFonts.poppins(fontSize: 12, color: subTextColor)),
+          ],
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: textColor),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: TextField(
+                  controller: _searchController,
+                  style: TextStyle(color: textColor),
+                  decoration: InputDecoration(
+                    hintText: 'Search by name or student ID...',
+                    hintStyle: TextStyle(color: subTextColor),
+                    prefixIcon: Icon(Icons.search, color: subTextColor),
+                    filled: true,
+                    fillColor: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[200],
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide.none),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: _isLoading
+                    ? const Center(child: CircularProgressIndicator())
+                    : _filteredStudents.isEmpty
+                        ? Center(child: Text("No students found.", style: TextStyle(color: subTextColor)))
+                        : ListView.builder(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            itemCount: _filteredStudents.length,
+                            itemBuilder: (context, index) {
+                              final student = _filteredStudents[index];
+                              final String name = student['fullName'] ?? 'Unknown';
+                              final String studentId = student['studentId'] ?? 'Unknown';
+                              final String dbId = student['id'] ?? studentId;
+                              
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) => HodStudentProfileScreen(
+                                        userId: dbId,
+                                        studentId: studentId,
+                                        studentName: name,
+                                      ),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  margin: const EdgeInsets.only(bottom: 15),
+                                  padding: const EdgeInsets.all(15),
+                                  decoration: BoxDecoration(
+                                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+                                    borderRadius: BorderRadius.circular(15),
+                                    border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+                                    boxShadow: [
+                                      BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 5, offset: const Offset(0, 2))
+                                    ],
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 25,
+                                        backgroundColor: Colors.blueAccent.withValues(alpha: 0.1),
+                                        child: Text(
+                                          name.isNotEmpty ? name[0].toUpperCase() : 'S',
+                                          style: GoogleFonts.poppins(color: Colors.blueAccent, fontWeight: FontWeight.bold, fontSize: 18),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 15),
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              name,
+                                              style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
+                                            ),
+                                            Text(
+                                              'ID: $studentId',
+                                              style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Icon(Icons.chevron_right, color: subTextColor),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
               ),
             ],
           ),

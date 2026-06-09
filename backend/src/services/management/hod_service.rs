@@ -328,3 +328,30 @@ pub async fn delete_course_subject(pool: &PgPool, id: uuid::Uuid) -> Result<(), 
             StatusCode::INTERNAL_SERVER_ERROR
         })
 }
+
+pub async fn get_graduated_batches(pool: &PgPool, branch: &str) -> Result<Vec<serde_json::Value>, StatusCode> {
+    hod_repository::find_graduated_batches(pool, branch)
+        .await
+        .map_err(|e| {
+            eprintln!("Failed to fetch graduated batches: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })
+}
+
+pub async fn get_graduated_sections(pool: &PgPool, branch: &str, batch: &str) -> Result<Vec<serde_json::Value>, StatusCode> {
+    hod_repository::find_graduated_sections(pool, branch, batch)
+        .await
+        .map_err(|e| {
+            eprintln!("Failed to fetch graduated sections: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })
+}
+
+pub async fn get_graduated_students(pool: &PgPool, branch: &str, batch: &str, section: &str) -> Result<Vec<serde_json::Value>, StatusCode> {
+    hod_repository::find_graduated_students(pool, branch, batch, section)
+        .await
+        .map_err(|e| {
+            eprintln!("Failed to fetch graduated students: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })
+}

@@ -7,7 +7,8 @@ use serde_json::json;
 use crate::models::{
     AppState, MasterTimetableQuery, AddCourseSubjectRequest, SectionQuery, 
     SubjectQuery, FacultyAssignmentQuery, BranchProgressQuery, 
-    YearSectionsProgressQuery, SectionSubjectsProgressQuery
+    YearSectionsProgressQuery, SectionSubjectsProgressQuery,
+    GraduatedBatchesQuery, GraduatedSectionsQuery, GraduatedStudentsQuery
 };
 use crate::services::management::hod_service;
 
@@ -284,5 +285,59 @@ pub async fn delete_course_subject_handler(
                 "data": null
             }))))
         },
+    }
+}
+
+pub async fn get_graduated_batches_handler(
+    State(data): State<AppState>,
+    Query(params): Query<GraduatedBatchesQuery>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match hod_service::get_graduated_batches(&data.pool, &params.branch).await {
+        Ok(res) => Ok(Json(json!({
+            "success": true,
+            "message": "Graduated batches fetched successfully",
+            "data": res
+        }))),
+        Err(e) => Err((e, Json(json!({
+            "success": false,
+            "message": "Failed to fetch graduated batches",
+            "data": null
+        })))),
+    }
+}
+
+pub async fn get_graduated_sections_handler(
+    State(data): State<AppState>,
+    Query(params): Query<GraduatedSectionsQuery>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match hod_service::get_graduated_sections(&data.pool, &params.branch, &params.batch).await {
+        Ok(res) => Ok(Json(json!({
+            "success": true,
+            "message": "Graduated sections fetched successfully",
+            "data": res
+        }))),
+        Err(e) => Err((e, Json(json!({
+            "success": false,
+            "message": "Failed to fetch graduated sections",
+            "data": null
+        })))),
+    }
+}
+
+pub async fn get_graduated_students_handler(
+    State(data): State<AppState>,
+    Query(params): Query<GraduatedStudentsQuery>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match hod_service::get_graduated_students(&data.pool, &params.branch, &params.batch, &params.section).await {
+        Ok(res) => Ok(Json(json!({
+            "success": true,
+            "message": "Graduated students fetched successfully",
+            "data": res
+        }))),
+        Err(e) => Err((e, Json(json!({
+            "success": false,
+            "message": "Failed to fetch graduated students",
+            "data": null
+        })))),
     }
 }
