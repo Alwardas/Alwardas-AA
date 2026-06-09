@@ -37,3 +37,7 @@ lto = true
 codegen-units = 1
 panic = 'abort'
 strip = true
+
+[[bin]]
+name = "scratch"
+path = "scratch.rs"

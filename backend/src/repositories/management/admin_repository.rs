@@ -91,7 +91,7 @@ pub async fn promote_students(pool: &PgPool) -> Result<u64, sqlx::Error> {
 
     let _q1 = sqlx::query("INSERT INTO student_academic_history (student_id, academic_year, study_year, semester) SELECT id, $1, '3rd Year', semester FROM users WHERE role = 'Student' AND year = '3rd Year' AND status = 'Active'")
         .bind(&academic_year_label).execute(&mut *tx).await?;
-    let u1 = sqlx::query("UPDATE users SET status = 'Graduated' WHERE role = 'Student' AND year = '3rd Year' AND status = 'Active'")
+    let u1 = sqlx::query("UPDATE users SET status = 'Graduated', year = 'Graduated', semester = NULL WHERE role = 'Student' AND year = '3rd Year' AND status = 'Active'")
         .execute(&mut *tx).await?;
     affected += u1.rows_affected();
 

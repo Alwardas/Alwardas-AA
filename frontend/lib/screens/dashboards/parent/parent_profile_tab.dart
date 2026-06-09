@@ -348,6 +348,8 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
     String semesterDisplay = "$studentYear $studentSem".trim();
     if (semesterDisplay.isEmpty) semesterDisplay = "N/A";
 
+    final isGraduated = studentYear == 'Graduated';
+
     final contact = _phoneController.text.isNotEmpty
         ? _phoneController.text
         : '+91 XXXXX XXXXX';
@@ -489,15 +491,17 @@ class _ParentProfileTabState extends State<ParentProfileTab> {
                       iconColor: const Color(0xFF10B981),
                       label: "Branch",
                       value: studentBranch,
-                      isDark: isDark),
-                  _buildRowItem(
-                      icon: Icons.class_outlined,
-                      iconColor: const Color(0xFF3B82F6),
-                      label: "Year & Section",
-                      value:
-                          "$semesterDisplay - ${widget.userData['section'] ?? 'A'}",
                       isDark: isDark,
-                      showBorder: false),
+                      showBorder: !isGraduated),
+                  if (!isGraduated)
+                    _buildRowItem(
+                        icon: Icons.class_outlined,
+                        iconColor: const Color(0xFF3B82F6),
+                        label: "Year & Section",
+                        value:
+                            "$semesterDisplay - ${widget.userData['section'] ?? 'A'}",
+                        isDark: isDark,
+                        showBorder: false),
                 ]))),
 
         const SizedBox(height: 24),

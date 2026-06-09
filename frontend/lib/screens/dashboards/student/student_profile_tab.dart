@@ -509,6 +509,8 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
     final String titleStr = _profileData?['title']?.toString() ?? widget.userData['title']?.toString() ?? '';
     final String displayName = "${titleStr.isNotEmpty ? '$titleStr ' : ''}${_fullNameController.text}".toUpperCase();
 
+    final isGraduated = _yearController.text == 'Graduated' || (_profileData != null && _profileData!['status'] == 'Graduated');
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -599,10 +601,14 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
              child: Column(
                 children: [
                    _buildRowItem(icon: Icons.computer, iconColor: const Color(0xFF8B5CF6), label: _branchController.text, isDark: isDark),
-                   _buildRowItem(icon: Icons.calendar_month, iconColor: const Color(0xFFF59E0B), label: "Batch", value: _batchNoController.text, isDark: isDark),
-                   _buildRowItem(icon: Icons.apartment, iconColor: const Color(0xFF10B981), label: "Current Year", value: _yearController.text, isDark: isDark),
-                   _buildRowItem(icon: Icons.grid_view_rounded, iconColor: const Color(0xFFF43F5E), label: "Section", value: _sectionController.text, isDark: isDark),
-                   _buildRowItem(icon: Icons.account_tree, iconColor: const Color(0xFFF59E0B), label: "Semester", value: _semesterController.text, isDark: isDark, showBorder: false),
+                   if (!isGraduated) ...[
+                     _buildRowItem(icon: Icons.calendar_month, iconColor: const Color(0xFFF59E0B), label: "Batch", value: _batchNoController.text, isDark: isDark),
+                     _buildRowItem(icon: Icons.apartment, iconColor: const Color(0xFF10B981), label: "Current Year", value: _yearController.text, isDark: isDark),
+                     _buildRowItem(icon: Icons.grid_view_rounded, iconColor: const Color(0xFFF43F5E), label: "Section", value: _sectionController.text, isDark: isDark),
+                     _buildRowItem(icon: Icons.account_tree, iconColor: const Color(0xFFF59E0B), label: "Semester", value: _semesterController.text, isDark: isDark, showBorder: false),
+                   ] else ...[
+                     _buildRowItem(icon: Icons.calendar_month, iconColor: const Color(0xFFF59E0B), label: "Batch", value: _batchNoController.text, isDark: isDark, showBorder: false),
+                   ]
                 ]
              )
           )
