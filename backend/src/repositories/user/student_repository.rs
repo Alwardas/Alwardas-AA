@@ -80,13 +80,20 @@ pub async fn find_subjects_by_branch_and_semester(pool: &PgPool, branch: &str, s
         r#"
         SELECT 
             s.id, s.name, s.type as subject_type,
-            COALESCE(u.full_name, s.faculty_name, 'TBA') as resolved_faculty_name,
-            u.email as faculty_email,
-            u.phone_number as faculty_phone,
-            u.branch as faculty_department
+            COALESCE(u1.full_name, u2.full_name, s.faculty_name, 'TBA') as resolved_faculty_name,
+            COALESCE(u1.email, u2.email) as faculty_email,
+            COALESCE(u1.phone_number, u2.phone_number) as faculty_phone,
+            COALESCE(u1.branch, u2.branch) as faculty_department
         FROM subjects s
         LEFT JOIN faculty_subjects fs ON s.id = fs.subject_id AND fs.branch = s.branch AND fs.status = 'APPROVED' AND fs.section = $3
-        LEFT JOIN users u ON fs.user_id = u.id
+        LEFT JOIN users u1 ON fs.user_id = u1.id
+        LEFT JOIN LATERAL (
+            SELECT faculty_id FROM timetable_entries 
+            WHERE (subject_code = s.id OR subject = s.name OR subject = s.id) 
+              AND branch = s.branch AND section = $3
+            LIMIT 1
+        ) t ON TRUE
+        LEFT JOIN users u2 ON t.faculty_id = u2.login_id
         WHERE s.branch = $1 AND s.semester = $2
         ORDER BY s.id ASC
         "#
