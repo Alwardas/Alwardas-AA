@@ -194,7 +194,7 @@ pub struct DeleteNotificationsRequest {
 #[derive(Deserialize)]
 pub struct ApprovalRequest {
     #[serde(rename = "userId")]
-    pub user_id: Uuid,
+    pub user_id: Option<Uuid>,
     #[serde(rename = "requestId")]
     pub request_id: Uuid,
     #[serde(rename = "senderId")]

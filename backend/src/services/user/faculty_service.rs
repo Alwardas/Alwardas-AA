@@ -286,9 +286,30 @@ pub async fn get_absent_students(pool: &PgPool, params: AttendanceStatsQuery) ->
 
 pub async fn approve_user(pool: &PgPool, payload: ApprovalRequest) -> Result<(), StatusCode> {
     let status = payload.action == "APPROVE";
-    faculty_repository::approve_user_status(pool, payload.user_id, status)
+    
+    let user_uuid = match payload.user_id {
+        Some(id) => id,
+        None => {
+            // Attempt to resolve user_id from sender_id
+            resolve_user_id(&payload.sender_id, "Faculty", pool)
+                .await
+                .map_err(|_| StatusCode::BAD_REQUEST)?
+        }
+    };
+
+    faculty_repository::approve_user_status(pool, user_uuid, status)
         .await
-        .map(|_| ())
+        .map(|_| {
+            // Also clean up the notification
+            tokio::spawn({
+                let pool = pool.clone();
+                let notif_id = payload.request_id;
+                async move {
+                    let _ = faculty_repository::delete_notification(&pool, notif_id).await;
+                }
+            });
+            ()
+        })
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
 }
 
