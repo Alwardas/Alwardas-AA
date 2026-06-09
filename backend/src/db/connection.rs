@@ -342,6 +342,17 @@ pub async fn init_db() -> Pool<Postgres> {
         )
     ").execute(&pool).await.err();
 
+    let _ = sqlx::query("
+        CREATE TABLE IF NOT EXISTS promotion_requests (
+            id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+            branch TEXT NOT NULL,
+            requested_by UUID REFERENCES users(id),
+            status TEXT DEFAULT 'PENDING',
+            created_at TIMESTAMPTZ DEFAULT NOW(),
+            updated_at TIMESTAMPTZ DEFAULT NOW()
+        )
+    ").execute(&pool).await.err();
+
     // Fallback: If `courses` table is empty, insert some default courses
     match pool.begin().await {
         Ok(mut tx) => {

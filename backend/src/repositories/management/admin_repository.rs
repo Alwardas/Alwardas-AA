@@ -83,29 +83,48 @@ pub async fn delete_user(pool: &PgPool, user_id: Uuid) -> Result<u64, sqlx::Erro
     sqlx::query("DELETE FROM users WHERE id = $1").bind(user_id).execute(pool).await.map(|r| r.rows_affected())
 }
 
-pub async fn promote_students(pool: &PgPool) -> Result<u64, sqlx::Error> {
+pub async fn promote_students(pool: &PgPool, branch_filter: Option<&str>) -> Result<u64, sqlx::Error> {
     let mut tx = pool.begin().await?;
     let mut affected: u64 = 0;
 
     let academic_year_label = format!("{}-{}", chrono::Utc::now().format("%Y"), (chrono::Utc::now() + chrono::Duration::days(365)).format("%y"));
 
-    let _q1 = sqlx::query("INSERT INTO student_academic_history (student_id, academic_year, study_year, semester) SELECT id, $1, '3rd Year', semester FROM users WHERE role = 'Student' AND year = '3rd Year' AND status = 'Active'")
-        .bind(&academic_year_label).execute(&mut *tx).await?;
-    let u1 = sqlx::query("UPDATE users SET status = 'Graduated', year = 'Graduated', semester = NULL WHERE role = 'Student' AND year = '3rd Year' AND status = 'Active'")
-        .execute(&mut *tx).await?;
-    affected += u1.rows_affected();
+    let branch_condition = if branch_filter.is_some() { "AND branch = $2" } else { "" };
 
-    let _q2 = sqlx::query("INSERT INTO student_academic_history (student_id, academic_year, study_year, semester) SELECT id, $1, '2nd Year', semester FROM users WHERE role = 'Student' AND year = '2nd Year' AND status = 'Active'")
-        .bind(&academic_year_label).execute(&mut *tx).await?;
-    let u2 = sqlx::query("UPDATE users SET year = '3rd Year' WHERE role = 'Student' AND year = '2nd Year' AND status = 'Active'")
-        .execute(&mut *tx).await?;
-    affected += u2.rows_affected();
+    let q1_sql = format!("INSERT INTO student_academic_history (student_id, academic_year, study_year, semester) SELECT id, $1, '3rd Year', semester FROM users WHERE role = 'Student' AND year = '3rd Year' AND status = 'Active' {}", branch_condition);
+    let u1_sql = format!("UPDATE users SET status = 'Graduated', year = 'Graduated', semester = NULL WHERE role = 'Student' AND year = '3rd Year' AND status = 'Active' {}", branch_condition);
 
-    let _q3 = sqlx::query("INSERT INTO student_academic_history (student_id, academic_year, study_year, semester) SELECT id, $1, '1st Year', semester FROM users WHERE role = 'Student' AND year = '1st Year' AND status = 'Active'")
-        .bind(&academic_year_label).execute(&mut *tx).await?;
-    let u3 = sqlx::query("UPDATE users SET year = '2nd Year' WHERE role = 'Student' AND year = '1st Year' AND status = 'Active'")
-        .execute(&mut *tx).await?;
-    affected += u3.rows_affected();
+    let q2_sql = format!("INSERT INTO student_academic_history (student_id, academic_year, study_year, semester) SELECT id, $1, '2nd Year', semester FROM users WHERE role = 'Student' AND year = '2nd Year' AND status = 'Active' {}", branch_condition);
+    let u2_sql = format!("UPDATE users SET year = '3rd Year' WHERE role = 'Student' AND year = '2nd Year' AND status = 'Active' {}", branch_condition);
+
+    let q3_sql = format!("INSERT INTO student_academic_history (student_id, academic_year, study_year, semester) SELECT id, $1, '1st Year', semester FROM users WHERE role = 'Student' AND year = '1st Year' AND status = 'Active' {}", branch_condition);
+    let u3_sql = format!("UPDATE users SET year = '2nd Year' WHERE role = 'Student' AND year = '1st Year' AND status = 'Active' {}", branch_condition);
+
+    if let Some(b) = branch_filter {
+        sqlx::query(&q1_sql).bind(&academic_year_label).bind(b).execute(&mut *tx).await?;
+        let u1 = sqlx::query(&u1_sql).bind(b).execute(&mut *tx).await?;
+        affected += u1.rows_affected();
+
+        sqlx::query(&q2_sql).bind(&academic_year_label).bind(b).execute(&mut *tx).await?;
+        let u2 = sqlx::query(&u2_sql).bind(b).execute(&mut *tx).await?;
+        affected += u2.rows_affected();
+
+        sqlx::query(&q3_sql).bind(&academic_year_label).bind(b).execute(&mut *tx).await?;
+        let u3 = sqlx::query(&u3_sql).bind(b).execute(&mut *tx).await?;
+        affected += u3.rows_affected();
+    } else {
+        sqlx::query(&q1_sql).bind(&academic_year_label).execute(&mut *tx).await?;
+        let u1 = sqlx::query(&u1_sql).execute(&mut *tx).await?;
+        affected += u1.rows_affected();
+
+        sqlx::query(&q2_sql).bind(&academic_year_label).execute(&mut *tx).await?;
+        let u2 = sqlx::query(&u2_sql).execute(&mut *tx).await?;
+        affected += u2.rows_affected();
+
+        sqlx::query(&q3_sql).bind(&academic_year_label).execute(&mut *tx).await?;
+        let u3 = sqlx::query(&u3_sql).execute(&mut *tx).await?;
+        affected += u3.rows_affected();
+    }
 
     tx.commit().await?;
     Ok(affected)

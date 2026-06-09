@@ -19,27 +19,36 @@ class PrincipalRequestsScreen extends StatefulWidget {
 class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> with SingleTickerProviderStateMixin {
   late TabController _tabController;
   List<dynamic> _hodRequests = [];
+  List<dynamic> _promotionRequests = [];
   bool _loading = true;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
     _fetchRequests();
   }
 
   Future<void> _fetchRequests() async {
     try {
-      final response = await http.get(
+      final responseHod = await http.get(
         Uri.parse('${ApiConstants.baseUrl}/api/admin/users?role=HOD&is_approved=false'),
       );
-      if (response.statusCode == 200) {
-        if (mounted) {
-          setState(() {
-            _hodRequests = json.decode(response.body);
-            _loading = false;
-          });
-        }
+      final responsePromotions = await http.get(
+        Uri.parse('${ApiConstants.baseUrl}/api/principal/promotion-requests'),
+      );
+
+      if (mounted) {
+        setState(() {
+          if (responseHod.statusCode == 200) {
+            _hodRequests = json.decode(responseHod.body);
+          }
+          if (responsePromotions.statusCode == 200) {
+            final promoData = json.decode(responsePromotions.body);
+            _promotionRequests = promoData is List ? promoData : promoData['data'] ?? [];
+          }
+          _loading = false;
+        });
       }
     } catch (e) {
       if (mounted) setState(() => _loading = false);
@@ -59,6 +68,25 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> with 
         _fetchRequests();
       } else {
         _showSnackBar("Failed to process request");
+      }
+    } catch (e) {
+      _showSnackBar("Network Error");
+    }
+  }
+
+  Future<void> _handlePromotionAction(String requestId, String action) async {
+    try {
+      final response = await http.post(
+        Uri.parse('${ApiConstants.baseUrl}/api/principal/approve-promotion'),
+        headers: const {'Content-Type': 'application/json'},
+        body: json.encode({'request_id': requestId, 'action': action}),
+      );
+
+      if (response.statusCode == 200) {
+        _showSnackBar("Promotion ${action == 'APPROVE' ? 'Approved' : 'Rejected'} successfully!");
+        _fetchRequests();
+      } else {
+        _showSnackBar("Failed to process promotion request");
       }
     } catch (e) {
       _showSnackBar("Network Error");
@@ -96,6 +124,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> with 
             indicatorColor: tint,
             tabs: const [
               Tab(text: "HOD Approvals"),
+              Tab(text: "Promotions"),
               Tab(text: "Parent Requests"),
             ],
           ),
@@ -150,6 +179,41 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> with 
                       ),
                     ),
                 
+                 // Promotions Tab
+                 _loading 
+                  ? const Center(child: CircularProgressIndicator())
+                  : _promotionRequests.isEmpty 
+                  ? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.check_circle_outline, size: 80, color: tint.withValues(alpha: 0.5)),
+                          const SizedBox(height: 20),
+                          Text("No Pending Promotions", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
+                          Text("All promotion requests have been handled.", style: TextStyle(color: subTextColor)),
+                        ],
+                      ),
+                    )
+                  : RefreshIndicator(
+                      onRefresh: _fetchRequests,
+                      child: ListView.builder(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        itemCount: _promotionRequests.length,
+                        itemBuilder: (ctx, index) {
+                          final r = _promotionRequests[index];
+                          return _PromotionRequestCard(
+                            r: r,
+                            cardColor: cardColor,
+                            textColor: textColor,
+                            subTextColor: subTextColor,
+                            tint: tint,
+                            iconBg: iconBg,
+                            onAction: _handlePromotionAction,
+                          );
+                        },
+                      ),
+                    ),
+
                 // Parent Requests Tab
                 ParentRequestsViewer(userData: widget.userData, requestFrom: 'Parent'),
               ],
@@ -261,4 +325,83 @@ class _RequestCard extends StatelessWidget {
   }
 }
 
+class _PromotionRequestCard extends StatelessWidget {
+  final Map<String, dynamic> r;
+  final Color cardColor;
+  final Color textColor;
+  final Color subTextColor;
+  final Color tint;
+  final Color iconBg;
+  final Function(String, String) onAction;
+
+  const _PromotionRequestCard({
+    required this.r,
+    required this.cardColor,
+    required this.textColor,
+    required this.subTextColor,
+    required this.tint,
+    required this.iconBg,
+    required this.onAction,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final branch = r['branch'] ?? 'Unknown Branch';
+    final reqId = r['id'] ?? '';
+    final createdAt = r['created_at'] != null ? DateTime.parse(r['created_at']).toLocal().toString().split('.')[0] : 'Unknown Time';
+
+    return Container(
+      margin: const EdgeInsets.only(bottom: 15),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5)),
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(backgroundColor: iconBg, child: Icon(Icons.upgrade, color: tint)),
+                const SizedBox(width: 15),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Promotion Request", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: textColor)),
+                      Text("Branch: $branch", style: TextStyle(color: subTextColor)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Text("Requested on: $createdAt", style: TextStyle(color: subTextColor, fontSize: 12)),
+            const SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () => onAction(reqId, 'REJECT'),
+                  style: TextButton.styleFrom(foregroundColor: Colors.red),
+                  child: const Text("Reject"),
+                ),
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () => onAction(reqId, 'APPROVE'),
+                  style: ElevatedButton.styleFrom(backgroundColor: tint, foregroundColor: Colors.white),
+                  child: const Text("Approve"),
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
 

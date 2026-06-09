@@ -355,3 +355,20 @@ pub async fn get_graduated_students(pool: &PgPool, branch: &str, batch: &str, se
             StatusCode::INTERNAL_SERVER_ERROR
         })
 }
+
+pub async fn request_promotion(pool: &PgPool, payload: crate::models::CreatePromotionRequest) -> Result<serde_json::Value, StatusCode> {
+    let hod_uuid = uuid::Uuid::parse_str(&payload.hod_user_id).map_err(|_| StatusCode::BAD_REQUEST)?;
+    sqlx::query("INSERT INTO promotion_requests (branch, requested_by, status) VALUES ($1, $2, 'PENDING')")
+        .bind(&payload.branch)
+        .bind(hod_uuid)
+        .execute(pool)
+        .await
+        .map_err(|e| {
+            eprintln!("Failed to insert promotion request: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })?;
+    Ok(serde_json::json!({
+        "success": true,
+        "message": "Promotion request submitted successfully"
+    }))
+}

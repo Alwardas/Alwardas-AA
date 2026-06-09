@@ -37,7 +37,7 @@ pub async fn admin_approve_user(pool: &PgPool, payload: AdminApprovalRequest) ->
 }
 
 pub async fn promote_students(pool: &PgPool) -> Result<serde_json::Value, StatusCode> {
-    match admin_repository::promote_students(pool).await {
+    match admin_repository::promote_students(pool, None).await {
         Ok(affected) => Ok(serde_json::json!({
             "success": true,
             "message": format!("Successfully promoted {} students", affected),

@@ -8,7 +8,8 @@ use crate::models::{
     AppState, MasterTimetableQuery, AddCourseSubjectRequest, SectionQuery, 
     SubjectQuery, FacultyAssignmentQuery, BranchProgressQuery, 
     YearSectionsProgressQuery, SectionSubjectsProgressQuery,
-    GraduatedBatchesQuery, GraduatedSectionsQuery, GraduatedStudentsQuery
+    GraduatedBatchesQuery, GraduatedSectionsQuery, GraduatedStudentsQuery,
+    CreatePromotionRequest
 };
 use crate::services::management::hod_service;
 
@@ -32,6 +33,20 @@ pub async fn get_hod_departments_handler(
                 "data": null
             }))))
         },
+    }
+}
+
+pub async fn request_promotion_handler(
+    State(data): State<AppState>,
+    Json(payload): Json<CreatePromotionRequest>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match hod_service::request_promotion(&data.pool, payload).await {
+        Ok(res) => Ok(Json(res)),
+        Err(e) => Err((e, Json(json!({
+            "success": false,
+            "message": "Failed to submit promotion request",
+            "data": null
+        })))),
     }
 }
 

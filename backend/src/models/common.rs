@@ -16,6 +16,28 @@ pub struct ApiResponse<T> {
     pub data: Option<T>,
 }
 
+#[derive(Serialize, Deserialize, Debug)]
+pub struct CreatePromotionRequest {
+    pub hod_user_id: String,
+    pub branch: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct ApprovePromotionRequest {
+    pub request_id: String,
+    pub action: String,
+}
+
+#[derive(Serialize, Deserialize, Debug, FromRow)]
+pub struct PromotionRequest {
+    pub id: Uuid,
+    pub branch: String,
+    pub requested_by: Option<Uuid>,
+    pub status: Option<String>,
+    pub created_at: Option<DateTime<Utc>>,
+    pub updated_at: Option<DateTime<Utc>>,
+}
+
 pub fn normalize_branch(input: &str) -> String {
     let binding = input.trim().to_uppercase();
     let upper = binding.as_str();

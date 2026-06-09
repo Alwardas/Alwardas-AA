@@ -108,45 +108,7 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
     );
   }
 
-  void _promoteYear() async {
-    final confirm = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text("Promote Academic Year?", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-        content: Text("This will move 1st Year to 2nd Year, 2nd Year to 3rd Year, and mark 3rd Year as Graduated.\n\nAre you sure you want to proceed?", style: GoogleFonts.poppins()),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text("Cancel")),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.purpleAccent),
-            onPressed: () => Navigator.pop(context, true), 
-            child: const Text("Promote", style: TextStyle(color: Colors.white))
-          ),
-        ],
-      ),
-    );
 
-    if (confirm != true) return;
-
-    try {
-      final url = Uri.parse('${ApiConstants.baseUrl}/api/admin/promote');
-      final response = await http.post(url);
-      if (response.statusCode == 200) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Promotion successful!")));
-          // Refresh state if needed
-          setState((){});
-        }
-      } else {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to promote students.")));
-        }
-      }
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
-      }
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -164,13 +126,6 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
         centerTitle: false,
-        actions: [
-          IconButton(
-            tooltip: 'Promote Academic Year',
-            icon: Icon(Icons.upgrade, color: Colors.purple.shade400),
-            onPressed: _promoteYear,
-          ),
-        ],
       ),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
@@ -403,18 +358,18 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
     }
   }
 
-  Future<void> _promoteStudents() async {
+  Future<void> _requestPromotion() async {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text("Promote Academic Year?", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-        content: Text("This will move 1st Year to 2nd Year, 2nd Year to 3rd Year, and mark 3rd Year as Graduated.\n\nAre you sure you want to proceed?", style: GoogleFonts.poppins()),
+        title: Text("Request Promotion?", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        content: Text("This will send a request to the Principal to promote students in your department.\n\nAre you sure you want to proceed?", style: GoogleFonts.poppins()),
         actions: [
           TextButton(onPressed: () => Navigator.pop(context, false), child: const Text("Cancel")),
           ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
             onPressed: () => Navigator.pop(context, true), 
-            child: const Text("Promote", style: TextStyle(color: Colors.white))
+            child: const Text("Send Request", style: TextStyle(color: Colors.white))
           ),
         ],
       ),
@@ -424,16 +379,22 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
 
     setState(() => _isLoading = true);
     try {
-      final url = Uri.parse('http://10.0.2.2:8000/api/admin/promote');
-      // For real app we should use ApiConstants.baseUrl but we'll import it or hardcode for now
-      final response = await http.post(url);
+      final url = Uri.parse('${ApiConstants.baseUrl}/api/hod/promote-request');
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({
+          'hod_user_id': widget.userData['id'],
+          'branch': widget.userData['branch'] ?? 'Computer Engineering'
+        }),
+      );
       if (response.statusCode == 200) {
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Promotion successful!")));
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Promotion request sent successfully!")));
         }
       } else {
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to promote.")));
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to send promotion request.")));
         }
       }
     } catch (e) {
@@ -456,17 +417,26 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _promoteStudents,
-        backgroundColor: Colors.blueAccent,
-        icon: const Icon(Icons.upgrade, color: Colors.white),
-        label: Text("Promote Year", style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
       appBar: AppBar(
         title: Text('Student Management', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
+        actions: [
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'promote') {
+                _requestPromotion();
+              }
+            },
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+              const PopupMenuItem<String>(
+                value: 'promote',
+                child: Text('Request Promotion'),
+              ),
+            ],
+          ),
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -613,48 +583,6 @@ class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
     }
   }
 
-  Future<void> _promoteStudents() async {
-    final confirm = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text("Promote Academic Year?", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-        content: Text("This will move 1st Year to 2nd Year, 2nd Year to 3rd Year, and mark 3rd Year as Graduated.\n\nAre you sure you want to proceed?", style: GoogleFonts.poppins()),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text("Cancel")),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
-            onPressed: () => Navigator.pop(context, true), 
-            child: const Text("Promote", style: TextStyle(color: Colors.white))
-          ),
-        ],
-      ),
-    );
-
-    if (confirm != true) return;
-
-    setState(() => _isLoading = true);
-    try {
-      final url = Uri.parse('http://10.0.2.2:8000/api/admin/promote');
-      // For real app we should use ApiConstants.baseUrl but we'll import it or hardcode for now
-      final response = await http.post(url);
-      if (response.statusCode == 200) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Promotion successful!")));
-        }
-      } else {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Failed to promote.")));
-        }
-      }
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
-      }
-    }
-    if (mounted) {
-      setState(() => _isLoading = false);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
