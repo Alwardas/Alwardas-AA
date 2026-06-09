@@ -69,13 +69,13 @@ class CoursesData {
       // Fallback to empty list or handled error
     }
 
-    // Sort by Branch, then Semester, then Name
+    // Sort by Branch, then Semester, then Code
     all.sort((a, b) {
       int cmp = a['branch'].compareTo(b['branch']);
       if (cmp != 0) return cmp;
       cmp = a['semester'].compareTo(b['semester']);
       if (cmp != 0) return cmp;
-      return a['name'].compareTo(b['name']);
+      return a['code'].compareTo(b['code']);
     });
 
     _cachedCourses = all;
