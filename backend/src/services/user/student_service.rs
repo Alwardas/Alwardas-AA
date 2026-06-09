@@ -13,18 +13,6 @@ use crate::utils::user_utils::resolve_user_id;
 use crate::repositories::user::student_repository;
 use crate::services::curriculum_service;
 
-fn get_expected_progress() -> i32 {
-    use chrono::Datelike;
-    match Utc::now().month() {
-        1 | 8 => 15,
-        2 | 9 => 35,
-        3 | 10 => 60,
-        4 | 11 => 85,
-        5 | 12 => 100,
-        _ => 50,
-    }
-}
-
 pub async fn get_student_profile(pool: &PgPool, user_id: &str) -> Result<StudentProfileResponse, StatusCode> {
     let user_uuid = resolve_user_id(user_id, "Student", pool).await.map_err(|_| StatusCode::BAD_REQUEST)?;
 
@@ -102,22 +90,22 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
         else { "1st Year".to_string() }
     };
 
+    let sem_int = match semester_key.to_lowercase().as_str() {
+        s if s.contains('1') => 1,
+        s if s.contains('2') => 2,
+        s if s.contains('3') => 3,
+        s if s.contains('4') => 4,
+        s if s.contains('5') => 5,
+        s if s.contains('6') => 6,
+        _ => 1
+    };
+
     let mut subjects = student_repository::find_subjects_by_branch_and_semester(pool, &branch_norm, &semester_key, &section_str)
         .await
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
 
     // Fallback: If DB returns empty, try to fetch from Assets
     if subjects.is_empty() {
-        let sem_int = match semester_key.to_lowercase().as_str() {
-            s if s.contains('1') => 1,
-            s if s.contains('2') => 2,
-            s if s.contains('3') => 3,
-            s if s.contains('4') => 4,
-            s if s.contains('5') => 5,
-            s if s.contains('6') => 6,
-            _ => 1
-        };
-        
         if let Ok(asset_subjects) = curriculum_service::get_subjects_from_assets(&branch_norm, sem_int, "C23").await {
             for (code, name, stype) in asset_subjects {
                 subjects.push((code, name, stype, None, None, None, None));
@@ -126,14 +114,94 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
     }
 
     let mut courses = Vec::new();
-    let expected_progress = get_expected_progress();
 
     for (sid, sname, stype, rfn, fe, fp, fd) in subjects {
-        let total_items = student_repository::count_lesson_plan_items(pool, &sid).await.unwrap_or(0);
-        let completed_items = student_repository::count_completed_lesson_plan_items(pool, &sid, &section_str).await.unwrap_or(0);
+        let mut total_items = student_repository::count_lesson_plan_items(pool, &sid).await.unwrap_or(0);
+        let mut completed_items = student_repository::count_completed_lesson_plan_items(pool, &sid, &section_str).await.unwrap_or(0);
+        let mut scheduled_items = 0;
+        let mut has_schedule = false;
+
+        if total_items == 0 {
+            // Try new curriculum system
+            if let Ok(curriculum) = curriculum_service::get_merged_curriculum(
+                pool,
+                &branch_norm,
+                sem_int,
+                "C23",
+                &sid,
+                &section_str,
+                &year_str,
+            ).await {
+                for unit in &curriculum.units {
+                    for topic in &unit.topics {
+                        if topic.topic_type.to_lowercase() != "unit" {
+                            total_items += 1;
+                            if topic.status.as_deref() == Some("completed") {
+                                completed_items += 1;
+                            }
+                            if let Some(assigned) = topic.assigned_date {
+                                has_schedule = true;
+                                if assigned <= chrono::Utc::now().date_naive() {
+                                    scheduled_items += 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            // Old lesson plan system has_schedule / scheduled_items count
+            let sched_count = sqlx::query_scalar::<_, i64>(
+                r#"
+                SELECT COUNT(*) 
+                FROM lesson_plan_items lpi 
+                JOIN lesson_schedule ls ON lpi.id = ls.topic_id 
+                WHERE lpi.subject_id = $1 AND ls.section = $2 
+                  AND ls.schedule_date <= NOW() 
+                  AND LOWER(lpi.type) != 'unit'
+                "#
+            )
+            .bind(&sid)
+            .bind(&section_str)
+            .fetch_one(pool)
+            .await
+            .unwrap_or(0);
+            
+            scheduled_items = sched_count;
+            
+            let total_sched_count = sqlx::query_scalar::<_, i64>(
+                r#"
+                SELECT COUNT(*) 
+                FROM lesson_plan_items lpi 
+                JOIN lesson_schedule ls ON lpi.id = ls.topic_id 
+                WHERE lpi.subject_id = $1 AND ls.section = $2 
+                  AND LOWER(lpi.type) != 'unit'
+                "#
+            )
+            .bind(&sid)
+            .bind(&section_str)
+            .fetch_one(pool)
+            .await
+            .unwrap_or(0);
+            
+            if total_sched_count > 0 {
+                has_schedule = true;
+            }
+        }
 
         let progress = if total_items > 0 { (completed_items * 100) / total_items } else { 0 } as i32;
-        let status = if progress < expected_progress - 10 { "Lagging".to_string() } else if progress > expected_progress + 10 { "Overfast".to_string() } else { "On Track".to_string() };
+        
+        let status = if has_schedule {
+            if completed_items < scheduled_items {
+                "Lagging".to_string()
+            } else if completed_items > scheduled_items {
+                "Overfast".to_string()
+            } else {
+                "On Track".to_string()
+            }
+        } else {
+            "On Track".to_string()
+        };
 
         courses.push(StudentCourse {
             id: sid,
@@ -182,13 +250,31 @@ pub async fn get_student_lesson_plan(pool: &PgPool, subject_id: &str, section_pa
     let total = items.iter().filter(|i| i.item_type.to_lowercase() != "unit").count();
     let completed = items.iter().filter(|i| i.item_type.to_lowercase() != "unit" && i.completed.unwrap_or(false)).count();
     let percentage = if total > 0 { (completed * 100) / total } else { 0 } as i32;
-    let expected = get_expected_progress();
-    let status = if percentage < expected - 10 { "LAGGING".to_string() } else if percentage > expected + 10 { "OVERFAST".to_string() } else { "NORMAL".to_string() };
+
+    let scheduled = items.iter().filter(|i| {
+        i.item_type.to_lowercase() != "unit" && 
+        i.scheduled_date.is_some() && 
+        i.scheduled_date.unwrap() <= Utc::now()
+    }).count();
+
+    let has_schedule = items.iter().any(|i| i.item_type.to_lowercase() != "unit" && i.scheduled_date.is_some());
+
+    let status = if has_schedule {
+        if completed < scheduled {
+            "LAGGING".to_string()
+        } else if completed > scheduled {
+            "OVERFAST".to_string()
+        } else {
+            "NORMAL".to_string()
+        }
+    } else {
+        "NORMAL".to_string()
+    };
 
     Ok(LessonPlanResponse {
         percentage,
-        status,
-        warning: if percentage < expected - 10 { Some("You are lagging behind schedule.".to_string()) } else { None },
+        status: status.clone(),
+        warning: if has_schedule && completed < scheduled { Some("You are lagging behind schedule.".to_string()) } else { None },
         items,
     })
 }

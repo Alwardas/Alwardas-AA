@@ -361,14 +361,45 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
       final cardBg = isDark ? const Color(0xFF1E1E24) : Colors.white;
       final text = isDark ? Colors.white : const Color(0xFF2D3748);
       
-      // Calculate completion percentage
+      // Calculate completion percentage and scheduled status
       int totalTopics = 0;
       int completedTopics = 0;
+      int scheduledTopics = 0;
+      bool hasSchedule = false;
+      final now = DateTime.now();
       for (var unit in _curriculum!.units) {
-        totalTopics += unit.topics.length;
-        completedTopics += unit.topics.where((t) => t.status == 'completed').length;
+        for (var topic in unit.topics) {
+          if (topic.type.toLowerCase() != 'unit') {
+            totalTopics += 1;
+            if (topic.status == 'completed') {
+              completedTopics += 1;
+            }
+            if (topic.assignedDate != null) {
+              hasSchedule = true;
+              if (topic.assignedDate!.isBefore(now)) {
+                scheduledTopics += 1;
+              }
+            }
+          }
+        }
       }
       final percentage = totalTopics > 0 ? (completedTopics * 100 ~/ totalTopics) : 0;
+
+      String statusText = "On Track";
+      Color statusColor = const Color(0xFF34C759); // Green
+      IconData statusIcon = Icons.check_circle;
+
+      if (hasSchedule) {
+        if (completedTopics < scheduledTopics) {
+          statusText = "Lagging";
+          statusColor = const Color(0xFFFF4B4B); // Red
+          statusIcon = Icons.warning_rounded;
+        } else if (completedTopics > scheduledTopics) {
+          statusText = "Overfast";
+          statusColor = Colors.orange;
+          statusIcon = Icons.speed;
+        }
+      }
 
       return Container(
           padding: const EdgeInsets.all(24),
@@ -397,15 +428,15 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                                 decoration: BoxDecoration(
-                                  color: Colors.green.withValues(alpha: 0.1),
+                                  color: statusColor.withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Icon(Icons.check_circle, size: 16, color: Colors.green),
+                                    Icon(statusIcon, size: 16, color: statusColor),
                                     const SizedBox(width: 6),
-                                    Text("On Track", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.green)),
+                                    Text(statusText, style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600, color: statusColor)),
                                   ],
                                 ),
                               )
