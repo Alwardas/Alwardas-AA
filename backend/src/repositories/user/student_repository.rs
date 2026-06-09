@@ -85,7 +85,8 @@ pub async fn find_subjects_by_branch_and_semester(pool: &PgPool, branch: &str, s
             COALESCE(u1.phone_number, u2.phone_number) as faculty_phone,
             COALESCE(u1.branch, u2.branch) as faculty_department
         FROM subjects s
-        LEFT JOIN faculty_subjects fs ON s.id = fs.subject_id AND fs.branch = s.branch AND fs.status = 'APPROVED' AND fs.section = $3
+        LEFT JOIN faculty_subjects fs ON s.id = fs.subject_id AND fs.branch = s.branch AND fs.section = $3
+          AND (fs.status = 'APPROVED' OR (fs.status = 'PENDING' AND fs.user_id IN (SELECT id FROM users WHERE role IN ('HOD', 'Incharge', 'Coordinator'))))
         LEFT JOIN users u1 ON fs.user_id = u1.id
         LEFT JOIN LATERAL (
             SELECT faculty_id FROM timetable_entries 

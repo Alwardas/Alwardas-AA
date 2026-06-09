@@ -128,7 +128,8 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
                 SELECT u.full_name, u.email, u.phone_number, u.branch as department
                 FROM faculty_subjects fs
                 JOIN users u ON fs.user_id = u.id
-                WHERE fs.subject_id = $1 AND fs.branch = $2 AND fs.section = $3 AND fs.status = 'APPROVED'
+                WHERE fs.subject_id = $1 AND fs.branch = $2 AND fs.section = $3
+                  AND (fs.status = 'APPROVED' OR (fs.status = 'PENDING' AND u.role IN ('HOD', 'Incharge', 'Coordinator')))
                 LIMIT 1
                 "#
             )
