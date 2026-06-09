@@ -200,6 +200,25 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
     );
   }
 
+  int _parseSemester(dynamic sem) {
+    if (sem == null) return 1;
+    if (sem is num) return sem.toInt();
+    final s = sem.toString().toLowerCase();
+    if (s.contains('1')) return 1;
+    if (s.contains('2')) return 2;
+    if (s.contains('3')) return 3;
+    if (s.contains('4')) return 4;
+    if (s.contains('5')) return 5;
+    if (s.contains('6')) return 6;
+    return 1;
+  }
+
+  String _semesterToYear(int sem) {
+    if (sem <= 2) return "1st Year";
+    if (sem <= 4) return "2nd Year";
+    return "3rd Year";
+  }
+
   Widget _buildCourseCard(dynamic item, Color cardColor, Color textColor, Color subTextColor, Color tint, Color iconBg) {
     final isSelected = _selectedForDelete.contains(item['id']);
     // Use camelCase keys from backend
@@ -218,10 +237,15 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
         if (_isSelectMode) {
           _toggleDeleteSelection(item['id']);
         } else {
+          final semInt = _parseSemester(item['semester']);
+          final yearStr = item['year']?.toString() ?? _semesterToYear(semInt);
           Navigator.push(context, MaterialPageRoute(builder: (_) => HodLessonPlanScreen(
             subjectId: displayId, 
             subjectName: subjectName,
             section: item['section'] ?? 'Section A',
+            branch: item['branch'] ?? 'Computer Engineering',
+            year: yearStr,
+            semester: semInt,
           )));
         }
       },

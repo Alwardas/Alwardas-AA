@@ -1,4 +1,4 @@
-use sqlx::{PgPool};
+use sqlx::{PgPool, Row};
 use axum::http::StatusCode;
 use uuid::Uuid;
 use chrono::{Utc};
@@ -116,6 +116,70 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
     let mut courses = Vec::new();
 
     for (sid, sname, stype, rfn, fe, fp, fd) in subjects {
+        let mut rfn_val = rfn.clone().unwrap_or_else(|| "TBA".to_string());
+        let mut fe_val = fe.clone();
+        let mut fp_val = fp.clone();
+        let mut fd_val = fd.clone();
+
+        if rfn_val == "TBA" {
+            // Try to resolve from faculty_subjects first
+            let faculty_row = sqlx::query(
+                r#"
+                SELECT u.full_name, u.email, u.phone_number, u.branch as department
+                FROM faculty_subjects fs
+                JOIN users u ON fs.user_id = u.id
+                WHERE fs.subject_id = $1 AND fs.branch = $2 AND fs.section = $3 AND fs.status = 'APPROVED'
+                LIMIT 1
+                "#
+            )
+            .bind(&sid)
+            .bind(&branch_norm)
+            .bind(&section_str)
+            .fetch_optional(pool)
+            .await
+            .unwrap_or(None);
+
+            if let Some(row) = faculty_row {
+                if let Ok(name) = row.try_get::<String, _>("full_name") {
+                    rfn_val = name;
+                } else if let Ok(Some(name)) = row.try_get::<Option<String>, _>("full_name") {
+                    rfn_val = name;
+                }
+                fe_val = row.try_get::<Option<String>, _>("email").unwrap_or(None);
+                fp_val = row.try_get::<Option<String>, _>("phone_number").unwrap_or(None);
+                fd_val = row.try_get::<Option<String>, _>("department").unwrap_or(None);
+            } else {
+                // Try timetable_entries
+                let timetable_row = sqlx::query(
+                    r#"
+                    SELECT u.full_name, u.email, u.phone_number, u.branch as department
+                    FROM timetable_entries t
+                    JOIN users u ON t.faculty_id = u.login_id
+                    WHERE (t.subject_code = $1 OR t.subject = $1)
+                      AND t.branch = $2 AND t.section = $3
+                    LIMIT 1
+                    "#
+                )
+                .bind(&sid)
+                .bind(&branch_norm)
+                .bind(&section_str)
+                .fetch_optional(pool)
+                .await
+                .unwrap_or(None);
+
+                if let Some(row) = timetable_row {
+                    if let Ok(name) = row.try_get::<String, _>("full_name") {
+                        rfn_val = name;
+                    } else if let Ok(Some(name)) = row.try_get::<Option<String>, _>("full_name") {
+                        rfn_val = name;
+                    }
+                    fe_val = row.try_get::<Option<String>, _>("email").unwrap_or(None);
+                    fp_val = row.try_get::<Option<String>, _>("phone_number").unwrap_or(None);
+                    fd_val = row.try_get::<Option<String>, _>("department").unwrap_or(None);
+                }
+            }
+        }
+
         let mut total_items = student_repository::count_lesson_plan_items(pool, &sid).await.unwrap_or(0);
         let mut completed_items = student_repository::count_completed_lesson_plan_items(pool, &sid, &section_str).await.unwrap_or(0);
         let mut scheduled_items = 0;
@@ -137,6 +201,7 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
                         if topic.topic_type.to_lowercase() != "unit" {
                             total_items += 1;
                             if topic.status.as_deref() == Some("completed") {
+                                // Under the new system, check completed status
                                 completed_items += 1;
                             }
                             if let Some(assigned) = topic.assigned_date {
@@ -206,13 +271,13 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
         courses.push(StudentCourse {
             id: sid,
             name: sname,
-            faculty_name: rfn.unwrap_or("TBA".to_string()),
+            faculty_name: rfn_val,
             credits: 3,
             progress,
             subject_type: stype,
-            faculty_email: fe,
-            faculty_phone: fp,
-            faculty_department: fd,
+            faculty_email: fe_val,
+            faculty_phone: fp_val,
+            faculty_department: fd_val,
             status: Some(status),
         });
     }
