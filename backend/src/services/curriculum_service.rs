@@ -42,14 +42,12 @@ pub async fn get_merged_curriculum(
     
     // Check theory
     let theory_path = format!("{}/theory/{}.json", base_path, subject_code);
+    let practical_path = format!("{}/practical/{}.json", base_path, subject_code);
+    
     if Path::new(&theory_path).exists() {
-        json_content = Some(fs::read_to_string(theory_path).await?);
-    } else {
-        // Check practical
-        let practical_path = format!("{}/practical/{}.json", base_path, subject_code);
-        if Path::new(&practical_path).exists() {
-            json_content = Some(fs::read_to_string(practical_path).await?);
-        }
+        json_content = Some(fs::read_to_string(&theory_path).await?);
+    } else if Path::new(&practical_path).exists() {
+        json_content = Some(fs::read_to_string(&practical_path).await?);
     }
 
     let json_str = json_content.ok_or_else(|| format!("Curriculum JSON not found for {}. Tried: {} and {}", subject_code, theory_path, practical_path))?;
