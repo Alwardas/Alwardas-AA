@@ -370,9 +370,8 @@ pub async fn approve_attendance_correction(pool: &PgPool, payload: ApproveAttend
             let date_str = d["date"].as_str().unwrap_or_default();
             let session = d["session"].as_str().unwrap_or_default();
             let section = d["section"].as_str().unwrap_or_default();
-            
-            // Note: passing Uuid::nil() as the faculty who approved it, since it's the HOD and we don't have their UUID in the payload right now.
-            faculty_repository::insert_attendance(&mut tx, user_uuid, &payload.sender_id, Uuid::nil(), date_str, "present", session, section).await.ok();
+            // Note: passing user_uuid as the faculty who approved it, since it's the HOD and we don't have their UUID in the payload right now, and Uuid::nil() violates the foreign key constraint.
+            faculty_repository::insert_attendance(&mut tx, user_uuid, &payload.sender_id, user_uuid, date_str, "P", session, section).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, format!("Insert attendance failed: {}", e)))?;
         }
     }
 
