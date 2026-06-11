@@ -165,7 +165,10 @@ class _SignupScreenState extends State<SignupScreen> {
        final response = await http.get(uri);
        
        if (response.statusCode == 200) {
-         final List<dynamic> data = json.decode(response.body);
+         final decoded = json.decode(response.body);
+         final List<dynamic> data = decoded is Map && decoded.containsKey('data') 
+             ? (decoded['data'] ?? []) 
+             : (decoded is List ? decoded : []);
          setState(() {
            _sections = data.map((e) => e.toString()).toList();
            if (_sections.isEmpty) _sections = ['Section A'];

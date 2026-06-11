@@ -68,7 +68,10 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
+        final decoded = json.decode(response.body);
+        final List<dynamic> data = decoded is Map && decoded.containsKey('data') 
+            ? (decoded['data'] ?? []) 
+            : (decoded is List ? decoded : []);
         setState(() {
           _availableSections = data.map((e) => e.toString()).toList();
           if (_availableSections.isNotEmpty) {
@@ -113,7 +116,7 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
         // Ideally backend should provide this check. 
         // For now, we'll assume if we fetch students and we find they have 'P' or 'A' status pre-filled ??
         // Actually, let's add a quick check API call or just infer from fetched data if we were fetching attendance state.
-        // Since `_fetchStudents` only gets user list, we might need a separate check.
+        // Since _fetchStudents only gets user list, we might need a separate check.
         
         // Simpler: Just Fetch attendance for today for this branch/year?
         // Or adding a lightweight endpoint `/api/attendance/check?branch=...&date=...&session=...`
@@ -123,9 +126,10 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
         final response = await http.get(url);
         
         if (response.statusCode == 200) {
-            final data = json.decode(response.body);
+            final decoded = json.decode(response.body);
+            final data = decoded is Map && decoded.containsKey('data') ? decoded['data'] : decoded;
             setState(() {
-                _alreadySubmitted = data['submitted'] == true;
+                _alreadySubmitted = (data['marked'] == true || data['submitted'] == true);
             });
         }
       } catch (e) {
@@ -150,7 +154,8 @@ class _FacultyAttendanceScreenState extends State<FacultyAttendanceScreen> {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        final data = json.decode(response.body);
+        final decoded = json.decode(response.body);
+        final data = decoded is Map && decoded.containsKey('data') ? decoded['data'] : decoded;
         final bool marked = data['marked'] ?? false;
         final List<dynamic> fetchedStudents = data['students'] ?? [];
 

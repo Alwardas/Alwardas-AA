@@ -212,7 +212,10 @@ class _AddClassScreenState extends State<AddClassScreen> {
       
       final res = await http.get(uri);
       if (res.statusCode == 200) {
-        final List<dynamic> data = json.decode(res.body);
+        final decoded = json.decode(res.body);
+        final List<dynamic> data = decoded is Map && decoded.containsKey('data') 
+            ? (decoded['data'] ?? []) 
+            : (decoded is List ? decoded : []);
         setState(() {
           _sections = data.map((e) => e.toString()).toList();
           if (!_sections.contains(_selectedSection)) _selectedSection = null;
