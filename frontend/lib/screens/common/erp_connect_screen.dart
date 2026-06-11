@@ -4,124 +4,13 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
 import '../../../core/providers/theme_provider.dart';
-
-/// Database Entity Mock Models
-class ErpUser {
-  final String erpId;
-  final String name;
-  final String role;
-  final String department;
-  final String avatarUrl;
-  final bool isOnline;
-  final String lastSeen;
-
-  ErpUser({
-    required this.erpId,
-    required this.name,
-    required this.role,
-    required this.department,
-    required this.avatarUrl,
-    required this.isOnline,
-    required this.lastSeen,
-  });
-}
-
-class ChatRequest {
-  final String id;
-  final ErpUser sender;
-  final String optionalMessage;
-  final DateTime timestamp;
-  String status; // 'PENDING', 'ACCEPTED', 'REJECTED', 'BLOCKED'
-
-  ChatRequest({
-    required this.id,
-    required this.sender,
-    required this.optionalMessage,
-    required this.timestamp,
-    this.status = 'PENDING',
-  });
-}
-
-class ErpMessage {
-  final String id;
-  final String senderId;
-  final String receiverId;
-  String content;
-  final DateTime timestamp;
-  final String type; // 'TEXT', 'VOICE', 'IMAGE', 'FILE', 'ERP_DOC'
-  final String? attachmentUrl;
-  final String? attachmentName;
-  final String? attachmentSize;
-  bool isStarred;
-  bool isPinned;
-  bool isEdited;
-  bool isDeletedForMe;
-  bool isDeletedForEveryone;
-  String? replyToId;
-  String? replyToContent;
-  String? reaction; // emoji reaction
-
-  ErpMessage({
-    required this.id,
-    required this.senderId,
-    required this.receiverId,
-    required this.content,
-    required this.timestamp,
-    this.type = 'TEXT',
-    this.attachmentUrl,
-    this.attachmentName,
-    this.attachmentSize,
-    this.isStarred = false,
-    this.isPinned = false,
-    this.isEdited = false,
-    this.isDeletedForMe = false,
-    this.isDeletedForEveryone = false,
-    this.replyToId,
-    this.replyToContent,
-    this.reaction,
-  });
-}
-
-class ErpGroup {
-  final String id;
-  final String name;
-  final String description;
-  final String iconUrl;
-  final List<String> memberIds;
-  final List<String> adminIds;
-  final List<ErpMessage> messages;
-
-  ErpGroup({
-    required this.id,
-    required this.name,
-    required this.description,
-    required this.iconUrl,
-    required this.memberIds,
-    required this.adminIds,
-    required this.messages,
-  });
-}
-
-class ErpStatus {
-  final String id;
-  final ErpUser user;
-  final String type; // 'TEXT', 'IMAGE'
-  final String content;
-  final DateTime timestamp;
-  final List<String> viewers;
-  final Map<String, String> reactions; // userId -> reactionEmoji
-
-  ErpStatus({
-    required this.id,
-    required this.user,
-    required this.type,
-    required this.content,
-    required this.timestamp,
-    required this.viewers,
-    required this.reactions,
-  });
-}
+import '../../../core/theme/app_theme.dart';
+import '../../../theme/theme_constants.dart';
+import '../../../core/api_constants.dart';
 
 class ErpConnectScreen extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -132,83 +21,106 @@ class ErpConnectScreen extends StatefulWidget {
   State<ErpConnectScreen> createState() => _ErpConnectScreenState();
 }
 
-class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerProviderStateMixin {
-  /// Theme helpers
+class _ErpConnectScreenState extends State<ErpConnectScreen> {
+  // Theme state helpers
   late bool isDark;
   late Color primaryColor;
   late Color scaffoldBg;
   late Color chatBg;
   late Color sidebarBg;
   late Color bubbleSent;
+  late Color bubbleSentText;
   late Color bubbleRecv;
+  late Color bubbleRecvText;
   late Color borderCol;
   late Color textCol;
   late Color subTextCol;
 
-  /// User data extracted from dashboard session
+  // Logged-in user information
   late String myErpId;
   late String myName;
   late String myRole;
   late String myDept;
 
-  /// Sidebar navigation
-  int _activeSidebarTab = 0; // 0: Chats, 1: Requests, 2: New Contact, 3: Statuses, 4: Call Logs, 5: Moderate Panel
-  String? _selectedConversationId; // erpId of active chat partner OR groupId
+  // Sidebar navigation state (0: Chats, 1: Requests, 2: Connect, 3: Calls, 4: Moderate)
+  int _activeSidebarTab = 0;
+  String? _selectedConversationId;
   bool _isGroupSelected = false;
   bool _showRightPanel = false;
 
-  /// Global Search
+  // Global search & filtering
   final TextEditingController _globalSearchController = TextEditingController();
   final TextEditingController _messageSearchController = TextEditingController();
   bool _isSearchingMessages = false;
   String _messageSearchQuery = '';
 
-  /// Searching ERP ID fields
+  // ERP ID lookup fields
   final TextEditingController _erpSearchController = TextEditingController();
   String? _erpSearchError;
-  ErpUser? _searchedUserResult;
+  dynamic _searchedUserResult;
 
-  /// Messaging inputs
+  // Chat input controller
   final TextEditingController _messageController = TextEditingController();
-  ErpMessage? _replyMessageContext;
+  dynamic _replyMessageContext;
 
-  /// Simulated Audio note recording states
+  // WebRTC simulated audio notes state
   bool _isRecordingAudio = false;
   int _recordingSeconds = 0;
   Timer? _recordingTimer;
   String? _recordedAudioPreviewUrl;
 
-  /// WebRTC Call state simulation
+  // Simulated WebRTC call overlay state
   bool _isCallActive = false;
   bool _isVideoCall = false;
   bool _isIncomingCall = false;
   String? _callPartnerId;
-  String _callState = 'Ringing'; // 'Ringing', 'Connected', 'Ended'
+  String _callState = 'Ringing';
   bool _callDataSaver = false;
-  String _networkQuality = 'Excellent'; // 'Excellent', 'Good', 'Fair', 'Poor'
+  String _networkQuality = 'Excellent';
   double _callBitrateKbps = 1500.0;
   double _dataConsumedMb = 0.0;
   Timer? _callStatsTimer;
 
-  /// Local database mocks (Fully interactive simulation state)
-  List<ErpUser> _usersDb = [];
-  List<ChatRequest> _requestsDb = [];
-  List<ErpMessage> _messagesDb = [];
-  List<ErpGroup> _groupsDb = [];
-  List<ErpStatus> _statusesDb = [];
-  List<String> _blockedUsersDb = [];
-  List<Map<String, dynamic>> _callLogsDb = [];
-  List<Map<String, dynamic>> _abuseReportsDb = [];
+  // API database state
+  List<dynamic> _conversations = [];
+  List<dynamic> _requests = [];
+  List<dynamic> _messages = [];
+  List<String> _blockedUsers = [];
+  
+  bool _isLoadingConversations = false;
+  bool _isLoadingRequests = false;
+  bool _isLoadingMessages = false;
+
+  // Periodic polling timers
+  Timer? _conversationsTimer;
+  Timer? _requestsTimer;
+  Timer? _messagesTimer;
+
+  // Local-only simulated logs
+  final List<Map<String, dynamic>> _callLogsDb = [];
+  final List<Map<String, dynamic>> _abuseReportsDb = [];
 
   @override
   void initState() {
     super.initState();
     _initUserInfo();
-    _seedMockDatabase();
+    _fetchConversations();
+    _fetchRequests();
+    _fetchBlockedUsers();
+
+    // Start periodic background updates for notifications/chats list
+    _conversationsTimer = Timer.periodic(const Duration(seconds: 4), (_) => _fetchConversations(silent: true));
+    _requestsTimer = Timer.periodic(const Duration(seconds: 6), (_) => _fetchRequests(silent: true));
+    
+    // Seed initial call logs dynamically for realistic feel
+    _seedLocalCallLogs();
   }
 
   @override
   void dispose() {
+    _conversationsTimer?.cancel();
+    _requestsTimer?.cancel();
+    _messagesTimer?.cancel();
     _recordingTimer?.cancel();
     _callStatsTimer?.cancel();
     _globalSearchController.dispose();
@@ -222,7 +134,6 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     myRole = widget.userData['role'] ?? 'Student';
     myDept = widget.userData['branch'] ?? widget.userData['department'] ?? 'CSE';
     
-    // Resolve login ERP IDs dynamically
     if (widget.userData['id'] != null && widget.userData['id'].toString().length > 5) {
       myErpId = widget.userData['login_id']?.toString() ?? widget.userData['id']?.toString() ?? 'ERP-ID';
     } else {
@@ -231,204 +142,350 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     myName = widget.userData['full_name'] ?? 'ERP User';
   }
 
-  void _seedMockDatabase() {
-    // 1. Target Directory Users (Strict Connection Lookup ONLY)
-    _usersDb = [
-      ErpUser(erpId: 'FAC-50194', name: 'Prof. Rajesh Kumar', role: 'Faculty', department: 'Computer Engineering', avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150', isOnline: true, lastSeen: 'Online'),
-      ErpUser(erpId: '24634-CM-026', name: 'Rohan Sharma', role: 'Student', department: 'Civil Engineering', avatarUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150', isOnline: false, lastSeen: 'Last seen 10 mins ago'),
-      ErpUser(erpId: 'EMP-1004', name: 'Anil Dev', role: 'Administrator', department: 'Management Office', avatarUrl: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150', isOnline: true, lastSeen: 'Online'),
-      ErpUser(erpId: 'PAR-2031', name: 'Suresh Sharma', role: 'Parent', department: 'Parent of Rohan Sharma', avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150', isOnline: false, lastSeen: 'Last seen 3 hours ago'),
-      ErpUser(erpId: 'HOD-3021', name: 'Dr. Vikram Sen', role: 'HOD', department: 'CME Department', avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150', isOnline: true, lastSeen: 'Online'),
-      ErpUser(erpId: 'PRI-1001', name: 'Dr. M. S. Murthy', role: 'Principal', department: 'Principal Office', avatarUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150', isOnline: true, lastSeen: 'Online'),
-      ErpUser(erpId: 'COO-2002', name: 'Smt. K. Sarada', role: 'Coordinator', department: 'Exam Cell', avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150', isOnline: false, lastSeen: 'Last seen yesterday'),
-    ];
-
-    // 2. Chat Requests
-    _requestsDb = [
-      ChatRequest(
-        id: 'req_1',
-        sender: _usersDb[0], // Faculty
-        optionalMessage: 'Hello, need to discuss the upcoming syllabus deadline request.',
-        timestamp: DateTime.now().subtract(const Duration(hours: 2)),
-      ),
-      ChatRequest(
-        id: 'req_2',
-        sender: _usersDb[3], // Parent
-        optionalMessage: 'Hello, tracking attendance record anomalies of Rohan.',
-        timestamp: DateTime.now().subtract(const Duration(days: 1)),
-      ),
-    ];
-
-    // 3. Messages Db
-    _messagesDb = [
-      ErpMessage(id: 'm_1', senderId: 'EMP-1004', receiverId: myErpId, content: 'Welcome to ERP Connect! Use the ID search to build your connection directory.', timestamp: DateTime.now().subtract(const Duration(days: 3))),
-      ErpMessage(id: 'm_2', senderId: 'HOD-3021', receiverId: myErpId, content: 'Good morning, please review the curriculum file attached below.', timestamp: DateTime.now().subtract(const Duration(hours: 5))),
-      ErpMessage(id: 'm_3', senderId: 'HOD-3021', receiverId: myErpId, content: 'Curriculum_2026.pdf', timestamp: DateTime.now().subtract(const Duration(hours: 4)), type: 'FILE', attachmentName: 'Curriculum_2026.pdf', attachmentSize: '1.2 MB'),
-      ErpMessage(id: 'm_4', senderId: myErpId, receiverId: 'HOD-3021', content: 'Yes Dr. Sen, I will verify it right away.', timestamp: DateTime.now().subtract(const Duration(hours: 3))),
-    ];
-
-    // 4. Groups Db
-    _groupsDb = [
-      ErpGroup(
-        id: 'g_1',
-        name: 'CSE Department Faculty',
-        description: 'Official group chat for faculty coordination',
-        iconUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=150',
-        memberIds: ['FAC-50194', 'HOD-3021', 'PRI-1001', myErpId],
-        adminIds: ['HOD-3021'],
-        messages: [
-          ErpMessage(id: 'gm_1', senderId: 'HOD-3021', receiverId: 'g_1', content: 'Colleagues, principal has called a staff meeting tomorrow at 10 AM.', timestamp: DateTime.now().subtract(const Duration(hours: 10))),
-          ErpMessage(id: 'gm_2', senderId: 'PRI-1001', receiverId: 'g_1', content: 'Please carry all attendance record worksheets.', timestamp: DateTime.now().subtract(const Duration(hours: 8))),
-        ],
-      ),
-      ErpGroup(
-        id: 'g_2',
-        name: 'Placement Coordination Cell',
-        description: 'Student updates regarding placements & internships',
-        iconUrl: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=150',
-        memberIds: ['24634-CM-026', 'EMP-1004', myErpId],
-        adminIds: ['EMP-1004'],
-        messages: [
-          ErpMessage(id: 'gm_3', senderId: 'EMP-1004', receiverId: 'g_2', content: 'Wipro drive registration link is closing in 2 hours.', timestamp: DateTime.now().subtract(const Duration(hours: 1))),
-        ],
-      ),
-    ];
-
-    // 5. Statuses Db
-    _statusesDb = [
-      ErpStatus(id: 's_1', user: _usersDb[0], type: 'TEXT', content: 'Weekend syllabus correction session completed! 👍', timestamp: DateTime.now().subtract(const Duration(hours: 5)), viewers: ['EMP-1004'], reactions: {'EMP-1004': '👏'}),
-      ErpStatus(id: 's_2', user: _usersDb[4], type: 'IMAGE', content: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400', timestamp: DateTime.now().subtract(const Duration(hours: 12)), viewers: [], reactions: {}),
-    ];
-
-    // 6. Call Logs
-    _callLogsDb = [
-      {'partner': _usersDb[0], 'type': 'VOICE', 'outgoing': false, 'missed': false, 'time': 'Today, 2:30 PM'},
-      {'partner': _usersDb[4], 'type': 'VIDEO', 'outgoing': true, 'missed': false, 'time': 'Yesterday, 11:15 AM'},
-      {'partner': _usersDb[1], 'type': 'VOICE', 'outgoing': false, 'missed': true, 'time': 'June 9, 4:45 PM'},
-    ];
-
-    // 7. Admin Abuse reports
-    _abuseReportsDb = [
-      {'reporter': '24634-CM-026', 'reported': 'FAC-50194', 'reason': 'Spamming marks reminders', 'time': '2026-06-10 14:02'},
-    ];
+  void _seedLocalCallLogs() {
+    _callLogsDb.addAll([
+      {
+        'name': 'Prof. Rajesh Kumar',
+        'role': 'Faculty',
+        'erpId': 'FAC-50194',
+        'type': 'VOICE',
+        'outgoing': false,
+        'missed': false,
+        'time': 'Today, 2:30 PM'
+      },
+      {
+        'name': 'Dr. Vikram Sen',
+        'role': 'HOD',
+        'erpId': 'HOD-3021',
+        'type': 'VIDEO',
+        'outgoing': true,
+        'missed': false,
+        'time': 'Yesterday, 11:15 AM'
+      }
+    ]);
   }
 
-  /// Interactive Simulation Helpers
-  void _sendMessage() {
-    if (_messageController.text.trim().isEmpty) return;
-    final content = _messageController.text.trim();
-    _messageController.clear();
+  // --- API CALLS INTEGRATION ---
 
-    final newMessage = ErpMessage(
-      id: 'm_${DateTime.now().millisecondsSinceEpoch}',
-      senderId: myErpId,
-      receiverId: _selectedConversationId!,
-      content: content,
-      timestamp: DateTime.now(),
-      replyToId: _replyMessageContext?.id,
-      replyToContent: _replyMessageContext?.content,
-    );
+  Future<void> _fetchConversations({bool silent = false}) async {
+    if (myErpId.isEmpty) return;
+    if (!silent) setState(() => _isLoadingConversations = true);
+    
+    try {
+      final response = await http.get(
+        Uri.parse('${ApiConstants.chatConversations}?user_id=$myErpId'),
+      );
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        if (mounted) {
+          setState(() {
+            _conversations = data;
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching conversations: $e");
+    } finally {
+      if (mounted && !silent) setState(() => _isLoadingConversations = false);
+    }
+  }
+
+  Future<void> _fetchRequests({bool silent = false}) async {
+    if (myErpId.isEmpty) return;
+    if (!silent) setState(() => _isLoadingRequests = true);
+
+    try {
+      final response = await http.get(
+        Uri.parse('${ApiConstants.chatRequests}?user_id=$myErpId'),
+      );
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        if (mounted) {
+          setState(() {
+            _requests = data;
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching requests: $e");
+    } finally {
+      if (mounted && !silent) setState(() => _isLoadingRequests = false);
+    }
+  }
+
+  Future<void> _fetchBlockedUsers() async {
+    if (myErpId.isEmpty) return;
+    try {
+      final response = await http.get(
+        Uri.parse('${ApiConstants.chatBlocks}?user_id=$myErpId'),
+      );
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        setState(() {
+          _blockedUsers = List<String>.from(data);
+        });
+      }
+    } catch (e) {
+      debugPrint("Error fetching blocked users: $e");
+    }
+  }
+
+  Future<void> _fetchMessages({bool silent = false}) async {
+    if (_selectedConversationId == null || myErpId.isEmpty) return;
+    if (!silent) setState(() => _isLoadingMessages = true);
+
+    try {
+      final response = await http.get(
+        Uri.parse('${ApiConstants.chatMessagesForPartner(_selectedConversationId!)}?user_id=$myErpId'),
+      );
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        if (mounted) {
+          setState(() {
+            _messages = data;
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching messages: $e");
+    } finally {
+      if (mounted && !silent) setState(() => _isLoadingMessages = false);
+    }
+  }
+
+  void _onConversationSelected(String id, bool isGroup) {
+    _messagesTimer?.cancel();
+    setState(() {
+      _selectedConversationId = id;
+      _isGroupSelected = isGroup;
+      _messages = [];
+    });
+    
+    _fetchMessages();
+    
+    // Start periodic messages polling (3s interval)
+    _messagesTimer = Timer.periodic(const Duration(seconds: 3), (_) {
+      _fetchMessages(silent: true);
+    });
+  }
+
+  Future<void> _searchErpId() async {
+    final query = _erpSearchController.text.trim();
+    if (query.isEmpty) return;
+
+    if (query.toLowerCase() == myErpId.toLowerCase()) {
+      setState(() {
+        _searchedUserResult = null;
+        _erpSearchError = 'You cannot connect with your own ERP ID.';
+      });
+      return;
+    }
 
     setState(() {
-      if (_isGroupSelected) {
-        final idx = _groupsDb.indexWhere((g) => g.id == _selectedConversationId);
-        if (idx != -1) {
-          _groupsDb[idx].messages.add(newMessage);
-        }
-      } else {
-        _messagesDb.add(newMessage);
-      }
-      _replyMessageContext = null;
+      _searchedUserResult = null;
+      _erpSearchError = null;
     });
 
-    // Simulate Echo / Auto Reply after 3 seconds for premium demo feel
-    if (!_isGroupSelected) {
-      Timer(const Duration(seconds: 2), () {
-        if (!mounted || _selectedConversationId != newMessage.receiverId) return;
-        final partner = _usersDb.firstWhere((u) => u.erpId == _selectedConversationId);
-        
+    try {
+      final response = await http.get(
+        Uri.parse('${ApiConstants.chatSearch}?erp_id=$query&user_id=$myErpId'),
+      );
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
         setState(() {
-          _messagesDb.add(ErpMessage(
-            id: 'm_${DateTime.now().millisecondsSinceEpoch}',
-            senderId: _selectedConversationId!,
-            receiverId: myErpId,
-            content: 'Simulation reply from ${partner.name}: Received your message successfully!',
-            timestamp: DateTime.now(),
-          ));
+          _searchedUserResult = data;
         });
+      } else {
+        setState(() {
+          _erpSearchError = 'No user found with the exact ERP ID: "$query"';
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _erpSearchError = 'Failed to execute look up. Verify backend services.';
       });
     }
   }
 
-  void _sendAttachment(String type, String name, String size, {String content = ''}) {
-    final newMsg = ErpMessage(
-      id: 'm_${DateTime.now().millisecondsSinceEpoch}',
-      senderId: myErpId,
-      receiverId: _selectedConversationId!,
-      content: content.isEmpty ? name : content,
-      timestamp: DateTime.now(),
-      type: type,
-      attachmentName: name,
-      attachmentSize: size,
-    );
-
-    setState(() {
-      if (_isGroupSelected) {
-        final idx = _groupsDb.indexWhere((g) => g.id == _selectedConversationId);
-        if (idx != -1) {
-          _groupsDb[idx].messages.add(newMsg);
-        }
-      } else {
-        _messagesDb.add(newMsg);
-      }
-    });
-  }
-
-  void _sendErpAttachment(String docType) {
-    String name = '';
-    String size = '';
-    String previewContent = '';
+  Future<void> _sendConnectionRequest() async {
+    if (_searchedUserResult == null) return;
     
-    switch (docType) {
-      case 'ASSIGNMENT':
-        name = 'Assignment_CM_501.pdf';
-        size = '840 KB';
-        previewContent = '📝 Assignment CM-501 (Database Systems)';
-        break;
-      case 'MARKS':
-        name = 'Semester_4_Marks_Memo.pdf';
-        size = '1.4 MB';
-        previewContent = '🎓 Semester IV Consolidated Marks Memo';
-        break;
-      case 'FEE':
-        name = 'Tuition_Fee_Receipt_2026.pdf';
-        size = '450 KB';
-        previewContent = '💳 Receipt: Tuition Fee (Part A)';
-        break;
-      case 'TIMETABLE':
-        name = 'Weekly_Class_Timetable.pdf';
-        size = '320 KB';
-        previewContent = '📅 Semester V Class Timetable Schedule';
-        break;
-      case 'LEAVE':
-        name = 'Approved_Medical_Leave_Form.pdf';
-        size = '510 KB';
-        previewContent = '🏥 Approved Leave Form (Medical Absences)';
-        break;
+    final body = {
+      'sender_id': myErpId,
+      'receiver_id': _searchedUserResult['loginId'],
+      'optional_message': 'Connection request from $myName ($myRole)',
+    };
+
+    try {
+      final response = await http.post(
+        Uri.parse(ApiConstants.chatRequests),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(body),
+      );
+
+      if (response.statusCode == 200) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Access Request sent successfully!')),
+        );
+        setState(() {
+          _searchedUserResult = null;
+          _erpSearchController.clear();
+        });
+        _fetchRequests();
+      } else {
+        final err = json.decode(response.body);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(err['message'] ?? 'Failed to send request.')),
+        );
+      }
+    } catch (e) {
+      debugPrint("Error sending request: $e");
     }
-
-    _sendAttachment('ERP_DOC', name, size, content: previewContent);
-    Navigator.pop(context); // Close the attachment bottom sheet
   }
 
-  void _sendVoiceNote() {
-    if (_recordedAudioPreviewUrl == null) return;
-    _sendAttachment('VOICE', 'Voice Note (0:${_recordingSeconds.toString().padLeft(2, '0')})', '240 KB');
+  Future<void> _handleRequestAction(dynamic req, String action) async {
+    final body = {
+      'user_id': myErpId,
+      'action': action,
+    };
+
+    try {
+      final response = await http.post(
+        Uri.parse(ApiConstants.respondChatRequest(req['id'])),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(body),
+      );
+
+      if (response.statusCode == 200) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Connection request $action')),
+        );
+        _fetchRequests();
+        _fetchConversations();
+        
+        if (action == 'ACCEPTED') {
+          _onConversationSelected(req['senderId'], false);
+          setState(() {
+            _activeSidebarTab = 0; // go back to chats
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error responding to request: $e");
+    }
+  }
+
+  Future<void> _sendChatMessage(String content, {String type = 'TEXT', String? attachmentName, String? attachmentSize}) async {
+    if (_selectedConversationId == null || myErpId.isEmpty) return;
+
+    final body = {
+      'sender_id': myErpId,
+      'receiver_id': _selectedConversationId!,
+      'content': content,
+      'message_type': type,
+      'attachment_url': '',
+      'attachment_name': attachmentName ?? '',
+      'attachment_size': attachmentSize ?? '',
+      'reply_to_id': _replyMessageContext?['id'],
+      'reply_to_content': _replyMessageContext?['content'],
+    };
+
     setState(() {
-      _recordedAudioPreviewUrl = null;
-      _recordingSeconds = 0;
+      _replyMessageContext = null;
     });
+
+    try {
+      final response = await http.post(
+        Uri.parse(ApiConstants.chatMessages),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(body),
+      );
+
+      if (response.statusCode == 200) {
+        _fetchMessages(silent: true);
+        _fetchConversations(silent: true);
+      }
+    } catch (e) {
+      debugPrint("Error sending message: $e");
+    }
   }
+
+  Future<void> _createGroupSubmit(String name, String desc, List<String> memberIds) async {
+    final body = {
+      'creator_id': myErpId,
+      'name': name,
+      'description': desc,
+      'icon_url': 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(name)}&background=0F172A&color=38BDF8&size=128',
+      'members': memberIds,
+    };
+
+    try {
+      final response = await http.post(
+        Uri.parse(ApiConstants.chatGroups),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(body),
+      );
+
+      if (response.statusCode == 200) {
+        final res = json.decode(response.body);
+        final newGroup = res['data'];
+        
+        _onConversationSelected(newGroup['id'], true);
+        _fetchConversations();
+        
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Group created successfully!')),
+        );
+      }
+    } catch (e) {
+      debugPrint("Error creating group: $e");
+    }
+  }
+
+  Future<void> _blockUser(String blockedId) async {
+    final body = {
+      'user_id': myErpId,
+      'blocked_id': blockedId,
+      'action': 'BLOCK',
+    };
+
+    try {
+      final response = await http.post(
+        Uri.parse(ApiConstants.chatBlocks),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(body),
+      );
+
+      if (response.statusCode == 200) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Contact blocked successfully.')),
+        );
+        _fetchBlockedUsers();
+        _fetchConversations();
+        setState(() {
+          _selectedConversationId = null;
+        });
+      }
+    } catch (e) {
+      debugPrint("Error blocking user: $e");
+    }
+  }
+
+  Future<void> _deleteChatMessage(String msgId, bool forEveryone) async {
+    try {
+      final response = await http.delete(
+        Uri.parse('${ApiConstants.chatMessages}/$msgId?for_everyone=$forEveryone&user_id=$myErpId'),
+      );
+      if (response.statusCode == 200) {
+        _fetchMessages(silent: true);
+        _fetchConversations(silent: true);
+      }
+    } catch (e) {
+      debugPrint("Error deleting message: $e");
+    }
+  }
+
+  // --- AUDIO NOTES SIMULATION ---
 
   void _startAudioRecording() {
     setState(() {
@@ -448,102 +505,29 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     setState(() {
       _isRecordingAudio = false;
       if (!cancel && _recordingSeconds > 0) {
-        _recordedAudioPreviewUrl = 'simulated_audio_url_path';
+        _recordedAudioPreviewUrl = 'simulated_audio_url';
       } else {
         _recordingSeconds = 0;
       }
     });
   }
 
-  void _searchErpId() {
-    final query = _erpSearchController.text.trim();
-    if (query.isEmpty) return;
-
-    final found = _usersDb.firstWhere(
-      (u) => u.erpId.toLowerCase() == query.toLowerCase(),
-      orElse: () => ErpUser(erpId: '', name: '', role: '', department: '', avatarUrl: '', isOnline: false, lastSeen: ''),
+  void _sendVoiceNote() {
+    if (_recordedAudioPreviewUrl == null) return;
+    _sendChatMessage(
+      'Voice Note (0:${_recordingSeconds.toString().padLeft(2, '0')})',
+      type: 'VOICE',
+      attachmentName: 'voice_note_${DateTime.now().millisecondsSinceEpoch}.ogg',
+      attachmentSize: '48 KB',
     );
-
     setState(() {
-      if (found.erpId.isEmpty) {
-        _searchedUserResult = null;
-        _erpSearchError = 'No user found with the exact ERP ID: "$query"';
-      } else if (found.erpId == myErpId) {
-        _searchedUserResult = null;
-        _erpSearchError = 'You cannot connect with your own ERP ID.';
-      } else {
-        _searchedUserResult = found;
-        _erpSearchError = null;
-      }
+      _recordedAudioPreviewUrl = null;
+      _recordingSeconds = 0;
     });
   }
 
-  void _sendConnectionRequest() {
-    if (_searchedUserResult == null) return;
-    
-    // Check if already requested
-    final isDuplicate = _requestsDb.any((r) => r.sender.erpId == myErpId && r.sender.erpId == _searchedUserResult!.erpId);
-    if (isDuplicate) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Connection request already pending.')),
-      );
-      return;
-    }
+  // --- WebRTC CALL SIMULATION ---
 
-    setState(() {
-      _requestsDb.add(ChatRequest(
-        id: 'req_${DateTime.now().millisecondsSinceEpoch}',
-        sender: ErpUser(
-          erpId: myErpId,
-          name: myName,
-          role: myRole,
-          department: myDept,
-          avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150', // placeholder self avatar
-          isOnline: true,
-          lastSeen: 'Online',
-        ),
-        optionalMessage: 'Connection request from $myName ($myRole)',
-        timestamp: DateTime.now(),
-        status: 'PENDING',
-      ));
-      
-      _searchedUserResult = null;
-      _erpSearchController.clear();
-    });
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Connection request sent successfully!')),
-    );
-  }
-
-  void _handleRequestAction(ChatRequest req, String action) {
-    setState(() {
-      req.status = action;
-      if (action == 'ACCEPTED') {
-        _selectedConversationId = req.sender.erpId;
-        _isGroupSelected = false;
-        _activeSidebarTab = 0; // return to chats
-        
-        // Seed welcome greeting messages
-        _messagesDb.add(ErpMessage(
-          id: 'm_greet_${DateTime.now().millisecondsSinceEpoch}',
-          senderId: req.sender.erpId,
-          receiverId: myErpId,
-          content: 'Hello! Thanks for accepting the connection request.',
-          timestamp: DateTime.now(),
-        ));
-      } else if (action == 'BLOCKED') {
-        _blockedUsersDb.add(req.sender.erpId);
-      }
-      _requestsDb.removeWhere((r) => r.id == req.id);
-    });
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Request $action')),
-    );
-  }
-
-  /// WebRTC Video/Voice call simulation controls
   void _initiateCall(String erpId, bool isVideo) {
     setState(() {
       _isCallActive = true;
@@ -555,46 +539,38 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
       _dataConsumedMb = 0.0;
     });
 
-    // Simulate connecting
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 2), () {
       if (!mounted || !_isCallActive) return;
       setState(() {
         _callState = 'Connected';
       });
 
-      // Periodic statistic simulator
       _callStatsTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
         if (!mounted || !_isCallActive || _callState != 'Connected') {
           timer.cancel();
           return;
         }
 
-        // Random network quality oscillations
-        final rand = DateTime.now().second % 12;
+        final secondFactor = DateTime.now().second % 10;
         String quality = 'Excellent';
-        double rate = _isVideoCall ? 1800.0 : 70.0;
-        
-        if (rand == 4 || rand == 8) {
+        double rate = _isVideoCall ? 1600.0 : 72.0;
+
+        if (secondFactor == 4) {
           quality = 'Good';
-          rate = _isVideoCall ? 900.0 : 50.0;
-        } else if (rand == 6) {
-          quality = 'Fair';
-          rate = _isVideoCall ? 450.0 : 35.0;
-        } else if (rand == 10) {
+          rate = _isVideoCall ? 950.0 : 54.0;
+        } else if (secondFactor == 8) {
           quality = 'Poor';
-          rate = _isVideoCall ? 110.0 : 20.0;
+          rate = _isVideoCall ? 240.0 : 22.0;
         }
 
         if (_callDataSaver) {
-          rate = _isVideoCall ? 320.0 : 30.0;
+          rate = _isVideoCall ? 300.0 : 24.0;
         }
 
         setState(() {
           _networkQuality = quality;
           _callBitrateKbps = rate;
-          
-          double bytesSec = (rate * 1000) / 8; // bits to bytes
-          _dataConsumedMb += bytesSec / (1024 * 1024); // increment MB
+          _dataConsumedMb += (rate * 1000) / 8 / (1024 * 1024);
         });
       });
     });
@@ -602,22 +578,24 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
 
   void _endCall() {
     _callStatsTimer?.cancel();
-    
-    // Add call log
-    final partner = _usersDb.firstWhere((u) => u.erpId == _callPartnerId, orElse: () => _usersDb[0]);
+    final callPartnerName = _isGroupSelected 
+        ? 'Group' 
+        : (_conversations.firstWhere((c) => c['id'] == _callPartnerId, orElse: () => {'name': 'ERP User'})['name'] ?? 'ERP User');
+
     setState(() {
       _callLogsDb.insert(0, {
-        'partner': partner,
+        'name': callPartnerName,
+        'role': 'ERP Partner',
+        'erpId': _callPartnerId ?? 'N/A',
         'type': _isVideoCall ? 'VIDEO' : 'VOICE',
-        'outgoing': !_isIncomingCall,
+        'outgoing': true,
         'missed': false,
         'time': 'Just now',
       });
-      
       _callState = 'Ended';
     });
 
-    Timer(const Duration(seconds: 1), () {
+    Timer(const Duration(milliseconds: 800), () {
       if (!mounted) return;
       setState(() {
         _isCallActive = false;
@@ -626,184 +604,60 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     });
   }
 
-  /// Story Status simulation
-  void _addTextStatus() {
-    final textController = TextEditingController();
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: isDark ? const Color(0xFF1E293B) : Colors.white,
-        title: Text('Add Text Status', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold)),
-        content: TextField(
-          controller: textController,
-          maxLines: 3,
-          style: TextStyle(color: textCol),
-          decoration: const InputDecoration(
-            hintText: "What is on your mind? (e.g. syllabus update, class cancelled)",
-            border: OutlineInputBorder(),
-          ),
-        ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
-          ElevatedButton(
-            onPressed: () {
-              if (textController.text.trim().isNotEmpty) {
-                setState(() {
-                  _statusesDb.insert(0, ErpStatus(
-                    id: 's_self_${DateTime.now().millisecondsSinceEpoch}',
-                    user: ErpUser(
-                      erpId: myErpId,
-                      name: myName,
-                      role: myRole,
-                      department: myDept,
-                      avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150',
-                      isOnline: true,
-                      lastSeen: 'Online',
-                    ),
-                    type: 'TEXT',
-                    content: textController.text.trim(),
-                    timestamp: DateTime.now(),
-                    viewers: [],
-                    reactions: {},
-                  ));
-                });
-                Navigator.pop(context);
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Status updated.')));
-              }
-            },
-            child: const Text('Publish'),
-          ),
-        ],
-      ),
-    );
+  // --- ERP ATTACHMENTS SHEETS ---
+
+  void _sendErpAttachment(String docType) {
+    String name = '';
+    String size = '';
+    String desc = '';
+
+    switch (docType) {
+      case 'ASSIGNMENT':
+        name = 'Assignment_Database_C23.pdf';
+        size = '780 KB';
+        desc = '📝 Assignment Doc';
+        break;
+      case 'MARKS':
+        name = 'Consolidated_Semester_Marks_Memo.pdf';
+        size = '1.2 MB';
+        desc = '🎓 Marks Memo Slip';
+        break;
+      case 'FEE':
+        name = 'Tuition_Fee_Receipt_Alwardas.pdf';
+        size = '410 KB';
+        desc = '💳 Term Fee Receipt';
+        break;
+      case 'TIMETABLE':
+        name = 'Timetable_Revision_V2.pdf';
+        size = '350 KB';
+        desc = '📅 Semester Class Schedule';
+        break;
+    }
+
+    _sendChatMessage(desc, type: 'ERP_DOC', attachmentName: name, attachmentSize: size);
+    Navigator.pop(context);
   }
 
-  void _createNewGroup() {
-    final groupNameController = TextEditingController();
-    final groupDescController = TextEditingController();
-    List<String> selectedMembers = [];
-
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (context) => StatefulBuilder(
-        builder: (context, setModalState) => Container(
-          decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF1E293B) : Colors.white,
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-          ),
-          padding: EdgeInsets.only(
-            top: 20, left: 24, right: 24,
-            bottom: MediaQuery.of(context).viewInsets.bottom + 20,
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Create Placement/Class Group', style: GoogleFonts.poppins(color: textCol, fontSize: 18, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 15),
-                TextField(
-                  controller: groupNameController,
-                  style: TextStyle(color: textCol),
-                  decoration: const InputDecoration(
-                    labelText: 'Group Name',
-                    hintText: 'e.g. CSE-A Period 3 Coordinator',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                const SizedBox(height: 12),
-                TextField(
-                  controller: groupDescController,
-                  style: TextStyle(color: textCol),
-                  decoration: const InputDecoration(
-                    labelText: 'Group Description',
-                    hintText: 'Topic/Department coordinates...',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                const SizedBox(height: 15),
-                Text('Select Members to Include:', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 14)),
-                const SizedBox(height: 8),
-                Container(
-                  constraints: const BoxConstraints(maxHeight: 180),
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: _usersDb.length,
-                    itemBuilder: (context, i) {
-                      final u = _usersDb[i];
-                      final isSelected = selectedMembers.contains(u.erpId);
-                      return CheckboxListTile(
-                        title: Text(u.name, style: TextStyle(color: textCol)),
-                        subtitle: Text('${u.role} - ${u.erpId}', style: TextStyle(color: subTextCol, fontSize: 11)),
-                        value: isSelected,
-                        onChanged: (val) {
-                          setModalState(() {
-                            if (val == true) {
-                              selectedMembers.add(u.erpId);
-                            } else {
-                              selectedMembers.remove(u.erpId);
-                            }
-                          });
-                        },
-                      );
-                    },
-                  ),
-                ),
-                const SizedBox(height: 15),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
-                    const SizedBox(width: 10),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(backgroundColor: primaryColor),
-                      onPressed: () {
-                        if (groupNameController.text.trim().isEmpty) return;
-                        final newG = ErpGroup(
-                          id: 'g_${DateTime.now().millisecondsSinceEpoch}',
-                          name: groupNameController.text.trim(),
-                          description: groupDescController.text.trim(),
-                          iconUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=150',
-                          memberIds: [...selectedMembers, myErpId],
-                          adminIds: [myErpId],
-                          messages: [
-                            ErpMessage(id: 'gm_init_${DateTime.now().millisecondsSinceEpoch}', senderId: myErpId, receiverId: 'g_temp', content: 'Group created by $myName ($myRole)', timestamp: DateTime.now())
-                          ],
-                        );
-                        setState(() {
-                          _groupsDb.add(newG);
-                          _selectedConversationId = newG.id;
-                          _isGroupSelected = true;
-                        });
-                        Navigator.pop(context);
-                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('New Group Created!')));
-                      },
-                      child: const Text('Create', style: TextStyle(color: Colors.white)),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  // --- UI WIDGET RENDERING ---
 
   @override
   Widget build(BuildContext context) {
     isDark = Provider.of<ThemeProvider>(context).isDarkMode;
-    primaryColor = const Color(0xFF10B981); // WhatsApp Emerald Green
-    scaffoldBg = isDark ? const Color(0xFF0F172A) : const Color(0xFFF1F5F9);
-    chatBg = isDark ? const Color(0xFF0B141A) : const Color(0xFFE5DDD5);
-    sidebarBg = isDark ? const Color(0xFF111B21) : Colors.white;
-    bubbleSent = isDark ? const Color(0xFF005C4B) : const Color(0xFFD9FDD3);
-    bubbleRecv = isDark ? const Color(0xFF202C33) : Colors.white;
-    borderCol = isDark ? Colors.white10 : Colors.black12;
-    textCol = isDark ? Colors.white : Colors.black87;
-    subTextCol = isDark ? Colors.white60 : Colors.black54;
+
+    // Redesigned Color Palette matching existing theme (Glassmorphism card constants)
+    primaryColor = isDark ? ThemeColors.accentCyan : ThemeColors.lightTint;
+    scaffoldBg = isDark ? const Color(0xFF020617) : const Color(0xFFF8FAFC);
+    sidebarBg = isDark ? const Color(0xFF0F172A) : Colors.white;
+    chatBg = isDark ? const Color(0xFF020617) : const Color(0xFFF1F5F9);
+    borderCol = isDark ? ThemeColors.darkBorder : const Color(0xFFE2E8F0);
+    textCol = isDark ? ThemeColors.darkTextPrimary : ThemeColors.lightText;
+    subTextCol = isDark ? ThemeColors.darkTextSecondary : ThemeColors.lightSubtext;
+
+    // Chat bubbles matching primary themes
+    bubbleSent = isDark ? const Color(0xFF1E293B) : const Color(0xFFDBEAFE);
+    bubbleSentText = isDark ? ThemeColors.darkTextPrimary : const Color(0xFF1E3A8A);
+    bubbleRecv = isDark ? const Color(0xFF0F172A) : Colors.white;
+    bubbleRecvText = isDark ? ThemeColors.darkTextPrimary : const Color(0xFF334155);
 
     return Theme(
       data: Theme.of(context).copyWith(
@@ -841,7 +695,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                             ),
                           ),
 
-                          // 3. User Details Sidebar panel (Right)
+                          // 3. User Details Sidebar Panel (Right)
                           if (_showRightPanel && _selectedConversationId != null)
                             Container(
                               width: 320,
@@ -858,8 +712,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
               ),
 
               // 4. Simulated WebRTC Call Overlay Dialog
-              if (_isCallActive)
-                _buildCallOverlay(),
+              if (_isCallActive) _buildCallOverlay(),
             ],
           ),
         ),
@@ -867,19 +720,23 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     );
   }
 
-  /// LEFT SIDEBAR LAYOUT
   Widget _buildSidebar() {
+    final pendingCount = _requests.where((r) => r['receiverId'] == myErpId && r['status'] == 'PENDING').length;
+    
     return Column(
       children: [
         // Sidebar Header
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          color: isDark ? const Color(0xFF202C33) : const Color(0xFFF0F2F5),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          decoration: BoxDecoration(
+            color: sidebarBg,
+            border: Border(bottom: BorderSide(color: borderCol, width: 1)),
+          ),
           child: Row(
             children: [
               CircleAvatar(
                 radius: 20,
-                backgroundColor: primaryColor.withOpacity(0.2),
+                backgroundColor: primaryColor.withOpacity(0.15),
                 child: Text(myName.isNotEmpty ? myName[0].toUpperCase() : 'E', style: GoogleFonts.poppins(color: primaryColor, fontWeight: FontWeight.bold)),
               ),
               const SizedBox(width: 12),
@@ -902,19 +759,18 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
           ),
         ),
 
-        // Sidebar Navigation Tabs
+        // Sidebar Navigation Tabs (Status tab removed)
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
           child: Row(
             children: [
-              _buildTabButton(0, Icons.chat, 'Chats'),
-              _buildTabButton(1, Icons.pending_actions_rounded, 'Requests (${_requestsDb.where((r)=>r.status=='PENDING').length})'),
-              _buildTabButton(2, Icons.person_add_alt_1_rounded, 'Connect'),
-              _buildTabButton(3, Icons.filter_tilt_shift_rounded, 'Status'),
-              _buildTabButton(4, Icons.call, 'Calls'),
+              _buildTabButton(0, Icons.chat_bubble_outline, 'Chats'),
+              _buildTabButton(1, Icons.pending_outlined, 'Requests ($pendingCount)'),
+              _buildTabButton(2, Icons.person_add_alt_outlined, 'Connect'),
+              _buildTabButton(3, Icons.call_outlined, 'Calls'),
               if (myRole.toLowerCase().contains('admin') || myRole.toLowerCase().contains('coordinator') || myRole.toLowerCase().contains('principal'))
-                _buildTabButton(5, Icons.admin_panel_settings_rounded, 'Moderate'),
+                _buildTabButton(4, Icons.security_outlined, 'Moderate'),
             ],
           ),
         ),
@@ -943,7 +799,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
         ),
         selected: isSelected,
         selectedColor: primaryColor,
-        backgroundColor: isDark ? const Color(0xFF202C33) : const Color(0xFFE2E8F0),
+        backgroundColor: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
         onSelected: (val) {
           if (val) {
             setState(() {
@@ -964,26 +820,22 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
       case 2:
         return _buildConnectTab();
       case 3:
-        return _buildStatusesTab();
-      case 4:
         return _buildCallsTab();
-      case 5:
+      case 4:
         return _buildModerateTab();
       default:
         return _buildChatsList();
     }
   }
 
-  /// CHATS TAB - ACTIVE LIST
   Widget _buildChatsList() {
-    // Collect active conversation partners from messages DB (excluding self)
-    final chatPartners = <String>{};
-    for (var m in _messagesDb) {
-      if (m.senderId == myErpId) chatPartners.add(m.receiverId);
-      if (m.receiverId == myErpId) chatPartners.add(m.senderId);
-    }
-
-    final activeUsers = _usersDb.where((u) => chatPartners.contains(u.erpId)).toList();
+    final filtered = _conversations.where((c) {
+      if (_globalSearchController.text.isEmpty) return true;
+      final q = _globalSearchController.text.toLowerCase();
+      final name = (c['name'] ?? '').toString().toLowerCase();
+      final id = (c['id'] ?? '').toString().toLowerCase();
+      return name.contains(q) || id.contains(q);
+    }).toList();
 
     return Column(
       children: [
@@ -997,7 +849,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
               hintText: 'Search chats or groups...',
               prefixIcon: Icon(Icons.search, size: 16, color: subTextCol),
               isDense: true,
-              fillColor: isDark ? const Color(0xFF202C33) : Colors.white,
+              fillColor: isDark ? const Color(0xFF1E293B) : Colors.white,
               filled: true,
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide.none),
             ),
@@ -1010,216 +862,156 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
           padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4),
           child: ElevatedButton.icon(
             style: ElevatedButton.styleFrom(
-              backgroundColor: primaryColor.withOpacity(0.15),
+              backgroundColor: primaryColor.withOpacity(0.12),
               foregroundColor: primaryColor,
               elevation: 0,
               minimumSize: const Size(double.infinity, 38),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             ),
-            icon: const Icon(Icons.groups, size: 18),
-            label: Text('Create Class/Faculty Group', style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.bold)),
+            icon: const Icon(Icons.groups_outlined, size: 18),
+            label: Text('Create Coordination Group', style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.bold)),
             onPressed: _createNewGroup,
           ),
         ),
 
-        // List
         Expanded(
-          child: activeUsers.isEmpty && _groupsDb.isEmpty
-              ? Center(child: Text('No active chats yet.\nUse Connect tab to search by ERP ID.', textAlign: TextAlign.center, style: TextStyle(color: subTextCol, fontSize: 12)))
-              : ListView(
-                  physics: const BouncingScrollPhysics(),
-                  children: [
-                    // Groups List
-                    if (_groupsDb.isNotEmpty) ...[
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16, top: 12, bottom: 4),
-                        child: Text('Groups', style: TextStyle(color: primaryColor, fontWeight: FontWeight.bold, fontSize: 11, letterSpacing: 0.5)),
-                      ),
-                      ..._groupsDb.where((g) {
-                        if (_globalSearchController.text.isEmpty) return true;
-                        return g.name.toLowerCase().contains(_globalSearchController.text.toLowerCase());
-                      }).map((g) {
-                        final lastMsg = g.messages.isNotEmpty ? g.messages.last : null;
-                        final isSelected = _selectedConversationId == g.id && _isGroupSelected;
+          child: _isLoadingConversations
+              ? const Center(child: CircularProgressIndicator())
+              : filtered.isEmpty
+                  ? Center(child: Text('No active chats yet.\nUse Connect tab to search by ERP ID.', textAlign: TextAlign.center, style: TextStyle(color: subTextCol, fontSize: 12)))
+                  : ListView.builder(
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: filtered.length,
+                      itemBuilder: (context, i) {
+                        final c = filtered[i];
+                        final isGroup = c['isGroup'] == true;
+                        final isSelected = _selectedConversationId == c['id'] && _isGroupSelected == isGroup;
+                        
+                        final avatarUrl = isGroup
+                            ? (c['iconUrl'] ?? 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(c['name'])}&background=0F172A&color=38BDF8')
+                            : 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(c['name'])}&background=0F172A&color=22D3EE';
+                        
+                        final lastMsg = c['lastMessage'] ?? (isGroup ? 'Tap to start group coordination' : 'Connected.');
+                        final lastTimeStr = c['lastMessageTime'] != null
+                            ? DateFormat('hh:mm a').format(DateTime.parse(c['lastMessageTime']))
+                            : '';
+
                         return ListTile(
                           selected: isSelected,
                           selectedTileColor: isDark ? Colors.white10 : Colors.black12,
                           leading: CircleAvatar(
-                            backgroundImage: NetworkImage(g.iconUrl),
+                            backgroundImage: NetworkImage(avatarUrl),
                             radius: 20,
                           ),
-                          title: Text(g.name, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
-                          subtitle: Text(lastMsg != null ? '${lastMsg.senderId}: ${lastMsg.content}' : 'Tap to start group coordination', maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: subTextCol, fontSize: 11)),
-                          trailing: Text(lastMsg != null ? DateFormat('hh:mm a').format(lastMsg.timestamp) : '', style: TextStyle(color: subTextCol, fontSize: 10)),
-                          onTap: () {
-                            setState(() {
-                              _selectedConversationId = g.id;
-                              _isGroupSelected = true;
-                            });
-                          },
-                        );
-                      }),
-                    ],
-
-                    // Personal Chats List
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16, top: 16, bottom: 4),
-                      child: Text('Direct Messages', style: TextStyle(color: primaryColor, fontWeight: FontWeight.bold, fontSize: 11, letterSpacing: 0.5)),
-                    ),
-                    ...activeUsers.where((u) {
-                      if (_globalSearchController.text.isEmpty) return true;
-                      return u.name.toLowerCase().contains(_globalSearchController.text.toLowerCase()) || u.erpId.toLowerCase().contains(_globalSearchController.text.toLowerCase());
-                    }).map((u) {
-                      // Get conversation messages
-                      final convMsgs = _messagesDb.where((m) =>
-                        (m.senderId == myErpId && m.receiverId == u.erpId) ||
-                        (m.senderId == u.erpId && m.receiverId == myErpId)
-                      ).toList();
-                      final lastMsg = convMsgs.isNotEmpty ? convMsgs.last : null;
-                      final isSelected = _selectedConversationId == u.erpId && !_isGroupSelected;
-                      
-                      // Typing indicator mock
-                      final isTyping = (u.erpId == 'FAC-50194' && DateTime.now().second % 10 < 3);
-
-                      return ListTile(
-                        selected: isSelected,
-                        selectedTileColor: isDark ? Colors.white10 : Colors.black12,
-                        leading: Stack(
-                          children: [
-                            CircleAvatar(
-                              backgroundImage: NetworkImage(u.avatarUrl),
-                              radius: 20,
-                            ),
-                            if (u.isOnline)
-                              Positioned(
-                                right: 0, bottom: 0,
-                                child: Container(
-                                  width: 10, height: 10,
-                                  decoration: BoxDecoration(color: Colors.green, shape: BoxShape.circle, border: Border.all(color: sidebarBg, width: 1.5)),
-                                ),
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: Text(c['name'] ?? '', maxLines: 1, overflow: TextOverflow.ellipsis, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
                               ),
-                          ],
-                        ),
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(u.name, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
-                            if (lastMsg != null)
-                              Text(DateFormat('hh:mm a').format(lastMsg.timestamp), style: TextStyle(color: subTextCol, fontSize: 9)),
-                          ],
-                        ),
-                        subtitle: Row(
-                          children: [
-                            Expanded(
-                              child: isTyping
-                                  ? Text('Typing...', style: TextStyle(color: primaryColor, fontSize: 11, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic))
-                                  : Text(lastMsg != null ? lastMsg.content : 'Requested connection connected.', maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: subTextCol, fontSize: 11)),
-                            ),
-                            if (lastMsg != null && lastMsg.senderId == myErpId) ...[
-                              const SizedBox(width: 4),
-                              Icon(Icons.done_all, size: 14, color: primaryColor), // read tick
-                            ]
-                          ],
-                        ),
-                        onTap: () {
-                          setState(() {
-                            _selectedConversationId = u.erpId;
-                            _isGroupSelected = false;
-                          });
-                        },
-                      );
-                    }),
-                  ],
-                ),
+                              if (lastTimeStr.isNotEmpty)
+                                Text(lastTimeStr, style: TextStyle(color: subTextCol, fontSize: 9)),
+                            ],
+                          ),
+                          subtitle: Text(
+                            lastMsg,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(color: subTextCol, fontSize: 11),
+                          ),
+                          onTap: () => _onConversationSelected(c['id'], isGroup),
+                        );
+                      },
+                    ),
         ),
       ],
     );
   }
 
-  /// REQUESTS TAB
   Widget _buildRequestsTab() {
-    final pending = _requestsDb.where((r) => r.status == 'PENDING').toList();
+    final incomingPending = _requests.where((r) => r['receiverId'] == myErpId && r['status'] == 'PENDING').toList();
+    
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text('Pending Access Requests (${pending.length})', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 14)),
+          child: Text('Access Link Requests (${incomingPending.length})', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 14)),
         ),
         Expanded(
-          child: pending.isEmpty
-              ? Center(child: Text('No pending incoming chat requests.', style: TextStyle(color: subTextCol)))
-              : ListView.builder(
-                  itemCount: pending.length,
-                  itemBuilder: (context, idx) {
-                    final req = pending[idx];
-                    return Card(
-                      color: isDark ? const Color(0xFF202C33) : Colors.white,
-                      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
+          child: _isLoadingRequests
+              ? const Center(child: CircularProgressIndicator())
+              : incomingPending.isEmpty
+                  ? Center(child: Text('No pending incoming chat requests.', style: TextStyle(color: subTextCol)))
+                  : ListView.builder(
+                      itemCount: incomingPending.length,
+                      itemBuilder: (context, idx) {
+                        final req = incomingPending[idx];
+                        final senderAvatar = 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(req['senderName'])}&background=0F172A&color=22D3EE';
+                        
+                        return Card(
+                          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                          margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12), side: BorderSide(color: borderCol)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                CircleAvatar(backgroundImage: NetworkImage(req.sender.avatarUrl), radius: 20),
-                                const SizedBox(width: 10),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(req.sender.name, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
-                                      Text('${req.sender.role} • ${req.sender.erpId}', style: TextStyle(color: subTextCol, fontSize: 10)),
-                                      Text(req.sender.department, style: TextStyle(color: primaryColor, fontSize: 10, fontWeight: FontWeight.bold)),
-                                    ],
-                                  ),
+                                Row(
+                                  children: [
+                                    CircleAvatar(backgroundImage: NetworkImage(senderAvatar), radius: 20),
+                                    const SizedBox(width: 10),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(req['senderName'] ?? '', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
+                                          Text('${req['senderRole']} • ${req['senderId']}', style: TextStyle(color: subTextCol, fontSize: 10)),
+                                          if (req['senderBranch'] != null)
+                                            Text(req['senderBranch'], style: TextStyle(color: primaryColor, fontSize: 10, fontWeight: FontWeight.bold)),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
+                                if (req['optionalMessage'] != null && req['optionalMessage'].toString().isNotEmpty) ...[
+                                  const SizedBox(height: 10),
+                                  Container(
+                                    padding: const EdgeInsets.all(8),
+                                    decoration: BoxDecoration(color: scaffoldBg, borderRadius: BorderRadius.circular(6)),
+                                    child: Text('"${req['optionalMessage']}"', style: TextStyle(color: textCol, fontSize: 11, fontStyle: FontStyle.italic)),
+                                  ),
+                                ],
+                                const SizedBox(height: 12),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    TextButton(
+                                      style: TextButton.styleFrom(foregroundColor: Colors.red),
+                                      onPressed: () => _handleRequestAction(req, 'REJECTED'),
+                                      child: const Text('Reject'),
+                                    ),
+                                    const SizedBox(width: 6),
+                                    ElevatedButton(
+                                      style: ElevatedButton.styleFrom(backgroundColor: primaryColor),
+                                      onPressed: () => _handleRequestAction(req, 'ACCEPTED'),
+                                      child: const Text('Accept', style: TextStyle(color: Colors.white)),
+                                    ),
+                                  ],
+                                )
                               ],
                             ),
-                            if (req.optionalMessage.isNotEmpty) ...[
-                              const SizedBox(height: 10),
-                              Container(
-                                padding: const EdgeInsets.all(8),
-                                decoration: BoxDecoration(color: scaffoldBg, borderRadius: BorderRadius.circular(6)),
-                                child: Text('"${req.optionalMessage}"', style: TextStyle(color: textCol, fontSize: 11, fontStyle: FontStyle.italic)),
-                              ),
-                            ],
-                            const SizedBox(height: 12),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                TextButton(
-                                  style: TextButton.styleFrom(foregroundColor: Colors.red),
-                                  onPressed: () => _handleRequestAction(req, 'REJECTED'),
-                                  child: const Text('Reject'),
-                                ),
-                                const SizedBox(width: 6),
-                                OutlinedButton(
-                                  style: OutlinedButton.styleFrom(foregroundColor: Colors.grey),
-                                  onPressed: () => _handleRequestAction(req, 'BLOCKED'),
-                                  child: const Text('Block'),
-                                ),
-                                const SizedBox(width: 6),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(backgroundColor: primaryColor),
-                                  onPressed: () => _handleRequestAction(req, 'ACCEPTED'),
-                                  child: const Text('Accept', style: TextStyle(color: Colors.white)),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
+                          ),
+                        );
+                      },
+                    ),
         )
       ],
     );
   }
 
-  /// CONNECT TAB - ERP ID SEARCH
   Widget _buildConnectTab() {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
@@ -1229,102 +1021,95 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
           Text('Establish Secure ERP Link', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 15)),
           const SizedBox(height: 4),
           Text(
-            'For security, no student/faculty directory exists. Enter the exact ID to connect.',
+            'For privacy, no directories exist. Search by exact ERP ID only.',
             style: TextStyle(color: subTextCol, fontSize: 11),
           ),
           const SizedBox(height: 15),
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  controller: _erpSearchController,
-                  style: TextStyle(color: textCol),
-                  decoration: InputDecoration(
-                    labelText: 'Enter ERP ID to connect',
-                    hintText: 'e.g. FAC-50194, 24634-CM-026',
-                    border: const OutlineInputBorder(),
-                    fillColor: isDark ? const Color(0xFF202C33) : Colors.white,
-                    filled: true,
-                    labelStyle: TextStyle(color: primaryColor),
-                  ),
-                  onSubmitted: (_) => _searchErpId(),
+          
+          // Premium Glass-like search card
+          AppTheme.buildGlassCard(
+            isDark: isDark,
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: _erpSearchController,
+                        style: TextStyle(color: textCol),
+                        decoration: InputDecoration(
+                          labelText: 'Enter ERP ID to connect',
+                          hintText: 'e.g. FAC-50194, 24634-CM-026',
+                          border: const OutlineInputBorder(),
+                          fillColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+                          filled: true,
+                          labelStyle: TextStyle(color: primaryColor, fontSize: 12),
+                        ),
+                        onSubmitted: (_) => _searchErpId(),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    IconButton(
+                      style: IconButton.styleFrom(backgroundColor: primaryColor, padding: const EdgeInsets.all(12)),
+                      icon: const Icon(Icons.search, color: Colors.white),
+                      onPressed: _searchErpId,
+                    )
+                  ],
                 ),
-              ),
-              const SizedBox(width: 8),
-              IconButton.filled(
-                style: IconButton.styleFrom(backgroundColor: primaryColor),
-                icon: const Icon(Icons.search, color: Colors.white),
-                onPressed: _searchErpId,
-              )
-            ],
+                if (_erpSearchError != null) ...[
+                  const SizedBox(height: 10),
+                  Text(_erpSearchError!, style: const TextStyle(color: Colors.redAccent, fontSize: 12, fontWeight: FontWeight.bold)),
+                ],
+              ],
+            ),
           ),
-          if (_erpSearchError != null) ...[
-            const SizedBox(height: 10),
-            Text(_erpSearchError!, style: const TextStyle(color: Colors.redAccent, fontSize: 12, fontWeight: FontWeight.bold)),
-          ],
 
           const SizedBox(height: 25),
 
           if (_searchedUserResult != null) ...[
             Card(
-              color: isDark ? const Color(0xFF202C33) : Colors.white,
-              elevation: 4,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              color: sidebarBg,
+              elevation: 0,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16), side: BorderSide(color: borderCol)),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     CircleAvatar(
-                      backgroundImage: NetworkImage(_searchedUserResult!.avatarUrl),
+                      backgroundImage: NetworkImage(
+                        'https://ui-avatars.com/api/?name=${Uri.encodeComponent(_searchedUserResult['fullName'])}&background=0F172A&color=22D3EE&size=128'
+                      ),
                       radius: 36,
                     ),
                     const SizedBox(height: 12),
-                    Text(_searchedUserResult!.name, style: GoogleFonts.poppins(color: textCol, fontSize: 16, fontWeight: FontWeight.bold)),
+                    Text(_searchedUserResult['fullName'] ?? '', style: GoogleFonts.poppins(color: textCol, fontSize: 16, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 4),
-                    Text('${_searchedUserResult!.role} • ${_searchedUserResult!.erpId}', style: TextStyle(color: subTextCol, fontSize: 11)),
-                    Text(_searchedUserResult!.department, style: TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.bold)),
-                    const SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 8, height: 8,
-                          decoration: BoxDecoration(color: _searchedUserResult!.isOnline ? Colors.green : Colors.grey, shape: BoxShape.circle),
-                        ),
-                        const SizedBox(width: 6),
-                        Text(_searchedUserResult!.isOnline ? 'Online' : 'Offline', style: TextStyle(color: subTextCol, fontSize: 11)),
-                      ],
-                    ),
+                    Text('${_searchedUserResult['role']} • ${_searchedUserResult['loginId']}', style: TextStyle(color: subTextCol, fontSize: 11)),
+                    if (_searchedUserResult['branch'] != null)
+                      Text('${_searchedUserResult['branch']} ${_searchedUserResult['section'] ?? ""}', style: TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.bold)),
                     const Divider(height: 25),
-                    ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: primaryColor,
-                        minimumSize: const Size(double.infinity, 44),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                      ),
-                      icon: const Icon(Icons.send_rounded, color: Colors.white, size: 18),
-                      label: const Text('Send Access Request', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                      onPressed: _sendConnectionRequest,
-                    )
+                    
+                    _searchedUserResult['isConnected'] == true
+                        ? TextButton.icon(
+                            icon: const Icon(Icons.check_circle_outline),
+                            label: const Text('Already Connected'),
+                            onPressed: null,
+                          )
+                        : _searchedUserResult['connectionStatus'] == 'PENDING'
+                            ? const Text('Connection Request Pending Approval', style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12))
+                            : ElevatedButton.icon(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: primaryColor,
+                                  minimumSize: const Size(double.infinity, 44),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                                ),
+                                icon: const Icon(Icons.send_rounded, color: Colors.white, size: 18),
+                                label: const Text('Send Connection Request', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                                onPressed: _sendConnectionRequest,
+                              )
                   ],
                 ),
-              ),
-            ),
-          ] else ...[
-            // Helpful hints
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(color: primaryColor.withOpacity(0.05), borderRadius: BorderRadius.circular(10)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('💡 Quick ID Reference for Testing:', style: GoogleFonts.poppins(color: primaryColor, fontWeight: FontWeight.bold, fontSize: 12)),
-                  const SizedBox(height: 6),
-                  const Text('• Faculty ID: FAC-50194 (Prof. Rajesh Kumar)', style: TextStyle(fontSize: 11)),
-                  const Text('• Student ID: 24634-CM-026 (Rohan Sharma)', style: TextStyle(fontSize: 11)),
-                  const Text('• Parent ID: PAR-2031 (Suresh Sharma)', style: TextStyle(fontSize: 11)),
-                  const Text('• HOD ID: HOD-3021 (Dr. Vikram Sen)', style: TextStyle(fontSize: 11)),
-                ],
               ),
             ),
           ]
@@ -1333,111 +1118,13 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     );
   }
 
-  /// STATUSES (STORIES) TAB
-  Widget _buildStatusesTab() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ListTile(
-          leading: Stack(
-            children: [
-              CircleAvatar(
-                backgroundColor: primaryColor.withOpacity(0.2),
-                child: Text(myName[0].toUpperCase(), style: TextStyle(color: primaryColor)),
-              ),
-              Positioned(
-                right: -2, bottom: -2,
-                child: Container(
-                  padding: const EdgeInsets.all(2),
-                  decoration: const BoxDecoration(color: Colors.green, shape: BoxShape.circle),
-                  child: const Icon(Icons.add, size: 12, color: Colors.white),
-                ),
-              )
-            ],
-          ),
-          title: Text('My Status', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
-          subtitle: const Text('Tap to write text status updates', style: TextStyle(fontSize: 11)),
-          onTap: _addTextStatus,
-        ),
-        const Divider(height: 1),
-        Padding(
-          padding: const EdgeInsets.only(left: 16, top: 12, bottom: 4),
-          child: Text('Recent Updates (24h Expiry)', style: TextStyle(color: primaryColor, fontWeight: FontWeight.bold, fontSize: 11)),
-        ),
-        Expanded(
-          child: _statusesDb.isEmpty
-              ? Center(child: Text('No statuses posted in the last 24h.', style: TextStyle(color: subTextCol)))
-              : ListView.builder(
-                  itemCount: _statusesDb.length,
-                  itemBuilder: (context, idx) {
-                    final status = _statusesDb[idx];
-                    return ListTile(
-                      leading: Container(
-                        padding: const EdgeInsets.all(2),
-                        decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: primaryColor, width: 2)),
-                        child: CircleAvatar(backgroundImage: NetworkImage(status.user.avatarUrl)),
-                      ),
-                      title: Text(status.user.name, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
-                      subtitle: Text(DateFormat('hh:mm a').format(status.timestamp), style: const TextStyle(fontSize: 11)),
-                      onTap: () {
-                        // Show status modal
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            backgroundColor: isDark ? const Color(0xFF1E293B) : Colors.white,
-                            contentPadding: EdgeInsets.zero,
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                ListTile(
-                                  leading: CircleAvatar(backgroundImage: NetworkImage(status.user.avatarUrl)),
-                                  title: Text(status.user.name, style: TextStyle(color: textCol, fontWeight: FontWeight.bold)),
-                                  subtitle: Text('${status.user.role} • ERP Status', style: TextStyle(color: subTextCol, fontSize: 10)),
-                                ),
-                                if (status.type == 'TEXT')
-                                  Container(
-                                    width: double.infinity,
-                                    color: primaryColor.withOpacity(0.08),
-                                    padding: const EdgeInsets.all(32),
-                                    child: Text(
-                                      status.content,
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.poppins(color: textCol, fontSize: 16, fontWeight: FontWeight.w500),
-                                    ),
-                                  )
-                                else
-                                  Image.network(status.content),
-                                Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text('Views: ${status.viewers.length + 1} students', style: TextStyle(color: subTextCol, fontSize: 11)),
-                                      Text('Reaction: 👏', style: TextStyle(color: primaryColor, fontSize: 11)),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                ),
-        )
-      ],
-    );
-  }
-
-  /// CALLS LOG TAB
   Widget _buildCallsTab() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.all(16),
-          child: Text('Simulated Call Logs', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 14)),
+          child: Text('Secure Call Logs', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 14)),
         ),
         Expanded(
           child: _callLogsDb.isEmpty
@@ -1446,10 +1133,11 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                   itemCount: _callLogsDb.length,
                   itemBuilder: (context, idx) {
                     final log = _callLogsDb[idx];
-                    final ErpUser p = log['partner'];
+                    final avatarUrl = 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(log['name'])}&background=0F172A&color=22D3EE';
+                    
                     return ListTile(
-                      leading: CircleAvatar(backgroundImage: NetworkImage(p.avatarUrl)),
-                      title: Text(p.name, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
+                      leading: CircleAvatar(backgroundImage: NetworkImage(avatarUrl)),
+                      title: Text(log['name'], style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
                       subtitle: Row(
                         children: [
                           Icon(
@@ -1462,8 +1150,8 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                         ],
                       ),
                       trailing: IconButton(
-                        icon: Icon(log['type'] == 'VIDEO' ? Icons.videocam : Icons.call, color: primaryColor),
-                        onPressed: () => _initiateCall(p.erpId, log['type'] == 'VIDEO'),
+                        icon: Icon(log['type'] == 'VIDEO' ? Icons.videocam_outlined : Icons.call_outlined, color: primaryColor),
+                        onPressed: () => _initiateCall(log['erpId'], log['type'] == 'VIDEO'),
                       ),
                     );
                   },
@@ -1473,31 +1161,31 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     );
   }
 
-  /// MODERATE PANEL (Admin Only)
   Widget _buildModerateTab() {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('ERP Abuse & Moderation Panel', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 14)),
+          Text('Abuse Reports & Moderation', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 14)),
           const SizedBox(height: 4),
-          const Text('Monitor active calls, moderate servers, and review abuse report lists.', style: TextStyle(fontSize: 10)),
+          const Text('Monitor communication logs, block abuses and verify user metrics.', style: TextStyle(fontSize: 10)),
           const SizedBox(height: 15),
           
-          // Stats Row
           Row(
             children: [
               Expanded(
                 child: Card(
-                  color: isDark ? const Color(0xFF202C33) : Colors.white,
+                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: borderCol)),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Column(
                       children: [
-                        Text('Active Users', style: TextStyle(color: subTextCol, fontSize: 10)),
+                        Text('Abuse Reports', style: TextStyle(color: subTextCol, fontSize: 10)),
                         const SizedBox(height: 4),
-                        Text('148', style: GoogleFonts.poppins(color: primaryColor, fontSize: 20, fontWeight: FontWeight.bold)),
+                        Text('${_requests.where((r) => r['status'] == 'BLOCKED').length}', style: GoogleFonts.poppins(color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold)),
                       ],
                     ),
                   ),
@@ -1505,14 +1193,16 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
               ),
               Expanded(
                 child: Card(
-                  color: isDark ? const Color(0xFF202C33) : Colors.white,
+                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: borderCol)),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Column(
                       children: [
-                        Text('Call Minutes', style: TextStyle(color: subTextCol, fontSize: 10)),
+                        Text('Active Connections', style: TextStyle(color: subTextCol, fontSize: 10)),
                         const SizedBox(height: 4),
-                        Text('1,240', style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 20, fontWeight: FontWeight.bold)),
+                        Text('${_conversations.length}', style: GoogleFonts.poppins(color: primaryColor, fontSize: 20, fontWeight: FontWeight.bold)),
                       ],
                     ),
                   ),
@@ -1520,130 +1210,96 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
               ),
             ],
           ),
-
+          
           const SizedBox(height: 15),
-          Text('Server Storage Monitoring', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 12)),
-          const SizedBox(height: 6),
-          LinearProgressIndicator(value: 0.42, backgroundColor: borderCol, color: primaryColor),
-          const SizedBox(height: 4),
-          Text('4.2 GB / 10 GB (42% used)', style: TextStyle(color: subTextCol, fontSize: 10)),
-
-          const SizedBox(height: 20),
-          Text('Abuse Reports Log:', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 12)),
+          Text('Active Blocked Users Directory', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 12)),
           const SizedBox(height: 8),
 
-          ..._abuseReportsDb.map((rep) {
-            return Container(
-              margin: const EdgeInsets.only(bottom: 8),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(color: isDark ? Colors.white10 : Colors.black.withOpacity(0.04), borderRadius: BorderRadius.circular(8)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Reported: ${rep['reported']}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11)),
-                      Text(rep['time'], style: TextStyle(color: subTextCol, fontSize: 9)),
-                    ],
-                  ),
-                  const SizedBox(height: 4),
-                  Text('Reporter: ${rep['reporter']}', style: TextStyle(color: subTextCol, fontSize: 11)),
-                  Text('Reason: "${rep['reason']}"', style: const TextStyle(color: Colors.redAccent, fontSize: 11, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 8),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        style: TextButton.styleFrom(foregroundColor: Colors.red, padding: EdgeInsets.zero, minimumSize: const Size(50, 30)),
-                        onPressed: () {
-                          setState(() {
-                            _blockedUsersDb.add(rep['reported']);
-                            _abuseReportsDb.clear();
-                          });
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('User blocked from ERP server.')));
+          _blockedUsers.isEmpty
+              ? Text('No users blocked.', style: TextStyle(color: subTextCol, fontSize: 11))
+              : ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: _blockedUsers.length,
+                  itemBuilder: (context, i) {
+                    final blockedId = _blockedUsers[i];
+                    return ListTile(
+                      dense: true,
+                      title: Text(blockedId, style: TextStyle(color: textCol)),
+                      trailing: TextButton(
+                        onPressed: () async {
+                          // Unblock
+                          final body = {
+                            'user_id': myErpId,
+                            'blocked_id': blockedId,
+                            'action': 'UNBLOCK',
+                          };
+                          await http.post(
+                            Uri.parse(ApiConstants.chatBlocks),
+                            headers: {'Content-Type': 'application/json'},
+                            body: json.encode(body),
+                          );
+                          _fetchBlockedUsers();
                         },
-                        child: const Text('Ban User', style: TextStyle(fontSize: 11)),
+                        child: const Text('Unblock', style: TextStyle(fontSize: 11)),
                       ),
-                      const SizedBox(width: 8),
-                      TextButton(
-                        style: TextButton.styleFrom(foregroundColor: Colors.grey, padding: EdgeInsets.zero, minimumSize: const Size(50, 30)),
-                        onPressed: () {
-                          setState(() {
-                            _abuseReportsDb.clear();
-                          });
-                        },
-                        child: const Text('Dismiss', style: TextStyle(fontSize: 11)),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            );
-          }),
+                    );
+                  },
+                ),
         ],
       ),
     );
   }
 
-  /// EMPTY STATE
   Widget _buildEmptyState() {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.lock_person_rounded, size: 64, color: primaryColor.withOpacity(0.4)),
+          Icon(Icons.shield_outlined, size: 64, color: primaryColor.withOpacity(0.35)),
           const SizedBox(height: 15),
           Text('ERP Connect secure Messenger', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 16)),
           const SizedBox(height: 4),
-          Text('Chat with faculty, students, & parents.', style: TextStyle(color: subTextCol, fontSize: 12)),
+          Text('Text faculty, peers and parents using exact IDs.', style: TextStyle(color: subTextCol, fontSize: 12)),
           const SizedBox(height: 2),
-          Text('End-to-End Encrypted ERP ID connections.', style: TextStyle(color: subTextCol, fontSize: 11, fontStyle: FontStyle.italic)),
+          Text('Protected under ERP system security protocols.', style: TextStyle(color: subTextCol, fontSize: 11, fontStyle: FontStyle.italic)),
         ],
       ),
     );
   }
 
-  /// ACTIVE CHAT WINDOW LAYOUT
   Widget _buildChatWindow() {
-    ErpUser? partner;
-    ErpGroup? group;
-
-    if (_isGroupSelected) {
-      group = _groupsDb.firstWhere((g) => g.id == _selectedConversationId);
-    } else {
-      partner = _usersDb.firstWhere((u) => u.erpId == _selectedConversationId);
+    final activeConv = _conversations.firstWhere((c) => c['id'] == _selectedConversationId, orElse: () => null);
+    if (activeConv == null) {
+      return _buildEmptyState();
     }
 
-    final String chatTitle = group != null ? group.name : partner!.name;
-    final String chatSubtitle = group != null ? '${group.memberIds.length} members' : partner!.lastSeen;
-    final String avatar = group != null ? group.iconUrl : partner!.avatarUrl;
+    final isGroup = activeConv['isGroup'] == true;
+    final chatTitle = activeConv['name'] ?? '';
+    final chatSubtitle = isGroup ? '${activeConv['description'] ?? ""}' : (activeConv['role'] ?? '');
+    
+    final avatar = isGroup
+        ? (activeConv['iconUrl'] ?? 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(chatTitle)}&background=0F172A&color=38BDF8')
+        : 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(chatTitle)}&background=0F172A&color=22D3EE';
 
-    // Filter messages for active screen
-    final conversationMessages = _isGroupSelected
-        ? group!.messages
-        : _messagesDb.where((m) =>
-            (m.senderId == myErpId && m.receiverId == partner!.erpId) ||
-            (m.senderId == partner!.erpId && m.receiverId == myErpId)
-          ).toList();
-
-    // Starred or search filtered
-    final displayMessages = conversationMessages.where((m) {
+    final displayMessages = _messages.where((m) {
       if (_isSearchingMessages && _messageSearchQuery.isNotEmpty) {
-        return m.content.toLowerCase().contains(_messageSearchQuery.toLowerCase());
+        return m['content'].toString().toLowerCase().contains(_messageSearchQuery.toLowerCase());
       }
       return true;
     }).toList();
 
     return Column(
       children: [
-        // 1. Chat Header
+        // Chat Window Header
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-          color: isDark ? const Color(0xFF202C33) : const Color(0xFFF0F2F5),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          decoration: BoxDecoration(
+            color: sidebarBg,
+            border: Border(bottom: BorderSide(color: borderCol, width: 1)),
+          ),
           child: Row(
             children: [
-              // Mobile Back Arrow
               if (MediaQuery.of(context).size.width <= 700)
                 IconButton(
                   icon: const Icon(Icons.arrow_back),
@@ -1664,13 +1320,12 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(chatTitle, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
-                      Text(chatSubtitle, style: TextStyle(color: subTextCol, fontSize: 10)),
+                      Text(chatSubtitle, style: TextStyle(color: subTextCol, fontSize: 10), overflow: TextOverflow.ellipsis),
                     ],
                   ),
                 ),
               ),
 
-              // Actions
               IconButton(
                 icon: const Icon(Icons.search, size: 20),
                 color: subTextCol,
@@ -1681,16 +1336,16 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                   });
                 },
               ),
-              if (!_isGroupSelected) ...[
+              if (!isGroup) ...[
                 IconButton(
-                  icon: const Icon(Icons.call, size: 20),
+                  icon: const Icon(Icons.call_outlined, size: 20),
                   color: primaryColor,
-                  onPressed: () => _initiateCall(partner!.erpId, false),
+                  onPressed: () => _initiateCall(_selectedConversationId!, false),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.videocam, size: 20),
+                  icon: const Icon(Icons.videocam_outlined, size: 20),
                   color: primaryColor,
-                  onPressed: () => _initiateCall(partner!.erpId, true),
+                  onPressed: () => _initiateCall(_selectedConversationId!, true),
                 ),
               ],
               IconButton(
@@ -1702,7 +1357,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
           ),
         ),
 
-        // Message Search Bar toggle
+        // Message Search
         if (_isSearchingMessages)
           Container(
             padding: const EdgeInsets.all(8),
@@ -1732,26 +1387,28 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
             ),
           ),
 
-        // 2. Chat Messages Area
+        // Messages List
         Expanded(
-          child: displayMessages.isEmpty
-              ? Center(child: Text(_isSearchingMessages ? 'No matching messages found.' : 'No messages here yet.', style: TextStyle(color: subTextCol)))
-              : ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: displayMessages.length,
-                  itemBuilder: (context, idx) {
-                    final msg = displayMessages[idx];
-                    final isMe = msg.senderId == myErpId;
-                    return _buildMessageBubble(msg, isMe);
-                  },
-                ),
+          child: _isLoadingMessages && _messages.isEmpty
+              ? const Center(child: CircularProgressIndicator())
+              : displayMessages.isEmpty
+                  ? Center(child: Text(_isSearchingMessages ? 'No matching messages found.' : 'No messages here yet.', style: TextStyle(color: subTextCol)))
+                  : ListView.builder(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: displayMessages.length,
+                      itemBuilder: (context, idx) {
+                        final msg = displayMessages[idx];
+                        final isMe = msg['senderId'] == myErpId;
+                        return _buildMessageBubble(msg, isMe);
+                      },
+                    ),
         ),
 
-        // 3. Reply Context Bar
+        // Reply context preview
         if (_replyMessageContext != null)
           Container(
-            color: isDark ? const Color(0xFF1F2937) : Colors.grey[200],
+            color: isDark ? const Color(0xFF1E293B) : Colors.grey[200],
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Row(
               children: [
@@ -1759,7 +1416,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    'Replying to: ${_replyMessageContext!.content}',
+                    'Replying to: ${_replyMessageContext['content']}',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(color: textCol, fontSize: 11),
@@ -1773,7 +1430,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
             ),
           ),
 
-        // 4. Voice Note Recording Preview Bar
+        // Voice Note Simulated Preview
         if (_recordedAudioPreviewUrl != null)
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -1782,7 +1439,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
               children: [
                 Icon(Icons.mic, color: primaryColor),
                 const SizedBox(width: 10),
-                Expanded(child: Text('Voice Note Simulated (0:${_recordingSeconds.toString().padLeft(2, '0')})', style: TextStyle(color: textCol, fontSize: 12))),
+                Expanded(child: Text('Simulated Voice Note (0:${_recordingSeconds.toString().padLeft(2, '0')})', style: TextStyle(color: textCol, fontSize: 12))),
                 TextButton(
                   onPressed: () => setState(() {
                     _recordedAudioPreviewUrl = null;
@@ -1799,17 +1456,17 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
             ),
           ),
 
-        // 5. Chat Input Bar
+        // Chat Input Bar
         Container(
           padding: const EdgeInsets.all(10),
-          color: isDark ? const Color(0xFF202C33) : const Color(0xFFF0F2F5),
+          color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF0F2F5),
           child: _isRecordingAudio
               ? Row(
                   children: [
                     const Icon(Icons.fiber_manual_record, color: Colors.red, size: 16),
                     const SizedBox(width: 8),
                     Text(
-                      'Recording simulated voice... 0:${_recordingSeconds.toString().padLeft(2, '0')}',
+                      'Recording voice note... 0:${_recordingSeconds.toString().padLeft(2, '0')}',
                       style: GoogleFonts.poppins(color: textCol, fontSize: 12),
                     ),
                     const Spacer(),
@@ -1825,11 +1482,10 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                 )
               : Row(
                   children: [
-                    // Attachments Drawer Button
                     IconButton(
                       icon: const Icon(Icons.attach_file),
                       color: subTextCol,
-                      onPressed: () => _showAttachmentDrawer(),
+                      onPressed: _showAttachmentDrawer,
                     ),
 
                     Expanded(
@@ -1839,28 +1495,39 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                         decoration: InputDecoration(
                           hintText: 'Type a secure message...',
                           border: OutlineInputBorder(borderRadius: BorderRadius.circular(25), borderSide: BorderSide.none),
-                          fillColor: isDark ? const Color(0xFF2A3942) : Colors.white,
+                          fillColor: isDark ? const Color(0xFF1E293B) : Colors.white,
                           filled: true,
                           isDense: true,
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                         ),
-                        onSubmitted: (_) => _sendMessage(),
+                        onChanged: (val) => setState(() {}),
+                        onSubmitted: (val) {
+                          if (val.trim().isNotEmpty) {
+                            _sendChatMessage(val.trim());
+                            _messageController.clear();
+                          }
+                        },
                       ),
                     ),
 
                     const SizedBox(width: 6),
                     
-                    // Voice Recorder or Send Trigger
-                    _messageController.text.isEmpty
+                    _messageController.text.trim().isEmpty
                         ? IconButton(
-                            icon: const Icon(Icons.mic),
+                            icon: const Icon(Icons.mic_none_outlined),
                             color: primaryColor,
                             onPressed: _startAudioRecording,
                           )
                         : IconButton(
-                            icon: const Icon(Icons.send),
+                            icon: const Icon(Icons.send_outlined),
                             color: primaryColor,
-                            onPressed: _sendMessage,
+                            onPressed: () {
+                              final txt = _messageController.text.trim();
+                              if (txt.isNotEmpty) {
+                                _sendChatMessage(txt);
+                                _messageController.clear();
+                              }
+                            },
                           ),
                   ],
                 ),
@@ -1869,14 +1536,13 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     );
   }
 
-  /// ATTACHMENT MENU DRAWER
   void _showAttachmentDrawer() {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
       builder: (context) => Container(
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: isDark ? const Color(0xFF0F172A) : Colors.white,
           borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
         ),
         padding: const EdgeInsets.all(20),
@@ -1884,7 +1550,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Secure ERP File Attachments', style: GoogleFonts.poppins(color: textCol, fontSize: 16, fontWeight: FontWeight.bold)),
+            Text('Attach ERP Repository Document', style: GoogleFonts.poppins(color: textCol, fontSize: 15, fontWeight: FontWeight.bold)),
             const SizedBox(height: 15),
             GridView(
               shrinkWrap: true,
@@ -1895,13 +1561,12 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                 childAspectRatio: 1.1,
               ),
               children: [
-                _buildAttachmentCard(Icons.assignment, 'Assignment', Colors.orange, () => _sendErpAttachment('ASSIGNMENT')),
-                _buildAttachmentCard(Icons.analytics, 'Marks Memo', Colors.blue, () => _sendErpAttachment('MARKS')),
-                _buildAttachmentCard(Icons.receipt_long, 'Fee Receipt', Colors.green, () => _sendErpAttachment('FEE')),
-                _buildAttachmentCard(Icons.calendar_month, 'Timetable', Colors.purple, () => _sendErpAttachment('TIMETABLE')),
-                _buildAttachmentCard(Icons.sick, 'Leave Slip', Colors.red, () => _sendErpAttachment('LEAVE')),
-                _buildAttachmentCard(Icons.image, 'Photo/Media', Colors.teal, () {
-                  _sendAttachment('IMAGE', 'Mock_Photo.jpg', '420 KB');
+                _buildAttachmentCard(Icons.assignment_outlined, 'Assignment', Colors.orange, () => _sendErpAttachment('ASSIGNMENT')),
+                _buildAttachmentCard(Icons.analytics_outlined, 'Marks Memo', Colors.blue, () => _sendErpAttachment('MARKS')),
+                _buildAttachmentCard(Icons.receipt_long_outlined, 'Fee Receipt', Colors.green, () => _sendErpAttachment('FEE')),
+                _buildAttachmentCard(Icons.calendar_month_outlined, 'Timetable', Colors.purple, () => _sendErpAttachment('TIMETABLE')),
+                _buildAttachmentCard(Icons.image_outlined, 'Photos', Colors.teal, () {
+                  _sendChatMessage('Mock Photo Uploaded', type: 'IMAGE', attachmentName: 'campus_photo.jpg', attachmentSize: '512 KB');
                   Navigator.pop(context);
                 }),
               ],
@@ -1921,7 +1586,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(backgroundColor: color.withOpacity(0.2), child: Icon(icon, color: color)),
+            CircleAvatar(backgroundColor: color.withOpacity(0.12), child: Icon(icon, color: color)),
             const SizedBox(height: 8),
             Text(title, style: TextStyle(color: textCol, fontSize: 10, fontWeight: FontWeight.bold)),
           ],
@@ -1930,72 +1595,81 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     );
   }
 
-  /// MESSAGE BUBBLES LAYOUT
-  Widget _buildMessageBubble(ErpMessage msg, bool isMe) {
+  Widget _buildMessageBubble(dynamic msg, bool isMe) {
     final bubbleColor = isMe ? bubbleSent : bubbleRecv;
     final alignment = isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start;
+    final fontCol = isMe ? bubbleSentText : bubbleRecvText;
     final bubbleBorder = isMe
         ? const BorderRadius.only(topLeft: Radius.circular(12), bottomLeft: Radius.circular(12), topRight: Radius.circular(12))
         : const BorderRadius.only(topLeft: Radius.circular(12), bottomRight: Radius.circular(12), topRight: Radius.circular(12));
+
+    final timeStr = msg['createdAt'] != null
+        ? DateFormat('hh:mm a').format(DateTime.parse(msg['createdAt']))
+        : '';
+
+    final isDeleted = msg['isDeletedForEveryone'] == true;
 
     return Align(
       alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
       child: Column(
         crossAxisAlignment: alignment,
         children: [
-          // Reply quote bubble inside bubble
           GestureDetector(
-            onLongPress: () {
-              // Message actions bottom sheet
-              _showMessageActions(msg);
-            },
+            onLongPress: () => _showMessageActions(msg),
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 4),
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.65),
               decoration: BoxDecoration(color: bubbleColor, borderRadius: bubbleBorder),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Reply reference
-                  if (msg.replyToContent != null) ...[
+                  if (msg['replyToContent'] != null && msg['replyToContent'].toString().isNotEmpty) ...[
                     Container(
                       padding: const EdgeInsets.all(6),
                       margin: const EdgeInsets.only(bottom: 6),
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         border: Border(left: BorderSide(color: primaryColor, width: 3)),
                       ),
-                      child: Text(msg.replyToContent!, style: TextStyle(color: subTextCol, fontSize: 10, fontStyle: FontStyle.italic)),
+                      child: Text(msg['replyToContent'], style: TextStyle(color: subTextCol, fontSize: 10, fontStyle: FontStyle.italic)),
                     ),
                   ],
 
-                  // Types of Messages Render
-                  if (msg.type == 'TEXT')
-                    Text(msg.content, style: TextStyle(color: textCol, fontSize: 12))
-                  else if (msg.type == 'VOICE')
+                  if (isDeleted)
+                    const Text('This message was deleted.', style: TextStyle(color: Colors.grey, fontSize: 12, fontStyle: FontStyle.italic))
+                  else if (msg['messageType'] == 'TEXT')
+                    Text(msg['content'] ?? '', style: TextStyle(color: fontCol, fontSize: 12))
+                  else if (msg['messageType'] == 'VOICE')
                     _buildVoicePlayer(msg)
-                  else if (msg.type == 'IMAGE')
+                  else if (msg['messageType'] == 'IMAGE')
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        ClipRRect(borderRadius: BorderRadius.circular(8), child: Image.network('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400')),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Container(
+                            height: 120, width: 180,
+                            color: Colors.black12,
+                            child: const Icon(Icons.image, color: Colors.grey, size: 36),
+                          )
+                        ),
                         const SizedBox(height: 4),
-                        Text(msg.content, style: TextStyle(color: textCol, fontSize: 11)),
+                        Text(msg['content'] ?? '', style: TextStyle(color: fontCol, fontSize: 11)),
                       ],
                     )
-                  else if (msg.type == 'FILE' || msg.type == 'ERP_DOC')
+                  else if (msg['messageType'] == 'FILE' || msg['messageType'] == 'ERP_DOC')
                     _buildFileAttachmentBubble(msg),
 
-                  // Message timestamp/read status footer
                   const SizedBox(height: 4),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(DateFormat('hh:mm a').format(msg.timestamp), style: TextStyle(color: subTextCol, fontSize: 8)),
-                      if (isMe) ...[
+                      Text(timeStr, style: TextStyle(color: subTextCol, fontSize: 8)),
+                      if (isMe && !isDeleted) ...[
                         const SizedBox(width: 4),
-                        Icon(Icons.done_all, size: 12, color: primaryColor), // read seen tick
+                        Icon(Icons.done_all, size: 12, color: primaryColor),
                       ]
                     ],
                   ),
@@ -2008,34 +1682,30 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     );
   }
 
-  Widget _buildVoicePlayer(ErpMessage msg) {
+  Widget _buildVoicePlayer(dynamic msg) {
     double playSpeed = 1.0;
     return StatefulBuilder(
       builder: (context, setBubbleState) => Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-            icon: const Icon(Icons.play_circle_fill, size: 28),
+            icon: const Icon(Icons.play_arrow_rounded, size: 24),
             color: primaryColor,
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Playing voice memo...')));
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Simulating voice playback...')));
             },
           ),
-          // Waveform placeholder
-          Expanded(
-            child: Container(
-              height: 20,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(15, (i) => Container(
-                  width: 2,
-                  height: (i % 3 + 1) * 4.0 + 2.0,
-                  color: primaryColor.withOpacity(0.5),
-                )),
-              ),
-            ),
+          const SizedBox(width: 4),
+          // Waveform
+          Row(
+            children: List.generate(8, (i) => Container(
+              margin: const EdgeInsets.symmetric(horizontal: 1),
+              width: 2,
+              height: (i % 3 + 1) * 4.0 + 2.0,
+              color: primaryColor.withOpacity(0.5),
+            )),
           ),
-          const SizedBox(width: 8),
+          const SizedBox(width: 10),
           GestureDetector(
             onTap: () {
               setBubbleState(() {
@@ -2049,9 +1719,9 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
               });
             },
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(color: Colors.black.withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
-              child: Text('${playSpeed}x', style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+              decoration: BoxDecoration(color: Colors.black12, borderRadius: BorderRadius.circular(10)),
+              child: Text('${playSpeed}x', style: const TextStyle(fontSize: 9, fontWeight: FontWeight.bold)),
             ),
           ),
         ],
@@ -2059,28 +1729,28 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     );
   }
 
-  Widget _buildFileAttachmentBubble(ErpMessage msg) {
+  Widget _buildFileAttachmentBubble(dynamic msg) {
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(color: Colors.black.withOpacity(0.04), borderRadius: BorderRadius.circular(8)),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(msg.type == 'ERP_DOC' ? Icons.description_rounded : Icons.insert_drive_file, color: primaryColor, size: 32),
-          const SizedBox(width: 10),
+          Icon(Icons.description_outlined, color: primaryColor, size: 28),
+          const SizedBox(width: 8),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(msg.attachmentName ?? 'Document.pdf', style: TextStyle(color: textCol, fontWeight: FontWeight.bold, fontSize: 11), overflow: TextOverflow.ellipsis),
-                Text(msg.attachmentSize ?? 'Unknown size', style: TextStyle(color: subTextCol, fontSize: 9)),
+                Text(msg['attachmentName'] ?? 'Document.pdf', style: TextStyle(color: textCol, fontWeight: FontWeight.bold, fontSize: 11), overflow: TextOverflow.ellipsis),
+                Text(msg['attachmentSize'] ?? '420 KB', style: TextStyle(color: subTextCol, fontSize: 9)),
               ],
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.download_rounded, size: 18),
+            icon: const Icon(Icons.download_for_offline_outlined, size: 18),
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Downloading ${msg.attachmentName}...')));
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Downloading ${msg['attachmentName'] ?? "document"}...')));
             },
           )
         ],
@@ -2088,21 +1758,22 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     );
   }
 
-  /// MESSAGE BUBBLE LONG PRESS ACTIONS
-  void _showMessageActions(ErpMessage msg) {
+  void _showMessageActions(dynamic msg) {
+    if (msg['isDeletedForEveryone'] == true) return;
+    
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
       builder: (context) => Container(
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: isDark ? const Color(0xFF0F172A) : Colors.white,
           borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              leading: const Icon(Icons.reply),
+              leading: const Icon(Icons.reply_outlined),
               title: const Text('Reply'),
               onTap: () {
                 setState(() {
@@ -2112,56 +1783,41 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
               },
             ),
             ListTile(
-              leading: const Icon(Icons.star_border),
-              title: const Text('Star Message'),
-              onTap: () {
-                setState(() {
-                  msg.isStarred = true;
-                });
-                Navigator.pop(context);
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Message Starred.')));
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.copy),
+              leading: const Icon(Icons.content_copy_outlined),
               title: const Text('Copy Text'),
               onTap: () {
-                Clipboard.setData(ClipboardData(text: msg.content));
+                Clipboard.setData(ClipboardData(text: msg['content'] ?? ''));
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Message copied to clipboard.')));
               },
             ),
-            ListTile(
-              leading: const Icon(Icons.delete, color: Colors.red),
-              title: const Text('Delete Message', style: TextStyle(color: Colors.red)),
-              onTap: () {
-                setState(() {
-                  _messagesDb.removeWhere((m) => m.id == msg.id);
-                });
-                Navigator.pop(context);
-              },
-            ),
+            if (msg['senderId'] == myErpId)
+              ListTile(
+                leading: const Icon(Icons.delete_outline, color: Colors.red),
+                title: const Text('Delete for Everyone', style: TextStyle(color: Colors.red)),
+                onTap: () {
+                  _deleteChatMessage(msg['id'], true);
+                  Navigator.pop(context);
+                },
+              ),
           ],
         ),
       ),
     );
   }
 
-  /// RIGHT USER DETAILS PANEL
   Widget _buildRightDetailPanel() {
-    ErpUser? partner;
-    ErpGroup? group;
+    final activeConv = _conversations.firstWhere((c) => c['id'] == _selectedConversationId, orElse: () => null);
+    if (activeConv == null) return const SizedBox();
 
-    if (_isGroupSelected) {
-      group = _groupsDb.firstWhere((g) => g.id == _selectedConversationId);
-    } else {
-      partner = _usersDb.firstWhere((u) => u.erpId == _selectedConversationId);
-    }
+    final isGroup = activeConv['isGroup'] == true;
+    final String name = activeConv['name'] ?? '';
+    final String id = isGroup ? 'Group ID: ${activeConv['id']}' : activeConv['id'];
+    final String roleText = isGroup ? (activeConv['description'] ?? "") : (activeConv['role'] ?? '');
 
-    final String name = group != null ? group.name : partner!.name;
-    final String id = group != null ? 'Group ID: ${group.id}' : partner!.erpId;
-    final String sub = group != null ? group.description : '${partner!.role} • ${partner.department}';
-    final String avatar = group != null ? group.iconUrl : partner!.avatarUrl;
+    final avatar = isGroup
+        ? (activeConv['iconUrl'] ?? 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(name)}&background=0F172A&color=38BDF8')
+        : 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(name)}&background=0F172A&color=22D3EE';
 
     return Column(
       children: [
@@ -2181,25 +1837,24 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                CircleAvatar(backgroundImage: NetworkImage(avatar), radius: 48),
+                CircleAvatar(backgroundImage: NetworkImage(avatar), radius: 44),
                 const SizedBox(height: 12),
                 Text(name, textAlign: TextAlign.center, style: GoogleFonts.poppins(color: textCol, fontSize: 15, fontWeight: FontWeight.bold)),
                 Text(id, style: TextStyle(color: subTextCol, fontSize: 11)),
                 const SizedBox(height: 6),
-                Text(sub, textAlign: TextAlign.center, style: TextStyle(color: primaryColor, fontSize: 11, fontWeight: FontWeight.bold)),
+                Text(roleText, textAlign: TextAlign.center, style: TextStyle(color: primaryColor, fontSize: 11, fontWeight: FontWeight.bold)),
                 const Divider(height: 30),
 
-                // Encryption notification
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(color: primaryColor.withOpacity(0.08), borderRadius: BorderRadius.circular(10)),
                   child: Row(
                     children: [
-                      Icon(Icons.lock, color: primaryColor, size: 20),
+                      Icon(Icons.lock_outline, color: primaryColor, size: 20),
                       const SizedBox(width: 8),
                       const Expanded(
                         child: Text(
-                          'End-to-End Encrypted. Messages are locked using secure role credentials.',
+                          'Secure ID communication. All chats require verified credentials to link.',
                           style: TextStyle(fontSize: 10),
                         ),
                       )
@@ -2208,39 +1863,20 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                 ),
                 const SizedBox(height: 20),
 
-                // Actions List
                 Card(
-                  color: isDark ? const Color(0xFF202C33) : Colors.white,
+                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12), side: BorderSide(color: borderCol)),
                   child: Column(
                     children: [
-                      ListTile(
-                        leading: const Icon(Icons.star_rate_rounded, color: Colors.orangeAccent),
-                        title: const Text('Starred Messages', style: TextStyle(fontSize: 12)),
-                        onTap: () {
-                          // ShowStarred dialog
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Opening starred catalog...')));
-                        },
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.archive_outlined),
-                        title: const Text('Archive Chat', style: TextStyle(fontSize: 12)),
-                        onTap: () {
-                          setState(() {
-                            _selectedConversationId = null;
-                          });
-                        },
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.block, color: Colors.red),
-                        title: const Text('Block User', style: TextStyle(fontSize: 12, color: Colors.red)),
-                        onTap: () {
-                          setState(() {
-                            _blockedUsersDb.add(id);
-                            _selectedConversationId = null;
-                          });
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('User connection blocked.')));
-                        },
-                      ),
+                      if (!isGroup)
+                        ListTile(
+                          leading: const Icon(Icons.block, color: Colors.red),
+                          title: const Text('Block Connection', style: TextStyle(fontSize: 12, color: Colors.red)),
+                          onTap: () {
+                            _blockUser(activeConv['id']);
+                          },
+                        ),
                     ],
                   ),
                 )
@@ -2252,21 +1888,137 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
     );
   }
 
-  /// WEBRTC CALL OVERLAY COMPONENT
+  void _createNewGroup() {
+    final groupNameController = TextEditingController();
+    final groupDescController = TextEditingController();
+    List<String> selectedMembers = [];
+
+    // Filter connected contacts from chats list to add them to a group
+    final directPartners = _conversations.where((c) => c['isGroup'] == false).toList();
+
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => StatefulBuilder(
+        builder: (context, setModalState) => Container(
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF0F172A) : Colors.white,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          ),
+          padding: EdgeInsets.only(
+            top: 20, left: 24, right: 24,
+            bottom: MediaQuery.of(context).viewInsets.bottom + 20,
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Create Coordination Group', style: GoogleFonts.poppins(color: textCol, fontSize: 16, fontWeight: FontWeight.bold)),
+                const SizedBox(height: 15),
+                TextField(
+                  controller: groupNameController,
+                  style: TextStyle(color: textCol),
+                  decoration: const InputDecoration(
+                    labelText: 'Group Name',
+                    hintText: 'e.g. CSE-A Coordination Group',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: groupDescController,
+                  style: TextStyle(color: textCol),
+                  decoration: const InputDecoration(
+                    labelText: 'Group Description',
+                    hintText: 'Purpose of group cell coordination...',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 15),
+                Text('Add Connected Links (ERP IDs):', style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
+                const SizedBox(height: 8),
+                
+                directPartners.isEmpty
+                    ? Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text('You must have connected ERP contact links to create a group.', style: TextStyle(color: subTextCol, fontSize: 11)),
+                      )
+                    : Container(
+                        constraints: const BoxConstraints(maxHeight: 180),
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: directPartners.length,
+                          itemBuilder: (context, i) {
+                            final u = directPartners[i];
+                            final id = u['id'];
+                            final name = u['name'] ?? '';
+                            final isSelected = selectedMembers.contains(id);
+                            
+                            return CheckboxListTile(
+                              title: Text(name, style: TextStyle(color: textCol, fontSize: 13)),
+                              subtitle: Text('${u['role']} - $id', style: TextStyle(color: subTextCol, fontSize: 11)),
+                              value: isSelected,
+                              onChanged: (val) {
+                                setModalState(() {
+                                  if (val == true) {
+                                    selectedMembers.add(id);
+                                  } else {
+                                    selectedMembers.remove(id);
+                                  }
+                                });
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                const SizedBox(height: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+                    const SizedBox(width: 10),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(backgroundColor: primaryColor),
+                      onPressed: () {
+                        if (groupNameController.text.trim().isEmpty) return;
+                        _createGroupSubmit(
+                          groupNameController.text.trim(),
+                          groupDescController.text.trim(),
+                          selectedMembers,
+                        );
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Create', style: TextStyle(color: Colors.white)),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _buildCallOverlay() {
-    final partner = _usersDb.firstWhere((u) => u.erpId == _callPartnerId, orElse: () => _usersDb[0]);
+    final activeConv = _conversations.firstWhere((c) => c['id'] == _callPartnerId, orElse: () => null);
+    final partnerName = activeConv != null ? activeConv['name'] : 'ERP User';
+    final partnerAvatar = 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(partnerName)}&background=0F172A&color=22D3EE&size=256';
+
     return Container(
-      color: Colors.black.withOpacity(0.92),
+      color: Colors.black.withValues(alpha: 0.95),
       width: double.infinity,
       height: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Spacer(),
-          CircleAvatar(backgroundImage: NetworkImage(partner.avatarUrl), radius: 56),
+          CircleAvatar(backgroundImage: NetworkImage(partnerAvatar), radius: 56),
           const SizedBox(height: 20),
-          Text(partner.name, style: GoogleFonts.poppins(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold)),
-          Text('${_isVideoCall ? "Video" : "Voice"} Calling (${partner.erpId})', style: const TextStyle(color: Colors.white54, fontSize: 13)),
+          Text(partnerName, style: GoogleFonts.poppins(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold)),
+          Text('${_isVideoCall ? "Video" : "Voice"} Calling (${_callPartnerId ?? ""})', style: const TextStyle(color: Colors.white54, fontSize: 13)),
           const SizedBox(height: 10),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
@@ -2279,7 +2031,6 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
 
           if (_callState == 'Connected') ...[
             const SizedBox(height: 40),
-            // Codec & Network Stats Panel
             Container(
               padding: const EdgeInsets.all(16),
               margin: const EdgeInsets.symmetric(horizontal: 32),
@@ -2311,7 +2062,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text('Bitrate Status:', style: TextStyle(color: Colors.white70, fontSize: 11)),
+                      const Text('Bitrate:', style: TextStyle(color: Colors.white70, fontSize: 11)),
                       Text('${_callBitrateKbps.toStringAsFixed(1)} kbps', style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold)),
                     ],
                   ),
@@ -2345,7 +2096,6 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> with SingleTickerPr
           ],
 
           const Spacer(),
-          // Action Buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

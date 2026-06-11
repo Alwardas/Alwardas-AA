@@ -163,6 +163,15 @@ async fn main() {
         .route("/api/curriculum/merged", get(curriculum::get_merged_curriculum_handler))
         .route("/api/curriculum/progress", post(curriculum::update_progress_handler))
         .route("/api/curriculum/feedback", post(curriculum::submit_feedback_handler))
+        // Chat / ERP Connect Messenger Routes
+        .route("/api/chat/search", get(chat::search_user_handler))
+        .route("/api/chat/requests", post(chat::send_request_handler).get(chat::get_requests_handler))
+        .route("/api/chat/requests/:id/respond", post(chat::respond_request_handler))
+        .route("/api/chat/conversations", get(chat::get_conversations_handler))
+        .route("/api/chat/messages", post(chat::send_message_handler))
+        .route("/api/chat/messages/:partner_id", get(chat::get_messages_handler).delete(chat::delete_message_handler))
+        .route("/api/chat/groups", post(chat::create_group_handler))
+        .route("/api/chat/blocks", post(chat::block_user_handler).get(chat::get_blocked_users_handler))
         .with_state(AppState { pool })
         .nest_service("/web", tower_http::services::ServeDir::new("static"))
         .fallback(move |req: axum::extract::Request| {

@@ -57,4 +57,13 @@ class ApiConstants {
   static String get getParentRequests => '$baseUrl/api/parent/requests';
   static String updateParentRequestStatus(String id) => '$baseUrl/api/parent/requests/$id/status';
 
- }
+  // Chat / ERP Connect Messenger
+  static String get chatSearch => '$baseUrl/api/chat/search';
+  static String get chatRequests => '$baseUrl/api/chat/requests';
+  static String respondChatRequest(String id) => '$baseUrl/api/chat/requests/$id/respond';
+  static String get chatConversations => '$baseUrl/api/chat/conversations';
+  static String get chatMessages => '$baseUrl/api/chat/messages';
+  static String chatMessagesForPartner(String partnerId) => '$baseUrl/api/chat/messages/$partnerId';
+  static String get chatGroups => '$baseUrl/api/chat/groups';
+  static String get chatBlocks => '$baseUrl/api/chat/blocks';
+}
