@@ -126,9 +126,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     _oldPasswordController.clear();
     _newPasswordController.clear();
     _confirmPasswordController.clear();
-    _otpController.clear();
     setState(() {
-      _otpSent = false;
       _validatePassword();
     });
   }
