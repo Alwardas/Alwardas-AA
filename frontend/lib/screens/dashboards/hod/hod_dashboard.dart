@@ -418,14 +418,23 @@ class _HodDashboardState extends State<HodDashboard> {
                        ],
                      ),
                    ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodNotificationsScreen())),
-                          child: _buildHeaderIcon(Icons.notifications_none),
-                        ),
-                      ],
-                    ),
+                     Row(
+                       children: [
+                         GestureDetector(
+                           onTap: () {
+                             ScaffoldMessenger.of(context).showSnackBar(
+                               const SnackBar(content: Text("Chat feature coming soon")),
+                             );
+                           },
+                           child: _buildHeaderIcon(Icons.chat_bubble_outline),
+                         ),
+                         const SizedBox(width: 8),
+                         GestureDetector(
+                           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodNotificationsScreen())),
+                           child: _buildHeaderIcon(Icons.notifications_none),
+                         ),
+                       ],
+                     ),
                   ],
                 )
              ],

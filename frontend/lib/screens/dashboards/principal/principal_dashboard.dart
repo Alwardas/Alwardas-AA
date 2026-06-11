@@ -340,6 +340,15 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
+                      onTap: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text("Chat feature coming soon")),
+                        );
+                      },
+                      child: const Icon(Icons.chat_bubble_outline, color: Colors.white, size: 22),
+                    ),
+                    const SizedBox(width: 14),
+                    GestureDetector(
                       onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PrincipalNotificationsScreen())),
                       child: Stack(
                         clipBehavior: Clip.none,

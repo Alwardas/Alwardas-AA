@@ -514,13 +514,27 @@ class _ParentDashboardState extends State<ParentDashboard> {
                       ],
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => StudentNotificationsScreen(
-                                userId: currentChild['id']))),
-                    child: _buildHeaderIcon(Icons.notifications_none),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text("Chat feature coming soon")),
+                          );
+                        },
+                        child: _buildHeaderIcon(Icons.chat_bubble_outline),
+                      ),
+                      const SizedBox(width: 8),
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => StudentNotificationsScreen(
+                                    userId: currentChild['id']))),
+                        child: _buildHeaderIcon(Icons.notifications_none),
+                      ),
+                    ],
                   ),
                 ],
               ),
