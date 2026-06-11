@@ -257,7 +257,7 @@ pub async fn get_class_attendance_record(pool: &PgPool, params: ClassRecordQuery
     let branch_variations = crate::models::get_branch_variations(&params.branch);
     let session = params.session.to_uppercase();
     
-    let mut query = sqlx::QueryBuilder::new("SELECT u.login_id as student_id, u.full_name, a.status, (SELECT full_name FROM users WHERE id = a.faculty_uuid) as faculty_name FROM users u LEFT JOIN attendance a ON u.id = a.student_uuid AND a.date = ");
+    let mut query = sqlx::QueryBuilder::new("SELECT u.id as user_uuid, u.login_id as student_id, u.full_name, a.status, (SELECT full_name FROM users WHERE id = a.faculty_uuid) as faculty_name FROM users u LEFT JOIN attendance a ON u.id = a.student_uuid AND a.date = ");
     query.push_bind(&params.date);
     query.push("::DATE AND a.session = ");
     query.push_bind(&session);
@@ -287,7 +287,7 @@ pub async fn get_class_attendance_record(pool: &PgPool, params: ClassRecordQuery
             marked_by = r.get::<Option<String>, _>("faculty_name");
         }
         crate::models::StudentAttendanceItem {
-            id: Uuid::nil(),
+            id: r.get("user_uuid"),
             student_id: r.get("student_id"),
             full_name: r.get("full_name"),
             status: r.get::<Option<String>, _>("status").unwrap_or_else(|| "not marked".to_string())
