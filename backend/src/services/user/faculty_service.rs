@@ -72,10 +72,10 @@ pub async fn add_faculty_subject(pool: &PgPool, payload: AddFacultySubjectReques
     println!("DEBUG: HOD lookup result: {:?}, Sender lookup result: {:?}", hod_login_id, sender_login_id);
 
     if let (Some(hod), Some(sender)) = (hod_login_id.as_ref(), sender_login_id.as_ref()) {
-        let msg = format!("Faculty {} has requested to add subject {}", sender, payload.subject_name);
+        let msg = format!("Faculty requested subject: {}", payload.subject_name);
         match crate::repositories::auth::insert_notification(
             pool,
-            "SUBJECT_REQUEST",
+            "SUBJECT_APPROVAL",
             msg,
             sender,
             Some(&payload.branch),
@@ -374,7 +374,33 @@ pub async fn approve_subject(pool: &PgPool, payload: ApproveSubjectRequest) -> R
     let sender_id = notif["sender_id"].as_str().unwrap_or_default();
     let user_uuid = resolve_user_id(sender_id, "Faculty", pool).await.map_err(|_| (StatusCode::BAD_REQUEST, "Invalid sender".to_string()))?;
 
-    faculty_repository::update_faculty_subject_status(pool, user_uuid, &payload.sender_id, &payload.action).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
+    // Extract subject name from the notification message
+    let message = notif["message"].as_str().unwrap_or_default();
+    let subject_name = if message.contains("Faculty requested subject: ") {
+        message.split("Faculty requested subject: ").last().unwrap_or_default().trim()
+    } else if message.contains("requested subject:") {
+        message.split("requested subject:").last().unwrap_or_default().trim()
+    } else if message.contains("has requested to add subject ") {
+        message.split("has requested to add subject ").last().unwrap_or_default().trim()
+    } else {
+        message
+    };
+
+    // Find the matching subject_id from faculty_subjects table
+    let subject_id: String = sqlx::query_scalar(
+        "SELECT subject_id FROM faculty_subjects 
+         WHERE user_id = $1 
+         AND (TRIM(LOWER(subject_name)) = TRIM(LOWER($2)) OR subject_id = $2)
+         ORDER BY created_at DESC LIMIT 1"
+    )
+    .bind(user_uuid)
+    .bind(subject_name)
+    .fetch_optional(pool)
+    .await
+    .unwrap_or(None)
+    .ok_or((StatusCode::BAD_REQUEST, "Subject not found for approval".to_string()))?;
+
+    faculty_repository::update_faculty_subject_status(pool, user_uuid, &subject_id, &payload.action).await.map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
     faculty_repository::delete_notification(pool, payload.notification_id).await.ok();
 
     Ok(())
