@@ -81,11 +81,11 @@ pub async fn add_faculty_subject_handler(
                 "data": res
             })))
         },
-        Err(e) => {
-            println!("ADD Subject Error: {:?}", e);
-            Err((e, Json(json!({
+        Err((c, msg)) => {
+            println!("ADD Subject Error: {:?}", msg);
+            Err((c, Json(json!({
                 "success": false,
-                "message": "Failed to add subject",
+                "message": msg,
                 "data": null
             }))))
         },

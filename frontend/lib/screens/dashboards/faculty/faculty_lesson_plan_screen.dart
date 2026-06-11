@@ -113,7 +113,7 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
           year: widget.year ?? '1st Year',
           semester: widget.semester,
           status: isCompleted ? 'pending' : 'completed',
-          completedDate: isCompleted ? null : DateTime.now().toIso8601String(),
+          completedDate: isCompleted ? null : DateFormat('yyyy-MM-dd').format(DateTime.now()),
         );
         
         if (response.success) {

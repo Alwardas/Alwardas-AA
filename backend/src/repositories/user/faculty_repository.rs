@@ -15,6 +15,14 @@ pub async fn find_profile_by_id(pool: &PgPool, user_uuid: Uuid) -> Result<Option
     .await
 }
 
+pub async fn check_faculty_subject_assigned(pool: &PgPool, subject_id: &str, branch: &str, section: Option<&str>) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM faculty_subjects WHERE subject_id = $1 AND branch = $2 AND (section = $3 OR ($3 IS NULL AND section IS NULL))")
+        .bind(subject_id).bind(branch).bind(section)
+        .fetch_one(pool).await?;
+    Ok(count > 0)
+}
+
+
 pub async fn find_subjects_by_user_id(pool: &PgPool, user_uuid: Uuid) -> Result<Vec<FacultySubjectResponse>, sqlx::Error> {
     sqlx::query_as::<Postgres, FacultySubjectResponse>(
         "SELECT 

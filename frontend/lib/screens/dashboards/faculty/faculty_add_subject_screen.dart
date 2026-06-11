@@ -1,9 +1,12 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:provider/provider.dart';
+import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
+import '../../../core/api_config.dart';
 import '../../../core/services/auth_service.dart';
 
 class FacultyAddSubjectScreen extends StatefulWidget {
@@ -11,9 +14,9 @@ class FacultyAddSubjectScreen extends StatefulWidget {
   final List<dynamic> existingSubjects;
 
   const FacultyAddSubjectScreen({
-    super.key, 
-    required this.allCourses, 
-    required this.existingSubjects
+    super.key,
+    required this.allCourses,
+    required this.existingSubjects,
   });
 
   @override
@@ -21,434 +24,499 @@ class FacultyAddSubjectScreen extends StatefulWidget {
 }
 
 class _FacultyAddSubjectScreenState extends State<FacultyAddSubjectScreen> {
-  // Dropdown Values
   String? _selectedBranch;
   String? _selectedYear;
   String? _selectedSection;
-  
-  final TextEditingController _subjectController = TextEditingController();
-  final TextEditingController _subjectCodeController = TextEditingController();
-  
-  bool _isLoading = false;
-  List<String> _sections = [];
-  List<Map<String, dynamic>> _filteredSubjects = [];
+  String? _selectedSubject;
 
-  // Options matching Schedule Page
-  final List<String> _branches = ["CME", "EEE", "ECE", "MEC", "CIV"];
+  List<String> _branches = [];
   final List<String> _years = ["1st Year", "2nd Year", "3rd Year"];
+  List<String> _sections = [];
+  List<String> _subjects = [];
+
+  bool _loadingBranches = true;
+  bool _loadingSections = false;
+  bool _submitting = false;
 
   @override
   void initState() {
     super.initState();
-    // Pre-select if possible, e.g. from user session
-    _loadFacultyDefault();
+    _fetchBranches();
   }
 
-  Future<void> _loadFacultyDefault() async {
-      final user = await AuthService.getUserSession();
-      if (user != null && _selectedBranch == null) {
-          setState(() {
-              _selectedBranch = _mapFullToShort(user['branch']);
-          });
-          // Initiate fetch if branch is set
-          _updateSubjects();
+  Future<void> _fetchBranches() async {
+    try {
+      final response = await http.get(Uri.parse(ApiConstants.hodGetDepartments));
+      if (response.statusCode == 200) {
+        final responseData = json.decode(response.body);
+        setState(() {
+          _branches = List<String>.from(responseData['data'] ?? []);
+          _loadingBranches = false;
+        });
       }
-  }
-
-  String _mapFullToShort(String? full) {
-      if (full == null) return "CME";
-      if (full.contains("Computer")) return "CME";
-      if (full.contains("Electrical")) return "EEE";
-      if (full.contains("Electronics")) return "ECE";
-      if (full.contains("Mechanical")) return "MEC";
-      if (full.contains("Civil")) return "CIV";
-      return "CME";
-  }
-
-  String _mapShortToFull(String short) {
-    switch (short) {
-      case "CME": return "Computer Engineering";
-      case "EEE": return "Electrical and Electronics Engineering";
-      case "ECE": return "Electronics & Communication Engineering";
-      case "MEC": return "Mechanical Engineering";
-      case "CIV": return "Civil Engineering";
-      default: return short;
+    } catch (e) {
+      debugPrint("Error fetching branches: $e");
+      if (mounted) setState(() => _loadingBranches = false);
     }
   }
 
   Future<void> _fetchSections() async {
     if (_selectedBranch == null || _selectedYear == null) return;
-    
-    setState(() => _isLoading = true);
-    
-    String fullBranch = _mapShortToFull(_selectedBranch!);
-    
+    setState(() {
+      _loadingSections = true;
+      _selectedSection = null;
+      _sections = [];
+    });
     try {
-      final uri = Uri.parse('${ApiConstants.baseUrl}/api/sections')
-          .replace(queryParameters: {'branch': fullBranch, 'year': _selectedYear});
-      
-      final res = await http.get(uri);
-      if (res.statusCode == 200) {
-        final List<dynamic> data = json.decode(res.body);
-        if (mounted) {
-          setState(() {
-            _sections = data.map((e) => e.toString()).toList();
-            // Reset section if not in new list
-            if (_selectedSection != null && !_sections.contains(_selectedSection)) {
-               _selectedSection = null;
-            }
-            // Auto Select if only one (optional, user asked for fetch)
-            if (_sections.isNotEmpty && _selectedSection == null) {
-               _selectedSection = _sections.first;
-            }
-          });
-        }
+      final response = await http.get(
+        Uri.parse("${ApiConstants.baseUrl}/api/sections?branch=$_selectedBranch&year=$_selectedYear"),
+      );
+      if (response.statusCode == 200) {
+        final responseData = json.decode(response.body);
+        setState(() {
+          final List<dynamic> data = responseData['data'] ?? [];
+          _sections = data.map((e) => e.toString()).toList();
+          _loadingSections = false;
+        });
       }
     } catch (e) {
       debugPrint("Error fetching sections: $e");
-    } finally {
-      if (mounted) setState(() => _isLoading = false);
+      if (mounted) setState(() => _loadingSections = false);
     }
   }
 
-  void _updateSubjects() {
-      if (_selectedBranch == null || _selectedYear == null) {
-          setState(() => _filteredSubjects = []);
-          return;
-      }
+  void _filterSubjectsLocally() {
+    if (_selectedBranch == null || _selectedYear == null) {
+      setState(() => _subjects = []);
+      return;
+    }
+
+    final targetSems = [];
+    if (_selectedYear == "1st Year") targetSems.addAll(["1", "2", "Semester 1", "Semester 2", "1st Year"]);
+    else if (_selectedYear == "2nd Year") targetSems.addAll(["3", "4", "Semester 3", "Semester 4"]);
+    else if (_selectedYear == "3rd Year") targetSems.addAll(["5", "6", "Semester 5", "Semester 6"]);
+
+    String norm(String b) {
+      String upper = b.trim().toUpperCase();
+      if (upper == 'CME' || upper == 'CM' || upper.contains('COMPUTER')) return 'computer engineering';
+      if (upper == 'CIV' || upper == 'CIVIL' || upper == 'CE') return 'civil engineering';
+      if (upper == 'ECE' || upper == 'EC' || upper.contains('ELECTRONICS')) return 'electronics & communication engineering';
+      if (upper == 'EEE' || upper == 'EE' || upper.contains('ELECTRICAL')) return 'electrical & electronics engineering';
+      if (upper == 'MECH' || upper == 'MEC' || upper == 'ME' || upper.contains('MECHANICAL')) return 'mechanical engineering';
+      return upper.toLowerCase();
+    }
+
+    final selBranchNorm = norm(_selectedBranch!);
+
+    final filtered = widget.allCourses.where((c) {
+      final b = c['branch']?.toString() ?? '';
+      final s = c['semester']?.toString() ?? '';
       
-      final fullBranch = _mapShortToFull(_selectedBranch!);
-      
-      // Filter logic: Match Branch AND Year (mapped to semesters)
-      final List<String> targetSemesters = [];
-      if (_selectedYear == "1st Year") {
-          targetSemesters.addAll(["1st Year", "1", "2", "Semester 1", "Semester 2"]);
-      } else if (_selectedYear == "2nd Year") {
-          targetSemesters.addAll(["3rd Semester", "4th Semester", "3", "4"]);
-      } else if (_selectedYear == "3rd Year") {
-          targetSemesters.addAll(["5th Semester", "6th Semester", "5", "6"]);
-       } else if (_selectedYear == "4th Year") {
-          targetSemesters.addAll(["7th Semester", "8th Semester", "7", "8"]);
-      }
+      final bNorm = norm(b);
+      bool branchMatch = bNorm == selBranchNorm || bNorm.contains(selBranchNorm) || selBranchNorm.contains(bNorm);
+      if (!branchMatch) return false;
 
-      final filtered = widget.allCourses.where((c) {
-          final b = c['branch'] ?? '';
-          final s = c['semester']?.toString() ?? '';
-          
-          bool branchMatch = b == fullBranch || b.contains(fullBranch); // Simple match
-          if (!branchMatch && _selectedBranch == "CME" && b.contains("Computer")) branchMatch = true; 
-          
-          if (!branchMatch) return false;
+      bool semMatch = targetSems.any((ts) => s.toLowerCase().contains(ts.toLowerCase()));
+      return semMatch;
+    }).map((e) => e['name'].toString()).toSet().toList(); // Unique names
 
-          // Check semester
-          // Normalize s
-          String semCheck = s;
-          if (s.toLowerCase().contains("1st year")) semCheck = "1st Year";
-          // We can just rely on basic string match vs our target list
-          bool semMatch = targetSemesters.any((ts) => s.toLowerCase().contains(ts.toLowerCase()));
-          
-          return semMatch;
-      }).map((e) => e as Map<String, dynamic>).toList();
-
-      setState(() {
-          _filteredSubjects = filtered;
-      });
+    setState(() {
+      _subjects = filtered;
+      _selectedSubject = null;
+    });
   }
 
-  void _onBranchChanged(String? val) {
-      setState(() {
-          _selectedBranch = val;
-          _selectedSection = null;
-          _sections = []; 
-          _subjectController.clear();
-          _subjectCodeController.clear();
-      });
-      _fetchSections();
-      _updateSubjects();
-  }
+  Future<void> _addSubject() async {
+    if (_selectedBranch == null || _selectedYear == null || _selectedSection == null || _selectedSubject == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Please fill all fields."), backgroundColor: Colors.orange),
+      );
+      return;
+    }
 
-  void _onYearChanged(String? val) {
-      setState(() {
-          _selectedYear = val;
-          _selectedSection = null; 
-          _subjectController.clear();
-          _subjectCodeController.clear();
-      });
-      _fetchSections();
-      _updateSubjects();
-  }
+    final user = await AuthService.getUserSession();
+    if (user == null) return;
 
-  void _submit() {
-      if (_selectedBranch == null || _selectedYear == null || _selectedSection == null || _subjectController.text.isEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please fill all fields")));
-          return;
-      }
-      
-      String subjectId = _subjectCodeController.text;
-      String subjectName = _subjectController.text;
-      String? code;
+    setState(() => _submitting = true);
 
-      // Try to find the full object for more details
-      final match = _filteredSubjects.firstWhere(
-          (s) => s['name'] == subjectName || s['id'].toString() == subjectId,
-          orElse: () => <String, dynamic>{}
+    // Find subject code from filtered subjects
+    String subjectId = "";
+    final match = widget.allCourses.firstWhere(
+      (c) => c['name'] == _selectedSubject,
+      orElse: () => null,
+    );
+    if (match != null) {
+      subjectId = match['id']?.toString() ?? "";
+    }
+
+    try {
+      final response = await ApiConfig.post(
+        '${ApiConstants.baseUrl}/api/faculty/subjects',
+        body: {
+          "userId": user['id'],
+          "subjectId": subjectId,
+          "subjectName": _selectedSubject,
+          "branch": _selectedBranch,
+          "year": _selectedYear,
+          "section": _selectedSection,
+        },
       );
 
-      if (match.isNotEmpty) {
-         subjectId = match['id'].toString();
-         subjectName = match['name'] ?? subjectName;
-         code = match['code']?.toString();
+      if (response.success) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Subject requested successfully."), backgroundColor: Colors.green),
+          );
+          Navigator.pop(context, true);
+        }
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(response.message.isNotEmpty ? response.message : "Failed to add subject."), backgroundColor: Colors.red),
+          );
+        }
       }
-      
-      if (subjectId.isEmpty) {
-         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please select a valid subject from the list")));
-         return;
+    } catch (e) {
+      debugPrint("Error adding subject: $e");
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Network error."), backgroundColor: Colors.red),
+        );
       }
-
-      // Return List of Maps as expected by FacultyClassesScreen
-      final result = [{
-        'id': subjectId,
-        'name': subjectName,
-        'code': code ?? subjectId,
-        'branch': _mapShortToFull(_selectedBranch!),
-        'year': _selectedYear,
-        'section': _selectedSection
-      }];
-
-      Navigator.pop(context, result);
+    } finally {
+      if (mounted) setState(() => _submitting = false);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    // Theme
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDark = themeProvider.isDarkMode;
+    final bgColors = isDark ? ThemeColors.darkBackground : ThemeColors.lightBackground;
     final textColor = isDark ? ThemeColors.darkText : ThemeColors.lightText;
     final subTextColor = isDark ? ThemeColors.darkSubtext : ThemeColors.lightSubtext;
-    final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
     final cardColor = isDark ? ThemeColors.darkCard : ThemeColors.lightCard;
-    final bgColor = isDark ? ThemeColors.darkBackground.first : ThemeColors.lightBackground.first;
+    final tint = isDark ? ThemeColors.darkTint : ThemeColors.lightTint;
 
     return Scaffold(
-      backgroundColor: bgColor,
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
+        title: Text("Add Subject", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: textColor),
-          onPressed: () => Navigator.pop(context),
+        iconTheme: IconThemeData(color: textColor),
+      ),
+      body: Container(
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight),
         ),
-        title: Text(
-          "Add Subject",
-          style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildHeader(tint, textColor, subTextColor),
+                const SizedBox(height: 32),
+                _buildSelectionCard(cardColor, textColor, subTextColor, tint),
+                const SizedBox(height: 32),
+                _buildSubmitButton(tint),
+              ],
+            ),
+          ),
         ),
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Dropdowns Row
-             Row(
-               children: [
-                 Expanded(child: _buildDropdown("Branch", _branches, _selectedBranch, _onBranchChanged, tint, textColor, cardColor)),
-                 const SizedBox(width: 10),
-                 Expanded(child: _buildDropdown("Year", _years, _selectedYear, _onYearChanged, tint, textColor, cardColor)),
-               ],
-             ),
-             const SizedBox(height: 20),
-             // Section Row (full width potentially or shorter)
-             _buildDropdown("Section", _sections, _selectedSection, (val) => setState(() => _selectedSection = val), tint, textColor, cardColor),
-            
-            const SizedBox(height: 30),
-            
-            // Subject Autocomplete
-            Text("Select Subject", style: GoogleFonts.poppins(color: textColor, fontWeight: FontWeight.bold, fontSize: 14)),
-            const SizedBox(height: 10),
-            
-            Autocomplete<Map<String, dynamic>>(
-               displayStringForOption: (option) => option['name'] ?? '',
-               optionsBuilder: (TextEditingValue textEditingValue) {
-                 if (_selectedBranch == null || _selectedYear == null) return const Iterable<Map<String, dynamic>>.empty();
-                 if (textEditingValue.text == '') return _filteredSubjects;
-                 
-                 return _filteredSubjects.where((option) {
-                    final name = option['name'].toString().toLowerCase();
-                    final code = option['code'].toString().toLowerCase();
-                    final input = textEditingValue.text.toLowerCase();
-                    return name.contains(input) || code.contains(input);
-                 });
-               },
-               onSelected: (selection) {
-                  setState(() {
-                     _subjectController.text = selection['name'];
-                     _subjectCodeController.text = selection['id'].toString();
-                  });
-               },
-               fieldViewBuilder: (context, controller, focusNode, onFieldSubmitted) {
-                   if (controller.text.isEmpty && _subjectController.text.isNotEmpty) {
-                      controller.text = _subjectController.text;
-                   }
-                   return TextField(
-                     controller: controller,
-                     focusNode: focusNode,
-                     onChanged: (val) {
-                        _subjectController.text = val;
-                        // Clear code if manual typing
-                        if (_subjectCodeController.text.isNotEmpty) {
-                           // potentially check if valid match still exists
-                        }
-                     },
-                     style: TextStyle(color: textColor),
-                     decoration: InputDecoration(
-                       hintText: _selectedYear == null ? "Select Year first..." : "Search subject...",
-                       hintStyle: TextStyle(color: textColor.withOpacity(0.5)),
-                       filled: true,
-                       fillColor: cardColor,
-                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: tint.withOpacity(0.3))),
-                       enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: tint.withOpacity(0.3))),
-                       prefixIcon: Icon(Icons.search, color: tint),
-                       suffixIcon: _subjectController.text.isNotEmpty ? IconButton(icon: const Icon(Icons.clear, size: 16), onPressed: () {
-                          controller.clear();
-                          setState(() {
-                             _subjectController.clear();
-                             _subjectCodeController.clear();
-                          });
-                       }) : null,
-                     ),
-                   );
-               },
-               optionsViewBuilder: (context, onSelected, options) {
-                  return Align(
-                    alignment: Alignment.topLeft,
-                    child: Material(
-                      elevation: 4.0,
-                      color: cardColor,
-                      borderRadius: BorderRadius.circular(10),
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(maxHeight: 250, maxWidth: MediaQuery.of(context).size.width - 40),
-                        child: ListView.builder(
-                          padding: EdgeInsets.zero,
-                          shrinkWrap: true,
-                          itemCount: options.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            final option = options.elementAt(index);
-                            
-                            // CHECK DUPLICATES: Only if Section matches!
-                            // Allows adding same subject to valid different sections (A vs B)
-                            final isAlreadyAdded = widget.existingSubjects.any((existing) {
-                                // ID Match
-                                final exId = existing['subject_id']?.toString() ?? existing['id']?.toString();
-                                final optId = option['id'].toString();
-                                if (exId != optId) return false;
-                                
-                                // Section Match
-                                var exSection = existing['section']?.toString() ?? '';
-                                var curSection = _selectedSection ?? '';
-                                
-                                if (curSection.isEmpty) return false; 
-                                
-                                // Normalize: "Section A" -> "a", "A" -> "a"
-                                exSection = exSection.toLowerCase().replaceAll('section', '').replaceAll(':', '').trim();
-                                curSection = curSection.toLowerCase().replaceAll('section', '').replaceAll(':', '').trim();
-                                
-                                return exSection == curSection;
-                            });
-                            
-                            return InkWell(
-                              onTap: isAlreadyAdded ? null : () => onSelected(option),
-                              child: Container(
-                                padding: const EdgeInsets.all(12.0),
-                                decoration: BoxDecoration(border: Border(bottom: BorderSide(color: textColor.withOpacity(0.05)))),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                      decoration: BoxDecoration(color: tint.withOpacity(0.1), borderRadius: BorderRadius.circular(4)),
-                                      child: Text(option['code'] ?? option['id'], style: TextStyle(color: tint, fontSize: 10, fontWeight: FontWeight.bold)),
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Expanded(
-                                      child: Text(
-                                        option['name'], 
-                                        style: TextStyle(
-                                          color: isAlreadyAdded ? subTextColor : textColor, 
-                                          fontWeight: FontWeight.bold,
-                                          decoration: isAlreadyAdded ? TextDecoration.lineThrough : null
-                                        )
-                                      ),
-                                    ),
-                                    if (isAlreadyAdded) Icon(Icons.check, size: 16, color: subTextColor),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  );
-               },
-            ),
-            
-            if (_subjectCodeController.text.isNotEmpty)
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: Text("Selected Code: ${_subjectCodeController.text}", style: TextStyle(color: tint, fontSize: 12, fontWeight: FontWeight.bold)),
-              ),
+    );
+  }
 
-             const SizedBox(height: 40),
-             
-             SizedBox(
-               width: double.infinity,
-               child: ElevatedButton(
-                 onPressed: _submit,
-                 style: ElevatedButton.styleFrom(
-                   backgroundColor: tint,
-                   padding: const EdgeInsets.symmetric(vertical: 16),
-                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                   elevation: 5,
-                   shadowColor: tint.withOpacity(0.4),
-                 ),
-                 child: Text("Add Subject", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16)),
-               ),
-             )
+  Widget _buildHeader(Color tint, Color textColor, Color subTextColor) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(color: tint.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12)),
+          child: Icon(Icons.menu_book_rounded, color: tint, size: 32),
+        ),
+        const SizedBox(height: 16),
+        Text("Request Course", style: GoogleFonts.poppins(fontSize: 28, fontWeight: FontWeight.bold, color: textColor)),
+        Text("Select subjects to be assigned to you for different branches and sections.", style: GoogleFonts.poppins(fontSize: 14, color: subTextColor)),
+      ],
+    );
+  }
+
+  Widget _buildSelectionCard(Color cardColor, Color textColor, Color subTextColor, Color tint) {
+    return Container(
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 20, offset: const Offset(0, 10))],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildDropdownLabel("Branch", Icons.account_tree_outlined, tint, textColor),
+          _buildDropdown(
+            value: _selectedBranch,
+            items: _branches,
+            hint: "Select Branch",
+            loading: _loadingBranches,
+            onChanged: (v) {
+              setState(() => _selectedBranch = v);
+              _fetchSections();
+              _filterSubjectsLocally();
+            },
+            textColor: textColor,
+            tint: tint,
+          ),
+          const SizedBox(height: 20),
+          _buildDropdownLabel("Year", Icons.calendar_today_outlined, tint, textColor),
+          _buildDropdown(
+            value: _selectedYear,
+            items: _years,
+            hint: "Select Year",
+            onChanged: (v) {
+              setState(() => _selectedYear = v);
+              _fetchSections();
+              _filterSubjectsLocally();
+            },
+            textColor: textColor,
+            tint: tint,
+          ),
+          const SizedBox(height: 20),
+          _buildDropdownLabel("Section", Icons.grid_view_outlined, tint, textColor),
+          _buildDropdown(
+            value: _selectedSection,
+            items: _sections,
+            hint: "Select Section",
+            loading: _loadingSections,
+            enabled: _selectedBranch != null && _selectedYear != null,
+            onChanged: (v) => setState(() => _selectedSection = v),
+            textColor: textColor,
+            tint: tint,
+          ),
+          const SizedBox(height: 32),
+          const Divider(),
+          const SizedBox(height: 24),
+          _buildDropdownLabel("Select Subject", Icons.library_books_outlined, tint, textColor),
+          _buildSearchableSelector(
+            value: _selectedSubject,
+            items: _subjects,
+            hint: "Select Subject",
+            enabled: _selectedBranch != null && _selectedYear != null,
+            onTap: () => _showSearchableModal(context, "Select Subject", _subjects, (val) {
+              setState(() => _selectedSubject = val);
+            }, textColor, cardColor, tint),
+            textColor: textColor,
+            tint: tint,
+          ),
+        ],
+      ),
+    );
+  }
+
+  // --- Helper Widgets ---
+
+  Widget _buildDropdownLabel(String label, IconData icon, Color tint, Color textColor) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        children: [
+          Icon(icon, size: 18, color: tint),
+          const SizedBox(width: 8),
+          Text(label, style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600, color: textColor)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDropdown({
+    required String? value,
+    required List<String> items,
+    required String hint,
+    required void Function(String?) onChanged,
+    required Color textColor,
+    required Color tint,
+    bool loading = false,
+    bool enabled = true,
+  }) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: tint.withValues(alpha: 0.2)),
+        color: enabled ? Colors.transparent : Colors.grey.withValues(alpha: 0.1),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          value: value,
+          hint: loading
+              ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2))
+              : Text(hint, style: GoogleFonts.poppins(color: textColor.withValues(alpha: 0.5), fontSize: 14)),
+          isExpanded: true,
+          icon: Icon(Icons.keyboard_arrow_down_rounded, color: tint),
+          dropdownColor: Theme.of(context).cardColor,
+          items: items.map((String item) {
+            return DropdownMenuItem<String>(
+              value: item,
+              child: Text(item, style: GoogleFonts.poppins(color: textColor, fontSize: 14)),
+            );
+          }).toList(),
+          onChanged: enabled ? onChanged : null,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSearchableSelector({
+    required String? value,
+    required List<String> items,
+    required String hint,
+    required VoidCallback onTap,
+    required Color textColor,
+    required Color tint,
+    bool enabled = true,
+  }) {
+    return GestureDetector(
+      onTap: enabled ? onTap : null,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: tint.withValues(alpha: 0.2)),
+          color: enabled ? Colors.transparent : Colors.grey.withValues(alpha: 0.1),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                value ?? hint,
+                style: GoogleFonts.poppins(color: value != null ? textColor : textColor.withValues(alpha: 0.5), fontSize: 14),
+              ),
+            ),
+            Icon(Icons.search, size: 20, color: tint),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildDropdown(String label, List<String> items, String? value, Function(String?) onChanged, Color tint, Color textColor, Color cardColor) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label, style: GoogleFonts.poppins(fontSize: 12, color: textColor, fontWeight: FontWeight.w500)),
-        const SizedBox(height: 5),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          decoration: BoxDecoration(
-            color: cardColor,
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: tint.withOpacity(0.3)),
-          ),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton<String>(
-              value: value,
-              isExpanded: true,
-              dropdownColor: cardColor,
-              icon: Icon(Icons.arrow_drop_down, color: tint),
-              hint: Text("Select", style: TextStyle(fontSize: 12, color: textColor.withOpacity(0.5))),
-              items: items.map((String item) {
-                return DropdownMenuItem<String>(
-                  value: item,
-                  child: Text(item, style: TextStyle(color: textColor, fontSize: 14), overflow: TextOverflow.ellipsis),
-                );
-              }).toList(),
-              onChanged: onChanged,
+  Widget _buildSubmitButton(Color tint) {
+    return SizedBox(
+      width: double.infinity,
+      height: 56,
+      child: ElevatedButton(
+        onPressed: _submitting ? null : _addSubject,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: tint,
+          foregroundColor: Colors.white,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          elevation: 0,
+        ),
+        child: _submitting ? const CircularProgressIndicator(color: Colors.white) : Text("Add Subject", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold)),
+      ),
+    );
+  }
+
+  void _showSearchableModal(BuildContext context, String title, List<String> items, Function(String) onSelect, Color textColor, Color cardColor, Color tint) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => _SearchContent(title: title, items: items, onSelect: onSelect, textColor: textColor, cardColor: cardColor, tint: tint),
+    );
+  }
+}
+
+class _SearchContent extends StatefulWidget {
+  final String title;
+  final List<String> items;
+  final Function(String) onSelect;
+  final Color textColor;
+  final Color cardColor;
+  final Color tint;
+
+  const _SearchContent({required this.title, required this.items, required this.onSelect, required this.textColor, required this.cardColor, required this.tint});
+
+  @override
+  __SearchContentState createState() => __SearchContentState();
+}
+
+class __SearchContentState extends State<_SearchContent> {
+  late List<String> filteredItems;
+  String query = "";
+
+  @override
+  void initState() {
+    super.initState();
+    filteredItems = widget.items;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final bottomInset = MediaQuery.of(context).viewInsets.bottom;
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.7 + bottomInset,
+      padding: EdgeInsets.only(bottom: bottomInset),
+      decoration: BoxDecoration(color: widget.cardColor, borderRadius: const BorderRadius.vertical(top: Radius.circular(24))),
+      child: Column(
+        children: [
+          const SizedBox(height: 12),
+          Container(width: 40, height: 4, decoration: BoxDecoration(color: Colors.grey.withValues(alpha: 0.3), borderRadius: BorderRadius.circular(2))),
+          Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(widget.title, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: widget.textColor)),
+                IconButton(icon: const Icon(Icons.close), onPressed: () => Navigator.pop(context)),
+              ],
             ),
           ),
-        ),
-      ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: TextField(
+              autofocus: true,
+              style: GoogleFonts.poppins(color: widget.textColor),
+              decoration: InputDecoration(
+                hintText: "Search...",
+                hintStyle: GoogleFonts.poppins(color: widget.textColor.withValues(alpha: 0.5)),
+                prefixIcon: Icon(Icons.search, color: widget.tint),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: widget.tint.withValues(alpha: 0.2))),
+                focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: widget.tint)),
+              ),
+              onChanged: (v) {
+                setState(() {
+                  query = v;
+                  filteredItems = widget.items.where((i) => i.toLowerCase().contains(v.toLowerCase())).toList();
+                });
+              },
+            ),
+          ),
+          const SizedBox(height: 16),
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              itemCount: filteredItems.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(filteredItems[index], style: GoogleFonts.poppins(color: widget.textColor)),
+                  trailing: Icon(Icons.chevron_right, color: widget.tint.withValues(alpha: 0.3)),
+                  onTap: () {
+                    widget.onSelect(filteredItems[index]);
+                    Navigator.pop(context);
+                  },
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

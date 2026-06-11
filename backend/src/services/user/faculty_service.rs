@@ -32,11 +32,46 @@ pub async fn get_faculty_subjects(pool: &PgPool, user_id: String) -> Result<Vec<
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
 }
 
-pub async fn add_faculty_subject(pool: &PgPool, payload: AddFacultySubjectRequest) -> Result<(), StatusCode> {
-    faculty_repository::insert_faculty_subject(pool, payload.user_id, &payload.subject_id, &payload.subject_name, &payload.branch, payload.section.as_deref())
+pub async fn add_faculty_subject(pool: &PgPool, payload: AddFacultySubjectRequest) -> Result<(), (StatusCode, String)> {
+    // 1. Check if assigned
+    match faculty_repository::check_faculty_subject_assigned(pool, &payload.subject_id, &payload.branch, payload.section.as_deref()).await {
+        Ok(true) => return Err((StatusCode::CONFLICT, "Already added by another faculty".to_string())),
+        Err(_) => return Err((StatusCode::INTERNAL_SERVER_ERROR, "Database error".to_string())),
+        Ok(false) => {}
+    }
+
+    // 2. Insert subject
+    if let Err(_) = faculty_repository::insert_faculty_subject(pool, payload.user_id, &payload.subject_id, &payload.subject_name, &payload.branch, payload.section.as_deref()).await {
+        return Err((StatusCode::INTERNAL_SERVER_ERROR, "Failed to add subject".to_string()));
+    }
+
+    // 3. Find HOD login_id
+    let hod_login_id: Option<String> = sqlx::query_scalar("SELECT login_id FROM users WHERE role = 'HOD' AND branch = $1 LIMIT 1")
+        .bind(&payload.branch)
+        .fetch_optional(pool)
         .await
-        .map(|_| ())
-        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
+        .unwrap_or(None);
+
+    // 4. Send Notification
+    let sender_login_id: Option<String> = sqlx::query_scalar("SELECT login_id FROM users WHERE id = $1")
+        .bind(payload.user_id)
+        .fetch_optional(pool)
+        .await
+        .unwrap_or(None);
+
+    if let (Some(hod), Some(sender)) = (hod_login_id, sender_login_id) {
+        let msg = format!("Faculty {} has requested to add subject {}", sender, payload.subject_name);
+        let _ = crate::repositories::auth::insert_notification(
+            pool,
+            "SUBJECT_REQUEST",
+            msg,
+            &sender,
+            Some(&payload.branch),
+            Some(&hod),
+        ).await;
+    }
+
+    Ok(())
 }
 
 pub async fn remove_faculty_subject(pool: &PgPool, payload: RemoveFacultySubjectRequest) -> Result<(), StatusCode> {
