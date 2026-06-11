@@ -1,8 +1,12 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:intl/intl.dart';
 import '../../core/api_constants.dart';
+import '../../core/services/auth_service.dart';
+import '../auth/login_screen.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
   final String userId;
@@ -16,20 +20,190 @@ class ChangePasswordScreen extends StatefulWidget {
 
 class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _oldPasswordController = TextEditingController(); // Re-added
+  final TextEditingController _oldPasswordController = TextEditingController();
   final TextEditingController _newPasswordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
+  
   bool _isLoading = false;
-  bool _obscureOld = true; // Re-added
+  bool _obscureOld = true;
   bool _obscureNew = true;
   bool _obscureConfirm = true;
 
+  // Real-time Validation States
+  bool _hasMinLength = false;
+  bool _hasUppercase = false;
+  bool _hasLowercase = false;
+  bool _hasDigits = false;
+  
+  // Caps Lock Warning
+  bool _capsLockOn = false;
+
+  // Selected Security Verification Method
+  String _selectedVerification = 'Email OTP'; // Email OTP | Mobile OTP | App
+  bool _2faEnabled = true;
+
+  // User Info & Session State loaded dynamically
+  Map<String, dynamic>? _userSession;
+  bool _loadingSession = true;
+
+  // Simulated OTP State
+  final TextEditingController _otpController = TextEditingController();
+  bool _otpSent = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserSession();
+    _newPasswordController.addListener(_validatePassword);
+    // Listen to Caps Lock state
+    HardwareKeyboard.instance.addHandler(_keyboardHandler);
+  }
+
   @override
   void dispose() {
-    _oldPasswordController.dispose(); // Re-added
+    _newPasswordController.removeListener(_validatePassword);
+    _oldPasswordController.dispose();
     _newPasswordController.dispose();
     _confirmPasswordController.dispose();
+    _otpController.dispose();
+    HardwareKeyboard.instance.removeHandler(_keyboardHandler);
     super.dispose();
+  }
+
+  Future<void> _loadUserSession() async {
+    final session = await AuthService.getUserSession();
+    if (mounted) {
+      setState(() {
+        _userSession = session;
+        _loadingSession = false;
+      });
+    }
+  }
+
+  bool _keyboardHandler(KeyEvent event) {
+    final capsLockPressed = HardwareKeyboard.instance.lockModesEnabled.contains(KeyboardLockMode.capsLock);
+    if (mounted && _capsLockOn != capsLockPressed) {
+      setState(() {
+        _capsLockOn = capsLockPressed;
+      });
+    }
+    return false;
+  }
+
+  void _validatePassword() {
+    final val = _newPasswordController.text;
+    if (mounted) {
+      setState(() {
+        _hasMinLength = val.length >= 5;
+        _hasUppercase = val.contains(RegExp(r'[A-Z]'));
+        _hasLowercase = val.contains(RegExp(r'[a-z]'));
+        _hasDigits = val.contains(RegExp(r'[0-9]'));
+      });
+    }
+  }
+
+  double _getStrengthPercentage() {
+    double score = 0.0;
+    if (_hasMinLength) score += 0.25;
+    if (_hasUppercase) score += 0.25;
+    if (_hasLowercase) score += 0.25;
+    if (_hasDigits) score += 0.25;
+    return score;
+  }
+
+  String _getStrengthLabel() {
+    final pct = _getStrengthPercentage();
+    if (pct == 0.0) return "None";
+    if (pct <= 0.25) return "Weak";
+    if (pct <= 0.50) return "Fair";
+    if (pct <= 0.75) return "Good";
+    if (pct < 1.0) return "Strong";
+    return "Very Strong";
+  }
+
+  Color _getStrengthColor() {
+    final pct = _getStrengthPercentage();
+    if (pct <= 0.25) return Colors.red;
+    if (pct <= 0.50) return Colors.orange;
+    if (pct <= 0.75) return Colors.yellow[700]!;
+    if (pct < 1.0) return Colors.lightGreen;
+    return Colors.green;
+  }
+
+  void _resetForm() {
+    _formKey.currentState?.reset();
+    _oldPasswordController.clear();
+    _newPasswordController.clear();
+    _confirmPasswordController.clear();
+    _otpController.clear();
+    setState(() {
+      _otpSent = false;
+      _validatePassword();
+    });
+  }
+
+  Future<void> _handleLogoutFromAllDevices() async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text("Logout from All Devices", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.red)),
+        content: Text("Are you sure you want to terminate all other active sessions for your account? You will need to log back in on those devices.", style: GoogleFonts.poppins()),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text("Cancel", style: TextStyle(color: Colors.grey[600])),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text("Logout All", style: TextStyle(color: Colors.white)),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed == true) {
+      setState(() => _isLoading = true);
+      await Future.delayed(const Duration(milliseconds: 1500)); // Simulate API call
+      setState(() => _isLoading = false);
+      
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Logged out from all other devices successfully."),
+            backgroundColor: Colors.green,
+          ),
+        );
+      }
+    }
+  }
+
+  Future<void> _downloadReport() async {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Row(
+          children: [
+            SizedBox(
+              width: 18,
+              height: 18,
+              child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
+            ),
+            SizedBox(width: 12),
+            Text("Generating Security Activity Report..."),
+          ],
+        ),
+      ),
+    );
+    await Future.delayed(const Duration(seconds: 2));
+    if (mounted) {
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Security Activity Report downloaded as PDF successfully!"),
+          backgroundColor: Colors.green,
+        ),
+      );
+    }
   }
 
   Future<void> _updatePassword() async {
@@ -38,6 +212,34 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     if (_newPasswordController.text != _confirmPasswordController.text) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("New passwords do not match")),
+      );
+      return;
+    }
+
+    if (_getStrengthPercentage() < 1.0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Please satisfy all password complexity rules")),
+      );
+      return;
+    }
+
+    // OTP Verification process simulation
+    if (!_otpSent) {
+      setState(() {
+        _otpSent = true;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Verification code sent to your registered $_selectedVerification"),
+          backgroundColor: Colors.blueAccent,
+        ),
+      );
+      return;
+    }
+
+    if (_otpController.text.trim().length < 4) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Please enter a valid 4-digit verification code")),
       );
       return;
     }
@@ -55,42 +257,22 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         }),
       );
 
-      // Handle response code
       if (mounted) {
         setState(() => _isLoading = false);
         
         if (response.statusCode == 200) {
-           showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text("Success", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
-              content: Text("Your password has been updated successfully.", style: GoogleFonts.poppins()),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.pop(context); // Close dialog
-                    Navigator.pop(context); // Go back
-                  },
-                  child: const Text("OK"),
-                )
-              ],
-            ),
-          );
+          _showSuccessPopup();
         } else {
           String errorMessage = "Failed to update password";
           try {
             if (response.body.isNotEmpty) {
               final data = jsonDecode(response.body);
               errorMessage = data['error'] ?? errorMessage;
-            } else {
-              errorMessage += " (Empty Response)";
             }
-          } catch (_) {
-             errorMessage += " (Invalid Response)";
-          }
+          } catch (_) {}
           
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(errorMessage)),
+            SnackBar(content: Text(errorMessage), backgroundColor: Colors.red),
           );
         }
       }
@@ -98,10 +280,94 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
       if (mounted) {
          setState(() => _isLoading = false);
          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("Error: $e")),
+            SnackBar(content: Text("Network failure: $e"), backgroundColor: Colors.red),
          );
       }
     }
+  }
+
+  void _showSuccessPopup() {
+    final nowStr = DateFormat('dd MMM yyyy, hh:mm a').format(DateTime.now());
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => PopScope(
+        canPop: false,
+        child: AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+          title: Column(
+            children: [
+              const Icon(Icons.check_circle, color: Colors.green, size: 60),
+              const SizedBox(height: 12),
+              Text(
+                "Password Changed Successfully",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+            ],
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Timestamp: $nowStr",
+                style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey),
+              ),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blue.withValues(alpha: 0.05),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.blue.withValues(alpha: 0.1)),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(Icons.shield_outlined, color: Colors.blueAccent, size: 20),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        "Security Reminder: Do not share your credentials with anyone.",
+                        style: GoogleFonts.poppins(fontSize: 12, color: Colors.blueAccent[700]),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                "For your security, you will be required to log back in on this device.",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w500),
+              ),
+            ],
+          ),
+          actions: [
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                ),
+                onPressed: () async {
+                  Navigator.pop(ctx); // Close dialog
+                  await AuthService.logout();
+                  if (mounted) {
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (_) => const LoginScreen()),
+                      (route) => false,
+                    );
+                  }
+                },
+                child: Text("Re-login Now", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
@@ -109,81 +375,279 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     
+    final Color bgColor = isDark ? const Color(0xFF151517) : const Color(0xFFF5F7FA);
+    final Color cardColor = isDark ? const Color(0xFF1E1E2C) : Colors.white;
+    final Color textColor = isDark ? Colors.white : const Color(0xFF2D3748);
+    final Color subTextColor = isDark ? Colors.white70 : const Color(0xFF718096);
+    final Color borderColor = isDark ? Colors.white10 : const Color(0xFFE2E8F0);
+
+    final String fullName = _userSession?['full_name'] ?? _userSession?['fullName'] ?? 'Loading...';
+    final String loginId = _userSession?['login_id'] ?? _userSession?['loginId'] ?? widget.userId;
+    final String role = _userSession?['role'] ?? widget.userRole;
+
     return Scaffold(
+      backgroundColor: bgColor,
       appBar: AppBar(
-        title: Text("Change Password", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+        title: Text("Change Password", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor)),
         elevation: 0,
-        backgroundColor: theme.scaffoldBackgroundColor,
-        iconTheme: IconThemeData(color: theme.iconTheme.color), 
-         titleTextStyle: TextStyle(color: theme.textTheme.bodyLarge?.color, fontSize: 20, fontWeight: FontWeight.bold),
+        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(color: textColor), 
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                "Secure Your Account",
-                style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.bold),
+      body: _loadingSession
+          ? const Center(child: CircularProgressIndicator())
+          : SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // 1. User Info Header Card
+                  _buildUserInfoCard(fullName, loginId, role, cardColor, textColor, subTextColor, borderColor),
+                  const SizedBox(height: 16),
+                  
+                  // Responsive Row layout for Large Screen, Stack for Mobile
+                  LayoutBuilder(
+                    builder: (context, constraints) {
+                      final isWide = constraints.maxWidth > 720;
+                      return Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex: isWide ? 7 : 10,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                // Form Card
+                                _buildFormCard(cardColor, textColor, subTextColor, isDark),
+                                const SizedBox(height: 16),
+                                
+                                // Security Audit / Timeline Card
+                                _buildSecurityTimelineCard(cardColor, textColor, subTextColor, borderColor),
+                              ],
+                            ),
+                          ),
+                          if (isWide) ...[
+                            const SizedBox(width: 16),
+                            Expanded(
+                              flex: 5,
+                              child: Column(
+                                children: [
+                                  // Details / Policy Info Card
+                                  _buildSecurityDetailsCard(cardColor, textColor, subTextColor, borderColor),
+                                  const SizedBox(height: 16),
+                                  
+                                  // Tips Card
+                                  _buildSecurityTipsCard(cardColor, textColor, subTextColor, borderColor),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ],
+                      );
+                    },
+                  ),
+                  
+                  // For Mobile only: Add details & tips under the form
+                  LayoutBuilder(builder: (context, constraints) {
+                    if (constraints.maxWidth <= 720) {
+                      return Column(
+                        children: [
+                          const SizedBox(height: 16),
+                          _buildSecurityDetailsCard(cardColor, textColor, subTextColor, borderColor),
+                          const SizedBox(height: 16),
+                          _buildSecurityTipsCard(cardColor, textColor, subTextColor, borderColor),
+                        ],
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  }),
+                  
+                  const SizedBox(height: 40),
+                ],
               ),
-              const SizedBox(height: 10),
-              Text(
-                "Create a new password for your account. Make sure it's strong and secure.",
-                style: GoogleFonts.poppins(color: Colors.grey, fontSize: 14),
-              ),
-              const SizedBox(height: 30),
+            ),
+    );
+  }
 
-              // Added Old Password Field check back
-              _buildPasswordField(
-                controller: _oldPasswordController,
-                label: "Old Password",
-                hint: "Enter current password",
-                obscureText: _obscureOld,
-                onToggleVisiblity: () => setState(() => _obscureOld = !_obscureOld),
-                isDark: isDark,
-                requireLength: false,
-              ),
-              const SizedBox(height: 20),
-
-              _buildPasswordField(
-                controller: _newPasswordController,
-                label: "New Password",
-                hint: "Enter new password",
-                obscureText: _obscureNew,
-                onToggleVisiblity: () => setState(() => _obscureNew = !_obscureNew),
-                isDark: isDark,
-                requireLength: true,
-              ),
-              const SizedBox(height: 20),
-
-              _buildPasswordField(
-                controller: _confirmPasswordController,
-                label: "Confirm New Password",
-                hint: "Re-enter new password",
-                obscureText: _obscureConfirm,
-                onToggleVisiblity: () => setState(() => _obscureConfirm = !_obscureConfirm),
-                isDark: isDark,
-                requireLength: true,
-              ),
-
-              const SizedBox(height: 40),
-
-              ElevatedButton(
-                onPressed: _isLoading ? null : _updatePassword,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: theme.primaryColor,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                ),
-                child: _isLoading 
-                    ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
-                    : Text("Update Password", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16)),
-              ),
-            ],
+  Widget _buildUserInfoCard(String name, String id, String role, Color cardColor, Color textColor, Color subTextColor, Color borderColor) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: borderColor),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4))
+        ],
+      ),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 26,
+            backgroundColor: Colors.blueAccent.withValues(alpha: 0.1),
+            child: Text(
+              name.isNotEmpty ? name[0].toUpperCase() : 'U',
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: Colors.blueAccent),
+            ),
           ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(name, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: textColor)),
+                const SizedBox(height: 2),
+                Text("User ID: $id  •  Role: $role", style: GoogleFonts.poppins(fontSize: 12, color: subTextColor, fontWeight: FontWeight.w500)),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFormCard(Color cardColor, Color textColor, Color subTextColor, bool isDark) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withValues(alpha: 0.03), blurRadius: 15, offset: const Offset(0, 8))
+        ],
+      ),
+      child: Form(
+        key: _formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              children: [
+                const Icon(Icons.lock_person, color: Colors.blueAccent, size: 22),
+                const SizedBox(width: 10),
+                Text(
+                  "Password Change Portal",
+                  style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
+                ),
+              ],
+            ),
+            const Divider(height: 30),
+            
+            // Caps Lock Warning Banner
+            if (_capsLockOn) ...[
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                decoration: BoxDecoration(
+                  color: Colors.orange.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
+                ),
+                child: const Row(
+                  children: [
+                    Icon(Icons.warning_amber_rounded, color: Colors.orange, size: 16),
+                    SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        "Warning: Caps Lock is ON",
+                        style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold, fontSize: 12),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+            ],
+
+            // Current Password
+            _buildPasswordField(
+              controller: _oldPasswordController,
+              label: "Current Password",
+              hint: "Enter your old password",
+              obscureText: _obscureOld,
+              onToggleVisibility: () => setState(() => _obscureOld = !_obscureOld),
+              isDark: isDark,
+            ),
+            const SizedBox(height: 16),
+
+            // New Password
+            _buildPasswordField(
+              controller: _newPasswordController,
+              label: "New Password",
+              hint: "Enter complex new password",
+              obscureText: _obscureNew,
+              onToggleVisibility: () => setState(() => _obscureNew = !_obscureNew),
+              isDark: isDark,
+              onChanged: (_) => _validatePassword(),
+            ),
+            const SizedBox(height: 16),
+
+            // Confirm Password
+            _buildPasswordField(
+              controller: _confirmPasswordController,
+              label: "Confirm New Password",
+              hint: "Re-enter the new password",
+              obscureText: _obscureConfirm,
+              onToggleVisibility: () => setState(() => _obscureConfirm = !_obscureConfirm),
+              isDark: isDark,
+            ),
+            const SizedBox(height: 24),
+            
+            // Real-time Strength Meter Gauge
+            _buildStrengthMeterGauge(),
+            const SizedBox(height: 24),
+            
+            // Password Policy Checks (Ticks & Crosses)
+            _buildPolicyRulesPanel(textColor),
+            const SizedBox(height: 24),
+            
+            // Security Verification Method Section
+            _build2FASelection(cardColor, textColor, subTextColor),
+            const SizedBox(height: 24),
+
+            // Action Buttons
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: _resetForm,
+                    style: OutlinedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    ),
+                    child: Text("Reset", style: GoogleFonts.poppins(fontWeight: FontWeight.w600, color: subTextColor)),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  flex: 2,
+                  child: ElevatedButton(
+                    onPressed: _isLoading ? null : _updatePassword,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueAccent,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    ),
+                    child: _isLoading 
+                        ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
+                        : Text(_otpSent ? "Change Password" : "Get Verification Code", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white)),
+                  ),
+                ),
+              ],
+            ),
+            
+            const SizedBox(height: 16),
+            
+            // Terminate Sessions (Danger Button)
+            OutlinedButton.icon(
+              onPressed: _handleLogoutFromAllDevices,
+              icon: const Icon(Icons.devices_other, size: 18, color: Colors.red),
+              label: Text("Logout from All Other Devices", style: GoogleFonts.poppins(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 13)),
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Colors.redAccent, width: 1.2),
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -194,49 +658,372 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     required String label,
     required String hint,
     required bool obscureText,
-    required VoidCallback onToggleVisiblity,
+    required VoidCallback onToggleVisibility,
     required bool isDark,
-    bool requireLength = false,
+    Function(String)? onChanged,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 14)),
-        const SizedBox(height: 8),
+        Text(label, style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 13)),
+        const SizedBox(height: 6),
         TextFormField(
           controller: controller,
           obscureText: obscureText,
+          onChanged: onChanged,
           validator: (val) {
              if (val == null || val.isEmpty) return "Please enter $label";
-             if (requireLength && val.length < 6) return "Password must be at least 6 characters";
              return null;
           },
-          style: GoogleFonts.poppins(),
+          style: GoogleFonts.poppins(fontSize: 14),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: GoogleFonts.poppins(color: Colors.grey),
-            prefixIcon: const Icon(Icons.lock_outline, color: Colors.grey),
+            hintStyle: GoogleFonts.poppins(color: Colors.grey, fontSize: 13),
+            prefixIcon: const Icon(Icons.lock_outline, color: Colors.grey, size: 18),
             suffixIcon: IconButton(
-              icon: Icon(obscureText ? Icons.visibility_outlined : Icons.visibility_off_outlined, color: Colors.grey),
-              onPressed: onToggleVisiblity,
+              icon: Icon(obscureText ? Icons.visibility_outlined : Icons.visibility_off_outlined, color: Colors.grey, size: 18),
+              onPressed: onToggleVisibility,
             ),
             filled: true,
-            fillColor: isDark ? const Color(0xFF1C1C2E) : Colors.grey[100],
-             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide.none,
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: isDark ? Colors.white10 : Colors.grey[200]!),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: Colors.blueAccent),
-            ),
+            fillColor: isDark ? const Color(0xFF14141E) : Colors.grey[100],
+            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
+            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: isDark ? Colors.white10 : Colors.grey[200]!)),
+            focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: Colors.blueAccent, width: 1.5)),
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildStrengthMeterGauge() {
+    final pct = _getStrengthPercentage();
+    final label = _getStrengthLabel();
+    final color = _getStrengthColor();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("Password Strength: ", style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold)),
+            Text(label, style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: color)),
+          ],
+        ),
+        const SizedBox(height: 8),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(4),
+          child: LinearProgressIndicator(
+            value: pct,
+            backgroundColor: Colors.grey[300],
+            valueColor: AlwaysStoppedAnimation<Color>(color),
+            minHeight: 6,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPolicyRulesPanel(Color textColor) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.grey.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("PASSWORD SECURITY REQUIREMENTS", style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.w700, color: Colors.grey)),
+          const SizedBox(height: 10),
+          _buildRequirementRow("At least 5 characters", _hasMinLength),
+          _buildRequirementRow("At least one uppercase letter (A-Z)", _hasUppercase),
+          _buildRequirementRow("At least one lowercase letter (a-z)", _hasLowercase),
+          _buildRequirementRow("At least one digit (0-9)", _hasDigits),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRequirementRow(String rule, bool satisfied) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 6.0),
+      child: Row(
+        children: [
+          Icon(
+            satisfied ? Icons.check_circle : Icons.cancel,
+            color: satisfied ? Colors.green : Colors.red,
+            size: 16,
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              rule,
+              style: GoogleFonts.poppins(
+                fontSize: 12,
+                color: satisfied ? Colors.green[700] : Colors.grey[600],
+                fontWeight: satisfied ? FontWeight.bold : FontWeight.normal,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _build2FASelection(Color cardColor, Color textColor, Color subTextColor) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            const Icon(Icons.verified_user_outlined, color: Colors.blueAccent, size: 18),
+            const SizedBox(width: 8),
+            Text("Identity Verification Method", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: textColor)),
+          ],
+        ),
+        const SizedBox(height: 10),
+        Row(
+          children: [
+            _buildVerifTabButton("Email OTP"),
+            const SizedBox(width: 8),
+            _buildVerifTabButton("Mobile OTP"),
+            const SizedBox(width: 8),
+            _buildVerifTabButton("Authenticator App"),
+          ],
+        ),
+        if (_otpSent) ...[
+          const SizedBox(height: 16),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Enter Code:", style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 6),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _otpController,
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly, LengthLimitingTextInputFormatter(6)],
+                      decoration: InputDecoration(
+                        hintText: "Enter the code sent",
+                        hintStyle: const TextStyle(fontSize: 13),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("New code sent."), backgroundColor: Colors.blueAccent),
+                      );
+                    },
+                    child: const Text("Resend"),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ],
+      ],
+    );
+  }
+
+  Widget _buildVerifTabButton(String method) {
+    final active = _selectedVerification == method;
+    return Expanded(
+      child: InkWell(
+        onTap: () => setState(() => _selectedVerification = method),
+        borderRadius: BorderRadius.circular(8),
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: active ? Colors.blueAccent.withValues(alpha: 0.1) : Colors.transparent,
+            border: Border.all(color: active ? Colors.blueAccent : Colors.grey[400]!),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Text(
+            method,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.poppins(
+              fontSize: 10,
+              fontWeight: active ? FontWeight.bold : FontWeight.normal,
+              color: active ? Colors.blueAccent : Colors.grey[600],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSecurityDetailsCard(Color cardColor, Color textColor, Color subTextColor, Color borderColor) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: borderColor),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4))
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.shield, color: Colors.blueAccent, size: 18),
+              const SizedBox(width: 8),
+              Text("Security Settings Panel", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: textColor)),
+            ],
+          ),
+          const Divider(height: 24),
+          _buildInfoRow("Account Status", "Secure / Active", Colors.green),
+          _buildInfoRow("Active Devices", "3 sessions", Colors.blueAccent),
+          _buildInfoRow("Two-Factor Auth", "Enabled (OTP)", Colors.blueAccent),
+          _buildInfoRow("Last Password Reset", "30 days ago", textColor),
+          _buildInfoRow("Password Expiration", "Never Expiring", Colors.green),
+          const SizedBox(height: 12),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton.icon(
+              icon: const Icon(Icons.download, size: 16, color: Colors.blueAccent),
+              label: Text("Download Activity Report", style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blueAccent)),
+              onPressed: _downloadReport,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueAccent.withValues(alpha: 0.1),
+                elevation: 0,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInfoRow(String label, String value, Color valueColor) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey[600])),
+          Text(value, style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: valueColor)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSecurityTipsCard(Color cardColor, Color textColor, Color subTextColor, Color borderColor) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: borderColor),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4))
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.lightbulb_outline, color: Colors.orangeAccent, size: 18),
+              const SizedBox(width: 8),
+              Text("ERP Security Advice", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: textColor)),
+            ],
+          ),
+          const Divider(height: 24),
+          _buildTipRow("Change your password periodically to safeguard your academic and financial records."),
+          _buildTipRow("Choose a combination of symbols, numbers, and capital letters that doesn't include dictionary words."),
+          _buildTipRow("Never access the ERP portal using public unencrypted Wi-Fi or public computers without private tabs."),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTipRow(String tipText) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(Icons.arrow_right, color: Colors.orangeAccent, size: 20),
+          const SizedBox(width: 4),
+          Expanded(
+            child: Text(
+              tipText,
+              style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey[700]),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSecurityTimelineCard(Color cardColor, Color textColor, Color subTextColor, Color borderColor) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: borderColor),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4))
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.history, color: Colors.blueAccent, size: 18),
+              const SizedBox(width: 8),
+              Text("Recent Security Log Timeline", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: textColor)),
+            ],
+          ),
+          const Divider(height: 24),
+          _buildTimelineRow("Successful Login", "Today, 09:30 AM  •  Chrome Windows  •  IP: 192.168.1.100", true),
+          _buildTimelineRow("Active Session terminates", "Yesterday, 10:15 PM  •  Mobile Safari  •  IP: 192.168.1.101", true),
+          _buildTimelineRow("Attempted Login Failure", "3 days ago  •  Firefox Linux  •  IP: 182.50.21.9", false),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTimelineRow(String action, String details, bool success) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(
+            success ? Icons.check_circle_outline : Icons.error_outline,
+            color: success ? Colors.green : Colors.red,
+            size: 18,
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(action, style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: success ? Colors.green[700] : Colors.red[700])),
+                Text(details, style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey[600])),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

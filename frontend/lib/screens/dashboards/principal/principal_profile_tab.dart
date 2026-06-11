@@ -10,6 +10,7 @@ import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 import 'principal_notifications_screen.dart';
+import '../../common/change_password_screen.dart';
 
 class PrincipalProfileTab extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -250,6 +251,16 @@ class _PrincipalProfileTabState extends State<PrincipalProfileTab> {
               onSelected: (value) {
                 if (value == 'update_profile') {
                    _showEditProfileDialog();
+                } else if (value == 'change_password') {
+                   final userId = widget.userData['id'] ?? widget.userData['userId'] ?? '';
+                   Navigator.of(context).push(
+                     MaterialPageRoute(
+                       builder: (context) => ChangePasswordScreen(
+                         userId: userId.toString(),
+                         userRole: 'Principal',
+                       ),
+                     ),
+                   );
                 } else if (value == 'logout') {
                    widget.onLogout();
                 }
@@ -262,6 +273,16 @@ class _PrincipalProfileTabState extends State<PrincipalProfileTab> {
                       Icon(Icons.edit_outlined, color: textColor, size: 20),
                       const SizedBox(width: 12),
                       Text("Update Profile", style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w500)),
+                    ],
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'change_password',
+                  child: Row(
+                    children: [
+                      Icon(Icons.lock_outline, color: textColor, size: 20),
+                      const SizedBox(width: 12),
+                      Text("Change Password", style: GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w500)),
                     ],
                   ),
                 ),

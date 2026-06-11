@@ -10,6 +10,7 @@ import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
 import '../../auth/login_screen.dart';
 import 'faculty_notifications_screen.dart';
+import '../../common/change_password_screen.dart';
 
 class FacultyProfileScreen extends StatefulWidget {
   final Map<String, dynamic>? userData;
@@ -272,7 +273,15 @@ class _FacultyProfileScreenState extends State<FacultyProfileScreen> {
                 if (value == 'update_profile') {
                   _showEditProfileDialog();
                 } else if (value == 'change_password') {
-                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Feature coming soon')));
+                   final userId = widget.userData?['id'] ?? widget.userData?['userId'] ?? '';
+                   Navigator.of(context).push(
+                     MaterialPageRoute(
+                       builder: (context) => ChangePasswordScreen(
+                         userId: userId.toString(),
+                         userRole: 'Faculty',
+                       ),
+                     ),
+                   );
                 } else if (value == 'logout') {
                    _logout();
                 }

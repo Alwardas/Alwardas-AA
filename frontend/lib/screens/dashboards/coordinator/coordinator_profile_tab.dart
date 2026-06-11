@@ -9,6 +9,7 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/auth_service.dart';
+import '../../common/change_password_screen.dart';
 
 class CoordinatorProfileTab extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -224,7 +225,15 @@ class _CoordinatorProfileTabState extends State<CoordinatorProfileTab> {
                 if (value == 'update_profile') {
                   _showEditProfileDialog();
                 } else if (value == 'change_password') {
-                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Feature coming soon')));
+                   final userId = widget.userData['id'] ?? widget.userData['userId'] ?? '';
+                   Navigator.of(context).push(
+                     MaterialPageRoute(
+                       builder: (context) => ChangePasswordScreen(
+                         userId: userId.toString(),
+                         userRole: 'Coordinator',
+                       ),
+                     ),
+                   );
                 } else if (value == 'logout') {
                    widget.onLogout();
                 }

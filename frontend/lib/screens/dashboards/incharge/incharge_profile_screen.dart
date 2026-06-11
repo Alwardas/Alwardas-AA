@@ -12,6 +12,7 @@ import '../../../core/services/auth_service.dart';
 // Note: Using a general notifications screen if available, or placeholder
 import '../hod/hod_notifications_screen.dart'; 
 import '../../auth/login_screen.dart';
+import '../../common/change_password_screen.dart';
 
 class InchargeProfileScreen extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -251,7 +252,15 @@ class _InchargeProfileScreenState extends State<InchargeProfileScreen> {
                 if (value == 'update_profile') {
                   _showEditProfileDialog();
                 } else if (value == 'change_password') {
-                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Feature coming soon')));
+                   final userId = widget.userData['id'] ?? widget.userData['userId'] ?? '';
+                   Navigator.of(context).push(
+                     MaterialPageRoute(
+                       builder: (context) => ChangePasswordScreen(
+                         userId: userId.toString(),
+                         userRole: 'Incharge',
+                       ),
+                     ),
+                   );
                 } else if (value == 'logout') {
                    _logout();
                 }

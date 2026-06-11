@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
-import '../../../core/theme/app_theme.dart';
+import '../../common/change_password_screen.dart';
 
 class StudentProfileTab extends StatefulWidget {
   final Map<String, dynamic> userData; 
@@ -409,7 +409,15 @@ class _StudentProfileTabState extends State<StudentProfileTab> {
                 if (value == 'update_profile') {
                   _toggleEditMode();
                 } else if (value == 'change_password') {
-                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Feature coming soon')));
+                   final userId = widget.userData['id'] ?? widget.userData['userId'] ?? '';
+                   Navigator.of(context).push(
+                     MaterialPageRoute(
+                       builder: (context) => ChangePasswordScreen(
+                         userId: userId.toString(),
+                         userRole: 'Student',
+                       ),
+                     ),
+                   );
                 } else if (value == 'logout') {
                    widget.onLogout();
                 }
