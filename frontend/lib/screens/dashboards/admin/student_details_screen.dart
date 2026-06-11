@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'dart:convert';
@@ -45,7 +45,8 @@ class _StudentDetailsScreenState extends State<StudentDetailsScreen> {
       if (response.statusCode == 200) {
         if (mounted) {
           setState(() {
-            _studentData = json.decode(response.body);
+            final decoded = json.decode(response.body);
+            _studentData = decoded is Map && decoded.containsKey('data') ? decoded['data'] : decoded;
             _loading = false;
           });
         }

@@ -53,7 +53,8 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
       if (response.statusCode == 200) {
         if (mounted) {
           setState(() {
-            _studentData = json.decode(response.body);
+            final decoded = json.decode(response.body);
+            _studentData = decoded is Map && decoded.containsKey('data') ? decoded['data'] : decoded;
             _isLoading = false;
           });
         }
