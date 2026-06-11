@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM chat_blocks WHERE blocker_id = $1 AND blocked_id = $2",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "3733ea3819dfd0c65eab53d4af02477b64c598b4e5bec50df13a1aa38719d4c0"
+}

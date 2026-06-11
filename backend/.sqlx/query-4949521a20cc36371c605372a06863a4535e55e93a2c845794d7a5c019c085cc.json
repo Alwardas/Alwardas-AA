@@ -1,0 +1,52 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT g.id, g.name, g.description, g.icon_url,\n                  (SELECT content FROM chat_messages WHERE receiver_id = g.id ORDER BY created_at DESC LIMIT 1) as last_message,\n                  (SELECT created_at FROM chat_messages WHERE receiver_id = g.id ORDER BY created_at DESC LIMIT 1) as last_message_time\n           FROM chat_groups g\n           JOIN chat_group_members gm ON g.id = gm.group_id\n           WHERE gm.user_id = $1",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 1,
+        "name": "name",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 2,
+        "name": "description",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 3,
+        "name": "icon_url",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 4,
+        "name": "last_message",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 5,
+        "name": "last_message_time",
+        "type_info": "Timestamptz"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      true,
+      true,
+      null,
+      null
+    ]
+  },
+  "hash": "4949521a20cc36371c605372a06863a4535e55e93a2c845794d7a5c019c085cc"
+}

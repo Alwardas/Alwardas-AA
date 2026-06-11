@@ -1,0 +1,46 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT full_name, role, login_id, branch, section FROM users WHERE login_id = $1",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "full_name",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 1,
+        "name": "role",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 2,
+        "name": "login_id",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 3,
+        "name": "branch",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 4,
+        "name": "section",
+        "type_info": "Varchar"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      true
+    ]
+  },
+  "hash": "5badc08867affeca1be769a15b3f2e2b58aca99870e5fa80baf3c86b2cc28d2e"
+}

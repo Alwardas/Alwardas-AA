@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO chat_group_members (group_id, user_id, role)\n                 VALUES ($1, $2, 'MEMBER')",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "73662ff5b9c5594e0bb1bd416805a4f001e00b9eb0a6afa60370274b963df2a8"
+}

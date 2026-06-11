@@ -1,0 +1,58 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT u.login_id as partner_id, u.full_name as partner_name, u.role as partner_role, u.branch as partner_branch, u.section as partner_section,\n                  (SELECT content FROM chat_messages \n                   WHERE (sender_id = $1 AND receiver_id = u.login_id) OR (sender_id = u.login_id AND receiver_id = $1)\n                   ORDER BY created_at DESC LIMIT 1) as last_message,\n                  (SELECT created_at FROM chat_messages \n                   WHERE (sender_id = $1 AND receiver_id = u.login_id) OR (sender_id = u.login_id AND receiver_id = $1)\n                   ORDER BY created_at DESC LIMIT 1) as last_message_time\n           FROM chat_requests r\n           JOIN users u ON (r.sender_id = u.login_id AND r.receiver_id = $1) OR (r.receiver_id = u.login_id AND r.sender_id = $1)\n           WHERE r.status = 'ACCEPTED' AND u.login_id != $1",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "partner_id",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 1,
+        "name": "partner_name",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 2,
+        "name": "partner_role",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 3,
+        "name": "partner_branch",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 4,
+        "name": "partner_section",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 5,
+        "name": "last_message",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 6,
+        "name": "last_message_time",
+        "type_info": "Timestamptz"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      true,
+      null,
+      null
+    ]
+  },
+  "hash": "6a2a12b199eabd946e0daff5b11b01acc6d7c3d20db04ac2168b6a1e44626c1e"
+}

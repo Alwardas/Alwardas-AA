@@ -1,0 +1,16 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO chat_requests (sender_id, receiver_id, optional_message, status)\n         VALUES ($1, $2, $3, 'PENDING')\n         ON CONFLICT (sender_id, receiver_id) DO UPDATE \n         SET status = 'PENDING', optional_message = $3, updated_at = NOW()",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "3d247c4ebad4f49139fbbfb601c4eff5779e5b28980531a6e7836a95fbc1da85"
+}

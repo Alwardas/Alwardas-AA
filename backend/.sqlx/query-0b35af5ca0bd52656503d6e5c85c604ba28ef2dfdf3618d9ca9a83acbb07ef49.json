@@ -1,0 +1,108 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO chat_messages (sender_id, receiver_id, content, message_type, attachment_url, attachment_name, attachment_size, reply_to_id, reply_to_content)\n           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)\n           RETURNING id, sender_id, receiver_id, content, message_type, attachment_url, attachment_name, attachment_size, reply_to_id, reply_to_content, is_starred, is_deleted_for_everyone, created_at as \"created_at!\",\n                     (SELECT full_name FROM users WHERE login_id = $1) as sender_name",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 1,
+        "name": "sender_id",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 2,
+        "name": "receiver_id",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 3,
+        "name": "content",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 4,
+        "name": "message_type",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 5,
+        "name": "attachment_url",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 6,
+        "name": "attachment_name",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 7,
+        "name": "attachment_size",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 8,
+        "name": "reply_to_id",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 9,
+        "name": "reply_to_content",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 10,
+        "name": "is_starred",
+        "type_info": "Bool"
+      },
+      {
+        "ordinal": 11,
+        "name": "is_deleted_for_everyone",
+        "type_info": "Bool"
+      },
+      {
+        "ordinal": 12,
+        "name": "created_at!",
+        "type_info": "Timestamptz"
+      },
+      {
+        "ordinal": 13,
+        "name": "sender_name",
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Uuid",
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      null
+    ]
+  },
+  "hash": "0b35af5ca0bd52656503d6e5c85c604ba28ef2dfdf3618d9ca9a83acbb07ef49"
+}

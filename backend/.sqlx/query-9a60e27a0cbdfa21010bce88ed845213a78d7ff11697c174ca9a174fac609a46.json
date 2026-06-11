@@ -1,0 +1,101 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT m.id, m.sender_id, u.full_name as sender_name, m.receiver_id, m.content, m.message_type,\n                      m.attachment_url, m.attachment_name, m.attachment_size, m.reply_to_id, m.reply_to_content,\n                      m.is_starred, m.is_deleted_for_everyone, m.created_at as \"created_at!\"\n               FROM chat_messages m\n               JOIN users u ON m.sender_id = u.login_id\n               WHERE (m.sender_id = $1 AND m.receiver_id = $2) OR (m.sender_id = $2 AND m.receiver_id = $1)\n               ORDER BY m.created_at ASC",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 1,
+        "name": "sender_id",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 2,
+        "name": "sender_name",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 3,
+        "name": "receiver_id",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 4,
+        "name": "content",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 5,
+        "name": "message_type",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 6,
+        "name": "attachment_url",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 7,
+        "name": "attachment_name",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 8,
+        "name": "attachment_size",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 9,
+        "name": "reply_to_id",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 10,
+        "name": "reply_to_content",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 11,
+        "name": "is_starred",
+        "type_info": "Bool"
+      },
+      {
+        "ordinal": 12,
+        "name": "is_deleted_for_everyone",
+        "type_info": "Bool"
+      },
+      {
+        "ordinal": 13,
+        "name": "created_at!",
+        "type_info": "Timestamptz"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "9a60e27a0cbdfa21010bce88ed845213a78d7ff11697c174ca9a174fac609a46"
+}

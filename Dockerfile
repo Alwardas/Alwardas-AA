@@ -27,7 +27,8 @@ RUN apt-get update && apt-get install -y \
 COPY backend/ /app/
 COPY protos/ /protos/
 
-# Build the release
+# Build the release with SQLx offline mode enabled
+ENV SQLX_OFFLINE=true
 RUN cargo build --release
 
 # Stage 3: Final Runtime Image

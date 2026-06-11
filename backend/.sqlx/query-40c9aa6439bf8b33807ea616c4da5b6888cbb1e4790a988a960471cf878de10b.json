@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "UPDATE chat_messages SET is_deleted_for_everyone = true WHERE id = $1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "40c9aa6439bf8b33807ea616c4da5b6888cbb1e4790a988a960471cf878de10b"
+}
