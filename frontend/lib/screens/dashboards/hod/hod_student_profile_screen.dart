@@ -516,28 +516,7 @@ class _HodStudentProfileScreenState extends State<HodStudentProfileScreen> {
         const SizedBox(width: 12),
         Expanded(
           child: _buildFeatureCard(
-            title: "Feedbacks",
-            icon: Icons.feedback,
-            color: Colors.purple,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => StudentFeedbackScreen(
-                    userData: {
-                      'id': widget.userId,
-                      'login_id': widget.studentId,
-                    },
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: _buildFeatureCard(
-            title: "Marks",
+            title: "Study",
             icon: Icons.analytics,
             color: Colors.blueAccent,
             onTap: () {
