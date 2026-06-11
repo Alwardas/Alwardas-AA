@@ -27,6 +27,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/notification_service.dart';
 import 'package:intl/intl.dart';
+import '../../common/erp_connect_screen.dart';
 
 class FacultyDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -491,41 +492,46 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                   ],
                 ),
               ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(
-                      color: Colors.white.withOpacity(0.4), width: 1),
-                  color: Colors.white.withOpacity(0.1),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text("Chat feature coming soon")),
-                        );
-                      },
-                      child: const Icon(Icons.chat_bubble_outline, color: Colors.white, size: 22),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ErpConnectScreen(userData: widget.userData),
+                      ),
                     ),
-                    const SizedBox(width: 14),
-                    GestureDetector(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) =>
-                                  const FacultyNotificationsScreen())),
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.15),
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white.withOpacity(0.4), width: 1),
+                      ),
+                      child: const Icon(Icons.chat_bubble_outline, color: Colors.white, size: 20),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const FacultyNotificationsScreen())),
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.15),
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white.withOpacity(0.4), width: 1),
+                      ),
                       child: Stack(
                         clipBehavior: Clip.none,
                         children: [
-                          const Icon(Icons.notifications_none,
-                              color: Colors.white, size: 22),
+                          const Icon(Icons.notifications_none, color: Colors.white, size: 20),
                           Positioned(
-                            right: 0,
-                            top: 0,
+                            right: -2,
+                            top: -2,
                             child: Container(
                               width: 8,
                               height: 8,
@@ -538,8 +544,8 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                         ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),

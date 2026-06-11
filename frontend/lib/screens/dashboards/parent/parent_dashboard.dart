@@ -24,6 +24,7 @@ import '../../../widgets/shared_dashboard_announcements.dart';
 import 'dart:async';
 import '../../../core/services/notification_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../common/erp_connect_screen.dart';
 
 class ParentDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -518,11 +519,12 @@ class _ParentDashboardState extends State<ParentDashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       GestureDetector(
-                        onTap: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text("Chat feature coming soon")),
-                          );
-                        },
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ErpConnectScreen(userData: widget.userData),
+                          ),
+                        ),
                         child: _buildHeaderIcon(Icons.chat_bubble_outline),
                       ),
                       const SizedBox(width: 8),

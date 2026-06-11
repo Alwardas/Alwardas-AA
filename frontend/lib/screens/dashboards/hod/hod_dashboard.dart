@@ -29,6 +29,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/notification_service.dart';
+import '../../common/erp_connect_screen.dart';
 
 class HodDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -420,14 +421,15 @@ class _HodDashboardState extends State<HodDashboard> {
                    ),
                      Row(
                        children: [
-                         GestureDetector(
-                           onTap: () {
-                             ScaffoldMessenger.of(context).showSnackBar(
-                               const SnackBar(content: Text("Chat feature coming soon")),
-                             );
-                           },
-                           child: _buildHeaderIcon(Icons.chat_bubble_outline),
-                         ),
+                          GestureDetector(
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => ErpConnectScreen(userData: widget.userData),
+                              ),
+                            ),
+                            child: _buildHeaderIcon(Icons.chat_bubble_outline),
+                          ),
                          const SizedBox(width: 8),
                          GestureDetector(
                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HodNotificationsScreen())),
