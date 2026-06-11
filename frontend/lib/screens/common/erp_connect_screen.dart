@@ -11,6 +11,7 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../core/api_constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ErpConnectScreen extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -91,6 +92,16 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
   bool _isLoadingRequests = false;
   bool _isLoadingMessages = false;
 
+  // New Snapchat mode & local renaming state variables
+  Map<String, String> _customAliases = {};
+  SharedPreferences? _prefs;
+  bool _isDisappearingMode = false;
+  final Set<String> _disappearedMessageIds = {};
+  final Set<String> _blueTickMessageIds = {};
+  final Map<String, Timer> _disappearingTimers = {};
+  final Set<String> _typingPartners = {};
+  Timer? _typingSimulationTimer;
+
   // Periodic polling timers
   Timer? _conversationsTimer;
   Timer? _requestsTimer;
@@ -107,6 +118,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
     _fetchConversations();
     _fetchRequests();
     _fetchBlockedUsers();
+    _loadAliases();
 
     // Start periodic background updates for notifications/chats list
     _conversationsTimer = Timer.periodic(const Duration(seconds: 4), (_) => _fetchConversations(silent: true));
@@ -114,6 +126,25 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
     
     // Seed initial call logs dynamically for realistic feel
     _seedLocalCallLogs();
+
+    // typing simulation timer
+    _typingSimulationTimer = Timer.periodic(const Duration(seconds: 12), (_) {
+      if (_selectedConversationId != null && !_isGroupSelected) {
+        final currentPartner = _selectedConversationId!;
+        if (mounted) {
+          setState(() {
+            _typingPartners.add(currentPartner);
+          });
+        }
+        Timer(const Duration(seconds: 4), () {
+          if (mounted) {
+            setState(() {
+              _typingPartners.remove(currentPartner);
+            });
+          }
+        });
+      }
+    });
   }
 
   @override
@@ -123,6 +154,10 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
     _messagesTimer?.cancel();
     _recordingTimer?.cancel();
     _callStatsTimer?.cancel();
+    _typingSimulationTimer?.cancel();
+    for (final timer in _disappearingTimers.values) {
+      timer.cancel();
+    }
     _globalSearchController.dispose();
     _messageSearchController.dispose();
     _erpSearchController.dispose();
@@ -140,6 +175,120 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
       myErpId = widget.userData['id']?.toString() ?? 'ERP-ID';
     }
     myName = widget.userData['full_name'] ?? 'ERP User';
+  }
+
+  // --- LOCAL ALIAS & RENAME / DELETE IMPLEMENTATION ---
+
+  Future<void> _loadAliases() async {
+    try {
+      _prefs = await SharedPreferences.getInstance();
+      final keys = _prefs!.getKeys();
+      final Map<String, String> loaded = {};
+      for (final key in keys) {
+        if (key.startsWith('alias_${myErpId}_')) {
+          final partnerId = key.substring('alias_${myErpId}_'.length);
+          final val = _prefs!.getString(key);
+          if (val != null) {
+            loaded[partnerId] = val;
+          }
+        }
+      }
+      setState(() {
+        _customAliases = loaded;
+      });
+    } catch (e) {
+      debugPrint("Error loading shared preferences: $e");
+    }
+  }
+
+  Future<void> _saveAlias(String partnerId, String newName) async {
+    if (_prefs == null) return;
+    final key = 'alias_${myErpId}_$partnerId';
+    if (newName.trim().isEmpty) {
+      await _prefs!.remove(key);
+      setState(() {
+        _customAliases.remove(partnerId);
+      });
+    } else {
+      await _prefs!.setString(key, newName.trim());
+      setState(() {
+        _customAliases[partnerId] = newName.trim();
+      });
+    }
+    _fetchConversations(silent: true);
+  }
+
+  void _showRenameDialog(String partnerId, String currentName) {
+    final controller = TextEditingController(text: _customAliases[partnerId] ?? currentName);
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Rename Contact'),
+        content: TextField(
+          controller: controller,
+          decoration: const InputDecoration(
+            labelText: 'Custom Alias',
+            hintText: 'Enter new name',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              _saveAlias(partnerId, ''); // Clear alias
+              Navigator.pop(context);
+            },
+            child: const Text('Reset', style: TextStyle(color: Colors.grey)),
+          ),
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+          TextButton(
+            onPressed: () {
+              _saveAlias(partnerId, controller.text);
+              Navigator.pop(context);
+            },
+            child: const Text('Save'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _deleteConversation(String partnerId) async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Delete Chat?'),
+        content: const Text('Are you sure you want to delete this conversation? This will clear all messages and disconnect the link.'),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
+          TextButton(
+            style: TextButton.styleFrom(foregroundColor: Colors.red),
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('Delete'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm != true) return;
+
+    try {
+      final response = await http.delete(
+        Uri.parse('${ApiConstants.baseUrl}/api/chat/conversations/$partnerId?user_id=$myErpId'),
+      );
+      if (response.statusCode == 200) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Conversation deleted successfully.')),
+        );
+        setState(() {
+          _selectedConversationId = null;
+          _showRightPanel = false;
+        });
+        _fetchConversations();
+      }
+    } catch (e) {
+      debugPrint("Error deleting conversation: $e");
+    }
   }
 
   void _seedLocalCallLogs() {
@@ -240,6 +389,48 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
       );
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
+
+        // Snapchat disappearing mode logic
+        if (_isDisappearingMode && !_isGroupSelected) {
+          for (final msg in data) {
+            final msgId = msg['id'].toString();
+            final isMe = msg['senderId'] == myErpId;
+            
+            if (!isMe) {
+              // Received message: starts disappearing timer immediately when fetched/displayed
+              if (!_disappearingTimers.containsKey(msgId) && !_disappearedMessageIds.contains(msgId)) {
+                _disappearingTimers[msgId] = Timer(const Duration(seconds: 8), () {
+                  if (mounted) {
+                    setState(() {
+                      _disappearedMessageIds.add(msgId);
+                    });
+                    _deleteChatMessage(msgId, false); // clear from DB
+                  }
+                });
+              }
+            } else {
+              // Sent message: blue ticks turn after 3s, disappears after 8s
+              if (!_blueTickMessageIds.contains(msgId) && !_disappearingTimers.containsKey('${msgId}_ticks') && !_disappearedMessageIds.contains(msgId)) {
+                _disappearingTimers['${msgId}_ticks'] = Timer(const Duration(seconds: 3), () {
+                  if (mounted) {
+                    setState(() {
+                      _blueTickMessageIds.add(msgId);
+                    });
+                  }
+                });
+                _disappearingTimers[msgId] = Timer(const Duration(seconds: 8), () {
+                  if (mounted) {
+                    setState(() {
+                      _disappearedMessageIds.add(msgId);
+                    });
+                    _deleteChatMessage(msgId, false); // clear from DB
+                  }
+                });
+              }
+            }
+          }
+        }
+
         if (mounted) {
           setState(() {
             _messages = data;
@@ -255,10 +446,16 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
 
   void _onConversationSelected(String id, bool isGroup) {
     _messagesTimer?.cancel();
+    for (final timer in _disappearingTimers.values) {
+      timer.cancel();
+    }
+    _disappearingTimers.clear();
+
     setState(() {
       _selectedConversationId = id;
       _isGroupSelected = isGroup;
       _messages = [];
+      _isDisappearingMode = false;
     });
     
     _fetchMessages();
@@ -671,40 +868,54 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
             children: [
               Row(
                 children: [
-                  // 1. Sidebar Panel (Left)
-                  Container(
-                    width: MediaQuery.of(context).size.width > 700 ? 360 : MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: sidebarBg,
-                      border: Border(right: BorderSide(color: borderCol, width: 1)),
+                  // 1. Sidebar Panel (Left) - Hidden on mobile if a chat conversation is selected
+                  if (MediaQuery.of(context).size.width > 700 || _selectedConversationId == null)
+                    Container(
+                      width: MediaQuery.of(context).size.width > 700 ? 360 : MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        color: sidebarBg,
+                        border: Border(right: BorderSide(color: borderCol, width: 1)),
+                      ),
+                      child: _buildSidebar(),
                     ),
-                    child: _buildSidebar(),
-                  ),
 
                   // 2. Chat Conversation Panel (Center / Right)
                   if (MediaQuery.of(context).size.width > 700 || _selectedConversationId != null)
                     Expanded(
                       child: Row(
                         children: [
-                          Expanded(
-                            child: Container(
-                              color: chatBg,
-                              child: _selectedConversationId != null
-                                  ? _buildChatWindow()
-                                  : _buildEmptyState(),
-                            ),
-                          ),
-
-                          // 3. User Details Sidebar Panel (Right)
-                          if (_showRightPanel && _selectedConversationId != null)
-                            Container(
-                              width: 320,
-                              decoration: BoxDecoration(
-                                color: sidebarBg,
-                                border: Border(left: BorderSide(color: borderCol, width: 1)),
+                          if (MediaQuery.of(context).size.width > 700) ...[
+                            // Desktop: Show chat window, and optionally details panel next to it
+                            Expanded(
+                              child: Container(
+                                color: chatBg,
+                                child: _selectedConversationId != null
+                                    ? _buildChatWindow()
+                                    : _buildEmptyState(),
                               ),
-                              child: _buildRightDetailPanel(),
                             ),
+                            if (_showRightPanel && _selectedConversationId != null)
+                              Container(
+                                width: 320,
+                                decoration: BoxDecoration(
+                                  color: sidebarBg,
+                                  border: Border(left: BorderSide(color: borderCol, width: 1)),
+                                ),
+                                child: _buildRightDetailPanel(),
+                              ),
+                          ] else ...[
+                            // Mobile: Show either chat window or details panel (taking full width)
+                            Expanded(
+                              child: Container(
+                                color: chatBg,
+                                child: _selectedConversationId == null
+                                    ? _buildEmptyState()
+                                    : (_showRightPanel
+                                        ? _buildRightDetailPanel()
+                                        : _buildChatWindow()),
+                              ),
+                            ),
+                          ],
                         ],
                       ),
                     ),
@@ -890,11 +1101,12 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                         final avatarUrl = isGroup
                             ? (c['iconUrl'] ?? 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(c['name'])}&background=0F172A&color=38BDF8')
                             : 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(c['name'])}&background=0F172A&color=22D3EE';
-                        
-                        final lastMsg = c['lastMessage'] ?? (isGroup ? 'Tap to start group coordination' : 'Connected.');
+                                   final isTyping = _typingPartners.contains(c['id']);
+                        final lastMsg = isTyping ? 'Typing...' : (c['lastMessage'] ?? (isGroup ? 'Tap to start group coordination' : 'Connected.'));
                         final lastTimeStr = c['lastMessageTime'] != null
                             ? DateFormat('hh:mm a').format(DateTime.parse(c['lastMessageTime']))
                             : '';
+                        final displayName = _customAliases[c['id']] ?? c['name'] ?? '';
 
                         return ListTile(
                           selected: isSelected,
@@ -907,7 +1119,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Expanded(
-                                child: Text(c['name'] ?? '', maxLines: 1, overflow: TextOverflow.ellipsis, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
+                                child: Text(displayName, maxLines: 1, overflow: TextOverflow.ellipsis, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
                               ),
                               if (lastTimeStr.isNotEmpty)
                                 Text(lastTimeStr, style: TextStyle(color: subTextCol, fontSize: 9)),
@@ -917,7 +1129,11 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                             lastMsg,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(color: subTextCol, fontSize: 11),
+                            style: TextStyle(
+                              color: isTyping ? primaryColor : subTextCol,
+                              fontWeight: isTyping ? FontWeight.bold : FontWeight.normal,
+                              fontSize: 11,
+                            ),
                           ),
                           onTap: () => _onConversationSelected(c['id'], isGroup),
                         );
@@ -1283,6 +1499,9 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
         : 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(chatTitle)}&background=0F172A&color=22D3EE';
 
     final displayMessages = _messages.where((m) {
+      if (_disappearedMessageIds.contains(m['id'].toString())) {
+        return false;
+      }
       if (_isSearchingMessages && _messageSearchQuery.isNotEmpty) {
         return m['content'].toString().toLowerCase().contains(_messageSearchQuery.toLowerCase());
       }
@@ -1319,8 +1538,16 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(chatTitle, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
-                      Text(chatSubtitle, style: TextStyle(color: subTextCol, fontSize: 10), overflow: TextOverflow.ellipsis),
+                      Text(_customAliases[_selectedConversationId!] ?? chatTitle, style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 13)),
+                      Text(
+                        _typingPartners.contains(_selectedConversationId!) ? 'Typing...' : chatSubtitle, 
+                        style: TextStyle(
+                          color: _typingPartners.contains(_selectedConversationId!) ? primaryColor : subTextCol, 
+                          fontWeight: _typingPartners.contains(_selectedConversationId!) ? FontWeight.bold : FontWeight.normal,
+                          fontSize: 10
+                        ), 
+                        overflow: TextOverflow.ellipsis
+                      ),
                     ],
                   ),
                 ),
@@ -1337,6 +1564,26 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                 },
               ),
               if (!isGroup) ...[
+                IconButton(
+                  icon: Icon(
+                    _isDisappearingMode ? Icons.auto_delete : Icons.auto_delete_outlined, 
+                    color: _isDisappearingMode ? Colors.purpleAccent : subTextCol,
+                    size: 20,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _isDisappearingMode = !_isDisappearingMode;
+                    });
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(_isDisappearingMode 
+                            ? '👻 Snapchat Disappearing Mode enabled!' 
+                            : 'Snapchat Disappearing Mode disabled.'),
+                      ),
+                    );
+                  },
+                  tooltip: 'Disappearing Messages (Snapchat Mode)',
+                ),
                 IconButton(
                   icon: const Icon(Icons.call_outlined, size: 20),
                   color: primaryColor,
@@ -1356,6 +1603,23 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
             ],
           ),
         ),
+        if (_isDisappearingMode && !isGroup)
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+            color: Colors.purple.withOpacity(0.12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(Icons.auto_delete, size: 14, color: Colors.purpleAccent),
+                const SizedBox(width: 6),
+                Text(
+                  'Snapchat Disappearing Mode: Messages vanish after being viewed.',
+                  style: GoogleFonts.poppins(color: isDark ? Colors.purpleAccent : Colors.purple[800], fontSize: 10, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
 
         // Message Search
         if (_isSearchingMessages)
@@ -1669,7 +1933,15 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                       Text(timeStr, style: TextStyle(color: subTextCol, fontSize: 8)),
                       if (isMe && !isDeleted) ...[
                         const SizedBox(width: 4),
-                        Icon(Icons.done_all, size: 12, color: primaryColor),
+                        Icon(
+                          Icons.done_all, 
+                          size: 12, 
+                          color: _isDisappearingMode
+                              ? (_blueTickMessageIds.contains(msg['id'].toString()) 
+                                  ? Colors.blueAccent 
+                                  : Colors.grey)
+                              : primaryColor,
+                        ),
                       ]
                     ],
                   ),
@@ -1839,7 +2111,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
               children: [
                 CircleAvatar(backgroundImage: NetworkImage(avatar), radius: 44),
                 const SizedBox(height: 12),
-                Text(name, textAlign: TextAlign.center, style: GoogleFonts.poppins(color: textCol, fontSize: 15, fontWeight: FontWeight.bold)),
+                Text(_customAliases[activeConv['id']] ?? name, textAlign: TextAlign.center, style: GoogleFonts.poppins(color: textCol, fontSize: 15, fontWeight: FontWeight.bold)),
                 Text(id, style: TextStyle(color: subTextCol, fontSize: 11)),
                 const SizedBox(height: 6),
                 Text(roleText, textAlign: TextAlign.center, style: TextStyle(color: primaryColor, fontSize: 11, fontWeight: FontWeight.bold)),
@@ -1869,6 +2141,11 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12), side: BorderSide(color: borderCol)),
                   child: Column(
                     children: [
+                      ListTile(
+                        leading: const Icon(Icons.edit_outlined),
+                        title: const Text('Rename Contact', style: TextStyle(fontSize: 12)),
+                        onTap: () => _showRenameDialog(activeConv['id'], name),
+                      ),
                       if (!isGroup)
                         ListTile(
                           leading: const Icon(Icons.block, color: Colors.red),
@@ -1877,13 +2154,20 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                             _blockUser(activeConv['id']);
                           },
                         ),
+                      ListTile(
+                        leading: const Icon(Icons.delete_outline, color: Colors.redAccent),
+                        title: Text(isGroup ? 'Leave & Delete Group' : 'Delete Chat History', style: const TextStyle(fontSize: 12, color: Colors.redAccent)),
+                        onTap: () {
+                          _deleteConversation(activeConv['id']);
+                        },
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
-        )
+        ),
       ],
     );
   }

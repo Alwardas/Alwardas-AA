@@ -1,5 +1,5 @@
 use axum::{
-    routing::{get, post},
+    routing::{get, post, delete},
     Router,
 };
 use tower_http::cors::CorsLayer;
@@ -168,6 +168,7 @@ async fn main() {
         .route("/api/chat/requests", post(chat::send_request_handler).get(chat::get_requests_handler))
         .route("/api/chat/requests/:id/respond", post(chat::respond_request_handler))
         .route("/api/chat/conversations", get(chat::get_conversations_handler))
+        .route("/api/chat/conversations/:partner_id", delete(chat::delete_conversation_handler))
         .route("/api/chat/messages", post(chat::send_message_handler))
         .route("/api/chat/messages/:partner_id", get(chat::get_messages_handler).delete(chat::delete_message_handler))
         .route("/api/chat/groups", post(chat::create_group_handler))

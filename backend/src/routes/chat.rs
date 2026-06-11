@@ -546,3 +546,66 @@ pub async fn delete_message_handler(
 
     Ok(StatusCode::OK)
 }
+
+// 12. Delete Conversation (Clear all messages and delete link request/membership)
+pub async fn delete_conversation_handler(
+    State(state): State<AppState>,
+    Path(partner_id): Path<String>,
+    Query(params): Query<serde_json::Value>,
+) -> Result<StatusCode, (StatusCode, Json<serde_json::Value>)> {
+    let user_id = params.get("user_id").and_then(|v| v.as_str()).ok_or((
+        StatusCode::BAD_REQUEST,
+        Json(json!({ "success": false, "message": "Missing user_id query parameter" })),
+    ))?;
+
+    let mut tx = state.pool.begin().await.map_err(|e| {
+        (
+            StatusCode::INTERNAL_SERVER_ERROR,
+            Json(json!({ "success": false, "message": format!("Transaction error: {:?}", e) })),
+        )
+    })?;
+
+    if partner_id.starts_with("group_") {
+        // If group, remove the user from membership
+        sqlx::query!(
+            "DELETE FROM chat_group_members WHERE group_id = $1 AND user_id = $2",
+            partner_id,
+            user_id
+        )
+        .execute(&mut *tx)
+        .await
+        .ok();
+    } else {
+        // Delete all messages between both users
+        sqlx::query!(
+            "DELETE FROM chat_messages 
+             WHERE (sender_id = $1 AND receiver_id = $2) OR (sender_id = $2 AND receiver_id = $1)",
+            user_id,
+            partner_id
+        )
+        .execute(&mut *tx)
+        .await
+        .ok();
+
+        // Delete the connection request (so they are disconnected)
+        sqlx::query!(
+            "DELETE FROM chat_requests 
+             WHERE (sender_id = $1 AND receiver_id = $2) OR (sender_id = $2 AND receiver_id = $1)",
+            user_id,
+            partner_id
+        )
+        .execute(&mut *tx)
+        .await
+        .ok();
+    }
+
+    tx.commit().await.map_err(|e| {
+        (
+            StatusCode::INTERNAL_SERVER_ERROR,
+            Json(json!({ "success": false, "message": format!("Transaction commit error: {:?}", e) })),
+        )
+    })?;
+
+    Ok(StatusCode::OK)
+}
+
