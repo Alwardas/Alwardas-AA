@@ -15,27 +15,39 @@ pub async fn find_profile_by_id(pool: &PgPool, user_uuid: Uuid) -> Result<Option
     .await
 }
 
-pub async fn check_faculty_subject_assigned(pool: &PgPool, subject_id: &str, branch: &str, section: Option<&str>) -> Result<bool, sqlx::Error> {
+pub async fn check_faculty_subject_assigned(pool: &PgPool, subject_id: &str, subject_name: &str, branch: &str, section: Option<&str>) -> Result<bool, sqlx::Error> {
     let variations = crate::models::get_branch_variations(branch);
     let count: i64 = if let Some(sec) = section {
         sqlx::query_scalar(
-            "SELECT COUNT(*) FROM faculty_subjects 
-             WHERE subject_id = $1 
-             AND branch = ANY($2) 
-             AND (
-                 TRIM(LOWER(REPLACE(LOWER(section), 'section ', ''))) = TRIM(LOWER(REPLACE(LOWER($3), 'section ', '')))
+            "SELECT (
+                SELECT COUNT(*) FROM faculty_subjects 
+                WHERE subject_id = $1 
+                AND branch = ANY($2) 
+                AND (TRIM(LOWER(REPLACE(LOWER(section), 'section ', ''))) = TRIM(LOWER(REPLACE(LOWER($3), 'section ', ''))))
+             ) + (
+                SELECT COUNT(*) FROM course_subjects 
+                WHERE (subject_code = $1 OR TRIM(LOWER(subject_name)) = TRIM(LOWER($4)))
+                AND branch = ANY($2) 
+                AND (TRIM(LOWER(REPLACE(LOWER(section), 'section ', ''))) = TRIM(LOWER(REPLACE(LOWER($3), 'section ', ''))))
              )"
         )
-        .bind(subject_id).bind(&variations).bind(sec)
+        .bind(subject_id).bind(&variations).bind(sec).bind(subject_name)
         .fetch_one(pool).await?
     } else {
         sqlx::query_scalar(
-            "SELECT COUNT(*) FROM faculty_subjects 
-             WHERE subject_id = $1 
-             AND branch = ANY($2) 
-             AND section IS NULL"
+            "SELECT (
+                SELECT COUNT(*) FROM faculty_subjects 
+                WHERE subject_id = $1 
+                AND branch = ANY($2) 
+                AND section IS NULL
+             ) + (
+                SELECT COUNT(*) FROM course_subjects 
+                WHERE (subject_code = $1 OR TRIM(LOWER(subject_name)) = TRIM(LOWER($3)))
+                AND branch = ANY($2) 
+                AND section IS NULL
+             )"
         )
-        .bind(subject_id).bind(&variations)
+        .bind(subject_id).bind(&variations).bind(subject_name)
         .fetch_one(pool).await?
     };
     Ok(count > 0)

@@ -36,9 +36,9 @@ pub async fn add_faculty_subject(pool: &PgPool, payload: AddFacultySubjectReques
     println!("DEBUG: add_faculty_subject called. subject_id={}, branch={}, section={:?}", payload.subject_id, payload.branch, payload.section);
     
     // 1. Check if assigned
-    match faculty_repository::check_faculty_subject_assigned(pool, &payload.subject_id, &payload.branch, payload.section.as_deref()).await {
+    match faculty_repository::check_faculty_subject_assigned(pool, &payload.subject_id, &payload.subject_name, &payload.branch, payload.section.as_deref()).await {
         Ok(true) => {
-            println!("DEBUG: Subject {} is already assigned to another faculty for branch {} and section {:?}", payload.subject_id, payload.branch, payload.section);
+            println!("DEBUG: Subject {} ({}) is already assigned to another user for branch {} and section {:?}", payload.subject_id, payload.subject_name, payload.branch, payload.section);
             return Err((StatusCode::CONFLICT, "Already added by another faculty".to_string()));
         }
         Err(e) => {
