@@ -92,13 +92,11 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
   bool _isLoadingRequests = false;
   bool _isLoadingMessages = false;
 
-  // New Snapchat mode & local renaming state variables
+  // Local renaming & message seen state variables
   Map<String, String> _customAliases = {};
   SharedPreferences? _prefs;
-  bool _isDisappearingMode = false;
-  final Set<String> _disappearedMessageIds = {};
-  final Set<String> _blueTickMessageIds = {};
-  final Map<String, Timer> _disappearingTimers = {};
+  final Set<String> _seenMessageIds = {};
+  final Map<String, Timer> _seenTimers = {};
   final Set<String> _typingPartners = {};
   Timer? _typingSimulationTimer;
 
@@ -155,7 +153,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
     _recordingTimer?.cancel();
     _callStatsTimer?.cancel();
     _typingSimulationTimer?.cancel();
-    for (final timer in _disappearingTimers.values) {
+    for (final timer in _seenTimers.values) {
       timer.cancel();
     }
     _globalSearchController.dispose();
@@ -257,14 +255,14 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Delete Chat?'),
-        content: const Text('Are you sure you want to delete this conversation? This will clear all messages and disconnect the link.'),
+        title: const Text('Clear Chat?'),
+        content: const Text('Are you sure you want to clear this conversation? This will delete all messages but keep you connected.'),
         actions: [
           TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
           TextButton(
             style: TextButton.styleFrom(foregroundColor: Colors.red),
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Delete'),
+            child: const Text('Clear'),
           ),
         ],
       ),
@@ -390,43 +388,19 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
 
-        // Snapchat disappearing mode logic
-        if (_isDisappearingMode && !_isGroupSelected) {
-          for (final msg in data) {
-            final msgId = msg['id'].toString();
-            final isMe = msg['senderId'] == myErpId;
-            
-            if (!isMe) {
-              // Received message: starts disappearing timer immediately when fetched/displayed
-              if (!_disappearingTimers.containsKey(msgId) && !_disappearedMessageIds.contains(msgId)) {
-                _disappearingTimers[msgId] = Timer(const Duration(seconds: 8), () {
-                  if (mounted) {
-                    setState(() {
-                      _disappearedMessageIds.add(msgId);
-                    });
-                    _deleteChatMessage(msgId, false); // clear from DB
-                  }
-                });
-              }
-            } else {
-              // Sent message: blue ticks turn after 3s, disappears after 8s
-              if (!_blueTickMessageIds.contains(msgId) && !_disappearingTimers.containsKey('${msgId}_ticks') && !_disappearedMessageIds.contains(msgId)) {
-                _disappearingTimers['${msgId}_ticks'] = Timer(const Duration(seconds: 3), () {
-                  if (mounted) {
-                    setState(() {
-                      _blueTickMessageIds.add(msgId);
-                    });
-                  }
-                });
-                _disappearingTimers[msgId] = Timer(const Duration(seconds: 8), () {
-                  if (mounted) {
-                    setState(() {
-                      _disappearedMessageIds.add(msgId);
-                    });
-                    _deleteChatMessage(msgId, false); // clear from DB
-                  }
-                });
-              }
+        // Simulated seen message logic
+        for (final msg in data) {
+          final msgId = msg['id'].toString();
+          final isMe = msg['senderId'] == myErpId;
+          if (isMe) {
+            if (!_seenMessageIds.contains(msgId) && !_seenTimers.containsKey(msgId)) {
+              _seenTimers[msgId] = Timer(const Duration(seconds: 3), () {
+                if (mounted) {
+                  setState(() {
+                    _seenMessageIds.add(msgId);
+                  });
+                }
+              });
             }
           }
         }
@@ -446,16 +420,16 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
 
   void _onConversationSelected(String id, bool isGroup) {
     _messagesTimer?.cancel();
-    for (final timer in _disappearingTimers.values) {
+    for (final timer in _seenTimers.values) {
       timer.cancel();
     }
-    _disappearingTimers.clear();
+    _seenTimers.clear();
+    _seenMessageIds.clear();
 
     setState(() {
       _selectedConversationId = id;
       _isGroupSelected = isGroup;
       _messages = [];
-      _isDisappearingMode = false;
     });
     
     _fetchMessages();
@@ -799,6 +773,49 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
         _callPartnerId = null;
       });
     });
+  }
+
+  void _showCallSelectionSheet(String partnerId) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (context) => Container(
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF0F172A) : Colors.white,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: Text(
+                'Start Secure Call',
+                style: GoogleFonts.poppins(color: textCol, fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+            ),
+            const Divider(height: 1),
+            ListTile(
+              leading: Icon(Icons.call_outlined, color: primaryColor),
+              title: Text('Voice Call', style: TextStyle(color: textCol)),
+              onTap: () {
+                Navigator.pop(context);
+                _initiateCall(partnerId, false);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.videocam_outlined, color: primaryColor),
+              title: Text('Video Call', style: TextStyle(color: textCol)),
+              onTap: () {
+                Navigator.pop(context);
+                _initiateCall(partnerId, true);
+              },
+            ),
+            const SizedBox(height: 10),
+          ],
+        ),
+      ),
+    );
   }
 
   // --- ERP ATTACHMENTS SHEETS ---
@@ -1492,16 +1509,13 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
 
     final isGroup = activeConv['isGroup'] == true;
     final chatTitle = activeConv['name'] ?? '';
-    final chatSubtitle = isGroup ? '${activeConv['description'] ?? ""}' : (activeConv['role'] ?? '');
+    final chatSubtitle = isGroup ? '${activeConv['description'] ?? ""}' : 'Active';
     
     final avatar = isGroup
         ? (activeConv['iconUrl'] ?? 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(chatTitle)}&background=0F172A&color=38BDF8')
         : 'https://ui-avatars.com/api/?name=${Uri.encodeComponent(chatTitle)}&background=0F172A&color=22D3EE';
 
     final displayMessages = _messages.where((m) {
-      if (_disappearedMessageIds.contains(m['id'].toString())) {
-        return false;
-      }
       if (_isSearchingMessages && _messageSearchQuery.isNotEmpty) {
         return m['content'].toString().toLowerCase().contains(_messageSearchQuery.toLowerCase());
       }
@@ -1553,73 +1567,16 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                 ),
               ),
 
-              IconButton(
-                icon: const Icon(Icons.search, size: 20),
-                color: subTextCol,
-                onPressed: () {
-                  setState(() {
-                    _isSearchingMessages = !_isSearchingMessages;
-                    if (!_isSearchingMessages) _messageSearchQuery = '';
-                  });
-                },
-              ),
-              if (!isGroup) ...[
-                IconButton(
-                  icon: Icon(
-                    _isDisappearingMode ? Icons.auto_delete : Icons.auto_delete_outlined, 
-                    color: _isDisappearingMode ? Colors.purpleAccent : subTextCol,
-                    size: 20,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _isDisappearingMode = !_isDisappearingMode;
-                    });
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(_isDisappearingMode 
-                            ? '👻 Snapchat Disappearing Mode enabled!' 
-                            : 'Snapchat Disappearing Mode disabled.'),
-                      ),
-                    );
-                  },
-                  tooltip: 'Disappearing Messages (Snapchat Mode)',
-                ),
+              if (!isGroup)
                 IconButton(
                   icon: const Icon(Icons.call_outlined, size: 20),
                   color: primaryColor,
-                  onPressed: () => _initiateCall(_selectedConversationId!, false),
+                  onPressed: () => _showCallSelectionSheet(_selectedConversationId!),
+                  tooltip: 'Call',
                 ),
-                IconButton(
-                  icon: const Icon(Icons.videocam_outlined, size: 20),
-                  color: primaryColor,
-                  onPressed: () => _initiateCall(_selectedConversationId!, true),
-                ),
-              ],
-              IconButton(
-                icon: const Icon(Icons.info_outline, size: 20),
-                color: subTextCol,
-                onPressed: () => setState(() => _showRightPanel = !_showRightPanel),
-              ),
             ],
           ),
         ),
-        if (_isDisappearingMode && !isGroup)
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
-            color: Colors.purple.withOpacity(0.12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(Icons.auto_delete, size: 14, color: Colors.purpleAccent),
-                const SizedBox(width: 6),
-                Text(
-                  'Snapchat Disappearing Mode: Messages vanish after being viewed.',
-                  style: GoogleFonts.poppins(color: isDark ? Colors.purpleAccent : Colors.purple[800], fontSize: 10, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
 
         // Message Search
         if (_isSearchingMessages)
@@ -1936,12 +1893,15 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                         Icon(
                           Icons.done_all, 
                           size: 12, 
-                          color: _isDisappearingMode
-                              ? (_blueTickMessageIds.contains(msg['id'].toString()) 
-                                  ? Colors.blueAccent 
-                                  : Colors.grey)
-                              : primaryColor,
+                          color: Colors.grey,
                         ),
+                        if (_seenMessageIds.contains(msg['id'].toString())) ...[
+                          const SizedBox(width: 4),
+                          Text(
+                            'seen',
+                            style: TextStyle(color: subTextCol, fontSize: 8, fontWeight: FontWeight.w500),
+                          ),
+                        ],
                       ]
                     ],
                   ),
@@ -2156,7 +2116,7 @@ class _ErpConnectScreenState extends State<ErpConnectScreen> {
                         ),
                       ListTile(
                         leading: const Icon(Icons.delete_outline, color: Colors.redAccent),
-                        title: Text(isGroup ? 'Leave & Delete Group' : 'Delete Chat History', style: const TextStyle(fontSize: 12, color: Colors.redAccent)),
+                        title: Text(isGroup ? 'Leave & Delete Group' : 'Clear Chat', style: const TextStyle(fontSize: 12, color: Colors.redAccent)),
                         onTap: () {
                           _deleteConversation(activeConv['id']);
                         },
