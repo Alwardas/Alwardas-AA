@@ -16,9 +16,28 @@ pub async fn find_profile_by_id(pool: &PgPool, user_uuid: Uuid) -> Result<Option
 }
 
 pub async fn check_faculty_subject_assigned(pool: &PgPool, subject_id: &str, branch: &str, section: Option<&str>) -> Result<bool, sqlx::Error> {
-    let count: i64 = sqlx::query_scalar("SELECT COUNT(*) FROM faculty_subjects WHERE subject_id = $1 AND branch = $2 AND (section = $3 OR ($3 IS NULL AND section IS NULL))")
-        .bind(subject_id).bind(branch).bind(section)
-        .fetch_one(pool).await?;
+    let variations = crate::models::get_branch_variations(branch);
+    let count: i64 = if let Some(sec) = section {
+        sqlx::query_scalar(
+            "SELECT COUNT(*) FROM faculty_subjects 
+             WHERE subject_id = $1 
+             AND branch = ANY($2) 
+             AND (
+                 TRIM(LOWER(REPLACE(LOWER(section), 'section ', ''))) = TRIM(LOWER(REPLACE(LOWER($3), 'section ', '')))
+             )"
+        )
+        .bind(subject_id).bind(&variations).bind(sec)
+        .fetch_one(pool).await?
+    } else {
+        sqlx::query_scalar(
+            "SELECT COUNT(*) FROM faculty_subjects 
+             WHERE subject_id = $1 
+             AND branch = ANY($2) 
+             AND section IS NULL"
+        )
+        .bind(subject_id).bind(&variations)
+        .fetch_one(pool).await?
+    };
     Ok(count > 0)
 }
 

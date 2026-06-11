@@ -12,32 +12,56 @@ pub async fn find_notifications(pool: &PgPool, params: NotificationQuery) -> Res
             "Student" => {
                 query_builder.push(" AND (recipient_id = ");
                 query_builder.push_bind(params.user_id.clone().unwrap_or_default());
-                query_builder.push(" OR recipient_id = 'STUDENT_RECIPIENT' OR recipient_id IS NULL)");
+                query_builder.push(" OR recipient_id = (SELECT login_id FROM users WHERE id::text = ");
+                query_builder.push_bind(params.user_id.clone().unwrap_or_default());
+                query_builder.push(" LIMIT 1) OR recipient_id = 'STUDENT_RECIPIENT' OR recipient_id IS NULL)");
             },
             "Faculty" => {
                 query_builder.push(" AND (recipient_id = ");
                 query_builder.push_bind(params.user_id.clone().unwrap_or_default());
-                query_builder.push(" OR recipient_id = 'FACULTY_RECIPIENT' OR (recipient_id IS NULL AND (branch = ");
+                query_builder.push(" OR recipient_id = (SELECT login_id FROM users WHERE id::text = ");
+                query_builder.push_bind(params.user_id.clone().unwrap_or_default());
+                query_builder.push(" LIMIT 1) OR recipient_id = 'FACULTY_RECIPIENT' OR (recipient_id IS NULL AND (branch = ");
                 query_builder.push_bind(params.branch.clone().unwrap_or_default());
                 query_builder.push(" OR branch IS NULL)))");
             },
             "Parent" => {
                 query_builder.push(" AND (recipient_id = ");
                 query_builder.push_bind(params.user_id.clone().unwrap_or_default());
-                query_builder.push(" OR recipient_id = 'PARENT_RECIPIENT' OR recipient_id IS NULL)");
+                query_builder.push(" OR recipient_id = (SELECT login_id FROM users WHERE id::text = ");
+                query_builder.push_bind(params.user_id.clone().unwrap_or_default());
+                query_builder.push(" LIMIT 1) OR recipient_id = 'PARENT_RECIPIENT' OR recipient_id IS NULL)");
             },
             "HOD" => {
+                query_builder.push(" AND (");
+                
+                let mut has_specific = false;
+                if let Some(uid) = &params.user_id {
+                    query_builder.push("(recipient_id = ");
+                    query_builder.push_bind(uid);
+                    query_builder.push(" OR recipient_id = (SELECT login_id FROM users WHERE id::text = ");
+                    query_builder.push_bind(uid);
+                    query_builder.push(" OR login_id = ");
+                    query_builder.push_bind(uid);
+                    query_builder.push(" LIMIT 1))");
+                    has_specific = true;
+                }
+                
+                if has_specific {
+                    query_builder.push(" OR ");
+                }
+                
                 if let Some(branch) = &params.branch {
-                    query_builder.push(" AND ((recipient_id = 'HOD_RECIPIENT' AND (branch = ");
+                    query_builder.push("((recipient_id = 'HOD_RECIPIENT' AND (branch = ");
                     query_builder.push_bind(branch);
                     query_builder.push(" OR branch IS NULL)) OR (recipient_id IS NULL AND (branch = ");
                     query_builder.push_bind(branch);
                     query_builder.push(" OR branch IS NULL)))");
-                } else if let Some(uid) = &params.user_id {
-                    query_builder.push(" AND (recipient_id = ");
-                    query_builder.push_bind(uid);
-                    query_builder.push(" OR recipient_id = 'HOD_RECIPIENT' OR recipient_id IS NULL)");
+                } else {
+                    query_builder.push("(recipient_id = 'HOD_RECIPIENT' OR recipient_id IS NULL)");
                 }
+                
+                query_builder.push(")");
             },
             "Principal" => {
                 query_builder.push(" AND (recipient_id = 'PRINCIPAL_RECIPIENT' OR (recipient_id IS NULL AND branch IS NULL))");

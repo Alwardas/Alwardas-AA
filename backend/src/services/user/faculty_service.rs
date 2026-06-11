@@ -33,21 +33,31 @@ pub async fn get_faculty_subjects(pool: &PgPool, user_id: String) -> Result<Vec<
 }
 
 pub async fn add_faculty_subject(pool: &PgPool, payload: AddFacultySubjectRequest) -> Result<(), (StatusCode, String)> {
+    println!("DEBUG: add_faculty_subject called. subject_id={}, branch={}, section={:?}", payload.subject_id, payload.branch, payload.section);
+    
     // 1. Check if assigned
     match faculty_repository::check_faculty_subject_assigned(pool, &payload.subject_id, &payload.branch, payload.section.as_deref()).await {
-        Ok(true) => return Err((StatusCode::CONFLICT, "Already added by another faculty".to_string())),
-        Err(_) => return Err((StatusCode::INTERNAL_SERVER_ERROR, "Database error".to_string())),
+        Ok(true) => {
+            println!("DEBUG: Subject {} is already assigned to another faculty for branch {} and section {:?}", payload.subject_id, payload.branch, payload.section);
+            return Err((StatusCode::CONFLICT, "Already added by another faculty".to_string()));
+        }
+        Err(e) => {
+            eprintln!("ERROR: Database check_faculty_subject_assigned failed: {:?}", e);
+            return Err((StatusCode::INTERNAL_SERVER_ERROR, "Database error".to_string()));
+        }
         Ok(false) => {}
     }
 
     // 2. Insert subject
-    if let Err(_) = faculty_repository::insert_faculty_subject(pool, payload.user_id, &payload.subject_id, &payload.subject_name, &payload.branch, payload.section.as_deref()).await {
+    if let Err(e) = faculty_repository::insert_faculty_subject(pool, payload.user_id, &payload.subject_id, &payload.subject_name, &payload.branch, payload.section.as_deref()).await {
+        eprintln!("ERROR: Failed to insert faculty subject assignment: {:?}", e);
         return Err((StatusCode::INTERNAL_SERVER_ERROR, "Failed to add subject".to_string()));
     }
 
     // 3. Find HOD login_id
-    let hod_login_id: Option<String> = sqlx::query_scalar("SELECT login_id FROM users WHERE role = 'HOD' AND branch = $1 LIMIT 1")
-        .bind(&payload.branch)
+    let branch_variations = crate::models::get_branch_variations(&payload.branch);
+    let hod_login_id: Option<String> = sqlx::query_scalar("SELECT login_id FROM users WHERE role = 'HOD' AND branch = ANY($1) LIMIT 1")
+        .bind(&branch_variations)
         .fetch_optional(pool)
         .await
         .unwrap_or(None);
@@ -59,16 +69,26 @@ pub async fn add_faculty_subject(pool: &PgPool, payload: AddFacultySubjectReques
         .await
         .unwrap_or(None);
 
-    if let (Some(hod), Some(sender)) = (hod_login_id, sender_login_id) {
+    println!("DEBUG: HOD lookup result: {:?}, Sender lookup result: {:?}", hod_login_id, sender_login_id);
+
+    if let (Some(hod), Some(sender)) = (hod_login_id.as_ref(), sender_login_id.as_ref()) {
         let msg = format!("Faculty {} has requested to add subject {}", sender, payload.subject_name);
-        let _ = crate::repositories::auth::insert_notification(
+        match crate::repositories::auth::insert_notification(
             pool,
             "SUBJECT_REQUEST",
             msg,
-            &sender,
+            sender,
             Some(&payload.branch),
-            Some(&hod),
-        ).await;
+            Some(hod),
+        ).await {
+            Ok(_) => println!("DEBUG: Subject request notification inserted successfully for HOD: {}", hod),
+            Err(e) => eprintln!("ERROR: Failed to insert subject request notification: {:?}", e),
+        }
+    } else {
+        eprintln!(
+            "WARNING: HOD or sender not found for notification. hod_login_id: {:?}, sender_login_id: {:?}",
+            hod_login_id, sender_login_id
+        );
     }
 
     Ok(())
