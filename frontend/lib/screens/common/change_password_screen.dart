@@ -38,17 +38,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   // Caps Lock Warning
   bool _capsLockOn = false;
 
-  // Selected Security Verification Method
-  String _selectedVerification = 'Email OTP'; // Email OTP | Mobile OTP | App
-  bool _2faEnabled = true;
-
   // User Info & Session State loaded dynamically
   Map<String, dynamic>? _userSession;
   bool _loadingSession = true;
-
-  // Simulated OTP State
-  final TextEditingController _otpController = TextEditingController();
-  bool _otpSent = false;
 
   @override
   void initState() {
@@ -65,7 +57,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     _oldPasswordController.dispose();
     _newPasswordController.dispose();
     _confirmPasswordController.dispose();
-    _otpController.dispose();
     HardwareKeyboard.instance.removeHandler(_keyboardHandler);
     super.dispose();
   }
@@ -219,27 +210,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     if (_getStrengthPercentage() < 1.0) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Please satisfy all password complexity rules")),
-      );
-      return;
-    }
-
-    // OTP Verification process simulation
-    if (!_otpSent) {
-      setState(() {
-        _otpSent = true;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text("Verification code sent to your registered $_selectedVerification"),
-          backgroundColor: Colors.blueAccent,
-        ),
-      );
-      return;
-    }
-
-    if (_otpController.text.trim().length < 4) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Please enter a valid 4-digit verification code")),
       );
       return;
     }
@@ -418,10 +388,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                               children: [
                                 // Form Card
                                 _buildFormCard(cardColor, textColor, subTextColor, isDark),
-                                const SizedBox(height: 16),
-                                
-                                // Security Audit / Timeline Card
-                                _buildSecurityTimelineCard(cardColor, textColor, subTextColor, borderColor),
                               ],
                             ),
                           ),
@@ -431,10 +397,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                               flex: 5,
                               child: Column(
                                 children: [
-                                  // Details / Policy Info Card
-                                  _buildSecurityDetailsCard(cardColor, textColor, subTextColor, borderColor),
-                                  const SizedBox(height: 16),
-                                  
                                   // Tips Card
                                   _buildSecurityTipsCard(cardColor, textColor, subTextColor, borderColor),
                                 ],
@@ -451,8 +413,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     if (constraints.maxWidth <= 720) {
                       return Column(
                         children: [
-                          const SizedBox(height: 16),
-                          _buildSecurityDetailsCard(cardColor, textColor, subTextColor, borderColor),
                           const SizedBox(height: 16),
                           _buildSecurityTipsCard(cardColor, textColor, subTextColor, borderColor),
                         ],
@@ -599,10 +559,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             _buildPolicyRulesPanel(textColor),
             const SizedBox(height: 24),
             
-            // Security Verification Method Section
-            _build2FASelection(cardColor, textColor, subTextColor),
-            const SizedBox(height: 24),
-
             // Action Buttons
             Row(
               children: [
@@ -628,7 +584,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     ),
                     child: _isLoading 
                         ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
-                        : Text(_otpSent ? "Change Password" : "Get Verification Code", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white)),
+                        : Text("Change Password", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white)),
                   ),
                 ),
               ],
@@ -773,154 +729,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     );
   }
 
-  Widget _build2FASelection(Color cardColor, Color textColor, Color subTextColor) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            const Icon(Icons.verified_user_outlined, color: Colors.blueAccent, size: 18),
-            const SizedBox(width: 8),
-            Text("Identity Verification Method", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: textColor)),
-          ],
-        ),
-        const SizedBox(height: 10),
-        Row(
-          children: [
-            _buildVerifTabButton("Email OTP"),
-            const SizedBox(width: 8),
-            _buildVerifTabButton("Mobile OTP"),
-            const SizedBox(width: 8),
-            _buildVerifTabButton("Authenticator App"),
-          ],
-        ),
-        if (_otpSent) ...[
-          const SizedBox(height: 16),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("Enter Code:", style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold)),
-              const SizedBox(height: 6),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextFormField(
-                      controller: _otpController,
-                      keyboardType: TextInputType.number,
-                      inputFormatters: [FilteringTextInputFormatter.digitsOnly, LengthLimitingTextInputFormatter(6)],
-                      decoration: InputDecoration(
-                        hintText: "Enter the code sent",
-                        hintStyle: const TextStyle(fontSize: 13),
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  TextButton(
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("New code sent."), backgroundColor: Colors.blueAccent),
-                      );
-                    },
-                    child: const Text("Resend"),
-                  )
-                ],
-              ),
-            ],
-          ),
-        ],
-      ],
-    );
-  }
 
-  Widget _buildVerifTabButton(String method) {
-    final active = _selectedVerification == method;
-    return Expanded(
-      child: InkWell(
-        onTap: () => setState(() => _selectedVerification = method),
-        borderRadius: BorderRadius.circular(8),
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: active ? Colors.blueAccent.withValues(alpha: 0.1) : Colors.transparent,
-            border: Border.all(color: active ? Colors.blueAccent : Colors.grey[400]!),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Text(
-            method,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.poppins(
-              fontSize: 10,
-              fontWeight: active ? FontWeight.bold : FontWeight.normal,
-              color: active ? Colors.blueAccent : Colors.grey[600],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSecurityDetailsCard(Color cardColor, Color textColor, Color subTextColor, Color borderColor) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: cardColor,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: borderColor),
-        boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4))
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              const Icon(Icons.shield, color: Colors.blueAccent, size: 18),
-              const SizedBox(width: 8),
-              Text("Security Settings Panel", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: textColor)),
-            ],
-          ),
-          const Divider(height: 24),
-          _buildInfoRow("Account Status", "Secure / Active", Colors.green),
-          _buildInfoRow("Active Devices", "3 sessions", Colors.blueAccent),
-          _buildInfoRow("Two-Factor Auth", "Enabled (OTP)", Colors.blueAccent),
-          _buildInfoRow("Last Password Reset", "30 days ago", textColor),
-          _buildInfoRow("Password Expiration", "Never Expiring", Colors.green),
-          const SizedBox(height: 12),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton.icon(
-              icon: const Icon(Icons.download, size: 16, color: Colors.blueAccent),
-              label: Text("Download Activity Report", style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blueAccent)),
-              onPressed: _downloadReport,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueAccent.withValues(alpha: 0.1),
-                elevation: 0,
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildInfoRow(String label, String value, Color valueColor) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(label, style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey[600])),
-          Text(value, style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: valueColor)),
-        ],
-      ),
-    );
-  }
 
   Widget _buildSecurityTipsCard(Color cardColor, Color textColor, Color subTextColor, Color borderColor) {
     return Container(
@@ -971,59 +780,5 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     );
   }
 
-  Widget _buildSecurityTimelineCard(Color cardColor, Color textColor, Color subTextColor, Color borderColor) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: cardColor,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: borderColor),
-        boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10, offset: const Offset(0, 4))
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              const Icon(Icons.history, color: Colors.blueAccent, size: 18),
-              const SizedBox(width: 8),
-              Text("Recent Security Log Timeline", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: textColor)),
-            ],
-          ),
-          const Divider(height: 24),
-          _buildTimelineRow("Successful Login", "Today, 09:30 AM  •  Chrome Windows  •  IP: 192.168.1.100", true),
-          _buildTimelineRow("Active Session terminates", "Yesterday, 10:15 PM  •  Mobile Safari  •  IP: 192.168.1.101", true),
-          _buildTimelineRow("Attempted Login Failure", "3 days ago  •  Firefox Linux  •  IP: 182.50.21.9", false),
-        ],
-      ),
-    );
-  }
 
-  Widget _buildTimelineRow(String action, String details, bool success) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(
-            success ? Icons.check_circle_outline : Icons.error_outline,
-            color: success ? Colors.green : Colors.red,
-            size: 18,
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(action, style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: success ? Colors.green[700] : Colors.red[700])),
-                Text(details, style: GoogleFonts.poppins(fontSize: 11, color: Colors.grey[600])),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
