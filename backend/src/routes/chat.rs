@@ -586,17 +586,6 @@ pub async fn delete_conversation_handler(
         .execute(&mut *tx)
         .await
         .ok();
-
-        // Delete the connection request (so they are disconnected)
-        sqlx::query!(
-            "DELETE FROM chat_requests 
-             WHERE (sender_id = $1 AND receiver_id = $2) OR (sender_id = $2 AND receiver_id = $1)",
-            user_id,
-            partner_id
-        )
-        .execute(&mut *tx)
-        .await
-        .ok();
     }
 
     tx.commit().await.map_err(|e| {
@@ -608,4 +597,3 @@ pub async fn delete_conversation_handler(
 
     Ok(StatusCode::OK)
 }
-
