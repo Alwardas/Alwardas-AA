@@ -12,6 +12,7 @@ import 'principal_requests_screen.dart';
 import 'principal_lesson_plans_screen.dart';
 import '../../common/issue_management_screen.dart';
 import '../coordinator/coordinator_department_screen.dart';
+import '../finance/fee_management_dashboard.dart';
 
 class PrincipalMenuTab extends StatelessWidget {
   final Map<String, dynamic> userData;
@@ -28,6 +29,7 @@ class PrincipalMenuTab extends StatelessWidget {
 
     final List<Map<String, dynamic>> menuItems = [
       {'label': 'Announcements', 'icon': Icons.campaign, 'route': const PrincipalAnnouncementsScreen(), 'color': const Color(0xFFff6347)},
+      {'label': 'Fee Management', 'icon': Icons.account_balance_wallet_outlined, 'route': FeeManagementDashboard(userData: userData), 'color': const Color(0xFF2ecc71)},
       {'label': 'Attendance Monitor', 'icon': Icons.calendar_today, 'route': const PrincipalAttendanceScreen(), 'color': const Color(0xFF00d2ff)},
       {'label': 'Faculty Directory', 'icon': Icons.people, 'route': const PrincipalFacultyScreen(), 'color': const Color(0xFF8E2DE2)},
       {'label': 'Master Timetables', 'icon': Icons.access_time, 'route': const PrincipalTimetablesScreen(), 'color': const Color(0xFF606c88)},

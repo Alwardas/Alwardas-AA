@@ -11,6 +11,7 @@ import '../../../core/api_constants.dart';
 import '../../auth/login_screen.dart';
 import 'admin_users_screen.dart';
 import 'admin_requests_screen.dart';
+import '../finance/fee_management_dashboard.dart';
 import 'dart:async';
 import '../../../core/services/notification_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -266,14 +267,14 @@ class _AdminDashboardState extends State<AdminDashboard> {
                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminUsersScreen()))
                       ),
                       _buildMenuCard(
-                        'System Stats', 
-                        'View insights',
-                        Icons.insights_outlined, 
+                        'Fee Management', 
+                        'Fee Transparency',
+                        Icons.account_balance_wallet_outlined, 
                         Colors.purpleAccent, 
                         cardColor, 
                         textColor, 
                         subTextColor,
-                        onTap: () {},
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => FeeManagementDashboard(userData: widget.userData))),
                       ),
                       _buildMenuCard(
                         'Coordinator Requests', 

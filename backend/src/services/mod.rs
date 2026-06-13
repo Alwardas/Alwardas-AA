@@ -5,3 +5,5 @@ pub mod notification_service;
 pub mod issue_service;
 pub mod management;
 pub mod user;
+pub mod finance_service;
+

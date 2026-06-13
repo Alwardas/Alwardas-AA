@@ -173,7 +173,23 @@ async fn main() {
         .route("/api/chat/messages/:partner_id", get(chat::get_messages_handler).delete(chat::delete_message_handler))
         .route("/api/chat/groups", post(chat::create_group_handler))
         .route("/api/chat/blocks", post(chat::block_user_handler).get(chat::get_blocked_users_handler))
+        // Finance / Fee transparency routes
+        .route("/api/finance/dashboard-stats", get(finance::get_dashboard_stats_handler))
+        .route("/api/finance/students", get(finance::get_student_fees_handler))
+        .route("/api/finance/student/:id/ledger", get(finance::get_student_ledger_handler))
+        .route("/api/finance/student/:id/update", post(finance::update_student_fee_handler))
+        .route("/api/finance/bulk-adjust/preview", post(finance::preview_bulk_adjust_handler))
+        .route("/api/finance/bulk-adjust/submit", post(finance::submit_bulk_workflow_handler))
+        .route("/api/finance/excel-upload/preview", post(finance::preview_excel_upload_handler))
+        .route("/api/finance/excel-upload/submit", post(finance::submit_excel_workflow_handler))
+        .route("/api/finance/approvals", get(finance::get_pending_workflows_handler))
+        .route("/api/finance/approvals/:id/action", post(finance::handle_approval_action_handler))
+        .route("/api/finance/audit-trails", get(finance::get_audit_trails_handler))
+        .route("/api/finance/student-summary", get(finance::get_student_mobile_summary_handler))
+        .route("/api/finance/parent-summary", get(finance::get_parent_mobile_summary_handler))
+        .route("/api/finance/pay-simulated", post(finance::pay_simulated_fee_handler))
         .with_state(AppState { pool })
+
         .nest_service("/web", tower_http::services::ServeDir::new("static"))
         .fallback(move |req: axum::extract::Request| {
             let mut grpc_service = grpc_service.clone();

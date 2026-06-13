@@ -13,6 +13,8 @@ import '../student/student_announcements_screen.dart';
 import '../student/time_table_screen.dart';
 import 'parent_requests_screen.dart';
 import '../../common/issue_management_screen.dart';
+import 'parent_fees_screen.dart';
+
 
 class ParentMenuTab extends StatelessWidget {
   final Map<String, dynamic> userData;
@@ -84,8 +86,10 @@ class ParentMenuTab extends StatelessWidget {
         'title': 'Fee Payments',
         'icon': Icons.payment,
         'color': Colors.orange,
-        'onTap': () => ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Fee Payments coming soon'))),
+        'onTap': () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => ParentFeesScreen(userData: currentChild))),
       },
       {
         'title': 'Permission & Requests',

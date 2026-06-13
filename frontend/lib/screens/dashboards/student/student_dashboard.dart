@@ -26,6 +26,8 @@ import '../../../core/services/notification_service.dart';
 import '../../common/erp_connect_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../common/issue_management_screen.dart';
+import 'student_fees_screen.dart';
+
 
 class StudentDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -999,6 +1001,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
       {'label': 'My Courses', 'subtitle': '4 Active', 'icon': Icons.menu_book, 'color': const Color(0xFF3b5998), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => MyCoursesScreen()))},
       {'label': 'Time Table', 'subtitle': '3 Classes', 'icon': Icons.schedule, 'color': const Color(0xFF9b59b6), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => TimeTableScreen()))},
       {'label': 'Exams / Results', 'subtitle': 'View Grades', 'icon': Icons.insights, 'color': const Color(0xFFe67e22), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => const StudentMarksScreen()))},
+      {'label': 'My Fees', 'subtitle': 'Check Dues & Pay', 'icon': Icons.account_balance_wallet_rounded, 'color': const Color(0xFF00d2ff), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentFeesScreen(userData: widget.userData)))},
       {'label': 'Issues', 'subtitle': 'Report & Track', 'icon': Icons.report_problem_outlined, 'color': const Color(0xFFE94057), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => IssueManagementScreen(userData: widget.userData)))},
       {'label': 'My Feedbacks', 'subtitle': 'Reviews', 'icon': Icons.feedback_outlined, 'color': const Color(0xFF1ABC9C), 'onTap': () => Navigator.push(context, MaterialPageRoute(builder: (_) => StudentFeedbackScreen(userData: widget.userData)))},
     ];

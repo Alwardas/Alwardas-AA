@@ -19,6 +19,7 @@ import '../dashboards/principal/principal_dashboard.dart';
 import '../dashboards/admin/admin_dashboard.dart';
 import '../dashboards/coordinator/coordinator_dashboard.dart';
 import '../dashboards/incharge/incharge_dashboard.dart';
+import '../dashboards/finance/fee_management_dashboard.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -317,6 +318,9 @@ class _LoginScreenState extends State<LoginScreen> {
     if (normalizedRole.toLowerCase() == 'admin') return AdminDashboard(userData: userData);
     if (normalizedRole.toLowerCase() == 'coordinator') return CoordinatorDashboard(userData: userData);
     if (normalizedRole.toLowerCase() == 'incharge') return InchargeDashboard(userData: userData);
+    if (normalizedRole.toLowerCase() == 'accountant' || normalizedRole.toLowerCase() == 'finance') {
+      return FeeManagementDashboard(userData: userData);
+    }
 
     return Scaffold(
       appBar: AppBar(title: const Text("Unknown Role")),
