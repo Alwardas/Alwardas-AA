@@ -1,366 +1,366 @@
 {
-  "subjectCode": "C-305",
-  "subjectName": "Construction Materials",
-  "regulation": "C23",
-  "semester": 3,
-  "totalPeriods": 45,
-  "units": [
-    {
-      "unitNo": 1,
-      "title": "Stones",
-      "totalPeriods": 6,
-      "topics": [
+    "subjectCode": "C-305",
+    "subjectName": "Construction Materials",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 45,
+    "units": [
         {
-          "id": "c305-1.1",
-          "sno": "1.1",
-          "topic": "Give Physical classifications of rocks.",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 1,
+            "title": "Stones",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Give Physical classifications of rocks.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List characteristics of good building stone.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List common varieties of stone used in different items of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the purpose of dressing of stones.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Revision of the Unit: Stones",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c305-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Stones",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c305-1.6",
+                    "sno": "1.6"
+                }
+            ]
         },
         {
-          "id": "c305-1.2",
-          "sno": "1.2",
-          "topic": "List characteristics of good building stone.",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 2,
+            "title": "Bricks",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "State the common sizes of bricks \u2013 as per IS specifications.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "List the characteristics of good bricks.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "List the standard tests on bricks like Water absorption test",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain Water absorption test and Compressive strength",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Revision of the Unit: Bricks",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c305-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Bricks",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c305-2.6",
+                    "sno": "2.6"
+                }
+            ]
         },
         {
-          "id": "c305-1.3",
-          "sno": "1.3",
-          "topic": "List common varieties of stone used in different items of",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 3,
+            "title": "Clay products & Sand",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "State the common varieties of tiles used for different",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List the characteristics of good tiles.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "List the uses of porcelain and glazed tiles.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "State the uses of stone ware pipes.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "List the characteristics of good sand.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "State the functions of building sand.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "State the percentage of bulkage allowance for construction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Revision of the Unit: Clay products & Sand",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c305-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Clay products & Sand",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c305-3.9",
+                    "sno": "3.9"
+                }
+            ]
         },
         {
-          "id": "c305-1.4",
-          "sno": "1.4",
-          "topic": "Explain the purpose of dressing of stones.",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 4,
+            "title": "Cement",
+            "totalPeriods": 7,
+            "topics": [
+                {
+                    "topic": "State the chemical composition of cement.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "State rough and ready methods of examining cement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain the method of manufacture of cement by dry",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Give the Classification of cements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "List the three uses of various cements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Revision of the Unit: Cement",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c305-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Cement",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c305-4.7",
+                    "sno": "4.7"
+                }
+            ]
         },
         {
-          "id": "c305-1.5",
-          "sno": "1.5",
-          "topic": "Revision of Stones",
-          "period": 1,
-          "type": "revision"
+            "unitNo": 5,
+            "title": "Mortars & Concrete",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "topic": "State Fine aggregate and Coarse aggregate. Explain the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Give the Classification of mortars. List the proportion of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain the use of super plasticiser for improving",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "List the ingredients of PCC and RCC. State the usual",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Define Hydration of cement, Water cement ratio,",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Explain the method of preparing concrete. List the steps",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "List different tests conducted for determining the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "List various types of admixtures used in concrete. List uses",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Revision of the Unit: Mortars & Concrete",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c305-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Mortars & Concrete",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c305-5.10",
+                    "sno": "5.10"
+                }
+            ]
         },
         {
-          "id": "c305-1.6",
-          "sno": "1.6",
-          "topic": "Assessment / Practice / Problem Solving on Stones",
-          "period": 1,
-          "type": "assessment"
+            "unitNo": 6,
+            "title": "Timber, Plastics, Glass and Asbestos",
+            "totalPeriods": 7,
+            "topics": [
+                {
+                    "topic": "List characteristics of good timber. Define seasoning.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-6.1",
+                    "sno": "6.1"
+                },
+                {
+                    "topic": "Name common varieties of timber used in A.P for various",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-6.2",
+                    "sno": "6.2"
+                },
+                {
+                    "topic": "State various types of wood products used in construction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-6.3",
+                    "sno": "6.3"
+                },
+                {
+                    "topic": "List the uses of wood products used in construction work.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-6.4",
+                    "sno": "6.4"
+                },
+                {
+                    "topic": "List the uses of fibre reinforced plastic.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c305-6.5",
+                    "sno": "6.5"
+                },
+                {
+                    "topic": "Revision of the Unit: Timber, Plastics, Glass and Asbestos",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c305-6.6",
+                    "sno": "6.6"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Timber, Plastics, Glass and Asbestos",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c305-6.7",
+                    "sno": "6.7"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "unitNo": 2,
-      "title": "Bricks",
-      "totalPeriods": 6,
-      "topics": [
-        {
-          "id": "c305-2.1",
-          "sno": "2.1",
-          "topic": "State the common sizes of bricks \u2013 as per IS specifications.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-2.2",
-          "sno": "2.2",
-          "topic": "List the characteristics of good bricks.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-2.3",
-          "sno": "2.3",
-          "topic": "List the standard tests on bricks like Water absorption test",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-2.4",
-          "sno": "2.4",
-          "topic": "Explain Water absorption test and Compressive strength",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-2.5",
-          "sno": "2.5",
-          "topic": "Revision of Bricks",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c305-2.6",
-          "sno": "2.6",
-          "topic": "Assessment / Practice / Problem Solving on Bricks",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 3,
-      "title": "Clay products & Sand",
-      "totalPeriods": 9,
-      "topics": [
-        {
-          "id": "c305-3.1",
-          "sno": "3.1",
-          "topic": "State the common varieties of tiles used for different",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-3.2",
-          "sno": "3.2",
-          "topic": "List the characteristics of good tiles.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-3.3",
-          "sno": "3.3",
-          "topic": "List the uses of porcelain and glazed tiles.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-3.4",
-          "sno": "3.4",
-          "topic": "State the uses of stone ware pipes.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-3.5",
-          "sno": "3.5",
-          "topic": "List the characteristics of good sand.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-3.6",
-          "sno": "3.6",
-          "topic": "State the functions of building sand.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-3.7",
-          "sno": "3.7",
-          "topic": "State the percentage of bulkage allowance for construction",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-3.8",
-          "sno": "3.8",
-          "topic": "Revision of Clay products & Sand",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c305-3.9",
-          "sno": "3.9",
-          "topic": "Assessment / Practice / Problem Solving on Clay products & Sand",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 4,
-      "title": "Cement",
-      "totalPeriods": 7,
-      "topics": [
-        {
-          "id": "c305-4.1",
-          "sno": "4.1",
-          "topic": "State the chemical composition of cement.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-4.2",
-          "sno": "4.2",
-          "topic": "State rough and ready methods of examining cement",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-4.3",
-          "sno": "4.3",
-          "topic": "Explain the method of manufacture of cement by dry",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-4.4",
-          "sno": "4.4",
-          "topic": "Give the Classification of cements",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-4.5",
-          "sno": "4.5",
-          "topic": "List the three uses of various cements",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-4.6",
-          "sno": "4.6",
-          "topic": "Revision of Cement",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c305-4.7",
-          "sno": "4.7",
-          "topic": "Assessment / Practice / Problem Solving on Cement",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 5,
-      "title": "Mortars & Concrete",
-      "totalPeriods": 10,
-      "topics": [
-        {
-          "id": "c305-5.1",
-          "sno": "5.1",
-          "topic": "State Fine aggregate and Coarse aggregate. Explain the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-5.2",
-          "sno": "5.2",
-          "topic": "Give the Classification of mortars. List the proportion of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-5.3",
-          "sno": "5.3",
-          "topic": "Explain the use of super plasticiser for improving",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-5.4",
-          "sno": "5.4",
-          "topic": "List the ingredients of PCC and RCC. State the usual",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-5.5",
-          "sno": "5.5",
-          "topic": "Define Hydration of cement, Water cement ratio,",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-5.6",
-          "sno": "5.6",
-          "topic": "Explain the method of preparing concrete. List the steps",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-5.7",
-          "sno": "5.7",
-          "topic": "List different tests conducted for determining the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-5.8",
-          "sno": "5.8",
-          "topic": "List various types of admixtures used in concrete. List uses",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-5.9",
-          "sno": "5.9",
-          "topic": "Revision of Mortars & Concrete",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c305-5.10",
-          "sno": "5.10",
-          "topic": "Assessment / Practice / Problem Solving on Mortars & Concrete",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 6,
-      "title": "Timber, Plastics, Glass and Asbestos",
-      "totalPeriods": 7,
-      "topics": [
-        {
-          "id": "c305-6.1",
-          "sno": "6.1",
-          "topic": "List characteristics of good timber. Define seasoning.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-6.2",
-          "sno": "6.2",
-          "topic": "Name common varieties of timber used in A.P for various",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-6.3",
-          "sno": "6.3",
-          "topic": "State various types of wood products used in construction",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-6.4",
-          "sno": "6.4",
-          "topic": "List the uses of wood products used in construction work.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-6.5",
-          "sno": "6.5",
-          "topic": "List the uses of fibre reinforced plastic.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c305-6.6",
-          "sno": "6.6",
-          "topic": "Revision of Timber, Plastics, Glass & Asbestos",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c305-6.7",
-          "sno": "6.7",
-          "topic": "Assessment / Practice / Problem Solving on Timber, Plastics, Glass & Asbestos",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    }
-  ]
+    ]
 }

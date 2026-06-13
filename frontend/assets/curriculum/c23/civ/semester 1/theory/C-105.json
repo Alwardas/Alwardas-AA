@@ -1,1101 +1,1101 @@
 {
-  "subjectCode": "C-105",
-  "subjectName": "Engineering Mechanics",
-  "regulation": "C23",
-  "semester": 1,
-  "totalPeriods": 150,
-  "units": [
-    {
-      "unitNo": 1,
-      "title": "Introduction",
-      "totalPeriods": 4,
-      "topics": [
+    "subjectCode": "C-105",
+    "subjectName": "Engineering Mechanics",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 150,
+    "units": [
         {
-          "id": "c105-1.1",
-          "sno": "1.1",
-          "topic": "Define Mechanics and Engineering Mechanics",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 1,
+            "title": "Introduction",
+            "totalPeriods": 4,
+            "topics": [
+                {
+                    "topic": "Define Mechanics and Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "State the applications of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Revision of the Unit: Introduction",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c105-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Introduction",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c105-1.4",
+                    "sno": "1.4"
+                }
+            ]
         },
         {
-          "id": "c105-1.2",
-          "sno": "1.2",
-          "topic": "State the applications of Engineering Mechanics",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 2,
+            "title": "Forces & Moments",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "topic": "Define the following terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Distinguish between",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Compute the resultant of two co-planar forces acting at a point",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain \u2018Lami\u2019s Theorem\u2019 and \u2018Polygon Law of forces\u2019",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Solve simple problems using Lami\u2019s Theorem",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain \u2018Polygon Law of forces\u2019",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Solve problems on computation of the resultant of a system of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Explain the properties of a couple.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "List the conditions of equilibrium of rigid body subjected to a",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Define the following terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Distinguish between",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Case study and practical applications of Compute the resultant of two co-planar forces acting at a point",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Explain \u2018Lami\u2019s Theorem\u2019 and \u2018Polygon Law of forces\u2019",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Solve simple problems using Lami\u2019s Theorem",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Case study and practical applications of Explain \u2018Polygon Law of forces\u2019",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Solve problems on computation of the resultant of a system of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.16",
+                    "sno": "2.16"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Explain the properties of a couple.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.17",
+                    "sno": "2.17"
+                },
+                {
+                    "topic": "Case study and practical applications of List the conditions of equilibrium of rigid body subjected to a",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.18",
+                    "sno": "2.18"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Define the following terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.19",
+                    "sno": "2.19"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Distinguish between",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.20",
+                    "sno": "2.20"
+                },
+                {
+                    "topic": "Case study and practical applications of Compute the resultant of two co-planar forces acting at a point",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.21",
+                    "sno": "2.21"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Explain \u2018Lami\u2019s Theorem\u2019 and \u2018Polygon Law of forces\u2019",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.22",
+                    "sno": "2.22"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Solve simple problems using Lami\u2019s Theorem",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-2.23",
+                    "sno": "2.23"
+                },
+                {
+                    "topic": "Revision of the Unit: Forces & Moments",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c105-2.24",
+                    "sno": "2.24"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Forces & Moments",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c105-2.25",
+                    "sno": "2.25"
+                }
+            ]
         },
         {
-          "id": "c105-1.3",
-          "sno": "1.3",
-          "topic": "Revision of Introduction",
-          "period": 1,
-          "type": "revision"
+            "unitNo": 3,
+            "title": "Centroid",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "State the need for finding the Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Calculate the positions of Centroid for simple plane figures",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain the method of determining the Centroid by \u2018Method",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Calculate the position of Centroid of standard Sections-T, L, I,",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Calculate the position of Centroid of built up sections",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Case study and practical applications of Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Tutorial / Practice session on State the need for finding the Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Calculate the positions of Centroid for simple plane figures",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Case study and practical applications of Explain the method of determining the Centroid by \u2018Method",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Calculate the position of Centroid of standard Sections-T, L, I,",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Calculate the position of Centroid of built up sections",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Case study and practical applications of Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.15",
+                    "sno": "3.15"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-3.16",
+                    "sno": "3.16"
+                },
+                {
+                    "topic": "Revision of the Unit: Centroid",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c105-3.17",
+                    "sno": "3.17"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Centroid",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c105-3.18",
+                    "sno": "3.18"
+                }
+            ]
         },
         {
-          "id": "c105-1.4",
-          "sno": "1.4",
-          "topic": "Assessment / Practice / Problem Solving on Introduction",
-          "period": 1,
-          "type": "assessment"
+            "unitNo": 4,
+            "title": "Moment of Inertia",
+            "totalPeriods": 23,
+            "topics": [
+                {
+                    "topic": "Define Moment of Inertia, Polar Moment of Inertia and Radius",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "State the necessity of finding Moment of Inertia for various",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Compute Moment of Inertia and Radius of gyration for",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "State 1. Parallel axes theorem and 2. Perpendicular axes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Compute MI of standard sections by applying parallel axis",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "ComputeMI of built-up sections by applying parallelaxis",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Calculate radius of gyration of standard sections.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Compute Polar Moment of Inertia for solid and hollow circular",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Case study and practical applications of Define Moment of Inertia, Polar Moment of Inertia and Radius",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Tutorial / Practice session on State the necessity of finding Moment of Inertia for various",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Compute Moment of Inertia and Radius of gyration for",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Case study and practical applications of State 1. Parallel axes theorem and 2. Perpendicular axes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Compute MI of standard sections by applying parallel axis",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of ComputeMI of built-up sections by applying parallelaxis",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Case study and practical applications of Calculate radius of gyration of standard sections.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.15",
+                    "sno": "4.15"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Compute Polar Moment of Inertia for solid and hollow circular",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.16",
+                    "sno": "4.16"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Define Moment of Inertia, Polar Moment of Inertia and Radius",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.17",
+                    "sno": "4.17"
+                },
+                {
+                    "topic": "Case study and practical applications of State the necessity of finding Moment of Inertia for various",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.18",
+                    "sno": "4.18"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Compute Moment of Inertia and Radius of gyration for",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.19",
+                    "sno": "4.19"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of State 1. Parallel axes theorem and 2. Perpendicular axes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.20",
+                    "sno": "4.20"
+                },
+                {
+                    "topic": "Case study and practical applications of Compute MI of standard sections by applying parallel axis",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-4.21",
+                    "sno": "4.21"
+                },
+                {
+                    "topic": "Revision of the Unit: Moment of Inertia",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c105-4.22",
+                    "sno": "4.22"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Moment of Inertia",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c105-4.23",
+                    "sno": "4.23"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Simple Stresses and Strains",
+            "totalPeriods": 40,
+            "topics": [
+                {
+                    "topic": "Define the following terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Distinguish between different kinds of stresses and strains",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Draw the stress-strain curve for ductile materials (Mild steel)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "State Hooke\u2019s law and limits of proportionality, State the factors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Solve problems on relationship between simple stress",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "State the relationship among the elastic constants, Solve",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Calculate stresses in simple and composite members under axial",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Define temperature stress, strain, hoops stress.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "List and explain mechanical properties of materials",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Define the following terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Distinguish between different kinds of stresses and strains",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Case study and practical applications of Draw the stress-strain curve for ductile materials (Mild steel)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Tutorial / Practice session on State Hooke\u2019s law and limits of proportionality, State the factors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Solve problems on relationship between simple stress",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Case study and practical applications of State the relationship among the elastic constants, Solve",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.15",
+                    "sno": "5.15"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Calculate stresses in simple and composite members under axial",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.16",
+                    "sno": "5.16"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Define temperature stress, strain, hoops stress.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.17",
+                    "sno": "5.17"
+                },
+                {
+                    "topic": "Case study and practical applications of List and explain mechanical properties of materials",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.18",
+                    "sno": "5.18"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Define the following terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.19",
+                    "sno": "5.19"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Distinguish between different kinds of stresses and strains",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.20",
+                    "sno": "5.20"
+                },
+                {
+                    "topic": "Case study and practical applications of Draw the stress-strain curve for ductile materials (Mild steel)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.21",
+                    "sno": "5.21"
+                },
+                {
+                    "topic": "Tutorial / Practice session on State Hooke\u2019s law and limits of proportionality, State the factors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.22",
+                    "sno": "5.22"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Solve problems on relationship between simple stress",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.23",
+                    "sno": "5.23"
+                },
+                {
+                    "topic": "Case study and practical applications of State the relationship among the elastic constants, Solve",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.24",
+                    "sno": "5.24"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Calculate stresses in simple and composite members under axial",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.25",
+                    "sno": "5.25"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Define temperature stress, strain, hoops stress.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.26",
+                    "sno": "5.26"
+                },
+                {
+                    "topic": "Case study and practical applications of List and explain mechanical properties of materials",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.27",
+                    "sno": "5.27"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Define the following terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.28",
+                    "sno": "5.28"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Distinguish between different kinds of stresses and strains",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.29",
+                    "sno": "5.29"
+                },
+                {
+                    "topic": "Case study and practical applications of Draw the stress-strain curve for ductile materials (Mild steel)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.30",
+                    "sno": "5.30"
+                },
+                {
+                    "topic": "Tutorial / Practice session on State Hooke\u2019s law and limits of proportionality, State the factors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.31",
+                    "sno": "5.31"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Solve problems on relationship between simple stress",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.32",
+                    "sno": "5.32"
+                },
+                {
+                    "topic": "Case study and practical applications of State the relationship among the elastic constants, Solve",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.33",
+                    "sno": "5.33"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Calculate stresses in simple and composite members under axial",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.34",
+                    "sno": "5.34"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Define temperature stress, strain, hoops stress.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.35",
+                    "sno": "5.35"
+                },
+                {
+                    "topic": "Case study and practical applications of List and explain mechanical properties of materials",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.36",
+                    "sno": "5.36"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Define the following terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.37",
+                    "sno": "5.37"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Distinguish between different kinds of stresses and strains",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-5.38",
+                    "sno": "5.38"
+                },
+                {
+                    "topic": "Revision of the Unit: Simple Stresses and Strains",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c105-5.39",
+                    "sno": "5.39"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Simple Stresses and Strains",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c105-5.40",
+                    "sno": "5.40"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Shear force and bending Moment",
+            "totalPeriods": 40,
+            "topics": [
+                {
+                    "topic": "Define",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.1",
+                    "sno": "6.1"
+                },
+                {
+                    "topic": "Calculate reactions at rollers/hinged and fixed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.2",
+                    "sno": "6.2"
+                },
+                {
+                    "topic": "Explain a)Shear Force and b) Bending Moment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.3",
+                    "sno": "6.3"
+                },
+                {
+                    "topic": "Explain sign conventions used for drawing 1. Shear Force",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.4",
+                    "sno": "6.4"
+                },
+                {
+                    "topic": "Deduce the relationship among the rate of loading, shear",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.5",
+                    "sno": "6.5"
+                },
+                {
+                    "topic": "Determine Shear Force and Bending Moments on",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.6",
+                    "sno": "6.6"
+                },
+                {
+                    "topic": "Describe the procedures for sketching the Shear Force",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.7",
+                    "sno": "6.7"
+                },
+                {
+                    "topic": "Sketch Shear Force Diagrams (SFD) and Bending Moment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.8",
+                    "sno": "6.8"
+                },
+                {
+                    "topic": "Define point of contra flexure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.9",
+                    "sno": "6.9"
+                },
+                {
+                    "topic": "Determine the Shear Force, Bending Moment and point",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.10",
+                    "sno": "6.10"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Define",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.11",
+                    "sno": "6.11"
+                },
+                {
+                    "topic": "Case study and practical applications of Calculate reactions at rollers/hinged and fixed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.12",
+                    "sno": "6.12"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Explain a)Shear Force and b) Bending Moment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.13",
+                    "sno": "6.13"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Explain sign conventions used for drawing 1. Shear Force",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.14",
+                    "sno": "6.14"
+                },
+                {
+                    "topic": "Case study and practical applications of Deduce the relationship among the rate of loading, shear",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.15",
+                    "sno": "6.15"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Determine Shear Force and Bending Moments on",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.16",
+                    "sno": "6.16"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Describe the procedures for sketching the Shear Force",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.17",
+                    "sno": "6.17"
+                },
+                {
+                    "topic": "Case study and practical applications of Sketch Shear Force Diagrams (SFD) and Bending Moment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.18",
+                    "sno": "6.18"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Define point of contra flexure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.19",
+                    "sno": "6.19"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Determine the Shear Force, Bending Moment and point",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.20",
+                    "sno": "6.20"
+                },
+                {
+                    "topic": "Case study and practical applications of Define",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.21",
+                    "sno": "6.21"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Calculate reactions at rollers/hinged and fixed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.22",
+                    "sno": "6.22"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Explain a)Shear Force and b) Bending Moment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.23",
+                    "sno": "6.23"
+                },
+                {
+                    "topic": "Case study and practical applications of Explain sign conventions used for drawing 1. Shear Force",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.24",
+                    "sno": "6.24"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Deduce the relationship among the rate of loading, shear",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.25",
+                    "sno": "6.25"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Determine Shear Force and Bending Moments on",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.26",
+                    "sno": "6.26"
+                },
+                {
+                    "topic": "Case study and practical applications of Describe the procedures for sketching the Shear Force",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.27",
+                    "sno": "6.27"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Sketch Shear Force Diagrams (SFD) and Bending Moment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.28",
+                    "sno": "6.28"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Define point of contra flexure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.29",
+                    "sno": "6.29"
+                },
+                {
+                    "topic": "Case study and practical applications of Determine the Shear Force, Bending Moment and point",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.30",
+                    "sno": "6.30"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Define",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.31",
+                    "sno": "6.31"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Calculate reactions at rollers/hinged and fixed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.32",
+                    "sno": "6.32"
+                },
+                {
+                    "topic": "Case study and practical applications of Explain a)Shear Force and b) Bending Moment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.33",
+                    "sno": "6.33"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Explain sign conventions used for drawing 1. Shear Force",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.34",
+                    "sno": "6.34"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Deduce the relationship among the rate of loading, shear",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.35",
+                    "sno": "6.35"
+                },
+                {
+                    "topic": "Case study and practical applications of Determine Shear Force and Bending Moments on",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.36",
+                    "sno": "6.36"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Describe the procedures for sketching the Shear Force",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.37",
+                    "sno": "6.37"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Sketch Shear Force Diagrams (SFD) and Bending Moment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c105-6.38",
+                    "sno": "6.38"
+                },
+                {
+                    "topic": "Revision of the Unit: Shear force and bending Moment",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c105-6.39",
+                    "sno": "6.39"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Shear force and bending Moment",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c105-6.40",
+                    "sno": "6.40"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "unitNo": 2,
-      "title": "Forces & Moments",
-      "totalPeriods": 25,
-      "topics": [
-        {
-          "id": "c105-2.1",
-          "sno": "2.1",
-          "topic": "Define the following terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.2",
-          "sno": "2.2",
-          "topic": "Distinguish between",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.3",
-          "sno": "2.3",
-          "topic": "Compute the resultant of two co-planar forces acting at a point",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.4",
-          "sno": "2.4",
-          "topic": "Explain \u2018Lami\u2019s Theorem\u2019 and \u2018Polygon Law of forces\u2019",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.5",
-          "sno": "2.5",
-          "topic": "Solve simple problems using Lami\u2019s Theorem",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.6",
-          "sno": "2.6",
-          "topic": "Explain \u2018Polygon Law of forces\u2019",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.7",
-          "sno": "2.7",
-          "topic": "Solve problems on computation of the resultant of a system of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.8",
-          "sno": "2.8",
-          "topic": "Explain the properties of a couple.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.9",
-          "sno": "2.9",
-          "topic": "List the conditions of equilibrium of rigid body subjected to a",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.10",
-          "sno": "2.10",
-          "topic": "Tutorial / Practice session on Define the following terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.11",
-          "sno": "2.11",
-          "topic": "Problem solving & numerical analysis of Distinguish between",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.12",
-          "sno": "2.12",
-          "topic": "Case study and practical applications of Compute the resultant of two co-planar forces acting at a point",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.13",
-          "sno": "2.13",
-          "topic": "Tutorial / Practice session on Explain \u2018Lami\u2019s Theorem\u2019 and \u2018Polygon Law of forces\u2019",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.14",
-          "sno": "2.14",
-          "topic": "Problem solving & numerical analysis of Solve simple problems using Lami\u2019s Theorem",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.15",
-          "sno": "2.15",
-          "topic": "Case study and practical applications of Explain \u2018Polygon Law of forces\u2019",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.16",
-          "sno": "2.16",
-          "topic": "Tutorial / Practice session on Solve problems on computation of the resultant of a system of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.17",
-          "sno": "2.17",
-          "topic": "Problem solving & numerical analysis of Explain the properties of a couple.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.18",
-          "sno": "2.18",
-          "topic": "Case study and practical applications of List the conditions of equilibrium of rigid body subjected to a",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.19",
-          "sno": "2.19",
-          "topic": "Tutorial / Practice session on Define the following terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.20",
-          "sno": "2.20",
-          "topic": "Problem solving & numerical analysis of Distinguish between",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.21",
-          "sno": "2.21",
-          "topic": "Case study and practical applications of Compute the resultant of two co-planar forces acting at a point",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.22",
-          "sno": "2.22",
-          "topic": "Tutorial / Practice session on Explain \u2018Lami\u2019s Theorem\u2019 and \u2018Polygon Law of forces\u2019",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.23",
-          "sno": "2.23",
-          "topic": "Problem solving & numerical analysis of Solve simple problems using Lami\u2019s Theorem",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-2.24",
-          "sno": "2.24",
-          "topic": "Revision of Forces & Moments",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c105-2.25",
-          "sno": "2.25",
-          "topic": "Assessment / Practice / Problem Solving on Forces & Moments",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 3,
-      "title": "Centroid",
-      "totalPeriods": 18,
-      "topics": [
-        {
-          "id": "c105-3.1",
-          "sno": "3.1",
-          "topic": "Define Centroid and Centre of gravity",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.2",
-          "sno": "3.2",
-          "topic": "Distinguish between Centroid and Centre of gravity",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.3",
-          "sno": "3.3",
-          "topic": "State the need for finding the Centroid and Centre of gravity",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.4",
-          "sno": "3.4",
-          "topic": "Calculate the positions of Centroid for simple plane figures",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.5",
-          "sno": "3.5",
-          "topic": "Explain the method of determining the Centroid by \u2018Method",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.6",
-          "sno": "3.6",
-          "topic": "Calculate the position of Centroid of standard Sections-T, L, I,",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.7",
-          "sno": "3.7",
-          "topic": "Calculate the position of Centroid of built up sections",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.8",
-          "sno": "3.8",
-          "topic": "Problem solving & numerical analysis of Define Centroid and Centre of gravity",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.9",
-          "sno": "3.9",
-          "topic": "Case study and practical applications of Distinguish between Centroid and Centre of gravity",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.10",
-          "sno": "3.10",
-          "topic": "Tutorial / Practice session on State the need for finding the Centroid and Centre of gravity",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.11",
-          "sno": "3.11",
-          "topic": "Problem solving & numerical analysis of Calculate the positions of Centroid for simple plane figures",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.12",
-          "sno": "3.12",
-          "topic": "Case study and practical applications of Explain the method of determining the Centroid by \u2018Method",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.13",
-          "sno": "3.13",
-          "topic": "Tutorial / Practice session on Calculate the position of Centroid of standard Sections-T, L, I,",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.14",
-          "sno": "3.14",
-          "topic": "Problem solving & numerical analysis of Calculate the position of Centroid of built up sections",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.15",
-          "sno": "3.15",
-          "topic": "Case study and practical applications of Define Centroid and Centre of gravity",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.16",
-          "sno": "3.16",
-          "topic": "Tutorial / Practice session on Distinguish between Centroid and Centre of gravity",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-3.17",
-          "sno": "3.17",
-          "topic": "Revision of Centroid",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c105-3.18",
-          "sno": "3.18",
-          "topic": "Assessment / Practice / Problem Solving on Centroid",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 4,
-      "title": "Moment of Inertia",
-      "totalPeriods": 23,
-      "topics": [
-        {
-          "id": "c105-4.1",
-          "sno": "4.1",
-          "topic": "Define Moment of Inertia, Polar Moment of Inertia and Radius",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.2",
-          "sno": "4.2",
-          "topic": "State the necessity of finding Moment of Inertia for various",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.3",
-          "sno": "4.3",
-          "topic": "Compute Moment of Inertia and Radius of gyration for",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.4",
-          "sno": "4.4",
-          "topic": "State 1. Parallel axes theorem and 2. Perpendicular axes",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.5",
-          "sno": "4.5",
-          "topic": "Compute MI of standard sections by applying parallel axis",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.6",
-          "sno": "4.6",
-          "topic": "ComputeMI of built-up sections by applying parallelaxis",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.7",
-          "sno": "4.7",
-          "topic": "Calculate radius of gyration of standard sections.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.8",
-          "sno": "4.8",
-          "topic": "Compute Polar Moment of Inertia for solid and hollow circular",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.9",
-          "sno": "4.9",
-          "topic": "Case study and practical applications of Define Moment of Inertia, Polar Moment of Inertia and Radius",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.10",
-          "sno": "4.10",
-          "topic": "Tutorial / Practice session on State the necessity of finding Moment of Inertia for various",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.11",
-          "sno": "4.11",
-          "topic": "Problem solving & numerical analysis of Compute Moment of Inertia and Radius of gyration for",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.12",
-          "sno": "4.12",
-          "topic": "Case study and practical applications of State 1. Parallel axes theorem and 2. Perpendicular axes",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.13",
-          "sno": "4.13",
-          "topic": "Tutorial / Practice session on Compute MI of standard sections by applying parallel axis",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.14",
-          "sno": "4.14",
-          "topic": "Problem solving & numerical analysis of ComputeMI of built-up sections by applying parallelaxis",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.15",
-          "sno": "4.15",
-          "topic": "Case study and practical applications of Calculate radius of gyration of standard sections.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.16",
-          "sno": "4.16",
-          "topic": "Tutorial / Practice session on Compute Polar Moment of Inertia for solid and hollow circular",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.17",
-          "sno": "4.17",
-          "topic": "Problem solving & numerical analysis of Define Moment of Inertia, Polar Moment of Inertia and Radius",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.18",
-          "sno": "4.18",
-          "topic": "Case study and practical applications of State the necessity of finding Moment of Inertia for various",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.19",
-          "sno": "4.19",
-          "topic": "Tutorial / Practice session on Compute Moment of Inertia and Radius of gyration for",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.20",
-          "sno": "4.20",
-          "topic": "Problem solving & numerical analysis of State 1. Parallel axes theorem and 2. Perpendicular axes",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.21",
-          "sno": "4.21",
-          "topic": "Case study and practical applications of Compute MI of standard sections by applying parallel axis",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-4.22",
-          "sno": "4.22",
-          "topic": "Revision of Moment of Inertia",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c105-4.23",
-          "sno": "4.23",
-          "topic": "Assessment / Practice / Problem Solving on Moment of Inertia",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 5,
-      "title": "Simple Stresses and Strains",
-      "totalPeriods": 40,
-      "topics": [
-        {
-          "id": "c105-5.1",
-          "sno": "5.1",
-          "topic": "Define the following terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.2",
-          "sno": "5.2",
-          "topic": "Distinguish between different kinds of stresses and strains",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.3",
-          "sno": "5.3",
-          "topic": "Draw the stress-strain curve for ductile materials (Mild steel)",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.4",
-          "sno": "5.4",
-          "topic": "State Hooke\u2019s law and limits of proportionality, State the factors",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.5",
-          "sno": "5.5",
-          "topic": "Solve problems on relationship between simple stress",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.6",
-          "sno": "5.6",
-          "topic": "State the relationship among the elastic constants, Solve",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.7",
-          "sno": "5.7",
-          "topic": "Calculate stresses in simple and composite members under axial",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.8",
-          "sno": "5.8",
-          "topic": "Define temperature stress, strain, hoops stress.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.9",
-          "sno": "5.9",
-          "topic": "List and explain mechanical properties of materials",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.10",
-          "sno": "5.10",
-          "topic": "Tutorial / Practice session on Define the following terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.11",
-          "sno": "5.11",
-          "topic": "Problem solving & numerical analysis of Distinguish between different kinds of stresses and strains",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.12",
-          "sno": "5.12",
-          "topic": "Case study and practical applications of Draw the stress-strain curve for ductile materials (Mild steel)",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.13",
-          "sno": "5.13",
-          "topic": "Tutorial / Practice session on State Hooke\u2019s law and limits of proportionality, State the factors",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.14",
-          "sno": "5.14",
-          "topic": "Problem solving & numerical analysis of Solve problems on relationship between simple stress",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.15",
-          "sno": "5.15",
-          "topic": "Case study and practical applications of State the relationship among the elastic constants, Solve",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.16",
-          "sno": "5.16",
-          "topic": "Tutorial / Practice session on Calculate stresses in simple and composite members under axial",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.17",
-          "sno": "5.17",
-          "topic": "Problem solving & numerical analysis of Define temperature stress, strain, hoops stress.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.18",
-          "sno": "5.18",
-          "topic": "Case study and practical applications of List and explain mechanical properties of materials",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.19",
-          "sno": "5.19",
-          "topic": "Tutorial / Practice session on Define the following terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.20",
-          "sno": "5.20",
-          "topic": "Problem solving & numerical analysis of Distinguish between different kinds of stresses and strains",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.21",
-          "sno": "5.21",
-          "topic": "Case study and practical applications of Draw the stress-strain curve for ductile materials (Mild steel)",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.22",
-          "sno": "5.22",
-          "topic": "Tutorial / Practice session on State Hooke\u2019s law and limits of proportionality, State the factors",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.23",
-          "sno": "5.23",
-          "topic": "Problem solving & numerical analysis of Solve problems on relationship between simple stress",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.24",
-          "sno": "5.24",
-          "topic": "Case study and practical applications of State the relationship among the elastic constants, Solve",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.25",
-          "sno": "5.25",
-          "topic": "Tutorial / Practice session on Calculate stresses in simple and composite members under axial",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.26",
-          "sno": "5.26",
-          "topic": "Problem solving & numerical analysis of Define temperature stress, strain, hoops stress.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.27",
-          "sno": "5.27",
-          "topic": "Case study and practical applications of List and explain mechanical properties of materials",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.28",
-          "sno": "5.28",
-          "topic": "Tutorial / Practice session on Define the following terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.29",
-          "sno": "5.29",
-          "topic": "Problem solving & numerical analysis of Distinguish between different kinds of stresses and strains",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.30",
-          "sno": "5.30",
-          "topic": "Case study and practical applications of Draw the stress-strain curve for ductile materials (Mild steel)",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.31",
-          "sno": "5.31",
-          "topic": "Tutorial / Practice session on State Hooke\u2019s law and limits of proportionality, State the factors",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.32",
-          "sno": "5.32",
-          "topic": "Problem solving & numerical analysis of Solve problems on relationship between simple stress",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.33",
-          "sno": "5.33",
-          "topic": "Case study and practical applications of State the relationship among the elastic constants, Solve",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.34",
-          "sno": "5.34",
-          "topic": "Tutorial / Practice session on Calculate stresses in simple and composite members under axial",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.35",
-          "sno": "5.35",
-          "topic": "Problem solving & numerical analysis of Define temperature stress, strain, hoops stress.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.36",
-          "sno": "5.36",
-          "topic": "Case study and practical applications of List and explain mechanical properties of materials",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.37",
-          "sno": "5.37",
-          "topic": "Tutorial / Practice session on Define the following terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.38",
-          "sno": "5.38",
-          "topic": "Problem solving & numerical analysis of Distinguish between different kinds of stresses and strains",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-5.39",
-          "sno": "5.39",
-          "topic": "Revision of Simple Stresses and Strains",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c105-5.40",
-          "sno": "5.40",
-          "topic": "Assessment / Practice / Problem Solving on Simple Stresses and Strains",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 6,
-      "title": "Shear force and bending Moment",
-      "totalPeriods": 40,
-      "topics": [
-        {
-          "id": "c105-6.1",
-          "sno": "6.1",
-          "topic": "Define",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.2",
-          "sno": "6.2",
-          "topic": "Calculate reactions at rollers/hinged and fixed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.3",
-          "sno": "6.3",
-          "topic": "Explain a)Shear Force and b) Bending Moment",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.4",
-          "sno": "6.4",
-          "topic": "Explain sign conventions used for drawing 1. Shear Force",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.5",
-          "sno": "6.5",
-          "topic": "Deduce the relationship among the rate of loading, shear",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.6",
-          "sno": "6.6",
-          "topic": "Determine Shear Force and Bending Moments on",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.7",
-          "sno": "6.7",
-          "topic": "Describe the procedures for sketching the Shear Force",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.8",
-          "sno": "6.8",
-          "topic": "Sketch Shear Force Diagrams (SFD) and Bending Moment",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.9",
-          "sno": "6.9",
-          "topic": "Define point of contra flexure",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.10",
-          "sno": "6.10",
-          "topic": "Determine the Shear Force, Bending Moment and point",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.11",
-          "sno": "6.11",
-          "topic": "Problem solving & numerical analysis of Define",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.12",
-          "sno": "6.12",
-          "topic": "Case study and practical applications of Calculate reactions at rollers/hinged and fixed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.13",
-          "sno": "6.13",
-          "topic": "Tutorial / Practice session on Explain a)Shear Force and b) Bending Moment",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.14",
-          "sno": "6.14",
-          "topic": "Problem solving & numerical analysis of Explain sign conventions used for drawing 1. Shear Force",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.15",
-          "sno": "6.15",
-          "topic": "Case study and practical applications of Deduce the relationship among the rate of loading, shear",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.16",
-          "sno": "6.16",
-          "topic": "Tutorial / Practice session on Determine Shear Force and Bending Moments on",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.17",
-          "sno": "6.17",
-          "topic": "Problem solving & numerical analysis of Describe the procedures for sketching the Shear Force",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.18",
-          "sno": "6.18",
-          "topic": "Case study and practical applications of Sketch Shear Force Diagrams (SFD) and Bending Moment",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.19",
-          "sno": "6.19",
-          "topic": "Tutorial / Practice session on Define point of contra flexure",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.20",
-          "sno": "6.20",
-          "topic": "Problem solving & numerical analysis of Determine the Shear Force, Bending Moment and point",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.21",
-          "sno": "6.21",
-          "topic": "Case study and practical applications of Define",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.22",
-          "sno": "6.22",
-          "topic": "Tutorial / Practice session on Calculate reactions at rollers/hinged and fixed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.23",
-          "sno": "6.23",
-          "topic": "Problem solving & numerical analysis of Explain a)Shear Force and b) Bending Moment",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.24",
-          "sno": "6.24",
-          "topic": "Case study and practical applications of Explain sign conventions used for drawing 1. Shear Force",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.25",
-          "sno": "6.25",
-          "topic": "Tutorial / Practice session on Deduce the relationship among the rate of loading, shear",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.26",
-          "sno": "6.26",
-          "topic": "Problem solving & numerical analysis of Determine Shear Force and Bending Moments on",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.27",
-          "sno": "6.27",
-          "topic": "Case study and practical applications of Describe the procedures for sketching the Shear Force",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.28",
-          "sno": "6.28",
-          "topic": "Tutorial / Practice session on Sketch Shear Force Diagrams (SFD) and Bending Moment",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.29",
-          "sno": "6.29",
-          "topic": "Problem solving & numerical analysis of Define point of contra flexure",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.30",
-          "sno": "6.30",
-          "topic": "Case study and practical applications of Determine the Shear Force, Bending Moment and point",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.31",
-          "sno": "6.31",
-          "topic": "Tutorial / Practice session on Define",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.32",
-          "sno": "6.32",
-          "topic": "Problem solving & numerical analysis of Calculate reactions at rollers/hinged and fixed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.33",
-          "sno": "6.33",
-          "topic": "Case study and practical applications of Explain a)Shear Force and b) Bending Moment",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.34",
-          "sno": "6.34",
-          "topic": "Tutorial / Practice session on Explain sign conventions used for drawing 1. Shear Force",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.35",
-          "sno": "6.35",
-          "topic": "Problem solving & numerical analysis of Deduce the relationship among the rate of loading, shear",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.36",
-          "sno": "6.36",
-          "topic": "Case study and practical applications of Determine Shear Force and Bending Moments on",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.37",
-          "sno": "6.37",
-          "topic": "Tutorial / Practice session on Describe the procedures for sketching the Shear Force",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.38",
-          "sno": "6.38",
-          "topic": "Problem solving & numerical analysis of Sketch Shear Force Diagrams (SFD) and Bending Moment",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c105-6.39",
-          "sno": "6.39",
-          "topic": "Revision of Shear force and Bending Moment",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c105-6.40",
-          "sno": "6.40",
-          "topic": "Assessment / Practice / Problem Solving on Shear force and Bending Moment",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    }
-  ]
+    ]
 }

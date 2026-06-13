@@ -11,109 +11,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Definition of Design. & Types of Design.",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-1.1",
-                    "sno": "1.1",
-                    "topic": "Definition of Design.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Necessity of Design. & Comparison of designed and undigned parts.",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-1.2",
-                    "sno": "1.2",
-                    "topic": "Types of Design.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "1.2"
                 },
                 {
-                    "id": "m401-1.3",
-                    "sno": "1.3",
-                    "topic": "Necessity of Design.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m401-1.4",
-                    "sno": "1.4",
-                    "topic": "Comparison of designed and undigned parts.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m401-1.5",
-                    "sno": "1.5",
                     "topic": "Design procedure.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "m401-1.6",
-                    "sno": "1.6",
                     "topic": "Characteristics of a good designer.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "m401-1.7",
-                    "sno": "1.7",
                     "topic": "General design considerations.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "m401-1.8",
-                    "sno": "1.8",
                     "topic": "Basic design requirements.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.6",
+                    "sno": "1.6"
                 },
                 {
-                    "id": "m401-1.9",
-                    "sno": "1.9",
                     "topic": "General procedure of design.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.7",
+                    "sno": "1.7"
                 },
                 {
-                    "id": "m401-1.10",
-                    "sno": "1.10",
                     "topic": "Codes and standards.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.8",
+                    "sno": "1.8"
                 },
                 {
-                    "id": "m401-1.11",
-                    "sno": "1.11",
                     "topic": "Review of engineering materials and their properties.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.9",
+                    "sno": "1.9"
                 },
                 {
-                    "id": "m401-1.12",
-                    "sno": "1.12",
                     "topic": "Design loads and stresses.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.10",
+                    "sno": "1.10"
                 },
                 {
-                    "id": "m401-1.13",
-                    "sno": "1.13",
                     "topic": "Determination of permissible stress.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "m401-1.14",
-                    "sno": "1.14",
                     "topic": "Factor of safety and factors affecting it.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.12",
+                    "sno": "1.12"
                 },
                 {
-                    "id": "m401-1.15",
-                    "sno": "1.15",
                     "topic": "Stress concentration, causes and remedies.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m401-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Introduction to Design",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m401-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Introduction to Design",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m401-1.15",
+                    "sno": "1.15"
                 }
             ]
         },
@@ -123,53 +123,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Types of screw fasteners. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-2.1",
-                    "sno": "2.1",
-                    "topic": "Types of screw fasteners.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Types of screw fasteners. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-2.2",
-                    "sno": "2.2",
-                    "topic": "Stresses in screw fasteners.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Stresses in screw fasteners. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-2.3",
-                    "sno": "2.3",
-                    "topic": "Design of bolts for static loading.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Stresses in screw fasteners. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-2.4",
-                    "sno": "2.4",
-                    "topic": "Design of cylinder covers.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.4"
                 },
                 {
+                    "topic": "Design of bolts for static loading. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-2.5",
-                    "sno": "2.5",
-                    "topic": "Design of bolts for dynamic loading.",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Design of bolts for static loading. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m401-2.6",
-                    "sno": "2.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.6"
                 },
                 {
-                    "id": "m401-2.7",
-                    "sno": "2.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Design of cylinder covers. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m401-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Design of cylinder covers. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Design of bolts for dynamic loading. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Design of bolts for dynamic loading. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Bolted Joints",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m401-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Bolted Joints",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m401-2.12",
+                    "sno": "2.12"
                 }
             ]
         },
@@ -179,74 +214,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Types of riveted joints. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-3.1",
-                    "sno": "3.1",
-                    "topic": "Types of riveted joints.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Types of riveted joints. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-3.2",
-                    "sno": "3.2",
-                    "topic": "Failures of riveted joints.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Failures of riveted joints. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-3.3",
-                    "sno": "3.3",
-                    "topic": "Strength and efficiency of riveted joints.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Failures of riveted joints. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-3.4",
-                    "sno": "3.4",
-                    "topic": "Design of riveted joints for boiler shells.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Strength and efficiency of riveted joints.",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-3.5",
-                    "sno": "3.5",
-                    "topic": "Structural joints (Lozenge joint).",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "3.5"
                 },
                 {
+                    "topic": "Design of riveted joints for boiler shells.",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-3.6",
-                    "sno": "3.6",
-                    "topic": "Types of welded joints.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "3.6"
                 },
                 {
+                    "topic": "Structural joints (Lozenge joint).",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-3.7",
-                    "sno": "3.7",
-                    "topic": "Strength of welded joints.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "3.7"
                 },
                 {
+                    "topic": "Types of welded joints.",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-3.8",
-                    "sno": "3.8",
-                    "topic": "Design of welded joints.",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Strength of welded joints.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m401-3.9",
-                    "sno": "3.9",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.9"
                 },
                 {
-                    "id": "m401-3.10",
-                    "sno": "3.10",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Design of welded joints.",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m401-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Riveted and Welded Joints",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m401-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Riveted and Welded Joints",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m401-3.12",
+                    "sno": "3.12"
                 }
             ]
         },
@@ -256,46 +305,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
+                    "topic": "Design of shafts for strength and rigidity. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-4.1",
-                    "sno": "4.1",
-                    "topic": "Design of shafts for strength and rigidity.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Design of shafts for strength and rigidity. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-4.2",
-                    "sno": "4.2",
-                    "topic": "Design of solid and hollow shafts.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Design of shafts for strength and rigidity. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-4.3",
-                    "sno": "4.3",
-                    "topic": "Types of keys and their design.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Design of solid and hollow shafts. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-4.4",
-                    "sno": "4.4",
-                    "topic": "Design of muff, flange and flexible couplings.",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Design of solid and hollow shafts. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m401-4.5",
-                    "sno": "4.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.5"
                 },
                 {
-                    "id": "m401-4.6",
-                    "sno": "4.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Design of solid and hollow shafts. - Part 3",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m401-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Types of keys and their design. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Types of keys and their design. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Types of keys and their design. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Design of muff, flange and flexible couplings. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Design of muff, flange and flexible couplings. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Shafts, Keys and Couplings",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m401-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Shafts, Keys and Couplings",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m401-4.13",
+                    "sno": "4.13"
                 }
             ]
         },
@@ -305,53 +403,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
+                    "topic": "Classification of bearings. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-5.1",
-                    "sno": "5.1",
-                    "topic": "Classification of bearings.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Classification of bearings. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-5.2",
-                    "sno": "5.2",
-                    "topic": "Sliding contact bearings - Terminology.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Classification of bearings. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-5.3",
-                    "sno": "5.3",
-                    "topic": "Design of Journal bearings.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Sliding contact bearings - Terminology. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-5.4",
-                    "sno": "5.4",
-                    "topic": "Rolling contact bearings - Types and selection.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.4"
                 },
                 {
+                    "topic": "Sliding contact bearings - Terminology. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-5.5",
-                    "sno": "5.5",
-                    "topic": "Comparison of Sliding and Rolling contact bearings.",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Design of Journal bearings. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m401-5.6",
-                    "sno": "5.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.6"
                 },
                 {
-                    "id": "m401-5.7",
-                    "sno": "5.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Design of Journal bearings. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m401-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Rolling contact bearings - Types and selection. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Rolling contact bearings - Types and selection. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Comparison of Sliding and Rolling contact bearings. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Comparison of Sliding and Rolling contact bearings. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Bearings",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m401-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Bearings",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m401-5.13",
+                    "sno": "5.13"
                 }
             ]
         },
@@ -361,53 +501,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
+                    "topic": "Design of levers. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-6.1",
-                    "sno": "6.1",
-                    "topic": "Design of levers.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "6.1"
                 },
                 {
+                    "topic": "Design of levers. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-6.2",
-                    "sno": "6.2",
-                    "topic": "Design of Knuckle joint.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "6.2"
                 },
                 {
+                    "topic": "Design of levers. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-6.3",
-                    "sno": "6.3",
-                    "topic": "Design of Cotter joint.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "6.3"
                 },
                 {
+                    "topic": "Design of Knuckle joint. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-6.4",
-                    "sno": "6.4",
-                    "topic": "Design of belt drives.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "6.4"
                 },
                 {
+                    "topic": "Design of Knuckle joint. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m401-6.5",
-                    "sno": "6.5",
-                    "topic": "Design of spur gears.",
+                    "sno": "6.5"
+                },
+                {
+                    "topic": "Design of Cotter joint. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m401-6.6",
-                    "sno": "6.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "6.6"
                 },
                 {
-                    "id": "m401-6.7",
-                    "sno": "6.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Design of Cotter joint. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m401-6.7",
+                    "sno": "6.7"
+                },
+                {
+                    "topic": "Design of belt drives. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-6.8",
+                    "sno": "6.8"
+                },
+                {
+                    "topic": "Design of belt drives. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-6.9",
+                    "sno": "6.9"
+                },
+                {
+                    "topic": "Design of spur gears. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-6.10",
+                    "sno": "6.10"
+                },
+                {
+                    "topic": "Design of spur gears. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m401-6.11",
+                    "sno": "6.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Design of Machine Elements",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m401-6.12",
+                    "sno": "6.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Design of Machine Elements",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m401-6.13",
+                    "sno": "6.13"
                 }
             ]
         }

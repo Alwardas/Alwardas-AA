@@ -11,53 +11,53 @@
             "totalPeriods": 7,
             "topics": [
                 {
-                    "id": "m402-1.1",
-                    "sno": "1.1",
                     "topic": "Definition of fluid and fluid mechanics.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "m402-1.2",
-                    "sno": "1.2",
                     "topic": "Properties of fluids: Density, Specific weight, Specific gravity, Viscosity, Surface tension, Capillarity.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "m402-1.3",
-                    "sno": "1.3",
                     "topic": "Compressibility and Bulk modulus.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "m402-1.4",
-                    "sno": "1.4",
                     "topic": "Vapour pressure.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "m402-1.5",
-                    "sno": "1.5",
                     "topic": "Problems on fluid properties.",
+                    "period": 1,
                     "type": "problem solving",
-                    "period": 1
+                    "id": "m402-1.5",
+                    "sno": "1.5"
                 },
                 {
+                    "topic": "Revision of the Unit: Properties of Fluids",
+                    "period": 1,
+                    "type": "revision",
                     "id": "m402-1.6",
-                    "sno": "1.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.6"
                 },
                 {
-                    "id": "m402-1.7",
-                    "sno": "1.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Properties of Fluids",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "m402-1.7",
+                    "sno": "1.7"
                 }
             ]
         },
@@ -67,53 +67,53 @@
             "totalPeriods": 7,
             "topics": [
                 {
-                    "id": "m402-2.1",
-                    "sno": "2.1",
-                    "topic": "Fluid pressure, Pressure head.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m402-2.2",
-                    "sno": "2.2",
-                    "topic": "Pascal's law.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m402-2.3",
-                    "sno": "2.3",
-                    "topic": "Atmospheric, Gauge and Absolute pressure.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m402-2.4",
-                    "sno": "2.4",
-                    "topic": "Measurement of pressure: Piezometer, U-tube manometer, Differential manometer.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m402-2.5",
-                    "sno": "2.5",
-                    "topic": "Mechanical gauges: Bourdon tube pressure gauge.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m402-2.6",
-                    "sno": "2.6",
-                    "topic": "Problems on pressure measurement.",
-                    "type": "problem solving",
-                    "period": 1
-                },
-                {
-                    "id": "m402-2.7",
-                    "sno": "2.7",
-                    "topic": "Revision and Assessment",
+                    "topic": "Fluid pressure, Pressure head. & Pascal's law.",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory",
+                    "id": "m402-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Atmospheric, Gauge and Absolute pressure.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m402-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Measurement of pressure: Piezometer, U-tube manometer, Differential manometer.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m402-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Mechanical gauges: Bourdon tube pressure gauge.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m402-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Problems on pressure measurement.",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m402-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Revision of the Unit: Fluid Pressure and Measurement",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m402-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Fluid Pressure and Measurement",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m402-2.7",
+                    "sno": "2.7"
                 }
             ]
         },
@@ -123,53 +123,53 @@
             "totalPeriods": 7,
             "topics": [
                 {
-                    "id": "m402-3.1",
-                    "sno": "3.1",
                     "topic": "Types of fluid flow: Steady/Unsteady, Uniform/Non-uniform, Laminar/Turbulent.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "m402-3.2",
-                    "sno": "3.2",
                     "topic": "Continuity equation.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "m402-3.3",
-                    "sno": "3.3",
                     "topic": "Bernoulli's theorem and its assumptions.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "m402-3.4",
-                    "sno": "3.4",
                     "topic": "Applications of Bernoulli's theorem: Venturimeter, Orifice meter, Pitot tube.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-3.4",
+                    "sno": "3.4"
                 },
                 {
-                    "id": "m402-3.5",
-                    "sno": "3.5",
                     "topic": "Problems on Continuity equation and Bernoulli's theorem.",
+                    "period": 1,
                     "type": "problem solving",
-                    "period": 1
+                    "id": "m402-3.5",
+                    "sno": "3.5"
                 },
                 {
+                    "topic": "Revision of the Unit: Fluid Flow",
+                    "period": 1,
+                    "type": "revision",
                     "id": "m402-3.6",
-                    "sno": "3.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.6"
                 },
                 {
-                    "id": "m402-3.7",
-                    "sno": "3.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Fluid Flow",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "m402-3.7",
+                    "sno": "3.7"
                 }
             ]
         },
@@ -179,67 +179,67 @@
             "totalPeriods": 9,
             "topics": [
                 {
+                    "topic": "Laws of fluid friction. & Darcy's equation for loss of head due to friction.",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m402-4.1",
-                    "sno": "4.1",
-                    "topic": "Laws of fluid friction.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Chezy's formula. & Minor losses in pipes.",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m402-4.2",
-                    "sno": "4.2",
-                    "topic": "Darcy's equation for loss of head due to friction.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "4.2"
                 },
                 {
-                    "id": "m402-4.3",
-                    "sno": "4.3",
-                    "topic": "Chezy's formula.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m402-4.4",
-                    "sno": "4.4",
-                    "topic": "Minor losses in pipes.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m402-4.5",
-                    "sno": "4.5",
                     "topic": "Hydraulic gradient line and Total energy line.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "m402-4.6",
-                    "sno": "4.6",
                     "topic": "Power transmission through pipes.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "m402-4.7",
-                    "sno": "4.7",
                     "topic": "Siphon.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "m402-4.8",
-                    "sno": "4.8",
                     "topic": "Water hammer.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "m402-4.9",
-                    "sno": "4.9",
                     "topic": "Problems on flow through pipes.",
+                    "period": 1,
                     "type": "problem solving",
-                    "period": 1
+                    "id": "m402-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Revision of the Unit: Flow through Pipes",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m402-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Flow through Pipes",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m402-4.9",
+                    "sno": "4.9"
                 }
             ]
         },
@@ -249,53 +249,60 @@
             "totalPeriods": 8,
             "topics": [
                 {
+                    "topic": "Force exerted by the jet on stationary flat plate (normal and inclined). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m402-5.1",
-                    "sno": "5.1",
-                    "topic": "Force exerted by the jet on stationary flat plate (normal and inclined).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Force exerted by the jet on stationary flat plate (normal and inclined). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m402-5.2",
-                    "sno": "5.2",
+                    "sno": "5.2"
+                },
+                {
                     "topic": "Force exerted by the jet on moving flat plate (normal and inclined).",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m402-5.3",
-                    "sno": "5.3",
+                    "sno": "5.3"
+                },
+                {
                     "topic": "Force exerted by the jet on stationary curved vane.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m402-5.4",
-                    "sno": "5.4",
+                    "sno": "5.4"
+                },
+                {
                     "topic": "Force exerted by the jet on moving curved vane.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m402-5.5",
-                    "sno": "5.5",
+                    "sno": "5.5"
+                },
+                {
                     "topic": "Problems on impact of jets.",
+                    "period": 1,
                     "type": "problem solving",
-                    "period": 1
-                },
-                {
                     "id": "m402-5.6",
-                    "sno": "5.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.6"
                 },
                 {
-                    "id": "m402-5.7",
-                    "sno": "5.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Revision of the Unit: Impact of Jets",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "revision",
+                    "id": "m402-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Impact of Jets",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m402-5.8",
+                    "sno": "5.8"
                 }
             ]
         },
@@ -305,67 +312,67 @@
             "totalPeriods": 9,
             "topics": [
                 {
+                    "topic": "Classification of hydraulic turbines. & Construction and working of Pelton wheel.",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m402-6.1",
-                    "sno": "6.1",
-                    "topic": "Classification of hydraulic turbines.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "6.1"
                 },
                 {
+                    "topic": "Construction and working of Francis turbine. & Construction and working of Kaplan turbine.",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m402-6.2",
-                    "sno": "6.2",
-                    "topic": "Construction and working of Pelton wheel.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "6.2"
                 },
                 {
-                    "id": "m402-6.3",
-                    "sno": "6.3",
-                    "topic": "Construction and working of Francis turbine.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m402-6.4",
-                    "sno": "6.4",
-                    "topic": "Construction and working of Kaplan turbine.",
-                    "type": "theory",
-                    "period": 1
-                },
-                {
-                    "id": "m402-6.5",
-                    "sno": "6.5",
                     "topic": "Draft tube: Function and types.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-6.3",
+                    "sno": "6.3"
                 },
                 {
-                    "id": "m402-6.6",
-                    "sno": "6.6",
                     "topic": "Governing of turbines.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-6.4",
+                    "sno": "6.4"
                 },
                 {
-                    "id": "m402-6.7",
-                    "sno": "6.7",
                     "topic": "Performance characteristics of turbines.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-6.5",
+                    "sno": "6.5"
                 },
                 {
-                    "id": "m402-6.8",
-                    "sno": "6.8",
                     "topic": "Selection of turbines.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-6.6",
+                    "sno": "6.6"
                 },
                 {
-                    "id": "m402-6.9",
-                    "sno": "6.9",
                     "topic": "Problems on hydraulic turbines.",
+                    "period": 1,
                     "type": "problem solving",
-                    "period": 1
+                    "id": "m402-6.7",
+                    "sno": "6.7"
+                },
+                {
+                    "topic": "Revision of the Unit: Hydraulic Turbines",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m402-6.8",
+                    "sno": "6.8"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Hydraulic Turbines",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m402-6.9",
+                    "sno": "6.9"
                 }
             ]
         },
@@ -375,60 +382,60 @@
             "totalPeriods": 8,
             "topics": [
                 {
-                    "id": "m402-7.1",
-                    "sno": "7.1",
                     "topic": "Classification of pumps.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-7.1",
+                    "sno": "7.1"
                 },
                 {
-                    "id": "m402-7.2",
-                    "sno": "7.2",
                     "topic": "Centrifugal pumps: Construction and working.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-7.2",
+                    "sno": "7.2"
                 },
                 {
-                    "id": "m402-7.3",
-                    "sno": "7.3",
                     "topic": "Reciprocating pumps: Construction and working.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-7.3",
+                    "sno": "7.3"
                 },
                 {
-                    "id": "m402-7.4",
-                    "sno": "7.4",
                     "topic": "Priming of centrifugal pumps.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-7.4",
+                    "sno": "7.4"
                 },
                 {
-                    "id": "m402-7.5",
-                    "sno": "7.5",
                     "topic": "Comparison of centrifugal and reciprocating pumps.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
+                    "id": "m402-7.5",
+                    "sno": "7.5"
                 },
                 {
-                    "id": "m402-7.6",
-                    "sno": "7.6",
                     "topic": "Problems on pumps.",
+                    "period": 1,
                     "type": "problem solving",
-                    "period": 1
+                    "id": "m402-7.6",
+                    "sno": "7.6"
                 },
                 {
+                    "topic": "Revision of the Unit: Hydraulic Pumps",
+                    "period": 1,
+                    "type": "revision",
                     "id": "m402-7.7",
-                    "sno": "7.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "7.7"
                 },
                 {
-                    "id": "m402-7.8",
-                    "sno": "7.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Hydraulic Pumps",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "m402-7.8",
+                    "sno": "7.8"
                 }
             ]
         },
@@ -438,53 +445,60 @@
             "totalPeriods": 8,
             "topics": [
                 {
+                    "topic": "Introduction to fluid power systems. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m402-8.1",
-                    "sno": "8.1",
-                    "topic": "Introduction to fluid power systems.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "8.1"
                 },
                 {
+                    "topic": "Introduction to fluid power systems. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m402-8.2",
-                    "sno": "8.2",
+                    "sno": "8.2"
+                },
+                {
                     "topic": "Components of hydraulic systems.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m402-8.3",
-                    "sno": "8.3",
+                    "sno": "8.3"
+                },
+                {
                     "topic": "Hydraulic circuits for different applications.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m402-8.4",
-                    "sno": "8.4",
+                    "sno": "8.4"
+                },
+                {
                     "topic": "Pneumatic systems: Components and applications.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m402-8.5",
-                    "sno": "8.5",
+                    "sno": "8.5"
+                },
+                {
                     "topic": "Comparison of hydraulic and pneumatic systems.",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m402-8.6",
-                    "sno": "8.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "8.6"
                 },
                 {
-                    "id": "m402-8.7",
-                    "sno": "8.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Revision of the Unit: Fluid Power Systems",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "revision",
+                    "id": "m402-8.7",
+                    "sno": "8.7"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Fluid Power Systems",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m402-8.8",
+                    "sno": "8.8"
                 }
             ]
         }

@@ -11,102 +11,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "id": "ee3021.1",
-                    "sno": "1.1",
-                    "topic": "Explain electromechanical energy conversion.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain electromechanical energy conversion. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "ee3021.2",
-                    "sno": "1.2",
-                    "topic": "Describe the constructional features of a D.C generator with a legible sketch and list the various materials used for each part.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain electromechanical energy conversion. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "ee3021.3",
-                    "sno": "1.3",
-                    "topic": "Explain the working principle of D.C generator.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Describe the constructional features of a D.C generator with a legible sketch and list the various materials used for each part. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "ee3021.4",
-                    "sno": "1.4",
-                    "topic": "State the types of armature windings.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Describe the constructional features of a D.C generator with a legible sketch and list the various materials used for each part. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "ee3021.5",
-                    "sno": "1.5",
+                    "topic": "Explain the working principle of D.C generator. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain the working principle of D.C generator. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "State the types of armature windings. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State the types of armature windings. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-1.8",
+                    "sno": "1.8"
+                },
+                {
                     "topic": "Derive the E.M.F equation of D.C generator in terms of \u03a6,Z, N, P &A and solve problems.",
                     "period": 1,
-                    "type": "problem solving"
+                    "type": "problem solving",
+                    "id": "ee302-1.9",
+                    "sno": "1.9"
                 },
                 {
-                    "id": "ee3021.6",
-                    "sno": "1.6",
                     "topic": "Classify D.C Generators based on excitation and draw its equivalent circuit by giving their voltage and current equations and solve problems.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-1.10",
+                    "sno": "1.10"
                 },
                 {
-                    "id": "ee3021.7",
-                    "sno": "1.7",
                     "topic": "State the various losses incurred in a D.C Generator and draw power flow diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ee3021.8",
-                    "sno": "1.8",
                     "topic": "Define the mechanical, electrical and overall efficiencies of DC Generator.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-1.12",
+                    "sno": "1.12"
                 },
                 {
-                    "id": "ee3021.9",
-                    "sno": "1.9",
                     "topic": "Define Armature reaction and state its effects.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-1.13",
+                    "sno": "1.13"
                 },
                 {
-                    "id": "ee3021.10",
-                    "sno": "1.10",
                     "topic": "State Commutation and list the different methods of improving commutation.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-1.14",
+                    "sno": "1.14"
                 },
                 {
-                    "id": "ee3021.11",
-                    "sno": "1.11",
                     "topic": "Plot Open Circuit Characteristics, Internal characteristics and external characteristics of the following types of D.C. Generators: (i) Separately excited(ii) Shunt(iii)Series",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-1.15",
+                    "sno": "1.15"
                 },
                 {
-                    "id": "ee3021.12",
-                    "sno": "1.12",
                     "topic": "List the applications of above D.C generators.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-1.16",
+                    "sno": "1.16"
                 },
                 {
-                    "id": "ee302-1.13",
-                    "sno": "1.13",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: Fundamentals of D.C Generators, Armature reaction and Characteristics",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee302-1.17",
+                    "sno": "1.17"
                 },
                 {
-                    "id": "ee302-1.14",
-                    "sno": "1.14",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Fundamentals of D.C Generators, Armature reaction and Characteristics",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee302-1.18",
+                    "sno": "1.18"
                 }
             ]
         },
@@ -116,81 +144,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "ee3022.1",
-                    "sno": "2.1",
-                    "topic": "Define DC motor",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Define DC motor - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ee3022.2",
-                    "sno": "2.2",
+                    "topic": "Define DC motor - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-2.2",
+                    "sno": "2.2"
+                },
+                {
                     "topic": "Explain the working of D.C motor.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "ee3022.3",
-                    "sno": "2.3",
                     "topic": "Explain the significance of back E.M.F.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-2.4",
+                    "sno": "2.4"
                 },
                 {
-                    "id": "ee3022.4",
-                    "sno": "2.4",
                     "topic": "Classify DC motors.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "ee3022.5",
-                    "sno": "2.5",
                     "topic": "Write the formula for Back E. M. F for different D.C Motors with equivalent circuits.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-2.6",
+                    "sno": "2.6"
                 },
                 {
-                    "id": "ee3022.6",
-                    "sno": "2.6",
                     "topic": "Solve Problems on Back E.M.F.",
                     "period": 1,
-                    "type": "problem solving"
+                    "type": "problem solving",
+                    "id": "ee302-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "ee3022.7",
-                    "sno": "2.7",
                     "topic": "Define Torque and derive Torque equation of a D.C motor.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-2.8",
+                    "sno": "2.8"
                 },
                 {
-                    "id": "ee3022.8",
-                    "sno": "2.8",
                     "topic": "Plot the i) Electrical characteristics and ii) Mechanical characteristics of (a) Shunt OUTCOMES 302.1 Describe the parts of a DC machine, its usages and analyse armature reaction and commutation for its effects. 302.2 Describe the working of a D.C motor and analyse the characteristics for its performance 302.3 Familiarise the usage of starter for different DC motors and selecting specific methods of speed control for D.C motor and to analyse various tests on D.C motors. 302.4 Describe the construction and working of different electrical and electronic measuring instruments and to explain the measurement of resistance. 302.5 Choosing appropriate Transducer for a specific application and to describe the basic principle of electronic digital measuring instruments. b) Series D. C. Motors",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-2.9",
+                    "sno": "2.9"
                 },
                 {
-                    "id": "ee3022.9",
-                    "sno": "2.9",
                     "topic": "List the applications of the various D.C motors. -",
                     "period": 1,
-                    "type": "theory"
-                },
-                {
+                    "type": "theory",
                     "id": "ee302-2.10",
-                    "sno": "2.10",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.10"
                 },
                 {
-                    "id": "ee302-2.11",
-                    "sno": "2.11",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Revision of the Unit: Fundamentals of DC motors",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "revision",
+                    "id": "ee302-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Fundamentals of DC motors",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee302-2.12",
+                    "sno": "2.12"
                 }
             ]
         },
@@ -200,67 +235,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "ee3023.1",
-                    "sno": "3.1",
-                    "topic": "Explain the three different methods of speed Control (Flux, Armature and voltage) for D.C shunt motors.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the three different methods of speed Control (Flux, Armature and voltage) for D.C shunt motors. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "ee3023.2",
-                    "sno": "3.2",
-                    "topic": "Explain the different methods of speed control of series motor.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the three different methods of speed Control (Flux, Armature and voltage) for D.C shunt motors. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "ee3023.3",
-                    "sno": "3.3",
-                    "topic": "State the necessity of a starter and List different types of Starters for DC motors.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the different methods of speed control of series motor. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "ee3023.4",
-                    "sno": "3.4",
+                    "topic": "Explain the different methods of speed control of series motor. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "State the necessity of a starter and List different types of Starters for DC motors. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "State the necessity of a starter and List different types of Starters for DC motors. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-3.6",
+                    "sno": "3.6"
+                },
+                {
                     "topic": "Explain the working of 3-point starter with legible sketch.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "ee3023.5",
-                    "sno": "3.5",
                     "topic": "List different tests of D.C Motors.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "ee3023.6",
-                    "sno": "3.6",
                     "topic": "Describe the direct and indirect methods of testing of the DC motors.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ee3023.7",
-                    "sno": "3.7",
                     "topic": "Explain the method of conducting brake test on D.C Series and Shunt motors.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-3.10",
+                    "sno": "3.10"
                 },
                 {
-                    "id": "ee302-3.8",
-                    "sno": "3.8",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: Speed Control and Testing of D.C Motors",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee302-3.11",
+                    "sno": "3.11"
                 },
                 {
-                    "id": "ee302-3.9",
-                    "sno": "3.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Speed Control and Testing of D.C Motors",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee302-3.12",
+                    "sno": "3.12"
                 }
             ]
         },
@@ -270,88 +326,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "id": "ee3024.1",
-                    "sno": "4.1",
-                    "topic": "Classify the instruments on the basis of(i) construction and output(ii) principle of working (iii) method of measuring the value",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Classify the instruments on the basis of(i) construction and output(ii) principle of working (iii) method of measuring the value - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "ee3024.2",
-                    "sno": "4.2",
-                    "topic": "State the purpose of obtaining deflecting, controlling and damping torques in Indicating instruments.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Classify the instruments on the basis of(i) construction and output(ii) principle of working (iii) method of measuring the value - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "ee3024.3",
-                    "sno": "4.3",
-                    "topic": "Explain the working of Permanent Magnet Moving Coil instrument.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "State the purpose of obtaining deflecting, controlling and damping torques in Indicating instruments. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "ee3024.4",
-                    "sno": "4.4",
-                    "topic": "State the advantages, disadvantages and applications of M.C Instruments.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "State the purpose of obtaining deflecting, controlling and damping torques in Indicating instruments. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "ee3024.5",
-                    "sno": "4.5",
-                    "topic": "Describe working of Moving Iron (M.I) Instrument i) Attraction type Instrument ii) Repulsion type",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the working of Permanent Magnet Moving Coil instrument. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "ee3024.6",
-                    "sno": "4.6",
-                    "topic": "State the advantages and disadvantages of M.I. Instruments.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the working of Permanent Magnet Moving Coil instrument. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "ee3024.7",
-                    "sno": "4.7",
+                    "topic": "State the advantages, disadvantages and applications of M.C Instruments. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "State the advantages, disadvantages and applications of M.C Instruments. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Describe working of Moving Iron (M.I) Instrument i) Attraction type Instrument ii) Repulsion type - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Describe working of Moving Iron (M.I) Instrument i) Attraction type Instrument ii) Repulsion type - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "State the advantages and disadvantages of M.I. Instruments. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "State the advantages and disadvantages of M.I. Instruments. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-4.12",
+                    "sno": "4.12"
+                },
+                {
                     "topic": "Explain the working of a Dynamometer type instrument",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-4.13",
+                    "sno": "4.13"
                 },
                 {
-                    "id": "ee3024.8",
-                    "sno": "4.8",
                     "topic": "State the need for instrument transformers (CT and PT).",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-4.14",
+                    "sno": "4.14"
                 },
                 {
-                    "id": "ee3024.10",
-                    "sno": "4.10",
                     "topic": "Classify the measurement of resistance into Low, Medium and High Values giving examples foreach.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-4.15",
+                    "sno": "4.15"
                 },
                 {
-                    "id": "ee3024.11",
-                    "sno": "4.11",
                     "topic": "Describe the construction and working of Megger",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-4.16",
+                    "sno": "4.16"
                 },
                 {
-                    "id": "ee302-4.11",
-                    "sno": "4.11",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: Basics of Electrical Measuring Instruments",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee302-4.17",
+                    "sno": "4.17"
                 },
                 {
-                    "id": "ee302-4.12",
-                    "sno": "4.12",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Basics of Electrical Measuring Instruments",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee302-4.18",
+                    "sno": "4.18"
                 }
             ]
         },
@@ -361,102 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ee3025.1",
-                    "sno": "5.1",
-                    "topic": "Define Transducer",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Define Transducer - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "ee3025.2",
-                    "sno": "5.2",
+                    "topic": "Define Transducer - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee302-5.2",
+                    "sno": "5.2"
+                },
+                {
                     "topic": "Classify Transducers(i)based on the principle of transduction form used (ii) as Primary and Secondary(iii) as Passive and Active (iv) as Analog and Digital (v) as Transducers and Inverse Transducers",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "ee3025.3",
-                    "sno": "5.3",
                     "topic": "State the applications of Transducers.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "ee3025.4",
-                    "sno": "5.4",
                     "topic": "Describe the construction of Linear Variable Differential transformer (LVDT).",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "ee3025.5",
-                    "sno": "5.5",
                     "topic": "Explain the working of LVDT.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "ee3025.6",
-                    "sno": "5.6",
                     "topic": "Define Sensor and list its types.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-5.7",
+                    "sno": "5.7"
                 },
                 {
-                    "id": "ee3025.7",
-                    "sno": "5.7",
                     "topic": "List the applications of sensors.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-5.8",
+                    "sno": "5.8"
                 },
                 {
-                    "id": "ee3025.8",
-                    "sno": "5.8",
                     "topic": "List the basic components of analogue electronic instruments.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-5.9",
+                    "sno": "5.9"
                 },
                 {
-                    "id": "ee3025.9",
-                    "sno": "5.9",
                     "topic": "List the basic components of Digital instruments.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-5.10",
+                    "sno": "5.10"
                 },
                 {
-                    "id": "ee3025.10",
-                    "sno": "5.10",
                     "topic": "List the advantages of Digital Instruments over Analog Instruments.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-5.11",
+                    "sno": "5.11"
                 },
                 {
-                    "id": "ee3025.11",
-                    "sno": "5.11",
                     "topic": "Explain the Working of Digital Multi meter with block diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee302-5.12",
+                    "sno": "5.12"
                 },
                 {
-                    "id": "ee3025.12",
-                    "sno": "5.12",
                     "topic": "Explain the Working of Single-Phase Digital Energy meter with block diagram.",
                     "period": 1,
-                    "type": "theory"
-                },
-                {
+                    "type": "theory",
                     "id": "ee302-5.13",
-                    "sno": "5.13",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.13"
                 },
                 {
-                    "id": "ee302-5.14",
-                    "sno": "5.14",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Revision of the Unit: Transducers, Sensors and Electronic & Digital Instruments",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "revision",
+                    "id": "ee302-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Transducers, Sensors and Electronic & Digital Instruments",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee302-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

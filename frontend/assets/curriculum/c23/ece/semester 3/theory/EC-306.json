@@ -1,464 +1,464 @@
 {
-  "subjectCode": "EC-306",
-  "subjectName": "Programming in C and MATLAB",
-  "regulation": "C23",
-  "semester": 3,
-  "totalPeriods": 60,
-  "units": [
-    {
-      "unitNo": 1,
-      "title": "C Programming Basics",
-      "totalPeriods": 10,
-      "topics": [
+    "subjectCode": "EC-306",
+    "subjectName": "Programming in C and MATLAB",
+    "regulation": "C23",
+    "semester": 3,
+    "totalPeriods": 60,
+    "units": [
         {
-          "id": "ec-306-1.1",
-          "sno": "1.1",
-          "topic": "Give the structure of C program",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 1,
+            "title": "C Programming Basics",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "topic": "Give the structure of C program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Mention the character set of C language.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Define the Keywords and list them",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "List the data types used in C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "i)Define constants and variables ii)Explain the declaration& initialization of variables.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "List the five Arithmetic Operators supported by C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Define an expression and show how to evaluate an Arithmetic Expression",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "i) Define the assignment statement and give the syntax of assignment statement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Revision of the Unit: C Programming Basics",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ec306-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on C Programming Basics",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ec306-1.10",
+                    "sno": "1.10"
+                }
+            ]
         },
         {
-          "id": "ec-306-1.2",
-          "sno": "1.2",
-          "topic": "Mention the character set of C language.",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 2,
+            "title": "Conditional statements and arrays",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Describe the conditional expression",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "List the four conditional statements supported by C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Write the syntaxes of the following conditional statements and explain i. If ii. If.. else. iii. Nested if \u2026else",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Write the syntax of switch case statement and explain.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Write simple programs based on conditional statements.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Write a program to find whether a given year is leap year or not",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Write a program to find biggest of three numbers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Write a program to check whether a given number is even or odd by using bitwise logical operator",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Write a program to check whether a given character is vowel or consonant by using switch case statement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Write a program to perform arithmetic operations using switch case statement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Conditional statements and arrays",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ec306-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Conditional statements and arrays",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ec306-2.12",
+                    "sno": "2.12"
+                }
+            ]
         },
         {
-          "id": "ec-306-1.3",
-          "sno": "1.3",
-          "topic": "Define the Keywords and list them",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 3,
+            "title": "Strings, Functions & Pointers",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "topic": "Define String",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain different functions used for reading and writing strings with examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the String manipulation functions strcat (), strcmp (), strcpy () and strlen () with examples.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "State the use of function in C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain declaration of a function in program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Write the operation of getchar (),getch (), getche () and putchar () functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "State the use of return statement.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain passing of parameters to the function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Write simple programs on functions call techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Define a pointer.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Declare a pointer, assign a pointer, initialize a pointer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Strings, Functions & Pointers",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ec306-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Strings, Functions & Pointers",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ec306-3.13",
+                    "sno": "3.13"
+                }
+            ]
         },
         {
-          "id": "ec-306-1.4",
-          "sno": "1.4",
-          "topic": "List the data types used in C",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 4,
+            "title": "Structures &unions",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Define a structure in C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Write the syntax of structure declaration and explain",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain the method of declaring a structure variable",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain the method of initializing a structure variable",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the method of accessing of members of a structure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Illustrate structures with a program to read & print a book database consisting of Title of book, author, no. of pages, price as fields",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain how to find size of a structure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Define a Union",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Differentiate between structure and union",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "State the function of pre-processor directives in C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Structures &unions",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ec306-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Structures &unions",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ec306-4.12",
+                    "sno": "4.12"
+                }
+            ]
         },
         {
-          "id": "ec-306-1.5",
-          "sno": "1.5",
-          "topic": "i)Define constants and variables ii)Explain the declaration& initialization of variables.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-1.6",
-          "sno": "1.6",
-          "topic": "List the five Arithmetic Operators supported by C",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-1.7",
-          "sno": "1.7",
-          "topic": "Define an expression and show how to evaluate an Arithmetic Expression",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-1.8",
-          "sno": "1.8",
-          "topic": "i) Define the assignment statement and give the syntax of assignment statement",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-1.9",
-          "sno": "1.9",
-          "topic": "Revision of C Programming Basics",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "ec-306-1.10",
-          "sno": "1.10",
-          "topic": "Assessment / Unit Test on C Programming Basics",
-          "period": 1,
-          "type": "assessment"
+            "unitNo": 5,
+            "title": "Basics of MATLAB",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "topic": "State the need for MATLAB in solving engineering problems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "List the major differences between C and MATLAB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List the arithmetic operators, relational operators, logical operators in MATLAB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Differentiate element wise multiplication/division/power operations and array multiplication/division/power operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "State the usage of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "linspace operator",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "clc, clear, who, whos commands",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Give the syntax and usage of decision-makingstatements:i) if\u2026end statement;",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "if..else..end statement used in MATLAB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Give the syntax and usage of loop statements:i) while loop ii) for loop used in MATLAB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Explain the creation 1D & 2D arrays and mXn matrices in MATLAB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ec306-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Basics of MATLAB",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ec306-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Basics of MATLAB",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ec306-5.13",
+                    "sno": "5.13"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "unitNo": 2,
-      "title": "Conditional statements and arrays",
-      "totalPeriods": 12,
-      "topics": [
-        {
-          "id": "ec-306-2.1",
-          "sno": "2.1",
-          "topic": "Describe the conditional expression",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-2.2",
-          "sno": "2.2",
-          "topic": "List the four conditional statements supported by C",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-2.3",
-          "sno": "2.3",
-          "topic": "Write the syntaxes of the following conditional statements and explain i. If ii. If.. else. iii. Nested if \u2026else",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-2.4",
-          "sno": "2.4",
-          "topic": "Write the syntax of switch case statement and explain.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-2.5",
-          "sno": "2.5",
-          "topic": "Write simple programs based on conditional statements.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-2.6",
-          "sno": "2.6",
-          "topic": "Write a program to find whether a given year is leap year or not",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-2.7",
-          "sno": "2.7",
-          "topic": "Write a program to find biggest of three numbers",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-2.8",
-          "sno": "2.8",
-          "topic": "Write a program to check whether a given number is even or odd by using bitwise logical operator",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-2.9",
-          "sno": "2.9",
-          "topic": "Write a program to check whether a given character is vowel or consonant by using switch case statement",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-2.10",
-          "sno": "2.10",
-          "topic": "Write a program to perform arithmetic operations using switch case statement",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-2.11",
-          "sno": "2.11",
-          "topic": "Revision of Conditional statements and arrays",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "ec-306-2.12",
-          "sno": "2.12",
-          "topic": "Assessment / Unit Test on Conditional statements and arrays",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 3,
-      "title": "Strings, Functions & Pointers",
-      "totalPeriods": 13,
-      "topics": [
-        {
-          "id": "ec-306-3.1",
-          "sno": "3.1",
-          "topic": "Define String",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.2",
-          "sno": "3.2",
-          "topic": "Explain different functions used for reading and writing strings with examples",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.3",
-          "sno": "3.3",
-          "topic": "Explain the String manipulation functions strcat (), strcmp (), strcpy () and strlen () with examples.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.4",
-          "sno": "3.4",
-          "topic": "State the use of function in C",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.5",
-          "sno": "3.5",
-          "topic": "Explain declaration of a function in program",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.6",
-          "sno": "3.6",
-          "topic": "Write the operation of getchar (),getch (), getche () and putchar () functions",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.7",
-          "sno": "3.7",
-          "topic": "State the use of return statement.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.8",
-          "sno": "3.8",
-          "topic": "Explain passing of parameters to the function",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.9",
-          "sno": "3.9",
-          "topic": "Write simple programs on functions call techniques",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.10",
-          "sno": "3.10",
-          "topic": "Define a pointer.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.11",
-          "sno": "3.11",
-          "topic": "Declare a pointer, assign a pointer, initialize a pointer",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-3.12",
-          "sno": "3.12",
-          "topic": "Revision of Strings, Functions & Pointers",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "ec-306-3.13",
-          "sno": "3.13",
-          "topic": "Assessment / Unit Test on Strings, Functions & Pointers",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 4,
-      "title": "Structures &unions",
-      "totalPeriods": 12,
-      "topics": [
-        {
-          "id": "ec-306-4.1",
-          "sno": "4.1",
-          "topic": "Define a structure in C",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-4.2",
-          "sno": "4.2",
-          "topic": "Write the syntax of structure declaration and explain",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-4.3",
-          "sno": "4.3",
-          "topic": "Explain the method of declaring a structure variable",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-4.4",
-          "sno": "4.4",
-          "topic": "Explain the method of initializing a structure variable",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-4.5",
-          "sno": "4.5",
-          "topic": "Explain the method of accessing of members of a structure",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-4.6",
-          "sno": "4.6",
-          "topic": "Illustrate structures with a program to read & print a book database consisting of Title of book, author, no. of pages, price as fields",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-4.7",
-          "sno": "4.7",
-          "topic": "Explain how to find size of a structure",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-4.8",
-          "sno": "4.8",
-          "topic": "Define a Union",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-4.9",
-          "sno": "4.9",
-          "topic": "Differentiate between structure and union",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-4.10",
-          "sno": "4.10",
-          "topic": "State the function of pre-processor directives in C",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-4.11",
-          "sno": "4.11",
-          "topic": "Revision of Structures & unions",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "ec-306-4.12",
-          "sno": "4.12",
-          "topic": "Assessment / Unit Test on Structures & unions",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 5,
-      "title": "Basics of MATLAB",
-      "totalPeriods": 13,
-      "topics": [
-        {
-          "id": "ec-306-5.1",
-          "sno": "5.1",
-          "topic": "State the need for MATLAB in solving engineering problems",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.2",
-          "sno": "5.2",
-          "topic": "List the major differences between C and MATLAB",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.3",
-          "sno": "5.3",
-          "topic": "List the arithmetic operators, relational operators, logical operators in MATLAB",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.4",
-          "sno": "5.4",
-          "topic": "Differentiate element wise multiplication/division/power operations and array multiplication/division/power operations",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.5",
-          "sno": "5.5",
-          "topic": "State the usage of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.6",
-          "sno": "5.6",
-          "topic": "linspace operator",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.7",
-          "sno": "5.7",
-          "topic": "clc, clear, who, whos commands",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.8",
-          "sno": "5.8",
-          "topic": "Give the syntax and usage of decision-makingstatements:i) if\u2026end statement;",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.9",
-          "sno": "5.9",
-          "topic": "if..else..end statement used in MATLAB",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.10",
-          "sno": "5.10",
-          "topic": "Give the syntax and usage of loop statements:i) while loop ii) for loop used in MATLAB",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.11",
-          "sno": "5.11",
-          "topic": "Explain the creation 1D & 2D arrays and mXn matrices in MATLAB",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ec-306-5.12",
-          "sno": "5.12",
-          "topic": "Revision of Basics of MATLAB",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "ec-306-5.13",
-          "sno": "5.13",
-          "topic": "Assessment / Unit Test on Basics of MATLAB",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    }
-  ]
+    ]
 }

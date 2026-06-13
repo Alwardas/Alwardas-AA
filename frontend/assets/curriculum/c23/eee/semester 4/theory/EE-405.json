@@ -11,60 +11,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "ee4051.1",
-                    "sno": "1.1",
-                    "topic": "Definitions of Tensile stress, Compressive stress, Shear stress, Linear strain, lateral strain and, Poisson's ratio, elastic limit, Identify the different types of stresses and Strains",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Definitions of Tensile stress, Compressive stress, Shear stress, Linear strain, lateral strain and, Poisson's ratio, elastic limit, Identify the different types of stresses and Strains - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "ee4051.2",
-                    "sno": "1.2",
-                    "topic": "State Hooke's law",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Definitions of Tensile stress, Compressive stress, Shear stress, Linear strain, lateral strain and, Poisson's ratio, elastic limit, Identify the different types of stresses and Strains - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "ee4051.3",
-                    "sno": "1.3",
+                    "topic": "State Hooke's law - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "State Hooke's law - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-1.4",
+                    "sno": "1.4"
+                },
+                {
                     "topic": "Draw stress-strain curves for ductile and brittle materials under tension",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "ee4051.4",
-                    "sno": "1.4",
                     "topic": "Define a) Working stress, ultimate stress, yield stress, factor of safety and Young's modulus. solve simple problems on above topics",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-1.6",
+                    "sno": "1.6"
                 },
                 {
-                    "id": "ee4051.5",
-                    "sno": "1.5",
                     "topic": "State the factors to be considered in selecting factor of safety",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-1.7",
+                    "sno": "1.7"
                 },
                 {
-                    "id": "ee4051.6",
-                    "sno": "1.6",
                     "topic": "Solve Simple problems on uniform bars subjected to loads",
                     "period": 1,
-                    "type": "problem solving"
-                },
-                {
-                    "id": "ee405-1.7",
-                    "sno": "1.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
+                    "type": "problem solving",
                     "id": "ee405-1.8",
-                    "sno": "1.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Revision of the Unit: Simple Stresses and Strains",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "revision",
+                    "id": "ee405-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Simple Stresses and Strains",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee405-1.10",
+                    "sno": "1.10"
                 }
             ]
         },
@@ -74,60 +88,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "ee4052.1",
-                    "sno": "2.1",
-                    "topic": "State the function of shafts",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "State the function of shafts - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ee4052.2",
-                    "sno": "2.2",
-                    "topic": "Classify shafts",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "State the function of shafts - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "ee4052.3",
-                    "sno": "2.3",
+                    "topic": "Classify shafts - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Classify shafts - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-2.4",
+                    "sno": "2.4"
+                },
+                {
                     "topic": "Specify the standard sizes of shafts",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "ee4052.4",
-                    "sno": "2.4",
                     "topic": "Write the torsion equations with usual notations",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-2.6",
+                    "sno": "2.6"
                 },
                 {
-                    "id": "ee4052.5",
-                    "sno": "2.5",
                     "topic": "State the procedural steps in design of shaft (both solid and hallow types)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "ee4052.6",
-                    "sno": "2.6",
                     "topic": "Design a shaft from given data on the basis of strength and solve problems.",
                     "period": 1,
-                    "type": "problem solving"
-                },
-                {
-                    "id": "ee405-2.7",
-                    "sno": "2.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
+                    "type": "problem solving",
                     "id": "ee405-2.8",
-                    "sno": "2.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Revision of the Unit: Torsion in Shafts",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "revision",
+                    "id": "ee405-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Torsion in Shafts",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee405-2.10",
+                    "sno": "2.10"
                 }
             ]
         },
@@ -137,67 +165,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "ee4053.1",
-                    "sno": "3.1",
-                    "topic": "Classify I.C. Engines",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Classify I.C. Engines - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "ee4053.2",
-                    "sno": "3.2",
-                    "topic": "Functions of main components of an I.C.Engine",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Classify I.C. Engines - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "ee4053.3",
-                    "sno": "3.3",
-                    "topic": "Illustrate the working of four stroke petrol engine",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Functions of main components of an I.C.Engine - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "ee4053.4",
-                    "sno": "3.4",
+                    "topic": "Functions of main components of an I.C.Engine - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Illustrate the working of four stroke petrol engine - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Illustrate the working of four stroke petrol engine - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-3.6",
+                    "sno": "3.6"
+                },
+                {
                     "topic": "Illustrate the working of four stroke diesel engine",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "ee4053.5",
-                    "sno": "3.5",
                     "topic": "Illustrate the working of two stroke petrol engine",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "ee4053.6",
-                    "sno": "3.6",
                     "topic": "Compare four stroke and two stroke engines",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ee4053.7",
-                    "sno": "3.7",
                     "topic": "Compare petrol engine and diesel engine",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-3.10",
+                    "sno": "3.10"
                 },
                 {
-                    "id": "ee405-3.8",
-                    "sno": "3.8",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: I.C. Engines",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee405-3.11",
+                    "sno": "3.11"
                 },
                 {
-                    "id": "ee405-3.9",
-                    "sno": "3.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on I.C. Engines",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee405-3.12",
+                    "sno": "3.12"
                 }
             ]
         },
@@ -207,95 +256,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "id": "ee4054.1",
-                    "sno": "4.1",
-                    "topic": "Classify steam boilers",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Classify steam boilers - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "ee4054.2",
-                    "sno": "4.2",
-                    "topic": "Compare fire tube and water tube boilers",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Classify steam boilers - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "ee4054.3",
-                    "sno": "4.3",
-                    "topic": "Differentiate between boiler mountings and accessories",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Compare fire tube and water tube boilers - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "ee4054.4",
-                    "sno": "4.4",
-                    "topic": "List out a) Popular boiler mountings b) Popular boiler accessories",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Compare fire tube and water tube boilers - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "ee4054.5",
-                    "sno": "4.5",
-                    "topic": "Illustrate the working of Lamont boiler",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Differentiate between boiler mountings and accessories - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "ee4054.6",
-                    "sno": "4.6",
+                    "topic": "Differentiate between boiler mountings and accessories - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "List out a) Popular boiler mountings b) Popular boiler accessories - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "List out a) Popular boiler mountings b) Popular boiler accessories - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Illustrate the working of Lamont boiler - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Illustrate the working of Lamont boiler - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-4.10",
+                    "sno": "4.10"
+                },
+                {
                     "topic": "State the working principle of steam turbine",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-4.11",
+                    "sno": "4.11"
                 },
                 {
-                    "id": "ee4054.7",
-                    "sno": "4.7",
                     "topic": "Classify steam turbines",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-4.12",
+                    "sno": "4.12"
                 },
                 {
-                    "id": "ee4054.8",
-                    "sno": "4.8",
                     "topic": "Explain the working of a) De-laval steam turbine, b) Parson's reaction turbne",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-4.13",
+                    "sno": "4.13"
                 },
                 {
-                    "id": "ee4054.9",
-                    "sno": "4.9",
                     "topic": "Compare impulse and reaction turbines",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-4.14",
+                    "sno": "4.14"
                 },
                 {
-                    "id": "ee4054.10",
-                    "sno": "4.10",
                     "topic": "Classify hydraulic turbines",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-4.15",
+                    "sno": "4.15"
                 },
                 {
-                    "id": "ee4054.11",
-                    "sno": "4.11",
                     "topic": "Explain the working of (i) Pelton wheel (ii) Francis turbine (iii) Kaplan turbine",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee405-4.16",
+                    "sno": "4.16"
                 },
                 {
-                    "id": "ee405-4.12",
-                    "sno": "4.12",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: Boilers and Turbines",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee405-4.17",
+                    "sno": "4.17"
                 },
                 {
-                    "id": "ee405-4.13",
-                    "sno": "4.13",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Boilers and Turbines",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee405-4.18",
+                    "sno": "4.18"
                 }
             ]
         },
@@ -305,39 +389,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "ee4055.1",
-                    "sno": "5.1",
-                    "topic": "Classify hydraulic pumps",
-                    "period": 3,
-                    "type": "theory"
+                    "topic": "Classify hydraulic pumps - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "ee4055.2",
-                    "sno": "5.2",
-                    "topic": "Compare between centrifugal and reciprocating pumps",
-                    "period": 3,
-                    "type": "theory"
+                    "topic": "Classify hydraulic pumps - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-5.2",
+                    "sno": "5.2"
                 },
                 {
-                    "id": "ee4055.3",
-                    "sno": "5.3",
-                    "topic": "Illustrate the working of (i) Single acting and Double acting reciprocating pump (ii) Single stage centrifugal pump (iii) Jet pump (iv) Submersible pump Note:1.Thissubjectistobe taughtbyMechanical EngineeringFaculty. MechanicalEngineeringFaculty.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Classify hydraulic pumps - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-5.3",
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Compare between centrifugal and reciprocating pumps - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee405-5.4",
-                    "sno": "5.4",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.4"
                 },
                 {
-                    "id": "ee405-5.5",
-                    "sno": "5.5",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Compare between centrifugal and reciprocating pumps - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "ee405-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Compare between centrifugal and reciprocating pumps - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Illustrate the working of (i) Single acting and Double acting reciprocating pump (ii) Single stage centrifugal pump (iii) Jet pump (iv) Submersible pump Note:1.Thissubjectistobe taughtbyMechanical EngineeringFaculty. MechanicalEngineeringFaculty. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Illustrate the working of (i) Single acting and Double acting reciprocating pump (ii) Single stage centrifugal pump (iii) Jet pump (iv) Submersible pump Note:1.Thissubjectistobe taughtbyMechanical EngineeringFaculty. MechanicalEngineeringFaculty. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee405-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Revision of the Unit: Pumps",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee405-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Pumps",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee405-5.10",
+                    "sno": "5.10"
                 }
             ]
         }

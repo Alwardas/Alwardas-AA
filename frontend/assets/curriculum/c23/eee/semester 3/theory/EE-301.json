@@ -11,130 +11,144 @@
             "totalPeriods": 20,
             "topics": [
                 {
-                    "id": "ee301-1.1",
-                    "sno": "1.1",
                     "topic": "Explain the concept of Indefinite integral as an anti-derivative",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.1",
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Explain the concept of Indefinite integral as an anti-derivative - Continued",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee301-1.2",
-                    "sno": "1.2",
+                    "sno": "1.2"
+                },
+                {
                     "topic": "State the indefinite integral of standard functions and properties of integration of sum and constant multiples of functions",
                     "period": 1,
-                    "type": "theory"
-                },
-                {
+                    "type": "theory",
                     "id": "ee301-1.3",
-                    "sno": "1.3",
-                    "topic": "Solve problems involving standard functions using these integration properties",
-                    "period": 2,
-                    "type": "problem solving"
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "Solve problems involving standard functions using these integration properties - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee301-1.4",
-                    "sno": "1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Solve problems involving standard functions using these integration properties - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-1.5",
+                    "sno": "1.5"
+                },
+                {
                     "topic": "Evaluate integrals of the form integral of f(ax+b) dx by substitution",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.6",
+                    "sno": "1.6"
                 },
                 {
-                    "id": "ee301-1.5",
-                    "sno": "1.5",
                     "topic": "Evaluate integrals of the form integral of f^n(x) f'(x) dx by substitution",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.7",
+                    "sno": "1.7"
                 },
                 {
-                    "id": "ee301-1.6",
-                    "sno": "1.6",
                     "topic": "Evaluate integrals of the form integral of f'(x)/f(x) dx by substitution",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.8",
+                    "sno": "1.8"
                 },
                 {
-                    "id": "ee301-1.7",
-                    "sno": "1.7",
                     "topic": "Evaluate integrals of the form integral of f(g(x)) g'(x) dx by substitution",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.9",
+                    "sno": "1.9"
                 },
                 {
-                    "id": "ee301-1.8",
-                    "sno": "1.8",
                     "topic": "Find the integrals of tan x and cot x w.r.t x",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.10",
+                    "sno": "1.10"
                 },
                 {
-                    "id": "ee301-1.9",
-                    "sno": "1.9",
                     "topic": "Find the integrals of sec x and cosec x w.r.t x",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ee301-1.10",
-                    "sno": "1.10",
                     "topic": "Evaluate standard integrals of types 1/(a^2 + x^2), 1/(a^2 - x^2), and 1/(x^2 - a^2)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.12",
+                    "sno": "1.12"
                 },
                 {
-                    "id": "ee301-1.11",
-                    "sno": "1.11",
                     "topic": "Evaluate standard integrals of types 1/sqrt(a^2 - x^2), 1/sqrt(a^2 + x^2), and 1/sqrt(x^2 - a^2)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.13",
+                    "sno": "1.13"
                 },
                 {
-                    "id": "ee301-1.12",
-                    "sno": "1.12",
                     "topic": "Evaluate standard integrals of types sqrt(a^2 - x^2), sqrt(a^2 + x^2), and sqrt(x^2 - a^2)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.14",
+                    "sno": "1.14"
                 },
                 {
-                    "id": "ee301-1.13",
-                    "sno": "1.13",
                     "topic": "Evaluate integrals using decomposition of the integrand into simple rational algebraic fractions",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.15",
+                    "sno": "1.15"
                 },
                 {
-                    "id": "ee301-1.14",
-                    "sno": "1.14",
                     "topic": "Solve integration problems using integration by parts method",
                     "period": 1,
-                    "type": "problem solving"
+                    "type": "problem solving",
+                    "id": "ee301-1.16",
+                    "sno": "1.16"
                 },
                 {
-                    "id": "ee301-1.15",
-                    "sno": "1.15",
                     "topic": "Use Bernoulli's rule for evaluating integrals of the form integral of u v dx",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-1.17",
+                    "sno": "1.17"
                 },
                 {
-                    "id": "ee301-1.16",
-                    "sno": "1.16",
                     "topic": "Evaluate integrals of the form integral of e^x [f(x) + f'(x)] dx",
                     "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee301-1.17",
-                    "sno": "1.17",
-                    "topic": "Revision of Indefinite Integration",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
+                    "type": "theory",
                     "id": "ee301-1.18",
-                    "sno": "1.18",
+                    "sno": "1.18"
+                },
+                {
+                    "topic": "Revision of the Unit: Indefinite Integration",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee301-1.19",
+                    "sno": "1.19"
+                },
+                {
                     "topic": "Assessment / Practice / Problem Solving on Indefinite Integration",
-                    "period": 2,
-                    "type": "assessment"
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee301-1.20",
+                    "sno": "1.20"
                 }
             ]
         },
@@ -144,53 +158,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "ee301-2.1",
-                    "sno": "2.1",
                     "topic": "State the fundamental theorem of integral calculus",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ee301-2.2",
-                    "sno": "2.2",
                     "topic": "Explain the concept of definite integral as area under a curve",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "ee301-2.3",
-                    "sno": "2.3",
-                    "topic": "Solve simple problems on definite integrals",
-                    "period": 2,
-                    "type": "problem solving"
-                },
-                {
-                    "id": "ee301-2.4",
-                    "sno": "2.4",
-                    "topic": "State various properties of definite integrals",
-                    "period": 2,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee301-2.5",
-                    "sno": "2.5",
-                    "topic": "Evaluate simple problems on definite integrals using properties of definite integrals",
-                    "period": 2,
-                    "type": "problem solving"
-                },
-                {
-                    "id": "ee301-2.6",
-                    "sno": "2.6",
-                    "topic": "Revision of Definite Integration",
+                    "topic": "Solve simple problems on definite integrals - Part 1",
                     "period": 1,
-                    "type": "revision"
+                    "type": "problem solving",
+                    "id": "ee301-2.3",
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Solve simple problems on definite integrals - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "State various properties of definite integrals - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee301-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "State various properties of definite integrals - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee301-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Evaluate simple problems on definite integrals using properties of definite integrals - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee301-2.7",
-                    "sno": "2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Evaluate simple problems on definite integrals using properties of definite integrals - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Revision of the Unit: Definite Integration",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee301-2.9",
+                    "sno": "2.9"
+                },
+                {
                     "topic": "Assessment / Practice / Problem Solving on Definite Integration",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee301-2.10",
+                    "sno": "2.10"
                 }
             ]
         },
@@ -200,39 +235,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "ee301-3.1",
-                    "sno": "3.1",
-                    "topic": "Find the area bounded by a curve and coordinate axes",
-                    "period": 3,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee301-3.2",
-                    "sno": "3.2",
-                    "topic": "Obtain the mean and R.M.S values of simple functions in given intervals",
-                    "period": 3,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee301-3.3",
-                    "sno": "3.3",
-                    "topic": "Solve simple problems using Trapezoidal rule and Simpson's 1/3 rule for approximation",
-                    "period": 2,
-                    "type": "problem solving"
-                },
-                {
-                    "id": "ee301-3.4",
-                    "sno": "3.4",
-                    "topic": "Revision of Applications of Definite Integrals",
+                    "topic": "Find the area bounded by a curve and coordinate axes - Part 1",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory",
+                    "id": "ee301-3.1",
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Find the area bounded by a curve and coordinate axes - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee301-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Find the area bounded by a curve and coordinate axes - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee301-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Obtain the mean and R.M.S values of simple functions in given intervals - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee301-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Obtain the mean and R.M.S values of simple functions in given intervals - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee301-3.5",
-                    "sno": "3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Obtain the mean and R.M.S values of simple functions in given intervals - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee301-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Solve simple problems using Trapezoidal rule and Simpson's 1/3 rule for approximation - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Solve simple problems using Trapezoidal rule and Simpson's 1/3 rule for approximation - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Revision of the Unit: Applications of Definite Integrals",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee301-3.9",
+                    "sno": "3.9"
+                },
+                {
                     "topic": "Assessment / Practice / Problem Solving on Applications of Definite Integrals",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee301-3.10",
+                    "sno": "3.10"
                 }
             ]
         },
@@ -242,67 +312,144 @@
             "totalPeriods": 20,
             "topics": [
                 {
+                    "topic": "Define a Differential equation, its order and degree, and find them for a given equation - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee301-4.1",
-                    "sno": "4.1",
-                    "topic": "Define a Differential equation, its order and degree, and find them for a given equation",
-                    "period": 2,
-                    "type": "theory"
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Define a Differential equation, its order and degree, and find them for a given equation - Part 1 - Continued",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee301-4.2",
-                    "sno": "4.2",
-                    "topic": "Form a differential equation by eliminating arbitrary constants",
-                    "period": 2,
-                    "type": "theory"
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Define a Differential equation, its order and degree, and find them for a given equation - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee301-4.3",
-                    "sno": "4.3",
-                    "topic": "Solve first order and first degree differential equations by variables separable method",
-                    "period": 3,
-                    "type": "problem solving"
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Form a differential equation by eliminating arbitrary constants - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee301-4.4",
-                    "sno": "4.4",
-                    "topic": "Solve linear differential equations of first order of the form dy/dx + Py = Q",
-                    "period": 3,
-                    "type": "problem solving"
+                    "sno": "4.4"
                 },
                 {
+                    "topic": "Form a differential equation by eliminating arbitrary constants - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee301-4.5",
-                    "sno": "4.5",
-                    "topic": "Solve homogeneous second order linear differential equations of the type (aD^2 + bD + c)y = 0",
-                    "period": 3,
-                    "type": "problem solving"
+                    "sno": "4.5"
                 },
                 {
+                    "topic": "Solve first order and first degree differential equations by variables separable method - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee301-4.6",
-                    "sno": "4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Solve first order and first degree differential equations by variables separable method - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Solve first order and first degree differential equations by variables separable method - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Solve linear differential equations of first order of the form dy/dx + Py = Q - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Solve linear differential equations of first order of the form dy/dx + Py = Q - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Solve linear differential equations of first order of the form dy/dx + Py = Q - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Solve homogeneous second order linear differential equations of the type (aD^2 + bD + c)y = 0 - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Solve homogeneous second order linear differential equations of the type (aD^2 + bD + c)y = 0 - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Solve homogeneous second order linear differential equations of the type (aD^2 + bD + c)y = 0 - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee301-4.14",
+                    "sno": "4.14"
+                },
+                {
                     "topic": "Define complementary function, particular integral, and general solution of second order non-homogeneous linear DEs",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee301-4.15",
+                    "sno": "4.15"
                 },
                 {
-                    "id": "ee301-4.7",
-                    "sno": "4.7",
-                    "topic": "Describe the methods of solving f(D)y = X, where X is of the form k, e^(ax), sin ax, cos ax, or x^n",
-                    "period": 3,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee301-4.8",
-                    "sno": "4.8",
-                    "topic": "Revision of Differential Equations",
+                    "topic": "Describe the methods of solving f(D)y = X, where X is of the form k, e^(ax), sin ax, cos ax, or x^n - Part 1",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory",
+                    "id": "ee301-4.16",
+                    "sno": "4.16"
                 },
                 {
-                    "id": "ee301-4.9",
-                    "sno": "4.9",
+                    "topic": "Describe the methods of solving f(D)y = X, where X is of the form k, e^(ax), sin ax, cos ax, or x^n - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee301-4.17",
+                    "sno": "4.17"
+                },
+                {
+                    "topic": "Describe the methods of solving f(D)y = X, where X is of the form k, e^(ax), sin ax, cos ax, or x^n - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee301-4.18",
+                    "sno": "4.18"
+                },
+                {
+                    "topic": "Revision of the Unit: Differential Equations",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee301-4.19",
+                    "sno": "4.19"
+                },
+                {
                     "topic": "Assessment / Practice / Problem Solving on Differential Equations",
-                    "period": 2,
-                    "type": "assessment"
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee301-4.20",
+                    "sno": "4.20"
                 }
             ]
         }

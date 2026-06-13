@@ -1,569 +1,569 @@
 {
-  "subjectCode": "C-503",
-  "subjectName": "Quantity Surveying",
-  "regulation": "C23",
-  "semester": 5,
-  "totalPeriods": 75,
-  "units": [
-    {
-      "unitNo": 1,
-      "title": "Introduction, Units and Specifications",
-      "totalPeriods": 5,
-      "topics": [
+    "subjectCode": "C-503",
+    "subjectName": "Quantity Surveying",
+    "regulation": "C23",
+    "semester": 5,
+    "totalPeriods": 75,
+    "units": [
         {
-          "id": "c503-1.1",
-          "sno": "1.1",
-          "topic": "List different types of estimates",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 1,
+            "title": "Introduction, Units and Specifications",
+            "totalPeriods": 5,
+            "topics": [
+                {
+                    "topic": "List different types of estimates",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain the need for different estimates",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Distinguish among element of structure, item of a work &",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Revision of the Unit: Introduction, Units and Specifications",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c503-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Introduction, Units and Specifications",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c503-1.5",
+                    "sno": "1.5"
+                }
+            ]
         },
         {
-          "id": "c503-1.2",
-          "sno": "1.2",
-          "topic": "Explain the need for different estimates",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 2,
+            "title": "Detailed estimates of buildings",
+            "totalPeriods": 28,
+            "topics": [
+                {
+                    "topic": "State the information required for preparation of detailed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Prepare the detailed estimates for various buildings from the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Prepare the estimation for various elements of a steel roof",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Prepare the estimation of a Septic tank with Soak pit.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of State the information required for preparation of detailed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Case study and practical applications of Prepare the detailed estimates for various buildings from the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Prepare the estimation for various elements of a steel roof",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Prepare the estimation of a Septic tank with Soak pit.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Case study and practical applications of State the information required for preparation of detailed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Prepare the detailed estimates for various buildings from the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Prepare the estimation for various elements of a steel roof",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Case study and practical applications of Prepare the estimation of a Septic tank with Soak pit.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Tutorial / Practice session on State the information required for preparation of detailed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Prepare the detailed estimates for various buildings from the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Case study and practical applications of Prepare the estimation for various elements of a steel roof",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Prepare the estimation of a Septic tank with Soak pit.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.16",
+                    "sno": "2.16"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of State the information required for preparation of detailed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.17",
+                    "sno": "2.17"
+                },
+                {
+                    "topic": "Case study and practical applications of Prepare the detailed estimates for various buildings from the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.18",
+                    "sno": "2.18"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Prepare the estimation for various elements of a steel roof",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.19",
+                    "sno": "2.19"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Prepare the estimation of a Septic tank with Soak pit.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.20",
+                    "sno": "2.20"
+                },
+                {
+                    "topic": "Case study and practical applications of State the information required for preparation of detailed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.21",
+                    "sno": "2.21"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Prepare the detailed estimates for various buildings from the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.22",
+                    "sno": "2.22"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Prepare the estimation for various elements of a steel roof",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.23",
+                    "sno": "2.23"
+                },
+                {
+                    "topic": "Case study and practical applications of Prepare the estimation of a Septic tank with Soak pit.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.24",
+                    "sno": "2.24"
+                },
+                {
+                    "topic": "Tutorial / Practice session on State the information required for preparation of detailed",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.25",
+                    "sno": "2.25"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Prepare the detailed estimates for various buildings from the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-2.26",
+                    "sno": "2.26"
+                },
+                {
+                    "topic": "Revision of the Unit: Detailed estimates of buildings",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c503-2.27",
+                    "sno": "2.27"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Detailed estimates of buildings",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c503-2.28",
+                    "sno": "2.28"
+                }
+            ]
         },
         {
-          "id": "c503-1.3",
-          "sno": "1.3",
-          "topic": "Distinguish among element of structure, item of a work &",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 3,
+            "title": "Analysis of Rates and Abstract Estimates:",
+            "totalPeriods": 16,
+            "topics": [
+                {
+                    "topic": "Define analysis of rates",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain the purpose of analysis of rates",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the following in rate analysis:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain the following terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain cost of material at source and site",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Define lead statement, write the format for Lead Statement,",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "List different types of labour wages as per latest SSR",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Prepare the data sheet for finished items of works using standard",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Tabulate the material requirement of mortars and concrete of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "State different items involved in Abstract estimation of a",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Prepare a detailed estimate for different types of roads",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Prepare a detailed estimate for (a) Pipe culvert (b) Slab",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Define analysis of rates",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Explain the purpose of analysis of rates",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Revision of the Unit: Analysis of Rates and Abstract Estimates:",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c503-3.15",
+                    "sno": "3.15"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Analysis of Rates and Abstract Estimates:",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c503-3.16",
+                    "sno": "3.16"
+                }
+            ]
         },
         {
-          "id": "c503-1.4",
-          "sno": "1.4",
-          "topic": "Revision of Introduction, Units and Specifications",
-          "period": 1,
-          "type": "revision"
+            "unitNo": 4,
+            "title": "Earth Work Calculations",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "topic": "Explain terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Define the terms: a) Lead b) Lift",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "State the standard values of \u2018Lead\u2019 and \u2018Lift\u2019",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Calculate the lead and lift for a given section",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "List different methods of computing the areas and volumes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "State the limitations of Prismoidal rule",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Compute the volumes of an embankment for a given data",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Revision of the Unit: Earth Work Calculations",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c503-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Earth Work Calculations",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c503-4.10",
+                    "sno": "4.10"
+                }
+            ]
         },
         {
-          "id": "c503-1.5",
-          "sno": "1.5",
-          "topic": "Assessment / Practice / Problem Solving on Introduction, Units and Specifications",
-          "period": 1,
-          "type": "assessment"
+            "unitNo": 5,
+            "title": "Detailed estimatesofroadsandculverts, and public health engineering works",
+            "totalPeriods": 16,
+            "topics": [
+                {
+                    "topic": "Prepare a detailed estimate for the following items:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "State the items to be included in the abstract estimates of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Case study and practical applications of Prepare a detailed estimate for the following items:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Tutorial / Practice session on State the items to be included in the abstract estimates of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Prepare a detailed estimate for the following items:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Case study and practical applications of State the items to be included in the abstract estimates of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Prepare a detailed estimate for the following items:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of State the items to be included in the abstract estimates of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Case study and practical applications of Prepare a detailed estimate for the following items:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Tutorial / Practice session on State the items to be included in the abstract estimates of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of Prepare a detailed estimate for the following items:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Case study and practical applications of State the items to be included in the abstract estimates of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Tutorial / Practice session on Prepare a detailed estimate for the following items:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of State the items to be included in the abstract estimates of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c503-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Revision of the Unit: Detailed estimatesofroadsandculverts, and public health engineering works",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c503-5.15",
+                    "sno": "5.15"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Detailed estimatesofroadsandculverts, and public health engineering works",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c503-5.16",
+                    "sno": "5.16"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "unitNo": 2,
-      "title": "Detailed estimates of buildings",
-      "totalPeriods": 28,
-      "topics": [
-        {
-          "id": "c503-2.1",
-          "sno": "2.1",
-          "topic": "State the information required for preparation of detailed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.2",
-          "sno": "2.2",
-          "topic": "Prepare the detailed estimates for various buildings from the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.3",
-          "sno": "2.3",
-          "topic": "Prepare the estimation for various elements of a steel roof",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.4",
-          "sno": "2.4",
-          "topic": "Prepare the estimation of a Septic tank with Soak pit.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.5",
-          "sno": "2.5",
-          "topic": "Problem solving & numerical analysis of State the information required for preparation of detailed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.6",
-          "sno": "2.6",
-          "topic": "Case study and practical applications of Prepare the detailed estimates for various buildings from the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.7",
-          "sno": "2.7",
-          "topic": "Tutorial / Practice session on Prepare the estimation for various elements of a steel roof",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.8",
-          "sno": "2.8",
-          "topic": "Problem solving & numerical analysis of Prepare the estimation of a Septic tank with Soak pit.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.9",
-          "sno": "2.9",
-          "topic": "Case study and practical applications of State the information required for preparation of detailed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.10",
-          "sno": "2.10",
-          "topic": "Tutorial / Practice session on Prepare the detailed estimates for various buildings from the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.11",
-          "sno": "2.11",
-          "topic": "Problem solving & numerical analysis of Prepare the estimation for various elements of a steel roof",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.12",
-          "sno": "2.12",
-          "topic": "Case study and practical applications of Prepare the estimation of a Septic tank with Soak pit.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.13",
-          "sno": "2.13",
-          "topic": "Tutorial / Practice session on State the information required for preparation of detailed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.14",
-          "sno": "2.14",
-          "topic": "Problem solving & numerical analysis of Prepare the detailed estimates for various buildings from the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.15",
-          "sno": "2.15",
-          "topic": "Case study and practical applications of Prepare the estimation for various elements of a steel roof",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.16",
-          "sno": "2.16",
-          "topic": "Tutorial / Practice session on Prepare the estimation of a Septic tank with Soak pit.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.17",
-          "sno": "2.17",
-          "topic": "Problem solving & numerical analysis of State the information required for preparation of detailed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.18",
-          "sno": "2.18",
-          "topic": "Case study and practical applications of Prepare the detailed estimates for various buildings from the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.19",
-          "sno": "2.19",
-          "topic": "Tutorial / Practice session on Prepare the estimation for various elements of a steel roof",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.20",
-          "sno": "2.20",
-          "topic": "Problem solving & numerical analysis of Prepare the estimation of a Septic tank with Soak pit.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.21",
-          "sno": "2.21",
-          "topic": "Case study and practical applications of State the information required for preparation of detailed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.22",
-          "sno": "2.22",
-          "topic": "Tutorial / Practice session on Prepare the detailed estimates for various buildings from the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.23",
-          "sno": "2.23",
-          "topic": "Problem solving & numerical analysis of Prepare the estimation for various elements of a steel roof",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.24",
-          "sno": "2.24",
-          "topic": "Case study and practical applications of Prepare the estimation of a Septic tank with Soak pit.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.25",
-          "sno": "2.25",
-          "topic": "Tutorial / Practice session on State the information required for preparation of detailed",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.26",
-          "sno": "2.26",
-          "topic": "Problem solving & numerical analysis of Prepare the detailed estimates for various buildings from the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-2.27",
-          "sno": "2.27",
-          "topic": "Revision of Detailed Estimates of buildings",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c503-2.28",
-          "sno": "2.28",
-          "topic": "Assessment / Practice / Problem Solving on Detailed Estimates of buildings",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 3,
-      "title": "Analysis of Rates and Abstract Estimates:",
-      "totalPeriods": 16,
-      "topics": [
-        {
-          "id": "c503-3.1",
-          "sno": "3.1",
-          "topic": "Define analysis of rates",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.2",
-          "sno": "3.2",
-          "topic": "Explain the purpose of analysis of rates",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.3",
-          "sno": "3.3",
-          "topic": "Explain the following in rate analysis:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.4",
-          "sno": "3.4",
-          "topic": "Explain the following terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.5",
-          "sno": "3.5",
-          "topic": "Explain cost of material at source and site",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.6",
-          "sno": "3.6",
-          "topic": "Define lead statement, write the format for Lead Statement,",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.7",
-          "sno": "3.7",
-          "topic": "List different types of labour wages as per latest SSR",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.8",
-          "sno": "3.8",
-          "topic": "Prepare the data sheet for finished items of works using standard",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.9",
-          "sno": "3.9",
-          "topic": "Tabulate the material requirement of mortars and concrete of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.10",
-          "sno": "3.10",
-          "topic": "State different items involved in Abstract estimation of a",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.11",
-          "sno": "3.11",
-          "topic": "Prepare a detailed estimate for different types of roads",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.12",
-          "sno": "3.12",
-          "topic": "Prepare a detailed estimate for (a) Pipe culvert (b) Slab",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.13",
-          "sno": "3.13",
-          "topic": "Tutorial / Practice session on Define analysis of rates",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.14",
-          "sno": "3.14",
-          "topic": "Problem solving & numerical analysis of Explain the purpose of analysis of rates",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-3.15",
-          "sno": "3.15",
-          "topic": "Revision of Analysis of Rates and Abstract Estimates",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c503-3.16",
-          "sno": "3.16",
-          "topic": "Assessment / Practice / Problem Solving on Analysis of Rates and Abstract Estimates",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 4,
-      "title": "Earth Work Calculations",
-      "totalPeriods": 10,
-      "topics": [
-        {
-          "id": "c503-4.1",
-          "sno": "4.1",
-          "topic": "Explain terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-4.2",
-          "sno": "4.2",
-          "topic": "Define the terms: a) Lead b) Lift",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-4.3",
-          "sno": "4.3",
-          "topic": "State the standard values of \u2018Lead\u2019 and \u2018Lift\u2019",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-4.4",
-          "sno": "4.4",
-          "topic": "Calculate the lead and lift for a given section",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-4.5",
-          "sno": "4.5",
-          "topic": "List different methods of computing the areas and volumes",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-4.6",
-          "sno": "4.6",
-          "topic": "Explain:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-4.7",
-          "sno": "4.7",
-          "topic": "State the limitations of Prismoidal rule",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-4.8",
-          "sno": "4.8",
-          "topic": "Compute the volumes of an embankment for a given data",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-4.9",
-          "sno": "4.9",
-          "topic": "Revision of Earthwork Calculations",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c503-4.10",
-          "sno": "4.10",
-          "topic": "Assessment / Practice / Problem Solving on Earthwork Calculations",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 5,
-      "title": "Detailed estimatesofroadsandculverts, and public health engineering works",
-      "totalPeriods": 16,
-      "topics": [
-        {
-          "id": "c503-5.1",
-          "sno": "5.1",
-          "topic": "Prepare a detailed estimate for the following items:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.2",
-          "sno": "5.2",
-          "topic": "State the items to be included in the abstract estimates of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.3",
-          "sno": "5.3",
-          "topic": "Case study and practical applications of Prepare a detailed estimate for the following items:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.4",
-          "sno": "5.4",
-          "topic": "Tutorial / Practice session on State the items to be included in the abstract estimates of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.5",
-          "sno": "5.5",
-          "topic": "Problem solving & numerical analysis of Prepare a detailed estimate for the following items:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.6",
-          "sno": "5.6",
-          "topic": "Case study and practical applications of State the items to be included in the abstract estimates of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.7",
-          "sno": "5.7",
-          "topic": "Tutorial / Practice session on Prepare a detailed estimate for the following items:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.8",
-          "sno": "5.8",
-          "topic": "Problem solving & numerical analysis of State the items to be included in the abstract estimates of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.9",
-          "sno": "5.9",
-          "topic": "Case study and practical applications of Prepare a detailed estimate for the following items:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.10",
-          "sno": "5.10",
-          "topic": "Tutorial / Practice session on State the items to be included in the abstract estimates of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.11",
-          "sno": "5.11",
-          "topic": "Problem solving & numerical analysis of Prepare a detailed estimate for the following items:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.12",
-          "sno": "5.12",
-          "topic": "Case study and practical applications of State the items to be included in the abstract estimates of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.13",
-          "sno": "5.13",
-          "topic": "Tutorial / Practice session on Prepare a detailed estimate for the following items:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.14",
-          "sno": "5.14",
-          "topic": "Problem solving & numerical analysis of State the items to be included in the abstract estimates of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c503-5.15",
-          "sno": "5.15",
-          "topic": "Revision of Detailed estimates of Roads, Culverts and Public Health Engineering Works",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c503-5.16",
-          "sno": "5.16",
-          "topic": "Assessment / Practice / Problem Solving on Detailed estimates of Roads, Culverts and Public Health Engineering Works",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    }
-  ]
+    ]
 }

@@ -11,60 +11,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Introduction to Renewable Energy Sources. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-1.1",
-                    "sno": "1.1",
-                    "topic": "Introduction to Renewable Energy Sources.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Introduction to Renewable Energy Sources. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-1.2",
-                    "sno": "1.2",
-                    "topic": "Solar Radiation: Extraterrestrial and Terrestrial.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Solar Radiation: Extraterrestrial and Terrestrial. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-1.3",
-                    "sno": "1.3",
-                    "topic": "Solar Collectors: Flat plate and Concentrating collectors.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "Solar Radiation: Extraterrestrial and Terrestrial. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-1.4",
-                    "sno": "1.4",
-                    "topic": "Solar Water Heating Systems.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "Solar Collectors: Flat plate and Concentrating collectors. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-1.5",
-                    "sno": "1.5",
-                    "topic": "Solar Photovoltaic (PV) systems.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "1.5"
                 },
                 {
+                    "topic": "Solar Collectors: Flat plate and Concentrating collectors. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-1.6",
-                    "sno": "1.6",
-                    "topic": "Applications of Solar Energy (Cookers, Dryers, Ponds).",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Solar Water Heating Systems. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m503-1.7",
-                    "sno": "1.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.7"
                 },
                 {
-                    "id": "m503-1.8",
-                    "sno": "1.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Solar Water Heating Systems. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m503-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Solar Photovoltaic (PV) systems.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Applications of Solar Energy (Cookers, Dryers, Ponds).",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Solar Energy",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m503-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Solar Energy",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m503-1.12",
+                    "sno": "1.12"
                 }
             ]
         },
@@ -74,53 +102,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Principle of Wind Energy Conversion. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-2.1",
-                    "sno": "2.1",
-                    "topic": "Principle of Wind Energy Conversion.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Principle of Wind Energy Conversion. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-2.2",
-                    "sno": "2.2",
-                    "topic": "Types of Wind Mills: Horizontal and Vertical axis.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Types of Wind Mills: Horizontal and Vertical axis. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-2.3",
-                    "sno": "2.3",
-                    "topic": "Components of a Wind Mill.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Types of Wind Mills: Horizontal and Vertical axis. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-2.4",
-                    "sno": "2.4",
-                    "topic": "Site selection for Wind Energy plants.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.4"
                 },
                 {
+                    "topic": "Components of a Wind Mill. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-2.5",
-                    "sno": "2.5",
-                    "topic": "Advantages and limitations of Wind Energy.",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Components of a Wind Mill. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m503-2.6",
-                    "sno": "2.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.6"
                 },
                 {
-                    "id": "m503-2.7",
-                    "sno": "2.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Site selection for Wind Energy plants. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m503-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Site selection for Wind Energy plants. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Advantages and limitations of Wind Energy. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Advantages and limitations of Wind Energy. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Wind Energy",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m503-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Wind Energy",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m503-2.12",
+                    "sno": "2.12"
                 }
             ]
         },
@@ -130,53 +193,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Bio-Mass conversion technologies. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-3.1",
-                    "sno": "3.1",
-                    "topic": "Bio-Mass conversion technologies.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Bio-Mass conversion technologies. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-3.2",
-                    "sno": "3.2",
-                    "topic": "Biogas generation: KVIC and Janata type plants.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Biogas generation: KVIC and Janata type plants. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-3.3",
-                    "sno": "3.3",
-                    "topic": "Factors affecting biogas generation.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Biogas generation: KVIC and Janata type plants. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-3.4",
-                    "sno": "3.4",
-                    "topic": "Geothermal Energy: Resources and utilization.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Factors affecting biogas generation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-3.5",
-                    "sno": "3.5",
-                    "topic": "Geothermal Power Plants.",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Factors affecting biogas generation. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m503-3.6",
-                    "sno": "3.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.6"
                 },
                 {
-                    "id": "m503-3.7",
-                    "sno": "3.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Geothermal Energy: Resources and utilization. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m503-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Geothermal Energy: Resources and utilization. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Geothermal Power Plants. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Geothermal Power Plants. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Bio-Mass and Geothermal Energy",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m503-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Bio-Mass and Geothermal Energy",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m503-3.12",
+                    "sno": "3.12"
                 }
             ]
         },
@@ -186,46 +284,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Tidal Energy: Principle and Power plants. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-4.1",
-                    "sno": "4.1",
-                    "topic": "Tidal Energy: Principle and Power plants.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Tidal Energy: Principle and Power plants. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-4.2",
-                    "sno": "4.2",
-                    "topic": "Ocean Thermal Energy Conversion (OTEC).",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Tidal Energy: Principle and Power plants. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-4.3",
-                    "sno": "4.3",
-                    "topic": "Fuel Cells: Principle and Types.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Ocean Thermal Energy Conversion (OTEC). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-4.4",
-                    "sno": "4.4",
-                    "topic": "Hybrid Energy Systems.",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Ocean Thermal Energy Conversion (OTEC). - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m503-4.5",
-                    "sno": "4.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.5"
                 },
                 {
-                    "id": "m503-4.6",
-                    "sno": "4.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Ocean Thermal Energy Conversion (OTEC). - Part 3",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m503-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Fuel Cells: Principle and Types. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Fuel Cells: Principle and Types. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Hybrid Energy Systems. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Hybrid Energy Systems. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Other Renewable Sources",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m503-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Other Renewable Sources",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m503-4.12",
+                    "sno": "4.12"
                 }
             ]
         },
@@ -235,46 +375,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Need for Energy Conservation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-5.1",
-                    "sno": "5.1",
-                    "topic": "Need for Energy Conservation.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Need for Energy Conservation. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-5.2",
-                    "sno": "5.2",
-                    "topic": "Energy Conservation in Industries (Boilers, Furnaces).",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Need for Energy Conservation. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-5.3",
-                    "sno": "5.3",
-                    "topic": "Waste Heat Recovery Systems.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Energy Conservation in Industries (Boilers, Furnaces). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m503-5.4",
-                    "sno": "5.4",
-                    "topic": "Energy Audit: Types and Methodology.",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Energy Conservation in Industries (Boilers, Furnaces). - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m503-5.5",
-                    "sno": "5.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.5"
                 },
                 {
-                    "id": "m503-5.6",
-                    "sno": "5.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Energy Conservation in Industries (Boilers, Furnaces). - Part 3",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m503-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Waste Heat Recovery Systems. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Waste Heat Recovery Systems. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Energy Audit: Types and Methodology. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Energy Audit: Types and Methodology. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m503-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Energy Conservation",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m503-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Energy Conservation",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m503-5.12",
+                    "sno": "5.12"
                 }
             ]
         }

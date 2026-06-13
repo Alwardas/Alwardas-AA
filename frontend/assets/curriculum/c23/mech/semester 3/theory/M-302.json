@@ -11,53 +11,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Definitions of Current, Voltage, Power, Energy and their units. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-1.1",
-                    "sno": "1.1",
-                    "topic": "Definitions of Current, Voltage, Power, Energy and their units.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Definitions of Current, Voltage, Power, Energy and their units. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-1.2",
-                    "sno": "1.2",
-                    "topic": "State and Explain Ohm's Law and its limitations.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Definitions of Current, Voltage, Power, Energy and their units. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-1.3",
-                    "sno": "1.3",
-                    "topic": "State and Explain Kirchhoff's Laws (KCL & KVL).",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "State and Explain Ohm's Law and its limitations. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-1.4",
-                    "sno": "1.4",
-                    "topic": "Simple problems on Ohm's Law and Kirchhoff's Laws.",
-                    "type": "problem solving",
-                    "period": 2
+                    "sno": "1.4"
                 },
                 {
-                    "id": "m302-1.5",
-                    "sno": "1.5",
-                    "topic": "Resistance in Series, Parallel and Series-Parallel combinations.",
+                    "topic": "State and Explain Ohm's Law and its limitations. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
+                    "id": "m302-1.5",
+                    "sno": "1.5"
                 },
                 {
+                    "topic": "State and Explain Ohm's Law and its limitations. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-1.6",
-                    "sno": "1.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.6"
                 },
                 {
-                    "id": "m302-1.7",
-                    "sno": "1.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "State and Explain Kirchhoff's Laws (KCL & KVL). - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m302-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State and Explain Kirchhoff's Laws (KCL & KVL). - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "State and Explain Kirchhoff's Laws (KCL & KVL). - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Simple problems on Ohm's Law and Kirchhoff's Laws. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m302-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Simple problems on Ohm's Law and Kirchhoff's Laws. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m302-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Resistance in Series, Parallel and Series-Parallel combinations. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Resistance in Series, Parallel and Series-Parallel combinations. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Fundamentals of DC Circuits",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m302-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Fundamentals of DC Circuits",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m302-1.15",
+                    "sno": "1.15"
                 }
             ]
         },
@@ -67,53 +123,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Fundamentals of AC voltage and current: Peak, Average, RMS values, Form factor, Peak factor. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-2.1",
-                    "sno": "2.1",
-                    "topic": "Fundamentals of AC voltage and current: Peak, Average, RMS values, Form factor, Peak factor.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Fundamentals of AC voltage and current: Peak, Average, RMS values, Form factor, Peak factor. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-2.2",
-                    "sno": "2.2",
-                    "topic": "Concept of Phase, Phase difference and Phasor representation.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Fundamentals of AC voltage and current: Peak, Average, RMS values, Form factor, Peak factor. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-2.3",
-                    "sno": "2.3",
-                    "topic": "AC through pure Resistance, Inductance and Capacitance.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Concept of Phase, Phase difference and Phasor representation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-2.4",
-                    "sno": "2.4",
-                    "topic": "Concept of Impedance, Power factor, Active, Reactive and Apparent power.",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Concept of Phase, Phase difference and Phasor representation. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m302-2.5",
-                    "sno": "2.5",
-                    "topic": "Simple problems on AC circuits.",
-                    "type": "problem solving",
-                    "period": 2
+                    "sno": "2.5"
                 },
                 {
+                    "topic": "Concept of Phase, Phase difference and Phasor representation. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-2.6",
-                    "sno": "2.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.6"
                 },
                 {
-                    "id": "m302-2.7",
-                    "sno": "2.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "AC through pure Resistance, Inductance and Capacitance. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m302-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "AC through pure Resistance, Inductance and Capacitance. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "AC through pure Resistance, Inductance and Capacitance. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Concept of Impedance, Power factor, Active, Reactive and Apparent power. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Concept of Impedance, Power factor, Active, Reactive and Apparent power. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Simple problems on AC circuits. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m302-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Simple problems on AC circuits. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m302-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Revision of the Unit: AC Circuits",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m302-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on AC Circuits",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m302-2.15",
+                    "sno": "2.15"
                 }
             ]
         },
@@ -123,60 +235,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Constructional details and working principle of DC Generator. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-3.1",
-                    "sno": "3.1",
-                    "topic": "Constructional details and working principle of DC Generator.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Constructional details and working principle of DC Generator. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-3.2",
-                    "sno": "3.2",
-                    "topic": "EMF equation of DC Generator (Derivation not required).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Constructional details and working principle of DC Generator. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-3.3",
-                    "sno": "3.3",
-                    "topic": "Types of DC Generators and their applications.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "EMF equation of DC Generator (Derivation not required). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-3.4",
-                    "sno": "3.4",
-                    "topic": "Working principle of DC Motor.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "EMF equation of DC Generator (Derivation not required). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-3.5",
-                    "sno": "3.5",
-                    "topic": "Back EMF, Torque equation and Types of DC Motors.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.5"
                 },
                 {
+                    "topic": "Types of DC Generators and their applications. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-3.6",
-                    "sno": "3.6",
-                    "topic": "Speed control methods of DC Shunt Motor.",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Types of DC Generators and their applications. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m302-3.7",
-                    "sno": "3.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.7"
                 },
                 {
-                    "id": "m302-3.8",
-                    "sno": "3.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Working principle of DC Motor. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m302-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Working principle of DC Motor. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Back EMF, Torque equation and Types of DC Motors. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Back EMF, Torque equation and Types of DC Motors. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Speed control methods of DC Shunt Motor. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Speed control methods of DC Shunt Motor. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Revision of the Unit: DC Machines",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m302-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on DC Machines",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m302-3.15",
+                    "sno": "3.15"
                 }
             ]
         },
@@ -186,60 +347,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Construction and working principle of Transformer. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-4.1",
-                    "sno": "4.1",
-                    "topic": "Construction and working principle of Transformer.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Construction and working principle of Transformer. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-4.2",
-                    "sno": "4.2",
-                    "topic": "EMF equation of Transformer, Voltage and Current transformation ratios.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Construction and working principle of Transformer. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-4.3",
-                    "sno": "4.3",
-                    "topic": "Losses and Efficiency of Transformer.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "EMF equation of Transformer, Voltage and Current transformation ratios. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-4.4",
-                    "sno": "4.4",
-                    "topic": "Construction and working of 3-Phase Induction Motor.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.4"
                 },
                 {
+                    "topic": "EMF equation of Transformer, Voltage and Current transformation ratios. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-4.5",
-                    "sno": "4.5",
-                    "topic": "Types of 3-Phase Induction Motors and their applications.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.5"
                 },
                 {
+                    "topic": "Losses and Efficiency of Transformer. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-4.6",
-                    "sno": "4.6",
-                    "topic": "Working principle of Alternator.",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Losses and Efficiency of Transformer. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m302-4.7",
-                    "sno": "4.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.7"
                 },
                 {
-                    "id": "m302-4.8",
-                    "sno": "4.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Construction and working of 3-Phase Induction Motor. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m302-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Construction and working of 3-Phase Induction Motor. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Types of 3-Phase Induction Motors and their applications. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Types of 3-Phase Induction Motors and their applications. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Working principle of Alternator. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Working principle of Alternator. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Revision of the Unit: AC Machines",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m302-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on AC Machines",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m302-4.15",
+                    "sno": "4.15"
                 }
             ]
         },
@@ -249,53 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Semiconductor materials: N-type and P-type. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-5.1",
-                    "sno": "5.1",
-                    "topic": "Semiconductor materials: N-type and P-type.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Semiconductor materials: N-type and P-type. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-5.2",
-                    "sno": "5.2",
-                    "topic": "PN Junction Diode: Construction, Working and V-I Characteristics.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Semiconductor materials: N-type and P-type. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-5.3",
-                    "sno": "5.3",
-                    "topic": "Rectifiers: Half wave, Full wave and Bridge Rectifiers (Working only).",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "PN Junction Diode: Construction, Working and V-I Characteristics. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-5.4",
-                    "sno": "5.4",
-                    "topic": "Transistors: PNP and NPN transistors, symbols and working.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.4"
                 },
                 {
+                    "topic": "PN Junction Diode: Construction, Working and V-I Characteristics. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m302-5.5",
-                    "sno": "5.5",
-                    "topic": "Electrical Safety: Electric shock, Precautions, Earthing.",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "PN Junction Diode: Construction, Working and V-I Characteristics. - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m302-5.6",
-                    "sno": "5.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.6"
                 },
                 {
-                    "id": "m302-5.7",
-                    "sno": "5.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Rectifiers: Half wave, Full wave and Bridge Rectifiers (Working only). - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m302-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Rectifiers: Half wave, Full wave and Bridge Rectifiers (Working only). - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Rectifiers: Half wave, Full wave and Bridge Rectifiers (Working only). - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Transistors: PNP and NPN transistors, symbols and working. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Transistors: PNP and NPN transistors, symbols and working. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Electrical Safety: Electric shock, Precautions, Earthing. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Electrical Safety: Electric shock, Precautions, Earthing. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m302-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Basic Electronics",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m302-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Basic Electronics",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m302-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

@@ -11,46 +11,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Define Perfect gas, State the laws of perfect gases (Boyle's, Charle's, Joule's, Regnault's, Avogadro's). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-1.1",
-                    "sno": "1.1",
-                    "topic": "Define Perfect gas, State the laws of perfect gases (Boyle's, Charle's, Joule's, Regnault's, Avogadro's).",
-                    "type": "theory",
-                    "period": 4
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Define Perfect gas, State the laws of perfect gases (Boyle's, Charle's, Joule's, Regnault's, Avogadro's). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-1.2",
-                    "sno": "1.2",
-                    "topic": "Derive Characteristic Gas equation.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Define Perfect gas, State the laws of perfect gases (Boyle's, Charle's, Joule's, Regnault's, Avogadro's). - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-1.3",
-                    "sno": "1.3",
-                    "topic": "Define Specific heats (Cp and Cv) and relation between them (R = Cp - Cv).",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Define Perfect gas, State the laws of perfect gases (Boyle's, Charle's, Joule's, Regnault's, Avogadro's). - Part 4",
+                    "period": 1,
                     "type": "theory",
-                    "period": 3
-                },
-                {
                     "id": "m303-1.4",
-                    "sno": "1.4",
-                    "topic": "Solve simple problems on gas laws and characteristic gas equation.",
-                    "type": "problem solving",
-                    "period": 3
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "Derive Characteristic Gas equation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-1.5",
-                    "sno": "1.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.5"
                 },
                 {
-                    "id": "m303-1.6",
-                    "sno": "1.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Derive Characteristic Gas equation. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m303-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Derive Characteristic Gas equation. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Define Specific heats (Cp and Cv) and relation between them (R = Cp - Cv). - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Define Specific heats (Cp and Cv) and relation between them (R = Cp - Cv). - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Define Specific heats (Cp and Cv) and relation between them (R = Cp - Cv). - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Solve simple problems on gas laws and characteristic gas equation. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m303-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Solve simple problems on gas laws and characteristic gas equation. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m303-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Solve simple problems on gas laws and characteristic gas equation. - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m303-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Properties of Perfect Gases",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m303-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Properties of Perfect Gases",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m303-1.15",
+                    "sno": "1.15"
                 }
             ]
         },
@@ -60,53 +123,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "State First Law of Thermodynamics. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-2.1",
-                    "sno": "2.1",
-                    "topic": "State First Law of Thermodynamics.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "State First Law of Thermodynamics. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-2.2",
-                    "sno": "2.2",
-                    "topic": "Define thermodynamic system, surroundings, boundary, state, process, cycle.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "State First Law of Thermodynamics. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-2.3",
-                    "sno": "2.3",
-                    "topic": "Explain Non-flow Energy Equation.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Define thermodynamic system, surroundings, boundary, state, process, cycle. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-2.4",
-                    "sno": "2.4",
-                    "topic": "Derive expressions for Work done, Internal Energy, Heat Transfer in Isochoric, Isobaric, Isothermal, Adiabatic, Polytropic processes.",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Define thermodynamic system, surroundings, boundary, state, process, cycle. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m303-2.5",
-                    "sno": "2.5",
-                    "topic": "Solve problems on the above processes.",
-                    "type": "problem solving",
-                    "period": 2
+                    "sno": "2.5"
                 },
                 {
+                    "topic": "Define thermodynamic system, surroundings, boundary, state, process, cycle. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-2.6",
-                    "sno": "2.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.6"
                 },
                 {
-                    "id": "m303-2.7",
-                    "sno": "2.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Explain Non-flow Energy Equation. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m303-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Explain Non-flow Energy Equation. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Explain Non-flow Energy Equation. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Derive expressions for Work done, Internal Energy, Heat Transfer in Isochoric, Isobaric, Isothermal, Adiabatic, Polytropic processes. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Derive expressions for Work done, Internal Energy, Heat Transfer in Isochoric, Isobaric, Isothermal, Adiabatic, Polytropic processes. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Solve problems on the above processes. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m303-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Solve problems on the above processes. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m303-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Thermodynamic Processes",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m303-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Thermodynamic Processes",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m303-2.15",
+                    "sno": "2.15"
                 }
             ]
         },
@@ -116,53 +235,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Define Air Standard Efficiency. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-3.1",
-                    "sno": "3.1",
-                    "topic": "Define Air Standard Efficiency.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Define Air Standard Efficiency. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-3.2",
-                    "sno": "3.2",
-                    "topic": "Explain Carnot Cycle and derive efficiency.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Define Air Standard Efficiency. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-3.3",
-                    "sno": "3.3",
-                    "topic": "Explain Otto Cycle, Diesel Cycle and Dual Combustion Cycle.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Explain Carnot Cycle and derive efficiency. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-3.4",
-                    "sno": "3.4",
-                    "topic": "Derive expressions for Air Standard Efficiency of Otto and Diesel cycles.",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain Carnot Cycle and derive efficiency. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m303-3.5",
-                    "sno": "3.5",
-                    "topic": "Solve simple problems on Otto and Diesel cycles.",
-                    "type": "problem solving",
-                    "period": 2
+                    "sno": "3.5"
                 },
                 {
+                    "topic": "Explain Carnot Cycle and derive efficiency. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-3.6",
-                    "sno": "3.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.6"
                 },
                 {
-                    "id": "m303-3.7",
-                    "sno": "3.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Explain Otto Cycle, Diesel Cycle and Dual Combustion Cycle. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m303-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain Otto Cycle, Diesel Cycle and Dual Combustion Cycle. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Explain Otto Cycle, Diesel Cycle and Dual Combustion Cycle. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Derive expressions for Air Standard Efficiency of Otto and Diesel cycles. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Derive expressions for Air Standard Efficiency of Otto and Diesel cycles. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Solve simple problems on Otto and Diesel cycles. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m303-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Solve simple problems on Otto and Diesel cycles. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m303-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Air Standard Cycles",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m303-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Air Standard Cycles",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m303-3.15",
+                    "sno": "3.15"
                 }
             ]
         },
@@ -172,74 +347,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Classify IC Engines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-4.1",
-                    "sno": "4.1",
-                    "topic": "Classify IC Engines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Classify IC Engines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-4.2",
-                    "sno": "4.2",
-                    "topic": "Explain construction and working of 2-stroke and 4-stroke Petrol and Diesel engines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Explain construction and working of 2-stroke and 4-stroke Petrol and Diesel engines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-4.3",
-                    "sno": "4.3",
-                    "topic": "Compare 2-stroke vs 4-stroke, Petrol vs Diesel engines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Explain construction and working of 2-stroke and 4-stroke Petrol and Diesel engines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-4.4",
-                    "sno": "4.4",
-                    "topic": "Explain Valve Timing Diagrams.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.4"
                 },
                 {
+                    "topic": "Compare 2-stroke vs 4-stroke, Petrol vs Diesel engines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-4.5",
-                    "sno": "4.5",
-                    "topic": "Describe fuel systems in Petrol (Carburetor, MPFI) and Diesel (Fuel Pump, Injector, CRDI).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.5"
                 },
                 {
+                    "topic": "Compare 2-stroke vs 4-stroke, Petrol vs Diesel engines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-4.6",
-                    "sno": "4.6",
-                    "topic": "Explain Cooling and Lubrication systems.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "4.6"
                 },
                 {
+                    "topic": "Explain Valve Timing Diagrams. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-4.7",
-                    "sno": "4.7",
-                    "topic": "Explain Ignition systems (Battery, Magneto).",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "4.7"
                 },
                 {
+                    "topic": "Explain Valve Timing Diagrams. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-4.8",
-                    "sno": "4.8",
-                    "topic": "Explain Governing of IC engines.",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Describe fuel systems in Petrol (Carburetor, MPFI) and Diesel (Fuel Pump, Injector, CRDI). - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m303-4.9",
-                    "sno": "4.9",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.9"
                 },
                 {
-                    "id": "m303-4.10",
-                    "sno": "4.10",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Describe fuel systems in Petrol (Carburetor, MPFI) and Diesel (Fuel Pump, Injector, CRDI). - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m303-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Explain Cooling and Lubrication systems.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Explain Ignition systems (Battery, Magneto).",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Explain Governing of IC engines.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Revision of the Unit: IC Engines",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m303-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on IC Engines",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m303-4.15",
+                    "sno": "4.15"
                 }
             ]
         },
@@ -249,60 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Define IP, BP, FP, Mechanical Efficiency, Thermal Efficiency, etc. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-5.1",
-                    "sno": "5.1",
-                    "topic": "Define IP, BP, FP, Mechanical Efficiency, Thermal Efficiency, etc.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Define IP, BP, FP, Mechanical Efficiency, Thermal Efficiency, etc. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-5.2",
-                    "sno": "5.2",
-                    "topic": "Explain Morse Test and Heat Balance Sheet.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Define IP, BP, FP, Mechanical Efficiency, Thermal Efficiency, etc. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-5.3",
-                    "sno": "5.3",
-                    "topic": "Solve problems on IC Engine performance.",
-                    "type": "problem solving",
-                    "period": 2
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Explain Morse Test and Heat Balance Sheet. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-5.4",
-                    "sno": "5.4",
-                    "topic": "Classify Air Compressors.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.4"
                 },
                 {
+                    "topic": "Explain Morse Test and Heat Balance Sheet. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m303-5.5",
-                    "sno": "5.5",
-                    "topic": "Explain working of Reciprocating and Rotary compressors.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.5"
                 },
                 {
+                    "topic": "Solve problems on IC Engine performance. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "m303-5.6",
-                    "sno": "5.6",
-                    "topic": "Explain Single stage and Multi-stage compression.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.6"
                 },
                 {
+                    "topic": "Solve problems on IC Engine performance. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "m303-5.7",
-                    "sno": "5.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.7"
                 },
                 {
-                    "id": "m303-5.8",
-                    "sno": "5.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Classify Air Compressors. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m303-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Classify Air Compressors. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Explain working of Reciprocating and Rotary compressors. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Explain working of Reciprocating and Rotary compressors. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Explain Single stage and Multi-stage compression. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Explain Single stage and Multi-stage compression. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m303-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Performance of IC Engines & Air Compressors",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m303-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Performance of IC Engines & Air Compressors",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m303-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

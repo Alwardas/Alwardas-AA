@@ -1,471 +1,471 @@
 {
-  "subjectCode": "C-404",
-  "subjectName": "Transportation Engineering",
-  "regulation": "C23",
-  "semester": 4,
-  "totalPeriods": 60,
-  "units": [
-    {
-      "unitNo": 1,
-      "title": "Introduction to Highways and Geotechnical Engineering",
-      "totalPeriods": 11,
-      "topics": [
+    "subjectCode": "C-404",
+    "subjectName": "Transportation Engineering",
+    "regulation": "C23",
+    "semester": 4,
+    "totalPeriods": 60,
+    "units": [
         {
-          "id": "c404-1.1",
-          "sno": "1.1",
-          "topic": "State the importance of transportation engineering.",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 1,
+            "title": "Introduction to Highways and Geotechnical Engineering",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "topic": "State the importance of transportation engineering.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "State the importance of I.R.C & List the functions of I.R.C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Classify roads as per I.R.C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Define the terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain the components of a road with a sketch.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "State the three types of gradients",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "State recommended values of gradients by I.R.C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State the need for providing super elevation and write the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "State the need for curves in highways and state the different",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Revision of the Unit: Introduction to Highways and Geotechnical Engineering",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c404-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Introduction to Highways and Geotechnical Engineering",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c404-1.11",
+                    "sno": "1.11"
+                }
+            ]
         },
         {
-          "id": "c404-1.2",
-          "sno": "1.2",
-          "topic": "State the importance of I.R.C & List the functions of I.R.C",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 2,
+            "title": "Highway Survey and Traffic Engineering",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "topic": "Define alignment of road.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "State the factors influencing selection of alignment for a road",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "List the surveys required for fixing alignment.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "State the different data required for the preparation of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain various engineering surveys conducted to fix the",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "State the importance of traffic census/traffic surveys.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "List various traffic surveys conducted.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Explain the following with sketches:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "State types of pavement markings with sketches and state its",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Revision of the Unit: Highway Survey and Traffic Engineering",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c404-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Highway Survey and Traffic Engineering",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c404-2.11",
+                    "sno": "2.11"
+                }
+            ]
         },
         {
-          "id": "c404-1.3",
-          "sno": "1.3",
-          "topic": "Classify roads as per I.R.C",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 3,
+            "title": "Highway construction and Maintenance",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "State the need for road drainage.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain the methods of providing surface and sub-surface",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "State the materials used in construction of different types of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "List the tests on Bitumen.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "State the equipment/machinery used in construction of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain the methods of construction of different types of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the maintenance of WBM of roads.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain the different types of joints used in C.C roads with",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "State the need for joints in C.C roads.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Tutorial / Practice session on State the need for road drainage.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Highway construction and Maintenance",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c404-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Highway construction and Maintenance",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c404-3.12",
+                    "sno": "3.12"
+                }
+            ]
         },
         {
-          "id": "c404-1.4",
-          "sno": "1.4",
-          "topic": "Define the terms:",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 4,
+            "title": "Introduction and Permanent way of Railways",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "topic": "State the advantages of Railways.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Define gauge and",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Classify gauges.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "State the component parts of a permanent way",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "List the functions of each component parts of a permanent",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "State the requirements/characteristics of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "State the different types of",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Problem solving & numerical analysis of State the advantages of Railways.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Case study and practical applications of Define gauge and",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Revision of the Unit: Introduction and Permanent way of Railways",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c404-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Introduction and Permanent way of Railways",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c404-4.11",
+                    "sno": "4.11"
+                }
+            ]
         },
         {
-          "id": "c404-1.5",
-          "sno": "1.5",
-          "topic": "Explain the components of a road with a sketch.",
-          "period": 1,
-          "type": "theory"
+            "unitNo": 5,
+            "title": "Station yard and Maintenance of Railways",
+            "totalPeriods": 7,
+            "topics": [
+                {
+                    "topic": "Describe different types of turnouts with sketches.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Describe different types of crossings with sketches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Classify stations.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "State different maintenance measures of a railway track.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "State the duties of a permanent way inspector.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Revision of the Unit: Station yard and Maintenance of Railways",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c404-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Station yard and Maintenance of Railways",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c404-5.7",
+                    "sno": "5.7"
+                }
+            ]
         },
         {
-          "id": "c404-1.6",
-          "sno": "1.6",
-          "topic": "State the three types of gradients",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-1.7",
-          "sno": "1.7",
-          "topic": "State recommended values of gradients by I.R.C",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-1.8",
-          "sno": "1.8",
-          "topic": "State the need for providing super elevation and write the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-1.9",
-          "sno": "1.9",
-          "topic": "State the need for curves in highways and state the different",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-1.10",
-          "sno": "1.10",
-          "topic": "Revision of Introduction to Highways and Geotechnical Engineering",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c404-1.11",
-          "sno": "1.11",
-          "topic": "Assessment / Practice / Problem Solving on Introduction to Highways and Geotechnical Engineering",
-          "period": 1,
-          "type": "assessment"
+            "unitNo": 6,
+            "title": "Basics of Bridge Engineering",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "topic": "Classify the bridges based on materials, position of bridge",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-6.1",
+                    "sno": "6.1"
+                },
+                {
+                    "topic": "Define the terms:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-6.2",
+                    "sno": "6.2"
+                },
+                {
+                    "topic": "State the factors influencing selection of site for a bridge.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-6.3",
+                    "sno": "6.3"
+                },
+                {
+                    "topic": "State component parts of a bridge sub-structure with sketches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-6.4",
+                    "sno": "6.4"
+                },
+                {
+                    "topic": "List the functions of a bridge sub-structure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-6.5",
+                    "sno": "6.5"
+                },
+                {
+                    "topic": "Distinguish between deck and through bridge.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "c404-6.6",
+                    "sno": "6.6"
+                },
+                {
+                    "topic": "Revision of the Unit: Basics of Bridge Engineering",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "c404-6.7",
+                    "sno": "6.7"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Basics of Bridge Engineering",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "c404-6.8",
+                    "sno": "6.8"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "unitNo": 2,
-      "title": "Highway Survey and Traffic Engineering",
-      "totalPeriods": 11,
-      "topics": [
-        {
-          "id": "c404-2.1",
-          "sno": "2.1",
-          "topic": "Define alignment of road.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-2.2",
-          "sno": "2.2",
-          "topic": "State the factors influencing selection of alignment for a road",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-2.3",
-          "sno": "2.3",
-          "topic": "List the surveys required for fixing alignment.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-2.4",
-          "sno": "2.4",
-          "topic": "State the different data required for the preparation of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-2.5",
-          "sno": "2.5",
-          "topic": "Explain various engineering surveys conducted to fix the",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-2.6",
-          "sno": "2.6",
-          "topic": "State the importance of traffic census/traffic surveys.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-2.7",
-          "sno": "2.7",
-          "topic": "List various traffic surveys conducted.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-2.8",
-          "sno": "2.8",
-          "topic": "Explain the following with sketches:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-2.9",
-          "sno": "2.9",
-          "topic": "State types of pavement markings with sketches and state its",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-2.10",
-          "sno": "2.10",
-          "topic": "Revision of Highway Surveys and Traffic Engineering",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c404-2.11",
-          "sno": "2.11",
-          "topic": "Assessment / Practice / Problem Solving on Highway Surveys and Traffic Engineering",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 3,
-      "title": "Highway construction and Maintenance",
-      "totalPeriods": 12,
-      "topics": [
-        {
-          "id": "c404-3.1",
-          "sno": "3.1",
-          "topic": "State the need for road drainage.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-3.2",
-          "sno": "3.2",
-          "topic": "Explain the methods of providing surface and sub-surface",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-3.3",
-          "sno": "3.3",
-          "topic": "State the materials used in construction of different types of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-3.4",
-          "sno": "3.4",
-          "topic": "List the tests on Bitumen.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-3.5",
-          "sno": "3.5",
-          "topic": "State the equipment/machinery used in construction of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-3.6",
-          "sno": "3.6",
-          "topic": "Explain the methods of construction of different types of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-3.7",
-          "sno": "3.7",
-          "topic": "Explain the maintenance of WBM of roads.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-3.8",
-          "sno": "3.8",
-          "topic": "Explain the different types of joints used in C.C roads with",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-3.9",
-          "sno": "3.9",
-          "topic": "State the need for joints in C.C roads.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-3.10",
-          "sno": "3.10",
-          "topic": "Tutorial / Practice session on State the need for road drainage.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-3.11",
-          "sno": "3.11",
-          "topic": "Revision of Highway Constructions and Maintenances",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c404-3.12",
-          "sno": "3.12",
-          "topic": "Assessment / Practice / Problem Solving on Highway Constructions and Maintenances",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 4,
-      "title": "Introduction and Permanent way of Railways",
-      "totalPeriods": 11,
-      "topics": [
-        {
-          "id": "c404-4.1",
-          "sno": "4.1",
-          "topic": "State the advantages of Railways.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-4.2",
-          "sno": "4.2",
-          "topic": "Define gauge and",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-4.3",
-          "sno": "4.3",
-          "topic": "Classify gauges.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-4.4",
-          "sno": "4.4",
-          "topic": "State the component parts of a permanent way",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-4.5",
-          "sno": "4.5",
-          "topic": "List the functions of each component parts of a permanent",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-4.6",
-          "sno": "4.6",
-          "topic": "State the requirements/characteristics of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-4.7",
-          "sno": "4.7",
-          "topic": "State the different types of",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-4.8",
-          "sno": "4.8",
-          "topic": "Problem solving & numerical analysis of State the advantages of Railways.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-4.9",
-          "sno": "4.9",
-          "topic": "Case study and practical applications of Define gauge and",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-4.10",
-          "sno": "4.10",
-          "topic": "Revision of Introduction and Permanent way of Railways",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c404-4.11",
-          "sno": "4.11",
-          "topic": "Assessment / Practice / Problem Solving on Introduction and Permanent way of Railways",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 5,
-      "title": "Station yard and Maintenance of Railways",
-      "totalPeriods": 7,
-      "topics": [
-        {
-          "id": "c404-5.1",
-          "sno": "5.1",
-          "topic": "Describe different types of turnouts with sketches.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-5.2",
-          "sno": "5.2",
-          "topic": "Describe different types of crossings with sketches",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-5.3",
-          "sno": "5.3",
-          "topic": "Classify stations.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-5.4",
-          "sno": "5.4",
-          "topic": "State different maintenance measures of a railway track.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-5.5",
-          "sno": "5.5",
-          "topic": "State the duties of a permanent way inspector.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-5.6",
-          "sno": "5.6",
-          "topic": "Revision of Station yards and Maintenance of Railways",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c404-5.7",
-          "sno": "5.7",
-          "topic": "Assessment / Practice / Problem Solving on Station yards and Maintenance of Railways",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 6,
-      "title": "Basics of Bridge Engineering",
-      "totalPeriods": 8,
-      "topics": [
-        {
-          "id": "c404-6.1",
-          "sno": "6.1",
-          "topic": "Classify the bridges based on materials, position of bridge",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-6.2",
-          "sno": "6.2",
-          "topic": "Define the terms:",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-6.3",
-          "sno": "6.3",
-          "topic": "State the factors influencing selection of site for a bridge.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-6.4",
-          "sno": "6.4",
-          "topic": "State component parts of a bridge sub-structure with sketches",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-6.5",
-          "sno": "6.5",
-          "topic": "List the functions of a bridge sub-structure",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-6.6",
-          "sno": "6.6",
-          "topic": "Distinguish between deck and through bridge.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "c404-6.7",
-          "sno": "6.7",
-          "topic": "Revision of Basics of Bridge Engineering",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "c404-6.8",
-          "sno": "6.8",
-          "topic": "Assessment / Practice / Problem Solving on Basics of Bridge Engineering",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    }
-  ]
+    ]
 }

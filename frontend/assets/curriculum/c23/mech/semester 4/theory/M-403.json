@@ -11,60 +11,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Function and Classification of Boilers. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-1.1",
-                    "sno": "1.1",
-                    "topic": "Function and Classification of Boilers.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Function and Classification of Boilers. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-1.2",
-                    "sno": "1.2",
-                    "topic": "Construction and working of Cochran, Lancashire, Babcock & Wilcox boilers.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Construction and working of Cochran, Lancashire, Babcock & Wilcox boilers. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-1.3",
-                    "sno": "1.3",
-                    "topic": "High pressure boilers: Lamont, Benson, Loeffler, Velox.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "Construction and working of Cochran, Lancashire, Babcock & Wilcox boilers. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-1.4",
-                    "sno": "1.4",
-                    "topic": "Boiler Mountings and Accessories.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "High pressure boilers: Lamont, Benson, Loeffler, Velox. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-1.5",
-                    "sno": "1.5",
-                    "topic": "Boiler Draught: Natural and Artificial.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "1.5"
                 },
                 {
+                    "topic": "High pressure boilers: Lamont, Benson, Loeffler, Velox. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-1.6",
-                    "sno": "1.6",
-                    "topic": "Performance of Boilers: Evaporative capacity, Equivalent evaporation, Boiler efficiency.",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Boiler Mountings and Accessories. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m403-1.7",
-                    "sno": "1.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.7"
                 },
                 {
-                    "id": "m403-1.8",
-                    "sno": "1.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Boiler Mountings and Accessories. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m403-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Boiler Draught: Natural and Artificial.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Performance of Boilers: Evaporative capacity, Equivalent evaporation, Boiler efficiency.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Steam Boilers",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m403-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Steam Boilers",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m403-1.12",
+                    "sno": "1.12"
                 }
             ]
         },
@@ -74,60 +102,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Flow of steam through nozzles. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-2.1",
-                    "sno": "2.1",
-                    "topic": "Flow of steam through nozzles.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Flow of steam through nozzles. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-2.2",
-                    "sno": "2.2",
-                    "topic": "Velocity of steam at exit.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Velocity of steam at exit. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-2.3",
-                    "sno": "2.3",
-                    "topic": "Discharge through nozzles.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Velocity of steam at exit. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-2.4",
-                    "sno": "2.4",
-                    "topic": "Critical pressure ratio.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.4"
                 },
                 {
+                    "topic": "Discharge through nozzles. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-2.5",
-                    "sno": "2.5",
-                    "topic": "Effect of friction in nozzles.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "2.5"
                 },
                 {
+                    "topic": "Discharge through nozzles. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-2.6",
-                    "sno": "2.6",
-                    "topic": "Supersaturated flow.",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Critical pressure ratio. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m403-2.7",
-                    "sno": "2.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.7"
                 },
                 {
-                    "id": "m403-2.8",
-                    "sno": "2.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Critical pressure ratio. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m403-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Effect of friction in nozzles.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Supersaturated flow.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Steam Nozzles",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m403-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Steam Nozzles",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m403-2.12",
+                    "sno": "2.12"
                 }
             ]
         },
@@ -137,53 +193,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Classification of Steam Turbines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-3.1",
-                    "sno": "3.1",
-                    "topic": "Classification of Steam Turbines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Classification of Steam Turbines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-3.2",
-                    "sno": "3.2",
-                    "topic": "Impulse Turbine: Principle, Velocity diagrams, Work done, Efficiency.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Impulse Turbine: Principle, Velocity diagrams, Work done, Efficiency. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-3.3",
-                    "sno": "3.3",
-                    "topic": "Reaction Turbine: Principle, Velocity diagrams, Degree of reaction, Work done, Efficiency.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Impulse Turbine: Principle, Velocity diagrams, Work done, Efficiency. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-3.4",
-                    "sno": "3.4",
-                    "topic": "Compounding of Steam Turbines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Reaction Turbine: Principle, Velocity diagrams, Degree of reaction, Work done, Efficiency. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-3.5",
-                    "sno": "3.5",
-                    "topic": "Governing of Steam Turbines.",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Reaction Turbine: Principle, Velocity diagrams, Degree of reaction, Work done, Efficiency. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m403-3.6",
-                    "sno": "3.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.6"
                 },
                 {
-                    "id": "m403-3.7",
-                    "sno": "3.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Compounding of Steam Turbines. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m403-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Compounding of Steam Turbines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Governing of Steam Turbines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Governing of Steam Turbines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Steam Turbines",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m403-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Steam Turbines",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m403-3.12",
+                    "sno": "3.12"
                 }
             ]
         },
@@ -193,53 +284,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
+                    "topic": "Function and Classification of Condensers. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-4.1",
-                    "sno": "4.1",
-                    "topic": "Function and Classification of Condensers.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Function and Classification of Condensers. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-4.2",
-                    "sno": "4.2",
-                    "topic": "Jet Condensers and Surface Condensers.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Function and Classification of Condensers. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-4.3",
-                    "sno": "4.3",
-                    "topic": "Vacuum and its measurement.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Jet Condensers and Surface Condensers. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-4.4",
-                    "sno": "4.4",
-                    "topic": "Efficiency of Condensers.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.4"
                 },
                 {
+                    "topic": "Jet Condensers and Surface Condensers. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-4.5",
-                    "sno": "4.5",
-                    "topic": "Cooling Towers.",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Vacuum and its measurement. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m403-4.6",
-                    "sno": "4.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.6"
                 },
                 {
-                    "id": "m403-4.7",
-                    "sno": "4.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Vacuum and its measurement. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m403-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Efficiency of Condensers. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Efficiency of Condensers. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Cooling Towers. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Cooling Towers. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Steam Condensers",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m403-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Steam Condensers",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m403-4.13",
+                    "sno": "4.13"
                 }
             ]
         },
@@ -249,53 +382,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
+                    "topic": "Classification of Gas Turbines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-5.1",
-                    "sno": "5.1",
-                    "topic": "Classification of Gas Turbines.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Classification of Gas Turbines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-5.2",
-                    "sno": "5.2",
-                    "topic": "Open cycle and Closed cycle gas turbines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Classification of Gas Turbines. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-5.3",
-                    "sno": "5.3",
-                    "topic": "Brayton Cycle.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Open cycle and Closed cycle gas turbines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-5.4",
-                    "sno": "5.4",
-                    "topic": "Methods to improve thermal efficiency.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.4"
                 },
                 {
+                    "topic": "Open cycle and Closed cycle gas turbines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-5.5",
-                    "sno": "5.5",
-                    "topic": "Applications of Gas Turbines.",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Brayton Cycle. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m403-5.6",
-                    "sno": "5.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.6"
                 },
                 {
-                    "id": "m403-5.7",
-                    "sno": "5.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Brayton Cycle. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m403-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Methods to improve thermal efficiency. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Methods to improve thermal efficiency. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Applications of Gas Turbines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Applications of Gas Turbines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Gas Turbines",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m403-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Gas Turbines",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m403-5.13",
+                    "sno": "5.13"
                 }
             ]
         },
@@ -305,46 +480,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
+                    "topic": "Principle of Jet Propulsion. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-6.1",
-                    "sno": "6.1",
-                    "topic": "Principle of Jet Propulsion.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "6.1"
                 },
                 {
+                    "topic": "Principle of Jet Propulsion. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-6.2",
-                    "sno": "6.2",
-                    "topic": "Types of Jet Engines: Turbojet, Turboprop, Ramjet, Pulsejet.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "6.2"
                 },
                 {
+                    "topic": "Principle of Jet Propulsion. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-6.3",
-                    "sno": "6.3",
-                    "topic": "Rocket Propulsion: Principle and Types.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "6.3"
                 },
                 {
+                    "topic": "Types of Jet Engines: Turbojet, Turboprop, Ramjet, Pulsejet. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m403-6.4",
-                    "sno": "6.4",
-                    "topic": "Applications of Jet Propulsion.",
+                    "sno": "6.4"
+                },
+                {
+                    "topic": "Types of Jet Engines: Turbojet, Turboprop, Ramjet, Pulsejet. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m403-6.5",
-                    "sno": "6.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "6.5"
                 },
                 {
-                    "id": "m403-6.6",
-                    "sno": "6.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Types of Jet Engines: Turbojet, Turboprop, Ramjet, Pulsejet. - Part 3",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m403-6.6",
+                    "sno": "6.6"
+                },
+                {
+                    "topic": "Rocket Propulsion: Principle and Types. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-6.7",
+                    "sno": "6.7"
+                },
+                {
+                    "topic": "Rocket Propulsion: Principle and Types. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-6.8",
+                    "sno": "6.8"
+                },
+                {
+                    "topic": "Rocket Propulsion: Principle and Types. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-6.9",
+                    "sno": "6.9"
+                },
+                {
+                    "topic": "Applications of Jet Propulsion. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-6.10",
+                    "sno": "6.10"
+                },
+                {
+                    "topic": "Applications of Jet Propulsion. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m403-6.11",
+                    "sno": "6.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Jet Propulsion",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m403-6.12",
+                    "sno": "6.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Jet Propulsion",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m403-6.13",
+                    "sno": "6.13"
                 }
             ]
         }

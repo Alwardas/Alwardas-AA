@@ -11,60 +11,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
-                    "id": "ee3031.1",
-                    "sno": "1.1",
-                    "topic": "State the relation between poles, speed and frequency",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "State the relation between poles, speed and frequency - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "ee3031.2",
-                    "sno": "1.2",
-                    "topic": "Define the instantaneous value, maximum value, frequency, time period, Average value, R.M.S value, Form factor and Peak factor of an A.C quantity.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "State the relation between poles, speed and frequency - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "ee3031.3",
-                    "sno": "1.3",
-                    "topic": "Derive the expression for the above for different alternating waveforms viz. half wave and full wave rectified sine wave.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Define the instantaneous value, maximum value, frequency, time period, Average value, R.M.S value, Form factor and Peak factor of an A.C quantity. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "ee3031.4",
-                    "sno": "1.4",
-                    "topic": "Explain the terms phase and phase difference of an A.C quantity.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Define the instantaneous value, maximum value, frequency, time period, Average value, R.M.S value, Form factor and Peak factor of an A.C quantity. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "ee3031.5",
-                    "sno": "1.5",
-                    "topic": "Understand j operator",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Derive the expression for the above for different alternating waveforms viz. half wave and full wave rectified sine wave. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "ee3031.6",
-                    "sno": "1.6",
+                    "topic": "Derive the expression for the above for different alternating waveforms viz. half wave and full wave rectified sine wave. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Explain the terms phase and phase difference of an A.C quantity. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Explain the terms phase and phase difference of an A.C quantity. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Understand j operator - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Understand j operator - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-1.10",
+                    "sno": "1.10"
+                },
+                {
                     "topic": "Convert polar quantities into rectangular quantities and Vice-versa.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ee303-1.7",
-                    "sno": "1.7",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: Fundamental of A.C.",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee303-1.12",
+                    "sno": "1.12"
                 },
                 {
-                    "id": "ee303-1.8",
-                    "sno": "1.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Fundamental of A.C.",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee303-1.13",
+                    "sno": "1.13"
                 }
             ]
         },
@@ -74,81 +109,165 @@
             "totalPeriods": 23,
             "topics": [
                 {
-                    "id": "ee3032.1",
-                    "sno": "2.1",
-                    "topic": "Derive relationship between voltage and current in a (i) Pure resistive circuit ii) Pure inductive circuit iii) Pure capacitive circuit.",
-                    "period": 3,
-                    "type": "theory"
+                    "topic": "Derive relationship between voltage and current in a (i) Pure resistive circuit ii) Pure inductive circuit iii) Pure capacitive circuit. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ee3032.2",
-                    "sno": "2.2",
-                    "topic": "Calculate the impedance, current, phase angle, power and power factor in R-L series circuits, R-C series circuits, L-C series circuits, R-L-C seriescircuits.",
-                    "period": 3,
-                    "type": "theory"
+                    "topic": "Derive relationship between voltage and current in a (i) Pure resistive circuit ii) Pure inductive circuit iii) Pure capacitive circuit. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "ee3032.3",
-                    "sno": "2.3",
-                    "topic": "Solve Problems on Series Circuits",
-                    "period": 3,
-                    "type": "problem solving"
+                    "topic": "Derive relationship between voltage and current in a (i) Pure resistive circuit ii) Pure inductive circuit iii) Pure capacitive circuit. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "ee3032.4",
-                    "sno": "2.4",
-                    "topic": "Define Resonance and Derive a formula for resonant frequency of a R-L-C series circuit.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Calculate the impedance, current, phase angle, power and power factor in R-L series circuits, R-C series circuits, L-C series circuits, R-L-C seriescircuits. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.4",
+                    "sno": "2.4"
                 },
                 {
-                    "id": "ee3032.5",
-                    "sno": "2.5",
-                    "topic": "Define Q-factor and state its importance,",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Calculate the impedance, current, phase angle, power and power factor in R-L series circuits, R-C series circuits, L-C series circuits, R-L-C seriescircuits. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "ee3032.6",
-                    "sno": "2.6",
-                    "topic": "Solve problems on Series Resonance.",
-                    "period": 2,
-                    "type": "problem solving"
+                    "topic": "Calculate the impedance, current, phase angle, power and power factor in R-L series circuits, R-C series circuits, L-C series circuits, R-L-C seriescircuits. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.6",
+                    "sno": "2.6"
                 },
                 {
-                    "id": "ee3032.7",
-                    "sno": "2.7",
-                    "topic": "State the concept of conductance, susceptance and admittance.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Solve Problems on Series Circuits - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee303-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "ee3032.8",
-                    "sno": "2.8",
-                    "topic": "Explain the method of solving two branch parallel A.C circuits by using J- notation method",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Solve Problems on Series Circuits - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee303-2.8",
+                    "sno": "2.8"
                 },
                 {
-                    "id": "ee3032.9",
-                    "sno": "2.9",
-                    "topic": "Solve Problems on j-notation method for two branch parallel A.C circuits.",
-                    "period": 2,
-                    "type": "problem solving"
+                    "topic": "Solve Problems on Series Circuits - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee303-2.9",
+                    "sno": "2.9"
                 },
                 {
+                    "topic": "Define Resonance and Derive a formula for resonant frequency of a R-L-C series circuit. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee303-2.10",
-                    "sno": "2.10",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.10"
                 },
                 {
-                    "id": "ee303-2.11",
-                    "sno": "2.11",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Define Resonance and Derive a formula for resonant frequency of a R-L-C series circuit. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "ee303-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Define Q-factor and state its importance, - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Define Q-factor and state its importance, - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Solve problems on Series Resonance. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee303-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Solve problems on Series Resonance. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee303-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "State the concept of conductance, susceptance and admittance. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.16",
+                    "sno": "2.16"
+                },
+                {
+                    "topic": "State the concept of conductance, susceptance and admittance. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.17",
+                    "sno": "2.17"
+                },
+                {
+                    "topic": "Explain the method of solving two branch parallel A.C circuits by using J- notation method - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.18",
+                    "sno": "2.18"
+                },
+                {
+                    "topic": "Explain the method of solving two branch parallel A.C circuits by using J- notation method - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-2.19",
+                    "sno": "2.19"
+                },
+                {
+                    "topic": "Solve Problems on j-notation method for two branch parallel A.C circuits. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee303-2.20",
+                    "sno": "2.20"
+                },
+                {
+                    "topic": "Solve Problems on j-notation method for two branch parallel A.C circuits. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee303-2.21",
+                    "sno": "2.21"
+                },
+                {
+                    "topic": "Revision of the Unit: Single phase A.C Circuits",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee303-2.22",
+                    "sno": "2.22"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Single phase A.C Circuits",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee303-2.23",
+                    "sno": "2.23"
                 }
             ]
         },
@@ -158,81 +277,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
-                    "id": "ee3033.1",
-                    "sno": "3.1",
-                    "topic": "Definetheterm`PolyPhase'.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Definetheterm`PolyPhase'. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "ee3033.2",
-                    "sno": "3.2",
-                    "topic": "List advantages of 3 phase system over single-phase system.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Definetheterm`PolyPhase'. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "ee3033.3",
-                    "sno": "3.3",
+                    "topic": "List advantages of 3 phase system over single-phase system. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "List advantages of 3 phase system over single-phase system. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-3.4",
+                    "sno": "3.4"
+                },
+                {
                     "topic": "Write the expressions for three-phase emfs and represent them by phasor diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-3.5",
+                    "sno": "3.5"
                 },
                 {
-                    "id": "ee3033.4",
-                    "sno": "3.4",
                     "topic": "State the concept of phase sequence.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-3.6",
+                    "sno": "3.6"
                 },
                 {
-                    "id": "ee3033.5",
-                    "sno": "3.5",
                     "topic": "Derive the relation between line and phase values of current and voltage in 3phase (i)Star circuits and(ii)delta circuits.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "ee3033.6",
-                    "sno": "3.6",
                     "topic": "Derive the equation for power in 3 phase circuit.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "ee3033.7",
-                    "sno": "3.7",
                     "topic": "Solve numerical examples in balanced loads.",
                     "period": 1,
-                    "type": "problem solving"
+                    "type": "problem solving",
+                    "id": "ee303-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ee3033.8",
-                    "sno": "3.8",
                     "topic": "Derive the formulae for measurement of 3 phase power and power factor by using two watt meters.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-3.10",
+                    "sno": "3.10"
                 },
                 {
-                    "id": "ee3033.9",
-                    "sno": "3.9",
                     "topic": "Solve simple problems on two wattmeter method.",
                     "period": 1,
-                    "type": "problem solving"
-                },
-                {
-                    "id": "ee303-3.10",
-                    "sno": "3.10",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
+                    "type": "problem solving",
                     "id": "ee303-3.11",
-                    "sno": "3.11",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Poly phase circuits",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "revision",
+                    "id": "ee303-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Poly phase circuits",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee303-3.13",
+                    "sno": "3.13"
                 }
             ]
         },
@@ -242,130 +375,200 @@
             "totalPeriods": 28,
             "topics": [
                 {
-                    "id": "ee3034.1",
-                    "sno": "4.1",
-                    "topic": "Define Transformer and Explain its working principle.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Define Transformer and Explain its working principle. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "ee3034.2",
-                    "sno": "4.2",
-                    "topic": "Classify the transformers basedon (i) numberofphases (ii)construction (iii)function.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Define Transformer and Explain its working principle. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "ee3034.3",
-                    "sno": "4.3",
-                    "topic": "Explain the constructional details oftransformers with legible Sketch.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Classify the transformers basedon (i) numberofphases (ii)construction (iii)function. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "ee3034.4",
-                    "sno": "4.4",
-                    "topic": "Distinguish between shell type and core typetransformers.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Classify the transformers basedon (i) numberofphases (ii)construction (iii)function. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "ee3034.5",
-                    "sno": "4.5",
-                    "topic": "Derive the E.M.F equation of a single phasetransformer and solve problems.",
-                    "period": 2,
-                    "type": "problem solving"
+                    "topic": "Explain the constructional details oftransformers with legible Sketch. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "ee3034.6",
-                    "sno": "4.6",
-                    "topic": "Define 'transformation'ratio.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the constructional details oftransformers with legible Sketch. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "ee3034.7",
-                    "sno": "4.7",
-                    "topic": "Explain ideal transformer and Draw Vector diagram for a transformer working on noload.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Distinguish between shell type and core typetransformers. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.7",
+                    "sno": "4.7"
                 },
                 {
-                    "id": "ee3034.8",
-                    "sno": "4.8",
-                    "topic": "Develop the vector diagram of a transformer on loadfor (i) Unity powerfactor (ii) Lagging powerfactor (iii) Leading powerfactor",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Distinguish between shell type and core typetransformers. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.8",
+                    "sno": "4.8"
                 },
                 {
-                    "id": "ee3034.9",
-                    "sno": "4.9",
-                    "topic": "Draw the equivalent circuit of a transformer byapproximation.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Derive the E.M.F equation of a single phasetransformer and solve problems. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee303-4.9",
+                    "sno": "4.9"
                 },
                 {
-                    "id": "ee3034.10",
-                    "sno": "4.10",
-                    "topic": "Determine the equivalent circuit constants from no-load test and short circuit test data and solve problems.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Derive the E.M.F equation of a single phasetransformer and solve problems. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee303-4.10",
+                    "sno": "4.10"
                 },
                 {
-                    "id": "ee3034.11",
-                    "sno": "4.11",
+                    "topic": "Define 'transformation'ratio. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Define 'transformation'ratio. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Explain ideal transformer and Draw Vector diagram for a transformer working on noload. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Explain ideal transformer and Draw Vector diagram for a transformer working on noload. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Develop the vector diagram of a transformer on loadfor (i) Unity powerfactor (ii) Lagging powerfactor (iii) Leading powerfactor - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.15",
+                    "sno": "4.15"
+                },
+                {
+                    "topic": "Develop the vector diagram of a transformer on loadfor (i) Unity powerfactor (ii) Lagging powerfactor (iii) Leading powerfactor - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.16",
+                    "sno": "4.16"
+                },
+                {
+                    "topic": "Draw the equivalent circuit of a transformer byapproximation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.17",
+                    "sno": "4.17"
+                },
+                {
+                    "topic": "Draw the equivalent circuit of a transformer byapproximation. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.18",
+                    "sno": "4.18"
+                },
+                {
+                    "topic": "Determine the equivalent circuit constants from no-load test and short circuit test data and solve problems. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.19",
+                    "sno": "4.19"
+                },
+                {
+                    "topic": "Determine the equivalent circuit constants from no-load test and short circuit test data and solve problems. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee303-4.20",
+                    "sno": "4.20"
+                },
+                {
                     "topic": "Derive the approximate equation for regulation fortransformer.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-4.21",
+                    "sno": "4.21"
                 },
                 {
-                    "id": "ee3034.12",
-                    "sno": "4.12",
                     "topic": "List the losses taking place in attransformer and derive the condition for maximum efficiency of attransformer.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-4.22",
+                    "sno": "4.22"
                 },
                 {
-                    "id": "ee3034.13",
-                    "sno": "4.13",
                     "topic": "Solve simple problems on regulation and efficiency.",
                     "period": 1,
-                    "type": "problem solving"
+                    "type": "problem solving",
+                    "id": "ee303-4.23",
+                    "sno": "4.23"
                 },
                 {
-                    "id": "ee3034.14",
-                    "sno": "4.14",
                     "topic": "State the reason for transformer rating inKVA.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-4.24",
+                    "sno": "4.24"
                 },
                 {
-                    "id": "ee3034.15",
-                    "sno": "4.15",
                     "topic": "Define all-day efficiency.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-4.25",
+                    "sno": "4.25"
                 },
                 {
-                    "id": "ee3034.16",
-                    "sno": "4.16",
                     "topic": "Differentiate between distribution transformer and powertransformer.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-4.26",
+                    "sno": "4.26"
                 },
                 {
-                    "id": "ee303-4.17",
-                    "sno": "4.17",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: Single phase transformers",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee303-4.27",
+                    "sno": "4.27"
                 },
                 {
-                    "id": "ee303-4.18",
-                    "sno": "4.18",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Single phase transformers",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee303-4.28",
+                    "sno": "4.28"
                 }
             ]
         },
@@ -375,95 +578,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
-                    "id": "ee3035.1",
-                    "sno": "5.1",
                     "topic": "State the advantages of 3 phase transformer over single phasetransformer.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "ee3035.2",
-                    "sno": "5.2",
                     "topic": "List the different types of three phase transformers by giving theirsymbolic representation and voltagerelationships.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.2",
+                    "sno": "5.2"
                 },
                 {
-                    "id": "ee3035.3",
-                    "sno": "5.3",
                     "topic": "State theapplicationsof (i)star-star (ii)delta-star (iii)star-delta (iv)delta- delta connected transformers.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "ee3035.4",
-                    "sno": "5.4",
                     "topic": "State the need for parallel operation of three phase transformers.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "ee3035.5",
-                    "sno": "5.5",
                     "topic": "State the conditions for parallel operation of 3 phasetransformers.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "ee3035.6",
-                    "sno": "5.6",
                     "topic": "List the specialtransformers.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "ee3035.7",
-                    "sno": "5.7",
                     "topic": "State the advantages and disadvantages ofautotransformers",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.7",
+                    "sno": "5.7"
                 },
                 {
-                    "id": "ee3035.8",
-                    "sno": "5.8",
                     "topic": "State the necessity of cooling of powertransformers.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.8",
+                    "sno": "5.8"
                 },
                 {
-                    "id": "ee3035.9",
-                    "sno": "5.9",
                     "topic": "List different methods of cooling of powertransformer.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.9",
+                    "sno": "5.9"
                 },
                 {
-                    "id": "ee3035.10",
-                    "sno": "5.10",
                     "topic": "Draw a legible sketch of a powertransformer and explain the function of each part.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.10",
+                    "sno": "5.10"
                 },
                 {
-                    "id": "ee3035.11",
-                    "sno": "5.11",
                     "topic": "State the need for Tap changing in power transformer and explainthe`onload'and`off load' tapchanging.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee303-5.11",
+                    "sno": "5.11"
                 },
                 {
+                    "topic": "Revision of the Unit: Three phase transformers and Auto Transformers",
+                    "period": 1,
+                    "type": "revision",
                     "id": "ee303-5.12",
-                    "sno": "5.12",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.12"
                 },
                 {
-                    "id": "ee303-5.13",
-                    "sno": "5.13",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Three phase transformers and Auto Transformers",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee303-5.13",
+                    "sno": "5.13"
                 }
             ]
         }

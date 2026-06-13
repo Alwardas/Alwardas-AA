@@ -11,46 +11,46 @@
             "totalPeriods": 6,
             "topics": [
                 {
-                    "id": "c405-1.1",
-                    "sno": "1.1",
                     "topic": "Define Irrigation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "c405-1.2",
-                    "sno": "1.2",
                     "topic": "State the necessity of irrigation.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "c405-1.3",
-                    "sno": "1.3",
                     "topic": "List advantages and disadvantages of irrigation.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "c405-1.4",
-                    "sno": "1.4",
                     "topic": "State different types of irrigation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "c405-1.5",
-                    "sno": "1.5",
-                    "topic": "Revision of Nature and scope of Irrigation Engineering",
+                    "topic": "Revision of the Unit: Nature and scope of Irrigation Engineering",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c405-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "c405-1.6",
-                    "sno": "1.6",
                     "topic": "Assessment / Practice / Problem Solving on Nature and scope of Irrigation Engineering",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c405-1.6",
+                    "sno": "1.6"
                 }
             ]
         },
@@ -60,60 +60,60 @@
             "totalPeriods": 8,
             "topics": [
                 {
-                    "id": "c405-2.1",
-                    "sno": "2.1",
                     "topic": "Describe Hydrological cycle",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "c405-2.2",
-                    "sno": "2.2",
                     "topic": "Explain the term Precipitation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "c405-2.3",
-                    "sno": "2.3",
                     "topic": "State different types of rain gauges and explain the method of",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "c405-2.4",
-                    "sno": "2.4",
                     "topic": "Explain precautions in setting and maintenance of rain gauges.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-2.4",
+                    "sno": "2.4"
                 },
                 {
-                    "id": "c405-2.5",
-                    "sno": "2.5",
                     "topic": "Explain method of calculation of average annual rainfall of an",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "c405-2.6",
-                    "sno": "2.6",
                     "topic": "Define the following:",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-2.6",
+                    "sno": "2.6"
                 },
                 {
-                    "id": "c405-2.7",
-                    "sno": "2.7",
-                    "topic": "Revision of Elements of Hydrology",
+                    "topic": "Revision of the Unit: Elements of Hydrology",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c405-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "c405-2.8",
-                    "sno": "2.8",
                     "topic": "Assessment / Practice / Problem Solving on Elements of Hydrology",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c405-2.8",
+                    "sno": "2.8"
                 }
             ]
         },
@@ -123,60 +123,60 @@
             "totalPeriods": 8,
             "topics": [
                 {
-                    "id": "c405-3.1",
-                    "sno": "3.1",
                     "topic": "Classify the head works and State the suitability of different",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "c405-3.2",
-                    "sno": "3.2",
                     "topic": "State the factors for selecting suitable site for diversion head",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "c405-3.3",
-                    "sno": "3.3",
                     "topic": "Describe the component parts of Diversion works with sketch",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "c405-3.4",
-                    "sno": "3.4",
                     "topic": "Distinguish between barrages and Weirs",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-3.4",
+                    "sno": "3.4"
                 },
                 {
-                    "id": "c405-3.5",
-                    "sno": "3.5",
                     "topic": "Describe head regulator and scouring sluice with sketch",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-3.5",
+                    "sno": "3.5"
                 },
                 {
-                    "id": "c405-3.6",
-                    "sno": "3.6",
                     "topic": "Describe flood banks and other protective works",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-3.6",
+                    "sno": "3.6"
                 },
                 {
-                    "id": "c405-3.7",
-                    "sno": "3.7",
-                    "topic": "Revision of Head works",
+                    "topic": "Revision of the Unit: Head works",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c405-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "c405-3.8",
-                    "sno": "3.8",
                     "topic": "Assessment / Practice / Problem Solving on Head works",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c405-3.8",
+                    "sno": "3.8"
                 }
             ]
         },
@@ -186,88 +186,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "c405-4.1",
-                    "sno": "4.1",
                     "topic": "Distinguish between Rigid dams and Non-rigid dams",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "c405-4.2",
-                    "sno": "4.2",
                     "topic": "State factors influencing selection of site for reservoirs and",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "c405-4.3",
-                    "sno": "4.3",
                     "topic": "Define the terms: Full reservoir level, Maximum water level,",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "c405-4.4",
-                    "sno": "4.4",
                     "topic": "Explain the causes of failure of gravity dams and their",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "c405-4.5",
-                    "sno": "4.5",
                     "topic": "Draw the elementary profile of a gravity dam for a given",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "c405-4.6",
-                    "sno": "4.6",
                     "topic": "Explain uplift pressure and explain need for drainage",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "c405-4.7",
-                    "sno": "4.7",
                     "topic": "Explain construction and contraction joints with sketches",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-4.7",
+                    "sno": "4.7"
                 },
                 {
-                    "id": "c405-4.8",
-                    "sno": "4.8",
                     "topic": "State need and types of grouting of foundations and explain",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-4.8",
+                    "sno": "4.8"
                 },
                 {
-                    "id": "c405-4.9",
-                    "sno": "4.9",
                     "topic": "State different types of spillways and their suitability and",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-4.9",
+                    "sno": "4.9"
                 },
                 {
-                    "id": "c405-4.10",
-                    "sno": "4.10",
                     "topic": "State the situations in which earth dams are suitable",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-4.10",
+                    "sno": "4.10"
                 },
                 {
-                    "id": "c405-4.11",
-                    "sno": "4.11",
-                    "topic": "Revision of Gravity dams and Earth dams",
+                    "topic": "Revision of the Unit: Gravity dams and Earth dams",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c405-4.11",
+                    "sno": "4.11"
                 },
                 {
-                    "id": "c405-4.12",
-                    "sno": "4.12",
                     "topic": "Assessment / Practice / Problem Solving on Gravity dams and Earth dams",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c405-4.12",
+                    "sno": "4.12"
                 }
             ]
         },
@@ -277,74 +277,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "c405-5.1",
-                    "sno": "5.1",
                     "topic": "Classify canals.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "c405-5.2",
-                    "sno": "5.2",
                     "topic": "State the different methods of canal alignment and the",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-5.2",
+                    "sno": "5.2"
                 },
                 {
-                    "id": "c405-5.3",
-                    "sno": "5.3",
                     "topic": "Sketch typical cross sections of canals in cutting, embankment",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "c405-5.4",
-                    "sno": "5.4",
                     "topic": "State the need for canal lining and State advantages and",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "c405-5.5",
-                    "sno": "5.5",
                     "topic": "Explain the maintenance required for canals and their",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "c405-5.6",
-                    "sno": "5.6",
-                    "topic": "Explain Lacey’s regime theory and Kennedy’s silt theory",
+                    "topic": "Explain Lacey\u2019s regime theory and Kennedy\u2019s silt theory",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "c405-5.7",
-                    "sno": "5.7",
                     "topic": "State need for cross drainage works and State different types",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-5.7",
+                    "sno": "5.7"
                 },
                 {
-                    "id": "c405-5.8",
-                    "sno": "5.8",
                     "topic": "Describe the following with sketches",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-5.8",
+                    "sno": "5.8"
                 },
                 {
-                    "id": "c405-5.9",
-                    "sno": "5.9",
-                    "topic": "Revision of Distribution works",
+                    "topic": "Revision of the Unit: Distribution works",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c405-5.9",
+                    "sno": "5.9"
                 },
                 {
-                    "id": "c405-5.10",
-                    "sno": "5.10",
                     "topic": "Assessment / Practice / Problem Solving on Distribution works",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c405-5.10",
+                    "sno": "5.10"
                 }
             ]
         },
@@ -354,74 +354,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "c405-6.1",
-                    "sno": "6.1",
                     "topic": "Explain terms: Soil erosion, Reclamation and Water logging.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-6.1",
+                    "sno": "6.1"
                 },
                 {
-                    "id": "c405-6.2",
-                    "sno": "6.2",
                     "topic": "State causes of soil erosion and ill effects of soil erosion",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-6.2",
+                    "sno": "6.2"
                 },
                 {
-                    "id": "c405-6.3",
-                    "sno": "6.3",
                     "topic": "Explain various methods of prevention of soil erosion.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-6.3",
+                    "sno": "6.3"
                 },
                 {
-                    "id": "c405-6.4",
-                    "sno": "6.4",
                     "topic": "State causes of water logging and ill effects of water logging",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-6.4",
+                    "sno": "6.4"
                 },
                 {
-                    "id": "c405-6.5",
-                    "sno": "6.5",
                     "topic": "Explain various methods of prevention of water logging",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-6.5",
+                    "sno": "6.5"
                 },
                 {
-                    "id": "c405-6.6",
-                    "sno": "6.6",
                     "topic": "State methods of land reclamation.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-6.6",
+                    "sno": "6.6"
                 },
                 {
-                    "id": "c405-6.7",
-                    "sno": "6.7",
                     "topic": "State different stages of flow of rivers",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-6.7",
+                    "sno": "6.7"
                 },
                 {
-                    "id": "c405-6.8",
-                    "sno": "6.8",
                     "topic": "Explain characteristics of Delta Rivers",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-6.8",
+                    "sno": "6.8"
                 },
                 {
-                    "id": "c405-6.9",
-                    "sno": "6.9",
-                    "topic": "Revision of Soil Erosion, Water logging, River Training works and Water management",
+                    "topic": "Revision of the Unit: Soil Erosion, Water logging, River Training works and Water management",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c405-6.9",
+                    "sno": "6.9"
                 },
                 {
-                    "id": "c405-6.10",
-                    "sno": "6.10",
                     "topic": "Assessment / Practice / Problem Solving on Soil Erosion, Water logging, River Training works and Water management",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c405-6.10",
+                    "sno": "6.10"
                 }
             ]
         },
@@ -431,46 +431,46 @@
             "totalPeriods": 6,
             "topics": [
                 {
-                    "id": "c405-7.1",
-                    "sno": "7.1",
                     "topic": "State soil-water plant relationship.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-7.1",
+                    "sno": "7.1"
                 },
                 {
-                    "id": "c405-7.2",
-                    "sno": "7.2",
                     "topic": "Describe the following irrigation methods: Broader irrigation,",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-7.2",
+                    "sno": "7.2"
                 },
                 {
-                    "id": "c405-7.3",
-                    "sno": "7.3",
                     "topic": "Explain on farm development and Describe 1. Warabandi",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-7.3",
+                    "sno": "7.3"
                 },
                 {
-                    "id": "c405-7.4",
-                    "sno": "7.4",
                     "topic": "State the duties of water user associations",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c405-7.4",
+                    "sno": "7.4"
                 },
                 {
-                    "id": "c405-7.5",
-                    "sno": "7.5",
-                    "topic": "Revision of Water and Watershed Management",
+                    "topic": "Revision of the Unit: Water and Watershed Management",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c405-7.5",
+                    "sno": "7.5"
                 },
                 {
-                    "id": "c405-7.6",
-                    "sno": "7.6",
                     "topic": "Assessment / Practice / Problem Solving on Water and Watershed Management",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c405-7.6",
+                    "sno": "7.6"
                 }
             ]
         }

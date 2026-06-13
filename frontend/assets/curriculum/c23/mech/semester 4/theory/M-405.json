@@ -11,53 +11,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Principles of Grinding. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-1.1",
-                    "sno": "1.1",
-                    "topic": "Principles of Grinding.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Principles of Grinding. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-1.2",
-                    "sno": "1.2",
-                    "topic": "Grinding wheels: Abrasives, Bonds, Grit, Grade, Structure.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Grinding wheels: Abrasives, Bonds, Grit, Grade, Structure. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-1.3",
-                    "sno": "1.3",
-                    "topic": "Selection of Grinding wheels.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "Grinding wheels: Abrasives, Bonds, Grit, Grade, Structure. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-1.4",
-                    "sno": "1.4",
-                    "topic": "Mounting, Dressing, Truing and Balancing of Grinding wheels.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "Selection of Grinding wheels. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-1.5",
-                    "sno": "1.5",
-                    "topic": "Types of Grinding machines: Surface, Cylindrical, Centreless.",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Selection of Grinding wheels. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m405-1.6",
-                    "sno": "1.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.6"
                 },
                 {
-                    "id": "m405-1.7",
-                    "sno": "1.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Mounting, Dressing, Truing and Balancing of Grinding wheels. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m405-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Mounting, Dressing, Truing and Balancing of Grinding wheels. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Types of Grinding machines: Surface, Cylindrical, Centreless. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Types of Grinding machines: Surface, Cylindrical, Centreless. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Grinding",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m405-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Grinding",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m405-1.12",
+                    "sno": "1.12"
                 }
             ]
         },
@@ -67,60 +102,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Lapping: Process and Machines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-2.1",
-                    "sno": "2.1",
-                    "topic": "Lapping: Process and Machines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Lapping: Process and Machines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-2.2",
-                    "sno": "2.2",
-                    "topic": "Honing: Process and Machines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Honing: Process and Machines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-2.3",
-                    "sno": "2.3",
-                    "topic": "Super finishing.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Honing: Process and Machines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-2.4",
-                    "sno": "2.4",
-                    "topic": "Polishing and Buffing.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.4"
                 },
                 {
+                    "topic": "Super finishing. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-2.5",
-                    "sno": "2.5",
-                    "topic": "Electroplating and Galvanizing.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "2.5"
                 },
                 {
+                    "topic": "Super finishing. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-2.6",
-                    "sno": "2.6",
-                    "topic": "Metal Spraying.",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Polishing and Buffing. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m405-2.7",
-                    "sno": "2.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.7"
                 },
                 {
-                    "id": "m405-2.8",
-                    "sno": "2.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Polishing and Buffing. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m405-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Electroplating and Galvanizing.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Metal Spraying.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Finishing Processes",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m405-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Finishing Processes",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m405-2.12",
+                    "sno": "2.12"
                 }
             ]
         },
@@ -130,67 +193,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Introduction to Unconventional Machining Processes. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-3.1",
-                    "sno": "3.1",
-                    "topic": "Introduction to Unconventional Machining Processes.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Introduction to Unconventional Machining Processes. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-3.2",
-                    "sno": "3.2",
-                    "topic": "Electric Discharge Machining (EDM).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Electric Discharge Machining (EDM). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-3.3",
-                    "sno": "3.3",
-                    "topic": "Wire Cut EDM.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Electric Discharge Machining (EDM). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-3.4",
-                    "sno": "3.4",
-                    "topic": "Ultrasonic Machining (USM).",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Wire Cut EDM. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-3.5",
-                    "sno": "3.5",
-                    "topic": "Abrasive Jet Machining (AJM).",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "3.5"
                 },
                 {
+                    "topic": "Wire Cut EDM. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-3.6",
-                    "sno": "3.6",
-                    "topic": "Laser Beam Machining (LBM).",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "3.6"
                 },
                 {
+                    "topic": "Ultrasonic Machining (USM).",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-3.7",
-                    "sno": "3.7",
-                    "topic": "Plasma Arc Machining (PAM).",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Abrasive Jet Machining (AJM).",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m405-3.8",
-                    "sno": "3.8",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.8"
                 },
                 {
-                    "id": "m405-3.9",
-                    "sno": "3.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Laser Beam Machining (LBM).",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m405-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Plasma Arc Machining (PAM).",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Modern Machining Processes",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m405-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Modern Machining Processes",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m405-3.12",
+                    "sno": "3.12"
                 }
             ]
         },
@@ -200,60 +284,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
+                    "topic": "Working principle of Milling. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-4.1",
-                    "sno": "4.1",
-                    "topic": "Working principle of Milling.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Working principle of Milling. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-4.2",
-                    "sno": "4.2",
-                    "topic": "Classification of Milling machines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Classification of Milling machines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-4.3",
-                    "sno": "4.3",
-                    "topic": "Constructional details of Horizontal and Vertical Milling machines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Classification of Milling machines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-4.4",
-                    "sno": "4.4",
-                    "topic": "Milling cutters.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.4"
                 },
                 {
+                    "topic": "Constructional details of Horizontal and Vertical Milling machines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-4.5",
-                    "sno": "4.5",
-                    "topic": "Milling operations: Plain, Face, Side, Straddle, Gang milling.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.5"
                 },
                 {
+                    "topic": "Constructional details of Horizontal and Vertical Milling machines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-4.6",
-                    "sno": "4.6",
-                    "topic": "Indexing methods: Simple, Compound, Differential.",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Milling cutters. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m405-4.7",
-                    "sno": "4.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.7"
                 },
                 {
-                    "id": "m405-4.8",
-                    "sno": "4.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Milling cutters. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m405-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Milling operations: Plain, Face, Side, Straddle, Gang milling. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Milling operations: Plain, Face, Side, Straddle, Gang milling. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Indexing methods: Simple, Compound, Differential.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Milling",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m405-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Milling",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m405-4.13",
+                    "sno": "4.13"
                 }
             ]
         },
@@ -263,46 +382,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
+                    "topic": "Gear generating methods. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-5.1",
-                    "sno": "5.1",
-                    "topic": "Gear generating methods.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Gear generating methods. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-5.2",
-                    "sno": "5.2",
-                    "topic": "Gear shaping.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Gear generating methods. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-5.3",
-                    "sno": "5.3",
-                    "topic": "Gear hobbing.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Gear shaping. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-5.4",
-                    "sno": "5.4",
-                    "topic": "Gear finishing methods: Shaving, Grinding, Lapping.",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Gear shaping. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m405-5.5",
-                    "sno": "5.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.5"
                 },
                 {
-                    "id": "m405-5.6",
-                    "sno": "5.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Gear shaping. - Part 3",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m405-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Gear hobbing. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Gear hobbing. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Gear hobbing. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Gear finishing methods: Shaving, Grinding, Lapping. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Gear finishing methods: Shaving, Grinding, Lapping. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Revision of the Unit: Gear Manufacturing",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m405-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Gear Manufacturing",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m405-5.13",
+                    "sno": "5.13"
                 }
             ]
         },
@@ -312,60 +480,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
+                    "topic": "Introduction to NC, CNC and DNC. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-6.1",
-                    "sno": "6.1",
-                    "topic": "Introduction to NC, CNC and DNC.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "6.1"
                 },
                 {
+                    "topic": "Introduction to NC, CNC and DNC. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-6.2",
-                    "sno": "6.2",
-                    "topic": "Components of CNC machines.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "6.2"
                 },
                 {
+                    "topic": "Components of CNC machines. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-6.3",
-                    "sno": "6.3",
-                    "topic": "Coordinate systems in CNC.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "6.3"
                 },
                 {
+                    "topic": "Components of CNC machines. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-6.4",
-                    "sno": "6.4",
-                    "topic": "G-codes and M-codes.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "6.4"
                 },
                 {
+                    "topic": "Coordinate systems in CNC. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-6.5",
-                    "sno": "6.5",
-                    "topic": "Part programming for simple components.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "6.5"
                 },
                 {
+                    "topic": "Coordinate systems in CNC. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m405-6.6",
-                    "sno": "6.6",
-                    "topic": "Advantages and applications of CNC machines.",
+                    "sno": "6.6"
+                },
+                {
+                    "topic": "G-codes and M-codes. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m405-6.7",
-                    "sno": "6.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "6.7"
                 },
                 {
-                    "id": "m405-6.8",
-                    "sno": "6.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "G-codes and M-codes. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m405-6.8",
+                    "sno": "6.8"
+                },
+                {
+                    "topic": "Part programming for simple components. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-6.9",
+                    "sno": "6.9"
+                },
+                {
+                    "topic": "Part programming for simple components. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-6.10",
+                    "sno": "6.10"
+                },
+                {
+                    "topic": "Advantages and applications of CNC machines.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m405-6.11",
+                    "sno": "6.11"
+                },
+                {
+                    "topic": "Revision of the Unit: CNC Machines",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m405-6.12",
+                    "sno": "6.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on CNC Machines",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m405-6.13",
+                    "sno": "6.13"
                 }
             ]
         }

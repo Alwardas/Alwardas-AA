@@ -11,88 +11,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "c504-1.1",
-                    "sno": "1.1",
                     "topic": "Understand the overview of Internet of Things (IoT)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "c504-1.2",
-                    "sno": "1.2",
                     "topic": "Understand the applications of IoT in various fields of",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "c504-1.3",
-                    "sno": "1.3",
                     "topic": "Case study and practical applications of Understand the overview of Internet of Things (IoT)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "c504-1.4",
-                    "sno": "1.4",
                     "topic": "Tutorial / Practice session on Understand the applications of IoT in various fields of",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "c504-1.5",
-                    "sno": "1.5",
                     "topic": "Problem solving & numerical analysis of Understand the overview of Internet of Things (IoT)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "c504-1.6",
-                    "sno": "1.6",
                     "topic": "Case study and practical applications of Understand the applications of IoT in various fields of",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-1.6",
+                    "sno": "1.6"
                 },
                 {
-                    "id": "c504-1.7",
-                    "sno": "1.7",
                     "topic": "Tutorial / Practice session on Understand the overview of Internet of Things (IoT)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-1.7",
+                    "sno": "1.7"
                 },
                 {
-                    "id": "c504-1.8",
-                    "sno": "1.8",
                     "topic": "Problem solving & numerical analysis of Understand the applications of IoT in various fields of",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-1.8",
+                    "sno": "1.8"
                 },
                 {
-                    "id": "c504-1.9",
-                    "sno": "1.9",
                     "topic": "Case study and practical applications of Understand the overview of Internet of Things (IoT)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-1.9",
+                    "sno": "1.9"
                 },
                 {
-                    "id": "c504-1.10",
-                    "sno": "1.10",
                     "topic": "Tutorial / Practice session on Understand the applications of IoT in various fields of",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-1.10",
+                    "sno": "1.10"
                 },
                 {
-                    "id": "c504-1.11",
-                    "sno": "1.11",
-                    "topic": "Revision of IOT Applications in Civil Engineering",
+                    "topic": "Revision of the Unit: IOT Applications in Civil Engineering",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c504-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "c504-1.12",
-                    "sno": "1.12",
                     "topic": "Assessment / Practice / Problem Solving on IOT Applications in Civil Engineering",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c504-1.12",
+                    "sno": "1.12"
                 }
             ]
         },
@@ -102,88 +102,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "c504-2.1",
-                    "sno": "2.1",
                     "topic": "Understand fundamental principles of prestressed concrete, systems and",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "c504-2.2",
-                    "sno": "2.2",
                     "topic": "State the materials and permissible stresses",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "c504-2.3",
-                    "sno": "2.3",
                     "topic": "List the losses of prestress",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "c504-2.4",
-                    "sno": "2.4",
                     "topic": "Explain the methods of 1. Pre-stressing and 2. Pre-tensioning system",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-2.4",
+                    "sno": "2.4"
                 },
                 {
-                    "id": "c504-2.5",
-                    "sno": "2.5",
                     "topic": "Problem solving & numerical analysis of Understand fundamental principles of prestressed concrete, systems and",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "c504-2.6",
-                    "sno": "2.6",
                     "topic": "Case study and practical applications of State the materials and permissible stresses",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-2.6",
+                    "sno": "2.6"
                 },
                 {
-                    "id": "c504-2.7",
-                    "sno": "2.7",
                     "topic": "Tutorial / Practice session on List the losses of prestress",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "c504-2.8",
-                    "sno": "2.8",
                     "topic": "Problem solving & numerical analysis of Explain the methods of 1. Pre-stressing and 2. Pre-tensioning system",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-2.8",
+                    "sno": "2.8"
                 },
                 {
-                    "id": "c504-2.9",
-                    "sno": "2.9",
                     "topic": "Case study and practical applications of Understand fundamental principles of prestressed concrete, systems and",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-2.9",
+                    "sno": "2.9"
                 },
                 {
-                    "id": "c504-2.10",
-                    "sno": "2.10",
                     "topic": "Tutorial / Practice session on State the materials and permissible stresses",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-2.10",
+                    "sno": "2.10"
                 },
                 {
-                    "id": "c504-2.11",
-                    "sno": "2.11",
-                    "topic": "Revision of Prestressed concrete",
+                    "topic": "Revision of the Unit: Prestressed concrete",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c504-2.11",
+                    "sno": "2.11"
                 },
                 {
-                    "id": "c504-2.12",
-                    "sno": "2.12",
                     "topic": "Assessment / Practice / Problem Solving on Prestressed concrete",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c504-2.12",
+                    "sno": "2.12"
                 }
             ]
         },
@@ -193,74 +193,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "c504-3.1",
-                    "sno": "3.1",
                     "topic": "Understand the concepts of advanced earth retaining structures",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "c504-3.2",
-                    "sno": "3.2",
                     "topic": "list the advantages of advanced earth retaining structures",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-3.2",
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "List and explain the methods of advanced earth retaining structures \u2013",
+                    "period": 1,
+                    "type": "theory",
                     "id": "c504-3.3",
-                    "sno": "3.3",
-                    "topic": "List and explain the methods of advanced earth retaining structures –",
-                    "period": 1,
-                    "type": "theory"
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Tutorial / Practice session on Understand the concepts of advanced earth retaining structures",
+                    "period": 1,
+                    "type": "theory",
                     "id": "c504-3.4",
-                    "sno": "3.4",
-                    "topic": "Tutorial / Practice session on Understand the concepts of advanced earth retaining structures",
-                    "period": 1,
-                    "type": "theory"
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Problem solving & numerical analysis of list the advantages of advanced earth retaining structures",
+                    "period": 1,
+                    "type": "theory",
                     "id": "c504-3.5",
-                    "sno": "3.5",
-                    "topic": "Problem solving & numerical analysis of list the advantages of advanced earth retaining structures",
-                    "period": 1,
-                    "type": "theory"
+                    "sno": "3.5"
                 },
                 {
+                    "topic": "Case study and practical applications of List and explain the methods of advanced earth retaining structures \u2013",
+                    "period": 1,
+                    "type": "theory",
                     "id": "c504-3.6",
-                    "sno": "3.6",
-                    "topic": "Case study and practical applications of List and explain the methods of advanced earth retaining structures –",
-                    "period": 1,
-                    "type": "theory"
+                    "sno": "3.6"
                 },
                 {
-                    "id": "c504-3.7",
-                    "sno": "3.7",
                     "topic": "Tutorial / Practice session on Understand the concepts of advanced earth retaining structures",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "c504-3.8",
-                    "sno": "3.8",
                     "topic": "Problem solving & numerical analysis of list the advantages of advanced earth retaining structures",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "c504-3.9",
-                    "sno": "3.9",
-                    "topic": "Revision of Advanced methods in Earth retaining structures",
+                    "topic": "Revision of the Unit: Advanced methods in Earth retaining structures",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c504-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "c504-3.10",
-                    "sno": "3.10",
                     "topic": "Assessment / Practice / Problem Solving on Advanced methods in Earth retaining structures",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c504-3.10",
+                    "sno": "3.10"
                 }
             ]
         },
@@ -270,74 +270,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "c504-4.1",
-                    "sno": "4.1",
                     "topic": "State alternatives for cast in-situ structures",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "c504-4.2",
-                    "sno": "4.2",
                     "topic": "Understand pre fabrication technology",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "c504-4.3",
-                    "sno": "4.3",
                     "topic": "State Importance for standardisation and modularisation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "c504-4.4",
-                    "sno": "4.4",
-                    "topic": "State the pre-fabricated structures – explain their utility",
+                    "topic": "State the pre-fabricated structures \u2013 explain their utility",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "c504-4.5",
-                    "sno": "4.5",
                     "topic": "State advantages of the pre-fabricated structures",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "c504-4.6",
-                    "sno": "4.6",
                     "topic": "State Materials used in pre-fabricated elements and explain their",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "c504-4.7",
-                    "sno": "4.7",
-                    "topic": "Explain types of pre-fabricated systems – large panel systems - frame",
+                    "topic": "Explain types of pre-fabricated systems \u2013 large panel systems - frame",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-4.7",
+                    "sno": "4.7"
                 },
                 {
-                    "id": "c504-4.8",
-                    "sno": "4.8",
                     "topic": "Problem solving & numerical analysis of State alternatives for cast in-situ structures",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-4.8",
+                    "sno": "4.8"
                 },
                 {
-                    "id": "c504-4.9",
-                    "sno": "4.9",
-                    "topic": "Revision of Pre-fabricated Building Technology",
+                    "topic": "Revision of the Unit: Pre-fabricated Building Technology",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c504-4.9",
+                    "sno": "4.9"
                 },
                 {
-                    "id": "c504-4.10",
-                    "sno": "4.10",
                     "topic": "Assessment / Practice / Problem Solving on Pre-fabricated Building Technology",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c504-4.10",
+                    "sno": "4.10"
                 }
             ]
         },
@@ -347,74 +347,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "c504-5.1",
-                    "sno": "5.1",
                     "topic": "State the terms and definitions: (a) Climate (b) weather (c) Global",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "c504-5.2",
-                    "sno": "5.2",
                     "topic": "Need of Green Buildings in present scenario",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-5.2",
+                    "sno": "5.2"
                 },
                 {
-                    "id": "c504-5.3",
-                    "sno": "5.3",
                     "topic": "Objectives of Green Buildings",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "c504-5.4",
-                    "sno": "5.4",
                     "topic": "Importance of Green buildings",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "c504-5.5",
-                    "sno": "5.5",
                     "topic": "Benefits of Green buildings",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "c504-5.6",
-                    "sno": "5.6",
                     "topic": "Features of Green buildings",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "c504-5.7",
-                    "sno": "5.7",
                     "topic": "Merits and Demerits of Green buildings",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-5.7",
+                    "sno": "5.7"
                 },
                 {
-                    "id": "c504-5.8",
-                    "sno": "5.8",
                     "topic": "Green Building Rating system",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-5.8",
+                    "sno": "5.8"
                 },
                 {
-                    "id": "c504-5.9",
-                    "sno": "5.9",
-                    "topic": "Revision of Concepts of Green Buildings",
+                    "topic": "Revision of the Unit: Concepts of Green Buildings",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c504-5.9",
+                    "sno": "5.9"
                 },
                 {
-                    "id": "c504-5.10",
-                    "sno": "5.10",
                     "topic": "Assessment / Practice / Problem Solving on Concepts of Green Buildings",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c504-5.10",
+                    "sno": "5.10"
                 }
             ]
         },
@@ -424,46 +424,46 @@
             "totalPeriods": 6,
             "topics": [
                 {
-                    "id": "c504-6.1",
-                    "sno": "6.1",
                     "topic": "Explain the active and passive concepts in heating and cooling",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-6.1",
+                    "sno": "6.1"
                 },
                 {
-                    "id": "c504-6.2",
-                    "sno": "6.2",
                     "topic": "List the various solar energy utilities like solar water heaters, solar air",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-6.2",
+                    "sno": "6.2"
                 },
                 {
-                    "id": "c504-6.3",
-                    "sno": "6.3",
                     "topic": "Case study and practical applications of Explain the active and passive concepts in heating and cooling",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-6.3",
+                    "sno": "6.3"
                 },
                 {
-                    "id": "c504-6.4",
-                    "sno": "6.4",
                     "topic": "Tutorial / Practice session on List the various solar energy utilities like solar water heaters, solar air",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "c504-6.4",
+                    "sno": "6.4"
                 },
                 {
-                    "id": "c504-6.5",
-                    "sno": "6.5",
-                    "topic": "Revision of Solar Energy Utilization in buildings",
+                    "topic": "Revision of the Unit: Solar Energy Utilization in buildings",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "c504-6.5",
+                    "sno": "6.5"
                 },
                 {
-                    "id": "c504-6.6",
-                    "sno": "6.6",
                     "topic": "Assessment / Practice / Problem Solving on Solar Energy Utilization in buildings",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "c504-6.6",
+                    "sno": "6.6"
                 }
             ]
         }

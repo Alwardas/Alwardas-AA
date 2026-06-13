@@ -1,583 +1,884 @@
 {
-  "subjectCode": "EE-105",
-  "subjectName": "Electrical Engineering Material Science",
-  "regulation": "C23",
-  "semester": 1,
-  "totalPeriods": 120,
-  "units": [
-    {
-      "unitNo": 1,
-      "title": "Conducting Materials and Semiconducting Materials",
-      "totalPeriods": 25,
-      "topics": [
+    "subjectCode": "EE-105",
+    "subjectName": "Electrical Engineering Material Science",
+    "regulation": "C23",
+    "semester": 1,
+    "totalPeriods": 120,
+    "units": [
         {
-          "id": "ee1051.1",
-          "sno": "1.1",
-          "topic": "Define Conducting Materials",
-          "period": 2,
-          "type": "theory"
+            "unitNo": 1,
+            "title": "Conducting Materials and Semiconducting Materials",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "topic": "Define Conducting Materials - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Define Conducting Materials - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "State the properties of conducting materials - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "State the properties of conducting materials - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Define the terms (i) Hardening (ii)Annealing - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Define the terms (i) Hardening (ii)Annealing - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "State the main requirements of (i) Low Resistivity Materials ( ii) High resistivity materials - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State the main requirements of (i) Low Resistivity Materials ( ii) High resistivity materials - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "List some examples of i)Low Resistivity Materials ii)High Resistivity materials - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "List some examples of i)Low Resistivity Materials ii)High Resistivity materials - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Mention the Properties & Applications of Copper and Aluminium - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Mention the Properties & Applications of Copper and Aluminium - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Distinguish between Copper and Aluminium - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Distinguish between Copper and Aluminium - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Mention the properties & applications of ACSR Conductors and AAAC. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.15",
+                    "sno": "1.15"
+                },
+                {
+                    "topic": "Mention the properties & applications of ACSR Conductors and AAAC. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.16",
+                    "sno": "1.16"
+                },
+                {
+                    "topic": "List the properties & Applications of High Resistive Materials of (i) Nichrome (ii) Tungsten (iii) Carbon",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.17",
+                    "sno": "1.17"
+                },
+                {
+                    "topic": "Define Semiconducting materials",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.18",
+                    "sno": "1.18"
+                },
+                {
+                    "topic": "Classify Semiconducting materials",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.19",
+                    "sno": "1.19"
+                },
+                {
+                    "topic": "Define (i)IntrinsicSemiconductors and(ii)ExtrinsicSemiconductors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.20",
+                    "sno": "1.20"
+                },
+                {
+                    "topic": "Distinguish between Intrinsic and Extrinsic semiconductors.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.21",
+                    "sno": "1.21"
+                },
+                {
+                    "topic": "Explain the formation of (i) P \u2013 type semiconductor and (ii) N \u2013 type semiconductor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.22",
+                    "sno": "1.22"
+                },
+                {
+                    "topic": "Distinguish between P and N typeSemiconductors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-1.23",
+                    "sno": "1.23"
+                },
+                {
+                    "topic": "Revision of the Unit: Conducting Materials and Semiconducting Materials",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee105-1.24",
+                    "sno": "1.24"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Conducting Materials and Semiconducting Materials",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee105-1.25",
+                    "sno": "1.25"
+                }
+            ]
         },
         {
-          "id": "ee1051.2",
-          "sno": "1.2",
-          "topic": "State the properties of conducting materials",
-          "period": 2,
-          "type": "theory"
+            "unitNo": 2,
+            "title": "Insulating Materials and Di- electric Materials",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "topic": "Define Insulating Materials - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Define Insulating Materials - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Define Insulating Materials - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Draw energy level diagrams of conductors, insulators and semi-Conductors - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Draw energy level diagrams of conductors, insulators and semi-Conductors - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Draw energy level diagrams of conductors, insulators and semi-Conductors - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Distinguish between Conductors, Insulators and Semiconductors - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Distinguish between Conductors, Insulators and Semiconductors - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Distinguish between Conductors, Insulators and Semiconductors - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Define Insulation resistance and explain factors affecting insulationresistance - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Define Insulation resistance and explain factors affecting insulationresistance - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Define Insulation resistance and explain factors affecting insulationresistance - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Classify insulatingmaterials - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Classify insulatingmaterials - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "State the properties and applications of (i) Impregnated paper(ii) Wood (iii)Asbestos(iv)Mica (v )Ceramics (vi) Glass - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "State the properties and applications of (i) Impregnated paper(ii) Wood (iii)Asbestos(iv)Mica (v )Ceramics (vi) Glass - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.16",
+                    "sno": "2.16"
+                },
+                {
+                    "topic": "Explain the properties and applications of PVC - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.17",
+                    "sno": "2.17"
+                },
+                {
+                    "topic": "Explain the properties and applications of PVC - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.18",
+                    "sno": "2.18"
+                },
+                {
+                    "topic": "State the effects of the following on P.V.C. (i)Filler (ii)Stabilizer(iii)Plasticizer (iv)Additives. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.19",
+                    "sno": "2.19"
+                },
+                {
+                    "topic": "State the effects of the following on P.V.C. (i)Filler (ii)Stabilizer(iii)Plasticizer (iv)Additives. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.20",
+                    "sno": "2.20"
+                },
+                {
+                    "topic": "Know the Permittivity of commonly used di \u2013 electric materials (i) Air (ii)Bakelite (iii)Glass (iv)Mica (v)Paper (vi) Porcelain (vii) Transformer oil - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.21",
+                    "sno": "2.21"
+                },
+                {
+                    "topic": "Know the Permittivity of commonly used di \u2013 electric materials (i) Air (ii)Bakelite (iii)Glass (iv)Mica (v)Paper (vi) Porcelain (vii) Transformer oil - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.22",
+                    "sno": "2.22"
+                },
+                {
+                    "topic": "Explain Polarization - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.23",
+                    "sno": "2.23"
+                },
+                {
+                    "topic": "Explain Polarization - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.24",
+                    "sno": "2.24"
+                },
+                {
+                    "topic": "Explain Di-electric Loss - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.25",
+                    "sno": "2.25"
+                },
+                {
+                    "topic": "Explain Di-electric Loss - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.26",
+                    "sno": "2.26"
+                },
+                {
+                    "topic": "List any four applications ofDi-electrics - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.27",
+                    "sno": "2.27"
+                },
+                {
+                    "topic": "List any four applications ofDi-electrics - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-2.28",
+                    "sno": "2.28"
+                },
+                {
+                    "topic": "Revision of the Unit: Insulating Materials and Di- electric Materials",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee105-2.29",
+                    "sno": "2.29"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Insulating Materials and Di- electric Materials",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee105-2.30",
+                    "sno": "2.30"
+                }
+            ]
         },
         {
-          "id": "ee1051.3",
-          "sno": "1.3",
-          "topic": "Define the terms (i) Hardening (ii)Annealing",
-          "period": 2,
-          "type": "theory"
+            "unitNo": 3,
+            "title": "Magnetic Materials",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "topic": "Classify the Magnetic Materials (i)Ferro (ii) Para (iii) Dia-Magnetic materials withexamples - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Classify the Magnetic Materials (i)Ferro (ii) Para (iii) Dia-Magnetic materials withexamples - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain (i) Soft Magnetic materials (ii) Hard Magnetic materials - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain (i) Soft Magnetic materials (ii) Hard Magnetic materials - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Draw (i) B-H Curve (ii) Hysteresis loop - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Draw (i) B-H Curve (ii) Hysteresis loop - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain Hysteresis loop - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain Hysteresis loop - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Explain Hysteresis loss and State Steinmetz equation(No-Problems) - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee105-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Explain Hysteresis loss and State Steinmetz equation(No-Problems) - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee105-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Explain Eddy CurrentLosses",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "State Curie point",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "DefineMagnetostriction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Magnetic Materials",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee105-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Magnetic Materials",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee105-3.15",
+                    "sno": "3.15"
+                }
+            ]
         },
         {
-          "id": "ee1051.4",
-          "sno": "1.4",
-          "topic": "State the main requirements of (i) Low Resistivity Materials ( ii) High resistivity materials",
-          "period": 2,
-          "type": "theory"
+            "unitNo": 4,
+            "title": "Magnetic effects of Electric Current and Electromagnetic Induction",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "topic": "State Coulombs laws ofMagnetism - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "State Coulombs laws ofMagnetism - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Define the terms Absolute and Relative Permeability ofmedium and give relation between them - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Define the terms Absolute and Relative Permeability ofmedium and give relation between them - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the concept of lines of force & magneticfield - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain the concept of lines of force & magneticfield - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "State Right hand Thumbrule - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "State Right hand Thumbrule - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Draw the field patterns dueto (i) Straight currentcarryingconductor (ii) Solenoid - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Draw the field patterns dueto (i) Straight currentcarryingconductor (ii) Solenoid - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "State and list the applications of (i) Work law (ii) Biot-Savart'sLaw(Laplacelaw) - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "State and list the applications of (i) Work law (ii) Biot-Savart'sLaw(Laplacelaw) - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Explain the Mechanical force on a current carrying Conductor placed inside a Magneticfield. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Explain the Mechanical force on a current carrying Conductor placed inside a Magneticfield. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Derive an expression for the magnitude of the force on a current carrying conductor inside a magneticfield. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.15",
+                    "sno": "4.15"
+                },
+                {
+                    "topic": "Derive an expression for the magnitude of the force on a current carrying conductor inside a magneticfield. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.16",
+                    "sno": "4.16"
+                },
+                {
+                    "topic": "StateFleming'sLeftHandrule",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.17",
+                    "sno": "4.17"
+                },
+                {
+                    "topic": "Understand the concept of the Magneticcircuit and Define the terms MMF, Flux and Reluctance",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.18",
+                    "sno": "4.18"
+                },
+                {
+                    "topic": "Compare Magnetic circuit with Electric circuit in differentaspects",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.19",
+                    "sno": "4.19"
+                },
+                {
+                    "topic": "Explain the effect of air gap in a magneticcircuit",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.20",
+                    "sno": "4.20"
+                },
+                {
+                    "topic": "Explain the terms leakage flux and leakage co-efficient",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.21",
+                    "sno": "4.21"
+                },
+                {
+                    "topic": "State Faraday's laws of Electro-Magnetic Induction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.22",
+                    "sno": "4.22"
+                },
+                {
+                    "topic": "Explain Dynamically and Statically induced E.M.Fs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.23",
+                    "sno": "4.23"
+                },
+                {
+                    "topic": "State Lenz's law",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.24",
+                    "sno": "4.24"
+                },
+                {
+                    "topic": "Explain Fleming's Right Hand rule",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.25",
+                    "sno": "4.25"
+                },
+                {
+                    "topic": "State the concept of Self and Mutual inductance and write their expressions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.26",
+                    "sno": "4.26"
+                },
+                {
+                    "topic": "State Co-efficient of coupling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.27",
+                    "sno": "4.27"
+                },
+                {
+                    "topic": "Develop an expression for the energy stored in a magnetic field",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-4.28",
+                    "sno": "4.28"
+                },
+                {
+                    "topic": "Revision of the Unit: Magnetic effects of Electric Current and Electromagnetic Induction",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee105-4.29",
+                    "sno": "4.29"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Magnetic effects of Electric Current and Electromagnetic Induction",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee105-4.30",
+                    "sno": "4.30"
+                }
+            ]
         },
         {
-          "id": "ee1051.5",
-          "sno": "1.5",
-          "topic": "List some examples of i)Low Resistivity Materials ii)High Resistivity materials",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1051.6",
-          "sno": "1.6",
-          "topic": "Mention the Properties & Applications of Copper and Aluminium",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1051.7",
-          "sno": "1.7",
-          "topic": "Distinguish between Copper and Aluminium",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1051.8",
-          "sno": "1.8",
-          "topic": "Mention the properties & applications of ACSR Conductors and AAAC.",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1051.9",
-          "sno": "1.9",
-          "topic": "List the properties & Applications of High Resistive Materials of (i) Nichrome (ii) Tungsten (iii) Carbon",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1051.10",
-          "sno": "1.10",
-          "topic": "Define Semiconducting materials",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1051.11",
-          "sno": "1.11",
-          "topic": "Classify Semiconducting materials",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1051.12",
-          "sno": "1.12",
-          "topic": "Define (i)IntrinsicSemiconductors and(ii)ExtrinsicSemiconductors",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1051.13",
-          "sno": "1.13",
-          "topic": "Distinguish between Intrinsic and Extrinsic semiconductors.",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1051.14",
-          "sno": "1.14",
-          "topic": "Explain the formation of (i) P \u2013 type semiconductor and (ii) N \u2013 type semiconductor",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1051.15",
-          "sno": "1.15",
-          "topic": "Distinguish between P and N typeSemiconductors",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee105-1.16",
-          "sno": "1.16",
-          "topic": "Revision of the Unit",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "ee105-1.17",
-          "sno": "1.17",
-          "topic": "Assessment / Practice / Problem Solving",
-          "period": 1,
-          "type": "assessment"
+            "unitNo": 5,
+            "title": "Electrostatics and Capacitance",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "topic": "StateCoulomb'slawsofElectrostaticsandsolve the problems - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee105-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "StateCoulomb'slawsofElectrostaticsandsolve the problems - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee105-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Define the following terms (i) Unit Charge (ii) Absolute permittivity (iii) Relativepermittivity(iv) Electric Flux (v) Flux Density (vi) Field intensity - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Define the following terms (i) Unit Charge (ii) Absolute permittivity (iii) Relativepermittivity(iv) Electric Flux (v) Flux Density (vi) Field intensity - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Draw the field patterns dueto i) Isolated positivecharge ii) Isolated negativecharge iii) Unlike charges placed side byside iv) Like charges placed side byside - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Draw the field patterns dueto i) Isolated positivecharge ii) Isolated negativecharge iii) Unlike charges placed side byside iv) Like charges placed side byside - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Compare Electrostatic and Magnetic lines of force in differentaspects. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Compare Electrostatic and Magnetic lines of force in differentaspects. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Define the concept of electric potential and potentialdifference - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Define the concept of electric potential and potentialdifference - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Define Di-electric strength and Di-electricconstant - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Define Di-electric strength and Di-electricconstant - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Give the permittivity of commonly used Di-electricmaterials",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Define Capacitance and state factors affecting the capacitance of a capacitor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Derive the formula for capacitance of a parallel plate capacitor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.15",
+                    "sno": "5.15"
+                },
+                {
+                    "topic": "State different types ofcapacitors with its uses",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.16",
+                    "sno": "5.16"
+                },
+                {
+                    "topic": "Derive an expression for equivalent capacitance i) When two Capacitors are connected inseries ii) When two Capacitors are connected inparallel",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.17",
+                    "sno": "5.17"
+                },
+                {
+                    "topic": "Derive an expression for the Energy stored in acapacitor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee105-5.18",
+                    "sno": "5.18"
+                },
+                {
+                    "topic": "Revision of the Unit: Electrostatics and Capacitance",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee105-5.19",
+                    "sno": "5.19"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Electrostatics and Capacitance",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee105-5.20",
+                    "sno": "5.20"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "unitNo": 2,
-      "title": "Insulating Materials and Di- electric Materials",
-      "totalPeriods": 30,
-      "topics": [
-        {
-          "id": "ee1052.1",
-          "sno": "2.1",
-          "topic": "Define Insulating Materials",
-          "period": 3,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.2",
-          "sno": "2.2",
-          "topic": "Draw energy level diagrams of conductors, insulators and semi-Conductors",
-          "period": 3,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.3",
-          "sno": "2.3",
-          "topic": "Distinguish between Conductors, Insulators and Semiconductors",
-          "period": 3,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.4",
-          "sno": "2.4",
-          "topic": "Define Insulation resistance and explain factors affecting insulationresistance",
-          "period": 3,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.5",
-          "sno": "2.5",
-          "topic": "Classify insulatingmaterials",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.6",
-          "sno": "2.6",
-          "topic": "State the properties and applications of (i) Impregnated paper(ii) Wood (iii)Asbestos(iv)Mica (v )Ceramics (vi) Glass",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.7",
-          "sno": "2.7",
-          "topic": "Explain the properties and applications of PVC",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.8",
-          "sno": "2.8",
-          "topic": "State the effects of the following on P.V.C. (i)Filler (ii)Stabilizer(iii)Plasticizer (iv)Additives.",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.9",
-          "sno": "2.9",
-          "topic": "Know the Permittivity of commonly used di \u2013 electric materials (i) Air (ii)Bakelite (iii)Glass (iv)Mica (v)Paper (vi) Porcelain (vii) Transformer oil",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.10",
-          "sno": "2.10",
-          "topic": "Explain Polarization",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.11",
-          "sno": "2.11",
-          "topic": "Explain Di-electric Loss",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1052.12",
-          "sno": "2.12",
-          "topic": "List any four applications ofDi-electrics",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee105-2.13",
-          "sno": "2.13",
-          "topic": "Revision of the Unit",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "ee105-2.14",
-          "sno": "2.14",
-          "topic": "Assessment / Practice / Problem Solving",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 3,
-      "title": "Magnetic Materials",
-      "totalPeriods": 15,
-      "topics": [
-        {
-          "id": "ee1053.1",
-          "sno": "3.1",
-          "topic": "Classify the Magnetic Materials (i)Ferro (ii) Para (iii) Dia-Magnetic materials withexamples",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1053.2",
-          "sno": "3.2",
-          "topic": "Explain (i) Soft Magnetic materials (ii) Hard Magnetic materials",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1053.3",
-          "sno": "3.3",
-          "topic": "Draw (i) B-H Curve (ii) Hysteresis loop",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1053.4",
-          "sno": "3.4",
-          "topic": "Explain Hysteresis loop",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1053.5",
-          "sno": "3.5",
-          "topic": "Explain Hysteresis loss and State Steinmetz equation(No-Problems)",
-          "period": 2,
-          "type": "problem solving"
-        },
-        {
-          "id": "ee1053.6",
-          "sno": "3.6",
-          "topic": "Explain Eddy CurrentLosses",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1053.7",
-          "sno": "3.7",
-          "topic": "State Curie point",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1053.8",
-          "sno": "3.8",
-          "topic": "DefineMagnetostriction",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee105-3.9",
-          "sno": "3.9",
-          "topic": "Revision of the Unit",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "ee105-3.10",
-          "sno": "3.10",
-          "topic": "Assessment / Practice / Problem Solving",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 4,
-      "title": "Magnetic effects of Electric Current and Electromagnetic Induction",
-      "totalPeriods": 30,
-      "topics": [
-        {
-          "id": "ee1054.1",
-          "sno": "4.1",
-          "topic": "State Coulombs laws ofMagnetism",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.2",
-          "sno": "4.2",
-          "topic": "Define the terms Absolute and Relative Permeability ofmedium and give relation between them",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.3",
-          "sno": "4.3",
-          "topic": "Explain the concept of lines of force & magneticfield",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.4",
-          "sno": "4.4",
-          "topic": "State Right hand Thumbrule",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.5",
-          "sno": "4.5",
-          "topic": "Draw the field patterns dueto (i) Straight currentcarryingconductor (ii) Solenoid",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.6",
-          "sno": "4.6",
-          "topic": "State and list the applications of (i) Work law (ii) Biot-Savart'sLaw(Laplacelaw)",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.7",
-          "sno": "4.7",
-          "topic": "Explain the Mechanical force on a current carrying Conductor placed inside a Magneticfield.",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.8",
-          "sno": "4.8",
-          "topic": "Derive an expression for the magnitude of the force on a current carrying conductor inside a magneticfield.",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.9",
-          "sno": "4.9",
-          "topic": "StateFleming'sLeftHandrule",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.10",
-          "sno": "4.10",
-          "topic": "Understand the concept of the Magneticcircuit and Define the terms MMF, Flux and Reluctance",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.11",
-          "sno": "4.11",
-          "topic": "Compare Magnetic circuit with Electric circuit in differentaspects",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.12",
-          "sno": "4.12",
-          "topic": "Explain the effect of air gap in a magneticcircuit",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.13",
-          "sno": "4.13",
-          "topic": "Explain the terms leakage flux and leakage co-efficient",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.14",
-          "sno": "4.14",
-          "topic": "State Faraday's laws of Electro-Magnetic Induction",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.15",
-          "sno": "4.15",
-          "topic": "Explain Dynamically and Statically induced E.M.Fs",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.16",
-          "sno": "4.16",
-          "topic": "State Lenz's law",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.17",
-          "sno": "4.17",
-          "topic": "Explain Fleming's Right Hand rule",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.18",
-          "sno": "4.18",
-          "topic": "State the concept of Self and Mutual inductance and write their expressions",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.19",
-          "sno": "4.19",
-          "topic": "State Co-efficient of coupling",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1054.20",
-          "sno": "4.20",
-          "topic": "Develop an expression for the energy stored in a magnetic field",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee105-4.21",
-          "sno": "4.21",
-          "topic": "Revision of the Unit",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "ee105-4.22",
-          "sno": "4.22",
-          "topic": "Assessment / Practice / Problem Solving",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    },
-    {
-      "unitNo": 5,
-      "title": "Electrostatics and Capacitance",
-      "totalPeriods": 20,
-      "topics": [
-        {
-          "id": "ee1055.1",
-          "sno": "5.1",
-          "topic": "StateCoulomb'slawsofElectrostaticsandsolve the problems",
-          "period": 2,
-          "type": "problem solving"
-        },
-        {
-          "id": "ee1055.2",
-          "sno": "5.2",
-          "topic": "Define the following terms (i) Unit Charge (ii) Absolute permittivity (iii) Relativepermittivity(iv) Electric Flux (v) Flux Density (vi) Field intensity",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1055.3",
-          "sno": "5.3",
-          "topic": "Draw the field patterns dueto i) Isolated positivecharge ii) Isolated negativecharge iii) Unlike charges placed side byside iv) Like charges placed side byside",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1055.4",
-          "sno": "5.4",
-          "topic": "Compare Electrostatic and Magnetic lines of force in differentaspects.",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1055.5",
-          "sno": "5.5",
-          "topic": "Define the concept of electric potential and potentialdifference",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1055.6",
-          "sno": "5.6",
-          "topic": "Define Di-electric strength and Di-electricconstant",
-          "period": 2,
-          "type": "theory"
-        },
-        {
-          "id": "ee1055.7",
-          "sno": "5.7",
-          "topic": "Give the permittivity of commonly used Di-electricmaterials",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1055.8",
-          "sno": "5.8",
-          "topic": "Define Capacitance and state factors affecting the capacitance of a capacitor",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1055.9",
-          "sno": "5.9",
-          "topic": "Derive the formula for capacitance of a parallel plate capacitor",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1055.10",
-          "sno": "5.10",
-          "topic": "State different types ofcapacitors with its uses",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1055.11",
-          "sno": "5.11",
-          "topic": "Derive an expression for equivalent capacitance i) When two Capacitors are connected inseries ii) When two Capacitors are connected inparallel",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee1055.12",
-          "sno": "5.12",
-          "topic": "Derive an expression for the Energy stored in acapacitor",
-          "period": 1,
-          "type": "theory"
-        },
-        {
-          "id": "ee105-5.13",
-          "sno": "5.13",
-          "topic": "Revision of the Unit",
-          "period": 1,
-          "type": "revision"
-        },
-        {
-          "id": "ee105-5.14",
-          "sno": "5.14",
-          "topic": "Assessment / Practice / Problem Solving",
-          "period": 1,
-          "type": "assessment"
-        }
-      ]
-    }
-  ]
+    ]
 }

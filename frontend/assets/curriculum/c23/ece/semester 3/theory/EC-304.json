@@ -11,109 +11,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-304-1.1",
-                    "sno": "1.1",
                     "topic": "Explain the basic elements of a communication system with a block diagram",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "ec-304-1.2",
-                    "sno": "1.2",
                     "topic": "Explain the frequency spectrum of radio waves and state the applications of each band",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "ec-304-1.3",
-                    "sno": "1.3",
                     "topic": "Explain about time domain and frequency domain waveforms.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "ec-304-1.4",
-                    "sno": "1.4",
                     "topic": "Define modulation and state the need for modulation in communication systems.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "ec-304-1.5",
-                    "sno": "1.5",
                     "topic": "Define baseband signal, carrier signal and modulated signal.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "ec-304-1.6",
-                    "sno": "1.6",
                     "topic": "Classify various types of continuous wave modulation systems",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.6",
+                    "sno": "1.6"
                 },
                 {
-                    "id": "ec-304-1.7",
-                    "sno": "1.7",
                     "topic": "Define amplitude modulation and draw its waveform",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.7",
+                    "sno": "1.7"
                 },
                 {
-                    "id": "ec-304-1.8",
-                    "sno": "1.8",
                     "topic": "Define the modulation index of an AM signal.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.8",
+                    "sno": "1.8"
                 },
                 {
-                    "id": "ec-304-1.9",
-                    "sno": "1.9",
                     "topic": "Derive the time-domain equation for an AM signal.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.9",
+                    "sno": "1.9"
                 },
                 {
-                    "id": "ec-304-1.10",
-                    "sno": "1.10",
                     "topic": "Explain the frequency spectrum of an AM wave and hence calculate its Bandwidth",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.10",
+                    "sno": "1.10"
                 },
                 {
-                    "id": "ec-304-1.11",
-                    "sno": "1.11",
                     "topic": "State the effects of over modulation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ec-304-1.12",
-                    "sno": "1.12",
                     "topic": "Derive the relation between total power and carrier power in AM and Solve simple problems",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.12",
+                    "sno": "1.12"
                 },
                 {
-                    "id": "ec-304-1.13",
-                    "sno": "1.13",
                     "topic": "State the need for DSB-SC and SSB modulation and list their advantages and disadvantages of",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-1.13",
+                    "sno": "1.13"
                 },
                 {
-                    "id": "ec-304-1.14",
-                    "sno": "1.14",
-                    "topic": "Revision of Amplitude Modulation",
+                    "topic": "Revision of the Unit: Amplitude Modulation",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec304-1.14",
+                    "sno": "1.14"
                 },
                 {
-                    "id": "ec-304-1.15",
-                    "sno": "1.15",
-                    "topic": "Assessment / Unit Test on Amplitude Modulation",
+                    "topic": "Assessment / Practice / Problem Solving on Amplitude Modulation",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec304-1.15",
+                    "sno": "1.15"
                 }
             ]
         },
@@ -123,109 +123,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-304-2.1",
-                    "sno": "2.1",
                     "topic": "Define angle modulation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ec-304-2.2",
-                    "sno": "2.2",
                     "topic": "List the types of angle modulation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "ec-304-2.3",
-                    "sno": "2.3",
                     "topic": "Define Frequency modulation and and draw its waveform.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "ec-304-2.4",
-                    "sno": "2.4",
                     "topic": "Define the modulation index of an FM signal",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.4",
+                    "sno": "2.4"
                 },
                 {
-                    "id": "ec-304-2.5",
-                    "sno": "2.5",
                     "topic": "Define Phase Modulation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "ec-304-2.6",
-                    "sno": "2.6",
                     "topic": "Derive the time domain equation for FM signal and explain its bandwidth requirements.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.6",
+                    "sno": "2.6"
                 },
                 {
-                    "id": "ec-304-2.7",
-                    "sno": "2.7",
                     "topic": "Explain the frequency spectrum of FM wave",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "ec-304-2.8",
-                    "sno": "2.8",
                     "topic": "Distinguish between narrow band and wide band FM",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.8",
+                    "sno": "2.8"
                 },
                 {
-                    "id": "ec-304-2.9",
-                    "sno": "2.9",
                     "topic": "Higher frequency components of FM signal are affected most by noise: Justify with Noise triangle.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.9",
+                    "sno": "2.9"
                 },
                 {
-                    "id": "ec-304-2.10",
-                    "sno": "2.10",
                     "topic": "Define the terms pre-emphasis and de-emphasis",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.10",
+                    "sno": "2.10"
                 },
                 {
-                    "id": "ec-304-2.11",
-                    "sno": "2.11",
                     "topic": "Distinguish between FM and PM",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.11",
+                    "sno": "2.11"
                 },
                 {
-                    "id": "ec-304-2.12",
-                    "sno": "2.12",
                     "topic": "List the merits of FM over AM",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.12",
+                    "sno": "2.12"
                 },
                 {
-                    "id": "ec-304-2.13",
-                    "sno": "2.13",
                     "topic": "Classify different types of noise",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-2.13",
+                    "sno": "2.13"
                 },
                 {
-                    "id": "ec-304-2.14",
-                    "sno": "2.14",
-                    "topic": "Revision of Angle Modulation techniques",
+                    "topic": "Revision of the Unit: Angle Modulation techniques",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec304-2.14",
+                    "sno": "2.14"
                 },
                 {
-                    "id": "ec-304-2.15",
-                    "sno": "2.15",
-                    "topic": "Assessment / Unit Test on Angle Modulation techniques",
+                    "topic": "Assessment / Practice / Problem Solving on Angle Modulation techniques",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec304-2.15",
+                    "sno": "2.15"
                 }
             ]
         },
@@ -235,123 +235,123 @@
             "totalPeriods": 17,
             "topics": [
                 {
-                    "id": "ec-304-3.1",
-                    "sno": "3.1",
                     "topic": "List the specifications of transmitters.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "ec-304-3.2",
-                    "sno": "3.2",
                     "topic": "Distinguish between low level and high-level modulation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "ec-304-3.3",
-                    "sno": "3.3",
                     "topic": "Draw the block diagram for high level modulated transmitter and explain its working",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "ec-304-3.4",
-                    "sno": "3.4",
                     "topic": "Draw the low-level modulated Transmitter and explain its working",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.4",
+                    "sno": "3.4"
                 },
                 {
-                    "id": "ec-304-3.5",
-                    "sno": "3.5",
                     "topic": "Draw the block diagram of FM transmitter using reactance method and explain its working",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.5",
+                    "sno": "3.5"
                 },
                 {
-                    "id": "ec-304-3.6",
-                    "sno": "3.6",
                     "topic": "Draw and explain the block diagram of indirect method of FM generation (Armstrong method)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.6",
+                    "sno": "3.6"
                 },
                 {
-                    "id": "ec-304-3.7",
-                    "sno": "3.7",
                     "topic": "Classify radio receivers",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "ec-304-3.8",
-                    "sno": "3.8",
                     "topic": "Define sensitivity, selectivity and fidelity of a radio receiver",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "ec-304-3.9",
-                    "sno": "3.9",
                     "topic": "i) Draw the block diagram of TRF receiver and explain the function of each block.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ec-304-3.10",
-                    "sno": "3.10",
                     "topic": "State the limitations of TRF Receiver",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.10",
+                    "sno": "3.10"
                 },
                 {
-                    "id": "ec-304-3.11",
-                    "sno": "3.11",
                     "topic": "Explain the working of super heterodyne AM receiver with a block diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.11",
+                    "sno": "3.11"
                 },
                 {
-                    "id": "ec-304-3.12",
-                    "sno": "3.12",
                     "topic": "Define the terms Image frequency and IMRR in a radio receiver.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.12",
+                    "sno": "3.12"
                 },
                 {
-                    "id": "ec-304-3.13",
-                    "sno": "3.13",
                     "topic": "State the factors to be considered for choice of IF.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.13",
+                    "sno": "3.13"
                 },
                 {
-                    "id": "ec-304-3.14",
-                    "sno": "3.14",
                     "topic": "State the need for AVC (AGC).",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.14",
+                    "sno": "3.14"
                 },
                 {
-                    "id": "ec-304-3.15",
-                    "sno": "3.15",
                     "topic": "Explain the process of demodulation with Envelope detector in AM receivers",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-3.15",
+                    "sno": "3.15"
                 },
                 {
-                    "id": "ec-304-3.16",
-                    "sno": "3.16",
-                    "topic": "Revision of Transmitters and Receivers",
+                    "topic": "Revision of the Unit: Transmitters and Receivers",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec304-3.16",
+                    "sno": "3.16"
                 },
                 {
-                    "id": "ec-304-3.17",
-                    "sno": "3.17",
-                    "topic": "Assessment / Unit Test on Transmitters and Receivers",
+                    "topic": "Assessment / Practice / Problem Solving on Transmitters and Receivers",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec304-3.17",
+                    "sno": "3.17"
                 }
             ]
         },
@@ -361,95 +361,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
-                    "id": "ec-304-4.1",
-                    "sno": "4.1",
                     "topic": "Distinguish between analog and digital signals",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "ec-304-4.2",
-                    "sno": "4.2",
                     "topic": "List the advantages and disadvantages of digital communication system over analog communication system",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "ec-304-4.3",
-                    "sno": "4.3",
                     "topic": "Define information capacity of a channel.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "ec-304-4.4",
-                    "sno": "4.4",
                     "topic": "State sampling theorem and mention its significance in pulse modulation techniques",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "ec-304-4.5",
-                    "sno": "4.5",
                     "topic": "Classify pulse modulation techniques.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "ec-304-4.6",
-                    "sno": "4.6",
                     "topic": "Define PAM and its waveform",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "ec-304-4.7",
-                    "sno": "4.7",
                     "topic": "Define PWM and its waveform",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.7",
+                    "sno": "4.7"
                 },
                 {
-                    "id": "ec-304-4.8",
-                    "sno": "4.8",
                     "topic": "Define PPM and its waveform",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.8",
+                    "sno": "4.8"
                 },
                 {
-                    "id": "ec-304-4.9",
-                    "sno": "4.9",
                     "topic": "Compare PAM, PWM and PPM",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.9",
+                    "sno": "4.9"
                 },
                 {
-                    "id": "ec-304-4.10",
-                    "sno": "4.10",
                     "topic": "Define the term quantization",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.10",
+                    "sno": "4.10"
                 },
                 {
-                    "id": "ec-304-4.11",
-                    "sno": "4.11",
                     "topic": "Explain the process of quantization with waveforms.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-4.11",
+                    "sno": "4.11"
                 },
                 {
-                    "id": "ec-304-4.12",
-                    "sno": "4.12",
-                    "topic": "Revision of Digital communication principles",
+                    "topic": "Revision of the Unit: Digital communication principles",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec304-4.12",
+                    "sno": "4.12"
                 },
                 {
-                    "id": "ec-304-4.13",
-                    "sno": "4.13",
-                    "topic": "Assessment / Unit Test on Digital communication principles",
+                    "topic": "Assessment / Practice / Problem Solving on Digital communication principles",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec304-4.13",
+                    "sno": "4.13"
                 }
             ]
         },
@@ -459,109 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-304-5.1",
-                    "sno": "5.1",
                     "topic": "State data encoding",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "ec-304-5.2",
-                    "sno": "5.2",
                     "topic": "List different analog signal to digital signal encoding schemes",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.2",
+                    "sno": "5.2"
                 },
                 {
-                    "id": "ec-304-5.3",
-                    "sno": "5.3",
                     "topic": "Explain the process of Asynchronous data communication scheme",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "ec-304-5.4",
-                    "sno": "5.4",
                     "topic": "Define Overhead and Efficiency of data communication system",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "ec-304-5.5",
-                    "sno": "5.5",
                     "topic": "Explain the process of synchronous data communication",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "ec-304-5.6",
-                    "sno": "5.6",
                     "topic": "List different error detection schemes",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "ec-304-5.7",
-                    "sno": "5.7",
                     "topic": "Explain parity check method of error detection.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.7",
+                    "sno": "5.7"
                 },
                 {
-                    "id": "ec-304-5.8",
-                    "sno": "5.8",
                     "topic": "Explain Checksum method of error detection.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.8",
+                    "sno": "5.8"
                 },
                 {
-                    "id": "ec-304-5.9",
-                    "sno": "5.9",
                     "topic": "Explain CRC method of error detection with an example.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.9",
+                    "sno": "5.9"
                 },
                 {
-                    "id": "ec-304-5.10",
-                    "sno": "5.10",
                     "topic": "Explain method of error correction using FEC method (Hamming Code).",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.10",
+                    "sno": "5.10"
                 },
                 {
-                    "id": "ec-304-5.11",
-                    "sno": "5.11",
                     "topic": "State the need for digital modulation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.11",
+                    "sno": "5.11"
                 },
                 {
-                    "id": "ec-304-5.12",
-                    "sno": "5.12",
                     "topic": "State the difference between bit rate and baud rate",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.12",
+                    "sno": "5.12"
                 },
                 {
-                    "id": "ec-304-5.13",
-                    "sno": "5.13",
                     "topic": "Define ASK, FSK and PSK",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec304-5.13",
+                    "sno": "5.13"
                 },
                 {
-                    "id": "ec-304-5.14",
-                    "sno": "5.14",
-                    "topic": "Revision of Digital modulation techniques",
+                    "topic": "Revision of the Unit: Digital modulation techniques",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec304-5.14",
+                    "sno": "5.14"
                 },
                 {
-                    "id": "ec-304-5.15",
-                    "sno": "5.15",
-                    "topic": "Assessment / Unit Test on Digital modulation techniques",
+                    "topic": "Assessment / Practice / Problem Solving on Digital modulation techniques",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec304-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

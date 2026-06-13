@@ -11,53 +11,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Classification of Engineering Materials. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-1.1",
-                    "sno": "1.1",
-                    "topic": "Classification of Engineering Materials.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Classification of Engineering Materials. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-1.2",
-                    "sno": "1.2",
-                    "topic": "Mechanical properties of metals.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Classification of Engineering Materials. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-1.3",
-                    "sno": "1.3",
-                    "topic": "Structure of metals and alloys.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "Mechanical properties of metals. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-1.4",
-                    "sno": "1.4",
-                    "topic": "Phase diagrams: Iron-Carbon Equilibrium Diagram.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "Mechanical properties of metals. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-1.5",
-                    "sno": "1.5",
-                    "topic": "TTT Curves.",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Mechanical properties of metals. - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m404-1.6",
-                    "sno": "1.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.6"
                 },
                 {
-                    "id": "m404-1.7",
-                    "sno": "1.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Structure of metals and alloys. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m404-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Structure of metals and alloys. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Structure of metals and alloys. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Phase diagrams: Iron-Carbon Equilibrium Diagram. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Phase diagrams: Iron-Carbon Equilibrium Diagram. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "TTT Curves. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "TTT Curves. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Introduction to Engineering Materials",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m404-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Introduction to Engineering Materials",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m404-1.15",
+                    "sno": "1.15"
                 }
             ]
         },
@@ -67,39 +123,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Objectives of Heat Treatment. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-2.1",
-                    "sno": "2.1",
-                    "topic": "Objectives of Heat Treatment.",
-                    "type": "theory",
-                    "period": 5
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Objectives of Heat Treatment. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-2.2",
-                    "sno": "2.2",
-                    "topic": "Annealing, Normalizing, Hardening, Tempering.",
-                    "type": "theory",
-                    "period": 4
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Objectives of Heat Treatment. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-2.3",
-                    "sno": "2.3",
-                    "topic": "Surface Hardening methods: Case hardening, Nitriding, Cyaniding, Induction hardening, Flame hardening.",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Objectives of Heat Treatment. - Part 4",
+                    "period": 1,
                     "type": "theory",
-                    "period": 4
-                },
-                {
                     "id": "m404-2.4",
-                    "sno": "2.4",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.4"
                 },
                 {
-                    "id": "m404-2.5",
-                    "sno": "2.5",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Objectives of Heat Treatment. - Part 5",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m404-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Annealing, Normalizing, Hardening, Tempering. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Annealing, Normalizing, Hardening, Tempering. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Annealing, Normalizing, Hardening, Tempering. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Annealing, Normalizing, Hardening, Tempering. - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Surface Hardening methods: Case hardening, Nitriding, Cyaniding, Induction hardening, Flame hardening. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Surface Hardening methods: Case hardening, Nitriding, Cyaniding, Induction hardening, Flame hardening. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Surface Hardening methods: Case hardening, Nitriding, Cyaniding, Induction hardening, Flame hardening. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Surface Hardening methods: Case hardening, Nitriding, Cyaniding, Induction hardening, Flame hardening. - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Heat Treatment of Steels",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m404-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Heat Treatment of Steels",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m404-2.15",
+                    "sno": "2.15"
                 }
             ]
         },
@@ -109,67 +235,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Pig iron: Manufacture and Types. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-3.1",
-                    "sno": "3.1",
-                    "topic": "Pig iron: Manufacture and Types.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Pig iron: Manufacture and Types. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-3.2",
-                    "sno": "3.2",
-                    "topic": "Cast iron: Types, Properties and Applications.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Cast iron: Types, Properties and Applications. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-3.3",
-                    "sno": "3.3",
-                    "topic": "Wrought iron: Properties and Applications.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Cast iron: Types, Properties and Applications. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-3.4",
-                    "sno": "3.4",
-                    "topic": "Steels: Plain carbon steels, Alloy steels.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Wrought iron: Properties and Applications. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-3.5",
-                    "sno": "3.5",
-                    "topic": "Effect of alloying elements on steel.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.5"
                 },
                 {
+                    "topic": "Wrought iron: Properties and Applications. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-3.6",
-                    "sno": "3.6",
-                    "topic": "Non-ferrous metals: Copper, Aluminium, Zinc, Lead, Tin and their alloys.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.6"
                 },
                 {
+                    "topic": "Steels: Plain carbon steels, Alloy steels. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-3.7",
-                    "sno": "3.7",
-                    "topic": "Bearing materials.",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Steels: Plain carbon steels, Alloy steels. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m404-3.8",
-                    "sno": "3.8",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.8"
                 },
                 {
-                    "id": "m404-3.9",
-                    "sno": "3.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Effect of alloying elements on steel. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m404-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Effect of alloying elements on steel. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Non-ferrous metals: Copper, Aluminium, Zinc, Lead, Tin and their alloys. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Non-ferrous metals: Copper, Aluminium, Zinc, Lead, Tin and their alloys. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Bearing materials.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Ferrous and Non-Ferrous Metals",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m404-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Ferrous and Non-Ferrous Metals",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m404-3.15",
+                    "sno": "3.15"
                 }
             ]
         },
@@ -179,46 +347,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Introduction and Advantages of Powder Metallurgy. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-4.1",
-                    "sno": "4.1",
-                    "topic": "Introduction and Advantages of Powder Metallurgy.",
-                    "type": "theory",
-                    "period": 4
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Introduction and Advantages of Powder Metallurgy. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-4.2",
-                    "sno": "4.2",
-                    "topic": "Methods of producing metal powders.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Introduction and Advantages of Powder Metallurgy. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-4.3",
-                    "sno": "4.3",
-                    "topic": "Stages in Powder Metallurgy: Mixing, Compacting, Sintering.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Introduction and Advantages of Powder Metallurgy. - Part 4",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-4.4",
-                    "sno": "4.4",
-                    "topic": "Applications of Powder Metallurgy.",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Methods of producing metal powders. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 3
-                },
-                {
                     "id": "m404-4.5",
-                    "sno": "4.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.5"
                 },
                 {
-                    "id": "m404-4.6",
-                    "sno": "4.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Methods of producing metal powders. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m404-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Methods of producing metal powders. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Stages in Powder Metallurgy: Mixing, Compacting, Sintering. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Stages in Powder Metallurgy: Mixing, Compacting, Sintering. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Stages in Powder Metallurgy: Mixing, Compacting, Sintering. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Applications of Powder Metallurgy. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Applications of Powder Metallurgy. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Applications of Powder Metallurgy. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Powder Metallurgy",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m404-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Powder Metallurgy",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m404-4.15",
+                    "sno": "4.15"
                 }
             ]
         },
@@ -228,60 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Introduction to NDT. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-5.1",
-                    "sno": "5.1",
-                    "topic": "Introduction to NDT.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Introduction to NDT. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-5.2",
-                    "sno": "5.2",
-                    "topic": "Visual Inspection.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Introduction to NDT. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-5.3",
-                    "sno": "5.3",
-                    "topic": "Liquid Penetrant Testing.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Visual Inspection. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-5.4",
-                    "sno": "5.4",
-                    "topic": "Magnetic Particle Testing.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.4"
                 },
                 {
+                    "topic": "Visual Inspection. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-5.5",
-                    "sno": "5.5",
-                    "topic": "Ultrasonic Testing.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.5"
                 },
                 {
+                    "topic": "Liquid Penetrant Testing. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m404-5.6",
-                    "sno": "5.6",
-                    "topic": "Radiography Testing.",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Liquid Penetrant Testing. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m404-5.7",
-                    "sno": "5.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.7"
                 },
                 {
-                    "id": "m404-5.8",
-                    "sno": "5.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Magnetic Particle Testing. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m404-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Magnetic Particle Testing. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Ultrasonic Testing. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Ultrasonic Testing. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Radiography Testing. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Radiography Testing. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m404-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Non-Destructive Testing",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m404-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Non-Destructive Testing",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m404-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

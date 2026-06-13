@@ -11,53 +11,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Definition and need for Automation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-1.1",
-                    "sno": "1.1",
-                    "topic": "Definition and need for Automation.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Definition and need for Automation. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-1.2",
-                    "sno": "1.2",
-                    "topic": "Types of Automation (Fixed, Programmable, Flexible).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Types of Automation (Fixed, Programmable, Flexible). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-1.3",
-                    "sno": "1.3",
-                    "topic": "Components of an Automated system.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "Types of Automation (Fixed, Programmable, Flexible). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-1.4",
-                    "sno": "1.4",
-                    "topic": "Advantages and Disadvantages of Automation.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "Components of an Automated system. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-1.5",
-                    "sno": "1.5",
-                    "topic": "Sensors and Actuators in Automation.",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Components of an Automated system. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m504-1.6",
-                    "sno": "1.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.6"
                 },
                 {
-                    "id": "m504-1.7",
-                    "sno": "1.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Advantages and Disadvantages of Automation. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m504-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Advantages and Disadvantages of Automation. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Sensors and Actuators in Automation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Sensors and Actuators in Automation. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Introduction to Automation",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m504-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Introduction to Automation",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m504-1.12",
+                    "sno": "1.12"
                 }
             ]
         },
@@ -67,46 +102,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Basics of Hydraulic and Pneumatic systems for automation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-2.1",
-                    "sno": "2.1",
-                    "topic": "Basics of Hydraulic and Pneumatic systems for automation.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Basics of Hydraulic and Pneumatic systems for automation. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-2.2",
-                    "sno": "2.2",
-                    "topic": "Control Valves: Directional, Pressure and Flow control.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Basics of Hydraulic and Pneumatic systems for automation. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-2.3",
-                    "sno": "2.3",
-                    "topic": "Design of simple Hydraulic and Pneumatic circuits.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Control Valves: Directional, Pressure and Flow control. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-2.4",
-                    "sno": "2.4",
-                    "topic": "Electro-pneumatic control.",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Control Valves: Directional, Pressure and Flow control. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m504-2.5",
-                    "sno": "2.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.5"
                 },
                 {
-                    "id": "m504-2.6",
-                    "sno": "2.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Control Valves: Directional, Pressure and Flow control. - Part 3",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m504-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Design of simple Hydraulic and Pneumatic circuits. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Design of simple Hydraulic and Pneumatic circuits. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Electro-pneumatic control. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Electro-pneumatic control. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Hydraulic and Pneumatic Systems",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m504-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Hydraulic and Pneumatic Systems",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m504-2.12",
+                    "sno": "2.12"
                 }
             ]
         },
@@ -116,53 +193,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Introduction to Logic Gates and Control. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-3.1",
-                    "sno": "3.1",
-                    "topic": "Introduction to Logic Gates and Control.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Introduction to Logic Gates and Control. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-3.2",
-                    "sno": "3.2",
-                    "topic": "PLC: Architecture and Working principle.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "PLC: Architecture and Working principle. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-3.3",
-                    "sno": "3.3",
-                    "topic": "Ladder Logic Programming basics.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "PLC: Architecture and Working principle. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-3.4",
-                    "sno": "3.4",
-                    "topic": "Timers and Counters in PLC.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Ladder Logic Programming basics. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-3.5",
-                    "sno": "3.5",
-                    "topic": "Applications of PLC in Industrial Automation.",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Ladder Logic Programming basics. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m504-3.6",
-                    "sno": "3.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.6"
                 },
                 {
-                    "id": "m504-3.7",
-                    "sno": "3.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Timers and Counters in PLC. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m504-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Timers and Counters in PLC. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Applications of PLC in Industrial Automation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Applications of PLC in Industrial Automation. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Logic Control and PLCs",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m504-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Logic Control and PLCs",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m504-3.12",
+                    "sno": "3.12"
                 }
             ]
         },
@@ -172,53 +284,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Overview of CNC machines and Part Programming. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-4.1",
-                    "sno": "4.1",
-                    "topic": "Overview of CNC machines and Part Programming.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Overview of CNC machines and Part Programming. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-4.2",
-                    "sno": "4.2",
-                    "topic": "Introduction to Robotics.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Introduction to Robotics. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-4.3",
-                    "sno": "4.3",
-                    "topic": "Robot configuration and Work volume.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Introduction to Robotics. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-4.4",
-                    "sno": "4.4",
-                    "topic": "Robot Sensors and End effectors.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.4"
                 },
                 {
+                    "topic": "Robot configuration and Work volume. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-4.5",
-                    "sno": "4.5",
-                    "topic": "Industrial Applications of Robots.",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Robot configuration and Work volume. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m504-4.6",
-                    "sno": "4.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.6"
                 },
                 {
-                    "id": "m504-4.7",
-                    "sno": "4.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Robot Sensors and End effectors. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m504-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Robot Sensors and End effectors. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Industrial Applications of Robots. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Industrial Applications of Robots. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Revision of the Unit: CNC Machines and Robotics",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m504-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on CNC Machines and Robotics",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m504-4.12",
+                    "sno": "4.12"
                 }
             ]
         },
@@ -228,53 +375,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
+                    "topic": "Introduction to Additive Manufacturing (AM). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-5.1",
-                    "sno": "5.1",
-                    "topic": "Introduction to Additive Manufacturing (AM).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Introduction to Additive Manufacturing (AM). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-5.2",
-                    "sno": "5.2",
-                    "topic": "Steps in 3D Printing process.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Steps in 3D Printing process. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-5.3",
-                    "sno": "5.3",
-                    "topic": "Types of 3D Printing technologies (FDM, SLA, SLS).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Steps in 3D Printing process. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-5.4",
-                    "sno": "5.4",
-                    "topic": "Materials used in 3D Printing.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.4"
                 },
                 {
+                    "topic": "Types of 3D Printing technologies (FDM, SLA, SLS). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m504-5.5",
-                    "sno": "5.5",
-                    "topic": "Applications and Future of 3D Printing.",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Types of 3D Printing technologies (FDM, SLA, SLS). - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m504-5.6",
-                    "sno": "5.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.6"
                 },
                 {
-                    "id": "m504-5.7",
-                    "sno": "5.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Materials used in 3D Printing. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m504-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Materials used in 3D Printing. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Applications and Future of 3D Printing. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Applications and Future of 3D Printing. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m504-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Revision of the Unit: 3D Printing (Additive Manufacturing)",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m504-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on 3D Printing (Additive Manufacturing)",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m504-5.12",
+                    "sno": "5.12"
                 }
             ]
         }

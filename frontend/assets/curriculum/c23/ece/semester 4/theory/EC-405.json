@@ -11,144 +11,144 @@
             "totalPeriods": 20,
             "topics": [
                 {
-                    "id": "ec-405-1.1",
-                    "sno": "1.1",
                     "topic": "Explain the steps involved in the design flow for the VLSI IC design",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "ec-405-1.2",
-                    "sno": "1.2",
                     "topic": "Explain the importance of Hardware Description Languages in VLSI design",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "ec-405-1.3",
-                    "sno": "1.3",
                     "topic": "Compare VHDL and Verilog HDL",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "ec-405-1.4",
-                    "sno": "1.4",
                     "topic": "List the features of Verilog HDL",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "ec-405-1.5",
-                    "sno": "1.5",
                     "topic": "Explain the difference between an instantiation and inference of a component.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "ec-405-1.6",
-                    "sno": "1.6",
                     "topic": "Explain differences between modules and module instances in Verilog.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.6",
+                    "sno": "1.6"
                 },
                 {
-                    "id": "ec-405-1.7",
-                    "sno": "1.7",
                     "topic": "Explain four levels of abstraction to represent the internals of a module",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.7",
+                    "sno": "1.7"
                 },
                 {
-                    "id": "ec-405-1.8",
-                    "sno": "1.8",
                     "topic": "Identify the components of a Verilog module definition",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.8",
+                    "sno": "1.8"
                 },
                 {
-                    "id": "ec-405-1.9",
-                    "sno": "1.9",
                     "topic": "Explain the port connection rules in a module instantiation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.9",
+                    "sno": "1.9"
                 },
                 {
-                    "id": "ec-405-1.10",
-                    "sno": "1.10",
                     "topic": "Explain about the hierarchical modelling/ Design methodologies",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.10",
+                    "sno": "1.10"
                 },
                 {
-                    "id": "ec-405-1.11",
-                    "sno": "1.11",
                     "topic": "List the advantages of hierarchical modelling.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ec-405-1.12",
-                    "sno": "1.12",
                     "topic": "Explain the lexical conventions like number specification, Identifiers, keywords, etc.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.12",
+                    "sno": "1.12"
                 },
                 {
-                    "id": "ec-405-1.13",
-                    "sno": "1.13",
                     "topic": "Explain different data types like value set, nets, registers, vectors, integer, real and time Register data types",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.13",
+                    "sno": "1.13"
                 },
                 {
-                    "id": "ec-405-1.14",
-                    "sno": "1.14",
                     "topic": "Explain data types like arrays, memories and strings.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.14",
+                    "sno": "1.14"
                 },
                 {
-                    "id": "ec-405-1.15",
-                    "sno": "1.15",
                     "topic": "Explain the difference between arrays and vectors with example",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.15",
+                    "sno": "1.15"
                 },
                 {
-                    "id": "ec-405-1.16",
-                    "sno": "1.16",
                     "topic": "Explain defparam and localparam keywords",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.16",
+                    "sno": "1.16"
                 },
                 {
-                    "id": "ec-405-1.17",
-                    "sno": "1.17",
                     "topic": "Explain about system tasks and compiler directives",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.17",
+                    "sno": "1.17"
                 },
                 {
-                    "id": "ec-405-1.18",
-                    "sno": "1.18",
                     "topic": "Define expressions, operators and operands.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-1.18",
+                    "sno": "1.18"
                 },
                 {
-                    "id": "ec-405-1.19",
-                    "sno": "1.19",
-                    "topic": "Revision of Introduction to Verilog HDL, Language constructs and conventions",
+                    "topic": "Revision of the Unit: Introduction to Verilog HDL, Language constructs and conventions",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec405-1.19",
+                    "sno": "1.19"
                 },
                 {
-                    "id": "ec-405-1.20",
-                    "sno": "1.20",
-                    "topic": "Assessment / Unit Test on Introduction to Verilog HDL, Language constructs and conventions",
+                    "topic": "Assessment / Practice / Problem Solving on Introduction to Verilog HDL, Language constructs and conventions",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec405-1.20",
+                    "sno": "1.20"
                 }
             ]
         },
@@ -158,74 +158,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "ec-405-2.1",
-                    "sno": "2.1",
                     "topic": "Identify the logic gate primitives provided in Verilog",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ec-405-2.2",
-                    "sno": "2.2",
                     "topic": "Explain the instantiation of gates, gate symbols, and truth tables for and/or and buf/not type gates.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "ec-405-2.3",
-                    "sno": "2.3",
                     "topic": "Explain Rise, fall and turn-off delays in the gate level modelling.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "ec-405-2.4",
-                    "sno": "2.4",
                     "topic": "Explain the assignment statements in data flow modelling",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-2.4",
+                    "sno": "2.4"
                 },
                 {
-                    "id": "ec-405-2.5",
-                    "sno": "2.5",
                     "topic": "Explain different types of delays used in the data flow level modelling",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "ec-405-2.6",
-                    "sno": "2.6",
                     "topic": "List the advantages of data flow modelling over gate level modelling.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-2.6",
+                    "sno": "2.6"
                 },
                 {
-                    "id": "ec-405-2.7",
-                    "sno": "2.7",
                     "topic": "Design simple logic combinational circuits like adders and subtractors, multiplexers and demultiplexers, encoders and Decoders, comparators and ALU using Data Flow and Gate level",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "ec-405-2.8",
-                    "sno": "2.8",
                     "topic": "Detailed discussion and applications of: Identify the logic gate primitives provided in Verilog",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-2.8",
+                    "sno": "2.8"
                 },
                 {
-                    "id": "ec-405-2.9",
-                    "sno": "2.9",
-                    "topic": "Revision of Gate level and Data flow modelling.",
+                    "topic": "Revision of the Unit: Gate level and Data flow modelling.",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec405-2.9",
+                    "sno": "2.9"
                 },
                 {
-                    "id": "ec-405-2.10",
-                    "sno": "2.10",
-                    "topic": "Assessment / Unit Test on Gate level and Data flow modelling.",
+                    "topic": "Assessment / Practice / Problem Solving on Gate level and Data flow modelling.",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec405-2.10",
+                    "sno": "2.10"
                 }
             ]
         },
@@ -235,109 +235,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-405-3.1",
-                    "sno": "3.1",
                     "topic": "Explain structural procedures - initial and always statements.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "ec-405-3.2",
-                    "sno": "3.2",
                     "topic": "Explain blocking and non blocking procedural assignments with examples",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "ec-405-3.3",
-                    "sno": "3.3",
                     "topic": "Explain timing controls like delay-based timing control and event-based timing control",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "ec-405-3.4",
-                    "sno": "3.4",
                     "topic": "Explain conditional statements.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.4",
+                    "sno": "3.4"
                 },
                 {
-                    "id": "ec-405-3.5",
-                    "sno": "3.5",
-                    "topic": "Explain multiway branching – use case, caseX, and caseZ statements.",
+                    "topic": "Explain multiway branching \u2013 use case, caseX, and caseZ statements.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.5",
+                    "sno": "3.5"
                 },
                 {
-                    "id": "ec-405-3.6",
-                    "sno": "3.6",
                     "topic": "Explain the difference between conditional if statement and case statements.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.6",
+                    "sno": "3.6"
                 },
                 {
-                    "id": "ec-405-3.7",
-                    "sno": "3.7",
                     "topic": "Explain looping statements such as while, for, repeat, and forever.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "ec-405-3.8",
-                    "sno": "3.8",
                     "topic": "Explain sequential and parallel blocks.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "ec-405-3.9",
-                    "sno": "3.9",
                     "topic": "Explain about user defined primitives (UDP).",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ec-405-3.10",
-                    "sno": "3.10",
                     "topic": "List the types of UDPs",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.10",
+                    "sno": "3.10"
                 },
                 {
-                    "id": "ec-405-3.11",
-                    "sno": "3.11",
                     "topic": "Explain combinational UDPs with example",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.11",
+                    "sno": "3.11"
                 },
                 {
-                    "id": "ec-405-3.12",
-                    "sno": "3.12",
                     "topic": "Explain sequential UDPs with example",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.12",
+                    "sno": "3.12"
                 },
                 {
-                    "id": "ec-405-3.13",
-                    "sno": "3.13",
                     "topic": "Detailed discussion and applications of: Explain structural procedures - initial and always statements.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-3.13",
+                    "sno": "3.13"
                 },
                 {
-                    "id": "ec-405-3.14",
-                    "sno": "3.14",
-                    "topic": "Revision of Behavioural modeling",
+                    "topic": "Revision of the Unit: Behavioural modeling",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec405-3.14",
+                    "sno": "3.14"
                 },
                 {
-                    "id": "ec-405-3.15",
-                    "sno": "3.15",
-                    "topic": "Assessment / Unit Test on Behavioural modeling",
+                    "topic": "Assessment / Practice / Problem Solving on Behavioural modeling",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec405-3.15",
+                    "sno": "3.15"
                 }
             ]
         },
@@ -347,109 +347,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-405-4.1",
-                    "sno": "4.1",
                     "topic": "Design combinational circuits like i) Multiplexers ii) Demultiplexers iii) Encoders iv) Decoders",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "ec-405-4.2",
-                    "sno": "4.2",
                     "topic": "Design RS, JK, T and D flip flops with Asynchronous and Synchronous Clock and reset",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "ec-405-4.3",
-                    "sno": "4.3",
                     "topic": "Explain implementation of shift registers like SISO, SIPO, PISO, PIPO, etc.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "ec-405-4.4",
-                    "sno": "4.4",
                     "topic": "Design synchronous and asynchronous counters",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "ec-405-4.5",
-                    "sno": "4.5",
                     "topic": "Design a divide by 3 counters",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "ec-405-4.6",
-                    "sno": "4.6",
                     "topic": "Design shift register counters like ring counter, etc.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "ec-405-4.7",
-                    "sno": "4.7",
                     "topic": "Design memories like RAM and ROM.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.7",
+                    "sno": "4.7"
                 },
                 {
-                    "id": "ec-405-4.8",
-                    "sno": "4.8",
                     "topic": "Compare RTL level and structural level modelling.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.8",
+                    "sno": "4.8"
                 },
                 {
-                    "id": "ec-405-4.9",
-                    "sno": "4.9",
                     "topic": "Explain the importance of stimulus block/test bench module.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.9",
+                    "sno": "4.9"
                 },
                 {
-                    "id": "ec-405-4.10",
-                    "sno": "4.10",
                     "topic": "Explain the structure of stimulus module.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.10",
+                    "sno": "4.10"
                 },
                 {
-                    "id": "ec-405-4.11",
-                    "sno": "4.11",
                     "topic": "Apply the stimulus modules for combinational and sequential circuits of Verilog designs",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.11",
+                    "sno": "4.11"
                 },
                 {
-                    "id": "ec-405-4.12",
-                    "sno": "4.12",
                     "topic": "Detailed discussion and applications of: Design combinational circuits like i) Multiplexers ii) Demultiplexers iii) Encoders iv) Decoders",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.12",
+                    "sno": "4.12"
                 },
                 {
-                    "id": "ec-405-4.13",
-                    "sno": "4.13",
                     "topic": "Detailed discussion and applications of: Design RS, JK, T and D flip flops with Asynchronous and Synchronous Clock and reset",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-4.13",
+                    "sno": "4.13"
                 },
                 {
-                    "id": "ec-405-4.14",
-                    "sno": "4.14",
-                    "topic": "Revision of Modeling of combinational and sequential logic circuits",
+                    "topic": "Revision of the Unit: Modeling of combinational and sequential logic circuits",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec405-4.14",
+                    "sno": "4.14"
                 },
                 {
-                    "id": "ec-405-4.15",
-                    "sno": "4.15",
-                    "topic": "Assessment / Unit Test on Modeling of combinational and sequential logic circuits",
+                    "topic": "Assessment / Practice / Problem Solving on Modeling of combinational and sequential logic circuits",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec405-4.15",
+                    "sno": "4.15"
                 }
             ]
         },
@@ -459,109 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-405-5.1",
-                    "sno": "5.1",
                     "topic": "Explain the importance of Finite State Machines",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "ec-405-5.2",
-                    "sno": "5.2",
                     "topic": "Explain the Mealy and Moore types of State Machines.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.2",
+                    "sno": "5.2"
                 },
                 {
-                    "id": "ec-405-5.3",
-                    "sno": "5.3",
                     "topic": "Explain the design of Mealy state machine using Verilog HDL",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "ec-405-5.4",
-                    "sno": "5.4",
                     "topic": "Explain the design of Moore state machine using Verilog HDL",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "ec-405-5.5",
-                    "sno": "5.5",
                     "topic": "List various design tools which are useful in different stages of design.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "ec-405-5.6",
-                    "sno": "5.6",
                     "topic": "List four important programmable logic devices.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "ec-405-5.7",
-                    "sno": "5.7",
                     "topic": "Explain the architecture of PLAs.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.7",
+                    "sno": "5.7"
                 },
                 {
-                    "id": "ec-405-5.8",
-                    "sno": "5.8",
                     "topic": "Explain the architecture of PALs",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.8",
+                    "sno": "5.8"
                 },
                 {
-                    "id": "ec-405-5.9",
-                    "sno": "5.9",
                     "topic": "Explain the architecture of CPLD.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.9",
+                    "sno": "5.9"
                 },
                 {
-                    "id": "ec-405-5.10",
-                    "sno": "5.10",
                     "topic": "Explain the architecture of FPGA.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.10",
+                    "sno": "5.10"
                 },
                 {
-                    "id": "ec-405-5.11",
-                    "sno": "5.11",
                     "topic": "Compare the programmable logic devices.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.11",
+                    "sno": "5.11"
                 },
                 {
-                    "id": "ec-405-5.12",
-                    "sno": "5.12",
                     "topic": "List any 3 applications of programmable logic devices.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.12",
+                    "sno": "5.12"
                 },
                 {
-                    "id": "ec-405-5.13",
-                    "sno": "5.13",
                     "topic": "Explain the design steps for simple systems like UART, Traffic Light controller using FPGA board",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec405-5.13",
+                    "sno": "5.13"
                 },
                 {
-                    "id": "ec-405-5.14",
-                    "sno": "5.14",
-                    "topic": "Revision of System design concepts",
+                    "topic": "Revision of the Unit: System design concepts",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec405-5.14",
+                    "sno": "5.14"
                 },
                 {
-                    "id": "ec-405-5.15",
-                    "sno": "5.15",
-                    "topic": "Assessment / Unit Test on System design concepts",
+                    "topic": "Assessment / Practice / Problem Solving on System design concepts",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec405-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

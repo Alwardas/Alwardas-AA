@@ -11,109 +11,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-502-1.1",
-                    "sno": "1.1",
                     "topic": "Concepts of Introduction to Embedded systems - Part 1",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "ec-502-1.2",
-                    "sno": "1.2",
                     "topic": "Concepts of Introduction to Embedded systems - Part 2",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "ec-502-1.3",
-                    "sno": "1.3",
                     "topic": "Concepts of Introduction to Embedded systems - Part 3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "ec-502-1.4",
-                    "sno": "1.4",
                     "topic": "Concepts of Introduction to Embedded systems - Part 4",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "ec-502-1.5",
-                    "sno": "1.5",
                     "topic": "Concepts of Introduction to Embedded systems - Part 5",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "ec-502-1.6",
-                    "sno": "1.6",
                     "topic": "Concepts of Introduction to Embedded systems - Part 6",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.6",
+                    "sno": "1.6"
                 },
                 {
-                    "id": "ec-502-1.7",
-                    "sno": "1.7",
                     "topic": "Concepts of Introduction to Embedded systems - Part 7",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.7",
+                    "sno": "1.7"
                 },
                 {
-                    "id": "ec-502-1.8",
-                    "sno": "1.8",
                     "topic": "Concepts of Introduction to Embedded systems - Part 8",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.8",
+                    "sno": "1.8"
                 },
                 {
-                    "id": "ec-502-1.9",
-                    "sno": "1.9",
                     "topic": "Concepts of Introduction to Embedded systems - Part 9",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.9",
+                    "sno": "1.9"
                 },
                 {
-                    "id": "ec-502-1.10",
-                    "sno": "1.10",
                     "topic": "Concepts of Introduction to Embedded systems - Part 10",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.10",
+                    "sno": "1.10"
                 },
                 {
-                    "id": "ec-502-1.11",
-                    "sno": "1.11",
                     "topic": "Concepts of Introduction to Embedded systems - Part 11",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ec-502-1.12",
-                    "sno": "1.12",
                     "topic": "Concepts of Introduction to Embedded systems - Part 12",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.12",
+                    "sno": "1.12"
                 },
                 {
-                    "id": "ec-502-1.13",
-                    "sno": "1.13",
                     "topic": "Concepts of Introduction to Embedded systems - Part 13",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-1.13",
+                    "sno": "1.13"
                 },
                 {
-                    "id": "ec-502-1.14",
-                    "sno": "1.14",
-                    "topic": "Revision of Introduction to Embedded systems",
+                    "topic": "Revision of the Unit: Introduction to Embedded systems",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec502-1.14",
+                    "sno": "1.14"
                 },
                 {
-                    "id": "ec-502-1.15",
-                    "sno": "1.15",
-                    "topic": "Assessment / Unit Test on Introduction to Embedded systems",
+                    "topic": "Assessment / Practice / Problem Solving on Introduction to Embedded systems",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec502-1.15",
+                    "sno": "1.15"
                 }
             ]
         },
@@ -123,109 +123,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-502-2.1",
-                    "sno": "2.1",
                     "topic": "Explain about SPI, I2C, UART communication communication protocols",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ec-502-2.2",
-                    "sno": "2.2",
                     "topic": "State the need of Operating system.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "ec-502-2.3",
-                    "sno": "2.3",
                     "topic": "Compare general OS and RTOS",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "ec-502-2.4",
-                    "sno": "2.4",
                     "topic": "List three Types of RTOS",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.4",
+                    "sno": "2.4"
                 },
                 {
-                    "id": "ec-502-2.5",
-                    "sno": "2.5",
                     "topic": "List the features of RTOS",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "ec-502-2.6",
-                    "sno": "2.6",
                     "topic": "Explain Real Time Operating System",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.6",
+                    "sno": "2.6"
                 },
                 {
-                    "id": "ec-502-2.7",
-                    "sno": "2.7",
                     "topic": "List the characteristics of RTOS",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "ec-502-2.8",
-                    "sno": "2.8",
                     "topic": "Explain Tasks, Process and Threads",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.8",
+                    "sno": "2.8"
                 },
                 {
-                    "id": "ec-502-2.9",
-                    "sno": "2.9",
                     "topic": "Explain task management and scheduling",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.9",
+                    "sno": "2.9"
                 },
                 {
-                    "id": "ec-502-2.10",
-                    "sno": "2.10",
                     "topic": "Explain resource allocation and interrupt handling",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.10",
+                    "sno": "2.10"
                 },
                 {
-                    "id": "ec-502-2.11",
-                    "sno": "2.11",
                     "topic": "Define Multi Processing and Multi-Tasking",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.11",
+                    "sno": "2.11"
                 },
                 {
-                    "id": "ec-502-2.12",
-                    "sno": "2.12",
                     "topic": "Detailed discussion and applications of: Explain about SPI, I2C, UART communication communication protocols",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.12",
+                    "sno": "2.12"
                 },
                 {
-                    "id": "ec-502-2.13",
-                    "sno": "2.13",
                     "topic": "Detailed discussion and applications of: State the need of Operating system.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-2.13",
+                    "sno": "2.13"
                 },
                 {
-                    "id": "ec-502-2.14",
-                    "sno": "2.14",
-                    "topic": "Revision of Communication Standards and Real Time Operating System",
+                    "topic": "Revision of the Unit: Communication Standards and Real Time Operating System",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec502-2.14",
+                    "sno": "2.14"
                 },
                 {
-                    "id": "ec-502-2.15",
-                    "sno": "2.15",
-                    "topic": "Assessment / Unit Test on Communication Standards and Real Time Operating System",
+                    "topic": "Assessment / Practice / Problem Solving on Communication Standards and Real Time Operating System",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec502-2.15",
+                    "sno": "2.15"
                 }
             ]
         },
@@ -235,109 +235,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-502-3.1",
-                    "sno": "3.1",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 1",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "ec-502-3.2",
-                    "sno": "3.2",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 2",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "ec-502-3.3",
-                    "sno": "3.3",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "ec-502-3.4",
-                    "sno": "3.4",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 4",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.4",
+                    "sno": "3.4"
                 },
                 {
-                    "id": "ec-502-3.5",
-                    "sno": "3.5",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 5",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.5",
+                    "sno": "3.5"
                 },
                 {
-                    "id": "ec-502-3.6",
-                    "sno": "3.6",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 6",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.6",
+                    "sno": "3.6"
                 },
                 {
-                    "id": "ec-502-3.7",
-                    "sno": "3.7",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 7",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "ec-502-3.8",
-                    "sno": "3.8",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 8",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "ec-502-3.9",
-                    "sno": "3.9",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 9",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ec-502-3.10",
-                    "sno": "3.10",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 10",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.10",
+                    "sno": "3.10"
                 },
                 {
-                    "id": "ec-502-3.11",
-                    "sno": "3.11",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 11",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.11",
+                    "sno": "3.11"
                 },
                 {
-                    "id": "ec-502-3.12",
-                    "sno": "3.12",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 12",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.12",
+                    "sno": "3.12"
                 },
                 {
-                    "id": "ec-502-3.13",
-                    "sno": "3.13",
                     "topic": "Concepts of ARM Cortex M3 Architecture - Part 13",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-3.13",
+                    "sno": "3.13"
                 },
                 {
-                    "id": "ec-502-3.14",
-                    "sno": "3.14",
-                    "topic": "Revision of ARM Cortex M3 Architecture",
+                    "topic": "Revision of the Unit: ARM Cortex M3 Architecture",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec502-3.14",
+                    "sno": "3.14"
                 },
                 {
-                    "id": "ec-502-3.15",
-                    "sno": "3.15",
-                    "topic": "Assessment / Unit Test on ARM Cortex M3 Architecture",
+                    "topic": "Assessment / Practice / Problem Solving on ARM Cortex M3 Architecture",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec502-3.15",
+                    "sno": "3.15"
                 }
             ]
         },
@@ -347,109 +347,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-502-4.1",
-                    "sno": "4.1",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 1",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "ec-502-4.2",
-                    "sno": "4.2",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 2",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "ec-502-4.3",
-                    "sno": "4.3",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "ec-502-4.4",
-                    "sno": "4.4",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 4",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "ec-502-4.5",
-                    "sno": "4.5",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 5",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "ec-502-4.6",
-                    "sno": "4.6",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 6",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "ec-502-4.7",
-                    "sno": "4.7",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 7",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.7",
+                    "sno": "4.7"
                 },
                 {
-                    "id": "ec-502-4.8",
-                    "sno": "4.8",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 8",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.8",
+                    "sno": "4.8"
                 },
                 {
-                    "id": "ec-502-4.9",
-                    "sno": "4.9",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 9",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.9",
+                    "sno": "4.9"
                 },
                 {
-                    "id": "ec-502-4.10",
-                    "sno": "4.10",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 10",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.10",
+                    "sno": "4.10"
                 },
                 {
-                    "id": "ec-502-4.11",
-                    "sno": "4.11",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 11",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.11",
+                    "sno": "4.11"
                 },
                 {
-                    "id": "ec-502-4.12",
-                    "sno": "4.12",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 12",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.12",
+                    "sno": "4.12"
                 },
                 {
-                    "id": "ec-502-4.13",
-                    "sno": "4.13",
                     "topic": "Concepts of ARM - Instruction set and programming - Part 13",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-4.13",
+                    "sno": "4.13"
                 },
                 {
-                    "id": "ec-502-4.14",
-                    "sno": "4.14",
-                    "topic": "Revision of ARM - Instruction set and programming",
+                    "topic": "Revision of the Unit: ARM - Instruction set and programming",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec502-4.14",
+                    "sno": "4.14"
                 },
                 {
-                    "id": "ec-502-4.15",
-                    "sno": "4.15",
-                    "topic": "Assessment / Unit Test on ARM - Instruction set and programming",
+                    "topic": "Assessment / Practice / Problem Solving on ARM - Instruction set and programming",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec502-4.15",
+                    "sno": "4.15"
                 }
             ]
         },
@@ -459,109 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ec-502-5.1",
-                    "sno": "5.1",
                     "topic": "Explain about GPIO interfacing of ARM cortex M3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "ec-502-5.2",
-                    "sno": "5.2",
                     "topic": "Explain about ADC and DAC interfacing and their usage and applications (Voltage measurement, sinewave generation).",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.2",
+                    "sno": "5.2"
                 },
                 {
-                    "id": "ec-502-5.3",
-                    "sno": "5.3",
                     "topic": "Explain about ARM peripherals: i) Timer ii) Watchdog timer iii) Sys Tick iv) PWMv)Internal",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "ec-502-5.4",
-                    "sno": "5.4",
                     "topic": "Explain about Interfacing LEDs and switches of ARM cortex M3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "ec-502-5.5",
-                    "sno": "5.5",
                     "topic": "Explain about interfacing seven segment display of ARM cortex M3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "ec-502-5.6",
-                    "sno": "5.6",
                     "topic": "Explain about keypad interfacing of ARM cortex M3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "ec-502-5.7",
-                    "sno": "5.7",
                     "topic": "Explain about LCD interfacing of ARM cortex M3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.7",
+                    "sno": "5.7"
                 },
                 {
-                    "id": "ec-502-5.8",
-                    "sno": "5.8",
                     "topic": "Detailed discussion and applications of: Explain about GPIO interfacing of ARM cortex M3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.8",
+                    "sno": "5.8"
                 },
                 {
-                    "id": "ec-502-5.9",
-                    "sno": "5.9",
                     "topic": "Detailed discussion and applications of: Explain about ADC and DAC interfacing and their usage and applications (Voltage measurement, sinewave generation).",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.9",
+                    "sno": "5.9"
                 },
                 {
-                    "id": "ec-502-5.10",
-                    "sno": "5.10",
                     "topic": "Detailed discussion and applications of: Explain about ARM peripherals: i) Timer ii) Watchdog timer iii) Sys Tick iv) PWMv)Internal",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.10",
+                    "sno": "5.10"
                 },
                 {
-                    "id": "ec-502-5.11",
-                    "sno": "5.11",
                     "topic": "Detailed discussion and applications of: Explain about Interfacing LEDs and switches of ARM cortex M3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.11",
+                    "sno": "5.11"
                 },
                 {
-                    "id": "ec-502-5.12",
-                    "sno": "5.12",
                     "topic": "Detailed discussion and applications of: Explain about interfacing seven segment display of ARM cortex M3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.12",
+                    "sno": "5.12"
                 },
                 {
-                    "id": "ec-502-5.13",
-                    "sno": "5.13",
                     "topic": "Detailed discussion and applications of: Explain about keypad interfacing of ARM cortex M3",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec502-5.13",
+                    "sno": "5.13"
                 },
                 {
-                    "id": "ec-502-5.14",
-                    "sno": "5.14",
-                    "topic": "Revision of ARM Interfacing",
+                    "topic": "Revision of the Unit: ARM Interfacing",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec502-5.14",
+                    "sno": "5.14"
                 },
                 {
-                    "id": "ec-502-5.15",
-                    "sno": "5.15",
-                    "topic": "Assessment / Unit Test on ARM Interfacing",
+                    "topic": "Assessment / Practice / Problem Solving on ARM Interfacing",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec502-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

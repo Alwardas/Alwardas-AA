@@ -11,123 +11,123 @@
             "totalPeriods": 17,
             "topics": [
                 {
-                    "id": "ec-403-1.1",
-                    "sno": "1.1",
                     "topic": "Introduction to transmission lines and different types.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "ec-403-1.2",
-                    "sno": "1.2",
                     "topic": "Draw the electrical equivalent of transmission line.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "ec-403-1.3",
-                    "sno": "1.3",
                     "topic": "Define the primary and secondary constants of a transmission line.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "ec-403-1.4",
-                    "sno": "1.4",
                     "topic": "Explain the significance of characteristic impedance and Propagation constant of a transmission line.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "ec-403-1.5",
-                    "sno": "1.5",
                     "topic": "Define reflection coefficient and standing wave ratio and give the relation between them.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "ec-403-1.6",
-                    "sno": "1.6",
                     "topic": "Explain the concept of Reflection, Refraction and diffraction of EM waves.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.6",
+                    "sno": "1.6"
                 },
                 {
-                    "id": "ec-403-1.7",
-                    "sno": "1.7",
                     "topic": "Explain the Ground wave propagation with the equation for electric filed at a distant place.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.7",
+                    "sno": "1.7"
                 },
                 {
-                    "id": "ec-403-1.8",
-                    "sno": "1.8",
                     "topic": "List the applications and limitations of ground wave propagation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.8",
+                    "sno": "1.8"
                 },
                 {
-                    "id": "ec-403-1.9",
-                    "sno": "1.9",
                     "topic": "Classify different layers of ionosphere and briefly explain them",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.9",
+                    "sno": "1.9"
                 },
                 {
-                    "id": "ec-403-1.10",
-                    "sno": "1.10",
                     "topic": "Explain the ionospheric wave (sky wave) propagation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.10",
+                    "sno": "1.10"
                 },
                 {
-                    "id": "ec-403-1.11",
-                    "sno": "1.11",
                     "topic": "Define the terms",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ec-403-1.12",
-                    "sno": "1.12",
                     "topic": "Critical Frequency ii) MUF iii) Skip Distance iv) Skip Zone v) Actual height and vi) Virtual height of an Ionosphere",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.12",
+                    "sno": "1.12"
                 },
                 {
-                    "id": "ec-403-1.13",
-                    "sno": "1.13",
                     "topic": "Explain Space wave (trophospheric wave) propagation and factors affecting space wave propagation (LOS)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.13",
+                    "sno": "1.13"
                 },
                 {
-                    "id": "ec-403-1.14",
-                    "sno": "1.14",
                     "topic": "Briefly explain i) Duct propagation & ii) Tropospheric Scatter Propagation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.14",
+                    "sno": "1.14"
                 },
                 {
-                    "id": "ec-403-1.15",
-                    "sno": "1.15",
                     "topic": "Detailed discussion and applications of: Introduction to transmission lines and different types.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-1.15",
+                    "sno": "1.15"
                 },
                 {
-                    "id": "ec-403-1.16",
-                    "sno": "1.16",
-                    "topic": "Revision of Transmission Lines and Wave Propagation",
+                    "topic": "Revision of the Unit: Transmission Lines and Wave Propagation",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec403-1.16",
+                    "sno": "1.16"
                 },
                 {
-                    "id": "ec-403-1.17",
-                    "sno": "1.17",
-                    "topic": "Assessment / Unit Test on Transmission Lines and Wave Propagation",
+                    "topic": "Assessment / Practice / Problem Solving on Transmission Lines and Wave Propagation",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec403-1.17",
+                    "sno": "1.17"
                 }
             ]
         },
@@ -137,116 +137,116 @@
             "totalPeriods": 16,
             "topics": [
                 {
-                    "id": "ec-403-2.1",
-                    "sno": "2.1",
                     "topic": "Explain the principle of radiation of EM waves from antennas",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ec-403-2.2",
-                    "sno": "2.2",
                     "topic": "Explain radiation mechanism of an antenna from transmission line theory",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "ec-403-2.3",
-                    "sno": "2.3",
                     "topic": "State the following parameters of antenna i. Radiation pattern ii. Front to back ratio iii. Directive gain iv. Directivity v. Power gain vi. Beamwidth",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "ec-403-2.4",
-                    "sno": "2.4",
                     "topic": "Explain Isotropic radiator",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.4",
+                    "sno": "2.4"
                 },
                 {
-                    "id": "ec-403-2.5",
-                    "sno": "2.5",
                     "topic": "Classify antennas based on i) Radiation pattern ii) Frequency range iii) Construction",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "ec-403-2.6",
-                    "sno": "2.6",
                     "topic": "Bandwidth",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.6",
+                    "sno": "2.6"
                 },
                 {
-                    "id": "ec-403-2.7",
-                    "sno": "2.7",
                     "topic": "Explain the function of dipole and folded dipole antennas and give their applications",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "ec-403-2.8",
-                    "sno": "2.8",
                     "topic": "List different microwave antennas",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.8",
+                    "sno": "2.8"
                 },
                 {
-                    "id": "ec-403-2.9",
-                    "sno": "2.9",
                     "topic": "Explain different horn antennas and give its applications",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.9",
+                    "sno": "2.9"
                 },
                 {
-                    "id": "ec-403-2.10",
-                    "sno": "2.10",
                     "topic": "Explain the construction and working principle of Parabolic Dish antenna",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.10",
+                    "sno": "2.10"
                 },
                 {
-                    "id": "ec-403-2.11",
-                    "sno": "2.11",
                     "topic": "State the need of antenna arrays",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.11",
+                    "sno": "2.11"
                 },
                 {
-                    "id": "ec-403-2.12",
-                    "sno": "2.12",
                     "topic": "Explain about end-fire array and broadside array",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.12",
+                    "sno": "2.12"
                 },
                 {
-                    "id": "ec-403-2.13",
-                    "sno": "2.13",
                     "topic": "Introduction to smart antennas",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.13",
+                    "sno": "2.13"
                 },
                 {
-                    "id": "ec-403-2.14",
-                    "sno": "2.14",
                     "topic": "Working of smart antennas",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-2.14",
+                    "sno": "2.14"
                 },
                 {
-                    "id": "ec-403-2.15",
-                    "sno": "2.15",
-                    "topic": "Revision of Antennas",
+                    "topic": "Revision of the Unit: Antennas",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec403-2.15",
+                    "sno": "2.15"
                 },
                 {
-                    "id": "ec-403-2.16",
-                    "sno": "2.16",
-                    "topic": "Assessment / Unit Test on Antennas",
+                    "topic": "Assessment / Practice / Problem Solving on Antennas",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec403-2.16",
+                    "sno": "2.16"
                 }
             ]
         },
@@ -256,144 +256,144 @@
             "totalPeriods": 20,
             "topics": [
                 {
-                    "id": "ec-403-3.1",
-                    "sno": "3.1",
                     "topic": "Define microwave frequencies",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "ec-403-3.2",
-                    "sno": "3.2",
                     "topic": "State the different microwave frequency bands and their applications",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "ec-403-3.3",
-                    "sno": "3.3",
                     "topic": "State the function of waveguides and classify them",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "ec-403-3.4",
-                    "sno": "3.4",
                     "topic": "Explain the concept of propagation of wave in rectangular waveguides",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.4",
+                    "sno": "3.4"
                 },
                 {
-                    "id": "ec-403-3.5",
-                    "sno": "3.5",
                     "topic": "Define TE (Transverse Electric) Mode and TM (Transverse Magnetic) Mode",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.5",
+                    "sno": "3.5"
                 },
                 {
-                    "id": "ec-403-3.6",
-                    "sno": "3.6",
                     "topic": "Define the terms: i) dominant mode, ii) cut-off wavelength, iii) cut-off frequency iv) phase velocity and v) group velocity related to waveguides",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.6",
+                    "sno": "3.6"
                 },
                 {
-                    "id": "ec-403-3.7",
-                    "sno": "3.7",
                     "topic": "List different Microwave passive devices",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "ec-403-3.8",
-                    "sno": "3.8",
                     "topic": "State the uses of i) T-junctions: E-Plane T, H-Plane T & Hybrid T ii) Microwave Bends iii) Microwave tapers iv) Microwave Twist",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "ec-403-3.9",
-                    "sno": "3.9",
                     "topic": "Explain the working principle of Reflex Klystron",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ec-403-3.10",
-                    "sno": "3.10",
                     "topic": "Explain the working principle of Magnetron and state its applications",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.10",
+                    "sno": "3.10"
                 },
                 {
-                    "id": "ec-403-3.11",
-                    "sno": "3.11",
                     "topic": "Explain the working principle of Travelling Wave Tube and state its applications",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.11",
+                    "sno": "3.11"
                 },
                 {
-                    "id": "ec-403-3.12",
-                    "sno": "3.12",
                     "topic": "List different microwave solid state devices",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.12",
+                    "sno": "3.12"
                 },
                 {
-                    "id": "ec-403-3.13",
-                    "sno": "3.13",
                     "topic": "Explain the working of Gunn diode",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.13",
+                    "sno": "3.13"
                 },
                 {
-                    "id": "ec-403-3.14",
-                    "sno": "3.14",
                     "topic": "Explain the working IMPATT diode.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.14",
+                    "sno": "3.14"
                 },
                 {
-                    "id": "ec-403-3.15",
-                    "sno": "3.15",
                     "topic": "Detailed discussion and applications of: Define microwave frequencies",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.15",
+                    "sno": "3.15"
                 },
                 {
-                    "id": "ec-403-3.16",
-                    "sno": "3.16",
                     "topic": "Detailed discussion and applications of: State the different microwave frequency bands and their applications",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.16",
+                    "sno": "3.16"
                 },
                 {
-                    "id": "ec-403-3.17",
-                    "sno": "3.17",
                     "topic": "Detailed discussion and applications of: State the function of waveguides and classify them",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.17",
+                    "sno": "3.17"
                 },
                 {
-                    "id": "ec-403-3.18",
-                    "sno": "3.18",
                     "topic": "Detailed discussion and applications of: Explain the concept of propagation of wave in rectangular waveguides",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-3.18",
+                    "sno": "3.18"
                 },
                 {
-                    "id": "ec-403-3.19",
-                    "sno": "3.19",
-                    "topic": "Revision of Microwave Components and Devices",
+                    "topic": "Revision of the Unit: Microwave Components and Devices",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec403-3.19",
+                    "sno": "3.19"
                 },
                 {
-                    "id": "ec-403-3.20",
-                    "sno": "3.20",
-                    "topic": "Assessment / Unit Test on Microwave Components and Devices",
+                    "topic": "Assessment / Practice / Problem Solving on Microwave Components and Devices",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec403-3.20",
+                    "sno": "3.20"
                 }
             ]
         },
@@ -403,88 +403,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "ec-403-4.1",
-                    "sno": "4.1",
                     "topic": "State the basic working principle of a RADAR",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "ec-403-4.2",
-                    "sno": "4.2",
                     "topic": "Derive the free space RADAR range equation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "ec-403-4.3",
-                    "sno": "4.3",
                     "topic": "Explain the factors affecting range of a RADAR",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "ec-403-4.4",
-                    "sno": "4.4",
                     "topic": "Classify RADARs",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "ec-403-4.5",
-                    "sno": "4.5",
                     "topic": "Draw the block diagram of a pulse RADAR and explain the function of each block",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "ec-403-4.6",
-                    "sno": "4.6",
                     "topic": "State the major advantages & disadvantages of a pulsed RADAR system",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "ec-403-4.7",
-                    "sno": "4.7",
                     "topic": "State the need of duplexer",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-4.7",
+                    "sno": "4.7"
                 },
                 {
-                    "id": "ec-403-4.8",
-                    "sno": "4.8",
                     "topic": "List the various displays used in RADAR",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-4.8",
+                    "sno": "4.8"
                 },
                 {
-                    "id": "ec-403-4.9",
-                    "sno": "4.9",
                     "topic": "Draw and explain the block diagram of continuous wave (CW) RADAR",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-4.9",
+                    "sno": "4.9"
                 },
                 {
-                    "id": "ec-403-4.10",
-                    "sno": "4.10",
                     "topic": "Explain the Doppler Effect",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-4.10",
+                    "sno": "4.10"
                 },
                 {
-                    "id": "ec-403-4.11",
-                    "sno": "4.11",
-                    "topic": "Revision of RADARs",
+                    "topic": "Revision of the Unit: RADARs",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec403-4.11",
+                    "sno": "4.11"
                 },
                 {
-                    "id": "ec-403-4.12",
-                    "sno": "4.12",
-                    "topic": "Assessment / Unit Test on RADARs",
+                    "topic": "Assessment / Practice / Problem Solving on RADARs",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec403-4.12",
+                    "sno": "4.12"
                 }
             ]
         },
@@ -494,74 +494,74 @@
             "totalPeriods": 10,
             "topics": [
                 {
-                    "id": "ec-403-5.1",
-                    "sno": "5.1",
                     "topic": "State the need for satellite communication",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "ec-403-5.2",
-                    "sno": "5.2",
                     "topic": "List the advantages of satellite communication system over terrestrial communication system",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-5.2",
+                    "sno": "5.2"
                 },
                 {
-                    "id": "ec-403-5.3",
-                    "sno": "5.3",
                     "topic": "Explain uplink and down link frequencies",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "ec-403-5.4",
-                    "sno": "5.4",
                     "topic": "List various types of satellites (LEOs, MEOs and GEOs)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "ec-403-5.5",
-                    "sno": "5.5",
                     "topic": "List the advantages of Geosynchronous satellites",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "ec-403-5.6",
-                    "sno": "5.6",
                     "topic": "Draw and explain block diagram of a satellite communication system (Satellite on board)",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "ec-403-5.7",
-                    "sno": "5.7",
                     "topic": "Draw the block diagram of earth station and explain each block.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-5.7",
+                    "sno": "5.7"
                 },
                 {
-                    "id": "ec-403-5.8",
-                    "sno": "5.8",
                     "topic": "List the functions of the satellite transponder.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ec403-5.8",
+                    "sno": "5.8"
                 },
                 {
-                    "id": "ec-403-5.9",
-                    "sno": "5.9",
-                    "topic": "Revision of Satellite Communication System",
+                    "topic": "Revision of the Unit: Satellite Communication System",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ec403-5.9",
+                    "sno": "5.9"
                 },
                 {
-                    "id": "ec-403-5.10",
-                    "sno": "5.10",
-                    "topic": "Assessment / Unit Test on Satellite Communication System",
+                    "topic": "Assessment / Practice / Problem Solving on Satellite Communication System",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ec403-5.10",
+                    "sno": "5.10"
                 }
             ]
         }

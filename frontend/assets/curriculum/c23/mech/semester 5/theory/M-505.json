@@ -11,53 +11,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Definition and Methods of Refrigeration. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-1.1",
-                    "sno": "1.1",
-                    "topic": "Definition and Methods of Refrigeration.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Definition and Methods of Refrigeration. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-1.2",
-                    "sno": "1.2",
-                    "topic": "Unit of Refrigeration (Ton) and COP.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Definition and Methods of Refrigeration. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-1.3",
-                    "sno": "1.3",
-                    "topic": "Reversed Carnot Cycle.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "Unit of Refrigeration (Ton) and COP. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-1.4",
-                    "sno": "1.4",
-                    "topic": "Bell-Coleman (Air) Refrigeration Cycle.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "Unit of Refrigeration (Ton) and COP. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-1.5",
-                    "sno": "1.5",
-                    "topic": "Refrigerants: Classification and Properties.",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Unit of Refrigeration (Ton) and COP. - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m505-1.6",
-                    "sno": "1.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.6"
                 },
                 {
-                    "id": "m505-1.7",
-                    "sno": "1.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Reversed Carnot Cycle. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m505-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Reversed Carnot Cycle. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Reversed Carnot Cycle. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Bell-Coleman (Air) Refrigeration Cycle. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Bell-Coleman (Air) Refrigeration Cycle. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Refrigerants: Classification and Properties. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Refrigerants: Classification and Properties. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Fundamentals of Refrigeration",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m505-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Fundamentals of Refrigeration",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m505-1.15",
+                    "sno": "1.15"
                 }
             ]
         },
@@ -67,53 +123,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Principle and Components of VCR System. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-2.1",
-                    "sno": "2.1",
-                    "topic": "Principle and Components of VCR System.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Principle and Components of VCR System. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-2.2",
-                    "sno": "2.2",
-                    "topic": "Analysis of VCR cycle using P-H and T-S diagrams.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Principle and Components of VCR System. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-2.3",
-                    "sno": "2.3",
-                    "topic": "Effect of superheating and subcooling.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Analysis of VCR cycle using P-H and T-S diagrams. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-2.4",
-                    "sno": "2.4",
-                    "topic": "Calculation of COP.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.4"
                 },
                 {
+                    "topic": "Analysis of VCR cycle using P-H and T-S diagrams. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-2.5",
-                    "sno": "2.5",
-                    "topic": "Types of Compressors, Condensers, Evaporators.",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Analysis of VCR cycle using P-H and T-S diagrams. - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m505-2.6",
-                    "sno": "2.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.6"
                 },
                 {
-                    "id": "m505-2.7",
-                    "sno": "2.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Effect of superheating and subcooling. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m505-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Effect of superheating and subcooling. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Effect of superheating and subcooling. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Calculation of COP. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Calculation of COP. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Types of Compressors, Condensers, Evaporators. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Types of Compressors, Condensers, Evaporators. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Vapour Compression Refrigeration System",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m505-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Vapour Compression Refrigeration System",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m505-2.15",
+                    "sno": "2.15"
                 }
             ]
         },
@@ -123,53 +235,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Principle of Vapour Absorption System. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-3.1",
-                    "sno": "3.1",
-                    "topic": "Principle of Vapour Absorption System.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Principle of Vapour Absorption System. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-3.2",
-                    "sno": "3.2",
-                    "topic": "Simple Ammonia-Water System.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Principle of Vapour Absorption System. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-3.3",
-                    "sno": "3.3",
-                    "topic": "Practical Ammonia-Water System.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Simple Ammonia-Water System. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-3.4",
-                    "sno": "3.4",
-                    "topic": "Electrolux (Three fluid) System.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Simple Ammonia-Water System. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-3.5",
-                    "sno": "3.5",
-                    "topic": "Comparison of VCR and VAR systems.",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Simple Ammonia-Water System. - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m505-3.6",
-                    "sno": "3.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.6"
                 },
                 {
-                    "id": "m505-3.7",
-                    "sno": "3.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Practical Ammonia-Water System. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m505-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Practical Ammonia-Water System. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Practical Ammonia-Water System. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Electrolux (Three fluid) System. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Electrolux (Three fluid) System. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Comparison of VCR and VAR systems. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Comparison of VCR and VAR systems. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Vapour Absorption Refrigeration System",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m505-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Vapour Absorption Refrigeration System",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m505-3.15",
+                    "sno": "3.15"
                 }
             ]
         },
@@ -179,46 +347,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Expansion devices: Capillary tube, Thermostatic expansion valve. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-4.1",
-                    "sno": "4.1",
-                    "topic": "Expansion devices: Capillary tube, Thermostatic expansion valve.",
-                    "type": "theory",
-                    "period": 4
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Expansion devices: Capillary tube, Thermostatic expansion valve. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-4.2",
-                    "sno": "4.2",
-                    "topic": "Safety controls: Pressure switches, Thermostats.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Expansion devices: Capillary tube, Thermostatic expansion valve. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-4.3",
-                    "sno": "4.3",
-                    "topic": "Domestic Refrigerator and Water Cooler.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Expansion devices: Capillary tube, Thermostatic expansion valve. - Part 4",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-4.4",
-                    "sno": "4.4",
-                    "topic": "Cold Storage.",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Safety controls: Pressure switches, Thermostats. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 3
-                },
-                {
                     "id": "m505-4.5",
-                    "sno": "4.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.5"
                 },
                 {
-                    "id": "m505-4.6",
-                    "sno": "4.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Safety controls: Pressure switches, Thermostats. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m505-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Safety controls: Pressure switches, Thermostats. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Domestic Refrigerator and Water Cooler. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Domestic Refrigerator and Water Cooler. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Domestic Refrigerator and Water Cooler. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Cold Storage. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Cold Storage. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Cold Storage. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Refrigeration Equipment and Controls",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m505-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Refrigeration Equipment and Controls",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m505-4.15",
+                    "sno": "4.15"
                 }
             ]
         },
@@ -228,53 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Psychrometry: Properties of air, Psychrometric chart. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-5.1",
-                    "sno": "5.1",
-                    "topic": "Psychrometry: Properties of air, Psychrometric chart.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Psychrometry: Properties of air, Psychrometric chart. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-5.2",
-                    "sno": "5.2",
-                    "topic": "Psychrometric processes (Sensible heating/cooling, Humidification/Dehumidification).",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Psychrometry: Properties of air, Psychrometric chart. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-5.3",
-                    "sno": "5.3",
-                    "topic": "Human comfort conditions.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Psychrometric processes (Sensible heating/cooling, Humidification/Dehumidification). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-5.4",
-                    "sno": "5.4",
-                    "topic": "Air Conditioning Systems: Window AC, Split AC.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.4"
                 },
                 {
+                    "topic": "Psychrometric processes (Sensible heating/cooling, Humidification/Dehumidification). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m505-5.5",
-                    "sno": "5.5",
-                    "topic": "Central Air Conditioning (Basics).",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Psychrometric processes (Sensible heating/cooling, Humidification/Dehumidification). - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m505-5.6",
-                    "sno": "5.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.6"
                 },
                 {
-                    "id": "m505-5.7",
-                    "sno": "5.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Human comfort conditions. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m505-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Human comfort conditions. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Human comfort conditions. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Air Conditioning Systems: Window AC, Split AC. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Air Conditioning Systems: Window AC, Split AC. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Central Air Conditioning (Basics). - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Central Air Conditioning (Basics). - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m505-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Air Conditioning",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m505-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Air Conditioning",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m505-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

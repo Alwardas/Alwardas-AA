@@ -11,109 +11,144 @@
             "totalPeriods": 20,
             "topics": [
                 {
-                    "id": "ee4021.1",
-                    "sno": "1.1",
-                    "topic": "Principle of Production of Rotating Magnetic Field in 3-phaseSystem.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Principle of Production of Rotating Magnetic Field in 3-phaseSystem. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "ee4021.2",
-                    "sno": "1.2",
-                    "topic": "Explain the construction of Induction motor- slip ring and squirrel cage",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Principle of Production of Rotating Magnetic Field in 3-phaseSystem. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "ee4021.3",
-                    "sno": "1.3",
-                    "topic": "Compare Slip ring & Squirrel cage Induction motors.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the construction of Induction motor- slip ring and squirrel cage - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "ee4021.4",
-                    "sno": "1.4",
-                    "topic": "State the working principle of 3 phase induction motor.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the construction of Induction motor- slip ring and squirrel cage - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "ee4021.5",
-                    "sno": "1.5",
-                    "topic": "Explain working of 3 phase induction motor on(i)no-load (ii) Load.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Compare Slip ring & Squirrel cage Induction motors. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "ee4021.6",
-                    "sno": "1.6",
+                    "topic": "Compare Slip ring & Squirrel cage Induction motors. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "State the working principle of 3 phase induction motor. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State the working principle of 3 phase induction motor. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Explain working of 3 phase induction motor on(i)no-load (ii) Load. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain working of 3 phase induction motor on(i)no-load (ii) Load. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-1.10",
+                    "sno": "1.10"
+                },
+                {
                     "topic": "Derive the expression relating to TORQUE, POWER and SLIP and solve simple problems.",
                     "period": 1,
-                    "type": "problem solving"
+                    "type": "problem solving",
+                    "id": "ee402-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ee4021.7",
-                    "sno": "1.7",
                     "topic": "Draw Torque \u2013 Slip curves.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-1.12",
+                    "sno": "1.12"
                 },
                 {
-                    "id": "ee4021.8",
-                    "sno": "1.8",
                     "topic": "Explain(i)No-load test (ii) Blocked rotor test",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-1.13",
+                    "sno": "1.13"
                 },
                 {
-                    "id": "ee4021.9",
-                    "sno": "1.9",
                     "topic": "State the Starters used for different ratings of induction motors.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-1.14",
+                    "sno": "1.14"
                 },
                 {
-                    "id": "ee4021.10",
-                    "sno": "1.10",
                     "topic": "Explain the working of the following starters with the help of circuitdiagram. (i) D.O.L.starter (ii) Star/Delta Starter (iii) Auto \u2013 Transformerstarter (iv) Rotor resistance starter",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-1.15",
+                    "sno": "1.15"
                 },
                 {
-                    "id": "ee4021.11",
-                    "sno": "1.11",
                     "topic": "Explain the speed control of inductor motorsby (i) Frequencychangingmethod(ii) Pole changingmethod (iii) Injecting voltage inrotor circuit(iv)Cascading",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-1.16",
+                    "sno": "1.16"
                 },
                 {
-                    "id": "ee4021.12",
-                    "sno": "1.12",
                     "topic": "State the advantages of induction motors",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-1.17",
+                    "sno": "1.17"
                 },
                 {
-                    "id": "ee4021.13",
-                    "sno": "1.13",
                     "topic": "List at least six applications of induction motors",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-1.18",
+                    "sno": "1.18"
                 },
                 {
-                    "id": "ee402-1.14",
-                    "sno": "1.14",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: 3-Phase Induction Motors",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee402-1.19",
+                    "sno": "1.19"
                 },
                 {
-                    "id": "ee402-1.15",
-                    "sno": "1.15",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on 3-Phase Induction Motors",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee402-1.20",
+                    "sno": "1.20"
                 }
             ]
         },
@@ -123,67 +158,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "ee4022.1",
-                    "sno": "2.1",
-                    "topic": "List the types of 1- phase motors.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "List the types of 1- phase motors. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ee4022.2",
-                    "sno": "2.2",
-                    "topic": "Explain why a Single-phase Induction motor is not a Self-starting motor.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "List the types of 1- phase motors. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "ee4022.3",
-                    "sno": "2.3",
-                    "topic": "Explain the working principle of 1 \u2013 phase Induction motorbyDouble field revolving theory.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain why a Single-phase Induction motor is not a Self-starting motor. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "ee4022.4",
-                    "sno": "2.4",
+                    "topic": "Explain why a Single-phase Induction motor is not a Self-starting motor. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain the working principle of 1 \u2013 phase Induction motorbyDouble field revolving theory. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain the working principle of 1 \u2013 phase Induction motorbyDouble field revolving theory. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-2.6",
+                    "sno": "2.6"
+                },
+                {
                     "topic": "Explain the working of the following 1-phase induction motors with legible sketch (i) Splitphasemotor(ii) capacitor start motor (iii) shaded polemotor",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "ee4022.5",
-                    "sno": "2.5",
                     "topic": "Explain the working of the universal motor.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-2.8",
+                    "sno": "2.8"
                 },
                 {
-                    "id": "ee4022.6",
-                    "sno": "2.6",
                     "topic": "Explain the working of Stepper motor and list different types.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-2.9",
+                    "sno": "2.9"
                 },
                 {
-                    "id": "ee4022.7",
-                    "sno": "2.7",
                     "topic": "Listapplicationsof (i) 1-phaseinductionmotors (ii)1-phase Commutator motors (iii)Steppermotors.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-2.10",
+                    "sno": "2.10"
                 },
                 {
-                    "id": "ee402-2.8",
-                    "sno": "2.8",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: 1-Phase Induction Motors",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee402-2.11",
+                    "sno": "2.11"
                 },
                 {
-                    "id": "ee402-2.9",
-                    "sno": "2.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on 1-Phase Induction Motors",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee402-2.12",
+                    "sno": "2.12"
                 }
             ]
         },
@@ -193,95 +249,116 @@
             "totalPeriods": 16,
             "topics": [
                 {
-                    "id": "ee4023.1",
-                    "sno": "3.1",
-                    "topic": "Explain the working principle of Alternators.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the working principle of Alternators. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "ee4023.2",
-                    "sno": "3.2",
-                    "topic": "Describe the Constructional details of Alternators with legible sketch.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the working principle of Alternators. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "ee4023.3",
-                    "sno": "3.3",
-                    "topic": "Classify the Alternators based on rotor construction.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Describe the Constructional details of Alternators with legible sketch. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "ee4023.4",
-                    "sno": "3.4",
+                    "topic": "Describe the Constructional details of Alternators with legible sketch. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Classify the Alternators based on rotor construction. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Classify the Alternators based on rotor construction. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-3.6",
+                    "sno": "3.6"
+                },
+                {
                     "topic": "State the advantage of Stationary Armature.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "ee4023.5",
-                    "sno": "3.5",
                     "topic": "Define Chording and Distribution factor",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "ee4023.6",
-                    "sno": "3.6",
                     "topic": "Derive EMF equation of an alternator taking into account distribution factor and pitch factor and solve problems",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ee4023.7",
-                    "sno": "3.7",
                     "topic": "State the need for an exciter in an Alternator and list various types of exciters.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-3.10",
+                    "sno": "3.10"
                 },
                 {
-                    "id": "ee4023.8",
-                    "sno": "3.8",
                     "topic": "ExplainArmatureReactionofAlternatoratdifferentP.F's.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-3.11",
+                    "sno": "3.11"
                 },
                 {
-                    "id": "ee4023.9",
-                    "sno": "3.9",
                     "topic": "Define the term synchronous impedance and state its effects on operation of an alternator.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-3.12",
+                    "sno": "3.12"
                 },
                 {
-                    "id": "ee4023.10",
-                    "sno": "3.10",
                     "topic": "Define voltage regulation of an alternator",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-3.13",
+                    "sno": "3.13"
                 },
                 {
-                    "id": "ee4023.11",
-                    "sno": "3.11",
                     "topic": "List the different methods of finding the regulation of alternator.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-3.14",
+                    "sno": "3.14"
                 },
                 {
-                    "id": "ee402-3.12",
-                    "sno": "3.12",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: Alternators",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee402-3.15",
+                    "sno": "3.15"
                 },
                 {
-                    "id": "ee402-3.13",
-                    "sno": "3.13",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Alternators",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee402-3.16",
+                    "sno": "3.16"
                 }
             ]
         },
@@ -291,46 +368,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "ee4024.1",
-                    "sno": "4.1",
-                    "topic": "Explain the necessity for parallel operation of alternators",
-                    "period": 3,
-                    "type": "theory"
+                    "topic": "Explain the necessity for parallel operation of alternators - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "ee4024.2",
-                    "sno": "4.2",
-                    "topic": "State the conditions for synchronisation",
-                    "period": 3,
-                    "type": "theory"
+                    "topic": "Explain the necessity for parallel operation of alternators - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "ee4024.3",
-                    "sno": "4.3",
-                    "topic": "Explain the procedure of synchronisation by using lamps and synchro scope methods.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the necessity for parallel operation of alternators - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "ee4024.4",
-                    "sno": "4.4",
-                    "topic": "Explain the method for adjusting the loads shared by two alternators (or one Alternator with infinite bus bar).",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "State the conditions for synchronisation - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-4.4",
+                    "sno": "4.4"
                 },
                 {
+                    "topic": "State the conditions for synchronisation - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee402-4.5",
-                    "sno": "4.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.5"
                 },
                 {
-                    "id": "ee402-4.6",
-                    "sno": "4.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "State the conditions for synchronisation - Part 3",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "ee402-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain the procedure of synchronisation by using lamps and synchro scope methods. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Explain the procedure of synchronisation by using lamps and synchro scope methods. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Explain the method for adjusting the loads shared by two alternators (or one Alternator with infinite bus bar). - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Explain the method for adjusting the loads shared by two alternators (or one Alternator with infinite bus bar). - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Revision of the Unit: Parallel operation of Alternators",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee402-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Parallel operation of Alternators",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee402-4.12",
+                    "sno": "4.12"
                 }
             ]
         },
@@ -340,67 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ee4025.1",
-                    "sno": "5.1",
-                    "topic": "Explain the working principles of synchronous motors.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the working principles of synchronous motors. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "ee4025.2",
-                    "sno": "5.2",
-                    "topic": "Explain the effects of varying excitation at constant load with phasor diagrams",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the working principles of synchronous motors. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.2",
+                    "sno": "5.2"
                 },
                 {
-                    "id": "ee4025.3",
-                    "sno": "5.3",
-                    "topic": "Explain'V' and inverted 'V'curves with neat sketch.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the effects of varying excitation at constant load with phasor diagrams - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "ee4025.4",
-                    "sno": "5.4",
-                    "topic": "Explain how a Synchronous motor can be used as a Synchronous condenser.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain the effects of varying excitation at constant load with phasor diagrams - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "ee4025.5",
-                    "sno": "5.5",
-                    "topic": "Explain the phenomenon ofHUNTING and how HUNTING can be prevented.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain'V' and inverted 'V'curves with neat sketch. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "ee4025.6",
-                    "sno": "5.6",
-                    "topic": "List the applications of synchronousmotor.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Explain'V' and inverted 'V'curves with neat sketch. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "ee4025.7",
-                    "sno": "5.7",
+                    "topic": "Explain how a Synchronous motor can be used as a Synchronous condenser. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain how a Synchronous motor can be used as a Synchronous condenser. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Explain the phenomenon ofHUNTING and how HUNTING can be prevented. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Explain the phenomenon ofHUNTING and how HUNTING can be prevented. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "List the applications of synchronousmotor. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "List the applications of synchronousmotor. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee402-5.12",
+                    "sno": "5.12"
+                },
+                {
                     "topic": "Compare synchronous motors with induction motors.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee402-5.13",
+                    "sno": "5.13"
                 },
                 {
-                    "id": "ee402-5.8",
-                    "sno": "5.8",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: Synchronous motors",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee402-5.14",
+                    "sno": "5.14"
                 },
                 {
-                    "id": "ee402-5.9",
-                    "sno": "5.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Synchronous motors",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee402-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

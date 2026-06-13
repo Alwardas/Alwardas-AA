@@ -11,88 +11,249 @@
             "totalPeriods": 35,
             "topics": [
                 {
+                    "topic": "Define Electric Current, Potential difference, Voltage and EMF - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-1.1",
-                    "sno": "1.1",
-                    "topic": "Define Electric Current, Potential difference, Voltage and EMF",
-                    "period": 3,
-                    "type": "theory"
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Define Electric Current, Potential difference, Voltage and EMF - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-1.2",
-                    "sno": "1.2",
-                    "topic": "State Ohm's Law and solve problems",
-                    "period": 4,
-                    "type": "problem solving"
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Define Electric Current, Potential difference, Voltage and EMF - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-1.3",
-                    "sno": "1.3",
-                    "topic": "List the limitations of Ohm's Law",
-                    "period": 2,
-                    "type": "theory"
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "State Ohm's Law and solve problems - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-1.4",
-                    "sno": "1.4",
-                    "topic": "Define the terms i) Specific resistance ii) Conductance iii) Conductivity",
-                    "period": 3,
-                    "type": "theory"
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "State Ohm's Law and solve problems - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-1.5",
-                    "sno": "1.5",
-                    "topic": "Derive the relation R = \u03c1l/a and solve the problems",
-                    "period": 5,
-                    "type": "problem solving"
+                    "sno": "1.5"
                 },
                 {
+                    "topic": "State Ohm's Law and solve problems - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-1.6",
-                    "sno": "1.6",
-                    "topic": "Explain the effects of temperature on resistance",
-                    "period": 3,
-                    "type": "theory"
+                    "sno": "1.6"
                 },
                 {
+                    "topic": "State Ohm's Law and solve problems - Part 4",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-1.7",
-                    "sno": "1.7",
-                    "topic": "Develop the expression for resistance at any temperature as Rt = Ro(1+\u03b1ot)",
-                    "period": 4,
-                    "type": "theory"
+                    "sno": "1.7"
                 },
                 {
+                    "topic": "List the limitations of Ohm's Law - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-1.8",
-                    "sno": "1.8",
-                    "topic": "Define temperature Co-efficient of resistance and give its unit",
-                    "period": 3,
-                    "type": "theory"
+                    "sno": "1.8"
                 },
                 {
+                    "topic": "List the limitations of Ohm's Law - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-1.9",
-                    "sno": "1.9",
-                    "topic": "Write the formula for Co-efficient of resistance at any temperatures \u03b1t = \u03b1o / (1 + \u03b1ot)",
-                    "period": 3,
-                    "type": "theory"
+                    "sno": "1.9"
                 },
                 {
+                    "topic": "Define the terms i) Specific resistance ii) Conductance iii) Conductivity - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-1.10",
-                    "sno": "1.10",
-                    "topic": "Solve problems on temperature coefficient of resistance",
-                    "period": 3,
-                    "type": "problem solving"
+                    "sno": "1.10"
                 },
                 {
+                    "topic": "Define the terms i) Specific resistance ii) Conductance iii) Conductivity - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-1.11",
-                    "sno": "1.11",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ee106-1.12",
-                    "sno": "1.12",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Define the terms i) Specific resistance ii) Conductance iii) Conductivity - Part 3",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "ee106-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Derive the relation R = \u03c1l/a and solve the problems - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Derive the relation R = \u03c1l/a and solve the problems - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Derive the relation R = \u03c1l/a and solve the problems - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-1.15",
+                    "sno": "1.15"
+                },
+                {
+                    "topic": "Derive the relation R = \u03c1l/a and solve the problems - Part 4",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-1.16",
+                    "sno": "1.16"
+                },
+                {
+                    "topic": "Derive the relation R = \u03c1l/a and solve the problems - Part 5",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-1.17",
+                    "sno": "1.17"
+                },
+                {
+                    "topic": "Explain the effects of temperature on resistance - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.18",
+                    "sno": "1.18"
+                },
+                {
+                    "topic": "Explain the effects of temperature on resistance - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.19",
+                    "sno": "1.19"
+                },
+                {
+                    "topic": "Explain the effects of temperature on resistance - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.20",
+                    "sno": "1.20"
+                },
+                {
+                    "topic": "Develop the expression for resistance at any temperature as Rt = Ro(1+\u03b1ot) - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.21",
+                    "sno": "1.21"
+                },
+                {
+                    "topic": "Develop the expression for resistance at any temperature as Rt = Ro(1+\u03b1ot) - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.22",
+                    "sno": "1.22"
+                },
+                {
+                    "topic": "Develop the expression for resistance at any temperature as Rt = Ro(1+\u03b1ot) - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.23",
+                    "sno": "1.23"
+                },
+                {
+                    "topic": "Develop the expression for resistance at any temperature as Rt = Ro(1+\u03b1ot) - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.24",
+                    "sno": "1.24"
+                },
+                {
+                    "topic": "Define temperature Co-efficient of resistance and give its unit - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.25",
+                    "sno": "1.25"
+                },
+                {
+                    "topic": "Define temperature Co-efficient of resistance and give its unit - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.26",
+                    "sno": "1.26"
+                },
+                {
+                    "topic": "Define temperature Co-efficient of resistance and give its unit - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.27",
+                    "sno": "1.27"
+                },
+                {
+                    "topic": "Write the formula for Co-efficient of resistance at any temperatures \u03b1t = \u03b1o / (1 + \u03b1ot) - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.28",
+                    "sno": "1.28"
+                },
+                {
+                    "topic": "Write the formula for Co-efficient of resistance at any temperatures \u03b1t = \u03b1o / (1 + \u03b1ot) - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.29",
+                    "sno": "1.29"
+                },
+                {
+                    "topic": "Write the formula for Co-efficient of resistance at any temperatures \u03b1t = \u03b1o / (1 + \u03b1ot) - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-1.30",
+                    "sno": "1.30"
+                },
+                {
+                    "topic": "Solve problems on temperature coefficient of resistance - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-1.31",
+                    "sno": "1.31"
+                },
+                {
+                    "topic": "Solve problems on temperature coefficient of resistance - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-1.32",
+                    "sno": "1.32"
+                },
+                {
+                    "topic": "Solve problems on temperature coefficient of resistance - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-1.33",
+                    "sno": "1.33"
+                },
+                {
+                    "topic": "Revision of the Unit: Basic Principles of Electricity",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee106-1.34",
+                    "sno": "1.34"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Basic Principles of Electricity",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee106-1.35",
+                    "sno": "1.35"
                 }
             ]
         },
@@ -102,67 +263,284 @@
             "totalPeriods": 40,
             "topics": [
                 {
+                    "topic": "Develop the expressions for equivalent Resistance with simple SERIES and PARALLEL connections - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-2.1",
-                    "sno": "2.1",
-                    "topic": "Develop the expressions for equivalent Resistance with simple SERIES and PARALLEL connections",
-                    "period": 5,
-                    "type": "theory"
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Develop the expressions for equivalent Resistance with simple SERIES and PARALLEL connections - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-2.2",
-                    "sno": "2.2",
-                    "topic": "Solve problems on equivalent resistance in case of Series-Parallel networks",
-                    "period": 6,
-                    "type": "problem solving"
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Develop the expressions for equivalent Resistance with simple SERIES and PARALLEL connections - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-2.3",
-                    "sno": "2.3",
-                    "topic": "State the concept of division of current when two Resistors are connected in parallel and solve the problems",
-                    "period": 5,
-                    "type": "problem solving"
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Develop the expressions for equivalent Resistance with simple SERIES and PARALLEL connections - Part 4",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-2.4",
-                    "sno": "2.4",
-                    "topic": "Differentiate between active and passive circuits.",
-                    "period": 3,
-                    "type": "theory"
+                    "sno": "2.4"
                 },
                 {
+                    "topic": "Develop the expressions for equivalent Resistance with simple SERIES and PARALLEL connections - Part 5",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-2.5",
-                    "sno": "2.5",
-                    "topic": "Define junction, branch and loop in circuits",
-                    "period": 3,
-                    "type": "theory"
+                    "sno": "2.5"
                 },
                 {
+                    "topic": "Solve problems on equivalent resistance in case of Series-Parallel networks - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-2.6",
-                    "sno": "2.6",
-                    "topic": "State (i) Kirchhoff's current law (KCL) (ii) Kirchhoff's voltage law (KVL)",
-                    "period": 6,
-                    "type": "theory"
+                    "sno": "2.6"
                 },
                 {
+                    "topic": "Solve problems on equivalent resistance in case of Series-Parallel networks - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-2.7",
-                    "sno": "2.7",
-                    "topic": "Solve problems by applying branch current method only",
-                    "period": 10,
-                    "type": "problem solving"
+                    "sno": "2.7"
                 },
                 {
+                    "topic": "Solve problems on equivalent resistance in case of Series-Parallel networks - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-2.8",
-                    "sno": "2.8",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.8"
                 },
                 {
-                    "id": "ee106-2.9",
-                    "sno": "2.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Solve problems on equivalent resistance in case of Series-Parallel networks - Part 4",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "problem solving",
+                    "id": "ee106-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Solve problems on equivalent resistance in case of Series-Parallel networks - Part 5",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Solve problems on equivalent resistance in case of Series-Parallel networks - Part 6",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "State the concept of division of current when two Resistors are connected in parallel and solve the problems - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "State the concept of division of current when two Resistors are connected in parallel and solve the problems - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "State the concept of division of current when two Resistors are connected in parallel and solve the problems - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "State the concept of division of current when two Resistors are connected in parallel and solve the problems - Part 4",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "State the concept of division of current when two Resistors are connected in parallel and solve the problems - Part 5",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.16",
+                    "sno": "2.16"
+                },
+                {
+                    "topic": "Differentiate between active and passive circuits. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.17",
+                    "sno": "2.17"
+                },
+                {
+                    "topic": "Differentiate between active and passive circuits. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.18",
+                    "sno": "2.18"
+                },
+                {
+                    "topic": "Differentiate between active and passive circuits. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.19",
+                    "sno": "2.19"
+                },
+                {
+                    "topic": "Define junction, branch and loop in circuits - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.20",
+                    "sno": "2.20"
+                },
+                {
+                    "topic": "Define junction, branch and loop in circuits - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.21",
+                    "sno": "2.21"
+                },
+                {
+                    "topic": "Define junction, branch and loop in circuits - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.22",
+                    "sno": "2.22"
+                },
+                {
+                    "topic": "State (i) Kirchhoff's current law (KCL) (ii) Kirchhoff's voltage law (KVL) - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.23",
+                    "sno": "2.23"
+                },
+                {
+                    "topic": "State (i) Kirchhoff's current law (KCL) (ii) Kirchhoff's voltage law (KVL) - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.24",
+                    "sno": "2.24"
+                },
+                {
+                    "topic": "State (i) Kirchhoff's current law (KCL) (ii) Kirchhoff's voltage law (KVL) - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.25",
+                    "sno": "2.25"
+                },
+                {
+                    "topic": "State (i) Kirchhoff's current law (KCL) (ii) Kirchhoff's voltage law (KVL) - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.26",
+                    "sno": "2.26"
+                },
+                {
+                    "topic": "State (i) Kirchhoff's current law (KCL) (ii) Kirchhoff's voltage law (KVL) - Part 5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.27",
+                    "sno": "2.27"
+                },
+                {
+                    "topic": "State (i) Kirchhoff's current law (KCL) (ii) Kirchhoff's voltage law (KVL) - Part 6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-2.28",
+                    "sno": "2.28"
+                },
+                {
+                    "topic": "Solve problems by applying branch current method only - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.29",
+                    "sno": "2.29"
+                },
+                {
+                    "topic": "Solve problems by applying branch current method only - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.30",
+                    "sno": "2.30"
+                },
+                {
+                    "topic": "Solve problems by applying branch current method only - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.31",
+                    "sno": "2.31"
+                },
+                {
+                    "topic": "Solve problems by applying branch current method only - Part 4",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.32",
+                    "sno": "2.32"
+                },
+                {
+                    "topic": "Solve problems by applying branch current method only - Part 5",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.33",
+                    "sno": "2.33"
+                },
+                {
+                    "topic": "Solve problems by applying branch current method only - Part 6",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.34",
+                    "sno": "2.34"
+                },
+                {
+                    "topic": "Solve problems by applying branch current method only - Part 7",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.35",
+                    "sno": "2.35"
+                },
+                {
+                    "topic": "Solve problems by applying branch current method only - Part 8",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.36",
+                    "sno": "2.36"
+                },
+                {
+                    "topic": "Solve problems by applying branch current method only - Part 9",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.37",
+                    "sno": "2.37"
+                },
+                {
+                    "topic": "Solve problems by applying branch current method only - Part 10",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-2.38",
+                    "sno": "2.38"
+                },
+                {
+                    "topic": "Revision of the Unit: Resistive Circuits",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee106-2.39",
+                    "sno": "2.39"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Resistive Circuits",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee106-2.40",
+                    "sno": "2.40"
                 }
             ]
         },
@@ -172,74 +550,284 @@
             "totalPeriods": 40,
             "topics": [
                 {
+                    "topic": "State and explain electric Work, Power and Energy - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-3.1",
-                    "sno": "3.1",
-                    "topic": "State and explain electric Work, Power and Energy",
-                    "period": 5,
-                    "type": "theory"
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "State and explain electric Work, Power and Energy - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-3.2",
-                    "sno": "3.2",
-                    "topic": "Solve problems on Work, Power and Energy",
-                    "period": 5,
-                    "type": "problem solving"
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "State and explain electric Work, Power and Energy - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-3.3",
-                    "sno": "3.3",
-                    "topic": "Mention the typical power ratings of home appliances like Electric lamps(Incandescent, fluorescent, CFL & LED), Water heater, Electric Iron, Fans, Refrigerators, Air and Water coolers, Television sets, Air Conditioners, Water Pumps, Computers, Printers etc.",
-                    "period": 5,
-                    "type": "theory"
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "State and explain electric Work, Power and Energy - Part 4",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-3.4",
-                    "sno": "3.4",
-                    "topic": "Calculate Electricity bill of domestic consumers as per the Electricity Tariff",
-                    "period": 5,
-                    "type": "theory"
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "State and explain electric Work, Power and Energy - Part 5",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-3.5",
-                    "sno": "3.5",
-                    "topic": "Define Joule's law and state its expression.",
-                    "period": 5,
-                    "type": "theory"
+                    "sno": "3.5"
                 },
                 {
+                    "topic": "Solve problems on Work, Power and Energy - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-3.6",
-                    "sno": "3.6",
-                    "topic": "Define Thermal efficiency",
-                    "period": 5,
-                    "type": "theory"
+                    "sno": "3.6"
                 },
                 {
+                    "topic": "Solve problems on Work, Power and Energy - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-3.7",
-                    "sno": "3.7",
-                    "topic": "Solve problems on Electric heating",
-                    "period": 4,
-                    "type": "problem solving"
+                    "sno": "3.7"
                 },
                 {
+                    "topic": "Solve problems on Work, Power and Energy - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-3.8",
-                    "sno": "3.8",
-                    "topic": "Explain the applications of heat produced due to Electric current in (i) Metal Filament lamp (ii) Electric kettle (iii) Electric Cooker (iv) Geyser",
-                    "period": 4,
-                    "type": "theory"
+                    "sno": "3.8"
                 },
                 {
+                    "topic": "Solve problems on Work, Power and Energy - Part 4",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "ee106-3.9",
-                    "sno": "3.9",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ee106-3.10",
-                    "sno": "3.10",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Solve problems on Work, Power and Energy - Part 5",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "problem solving",
+                    "id": "ee106-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Mention the typical power ratings of home appliances like Electric lamps(Incandescent, fluorescent, CFL & LED), Water heater, Electric Iron, Fans, Refrigerators, Air and Water coolers, Television sets, Air Conditioners, Water Pumps, Computers, Printers etc. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Mention the typical power ratings of home appliances like Electric lamps(Incandescent, fluorescent, CFL & LED), Water heater, Electric Iron, Fans, Refrigerators, Air and Water coolers, Television sets, Air Conditioners, Water Pumps, Computers, Printers etc. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Mention the typical power ratings of home appliances like Electric lamps(Incandescent, fluorescent, CFL & LED), Water heater, Electric Iron, Fans, Refrigerators, Air and Water coolers, Television sets, Air Conditioners, Water Pumps, Computers, Printers etc. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Mention the typical power ratings of home appliances like Electric lamps(Incandescent, fluorescent, CFL & LED), Water heater, Electric Iron, Fans, Refrigerators, Air and Water coolers, Television sets, Air Conditioners, Water Pumps, Computers, Printers etc. - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Mention the typical power ratings of home appliances like Electric lamps(Incandescent, fluorescent, CFL & LED), Water heater, Electric Iron, Fans, Refrigerators, Air and Water coolers, Television sets, Air Conditioners, Water Pumps, Computers, Printers etc. - Part 5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.15",
+                    "sno": "3.15"
+                },
+                {
+                    "topic": "Calculate Electricity bill of domestic consumers as per the Electricity Tariff - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.16",
+                    "sno": "3.16"
+                },
+                {
+                    "topic": "Calculate Electricity bill of domestic consumers as per the Electricity Tariff - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.17",
+                    "sno": "3.17"
+                },
+                {
+                    "topic": "Calculate Electricity bill of domestic consumers as per the Electricity Tariff - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.18",
+                    "sno": "3.18"
+                },
+                {
+                    "topic": "Calculate Electricity bill of domestic consumers as per the Electricity Tariff - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.19",
+                    "sno": "3.19"
+                },
+                {
+                    "topic": "Calculate Electricity bill of domestic consumers as per the Electricity Tariff - Part 5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.20",
+                    "sno": "3.20"
+                },
+                {
+                    "topic": "Define Joule's law and state its expression. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.21",
+                    "sno": "3.21"
+                },
+                {
+                    "topic": "Define Joule's law and state its expression. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.22",
+                    "sno": "3.22"
+                },
+                {
+                    "topic": "Define Joule's law and state its expression. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.23",
+                    "sno": "3.23"
+                },
+                {
+                    "topic": "Define Joule's law and state its expression. - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.24",
+                    "sno": "3.24"
+                },
+                {
+                    "topic": "Define Joule's law and state its expression. - Part 5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.25",
+                    "sno": "3.25"
+                },
+                {
+                    "topic": "Define Thermal efficiency - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.26",
+                    "sno": "3.26"
+                },
+                {
+                    "topic": "Define Thermal efficiency - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.27",
+                    "sno": "3.27"
+                },
+                {
+                    "topic": "Define Thermal efficiency - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.28",
+                    "sno": "3.28"
+                },
+                {
+                    "topic": "Define Thermal efficiency - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.29",
+                    "sno": "3.29"
+                },
+                {
+                    "topic": "Define Thermal efficiency - Part 5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.30",
+                    "sno": "3.30"
+                },
+                {
+                    "topic": "Solve problems on Electric heating - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-3.31",
+                    "sno": "3.31"
+                },
+                {
+                    "topic": "Solve problems on Electric heating - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-3.32",
+                    "sno": "3.32"
+                },
+                {
+                    "topic": "Solve problems on Electric heating - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-3.33",
+                    "sno": "3.33"
+                },
+                {
+                    "topic": "Solve problems on Electric heating - Part 4",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-3.34",
+                    "sno": "3.34"
+                },
+                {
+                    "topic": "Explain the applications of heat produced due to Electric current in (i) Metal Filament lamp (ii) Electric kettle (iii) Electric Cooker (iv) Geyser - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.35",
+                    "sno": "3.35"
+                },
+                {
+                    "topic": "Explain the applications of heat produced due to Electric current in (i) Metal Filament lamp (ii) Electric kettle (iii) Electric Cooker (iv) Geyser - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.36",
+                    "sno": "3.36"
+                },
+                {
+                    "topic": "Explain the applications of heat produced due to Electric current in (i) Metal Filament lamp (ii) Electric kettle (iii) Electric Cooker (iv) Geyser - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.37",
+                    "sno": "3.37"
+                },
+                {
+                    "topic": "Explain the applications of heat produced due to Electric current in (i) Metal Filament lamp (ii) Electric kettle (iii) Electric Cooker (iv) Geyser - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-3.38",
+                    "sno": "3.38"
+                },
+                {
+                    "topic": "Revision of the Unit: Work, Power, Energy and Heating effects of Electric Current",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee106-3.39",
+                    "sno": "3.39"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Work, Power, Energy and Heating effects of Electric Current",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee106-3.40",
+                    "sno": "3.40"
                 }
             ]
         },
@@ -249,67 +837,179 @@
             "totalPeriods": 25,
             "topics": [
                 {
+                    "topic": "Explain star and delta circuits - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-4.1",
-                    "sno": "4.1",
-                    "topic": "Explain star and delta circuits",
-                    "period": 4,
-                    "type": "theory"
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Explain star and delta circuits - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-4.2",
-                    "sno": "4.2",
-                    "topic": "Explain the concept of circuit transformation and equivalent circuits",
-                    "period": 4,
-                    "type": "theory"
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Explain star and delta circuits - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-4.3",
-                    "sno": "4.3",
-                    "topic": "Develop transformation formulae for star- delta transformations and vice-versa",
-                    "period": 3,
-                    "type": "theory"
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Explain star and delta circuits - Part 4",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-4.4",
-                    "sno": "4.4",
-                    "topic": "Solve problems on Star Delta Transformation.",
-                    "period": 3,
-                    "type": "problem solving"
+                    "sno": "4.4"
                 },
                 {
+                    "topic": "Explain the concept of circuit transformation and equivalent circuits - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-4.5",
-                    "sno": "4.5",
-                    "topic": "Explain ideal voltage source & ideal current source",
-                    "period": 3,
-                    "type": "theory"
+                    "sno": "4.5"
                 },
                 {
+                    "topic": "Explain the concept of circuit transformation and equivalent circuits - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-4.6",
-                    "sno": "4.6",
-                    "topic": "Explain Source transformation technique",
-                    "period": 3,
-                    "type": "theory"
+                    "sno": "4.6"
                 },
                 {
+                    "topic": "Explain the concept of circuit transformation and equivalent circuits - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-4.7",
-                    "sno": "4.7",
-                    "topic": "Solve simple problems on Source transformation technique",
-                    "period": 3,
-                    "type": "problem solving"
+                    "sno": "4.7"
                 },
                 {
+                    "topic": "Explain the concept of circuit transformation and equivalent circuits - Part 4",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-4.8",
-                    "sno": "4.8",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.8"
                 },
                 {
-                    "id": "ee106-4.9",
-                    "sno": "4.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Develop transformation formulae for star- delta transformations and vice-versa - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "ee106-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Develop transformation formulae for star- delta transformations and vice-versa - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Develop transformation formulae for star- delta transformations and vice-versa - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Solve problems on Star Delta Transformation. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Solve problems on Star Delta Transformation. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Solve problems on Star Delta Transformation. - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Explain ideal voltage source & ideal current source - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-4.15",
+                    "sno": "4.15"
+                },
+                {
+                    "topic": "Explain ideal voltage source & ideal current source - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-4.16",
+                    "sno": "4.16"
+                },
+                {
+                    "topic": "Explain ideal voltage source & ideal current source - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-4.17",
+                    "sno": "4.17"
+                },
+                {
+                    "topic": "Explain Source transformation technique - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-4.18",
+                    "sno": "4.18"
+                },
+                {
+                    "topic": "Explain Source transformation technique - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-4.19",
+                    "sno": "4.19"
+                },
+                {
+                    "topic": "Explain Source transformation technique - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-4.20",
+                    "sno": "4.20"
+                },
+                {
+                    "topic": "Solve simple problems on Source transformation technique - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-4.21",
+                    "sno": "4.21"
+                },
+                {
+                    "topic": "Solve simple problems on Source transformation technique - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-4.22",
+                    "sno": "4.22"
+                },
+                {
+                    "topic": "Solve simple problems on Source transformation technique - Part 3",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "ee106-4.23",
+                    "sno": "4.23"
+                },
+                {
+                    "topic": "Revision of the Unit: Conversion Techniques",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee106-4.24",
+                    "sno": "4.24"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Conversion Techniques",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee106-4.25",
+                    "sno": "4.25"
                 }
             ]
         },
@@ -319,60 +1019,284 @@
             "totalPeriods": 40,
             "topics": [
                 {
+                    "topic": "State the need for network theorems - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-5.1",
-                    "sno": "5.1",
-                    "topic": "State the need for network theorems",
-                    "period": 7,
-                    "type": "theory"
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "State the need for network theorems - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-5.2",
-                    "sno": "5.2",
-                    "topic": "list different types of theorems applied to DC circuits",
-                    "period": 7,
-                    "type": "theory"
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "State the need for network theorems - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-5.3",
-                    "sno": "5.3",
-                    "topic": "State and explain Super position theorem.",
-                    "period": 6,
-                    "type": "theory"
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "State the need for network theorems - Part 4",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-5.4",
-                    "sno": "5.4",
-                    "topic": "State and explain Thevenin's theorem.",
-                    "period": 6,
-                    "type": "theory"
+                    "sno": "5.4"
                 },
                 {
+                    "topic": "State the need for network theorems - Part 5",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-5.5",
-                    "sno": "5.5",
-                    "topic": "State and explain Norton's theorem",
-                    "period": 6,
-                    "type": "theory"
+                    "sno": "5.5"
                 },
                 {
+                    "topic": "State the need for network theorems - Part 6",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-5.6",
-                    "sno": "5.6",
-                    "topic": "State and explain Maximum power transfer theorem.",
-                    "period": 6,
-                    "type": "theory"
+                    "sno": "5.6"
                 },
                 {
+                    "topic": "State the need for network theorems - Part 7",
+                    "period": 1,
+                    "type": "theory",
                     "id": "ee106-5.7",
-                    "sno": "5.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.7"
                 },
                 {
-                    "id": "ee106-5.8",
-                    "sno": "5.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "list different types of theorems applied to DC circuits - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "ee106-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "list different types of theorems applied to DC circuits - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "list different types of theorems applied to DC circuits - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "list different types of theorems applied to DC circuits - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "list different types of theorems applied to DC circuits - Part 5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "list different types of theorems applied to DC circuits - Part 6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "list different types of theorems applied to DC circuits - Part 7",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "State and explain Super position theorem. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.15",
+                    "sno": "5.15"
+                },
+                {
+                    "topic": "State and explain Super position theorem. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.16",
+                    "sno": "5.16"
+                },
+                {
+                    "topic": "State and explain Super position theorem. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.17",
+                    "sno": "5.17"
+                },
+                {
+                    "topic": "State and explain Super position theorem. - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.18",
+                    "sno": "5.18"
+                },
+                {
+                    "topic": "State and explain Super position theorem. - Part 5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.19",
+                    "sno": "5.19"
+                },
+                {
+                    "topic": "State and explain Super position theorem. - Part 6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.20",
+                    "sno": "5.20"
+                },
+                {
+                    "topic": "State and explain Thevenin's theorem. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.21",
+                    "sno": "5.21"
+                },
+                {
+                    "topic": "State and explain Thevenin's theorem. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.22",
+                    "sno": "5.22"
+                },
+                {
+                    "topic": "State and explain Thevenin's theorem. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.23",
+                    "sno": "5.23"
+                },
+                {
+                    "topic": "State and explain Thevenin's theorem. - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.24",
+                    "sno": "5.24"
+                },
+                {
+                    "topic": "State and explain Thevenin's theorem. - Part 5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.25",
+                    "sno": "5.25"
+                },
+                {
+                    "topic": "State and explain Thevenin's theorem. - Part 6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.26",
+                    "sno": "5.26"
+                },
+                {
+                    "topic": "State and explain Norton's theorem - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.27",
+                    "sno": "5.27"
+                },
+                {
+                    "topic": "State and explain Norton's theorem - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.28",
+                    "sno": "5.28"
+                },
+                {
+                    "topic": "State and explain Norton's theorem - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.29",
+                    "sno": "5.29"
+                },
+                {
+                    "topic": "State and explain Norton's theorem - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.30",
+                    "sno": "5.30"
+                },
+                {
+                    "topic": "State and explain Norton's theorem - Part 5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.31",
+                    "sno": "5.31"
+                },
+                {
+                    "topic": "State and explain Norton's theorem - Part 6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.32",
+                    "sno": "5.32"
+                },
+                {
+                    "topic": "State and explain Maximum power transfer theorem. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.33",
+                    "sno": "5.33"
+                },
+                {
+                    "topic": "State and explain Maximum power transfer theorem. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.34",
+                    "sno": "5.34"
+                },
+                {
+                    "topic": "State and explain Maximum power transfer theorem. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.35",
+                    "sno": "5.35"
+                },
+                {
+                    "topic": "State and explain Maximum power transfer theorem. - Part 4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.36",
+                    "sno": "5.36"
+                },
+                {
+                    "topic": "State and explain Maximum power transfer theorem. - Part 5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.37",
+                    "sno": "5.37"
+                },
+                {
+                    "topic": "State and explain Maximum power transfer theorem. - Part 6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee106-5.38",
+                    "sno": "5.38"
+                },
+                {
+                    "topic": "Revision of the Unit: Network Theorems",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee106-5.39",
+                    "sno": "5.39"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Network Theorems",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee106-5.40",
+                    "sno": "5.40"
                 }
             ]
         }

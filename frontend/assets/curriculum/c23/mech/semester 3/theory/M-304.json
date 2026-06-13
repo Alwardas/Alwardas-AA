@@ -11,67 +11,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Define Stress, Strain, Modulus of Elasticity. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-1.1",
-                    "sno": "1.1",
-                    "topic": "Define Stress, Strain, Modulus of Elasticity.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Define Stress, Strain, Modulus of Elasticity. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-1.2",
-                    "sno": "1.2",
-                    "topic": "Types of Stresses (Tensile, Compressive, Shear).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Types of Stresses (Tensile, Compressive, Shear). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-1.3",
-                    "sno": "1.3",
-                    "topic": "Stress-Strain diagram for Ductile and Brittle materials.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "Types of Stresses (Tensile, Compressive, Shear). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-1.4",
-                    "sno": "1.4",
-                    "topic": "Solve problems on elongation of bars of uniform section.",
-                    "type": "problem solving",
-                    "period": 2
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "Stress-Strain diagram for Ductile and Brittle materials. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-1.5",
-                    "sno": "1.5",
-                    "topic": "Explain Thermal stresses and strains.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.5"
                 },
                 {
+                    "topic": "Stress-Strain diagram for Ductile and Brittle materials. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-1.6",
-                    "sno": "1.6",
-                    "topic": "Define Poisson's ratio, Volumetric strain, Bulk Modulus.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.6"
                 },
                 {
+                    "topic": "Solve problems on elongation of bars of uniform section. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "m304-1.7",
-                    "sno": "1.7",
-                    "topic": "Relations between elastic constants.",
-                    "type": "theory",
-                    "period": 1
+                    "sno": "1.7"
                 },
                 {
+                    "topic": "Solve problems on elongation of bars of uniform section. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
                     "id": "m304-1.8",
-                    "sno": "1.8",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.8"
                 },
                 {
-                    "id": "m304-1.9",
-                    "sno": "1.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Explain Thermal stresses and strains. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m304-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain Thermal stresses and strains. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Define Poisson's ratio, Volumetric strain, Bulk Modulus. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Define Poisson's ratio, Volumetric strain, Bulk Modulus. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Relations between elastic constants.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Simple Stresses and Strains",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m304-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Simple Stresses and Strains",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m304-1.15",
+                    "sno": "1.15"
                 }
             ]
         },
@@ -81,60 +123,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Define Beam, Support, Load types. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-2.1",
-                    "sno": "2.1",
-                    "topic": "Define Beam, Support, Load types.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Define Beam, Support, Load types. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-2.2",
-                    "sno": "2.2",
-                    "topic": "Define Shear Force and Bending Moment.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Define Beam, Support, Load types. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-2.3",
-                    "sno": "2.3",
-                    "topic": "Draw SFD and BMD for Cantilever beams.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Define Shear Force and Bending Moment. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-2.4",
-                    "sno": "2.4",
-                    "topic": "Draw SFD and BMD for Simply Supported beams.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.4"
                 },
                 {
+                    "topic": "Define Shear Force and Bending Moment. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-2.5",
-                    "sno": "2.5",
-                    "topic": "Draw SFD and BMD for Overhanging beams.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.5"
                 },
                 {
+                    "topic": "Draw SFD and BMD for Cantilever beams. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-2.6",
-                    "sno": "2.6",
-                    "topic": "Identify Point of Contraflexure.",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Draw SFD and BMD for Cantilever beams. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m304-2.7",
-                    "sno": "2.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.7"
                 },
                 {
-                    "id": "m304-2.8",
-                    "sno": "2.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Draw SFD and BMD for Simply Supported beams. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m304-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Draw SFD and BMD for Simply Supported beams. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Draw SFD and BMD for Overhanging beams. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Draw SFD and BMD for Overhanging beams. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Identify Point of Contraflexure. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Identify Point of Contraflexure. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Shear Force and Bending Moment",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m304-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Shear Force and Bending Moment",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m304-2.15",
+                    "sno": "2.15"
                 }
             ]
         },
@@ -144,53 +235,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Theory of Simple Bending and assumptions. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-3.1",
-                    "sno": "3.1",
-                    "topic": "Theory of Simple Bending and assumptions.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Theory of Simple Bending and assumptions. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-3.2",
-                    "sno": "3.2",
-                    "topic": "Bending equation (M/I = f/y = E/R).",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Theory of Simple Bending and assumptions. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-3.3",
-                    "sno": "3.3",
-                    "topic": "Section Modulus and Flexural Strength.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Bending equation (M/I = f/y = E/R). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-3.4",
-                    "sno": "3.4",
-                    "topic": "Calculate bending stresses in symmetrical sections.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Bending equation (M/I = f/y = E/R). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-3.5",
-                    "sno": "3.5",
-                    "topic": "Shear stress distribution in beams (Rectangular, Circular, I-Section).",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Bending equation (M/I = f/y = E/R). - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m304-3.6",
-                    "sno": "3.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.6"
                 },
                 {
-                    "id": "m304-3.7",
-                    "sno": "3.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Section Modulus and Flexural Strength. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m304-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Section Modulus and Flexural Strength. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Section Modulus and Flexural Strength. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Calculate bending stresses in symmetrical sections. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Calculate bending stresses in symmetrical sections. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Shear stress distribution in beams (Rectangular, Circular, I-Section). - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Shear stress distribution in beams (Rectangular, Circular, I-Section). - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Bending Stresses and Shear Stresses in Beams",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m304-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Bending Stresses and Shear Stresses in Beams",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m304-3.15",
+                    "sno": "3.15"
                 }
             ]
         },
@@ -200,60 +347,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Theory of Torsion and assumptions. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-4.1",
-                    "sno": "4.1",
-                    "topic": "Theory of Torsion and assumptions.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Theory of Torsion and assumptions. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-4.2",
-                    "sno": "4.2",
-                    "topic": "Torsion equation (T/J = fs/R = G\u03b8/L).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Theory of Torsion and assumptions. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-4.3",
-                    "sno": "4.3",
-                    "topic": "Power transmitted by solid and hollow shafts.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Torsion equation (T/J = fs/R = G\u03b8/L). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-4.4",
-                    "sno": "4.4",
-                    "topic": "Compare Solid vs Hollow shafts.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.4"
                 },
                 {
+                    "topic": "Torsion equation (T/J = fs/R = G\u03b8/L). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-4.5",
-                    "sno": "4.5",
-                    "topic": "Types of springs and their applications.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.5"
                 },
                 {
+                    "topic": "Power transmitted by solid and hollow shafts. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-4.6",
-                    "sno": "4.6",
-                    "topic": "Design of Close Coiled Helical Springs.",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Power transmitted by solid and hollow shafts. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m304-4.7",
-                    "sno": "4.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.7"
                 },
                 {
-                    "id": "m304-4.8",
-                    "sno": "4.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Compare Solid vs Hollow shafts. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m304-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Compare Solid vs Hollow shafts. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Types of springs and their applications. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Types of springs and their applications. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Design of Close Coiled Helical Springs. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Design of Close Coiled Helical Springs. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Torsion of Shafts and Springs",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m304-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Torsion of Shafts and Springs",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m304-4.15",
+                    "sno": "4.15"
                 }
             ]
         },
@@ -263,53 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Define Thin Cylinder. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-5.1",
-                    "sno": "5.1",
-                    "topic": "Define Thin Cylinder.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Define Thin Cylinder. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-5.2",
-                    "sno": "5.2",
-                    "topic": "Failure of thin cylinders.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Define Thin Cylinder. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-5.3",
-                    "sno": "5.3",
-                    "topic": "Hoop stress and Longitudinal stress.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Failure of thin cylinders. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-5.4",
-                    "sno": "5.4",
-                    "topic": "Volumetric strain and change in dimensions.",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Failure of thin cylinders. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m304-5.5",
-                    "sno": "5.5",
-                    "topic": "Solve problems on thin cylinders.",
-                    "type": "problem solving",
-                    "period": 2
+                    "sno": "5.5"
                 },
                 {
+                    "topic": "Failure of thin cylinders. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m304-5.6",
-                    "sno": "5.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.6"
                 },
                 {
-                    "id": "m304-5.7",
-                    "sno": "5.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Hoop stress and Longitudinal stress. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m304-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Hoop stress and Longitudinal stress. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Hoop stress and Longitudinal stress. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Volumetric strain and change in dimensions. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Volumetric strain and change in dimensions. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m304-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Solve problems on thin cylinders. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m304-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Solve problems on thin cylinders. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m304-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Thin Cylinders",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m304-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Thin Cylinders",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m304-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

@@ -11,67 +11,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Definition of Management, Administration and Organisation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-1.1",
-                    "sno": "1.1",
-                    "topic": "Definition of Management, Administration and Organisation.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Definition of Management, Administration and Organisation. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-1.2",
-                    "sno": "1.2",
-                    "topic": "Functions of Management (Planning, Organising, Directing, Controlling).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Functions of Management (Planning, Organising, Directing, Controlling). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-1.3",
-                    "sno": "1.3",
-                    "topic": "Principles of Scientific Management (F.W. Taylor).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "Functions of Management (Planning, Organising, Directing, Controlling). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-1.4",
-                    "sno": "1.4",
-                    "topic": "Principles of Management (Henry Fayol).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "Principles of Scientific Management (F.W. Taylor). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-1.5",
-                    "sno": "1.5",
-                    "topic": "Types of Organisation: Line, Line and Staff, Functional.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.5"
                 },
                 {
+                    "topic": "Principles of Scientific Management (F.W. Taylor). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-1.6",
-                    "sno": "1.6",
-                    "topic": "Organisational Behaviour: Motivation theories (Maslow's).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.6"
                 },
                 {
+                    "topic": "Principles of Management (Henry Fayol). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-1.7",
-                    "sno": "1.7",
-                    "topic": "Leadership Styles.",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Principles of Management (Henry Fayol). - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 1
-                },
-                {
                     "id": "m501-1.8",
-                    "sno": "1.8",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.8"
                 },
                 {
-                    "id": "m501-1.9",
-                    "sno": "1.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Types of Organisation: Line, Line and Staff, Functional. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m501-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Types of Organisation: Line, Line and Staff, Functional. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Organisational Behaviour: Motivation theories (Maslow's). - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Organisational Behaviour: Motivation theories (Maslow's). - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Leadership Styles.",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Principles of Management & Organisation Structure",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m501-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Principles of Management & Organisation Structure",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m501-1.15",
+                    "sno": "1.15"
                 }
             ]
         },
@@ -81,67 +123,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Functions of Production Planning and Control (PPC). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-2.1",
-                    "sno": "2.1",
-                    "topic": "Functions of Production Planning and Control (PPC).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Functions of Production Planning and Control (PPC). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-2.2",
-                    "sno": "2.2",
-                    "topic": "Plant Layout: Types and factors affecting layout.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Plant Layout: Types and factors affecting layout. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-2.3",
-                    "sno": "2.3",
-                    "topic": "Inventory Control: ABC Analysis.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Plant Layout: Types and factors affecting layout. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-2.4",
-                    "sno": "2.4",
-                    "topic": "Economic Order Quantity (EOQ).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.4"
                 },
                 {
+                    "topic": "Inventory Control: ABC Analysis. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-2.5",
-                    "sno": "2.5",
-                    "topic": "Purchasing procedure and Stores management.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.5"
                 },
                 {
+                    "topic": "Inventory Control: ABC Analysis. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-2.6",
-                    "sno": "2.6",
-                    "topic": "Break Even Analysis.",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Economic Order Quantity (EOQ). - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m501-2.7",
-                    "sno": "2.7",
-                    "topic": "Project Management: CPM and PERT (Simple problems).",
-                    "type": "problem solving",
-                    "period": 1
+                    "sno": "2.7"
                 },
                 {
+                    "topic": "Economic Order Quantity (EOQ). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-2.8",
-                    "sno": "2.8",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.8"
                 },
                 {
-                    "id": "m501-2.9",
-                    "sno": "2.9",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Purchasing procedure and Stores management. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m501-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Purchasing procedure and Stores management. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Break Even Analysis. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Break Even Analysis. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Project Management: CPM and PERT (Simple problems).",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m501-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Production & Materials Management",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m501-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Production & Materials Management",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m501-2.15",
+                    "sno": "2.15"
                 }
             ]
         },
@@ -151,53 +235,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Importance of Safety at workplace. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-3.1",
-                    "sno": "3.1",
-                    "topic": "Importance of Safety at workplace.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Importance of Safety at workplace. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-3.2",
-                    "sno": "3.2",
-                    "topic": "Causes of accidents and prevention methods.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Importance of Safety at workplace. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-3.3",
-                    "sno": "3.3",
-                    "topic": "Fire hazards and Fire extinguishers.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Causes of accidents and prevention methods. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-3.4",
-                    "sno": "3.4",
-                    "topic": "Salient features of Factories Act 1948.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Causes of accidents and prevention methods. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-3.5",
-                    "sno": "3.5",
-                    "topic": "Industrial Dispute Act and Workmen's Compensation Act.",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Causes of accidents and prevention methods. - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m501-3.6",
-                    "sno": "3.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.6"
                 },
                 {
-                    "id": "m501-3.7",
-                    "sno": "3.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Fire hazards and Fire extinguishers. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m501-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Fire hazards and Fire extinguishers. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Fire hazards and Fire extinguishers. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Salient features of Factories Act 1948. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Salient features of Factories Act 1948. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Industrial Dispute Act and Workmen's Compensation Act. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Industrial Dispute Act and Workmen's Compensation Act. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Industrial Safety and Legislations",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m501-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Industrial Safety and Legislations",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m501-3.15",
+                    "sno": "3.15"
                 }
             ]
         },
@@ -207,53 +347,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Concept of Entrepreneurship and qualities of an Entrepreneur. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-4.1",
-                    "sno": "4.1",
-                    "topic": "Concept of Entrepreneurship and qualities of an Entrepreneur.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Concept of Entrepreneurship and qualities of an Entrepreneur. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-4.2",
-                    "sno": "4.2",
-                    "topic": "Role of SSI (Small Scale Industries) in economic development.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Concept of Entrepreneurship and qualities of an Entrepreneur. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-4.3",
-                    "sno": "4.3",
-                    "topic": "Institutional support for Entrepreneurs (DIC, SFC, SIDBI).",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Role of SSI (Small Scale Industries) in economic development. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-4.4",
-                    "sno": "4.4",
-                    "topic": "Market Survey and Demand Forecasting.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "4.4"
                 },
                 {
+                    "topic": "Role of SSI (Small Scale Industries) in economic development. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-4.5",
-                    "sno": "4.5",
-                    "topic": "Project Report preparation.",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Role of SSI (Small Scale Industries) in economic development. - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m501-4.6",
-                    "sno": "4.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.6"
                 },
                 {
-                    "id": "m501-4.7",
-                    "sno": "4.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Institutional support for Entrepreneurs (DIC, SFC, SIDBI). - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m501-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Institutional support for Entrepreneurs (DIC, SFC, SIDBI). - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Institutional support for Entrepreneurs (DIC, SFC, SIDBI). - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Market Survey and Demand Forecasting. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Market Survey and Demand Forecasting. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Project Report preparation. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Project Report preparation. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Entrepreneurship Development",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m501-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Entrepreneurship Development",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m501-4.15",
+                    "sno": "4.15"
                 }
             ]
         },
@@ -263,46 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Concept of Quality and TQM. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-5.1",
-                    "sno": "5.1",
-                    "topic": "Concept of Quality and TQM.",
-                    "type": "theory",
-                    "period": 4
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Concept of Quality and TQM. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-5.2",
-                    "sno": "5.2",
-                    "topic": "PDCA Cycle and 5S concept.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Concept of Quality and TQM. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-5.3",
-                    "sno": "5.3",
-                    "topic": "ISO 9000 Series and ISO 14000 Series.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Concept of Quality and TQM. - Part 4",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m501-5.4",
-                    "sno": "5.4",
-                    "topic": "Kaizen and Six Sigma.",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "PDCA Cycle and 5S concept. - Part 1",
+                    "period": 1,
                     "type": "theory",
-                    "period": 3
-                },
-                {
                     "id": "m501-5.5",
-                    "sno": "5.5",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.5"
                 },
                 {
-                    "id": "m501-5.6",
-                    "sno": "5.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "PDCA Cycle and 5S concept. - Part 2",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m501-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "PDCA Cycle and 5S concept. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "ISO 9000 Series and ISO 14000 Series. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "ISO 9000 Series and ISO 14000 Series. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "ISO 9000 Series and ISO 14000 Series. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Kaizen and Six Sigma. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Kaizen and Six Sigma. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Kaizen and Six Sigma. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m501-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Total Quality Management",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m501-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Total Quality Management",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m501-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

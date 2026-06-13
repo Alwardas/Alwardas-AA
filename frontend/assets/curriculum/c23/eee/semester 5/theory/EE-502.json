@@ -11,102 +11,123 @@
             "totalPeriods": 17,
             "topics": [
                 {
-                    "id": "ee5021.1",
-                    "sno": "1.1",
-                    "topic": "List different pollutants produced by IC engine vehicle (ICEV) and state their effect on human health.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "List different pollutants produced by IC engine vehicle (ICEV) and state their effect on human health. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "ee5021.2",
-                    "sno": "1.2",
-                    "topic": "Briefly explain the historical journey of electric vehicle.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "List different pollutants produced by IC engine vehicle (ICEV) and state their effect on human health. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "ee5021.3",
-                    "sno": "1.3",
-                    "topic": "Define Electric vehicle and state the need of electric vehicle.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Briefly explain the historical journey of electric vehicle. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "ee5021.4",
-                    "sno": "1.4",
+                    "topic": "Briefly explain the historical journey of electric vehicle. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Define Electric vehicle and state the need of electric vehicle. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Define Electric vehicle and state the need of electric vehicle. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-1.6",
+                    "sno": "1.6"
+                },
+                {
                     "topic": "Briefly explain the problems encountered by humans with usage of Electric vehicles.",
                     "period": 1,
-                    "type": "problem solving"
+                    "type": "problem solving",
+                    "id": "ee502-1.7",
+                    "sno": "1.7"
                 },
                 {
-                    "id": "ee5021.5",
-                    "sno": "1.5",
                     "topic": "List the Advantages and disadvantages of electric vehicles.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-1.8",
+                    "sno": "1.8"
                 },
                 {
-                    "id": "ee5021.6",
-                    "sno": "1.6",
                     "topic": "Compare Battery Electric Vehicle (BEV) & conventional vehicles.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-1.9",
+                    "sno": "1.9"
                 },
                 {
-                    "id": "ee5021.7",
-                    "sno": "1.7",
                     "topic": "Draw the block diagram of electric vehicle and explain the major components.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-1.10",
+                    "sno": "1.10"
                 },
                 {
-                    "id": "ee5021.8",
-                    "sno": "1.8",
                     "topic": "Classification of electric vehicles according to the source of power as BEV, HEV , PHEV and FCEV.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-1.11",
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ee5021.9",
-                    "sno": "1.9",
                     "topic": "Explain Battery Electric Vehicle (BEV) with a neat block diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-1.12",
+                    "sno": "1.12"
                 },
                 {
-                    "id": "ee5021.10",
-                    "sno": "1.10",
                     "topic": "Explain Hybrid electric Vehicle (HEV) with a neat block diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-1.13",
+                    "sno": "1.13"
                 },
                 {
-                    "id": "ee5021.11",
-                    "sno": "1.11",
                     "topic": "Explain Plug-in Hybrid Electric Vehicle (PHEV) with a neat block diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-1.14",
+                    "sno": "1.14"
                 },
                 {
-                    "id": "ee5021.12",
-                    "sno": "1.12",
                     "topic": "Explain Fuel Cell Electric Vehicle (FCEV) with a neat block diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-1.15",
+                    "sno": "1.15"
                 },
                 {
-                    "id": "ee502-1.13",
-                    "sno": "1.13",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: Environmental impact, History and Electric vehicle Types",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee502-1.16",
+                    "sno": "1.16"
                 },
                 {
-                    "id": "ee502-1.14",
-                    "sno": "1.14",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Environmental impact, History and Electric vehicle Types",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee502-1.17",
+                    "sno": "1.17"
                 }
             ]
         },
@@ -116,88 +137,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
-                    "id": "ee5022.1",
-                    "sno": "2.1",
-                    "topic": "What is hybrid electric vehicle and state its necessity.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "What is hybrid electric vehicle and state its necessity. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ee5022.2",
-                    "sno": "2.2",
+                    "topic": "What is hybrid electric vehicle and state its necessity. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-2.2",
+                    "sno": "2.2"
+                },
+                {
                     "topic": "Classification of hybrid vehicles.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "ee5022.3",
-                    "sno": "2.3",
                     "topic": "Explain series hybrid electric vehicle with a neat block diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-2.4",
+                    "sno": "2.4"
                 },
                 {
-                    "id": "ee5022.4",
-                    "sno": "2.4",
                     "topic": "State the advantages and disadvantages of series hybrid system.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "ee5022.5",
-                    "sno": "2.5",
                     "topic": "Explain the different power flow control modes of a series hybrid system with the help of block diagrams",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-2.6",
+                    "sno": "2.6"
                 },
                 {
-                    "id": "ee5022.6",
-                    "sno": "2.6",
                     "topic": "Explain parallel hybrid electric vehicle with a neat block diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-2.7",
+                    "sno": "2.7"
                 },
                 {
-                    "id": "ee5022.7",
-                    "sno": "2.7",
                     "topic": "Advantages and disadvantages of parallel hybrid system.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-2.8",
+                    "sno": "2.8"
                 },
                 {
-                    "id": "ee5022.8",
-                    "sno": "2.8",
                     "topic": "Explain the different power flow control modes of a parallel hybrid system with the help of block diagrams",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-2.9",
+                    "sno": "2.9"
                 },
                 {
-                    "id": "ee5022.9",
-                    "sno": "2.9",
                     "topic": "Explain series-parallel hybrid electric vehicle with a neat block diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-2.10",
+                    "sno": "2.10"
                 },
                 {
-                    "id": "ee5022.10",
-                    "sno": "2.10",
                     "topic": "List the impacts of EVs/HEVs on the power grid, environment and economy.",
                     "period": 1,
-                    "type": "theory"
-                },
-                {
+                    "type": "theory",
                     "id": "ee502-2.11",
-                    "sno": "2.11",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.11"
                 },
                 {
-                    "id": "ee502-2.12",
-                    "sno": "2.12",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Revision of the Unit: Hybrid Electric Vehicle",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "revision",
+                    "id": "ee502-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Hybrid Electric Vehicle",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee502-2.13",
+                    "sno": "2.13"
                 }
             ]
         },
@@ -207,102 +235,123 @@
             "totalPeriods": 17,
             "topics": [
                 {
-                    "id": "ee5023.1",
-                    "sno": "3.1",
-                    "topic": "State cell and battery",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "State cell and battery - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "ee5023.2",
-                    "sno": "3.2",
-                    "topic": "Classify cells as Primary and Secondary cells",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "State cell and battery - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "ee5023.3",
-                    "sno": "3.3",
-                    "topic": "Classify storage cell as Lead Acid Battery, Nickel based batteries, Sodium based batteries, Lithium based batteries \u2013 Li-ion & Li-poly,",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Classify cells as Primary and Secondary cells - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "ee5023.4",
-                    "sno": "3.4",
+                    "topic": "Classify cells as Primary and Secondary cells - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Classify storage cell as Lead Acid Battery, Nickel based batteries, Sodium based batteries, Lithium based batteries \u2013 Li-ion & Li-poly, - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Classify storage cell as Lead Acid Battery, Nickel based batteries, Sodium based batteries, Lithium based batteries \u2013 Li-ion & Li-poly, - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-3.6",
+                    "sno": "3.6"
+                },
+                {
                     "topic": "Define the terms related to batteries (i) Battery Capacity (ii) Specific Energy Density (iii) State Of Charge (iv) State Of Discharge (v) Cycle Life (vi) Efficiency.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "ee5023.5",
-                    "sno": "3.5",
                     "topic": "List main Requirements of EV batteries.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "ee5023.6",
-                    "sno": "3.6",
                     "topic": "Explain Nickel -Cadmium battery system with a neat sketch.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ee5023.7",
-                    "sno": "3.7",
                     "topic": "Explain Lithium-Ion (Li-Ion) battery system with a neat sketch.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-3.10",
+                    "sno": "3.10"
                 },
                 {
-                    "id": "ee5023.8",
-                    "sno": "3.8",
                     "topic": "List different alternative energy storage devices for EVs as Ultracapacitor, flywheel, Fuel cell.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-3.11",
+                    "sno": "3.11"
                 },
                 {
-                    "id": "ee5023.9",
-                    "sno": "3.9",
                     "topic": "Explain Ultracapacitor storage system with a neat sketch.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-3.12",
+                    "sno": "3.12"
                 },
                 {
-                    "id": "ee5023.10",
-                    "sno": "3.10",
                     "topic": "Explain flywheel storage system with a neat sketch.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-3.13",
+                    "sno": "3.13"
                 },
                 {
-                    "id": "ee5023.11",
-                    "sno": "3.11",
                     "topic": "Explain Fuel cell storage system with a neat sketch.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-3.14",
+                    "sno": "3.14"
                 },
                 {
-                    "id": "ee5023.12",
-                    "sno": "3.12",
                     "topic": "List Advantages and disadvantages of (i) Ultracapacitor (ii) flywheel (iii) Fuel cell .",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-3.15",
+                    "sno": "3.15"
                 },
                 {
-                    "id": "ee502-3.13",
-                    "sno": "3.13",
-                    "topic": "Revision of the Unit",
+                    "topic": "Revision of the Unit: Energy Storages",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee502-3.16",
+                    "sno": "3.16"
                 },
                 {
-                    "id": "ee502-3.14",
-                    "sno": "3.14",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Energy Storages",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee502-3.17",
+                    "sno": "3.17"
                 }
             ]
         },
@@ -312,95 +361,95 @@
             "totalPeriods": 13,
             "topics": [
                 {
-                    "id": "ee5024.1",
-                    "sno": "4.1",
-                    "topic": "List the basic requirements for charging system as Safety , Reliability , User-friendliness , Power levels and charging times , Communication , Standardization.",
+                    "topic": "List the basic requirements for charging system as Safety , Reliability , User-friendliness , Power levels and charging times , Communication , Standardization. & List the Battery charging techniques as Constant voltage, Constant current, Trickle Charging, Battery swapping techniques, Conductive DC Charging, Conductive Ac charging, Inductive charging or Wireless charging.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "ee5024.2",
-                    "sno": "4.2",
-                    "topic": "List the Battery charging techniques as Constant voltage, Constant current, Trickle Charging, Battery swapping techniques, Conductive DC Charging, Conductive Ac charging, Inductive charging or Wireless charging.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee5024.3",
-                    "sno": "4.3",
                     "topic": "State the Constant voltage, Constant current and Trickle Charging methods.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "ee5024.4",
-                    "sno": "4.4",
                     "topic": "Explain about Battery swapping techniques in Electric vehicles.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "ee5024.5",
-                    "sno": "4.5",
                     "topic": "Explain about Conductive DC Charging in Electric vehicles.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "ee5024.6",
-                    "sno": "4.6",
                     "topic": "Explain about Conductive AC charging in Electric vehicles.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "ee5024.7",
-                    "sno": "4.7",
                     "topic": "Explain about Inductive charging or Wireless charging in Electric vehicles.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "ee5024.8",
-                    "sno": "4.8",
                     "topic": "List the advantages and disadvantages of Wireless charging.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.7",
+                    "sno": "4.7"
                 },
                 {
-                    "id": "ee5024.9",
-                    "sno": "4.9",
                     "topic": "Explain the concept of V2G Technology (Vehicle-to-Grid).",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.8",
+                    "sno": "4.8"
                 },
                 {
-                    "id": "ee5024.10",
-                    "sno": "4.10",
                     "topic": "List types of (i) AC connectors (ii) DC connectors.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.9",
+                    "sno": "4.9"
                 },
                 {
-                    "id": "ee5024.11",
-                    "sno": "4.11",
                     "topic": "Need of battery management system.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.10",
+                    "sno": "4.10"
                 },
                 {
-                    "id": "ee5024.12",
-                    "sno": "4.12",
                     "topic": "Explain the Block diagram of Battery Management system (BMS).",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-4.11",
+                    "sno": "4.11"
                 },
                 {
-                    "id": "ee502-4.13",
-                    "sno": "4.13",
-                    "topic": "Revision and Assessment",
+                    "topic": "Revision of the Unit: Charging techniques and Battery Management system",
                     "period": 1,
-                    "type": "revision"
+                    "type": "revision",
+                    "id": "ee502-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Charging techniques and Battery Management system",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee502-4.13",
+                    "sno": "4.13"
                 }
             ]
         },
@@ -410,102 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "ee5025.1",
-                    "sno": "5.1",
-                    "topic": "Define an Electric Drive and explain the concept of electric drive.",
-                    "period": 2,
-                    "type": "theory"
+                    "topic": "Define an Electric Drive and explain the concept of electric drive. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "ee5025.2",
-                    "sno": "5.2",
+                    "topic": "Define an Electric Drive and explain the concept of electric drive. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee502-5.2",
+                    "sno": "5.2"
+                },
+                {
                     "topic": "List the advantages of Electric Drives.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "ee5025.3",
-                    "sno": "5.3",
                     "topic": "Draw the block diagram of an Electric drive and state the function of each block.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "ee5025.4",
-                    "sno": "5.4",
                     "topic": "List the factors governing the selection of electric drive.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "ee5025.5",
-                    "sno": "5.5",
                     "topic": "Classify the drives based on (i) Operation (ii) Application",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "ee5025.6",
-                    "sno": "5.6",
                     "topic": "List the Major requirements of Electric vehicle motor drive.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-5.7",
+                    "sno": "5.7"
                 },
                 {
-                    "id": "ee5025.7",
-                    "sno": "5.7",
                     "topic": "Explain Brushless DC (BLDC) motor with a neat sketch.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-5.8",
+                    "sno": "5.8"
                 },
                 {
-                    "id": "ee5025.8",
-                    "sno": "5.8",
                     "topic": "Explain Switched Reluctance motor with a neat sketch.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-5.9",
+                    "sno": "5.9"
                 },
                 {
-                    "id": "ee5025.9",
-                    "sno": "5.9",
                     "topic": "State the advantages of electric braking over other methods of braking.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-5.10",
+                    "sno": "5.10"
                 },
                 {
-                    "id": "ee5025.10",
-                    "sno": "5.10",
                     "topic": "List different methods of electric braking.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-5.11",
+                    "sno": "5.11"
                 },
                 {
-                    "id": "ee5025.11",
-                    "sno": "5.11",
                     "topic": "Explain the methods of plugging, Rheostatic and Regenerative braking.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee502-5.12",
+                    "sno": "5.12"
                 },
                 {
-                    "id": "ee5025.12",
-                    "sno": "5.12",
                     "topic": "List the advantages of Regenerative Braking System.",
                     "period": 1,
-                    "type": "theory"
-                },
-                {
+                    "type": "theory",
                     "id": "ee502-5.13",
-                    "sno": "5.13",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.13"
                 },
                 {
-                    "id": "ee502-5.14",
-                    "sno": "5.14",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Revision of the Unit: Electrical Drives and Braking of electric motors",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "revision",
+                    "id": "ee502-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Electrical Drives and Braking of electric motors",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee502-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

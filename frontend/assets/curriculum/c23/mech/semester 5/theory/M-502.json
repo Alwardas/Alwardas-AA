@@ -11,60 +11,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Introduction to Industrial Engineering and Productivity. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-1.1",
-                    "sno": "1.1",
-                    "topic": "Introduction to Industrial Engineering and Productivity.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "1.1"
                 },
                 {
+                    "topic": "Introduction to Industrial Engineering and Productivity. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-1.2",
-                    "sno": "1.2",
-                    "topic": "Objectives and procedure of Method Study.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.2"
                 },
                 {
+                    "topic": "Introduction to Industrial Engineering and Productivity. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-1.3",
-                    "sno": "1.3",
-                    "topic": "Recording techniques: Charts (Operation process, Flow process, Two-handed).",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.3"
                 },
                 {
+                    "topic": "Objectives and procedure of Method Study. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-1.4",
-                    "sno": "1.4",
-                    "topic": "Flow diagrams and String diagrams.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.4"
                 },
                 {
+                    "topic": "Objectives and procedure of Method Study. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-1.5",
-                    "sno": "1.5",
-                    "topic": "Therbligs and SIMO chart.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "1.5"
                 },
                 {
+                    "topic": "Recording techniques: Charts (Operation process, Flow process, Two-handed). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-1.6",
-                    "sno": "1.6",
-                    "topic": "Principles of Motion Economy.",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Recording techniques: Charts (Operation process, Flow process, Two-handed). - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m502-1.7",
-                    "sno": "1.7",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.7"
                 },
                 {
-                    "id": "m502-1.8",
-                    "sno": "1.8",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Flow diagrams and String diagrams. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m502-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Flow diagrams and String diagrams. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Therbligs and SIMO chart. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Therbligs and SIMO chart. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Principles of Motion Economy. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Principles of Motion Economy. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Method Study",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m502-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Method Study",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m502-1.15",
+                    "sno": "1.15"
                 }
             ]
         },
@@ -74,53 +123,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Objectives and procedure of Work Measurement (Time Study). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-2.1",
-                    "sno": "2.1",
-                    "topic": "Objectives and procedure of Work Measurement (Time Study).",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.1"
                 },
                 {
+                    "topic": "Objectives and procedure of Work Measurement (Time Study). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-2.2",
-                    "sno": "2.2",
-                    "topic": "Stop watch time study equipment.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.2"
                 },
                 {
+                    "topic": "Objectives and procedure of Work Measurement (Time Study). - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-2.3",
-                    "sno": "2.3",
-                    "topic": "Standard time calculation: Rating factor, Allowances.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "2.3"
                 },
                 {
+                    "topic": "Stop watch time study equipment. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-2.4",
-                    "sno": "2.4",
-                    "topic": "Work sampling: Principle and advantages.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "2.4"
                 },
                 {
+                    "topic": "Stop watch time study equipment. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-2.5",
-                    "sno": "2.5",
-                    "topic": "PMTS (Predetermined Motion Time Systems).",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Stop watch time study equipment. - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m502-2.6",
-                    "sno": "2.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "2.6"
                 },
                 {
-                    "id": "m502-2.7",
-                    "sno": "2.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Standard time calculation: Rating factor, Allowances. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m502-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Standard time calculation: Rating factor, Allowances. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Standard time calculation: Rating factor, Allowances. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Work sampling: Principle and advantages. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Work sampling: Principle and advantages. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "PMTS (Predetermined Motion Time Systems). - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "PMTS (Predetermined Motion Time Systems). - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Work Measurement",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m502-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Work Measurement",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m502-2.15",
+                    "sno": "2.15"
                 }
             ]
         },
@@ -130,53 +235,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Definition and objectives of Inspection. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-3.1",
-                    "sno": "3.1",
-                    "topic": "Definition and objectives of Inspection.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.1"
                 },
                 {
+                    "topic": "Definition and objectives of Inspection. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-3.2",
-                    "sno": "3.2",
-                    "topic": "Types of Inspection (Incoming, In-process, Final).",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.2"
                 },
                 {
+                    "topic": "Definition and objectives of Inspection. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-3.3",
-                    "sno": "3.3",
-                    "topic": "Statistical Quality Control (SQC): Terminology.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "3.3"
                 },
                 {
+                    "topic": "Types of Inspection (Incoming, In-process, Final). - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-3.4",
-                    "sno": "3.4",
-                    "topic": "Frequency distribution and Normal distribution curve.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "3.4"
                 },
                 {
+                    "topic": "Types of Inspection (Incoming, In-process, Final). - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-3.5",
-                    "sno": "3.5",
-                    "topic": "Causes of variation: Chance and Assignable causes.",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Types of Inspection (Incoming, In-process, Final). - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m502-3.6",
-                    "sno": "3.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "3.6"
                 },
                 {
-                    "id": "m502-3.7",
-                    "sno": "3.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Statistical Quality Control (SQC): Terminology. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m502-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Statistical Quality Control (SQC): Terminology. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Statistical Quality Control (SQC): Terminology. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Frequency distribution and Normal distribution curve. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Frequency distribution and Normal distribution curve. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Causes of variation: Chance and Assignable causes. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Causes of variation: Chance and Assignable causes. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Fundamentals of Inspection & S.Q.C",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m502-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Fundamentals of Inspection & S.Q.C",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m502-3.15",
+                    "sno": "3.15"
                 }
             ]
         },
@@ -186,53 +347,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Control charts for Variables: X-bar and R charts. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-4.1",
-                    "sno": "4.1",
-                    "topic": "Control charts for Variables: X-bar and R charts.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.1"
                 },
                 {
+                    "topic": "Control charts for Variables: X-bar and R charts. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-4.2",
-                    "sno": "4.2",
-                    "topic": "Interpretation of Control charts.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.2"
                 },
                 {
+                    "topic": "Control charts for Variables: X-bar and R charts. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-4.3",
-                    "sno": "4.3",
-                    "topic": "Control charts for Attributes: P-chart, C-chart.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "4.3"
                 },
                 {
+                    "topic": "Interpretation of Control charts. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-4.4",
-                    "sno": "4.4",
-                    "topic": "Process Capability.",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Interpretation of Control charts. - Part 2",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m502-4.5",
-                    "sno": "4.5",
-                    "topic": "Simple problems on Control charts.",
-                    "type": "problem solving",
-                    "period": 2
+                    "sno": "4.5"
                 },
                 {
+                    "topic": "Interpretation of Control charts. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-4.6",
-                    "sno": "4.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "4.6"
                 },
                 {
-                    "id": "m502-4.7",
-                    "sno": "4.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Control charts for Attributes: P-chart, C-chart. - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m502-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Control charts for Attributes: P-chart, C-chart. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Control charts for Attributes: P-chart, C-chart. - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Process Capability. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Process Capability. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Simple problems on Control charts. - Part 1",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m502-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Simple problems on Control charts. - Part 2",
+                    "period": 1,
+                    "type": "problem solving",
+                    "id": "m502-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Control Charts",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m502-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Control Charts",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m502-4.15",
+                    "sno": "4.15"
                 }
             ]
         },
@@ -242,53 +459,109 @@
             "totalPeriods": 15,
             "topics": [
                 {
+                    "topic": "Concept of Acceptance Sampling. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-5.1",
-                    "sno": "5.1",
-                    "topic": "Concept of Acceptance Sampling.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.1"
                 },
                 {
+                    "topic": "Concept of Acceptance Sampling. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-5.2",
-                    "sno": "5.2",
-                    "topic": "Sampling Plans: Single, Double and Multiple sampling.",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.2"
                 },
                 {
+                    "topic": "Concept of Acceptance Sampling. - Part 3",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-5.3",
-                    "sno": "5.3",
-                    "topic": "OC Curve (Operating Characteristic Curve).",
-                    "type": "theory",
-                    "period": 3
+                    "sno": "5.3"
                 },
                 {
+                    "topic": "Sampling Plans: Single, Double and Multiple sampling. - Part 1",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-5.4",
-                    "sno": "5.4",
-                    "topic": "Producer's risk and Consumer's risk.",
-                    "type": "theory",
-                    "period": 2
+                    "sno": "5.4"
                 },
                 {
+                    "topic": "Sampling Plans: Single, Double and Multiple sampling. - Part 2",
+                    "period": 1,
+                    "type": "theory",
                     "id": "m502-5.5",
-                    "sno": "5.5",
-                    "topic": "AQL, LTPD, IQL.",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Sampling Plans: Single, Double and Multiple sampling. - Part 3",
+                    "period": 1,
                     "type": "theory",
-                    "period": 2
-                },
-                {
                     "id": "m502-5.6",
-                    "sno": "5.6",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "5.6"
                 },
                 {
-                    "id": "m502-5.7",
-                    "sno": "5.7",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "OC Curve (Operating Characteristic Curve). - Part 1",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "theory",
+                    "id": "m502-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "OC Curve (Operating Characteristic Curve). - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "OC Curve (Operating Characteristic Curve). - Part 3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Producer's risk and Consumer's risk. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Producer's risk and Consumer's risk. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "AQL, LTPD, IQL. - Part 1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "AQL, LTPD, IQL. - Part 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "m502-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Revision of the Unit: Acceptance Sampling",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "m502-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Acceptance Sampling",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "m502-5.15",
+                    "sno": "5.15"
                 }
             ]
         }

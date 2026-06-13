@@ -11,88 +11,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "ee4041.1",
-                    "sno": "1.1",
                     "topic": "List different thyristors family devices and draw the circuit symbols for each device.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-1.1",
+                    "sno": "1.1"
                 },
                 {
-                    "id": "ee4041.2",
-                    "sno": "1.2",
                     "topic": "Describe constructional details and operation of SCR",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-1.2",
+                    "sno": "1.2"
                 },
                 {
-                    "id": "ee4041.3",
-                    "sno": "1.3",
                     "topic": "Explain the Volt \u2013 Ampere characteristics of SCR with the help of adiagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-1.3",
+                    "sno": "1.3"
                 },
                 {
-                    "id": "ee4041.4",
-                    "sno": "1.4",
                     "topic": "Draw the Gate characteristics of SCR",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-1.4",
+                    "sno": "1.4"
                 },
                 {
-                    "id": "ee4041.5",
-                    "sno": "1.5",
                     "topic": "Mention the ratings of SCR.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-1.5",
+                    "sno": "1.5"
                 },
                 {
-                    "id": "ee4041.6",
-                    "sno": "1.6",
                     "topic": "Give the advantages of SCR as a switch.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-1.6",
+                    "sno": "1.6"
                 },
                 {
-                    "id": "ee4041.7",
-                    "sno": "1.7",
                     "topic": "List ten applications of SCR.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-1.7",
+                    "sno": "1.7"
                 },
                 {
-                    "id": "ee4041.8",
-                    "sno": "1.8",
                     "topic": "Explain the Volt-ampere characteristics of Diac under forward / reverse bias.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-1.8",
+                    "sno": "1.8"
                 },
                 {
-                    "id": "ee4041.9",
-                    "sno": "1.9",
                     "topic": "Explain the Volt-ampere characteristics of Triac under forward / reverse bias.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-1.9",
+                    "sno": "1.9"
                 },
                 {
-                    "id": "ee4041.10",
-                    "sno": "1.10",
                     "topic": "State the necessity of Commutation in SCR's and list different methods of commutation",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-1.10",
+                    "sno": "1.10"
                 },
                 {
+                    "topic": "Revision of the Unit: Power Electronic devices",
+                    "period": 1,
+                    "type": "revision",
                     "id": "ee404-1.11",
-                    "sno": "1.11",
-                    "topic": "Revision of the Unit",
-                    "period": 1,
-                    "type": "revision"
+                    "sno": "1.11"
                 },
                 {
-                    "id": "ee404-1.12",
-                    "sno": "1.12",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Assessment / Practice / Problem Solving on Power Electronic devices",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "assessment",
+                    "id": "ee404-1.12",
+                    "sno": "1.12"
                 }
             ]
         },
@@ -102,81 +102,60 @@
             "totalPeriods": 8,
             "topics": [
                 {
-                    "id": "ee4042.1",
-                    "sno": "2.1",
-                    "topic": "Classify power transistor.",
+                    "topic": "Classify power transistor. & Describe the basic structure and operation of IGBT.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-2.1",
+                    "sno": "2.1"
                 },
                 {
-                    "id": "ee4042.2",
-                    "sno": "2.2",
-                    "topic": "Describe the basic structure and operation of IGBT.",
+                    "topic": "Explain the characteristics of IGBT. & Mention the applications of IGBT.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-2.2",
+                    "sno": "2.2"
                 },
                 {
-                    "id": "ee4042.3",
-                    "sno": "2.3",
-                    "topic": "Explain the characteristics of IGBT.",
+                    "topic": "List the types of MOSFETs. & Describe the working of Power MOSFET.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-2.3",
+                    "sno": "2.3"
                 },
                 {
-                    "id": "ee4042.4",
-                    "sno": "2.4",
-                    "topic": "Mention the applications of IGBT.",
+                    "topic": "Explain the characteristics of MOSFET. & Mention the applications of MOSFET.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-2.4",
+                    "sno": "2.4"
                 },
                 {
-                    "id": "ee4042.5",
-                    "sno": "2.5",
-                    "topic": "List the types of MOSFETs.",
+                    "topic": "Compare MOSFET with BJT. & Compare IGBT with MOSFET.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-2.5",
+                    "sno": "2.5"
                 },
                 {
-                    "id": "ee4042.6",
-                    "sno": "2.6",
-                    "topic": "Describe the working of Power MOSFET.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4042.7",
-                    "sno": "2.7",
-                    "topic": "Explain the characteristics of MOSFET.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4042.8",
-                    "sno": "2.8",
-                    "topic": "Mention the applications of MOSFET.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4042.9",
-                    "sno": "2.9",
-                    "topic": "Compare MOSFET with BJT.",
-                    "period": 0,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4042.10",
-                    "sno": "2.10",
-                    "topic": "Compare IGBT with MOSFET.",
-                    "period": 0,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4042.11",
-                    "sno": "2.11",
                     "topic": "Describe the basic structure and operation of MOS \u2013Controlled Thyristor (MCT).",
-                    "period": 0,
-                    "type": "theory"
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee404-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Revision of the Unit: Power Transistors",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee404-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Power Transistors",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee404-2.8",
+                    "sno": "2.8"
                 }
             ]
         },
@@ -186,102 +165,102 @@
             "totalPeriods": 14,
             "topics": [
                 {
-                    "id": "ee4043.1",
-                    "sno": "3.1",
-                    "topic": "Define rectifier, AC voltage controller, inverter, chopper and cyclo converter",
+                    "topic": "Define rectifier, AC voltage controller, inverter, chopper and cyclo converter & Explain the working of single-phase half wave converter with resistive and R-L loads.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.1",
+                    "sno": "3.1"
                 },
                 {
-                    "id": "ee4043.2",
-                    "sno": "3.2",
-                    "topic": "Explain the working of single-phase half wave converter with resistive and R-L loads.",
+                    "topic": "Understand need for freewheeling diode. & Explain the working of single phase full wave converter with resistive and R- L loads.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.2",
+                    "sno": "3.2"
                 },
                 {
-                    "id": "ee4043.3",
-                    "sno": "3.3",
-                    "topic": "Understand need for freewheeling diode.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4043.4",
-                    "sno": "3.4",
-                    "topic": "Explain the working of single phase full wave converter with resistive and R- L loads.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4043.5",
-                    "sno": "3.5",
                     "topic": "Explain the working of three-phase half wave converter with resistive load",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.3",
+                    "sno": "3.3"
                 },
                 {
-                    "id": "ee4043.6",
-                    "sno": "3.6",
                     "topic": "Explain the working of three phase full wave converter with resistive load.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.4",
+                    "sno": "3.4"
                 },
                 {
-                    "id": "ee4043.7",
-                    "sno": "3.7",
                     "topic": "Explain the working of single phase AC voltage controller with resistive load.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.5",
+                    "sno": "3.5"
                 },
                 {
-                    "id": "ee4043.8",
-                    "sno": "3.8",
                     "topic": "Explain the working of three phase AC voltage controller with resistive load.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.6",
+                    "sno": "3.6"
                 },
                 {
-                    "id": "ee4043.9",
-                    "sno": "3.9",
                     "topic": "Compare AC voltage controller with transformer.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.7",
+                    "sno": "3.7"
                 },
                 {
-                    "id": "ee4043.10",
-                    "sno": "3.10",
                     "topic": "Classify inverters.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.8",
+                    "sno": "3.8"
                 },
                 {
-                    "id": "ee4043.11",
-                    "sno": "3.11",
                     "topic": "Explain the working of single-phase bridge inverter.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.9",
+                    "sno": "3.9"
                 },
                 {
-                    "id": "ee4043.12",
-                    "sno": "3.12",
                     "topic": "Explain the working of three-phase bridge inverter.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.10",
+                    "sno": "3.10"
                 },
                 {
-                    "id": "ee4043.13",
-                    "sno": "3.13",
                     "topic": "State the advantages of MOSFET based inverters over SCR based inverters.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.11",
+                    "sno": "3.11"
                 },
                 {
-                    "id": "ee4043.14",
-                    "sno": "3.14",
                     "topic": "List the applications of Inverters.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Revision of the Unit: Converters, AC Voltage controllers & Inverters",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee404-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Converters, AC Voltage controllers & Inverters",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee404-3.14",
+                    "sno": "3.14"
                 }
             ]
         },
@@ -291,109 +270,102 @@
             "totalPeriods": 14,
             "topics": [
                 {
-                    "id": "ee4044.1",
-                    "sno": "4.1",
-                    "topic": "List applications of power electronic circuits.",
+                    "topic": "List applications of power electronic circuits. & Mention the factors affecting the speed of DC Motors.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.1",
+                    "sno": "4.1"
                 },
                 {
-                    "id": "ee4044.2",
-                    "sno": "4.2",
-                    "topic": "Mention the factors affecting the speed of DC Motors.",
+                    "topic": "Explain the speed control of DC Shunt motor using converter. & Explain the speed control of PMDC motor using converter.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.2",
+                    "sno": "4.2"
                 },
                 {
-                    "id": "ee4044.3",
-                    "sno": "4.3",
-                    "topic": "Explain the speed control of DC Shunt motor using converter.",
+                    "topic": "List the factors affecting speed of the AC Motors. & Explain the speed control of induction motor by using AC voltage controller.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.3",
+                    "sno": "4.3"
                 },
                 {
-                    "id": "ee4044.4",
-                    "sno": "4.4",
-                    "topic": "Explain the speed control of PMDC motor using converter.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4044.5",
-                    "sno": "4.5",
-                    "topic": "List the factors affecting speed of the AC Motors.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4044.6",
-                    "sno": "4.6",
-                    "topic": "Explain the speed control of induction motor by using AC voltage controller.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4044.7",
-                    "sno": "4.7",
                     "topic": "Explain the speed control of induction motor by using converter and inverter (V/F control).",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.4",
+                    "sno": "4.4"
                 },
                 {
-                    "id": "ee4044.8",
-                    "sno": "4.8",
                     "topic": "Devices used to suppress the spikes in supply system.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.5",
+                    "sno": "4.5"
                 },
                 {
-                    "id": "ee4044.9",
-                    "sno": "4.9",
                     "topic": "Working of UPS with block diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.6",
+                    "sno": "4.6"
                 },
                 {
-                    "id": "ee4044.10",
-                    "sno": "4.10",
                     "topic": "Explain the illumination control circuit using TRIAC and DIAC with the help of a legible sketch.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.7",
+                    "sno": "4.7"
                 },
                 {
-                    "id": "ee4044.11",
-                    "sno": "4.11",
                     "topic": "Explain the anti-theft alarm circuit using SCR with the help of a diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.8",
+                    "sno": "4.8"
                 },
                 {
-                    "id": "ee4044.12",
-                    "sno": "4.12",
                     "topic": "Explain the emergency lamp circuit using SCR with the help of a diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.9",
+                    "sno": "4.9"
                 },
                 {
-                    "id": "ee4044.13",
-                    "sno": "4.13",
                     "topic": "Explain the battery charger circuit using SCR with the help of a diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.10",
+                    "sno": "4.10"
                 },
                 {
-                    "id": "ee4044.14",
-                    "sno": "4.14",
                     "topic": "Explain the power factor improvement circuit using SCR with the help of a diagram.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-4.11",
+                    "sno": "4.11"
                 },
                 {
-                    "id": "ee4044.15",
-                    "sno": "4.15",
                     "topic": "Explain the DC circuit breaker using SCR with the help of a diagram.",
-                    "period": 0,
-                    "type": "theory"
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee404-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Revision of the Unit: Applications of Power Electronic circuits",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee404-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on Applications of Power Electronic circuits",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee404-4.14",
+                    "sno": "4.14"
                 }
             ]
         },
@@ -403,116 +375,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "id": "ee4045.1",
-                    "sno": "5.1",
-                    "topic": "Need for automation and advantages of automation.",
+                    "topic": "Need for automation and advantages of automation. & Define Programmable Logic Controller(PLC) and state the advantages of PLC",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-5.1",
+                    "sno": "5.1"
                 },
                 {
-                    "id": "ee4045.2",
-                    "sno": "5.2",
-                    "topic": "Define Programmable Logic Controller(PLC) and state the advantages of PLC",
+                    "topic": "Explain the different parts of PLC by drawing the Block diagram and state the purpose of each part. & State the applications of PLC",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-5.2",
+                    "sno": "5.2"
                 },
                 {
-                    "id": "ee4045.3",
-                    "sno": "5.3",
-                    "topic": "Explain the different parts of PLC by drawing the Block diagram and state the purpose of each part.",
+                    "topic": "Explain Ladder diagram & Explain contacts and coils used in PLC",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-5.3",
+                    "sno": "5.3"
                 },
                 {
-                    "id": "ee4045.4",
-                    "sno": "5.4",
-                    "topic": "State the applications of PLC",
+                    "topic": "Draw ladder diagrams for (i)AND gate (ii)OR gate (iii) NOT gate (iv) NAND gate (iv) NOR gate (iv) X-OR gate & Explain the following Timers and counters (i)TON (ii)T OFF (iii) Retentive timer (iv) CTU (v) CTD",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-5.4",
+                    "sno": "5.4"
                 },
                 {
-                    "id": "ee4045.5",
-                    "sno": "5.5",
-                    "topic": "Explain Ladder diagram",
+                    "topic": "Draw ladder diagrams using Timers and counters & Explain PLC Instruction set",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-5.5",
+                    "sno": "5.5"
                 },
                 {
-                    "id": "ee4045.6",
-                    "sno": "5.6",
-                    "topic": "Explain contacts and coils used in PLC",
+                    "topic": "Explain ladder diagrams for following (i) DOL starter and STAR-DELTA starter(ii) Stair case lighting (iii) Traffic light control(iv) Temperature Controller & Explain the need of data acquisition.",
                     "period": 1,
-                    "type": "theory"
+                    "type": "theory",
+                    "id": "ee404-5.6",
+                    "sno": "5.6"
                 },
                 {
-                    "id": "ee4045.7",
-                    "sno": "5.7",
-                    "topic": "Draw ladder diagrams for (i)AND gate (ii)OR gate (iii) NOT gate (iv) NAND gate (iv) NOR gate (iv) X-OR gate",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4045.8",
-                    "sno": "5.8",
-                    "topic": "Explain the following Timers and counters (i)TON (ii)T OFF (iii) Retentive timer (iv) CTU (v) CTD",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4045.9",
-                    "sno": "5.9",
-                    "topic": "Draw ladder diagrams using Timers and counters",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4045.10",
-                    "sno": "5.10",
-                    "topic": "Explain PLC Instruction set",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4045.11",
-                    "sno": "5.11",
-                    "topic": "Explain ladder diagrams for following (i) DOL starter and STAR-DELTA starter(ii) Stair case lighting (iii) Traffic light control(iv) Temperature Controller",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4045.12",
-                    "sno": "5.12",
-                    "topic": "Explain the need of data acquisition.",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "ee4045.13",
-                    "sno": "5.13",
                     "topic": "State the advantages of supervisory control.",
-                    "period": 0,
-                    "type": "theory"
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee404-5.7",
+                    "sno": "5.7"
                 },
                 {
-                    "id": "ee4045.14",
-                    "sno": "5.14",
                     "topic": "List the softwares used for SCADA and explain them.",
-                    "period": 0,
-                    "type": "theory"
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee404-5.8",
+                    "sno": "5.8"
                 },
                 {
-                    "id": "ee4045.15",
-                    "sno": "5.15",
                     "topic": "State various communication methods used in SCADA.",
-                    "period": 0,
-                    "type": "theory"
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee404-5.9",
+                    "sno": "5.9"
                 },
                 {
-                    "id": "ee4045.16",
-                    "sno": "5.16",
                     "topic": "Explain the working of SCADA with PLC and applications of SCADA.",
-                    "period": 0,
-                    "type": "theory"
+                    "period": 1,
+                    "type": "theory",
+                    "id": "ee404-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Revision of the Unit: PLC and SCADA",
+                    "period": 1,
+                    "type": "revision",
+                    "id": "ee404-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Assessment / Practice / Problem Solving on PLC and SCADA",
+                    "period": 1,
+                    "type": "assessment",
+                    "id": "ee404-5.12",
+                    "sno": "5.12"
                 }
             ]
         }
