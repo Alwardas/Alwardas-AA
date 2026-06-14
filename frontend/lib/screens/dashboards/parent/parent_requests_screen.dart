@@ -38,7 +38,6 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
 
   late stt.SpeechToText _speech;
   bool _isListening = false;
-  double _confidence = 1.0;
 
   late AudioRecorder _recorder;
   late AudioPlayer _player;
@@ -204,7 +203,14 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
     });
 
     try {
-      final parentId = widget.userData['id'];
+      final parentId = widget.userData['id'] ?? widget.userData['userId'];
+      if (parentId == null) {
+         setState(() {
+            _error = "User ID not found";
+            _isLoading = false;
+         });
+         return;
+      }
       final uri = Uri.parse(ApiConstants.getParentRequests).replace(queryParameters: {
         'parentId': parentId.toString(),
       });
@@ -212,11 +218,19 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
-        setState(() {
-          _requests = data.map((json) => ParentRequest.fromJson(json)).toList();
-          _isLoading = false;
-        });
+        final decoded = json.decode(response.body);
+        if (decoded['success'] == true && decoded['data'] != null) {
+          final List<dynamic> data = decoded['data'];
+          setState(() {
+            _requests = data.map((json) => ParentRequest.fromJson(json)).toList();
+            _isLoading = false;
+          });
+        } else {
+          setState(() {
+            _error = decoded['message'] ?? "Failed to load requests";
+            _isLoading = false;
+          });
+        }
       } else {
         setState(() {
           _error = "Failed to load requests: ${response.statusCode}";
@@ -264,11 +278,12 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
     setState(() => _isSubmitting = true);
 
     try {
+      final parentId = widget.userData['id'] ?? widget.userData['userId'];
       final response = await http.post(
         Uri.parse(ApiConstants.submitParentRequest),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
-          'parentId': widget.userData['id'],
+          'parentId': parentId.toString(),
           'studentId': widget.studentId,
           'requestType': _selectedType,
           'subject': _subjectController.text,

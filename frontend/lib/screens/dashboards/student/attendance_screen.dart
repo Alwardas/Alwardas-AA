@@ -135,7 +135,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
     
     final studentId = widget.userData?['id']?.toString() ?? widget.userData?['login_id']?.toString();
     
-    if (studentId == null) {
+    if (studentId == null || studentId.isEmpty) {
        setState(() => _loading = false);
        return; 
     }

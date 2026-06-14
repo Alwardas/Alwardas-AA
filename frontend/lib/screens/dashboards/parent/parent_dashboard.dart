@@ -218,8 +218,9 @@ class _ParentDashboardState extends State<ParentDashboard> {
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
-        if (data['student'] != null) {
-          final student = data['student'];
+        final profileData = data['data'];
+        if (profileData != null && profileData['student'] != null) {
+          final student = profileData['student'];
           if (mounted) {
             setState(() {
               _children = [
@@ -230,14 +231,30 @@ class _ParentDashboardState extends State<ParentDashboard> {
                   "branch": student['branch'] ?? "N/A",
                   "batch_no":
                       student['batchNo'], // Mapped for Attendance Screen
-                  "year": student['year'] ?? "N/A",
+                  "year": student['year']?.toString() ?? "N/A",
                   "section": student['section'] ?? "Section A",
-                  "semester": student['semester'] ?? ""
+                  "semester": student['semester']?.toString() ?? ""
                 }
               ];
             });
             // Fetch attendance after children data is loaded
             _fetchTodayAttendance();
+          }
+        } else {
+          if (mounted) {
+            setState(() {
+              _children = [
+                {
+                  "name": "No Student Linked",
+                  "id": "",
+                  "branch": "",
+                  "batch_no": "",
+                  "year": "",
+                  "section": "",
+                  "semester": ""
+                }
+              ];
+            });
           }
         }
       }

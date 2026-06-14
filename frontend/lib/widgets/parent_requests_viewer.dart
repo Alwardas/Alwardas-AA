@@ -52,13 +52,23 @@ class _ParentRequestsViewerState extends State<ParentRequestsViewer> {
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
-        setState(() {
-          _requests = data.map((json) => ParentRequest.fromJson(json))
-              .where((r) => r.parentRole == widget.requestFrom)
-              .toList();
-          _isLoading = false;
-        });
+        final decoded = json.decode(response.body);
+        if (decoded['success'] == true && decoded['data'] != null) {
+          final List<dynamic> data = decoded['data'];
+          setState(() {
+            _requests = data.map((json) => ParentRequest.fromJson(json))
+                .where((r) => r.parentRole == widget.requestFrom)
+                .toList();
+            _isLoading = false;
+          });
+        } else {
+          setState(() {
+            if (mounted) {
+              _error = decoded['message'] ?? "Failed to load requests";
+              _isLoading = false;
+            }
+          });
+        }
       } else {
         setState(() {
           if (mounted) {
