@@ -7,15 +7,22 @@ class ApiConstants {
 
   static String get baseUrl {
     if (kIsWeb) {
-      // In web, use the current origin (e.g., https://your-app.up.railway.app)
-      return Uri.base.origin;
+      final origin = Uri.base.origin;
+      if (origin.contains('localhost') || origin.contains('127.0.0.1')) {
+        return _prodUrl;
+      }
+      return origin;
     }
     return _prodUrl; 
   }
   
   static String get grpcHost {
     if (kIsWeb) {
-      return Uri.base.host;
+      final host = Uri.base.host;
+      if (host.contains('localhost') || host.contains('127.0.0.1')) {
+        return _prodGrpcHost;
+      }
+      return host;
     }
      return _prodGrpcHost; 
   }

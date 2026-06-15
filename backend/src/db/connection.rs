@@ -66,6 +66,11 @@ pub async fn init_db() -> Pool<Postgres> {
     println!("🔧 Running migrations with extended timeout...");
     let _ = sqlx::query("SET statement_timeout = '300s'").execute(&pool).await; 
     
+    // Clear the stale/missing historical migration reference if it exists
+    let _ = sqlx::query("DELETE FROM _sqlx_migrations WHERE version = 20240205")
+        .execute(&pool)
+        .await;
+    
     match sqlx::migrate!("./migrations").run(&pool).await {
         Ok(_) => println!("✅ Migrations complete!"),
         Err(e) => {

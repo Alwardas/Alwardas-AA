@@ -9,6 +9,8 @@ import '../../core/api_constants.dart';
 import '../../core/services/auth_service.dart';
 import 'package:provider/provider.dart';
 import '../../core/providers/theme_provider.dart';
+import 'package:go_router/go_router.dart';
+import '../../core/services/hive_service.dart';
 
 // Import Dashboards
 import '../dashboards/student/student_dashboard.dart';
@@ -159,23 +161,19 @@ class _LoginScreenState extends State<LoginScreen> {
 
              debugPrint("DEBUG: UserData constructed: $userData");
 
-            if (mounted) {
-              _showPopupResponse(
-                title: 'Login Successful',
-                message: 'Welcome back, ${userData['full_name']}!',
-                isError: false,
-              );
-              await Future.delayed(const Duration(milliseconds: 800)); // Brief pause for user to see success
-              await AuthService.saveUserSession(userData);
-              Widget dashboard = _getDashboardForRole(userData['role'], userData);
-              if (mounted) {
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => dashboard),
-                  (route) => false, // Remove all previous routes
-                );
-              }
-            }
+             if (mounted) {
+               _showPopupResponse(
+                 title: 'Login Successful',
+                 message: 'Welcome back, ${userData['full_name']}!',
+                 isError: false,
+               );
+               await Future.delayed(const Duration(milliseconds: 800)); // Brief pause for user to see success
+               await AuthService.saveUserSession(userData);
+               await HiveService.saveSession(userData);
+               if (mounted) {
+                 context.go('/dashboard');
+               }
+             }
           } else {
              if (mounted) {
               _showPopupResponse(

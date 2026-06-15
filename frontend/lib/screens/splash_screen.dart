@@ -2,17 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import '../core/services/auth_service.dart';
 import '../core/services/notification_service.dart';
-import 'auth/login_screen.dart';
-import 'dashboards/student/student_dashboard.dart';
-import 'dashboards/parent/parent_dashboard.dart';
-import 'dashboards/faculty/faculty_dashboard.dart';
-import 'dashboards/hod/hod_dashboard.dart';
-import 'dashboards/principal/principal_dashboard.dart';
+import 'package:go_router/go_router.dart';
+import '../core/services/hive_service.dart';
 import 'package:provider/provider.dart';
 import '../core/providers/theme_provider.dart';
-import 'dashboards/admin/admin_dashboard.dart';
-import 'dashboards/coordinator/coordinator_dashboard.dart';
-import 'dashboards/incharge/incharge_dashboard.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -96,32 +89,16 @@ class _SplashScreenState extends State<SplashScreen> {
     
     if (!mounted) return;
 
-    Widget destination;
     if (userData != null) {
-      final role = userData['role'];
-      debugPrint("Session Found: Role=$role"); // Debug log
-      switch (role) {
-        case 'Student': destination = StudentDashboard(userData: userData); break;
-        case 'Parent': destination = ParentDashboard(userData: userData); break;
-        case 'Faculty': destination = FacultyDashboard(userData: userData); break;
-        case 'HOD': destination = HodDashboard(userData: userData); break;
-        case 'Principal': destination = PrincipalDashboard(userData: userData); break;
-        case 'Admin': destination = AdminDashboard(userData: userData); break;
-        case 'Coordinator': destination = CoordinatorDashboard(userData: userData); break; // Added Coordinator
-        case 'Incharge': destination = InchargeDashboard(userData: userData); break; // Added Incharge
-        default: 
-           debugPrint("Unknown Role in Session: $role");
-           destination = const LoginScreen();
+      debugPrint("Session Found: Role=${userData['role']}");
+      await HiveService.saveSession(userData);
+      if (mounted) {
+        context.go('/dashboard');
       }
     } else {
       debugPrint("No Session Found");
-      destination = const LoginScreen();
+      context.go('/login');
     }
-
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => destination),
-    );
   }
 
   @override

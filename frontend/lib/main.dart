@@ -2,24 +2,27 @@ import 'package:flutter/material.dart';
 import 'screens/splash_screen.dart';
 import 'core/services/notification_service.dart';
 
-import 'package:provider/provider.dart';
+import 'package:provider/provider.dart' as legacy_provider;
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/theme/app_theme.dart';
 import 'core/providers/theme_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'core/services/hive_service.dart';
+import 'core/services/desktop_routing.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Performance: Increase image cache limit (30MB) for smoother asset loading without crashing old devices
   PaintingBinding.instance.imageCache.maximumSize = 30 * 1024 * 1024;
   
-  // Initialize Notifications asynchronously to avoid blocking the main UI startup (critical if system overlays are restricted during calls)
+  // Initialize Hive Caching database
+  await HiveService.init();
+
   NotificationService().init().then((_) {
      NotificationService().requestPermissions();
   }).catchError((e) {
     debugPrint("Notification Async Init Error: $e");
   });
 
-  // Hard reset API URL to production to clear any legacy local IPs stored in device cache
   try {
     final prefs = await SharedPreferences.getInstance().timeout(const Duration(seconds: 2));
     await prefs.remove('api_base_url');
@@ -28,9 +31,11 @@ Future<void> main() async {
   }
 
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => ThemeProvider(),
-      child: const MyApp(),
+    ProviderScope(
+      child: legacy_provider.ChangeNotifierProvider(
+        create: (_) => ThemeProvider(),
+        child: const MyApp(),
+      ),
     ),
   );
 }
@@ -40,20 +45,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    return MaterialApp(
+    final themeProvider = legacy_provider.Provider.of<ThemeProvider>(context);
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Alwardas Academics & Administration',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeProvider.themeMode,
-      builder: (context, child) {
-        return ScrollConfiguration(
-          behavior: const CustomScrollBehavior(),
-          child: child!,
-        );
-      },
-      home: const SplashScreen(),
+      routerConfig: desktopRouter,
     );
   }
 }

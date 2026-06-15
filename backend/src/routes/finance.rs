@@ -261,3 +261,91 @@ pub async fn pay_simulated_fee_handler(
         })))),
     }
 }
+
+pub async fn create_accountant_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<CreateAccountantRequest>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match finance_service::create_accountant(&state.pool, payload).await {
+        Ok(_) => Ok(Json(json!({
+            "success": true,
+            "message": "Accountant created successfully",
+            "data": null
+        }))),
+        Err(code) => Err((code, Json(json!({
+            "success": false,
+            "message": "Failed to create accountant profile",
+            "data": null
+        })))),
+    }
+}
+
+pub async fn get_accountants_handler(
+    State(state): State<AppState>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match finance_service::get_accountant_directory(&state.pool).await {
+        Ok(res) => Ok(Json(json!({
+            "success": true,
+            "message": "Accountant list fetched successfully",
+            "data": res
+        }))),
+        Err(code) => Err((code, Json(json!({
+            "success": false,
+            "message": "Failed to fetch accountants",
+            "data": null
+        })))),
+    }
+}
+
+pub async fn get_accountant_performance_handler(
+    State(state): State<AppState>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match finance_service::get_accountant_performance(&state.pool).await {
+        Ok(res) => Ok(Json(json!({
+            "success": true,
+            "message": "Accountant performance stats fetched successfully",
+            "data": res
+        }))),
+        Err(code) => Err((code, Json(json!({
+            "success": false,
+            "message": "Failed to fetch accountant performance stats",
+            "data": null
+        })))),
+    }
+}
+
+pub async fn assign_work_handler(
+    State(state): State<AppState>,
+    Json(payload): Json<AssignWorkRequest>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match finance_service::assign_work(&state.pool, payload).await {
+        Ok(_) => Ok(Json(json!({
+            "success": true,
+            "message": "Task assigned to accountant successfully",
+            "data": null
+        }))),
+        Err(code) => Err((code, Json(json!({
+            "success": false,
+            "message": "Failed to assign task",
+            "data": null
+        })))),
+    }
+}
+
+pub async fn get_work_assignments_handler(
+    State(state): State<AppState>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match finance_service::get_work_assignments(&state.pool).await {
+        Ok(res) => Ok(Json(json!({
+            "success": true,
+            "message": "Work assignments list fetched successfully",
+            "data": res
+        }))),
+        Err(code) => Err((code, Json(json!({
+            "success": false,
+            "message": "Failed to fetch work assignments",
+            "data": null
+        })))),
+    }
+}
+

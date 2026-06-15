@@ -188,6 +188,9 @@ async fn main() {
         .route("/api/finance/student-summary", get(finance::get_student_mobile_summary_handler))
         .route("/api/finance/parent-summary", get(finance::get_parent_mobile_summary_handler))
         .route("/api/finance/pay-simulated", post(finance::pay_simulated_fee_handler))
+        .route("/api/finance/accountants", get(finance::get_accountants_handler).post(finance::create_accountant_handler))
+        .route("/api/finance/accountants/performance", get(finance::get_accountant_performance_handler))
+        .route("/api/finance/work-assignments", get(finance::get_work_assignments_handler).post(finance::assign_work_handler))
         .with_state(AppState { pool })
 
         .nest_service("/web", tower_http::services::ServeDir::new("static"))

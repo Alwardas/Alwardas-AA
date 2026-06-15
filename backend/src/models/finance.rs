@@ -266,4 +266,70 @@ pub struct PaySimulatedRequest {
     pub amount: f64,
     pub payment_mode: String,
     pub remarks: Option<String>,
+    pub processed_by: Option<String>,
 }
+
+#[derive(Deserialize, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct CreateAccountantRequest {
+    pub employee_id: String,
+    pub full_name: String,
+    pub mobile_number: String,
+    pub email: String,
+    pub designation: String,
+    pub department: String,
+    pub joining_date: String,
+    pub password_setup: String,
+}
+
+#[derive(Serialize, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct AccountantDirectoryRow {
+    pub employee_id: String,
+    pub name: String,
+    pub role: String,
+    pub department: String,
+    pub status: String,
+    pub email: Option<String>,
+    pub phone_number: Option<String>,
+    pub todays_collections: f64,
+    pub monthly_collections: f64,
+    pub assigned_tasks: Vec<String>,
+}
+
+#[derive(Serialize, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct AccountantPerformanceResponse {
+    pub employee_id: String,
+    pub name: String,
+    pub total_collections: f64,
+    pub receipts_generated: i64,
+    pub refunds_processed: i64,
+    pub scholarships_handled: i64,
+    pub pending_tasks: i64,
+    pub average_processing_time_mins: f64,
+    pub student_satisfaction_score: f64,
+    pub monthly_ranking: i32,
+}
+
+#[derive(Deserialize, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct AssignWorkRequest {
+    pub accountant_id: String, // login_id
+    pub assignment_type: String,
+    pub department: String,
+    pub assigned_by: String, // login_id
+}
+
+#[derive(Serialize, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct WorkAssignmentRow {
+    pub id: Uuid,
+    pub accountant_name: String,
+    pub accountant_id: String,
+    pub assignment_type: String,
+    pub department: String,
+    pub status: String,
+    pub created_at: DateTime<Utc>,
+}
+
