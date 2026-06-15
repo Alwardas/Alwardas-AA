@@ -427,7 +427,7 @@ class DesktopLayoutShell extends ConsumerWidget {
   }
 
   Widget _getView(String section, Map<String, dynamic> userData) {
-    final role = userData['role']?.toString().toLowerCase() ?? 'staff';
+    final role = userData['role']?.toString().toLowerCase().trim() ?? 'staff';
 
     switch (section) {
       case 'Dashboard':
@@ -436,7 +436,7 @@ class DesktopLayoutShell extends ConsumerWidget {
         }
         return DesktopDashboardView(userData: userData);
       case 'Admissions':
-        if (role == 'hod') {
+        if (role == 'hod' || role == 'admin' || role == 'principal') {
           return DesktopHodAdmissionView(userData: userData);
         }
         return const Center(child: Text("Access Denied"));
@@ -590,7 +590,7 @@ class DesktopLayoutShell extends ConsumerWidget {
   }
 
   List<Map<String, dynamic>> _getFilteredSidebarItems(String role) {
-    final cleanRole = role.toLowerCase();
+    final cleanRole = role.toLowerCase().trim();
     
     if (cleanRole == 'accountant') {
       return [
