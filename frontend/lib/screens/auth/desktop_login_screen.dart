@@ -6,8 +6,6 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/api_constants.dart';
 import '../../core/services/hive_service.dart';
-import '../../core/theme/app_theme.dart';
-import '../../../theme/theme_constants.dart';
 
 class DesktopLoginScreen extends StatefulWidget {
   const DesktopLoginScreen({super.key});
@@ -103,247 +101,359 @@ class _DesktopLoginScreenState extends State<DesktopLoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
+      body: Stack(
         children: [
-          // Left Pane: Illustration & Banner
-          Expanded(
-            flex: 6,
-            child: Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xFF0F172A),
-                    Color(0xFF1E293B),
-                    Color(0xFF3b5998),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-              ),
-              padding: const EdgeInsets.all(60),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // Logo/Header
-                  Row(
-                    children: [
-                      const Icon(Icons.school, size: 36, color: Colors.white),
-                      const SizedBox(width: 12),
-                      Text(
-                        'Alwardas Group',
-                        style: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1.0,
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  // Core message
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.white24),
-                        ),
-                        child: Text(
-                          'ERP Enterprise Desktop Portal',
-                          style: GoogleFonts.poppins(
-                            color: Colors.blueAccent,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 24),
-                      Text(
-                        'Simplify Academics &\nAdministrations.',
-                        style: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontSize: 44,
-                          fontWeight: FontWeight.bold,
-                          height: 1.2,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      Text(
-                        'Access college analytics, fee systems, schedules, and communication channels under a unified administrative dashboard.',
-                        style: GoogleFonts.poppins(
-                          color: Colors.white70,
-                          fontSize: 16,
-                          height: 1.5,
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  // Footer info
-                  Row(
-                    children: [
-                      const Icon(Icons.security, color: Colors.greenAccent, size: 18),
-                      const SizedBox(width: 8),
-                      Text(
-                        'Secure SSL connection active',
-                        style: GoogleFonts.poppins(
-                          color: Colors.white.withOpacity(0.5),
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+          // Background Image
+          Positioned.fill(
+            child: Image.network(
+              'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80',
+              fit: BoxFit.cover,
+              color: Colors.black.withOpacity(0.3),
+              colorBlendMode: BlendMode.darken,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(color: const Color(0xFF3b5998));
+              },
             ),
           ),
 
-          // Right Pane: Login Form
-          Expanded(
-            flex: 5,
-            child: Container(
-              color: const Color(0xFF0B0F19),
-              child: Center(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.all(50),
-                  child: Container(
-                    constraints: const BoxConstraints(maxWidth: 440),
-                    padding: const EdgeInsets.all(40),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF1E293B).withOpacity(0.6),
-                      borderRadius: BorderRadius.circular(24),
-                      border: Border.all(color: Colors.white10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.3),
-                          blurRadius: 30,
-                          offset: const Offset(0, 15),
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          'Welcome Back',
-                          style: GoogleFonts.poppins(
-                            color: Colors.white,
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          'Log in with your institution credentials',
-                          style: GoogleFonts.poppins(
-                            color: Colors.white.withOpacity(0.5),
-                            fontSize: 14,
-                          ),
-                        ),
-                        const SizedBox(height: 36),
-
-                        // Login ID Field
-                        Text(
-                          'Login ID',
-                          style: GoogleFonts.poppins(
-                            color: Colors.white70,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 13,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        TextField(
-                          controller: _loginIdController,
-                          style: const TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
-                            hintText: 'e.g. ADM2026001',
-                            hintStyle: GoogleFonts.poppins(color: Colors.white24, fontSize: 14),
-                            filled: true,
-                            fillColor: const Color(0xFF0F172A),
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide.none,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-
-                        // Password Field
-                        Text(
-                          'Password',
-                          style: GoogleFonts.poppins(
-                            color: Colors.white70,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 13,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        TextField(
-                          controller: _passwordController,
-                          obscureText: _obscurePassword,
-                          style: const TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
-                            hintText: 'Enter Password',
-                            hintStyle: GoogleFonts.poppins(color: Colors.white24, fontSize: 14),
-                            filled: true,
-                            fillColor: const Color(0xFF0F172A),
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                _obscurePassword ? Icons.visibility_outlined : Icons.visibility_off_outlined,
-                                color: Colors.white38,
-                                size: 20,
+          // Main Layout
+          Positioned.fill(
+            child: Column(
+              children: [
+                Expanded(
+                  child: Row(
+                    children: [
+                      // Left Side (Logo & Text)
+                      Expanded(
+                        flex: 5,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 80, top: 120),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Mock Logo area
+                              Image.asset(
+                                'assets/images/college logo.png', // Try this first
+                                width: 380,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Image.asset(
+                                    'assets/images/logo.png', // Fallback
+                                    width: 380,
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'alwar das group',
+                                            style: GoogleFonts.poppins(
+                                              color: const Color(0xFF2563EB),
+                                              fontSize: 48,
+                                              fontWeight: FontWeight.bold,
+                                              height: 1.1,
+                                            ),
+                                          ),
+                                          Text(
+                                            'free mind through education',
+                                            style: GoogleFonts.caveat(
+                                              color: const Color(0xFFDC2626),
+                                              fontSize: 32,
+                                              height: 1.2,
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
                               ),
-                              onPressed: () {
-                                setState(() {
-                                  _obscurePassword = !_obscurePassword;
-                                });
-                              },
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide.none,
-                            ),
+                              const SizedBox(height: 60),
+                              
+                              // Feature Icons
+                              Row(
+                                children: [
+                                  _buildFeatureItem(Icons.school, 'Quality\nEducation'),
+                                  Container(width: 1, height: 40, color: Colors.white54, margin: const EdgeInsets.symmetric(horizontal: 24)),
+                                  _buildFeatureItem(Icons.menu_book, 'Holistic\nDevelopment'),
+                                  Container(width: 1, height: 40, color: Colors.white54, margin: const EdgeInsets.symmetric(horizontal: 24)),
+                                  _buildFeatureItem(Icons.group, 'Bright\nFuture'),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
-                        const SizedBox(height: 30),
-
-                        // Login Button
-                        ElevatedButton(
-                          onPressed: _isLoading ? null : _handleLogin,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF3b5998),
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(vertical: 18),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            elevation: 0,
-                          ),
-                          child: _isLoading
-                              ? const SizedBox(
-                                  height: 24,
-                                  width: 24,
-                                  child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
-                                )
-                              : Text(
-                                  'Sign In',
-                                  style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                      
+                      // Right Side (Login Card)
+                      Expanded(
+                        flex: 5,
+                        child: Center(
+                          child: Container(
+                            width: 500,
+                            padding: const EdgeInsets.symmetric(horizontal: 56, vertical: 48),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.15),
+                                  blurRadius: 40,
+                                  offset: const Offset(0, 15),
                                 ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Text(
+                                  'Welcome Back',
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.inter(
+                                    fontSize: 32,
+                                    fontWeight: FontWeight.bold,
+                                    color: const Color(0xFF1E293B),
+                                  ),
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                  'Sign in to continue',
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.inter(
+                                    fontSize: 16,
+                                    color: const Color(0xFF64748B),
+                                  ),
+                                ),
+                                const SizedBox(height: 40),
+
+                                // Login ID
+                                Text(
+                                  'Login ID',
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: const Color(0xFF1E293B),
+                                  ),
+                                ),
+                                const SizedBox(height: 8),
+                                TextField(
+                                  controller: _loginIdController,
+                                  decoration: InputDecoration(
+                                    hintText: 'Enter your ID',
+                                    hintStyle: GoogleFonts.inter(color: const Color(0xFF94A3B8)),
+                                    filled: true,
+                                    fillColor: const Color(0xFFF1F5F9),
+                                    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    suffixIcon: const Icon(Icons.person_outline, color: Color(0xFF94A3B8)),
+                                  ),
+                                ),
+                                const SizedBox(height: 24),
+
+                                // Password
+                                Text(
+                                  'Password',
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: const Color(0xFF1E293B),
+                                  ),
+                                ),
+                                const SizedBox(height: 8),
+                                TextField(
+                                  controller: _passwordController,
+                                  obscureText: _obscurePassword,
+                                  decoration: InputDecoration(
+                                    hintText: 'Enter Password',
+                                    hintStyle: GoogleFonts.inter(color: const Color(0xFF94A3B8)),
+                                    filled: true,
+                                    fillColor: const Color(0xFFF1F5F9),
+                                    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    suffixIcon: IconButton(
+                                      icon: Icon(
+                                        _obscurePassword ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                                        color: const Color(0xFF94A3B8),
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          _obscurePassword = !_obscurePassword;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 12),
+
+                                // Forgot Password
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: TextButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Forgot Password?',
+                                      style: GoogleFonts.inter(
+                                        color: const Color(0xFF2E518E),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+
+                                // Login Button
+                                ElevatedButton(
+                                  onPressed: _isLoading ? null : _handleLogin,
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: const Color(0xFF2E518E), // Match dark blue
+                                    foregroundColor: Colors.white,
+                                    padding: const EdgeInsets.symmetric(vertical: 20),
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                    elevation: 0,
+                                  ),
+                                  child: _isLoading
+                                      ? const SizedBox(
+                                          height: 24,
+                                          width: 24,
+                                          child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
+                                        )
+                                      : Text(
+                                          'Login',
+                                          style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold),
+                                        ),
+                                ),
+                                const SizedBox(height: 32),
+
+                                // OR Divider
+                                Row(
+                                  children: [
+                                    Expanded(child: Divider(color: Colors.grey[300], thickness: 1)),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                                      child: Text(
+                                        'OR',
+                                        style: GoogleFonts.inter(
+                                          color: const Color(0xFF94A3B8),
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(child: Divider(color: Colors.grey[300], thickness: 1)),
+                                  ],
+                                ),
+                                const SizedBox(height: 24),
+
+                                // Create New ID
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Don't have an ID? ",
+                                      style: GoogleFonts.inter(color: const Color(0xFF64748B), fontSize: 14),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {},
+                                      style: TextButton.styleFrom(padding: EdgeInsets.zero, minimumSize: const Size(0, 0)),
+                                      child: Text(
+                                        'Create New ID',
+                                        style: GoogleFonts.inter(
+                                          color: const Color(0xFF2E518E),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
+
+                // Footer
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 24),
+                  color: const Color(0xFF1E3A5F).withOpacity(0.95), // Dark blue footer
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '© 2025 Alwar Das Group. All Rights Reserved.',
+                        style: GoogleFonts.inter(color: Colors.white70, fontSize: 14),
+                      ),
+                      Row(
+                        children: [
+                          _buildFooterLink('Privacy Policy'),
+                          _buildFooterDivider(),
+                          _buildFooterLink('Terms of Use'),
+                          _buildFooterDivider(),
+                          _buildFooterLink('Support'),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],
       ),
     );
   }
+
+  Widget _buildFeatureItem(IconData icon, String text) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.2),
+            shape: BoxShape.circle,
+          ),
+          child: Icon(icon, color: Colors.white, size: 24),
+        ),
+        const SizedBox(width: 14),
+        Text(
+          text,
+          style: GoogleFonts.inter(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+            height: 1.3,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildFooterLink(String text) {
+    return TextButton(
+      onPressed: () {},
+      style: TextButton.styleFrom(padding: EdgeInsets.zero, minimumSize: const Size(0, 0)),
+      child: Text(
+        text,
+        style: GoogleFonts.inter(color: Colors.white70, fontSize: 14),
+      ),
+    );
+  }
+
+  Widget _buildFooterDivider() {
+    return Container(
+      width: 1,
+      height: 14,
+      color: Colors.white30,
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+    );
+  }
 }
+
