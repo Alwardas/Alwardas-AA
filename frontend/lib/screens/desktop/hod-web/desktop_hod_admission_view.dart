@@ -231,7 +231,7 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFF1F5F9), // Light background to stand out and match screenshot
+      color: Colors.transparent, // Let dark shell background show
       padding: const EdgeInsets.all(30),
       child: Form(
         key: _formKey,
@@ -254,15 +254,9 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: const Color(0xFF1E293B),
                         borderRadius: BorderRadius.circular(16),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.04),
-                            blurRadius: 20,
-                            offset: const Offset(0, 4),
-                          ),
-                        ],
+                        border: Border.all(color: Colors.white10),
                       ),
                       padding: const EdgeInsets.all(30),
                       child: Column(
@@ -274,7 +268,7 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
                               child: _buildActiveFormSection(),
                             ),
                           ),
-                          const Divider(height: 40),
+                          const Divider(height: 40, color: Colors.white10),
                           _buildFormActions(),
                         ],
                       ),
@@ -293,11 +287,9 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: const Color(0xFF1E293B),
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10, offset: const Offset(0, 2)),
-        ],
+        border: Border.all(color: Colors.white10),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -307,20 +299,20 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
             children: [
               Text(
                 'New Student Admission',
-                style: GoogleFonts.poppins(color: const Color(0xFF1E293B), fontSize: 20, fontWeight: FontWeight.bold),
+                style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Text(
                 'Fill in all the details carefully to create a new student admission record.',
-                style: GoogleFonts.poppins(color: const Color(0xFF64748B), fontSize: 13),
+                style: GoogleFonts.poppins(color: Colors.white70, fontSize: 13),
               ),
             ],
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
-              color: const Color(0xFFEFF6FF),
+              color: const Color(0xFF3b5998).withOpacity(0.2),
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: const Color(0xFFDBEAFE)),
+              border: Border.all(color: const Color(0xFF3b5998).withOpacity(0.5)),
             ),
             child: Row(
               children: [
@@ -342,11 +334,9 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
     return Container(
       width: 280,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: const Color(0xFF1E293B),
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10, offset: const Offset(0, 2)),
-        ],
+        border: Border.all(color: Colors.white10),
       ),
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
       child: ListView.builder(
@@ -368,10 +358,10 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                 decoration: BoxDecoration(
-                  color: isSelected ? const Color(0xFFEFF6FF) : Colors.transparent,
+                  color: isSelected ? const Color(0xFF3b5998).withOpacity(0.2) : Colors.transparent,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: isSelected ? const Color(0xFFBFDBFE) : Colors.transparent,
+                    color: isSelected ? const Color(0xFF3b5998).withOpacity(0.5) : Colors.transparent,
                   ),
                 ),
                 child: Row(
@@ -382,17 +372,18 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
                         color: isSelected
                             ? Colors.blueAccent
                             : isCompleted
-                                ? Colors.green.withOpacity(0.1)
-                                : const Color(0xFFF1F5F9),
+                                ? Colors.green.withOpacity(0.2)
+                                : const Color(0xFF0F172A),
                         shape: BoxShape.circle,
+                        border: Border.all(color: isSelected ? Colors.transparent : Colors.white10),
                       ),
                       child: Icon(
                         isCompleted ? Icons.check : step['icon'],
                         color: isSelected
                             ? Colors.white
                             : isCompleted
-                                ? Colors.green
-                                : const Color(0xFF64748B),
+                                ? Colors.greenAccent
+                                : Colors.white38,
                         size: 16,
                       ),
                     ),
@@ -404,7 +395,7 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
                           Text(
                             step['title'],
                             style: GoogleFonts.poppins(
-                              color: isSelected ? Colors.blueAccent : const Color(0xFF1E293B),
+                              color: isSelected ? Colors.blueAccent : Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 13,
                             ),
@@ -412,7 +403,7 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
                           Text(
                             step['subtitle'],
                             style: GoogleFonts.poppins(
-                              color: const Color(0xFF64748B),
+                              color: Colors.white60,
                               fontSize: 11,
                             ),
                           ),
@@ -676,23 +667,31 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("CET Qualified? *", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: const Color(0xFF475569))),
+                  Text("CET Qualified? *", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white70)),
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      Radio<bool>(
-                        value: true,
-                        groupValue: _cetQualified,
-                        onChanged: (val) => setState(() => _cetQualified = val!),
+                      Theme(
+                        data: ThemeData(unselectedWidgetColor: Colors.white38),
+                        child: Radio<bool>(
+                          value: true,
+                          groupValue: _cetQualified,
+                          activeColor: Colors.blueAccent,
+                          onChanged: (val) => setState(() => _cetQualified = val!),
+                        ),
                       ),
-                      const Text("YES"),
+                      const Text("YES", style: TextStyle(color: Colors.white)),
                       const SizedBox(width: 20),
-                      Radio<bool>(
-                        value: false,
-                        groupValue: _cetQualified,
-                        onChanged: (val) => setState(() => _cetQualified = val!),
+                      Theme(
+                        data: ThemeData(unselectedWidgetColor: Colors.white38),
+                        child: Radio<bool>(
+                          value: false,
+                          groupValue: _cetQualified,
+                          activeColor: Colors.blueAccent,
+                          onChanged: (val) => setState(() => _cetQualified = val!),
+                        ),
                       ),
-                      const Text("NO"),
+                      const Text("NO", style: TextStyle(color: Colors.white)),
                     ],
                   ),
                 ],
@@ -703,23 +702,31 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Type of Admission *", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: const Color(0xFF475569))),
+                  Text("Type of Admission *", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white70)),
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      Radio<String>(
-                        value: 'CQ',
-                        groupValue: _typeOfAdmission,
-                        onChanged: (val) => setState(() => _typeOfAdmission = val!),
+                      Theme(
+                        data: ThemeData(unselectedWidgetColor: Colors.white38),
+                        child: Radio<String>(
+                          value: 'CQ',
+                          groupValue: _typeOfAdmission,
+                          activeColor: Colors.blueAccent,
+                          onChanged: (val) => setState(() => _typeOfAdmission = val!),
+                        ),
                       ),
-                      const Text("CQ (Counselling)"),
+                      const Text("CQ (Counselling)", style: TextStyle(color: Colors.white)),
                       const SizedBox(width: 20),
-                      Radio<String>(
-                        value: 'SPOT',
-                        groupValue: _typeOfAdmission,
-                        onChanged: (val) => setState(() => _typeOfAdmission = val!),
+                      Theme(
+                        data: ThemeData(unselectedWidgetColor: Colors.white38),
+                        child: Radio<String>(
+                          value: 'SPOT',
+                          groupValue: _typeOfAdmission,
+                          activeColor: Colors.blueAccent,
+                          onChanged: (val) => setState(() => _typeOfAdmission = val!),
+                        ),
                       ),
-                      const Text("SPOT"),
+                      const Text("SPOT", style: TextStyle(color: Colors.white)),
                     ],
                   ),
                 ],
@@ -861,7 +868,7 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
         const SizedBox(height: 8),
         Text(
           "Upload clear and valid documents. Accepted formats: JPG, PNG, PDF (Max size: 2MB each)",
-          style: GoogleFonts.poppins(color: const Color(0xFF64748B), fontSize: 12),
+          style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12),
         ),
         const SizedBox(height: 24),
         GridView.count(
@@ -888,7 +895,7 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
     return Text(
       title,
       style: GoogleFonts.poppins(
-        color: const Color(0xFF1E293B),
+        color: Colors.white,
         fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
@@ -906,24 +913,24 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
       children: [
         Text(
           label,
-          style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: const Color(0xFF475569)),
+          style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white70),
         ),
         const SizedBox(height: 8),
         TextFormField(
           controller: controller,
-          style: GoogleFonts.poppins(color: const Color(0xFF1E293B), fontSize: 13),
+          style: GoogleFonts.poppins(color: Colors.white, fontSize: 13),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: const TextStyle(color: Colors.black26),
+            hintStyle: const TextStyle(color: Colors.white38),
             filled: true,
-            fillColor: const Color(0xFFF8FAFC),
+            fillColor: const Color(0xFF0F172A),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+              borderSide: const BorderSide(color: Colors.white10),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+              borderSide: const BorderSide(color: Colors.white10),
             ),
           ),
           validator: validator,
@@ -943,27 +950,27 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
       children: [
         Text(
           label,
-          style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: const Color(0xFF475569)),
+          style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white70),
         ),
         const SizedBox(height: 8),
         TextFormField(
           controller: controller,
           readOnly: true,
           onTap: () => _selectDate(context, controller),
-          style: GoogleFonts.poppins(color: const Color(0xFF1E293B), fontSize: 13),
+          style: GoogleFonts.poppins(color: Colors.white, fontSize: 13),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: const TextStyle(color: Colors.black26),
+            hintStyle: const TextStyle(color: Colors.white38),
             filled: true,
-            fillColor: const Color(0xFFF8FAFC),
+            fillColor: const Color(0xFF0F172A),
             suffixIcon: const Icon(Icons.calendar_today_outlined, color: Colors.blueAccent, size: 18),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+              borderSide: const BorderSide(color: Colors.white10),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+              borderSide: const BorderSide(color: Colors.white10),
             ),
           ),
           validator: validator,
@@ -985,29 +992,30 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
       children: [
         Text(
           label,
-          style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: const Color(0xFF475569)),
+          style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white70),
         ),
         const SizedBox(height: 8),
         DropdownButtonFormField<String>(
           value: value,
-          dropdownColor: Colors.white,
+          dropdownColor: const Color(0xFF1E293B),
+          style: GoogleFonts.poppins(color: Colors.white, fontSize: 13),
           decoration: InputDecoration(
             filled: true,
-            fillColor: const Color(0xFFF8FAFC),
+            fillColor: const Color(0xFF0F172A),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+              borderSide: const BorderSide(color: Colors.white10),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+              borderSide: const BorderSide(color: Colors.white10),
             ),
           ),
-          hint: Text(hint, style: GoogleFonts.poppins(color: Colors.black26, fontSize: 13)),
+          hint: Text(hint, style: GoogleFonts.poppins(color: Colors.white38, fontSize: 13)),
           items: items.map((String item) {
             return DropdownMenuItem<String>(
               value: item,
-              child: Text(item, style: GoogleFonts.poppins(color: const Color(0xFF1E293B), fontSize: 13)),
+              child: Text(item, style: GoogleFonts.poppins(color: Colors.white, fontSize: 13)),
             );
           }).toList(),
           onChanged: onChanged,
@@ -1021,9 +1029,9 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
     final hasFile = _uploadedDocs.containsKey(docName);
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFFF8FAFC),
+        color: const Color(0xFF0F172A),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const Color(0xFFE2E8F0)),
+        border: Border.all(color: Colors.white10),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       child: Row(
@@ -1031,12 +1039,12 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: hasFile ? Colors.green.withOpacity(0.1) : Colors.blueAccent.withOpacity(0.1),
+              color: hasFile ? Colors.green.withOpacity(0.1) : const Color(0xFF3b5998).withOpacity(0.2),
               shape: BoxShape.circle,
             ),
             child: Icon(
               hasFile ? Icons.check : icon,
-              color: hasFile ? Colors.green : Colors.blueAccent,
+              color: hasFile ? Colors.greenAccent : Colors.blueAccent,
               size: 20,
             ),
           ),
@@ -1048,14 +1056,14 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
               children: [
                 Text(
                   docName + " *",
-                  style: GoogleFonts.poppins(color: const Color(0xFF1E293B), fontSize: 11, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 2),
                 Text(
                   hasFile ? _uploadedDocs[docName]! : "No file selected",
-                  style: GoogleFonts.poppins(color: const Color(0xFF64748B), fontSize: 10),
+                  style: GoogleFonts.poppins(color: Colors.white60, fontSize: 10),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -1066,10 +1074,10 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
           ElevatedButton(
             onPressed: () => _pickFile(docName),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white,
-              foregroundColor: const Color(0xFF475569),
+              backgroundColor: const Color(0xFF1E293B),
+              foregroundColor: Colors.white,
               elevation: 0,
-              side: const BorderSide(color: Color(0xFFCBD5E1)),
+              side: const BorderSide(color: Colors.white10),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
             ),
@@ -1097,8 +1105,8 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
             icon: const Icon(Icons.arrow_back),
             label: Text("Back", style: GoogleFonts.poppins()),
             style: OutlinedButton.styleFrom(
-              foregroundColor: const Color(0xFF475569),
-              side: const BorderSide(color: Color(0xFFCBD5E1)),
+              foregroundColor: Colors.white70,
+              side: const BorderSide(color: Colors.white10),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             ),
@@ -1112,7 +1120,7 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
               });
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blueAccent,
+              backgroundColor: const Color(0xFF3b5998),
               foregroundColor: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -1129,8 +1137,8 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
           OutlinedButton(
             onPressed: _resetForm,
             style: OutlinedButton.styleFrom(
-              foregroundColor: const Color(0xFF475569),
-              side: const BorderSide(color: Color(0xFFCBD5E1)),
+              foregroundColor: Colors.white70,
+              side: const BorderSide(color: Colors.white10),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             ),
@@ -1142,7 +1150,7 @@ class _DesktopHodAdmissionViewState extends State<DesktopHodAdmissionView> {
             icon: const Icon(Icons.check),
             label: Text("Submit Admission", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blueAccent,
+              backgroundColor: const Color(0xFF3b5998),
               foregroundColor: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
