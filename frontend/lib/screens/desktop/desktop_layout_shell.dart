@@ -23,6 +23,7 @@ import 'hod-web/desktop_hod_requests_view.dart';
 import 'hod-web/desktop_hod_timetable_view.dart';
 import 'hod-web/desktop_hod_syllabus_view.dart';
 import 'hod-web/desktop_hod_issues_view.dart';
+import 'hod-web/desktop_hod_admission_view.dart';
 
 class DesktopLayoutShell extends ConsumerWidget {
   final Map<String, dynamic> userData;
@@ -434,6 +435,11 @@ class DesktopLayoutShell extends ConsumerWidget {
           return DesktopHodDashboardView(userData: userData);
         }
         return DesktopDashboardView(userData: userData);
+      case 'Admissions':
+        if (role == 'hod') {
+          return DesktopHodAdmissionView(userData: userData);
+        }
+        return const Center(child: Text("Access Denied"));
       case 'Students':
         return DesktopStudentManagementView(userData: userData);
       case 'Attendance':
@@ -608,6 +614,7 @@ class DesktopLayoutShell extends ConsumerWidget {
     if (cleanRole == 'hod') {
       return [
         {'name': 'Dashboard', 'icon': Icons.dashboard_outlined, 'activeIcon': Icons.dashboard},
+        {'name': 'Admissions', 'icon': Icons.app_registration_outlined, 'activeIcon': Icons.app_registration},
         {'name': 'Students', 'icon': Icons.people_outline, 'activeIcon': Icons.people},
         {'name': 'Faculty', 'icon': Icons.badge_outlined, 'activeIcon': Icons.badge},
         {'name': 'Attendance', 'icon': Icons.fact_check_outlined, 'activeIcon': Icons.fact_check},
