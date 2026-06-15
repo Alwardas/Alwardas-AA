@@ -105,8 +105,8 @@ class _DesktopLoginScreenState extends State<DesktopLoginScreen> {
         children: [
           // Background Image
           Positioned.fill(
-            child: Image.network(
-              'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80',
+            child: Image.asset(
+              'assets/images/college_bg.jpg',
               fit: BoxFit.cover,
               color: Colors.black.withOpacity(0.3),
               colorBlendMode: BlendMode.darken,
