@@ -6,6 +6,7 @@ import '../../screens/splash_screen.dart';
 import '../../screens/auth/login_screen.dart';
 import '../../screens/auth/desktop_login_screen.dart';
 import '../../screens/common/responsive_layout.dart';
+import '../../pages/login_page.dart';
 import '../../screens/dashboards/student/student_dashboard.dart';
 import '../../screens/dashboards/parent/parent_dashboard.dart';
 import '../../screens/dashboards/faculty/faculty_dashboard.dart';
@@ -40,22 +41,13 @@ final desktopRouter = GoRouter(
     ),
     GoRoute(
       path: '/login',
-      builder: (context, state) {
-        return LayoutBuilder(
-          builder: (context, constraints) {
-            if (constraints.maxWidth > 900) {
-              return const DesktopLoginScreen();
-            }
-            return const LoginScreen();
-          },
-        );
-      },
+      builder: (context, state) => const LoginPage(),
     ),
     GoRoute(
       path: '/dashboard',
       builder: (context, state) {
         final session = HiveService.getSession();
-        if (session == null) return const LoginScreen();
+        if (session == null) return const LoginPage();
 
         return LayoutBuilder(
           builder: (context, constraints) {
@@ -88,7 +80,7 @@ final desktopRouter = GoRouter(
               case 'Finance':
                 return FeeManagementDashboard(userData: session);
               default:
-                return const LoginScreen();
+                return const LoginPage();
             }
           },
         );
