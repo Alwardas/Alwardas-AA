@@ -188,7 +188,7 @@ class _DesktopLoginScreenState extends State<DesktopLoginScreen> {
                         flex: 5,
                         child: Center(
                           child: Container(
-                            width: 500,
+                            constraints: const BoxConstraints(maxWidth: 500),
                             padding: const EdgeInsets.symmetric(horizontal: 56, vertical: 48),
                             decoration: BoxDecoration(
                               color: Colors.white,
