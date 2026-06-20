@@ -1,9 +1,3 @@
--- Fix foreign key constraint to allow deletion of parents
-ALTER TABLE parent_student_links 
-DROP CONSTRAINT IF EXISTS parent_student_links_parent_id_fkey;
-
-ALTER TABLE parent_student_links 
-ADD CONSTRAINT parent_student_links_parent_id_fkey 
-FOREIGN KEY (parent_id) 
-REFERENCES users(id) 
-ON DELETE CASCADE;
+-- Obsolete migration: parent_student_links table does not exist in the codebase.
+-- The actual table is parent_student and uses login_id (TEXT) instead of user_id (UUID),
+-- so foreign key constraints to users(id) are not applicable.

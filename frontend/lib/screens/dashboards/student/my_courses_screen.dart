@@ -10,6 +10,7 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../core/theme/app_theme.dart';
 import 'student_lesson_plan_screen.dart'; // Keep this for navigation
 import '../../../data/courses_data.dart';
+import '../../common/erp_connect_screen.dart';
 
 class MyCoursesScreen extends StatefulWidget {
   final String? userId;
@@ -23,6 +24,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
   bool _isLoading = true;
   List<dynamic> _courses = [];
   String _headerSubtitle = "Loading details...";
+  Map<String, dynamic>? _currentUser;
   
   // Filter state
   String _selectedFilter = 'Theory';
@@ -49,6 +51,10 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
       setState(() => _isLoading = false);
       return;
     }
+
+    setState(() {
+      _currentUser = user;
+    });
 
     try {
       final String? userId = widget.userId ?? user['id'];
@@ -127,6 +133,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
             'facultyEmail': apiMatch['facultyEmail'],
             'facultyPhone': apiMatch['facultyPhone'],
             'facultyDepartment': apiMatch['facultyDepartment'],
+            'facultyId': apiMatch['facultyId'] ?? apiMatch['faculty_id'],
           };
         } else {
           // Subject exists in curriculum but not yet assigned/tracked in DB
@@ -136,6 +143,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
             'progress': 0,
             'status': 'On Track',
             'subjectType': local['type'] ?? 'Theory',
+            'facultyId': null,
           };
         }
       }).toList();
@@ -389,9 +397,8 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
     final progress = course['progress'] ?? 0;
     final facultyName = course['facultyName'] ?? course['faculty_name'] ?? 'TBA';
-    final facultyEmail = course['facultyEmail'];
-    final facultyPhone = course['facultyPhone'];
     final facultyDept = course['facultyDepartment'];
+    final facultyId = course['facultyId'] ?? 'N/A';
     
     // Status Logic
     String statusText = course['status'] ?? 'On Track';
@@ -471,7 +478,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                   child: GestureDetector(
                     onTap: () {
                       if (facultyName != 'TBA') {
-                        _showFacultyDetails(context, facultyName, facultyDept, facultyEmail, facultyPhone);
+                        _showFacultyDetails(context, facultyName, facultyDept, facultyId);
                       }
                     },
                     child: Text(
@@ -568,29 +575,218 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
   }
 
 
-  void _showFacultyDetails(BuildContext context, String name, String? dept, String? email, String? phone) {
+  Future<void> _sendChatRequest(String facultyId, String facultyName) async {
+    if (_currentUser == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Session expired. Please log in again.')),
+      );
+      return;
+    }
+    
+    final senderId = _currentUser!['login_id']?.toString() ?? _currentUser!['id']?.toString() ?? '';
+    final senderName = _currentUser!['full_name']?.toString() ?? 'Student';
+    final senderRole = _currentUser!['role']?.toString() ?? 'Student';
+
+    if (senderId.isEmpty || facultyId.isEmpty || facultyId == 'N/A') {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Invalid user or faculty details.')),
+      );
+      return;
+    }
+
+    final body = {
+      'sender_id': senderId,
+      'receiver_id': facultyId,
+      'optional_message': 'Connection request from $senderName ($senderRole)',
+    };
+
+    try {
+      final response = await http.post(
+        Uri.parse(ApiConstants.chatRequests),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(body),
+      );
+
+      if (response.statusCode == 200) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Request sent to $facultyName successfully!'),
+            backgroundColor: const Color(0xFF34C759),
+          ),
+        );
+      } else {
+        final err = json.decode(response.body);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(err['message'] ?? 'Failed to send request.'),
+            backgroundColor: const Color(0xFFFF4B4B),
+          ),
+        );
+      }
+    } catch (e) {
+      debugPrint("Error sending chat request: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Network error. Please try again.'),
+          backgroundColor: Color(0xFFFF4B4B),
+        ),
+      );
+    }
+  }
+
+  void _showFacultyDetails(BuildContext context, String name, String? dept, String? facultyId) {
+    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+    final isDark = themeProvider.isDarkMode;
+    final dialogBg = isDark ? const Color(0xFF2C2C2E) : Colors.white;
+    final textCol = isDark ? Colors.white : Colors.black87;
+
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: Text("Faculty Details", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+      builder: (dialogContext) => AlertDialog(
+        backgroundColor: dialogBg,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+        titlePadding: const EdgeInsets.fromLTRB(24, 24, 24, 10),
+        title: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: const Color(0xFF4B7FFB).withValues(alpha: 0.15),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.privacy_tip_outlined, color: Color(0xFF4B7FFB), size: 24),
+            ),
+            const SizedBox(width: 12),
+            Text(
+              "Faculty Profile",
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold,
+                color: textCol,
+                fontSize: 20,
+              ),
+            ),
+          ],
+        ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildDetailRow(Icons.person, "Name", name),
-            const SizedBox(height: 10),
-            _buildDetailRow(Icons.business, "Department", dept ?? "N/A"),
-            const SizedBox(height: 10),
-            _buildDetailRow(Icons.email, "Email", email ?? "N/A"),
-            const SizedBox(height: 10),
-            _buildDetailRow(Icons.phone, "Phone", phone ?? "N/A"),
+            Center(
+              child: Container(
+                width: 60,
+                height: 60,
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF4B7FFB), Color(0xFFA569BD)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF4B7FFB).withValues(alpha: 0.3),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    )
+                  ],
+                ),
+                child: const Icon(Icons.person, size: 36, color: Colors.white),
+              ),
+            ),
+            const SizedBox(height: 20),
+            _buildDetailRow(Icons.person_outline, "Name", name),
+            const SizedBox(height: 12),
+            _buildDetailRow(Icons.business_outlined, "Department", dept ?? "N/A"),
+            const SizedBox(height: 12),
+            _buildDetailRow(Icons.badge_outlined, "Faculty ID", facultyId ?? "N/A"),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.orange.withValues(alpha: 0.2)),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Icon(Icons.info_outline, color: Colors.orange, size: 18),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      "Direct contact information is hidden for security. Send a connect request to message.",
+                      style: GoogleFonts.poppins(
+                        fontSize: 11,
+                        color: isDark ? Colors.orange.shade300 : Colors.orange.shade800,
+                        height: 1.3,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
+        actionsPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text("Close", style: GoogleFonts.poppins()),
+          Row(
+            children: [
+              Expanded(
+                child: OutlinedButton.icon(
+                  onPressed: (facultyId == null || facultyId == 'N/A' || facultyId.isEmpty)
+                      ? null
+                      : () {
+                          Navigator.pop(dialogContext);
+                          _sendChatRequest(facultyId, name);
+                        },
+                  icon: const Icon(Icons.send_rounded, size: 16),
+                  label: Text("Request", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600)),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: const Color(0xFF4B7FFB),
+                    side: const BorderSide(color: Color(0xFF4B7FFB)),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: ElevatedButton.icon(
+                  onPressed: _currentUser == null
+                      ? null
+                      : () {
+                          Navigator.pop(dialogContext);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ErpConnectScreen(userData: _currentUser!),
+                            ),
+                          );
+                        },
+                  icon: const Icon(Icons.chat_bubble_outline_rounded, size: 16, color: Colors.white),
+                  label: Text("Message", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF4B7FFB),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    elevation: 0,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Center(
+            child: TextButton(
+              onPressed: () => Navigator.pop(dialogContext),
+              child: Text(
+                "Close",
+                style: GoogleFonts.poppins(
+                  color: isDark ? Colors.white70 : Colors.grey[600],
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
           ),
         ],
       ),

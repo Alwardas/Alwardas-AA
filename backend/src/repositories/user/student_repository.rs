@@ -75,7 +75,7 @@ pub async fn get_student_basics(pool: &PgPool, user_uuid: Uuid) -> Result<Option
         )))
 }
 
-pub async fn find_subjects_by_branch_and_semester(pool: &PgPool, branch: &str, semester: &str, section: &str) -> Result<Vec<(String, String, String, Option<String>, Option<String>, Option<String>, Option<String>)>, sqlx::Error> {
+pub async fn find_subjects_by_branch_and_semester(pool: &PgPool, branch: &str, semester: &str, section: &str) -> Result<Vec<(String, String, String, Option<String>, Option<String>, Option<String>, Option<String>, Option<String>)>, sqlx::Error> {
     sqlx::query(
         r#"
         SELECT 
@@ -83,7 +83,8 @@ pub async fn find_subjects_by_branch_and_semester(pool: &PgPool, branch: &str, s
             COALESCE(u1.full_name, u2.full_name, u3.full_name, s.faculty_name, 'TBA') as resolved_faculty_name,
             COALESCE(u1.email, u2.email, u3.email) as faculty_email,
             COALESCE(u1.phone_number, u2.phone_number, u3.phone_number) as faculty_phone,
-            COALESCE(u1.branch, u2.branch, u3.branch) as faculty_department
+            COALESCE(u1.branch, u2.branch, u3.branch) as faculty_department,
+            COALESCE(u1.login_id, u2.login_id, u3.login_id) as faculty_id
         FROM subjects s
         LEFT JOIN faculty_subjects fs ON s.id = fs.subject_id AND fs.branch = s.branch AND fs.section = $3
           AND (fs.status = 'APPROVED' OR (fs.status = 'PENDING' AND fs.user_id IN (SELECT id FROM users WHERE role IN ('HOD', 'Incharge', 'Coordinator'))))
@@ -113,7 +114,8 @@ pub async fn find_subjects_by_branch_and_semester(pool: &PgPool, branch: &str, s
         r.get("resolved_faculty_name"),
         r.get("faculty_email"),
         r.get("faculty_phone"),
-        r.get("faculty_department")
+        r.get("faculty_department"),
+        r.get("faculty_id")
     )).collect())
 }
 

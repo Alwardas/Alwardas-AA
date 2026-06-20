@@ -108,24 +108,25 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
     if subjects.is_empty() {
         if let Ok(asset_subjects) = curriculum_service::get_subjects_from_assets(&branch_norm, sem_int, "C23").await {
             for (code, name, stype) in asset_subjects {
-                subjects.push((code, name, stype, None, None, None, None));
+                subjects.push((code, name, stype, None, None, None, None, None));
             }
         }
     }
 
     let mut courses = Vec::new();
 
-    for (sid, sname, stype, rfn, fe, fp, fd) in subjects {
+    for (sid, sname, stype, rfn, fe, fp, fd, fid) in subjects {
         let mut rfn_val = rfn.clone().unwrap_or_else(|| "TBA".to_string());
         let mut fe_val = fe.clone();
         let mut fp_val = fp.clone();
         let mut fd_val = fd.clone();
+        let mut fid_val = fid.clone();
 
         if rfn_val == "TBA" {
             // Try to resolve from faculty_subjects first
             let faculty_row = sqlx::query(
                 r#"
-                SELECT u.full_name, u.email, u.phone_number, u.branch as department
+                SELECT u.full_name, u.email, u.phone_number, u.branch as department, u.login_id
                 FROM faculty_subjects fs
                 JOIN users u ON fs.user_id = u.id
                 WHERE fs.subject_id = $1 AND fs.branch = $2 AND fs.section = $3
@@ -149,11 +150,12 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
                 fe_val = row.try_get::<Option<String>, _>("email").unwrap_or(None);
                 fp_val = row.try_get::<Option<String>, _>("phone_number").unwrap_or(None);
                 fd_val = row.try_get::<Option<String>, _>("department").unwrap_or(None);
+                fid_val = row.try_get::<Option<String>, _>("login_id").unwrap_or(None);
             } else {
                 // Try timetable_entries
                 let timetable_row = sqlx::query(
                     r#"
-                    SELECT u.full_name, u.email, u.phone_number, u.branch as department
+                    SELECT u.full_name, u.email, u.phone_number, u.branch as department, u.login_id
                     FROM timetable_entries t
                     JOIN users u ON t.faculty_id = u.login_id
                     WHERE (t.subject_code = $1 OR t.subject = $1)
@@ -177,11 +179,12 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
                     fe_val = row.try_get::<Option<String>, _>("email").unwrap_or(None);
                     fp_val = row.try_get::<Option<String>, _>("phone_number").unwrap_or(None);
                     fd_val = row.try_get::<Option<String>, _>("department").unwrap_or(None);
+                    fid_val = row.try_get::<Option<String>, _>("login_id").unwrap_or(None);
                 } else {
                     // Try course_subjects
                     let cs_row = sqlx::query(
                         r#"
-                        SELECT u.full_name, u.email, u.phone_number, u.branch as department
+                        SELECT u.full_name, u.email, u.phone_number, u.branch as department, u.login_id
                         FROM course_subjects cs
                         JOIN users u ON (u.id::text = cs.created_by OR u.login_id = cs.created_by)
                         WHERE (cs.subject_code = $1 OR cs.subject_name = $1)
@@ -205,6 +208,7 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
                         fe_val = row.try_get::<Option<String>, _>("email").unwrap_or(None);
                         fp_val = row.try_get::<Option<String>, _>("phone_number").unwrap_or(None);
                         fd_val = row.try_get::<Option<String>, _>("department").unwrap_or(None);
+                        fid_val = row.try_get::<Option<String>, _>("login_id").unwrap_or(None);
                     }
                 }
             }
@@ -308,6 +312,7 @@ pub async fn get_student_courses(pool: &PgPool, user_id: &str) -> Result<Vec<Stu
             faculty_email: fe_val,
             faculty_phone: fp_val,
             faculty_department: fd_val,
+            faculty_id: fid_val,
             status: Some(status),
         });
     }

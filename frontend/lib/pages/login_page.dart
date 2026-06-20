@@ -9,6 +9,7 @@ import '../core/api_constants.dart';
 import '../core/services/auth_service.dart';
 import '../core/services/hive_service.dart';
 import '../widgets/login_card.dart';
+import '../widgets/mobile_login_card.dart';
 import '../widgets/branding_section.dart';
 import '../widgets/footer_section.dart';
 import '../screens/auth/signup_screen.dart';
@@ -321,6 +322,9 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final bool isMobile = screenWidth < 800;
+
     return Scaffold(
       body: AnimatedOpacity(
         duration: const Duration(milliseconds: 800),
@@ -330,81 +334,92 @@ class _LoginPageState extends State<LoginPage> {
             // 1. Full-screen Base Gradient (Sky & Backdrop)
             Positioned.fill(
               child: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF2F5AA8),
-                      Color(0xFF4A86D9),
-                      Color(0xFF1D4F91),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-
-            // 2. Building Image aligned to the bottom (covers 48% height)
-            Positioned(
-              left: 0,
-              right: 0,
-              bottom: 0,
-              height: MediaQuery.of(context).size.height * 0.48,
-              child: Image.asset(
-                'assets/images/alwar_das_background.png',
-                fit: BoxFit.cover,
-                alignment: const Alignment(0, -0.35),
-                errorBuilder: (context, error, stackTrace) {
-                  return const SizedBox.shrink();
-                },
-              ),
-            ),
-
-            // 3. Main Dark Blue Gradient Overlay (tints both sky and bottom building)
-            Positioned.fill(
-              child: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Color(0xCC4A86D9),
-                      Color(0xBB3E78C7),
-                      Color(0xCC1D4F91),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-
-            // 3. Main Content Scrollable Layer
-            Positioned.fill(
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  final double width = constraints.maxWidth;
-                  final bool isDesktop = width > 1200;
-                  final bool isTablet = width >= 800 && width <= 1200;
-
-                  return SafeArea(
-                    child: Column(
-                      children: [
-                        Expanded(
-                          child: SingleChildScrollView(
-                            padding: const EdgeInsets.symmetric(vertical: 40),
-                            child: Center(
-                              child: isDesktop
-                                  ? _buildDesktopLayout()
-                                  : isTablet
-                                      ? _buildTabletLayout()
-                                      : _buildMobileLayout(),
-                            ),
-                          ),
+                decoration: BoxDecoration(
+                  gradient: isMobile
+                      ? const LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color(0xFF1C63CF), // Clean vibrant blue at the top
+                            Color(0xFF8BB5F3), // Light sky blue
+                            Color(0xFFE8F0FE), // Very light soft blue/white at the bottom
+                          ],
+                        )
+                      : const LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color(0xFF2F5AA8),
+                            Color(0xFF4A86D9),
+                            Color(0xFF1D4F91),
+                          ],
                         ),
-                        const FooterSection(),
+                ),
+              ),
+            ),
+
+            // 2. Building Image aligned to the bottom (covers 48% height) - only for Desktop/Tablet
+            if (!isMobile)
+              Positioned(
+                left: 0,
+                right: 0,
+                bottom: 0,
+                height: MediaQuery.of(context).size.height * 0.48,
+                child: Image.asset(
+                  'assets/images/alwar_das_background.png',
+                  fit: BoxFit.cover,
+                  alignment: const Alignment(0, -0.35),
+                  errorBuilder: (context, error, stackTrace) {
+                    return const SizedBox.shrink();
+                  },
+                ),
+              ),
+
+            // 3. Main Dark Blue Gradient Overlay (tints both sky and bottom building) - only for Desktop/Tablet
+            if (!isMobile)
+              Positioned.fill(
+                child: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color(0xCC4A86D9),
+                        Color(0xBB3E78C7),
+                        Color(0xCC1D4F91),
                       ],
                     ),
-                  );
-                },
+                  ),
+                ),
+              ),
+
+            // 4. Main Content Layer
+            Positioned.fill(
+              child: SafeArea(
+                child: isMobile
+                    ? _buildMobileLayout()
+                    : LayoutBuilder(
+                        builder: (context, constraints) {
+                          final double width = constraints.maxWidth;
+                          final bool isDesktop = width > 1200;
+
+                          return Column(
+                            children: [
+                              Expanded(
+                                child: SingleChildScrollView(
+                                  padding: const EdgeInsets.symmetric(vertical: 40),
+                                  child: Center(
+                                    child: isDesktop
+                                        ? _buildDesktopLayout()
+                                        : _buildTabletLayout(),
+                                  ),
+                                ),
+                              ),
+                              const FooterSection(),
+                            ],
+                          );
+                        },
+                      ),
               ),
             ),
           ],
@@ -465,16 +480,83 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _buildMobileLayout() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: LoginCard(
-        loginIdController: _loginIdController,
-        passwordController: _passwordController,
-        isLoading: _isLoading,
-        onLogin: _handleLogin,
-        onForgotPassword: _onForgotPassword,
-        onCreateNewId: _onCreateNewId,
-      ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: constraints.maxHeight,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Upper Section: Logo centering (shifted slightly down)
+                Column(
+                  children: [
+                    const SizedBox(height: 125),
+                    Image.asset(
+                      'assets/images/logo.png',
+                      width: 304, // 5% reduction from 320
+                      fit: BoxFit.contain,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Image.asset(
+                          'assets/images/college logo.png',
+                          width: 304,
+                          fit: BoxFit.contain,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Column(
+                              children: [
+                                Text(
+                                  'Since 1979',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.grey[700],
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  'alwar das group',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 28,
+                                    fontWeight: FontWeight.bold,
+                                    color: const Color(0xFF1B60C6),
+                                  ),
+                                ),
+                                Text(
+                                  'free mind through education',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 14,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red[800],
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                // Lower Section: Login Card anchored slightly higher from the bottom
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 75),
+                  child: MobileLoginCard(
+                    loginIdController: _loginIdController,
+                    passwordController: _passwordController,
+                    isLoading: _isLoading,
+                    onLogin: _handleLogin,
+                    onForgotPassword: _onForgotPassword,
+                    onCreateNewId: _onCreateNewId,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 
