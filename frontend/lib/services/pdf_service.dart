@@ -421,19 +421,20 @@ class PdfService {
         return;
       }
 
-      ByteData? fontRegular;
-      try { fontRegular = await rootBundle.load("assets/fonts/Poppins-Regular.ttf"); } catch (_) {}
-      ByteData? fontBold;
-      try { fontBold = await rootBundle.load("assets/fonts/Poppins-Bold.ttf"); } catch (_) {}
+      // Standard Arial equivalent Helvetica fonts
+      final ttfRegular = pw.Font.helvetica();
+      final ttfBold = pw.Font.helveticaBold();
 
-      final ttfRegular = fontRegular != null ? pw.Font.ttf(fontRegular) : pw.Font.courier();
-      final ttfBold = fontBold != null ? pw.Font.ttf(fontBold) : pw.Font.courierBold();
+      // Load logo image
+      pw.MemoryImage? logoImage;
+      try {
+        final logoBytes = await rootBundle.load('assets/images/college logo.png');
+        logoImage = pw.MemoryImage(logoBytes.buffer.asUint8List());
+      } catch (e) {
+        debugPrint("Error loading college logo for PDF: $e");
+      }
 
       final pdf = pw.Document();
-      
-      PdfColor statusColor = PdfColors.green;
-      if (status.toLowerCase() == 'lagging') statusColor = PdfColors.red;
-      if (status.toLowerCase().contains('fast')) statusColor = PdfColors.orange;
 
       Map<int, List<dynamic>> unitsMap = {};
       for (var t in localTopics) {
@@ -448,45 +449,56 @@ class PdfService {
         final unitTitle = unitHeader != null ? unitHeader['topicName'] : 'UNIT $unitNo';
         
         int sNo = 1;
-        int totalPeriods = 0;
-        for(var t in items.where((e) => e['type'] != 'unit')) totalPeriods++;
+        final totalPeriods = items.where((e) => e['type'] != 'unit').length;
 
         pdf.addPage(
           pw.MultiPage(
-            pageFormat: PdfPageFormat.a4,
-            margin: const pw.EdgeInsets.all(32),
+            pageTheme: pw.PageTheme(
+              pageFormat: PdfPageFormat.a4,
+              margin: const pw.EdgeInsets.all(32),
+              buildBackground: logoImage == null ? null : (pw.Context pdfContext) {
+                return pw.Center(
+                  child: pw.Opacity(
+                    opacity: 0.30, // Opacity is 30%
+                    child: pw.Image(
+                      logoImage!,
+                      width: 320,
+                      height: 320,
+                      fit: pw.BoxFit.contain,
+                    ),
+                  ),
+                );
+              },
+            ),
             header: (pw.Context pdfContext) {
               if (pdfContext.pageNumber != 1) return pw.SizedBox();
               return pw.Column(
                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                 children: [
-                  pw.Row(
-                    mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                    children: [
-                      pw.Text(
-                        'NAME OF THE FACULTY: ${facultyName.toUpperCase()}',
-                        style: pw.TextStyle(font: ttfBold, fontSize: 12),
-                      ),
-                      pw.Container(
-                        padding: const pw.EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                        decoration: pw.BoxDecoration(
-                          border: pw.Border.all(color: statusColor, width: 1.5),
-                          borderRadius: const pw.BorderRadius.all(pw.Radius.circular(4)),
-                        ),
-                        child: pw.Text(
-                          '$status | $percentage%',
-                          style: pw.TextStyle(font: ttfBold, fontSize: 10, color: statusColor),
-                        ),
-                      ),
-                    ],
+                  pw.Text(
+                    'NAME OF THE FACULTY: ${facultyName.toUpperCase()}',
+                    style: pw.TextStyle(font: ttfBold, fontSize: 12),
                   ),
                   pw.SizedBox(height: 8),
                   pw.Text(
-                    'Lesson Plan: $subjectName ($subjectId) Academic Year: $academicYear',
+                    'Lesson Plan: $subjectName ($subjectId) — Academic Year: $academicYear',
                     style: pw.TextStyle(font: ttfBold, fontSize: 12),
                   ),
                   pw.SizedBox(height: 16),
                 ],
+              );
+            },
+            footer: (pw.Context pdfContext) {
+              return pw.Container(
+                alignment: pw.Alignment.center,
+                margin: const pw.EdgeInsets.only(top: 20),
+                child: pw.Text(
+                  'SUBJECT: $subjectId ($subjectName)',
+                  style: pw.TextStyle(
+                    font: ttfBold,
+                    fontSize: 10,
+                  ),
+                ),
               );
             },
             build: (pw.Context pdfContext) {
@@ -508,11 +520,11 @@ class PdfService {
                       pw.Table(
                         border: pw.TableBorder.symmetric(inside: const pw.BorderSide(color: PdfColors.black, width: 0.5)),
                         columnWidths: {
-                          0: const pw.FlexColumnWidth(1),
-                          1: const pw.FlexColumnWidth(2),
-                          2: const pw.FlexColumnWidth(6),
-                          3: const pw.FlexColumnWidth(1.5),
-                          4: const pw.FlexColumnWidth(2),
+                          0: const pw.FixedColumnWidth(30),
+                          1: const pw.FixedColumnWidth(70),
+                          2: const pw.FlexColumnWidth(),
+                          3: const pw.FixedColumnWidth(40),
+                          4: const pw.FixedColumnWidth(70),
                         },
                         children: [
                           pw.TableRow(
@@ -521,23 +533,23 @@ class PdfService {
                               _lpCell('Date', true, true, ttfBold, ttfRegular),
                               _lpCell('Name of the topic to be covered', true, true, ttfBold, ttfRegular),
                               _lpCell('No. Of\nPeriods', true, true, ttfBold, ttfRegular),
-                              _lpCell('Completed\nDate', true, true, ttfBold, ttfRegular),
+                              _lpCell('completed\nDate', true, true, ttfBold, ttfRegular),
                             ],
                           ),
                           ...items.where((e) => e['type'] != 'unit').map((t) {
                             String dateStr = '';
                             if (t['scheduleDate'] != null) {
-                              try { dateStr = DateFormat('dd/MM/yyyy').format(DateTime.parse(t['scheduleDate']).toLocal()); } catch (_) {}
+                              try { dateStr = DateFormat('dd-MM-yyyy').format(DateTime.parse(t['scheduleDate']).toLocal()); } catch (_) {}
                             }
                             String completedDateStr = '';
                             if (t['completed'] == true && t['completedDate'] != null) {
-                              try { completedDateStr = DateFormat('dd/MM/yyyy').format(DateTime.parse(t['completedDate']).toLocal()); } catch (_) {}
+                              try { completedDateStr = DateFormat('dd-MM-yyyy').format(DateTime.parse(t['completedDate']).toLocal()); } catch (_) {}
                             }
                             return pw.TableRow(
                               children: [
                                 _lpCell('${sNo++}', false, true, ttfBold, ttfRegular),
                                 _lpCell(dateStr, false, true, ttfBold, ttfRegular),
-                                _lpCell(t['topicName'] ?? '', false, false, ttfBold, ttfRegular),
+                                _lpCell(_buildTopicText(t['topicName'] ?? '', ttfBold, ttfRegular), false, false, ttfBold, ttfRegular),
                                 _lpCell('1', false, true, ttfBold, ttfRegular),
                                 _lpCell(completedDateStr, false, true, ttfBold, ttfRegular),
                               ],
@@ -576,17 +588,36 @@ class PdfService {
     }
   }
 
-  static pw.Widget _lpCell(String text, bool isHeader, bool isCenter, pw.Font fb, pw.Font fr) {
+  static pw.Widget _buildTopicText(String text, pw.Font fb, pw.Font fr) {
+    final int colonIndex = text.indexOf(':');
+    if (colonIndex != -1) {
+      final prefix = text.substring(0, colonIndex + 1);
+      final suffix = text.substring(colonIndex + 1);
+      return pw.RichText(
+        text: pw.TextSpan(
+          children: [
+            pw.TextSpan(text: prefix, style: pw.TextStyle(font: fb, fontSize: 10, fontWeight: pw.FontWeight.bold)),
+            pw.TextSpan(text: suffix, style: pw.TextStyle(font: fr, fontSize: 10)),
+          ],
+        ),
+      );
+    }
+    return pw.Text(text, style: pw.TextStyle(font: fr, fontSize: 10));
+  }
+
+  static pw.Widget _lpCell(dynamic content, bool isHeader, bool isCenter, pw.Font fb, pw.Font fr) {
     return pw.Container(
       padding: const pw.EdgeInsets.all(6),
       alignment: isCenter ? pw.Alignment.center : pw.Alignment.centerLeft,
-      child: pw.Text(
-        text,
-        style: pw.TextStyle(
-          font: isHeader ? fb : fr,
-          fontSize: 10,
-        ),
-      ),
+      child: content is pw.Widget 
+          ? content 
+          : pw.Text(
+              content.toString(),
+              style: pw.TextStyle(
+                font: isHeader ? fb : fr,
+                fontSize: 10,
+              ),
+            ),
     );
   }
 }
