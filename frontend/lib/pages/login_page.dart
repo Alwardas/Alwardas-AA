@@ -188,10 +188,16 @@ class _LoginPageState extends State<LoginPage> {
             );
 
             await Future.delayed(const Duration(milliseconds: 1000));
-            await AuthService.saveUserSession(userData);
-            await HiveService.saveSession(userData);
+            try {
+              await AuthService.saveUserSession(userData);
+              await HiveService.saveSession(userData);
+              debugPrint("DEBUG LOGIN: Saved session. HiveSession: ${HiveService.getSession()}, AuthServiceSession: ${await AuthService.getUserSession()}");
+            } catch (e, stack) {
+              debugPrint("DEBUG LOGIN: Error saving session: $e\n$stack");
+            }
 
             if (mounted) {
+              debugPrint("DEBUG LOGIN: Navigating to /dashboard");
               context.go('/dashboard');
             }
           }

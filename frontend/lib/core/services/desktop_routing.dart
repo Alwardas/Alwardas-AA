@@ -23,12 +23,15 @@ final desktopRouter = GoRouter(
   redirect: (context, state) {
     final session = HiveService.getSession();
     final loggingIn = state.matchedLocation == '/login';
+    debugPrint("DEBUG ROUTER: redirect check. session=$session, location=${state.matchedLocation}, loggingIn=$loggingIn");
 
     if (session == null && state.matchedLocation != '/' && !loggingIn) {
+      debugPrint("DEBUG ROUTER: Redirecting to /login because session is null");
       return '/login';
     }
 
     if (session != null && loggingIn) {
+      debugPrint("DEBUG ROUTER: Redirecting to /dashboard because session exists");
       return '/dashboard';
     }
 
