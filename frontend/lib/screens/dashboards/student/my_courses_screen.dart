@@ -699,32 +699,6 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
             _buildDetailRow(Icons.business_outlined, "Department", dept ?? "N/A"),
             const SizedBox(height: 12),
             _buildDetailRow(Icons.badge_outlined, "Faculty ID", facultyId ?? "N/A"),
-            const SizedBox(height: 16),
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.orange.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.orange.withValues(alpha: 0.2)),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Icon(Icons.info_outline, color: Colors.orange, size: 18),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      "Direct contact information is hidden for security. Send a connect request to message.",
-                      style: GoogleFonts.poppins(
-                        fontSize: 11,
-                        color: isDark ? Colors.orange.shade300 : Colors.orange.shade800,
-                        height: 1.3,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
         actionsPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
