@@ -608,8 +608,8 @@ class _HodDashboardState extends State<HodDashboard> {
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.03),
-             width: 1,
+             color: isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+             width: 1.2,
           ),
           boxShadow: [
             BoxShadow(
@@ -661,8 +661,8 @@ class _HodDashboardState extends State<HodDashboard> {
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
-          color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05),
-          width: 1,
+          color: isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+          width: 1.2,
         ),
         boxShadow: [
           BoxShadow(
@@ -793,8 +793,8 @@ class _HodDashboardState extends State<HodDashboard> {
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
-             width: 1,
+             color: isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+             width: 1.2,
           ),
           boxShadow: [
             BoxShadow(

@@ -164,7 +164,8 @@ class ParentMenuTab extends StatelessWidget {
         color: cardColor,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-            color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05)),
+            color: isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+            width: 1.2),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(isDark ? 0.2 : 0.05),

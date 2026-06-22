@@ -786,8 +786,8 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color:
-                isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
-            width: 1,
+                isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+            width: 1.2,
           ),
           boxShadow: [
             BoxShadow(
@@ -852,8 +852,8 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color:
-                isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
-            width: 1,
+                isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+            width: 1.2,
           ),
           boxShadow: [
             BoxShadow(
@@ -1011,9 +1011,9 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
                         color: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        width: 1,
+                            ? Colors.white.withValues(alpha: 0.22)
+                            : const Color(0xFFD1D5DB),
+                        width: 1.2,
                       ),
                       boxShadow: [
                         BoxShadow(
@@ -1079,7 +1079,8 @@ class _FacultyDashboardState extends State<FacultyDashboard> {
         ],
         border: Border.all(
             color:
-                isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+                isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+            width: 1.2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

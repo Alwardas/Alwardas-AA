@@ -190,6 +190,10 @@ class _SharedDashboardAnnouncementsState extends State<SharedDashboardAnnounceme
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(35),
+          border: Border.all(
+            color: isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+            width: 1.2,
+          ),
           boxShadow: [
             BoxShadow(
               color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.black.withValues(alpha: 0.05),

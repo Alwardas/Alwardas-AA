@@ -248,6 +248,10 @@ class _FeeManagementDashboardState extends State<FeeManagementDashboard> with Si
                   decoration: BoxDecoration(
                     color: cardColor,
                     borderRadius: BorderRadius.circular(24),
+                    border: Border.all(
+                      color: isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+                      width: 1.2,
+                    ),
                     boxShadow: [
                       BoxShadow(color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.05), blurRadius: 15)
                     ],
@@ -432,6 +436,12 @@ class _FeeManagementDashboardState extends State<FeeManagementDashboard> with Si
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: bg == Colors.white
+              ? const Color(0xFFD1D5DB)
+              : Colors.white.withValues(alpha: 0.22),
+          width: 1.2,
+        ),
         boxShadow: [
           BoxShadow(color: Colors.black.withValues(alpha: bg == Colors.white ? 0.05 : 0.2), blurRadius: 10)
         ],
@@ -488,6 +498,10 @@ class _FeeManagementDashboardState extends State<FeeManagementDashboard> with Si
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(24),
+        border: Border.all(
+          color: isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+          width: 1.2,
+        ),
         boxShadow: [
           BoxShadow(color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.05), blurRadius: 15)
         ],

@@ -529,8 +529,8 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
           color: isDark ? ThemeColors.darkCardBg : Colors.white, // Solid color from theme
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-             color: isDark ? ThemeColors.darkBorder : Colors.black.withValues(alpha: 0.03),
-             width: 1,
+             color: isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+             width: 1.2,
           ),
           boxShadow: [
             BoxShadow(

@@ -67,7 +67,10 @@ class HodMenuTab extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: cardColor,
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: iconBg.withValues(alpha: 0.5)),
+                      border: Border.all(
+                        color: isDark ? Colors.white.withValues(alpha: 0.22) : const Color(0xFFD1D5DB),
+                        width: 1.2,
+                      ),
                       boxShadow: [
                         BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))
                       ]
