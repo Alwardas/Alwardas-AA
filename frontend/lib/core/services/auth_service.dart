@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'hive_service.dart';
+import 'desktop_routing.dart';
 
 class AuthService {
   static const String _userDataKey = 'user_data';
@@ -32,6 +33,7 @@ class AuthService {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_userDataKey);
     await HiveService.clearSession();
+    desktopRouter.go('/login');
   }
   
   static Future<bool> isLoggedIn() async {
