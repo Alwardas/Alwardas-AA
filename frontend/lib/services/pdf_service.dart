@@ -637,6 +637,37 @@ class PdfService {
       final ttfRegular = pw.Font.helvetica();
       final ttfBold = pw.Font.helveticaBold();
 
+      // Calculate completion percentage and scheduled status
+      int totalTopics = 0;
+      int completedTopics = 0;
+      int scheduledTopics = 0;
+      bool hasSchedule = false;
+      final now = DateTime.now();
+      for (var unit in curriculum.units) {
+        for (var topic in unit.topics) {
+          totalTopics += 1;
+          if (topic.status == 'completed') {
+            completedTopics += 1;
+          }
+          if (topic.assignedDate != null) {
+            hasSchedule = true;
+            if (topic.assignedDate!.isBefore(now)) {
+              scheduledTopics += 1;
+            }
+          }
+        }
+      }
+      final percentage = totalTopics > 0 ? (completedTopics * 100 ~/ totalTopics) : 0;
+
+      String statusText = "On Track";
+      if (hasSchedule) {
+        if (completedTopics < scheduledTopics) {
+          statusText = "Lagging";
+        } else if (completedTopics > scheduledTopics) {
+          statusText = "Overfast";
+        }
+      }
+
       // Load logo image
       pw.MemoryImage? logoImage;
       try {
@@ -669,24 +700,59 @@ class PdfService {
           ),
           header: (pw.Context pdfContext) {
             if (pdfContext.pageNumber != 1) return pw.SizedBox();
-            return pw.Column(
+            return pw.Row(
+              mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               children: [
-                pw.Text(
-                  'NAME OF THE FACULTY: ${facultyName.toUpperCase()}',
-                  style: pw.TextStyle(font: ttfBold, fontSize: 12),
+                pw.Expanded(
+                  child: pw.Column(
+                    crossAxisAlignment: pw.CrossAxisAlignment.start,
+                    children: [
+                      pw.Text(
+                        'NAME OF THE FACULTY: ${facultyName.toUpperCase()}',
+                        style: pw.TextStyle(font: ttfBold, fontSize: 12),
+                      ),
+                      pw.SizedBox(height: 8),
+                      pw.Text(
+                        'Lesson Plan: $subjectName ($subjectId) — Academic Year: $year',
+                        style: pw.TextStyle(font: ttfBold, fontSize: 12),
+                      ),
+                      pw.SizedBox(height: 8),
+                      pw.Text(
+                        'Branch: $branch | Section: $section | Semester: $semester',
+                        style: pw.TextStyle(font: ttfBold, fontSize: 10),
+                      ),
+                    ],
+                  ),
                 ),
-                pw.SizedBox(height: 8),
-                pw.Text(
-                  'Lesson Plan: $subjectName ($subjectId) — Academic Year: $year',
-                  style: pw.TextStyle(font: ttfBold, fontSize: 12),
+                pw.SizedBox(width: 20),
+                pw.Container(
+                  padding: const pw.EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  decoration: pw.BoxDecoration(
+                    border: pw.Border.all(color: PdfColors.grey400, width: 1),
+                    borderRadius: const pw.BorderRadius.all(pw.Radius.circular(6)),
+                  ),
+                  child: pw.Column(
+                    crossAxisAlignment: pw.CrossAxisAlignment.end,
+                    children: [
+                      pw.Text(
+                        'Progress: $percentage%',
+                        style: pw.TextStyle(font: ttfBold, fontSize: 11, color: PdfColors.green700),
+                      ),
+                      pw.SizedBox(height: 4),
+                      pw.Text(
+                        'Status: ${statusText.toUpperCase()}',
+                        style: pw.TextStyle(
+                          font: ttfBold,
+                          fontSize: 10,
+                          color: statusText == 'Lagging'
+                              ? PdfColors.red700
+                              : (statusText == 'Overfast' ? PdfColors.orange700 : PdfColors.green700),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                pw.SizedBox(height: 8),
-                pw.Text(
-                  'Branch: $branch | Section: $section | Semester: $semester',
-                  style: pw.TextStyle(font: ttfBold, fontSize: 10),
-                ),
-                pw.SizedBox(height: 16),
               ],
             );
           },
@@ -705,7 +771,8 @@ class PdfService {
           },
           build: (pw.Context pdfContext) {
             List<pw.Widget> widgets = [];
-            for (var unit in curriculum.units) {
+            for (int i = 0; i < curriculum.units.length; i++) {
+              final unit = curriculum.units[i];
               final unitTitle = "Unit ${unit.unitNo}: ${unit.title}";
               final totalPeriods = unit.topics.length;
               
@@ -751,10 +818,10 @@ class PdfService {
                           ...unit.topics.map((t) {
                             final assignedDateStr = t.assignedDate != null 
                                 ? DateFormat('dd-MM-yyyy').format(t.assignedDate!.toLocal()) 
-                                : "Pending";
+                                : "";
                             final completedDateStr = t.status == 'completed' && t.completedDate != null 
                                 ? DateFormat('dd-MM-yyyy').format(t.completedDate!.toLocal()) 
-                                : "Pending";
+                                : "";
                             return pw.TableRow(
                               children: [
                                 _lpCell(t.sno, false, true, ttfBold, ttfRegular),
@@ -782,6 +849,10 @@ class PdfService {
                   ),
                 ),
               );
+
+              if (i < curriculum.units.length - 1) {
+                widgets.add(pw.NewPage());
+              }
             }
             return widgets;
           },
@@ -839,10 +910,10 @@ class PdfService {
           final cleanTopic = t.topic.replaceAll('"', '""');
           final assignedDateStr = t.assignedDate != null 
               ? DateFormat('dd-MM-yyyy').format(t.assignedDate!.toLocal()) 
-              : "Pending";
+              : "";
           final completedDateStr = t.status == 'completed' && t.completedDate != null 
               ? DateFormat('dd-MM-yyyy').format(t.completedDate!.toLocal()) 
-              : "Pending";
+              : "";
               
           csvBuffer.writeln('"${t.sno}","$unitLabel","$cleanTopic","${t.period}","$assignedDateStr","$completedDateStr","${t.status.toUpperCase()}"');
         }
