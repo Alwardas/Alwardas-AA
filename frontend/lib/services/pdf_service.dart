@@ -718,8 +718,10 @@ class PdfService {
                       pw.Container(
                         width: double.infinity,
                         padding: const pw.EdgeInsets.all(6),
-                        color: PdfColors.grey200,
-                        decoration: const pw.BoxDecoration(border: pw.Border(bottom: pw.BorderSide(color: PdfColors.black, width: 0.5))),
+                        decoration: const pw.BoxDecoration(
+                          color: PdfColors.grey200,
+                          border: pw.Border(bottom: pw.BorderSide(color: PdfColors.black, width: 0.5)),
+                        ),
                         child: pw.Text(
                           '$unitTitle ($totalPeriods Periods)',
                           textAlign: pw.TextAlign.center,
