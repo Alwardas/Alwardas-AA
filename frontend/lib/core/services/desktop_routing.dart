@@ -50,19 +50,26 @@ final desktopRouter = GoRouter(
       path: '/dashboard',
       builder: (context, state) {
         final session = HiveService.getSession();
-        if (session == null) return const LoginPage();
+        debugPrint("DEBUG ROUTER: building /dashboard page. session=$session");
+        if (session == null) {
+          debugPrint("DEBUG ROUTER: session is null in builder, returning LoginPage");
+          return const LoginPage();
+        }
 
         return LayoutBuilder(
           builder: (context, constraints) {
             final role = session['role'] ?? '';
             final isMobileRole = role == 'Student' || role == 'Parent';
+            debugPrint("DEBUG ROUTER: LayoutBuilder constraints.maxWidth=${constraints.maxWidth}, role=$role, isMobileRole=$isMobileRole");
 
             if (constraints.maxWidth > 900 && !isMobileRole) {
+              debugPrint("DEBUG ROUTER: returning DesktopLayoutShell");
               return DesktopLayoutShell(userData: session);
             }
 
             // Return traditional mobile/tablet dashboards
-            switch (role) {
+             debugPrint("DEBUG ROUTER: switch role matched: $role");
+             switch (role) {
               case 'Student':
                 return StudentDashboard(userData: session);
               case 'Parent':
@@ -83,6 +90,7 @@ final desktopRouter = GoRouter(
               case 'Finance':
                 return FeeManagementDashboard(userData: session);
               default:
+                debugPrint("DEBUG ROUTER: default case matched, returning LoginPage");
                 return const LoginPage();
             }
           },
