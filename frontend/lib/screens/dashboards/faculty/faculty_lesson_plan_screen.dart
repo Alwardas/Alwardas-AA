@@ -8,6 +8,7 @@ import '../../../core/services/auth_service.dart';
 import '../../../core/services/curriculum_service.dart';
 import '../../../core/models/curriculum_merged.dart';
 import '../../../widgets/skeleton_loader.dart';
+import '../../../services/pdf_service.dart';
 
 class FacultyLessonPlanScreen extends StatefulWidget {
   final String subjectId;
@@ -131,6 +132,141 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
   }
 
+  void _showDownloadOptions() {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (context) {
+        return Container(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Download Lesson Plan",
+                style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                "Select how you want to download the lesson plan for ${widget.subjectName}.",
+                style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey),
+              ),
+              const SizedBox(height: 24),
+              ListTile(
+                leading: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(color: Colors.red.withValues(alpha: 0.1), shape: BoxShape.circle),
+                  child: const Icon(Icons.picture_as_pdf, color: Colors.red),
+                ),
+                title: Text("Download PDF Report", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+                subtitle: Text("Generate stylized PDF Lesson Plan", style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
+                onTap: () {
+                  Navigator.pop(context);
+                  _downloadPdf();
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), shape: BoxShape.circle),
+                  child: const Icon(Icons.table_view, color: Colors.green),
+                ),
+                title: Text("Download Excel (CSV)", style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+                subtitle: Text("Download spreadsheet with topics and dates", style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
+                onTap: () {
+                  Navigator.pop(context);
+                  _downloadExcel();
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> _downloadPdf() async {
+    if (_curriculum == null) {
+      _showSnackBar("Curriculum data is not loaded yet.");
+      return;
+    }
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => AlertDialog(
+        content: Row(
+          children: [
+            const CircularProgressIndicator(),
+            const SizedBox(width: 20),
+            Text("PDF Generating...", style: GoogleFonts.poppins())
+          ],
+        )
+      )
+    );
+
+    try {
+      await PdfService.generateLessonPlanPdfFromData(
+        context: context,
+        subjectId: widget.subjectId,
+        subjectName: widget.subjectName,
+        facultyName: widget.facultyName,
+        branch: widget.branch,
+        section: widget.section ?? 'Section A',
+        year: widget.year ?? '1st Year',
+        semester: widget.semester,
+        curriculum: _curriculum!,
+      );
+    } catch (e) {
+      debugPrint("Error exporting PDF: $e");
+    } finally {
+      if (mounted) Navigator.pop(context);
+    }
+  }
+
+  Future<void> _downloadExcel() async {
+    if (_curriculum == null) {
+      _showSnackBar("Curriculum data is not loaded yet.");
+      return;
+    }
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => AlertDialog(
+        content: Row(
+          children: [
+            const CircularProgressIndicator(),
+            const SizedBox(width: 20),
+            Text("Excel Generating...", style: GoogleFonts.poppins())
+          ],
+        )
+      )
+    );
+
+    try {
+      await PdfService.generateLessonPlanExcelFromData(
+        context: context,
+        subjectId: widget.subjectId,
+        subjectName: widget.subjectName,
+        facultyName: widget.facultyName,
+        branch: widget.branch,
+        section: widget.section ?? 'Section A',
+        year: widget.year ?? '1st Year',
+        semester: widget.semester,
+        curriculum: _curriculum!,
+      );
+    } catch (e) {
+      debugPrint("Error exporting Excel: $e");
+    } finally {
+      if (mounted) Navigator.pop(context);
+    }
+  }
+
   void _showReviewsModal(CurriculumTopic topic) {
     showModalBottomSheet(
       context: context,
@@ -225,34 +361,12 @@ class _FacultyLessonPlanScreenState extends State<FacultyLessonPlanScreen> {
                         );
                       },
                     ),
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).primaryColor,
-        icon: const Icon(Icons.picture_as_pdf, color: Colors.white),
-        label: Text("Export Log", style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold)),
+        tooltip: "Download Lesson Plan",
+        child: const Icon(Icons.download, color: Colors.white),
         onPressed: () {
-            // Simulate Report Download
-            showDialog(
-              context: context,
-              barrierDismissible: false,
-              builder: (ctx) => AlertDialog(
-                 content: Row(
-                   children: [
-                     const CircularProgressIndicator(),
-                     const SizedBox(width: 20),
-                     Text("PDF Generating...", style: GoogleFonts.poppins())
-                   ],
-                 )
-              )
-            );
-            
-            Future.delayed(const Duration(seconds: 2), () {
-               Navigator.pop(context); // Close loading
-               if (mounted) {
-                   ScaffoldMessenger.of(context).showSnackBar(
-                     const SnackBar(content: Text("Lesson Plan Report exported to Downloads."))
-                   );
-               }
-            });
+          _showDownloadOptions();
         },
       ),
     );

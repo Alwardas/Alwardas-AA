@@ -13,6 +13,7 @@ import 'package:intl/intl.dart';
 
 import '../core/api_constants.dart';
 import '../data/courses_data.dart';
+import '../core/models/curriculum_merged.dart';
 
 class PdfService {
 
@@ -619,5 +620,260 @@ class PdfService {
               ),
             ),
     );
+  }
+
+  static Future<void> generateLessonPlanPdfFromData({
+    required BuildContext context,
+    required String subjectId,
+    required String subjectName,
+    required String facultyName,
+    required String branch,
+    required String section,
+    required String year,
+    required int semester,
+    required CurriculumMerged curriculum,
+  }) async {
+    try {
+      final ttfRegular = pw.Font.helvetica();
+      final ttfBold = pw.Font.helveticaBold();
+
+      // Load logo image
+      pw.MemoryImage? logoImage;
+      try {
+        final logoBytes = await rootBundle.load('assets/images/college logo.png');
+        logoImage = pw.MemoryImage(logoBytes.buffer.asUint8List());
+      } catch (e) {
+        debugPrint("Error loading college logo for PDF: $e");
+      }
+
+      final pdf = pw.Document();
+
+      pdf.addPage(
+        pw.MultiPage(
+          pageTheme: pw.PageTheme(
+            pageFormat: PdfPageFormat.a4,
+            margin: const pw.EdgeInsets.all(32),
+            buildBackground: logoImage == null ? null : (pw.Context pdfContext) {
+              return pw.Center(
+                child: pw.Opacity(
+                  opacity: 0.15,
+                  child: pw.Image(
+                    logoImage!,
+                    width: 320,
+                    height: 320,
+                    fit: pw.BoxFit.contain,
+                  ),
+                ),
+              );
+            },
+          ),
+          header: (pw.Context pdfContext) {
+            if (pdfContext.pageNumber != 1) return pw.SizedBox();
+            return pw.Column(
+              crossAxisAlignment: pw.CrossAxisAlignment.start,
+              children: [
+                pw.Text(
+                  'NAME OF THE FACULTY: ${facultyName.toUpperCase()}',
+                  style: pw.TextStyle(font: ttfBold, fontSize: 12),
+                ),
+                pw.SizedBox(height: 8),
+                pw.Text(
+                  'Lesson Plan: $subjectName ($subjectId) — Academic Year: $year',
+                  style: pw.TextStyle(font: ttfBold, fontSize: 12),
+                ),
+                pw.SizedBox(height: 8),
+                pw.Text(
+                  'Branch: $branch | Section: $section | Semester: $semester',
+                  style: pw.TextStyle(font: ttfBold, fontSize: 10),
+                ),
+                pw.SizedBox(height: 16),
+              ],
+            );
+          },
+          footer: (pw.Context pdfContext) {
+            return pw.Container(
+              alignment: pw.Alignment.center,
+              margin: const pw.EdgeInsets.only(top: 20),
+              child: pw.Text(
+                'SUBJECT: $subjectId ($subjectName) — Page ${pdfContext.pageNumber}',
+                style: pw.TextStyle(
+                  font: ttfBold,
+                  fontSize: 10,
+                ),
+              ),
+            );
+          },
+          build: (pw.Context pdfContext) {
+            List<pw.Widget> widgets = [];
+            for (var unit in curriculum.units) {
+              final unitTitle = "Unit ${unit.unitNo}: ${unit.title}";
+              final totalPeriods = unit.topics.length;
+              
+              widgets.add(
+                pw.Container(
+                  margin: const pw.EdgeInsets.only(bottom: 20),
+                  decoration: pw.BoxDecoration(border: pw.Border.all(color: PdfColors.black, width: 0.5)),
+                  child: pw.Column(
+                    children: [
+                      pw.Container(
+                        width: double.infinity,
+                        padding: const pw.EdgeInsets.all(6),
+                        color: PdfColors.grey200,
+                        decoration: const pw.BoxDecoration(border: pw.Border(bottom: pw.BorderSide(color: PdfColors.black, width: 0.5))),
+                        child: pw.Text(
+                          '$unitTitle ($totalPeriods Periods)',
+                          textAlign: pw.TextAlign.center,
+                          style: pw.TextStyle(font: ttfBold, fontSize: 11),
+                        ),
+                      ),
+                      pw.Table(
+                        border: pw.TableBorder.symmetric(inside: const pw.BorderSide(color: PdfColors.black, width: 0.5)),
+                        columnWidths: {
+                          0: const pw.FixedColumnWidth(40),
+                          1: const pw.FixedColumnWidth(80),
+                          2: const pw.FlexColumnWidth(),
+                          3: const pw.FixedColumnWidth(50),
+                          4: const pw.FixedColumnWidth(80),
+                        },
+                        children: [
+                          pw.TableRow(
+                            decoration: const pw.BoxDecoration(color: PdfColors.grey100),
+                            children: [
+                              _lpCell('S.No', true, true, ttfBold, ttfRegular),
+                              _lpCell('Assigned Date', true, true, ttfBold, ttfRegular),
+                              _lpCell('Name of the topic to be covered', true, true, ttfBold, ttfRegular),
+                              _lpCell('No. Of\nPeriods', true, true, ttfBold, ttfRegular),
+                              _lpCell('Completed Date', true, true, ttfBold, ttfRegular),
+                            ],
+                          ),
+                          ...unit.topics.map((t) {
+                            final assignedDateStr = t.assignedDate != null 
+                                ? DateFormat('dd-MM-yyyy').format(t.assignedDate!.toLocal()) 
+                                : "Pending";
+                            final completedDateStr = t.status == 'completed' && t.completedDate != null 
+                                ? DateFormat('dd-MM-yyyy').format(t.completedDate!.toLocal()) 
+                                : "Pending";
+                            return pw.TableRow(
+                              children: [
+                                _lpCell(t.sno, false, true, ttfBold, ttfRegular),
+                                _lpCell(assignedDateStr, false, true, ttfBold, ttfRegular),
+                                _lpCell(_buildTopicText(t.topic, ttfBold, ttfRegular), false, false, ttfBold, ttfRegular),
+                                _lpCell(t.period.toString(), false, true, ttfBold, ttfRegular),
+                                _lpCell(completedDateStr, false, true, ttfBold, ttfRegular),
+                              ],
+                            );
+                          }),
+                        ],
+                      ),
+                      pw.Container(
+                        width: double.infinity,
+                        padding: const pw.EdgeInsets.all(6),
+                        decoration: const pw.BoxDecoration(border: pw.Border(top: pw.BorderSide(color: PdfColors.black, width: 0.5))),
+                        child: pw.Row(
+                           children: [
+                             pw.Expanded(flex: 9, child: pw.Text('(UNIT ${unit.unitNo} END)', textAlign: pw.TextAlign.center, style: pw.TextStyle(font: ttfBold, fontSize: 9))),
+                             pw.Expanded(flex: 3, child: pw.Text('Total: $totalPeriods Periods', textAlign: pw.TextAlign.center, style: pw.TextStyle(font: ttfBold, fontSize: 9))),
+                           ]
+                        )
+                      )
+                    ],
+                  ),
+                ),
+              );
+            }
+            return widgets;
+          },
+        ),
+      );
+
+      final sanitizedSubject = subjectName.replaceAll(RegExp(r'[^\w\s\-]'), '_');
+      final sanitizedSection = section.replaceAll(RegExp(r'[^\w\s\-]'), '_');
+      await _saveAndLaunchPdf(pdf, "LessonPlan_${sanitizedSubject}_$sanitizedSection.pdf");
+
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Lesson Plan PDF exported successfully.")),
+        );
+      }
+    } catch (e) {
+      debugPrint("PDF Generation error: $e");
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Failed to generate PDF.")),
+        );
+      }
+    }
+  }
+
+  static Future<void> generateLessonPlanExcelFromData({
+    required BuildContext context,
+    required String subjectId,
+    required String subjectName,
+    required String facultyName,
+    required String branch,
+    required String section,
+    required String year,
+    required int semester,
+    required CurriculumMerged curriculum,
+  }) async {
+    try {
+      StringBuffer csvBuffer = StringBuffer();
+      
+      // Header metadata
+      csvBuffer.writeln("Faculty Name,$facultyName");
+      csvBuffer.writeln("Subject,$subjectName ($subjectId)");
+      csvBuffer.writeln("Branch,$branch");
+      csvBuffer.writeln("Section,$section");
+      csvBuffer.writeln("Academic Year,$year");
+      csvBuffer.writeln("Semester,$semester");
+      csvBuffer.writeln(""); // Blank line
+      
+      // Table Header
+      csvBuffer.writeln("S.No,Unit,Topic Description,Periods,Assigned Date,Completed Date,Status");
+      
+      for (var unit in curriculum.units) {
+        final unitLabel = "Unit ${unit.unitNo}: ${unit.title}";
+        for (var t in unit.topics) {
+          final cleanTopic = t.topic.replaceAll('"', '""');
+          final assignedDateStr = t.assignedDate != null 
+              ? DateFormat('dd-MM-yyyy').format(t.assignedDate!.toLocal()) 
+              : "Pending";
+          final completedDateStr = t.status == 'completed' && t.completedDate != null 
+              ? DateFormat('dd-MM-yyyy').format(t.completedDate!.toLocal()) 
+              : "Pending";
+              
+          csvBuffer.writeln('"${t.sno}","$unitLabel","$cleanTopic","${t.period}","$assignedDateStr","$completedDateStr","${t.status.toUpperCase()}"');
+        }
+      }
+      
+      final bytes = utf8.encode(csvBuffer.toString());
+      final sanitizedSubject = subjectName.replaceAll(RegExp(r'[^\w\s\-]'), '_');
+      final sanitizedSection = section.replaceAll(RegExp(r'[^\w\s\-]'), '_');
+      final fileName = "LessonPlan_${sanitizedSubject}_$sanitizedSection.csv";
+      
+      if (Platform.isAndroid) {
+        var status = await Permission.storage.status;
+        if (!status.isGranted) {
+          await Permission.storage.request();
+        }
+      }
+      final dir = await getExternalStorageDirectory();
+      final file = File("${dir?.path}/$fileName");
+      await file.writeAsBytes(bytes);
+      await OpenFilex.open(file.path);
+
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Lesson Plan Excel exported to ${file.path}")),
+        );
+      }
+    } catch (e) {
+      debugPrint("Error exporting Excel: $e");
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Failed to download Excel.")),
+        );
+      }
+    }
   }
 }
