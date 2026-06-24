@@ -181,25 +181,25 @@ class _LoginPageState extends State<LoginPage> {
           }
 
           if (mounted) {
-            _showPopupResponse(
-              title: 'Login Successful',
-              message: 'Welcome back, ${userData['full_name']}!',
-              isError: false,
-            );
-
-            await Future.delayed(const Duration(milliseconds: 1000));
             try {
               await AuthService.saveUserSession(userData);
               await HiveService.saveSession(userData);
-              debugPrint("DEBUG LOGIN: Saved session. HiveSession: ${HiveService.getSession()}, AuthServiceSession: ${await AuthService.getUserSession()}");
+              debugPrint("DEBUG LOGIN: Saved session immediately. HiveSession: ${HiveService.getSession()}, AuthServiceSession: ${await AuthService.getUserSession()}");
             } catch (e, stack) {
               debugPrint("DEBUG LOGIN: Error saving session: $e\n$stack");
             }
 
-            if (mounted) {
-              debugPrint("DEBUG LOGIN: Navigating to /dashboard");
-              context.go('/dashboard');
-            }
+            _showPopupResponse(
+              title: 'Login Successful',
+              message: 'Welcome back, ${userData['full_name']}!',
+              isError: false,
+              onDismiss: () {
+                if (mounted) {
+                  debugPrint("DEBUG LOGIN: Navigating to /dashboard on dismiss");
+                  context.go('/dashboard');
+                }
+              },
+            );
           }
         } else {
           if (mounted) {
@@ -250,11 +250,17 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  void _showPopupResponse({required String title, required String message, required bool isError}) {
+  void _showPopupResponse({
+    required String title,
+    required String message,
+    required bool isError,
+    VoidCallback? onDismiss,
+  }) {
     if (!mounted) return;
     showDialog(
       context: context,
-      builder: (context) => Dialog(
+      barrierDismissible: isError, // Force user to click Continue on success
+      builder: (dialogContext) => Dialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
         child: Container(
           width: 400,
@@ -303,7 +309,12 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 height: 54,
                 child: ElevatedButton(
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () {
+                    Navigator.pop(dialogContext);
+                    if (onDismiss != null) {
+                      onDismiss();
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: isError ? const Color(0xFF1E2B57) : const Color(0xFF2F5AA8),
                     foregroundColor: Colors.white,
