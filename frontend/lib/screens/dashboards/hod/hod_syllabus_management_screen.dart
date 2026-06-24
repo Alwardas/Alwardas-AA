@@ -164,9 +164,13 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Overall Branch Progress", 
-                style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)
+              Expanded(
+                child: Text("Overall Branch Progress", 
+                  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)
+                ),
               ),
+              const SizedBox(width: 8),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(color: accentColor.withOpacity(0.1), borderRadius: BorderRadius.circular(12)),
