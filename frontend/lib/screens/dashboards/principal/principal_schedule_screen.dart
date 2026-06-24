@@ -480,17 +480,26 @@ class _PrincipalScheduleScreenState extends State<PrincipalScheduleScreen> {
               ),
 
               Expanded(
-                child: _isLoading 
-                    ? Center(child: CircularProgressIndicator(color: tint))
-                    : ListView.builder(
-                      padding: const EdgeInsets.fromLTRB(20, 10, 20, 80),
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: currentSchedule.length,
-                      itemBuilder: (ctx, index) {
-                        final item = currentSchedule[index];
-                        return _buildTimelineItem(item, textColor, subTextColor, tint, isDark);
-                      },
-                    ),
+                child: RefreshIndicator(
+                  onRefresh: _refreshSchedule,
+                  child: _isLoading 
+                      ? SingleChildScrollView(
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          child: SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.6,
+                            child: Center(child: CircularProgressIndicator(color: tint)),
+                          ),
+                        )
+                      : ListView.builder(
+                          padding: const EdgeInsets.fromLTRB(20, 10, 20, 80),
+                          physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                          itemCount: currentSchedule.length,
+                          itemBuilder: (ctx, index) {
+                            final item = currentSchedule[index];
+                            return _buildTimelineItem(item, textColor, subTextColor, tint, isDark);
+                          },
+                        ),
+                ),
               ),
             ],
           ),

@@ -249,12 +249,17 @@ class _AdminDashboardState extends State<AdminDashboard> {
             Expanded(
               child: _loading 
                 ? const Center(child: CircularProgressIndicator())
-                : GridView.count(
-                    padding: const EdgeInsets.all(24),
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 15,
-                    mainAxisSpacing: 15,
-                    childAspectRatio: 1.2,
+                : RefreshIndicator(
+                    onRefresh: () async {
+                      await _fetchStats();
+                    },
+                    child: GridView.count(
+                      physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                      padding: const EdgeInsets.all(24),
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: 1.2,
                     children: [
                       _buildMenuCard(
                         'User Management', 
@@ -307,6 +312,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                         onTap: () {},
                       ),
                     ],
+                  ),
                   ),
             ),
           ],

@@ -406,9 +406,14 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
         child: SafeArea(
           child: Stack(
             children: [
-              SingleChildScrollView(
-                padding: const EdgeInsets.all(20),
-                child: Column(
+              RefreshIndicator(
+                onRefresh: () async {
+                  await _fetchStats();
+                },
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
                   children: [
                     // Filter Row: Session Selector + Date Picker
                     Container(
@@ -632,6 +637,7 @@ class _HODAttendanceScreenState extends State<HODAttendanceScreen> {
               const SizedBox(height: 100), // Space for bottom bar
                   ],
                 ),
+              ),
               ),
 
               if (_modalVisible) _buildModal(textColor, subTextColor, isDark ? const Color(0xFF24243e) : Colors.white, tint, iconBg),

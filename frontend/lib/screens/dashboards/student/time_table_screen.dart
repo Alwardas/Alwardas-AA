@@ -262,10 +262,13 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                 ),
 
               Expanded(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.fromLTRB(20, 10, 20, 120),
-                  child: Column(
-                    children: [
+                child: RefreshIndicator(
+                  onRefresh: _fetchStudentProfile,
+                  child: SingleChildScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                    padding: const EdgeInsets.fromLTRB(20, 10, 20, 120),
+                    child: Column(
+                      children: [
                       Wrap(
                         spacing: 12,
                         runSpacing: 12,
@@ -376,6 +379,7 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                       _buildTimeTableLegend(textColor),
                     ],
                   ),
+                ),
                 ),
               )
             ],

@@ -137,26 +137,31 @@ class _HodDepartmentScreenState extends State<HodDepartmentScreen> {
               end: Alignment.bottomCenter,
             ),
           ),
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.only(
-               top: MediaQuery.of(context).padding.top + kToolbarHeight + 10, 
-               left: 20, 
-               right: 20, 
-               bottom: 100 // Padding for bottom navbar
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildSectionHeader('Department Overview', textColor),
-                const SizedBox(height: 15),
-                _buildOverviewCard(isDark, textColor, subTextColor),
-                const SizedBox(height: 30),
-                _buildSectionHeader('Department Management', textColor),
-                const SizedBox(height: 15),
-                _buildManagementCards(context, isDark, textColor, subTextColor),
-                const SizedBox(height: 20),
-              ],
+          child: RefreshIndicator(
+            onRefresh: () async {
+              setState(() {});
+            },
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+              padding: EdgeInsets.only(
+                 top: MediaQuery.of(context).padding.top + kToolbarHeight + 10, 
+                 left: 20, 
+                 right: 20, 
+                 bottom: 100 // Padding for bottom navbar
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildSectionHeader('Department Overview', textColor),
+                  const SizedBox(height: 15),
+                  _buildOverviewCard(isDark, textColor, subTextColor),
+                  const SizedBox(height: 30),
+                  _buildSectionHeader('Department Management', textColor),
+                  const SizedBox(height: 15),
+                  _buildManagementCards(context, isDark, textColor, subTextColor),
+                  const SizedBox(height: 20),
+                ],
+              ),
             ),
           ),
         ),
@@ -443,81 +448,89 @@ class _HodStudentManagementScreenState extends State<HodStudentManagementScreen>
           gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: SafeArea(
-          child: _isLoading 
-            ? const Center(child: CircularProgressIndicator())
-            : Padding(
-                padding: const EdgeInsets.all(20),
-                child: ListView.builder(
+          child: RefreshIndicator(
+            onRefresh: _loadAllSectionCounts,
+            child: _isLoading 
+              ? SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.7,
+                    child: const Center(child: CircularProgressIndicator()),
+                  ),
+                )
+              : ListView.builder(
+                  physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                  padding: const EdgeInsets.all(20),
                   itemCount: widget.years.length,
                   itemBuilder: (context, index) {
-                final year = widget.years[index];
-                return GestureDetector(
-                  onTap: () {
-                    if (year['year'] == 'Graduated') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => HodGraduatedStudentsScreen(
-                          userData: widget.userData,
-                        )),
-                      );
-                    } else {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => HodYearSectionsScreen(
-                          yearData: year,
-                          branch: widget.userData['branch'] ?? 'Computer Engineering',
-                          onUpdateSections: (newSections) {
-                            setState(() {
-                              year['sections'] = newSections;
-                            });
-                            widget.onUpdateYears(widget.years);
-                          },
-                        )),
-                      );
-                    }
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.only(bottom: 15),
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
-                      boxShadow: [
-                         BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
-                      ]
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(color: Colors.blueAccent.withValues(alpha: 0.1), shape: BoxShape.circle),
-                          child: const Icon(Icons.school, color: Colors.blueAccent, size: 24),
+                    final year = widget.years[index];
+                    return GestureDetector(
+                      onTap: () {
+                        if (year['year'] == 'Graduated') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => HodGraduatedStudentsScreen(
+                              userData: widget.userData,
+                            )),
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => HodYearSectionsScreen(
+                              yearData: year,
+                              branch: widget.userData['branch'] ?? 'Computer Engineering',
+                              onUpdateSections: (newSections) {
+                                setState(() {
+                                  year['sections'] = newSections;
+                                });
+                                widget.onUpdateYears(widget.years);
+                              },
+                            )),
+                          );
+                        }
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(bottom: 15),
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+                          boxShadow: [
+                             BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
+                          ]
                         ),
-                        const SizedBox(width: 20),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                year['year'] == 'Graduated' ? 'Graduated' : '${year['year']} (${year['batch']})',
-                                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 18),
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(12),
+                              decoration: BoxDecoration(color: Colors.blueAccent.withValues(alpha: 0.1), shape: BoxShape.circle),
+                              child: const Icon(Icons.school, color: Colors.blueAccent, size: 24),
+                            ),
+                            const SizedBox(width: 20),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    year['year'] == 'Graduated' ? 'Graduated' : '${year['year']} (${year['batch']})',
+                                    style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 18),
+                                  ),
+                                  if (year['year'] != 'Graduated')
+                                    Text(
+                                      '${year['sections'].length} Sections',
+                                      style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                                    ),
+                                ],
                               ),
-                              if (year['year'] != 'Graduated')
-                                Text(
-                                  '${year['sections'].length} Sections',
-                                  style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
-                                ),
-                            ],
-                          ),
+                            ),
+                            Icon(Icons.arrow_forward_ios, size: 16, color: subTextColor),
+                          ],
                         ),
-                        Icon(Icons.arrow_forward_ios, size: 16, color: subTextColor),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
+                      ),
+                    );
+                  },
+                ),
           ),
         ),
       ),
@@ -605,74 +618,82 @@ class _HodSyllabusYearsScreenState extends State<HodSyllabusYearsScreen> {
           gradient: LinearGradient(colors: bgColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: SafeArea(
-          child: _isLoading 
-            ? const Center(child: CircularProgressIndicator())
-            : Padding(
-                padding: const EdgeInsets.all(20),
-                child: ListView.builder(
+          child: RefreshIndicator(
+            onRefresh: _loadAllSectionCounts,
+            child: _isLoading 
+              ? SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.7,
+                    child: const Center(child: CircularProgressIndicator()),
+                  ),
+                )
+              : ListView.builder(
+                  physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                  padding: const EdgeInsets.all(20),
                   itemCount: widget.years.length,
                   itemBuilder: (context, index) {
-                final year = widget.years[index];
-                return GestureDetector(
-                  onTap: () {
-                    _openSyllabusSectionsScreen(context, year);
+                    final year = widget.years[index];
+                    return GestureDetector(
+                      onTap: () {
+                        _openSyllabusSectionsScreen(context, year);
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(bottom: 15),
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+                          boxShadow: [
+                             BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
+                          ]
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(12),
+                              decoration: BoxDecoration(color: Colors.purple.withValues(alpha: 0.1), shape: BoxShape.circle),
+                              child: const Icon(Icons.menu_book, color: Colors.purple, size: 24),
+                            ),
+                            const SizedBox(width: 20),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    year['year'],
+                                    style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 18),
+                                  ),
+                                  Text(
+                                    '${year['sections'].length} Sections',
+                                    style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              width: 45,
+                              height: 45,
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  CircularProgressIndicator(
+                                    value: 0.0,
+                                    strokeWidth: 4,
+                                    backgroundColor: Colors.purple.withValues(alpha: 0.1),
+                                    valueColor: const AlwaysStoppedAnimation<Color>(Colors.purple),
+                                  ),
+                                  Text('0%', style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: textColor)),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
                   },
-                  child: Container(
-                    margin: const EdgeInsets.only(bottom: 15),
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
-                      boxShadow: [
-                         BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
-                      ]
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(color: Colors.purple.withValues(alpha: 0.1), shape: BoxShape.circle),
-                          child: const Icon(Icons.menu_book, color: Colors.purple, size: 24),
-                        ),
-                        const SizedBox(width: 20),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                year['year'],
-                                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: textColor, fontSize: 18),
-                              ),
-                              Text(
-                                '${year['sections'].length} Sections',
-                                style: GoogleFonts.poppins(fontSize: 12, color: subTextColor),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 45,
-                          height: 45,
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              CircularProgressIndicator(
-                                value: 0.0,
-                                strokeWidth: 4,
-                                backgroundColor: Colors.purple.withValues(alpha: 0.1),
-                                valueColor: const AlwaysStoppedAnimation<Color>(Colors.purple),
-                              ),
-                              Text('0%', style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold, color: textColor)),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
+                ),
           ),
         ),
       ),

@@ -109,12 +109,18 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
                 : Column(
                     children: [
                       Expanded(
-                        child: ListView(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          children: [
-                            const SizedBox(height: 10),
-                            if (_branchProgress != null)
-                              _buildBranchProgressCard(_branchProgress!, isDark),
+                        child: RefreshIndicator(
+                          onRefresh: () async {
+                            await _fetchCourses();
+                            await _fetchBranchProgress();
+                          },
+                          child: ListView(
+                            physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            children: [
+                              const SizedBox(height: 10),
+                              if (_branchProgress != null)
+                                _buildBranchProgressCard(_branchProgress!, isDark),
                             
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -126,6 +132,7 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
                             ..._courses.map((course) => _buildCourseCard(course, isDark)),
                           ],
                         ),
+                      ),
                       ),
                     ],
                   ),

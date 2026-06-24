@@ -179,12 +179,14 @@ class _FeeManagementDashboardState extends State<FeeManagementDashboard> with Si
     final List<dynamic> deptData = _stats!['departmentCollection'] ?? [];
     final List<dynamic> courseData = _stats!['courseCollection'] ?? [];
 
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(24),
-      physics: const BouncingScrollPhysics(),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+    return RefreshIndicator(
+      onRefresh: _fetchStats,
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
           // Row of Overview Statistics Cards
           LayoutBuilder(
             builder: (context, constraints) {
@@ -426,6 +428,7 @@ class _FeeManagementDashboardState extends State<FeeManagementDashboard> with Si
             isDark,
           ),
         ],
+      ),
       ),
     );
   }

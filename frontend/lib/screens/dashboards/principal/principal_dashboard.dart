@@ -387,13 +387,17 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
 
         // 2. Scrollable Body
         Expanded(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+          child: RefreshIndicator(
+            onRefresh: () async {
+              await _fetchTodayAttendance();
+            },
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                   // 2. Announcements
                   SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'Principal'),
                   const SizedBox(height: 15),
@@ -514,6 +518,7 @@ class _PrincipalDashboardState extends State<PrincipalDashboard> {
                 ],
               ),
             ),
+          ),
           ),
         ),
       ],

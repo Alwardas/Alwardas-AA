@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -168,25 +168,40 @@ class _StudentNotificationsScreenState extends State<StudentNotificationsScreen>
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
         child: SafeArea(
-          child: _loading 
-            ? Center(child: CircularProgressIndicator(color: tint))
-            : (_notifications.isEmpty
-                ? Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.notifications_off_outlined, size: 80, color: subTextColor.withValues(alpha: 0.5)),
-                        const SizedBox(height: 20),
-                        Text("No Notifications", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
-                        const SizedBox(height: 8),
-                        Text("You're all caught up!", style: GoogleFonts.poppins(fontSize: 14, color: subTextColor)),
-                      ],
-                    ),
-                  )
-                : ListView.builder(
-                    padding: const EdgeInsets.all(20),
-                    itemCount: _notifications.length,
-                    itemBuilder: (ctx, index) {
+          child: RefreshIndicator(
+            onRefresh: _fetchNotifications,
+            child: _loading 
+              ? SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.7,
+                    child: Center(child: CircularProgressIndicator(color: tint)),
+                  ),
+                )
+              : _notifications.isEmpty
+                  ? SingleChildScrollView(
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.7,
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.notifications_off_outlined, size: 80, color: subTextColor.withValues(alpha: 0.5)),
+                              const SizedBox(height: 20),
+                              Text("No Notifications", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
+                              const SizedBox(height: 8),
+                              Text("You're all caught up!", style: GoogleFonts.poppins(fontSize: 14, color: subTextColor)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  : ListView.builder(
+                      physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                      padding: const EdgeInsets.all(20),
+                      itemCount: _notifications.length,
+                      itemBuilder: (ctx, index) {
                       final item = _notifications[index];
                       // Backend fields: message, created_at, type, status
                       final id = item['id'].toString();
@@ -252,7 +267,7 @@ class _StudentNotificationsScreenState extends State<StudentNotificationsScreen>
                         ),
                       );
                     },
-                  )
+                  ),
             ),
         ),
       ),

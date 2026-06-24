@@ -79,27 +79,42 @@ class _StudentFeedbackScreenState extends State<StudentFeedbackScreen> {
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
       ),
-      body: _loading
-          ? const Center(child: CircularProgressIndicator())
-          : _feedbacks.isEmpty
-              ? Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.feedback_outlined, size: 80, color: Colors.grey[400]),
-                      const SizedBox(height: 16),
-                      Text(
-                        "No Feedbacks Yet",
-                        style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: subTextColor),
+      body: RefreshIndicator(
+        onRefresh: _fetchFeedbacks,
+        child: _loading
+            ? SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: const Center(child: CircularProgressIndicator()),
+                ),
+              )
+            : _feedbacks.isEmpty
+                ? SingleChildScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.7,
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.feedback_outlined, size: 80, color: Colors.grey[400]),
+                            const SizedBox(height: 16),
+                            Text(
+                              "No Feedbacks Yet",
+                              style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: subTextColor),
+                            ),
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
-                )
-              : ListView.separated(
-                  padding: const EdgeInsets.all(20),
-                  itemCount: _feedbacks.length,
-                  separatorBuilder: (context, index) => const SizedBox(height: 15),
-                  itemBuilder: (context, index) {
+                    ),
+                  )
+                : ListView.separated(
+                    physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                    padding: const EdgeInsets.all(20),
+                    itemCount: _feedbacks.length,
+                    separatorBuilder: (context, index) => const SizedBox(height: 15),
+                    itemBuilder: (context, index) {
                     final item = _feedbacks[index];
                     final dateStr = DateFormat('dd/MM/yyyy • h:mm a').format(DateTime.parse(item['createdAt']).toLocal());
                     final rating = item['rating'] ?? 0;
@@ -242,6 +257,7 @@ class _StudentFeedbackScreenState extends State<StudentFeedbackScreen> {
                     );
                   },
                 ),
+      ),
     );
   }
 }

@@ -344,10 +344,16 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
         child: SafeArea(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+          child: RefreshIndicator(
+            onRefresh: () async {
+              setState(() => _loadingStats = true);
+              await _fetchAggregatedStats();
+            },
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Session Selector
                 Container(
@@ -507,6 +513,7 @@ class _PrincipalAttendanceScreenState extends State<PrincipalAttendanceScreen> {
                 const SizedBox(height: 20),
               ],
             ),
+          ),
           ),
         ),
       ),

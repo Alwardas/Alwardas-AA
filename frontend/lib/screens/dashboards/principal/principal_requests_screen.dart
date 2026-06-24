@@ -145,23 +145,36 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> with 
               controller: _tabController,
               children: [
                  // HOD Approvals Tab
-                 _loading 
-                  ? const Center(child: CircularProgressIndicator())
-                  : _hodRequests.isEmpty 
-                  ? Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.check_circle_outline, size: 80, color: tint.withValues(alpha: 0.5)),
-                          const SizedBox(height: 20),
-                          Text("All Caught Up!", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
-                          Text("No pending HOD requests.", style: TextStyle(color: subTextColor)),
-                        ],
-                      ),
-                    )
-                  : RefreshIndicator(
-                      onRefresh: _fetchRequests,
-                      child: ListView.builder(
+                 RefreshIndicator(
+                   onRefresh: _fetchRequests,
+                   child: _loading 
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: const Center(child: CircularProgressIndicator()),
+                        ),
+                      )
+                    : _hodRequests.isEmpty 
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.check_circle_outline, size: 80, color: tint.withValues(alpha: 0.5)),
+                                const SizedBox(height: 20),
+                                Text("All Caught Up!", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
+                                Text("No pending HOD requests.", style: TextStyle(color: subTextColor)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    : ListView.builder(
+                        physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                         itemCount: _hodRequests.length,
                         itemBuilder: (ctx, index) {
@@ -177,26 +190,39 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> with 
                           );
                         },
                       ),
-                    ),
+                 ),
                 
                  // Promotions Tab
-                 _loading 
-                  ? const Center(child: CircularProgressIndicator())
-                  : _promotionRequests.isEmpty 
-                  ? Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.check_circle_outline, size: 80, color: tint.withValues(alpha: 0.5)),
-                          const SizedBox(height: 20),
-                          Text("No Pending Promotions", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
-                          Text("All promotion requests have been handled.", style: TextStyle(color: subTextColor)),
-                        ],
-                      ),
-                    )
-                  : RefreshIndicator(
-                      onRefresh: _fetchRequests,
-                      child: ListView.builder(
+                 RefreshIndicator(
+                   onRefresh: _fetchRequests,
+                   child: _loading 
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: const Center(child: CircularProgressIndicator()),
+                        ),
+                      )
+                    : _promotionRequests.isEmpty 
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.check_circle_outline, size: 80, color: tint.withValues(alpha: 0.5)),
+                                const SizedBox(height: 20),
+                                Text("No Pending Promotions", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: textColor)),
+                                Text("All promotion requests have been handled.", style: TextStyle(color: subTextColor)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    : ListView.builder(
+                        physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                         itemCount: _promotionRequests.length,
                         itemBuilder: (ctx, index) {
@@ -212,7 +238,7 @@ class _PrincipalRequestsScreenState extends State<PrincipalRequestsScreen> with 
                           );
                         },
                       ),
-                    ),
+                 ),
 
                 // Parent Requests Tab
                 ParentRequestsViewer(userData: widget.userData, requestFrom: 'Parent'),

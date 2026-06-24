@@ -308,11 +308,21 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                 const SizedBox(height: 10),
     
                 Expanded(
-                   child: _isLoading 
-                     ? _buildSkeletonCourseList(isDark)
-                     : displayedCourses.isEmpty 
-                        ? _buildEmptyState(subHeadingColor)
-                        : _buildCourseList(displayedCourses, isDark),
+                   child: RefreshIndicator(
+                     onRefresh: _fetchCourses,
+                     child: _isLoading 
+                       ? _buildSkeletonCourseList(isDark)
+                       : displayedCourses.isEmpty 
+                          ? SingleChildScrollView(
+                              physics: const AlwaysScrollableScrollPhysics(),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height * 0.6,
+                                alignment: Alignment.center,
+                                child: _buildEmptyState(subHeadingColor),
+                              ),
+                            )
+                          : _buildCourseList(displayedCourses, isDark),
+                   ),
                 ),
             ],
           ),
@@ -376,6 +386,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
   Widget _buildCourseList(List<dynamic> courses, bool isDark) {
     return ListView.builder(
+      physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       itemCount: courses.length,
       itemBuilder: (context, index) {

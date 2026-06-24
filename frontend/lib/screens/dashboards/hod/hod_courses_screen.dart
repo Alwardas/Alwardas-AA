@@ -169,18 +169,34 @@ class _HodCoursesScreenState extends State<HodCoursesScreen> {
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
         child: SafeArea(
-          child: _loading
-              ? const Center(child: CircularProgressIndicator())
-              : _mySubjects.isEmpty
-                  ? _buildEmptyState(subTextColor, tint)
-                  : ListView.builder(
-                      padding: const EdgeInsets.all(20),
-                      itemCount: _mySubjects.length,
-                      itemBuilder: (ctx, index) {
-                        final item = _mySubjects[index];
-                        return _buildCourseCard(item, cardColor, textColor, subTextColor, tint, iconBg);
-                      },
+          child: RefreshIndicator(
+            onRefresh: _fetchMySubjects,
+            child: _loading
+                ? SingleChildScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.7,
+                      child: const Center(child: CircularProgressIndicator()),
                     ),
+                  )
+                : _mySubjects.isEmpty
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.7,
+                          child: _buildEmptyState(subTextColor, tint),
+                        ),
+                      )
+                    : ListView.builder(
+                        physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                        padding: const EdgeInsets.all(20),
+                        itemCount: _mySubjects.length,
+                        itemBuilder: (ctx, index) {
+                          final item = _mySubjects[index];
+                          return _buildCourseCard(item, cardColor, textColor, subTextColor, tint, iconBg);
+                        },
+                      ),
+          ),
         ),
       ),
     );

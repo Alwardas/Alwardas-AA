@@ -569,13 +569,18 @@ class _StudentDashboardState extends State<StudentDashboard> {
 
         // 2. Scrollable Body
         Expanded(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+          child: RefreshIndicator(
+            onRefresh: () async {
+              await _fetchTodayAttendance();
+              await _setupClassReminders();
+            },
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                   
                   // Announcements
                   SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'Student'),
@@ -771,6 +776,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
                 ],
               ),
             ),
+          ),
           ),
         ),
       ],

@@ -149,17 +149,48 @@ class _ParentRequestsViewerState extends State<ParentRequestsViewer> {
     final textColor = isDark ? Colors.white : Colors.black;
     final cardColor = isDark ? const Color(0xFF1E293B) : Colors.white;
 
-    if (_isLoading) return const Center(child: CircularProgressIndicator());
-    if (_error != null) return Center(child: Text(_error!, style: GoogleFonts.poppins(color: Colors.red)));
+    if (_isLoading) {
+      return RefreshIndicator(
+        onRefresh: _fetchRequests,
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.6,
+            child: const Center(child: CircularProgressIndicator()),
+          ),
+        ),
+      );
+    }
+    if (_error != null) {
+      return RefreshIndicator(
+        onRefresh: _fetchRequests,
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.6,
+            child: Center(child: Text(_error!, style: GoogleFonts.poppins(color: Colors.red))),
+          ),
+        ),
+      );
+    }
     if (_requests.isEmpty) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.inbox_outlined, size: 64, color: Colors.grey.withOpacity(0.5)),
-            const SizedBox(height: 16),
-            Text("No ${widget.requestFrom} requests", style: GoogleFonts.poppins(color: Colors.grey, fontSize: 16)),
-          ],
+      return RefreshIndicator(
+        onRefresh: _fetchRequests,
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.6,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.inbox_outlined, size: 64, color: Colors.grey.withOpacity(0.5)),
+                  const SizedBox(height: 16),
+                  Text("No ${widget.requestFrom} requests", style: GoogleFonts.poppins(color: Colors.grey, fontSize: 16)),
+                ],
+              ),
+            ),
+          ),
         ),
       );
     }
@@ -167,6 +198,7 @@ class _ParentRequestsViewerState extends State<ParentRequestsViewer> {
     return RefreshIndicator(
       onRefresh: _fetchRequests,
       child: ListView.builder(
+        physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
         padding: const EdgeInsets.all(16),
         itemCount: _requests.length,
         itemBuilder: (context, index) {

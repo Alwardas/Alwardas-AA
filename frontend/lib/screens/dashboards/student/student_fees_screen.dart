@@ -198,15 +198,33 @@ class _StudentFeesScreenState extends State<StudentFeesScreen> {
     final isDark = theme.brightness == Brightness.dark;
 
     if (_isLoading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+      return Scaffold(
+        body: RefreshIndicator(
+          onRefresh: _fetchFeeSummary,
+          child: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: const Center(child: CircularProgressIndicator()),
+            ),
+          ),
+        ),
       );
     }
 
     if (_ledger == null) {
       return Scaffold(
         appBar: AppBar(title: const Text("Fees Portal")),
-        body: const Center(child: Text("Fee details not configured. Contact accounts department.")),
+        body: RefreshIndicator(
+          onRefresh: _fetchFeeSummary,
+          child: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.8,
+              child: const Center(child: Text("Fee details not configured. Contact accounts department.")),
+            ),
+          ),
+        ),
       );
     }
 
@@ -227,11 +245,13 @@ class _StudentFeesScreenState extends State<StudentFeesScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
-        physics: const BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      body: RefreshIndicator(
+        onRefresh: _fetchFeeSummary,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20),
+          physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Summary Card
             Card(
@@ -377,6 +397,7 @@ class _StudentFeesScreenState extends State<StudentFeesScreen> {
             const SizedBox(height: 60),
           ],
         ),
+      ),
       ),
     );
   }

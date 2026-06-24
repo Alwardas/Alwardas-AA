@@ -70,23 +70,44 @@ class _StudentMarksScreenState extends State<StudentMarksScreen> {
         elevation: 0,
         iconTheme: IconThemeData(color: textColor),
       ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : _error != null
-              ? Center(child: Text(_error!, style: GoogleFonts.poppins(color: Colors.red)))
-              : _semesters.isEmpty
-                  ? Center(child: Text("No academic records found.", style: GoogleFonts.poppins(color: textColor)))
-                  : ListView.builder(
-                      padding: const EdgeInsets.all(20),
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: _semesters.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 20),
-                          child: _buildSemesterCard(context, _semesters[index]),
-                        );
-                      },
+      body: RefreshIndicator(
+        onRefresh: _fetchAcademics,
+        child: _isLoading
+            ? SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: const Center(child: CircularProgressIndicator()),
+                ),
+              )
+            : _error != null
+                ? SingleChildScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.7,
+                      child: Center(child: Text(_error!, style: GoogleFonts.poppins(color: Colors.red))),
                     ),
+                  )
+                : _semesters.isEmpty
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.7,
+                          child: Center(child: Text("No academic records found.", style: GoogleFonts.poppins(color: textColor))),
+                        ),
+                      )
+                    : ListView.builder(
+                        padding: const EdgeInsets.all(20),
+                        physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                        itemCount: _semesters.length,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 20),
+                            child: _buildSemesterCard(context, _semesters[index]),
+                          );
+                        },
+                      ),
+      ),
     );
   }
 

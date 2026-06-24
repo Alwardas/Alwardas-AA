@@ -285,18 +285,34 @@ class _HodNotificationsScreenState extends State<HodNotificationsScreen> {
                     ),
                   ),
                 Expanded(
-                  child: _loading
-                    ? const Center(child: CircularProgressIndicator())
-                    : _notifications.isEmpty
-                      ? _buildEmptyState(subTextColor)
-                      : ListView.builder(
-                          padding: const EdgeInsets.all(20),
-                          itemCount: _notifications.length,
-                          itemBuilder: (ctx, index) {
-                            final item = _notifications[index];
-                            return _buildNotificationCard(item, cardColor, textColor, subTextColor, iconBg, tint);
-                          },
-                        ),
+                  child: RefreshIndicator(
+                    onRefresh: _fetchNotifications,
+                    child: _loading
+                      ? SingleChildScrollView(
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          child: SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.7,
+                            child: const Center(child: CircularProgressIndicator()),
+                          ),
+                        )
+                      : _notifications.isEmpty
+                        ? SingleChildScrollView(
+                            physics: const AlwaysScrollableScrollPhysics(),
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.7,
+                              child: _buildEmptyState(subTextColor),
+                            ),
+                          )
+                        : ListView.builder(
+                            physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                            padding: const EdgeInsets.all(20),
+                            itemCount: _notifications.length,
+                            itemBuilder: (ctx, index) {
+                              final item = _notifications[index];
+                              return _buildNotificationCard(item, cardColor, textColor, subTextColor, iconBg, tint);
+                            },
+                          ),
+                  ),
                 ),
               ],
             ),

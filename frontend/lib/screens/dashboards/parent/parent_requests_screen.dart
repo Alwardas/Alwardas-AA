@@ -351,15 +351,37 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
         controller: _tabController,
         children: [
           // History Tab
-          _isLoading 
-            ? const Center(child: CircularProgressIndicator())
-            : _error != null
-              ? Center(child: Text(_error!, style: GoogleFonts.poppins(color: Colors.red)))
-              : _requests.isEmpty
-                ? Center(child: Text("No requests found", style: GoogleFonts.poppins(color: Colors.grey)))
-                : RefreshIndicator(
-                    onRefresh: _fetchRequests,
-                    child: ListView.builder(
+          RefreshIndicator(
+            onRefresh: _fetchRequests,
+            child: _isLoading 
+              ? SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    alignment: Alignment.center,
+                    child: const CircularProgressIndicator(),
+                  ),
+                )
+              : _error != null
+                ? SingleChildScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.6,
+                      alignment: Alignment.center,
+                      child: Text(_error!, style: GoogleFonts.poppins(color: Colors.red)),
+                    ),
+                  )
+                : _requests.isEmpty
+                  ? SingleChildScrollView(
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.6,
+                        alignment: Alignment.center,
+                        child: Text("No requests found", style: GoogleFonts.poppins(color: Colors.grey)),
+                      ),
+                    )
+                  : ListView.builder(
+                      physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
                       padding: const EdgeInsets.all(20),
                       itemCount: _requests.length,
                       itemBuilder: (context, index) {
@@ -423,6 +445,7 @@ class _ParentRequestsScreenState extends State<ParentRequestsScreen> with Single
                       },
                     ),
                   ),
+
 
           // New Request Tab
           SingleChildScrollView(

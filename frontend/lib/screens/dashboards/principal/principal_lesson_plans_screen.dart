@@ -102,12 +102,13 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
         iconTheme: IconThemeData(color: textColor),
         centerTitle: true,
       ),
-      body: isLoading 
-        ? _buildSkeletonLoader(isDark)
-        : RefreshIndicator(
-            onRefresh: _fetchBranches,
-            color: ThemeColors.accentBlue,
-            child: ListView(
+      body: RefreshIndicator(
+        onRefresh: _fetchBranches,
+        color: ThemeColors.accentBlue,
+        child: isLoading 
+          ? _buildSkeletonLoader(isDark)
+          : ListView(
+              physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
               children: [
                 _buildHeader(textColor, subTextColor),
@@ -116,12 +117,13 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
                 const SizedBox(height: 80),
               ],
             ),
-          ),
+      ),
     );
   }
 
   Widget _buildSkeletonLoader(bool isDark) {
     return ListView.builder(
+      physics: const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.all(24),
       itemCount: 4,
       itemBuilder: (context, index) {

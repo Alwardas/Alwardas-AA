@@ -144,7 +144,16 @@ class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> w
             ),
             SafeArea(
               child: _loading
-              ? const Center(child: CircularProgressIndicator())
+              ? RefreshIndicator(
+                  onRefresh: _fetchRequests,
+                  child: SingleChildScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.7,
+                      child: const Center(child: CircularProgressIndicator()),
+                    ),
+                  ),
+                )
               : TabBarView(
                   controller: _tabController,
                   children: [
@@ -160,42 +169,48 @@ class _CoordinatorRequestsScreenState extends State<CoordinatorRequestsScreen> w
   }
 
   Widget _buildRequestsList(List<dynamic> list, Color cardColor, Color textColor, Color subTextColor, Color tint, Color iconBg) {
-    if (list.isEmpty) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-               padding: const EdgeInsets.all(30),
-               decoration: BoxDecoration(color: iconBg, shape: BoxShape.circle),
-               child: Icon(Icons.check_circle_outline, size: 60, color: subTextColor)
-            ),
-            const SizedBox(height: 20),
-            Text("All Caught Up!", style: GoogleFonts.poppins(color: textColor, fontSize: 18, fontWeight: FontWeight.w600)),
-            const SizedBox(height: 8),
-            Text("No pending requests found here.", style: GoogleFonts.poppins(color: subTextColor, fontSize: 14)),
-          ],
-        ),
-      );
-    }
     return RefreshIndicator(
       onRefresh: _fetchRequests,
-      child: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        itemCount: list.length,
-        itemBuilder: (ctx, index) {
-          final r = list[index];
-          return _PrincipalRequestCard(
-            r: r,
-            cardColor: cardColor,
-            textColor: textColor,
-            subTextColor: subTextColor,
-            tint: tint,
-            iconBg: iconBg,
-            onAction: _handleAction,
-          );
-        },
-      ),
+      child: list.isEmpty
+          ? SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.7,
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                         padding: const EdgeInsets.all(30),
+                         decoration: BoxDecoration(color: iconBg, shape: BoxShape.circle),
+                         child: Icon(Icons.check_circle_outline, size: 60, color: subTextColor)
+                      ),
+                      const SizedBox(height: 20),
+                      Text("All Caught Up!", style: GoogleFonts.poppins(color: textColor, fontSize: 18, fontWeight: FontWeight.w600)),
+                      const SizedBox(height: 8),
+                      Text("No pending requests found here.", style: GoogleFonts.poppins(color: subTextColor, fontSize: 14)),
+                    ],
+                  ),
+                ),
+              ),
+            )
+          : ListView.builder(
+              physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              itemCount: list.length,
+              itemBuilder: (ctx, index) {
+                final r = list[index];
+                return _PrincipalRequestCard(
+                  r: r,
+                  cardColor: cardColor,
+                  textColor: textColor,
+                  subTextColor: subTextColor,
+                  tint: tint,
+                  iconBg: iconBg,
+                  onAction: _handleAction,
+                );
+              },
+            ),
     );
   }
 }

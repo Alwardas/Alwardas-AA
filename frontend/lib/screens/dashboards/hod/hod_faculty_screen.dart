@@ -112,130 +112,152 @@ class _HodFacultyScreenState extends State<HodFacultyScreen> {
                 ),
               ),
               Expanded(
-                child: _isLoading 
-                  ? Center(child: CircularProgressIndicator(color: tint))
-                  : _error != null 
-                    ? Center(child: Text(_error!, style: TextStyle(color: Colors.red)))
-                    : filteredList.isEmpty
-                      ? Center(child: Text("No faculty found", style: TextStyle(color: subTextColor)))
-                      : ListView.builder(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          itemCount: filteredList.length,
-                          itemBuilder: (ctx, index) {
-                            final faculty = filteredList[index];
-                            // Faculty Detail Navigation Logic
-
-                            bool isHod = faculty.role == 'HOD';
-                            // Gold colors for HOD
-                            final hodBgColor = const Color(0xFFFFF8E1); // Light amber
-                            final hodBorderColor = const Color(0xFFFFC107); // Amber
-                            
-                            return GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context, 
-                                  MaterialPageRoute(builder: (_) => HodFacultyDetailScreen(faculty: faculty, branch: widget.branch))
-                                );
-                              },
-                              child: Container(
-                                margin: const EdgeInsets.only(bottom: 16),
-                                padding: EdgeInsets.all(isHod ? 3 : 16),
-                                decoration: BoxDecoration(
-                                  color: isHod ? hodBgColor : cardColor,
-                                  gradient: isHod ? const LinearGradient(colors: [Color(0xFFFFF8E1), Color(0xFFFFECB3)]) : null,
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: isHod ? Border.all(color: hodBorderColor, width: 2) : Border.all(color: iconBg),
-                                  boxShadow: [
-                                    if (isHod) 
-                                       BoxShadow(color: Colors.amber.withValues(alpha: 0.3), blurRadius: 12, offset: const Offset(0, 4))
-                                    else
-                                       BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
-                                  ],
-                                ),
+                child: RefreshIndicator(
+                  onRefresh: _fetchFaculty,
+                  child: _isLoading 
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: Center(child: CircularProgressIndicator(color: tint)),
+                        ),
+                      )
+                    : _error != null 
+                      ? SingleChildScrollView(
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          child: SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.6,
+                            child: Center(child: Text(_error!, style: const TextStyle(color: Colors.red))),
+                          ),
+                        )
+                      : filteredList.isEmpty
+                        ? SingleChildScrollView(
+                            physics: const AlwaysScrollableScrollPhysics(),
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.6,
+                              child: Center(child: Text("No faculty found", style: TextStyle(color: subTextColor))),
+                            ),
+                          )
+                        : ListView.builder(
+                            physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            itemCount: filteredList.length,
+                            itemBuilder: (ctx, index) {
+                              final faculty = filteredList[index];
+                              // Faculty Detail Navigation Logic
+  
+                              bool isHod = faculty.role == 'HOD';
+                              // Gold colors for HOD
+                              final hodBgColor = const Color(0xFFFFF8E1); // Light amber
+                              final hodBorderColor = const Color(0xFFFFC107); // Amber
+                              
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context, 
+                                    MaterialPageRoute(builder: (_) => HodFacultyDetailScreen(faculty: faculty, branch: widget.branch))
+                                  );
+                                },
                                 child: Container(
-                                  padding: isHod ? const EdgeInsets.all(16) : EdgeInsets.zero,
-                                  child: Row(
-                                    children: [
-                                      Stack(
-                                        children: [
-                                          CircleAvatar(
-                                            radius: 30,
-                                            backgroundColor: isHod ? Colors.white.withValues(alpha: 0.6) : tint.withValues(alpha: 0.1),
-                                            child: Text(
-                                              faculty.name.isNotEmpty ? faculty.name[0].toUpperCase() : '?', 
-                                              style: TextStyle(
-                                                color: isHod ? Colors.amber[900] : tint, 
-                                                fontWeight: FontWeight.bold, 
-                                                fontSize: 24
-                                              )
-                                            ),
-                                          ),
-                                          if (isHod)
-                                            Positioned(
-                                              right: 0,
-                                              bottom: 0,
-                                              child: Container(
-                                                padding: const EdgeInsets.all(4),
-                                                decoration: const BoxDecoration(
-                                                  color: Colors.amber, 
-                                                  shape: BoxShape.circle,
-                                                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 2)]
-                                                ),
-                                                child: const Icon(Icons.star, color: Colors.white, size: 10),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                      const SizedBox(width: 16),
-                                      Expanded(
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Expanded(child: Text(faculty.name, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: isHod ? Colors.amber[900] : textColor))),
-                                                if (isHod)
-                                                  Container(
-                                                    margin: const EdgeInsets.only(left: 8),
-                                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                                                    decoration: BoxDecoration(
-                                                      color: Colors.amber[800],
-                                                      borderRadius: BorderRadius.circular(10)
-                                                    ),
-                                                    child: const Text("HOD", style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
-                                                  )
-                                              ],
-                                            ),
-                                            Text(
-                                              isHod ? "Head of Department" : "ID-${faculty.loginId}", 
-                                              style: GoogleFonts.poppins(
-                                                fontSize: 14, 
-                                                color: isHod ? Colors.amber[800] : subTextColor,
-                                                fontWeight: isHod ? FontWeight.w600 : FontWeight.normal
-                                              )
-                                            ),
-                                            const SizedBox(height: 8),
-                                            Row(
-                                              children: [
-                                                Icon(Icons.email_outlined, size: 14, color: isHod ? Colors.amber[900] : tint),
-                                                const SizedBox(width: 4),
-                                                Expanded(child: Text(faculty.email, style: TextStyle(fontSize: 12, color: isHod ? Colors.brown[400] : subTextColor), overflow: TextOverflow.ellipsis)),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      IconButton(
-                                        icon: Icon(Icons.info_outline, color: isHod ? Colors.amber[900] : tint),
-                                        onPressed: () => _showFacultyDetails(faculty),
-                                      ),
+                                  margin: const EdgeInsets.only(bottom: 16),
+                                  padding: EdgeInsets.all(isHod ? 3 : 16),
+                                  decoration: BoxDecoration(
+                                    color: isHod ? hodBgColor : cardColor,
+                                    gradient: isHod ? const LinearGradient(colors: [Color(0xFFFFF8E1), Color(0xFFFFECB3)]) : null,
+                                    borderRadius: BorderRadius.circular(20),
+                                    border: isHod ? Border.all(color: hodBorderColor, width: 2) : Border.all(color: iconBg),
+                                    boxShadow: [
+                                      if (isHod) 
+                                         BoxShadow(color: Colors.amber.withValues(alpha: 0.3), blurRadius: 12, offset: const Offset(0, 4))
+                                      else
+                                         BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 5))
                                     ],
                                   ),
+                                  child: Container(
+                                    padding: isHod ? const EdgeInsets.all(16) : EdgeInsets.zero,
+                                    child: Row(
+                                      children: [
+                                        Stack(
+                                          children: [
+                                            CircleAvatar(
+                                              radius: 30,
+                                              backgroundColor: isHod ? Colors.white.withValues(alpha: 0.6) : tint.withValues(alpha: 0.1),
+                                              child: Text(
+                                                faculty.name.isNotEmpty ? faculty.name[0].toUpperCase() : '?', 
+                                                style: TextStyle(
+                                                  color: isHod ? Colors.amber[900] : tint, 
+                                                  fontWeight: FontWeight.bold, 
+                                                  fontSize: 24
+                                                )
+                                              ),
+                                            ),
+                                            if (isHod)
+                                              Positioned(
+                                                right: 0,
+                                                bottom: 0,
+                                                child: Container(
+                                                  padding: const EdgeInsets.all(4),
+                                                  decoration: const BoxDecoration(
+                                                    color: Colors.amber, 
+                                                    shape: BoxShape.circle,
+                                                    boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 2)]
+                                                  ),
+                                                  child: const Icon(Icons.star, color: Colors.white, size: 10),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                        const SizedBox(width: 16),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Expanded(child: Text(faculty.name, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: isHod ? Colors.amber[900] : textColor))),
+                                                  if (isHod)
+                                                    Container(
+                                                      margin: const EdgeInsets.only(left: 8),
+                                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.amber[800],
+                                                        borderRadius: BorderRadius.circular(10)
+                                                      ),
+                                                      child: const Text("HOD", style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
+                                                    )
+                                                ],
+                                              ),
+                                              Text(
+                                                isHod ? "Head of Department" : "ID-${faculty.loginId}", 
+                                                style: GoogleFonts.poppins(
+                                                  fontSize: 14, 
+                                                  color: isHod ? Colors.amber[800] : subTextColor,
+                                                  fontWeight: isHod ? FontWeight.w600 : FontWeight.normal
+                                                )
+                                              ),
+                                              const SizedBox(height: 8),
+                                              Row(
+                                                children: [
+                                                  Icon(Icons.email_outlined, size: 14, color: isHod ? Colors.amber[900] : tint),
+                                                  const SizedBox(width: 4),
+                                                  Expanded(child: Text(faculty.email, style: TextStyle(fontSize: 12, color: isHod ? Colors.brown[400] : subTextColor), overflow: TextOverflow.ellipsis)),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        IconButton(
+                                          icon: Icon(Icons.info_outline, color: isHod ? Colors.amber[900] : tint),
+                                          onPressed: () => _showFacultyDetails(faculty),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            );
-                          },
-                        ),
+                              );
+                            },
+                          ),
+                ),
               ),
             ],
           ),

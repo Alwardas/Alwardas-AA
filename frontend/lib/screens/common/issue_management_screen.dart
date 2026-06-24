@@ -146,11 +146,28 @@ class _IssueManagementScreenState extends State<IssueManagementScreen> {
               Expanded(
                 child: _isLoading 
                   ? const Center(child: CircularProgressIndicator())
-                  : _error != null
-                    ? Center(child: Text(_error!, style: GoogleFonts.poppins(color: Colors.red)))
-                    : _issues.isEmpty
-                      ? _buildEmptyState(subTextColor)
-                      : _buildIssueList(cardColor, textColor, subTextColor),
+                  : RefreshIndicator(
+                      onRefresh: _fetchIssues,
+                      child: _error != null
+                        ? SingleChildScrollView(
+                            physics: const AlwaysScrollableScrollPhysics(),
+                            child: Container(
+                              height: MediaQuery.of(context).size.height * 0.6,
+                              alignment: Alignment.center,
+                              child: Text(_error!, style: GoogleFonts.poppins(color: Colors.red)),
+                            ),
+                          )
+                        : _issues.isEmpty
+                          ? SingleChildScrollView(
+                              physics: const AlwaysScrollableScrollPhysics(),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height * 0.6,
+                                alignment: Alignment.center,
+                                child: _buildEmptyState(subTextColor),
+                              ),
+                            )
+                          : _buildIssueList(cardColor, textColor, subTextColor),
+                    ),
               ),
             ],
           ),
@@ -205,6 +222,7 @@ class _IssueManagementScreenState extends State<IssueManagementScreen> {
 
   Widget _buildIssueList(Color cardColor, Color textColor, Color subTextColor) {
     return ListView.builder(
+      physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 80),
       itemCount: _issues.length,
       itemBuilder: (context, index) {

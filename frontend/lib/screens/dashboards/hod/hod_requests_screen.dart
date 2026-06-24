@@ -276,64 +276,96 @@ class _HodRequestsScreenState extends State<HodRequestsScreen> with SingleTicker
               controller: _tabController,
               children: [
                 // Tab 1: Faculty Signups
-                _loadingSignups
-                  ? const Center(child: CircularProgressIndicator())
-                  : _facultySignups.isEmpty
-                  ? Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.person_add_disabled_outlined, size: 64, color: subTextColor),
-                          const SizedBox(height: 20),
-                          Text("No pending signups", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
-                        ],
+                RefreshIndicator(
+                  onRefresh: _fetchSignups,
+                  child: _loadingSignups
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: const Center(child: CircularProgressIndicator()),
+                        ),
+                      )
+                    : _facultySignups.isEmpty
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.person_add_disabled_outlined, size: 64, color: subTextColor),
+                                const SizedBox(height: 20),
+                                Text("No pending signups", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    : ListView.builder(
+                        physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        itemCount: _facultySignups.length,
+                        itemBuilder: (ctx, index) {
+                          final u = _facultySignups[index];
+                          return _SignupCard(
+                            u: u,
+                            cardColor: cardColor,
+                            textColor: textColor,
+                            subTextColor: subTextColor,
+                            tint: tint,
+                            onAction: _handleSignupAction,
+                          );
+                        },
                       ),
-                    )
-                  : ListView.builder(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                      itemCount: _facultySignups.length,
-                      itemBuilder: (ctx, index) {
-                        final u = _facultySignups[index];
-                        return _SignupCard(
-                          u: u,
-                          cardColor: cardColor,
-                          textColor: textColor,
-                          subTextColor: subTextColor,
-                          tint: tint,
-                          onAction: _handleSignupAction,
-                        );
-                      },
-                    ),
+                ),
 
                 // Tab 2: Faculty Subject Requests
-                _loading
-                  ? const Center(child: CircularProgressIndicator())
-                  : _facultyRequests.isEmpty
-                  ? Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.assignment_turned_in_outlined, size: 64, color: subTextColor),
-                          const SizedBox(height: 20),
-                          Text("No pending requests", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
-                        ],
+                RefreshIndicator(
+                  onRefresh: _fetchRequests,
+                  child: _loading
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: const Center(child: CircularProgressIndicator()),
+                        ),
+                      )
+                    : _facultyRequests.isEmpty
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.assignment_turned_in_outlined, size: 64, color: subTextColor),
+                                const SizedBox(height: 20),
+                                Text("No pending requests", style: GoogleFonts.poppins(color: subTextColor, fontSize: 16)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    : ListView.builder(
+                        physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        itemCount: _facultyRequests.length,
+                        itemBuilder: (ctx, index) {
+                          final r = _facultyRequests[index];
+                          return _RequestCard(
+                            r: r,
+                            cardColor: cardColor,
+                            textColor: textColor,
+                            subTextColor: subTextColor,
+                            tint: tint,
+                            onAction: _handleAction,
+                          );
+                        },
                       ),
-                    )
-                  : ListView.builder(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                      itemCount: _facultyRequests.length,
-                      itemBuilder: (ctx, index) {
-                        final r = _facultyRequests[index];
-                        return _RequestCard(
-                          r: r,
-                          cardColor: cardColor,
-                          textColor: textColor,
-                          subTextColor: subTextColor,
-                          tint: tint,
-                          onAction: _handleAction,
-                        );
-                      },
-                    ),
+                ),
                 
                 // Tab 3: Parent Requests
                 ParentRequestsViewer(userData: widget.userData, requestFrom: 'Parent'),

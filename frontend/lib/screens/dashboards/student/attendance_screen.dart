@@ -408,11 +408,14 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
         child: Column(
           children: [
             Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
+              child: RefreshIndicator(
+                onRefresh: _fetchAttendance,
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
                     // Month/Year Selectors
                     _buildSelectors(textColor, theme.cardColor),
                     const SizedBox(height: 20),
@@ -479,6 +482,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                     const SizedBox(height: 40), 
                   ],
                 ),
+              ),
               ),
             ),
           ],

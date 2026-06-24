@@ -142,12 +142,17 @@ class _InchargeDashboardState extends State<InchargeDashboard> {
         
         // Body
         Expanded(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+          child: RefreshIndicator(
+            onRefresh: () async {
+              setState(() {});
+              await Future.delayed(const Duration(milliseconds: 500));
+            },
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                 SharedDashboardAnnouncements(userRole: 'Incharge'),
                 const SizedBox(height: 24),
                 
@@ -197,6 +202,7 @@ class _InchargeDashboardState extends State<InchargeDashboard> {
                 const SizedBox(height: 100),
               ],
             ),
+          ),
           ),
         ),
       ],

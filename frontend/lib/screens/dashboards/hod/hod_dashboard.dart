@@ -30,6 +30,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/services/notification_service.dart';
 import '../../common/erp_connect_screen.dart';
+import '../../../core/api_config.dart';
 
 class HodDashboard extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -50,6 +51,8 @@ class _HodDashboardState extends State<HodDashboard> {
   int _absentCount = 0;
   List<dynamic> _absentStudents = [];
   bool _isLoadingAttendance = false;
+  int _branchProgressPercentage = 0;
+  bool _isLoadingBranchProgress = true;
 
 
   @override
@@ -58,6 +61,7 @@ class _HodDashboardState extends State<HodDashboard> {
     _startNotificationPolling();
     _setupClassReminders();
     _fetchTodayAttendance();
+    _fetchBranchProgress();
   }
 
   @override
@@ -274,6 +278,28 @@ class _HodDashboardState extends State<HodDashboard> {
     }
   }
 
+  Future<void> _fetchBranchProgress() async {
+    if (!mounted) return;
+    setState(() => _isLoadingBranchProgress = true);
+    try {
+      final String branch = widget.userData['branch'] ?? 'Computer Engineering';
+      final response = await ApiConfig.get('${ApiConstants.baseUrl}/api/hod/branch-progress?branch=${Uri.encodeComponent(branch)}&courseId=C-23');
+      if (response.success && response.data != null) {
+        if (mounted) {
+          setState(() {
+            _branchProgressPercentage = response.data['overallPercentage'] ?? 0;
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching branch progress on dashboard: $e");
+    } finally {
+      if (mounted) {
+        setState(() => _isLoadingBranchProgress = false);
+      }
+    }
+  }
+
 
   void _showAbsentList() {
     if (_absentStudents.isEmpty && _absentCount == 0) {
@@ -445,11 +471,16 @@ class _HodDashboardState extends State<HodDashboard> {
 
         // 2. Scrollable Body
         Expanded(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
+          child: RefreshIndicator(
+            onRefresh: () async {
+              await _fetchTodayAttendance();
+              await _fetchBranchProgress();
+            },
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // 2. Announcements
@@ -578,6 +609,7 @@ class _HodDashboardState extends State<HodDashboard> {
               ),
             ),
           ),
+          ),
         ),
       ],
     );
@@ -678,24 +710,28 @@ class _HodDashboardState extends State<HodDashboard> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Over All Branch Progress',
-                style: GoogleFonts.poppins(
-                  color: textColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: Text(
+                  'Over All Branch Progress',
+                  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.poppins(
+                    color: textColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
+              const SizedBox(width: 8),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6B48FF).withOpacity(0.1),
+                  color: (_branchProgressPercentage >= 75 ? const Color(0xFF6B48FF) : Colors.orange).withOpacity(0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  'On Track',
+                  _branchProgressPercentage >= 75 ? 'On Track' : 'In Progress',
                   style: GoogleFonts.poppins(
-                    color: const Color(0xFF6B48FF),
+                    color: _branchProgressPercentage >= 75 ? const Color(0xFF6B48FF) : Colors.orange,
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                   ),
@@ -721,7 +757,7 @@ class _HodDashboardState extends State<HodDashboard> {
                           ),
                         ),
                         Text(
-                          '74%',
+                          '$_branchProgressPercentage%',
                           style: GoogleFonts.poppins(
                             color: textColor,
                             fontSize: 14,
@@ -741,21 +777,23 @@ class _HodDashboardState extends State<HodDashboard> {
                             borderRadius: BorderRadius.circular(4),
                           ),
                         ),
-                        Container(
-                          height: 8,
-                          width: MediaQuery.of(context).size.width * 0.5, // Approx 74% relative to container width
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFF6B48FF), Color(0xFF1EC9F8)],
-                            ),
-                            borderRadius: BorderRadius.circular(4),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0xFF6B48FF).withOpacity(0.3),
-                                blurRadius: 8,
-                                offset: const Offset(0, 4),
+                        FractionallySizedBox(
+                          widthFactor: (_branchProgressPercentage / 100.0).clamp(0.0, 1.0),
+                          child: Container(
+                            height: 8,
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [Color(0xFF6B48FF), Color(0xFF1EC9F8)],
                               ),
-                            ],
+                              borderRadius: BorderRadius.circular(4),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(0xFF6B48FF).withOpacity(0.3),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 4),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],

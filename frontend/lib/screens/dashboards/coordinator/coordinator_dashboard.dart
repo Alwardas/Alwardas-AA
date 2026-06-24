@@ -387,13 +387,17 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
 
         // 2. Scrollable Body
         Expanded(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+          child: RefreshIndicator(
+            onRefresh: () async {
+              await _fetchTodayAttendance();
+            },
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                   
                   // Announcements Header
                   SharedDashboardAnnouncements(userRole: widget.userData['role'] ?? 'Coordinator'),
@@ -498,6 +502,7 @@ class _CoordinatorDashboardState extends State<CoordinatorDashboard> {
                 ],
               ),
             ),
+          ),
           ),
         ),
       ],

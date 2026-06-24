@@ -184,29 +184,53 @@ class _PrincipalFacultyScreenState extends State<PrincipalFacultyScreen> {
               ),
               // Faculty List
               Expanded(
-                child: _isLoading 
-                  ? Center(child: CircularProgressIndicator(color: tint))
-                  : _error != null
-                    ? Center(child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Text(_error!, style: const TextStyle(color: Colors.red), textAlign: TextAlign.center),
-                      ))
-                    : filteredFaculty.isEmpty
-                      ? Center(child: Text("No faculty found", style: TextStyle(color: subTextColor)))
-                      : ListView.builder(
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                          itemCount: filteredFaculty.length,
-                          itemBuilder: (ctx, index) {
-                            final f = filteredFaculty[index];
-                            return GestureDetector(
-                              onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (_) => PrincipalFacultyDetailScreen(faculty: f))
-                              ),
-                              child: _buildFacultyItem(f, cardColor, textColor, subTextColor, tint, iconBg),
-                            );
-                          },
+                child: RefreshIndicator(
+                  onRefresh: _fetchFaculty,
+                  child: _isLoading 
+                    ? SingleChildScrollView(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.6,
+                          child: Center(child: CircularProgressIndicator(color: tint)),
                         ),
+                      )
+                    : _error != null
+                      ? SingleChildScrollView(
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          child: SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.6,
+                            child: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Text(_error!, style: const TextStyle(color: Colors.red), textAlign: TextAlign.center),
+                              ),
+                            ),
+                          ),
+                        )
+                      : filteredFaculty.isEmpty
+                        ? SingleChildScrollView(
+                            physics: const AlwaysScrollableScrollPhysics(),
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.6,
+                              child: Center(child: Text("No faculty found", style: TextStyle(color: subTextColor))),
+                            ),
+                          )
+                        : ListView.builder(
+                            physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            itemCount: filteredFaculty.length,
+                            itemBuilder: (ctx, index) {
+                              final f = filteredFaculty[index];
+                              return GestureDetector(
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (_) => PrincipalFacultyDetailScreen(faculty: f))
+                                ),
+                                child: _buildFacultyItem(f, cardColor, textColor, subTextColor, tint, iconBg),
+                              );
+                            },
+                          ),
+                ),
               ),
             ],
           ),

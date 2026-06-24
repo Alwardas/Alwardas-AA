@@ -70,6 +70,11 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
     });
   }
 
+  Future<void> _handleRefresh() async {
+    await _fetchBranches();
+    await _fetchUserData();
+  }
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -95,8 +100,11 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
         height: double.infinity,
         decoration: BoxDecoration(gradient: LinearGradient(colors: bgColors, begin: Alignment.topLeft, end: Alignment.bottomRight)),
         child: SafeArea(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(20),
+          child: RefreshIndicator(
+            onRefresh: _handleRefresh,
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+              padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -220,6 +228,7 @@ class _PrincipalTimetablesScreenState extends State<PrincipalTimetablesScreen> {
                 const SizedBox(height: 30),
               ],
             ),
+          ),
           ),
         ),
       ),
