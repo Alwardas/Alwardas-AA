@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'hive_service.dart';
 
 class AuthService {
   static const String _userDataKey = 'user_data';
@@ -30,6 +31,7 @@ class AuthService {
   static Future<void> logout() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_userDataKey);
+    await HiveService.clearSession();
   }
   
   static Future<bool> isLoggedIn() async {

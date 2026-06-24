@@ -196,7 +196,12 @@ class _LoginPageState extends State<LoginPage> {
               onDismiss: () {
                 if (mounted) {
                   debugPrint("DEBUG LOGIN: Navigating to /dashboard on dismiss");
-                  context.go('/dashboard');
+                  context.go('/login');
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    if (mounted) {
+                      context.go('/dashboard');
+                    }
+                  });
                 }
               },
             );
