@@ -749,13 +749,17 @@ class _HodDashboardState extends State<HodDashboard> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Syllabus Completion',
-                          style: GoogleFonts.poppins(
-                            color: subTextColor,
-                            fontSize: 13,
+                        Expanded(
+                          child: Text(
+                            'Syllabus Completion',
+                            overflow: TextOverflow.ellipsis,
+                            style: GoogleFonts.poppins(
+                              color: subTextColor,
+                              fontSize: 13,
+                            ),
                           ),
                         ),
+                        const SizedBox(width: 8),
                         Text(
                           '$_branchProgressPercentage%',
                           style: GoogleFonts.poppins(
