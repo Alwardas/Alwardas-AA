@@ -124,6 +124,11 @@ pub async fn find_sections_with_student_fallback(pool: &PgPool, branch: &str, ye
         )
         .bind(branch).bind(year_pattern).fetch_all(pool).await?;
     }
+
+    if sections.is_empty() {
+        sections = vec!["Section A".to_string()];
+    }
+
     Ok(sections)
 }
 
