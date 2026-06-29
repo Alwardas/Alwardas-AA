@@ -81,11 +81,14 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
       final String? batch = user['batch_no'] ?? user['batchNo'];
       String regulation = 'C23';
-      if (batch != null && batch.contains('-')) {
-        final startYearStr = batch.split('-')[0].trim();
-        final startYear = int.tryParse(startYearStr);
-        if (startYear != null && startYear >= 2026) {
-          regulation = 'C26';
+      if (batch != null) {
+        final regExp = RegExp(r'\b\d{4}\b');
+        final match = regExp.firstMatch(batch);
+        if (match != null) {
+          final startYear = int.tryParse(match.group(0)!);
+          if (startYear != null && startYear >= 2026) {
+            regulation = 'C26';
+          }
         }
       }
       debugPrint("Student Batch: $batch -> Regulation: $regulation");
@@ -465,11 +468,14 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
             final String? batch = user?['batch_no'] ?? user?['batchNo'];
             String regulation = 'C23';
-            if (batch != null && batch.contains('-')) {
-              final startYearStr = batch.split('-')[0].trim();
-              final startYear = int.tryParse(startYearStr);
-              if (startYear != null && startYear >= 2026) {
-                regulation = 'C26';
+            if (batch != null) {
+              final regExp = RegExp(r'\b\d{4}\b');
+              final match = regExp.firstMatch(batch);
+              if (match != null) {
+                final startYear = int.tryParse(match.group(0)!);
+                if (startYear != null && startYear >= 2026) {
+                  regulation = 'C26';
+                }
               }
             }
 

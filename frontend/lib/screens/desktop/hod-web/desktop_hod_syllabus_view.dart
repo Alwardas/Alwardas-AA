@@ -89,29 +89,52 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
       if (response.success && response.data != null) {
         setState(() {
           _yearSectionsProgress = response.data is List ? response.data : [];
+          if (_yearSectionsProgress.isEmpty) {
+            final String defaultSem = _selectedYear == '1st Year' 
+                ? 'Semester 1' 
+                : (_selectedYear == '2nd Year' ? 'Semester 3' : 'Semester 5');
+            _yearSectionsProgress = [
+              {'section': 'A', 'percentage': 0, 'semester': defaultSem},
+              {'section': 'B', 'percentage': 0, 'semester': defaultSem},
+            ];
+          }
         });
         if (_yearSectionsProgress.isNotEmpty) {
-          // Auto select first section
           final firstSec = _yearSectionsProgress[0];
           _selectedSection = firstSec['section'] ?? 'A';
-          _selectedSemester = firstSec['semester'] ?? '1st Year';
+          _selectedSemester = firstSec['semester'] ?? 'Semester 1';
           _fetchSectionSubjectsProgress();
-        } else {
-          setState(() {
-            _sectionSubjectsProgress = [];
-            _loadingSectionProgress = false;
-          });
         }
       } else {
         setState(() {
-          _yearSectionsProgress = [];
-          _sectionSubjectsProgress = [];
+          final String defaultSem = _selectedYear == '1st Year' 
+              ? 'Semester 1' 
+              : (_selectedYear == '2nd Year' ? 'Semester 3' : 'Semester 5');
+          _yearSectionsProgress = [
+            {'section': 'A', 'percentage': 0, 'semester': defaultSem},
+            {'section': 'B', 'percentage': 0, 'semester': defaultSem},
+          ];
+          _selectedSection = 'A';
+          _selectedSemester = defaultSem;
           _loadingSectionProgress = false;
         });
+        _fetchSectionSubjectsProgress();
       }
     } catch (e) {
       debugPrint("Error fetching year section progress: $e");
-      setState(() => _loadingSectionProgress = false);
+      setState(() {
+        final String defaultSem = _selectedYear == '1st Year' 
+            ? 'Semester 1' 
+            : (_selectedYear == '2nd Year' ? 'Semester 3' : 'Semester 5');
+        _yearSectionsProgress = [
+          {'section': 'A', 'percentage': 0, 'semester': defaultSem},
+          {'section': 'B', 'percentage': 0, 'semester': defaultSem},
+        ];
+        _selectedSection = 'A';
+        _selectedSemester = defaultSem;
+        _loadingSectionProgress = false;
+      });
+      _fetchSectionSubjectsProgress();
     }
   }
 

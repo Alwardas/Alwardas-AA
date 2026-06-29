@@ -62,14 +62,36 @@ class _HodSyllabusYearDetailsScreenState extends State<HodSyllabusYearDetailsScr
         final List<dynamic> fetched = response.data;
         setState(() {
           _sections = fetched.map((e) => e as Map<String, dynamic>).toList();
+          if (_sections.isEmpty) {
+            _sections = [
+              {'sectionName': 'Section A', 'percentage': 0},
+              {'sectionName': 'Section B', 'percentage': 0},
+            ];
+          }
           _loadingSections = false;
         });
       } else {
-        if (mounted) setState(() => _loadingSections = false);
+        if (mounted) {
+          setState(() {
+            _sections = [
+              {'sectionName': 'Section A', 'percentage': 0},
+              {'sectionName': 'Section B', 'percentage': 0},
+            ];
+            _loadingSections = false;
+          });
+        }
       }
     } catch (e) {
       debugPrint("Error fetching sections: $e");
-      if (mounted) setState(() => _loadingSections = false);
+      if (mounted) {
+        setState(() {
+          _sections = [
+            {'sectionName': 'Section A', 'percentage': 0},
+            {'sectionName': 'Section B', 'percentage': 0},
+          ];
+          _loadingSections = false;
+        });
+      }
     }
   }
 
