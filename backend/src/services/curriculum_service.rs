@@ -173,8 +173,8 @@ pub async fn get_subjects_from_assets(
 fn _map_to_short_branch(branch: &str) -> &str {
     let b_lower = branch.to_lowercase();
     if b_lower.contains("computer") { "cme" }
-    else if b_lower.contains("electronics") { "ece" }
     else if b_lower.contains("electrical") { "eee" }
+    else if b_lower.contains("electronics") { "ece" }
     else if b_lower.contains("mechanical") { "mech" }
     else if b_lower.contains("civil") { "civ" }
     else if b_lower.contains("intelligence") || b_lower.contains("aiml") || b_lower.contains("machine learning") { "aiml" }
