@@ -7,7 +7,7 @@ import '../../../core/providers/theme_provider.dart';
 import '../../../core/api_constants.dart';
 import '../../../theme/theme_constants.dart';
 import '../../../widgets/skeleton_loader.dart';
-import 'hod_syllabus_year_selection_screen.dart';
+import 'hod_syllabus_year_details_screen.dart';
 
 import '../../../core/api_config.dart';
 
@@ -22,13 +22,11 @@ class HodSyllabusManagementScreen extends StatefulWidget {
 
 class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScreen> {
   bool _isLoading = true;
-  List<dynamic> _courses = [];
   Map<String, dynamic>? _branchProgress;
 
   @override
   void initState() {
     super.initState();
-    _fetchCourses();
     _fetchBranchProgress();
   }
 
@@ -40,42 +38,23 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
         if (mounted) {
           setState(() {
             _branchProgress = response.data is Map ? response.data : null;
+            _isLoading = false;
+          });
+        }
+      } else {
+        if (mounted) {
+          setState(() {
+            _isLoading = false;
           });
         }
       }
     } catch (e) {
       debugPrint("Error fetching branch progress: $e");
-    }
-  }
-
-  Future<void> _fetchCourses() async {
-    try {
-      final response = await ApiConfig.get('${ApiConstants.baseUrl}/api/faculty/hod-courses');
-      if (response.success && response.data is List && (response.data as List).isNotEmpty) {
-        if (mounted) {
-          setState(() {
-            _courses = response.data;
-            _isLoading = false;
-          });
-        }
-      } else {
-        _loadLocalCourses();
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
       }
-    } catch (e) {
-      debugPrint("Error fetching courses: $e");
-      _loadLocalCourses();
-    }
-  }
-
-  void _loadLocalCourses() {
-    if (mounted) {
-      setState(() {
-        _courses = [
-          {'courseId': 'C-23', 'courseName': 'C-23 Regulation'},
-          {'courseId': 'C-26', 'courseName': 'C-26 Regulation'},
-        ];
-        _isLoading = false;
-      });
     }
   }
 
@@ -84,10 +63,15 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
     final themeProvider = Provider.of<ThemeProvider>(context);
     final isDark = themeProvider.isDarkMode;
     final textColor = isDark ? Colors.white : Colors.black87;
-    final subTextColor = isDark ? Colors.white70 : Colors.black54;
     final bgColors = isDark 
         ? [const Color(0xFF1a1a2e), const Color(0xFF16213e)] 
         : [const Color(0xFFF8F9FA), Colors.white];
+
+    final yearsList = [
+      {'label': '1st Year', 'icon': Icons.looks_one},
+      {'label': '2nd Year', 'icon': Icons.looks_two},
+      {'label': '3rd Year', 'icon': Icons.looks_3},
+    ];
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -104,38 +88,45 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
         child: SafeArea(
           child: _isLoading 
             ? _buildSkeletonList(isDark)
-            : _courses.isEmpty
-                ? Center(child: Text("No courses found.", style: GoogleFonts.poppins(color: subTextColor)))
-                : Column(
-                    children: [
-                      Expanded(
-                        child: RefreshIndicator(
-                          onRefresh: () async {
-                            await _fetchCourses();
-                            await _fetchBranchProgress();
-                          },
-                          child: ListView(
-                            physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            children: [
-                              const SizedBox(height: 10),
-                              if (_branchProgress != null)
-                                _buildBranchProgressCard(_branchProgress!, isDark),
-                            
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 20.0),
-                              child: Text(
-                                "Select Course to Begin",
-                                style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: textColor),
-                              ),
+            : Column(
+                children: [
+                  Expanded(
+                    child: RefreshIndicator(
+                      onRefresh: () async {
+                        await _fetchBranchProgress();
+                      },
+                      child: ListView(
+                        physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        children: [
+                          const SizedBox(height: 10),
+                          if (_branchProgress != null)
+                            _buildBranchProgressCard(_branchProgress!, isDark),
+                        
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 20.0),
+                            child: Text(
+                              "Select Academic Year",
+                              style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: textColor),
                             ),
-                            ..._courses.map((course) => _buildCourseCard(course, isDark)),
-                          ],
-                        ),
+                          ),
+                          ...yearsList.map((year) {
+                            int progress = 0;
+                            if (_branchProgress != null && _branchProgress!['years'] != null) {
+                              final yearsData = _branchProgress!['years'] as List<dynamic>;
+                              final match = yearsData.firstWhere((y) => y['year'] == year['label'], orElse: () => null);
+                              if (match != null) {
+                                progress = (match['percentage'] as num).toInt();
+                              }
+                            }
+                            return _buildYearCard(context, year, progress, isDark, textColor);
+                          }),
+                        ],
                       ),
-                      ),
-                    ],
+                    ),
                   ),
+                ],
+              ),
         ),
       ),
     );
@@ -145,7 +136,6 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
     final int overall = data['overallPercentage'] ?? 0;
     final List<dynamic> years = data['years'] ?? [];
     final textColor = isDark ? Colors.white : const Color(0xFF1E293B);
-    final subTextColor = isDark ? Colors.white70 : const Color(0xFF64748B);
     final accentColor = _getAccentColor(overall / 100.0);
 
     return Container(
@@ -244,58 +234,76 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
   }
 
   Color _getStatusColor(int percentage) {
-    if (percentage >= 85) return const Color(0xFFF59E0B); // Orange (Overfast/Ahead)
-    if (percentage >= 60) return const Color(0xFF10B981); // Green (On Track)
-    return const Color(0xFFEF4444); // Red (Lagging)
+    if (percentage >= 85) return const Color(0xFFF59E0B);
+    if (percentage >= 60) return const Color(0xFF10B981);
+    return const Color(0xFFEF4444);
   }
 
   Color _getAccentColor(double progress) {
     return _getStatusColor((progress * 100).toInt());
   }
 
-  Widget _buildCourseCard(dynamic course, bool isDark) {
+  Widget _buildYearCard(BuildContext context, Map<String, dynamic> year, int progress, bool isDark, Color textColor) {
     final cardColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white;
-    final textColor = isDark ? Colors.white : Colors.black87;
 
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusYearSelectionScreen(
-          courseId: course['courseId'],
-          courseName: course['courseName'],
-          userData: {
-            ...widget.userData,
-            if (widget.branchOverride != null) 'branch': widget.branchOverride,
-          },
+        final courseId = year['label'] == '1st Year' ? 'C-26' : 'C-23';
+        final courseName = year['label'] == '1st Year' ? 'C-26 Regulation' : 'C-23 Regulation';
+        Navigator.push(context, MaterialPageRoute(builder: (_) => HodSyllabusYearDetailsScreen(
+          courseId: courseId,
+          courseName: courseName,
+          year: year['label'] as String,
+          userData: widget.userData,
         )));
       },
       child: Container(
-        margin: const EdgeInsets.only(bottom: 16),
+        margin: const EdgeInsets.only(bottom: 15),
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: cardColor,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.purple.withValues(alpha: 0.3)),
+          border: Border.all(color: Colors.blue.withValues(alpha: 0.3)),
           boxShadow: [
-            BoxShadow(color: Colors.purple.withValues(alpha: 0.1), blurRadius: 10, offset: const Offset(0, 5))
+            BoxShadow(color: Colors.blue.withValues(alpha: 0.1), blurRadius: 10, offset: const Offset(0, 5))
           ]
         ),
         child: Row(
           children: [
             Container(
               padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(color: Colors.purple.withValues(alpha: 0.1), shape: BoxShape.circle),
-              child: const Icon(Icons.school, color: Colors.purple, size: 28),
+              decoration: BoxDecoration(color: Colors.blue.withValues(alpha: 0.1), shape: BoxShape.circle),
+              child: Icon(year['icon'] as IconData, color: Colors.blue, size: 28),
             ),
             const SizedBox(width: 20),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(course['courseId'], style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.purple)),
-                  Text(course['courseName'], style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor)),
+                   Text(
+                    year['label'] as String,
+                    style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
+                  ),
+                  const SizedBox(height: 4),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: LinearProgressIndicator(
+                          value: progress / 100,
+                          backgroundColor: Colors.blue.withValues(alpha: 0.1),
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(10),
+                          minHeight: 6,
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Text("$progress%", style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue)),
+                    ],
+                  ),
                 ],
               ),
             ),
+            const SizedBox(width: 10),
             Icon(Icons.arrow_forward_ios, size: 16, color: textColor.withValues(alpha: 0.5)),
           ],
         ),
@@ -306,32 +314,60 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
   Widget _buildSkeletonList(bool isDark) {
     return ListView.builder(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      itemCount: 5,
-      itemBuilder: (context, index) => Container(
-        margin: const EdgeInsets.only(bottom: 16),
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.purple.withValues(alpha: 0.1)),
-        ),
-        child: Row(
-          children: [
-            SkeletonLoader(width: 52, height: 52, borderRadius: BorderRadius.circular(26)),
-            const SizedBox(width: 20),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SkeletonLoader(width: 60, height: 14, borderRadius: BorderRadius.circular(4)),
-                  const SizedBox(height: 8),
-                  SkeletonLoader(width: double.infinity, height: 20, borderRadius: BorderRadius.circular(4)),
-                ],
-              ),
+      itemCount: 4,
+      itemBuilder: (context, index) {
+        if (index < 3) {
+          return Container(
+            margin: const EdgeInsets.only(bottom: 15),
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: Colors.blue.withValues(alpha: 0.1)),
             ),
-          ],
-        ),
-      ),
+            child: Row(
+              children: [
+                SkeletonLoader(width: 52, height: 52, borderRadius: BorderRadius.circular(26)),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SkeletonLoader(width: 100, height: 18, borderRadius: BorderRadius.circular(4)),
+                      const SizedBox(height: 12),
+                      SkeletonLoader(width: double.infinity, height: 8, borderRadius: BorderRadius.circular(4)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        } else {
+          return Container(
+            margin: const EdgeInsets.symmetric(vertical: 20),
+            padding: const EdgeInsets.all(25),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
+              borderRadius: BorderRadius.circular(25),
+              border: Border.all(color: Colors.purple.withValues(alpha: 0.2)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SkeletonLoader(width: 200, height: 20, borderRadius: BorderRadius.circular(4)),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SkeletonLoader(width: 80, height: 36, borderRadius: BorderRadius.circular(4)),
+                    SkeletonLoader(width: 100, height: 10, borderRadius: BorderRadius.circular(5)),
+                  ],
+                ),
+              ],
+            ),
+          );
+        }
+      },
     );
   }
 }

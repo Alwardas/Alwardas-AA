@@ -83,7 +83,7 @@ pub async fn pin_announcement(pool: &PgPool, announcement_id: Uuid, is_pinned: b
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
 }
 
-pub async fn get_all_branches_syllabus_progress(pool: &PgPool, course_id: &str) -> Result<Vec<serde_json::Value>, StatusCode> {
+pub async fn get_all_branches_syllabus_progress(pool: &PgPool, _course_id: &str) -> Result<Vec<serde_json::Value>, StatusCode> {
     let branches = coordinator_repository::find_all_branches(pool).await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
 
     let mut results = Vec::new();
@@ -92,7 +92,8 @@ pub async fn get_all_branches_syllabus_progress(pool: &PgPool, course_id: &str) 
         let years = vec!["1st Year", "2nd Year", "3rd Year"];
         let mut year_data = Vec::new();
         for year in &years {
-            let progress = crate::services::management::hod_service::calculate_year_progress(pool, &branch_name, course_id, year).await.unwrap_or(0);
+            let current_course_id = if *year == "1st Year" { "C-26" } else { "C-23" };
+            let progress = crate::services::management::hod_service::calculate_year_progress(pool, &branch_name, current_course_id, year).await.unwrap_or(0);
             total_avg += progress as f64;
             year_data.push(serde_json::json!({ "year": year.to_string(), "percentage": progress }));
         }

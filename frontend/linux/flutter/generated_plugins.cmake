@@ -4,8 +4,9 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   audioplayers_linux
+  flutter_timezone
   record_linux
-  rive_common
+  rive_native
   url_launcher_linux
 )
 

@@ -16,7 +16,7 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
   bool _isLoading = true;
   List<dynamic> _courses = [];
   Map<String, dynamic>? _branchProgress;
-  String? _selectedCourseId = 'C-23';
+  String? _selectedCourseId = 'C-26';
   String? _selectedYear = '1st Year';
   String? _selectedSection = 'A';
   String? _selectedSemester = '1st Year';
@@ -170,32 +170,17 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
                   ),
                 ],
               ),
-              // Regulations Dropdown
+              // Regulation Text Indicator
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                 decoration: BoxDecoration(
                   color: const Color(0xFF1E293B),
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Colors.white10),
                 ),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    value: _selectedCourseId,
-                    dropdownColor: const Color(0xFF1E293B),
-                    icon: const Icon(Icons.keyboard_arrow_down, color: Colors.blueAccent),
-                    items: _courses.map((c) {
-                      return DropdownMenuItem<String>(
-                        value: c['courseId'],
-                        child: Text(c['courseName'] ?? '', style: const TextStyle(color: Colors.white, fontSize: 13)),
-                      );
-                    }).toList(),
-                    onChanged: (val) {
-                      setState(() {
-                        _selectedCourseId = val;
-                      });
-                      _fetchBranchProgress();
-                    },
-                  ),
+                child: Text(
+                  _selectedCourseId == 'C-26' ? 'C-26 Regulation' : 'C-23 Regulation',
+                  style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 13, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
@@ -367,6 +352,7 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
               onTap: () {
                 setState(() {
                   _selectedYear = y;
+                  _selectedCourseId = y == '1st Year' ? 'C-26' : 'C-23';
                 });
                 _fetchYearSectionProgress();
               },

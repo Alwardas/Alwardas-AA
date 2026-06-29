@@ -79,6 +79,17 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
 
       debugPrint("Student Profile: Branch=$studentBranch, Semester=$studentSemester");
 
+      final String? batch = user['batch_no'] ?? user['batchNo'];
+      String regulation = 'C23';
+      if (batch != null && batch.contains('-')) {
+        final startYearStr = batch.split('-')[0].trim();
+        final startYear = int.tryParse(startYearStr);
+        if (startYear != null && startYear >= 2026) {
+          regulation = 'C26';
+        }
+      }
+      debugPrint("Student Batch: $batch -> Regulation: $regulation");
+
       // 1. Load curriculum from local assets (Source of Truth)
       final allCurriculumCourses = await CoursesData.getAllCourses();
       
@@ -92,7 +103,10 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
       final List<dynamic> localCourses = allCurriculumCourses.where((c) {
         final localBranch = CoursesData.normalizeBranch(c['branch']?.toString() ?? '');
         final localSem = CoursesData.normalizeSemester(c['semester']?.toString() ?? '');
-        return localBranch == normalizedBranch && localSem == normalizedSemester;
+        final localRegulation = c['regulation']?.toString().toUpperCase() ?? '';
+        return localBranch == normalizedBranch && 
+               localSem == normalizedSemester &&
+               localRegulation == regulation;
       }).toList();
 
       debugPrint("Matched local courses count: ${localCourses.length}");
@@ -448,7 +462,17 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
           onTap: () async {
             final user = await AuthService.getUserSession();
             if (!mounted) return;
-            
+
+            final String? batch = user?['batch_no'] ?? user?['batchNo'];
+            String regulation = 'C23';
+            if (batch != null && batch.contains('-')) {
+              final startYearStr = batch.split('-')[0].trim();
+              final startYear = int.tryParse(startYearStr);
+              if (startYear != null && startYear >= 2026) {
+                regulation = 'C26';
+              }
+            }
+
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -460,6 +484,7 @@ class _MyCoursesScreenState extends State<MyCoursesScreen> {
                   section: user?['section'],
                   year: user?['year'],
                   semester: int.tryParse((course['semester'] ?? user?['semester'])?.toString().replaceAll(RegExp(r'[^0-9]'), '') ?? '1') ?? 1,
+                  regulation: course['regulation'] ?? regulation,
                 ),
               ),
             );

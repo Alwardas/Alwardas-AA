@@ -18,6 +18,7 @@ class StudentLessonPlanScreen extends StatefulWidget {
   final String? section;
   final String? year;
   final int semester;
+  final String regulation;
 
   const StudentLessonPlanScreen({
     super.key, 
@@ -28,6 +29,7 @@ class StudentLessonPlanScreen extends StatefulWidget {
     this.section,
     this.year,
     this.semester = 1,
+    this.regulation = 'C23',
   });
 
   @override
@@ -53,6 +55,7 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
         subjectCode: widget.subjectId,
         section: widget.section ?? 'Section A',
         year: widget.year ?? '1st Year',
+        regulation: widget.regulation,
       );
 
       if (response.success && response.data != null) {

@@ -40,11 +40,14 @@ pub async fn get_merged_curriculum(
 
     let mut json_content = None;
     
-    // Check theory
+    // Check direct path first (for regulations without theory/practical subdirectories like C26)
+    let direct_path = format!("{}/{}.json", base_path, subject_code);
     let theory_path = format!("{}/theory/{}.json", base_path, subject_code);
     let practical_path = format!("{}/practical/{}.json", base_path, subject_code);
     
-    if Path::new(&theory_path).exists() {
+    if Path::new(&direct_path).exists() {
+        json_content = Some(fs::read_to_string(&direct_path).await?);
+    } else if Path::new(&theory_path).exists() {
         json_content = Some(fs::read_to_string(&theory_path).await?);
     } else if Path::new(&practical_path).exists() {
         json_content = Some(fs::read_to_string(&practical_path).await?);
@@ -111,6 +114,27 @@ pub async fn get_subjects_from_assets(
 
     let mut subjects = Vec::new();
 
+    // Read directly from semester folder (for regulations without theory/practical subdirectories)
+    if let Ok(mut entries) = fs::read_dir(&base_path).await {
+        while let Ok(Some(entry)) = entries.next_entry().await {
+            if let Some(name) = entry.file_name().to_str() {
+                if name.ends_with(".json") {
+                    let code = name.replace(".json", "");
+                    let content = fs::read_to_string(entry.path()).await?;
+                    let data: serde_json::Value = serde_json::from_str(&content)?;
+                    let sub_name = data["subjectName"].as_str().unwrap_or(&code).to_string();
+                    let suffix = code.chars().last().unwrap_or('T').to_ascii_uppercase();
+                    let sub_type = if ['L', 'D', 'P', 'C'].contains(&suffix) {
+                        "Practical"
+                    } else {
+                        "Theory"
+                    };
+                    subjects.push((code, sub_name, sub_type.to_string()));
+                }
+            }
+        }
+    }
+
     // Read theory
     let theory_path = format!("{}/theory", base_path);
     if let Ok(mut entries) = fs::read_dir(&theory_path).await {
@@ -147,12 +171,12 @@ pub async fn get_subjects_from_assets(
 }
 
 fn _map_to_short_branch(branch: &str) -> &str {
-    match branch {
-        "Computer Engineering" => "cme",
-        "Electronics & Communication Engineering" => "ece",
-        "Electrical & Electronics Engineering" => "eee",
-        "Mechanical Engineering" => "mech",
-        "Civil Engineering" => "civ",
-        _ => "cme",
-    }
+    let b_lower = branch.to_lowercase();
+    if b_lower.contains("computer") { "cme" }
+    else if b_lower.contains("electronics") { "ece" }
+    else if b_lower.contains("electrical") { "eee" }
+    else if b_lower.contains("mechanical") { "mech" }
+    else if b_lower.contains("civil") { "civ" }
+    else if b_lower.contains("intelligence") || b_lower.contains("aiml") || b_lower.contains("machine learning") { "aiml" }
+    else { "cme" }
 }

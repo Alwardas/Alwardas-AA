@@ -46,7 +46,7 @@ pub async fn add_course_subject(pool: &PgPool, payload: AddCourseSubjectRequest)
         return Err((StatusCode::CONFLICT, "Subject already assigned.".to_string()));
     }
 
-    let course_id = payload.course_id.clone().unwrap_or_else(|| "C-23".to_string());
+    let course_id = if payload.year == "1st Year" { "C-26".to_string() } else { payload.course_id.clone().unwrap_or_else(|| "C-23".to_string()) };
     hod_repository::insert_course_subject(pool, &payload.branch, &payload.year, &payload.section, &payload.subject_name, payload.subject_code.as_deref(), &payload.created_by, &course_id)
         .await
         .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()))?;
@@ -189,7 +189,8 @@ pub async fn get_branch_progress(pool: &PgPool, params: BranchProgressQuery) -> 
     let mut total_avg = 0.0;
 
     for year in years {
-        let progress = calculate_year_progress(pool, &branch_norm, &params.course_id, year).await.unwrap_or(0);
+        let course_id = if year == "1st Year" { "C-26" } else { "C-23" };
+        let progress = calculate_year_progress(pool, &branch_norm, course_id, year).await.unwrap_or(0);
         year_responses.push(YearProgressResponse {
             year: year.to_string(),
             percentage: progress,
@@ -211,9 +212,10 @@ pub async fn get_year_sections_progress(pool: &PgPool, params: YearSectionsProgr
     
     let sections = hod_repository::find_sections_with_student_fallback(pool, &branch_norm, &params.year).await.unwrap_or_default();
 
+    let course_id = if params.year == "1st Year" { "C-26" } else { "C-23" };
     let mut responses = Vec::new();
     for section in sections {
-        let progress = calculate_section_progress(pool, &branch_norm, &params.course_id, &params.year, &section).await.unwrap_or(0);
+        let progress = calculate_section_progress(pool, &branch_norm, course_id, &params.year, &section).await.unwrap_or(0);
         responses.push(SectionProgressResponse {
             section_name: section,
             percentage: progress,
@@ -237,10 +239,12 @@ pub async fn get_section_subjects_progress(pool: &PgPool, params: SectionSubject
         }
     });
 
+    let course_id = if params.year == "1st Year" { "C-26" } else { "C-23" };
+
     let subjects = if let Some(patterns) = semester_pattern {
-        hod_repository::find_subjects_by_semester_variations(pool, &branch_norm, Some(&params.course_id), patterns).await.unwrap_or_default()
+        hod_repository::find_subjects_by_semester_variations(pool, &branch_norm, Some(course_id), patterns).await.unwrap_or_default()
     } else {
-        hod_repository::find_subjects_by_year_fallback(pool, &branch_norm, Some(&params.course_id), &params.year).await.unwrap_or_default()
+        hod_repository::find_subjects_by_year_fallback(pool, &branch_norm, Some(course_id), &params.year).await.unwrap_or_default()
     };
 
     let mut responses = Vec::new();
