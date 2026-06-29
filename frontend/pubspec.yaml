@@ -125,6 +125,30 @@ flutter:
     - assets/curriculum/c23/mech/semester 3/
     - assets/curriculum/c23/mech/semester 4/
     - assets/curriculum/c23/mech/semester 5/
+    - assets/curriculum/c26/aiml/semester 1/
+    - assets/curriculum/c26/aiml/semester 3/
+    - assets/curriculum/c26/aiml/semester 4/
+    - assets/curriculum/c26/aiml/semester 5/
+    - assets/curriculum/c26/civ/semester 1/
+    - assets/curriculum/c26/civ/semester 3/
+    - assets/curriculum/c26/civ/semester 4/
+    - assets/curriculum/c26/civ/semester 5/
+    - assets/curriculum/c26/cme/semester 1/
+    - assets/curriculum/c26/cme/semester 3/
+    - assets/curriculum/c26/cme/semester 4/
+    - assets/curriculum/c26/cme/semester 5/
+    - assets/curriculum/c26/ece/semester 1/
+    - assets/curriculum/c26/ece/semester 3/
+    - assets/curriculum/c26/ece/semester 4/
+    - assets/curriculum/c26/ece/semester 5/
+    - assets/curriculum/c26/eee/semester 1/
+    - assets/curriculum/c26/eee/semester 3/
+    - assets/curriculum/c26/eee/semester 4/
+    - assets/curriculum/c26/eee/semester 5/
+    - assets/curriculum/c26/mech/semester 1/
+    - assets/curriculum/c26/mech/semester 3/
+    - assets/curriculum/c26/mech/semester 4/
+    - assets/curriculum/c26/mech/semester 5/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

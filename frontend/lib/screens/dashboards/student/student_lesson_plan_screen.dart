@@ -159,63 +159,81 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
       ),
       body: _loading
           ? Center(child: CircularProgressIndicator())
-          : _error != null
-              ? Center(child: Text("Error: $_error", style: GoogleFonts.poppins(color: Colors.red)))
-              : _curriculum == null || _curriculum!.units.isEmpty
-                  ? Center(child: Text("No curriculum data found", style: GoogleFonts.poppins(color: text)))
-                  : CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
+          : CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                SliverPadding(
+                  padding: const EdgeInsets.all(20),
+                  sliver: SliverToBoxAdapter(
+                    child: _buildSubjectHeaderCard(context),
+                  ),
+                ),
+                if (_error != null || _curriculum == null || _curriculum!.units.isEmpty)
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(Icons.info_outline, size: 48, color: Colors.grey),
+                            const SizedBox(height: 16),
+                            Text(
+                              "No lesson plan found for this subject.",
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.poppins(color: text.withValues(alpha: 0.7), fontSize: 16, fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                else
+                  ..._curriculum!.units.map((unit) {
+                    return SliverMainAxisGroup(
                       slivers: [
-                        SliverPadding(
-                          padding: const EdgeInsets.all(20),
-                          sliver: SliverToBoxAdapter(
-                            child: _buildSubjectHeaderCard(context),
+                        SliverToBoxAdapter(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            child: Text(
+                              "UNIT ${unit.unitNo}: ${unit.title.toUpperCase()}",
+                              style: GoogleFonts.poppins(
+                                fontSize: 13,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.grey,
+                                letterSpacing: 1.2,
+                              ),
+                            ),
                           ),
                         ),
-                        ..._curriculum!.units.map((unit) {
-                          return SliverMainAxisGroup(
-                            slivers: [
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                                  child: Text(
-                                    "UNIT ${unit.unitNo}: ${unit.title.toUpperCase()}",
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.grey,
-                                      letterSpacing: 1.2,
+                        SliverPadding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          sliver: SliverList(
+                            delegate: SliverChildBuilderDelegate(
+                              (context, index) {
+                                final topic = unit.topics[index];
+                                return AnimationConfiguration.staggeredList(
+                                  position: index,
+                                  duration: const Duration(milliseconds: 375),
+                                  child: SlideAnimation(
+                                    verticalOffset: 50.0,
+                                    child: FadeInAnimation(
+                                      child: _buildLessonItem(topic),
                                     ),
                                   ),
-                                ),
-                              ),
-                              SliverPadding(
-                                padding: const EdgeInsets.symmetric(horizontal: 20),
-                                sliver: SliverList(
-                                  delegate: SliverChildBuilderDelegate(
-                                    (context, index) {
-                                      final topic = unit.topics[index];
-                                      return AnimationConfiguration.staggeredList(
-                                        position: index,
-                                        duration: const Duration(milliseconds: 375),
-                                        child: SlideAnimation(
-                                          verticalOffset: 50.0,
-                                          child: FadeInAnimation(
-                                            child: _buildLessonItem(topic),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    childCount: unit.topics.length,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          );
-                        }).toList(),
-                        const SliverToBoxAdapter(child: SizedBox(height: 40)),
+                                );
+                              },
+                              childCount: unit.topics.length,
+                            ),
+                          ),
+                        ),
                       ],
-                    ),
+                    );
+                  }).toList(),
+                const SliverToBoxAdapter(child: SizedBox(height: 40)),
+              ],
+            ),
     );
   }
 
@@ -370,17 +388,19 @@ class _StudentLessonPlanScreenState extends State<StudentLessonPlanScreen> {
       int scheduledTopics = 0;
       bool hasSchedule = false;
       final now = DateTime.now();
-      for (var unit in _curriculum!.units) {
-        for (var topic in unit.topics) {
-          if (topic.type.toLowerCase() != 'unit') {
-            totalTopics += 1;
-            if (topic.status == 'completed') {
-              completedTopics += 1;
-            }
-            if (topic.assignedDate != null) {
-              hasSchedule = true;
-              if (topic.assignedDate!.isBefore(now)) {
-                scheduledTopics += 1;
+      if (_curriculum != null) {
+        for (var unit in _curriculum!.units) {
+          for (var topic in unit.topics) {
+            if (topic.type.toLowerCase() != 'unit') {
+              totalTopics += 1;
+              if (topic.status == 'completed') {
+                completedTopics += 1;
+              }
+              if (topic.assignedDate != null) {
+                hasSchedule = true;
+                if (topic.assignedDate!.isBefore(now)) {
+                  scheduledTopics += 1;
+                }
               }
             }
           }
