@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:url_launcher/url_launcher.dart';
 import 'custom_text_field.dart';
 
 class LoginCard extends StatefulWidget {
@@ -241,6 +243,28 @@ class _LoginCardState extends State<LoginCard> {
                       ),
                     ],
                   ),
+                  if (kIsWeb) ...[
+                    const SizedBox(height: 24),
+                    Center(
+                      child: TextButton.icon(
+                        onPressed: () async {
+                          final url = Uri.parse('${Uri.base.origin}/app-release.apk');
+                          if (await canLaunchUrl(url)) {
+                            await launchUrl(url, mode: LaunchMode.externalApplication);
+                          }
+                        },
+                        icon: const Icon(Icons.android, color: Colors.green, size: 24),
+                        label: Text(
+                          'Download Android App',
+                          style: GoogleFonts.poppins(
+                            color: primaryBlue,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -348,7 +347,7 @@ class _LoginPageState extends State<LoginPage> {
         opacity: _opacity,
         child: Stack(
           children: [
-            // 1. Full-screen Base Gradient (Sky & Backdrop)
+            // 1. Full-screen Base Gradient (Sky & Backdrop) or college_bg image
             Positioned.fill(
               child: Container(
                 decoration: BoxDecoration(
@@ -362,53 +361,17 @@ class _LoginPageState extends State<LoginPage> {
                             Color(0xFFE8F0FE), // Very light soft blue/white at the bottom
                           ],
                         )
-                      : const LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0xFF2F5AA8),
-                            Color(0xFF4A86D9),
-                            Color(0xFF1D4F91),
-                          ],
+                      : null,
+                  image: isMobile
+                      ? null
+                      : const DecorationImage(
+                          image: AssetImage('assets/images/college_bg.jpg'),
+                          fit: BoxFit.cover,
+                          alignment: Alignment.center,
                         ),
                 ),
               ),
             ),
-
-            // 2. Building Image aligned to the bottom (covers 48% height) - only for Desktop/Tablet
-            if (!isMobile)
-              Positioned(
-                left: 0,
-                right: 0,
-                bottom: 0,
-                height: MediaQuery.of(context).size.height * 0.48,
-                child: Image.asset(
-                  'assets/images/alwar_das_background.png',
-                  fit: BoxFit.cover,
-                  alignment: const Alignment(0, -0.35),
-                  errorBuilder: (context, error, stackTrace) {
-                    return const SizedBox.shrink();
-                  },
-                ),
-              ),
-
-            // 3. Main Dark Blue Gradient Overlay (tints both sky and bottom building) - only for Desktop/Tablet
-            if (!isMobile)
-              Positioned.fill(
-                child: Container(
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color(0xCC4A86D9),
-                        Color(0xBB3E78C7),
-                        Color(0xCC1D4F91),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
 
             // 4. Main Content Layer
             Positioned.fill(
@@ -454,7 +417,7 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           const Expanded(
             flex: 11, // 55% Branding Section
-            child: BrandingSection(isTablet: false),
+            child: BrandingSection(isTablet: false, showLogo: false),
           ),
           const SizedBox(width: 40),
           Expanded(
@@ -481,7 +444,7 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const BrandingSection(isTablet: true),
+          const BrandingSection(isTablet: true, showLogo: false),
           const SizedBox(height: 48),
           LoginCard(
             loginIdController: _loginIdController,

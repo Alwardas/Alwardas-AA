@@ -45,5 +45,8 @@ COPY --from=rust-builder /app/migrations /app/migrations
 # Copy the built Flutter web files to the "static" directory
 COPY --from=flutter-builder /app/build/web /app/static
 
+# Copy the built Android APK file to the static directory so users can download it
+COPY app-release.apk /app/static/app-release.apk
+
 # Set the binary as the entry point
 CMD ["/app/backend"]

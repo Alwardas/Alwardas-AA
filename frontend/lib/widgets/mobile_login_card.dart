@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:url_launcher/url_launcher.dart';
 
 class MobileLoginCard extends StatefulWidget {
   final TextEditingController loginIdController;
@@ -248,6 +250,28 @@ class _MobileLoginCardState extends State<MobileLoginCard> {
               ),
             ],
           ),
+          if (kIsWeb) ...[
+            const SizedBox(height: 16),
+            Center(
+              child: TextButton.icon(
+                onPressed: () async {
+                  final url = Uri.parse('${Uri.base.origin}/app-release.apk');
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                  }
+                },
+                icon: const Icon(Icons.android, color: Colors.green, size: 20),
+                label: Text(
+                  'Download Android App',
+                  style: GoogleFonts.poppins(
+                    color: primaryBlue,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );

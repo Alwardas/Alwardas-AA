@@ -3,10 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class BrandingSection extends StatelessWidget {
   final bool isTablet;
+  final bool showLogo;
 
   const BrandingSection({
     super.key,
     this.isTablet = false,
+    this.showLogo = true,
   });
 
   @override
@@ -20,54 +22,56 @@ class BrandingSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         // Main Branding Logo Image (contains wave curves and name)
-        Image.asset(
-          'assets/images/college logo.png',
-          width: isTablet ? 280 : 360,
-          fit: BoxFit.contain,
-          errorBuilder: (context, error, stackTrace) {
-            return Image.asset(
-              'assets/images/logo.png',
-              width: isTablet ? 280 : 360,
-              fit: BoxFit.contain,
-              errorBuilder: (context, error, stackTrace) {
-                // Code fallback if both image assets fail to load
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Since 1979',
-                      style: GoogleFonts.poppins(
-                        fontSize: isTablet ? 14 : 18,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white70,
+        if (showLogo) ...[
+          Image.asset(
+            'assets/images/college logo.png',
+            width: isTablet ? 280 : 360,
+            fit: BoxFit.contain,
+            errorBuilder: (context, error, stackTrace) {
+              return Image.asset(
+                'assets/images/logo.png',
+                width: isTablet ? 280 : 360,
+                fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) {
+                  // Code fallback if both image assets fail to load
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Since 1979',
+                        style: GoogleFonts.poppins(
+                          fontSize: isTablet ? 14 : 18,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white70,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'alwar das group',
-                      style: GoogleFonts.poppins(
-                        fontSize: isTablet ? 36 : 48,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        letterSpacing: 1.1,
+                      const SizedBox(height: 8),
+                      Text(
+                        'alwar das group',
+                        style: GoogleFonts.poppins(
+                          fontSize: isTablet ? 36 : 48,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          letterSpacing: 1.1,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'free mind through education',
-                      style: GoogleFonts.poppins(
-                        fontSize: isTablet ? 18 : 24,
-                        fontStyle: FontStyle.italic,
-                        color: const Color(0xFFFFD6D6),
+                      const SizedBox(height: 8),
+                      Text(
+                        'free mind through education',
+                        style: GoogleFonts.poppins(
+                          fontSize: isTablet ? 18 : 24,
+                          fontStyle: FontStyle.italic,
+                          color: const Color(0xFFFFD6D6),
+                        ),
                       ),
-                    ),
-                  ],
-                );
-              },
-            );
-          },
-        ),
-        SizedBox(height: spacing * 1.5),
+                    ],
+                  );
+                },
+              );
+            },
+          ),
+          SizedBox(height: spacing * 1.5),
+        ],
 
         // Features Row
         Wrap(
