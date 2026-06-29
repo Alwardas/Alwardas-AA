@@ -254,7 +254,10 @@ class _HodSyllabusManagementScreenState extends State<HodSyllabusManagementScree
           courseId: courseId,
           courseName: courseName,
           year: year['label'] as String,
-          userData: widget.userData,
+          userData: {
+            ...widget.userData,
+            if (widget.branchOverride != null) 'branch': widget.branchOverride,
+          },
         )));
       },
       child: Container(

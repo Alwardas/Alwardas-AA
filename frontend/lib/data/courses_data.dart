@@ -114,6 +114,7 @@ class CoursesData {
     if (upper == 'ECE' || upper == 'EC' || upper.contains('ELECTRONICS')) return 'Electronics & Communication Engineering';
     if (upper == 'EEE' || upper == 'EE' || upper.contains('ELECTRICAL')) return 'Electrical & Electronics Engineering';
     if (upper == 'MECH' || upper == 'MEC' || upper == 'ME' || upper.contains('MECHANICAL')) return 'Mechanical Engineering';
+    if (upper == 'AIML' || upper == 'AI' || upper.contains('INTELLIGENCE') || upper.contains('MACHINE LEARNING')) return 'Artificial Intelligence and Machine Learning';
     return b.trim();
   }
 
