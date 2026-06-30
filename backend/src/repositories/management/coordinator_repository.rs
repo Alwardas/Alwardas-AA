@@ -1,4 +1,4 @@
-use sqlx::{PgPool, Postgres, Row};
+use sqlx::PgPool;
 use uuid::Uuid;
 use chrono::{DateTime, Utc};
 use crate::models::{Announcement, DepartmentTiming};

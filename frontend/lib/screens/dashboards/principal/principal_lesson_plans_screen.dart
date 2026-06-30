@@ -9,6 +9,7 @@ import '../../../core/api_constants.dart';
 import '../../../core/providers/theme_provider.dart';
 import '../../../theme/theme_constants.dart';
 import '../hod/hod_syllabus_management_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PrincipalLessonPlansScreen extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -31,18 +32,53 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
   Future<void> _fetchBranches() async {
     try {
       final res = await http.get(Uri.parse('${ApiConstants.baseUrl}/api/coordinator/overall-syllabus-progress'));
+      
+      final prefs = await SharedPreferences.getInstance();
+      List<String> deletedPresets = prefs.getStringList('deleted_presets') ?? [];
+
+      // Migrate old preset names if they exist in deletedPresets
+      bool changed = false;
+      if (deletedPresets.contains('Electronics & Communication')) {
+        deletedPresets.remove('Electronics & Communication');
+        if (!deletedPresets.contains('Electronics & Communication Engineering')) {
+          deletedPresets.add('Electronics & Communication Engineering');
+        }
+        changed = true;
+      }
+      if (deletedPresets.contains('Electrical & Electronics')) {
+        deletedPresets.remove('Electrical & Electronics');
+        if (!deletedPresets.contains('Electrical & Electronics Engineering')) {
+          deletedPresets.add('Electrical & Electronics Engineering');
+        }
+        changed = true;
+      }
+      if (changed) {
+        await prefs.setStringList('deleted_presets', deletedPresets);
+      }
+
       if (res.statusCode == 200) {
         final Map<String, dynamic> responseData = json.decode(res.body);
         final List<dynamic> data = responseData['data'] ?? [];
         if (mounted) {
           setState(() {
-            deptProgress = data.map((d) {
-              return {
-                 'branch': d['branch']?.toString() ?? 'Unknown', 
-                 'overallPercentage': d['overallPercentage'] ?? 0,
-                 'years': d['years'] ?? [],
-              };
-            }).toList();
+            List<Map<String, dynamic>> mapped = [];
+            for (var d in data) {
+              String branchName = d['branch']?.toString() ?? 'Unknown';
+              // Check if deleted (direct or partial match)
+              bool isDeleted = deletedPresets.contains(branchName) || 
+                  deletedPresets.any((deleted) => 
+                      deleted == branchName || 
+                      branchName.contains(deleted) || 
+                      deleted.contains(branchName));
+              if (!isDeleted) {
+                mapped.add({
+                  'branch': branchName, 
+                  'overallPercentage': d['overallPercentage'] ?? 0,
+                  'years': d['years'] ?? [],
+                });
+              }
+            }
+            deptProgress = mapped;
             isLoading = false;
           });
         }

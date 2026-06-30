@@ -86,11 +86,31 @@ class _SignupScreenState extends State<SignupScreen> {
       final prefs = await SharedPreferences.getInstance();
       List<String> deletedPresets = prefs.getStringList('deleted_presets') ?? [];
       
+      // Migrate old preset names if they exist in deletedPresets
+      bool changed = false;
+      if (deletedPresets.contains('Electronics & Communication')) {
+        deletedPresets.remove('Electronics & Communication');
+        if (!deletedPresets.contains('Electronics & Communication Engineering')) {
+          deletedPresets.add('Electronics & Communication Engineering');
+        }
+        changed = true;
+      }
+      if (deletedPresets.contains('Electrical & Electronics')) {
+        deletedPresets.remove('Electrical & Electronics');
+        if (!deletedPresets.contains('Electrical & Electronics Engineering')) {
+          deletedPresets.add('Electrical & Electronics Engineering');
+        }
+        changed = true;
+      }
+      if (changed) {
+        await prefs.setStringList('deleted_presets', deletedPresets);
+      }
+      
       List<String> presets = [
         'Civil Engineering',
         'Computer Engineering',
-        'Electronics & Communication',
-        'Electrical & Electronics',
+        'Electronics & Communication Engineering',
+        'Electrical & Electronics Engineering',
         'Mechanical Engineering',
       ];
 

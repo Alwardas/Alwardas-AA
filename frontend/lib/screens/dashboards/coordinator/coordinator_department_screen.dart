@@ -35,14 +35,14 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
       'gradient': [const Color(0xFF2196F3), const Color(0xFF1976D2)],
     },
     {
-      'name': 'Electronics & Communication',
+      'name': 'Electronics & Communication Engineering',
       'code': 'ECE',
       'icon': Icons.memory_rounded,
       'color': const Color(0xFF6A1B9A), // Purple
       'gradient': [const Color(0xFF9C27B0), const Color(0xFF7B1FA2)],
     },
     {
-      'name': 'Electrical & Electronics',
+      'name': 'Electrical & Electronics Engineering',
       'code': 'EEE',
       'icon': Icons.electrical_services_rounded,
       'color': const Color(0xFFF9A825), // Yellow/Amber
@@ -68,6 +68,26 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
     try {
       final prefs = await SharedPreferences.getInstance();
       List<String> deletedPresets = prefs.getStringList('deleted_presets') ?? [];
+      
+      // Migrate old preset names if they exist in deletedPresets
+      bool changed = false;
+      if (deletedPresets.contains('Electronics & Communication')) {
+        deletedPresets.remove('Electronics & Communication');
+        if (!deletedPresets.contains('Electronics & Communication Engineering')) {
+          deletedPresets.add('Electronics & Communication Engineering');
+        }
+        changed = true;
+      }
+      if (deletedPresets.contains('Electrical & Electronics')) {
+        deletedPresets.remove('Electrical & Electronics');
+        if (!deletedPresets.contains('Electrical & Electronics Engineering')) {
+          deletedPresets.add('Electrical & Electronics Engineering');
+        }
+        changed = true;
+      }
+      if (changed) {
+        await prefs.setStringList('deleted_presets', deletedPresets);
+      }
 
       final url = Uri.parse('${ApiConstants.baseUrl}/api/departments');
       final response = await http.get(url);
@@ -105,6 +125,7 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
                   (preset) => 
                     preset['name'] == branchName || 
                     preset['code'] == branchName ||
+                    branchName.contains(preset['name'] as String) ||
                     (preset['name'] as String).contains(branchName),
                   orElse: () => {
                     'name': branchName,
