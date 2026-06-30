@@ -56,26 +56,61 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
         await prefs.setStringList('deleted_presets', deletedPresets);
       }
 
+      List<String> presets = [
+        'Civil Engineering',
+        'Computer Engineering',
+        'Electronics & Communication Engineering',
+        'Electrical & Electronics Engineering',
+        'Mechanical Engineering',
+      ];
+
       if (res.statusCode == 200) {
         final Map<String, dynamic> responseData = json.decode(res.body);
         final List<dynamic> data = responseData['data'] ?? [];
         if (mounted) {
           setState(() {
             List<Map<String, dynamic>> mapped = [];
+            
+            // 1. Add presets that haven't been deleted locally
+            for (var preset in presets) {
+              if (!deletedPresets.contains(preset)) {
+                mapped.add({
+                  'branch': preset,
+                  'overallPercentage': 0,
+                  'years': [
+                    {'year': '1st Year', 'percentage': 0},
+                    {'year': '2nd Year', 'percentage': 0},
+                    {'year': '3rd Year', 'percentage': 0},
+                  ],
+                });
+              }
+            }
+
+            // 2. Add or update data from the database
             for (var d in data) {
               String branchName = d['branch']?.toString() ?? 'Unknown';
-              // Check if deleted (direct or partial match)
-              bool isDeleted = deletedPresets.contains(branchName) || 
-                  deletedPresets.any((deleted) => 
-                      deleted == branchName || 
-                      branchName.contains(deleted) || 
-                      deleted.contains(branchName));
-              if (!isDeleted) {
-                mapped.add({
-                  'branch': branchName, 
-                  'overallPercentage': d['overallPercentage'] ?? 0,
-                  'years': d['years'] ?? [],
-                });
+              
+              int existingIdx = mapped.indexWhere((item) =>
+                  item['branch'] == branchName ||
+                  branchName.contains(item['branch'] as String) ||
+                  (item['branch'] as String).contains(branchName));
+                  
+              if (existingIdx != -1) {
+                mapped[existingIdx]['overallPercentage'] = d['overallPercentage'] ?? 0;
+                mapped[existingIdx]['years'] = d['years'] ?? [];
+              } else {
+                bool isDeleted = deletedPresets.contains(branchName) || 
+                    deletedPresets.any((deleted) => 
+                        deleted == branchName || 
+                        branchName.contains(deleted) || 
+                        deleted.contains(branchName));
+                if (!isDeleted) {
+                  mapped.add({
+                    'branch': branchName, 
+                    'overallPercentage': d['overallPercentage'] ?? 0,
+                    'years': d['years'] ?? [],
+                  });
+                }
               }
             }
             deptProgress = mapped;
