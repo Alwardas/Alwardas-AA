@@ -73,7 +73,12 @@ class _PrincipalLessonPlansScreenState extends State<PrincipalLessonPlansScreen>
             
             // 1. Add presets that haven't been deleted locally
             for (var preset in presets) {
-              if (!deletedPresets.contains(preset)) {
+              bool isDeleted = deletedPresets.contains(preset) || 
+                  deletedPresets.any((deleted) => 
+                      deleted == preset || 
+                      preset.contains(deleted) || 
+                      deleted.contains(preset));
+              if (!isDeleted) {
                 mapped.add({
                   'branch': preset,
                   'overallPercentage': 0,

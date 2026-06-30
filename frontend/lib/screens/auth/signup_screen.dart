@@ -119,7 +119,12 @@ class _SignupScreenState extends State<SignupScreen> {
         Set<String> branchSet = {};
         
         for (String p in presets) {
-            if (!deletedPresets.contains(p)) {
+            bool isDeleted = deletedPresets.contains(p) ||
+                deletedPresets.any((deleted) =>
+                    deleted == p ||
+                    p.contains(deleted) ||
+                    deleted.contains(p));
+            if (!isDeleted) {
                 branchSet.add(p);
             }
         }
@@ -127,7 +132,20 @@ class _SignupScreenState extends State<SignupScreen> {
         for (var item in data) {
            String branchName = item['branch'] ?? '';
            if (branchName.isNotEmpty) {
-               branchSet.add(branchName);
+               bool isDeleted = deletedPresets.contains(branchName) ||
+                   deletedPresets.any((deleted) =>
+                       deleted == branchName ||
+                       branchName.contains(deleted) ||
+                       deleted.contains(branchName));
+               if (!isDeleted) {
+                   bool exists = branchSet.any((existing) =>
+                       existing == branchName ||
+                       existing.contains(branchName) ||
+                       branchName.contains(existing));
+                   if (!exists) {
+                       branchSet.add(branchName);
+                   }
+               }
            }
         }
         

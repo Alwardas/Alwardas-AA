@@ -101,7 +101,13 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
 
             // 1. Add presets that haven't been deleted locally
             for (var preset in _presets) {
-              if (!deletedPresets.contains(preset['name'])) {
+              String presetName = preset['name'];
+              bool isDeleted = deletedPresets.contains(presetName) ||
+                  deletedPresets.any((deleted) =>
+                      deleted == presetName ||
+                      presetName.contains(deleted) ||
+                      deleted.contains(presetName));
+              if (!isDeleted) {
                 branches.add(Map.from(preset));
               }
             }
@@ -110,10 +116,14 @@ class _CoordinatorDepartmentScreenState extends State<CoordinatorDepartmentScree
             for (var item in data) {
               String branchName = item['branch'] ?? 'Unknown';
               
-              int existingIdx = branches.indexWhere((b) => b['name'] == branchName);
+              int existingIdx = branches.indexWhere((b) => 
+                  b['name'] == branchName ||
+                  branchName.contains(b['name'] as String) ||
+                  (b['name'] as String).contains(branchName));
               
               if (existingIdx != -1) {
-                // If the preset is already in the list, update its short code if available from DB
+                // Update name to database name so deletion matches DB exactly
+                branches[existingIdx]['name'] = branchName;
                 if (item['short_code'] != null && item['short_code'].toString().isNotEmpty) {
                   branches[existingIdx]['code'] = item['short_code'];
                 }
