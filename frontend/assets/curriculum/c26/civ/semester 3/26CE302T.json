@@ -1,8 +1,597 @@
-{
-    "regulation": "C26",
-    "units": [],
-    "totalPeriods": 75,
-    "subjectCode": "26CE302T",
-    "semester": 3,
-    "subjectName": "Hydraulics"
+﻿{
+    "subjectCode":  "26CE302T",
+    "subjectName":  "Hydraulics",
+    "regulation":  "C26",
+    "semester":  3,
+    "totalPeriods":  75,
+    "units":  [
+                  {
+                      "unitNo":  1,
+                      "title":  "Properties of Fluids",
+                      "totalPeriods":  5,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE302T-1.1",
+                                         "sno":  "1.1",
+                                         "topic":  "Define fluid and distinguish between solids and fluids",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-1.2",
+                                         "sno":  "1.2",
+                                         "topic":  "Differentiate ideal and real fluids and define basic properties",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-1.3",
+                                         "sno":  "1.3",
+                                         "topic":  "Define mass density, specific weight, specific gravity, viscosity and surface tension",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-1.4",
+                                         "sno":  "1.4",
+                                         "topic":  "Revision of Properties of Fluids",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE302T-1.5",
+                                         "sno":  "1.5",
+                                         "topic":  "Assessment on Properties of Fluids",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  2,
+                      "title":  "Fluid pressure and its measurements",
+                      "totalPeriods":  9,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE302T-2.1",
+                                         "sno":  "2.1",
+                                         "topic":  "Define atmospheric, gauge and absolute pressure and their relation",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-2.2",
+                                         "sno":  "2.2",
+                                         "topic":  "Describe pressure measuring instruments: Piezometers, U-tube manometers",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-2.3",
+                                         "sno":  "2.3",
+                                         "topic":  "Describe differential manometers and mechanical gauges",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-2.4",
+                                         "sno":  "2.4",
+                                         "topic":  "Calculate fluid pressure using manometer readings - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-2.5",
+                                         "sno":  "2.5",
+                                         "topic":  "Calculate fluid pressure using manometer readings - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-2.6",
+                                         "sno":  "2.6",
+                                         "topic":  "Define Total Pressure and Centre of Pressure on immersed surfaces",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-2.7",
+                                         "sno":  "2.7",
+                                         "topic":  "Compute total pressure and centre of pressure for horizontal, vertical and inclined planes",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-2.8",
+                                         "sno":  "2.8",
+                                         "topic":  "Revision of Fluid Pressure and its Measurements",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE302T-2.9",
+                                         "sno":  "2.9",
+                                         "topic":  "Assessment on Fluid Pressure and its Measurements",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  3,
+                      "title":  "Flow of Fluids",
+                      "totalPeriods":  13,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE302T-3.1",
+                                         "sno":  "3.1",
+                                         "topic":  "State different types of flow of liquids (steady, unsteady, uniform, non-uniform)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.2",
+                                         "sno":  "3.2",
+                                         "topic":  "Define laminar and turbulent flow and state their differences",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.3",
+                                         "sno":  "3.3",
+                                         "topic":  "Define discharge and state its units",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.4",
+                                         "sno":  "3.4",
+                                         "topic":  "Derive one-dimensional continuity equation",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.5",
+                                         "sno":  "3.5",
+                                         "topic":  "Solve problems on discharge and velocity using continuity equation",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.6",
+                                         "sno":  "3.6",
+                                         "topic":  "Explain energies of liquid in motion (datum, pressure, velocity heads)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.7",
+                                         "sno":  "3.7",
+                                         "topic":  "State Bernoulli\u0027s theorem of total energy of liquid in motion",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.8",
+                                         "sno":  "3.8",
+                                         "topic":  "List limitations and practical applications of Bernoulli\u0027s theorem",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.9",
+                                         "sno":  "3.9",
+                                         "topic":  "Compute pressure and velocity using Bernoulli\u0027s equation",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.10",
+                                         "sno":  "3.10",
+                                         "topic":  "Describe working principle of Venturi meter, Orifice meter and Pitot tube",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.11",
+                                         "sno":  "3.11",
+                                         "topic":  "Calculate actual discharge through Venturi meter and Orifice meter",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.12",
+                                         "sno":  "3.12",
+                                         "topic":  "Revision of Flow of Fluids",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE302T-3.13",
+                                         "sno":  "3.13",
+                                         "topic":  "Assessment on Flow of Fluids",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  4,
+                      "title":  "Flow through orifices and mouth pieces",
+                      "totalPeriods":  10,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE302T-4.1",
+                                         "sno":  "4.1",
+                                         "topic":  "Define orifice and classify (small, large, rectangular)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-4.2",
+                                         "sno":  "4.2",
+                                         "topic":  "Define Vena-contracta and hydraulic coefficients (Cc, Cv, Cd, Cr)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-4.3",
+                                         "sno":  "4.3",
+                                         "topic":  "Calculate discharge and coefficients for small orifice",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-4.4",
+                                         "sno":  "4.4",
+                                         "topic":  "State formula for discharge through large rectangular orifice",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-4.5",
+                                         "sno":  "4.5",
+                                         "topic":  "State equations for discharge through fully/partially submerged orifices",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-4.6",
+                                         "sno":  "4.6",
+                                         "topic":  "State formula for time of emptying a prismatic tank by an orifice",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-4.7",
+                                         "sno":  "4.7",
+                                         "topic":  "Define mouthpiece and state formulae for discharge",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-4.8",
+                                         "sno":  "4.8",
+                                         "topic":  "Calculate discharge through mouthpiece using numerical examples",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-4.9",
+                                         "sno":  "4.9",
+                                         "topic":  "Revision of Flow through Orifices and Mouth Pieces",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE302T-4.10",
+                                         "sno":  "4.10",
+                                         "topic":  "Assessment on Flow through Orifices and Mouth Pieces",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  5,
+                      "title":  "Flow over notches and weirs",
+                      "totalPeriods":  9,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE302T-5.1",
+                                         "sno":  "5.1",
+                                         "topic":  "Define a notch and list types (rectangular, triangular, trapezoidal)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-5.2",
+                                         "sno":  "5.2",
+                                         "topic":  "State formulae for discharge through rectangular and triangular notches",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-5.3",
+                                         "sno":  "5.3",
+                                         "topic":  "Calculate discharge through rectangular and triangular notches",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-5.4",
+                                         "sno":  "5.4",
+                                         "topic":  "Define weir and list types (sharp crested, broad crested)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-5.5",
+                                         "sno":  "5.5",
+                                         "topic":  "State formulae for discharge over sharp crested and broad crested weirs",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-5.6",
+                                         "sno":  "5.6",
+                                         "topic":  "Write Francis and Bazin empirical formulas for rectangular weirs",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-5.7",
+                                         "sno":  "5.7",
+                                         "topic":  "Solve numerical problems on discharge over weirs",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-5.8",
+                                         "sno":  "5.8",
+                                         "topic":  "Revision of Flow over Notches and Weirs",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE302T-5.9",
+                                         "sno":  "5.9",
+                                         "topic":  "Assessment on Flow over Notches and Weirs",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  6,
+                      "title":  "Flow through pipes",
+                      "totalPeriods":  9,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE302T-6.1",
+                                         "sno":  "6.1",
+                                         "topic":  "List various major and minor losses in pipes",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-6.2",
+                                         "sno":  "6.2",
+                                         "topic":  "State Chezy\u0027s formula and Darcy\u0027s Weisbach equation for friction loss",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-6.3",
+                                         "sno":  "6.3",
+                                         "topic":  "Solve numerical problems on loss of head due to friction",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-6.4",
+                                         "sno":  "6.4",
+                                         "topic":  "State formulae for minor head loss (entrance, exit, sudden expansion/contraction)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-6.5",
+                                         "sno":  "6.5",
+                                         "topic":  "Define Hydraulic Gradient Line (HGL) and Total Energy Line (TEL)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-6.6",
+                                         "sno":  "6.6",
+                                         "topic":  "Calculate discharge through parallel and compound (series) pipes",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-6.7",
+                                         "sno":  "6.7",
+                                         "topic":  "Solve numerical problems on compound pipes",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-6.8",
+                                         "sno":  "6.8",
+                                         "topic":  "Revision of Flow through Pipes",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE302T-6.9",
+                                         "sno":  "6.9",
+                                         "topic":  "Assessment on Flow through Pipes",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  7,
+                      "title":  "Flow through open channels",
+                      "totalPeriods":  14,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE302T-7.1",
+                                         "sno":  "7.1",
+                                         "topic":  "Define open channel flow and differentiate from pipe flow",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.2",
+                                         "sno":  "7.2",
+                                         "topic":  "Define terms: Wetted perimeter and Hydraulic mean depth",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.3",
+                                         "sno":  "7.3",
+                                         "topic":  "State Chezy\u0027s formula and Manning\u0027s formula for uniform flow",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.4",
+                                         "sno":  "7.4",
+                                         "topic":  "State Kutter\u0027s, Manning\u0027s and Bazin\u0027s formulae to calculate \u0027C\u0027",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.5",
+                                         "sno":  "7.5",
+                                         "topic":  "Calculate velocity and discharge in open channels using Chezy\u0027s formula",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.6",
+                                         "sno":  "7.6",
+                                         "topic":  "Calculate velocity and discharge in open channels using Manning\u0027s formula",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.7",
+                                         "sno":  "7.7",
+                                         "topic":  "Define most economical section of a channel",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.8",
+                                         "sno":  "7.8",
+                                         "topic":  "List conditions for most economical Rectangular channel section",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.9",
+                                         "sno":  "7.9",
+                                         "topic":  "List conditions for most economical Trapezoidal channel section",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.10",
+                                         "sno":  "7.10",
+                                         "topic":  "Design Rectangular and Trapezoidal sections for given conditions - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.11",
+                                         "sno":  "7.11",
+                                         "topic":  "Design Rectangular and Trapezoidal sections for given conditions - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.12",
+                                         "sno":  "7.12",
+                                         "topic":  "Solve general channel flow design problems",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.13",
+                                         "sno":  "7.13",
+                                         "topic":  "Revision of Flow through Open Channels",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE302T-7.14",
+                                         "sno":  "7.14",
+                                         "topic":  "Assessment on Flow through Open Channels",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  8,
+                      "title":  "Pumps and Turbines",
+                      "totalPeriods":  3,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE302T-8.1",
+                                         "sno":  "8.1",
+                                         "topic":  "Define pump, list types (reciprocating/centrifugal) and define turbines",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-8.2",
+                                         "sno":  "8.2",
+                                         "topic":  "Revision of Pumps and Turbines",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE302T-8.3",
+                                         "sno":  "8.3",
+                                         "topic":  "Assessment on Pumps and Turbines",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  9,
+                      "title":  "Hydroelectric power plants",
+                      "totalPeriods":  3,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE302T-9.1",
+                                         "sno":  "9.1",
+                                         "topic":  "Sketch typical layout of hydroelectric power plant and define surge tank",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE302T-9.2",
+                                         "sno":  "9.2",
+                                         "topic":  "Revision of Hydroelectric Power Plants",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE302T-9.3",
+                                         "sno":  "9.3",
+                                         "topic":  "Assessment on Hydroelectric Power Plants",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  }
+              ]
 }

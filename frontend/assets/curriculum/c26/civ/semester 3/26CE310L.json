@@ -1,8 +1,667 @@
-{
-    "regulation": "C26",
-    "units": [],
-    "totalPeriods": 90,
-    "subjectCode": "26CE310L",
-    "semester": 3,
-    "subjectName": "Material Testing & Hydraulics Practice"
+﻿{
+    "subjectCode":  "26CE310L",
+    "subjectName":  "Material Testing \u0026 Hydraulics Practice",
+    "regulation":  "C26",
+    "semester":  3,
+    "totalPeriods":  90,
+    "units":  [
+                  {
+                      "unitNo":  1,
+                      "title":  "Tests on bricks\u0026 cement",
+                      "totalPeriods":  15,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE310L-1.1",
+                                         "sno":  "1.1",
+                                         "topic":  "Explain water absorption test on bricks as per IS:3495",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.2",
+                                         "sno":  "1.2",
+                                         "topic":  "Perform water absorption test on bricks in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.3",
+                                         "sno":  "1.3",
+                                         "topic":  "Explain crushing/compressive strength test on bricks",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.4",
+                                         "sno":  "1.4",
+                                         "topic":  "Perform crushing strength test on bricks in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.5",
+                                         "sno":  "1.5",
+                                         "topic":  "Calculate and interpret brick test results",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.6",
+                                         "sno":  "1.6",
+                                         "topic":  "Explain fineness test on cement using 90-micron sieve",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.7",
+                                         "sno":  "1.7",
+                                         "topic":  "Perform fineness test on cement in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.8",
+                                         "sno":  "1.8",
+                                         "topic":  "Explain normal consistency test on cement using Vicat apparatus",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.9",
+                                         "sno":  "1.9",
+                                         "topic":  "Perform normal consistency test on cement in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.10",
+                                         "sno":  "1.10",
+                                         "topic":  "Explain initial and final setting time tests on cement",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.11",
+                                         "sno":  "1.11",
+                                         "topic":  "Perform initial and final setting time tests in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.12",
+                                         "sno":  "1.12",
+                                         "topic":  "Explain compressive strength test on cement mortar cubes (1:3)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.13",
+                                         "sno":  "1.13",
+                                         "topic":  "Perform compressive strength test on cement mortar cubes",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.14",
+                                         "sno":  "1.14",
+                                         "topic":  "Revision of Brick and Cement Tests",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE310L-1.15",
+                                         "sno":  "1.15",
+                                         "topic":  "Assessment on Brick and Cement Tests",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  2,
+                      "title":  "Tests on Aggregates\u0026 soils",
+                      "totalPeriods":  27,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE310L-2.1",
+                                         "sno":  "2.1",
+                                         "topic":  "Explain bulking of sand test using volumetric method",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.2",
+                                         "sno":  "2.2",
+                                         "topic":  "Perform bulking of sand test in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.3",
+                                         "sno":  "2.3",
+                                         "topic":  "Explain bulk density and percentage voids test in aggregate",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.4",
+                                         "sno":  "2.4",
+                                         "topic":  "Perform bulk density test for loose and compacted aggregates",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.5",
+                                         "sno":  "2.5",
+                                         "topic":  "Calculate voids ratio and bulk density",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.6",
+                                         "sno":  "2.6",
+                                         "topic":  "Explain sieve analysis of fine and coarse aggregates",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.7",
+                                         "sno":  "2.7",
+                                         "topic":  "Perform sieve analysis of fine aggregate (sand) in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.8",
+                                         "sno":  "2.8",
+                                         "topic":  "Perform sieve analysis of coarse aggregate in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.9",
+                                         "sno":  "2.9",
+                                         "topic":  "Calculate fineness modulus and plot gradation curve",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.10",
+                                         "sno":  "2.10",
+                                         "topic":  "Explain flakiness index test on coarse aggregates",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.11",
+                                         "sno":  "2.11",
+                                         "topic":  "Perform flakiness index test in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.12",
+                                         "sno":  "2.12",
+                                         "topic":  "Explain elongation index test on coarse aggregates",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.13",
+                                         "sno":  "2.13",
+                                         "topic":  "Perform elongation index test in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.14",
+                                         "sno":  "2.14",
+                                         "topic":  "Calculate flakiness and elongation indices",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.15",
+                                         "sno":  "2.15",
+                                         "topic":  "Explain aggregate impact value test",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.16",
+                                         "sno":  "2.16",
+                                         "topic":  "Perform aggregate impact value test in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.17",
+                                         "sno":  "2.17",
+                                         "topic":  "Explain field density test of soil by sand replacement method",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.18",
+                                         "sno":  "2.18",
+                                         "topic":  "Perform sand replacement method on field",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.19",
+                                         "sno":  "2.19",
+                                         "topic":  "Explain field density test of soil by core cutter method",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.20",
+                                         "sno":  "2.20",
+                                         "topic":  "Perform core cutter method in laboratory/field",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.21",
+                                         "sno":  "2.21",
+                                         "topic":  "Calculate bulk density, dry density and compaction degree of soil",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.22",
+                                         "sno":  "2.22",
+                                         "topic":  "Explain Standard Proctor compaction test of soil",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.23",
+                                         "sno":  "2.23",
+                                         "topic":  "Perform Standard Proctor compaction test in laboratory - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.24",
+                                         "sno":  "2.24",
+                                         "topic":  "Perform Standard Proctor compaction test in laboratory - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.25",
+                                         "sno":  "2.25",
+                                         "topic":  "Calculate OMC and MDD and plot compaction curve",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.26",
+                                         "sno":  "2.26",
+                                         "topic":  "Revision of Aggregate and Soil Tests",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE310L-2.27",
+                                         "sno":  "2.27",
+                                         "topic":  "Assessment on Aggregate and Soil Tests",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  3,
+                      "title":  "Tests on Concrete \u0026 metals",
+                      "totalPeriods":  18,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE310L-3.1",
+                                         "sno":  "3.1",
+                                         "topic":  "Explain workability tests (slump cone and compaction factor)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.2",
+                                         "sno":  "3.2",
+                                         "topic":  "Perform slump cone test in concrete laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.3",
+                                         "sno":  "3.3",
+                                         "topic":  "Perform compaction factor test in concrete laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.4",
+                                         "sno":  "3.4",
+                                         "topic":  "Explain casting and curing of cement concrete cubes",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.5",
+                                         "sno":  "3.5",
+                                         "topic":  "Perform casting of cement concrete cubes in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.6",
+                                         "sno":  "3.6",
+                                         "topic":  "Explain testing of concrete cubes for compressive strength",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.7",
+                                         "sno":  "3.7",
+                                         "topic":  "Perform compressive strength test on concrete cubes",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.8",
+                                         "sno":  "3.8",
+                                         "topic":  "Explain non-destructive tests (rebound hammer, ultrasonic velocity)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.9",
+                                         "sno":  "3.9",
+                                         "topic":  "Perform rebound hammer test on concrete structures",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.10",
+                                         "sno":  "3.10",
+                                         "topic":  "Perform ultrasonic pulse velocity test on concrete specimens",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.11",
+                                         "sno":  "3.11",
+                                         "topic":  "Explain tension test on mild steel rod using UTM",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.12",
+                                         "sno":  "3.12",
+                                         "topic":  "Perform tension test on mild steel rod in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.13",
+                                         "sno":  "3.13",
+                                         "topic":  "Calculate yield stress, ultimate stress, and percentage elongation",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.14",
+                                         "sno":  "3.14",
+                                         "topic":  "Explain deflection test on simple supported beam (steel/wood)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.15",
+                                         "sno":  "3.15",
+                                         "topic":  "Perform deflection test on beam and calculate Young\u0027s modulus",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.16",
+                                         "sno":  "3.16",
+                                         "topic":  "Solve general material testing numerical problems",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.17",
+                                         "sno":  "3.17",
+                                         "topic":  "Revision of Concrete and Metals Tests",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE310L-3.18",
+                                         "sno":  "3.18",
+                                         "topic":  "Assessment on Concrete and Metals Tests",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  4,
+                      "title":  "Determination of Hydraulic Coefficients / factors / constants / verification of principles / laws",
+                      "totalPeriods":  30,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE310L-4.1",
+                                         "sno":  "4.1",
+                                         "topic":  "Explain coefficient of discharge (Cd) of small orifice by constant head",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.2",
+                                         "sno":  "4.2",
+                                         "topic":  "Perform Cd of small orifice by constant head in hydraulics laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.3",
+                                         "sno":  "4.3",
+                                         "topic":  "Explain Cd of small orifice by variable head method",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.4",
+                                         "sno":  "4.4",
+                                         "topic":  "Perform Cd of small orifice by variable head in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.5",
+                                         "sno":  "4.5",
+                                         "topic":  "Explain determination of hydraulic coefficients (Cc, Cv, Cd) of orifice",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.6",
+                                         "sno":  "4.6",
+                                         "topic":  "Perform test to determine Cc, Cv, Cd of orifice",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.7",
+                                         "sno":  "4.7",
+                                         "topic":  "Calculate hydraulic coefficients from experimental data",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.8",
+                                         "sno":  "4.8",
+                                         "topic":  "Explain Cd of mouthpiece by constant head method",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.9",
+                                         "sno":  "4.9",
+                                         "topic":  "Perform Cd of mouthpiece test in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.10",
+                                         "sno":  "4.10",
+                                         "topic":  "Explain Cd of rectangular notch in hydraulics laboratory",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.11",
+                                         "sno":  "4.11",
+                                         "topic":  "Perform Cd of rectangular notch test in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.12",
+                                         "sno":  "4.12",
+                                         "topic":  "Explain Cd of triangular notch in laboratory",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.13",
+                                         "sno":  "4.13",
+                                         "topic":  "Perform Cd of triangular notch test in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.14",
+                                         "sno":  "4.14",
+                                         "topic":  "Calculate notch discharge and Cd values",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.15",
+                                         "sno":  "4.15",
+                                         "topic":  "Explain verification of Bernoulli\u0027s theorem",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.16",
+                                         "sno":  "4.16",
+                                         "topic":  "Perform test to verify Bernoulli\u0027s theorem in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.17",
+                                         "sno":  "4.17",
+                                         "topic":  "Plot HGL and TEL from experimental data",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.18",
+                                         "sno":  "4.18",
+                                         "topic":  "Explain Cd of Venturi meter in laboratory",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.19",
+                                         "sno":  "4.19",
+                                         "topic":  "Perform Cd of Venturi meter test in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.20",
+                                         "sno":  "4.20",
+                                         "topic":  "Explain Cd of Orifice meter in laboratory",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.21",
+                                         "sno":  "4.21",
+                                         "topic":  "Perform Cd of Orifice meter test in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.22",
+                                         "sno":  "4.22",
+                                         "topic":  "Calculate actual discharge and Cd for flow meters",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.23",
+                                         "sno":  "4.23",
+                                         "topic":  "Explain determination of friction factor in pipe flow",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.24",
+                                         "sno":  "4.24",
+                                         "topic":  "Perform pipe friction factor test in laboratory",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.25",
+                                         "sno":  "4.25",
+                                         "topic":  "Calculate friction factor using Darcy\u0027s equation",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.26",
+                                         "sno":  "4.26",
+                                         "topic":  "Perform minor loss of head tests (bends, contractions)",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.27",
+                                         "sno":  "4.27",
+                                         "topic":  "Calculate minor loss coefficients",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.28",
+                                         "sno":  "4.28",
+                                         "topic":  "Solve general hydraulics practice problems",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.29",
+                                         "sno":  "4.29",
+                                         "topic":  "Revision of Hydraulics Practice",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE310L-4.30",
+                                         "sno":  "4.30",
+                                         "topic":  "Assessment on Hydraulics Practice",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  }
+              ]
 }

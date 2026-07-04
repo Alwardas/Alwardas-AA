@@ -1,8 +1,674 @@
-{
-    "regulation": "C26",
-    "units": [],
-    "totalPeriods": 90,
-    "subjectCode": "26CE308D",
-    "semester": 3,
-    "subjectName": "Civil Engineering Drawing -I Integrated with CAD"
+﻿{
+    "subjectCode":  "26CE308D",
+    "subjectName":  "Civil Engineering Drawing-I Integrated with CAD",
+    "regulation":  "C26",
+    "semester":  3,
+    "totalPeriods":  90,
+    "units":  [
+                  {
+                      "unitNo":  1,
+                      "title":  "Introduction",
+                      "totalPeriods":  6,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE308D-1.1",
+                                         "sno":  "1.1",
+                                         "topic":  "Sketch conventional signs of materials, plumbing and electrical fixtures",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE308D-1.2",
+                                         "sno":  "1.2",
+                                         "topic":  "Draw cross-section of load bearing wall and label components",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-1.3",
+                                         "sno":  "1.3",
+                                         "topic":  "Draw cross-section of isolated column footing of framed structure",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-1.4",
+                                         "sno":  "1.4",
+                                         "topic":  "Draw plan of brick wall meeting at corner in English bond",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-1.5",
+                                         "sno":  "1.5",
+                                         "topic":  "Revision of Introduction",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE308D-1.6",
+                                         "sno":  "1.6",
+                                         "topic":  "Assessment on Introduction",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  2,
+                      "title":  "Residential Buildings",
+                      "totalPeriods":  30,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE308D-2.1",
+                                         "sno":  "2.1",
+                                         "topic":  "State setbacks and orientation principles for residential buildings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.2",
+                                         "sno":  "2.2",
+                                         "topic":  "Draw plan, section and elevation of single-room building with veranda - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.3",
+                                         "sno":  "2.3",
+                                         "topic":  "Draw plan, section and elevation of single-room building with veranda - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.4",
+                                         "sno":  "2.4",
+                                         "topic":  "Draw plan, section and elevation of single-room building with veranda - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.5",
+                                         "sno":  "2.5",
+                                         "topic":  "Draw plan of one-bedroom residential house - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.6",
+                                         "sno":  "2.6",
+                                         "topic":  "Draw plan of one-bedroom residential house - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.7",
+                                         "sno":  "2.7",
+                                         "topic":  "Draw section and elevation of one-bedroom residential house - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.8",
+                                         "sno":  "2.8",
+                                         "topic":  "Draw section and elevation of one-bedroom residential house - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.9",
+                                         "sno":  "2.9",
+                                         "topic":  "Draw plan of two-bedroom residential house - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.10",
+                                         "sno":  "2.10",
+                                         "topic":  "Draw plan of two-bedroom residential house - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.11",
+                                         "sno":  "2.11",
+                                         "topic":  "Draw plan of two-bedroom residential house - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.12",
+                                         "sno":  "2.12",
+                                         "topic":  "Draw section and elevation of two-bedroom residential house - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.13",
+                                         "sno":  "2.13",
+                                         "topic":  "Draw section and elevation of two-bedroom residential house - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.14",
+                                         "sno":  "2.14",
+                                         "topic":  "Draw section and elevation of two-bedroom residential house - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.15",
+                                         "sno":  "2.15",
+                                         "topic":  "Draw plan of single-storied framed structure residential building",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.16",
+                                         "sno":  "2.16",
+                                         "topic":  "Draw section of single-storied framed structure residential building",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.17",
+                                         "sno":  "2.17",
+                                         "topic":  "Draw elevation of single-storied framed structure residential building",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.18",
+                                         "sno":  "2.18",
+                                         "topic":  "Draw site plan of residential building as per NBC rules",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.19",
+                                         "sno":  "2.19",
+                                         "topic":  "Draw plan and section of dog-legged staircase - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.20",
+                                         "sno":  "2.20",
+                                         "topic":  "Draw plan and section of dog-legged staircase - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.21",
+                                         "sno":  "2.21",
+                                         "topic":  "Draw first and second floor plans of two-storied residential building",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.22",
+                                         "sno":  "2.22",
+                                         "topic":  "Draw elevation of two-storied residential building",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.23",
+                                         "sno":  "2.23",
+                                         "topic":  "Understand principles of Vaastu in planning of residential building",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.24",
+                                         "sno":  "2.24",
+                                         "topic":  "Draw detailed doors and windows elevation and sections - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.25",
+                                         "sno":  "2.25",
+                                         "topic":  "Draw detailed doors and windows elevation and sections - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.26",
+                                         "sno":  "2.26",
+                                         "topic":  "Draw King post and Queen post trusses elevation - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.27",
+                                         "sno":  "2.27",
+                                         "topic":  "Draw King post and Queen post trusses elevation - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.28",
+                                         "sno":  "2.28",
+                                         "topic":  "Draw details of flush and panelled doors",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.29",
+                                         "sno":  "2.29",
+                                         "topic":  "Revision of Residential Buildings Drawing",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE308D-2.30",
+                                         "sno":  "2.30",
+                                         "topic":  "Assessment on Residential Buildings Drawing",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  3,
+                      "title":  "Public Buildings",
+                      "totalPeriods":  14,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE308D-3.1",
+                                         "sno":  "3.1",
+                                         "topic":  "Draw line diagram and plan of Rural hospital of 10 beds capacity - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.2",
+                                         "sno":  "3.2",
+                                         "topic":  "Draw line diagram and plan of Rural hospital of 10 beds capacity - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.3",
+                                         "sno":  "3.3",
+                                         "topic":  "Draw line diagram and plan of Rural hospital of 10 beds capacity - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.4",
+                                         "sno":  "3.4",
+                                         "topic":  "Draw plan of Hostel building for 50 students capacity - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.5",
+                                         "sno":  "3.5",
+                                         "topic":  "Draw plan of Hostel building for 50 students capacity - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.6",
+                                         "sno":  "3.6",
+                                         "topic":  "Draw plan of Hostel building for 50 students capacity - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.7",
+                                         "sno":  "3.7",
+                                         "topic":  "Draw plan of Primary school building for 250 to 300 students - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.8",
+                                         "sno":  "3.8",
+                                         "topic":  "Draw plan of Primary school building for 250 to 300 students - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.9",
+                                         "sno":  "3.9",
+                                         "topic":  "Draw plan of Primary school building for 250 to 300 students - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.10",
+                                         "sno":  "3.10",
+                                         "topic":  "Draw plan and sectional elevation of lift provision in buildings",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.11",
+                                         "sno":  "3.11",
+                                         "topic":  "Understand fire safety provisions in public buildings drawing",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.12",
+                                         "sno":  "3.12",
+                                         "topic":  "Understand provisions for physically challenged and aged in buildings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.13",
+                                         "sno":  "3.13",
+                                         "topic":  "Revision of Public Buildings Drawing",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE308D-3.14",
+                                         "sno":  "3.14",
+                                         "topic":  "Assessment on Public Buildings Drawing",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  4,
+                      "title":  "Working drawings",
+                      "totalPeriods":  10,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE308D-4.1",
+                                         "sno":  "4.1",
+                                         "topic":  "Prepare working drawing for foundation marking width of building",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-4.2",
+                                         "sno":  "4.2",
+                                         "topic":  "Calculate plinth area, carpet area and floor area ratio (FAR)",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE308D-4.3",
+                                         "sno":  "4.3",
+                                         "topic":  "Prepare working drawing for electrical layout of residential building",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-4.4",
+                                         "sno":  "4.4",
+                                         "topic":  "Prepare working drawing for plan of a Lift Shaft",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-4.5",
+                                         "sno":  "4.5",
+                                         "topic":  "Draw plumbing layout plan for two-bedroom residential building",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-4.6",
+                                         "sno":  "4.6",
+                                         "topic":  "Draw site layout plan showing septic tank and soak pit connection",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-4.7",
+                                         "sno":  "4.7",
+                                         "topic":  "Draw reinforcement details for simple beam column junction",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-4.8",
+                                         "sno":  "4.8",
+                                         "topic":  "Draw staircase reinforcement detailing plan",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-4.9",
+                                         "sno":  "4.9",
+                                         "topic":  "Revision of Working Drawings",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE308D-4.10",
+                                         "sno":  "4.10",
+                                         "topic":  "Assessment on Working Drawings",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  5,
+                      "title":  "Building Drawings with Auto CAD",
+                      "totalPeriods":  30,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE308D-5.1",
+                                         "sno":  "5.1",
+                                         "topic":  "Learn 2D AutoCAD Commands (Line, Offset, Trim, Mirror, Block, Layer)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.2",
+                                         "sno":  "5.2",
+                                         "topic":  "Practice drawing Plan and Elevation of single-room building in AutoCAD - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.3",
+                                         "sno":  "5.3",
+                                         "topic":  "Practice drawing Plan and Elevation of single-room building in AutoCAD - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.4",
+                                         "sno":  "5.4",
+                                         "topic":  "Practice drawing Plan and Elevation of single-room building in AutoCAD - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.5",
+                                         "sno":  "5.5",
+                                         "topic":  "Practice drawing section of single-room building in AutoCAD - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.6",
+                                         "sno":  "5.6",
+                                         "topic":  "Practice drawing section of single-room building in AutoCAD - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.7",
+                                         "sno":  "5.7",
+                                         "topic":  "Practice drawing site plan of single-room building in AutoCAD",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.8",
+                                         "sno":  "5.8",
+                                         "topic":  "Practice drawing Plan of 2-BHK residential building in AutoCAD - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.9",
+                                         "sno":  "5.9",
+                                         "topic":  "Practice drawing Plan of 2-BHK residential building in AutoCAD - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.10",
+                                         "sno":  "5.10",
+                                         "topic":  "Practice drawing Plan of 2-BHK residential building in AutoCAD - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.11",
+                                         "sno":  "5.11",
+                                         "topic":  "Practice drawing section of 2-BHK building in AutoCAD - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.12",
+                                         "sno":  "5.12",
+                                         "topic":  "Practice drawing section of 2-BHK building in AutoCAD - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.13",
+                                         "sno":  "5.13",
+                                         "topic":  "Practice drawing section of 2-BHK building in AutoCAD - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.14",
+                                         "sno":  "5.14",
+                                         "topic":  "Practice drawing elevation of 2-BHK building in AutoCAD",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.15",
+                                         "sno":  "5.15",
+                                         "topic":  "Practice drawing site plan of 2-BHK building in AutoCAD",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.16",
+                                         "sno":  "5.16",
+                                         "topic":  "Practice drawing Plan of a primary school building in AutoCAD - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.17",
+                                         "sno":  "5.17",
+                                         "topic":  "Practice drawing Plan of a primary school building in AutoCAD - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.18",
+                                         "sno":  "5.18",
+                                         "topic":  "Practice drawing Plan of a primary school building in AutoCAD - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.19",
+                                         "sno":  "5.19",
+                                         "topic":  "Practice drawing section and elevation of primary school building in AutoCAD",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.20",
+                                         "sno":  "5.20",
+                                         "topic":  "Practice drawing Plan of a Rural Hospital in AutoCAD - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.21",
+                                         "sno":  "5.21",
+                                         "topic":  "Practice drawing Plan of a Rural Hospital in AutoCAD - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.22",
+                                         "sno":  "5.22",
+                                         "topic":  "Practice drawing Plan of a Rural Hospital in AutoCAD - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.23",
+                                         "sno":  "5.23",
+                                         "topic":  "Practice drawing section and elevation of Rural Hospital in AutoCAD",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.24",
+                                         "sno":  "5.24",
+                                         "topic":  "Draw 3D view of wall foundation and isolated column footing in AutoCAD",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.25",
+                                         "sno":  "5.25",
+                                         "topic":  "Learn 3D AutoCAD Commands (Extrude, Revolve, Subtract, Union)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.26",
+                                         "sno":  "5.26",
+                                         "topic":  "Practice 3D modelling of staircase in AutoCAD - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.27",
+                                         "sno":  "5.27",
+                                         "topic":  "Practice 3D modelling of staircase in AutoCAD - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.28",
+                                         "sno":  "5.28",
+                                         "topic":  "Print and layout setup in AutoCAD (Paper space, scale)",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.29",
+                                         "sno":  "5.29",
+                                         "topic":  "Revision of AutoCAD Drawings",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE308D-5.30",
+                                         "sno":  "5.30",
+                                         "topic":  "Assessment on AutoCAD Drawings",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  }
+              ]
 }

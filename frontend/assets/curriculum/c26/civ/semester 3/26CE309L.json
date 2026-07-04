@@ -1,8 +1,667 @@
-{
-    "regulation": "C26",
-    "units": [],
-    "totalPeriods": 90,
-    "subjectCode": "26CE309L",
-    "semester": 3,
-    "subjectName": "Surveying Theory & Practice"
+﻿{
+    "subjectCode":  "26CE309L",
+    "subjectName":  "Surveying Theory \u0026 Practice - II",
+    "regulation":  "C26",
+    "semester":  3,
+    "totalPeriods":  90,
+    "units":  [
+                  {
+                      "unitNo":  1,
+                      "title":  "Theodolite Survey",
+                      "totalPeriods":  36,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE309L-1.1",
+                                         "sno":  "1.1",
+                                         "topic":  "Identify component parts and fundamental lines of transit theodolite",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.2",
+                                         "sno":  "1.2",
+                                         "topic":  "Understand technical terms: face left, face right, transiting, swinging",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.3",
+                                         "sno":  "1.3",
+                                         "topic":  "Perform temporary adjustments of theodolite on field",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.4",
+                                         "sno":  "1.4",
+                                         "topic":  "Measure horizontal angle by repetition method - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.5",
+                                         "sno":  "1.5",
+                                         "topic":  "Measure horizontal angle by repetition method - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.6",
+                                         "sno":  "1.6",
+                                         "topic":  "Measure horizontal angle by repetition method - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.7",
+                                         "sno":  "1.7",
+                                         "topic":  "Measure horizontal angles by reiteration method - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.8",
+                                         "sno":  "1.8",
+                                         "topic":  "Measure horizontal angles by reiteration method - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.9",
+                                         "sno":  "1.9",
+                                         "topic":  "Measure horizontal angles by reiteration method - Part 3",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.10",
+                                         "sno":  "1.10",
+                                         "topic":  "Measure vertical angles on field - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.11",
+                                         "sno":  "1.11",
+                                         "topic":  "Measure vertical angles on field - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.12",
+                                         "sno":  "1.12",
+                                         "topic":  "Record observations in theodolite field book correctly",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.13",
+                                         "sno":  "1.13",
+                                         "topic":  "Determine magnetic bearings, deflection angles and direct angles",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.14",
+                                         "sno":  "1.14",
+                                         "topic":  "Extend a straight-line using single and double transiting methods",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.15",
+                                         "sno":  "1.15",
+                                         "topic":  "Identify and minimize errors in theodolite work",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.16",
+                                         "sno":  "1.16",
+                                         "topic":  "Conduct theodolite traversing by included angle method - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.17",
+                                         "sno":  "1.17",
+                                         "topic":  "Conduct theodolite traversing by included angle method - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.18",
+                                         "sno":  "1.18",
+                                         "topic":  "Conduct theodolite traversing by deflection angle method",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.19",
+                                         "sno":  "1.19",
+                                         "topic":  "Conduct theodolite traversing by magnetic bearing method",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.20",
+                                         "sno":  "1.20",
+                                         "topic":  "Perform checks for closed and open traverses",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.21",
+                                         "sno":  "1.21",
+                                         "topic":  "Calculate latitude and departure of a traverse - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.22",
+                                         "sno":  "1.22",
+                                         "topic":  "Calculate latitude and departure of a traverse - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.23",
+                                         "sno":  "1.23",
+                                         "topic":  "Determine closing error and consecutive/independent coordinates",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.24",
+                                         "sno":  "1.24",
+                                         "topic":  "Apply Bowditch\u0027s rule for balancing a traverse",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.25",
+                                         "sno":  "1.25",
+                                         "topic":  "Apply Transit rule for balancing a traverse",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.26",
+                                         "sno":  "1.26",
+                                         "topic":  "Determine area of closed traverse using coordinates - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.27",
+                                         "sno":  "1.27",
+                                         "topic":  "Determine area of closed traverse using coordinates - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.28",
+                                         "sno":  "1.28",
+                                         "topic":  "Calculate omitted measurements in a closed traverse (one side)",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.29",
+                                         "sno":  "1.29",
+                                         "topic":  "Solve numerical problems on missing coordinates",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.30",
+                                         "sno":  "1.30",
+                                         "topic":  "Measure horizontal distance between inaccessible points using theodolite",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.31",
+                                         "sno":  "1.31",
+                                         "topic":  "Verify line of collimation adjustment on theodolite",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.32",
+                                         "sno":  "1.32",
+                                         "topic":  "Plotting theodolite traverse from field data - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.33",
+                                         "sno":  "1.33",
+                                         "topic":  "Plotting theodolite traverse from field data - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.34",
+                                         "sno":  "1.34",
+                                         "topic":  "Safety and care of optical instruments on field",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.35",
+                                         "sno":  "1.35",
+                                         "topic":  "Revision of Theodolite Survey",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE309L-1.36",
+                                         "sno":  "1.36",
+                                         "topic":  "Assessment on Theodolite Survey",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  2,
+                      "title":  "Trigonometric Levelling",
+                      "totalPeriods":  21,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE309L-2.1",
+                                         "sno":  "2.1",
+                                         "topic":  "Explain principle and necessity of trigonometric levelling",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.2",
+                                         "sno":  "2.2",
+                                         "topic":  "Determine horizontal and vertical distance when object base is accessible",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.3",
+                                         "sno":  "2.3",
+                                         "topic":  "Calculate RL of object with accessible base - problems",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.4",
+                                         "sno":  "2.4",
+                                         "topic":  "Determine distance when base is inaccessible, instrument stations in same vertical plane (Case 1)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.5",
+                                         "sno":  "2.5",
+                                         "topic":  "Derive formula for Case 1 (instrument axis at same level)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.6",
+                                         "sno":  "2.6",
+                                         "topic":  "Solve problems for Case 1 (instrument axis at same level)",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.7",
+                                         "sno":  "2.7",
+                                         "topic":  "Derive formula for Case 1 (instrument axis at different levels)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.8",
+                                         "sno":  "2.8",
+                                         "topic":  "Solve problems for Case 1 (instrument axis at different levels) - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.9",
+                                         "sno":  "2.9",
+                                         "topic":  "Solve problems for Case 1 (instrument axis at different levels) - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.10",
+                                         "sno":  "2.10",
+                                         "topic":  "Determine distance when base is inaccessible, instrument stations not in same vertical plane (Case 2)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.11",
+                                         "sno":  "2.11",
+                                         "topic":  "Derive formula for Case 2 (transitive angle method)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.12",
+                                         "sno":  "2.12",
+                                         "topic":  "Solve problems for Case 2 - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.13",
+                                         "sno":  "2.13",
+                                         "topic":  "Solve problems for Case 2 - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.14",
+                                         "sno":  "2.14",
+                                         "topic":  "Field practice on finding height of building (accessible base)",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.15",
+                                         "sno":  "2.15",
+                                         "topic":  "Field practice on finding height of tower (inaccessible base) - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.16",
+                                         "sno":  "2.16",
+                                         "topic":  "Field practice on finding height of tower (inaccessible base) - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.17",
+                                         "sno":  "2.17",
+                                         "topic":  "Apply curvature and refraction corrections to trigonometric levelling",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.18",
+                                         "sno":  "2.18",
+                                         "topic":  "Perform relative height calculations for elevated structures",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.19",
+                                         "sno":  "2.19",
+                                         "topic":  "Solve exam-standard problems on trigonometric levelling",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.20",
+                                         "sno":  "2.20",
+                                         "topic":  "Revision of Trigonometric Levelling",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE309L-2.21",
+                                         "sno":  "2.21",
+                                         "topic":  "Assessment on Trigonometric Levelling",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  3,
+                      "title":  "Tacheometry",
+                      "totalPeriods":  15,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE309L-3.1",
+                                         "sno":  "3.1",
+                                         "topic":  "Explain tacheometry principles, uses, and types",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.2",
+                                         "sno":  "3.2",
+                                         "topic":  "Differentiate stadia and tangential tacheometry systems",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.3",
+                                         "sno":  "3.3",
+                                         "topic":  "Derive stadia formulae for horizontal line of sight",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.4",
+                                         "sno":  "3.4",
+                                         "topic":  "Determine tacheometric constants \u0027K\u0027 and \u0027C\u0027 experimentally",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.5",
+                                         "sno":  "3.5",
+                                         "topic":  "Calculate horizontal distance and elevation for horizontal sight",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.6",
+                                         "sno":  "3.6",
+                                         "topic":  "Derive stadia formulae for inclined sight with staff vertical (elevation)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.7",
+                                         "sno":  "3.7",
+                                         "topic":  "Derive stadia formulae for inclined sight with staff vertical (depression)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.8",
+                                         "sno":  "3.8",
+                                         "topic":  "Calculate distance and elevation for inclined sight with staff vertical - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.9",
+                                         "sno":  "3.9",
+                                         "topic":  "Calculate distance and elevation for inclined sight with staff vertical - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.10",
+                                         "sno":  "3.10",
+                                         "topic":  "Field practice on tacheometric distance measurement",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.11",
+                                         "sno":  "3.11",
+                                         "topic":  "Explain tangential system of tacheometry and solve simple problems",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.12",
+                                         "sno":  "3.12",
+                                         "topic":  "Explain the use of anallatic lens in tacheometers",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.13",
+                                         "sno":  "3.13",
+                                         "topic":  "Solve comprehensive numerical problems on tacheometric surveying",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.14",
+                                         "sno":  "3.14",
+                                         "topic":  "Revision of Tacheometry",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE309L-3.15",
+                                         "sno":  "3.15",
+                                         "topic":  "Assessment on Tacheometry",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  4,
+                      "title":  "Curves",
+                      "totalPeriods":  18,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE309L-4.1",
+                                         "sno":  "4.1",
+                                         "topic":  "Classify horizontal curves (simple, compound, reverse)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.2",
+                                         "sno":  "4.2",
+                                         "topic":  "Define degree of curve and state relation with radius (20m/30m chain)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.3",
+                                         "sno":  "4.3",
+                                         "topic":  "Identify elements of simple circular curve with neat sketch",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.4",
+                                         "sno":  "4.4",
+                                         "topic":  "Calculate elements of simple circular curve (tangent length, curve length, apex distance)",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.5",
+                                         "sno":  "4.5",
+                                         "topic":  "Explain linear methods of curve setting: offsets from long chord",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.6",
+                                         "sno":  "4.6",
+                                         "topic":  "Explain linear methods: successive bisection of arcs and offsets from tangents",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.7",
+                                         "sno":  "4.7",
+                                         "topic":  "Explain method of chords produced (deflection distance method)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.8",
+                                         "sno":  "4.8",
+                                         "topic":  "Calculate offsets for curve setting using chords produced method",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.9",
+                                         "sno":  "4.9",
+                                         "topic":  "Explain Rankine\u0027s method of tangential angles using one theodolite",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.10",
+                                         "sno":  "4.10",
+                                         "topic":  "Calculate deflection angles for simple curve using Rankine\u0027s method",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.11",
+                                         "sno":  "4.11",
+                                         "topic":  "Field practice on setting out simple curve by chain and tape - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.12",
+                                         "sno":  "4.12",
+                                         "topic":  "Field practice on setting out simple curve by chain and tape - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.13",
+                                         "sno":  "4.13",
+                                         "topic":  "Field practice on setting out simple curve by Rankine\u0027s method - Part 1",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.14",
+                                         "sno":  "4.14",
+                                         "topic":  "Field practice on setting out simple curve by Rankine\u0027s method - Part 2",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.15",
+                                         "sno":  "4.15",
+                                         "topic":  "Explain transition curves and vertical curves basics",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.16",
+                                         "sno":  "4.16",
+                                         "topic":  "Solve general curve design problems",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.17",
+                                         "sno":  "4.17",
+                                         "topic":  "Revision of Curves",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE309L-4.18",
+                                         "sno":  "4.18",
+                                         "topic":  "Assessment on Curves",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  }
+              ]
 }

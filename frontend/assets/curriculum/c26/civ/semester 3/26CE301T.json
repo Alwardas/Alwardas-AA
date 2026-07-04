@@ -1,8 +1,576 @@
-{
-    "regulation": "C26",
-    "units": [],
-    "totalPeriods": 75,
-    "subjectCode": "26CE301T",
-    "semester": 3,
-    "subjectName": "Mechanics of Solids & Theory of Structures"
+﻿{
+    "subjectCode":  "26CE301T",
+    "subjectName":  "Mechanics of Solids \u0026 Theory of Structures",
+    "regulation":  "C26",
+    "semester":  3,
+    "totalPeriods":  75,
+    "units":  [
+                  {
+                      "unitNo":  1,
+                      "title":  "Theory of simple bending",
+                      "totalPeriods":  15,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE301T-1.1",
+                                         "sno":  "1.1",
+                                         "topic":  "Define simple / pure bending and its significance",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.2",
+                                         "sno":  "1.2",
+                                         "topic":  "Explain the process of simple bending",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.3",
+                                         "sno":  "1.3",
+                                         "topic":  "Define Neutral layer, Neutral axis and Radius of curvature",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.4",
+                                         "sno":  "1.4",
+                                         "topic":  "List the assumptions made in the theory of simple bending",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.5",
+                                         "sno":  "1.5",
+                                         "topic":  "Derive the bending equation for simple bending",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.6",
+                                         "sno":  "1.6",
+                                         "topic":  "Define Bending stress and Moment of resistance",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.7",
+                                         "sno":  "1.7",
+                                         "topic":  "Sketch bending stress distribution across standard sections",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.8",
+                                         "sno":  "1.8",
+                                         "topic":  "Define Modulus of section and Flexural rigidity",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.9",
+                                         "sno":  "1.9",
+                                         "topic":  "Derive formula for section modulus of Square, Rectangular, and Circular sections",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.10",
+                                         "sno":  "1.10",
+                                         "topic":  "Solve numerical problems on theory of simple bending - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.11",
+                                         "sno":  "1.11",
+                                         "topic":  "Solve numerical problems on theory of simple bending - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.12",
+                                         "sno":  "1.12",
+                                         "topic":  "State formula for Shear Stress in cross sections and draw shear stress distribution",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.13",
+                                         "sno":  "1.13",
+                                         "topic":  "Determine maximum shear stress in circular, rectangular and square sections",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.14",
+                                         "sno":  "1.14",
+                                         "topic":  "Revision of Simple Bending",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE301T-1.15",
+                                         "sno":  "1.15",
+                                         "topic":  "Assessment on Simple Bending",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  2,
+                      "title":  "Deflection of beams",
+                      "totalPeriods":  15,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE301T-2.1",
+                                         "sno":  "2.1",
+                                         "topic":  "Draw deflected shapes of simply supported, cantilever and fixed beams",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.2",
+                                         "sno":  "2.2",
+                                         "topic":  "Define Elastic curve, slope and Deflection",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.3",
+                                         "sno":  "2.3",
+                                         "topic":  "Derive relation between slope, deflection and radius of curvature",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.4",
+                                         "sno":  "2.4",
+                                         "topic":  "Derive equations for max slope and deflection by double integration method",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.5",
+                                         "sno":  "2.5",
+                                         "topic":  "Calculate max slope and deflection in simply supported and cantilever beams",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.6",
+                                         "sno":  "2.6",
+                                         "topic":  "Explain Macaulay\u0027s method for slope and deflection in simply supported beams",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.7",
+                                         "sno":  "2.7",
+                                         "topic":  "Compute max slope and deflection by Macaulay\u0027s method - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.8",
+                                         "sno":  "2.8",
+                                         "topic":  "Compute max slope and deflection by Macaulay\u0027s method - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.9",
+                                         "sno":  "2.9",
+                                         "topic":  "Explain the moment area method (Mohr\u0027s theorem-I and Mohr\u0027s theorem-II)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.10",
+                                         "sno":  "2.10",
+                                         "topic":  "Derive formulae for slope and deflection by moment area method",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.11",
+                                         "sno":  "2.11",
+                                         "topic":  "Compute slope and deflection using moment area method - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.12",
+                                         "sno":  "2.12",
+                                         "topic":  "Compute slope and deflection using moment area method - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.13",
+                                         "sno":  "2.13",
+                                         "topic":  "Compare double integration, Macaulay\u0027s, and moment area methods",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.14",
+                                         "sno":  "2.14",
+                                         "topic":  "Revision of Deflection of Beams",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE301T-2.15",
+                                         "sno":  "2.15",
+                                         "topic":  "Assessment on Deflection of Beams",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  3,
+                      "title":  "Columns and Struts",
+                      "totalPeriods":  10,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE301T-3.1",
+                                         "sno":  "3.1",
+                                         "topic":  "Define Column, Strut, Compression member and Axial Loading",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-3.2",
+                                         "sno":  "3.2",
+                                         "topic":  "Define Buckling/Crippling Load, Safe load, and Factor of safety",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-3.3",
+                                         "sno":  "3.3",
+                                         "topic":  "Calculate least radius of gyration for standard solid sections",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-3.4",
+                                         "sno":  "3.4",
+                                         "topic":  "List different end conditions for a column and define effective length",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-3.5",
+                                         "sno":  "3.5",
+                                         "topic":  "Define Slenderness ratio and classify columns (Long vs Short)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-3.6",
+                                         "sno":  "3.6",
+                                         "topic":  "Explain Euler\u0027s formula and calculate crippling/safe loads",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-3.7",
+                                         "sno":  "3.7",
+                                         "topic":  "Explain Rankine\u0027s formula for columns and calculate safe loads - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-3.8",
+                                         "sno":  "3.8",
+                                         "topic":  "Explain Rankine\u0027s formula for columns and calculate safe loads - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-3.9",
+                                         "sno":  "3.9",
+                                         "topic":  "Revision of Columns and Struts",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE301T-3.10",
+                                         "sno":  "3.10",
+                                         "topic":  "Assessment on Columns and Struts",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  4,
+                      "title":  "Dams and Retaining walls",
+                      "totalPeriods":  10,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE301T-4.1",
+                                         "sno":  "4.1",
+                                         "topic":  "Define dam/retaining wall and list forces acting on them",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-4.2",
+                                         "sno":  "4.2",
+                                         "topic":  "Derive formula for max/min stress intensities at base of dam",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-4.3",
+                                         "sno":  "4.3",
+                                         "topic":  "Calculate base stress intensity with and without free board",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-4.4",
+                                         "sno":  "4.4",
+                                         "topic":  "List conditions for stability of a dam and explain middle third rule",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-4.5",
+                                         "sno":  "4.5",
+                                         "topic":  "Derive minimum base width to avoid tension at the base of dam",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-4.6",
+                                         "sno":  "4.6",
+                                         "topic":  "Define angle of repose, active and passive earth pressure",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-4.7",
+                                         "sno":  "4.7",
+                                         "topic":  "Compute lateral earth pressure and stresses on retaining walls",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-4.8",
+                                         "sno":  "4.8",
+                                         "topic":  "State Rankine\u0027s formula for minimum depth of foundation",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-4.9",
+                                         "sno":  "4.9",
+                                         "topic":  "Revision of Dams and Retaining Walls",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE301T-4.10",
+                                         "sno":  "4.10",
+                                         "topic":  "Assessment on Dams and Retaining Walls",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  5,
+                      "title":  "Statically indeterminate beams",
+                      "totalPeriods":  15,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE301T-5.1",
+                                         "sno":  "5.1",
+                                         "topic":  "Differentiate between statically determinate and indeterminate structures",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.2",
+                                         "sno":  "5.2",
+                                         "topic":  "Define degree of static indeterminacy for propped, fixed and continuous beams",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.3",
+                                         "sno":  "5.3",
+                                         "topic":  "Calculate prop reaction of propped cantilever subjected to UDL",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.4",
+                                         "sno":  "5.4",
+                                         "topic":  "Calculate prop reaction under single point load",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.5",
+                                         "sno":  "5.5",
+                                         "topic":  "Draw SFD and BMD for propped cantilevers - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.6",
+                                         "sno":  "5.6",
+                                         "topic":  "Draw SFD and BMD for propped cantilevers - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.7",
+                                         "sno":  "5.7",
+                                         "topic":  "Calculate location of point of contra-flexure",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.8",
+                                         "sno":  "5.8",
+                                         "topic":  "State the merits and demerits of fixed beams",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.9",
+                                         "sno":  "5.9",
+                                         "topic":  "Explain sagging and hogging bending moments in fixed beams",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.10",
+                                         "sno":  "5.10",
+                                         "topic":  "Solve problems on fixed beams under point loads/UDL",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.11",
+                                         "sno":  "5.11",
+                                         "topic":  "State merits, demerits, and continuous support effects of continuous beams",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.12",
+                                         "sno":  "5.12",
+                                         "topic":  "Analyze continuous beams using Clapeyron\u0027s theorem of three moments - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.13",
+                                         "sno":  "5.13",
+                                         "topic":  "Analyze continuous beams using Clapeyron\u0027s theorem of three moments - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.14",
+                                         "sno":  "5.14",
+                                         "topic":  "Revision of Indeterminate Beams",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE301T-5.15",
+                                         "sno":  "5.15",
+                                         "topic":  "Assessment on Indeterminate Beams",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  6,
+                      "title":  "Stresses in frames",
+                      "totalPeriods":  10,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE301T-6.1",
+                                         "sno":  "6.1",
+                                         "topic":  "Define a frame and classify based on members and joints",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-6.2",
+                                         "sno":  "6.2",
+                                         "topic":  "State the rules for assuming direction of stresses in members",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-6.3",
+                                         "sno":  "6.3",
+                                         "topic":  "Explain the method of joints for calculating stresses/forces",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-6.4",
+                                         "sno":  "6.4",
+                                         "topic":  "Calculate forces in members by method of joints for simple truss - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-6.5",
+                                         "sno":  "6.5",
+                                         "topic":  "Calculate forces in members by method of joints for simple truss - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-6.6",
+                                         "sno":  "6.6",
+                                         "topic":  "Explain the method of sections for calculating stresses/forces",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE301T-6.7",
+                                         "sno":  "6.7",
+                                         "topic":  "Calculate forces in members by method of sections and prepare force table - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-6.8",
+                                         "sno":  "6.8",
+                                         "topic":  "Calculate forces in members by method of sections and prepare force table - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE301T-6.9",
+                                         "sno":  "6.9",
+                                         "topic":  "Revision of Stresses in Frames",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE301T-6.10",
+                                         "sno":  "6.10",
+                                         "topic":  "Assessment on Stresses in Frames",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  }
+              ]
 }

@@ -1,8 +1,345 @@
-{
-    "regulation": "C26",
-    "units": [],
-    "totalPeriods": 45,
-    "subjectCode": "26CE304E",
-    "semester": 3,
-    "subjectName": "Engineering Mathematics-II"
+﻿{
+    "subjectCode":  "26CE304E",
+    "subjectName":  "Engineering Mathematics-II",
+    "regulation":  "C26",
+    "semester":  3,
+    "totalPeriods":  45,
+    "units":  [
+                  {
+                      "unitNo":  1,
+                      "title":  "Applications of Definite Integrals",
+                      "totalPeriods":  15,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE304E-1.1",
+                                         "sno":  "1.1",
+                                         "topic":  "Define definite integral and state properties",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.2",
+                                         "sno":  "1.2",
+                                         "topic":  "Calculate area bounded by curve and axes - simple cases",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.3",
+                                         "sno":  "1.3",
+                                         "topic":  "Calculate area between two intersecting curves",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.4",
+                                         "sno":  "1.4",
+                                         "topic":  "Determine volumes of solids of revolution along x-axis - Part 1",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.5",
+                                         "sno":  "1.5",
+                                         "topic":  "Determine volumes of solids of revolution along x-axis - Part 2",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.6",
+                                         "sno":  "1.6",
+                                         "topic":  "Explain Mean value and Root Mean Square (RMS) values of simple functions",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.7",
+                                         "sno":  "1.7",
+                                         "topic":  "Compute Mean and RMS values for standard trigonometric functions",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.8",
+                                         "sno":  "1.8",
+                                         "topic":  "State principles of Numerical Integration",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.9",
+                                         "sno":  "1.9",
+                                         "topic":  "Explain Trapezoidal rule and solve simple problems",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.10",
+                                         "sno":  "1.10",
+                                         "topic":  "Explain Simpson\u0027s 1/3 rule and solve simple problems",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.11",
+                                         "sno":  "1.11",
+                                         "topic":  "Apply numerical integration to practical engineering data",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.12",
+                                         "sno":  "1.12",
+                                         "topic":  "Compare accuracy of Trapezoidal and Simpson\u0027s rules",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.13",
+                                         "sno":  "1.13",
+                                         "topic":  "Solve comprehensive problems on integration applications",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.14",
+                                         "sno":  "1.14",
+                                         "topic":  "Revision of Definite Integrals",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE304E-1.15",
+                                         "sno":  "1.15",
+                                         "topic":  "Assessment on Definite Integrals",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  2,
+                      "title":  "Differential Equations",
+                      "totalPeriods":  15,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE304E-2.1",
+                                         "sno":  "2.1",
+                                         "topic":  "Define differential equation, order and degree",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.2",
+                                         "sno":  "2.2",
+                                         "topic":  "Form a differential equation by eliminating arbitrary constants",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.3",
+                                         "sno":  "2.3",
+                                         "topic":  "Solve first order first degree equations by variables separable method",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.4",
+                                         "sno":  "2.4",
+                                         "topic":  "Solve equations reducible to variable separable form",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.5",
+                                         "sno":  "2.5",
+                                         "topic":  "Solve linear differential equation of the form dy/dx + Py = Q",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.6",
+                                         "sno":  "2.6",
+                                         "topic":  "Solve Bernoulli\u0027s differential equations",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.7",
+                                         "sno":  "2.7",
+                                         "topic":  "Solve homogeneous linear differential equations of second order (aD2+bD+c)y=0",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.8",
+                                         "sno":  "2.8",
+                                         "topic":  "Calculate complementary functions for second order equations",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.9",
+                                         "sno":  "2.9",
+                                         "topic":  "Define particular integral (PI) and explain methods of finding PI",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.10",
+                                         "sno":  "2.10",
+                                         "topic":  "Find PI for RHS of type e^(ax) and sin(ax)/cos(ax)",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.11",
+                                         "sno":  "2.11",
+                                         "topic":  "Find PI for RHS of type x^m",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.12",
+                                         "sno":  "2.12",
+                                         "topic":  "Solve non-homogeneous second order linear equations - general cases",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.13",
+                                         "sno":  "2.13",
+                                         "topic":  "Apply differential equations to simple electrical/mechanical models",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.14",
+                                         "sno":  "2.14",
+                                         "topic":  "Revision of Differential Equations",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE304E-2.15",
+                                         "sno":  "2.15",
+                                         "topic":  "Assessment on Differential Equations",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  3,
+                      "title":  "Probability \u0026 Statistics",
+                      "totalPeriods":  15,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE304E-3.1",
+                                         "sno":  "3.1",
+                                         "topic":  "Recall basic probability principles and define sample space",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.2",
+                                         "sno":  "3.2",
+                                         "topic":  "State addition theorem of probability for mutually exclusive events",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.3",
+                                         "sno":  "3.3",
+                                         "topic":  "Solve problems on addition theorem of probability",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.4",
+                                         "sno":  "3.4",
+                                         "topic":  "Explain conditional event and conditional probability",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.5",
+                                         "sno":  "3.5",
+                                         "topic":  "State multiplication theorem of probability for dependent/independent events",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.6",
+                                         "sno":  "3.6",
+                                         "topic":  "Solve problems on multiplication theorem of probability",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.7",
+                                         "sno":  "3.7",
+                                         "topic":  "Recall measures of central tendency: Mean, Median, Mode",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.8",
+                                         "sno":  "3.8",
+                                         "topic":  "Define measures of dispersion: Range, Mean Deviation",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.9",
+                                         "sno":  "3.9",
+                                         "topic":  "Define Standard Deviation (SD) for ungrouped data",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.10",
+                                         "sno":  "3.10",
+                                         "topic":  "Compute Range, Mean Deviation and SD for ungrouped data",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.11",
+                                         "sno":  "3.11",
+                                         "topic":  "Explain bivariate data and covariance",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.12",
+                                         "sno":  "3.12",
+                                         "topic":  "Explain correlation and rank correlation coefficients",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.13",
+                                         "sno":  "3.13",
+                                         "topic":  "Find Spearman\u0027s rank correlation coefficient",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.14",
+                                         "sno":  "3.14",
+                                         "topic":  "Revision of Probability \u0026 Statistics",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE304E-3.15",
+                                         "sno":  "3.15",
+                                         "topic":  "Assessment on Probability \u0026 Statistics",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  }
+              ]
 }

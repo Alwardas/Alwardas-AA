@@ -1,8 +1,373 @@
-{
-    "regulation": "C26",
-    "units": [],
-    "totalPeriods": 45,
-    "subjectCode": "26CE306E",
-    "semester": 3,
-    "subjectName": "Building Services and Maintenance"
+﻿{
+    "subjectCode":  "26CE306E",
+    "subjectName":  "Building Services and Maintenance",
+    "regulation":  "C26",
+    "semester":  3,
+    "totalPeriods":  45,
+    "units":  [
+                  {
+                      "unitNo":  1,
+                      "title":  "Introduction to Building Services",
+                      "totalPeriods":  3,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE306E-1.1",
+                                         "sno":  "1.1",
+                                         "topic":  "Explain importance and objectives of services in buildings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-1.2",
+                                         "sno":  "1.2",
+                                         "topic":  "Revision of Introduction",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE306E-1.3",
+                                         "sno":  "1.3",
+                                         "topic":  "Assessment on Introduction",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  2,
+                      "title":  "Water Supply and Sanitary systems in Buildings",
+                      "totalPeriods":  6,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE306E-2.1",
+                                         "sno":  "2.1",
+                                         "topic":  "State water quality standards and components of internal supply layout",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-2.2",
+                                         "sno":  "2.2",
+                                         "topic":  "Describe storage/distribution systems and drainage plumbing traps",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-2.3",
+                                         "sno":  "2.3",
+                                         "topic":  "Explain one-pipe and two-pipe drainage systems and septic tank design",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-2.4",
+                                         "sno":  "2.4",
+                                         "topic":  "Explain rainwater harvesting and storm water management layouts",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-2.5",
+                                         "sno":  "2.5",
+                                         "topic":  "Revision of Water and Sanitary Systems",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE306E-2.6",
+                                         "sno":  "2.6",
+                                         "topic":  "Assessment on Water and Sanitary Systems",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  3,
+                      "title":  "Electrical Services and Lighting in Buildings",
+                      "totalPeriods":  8,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE306E-3.1",
+                                         "sno":  "3.1",
+                                         "topic":  "State electrical services and basic layout safety rules",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-3.2",
+                                         "sno":  "3.2",
+                                         "topic":  "State technical terms, symbols, and wiring types",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-3.3",
+                                         "sno":  "3.3",
+                                         "topic":  "Explain objectives and types of electrical earthing systems",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-3.4",
+                                         "sno":  "3.4",
+                                         "topic":  "State requirements of good lighting and define glare",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-3.5",
+                                         "sno":  "3.5",
+                                         "topic":  "Explain solar power integration in building layouts",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-3.6",
+                                         "sno":  "3.6",
+                                         "topic":  "State precautions to avoid glare and shadows",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-3.7",
+                                         "sno":  "3.7",
+                                         "topic":  "Revision of Electrical and Lighting",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE306E-3.8",
+                                         "sno":  "3.8",
+                                         "topic":  "Assessment on Electrical and Lighting",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  4,
+                      "title":  "Mechanical Services and HVAC Systems in Buildings",
+                      "totalPeriods":  9,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE306E-4.1",
+                                         "sno":  "4.1",
+                                         "topic":  "State HVAC systems and explain components",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-4.2",
+                                         "sno":  "4.2",
+                                         "topic":  "State different types of air conditioning systems",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-4.3",
+                                         "sno":  "4.3",
+                                         "topic":  "Explain hot water supply distribution using solar heating",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-4.4",
+                                         "sno":  "4.4",
+                                         "topic":  "State vertical transportation systems: lifts and escalators",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-4.5",
+                                         "sno":  "4.5",
+                                         "topic":  "Understand passenger capacity and elevator groupings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-4.6",
+                                         "sno":  "4.6",
+                                         "topic":  "Explain maintenance parameters for elevators",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-4.7",
+                                         "sno":  "4.7",
+                                         "topic":  "Describe safety features in mechanical escalators",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-4.8",
+                                         "sno":  "4.8",
+                                         "topic":  "Revision of Mechanical and HVAC",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE306E-4.9",
+                                         "sno":  "4.9",
+                                         "topic":  "Assessment on Mechanical and HVAC",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  5,
+                      "title":  "Fire Safety and Building Security Systems",
+                      "totalPeriods":  6,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE306E-5.1",
+                                         "sno":  "5.1",
+                                         "topic":  "State fire protection principles and causes of fire",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-5.2",
+                                         "sno":  "5.2",
+                                         "topic":  "Explain fire detection, alarm systems, and extinguishers",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-5.3",
+                                         "sno":  "5.3",
+                                         "topic":  "State emergency exit routes and security systems (CCTV, access control)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-5.4",
+                                         "sno":  "5.4",
+                                         "topic":  "Explain fire ratings of basic building materials",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-5.5",
+                                         "sno":  "5.5",
+                                         "topic":  "Revision of Fire and Security",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE306E-5.6",
+                                         "sno":  "5.6",
+                                         "topic":  "Assessment on Fire and Security",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  6,
+                      "title":  "Acoustics and Sound Insulation in buildings",
+                      "totalPeriods":  5,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE306E-6.1",
+                                         "sno":  "6.1",
+                                         "topic":  "State acoustic requirements and noise control in buildings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-6.2",
+                                         "sno":  "6.2",
+                                         "topic":  "List methods of sound insulation used in walls and floors",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-6.3",
+                                         "sno":  "6.3",
+                                         "topic":  "Explain absorption coefficients of insulation materials",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-6.4",
+                                         "sno":  "6.4",
+                                         "topic":  "Revision of Acoustics",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE306E-6.5",
+                                         "sno":  "6.5",
+                                         "topic":  "Assessment on Acoustics",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  7,
+                      "title":  "Maintenance and Repairs",
+                      "totalPeriods":  8,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE306E-7.1",
+                                         "sno":  "7.1",
+                                         "topic":  "List common building defects and their remedies",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-7.2",
+                                         "sno":  "7.2",
+                                         "topic":  "State different maintenance types: routine, predictive, emergency",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-7.3",
+                                         "sno":  "7.3",
+                                         "topic":  "Explain maintenance of water supply and drainage systems",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-7.4",
+                                         "sno":  "7.4",
+                                         "topic":  "Describe maintenance logbooks, schedules, and BMS",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-7.5",
+                                         "sno":  "7.5",
+                                         "topic":  "Explain cracks in concrete and repair methods",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-7.6",
+                                         "sno":  "7.6",
+                                         "topic":  "Explain waterproofing techniques for repairs",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE306E-7.7",
+                                         "sno":  "7.7",
+                                         "topic":  "Revision of Maintenance and Repairs",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE306E-7.8",
+                                         "sno":  "7.8",
+                                         "topic":  "Assessment on Maintenance and Repairs",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  }
+              ]
 }

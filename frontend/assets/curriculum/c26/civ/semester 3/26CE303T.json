@@ -1,8 +1,681 @@
-{
-    "regulation": "C26",
-    "units": [],
-    "totalPeriods": 90,
-    "subjectCode": "26CE303T",
-    "semester": 3,
-    "subjectName": "Construction Materials & Practice"
+﻿{
+    "subjectCode":  "26CE303T",
+    "subjectName":  "Construction Materials \u0026 Practice",
+    "regulation":  "C26",
+    "semester":  3,
+    "totalPeriods":  90,
+    "units":  [
+                  {
+                      "unitNo":  1,
+                      "title":  "Basic Construction Materials",
+                      "totalPeriods":  18,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE303T-1.1",
+                                         "sno":  "1.1",
+                                         "topic":  "Classify rocks based on physical characteristics",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.2",
+                                         "sno":  "1.2",
+                                         "topic":  "Identify and explain essential properties of good building stones",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.3",
+                                         "sno":  "1.3",
+                                         "topic":  "Explain dressing of stones and its purpose in construction",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.4",
+                                         "sno":  "1.4",
+                                         "topic":  "Describe desirable characteristics of good quality bricks",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.5",
+                                         "sno":  "1.5",
+                                         "topic":  "Explain brick tests (water absorption and compressive strength) as per IS:3495",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.6",
+                                         "sno":  "1.6",
+                                         "topic":  "Distinguish between traditional bricks, AAC blocks and fly ash bricks",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.7",
+                                         "sno":  "1.7",
+                                         "topic":  "Identify different types of tiles and evaluate suitability",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.8",
+                                         "sno":  "1.8",
+                                         "topic":  "Describe uses and properties of stoneware pipes in drainage",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.9",
+                                         "sno":  "1.9",
+                                         "topic":  "Explain characteristics and functions of good sand in construction",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.10",
+                                         "sno":  "1.10",
+                                         "topic":  "Understand the concept of bulking of sand and its impact",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.11",
+                                         "sno":  "1.11",
+                                         "topic":  "Explain the use of crushed stone powder as natural sand substitute",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.12",
+                                         "sno":  "1.12",
+                                         "topic":  "State properties of modern lightweight wall materials",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.13",
+                                         "sno":  "1.13",
+                                         "topic":  "Explain durability criteria for bricks and stone",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.14",
+                                         "sno":  "1.14",
+                                         "topic":  "Describe storage methods of bricks and tiles at site",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.15",
+                                         "sno":  "1.15",
+                                         "topic":  "Field inspection practices for basic materials",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.16",
+                                         "sno":  "1.16",
+                                         "topic":  "Industrial applications of stone powder and fly ash",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.17",
+                                         "sno":  "1.17",
+                                         "topic":  "Revision of Basic Construction Materials",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE303T-1.18",
+                                         "sno":  "1.18",
+                                         "topic":  "Assessment on Basic Construction Materials",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  2,
+                      "title":  "Cementitious Materials \u0026 Admixtures",
+                      "totalPeriods":  20,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE303T-2.1",
+                                         "sno":  "2.1",
+                                         "topic":  "Explain chemical composition of cement and its compounds",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.2",
+                                         "sno":  "2.2",
+                                         "topic":  "Understand basic field tests to assess cement quality",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.3",
+                                         "sno":  "2.3",
+                                         "topic":  "Classify cement types (OPC, pozzolana, slag) and their uses",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.4",
+                                         "sno":  "2.4",
+                                         "topic":  "Explain standard consistency, setting times and soundness tests",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.5",
+                                         "sno":  "2.5",
+                                         "topic":  "Understand fine and coarse aggregates grading through sieve analysis",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.6",
+                                         "sno":  "2.6",
+                                         "topic":  "Differentiate mortar types (lime, cement, blended) and applications",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.7",
+                                         "sno":  "2.7",
+                                         "topic":  "Describe ingredients of concrete and their specific roles",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.8",
+                                         "sno":  "2.8",
+                                         "topic":  "Explain water-cement ratio and factors affecting workability",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.9",
+                                         "sno":  "2.9",
+                                         "topic":  "Describe advantages and limitations of Ready-Mix Concrete (RMC)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.10",
+                                         "sno":  "2.10",
+                                         "topic":  "Identify construction chemicals and waterproofing compounds",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.11",
+                                         "sno":  "2.11",
+                                         "topic":  "Explain chemical admixtures (plasticizers, accelerators, retarders)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.12",
+                                         "sno":  "2.12",
+                                         "topic":  "Understand mineral admixtures (fly ash, GGBS, silica fume)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.13",
+                                         "sno":  "2.13",
+                                         "topic":  "Describe concrete curing methods, compounds and selection",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.14",
+                                         "sno":  "2.14",
+                                         "topic":  "Understand chemical properties of steel for RC structures",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.15",
+                                         "sno":  "2.15",
+                                         "topic":  "Special concretes: high strength, self-compacting, polymer concrete",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.16",
+                                         "sno":  "2.16",
+                                         "topic":  "Laboratory procedures for concrete mix testing",
+                                         "period":  1,
+                                         "type":  "practice"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.17",
+                                         "sno":  "2.17",
+                                         "topic":  "Corrosion in steel reinforcement and preventive coatings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.18",
+                                         "sno":  "2.18",
+                                         "topic":  "Quality control standards for concrete mixing",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.19",
+                                         "sno":  "2.19",
+                                         "topic":  "Revision of Cementitious Materials \u0026 Admixtures",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE303T-2.20",
+                                         "sno":  "2.20",
+                                         "topic":  "Assessment on Cementitious Materials \u0026 Admixtures",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  3,
+                      "title":  "Timber, Glass \u0026 Asbestos",
+                      "totalPeriods":  6,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE303T-3.1",
+                                         "sno":  "3.1",
+                                         "topic":  "Identify characteristics of good timber and seasoning methods",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-3.2",
+                                         "sno":  "3.2",
+                                         "topic":  "Understand wood products (plywood, veneer) and types of glass",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-3.3",
+                                         "sno":  "3.3",
+                                         "topic":  "Understand uses and applications of asbestos in construction",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-3.4",
+                                         "sno":  "3.4",
+                                         "topic":  "State orientation guidelines for using glass facades",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-3.5",
+                                         "sno":  "3.5",
+                                         "topic":  "Revision of Timber, Glass \u0026 Asbestos",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE303T-3.6",
+                                         "sno":  "3.6",
+                                         "topic":  "Assessment on Timber, Glass \u0026 Asbestos",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  4,
+                      "title":  "Building Components \u0026 Planning",
+                      "totalPeriods":  16,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE303T-4.1",
+                                         "sno":  "4.1",
+                                         "topic":  "Identify building components (foundation, plinth, walls, roof)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.2",
+                                         "sno":  "4.2",
+                                         "topic":  "Classify buildings based on occupancy as per NBC guidelines",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.3",
+                                         "sno":  "4.3",
+                                         "topic":  "Explain principles of building planning: roominess, circulation, privacy",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.4",
+                                         "sno":  "4.4",
+                                         "topic":  "Describe orientation factors for climatic comfort and efficiency",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.5",
+                                         "sno":  "4.5",
+                                         "topic":  "Understand natural ventilation and HVAC systems in buildings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.6",
+                                         "sno":  "4.6",
+                                         "topic":  "Explain causes and prevention of dampness at basement level",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.7",
+                                         "sno":  "4.7",
+                                         "topic":  "Define safe bearing capacity (SBC) and ultimate bearing capacity of soils",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.8",
+                                         "sno":  "4.8",
+                                         "topic":  "Classify and describe various foundation types (shallow, deep)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.9",
+                                         "sno":  "4.9",
+                                         "topic":  "Understand loads on foundations as per IS 875:2015",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.10",
+                                         "sno":  "4.10",
+                                         "topic":  "State Rankine\u0027s formula for depth of spread footings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.11",
+                                         "sno":  "4.11",
+                                         "topic":  "Explain setback rules and open space requirements",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.12",
+                                         "sno":  "4.12",
+                                         "topic":  "Site selection criteria for residential vs public buildings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.13",
+                                         "sno":  "4.13",
+                                         "topic":  "Concept of modular planning in modern buildings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.14",
+                                         "sno":  "4.14",
+                                         "topic":  "Soil improvement techniques for low bearing capacity",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.15",
+                                         "sno":  "4.15",
+                                         "topic":  "Revision of Building Components \u0026 Planning",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE303T-4.16",
+                                         "sno":  "4.16",
+                                         "topic":  "Assessment on Building Components \u0026 Planning",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  5,
+                      "title":  "Building Elements",
+                      "totalPeriods":  20,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE303T-5.1",
+                                         "sno":  "5.1",
+                                         "topic":  "Differentiate stone masonry: Ashlar, Random Rubble, Coursed Rubble",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.2",
+                                         "sno":  "5.2",
+                                         "topic":  "Explain English bond brick masonry and wall thicknesses",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.3",
+                                         "sno":  "5.3",
+                                         "topic":  "State construction principles for stone and brick masonry",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.4",
+                                         "sno":  "5.4",
+                                         "topic":  "Identify parts and positioning of doors and windows",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.5",
+                                         "sno":  "5.5",
+                                         "topic":  "Classify doors: panelled, glazed, flush, collapsible, sliding",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.6",
+                                         "sno":  "5.6",
+                                         "topic":  "Describe window types and applications in building design",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.7",
+                                         "sno":  "5.7",
+                                         "topic":  "Explain functions and types of lintels (RCC, wood, stone, steel)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.8",
+                                         "sno":  "5.8",
+                                         "topic":  "Describe functions and types of roofs (flat, pitched)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.9",
+                                         "sno":  "5.9",
+                                         "topic":  "Explain requirements of good flooring and flooring types",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.10",
+                                         "sno":  "5.10",
+                                         "topic":  "Define staircase terms: rise, tread, landing, going, handrail",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.11",
+                                         "sno":  "5.11",
+                                         "topic":  "Classify staircases (straight, half-turn, dog-legged, spiral)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.12",
+                                         "sno":  "5.12",
+                                         "topic":  "Explain structural elements of flat slab and sloped roofs",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.13",
+                                         "sno":  "5.13",
+                                         "topic":  "Describe plastering base preparation and bonding techniques",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.14",
+                                         "sno":  "5.14",
+                                         "topic":  "Describe waterproofing of roofs and wet areas",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.15",
+                                         "sno":  "5.15",
+                                         "topic":  "Termite proofing methods at plinth and foundation levels",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.16",
+                                         "sno":  "5.16",
+                                         "topic":  "Explain expansion and construction joints in brickwork",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.17",
+                                         "sno":  "5.17",
+                                         "topic":  "Acoustic and thermal insulation elements in walls",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.18",
+                                         "sno":  "5.18",
+                                         "topic":  "Maintenance of brickwork, doors and windows",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.19",
+                                         "sno":  "5.19",
+                                         "topic":  "Revision of Building Elements",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE303T-5.20",
+                                         "sno":  "5.20",
+                                         "topic":  "Assessment on Building Elements",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  6,
+                      "title":  "Scaffolding, Formwork \u0026 Finishes",
+                      "totalPeriods":  10,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE303T-6.1",
+                                         "sno":  "6.1",
+                                         "topic":  "Explain purpose and types of scaffolding in construction",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-6.2",
+                                         "sno":  "6.2",
+                                         "topic":  "Describe component parts of tubular scaffolding and safety roles",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-6.3",
+                                         "sno":  "6.3",
+                                         "topic":  "Classify formwork used for columns, beams, and slabs",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-6.4",
+                                         "sno":  "6.4",
+                                         "topic":  "Explain advantages of aluminium shuttering (Mivan technology)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-6.5",
+                                         "sno":  "6.5",
+                                         "topic":  "State objectives, types, and procedures of plastering and pointing",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-6.6",
+                                         "sno":  "6.6",
+                                         "topic":  "Identify painting methods for old/new walls, wood and metal",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-6.7",
+                                         "sno":  "6.7",
+                                         "topic":  "Differentiate whitewashing, colour washing, and distempering",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-6.8",
+                                         "sno":  "6.8",
+                                         "topic":  "Explain safety protocols during scaffolding erection and stripping",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE303T-6.9",
+                                         "sno":  "6.9",
+                                         "topic":  "Revision of Scaffolding, Formwork \u0026 Finishes",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE303T-6.10",
+                                         "sno":  "6.10",
+                                         "topic":  "Assessment on Scaffolding, Formwork \u0026 Finishes",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  }
+              ]
 }

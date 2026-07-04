@@ -1,8 +1,359 @@
-{
-    "regulation": "C26",
-    "units": [],
-    "totalPeriods": 45,
-    "subjectCode": "26CE305E",
-    "semester": 3,
-    "subjectName": "Concrete Technology"
+﻿{
+    "subjectCode":  "26CE305E",
+    "subjectName":  "Concrete Technology",
+    "regulation":  "C26",
+    "semester":  3,
+    "totalPeriods":  45,
+    "units":  [
+                  {
+                      "unitNo":  1,
+                      "title":  "Ingredients of concrete",
+                      "totalPeriods":  10,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE305E-1.1",
+                                         "sno":  "1.1",
+                                         "topic":  "Identify ingredients of concrete and their specific roles",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-1.2",
+                                         "sno":  "1.2",
+                                         "topic":  "Identify different cement types and physical properties",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-1.3",
+                                         "sno":  "1.3",
+                                         "topic":  "Understand aggregates classification and grading requirements",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-1.4",
+                                         "sno":  "1.4",
+                                         "topic":  "State quality standards for mixing and curing water",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-1.5",
+                                         "sno":  "1.5",
+                                         "topic":  "Define chemical and mineral admixtures and explain their purposes",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-1.6",
+                                         "sno":  "1.6",
+                                         "topic":  "Understand concrete grades and recommended grades for works",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-1.7",
+                                         "sno":  "1.7",
+                                         "topic":  "Explain the chemical reaction of cement hydration",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-1.8",
+                                         "sno":  "1.8",
+                                         "topic":  "Explain aggregate-cement paste transition zone",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-1.9",
+                                         "sno":  "1.9",
+                                         "topic":  "Revision of Ingredients of Concrete",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE305E-1.10",
+                                         "sno":  "1.10",
+                                         "topic":  "Assessment on Ingredients of Concrete",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  2,
+                      "title":  "Concrete Mixing and Placement Methods",
+                      "totalPeriods":  10,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE305E-2.1",
+                                         "sno":  "2.1",
+                                         "topic":  "Explain volume and weight batching and their accuracy",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-2.2",
+                                         "sno":  "2.2",
+                                         "topic":  "Describe hand and machine mixing procedures",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-2.3",
+                                         "sno":  "2.3",
+                                         "topic":  "Identify concrete transport methods and site precautions",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-2.4",
+                                         "sno":  "2.4",
+                                         "topic":  "Explain concrete placing methods and do\u0027s and don\u0027ts",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-2.5",
+                                         "sno":  "2.5",
+                                         "topic":  "State importance of compaction and describe vibrators",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-2.6",
+                                         "sno":  "2.6",
+                                         "topic":  "List curing methods and understand impact on strength",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-2.7",
+                                         "sno":  "2.7",
+                                         "topic":  "Explain the concept and advantages of Ready-Mix Concrete (RMC)",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-2.8",
+                                         "sno":  "2.8",
+                                         "topic":  "Describe hot and cold weather concreting methods",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-2.9",
+                                         "sno":  "2.9",
+                                         "topic":  "Revision of Concrete Mixing and Placement",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE305E-2.10",
+                                         "sno":  "2.10",
+                                         "topic":  "Assessment on Concrete Mixing and Placement",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  3,
+                      "title":  "Concrete Testing and Quality Evaluation",
+                      "totalPeriods":  8,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE305E-3.1",
+                                         "sno":  "3.1",
+                                         "topic":  "Perform slump cone and compaction factor tests",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-3.2",
+                                         "sno":  "3.2",
+                                         "topic":  "Explain compressive strength test on concrete cubes",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-3.3",
+                                         "sno":  "3.3",
+                                         "topic":  "Understand non-destructive testing (NDT) methods",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-3.4",
+                                         "sno":  "3.4",
+                                         "topic":  "Describe rebound hammer and ultrasonic pulse velocity tests",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-3.5",
+                                         "sno":  "3.5",
+                                         "topic":  "Understand concrete durability, permeability and water absorption",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-3.6",
+                                         "sno":  "3.6",
+                                         "topic":  "Explain concrete acceptance criteria as per IS:456",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-3.7",
+                                         "sno":  "3.7",
+                                         "topic":  "Revision of Concrete Testing",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE305E-3.8",
+                                         "sno":  "3.8",
+                                         "topic":  "Assessment on Concrete Testing",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  4,
+                      "title":  "Types of concretes",
+                      "totalPeriods":  7,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE305E-4.1",
+                                         "sno":  "4.1",
+                                         "topic":  "Differentiate between PCC, RCC, and PSC",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-4.2",
+                                         "sno":  "4.2",
+                                         "topic":  "Understand special concretes: fiber reinforced and light weight",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-4.3",
+                                         "sno":  "4.3",
+                                         "topic":  "Explain polymer concrete, self-compacting, and shotcrete",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-4.4",
+                                         "sno":  "4.4",
+                                         "topic":  "Explain underwater concreting and concreting in high rise buildings",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-4.5",
+                                         "sno":  "4.5",
+                                         "topic":  "State properties of high-performance concrete",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-4.6",
+                                         "sno":  "4.6",
+                                         "topic":  "Revision of Types of Concretes",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE305E-4.7",
+                                         "sno":  "4.7",
+                                         "topic":  "Assessment on Types of Concretes",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  },
+                  {
+                      "unitNo":  5,
+                      "title":  "Concrete Mix Proportioning and Design",
+                      "totalPeriods":  10,
+                      "topics":  [
+                                     {
+                                         "id":  "26CE305E-5.1",
+                                         "sno":  "5.1",
+                                         "topic":  "Differentiate nominal mix and design mix",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-5.2",
+                                         "sno":  "5.2",
+                                         "topic":  "State nominal mix ratios from M5 to M25",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-5.3",
+                                         "sno":  "5.3",
+                                         "topic":  "Identify factors influencing mix design",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-5.4",
+                                         "sno":  "5.4",
+                                         "topic":  "Explain step-by-step IS method of mix design procedure",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-5.5",
+                                         "sno":  "5.5",
+                                         "topic":  "Calculate target strength and water content",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE305E-5.6",
+                                         "sno":  "5.6",
+                                         "topic":  "Determine aggregate content for concrete design",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE305E-5.7",
+                                         "sno":  "5.7",
+                                         "topic":  "Prepare concrete design mix sheet example",
+                                         "period":  1,
+                                         "type":  "problem solving"
+                                     },
+                                     {
+                                         "id":  "26CE305E-5.8",
+                                         "sno":  "5.8",
+                                         "topic":  "Explain site adjustments for moisture in aggregates",
+                                         "period":  1,
+                                         "type":  "theory"
+                                     },
+                                     {
+                                         "id":  "26CE305E-5.9",
+                                         "sno":  "5.9",
+                                         "topic":  "Revision of Mix Design",
+                                         "period":  1,
+                                         "type":  "revision"
+                                     },
+                                     {
+                                         "id":  "26CE305E-5.10",
+                                         "sno":  "5.10",
+                                         "topic":  "Assessment on Mix Design",
+                                         "period":  1,
+                                         "type":  "assessment"
+                                     }
+                                 ]
+                  }
+              ]
 }
