@@ -11,6 +11,7 @@ import 'coordinator-web/desktop_attendance_view.dart';
 import 'coordinator-web/desktop_examination_view.dart';
 import 'accountant-web/desktop_fee_management_view.dart';
 import 'coordinator-web/desktop_faculty_management_view.dart';
+import 'coordinator-web/desktop_coordinator_academics_view.dart';
 import 'shared-web/desktop_communication_view.dart';
 import 'principal-web/desktop_principal_analytics_view.dart';
 import 'principal-web/desktop_reports_view.dart';
@@ -446,6 +447,11 @@ class DesktopLayoutShell extends ConsumerWidget {
         return DesktopAttendanceView(userData: userData);
       case 'Examinations':
         return DesktopExaminationView(userData: userData);
+      case 'Academics':
+        if (role == 'coordinator' || role == 'principal' || role == 'admin') {
+          return DesktopCoordinatorAcademicsView(userData: userData);
+        }
+        return const Center(child: Text("Access Denied"));
       case 'Fee Management':
         return DesktopFeeManagementView(userData: userData);
       case 'Faculty':
