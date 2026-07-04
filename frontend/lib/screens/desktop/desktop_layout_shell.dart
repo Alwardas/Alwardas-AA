@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
+import '../../theme/theme_extensions.dart';
 
 import '../../core/providers/desktop_providers.dart';
 import '../../core/services/hive_service.dart';
@@ -31,7 +32,7 @@ class DesktopLayoutShell extends ConsumerWidget {
 
   const DesktopLayoutShell({super.key, required this.userData});
 
-  static const List<Map<String, dynamic>> sidebarItems = [
+  static final List<Map<String, dynamic>> sidebarItems = [
     {'name': 'Dashboard', 'icon': Icons.dashboard_outlined, 'activeIcon': Icons.dashboard},
     {'name': 'Admissions', 'icon': Icons.app_registration_outlined, 'activeIcon': Icons.app_registration},
     {'name': 'Students', 'icon': Icons.people_outline, 'activeIcon': Icons.people},
@@ -67,40 +68,40 @@ class DesktopLayoutShell extends ConsumerWidget {
     }
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F172A),
+      backgroundColor: context.bgColor,
       body: Row(
         children: [
           // 1. Sidebar Menu (Left Pane)
           Container(
             width: 260,
-            decoration: const BoxDecoration(
-              color: Color(0xFF1E293B),
-              border: Border(right: BorderSide(color: Colors.white10, width: 1)),
+            decoration: BoxDecoration(
+              color: context.cardColor,
+              border: Border(right: BorderSide(color: context.borderColor, width: 1)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Branding Header
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
                   child: Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF3b5998).withOpacity(0.1),
+                          color: Color(0xFF3b5998).withOpacity(0.1),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const Icon(Icons.school, color: Colors.blueAccent, size: 24),
+                        child: Icon(Icons.school, color: Colors.blueAccent, size: 24),
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: 12),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             'Alwardas ERP',
                             style: GoogleFonts.poppins(
-                              color: Colors.white,
+                              color: context.textPrimary,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
@@ -108,7 +109,7 @@ class DesktopLayoutShell extends ConsumerWidget {
                           Text(
                             'Desktop Workspace',
                             style: GoogleFonts.poppins(
-                              color: Colors.white38,
+                              color: context.textMuted,
                               fontSize: 11,
                             ),
                           ),
@@ -118,12 +119,12 @@ class DesktopLayoutShell extends ConsumerWidget {
                   ),
                 ),
 
-                const Divider(color: Colors.white10, height: 1),
+                Divider(color: context.borderColor, height: 1),
 
                 // Navigation Items List
                 Expanded(
                   child: ListView.builder(
-                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
                     itemCount: items.length,
                     itemBuilder: (context, index) {
                       final item = items[index];
@@ -131,7 +132,7 @@ class DesktopLayoutShell extends ConsumerWidget {
                       final isSelected = activeSection == name;
 
                       return Padding(
-                        padding: const EdgeInsets.only(bottom: 4),
+                        padding: EdgeInsets.only(bottom: 4),
                         child: InkWell(
                           onTap: () {
                             ref.read(desktopNavigationProvider.notifier).state = name;
@@ -139,14 +140,14 @@ class DesktopLayoutShell extends ConsumerWidget {
                           borderRadius: BorderRadius.circular(10),
                           child: AnimatedContainer(
                             duration: const Duration(milliseconds: 200),
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                             decoration: BoxDecoration(
                               color: isSelected
-                                  ? const Color(0xFF3b5998).withOpacity(0.15)
+                                  ? Color(0xFF3b5998).withOpacity(0.15)
                                   : Colors.transparent,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                color: isSelected ? const Color(0xFF3b5998).withOpacity(0.3) : Colors.transparent,
+                                color: isSelected ? Color(0xFF3b5998).withOpacity(0.3) : Colors.transparent,
                                 width: 1,
                               ),
                             ),
@@ -154,15 +155,15 @@ class DesktopLayoutShell extends ConsumerWidget {
                               children: [
                                 Icon(
                                   isSelected ? item['activeIcon'] : item['icon'],
-                                  color: isSelected ? Colors.blueAccent : Colors.white60,
+                                  color: isSelected ? Colors.blueAccent : context.textSecondary,
                                   size: 20,
                                 ),
-                                const SizedBox(width: 14),
+                                SizedBox(width: 14),
                                 Expanded(
                                   child: Text(
                                     name,
                                     style: GoogleFonts.poppins(
-                                      color: isSelected ? Colors.white : Colors.white70,
+                                      color: isSelected ? context.textPrimary : context.textSecondary,
                                       fontSize: 13,
                                       fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
                                     ),
@@ -177,21 +178,21 @@ class DesktopLayoutShell extends ConsumerWidget {
                   ),
                 ),
 
-                const Divider(color: Colors.white10, height: 1),
+                Divider(color: context.borderColor, height: 1),
 
                 // Current logged in User profile segment
                 Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding: EdgeInsets.all(16),
                   child: Row(
                     children: [
                       CircleAvatar(
                         backgroundColor: Colors.blueAccent.withOpacity(0.2),
                         child: Text(
                           (userData['full_name'] ?? 'U').toString().substring(0, 1).toUpperCase(),
-                          style: const TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold),
+                          style: TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold),
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: 12),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,7 +201,7 @@ class DesktopLayoutShell extends ConsumerWidget {
                               (userData['full_name'] ?? 'User').toString().toUpperCase(),
                               overflow: TextOverflow.ellipsis,
                               style: GoogleFonts.poppins(
-                                color: Colors.white,
+                                color: context.textPrimary,
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -208,7 +209,7 @@ class DesktopLayoutShell extends ConsumerWidget {
                             Text(
                               userData['role'] ?? 'Staff',
                               style: GoogleFonts.poppins(
-                                color: Colors.white38,
+                                color: context.textMuted,
                                 fontSize: 11,
                               ),
                             ),
@@ -229,11 +230,11 @@ class DesktopLayoutShell extends ConsumerWidget {
                 // Header (Glassmorphism inspired)
                 Container(
                   height: 70,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF0F172A),
-                    border: Border(bottom: BorderSide(color: Colors.white10, width: 1)),
+                  decoration: BoxDecoration(
+                    color: context.bgColor,
+                    border: Border(bottom: BorderSide(color: context.borderColor, width: 1)),
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -242,15 +243,15 @@ class DesktopLayoutShell extends ConsumerWidget {
                         children: [
                           Text(
                             'ERP System',
-                            style: GoogleFonts.poppins(color: Colors.white38, fontSize: 13),
+                            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 13),
                           ),
-                          const SizedBox(width: 8),
-                          const Icon(Icons.chevron_right, color: Colors.white38, size: 16),
-                          const SizedBox(width: 8),
+                          SizedBox(width: 8),
+                          Icon(Icons.chevron_right, color: context.textMuted, size: 16),
+                          SizedBox(width: 8),
                           Text(
                             activeSection,
                             style: GoogleFonts.poppins(
-                              color: Colors.white,
+                              color: context.textPrimary,
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -266,21 +267,21 @@ class DesktopLayoutShell extends ConsumerWidget {
                             width: 240,
                             height: 38,
                             decoration: BoxDecoration(
-                              color: const Color(0xFF1E293B),
+                              color: context.cardColor,
                               borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: Colors.white10),
+                              border: Border.all(color: context.borderColor),
                             ),
-                            padding: const EdgeInsets.symmetric(horizontal: 12),
+                            padding: EdgeInsets.symmetric(horizontal: 12),
                             child: Row(
                               children: [
-                                const Icon(Icons.search, color: Colors.white38, size: 18),
-                                const SizedBox(width: 8),
+                                Icon(Icons.search, color: context.textMuted, size: 18),
+                                SizedBox(width: 8),
                                 Expanded(
                                   child: TextField(
-                                    style: const TextStyle(color: Colors.white, fontSize: 12),
+                                    style: TextStyle(color: context.textPrimary, fontSize: 12),
                                     decoration: InputDecoration(
                                       hintText: 'Search ERP...',
-                                      hintStyle: GoogleFonts.poppins(color: Colors.white24),
+                                      hintStyle: GoogleFonts.poppins(color: context.textMuted2),
                                       border: InputBorder.none,
                                       isDense: true,
                                       contentPadding: EdgeInsets.zero,
@@ -290,14 +291,14 @@ class DesktopLayoutShell extends ConsumerWidget {
                               ],
                             ),
                           ),
-                          const SizedBox(width: 20),
+                          SizedBox(width: 20),
 
                           // Notification bell icon
                           Stack(
                             clipBehavior: Clip.none,
                             children: [
                               IconButton(
-                                icon: const Icon(Icons.notifications_none, color: Colors.white70),
+                                icon: Icon(Icons.notifications_none, color: context.textSecondary),
                                 onPressed: () {
                                   // Open notification side drawer or alert overlay
                                   _showNotificationsDialog(context);
@@ -308,19 +309,19 @@ class DesktopLayoutShell extends ConsumerWidget {
                                   top: 8,
                                   right: 8,
                                   child: Container(
-                                    padding: const EdgeInsets.all(4),
-                                    decoration: const BoxDecoration(
+                                    padding: EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
                                       color: Colors.redAccent,
                                       shape: BoxShape.circle,
                                     ),
-                                    constraints: const BoxConstraints(
+                                    constraints: BoxConstraints(
                                       minWidth: 16,
                                       minHeight: 16,
                                     ),
                                     child: Text(
                                       '$notificationCount',
-                                      style: const TextStyle(
-                                        color: Colors.white,
+                                      style: TextStyle(
+                                        color: context.textPrimary,
                                         fontSize: 9,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -330,12 +331,12 @@ class DesktopLayoutShell extends ConsumerWidget {
                                 ),
                             ],
                           ),
-                          const SizedBox(width: 10),
+                          SizedBox(width: 10),
 
                           // Logout / Session dropdown
                           PopupMenuButton<String>(
-                            icon: const Icon(Icons.keyboard_arrow_down, color: Colors.white70),
-                            color: const Color(0xFF1E293B),
+                            icon: Icon(Icons.keyboard_arrow_down, color: context.textSecondary),
+                            color: context.cardColor,
                             onSelected: (value) {
                               if (value == 'logout') {
                                 HiveService.clearSession();
@@ -347,14 +348,14 @@ class DesktopLayoutShell extends ConsumerWidget {
                                 value: 'profile',
                                 child: Text(
                                   'My Profile',
-                                  style: GoogleFonts.poppins(color: Colors.white70, fontSize: 13),
+                                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13),
                                 ),
                               ),
                               PopupMenuItem<String>(
                                 value: 'settings',
                                 child: Text(
                                   'ERP Settings',
-                                  style: GoogleFonts.poppins(color: Colors.white70, fontSize: 13),
+                                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13),
                                 ),
                               ),
                               const PopupMenuDivider(height: 1),
@@ -362,8 +363,8 @@ class DesktopLayoutShell extends ConsumerWidget {
                                 value: 'logout',
                                 child: Row(
                                   children: [
-                                    const Icon(Icons.logout, color: Colors.redAccent, size: 16),
-                                    const SizedBox(width: 8),
+                                    Icon(Icons.logout, color: Colors.redAccent, size: 16),
+                                    SizedBox(width: 8),
                                     Text(
                                       'Log Out',
                                       style: GoogleFonts.poppins(color: Colors.redAccent, fontSize: 13),
@@ -381,38 +382,38 @@ class DesktopLayoutShell extends ConsumerWidget {
 
                 // Main body view content area
                 Expanded(
-                  child: _getView(activeSection, userData),
+                  child: _getView(context, activeSection, userData),
                 ),
 
                 // Footer segment
                 Container(
                   height: 36,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF0F172A),
-                    border: Border(top: BorderSide(color: Colors.white10, width: 1)),
+                  decoration: BoxDecoration(
+                    color: context.bgColor,
+                    border: Border(top: BorderSide(color: context.borderColor, width: 1)),
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         '© 2026 Alwardas Group of Institutions. All rights reserved.',
-                        style: GoogleFonts.poppins(color: Colors.white24, fontSize: 10),
+                        style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 10),
                       ),
                       Row(
                         children: [
                           Container(
                             width: 8,
                             height: 8,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.greenAccent,
                               shape: BoxShape.circle,
                             ),
                           ),
-                          const SizedBox(width: 8),
+                          SizedBox(width: 8),
                           Text(
                             'System Active (v1.0.1)',
-                            style: GoogleFonts.poppins(color: Colors.white38, fontSize: 10),
+                            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10),
                           ),
                         ],
                       ),
@@ -427,7 +428,7 @@ class DesktopLayoutShell extends ConsumerWidget {
     );
   }
 
-  Widget _getView(String section, Map<String, dynamic> userData) {
+  Widget _getView(BuildContext context, String section, Map<String, dynamic> userData) {
     final role = userData['role']?.toString().toLowerCase().trim() ?? 'staff';
 
     switch (section) {
@@ -440,7 +441,7 @@ class DesktopLayoutShell extends ConsumerWidget {
         if (role == 'hod' || role == 'admin' || role == 'principal') {
           return DesktopHodAdmissionView(userData: userData);
         }
-        return const Center(child: Text("Access Denied"));
+        return Center(child: Text("Access Denied"));
       case 'Students':
         return DesktopStudentManagementView(userData: userData);
       case 'Attendance':
@@ -451,7 +452,7 @@ class DesktopLayoutShell extends ConsumerWidget {
         if (role == 'coordinator' || role == 'principal' || role == 'admin') {
           return DesktopCoordinatorAcademicsView(userData: userData);
         }
-        return const Center(child: Text("Access Denied"));
+        return Center(child: Text("Access Denied"));
       case 'Fee Management':
         return DesktopFeeManagementView(userData: userData);
       case 'Faculty':
@@ -470,29 +471,29 @@ class DesktopLayoutShell extends ConsumerWidget {
         if (role == 'hod') {
           return DesktopHodRequestsView(userData: userData);
         }
-        return const Center(child: Text("Access Denied"));
+        return Center(child: Text("Access Denied"));
       case 'Timetable':
         if (role == 'hod') {
           return DesktopHodTimetableView(userData: userData);
         }
-        return const Center(child: Text("Access Denied"));
+        return Center(child: Text("Access Denied"));
       case 'Syllabus':
         if (role == 'hod') {
           return DesktopHodSyllabusView(userData: userData);
         }
-        return const Center(child: Text("Access Denied"));
+        return Center(child: Text("Access Denied"));
       case 'Issues':
         if (role == 'hod') {
           return DesktopHodIssuesView(userData: userData);
         }
-        return const Center(child: Text("Access Denied"));
+        return Center(child: Text("Access Denied"));
       default:
         return Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.hourglass_empty, color: Colors.blueAccent.withOpacity(0.4), size: 60),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               Text(
                 'ERP $section module coming soon',
                 style: GoogleFonts.poppins(
@@ -501,10 +502,10 @@ class DesktopLayoutShell extends ConsumerWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8),
               Text(
                 'We are finishing migrations for this desktop subsection.',
-                style: GoogleFonts.poppins(color: Colors.white24, fontSize: 12),
+                style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 12),
               ),
             ],
           ),
@@ -516,11 +517,11 @@ class DesktopLayoutShell extends ConsumerWidget {
     showDialog(
       context: context,
       builder: (context) => Dialog(
-        backgroundColor: const Color(0xFF1E293B),
+        backgroundColor: context.cardColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: Container(
           width: 400,
-          padding: const EdgeInsets.all(24),
+          padding: EdgeInsets.all(24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -531,29 +532,29 @@ class DesktopLayoutShell extends ConsumerWidget {
                   Text(
                     'Recent Notifications',
                     style: GoogleFonts.poppins(
-                      color: Colors.white,
+                      color: context.textPrimary,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.close, color: Colors.white60),
+                    icon: Icon(Icons.close, color: context.textSecondary),
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
-              _buildNotificationItem('Admission request from John Doe (HOD Review)', '10 mins ago'),
-              _buildNotificationItem('Semester exam schedules updated', '2 hours ago'),
-              _buildNotificationItem('System security backup finished', '5 hours ago'),
-              const SizedBox(height: 24),
+              SizedBox(height: 16),
+              _buildNotificationItem(context, 'Admission request from John Doe (HOD Review)', '10 mins ago'),
+              _buildNotificationItem(context, 'Semester exam schedules updated', '2 hours ago'),
+              _buildNotificationItem(context, 'System security backup finished', '5 hours ago'),
+              SizedBox(height: 24),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () => Navigator.pop(context),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF3b5998),
-                    foregroundColor: Colors.white,
+                    backgroundColor: Color(0xFF3b5998),
+                    foregroundColor: context.textPrimary,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   ),
                   child: Text('Close Feed', style: GoogleFonts.poppins()),
@@ -566,26 +567,26 @@ class DesktopLayoutShell extends ConsumerWidget {
     );
   }
 
-  Widget _buildNotificationItem(String message, String time) {
+  Widget _buildNotificationItem(BuildContext context, String message, String time) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Icons.circle, color: Colors.blueAccent, size: 8),
-          const SizedBox(width: 12),
+          Icon(Icons.circle, color: Colors.blueAccent, size: 8),
+          SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   message,
-                  style: GoogleFonts.poppins(color: Colors.white70, fontSize: 13),
+                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13),
                 ),
-                const SizedBox(height: 4),
+                SizedBox(height: 4),
                 Text(
                   time,
-                  style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11),
+                  style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
                 ),
               ],
             ),
@@ -637,3 +638,4 @@ class DesktopLayoutShell extends ConsumerWidget {
     return sidebarItems;
   }
 }
+

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../theme/theme_extensions.dart';
 
 class DesktopPrincipalAnalyticsView extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -15,8 +16,8 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF0F172A),
-      padding: const EdgeInsets.all(30),
+      color: context.bgColor,
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -29,17 +30,17 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
                 children: [
                   Text(
                     'Principal Executive Analytics Center',
-                    style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     'Evaluate campus divisions performance, placement stats, and configure institutional alerts',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   ),
                 ],
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Main layout split
           Expanded(
@@ -55,42 +56,42 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
                       Container(
                         height: 240,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF1E293B),
+                          color: context.cardColor,
                           borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: Colors.white10),
+                          border: Border.all(color: context.borderColor),
                         ),
-                        padding: const EdgeInsets.all(20),
+                        padding: EdgeInsets.all(20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               'Department Performance Index',
-                              style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+                              style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold),
                             ),
-                            const SizedBox(height: 14),
+                            SizedBox(height: 14),
                             Expanded(child: _buildDepartmentPerformanceTable()),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20),
 
                       // Placements trend
                       Expanded(
                         child: Container(
                           decoration: BoxDecoration(
-                            color: const Color(0xFF1E293B),
+                            color: context.cardColor,
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: Colors.white10),
+                            border: Border.all(color: context.borderColor),
                           ),
-                          padding: const EdgeInsets.all(24),
+                          padding: EdgeInsets.all(24),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'Historical Campus Placements Trend',
-                                style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+                                style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold),
                               ),
-                              const SizedBox(height: 20),
+                              SizedBox(height: 20),
                               Expanded(child: _buildLineChart()),
                             ],
                           ),
@@ -99,31 +100,31 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
                     ],
                   ),
                 ),
-                const SizedBox(width: 20),
+                SizedBox(width: 20),
 
                 // 2. Proactive Warnings & Alerts center
                 Expanded(
                   flex: 2,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFF1E293B),
+                      color: context.cardColor,
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: Colors.white10),
+                      border: Border.all(color: context.borderColor),
                     ),
-                    padding: const EdgeInsets.all(24),
+                    padding: EdgeInsets.all(24),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Proactive Security & Compliance Alerts',
-                          style: GoogleFonts.poppins(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 15, fontWeight: FontWeight.bold),
                         ),
-                        const SizedBox(height: 4),
+                        SizedBox(height: 4),
                         Text(
                           'Automated warning triggers generated by system anomalies',
-                          style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11),
+                          style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
                         ),
-                        const SizedBox(height: 24),
+                        SizedBox(height: 24),
                         Expanded(
                           child: ListView(
                             children: [
@@ -155,19 +156,19 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
     return Column(
       children: [
         Container(
-          color: const Color(0xFF0F172A).withOpacity(0.4),
+          color: context.bgColor.withOpacity(0.4),
           height: 36,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: const Row(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
             children: [
-              Expanded(flex: 3, child: Text('Department', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-              Expanded(flex: 2, child: Text('Pass %', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-              Expanded(flex: 2, child: Text('Attendance %', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-              Expanded(flex: 2, child: Text('Placement %', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
+              Expanded(flex: 3, child: Text('Department', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+              Expanded(flex: 2, child: Text('Pass %', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+              Expanded(flex: 2, child: Text('Attendance %', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+              Expanded(flex: 2, child: Text('Placement %', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
             ],
           ),
         ),
-        const Divider(color: Colors.white10, height: 1),
+        Divider(color: context.borderColor, height: 1),
         Expanded(
           child: ListView.builder(
             itemCount: depts.length,
@@ -175,15 +176,15 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
               final item = depts[index];
               return Container(
                 height: 42,
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                decoration: const BoxDecoration(
-                  border: Border(bottom: BorderSide(color: Colors.white10, width: 0.5)),
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                decoration: BoxDecoration(
+                  border: Border(bottom: BorderSide(color: context.borderColor, width: 0.5)),
                 ),
                 child: Row(
                   children: [
-                    Expanded(flex: 3, child: Text(item['name'], style: GoogleFonts.poppins(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold))),
-                    Expanded(flex: 2, child: Text(item['pass'], style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12))),
-                    Expanded(flex: 2, child: Text(item['att'], style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12))),
+                    Expanded(flex: 3, child: Text(item['name'], style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12, fontWeight: FontWeight.bold))),
+                    Expanded(flex: 2, child: Text(item['pass'], style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12))),
+                    Expanded(flex: 2, child: Text(item['att'], style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12))),
                     Expanded(flex: 2, child: Text(item['place'], style: GoogleFonts.poppins(color: Colors.greenAccent, fontSize: 12, fontWeight: FontWeight.bold))),
                   ],
                 ),
@@ -197,23 +198,23 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
 
   Widget _buildWarningCard(String title, String details, Color color) {
     return Card(
-      color: const Color(0xFF0F172A),
-      margin: const EdgeInsets.only(bottom: 16),
+      color: context.bgColor,
+      margin: EdgeInsets.only(bottom: 16),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(Icons.warning_amber_rounded, color: color, size: 20),
-            const SizedBox(width: 14),
+            SizedBox(width: 14),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 4),
-                  Text(details, style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
+                  Text(title, style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold)),
+                  SizedBox(height: 4),
+                  Text(details, style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
                 ],
               ),
             ),
@@ -234,7 +235,7 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
             sideTitles: SideTitles(
               showTitles: true,
               getTitlesWidget: (value, meta) {
-                return Text('${value.toInt()}%', style: const TextStyle(color: Colors.white38, fontSize: 10));
+                return Text('${value.toInt()}%', style: TextStyle(color: context.textMuted, fontSize: 10));
               },
               reservedSize: 32,
             ),
@@ -245,9 +246,9 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
               getTitlesWidget: (value, meta) {
                 const years = ['2023', '2024', '2025', '2026'];
                 if (value.toInt() >= 0 && value.toInt() < years.length) {
-                  return Text(years[value.toInt()], style: const TextStyle(color: Colors.white38, fontSize: 10));
+                  return Text(years[value.toInt()], style: TextStyle(color: context.textMuted, fontSize: 10));
                 }
-                return const Text('');
+                return Text('');
               },
             ),
           ),
@@ -259,7 +260,7 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
         maxY: 100,
         lineBarsData: [
           LineChartBarData(
-            spots: const [
+            spots: [
               FlSpot(0, 78),
               FlSpot(1, 82),
               FlSpot(2, 85),
@@ -278,3 +279,4 @@ class _DesktopPrincipalAnalyticsViewState extends State<DesktopPrincipalAnalytic
     );
   }
 }
+

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:intl/intl.dart';
+import '../../../theme/theme_extensions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
@@ -88,7 +89,7 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return const Center(child: CircularProgressIndicator(color: Colors.blueAccent));
+      return Center(child: CircularProgressIndicator(color: Colors.blueAccent));
     }
 
     final branchName = widget.userData['branch'] ?? 'Computer Engineering';
@@ -97,8 +98,8 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
     return Consumer(
       builder: (context, ref, child) {
         return SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.all(30),
+          physics: BouncingScrollPhysics(),
+          padding: EdgeInsets.all(30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -112,35 +113,35 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                       Text(
                         'Welcome Back, $hodName',
                         style: GoogleFonts.poppins(
-                          color: Colors.white,
+                          color: context.textPrimary,
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
                         'Department Workspace for $branchName',
-                        style: GoogleFonts.poppins(color: Colors.white38, fontSize: 13),
+                        style: GoogleFonts.poppins(color: context.textMuted, fontSize: 13),
                       ),
                     ],
                   ),
                   ElevatedButton.icon(
                     onPressed: _loadDashboardData,
-                    icon: const Icon(Icons.refresh, size: 16),
+                    icon: Icon(Icons.refresh, size: 16),
                     label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF1E293B),
-                      foregroundColor: Colors.white,
+                      backgroundColor: context.cardColor,
+                      foregroundColor: context.textPrimary,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
 
               // KPI Cards Grid (HOD specific)
               GridView.count(
                 shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
+                physics: NeverScrollableScrollPhysics(),
                 crossAxisCount: 4,
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20,
@@ -152,7 +153,7 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                   _buildKpiCard('Syllabus Completion', '${_syllabusProgress.toStringAsFixed(1)}%', Icons.menu_book_outlined, Colors.amberAccent),
                 ],
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
 
               // Quick Actions & Charts Row
               Row(
@@ -164,21 +165,21 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                     child: Container(
                       height: 380,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF1E293B),
+                        color: context.cardColor,
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Colors.white10),
+                        border: Border.all(color: context.borderColor),
                       ),
-                      padding: const EdgeInsets.all(24),
+                      padding: EdgeInsets.all(24),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             'Administrative Quick Actions',
-                            style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                            style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
                           ),
-                          const SizedBox(height: 4),
-                          Text('Direct shortcuts to manage department functions', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
-                          const SizedBox(height: 24),
+                          SizedBox(height: 4),
+                          Text('Direct shortcuts to manage department functions', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+                          SizedBox(height: 24),
                           Expanded(
                             child: GridView.count(
                               crossAxisCount: 2,
@@ -199,7 +200,7 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 20),
+                  SizedBox(width: 20),
 
                   // Syllabus Progress chart (Bar / Circular Indicator representation)
                   Expanded(
@@ -207,21 +208,21 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                     child: Container(
                       height: 380,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF1E293B),
+                        color: context.cardColor,
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Colors.white10),
+                        border: Border.all(color: context.borderColor),
                       ),
-                      padding: const EdgeInsets.all(24),
+                      padding: EdgeInsets.all(24),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             'Department Syllabus Status',
-                            style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                            style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
                           ),
-                          const SizedBox(height: 4),
-                          Text('Syllabus completion percentage representation', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
-                          const SizedBox(height: 40),
+                          SizedBox(height: 4),
+                          Text('Syllabus completion percentage representation', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+                          SizedBox(height: 40),
                           Expanded(
                             child: Center(
                               child: Stack(
@@ -233,7 +234,7 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                                     child: CircularProgressIndicator(
                                       value: _syllabusProgress / 100.0,
                                       strokeWidth: 16,
-                                      backgroundColor: Colors.white10,
+                                      backgroundColor: context.borderColor,
                                       valueColor: const AlwaysStoppedAnimation<Color>(Colors.amberAccent),
                                     ),
                                   ),
@@ -242,11 +243,11 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                                     children: [
                                       Text(
                                         '${_syllabusProgress.toStringAsFixed(1)}%',
-                                        style: GoogleFonts.poppins(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
+                                        style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 28, fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         'Completed',
-                                        style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                                        style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                                       ),
                                     ],
                                   ),
@@ -260,41 +261,41 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                   ),
                 ],
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
 
               // Recent Activities Feed
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1E293B),
+                  color: context.cardColor,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.white10),
+                  border: Border.all(color: context.borderColor),
                 ),
-                padding: const EdgeInsets.all(24),
+                padding: EdgeInsets.all(24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Department Live Activities Feed',
-                      style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                      style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     if (_recentActivities.isEmpty)
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        padding: EdgeInsets.symmetric(vertical: 20),
                         child: Center(
                           child: Text(
                             'No recent notifications or approval requests.',
-                            style: GoogleFonts.poppins(color: Colors.white38, fontSize: 13),
+                            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 13),
                           ),
                         ),
                       )
                     else
                       ListView.separated(
                         shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
+                        physics: NeverScrollableScrollPhysics(),
                         itemCount: _recentActivities.length > 5 ? 5 : _recentActivities.length,
-                        separatorBuilder: (context, index) => const Divider(color: Colors.white10, height: 1),
+                        separatorBuilder: (context, index) => Divider(color: context.borderColor, height: 1),
                         itemBuilder: (context, index) {
                           final item = _recentActivities[index];
                           final String title = _getNotificationTitle(item['type']);
@@ -318,11 +319,11 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
   Widget _buildKpiCard(String title, String value, IconData icon, Color color) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -333,20 +334,20 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                  style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
                 Text(
                   value,
-                  style: GoogleFonts.poppins(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: color.withOpacity(0.1),
               borderRadius: BorderRadius.circular(12),
@@ -366,18 +367,18 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
       borderRadius: BorderRadius.circular(12),
       child: Container(
         decoration: BoxDecoration(
-          color: const Color(0xFF0F172A),
+          color: context.bgColor,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.white10),
+          border: Border.all(color: context.borderColor),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         child: Row(
           children: [
             Icon(icon, color: color, size: 20),
-            const SizedBox(width: 12),
+            SizedBox(width: 12),
             Text(
               label,
-              style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold),
+              style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold),
             ),
           ],
         ),
@@ -387,29 +388,29 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
 
   Widget _buildActivityRow(String title, String desc, String time, IconData icon, Color color) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 14),
+      padding: EdgeInsets.symmetric(vertical: 14),
       child: Row(
         children: [
           Container(
-            padding: const EdgeInsets.all(8),
+            padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: color.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, color: color, size: 18),
           ),
-          const SizedBox(width: 16),
+          SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w600)),
-                const SizedBox(height: 2),
-                Text(desc, style: GoogleFonts.poppins(color: Colors.white60, fontSize: 12)),
+                Text(title, style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.w600)),
+                SizedBox(height: 2),
+                Text(desc, style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12)),
               ],
             ),
           ),
-          Text(time, style: GoogleFonts.poppins(color: Colors.white24, fontSize: 11)),
+          Text(time, style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 11)),
         ],
       ),
     );
@@ -432,3 +433,4 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
     }
   }
 }
+

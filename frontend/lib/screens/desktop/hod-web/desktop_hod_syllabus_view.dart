@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../theme/theme_extensions.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
 
@@ -165,14 +166,14 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return const Center(child: CircularProgressIndicator(color: Colors.blueAccent));
+      return Center(child: CircularProgressIndicator(color: Colors.blueAccent));
     }
 
     final branchName = widget.userData['branch'] ?? 'Computer Engineering';
 
     return Container(
-      color: const Color(0xFF0F172A),
-      padding: const EdgeInsets.all(30),
+      color: context.bgColor,
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -185,21 +186,21 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
                 children: [
                   Text(
                     'Syllabus & Curriculum Tracker',
-                    style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     'Track syllabus progression index across all years, sections, and subjects in $branchName',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   ),
                 ],
               ),
               // Regulation Text Indicator
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1E293B),
+                  color: context.cardColor,
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.white10),
+                  border: Border.all(color: context.borderColor),
                 ),
                 child: Text(
                   _selectedCourseId == 'C-26' ? 'C-26 Regulation' : 'C-23 Regulation',
@@ -208,7 +209,7 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Main split layout
           Expanded(
@@ -222,47 +223,47 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
                     children: [
                       // Branch Overall Card
                       if (_branchProgress != null) _buildBranchOverallCard(),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20),
 
                       // Years Selector
                       Container(
                         decoration: BoxDecoration(
-                          color: const Color(0xFF1E293B),
+                          color: context.cardColor,
                           borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: Colors.white10),
+                          border: Border.all(color: context.borderColor),
                         ),
-                        padding: const EdgeInsets.all(20),
+                        padding: EdgeInsets.all(20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               'Select Academic Year',
-                              style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+                              style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold),
                             ),
-                            const SizedBox(height: 16),
+                            SizedBox(height: 16),
                             _buildYearSelectionRow(),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20),
 
                       // Section Selector List
                       Expanded(
                         child: Container(
                           decoration: BoxDecoration(
-                            color: const Color(0xFF1E293B),
+                            color: context.cardColor,
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: Colors.white10),
+                            border: Border.all(color: context.borderColor),
                           ),
-                          padding: const EdgeInsets.all(20),
+                          padding: EdgeInsets.all(20),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'Sections Overview',
-                                style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+                                style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold),
                               ),
-                              const SizedBox(height: 16),
+                              SizedBox(height: 16),
                               Expanded(child: _buildSectionsList()),
                             ],
                           ),
@@ -271,33 +272,33 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
                     ],
                   ),
                 ),
-                const SizedBox(width: 20),
+                SizedBox(width: 20),
 
                 // Right Pane: Subject-wise Breakdown Table
                 Expanded(
                   flex: 3,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFF1E293B),
+                      color: context.cardColor,
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: Colors.white10),
+                      border: Border.all(color: context.borderColor),
                     ),
-                    padding: const EdgeInsets.all(24),
+                    padding: EdgeInsets.all(24),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Subject Progression: $_selectedYear - Sec $_selectedSection',
-                          style: GoogleFonts.poppins(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 15, fontWeight: FontWeight.bold),
                         ),
                         Text(
                           'Detail syllabus feedback and topics completed by respective faculty members',
-                          style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11),
+                          style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
                         ),
-                        const SizedBox(height: 20),
+                        SizedBox(height: 20),
                         Expanded(
                           child: _loadingSectionProgress
-                              ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                              ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                               : _buildSubjectsTable(),
                         ),
                       ],
@@ -315,11 +316,11 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
   Widget _buildBranchOverallCard() {
     final int overall = _branchProgress!['overallPercentage'] ?? 0;
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -329,7 +330,7 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
             children: [
               Text(
                 "Overall Branch Progress",
-                style: GoogleFonts.poppins(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+                style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 15, fontWeight: FontWeight.bold),
               ),
               Text(
                 "$overall% Completed",
@@ -337,13 +338,13 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
               ),
             ],
           ),
-          const SizedBox(height: 12),
+          SizedBox(height: 12),
           Stack(
             children: [
               Container(
                 height: 8,
                 width: double.infinity,
-                decoration: BoxDecoration(color: Colors.white10, borderRadius: BorderRadius.circular(4)),
+                decoration: BoxDecoration(color: context.borderColor, borderRadius: BorderRadius.circular(4)),
               ),
               FractionallySizedBox(
                 widthFactor: (overall / 100.0).clamp(0.0, 1.0),
@@ -370,7 +371,7 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
         final isSelected = y == _selectedYear;
         return Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
+            padding: EdgeInsets.symmetric(horizontal: 4),
             child: InkWell(
               onTap: () {
                 setState(() {
@@ -381,19 +382,19 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
               },
               borderRadius: BorderRadius.circular(8),
               child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 12),
+                padding: EdgeInsets.symmetric(vertical: 12),
                 decoration: BoxDecoration(
-                  color: isSelected ? Colors.blueAccent.withOpacity(0.15) : const Color(0xFF0F172A),
+                  color: isSelected ? Colors.blueAccent.withOpacity(0.15) : context.bgColor,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: isSelected ? Colors.blueAccent : Colors.white10,
+                    color: isSelected ? Colors.blueAccent : context.borderColor,
                   ),
                 ),
                 child: Center(
                   child: Text(
                     y,
                     style: GoogleFonts.poppins(
-                      color: isSelected ? Colors.white : Colors.white60,
+                      color: isSelected ? context.textPrimary : context.textSecondary,
                       fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                       fontSize: 12,
                     ),
@@ -412,7 +413,7 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
       return Center(
         child: Text(
           "No sections configured for this year.",
-          style: GoogleFonts.poppins(color: Colors.white24, fontSize: 12),
+          style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 12),
         ),
       );
     }
@@ -436,13 +437,13 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
           },
           borderRadius: BorderRadius.circular(10),
           child: Container(
-            margin: const EdgeInsets.only(bottom: 8),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            margin: EdgeInsets.only(bottom: 8),
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
               color: isSelected ? Colors.white.withOpacity(0.05) : Colors.transparent,
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                color: isSelected ? Colors.white24 : Colors.transparent,
+                color: isSelected ? context.textMuted2 : Colors.transparent,
               ),
             ),
             child: Row(
@@ -452,21 +453,21 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
                   radius: 18,
                   child: Text(
                     sec,
-                    style: const TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold, fontSize: 13),
+                    style: TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold, fontSize: 13),
                   ),
                 ),
-                const SizedBox(width: 14),
+                SizedBox(width: 14),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "Section $sec",
-                        style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold),
                       ),
                       Text(
                         sem,
-                        style: GoogleFonts.poppins(color: Colors.white38, fontSize: 10),
+                        style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10),
                       ),
                     ],
                   ),
@@ -492,7 +493,7 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
       return Center(
         child: Text(
           "No subjects data found.",
-          style: GoogleFonts.poppins(color: Colors.white24, fontSize: 13),
+          style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 13),
         ),
       );
     }
@@ -500,21 +501,21 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: const Color(0xFF0F172A).withOpacity(0.4),
+        color: context.bgColor.withOpacity(0.4),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
       child: DataTable(
         columnSpacing: 16,
         columns: [
           DataColumn(
-            label: Text('Subject', style: GoogleFonts.poppins(color: Colors.white70, fontWeight: FontWeight.bold, fontSize: 13)),
+            label: Text('Subject', style: GoogleFonts.poppins(color: context.textSecondary, fontWeight: FontWeight.bold, fontSize: 13)),
           ),
           DataColumn(
-            label: Text('Faculty', style: GoogleFonts.poppins(color: Colors.white70, fontWeight: FontWeight.bold, fontSize: 13)),
+            label: Text('Faculty', style: GoogleFonts.poppins(color: context.textSecondary, fontWeight: FontWeight.bold, fontSize: 13)),
           ),
           DataColumn(
-            label: Text('Completion', style: GoogleFonts.poppins(color: Colors.white70, fontWeight: FontWeight.bold, fontSize: 13)),
+            label: Text('Completion', style: GoogleFonts.poppins(color: context.textSecondary, fontWeight: FontWeight.bold, fontSize: 13)),
           ),
         ],
         rows: _sectionSubjectsProgress.map((sub) {
@@ -524,13 +525,13 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
               DataCell(
                 Text(
                   sub['subjectName'] ?? sub['name'] ?? '',
-                  style: GoogleFonts.poppins(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12, fontWeight: FontWeight.bold),
                 ),
               ),
               DataCell(
                 Text(
                   sub['facultyName'] ?? 'Not Assigned',
-                  style: GoogleFonts.poppins(color: Colors.white60, fontSize: 12),
+                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12),
                 ),
               ),
               DataCell(
@@ -540,13 +541,13 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
                       width: 50,
                       child: LinearProgressIndicator(
                         value: completion / 100.0,
-                        backgroundColor: Colors.white10,
+                        backgroundColor: context.borderColor,
                         valueColor: AlwaysStoppedAnimation<Color>(
                           completion >= 75 ? Colors.greenAccent : Colors.orangeAccent,
                         ),
                       ),
                     ),
-                    const SizedBox(width: 8),
+                    SizedBox(width: 8),
                     Text(
                       "$completion%",
                       style: GoogleFonts.poppins(
@@ -565,3 +566,4 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
     );
   }
 }
+

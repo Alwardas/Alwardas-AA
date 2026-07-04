@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../theme/theme_extensions.dart';
 
 class DesktopFacultyManagementView extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -28,8 +29,8 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF0F172A),
-      padding: const EdgeInsets.all(30),
+      color: context.bgColor,
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -42,17 +43,17 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
                 children: [
                   Text(
                     'Faculty Workload & Scheduling Center',
-                    style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     'Manage faculty profiles, monitor lecture workloads, track syllabus completion progress, and approve leave requests',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   ),
                 ],
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Tabs headers
           TabBar(
@@ -60,17 +61,17 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
             isScrollable: true,
             tabAlignment: TabAlignment.start,
             labelColor: Colors.blueAccent,
-            unselectedLabelColor: Colors.white38,
+            unselectedLabelColor: context.textMuted,
             indicatorColor: Colors.blueAccent,
-            dividerColor: Colors.white10,
+            dividerColor: context.borderColor,
             labelStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold),
-            tabs: const [
+            tabs: [
               Tab(text: 'Faculty Directory'),
               Tab(text: 'Syllabus Workloads'),
               Tab(text: 'Leave Approvals'),
             ],
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
 
           // Tabs Views
           Expanded(
@@ -97,29 +98,29 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
 
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
       clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
           Container(
-            color: const Color(0xFF0F172A).withOpacity(0.4),
+            color: context.bgColor.withOpacity(0.4),
             height: 44,
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: [
-                Expanded(flex: 2, child: Text('Faculty ID', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                Expanded(flex: 3, child: Text('Name', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                Expanded(flex: 3, child: Text('Department', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                Expanded(flex: 3, child: Text('Designation', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                Expanded(flex: 3, child: Text('Email ID', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                Expanded(flex: 2, child: Text('Contact Phone', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
+                Expanded(flex: 2, child: Text('Faculty ID', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                Expanded(flex: 3, child: Text('Name', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                Expanded(flex: 3, child: Text('Department', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                Expanded(flex: 3, child: Text('Designation', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                Expanded(flex: 3, child: Text('Email ID', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                Expanded(flex: 2, child: Text('Contact Phone', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
               ],
             ),
           ),
-          const Divider(color: Colors.white10, height: 1),
+          Divider(color: context.borderColor, height: 1),
           Expanded(
             child: ListView.builder(
               itemCount: faculty.length,
@@ -127,18 +128,18 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
                 final item = faculty[index];
                 return Container(
                   height: 48,
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  decoration: const BoxDecoration(
-                    border: Border(bottom: BorderSide(color: Colors.white10, width: 0.5)),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  decoration: BoxDecoration(
+                    border: Border(bottom: BorderSide(color: context.borderColor, width: 0.5)),
                   ),
                   child: Row(
                     children: [
-                      Expanded(flex: 2, child: Text(item['id'], style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12))),
-                      Expanded(flex: 3, child: Text(item['name'], style: GoogleFonts.poppins(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold))),
-                      Expanded(flex: 3, child: Text(item['dept'], style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12))),
-                      Expanded(flex: 3, child: Text(item['designation'], style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12))),
-                      Expanded(flex: 3, child: Text(item['email'], style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12))),
-                      Expanded(flex: 2, child: Text(item['phone'], style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12))),
+                      Expanded(flex: 2, child: Text(item['id'], style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12))),
+                      Expanded(flex: 3, child: Text(item['name'], style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12, fontWeight: FontWeight.bold))),
+                      Expanded(flex: 3, child: Text(item['dept'], style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12))),
+                      Expanded(flex: 3, child: Text(item['designation'], style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12))),
+                      Expanded(flex: 3, child: Text(item['email'], style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12))),
+                      Expanded(flex: 2, child: Text(item['phone'], style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12))),
                     ],
                   ),
                 );
@@ -162,11 +163,11 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
       itemBuilder: (context, index) {
         final item = progress[index];
         return Card(
-          color: const Color(0xFF1E293B),
-          margin: const EdgeInsets.only(bottom: 16),
+          color: context.cardColor,
+          margin: EdgeInsets.only(bottom: 16),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
             child: Row(
               children: [
                 Expanded(
@@ -174,9 +175,9 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(item['name'], style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold)),
-                      const SizedBox(height: 4),
-                      Text(item['subject'], style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12)),
+                      Text(item['name'], style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold)),
+                      SizedBox(height: 4),
+                      Text(item['subject'], style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12)),
                     ],
                   ),
                 ),
@@ -184,7 +185,7 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
                   flex: 1,
                   child: Text(
                     'Lectures: ${item['lectures']}',
-                    style: GoogleFonts.poppins(color: Colors.white70, fontSize: 13),
+                    style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13),
                   ),
                 ),
                 Expanded(
@@ -196,7 +197,7 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
                           borderRadius: BorderRadius.circular(4),
                           child: LinearProgressIndicator(
                             value: item['completion'],
-                            backgroundColor: Colors.white10,
+                            backgroundColor: context.borderColor,
                             valueColor: AlwaysStoppedAnimation<Color>(
                               item['completion'] > 0.8 ? Colors.greenAccent : (item['completion'] > 0.5 ? Colors.blueAccent : Colors.orangeAccent),
                             ),
@@ -204,10 +205,10 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
                           ),
                         ),
                       ),
-                      const SizedBox(width: 16),
+                      SizedBox(width: 16),
                       Text(
                         '${(item['completion'] * 100).toInt()}%',
-                        style: GoogleFonts.poppins(color: Colors.white70, fontSize: 13, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -227,60 +228,60 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
 
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
       clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
           Container(
-            color: const Color(0xFF0F172A).withOpacity(0.4),
+            color: context.bgColor.withOpacity(0.4),
             height: 44,
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: [
-                Expanded(flex: 3, child: Text('Faculty Name', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                Expanded(flex: 3, child: Text('Requested Dates', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                Expanded(flex: 4, child: Text('Reason', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                const SizedBox(width: 160), // action spacer
+                Expanded(flex: 3, child: Text('Faculty Name', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                Expanded(flex: 3, child: Text('Requested Dates', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                Expanded(flex: 4, child: Text('Reason', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                SizedBox(width: 160), // action spacer
               ],
             ),
           ),
-          const Divider(color: Colors.white10, height: 1),
+          Divider(color: context.borderColor, height: 1),
           Expanded(
             child: requests.isEmpty
-                ? Center(child: Text('No pending leave requests.', style: GoogleFonts.poppins(color: Colors.white38)))
+                ? Center(child: Text('No pending leave requests.', style: GoogleFonts.poppins(color: context.textMuted)))
                 : ListView.builder(
                     itemCount: requests.length,
                     itemBuilder: (context, index) {
                       final item = requests[index];
                       return Container(
                         height: 52,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        decoration: const BoxDecoration(
-                          border: Border(bottom: BorderSide(color: Colors.white10, width: 0.5)),
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        decoration: BoxDecoration(
+                          border: Border(bottom: BorderSide(color: context.borderColor, width: 0.5)),
                         ),
                         child: Row(
                           children: [
-                            Expanded(flex: 3, child: Text(item['name'], style: GoogleFonts.poppins(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold))),
-                            Expanded(flex: 3, child: Text(item['dates'], style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12))),
-                            Expanded(flex: 4, child: Text(item['reason'], style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12))),
+                            Expanded(flex: 3, child: Text(item['name'], style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12, fontWeight: FontWeight.bold))),
+                            Expanded(flex: 3, child: Text(item['dates'], style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12))),
+                            Expanded(flex: 4, child: Text(item['reason'], style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12))),
                             Row(
                               children: [
                                 TextButton(
                                   onPressed: () {},
-                                  child: const Text('Reject', style: TextStyle(color: Colors.redAccent, fontSize: 12)),
+                                  child: Text('Reject', style: TextStyle(color: Colors.redAccent, fontSize: 12)),
                                 ),
-                                const SizedBox(width: 8),
+                                SizedBox(width: 8),
                                 ElevatedButton(
                                   onPressed: () {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(content: Text('Leave request approved. Notification sent.')),
                                     );
                                   },
-                                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: Colors.white),
-                                  child: const Text('Approve', style: TextStyle(fontSize: 12)),
+                                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: context.textPrimary),
+                                  child: Text('Approve', style: TextStyle(fontSize: 12)),
                                 ),
                               ],
                             ),
@@ -295,3 +296,4 @@ class _DesktopFacultyManagementViewState extends State<DesktopFacultyManagementV
     );
   }
 }
+

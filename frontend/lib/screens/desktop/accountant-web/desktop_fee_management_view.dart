@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart' hide TextDirection;
 import 'dart:math' as math;
+import '../../../theme/theme_extensions.dart';
 
 import '../../../../core/api_config.dart';
 import '../../../../core/api_constants.dart';
@@ -89,14 +90,14 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF0F172A),
-      padding: const EdgeInsets.all(24),
+      color: context.bgColor,
+      padding: EdgeInsets.all(24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Header / Global Search
           _buildHeaderBar(),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
 
           // Tabs Headers
           TabBar(
@@ -104,18 +105,18 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
             isScrollable: true,
             tabAlignment: TabAlignment.start,
             labelColor: Colors.blueAccent,
-            unselectedLabelColor: Colors.white38,
+            unselectedLabelColor: context.textMuted,
             indicatorColor: Colors.blueAccent,
-            dividerColor: Colors.white10,
+            dividerColor: context.borderColor,
             labelStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold),
             tabs: _tabTitles.map((title) => Tab(text: title)).toList(),
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16),
 
           // Tab views
           Expanded(
             child: _isLoadingStats
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : TabBarView(
                     controller: _tabController,
                     children: _tabTitles.map((title) => _buildTabView(title)).toList(),
@@ -135,11 +136,11 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
           children: [
             Text(
               'Accounts Department Management System',
-              style: GoogleFonts.poppins(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+              style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 22, fontWeight: FontWeight.bold),
             ),
             Text(
               'Supervise accountants, track fee profiles, disburse scholarships, and approve refund workflows.',
-              style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+              style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
             ),
           ],
         ),
@@ -149,17 +150,17 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
           children: [
             Container(
               height: 38,
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              padding: EdgeInsets.symmetric(horizontal: 8),
               decoration: BoxDecoration(
-                color: const Color(0xFF1E293B),
+                color: context.cardColor,
                 borderRadius: const BorderRadius.horizontal(left: Radius.circular(8)),
-                border: Border.all(color: Colors.white10),
+                border: Border.all(color: context.borderColor),
               ),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
                   value: _searchCategory,
-                  dropdownColor: const Color(0xFF1E293B),
-                  style: GoogleFonts.poppins(color: Colors.white70, fontSize: 11),
+                  dropdownColor: context.cardColor,
+                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 11),
                   items: ['Student ID', 'Roll Number', 'Receipt Number', 'Transaction ID']
                       .map((val) => DropdownMenuItem(value: val, child: Text(val)))
                       .toList(),
@@ -173,19 +174,19 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
               width: 200,
               height: 38,
               decoration: BoxDecoration(
-                color: const Color(0xFF1E293B),
+                color: context.cardColor,
                 borderRadius: const BorderRadius.horizontal(right: Radius.circular(8)),
-                border: Border.all(color: Colors.white10),
+                border: Border.all(color: context.borderColor),
               ),
               child: TextField(
                 controller: _searchController,
-                style: const TextStyle(color: Colors.white, fontSize: 12),
+                style: TextStyle(color: context.textPrimary, fontSize: 12),
                 decoration: InputDecoration(
                   hintText: 'Global Search...',
-                  hintStyle: GoogleFonts.poppins(color: Colors.white24, fontSize: 12),
+                  hintStyle: GoogleFonts.poppins(color: context.textMuted2, fontSize: 12),
                   border: InputBorder.none,
-                  prefixIcon: const Icon(Icons.search, color: Colors.white38, size: 16),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 10),
+                  prefixIcon: Icon(Icons.search, color: context.textMuted, size: 16),
+                  contentPadding: EdgeInsets.symmetric(vertical: 10),
                 ),
                 onSubmitted: (val) {
                   if (val.trim().isNotEmpty) {
@@ -235,7 +236,7 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
       case 'Audit Trails':
         return const AuditTrailsTab();
       default:
-        return Center(child: Text('Coming Soon', style: GoogleFonts.poppins(color: Colors.white38)));
+        return Center(child: Text('Coming Soon', style: GoogleFonts.poppins(color: context.textMuted)));
     }
   }
 
@@ -243,7 +244,7 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
     if (_stats == null) {
       return Center(
         child: Text('Unable to load financial analytics. Make sure the database has fee structures populated.',
-            style: GoogleFonts.poppins(color: Colors.white38)),
+            style: GoogleFonts.poppins(color: context.textMuted)),
       );
     }
 
@@ -259,33 +260,33 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
     final List<dynamic> courseData = _stats!['courseCollection'] ?? [];
 
     return ListView(
-      physics: const BouncingScrollPhysics(),
+      physics: BouncingScrollPhysics(),
       children: [
         // KPI row
         Row(
           children: [
             _buildKPICard("Today's Collection", "₹${NumberFormat('#,##,###').format(today)}", Icons.today, Colors.cyan),
-            const SizedBox(width: 16),
+            SizedBox(width: 16),
             _buildKPICard("This Month Collection", "₹${NumberFormat('#,##,###').format(collected * 0.45)}", Icons.calendar_month, Colors.greenAccent),
-            const SizedBox(width: 16),
+            SizedBox(width: 16),
             _buildKPICard("Pending Dues", "₹${NumberFormat('#,##,###').format(pending)}", Icons.hourglass_empty, Colors.orangeAccent),
-            const SizedBox(width: 16),
+            SizedBox(width: 16),
             _buildKPICard("Overdue Fines", "₹${NumberFormat('#,##,###').format(fine)}", Icons.warning_amber, Colors.redAccent),
           ],
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: 16),
         Row(
           children: [
             _buildKPICard("Refund Requests", "3 Pending", Icons.assignment_return_outlined, Colors.purpleAccent),
-            const SizedBox(width: 16),
+            SizedBox(width: 16),
             _buildKPICard("Scholarship Requests", "₹${NumberFormat('#,##,###').format(scholarship)}", Icons.card_membership, Colors.blueAccent),
-            const SizedBox(width: 16),
+            SizedBox(width: 16),
             _buildKPICard("Active Accountants", "2 Staff", Icons.badge_outlined, Colors.tealAccent),
-            const SizedBox(width: 16),
+            SizedBox(width: 16),
             _buildKPICard("Target Achievement", "${collRate.toStringAsFixed(1)}%", Icons.track_changes, Colors.amberAccent),
           ],
         ),
-        const SizedBox(height: 24),
+        SizedBox(height: 24),
 
         // Charts
         Row(
@@ -301,7 +302,7 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
                 ),
               ),
             ),
-            const SizedBox(width: 16),
+            SizedBox(width: 16),
             Expanded(
               flex: 2,
               child: _buildChartContainer(
@@ -314,7 +315,7 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
             ),
           ],
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: 16),
 
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -332,7 +333,7 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
                         painter: DoughnutChartPainter(courseData, true),
                       ),
                     ),
-                    const SizedBox(width: 20),
+                    SizedBox(width: 20),
                     Expanded(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -340,7 +341,7 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
                         children: courseData.take(5).map((point) {
                           final idx = courseData.indexOf(point);
                           return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 4),
+                            padding: EdgeInsets.symmetric(vertical: 4),
                             child: Row(
                               children: [
                                 Container(
@@ -348,11 +349,11 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
                                   height: 12,
                                   decoration: BoxDecoration(color: _getChartColor(idx), shape: BoxShape.circle),
                                 ),
-                                const SizedBox(width: 8),
+                                SizedBox(width: 8),
                                 Expanded(
                                   child: Text(
                                     "${point['label']}: ₹${NumberFormat('#,##,###').format(point['value'])}",
-                                    style: GoogleFonts.poppins(color: Colors.white70, fontSize: 11),
+                                    style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 11),
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
@@ -366,22 +367,22 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
                 ),
               ),
             ),
-            const SizedBox(width: 16),
+            SizedBox(width: 16),
             Expanded(
               flex: 1,
               child: Container(
                 height: 268,
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1E293B),
+                  color: context.cardColor,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.white10),
+                  border: Border.all(color: context.borderColor),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Target Achievement Dial', style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold)),
-                    const Spacer(),
+                    Text('Target Achievement Dial', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold)),
+                    Spacer(),
                     Center(
                       child: Stack(
                         alignment: Alignment.center,
@@ -392,21 +393,21 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
                             child: CircularProgressIndicator(
                               value: collRate / 100,
                               strokeWidth: 16,
-                              backgroundColor: Colors.white10,
+                              backgroundColor: context.borderColor,
                               color: Colors.green,
                             ),
                           ),
                           Column(
                             children: [
                               Text('${collRate.toStringAsFixed(1)}%',
-                                  style: GoogleFonts.poppins(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold)),
-                              Text('Collected', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 10)),
+                                  style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 22, fontWeight: FontWeight.bold)),
+                              Text('Collected', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10)),
                             ],
                           ),
                         ],
                       ),
                     ),
-                    const Spacer(),
+                    Spacer(),
                   ],
                 ),
               ),
@@ -420,11 +421,11 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
   Widget _buildKPICard(String title, String value, IconData icon, Color color) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: const Color(0xFF1E293B),
+          color: context.cardColor,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.white10),
+          border: Border.all(color: context.borderColor),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -433,17 +434,17 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
-                  const SizedBox(height: 4),
+                  Text(title, style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+                  SizedBox(height: 4),
                   FittedBox(
                     fit: BoxFit.scaleDown,
-                    child: Text(value, style: GoogleFonts.poppins(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                    child: Text(value, style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 18, fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),
             ),
             Container(
-              padding: const EdgeInsets.all(8),
+              padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: color.withOpacity(0.1),
                 shape: BoxShape.circle,
@@ -458,18 +459,18 @@ class _DesktopFeeManagementViewState extends State<DesktopFeeManagementView> wit
 
   Widget _buildChartContainer(String title, Widget chart) {
     return Container(
-      padding: const EdgeInsets.all(20),
-      margin: const EdgeInsets.only(bottom: 16),
+      padding: EdgeInsets.all(20),
+      margin: EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold)),
-          const SizedBox(height: 16),
+          Text(title, style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold)),
+          SizedBox(height: 16),
           chart,
         ],
       ),
@@ -559,18 +560,18 @@ class _StudentRosterTabState extends State<StudentRosterTab> {
               child: Container(
                 height: 38,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1E293B),
+                  color: context.cardColor,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: Colors.white10),
+                  border: Border.all(color: context.borderColor),
                 ),
                 child: TextField(
                   controller: _searchController,
-                  style: const TextStyle(color: Colors.white, fontSize: 12),
-                  decoration: const InputDecoration(
+                  style: TextStyle(color: context.textPrimary, fontSize: 12),
+                  decoration: InputDecoration(
                     hintText: 'Filter by Student Name...',
-                    hintStyle: TextStyle(color: Colors.white24, fontSize: 12),
+                    hintStyle: TextStyle(color: context.textMuted2, fontSize: 12),
                     border: InputBorder.none,
-                    prefixIcon: Icon(Icons.filter_list, color: Colors.white38, size: 16),
+                    prefixIcon: Icon(Icons.filter_list, color: context.textMuted, size: 16),
                   ),
                   onSubmitted: (_) {
                     setState(() => _currentPage = 1);
@@ -579,57 +580,57 @@ class _StudentRosterTabState extends State<StudentRosterTab> {
                 ),
               ),
             ),
-            const SizedBox(width: 10),
+            SizedBox(width: 10),
             _buildDropdown(_selectedBranch, _branches, (val) => setState(() => _selectedBranch = val!)),
-            const SizedBox(width: 10),
+            SizedBox(width: 10),
             _buildDropdown(_selectedYear, _years, (val) => setState(() => _selectedYear = val!)),
-            const SizedBox(width: 10),
+            SizedBox(width: 10),
             _buildDropdown(_selectedStatus, _statuses, (val) => setState(() => _selectedStatus = val!)),
-            const SizedBox(width: 10),
+            SizedBox(width: 10),
             ElevatedButton(
               onPressed: () {
                 setState(() => _currentPage = 1);
                 _fetchStudents();
               },
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: Colors.white),
-              child: const Text('Apply'),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: context.textPrimary),
+              child: Text('Apply'),
             ),
           ],
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: 16),
 
         // Table
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: const Color(0xFF1E293B),
+              color: context.cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.white10),
+              border: Border.all(color: context.borderColor),
             ),
             clipBehavior: Clip.antiAlias,
             child: _isLoading
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : _students.isEmpty
-                    ? Center(child: Text('No student records found.', style: GoogleFonts.poppins(color: Colors.white38)))
+                    ? Center(child: Text('No student records found.', style: GoogleFonts.poppins(color: context.textMuted)))
                     : Column(
                         children: [
                           Container(
-                            color: const Color(0xFF0F172A).withOpacity(0.4),
+                            color: context.bgColor.withOpacity(0.4),
                             height: 44,
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            child: const Row(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            child: Row(
                               children: [
-                                Expanded(flex: 2, child: Text('Student ID', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 3, child: Text('Name', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 2, child: Text('Department', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 2, child: Text('Total Payable', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 2, child: Text('Paid', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 2, child: Text('Pending', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 2, child: Text('Status', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Student ID', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 3, child: Text('Name', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Department', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Total Payable', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Paid', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Pending', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Status', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
                               ],
                             ),
                           ),
-                          const Divider(color: Colors.white10, height: 1),
+                          Divider(color: context.borderColor, height: 1),
                           Expanded(
                             child: ListView.builder(
                               itemCount: _students.length,
@@ -640,24 +641,24 @@ class _StudentRosterTabState extends State<StudentRosterTab> {
                                   onTap: () => _openLedgerDrawer(s['studentId']),
                                   child: Container(
                                     height: 48,
-                                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                                    decoration: const BoxDecoration(
-                                      border: Border(bottom: BorderSide(color: Colors.white10, width: 0.5)),
+                                    padding: EdgeInsets.symmetric(horizontal: 20),
+                                    decoration: BoxDecoration(
+                                      border: Border(bottom: BorderSide(color: context.borderColor, width: 0.5)),
                                     ),
                                     child: Row(
                                       children: [
-                                        Expanded(flex: 2, child: Text(s['studentId'] ?? '', style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12))),
-                                        Expanded(flex: 3, child: Text(s['studentName'] ?? '', style: GoogleFonts.poppins(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold))),
-                                        Expanded(flex: 2, child: Text(s['department'] ?? '', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12))),
-                                        Expanded(flex: 2, child: Text("₹${NumberFormat('#,###').format(s['totalFee'] ?? 0)}", style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12))),
-                                        Expanded(flex: 2, child: Text("₹${NumberFormat('#,###').format(s['paidAmount'] ?? 0)}", style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12))),
+                                        Expanded(flex: 2, child: Text(s['studentId'] ?? '', style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12))),
+                                        Expanded(flex: 3, child: Text(s['studentName'] ?? '', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12, fontWeight: FontWeight.bold))),
+                                        Expanded(flex: 2, child: Text(s['department'] ?? '', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12))),
+                                        Expanded(flex: 2, child: Text("₹${NumberFormat('#,###').format(s['totalFee'] ?? 0)}", style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12))),
+                                        Expanded(flex: 2, child: Text("₹${NumberFormat('#,###').format(s['paidAmount'] ?? 0)}", style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12))),
                                         Expanded(flex: 2, child: Text("₹${NumberFormat('#,###').format(s['pendingAmount'] ?? 0)}", style: GoogleFonts.poppins(color: Colors.redAccent, fontSize: 12))),
                                         Expanded(
                                           flex: 2,
                                           child: Row(
                                             children: [
                                               Container(
-                                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                                 decoration: BoxDecoration(
                                                   color: (isCleared ? Colors.green : Colors.orange).withOpacity(0.15),
                                                   borderRadius: BorderRadius.circular(4),
@@ -685,18 +686,18 @@ class _StudentRosterTabState extends State<StudentRosterTab> {
                       ),
           ),
         ),
-        const SizedBox(height: 10),
+        SizedBox(height: 10),
 
         // Pagination
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text("Showing ${(_currentPage - 1) * _limit + 1} - ${math.min(_currentPage * _limit, _totalCount)} of $_totalCount",
-                style: const TextStyle(color: Colors.white38, fontSize: 11)),
+                style: TextStyle(color: context.textMuted, fontSize: 11)),
             Row(
               children: [
                 IconButton(
-                  icon: const Icon(Icons.arrow_back_ios, size: 14, color: Colors.white70),
+                  icon: Icon(Icons.arrow_back_ios, size: 14, color: context.textSecondary),
                   onPressed: _currentPage > 1
                       ? () {
                           setState(() => _currentPage--);
@@ -704,9 +705,9 @@ class _StudentRosterTabState extends State<StudentRosterTab> {
                         }
                       : null,
                 ),
-                Text("$_currentPage / $_totalPages", style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                Text("$_currentPage / $_totalPages", style: TextStyle(color: context.textSecondary, fontSize: 12)),
                 IconButton(
-                  icon: const Icon(Icons.arrow_forward_ios, size: 14, color: Colors.white70),
+                  icon: Icon(Icons.arrow_forward_ios, size: 14, color: context.textSecondary),
                   onPressed: _currentPage < _totalPages
                       ? () {
                           setState(() => _currentPage++);
@@ -725,17 +726,17 @@ class _StudentRosterTabState extends State<StudentRosterTab> {
   Widget _buildDropdown(String value, List<String> items, ValueChanged<String?> onChanged) {
     return Container(
       height: 38,
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
           value: value,
-          dropdownColor: const Color(0xFF1E293B),
-          style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12),
+          dropdownColor: context.cardColor,
+          style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12),
           items: items.map((val) => DropdownMenuItem(value: val, child: Text(val))).toList(),
           onChanged: onChanged,
         ),
@@ -755,7 +756,7 @@ class _StudentRosterTabState extends State<StudentRosterTab> {
           child: Container(
             width: 650,
             height: double.infinity,
-            color: const Color(0xFF1E293B),
+            color: context.cardColor,
             child: Material(
               color: Colors.transparent,
               child: LedgerDrawerWidget(
@@ -828,10 +829,10 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return const Center(child: CircularProgressIndicator(color: Colors.blueAccent));
+      return Center(child: CircularProgressIndicator(color: Colors.blueAccent));
     }
     if (_ledger == null) {
-      return const Center(child: Text('Failed to load student ledger details.', style: TextStyle(color: Colors.white38)));
+      return Center(child: Text('Failed to load student ledger details.', style: TextStyle(color: context.textMuted)));
     }
 
     final double total = _ledger!['totalFee']?.toDouble() ?? 0.0;
@@ -848,20 +849,20 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
       children: [
         // Header
         Container(
-          padding: const EdgeInsets.all(24),
-          color: const Color(0xFF0F172A),
+          padding: EdgeInsets.all(24),
+          color: context.bgColor,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(_ledger!['studentName'] ?? '', style: GoogleFonts.poppins(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
-                  Text('ID: ${widget.studentId} • Branch: ${_ledger!['department'] ?? ''}', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
+                  Text(_ledger!['studentName'] ?? '', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 18, fontWeight: FontWeight.bold)),
+                  Text('ID: ${widget.studentId} • Branch: ${_ledger!['department'] ?? ''}', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
                 ],
               ),
               IconButton(
-                icon: const Icon(Icons.close, color: Colors.white60),
+                icon: Icon(Icons.close, color: context.textSecondary),
                 onPressed: () => Navigator.pop(context),
               ),
             ],
@@ -871,25 +872,25 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
         // Content
         Expanded(
           child: ListView(
-            padding: const EdgeInsets.all(24),
+            padding: EdgeInsets.all(24),
             children: [
               // Financial metrics cards
               Row(
                 children: [
                   _buildMetricBox("Demand", total, Colors.indigoAccent),
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12),
                   _buildMetricBox("Paid", paid, Colors.green),
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12),
                   _buildMetricBox("Pending", pending, Colors.orange),
                 ],
               ),
-              const SizedBox(height: 24),
+              SizedBox(height: 24),
 
               // Fee structures breakdowns
               _buildSectionTitle('Fee Breakdown Breakdown'),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               Table(
-                columnWidths: const {
+                columnWidths: {
                   0: FlexColumnWidth(2),
                   1: FlexColumnWidth(1),
                   2: FlexColumnWidth(1),
@@ -919,32 +920,32 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
                   }),
                 ],
               ),
-              const SizedBox(height: 24),
+              SizedBox(height: 24),
 
               // Receipts history
               _buildSectionTitle('Transactions & Receipts History'),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               payments.isEmpty
-                  ? Text('No payments recorded yet.', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12))
+                  ? Text('No payments recorded yet.', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12))
                   : ListView.builder(
                       shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
+                      physics: NeverScrollableScrollPhysics(),
                       itemCount: payments.length,
                       itemBuilder: (ctx, idx) {
                         final r = payments[idx];
                         return Card(
-                          color: const Color(0xFF0F172A),
-                          margin: const EdgeInsets.only(bottom: 8),
+                          color: context.bgColor,
+                          margin: EdgeInsets.only(bottom: 8),
                           child: ListTile(
-                            title: Text(r['receiptNumber'] ?? '', style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
-                            subtitle: Text('${r['paymentMode']} • ${r['transactionDate'].substring(0,10)}', style: const TextStyle(fontSize: 11)),
+                            title: Text(r['receiptNumber'] ?? '', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold)),
+                            subtitle: Text('${r['paymentMode']} • ${r['transactionDate'].substring(0,10)}', style: TextStyle(fontSize: 11)),
                             trailing: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text('₹${NumberFormat('#,###').format(r['amount'] ?? 0)}', style: GoogleFonts.poppins(color: Colors.greenAccent, fontSize: 13, fontWeight: FontWeight.bold)),
-                                const SizedBox(width: 8),
+                                SizedBox(width: 8),
                                 IconButton(
-                                  icon: const Icon(Icons.print, color: Colors.blueAccent, size: 18),
+                                  icon: Icon(Icons.print, color: Colors.blueAccent, size: 18),
                                   onPressed: () => _printDuplicateReceipt(r),
                                 ),
                               ],
@@ -953,13 +954,13 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
                         );
                       },
                     ),
-              const SizedBox(height: 24),
+              SizedBox(height: 24),
 
               // Change history logs
               _buildSectionTitle('Fee Change History Logs'),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               changes.isEmpty
-                  ? Text('No manual modifications applied.', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12))
+                  ? Text('No manual modifications applied.', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12))
                   : Table(
                       children: [
                         TableRow(
@@ -990,24 +991,24 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
         // Footer Actions
         if (widget.userRole.toLowerCase() != 'principal')
           Container(
-            padding: const EdgeInsets.all(24),
-            color: const Color(0xFF0F172A),
+            padding: EdgeInsets.all(24),
+            color: context.bgColor,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton.icon(
                   onPressed: _openPaymentSimulator,
-                  icon: const Icon(Icons.payment),
-                  label: const Text('Record Fee Payment'),
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green, foregroundColor: Colors.white),
+                  icon: Icon(Icons.payment),
+                  label: Text('Record Fee Payment'),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green, foregroundColor: context.textPrimary),
                 ),
                 if (isManagerOrAdmin) ...[
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12),
                   ElevatedButton.icon(
                     onPressed: _openAdjustmentWizard,
-                    icon: const Icon(Icons.edit_note),
-                    label: const Text('Adjust Student Fee'),
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: Colors.white),
+                    icon: Icon(Icons.edit_note),
+                    label: Text('Adjust Student Fee'),
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: context.textPrimary),
                   ),
                 ],
               ],
@@ -1020,17 +1021,17 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
   Widget _buildMetricBox(String label, double val, Color color) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: const Color(0xFF0F172A),
+          color: context.bgColor,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.white10),
+          border: Border.all(color: context.borderColor),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(label, style: GoogleFonts.poppins(color: Colors.white38, fontSize: 10)),
-            const SizedBox(height: 4),
+            Text(label, style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10)),
+            SizedBox(height: 4),
             Text('₹${NumberFormat('#,##,###').format(val)}',
                 style: GoogleFonts.poppins(color: color, fontSize: 15, fontWeight: FontWeight.bold)),
           ],
@@ -1040,16 +1041,16 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
   }
 
   Widget _buildSectionTitle(String title) {
-    return Text(title, style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold));
+    return Text(title, style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold));
   }
 
   Widget _tableCell(String val, {bool isHeader = false}) {
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: EdgeInsets.all(8),
       child: Text(
         val,
         style: GoogleFonts.poppins(
-          color: isHeader ? Colors.white70 : Colors.white38,
+          color: isHeader ? context.textSecondary : context.textMuted,
           fontSize: 11,
           fontWeight: isHeader ? FontWeight.bold : FontWeight.normal,
         ),
@@ -1062,11 +1063,11 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
       context: context,
       builder: (ctx) {
         return Dialog(
-          backgroundColor: Colors.white,
+          backgroundColor: context.textPrimary,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: Container(
             width: 450,
-            padding: const EdgeInsets.all(30),
+            padding: EdgeInsets.all(30),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1074,7 +1075,7 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Icon(Icons.school, color: Colors.blueAccent, size: 36),
+                    Icon(Icons.school, color: Colors.blueAccent, size: 36),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -1084,13 +1085,13 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
                     )
                   ],
                 ),
-                const SizedBox(height: 16),
-                const Divider(color: Colors.black26),
-                const SizedBox(height: 16),
-                Text('Student ID: ${widget.studentId}', style: const TextStyle(color: Colors.black87, fontSize: 12)),
-                Text('Student Name: ${_ledger!['studentName']}', style: const TextStyle(color: Colors.black87, fontSize: 12)),
-                Text('Department: ${_ledger!['department']}', style: const TextStyle(color: Colors.black87, fontSize: 12)),
-                const SizedBox(height: 20),
+                SizedBox(height: 16),
+                Divider(color: Colors.black26),
+                SizedBox(height: 16),
+                Text('Student ID: ${widget.studentId}', style: TextStyle(color: Colors.black87, fontSize: 12)),
+                Text('Student Name: ${_ledger!['studentName']}', style: TextStyle(color: Colors.black87, fontSize: 12)),
+                Text('Department: ${_ledger!['department']}', style: TextStyle(color: Colors.black87, fontSize: 12)),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -1098,34 +1099,34 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
                     Text('₹${NumberFormat('#,###').format(receipt['amount'])}', style: GoogleFonts.poppins(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 13)),
                   ],
                 ),
-                Text('Payment Mode: ${receipt['paymentMode']}', style: const TextStyle(color: Colors.black54, fontSize: 11)),
-                Text('Transaction Date: ${receipt['transactionDate'].substring(0, 10)}', style: const TextStyle(color: Colors.black54, fontSize: 11)),
-                const SizedBox(height: 30),
+                Text('Payment Mode: ${receipt['paymentMode']}', style: TextStyle(color: Colors.black54, fontSize: 11)),
+                Text('Transaction Date: ${receipt['transactionDate'].substring(0, 10)}', style: TextStyle(color: Colors.black54, fontSize: 11)),
+                SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Icon(Icons.qr_code, color: Colors.black87, size: 50),
+                    Icon(Icons.qr_code, color: Colors.black87, size: 50),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        const Icon(Icons.verified, color: Colors.green, size: 20),
+                        Icon(Icons.verified, color: Colors.green, size: 20),
                         Text('Digitally Verified Seal', style: GoogleFonts.poppins(color: Colors.black54, fontSize: 9)),
                       ],
                     )
                   ],
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Close')),
-                    const SizedBox(width: 8),
+                    TextButton(onPressed: () => Navigator.pop(ctx), child: Text('Close')),
+                    SizedBox(width: 8),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.pop(ctx);
                         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Receipt downloaded successfully.')));
                       },
-                      child: const Text('Download PDF'),
+                      child: Text('Download PDF'),
                     )
                   ],
                 )
@@ -1146,26 +1147,26 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
       context: context,
       builder: (ctx) {
         return AlertDialog(
-          backgroundColor: const Color(0xFF1E293B),
-          title: Text('Collect Fee Payment', style: GoogleFonts.poppins(color: Colors.white)),
+          backgroundColor: context.cardColor,
+          title: Text('Collect Fee Payment', style: GoogleFonts.poppins(color: context.textPrimary)),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: amtController,
-                style: const TextStyle(color: Colors.white),
+                style: TextStyle(color: context.textPrimary),
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Payment Amount (₹)',
-                  labelStyle: TextStyle(color: Colors.white38),
+                  labelStyle: TextStyle(color: context.textMuted),
                 ),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
               DropdownButtonFormField<String>(
                 value: method,
-                dropdownColor: const Color(0xFF1E293B),
-                style: const TextStyle(color: Colors.white),
-                decoration: const InputDecoration(labelText: 'Payment Method'),
+                dropdownColor: context.cardColor,
+                style: TextStyle(color: context.textPrimary),
+                decoration: InputDecoration(labelText: 'Payment Method'),
                 items: ['UPI', 'Net Banking', 'Credit Card', 'Debit Card', 'Cash', 'Cheque']
                     .map((m) => DropdownMenuItem(value: m, child: Text(m)))
                     .toList(),
@@ -1173,16 +1174,16 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
               ),
               TextField(
                 controller: refController,
-                style: const TextStyle(color: Colors.white),
-                decoration: const InputDecoration(
+                style: TextStyle(color: context.textPrimary),
+                decoration: InputDecoration(
                   labelText: 'Reference Number / Cheque ID',
-                  labelStyle: TextStyle(color: Colors.white38),
+                  labelStyle: TextStyle(color: context.textMuted),
                 ),
               ),
             ],
           ),
           actions: [
-            TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Cancel')),
+            TextButton(onPressed: () => Navigator.pop(ctx), child: Text('Cancel')),
             ElevatedButton(
               onPressed: () async {
                 final double? amt = double.tryParse(amtController.text);
@@ -1190,7 +1191,7 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
                 Navigator.pop(ctx);
                 _submitPayment(amt, method, refController.text);
               },
-              child: const Text('Record'),
+              child: Text('Record'),
             ),
           ],
         );
@@ -1237,17 +1238,17 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
       context: context,
       builder: (ctx) {
         return AlertDialog(
-          backgroundColor: const Color(0xFF1E293B),
-          title: Text('Adjust Student Fee', style: GoogleFonts.poppins(color: Colors.white)),
+          backgroundColor: context.cardColor,
+          title: Text('Adjust Student Fee', style: GoogleFonts.poppins(color: context.textPrimary)),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 DropdownButtonFormField<String>(
                   value: category,
-                  dropdownColor: const Color(0xFF1E293B),
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(labelText: 'Fee Category'),
+                  dropdownColor: context.cardColor,
+                  style: TextStyle(color: context.textPrimary),
+                  decoration: InputDecoration(labelText: 'Fee Category'),
                   items: ['Tuition Fee', 'Lab Fee', 'Library Fee', 'Exam Fee', 'Transport Fee', 'Hostel Fee']
                       .map((c) => DropdownMenuItem(value: c, child: Text(c)))
                       .toList(),
@@ -1255,44 +1256,44 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
                 ),
                 TextField(
                   controller: amtController,
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(color: context.textPrimary),
                   keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Adjusted Amount (₹)',
-                    labelStyle: TextStyle(color: Colors.white38),
+                    labelStyle: TextStyle(color: context.textMuted),
                   ),
                 ),
                 TextField(
                   controller: scholController,
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(color: context.textPrimary),
                   keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Scholarship Discount (₹)',
-                    labelStyle: TextStyle(color: Colors.white38),
+                    labelStyle: TextStyle(color: context.textMuted),
                   ),
                 ),
                 TextField(
                   controller: fineController,
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(color: context.textPrimary),
                   keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Fine Penalty Add-on (₹)',
-                    labelStyle: TextStyle(color: Colors.white38),
+                    labelStyle: TextStyle(color: context.textMuted),
                   ),
                 ),
                 TextField(
                   controller: reasonController,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(
+                  style: TextStyle(color: context.textPrimary),
+                  decoration: InputDecoration(
                     labelText: 'Reason for Modification',
-                    labelStyle: TextStyle(color: Colors.white38),
+                    labelStyle: TextStyle(color: context.textMuted),
                   ),
                 ),
               ],
             ),
           ),
           actions: [
-            TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Cancel')),
+            TextButton(onPressed: () => Navigator.pop(ctx), child: Text('Cancel')),
             ElevatedButton(
               onPressed: () async {
                 final double? amt = double.tryParse(amtController.text);
@@ -1302,7 +1303,7 @@ class _LedgerDrawerWidgetState extends State<LedgerDrawerWidget> {
                 Navigator.pop(ctx);
                 _submitAdjustment(category, amt, schol, fine, reasonController.text.trim());
               },
-              child: const Text('Adjust'),
+              child: Text('Adjust'),
             ),
           ],
         );
@@ -1380,55 +1381,55 @@ class _AccountantDirectoryTabState extends State<AccountantDirectoryTab> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Accountant Directory', style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+              Text('Accountant Directory', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold)),
               ElevatedButton.icon(
                 onPressed: _openCreateAccountantDialog,
-                icon: const Icon(Icons.add),
-                label: const Text('Register Accountant'),
+                icon: Icon(Icons.add),
+                label: Text('Register Accountant'),
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16),
           Expanded(
             child: _isLoading
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : _accountants.isEmpty
-                    ? Center(child: Text('No accountants registered yet.', style: TextStyle(color: Colors.white38)))
+                    ? Center(child: Text('No accountants registered yet.', style: TextStyle(color: context.textMuted)))
                     : ListView.builder(
                         itemCount: _accountants.length,
                         itemBuilder: (ctx, index) {
                           final acc = _accountants[index];
                           final tasks = List<dynamic>.from(acc['assignedTasks'] ?? []);
                           return Card(
-                            color: const Color(0xFF0F172A),
-                            margin: const EdgeInsets.only(bottom: 12),
+                            color: context.bgColor,
+                            margin: EdgeInsets.only(bottom: 12),
                             child: Padding(
-                              padding: const EdgeInsets.all(16),
+                              padding: EdgeInsets.all(16),
                               child: Row(
                                 children: [
                                   CircleAvatar(
                                     backgroundColor: Colors.blueAccent.withOpacity(0.1),
-                                    child: const Icon(Icons.person, color: Colors.blueAccent),
+                                    child: Icon(Icons.person, color: Colors.blueAccent),
                                   ),
-                                  const SizedBox(width: 16),
+                                  SizedBox(width: 16),
                                   Expanded(
                                     flex: 3,
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text(acc['name'] ?? '', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold)),
-                                        Text('Employee ID: ${acc['employeeId']}', style: const TextStyle(color: Colors.white38, fontSize: 11)),
+                                        Text(acc['name'] ?? '', style: GoogleFonts.poppins(color: context.textPrimary, fontWeight: FontWeight.bold)),
+                                        Text('Employee ID: ${acc['employeeId']}', style: TextStyle(color: context.textMuted, fontSize: 11)),
                                       ],
                                     ),
                                   ),
@@ -1437,8 +1438,8 @@ class _AccountantDirectoryTabState extends State<AccountantDirectoryTab> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text(acc['email'] ?? 'No email', style: const TextStyle(color: Colors.white70, fontSize: 12)),
-                                        Text(acc['phoneNumber'] ?? 'No mobile', style: const TextStyle(color: Colors.white38, fontSize: 11)),
+                                        Text(acc['email'] ?? 'No email', style: TextStyle(color: context.textSecondary, fontSize: 12)),
+                                        Text(acc['phoneNumber'] ?? 'No mobile', style: TextStyle(color: context.textMuted, fontSize: 11)),
                                       ],
                                     ),
                                   ),
@@ -1447,21 +1448,21 @@ class _AccountantDirectoryTabState extends State<AccountantDirectoryTab> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.end,
                                       children: [
-                                        Text('Today: ₹${NumberFormat('#,###').format(acc['todaysCollections'] ?? 0)}', style: const TextStyle(color: Colors.green, fontSize: 12)),
-                                        Text('Month: ₹${NumberFormat('#,###').format(acc['monthlyCollections'] ?? 0)}', style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                                        Text('Today: ₹${NumberFormat('#,###').format(acc['todaysCollections'] ?? 0)}', style: TextStyle(color: Colors.green, fontSize: 12)),
+                                        Text('Month: ₹${NumberFormat('#,###').format(acc['monthlyCollections'] ?? 0)}', style: TextStyle(color: context.textSecondary, fontSize: 12)),
                                       ],
                                     ),
                                   ),
-                                  const SizedBox(width: 20),
+                                  SizedBox(width: 20),
                                   Expanded(
                                     flex: 2,
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text('Assignments:', style: const TextStyle(color: Colors.white38, fontSize: 10)),
+                                        Text('Assignments:', style: TextStyle(color: context.textMuted, fontSize: 10)),
                                         tasks.isEmpty
-                                            ? const Text('None', style: TextStyle(color: Colors.white54, fontSize: 11))
-                                            : Text(tasks.join(', '), style: const TextStyle(color: Colors.white70, fontSize: 11), overflow: TextOverflow.ellipsis),
+                                            ? Text('None', style: TextStyle(color: Colors.white54, fontSize: 11))
+                                            : Text(tasks.join(', '), style: TextStyle(color: context.textSecondary, fontSize: 11), overflow: TextOverflow.ellipsis),
                                       ],
                                     ),
                                   ),
@@ -1488,42 +1489,42 @@ class _AccountantDirectoryTabState extends State<AccountantDirectoryTab> {
       context: context,
       builder: (ctx) {
         return AlertDialog(
-          backgroundColor: const Color(0xFF1E293B),
-          title: Text('Register Accountant Account', style: GoogleFonts.poppins(color: Colors.white)),
+          backgroundColor: context.cardColor,
+          title: Text('Register Accountant Account', style: GoogleFonts.poppins(color: context.textPrimary)),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 TextField(
                   controller: idController,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(labelText: 'Employee ID', labelStyle: TextStyle(color: Colors.white38)),
+                  style: TextStyle(color: context.textPrimary),
+                  decoration: InputDecoration(labelText: 'Employee ID', labelStyle: TextStyle(color: context.textMuted)),
                 ),
                 TextField(
                   controller: nameController,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(labelText: 'Full Name', labelStyle: TextStyle(color: Colors.white38)),
+                  style: TextStyle(color: context.textPrimary),
+                  decoration: InputDecoration(labelText: 'Full Name', labelStyle: TextStyle(color: context.textMuted)),
                 ),
                 TextField(
                   controller: mobileController,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(labelText: 'Mobile Number', labelStyle: TextStyle(color: Colors.white38)),
+                  style: TextStyle(color: context.textPrimary),
+                  decoration: InputDecoration(labelText: 'Mobile Number', labelStyle: TextStyle(color: context.textMuted)),
                 ),
                 TextField(
                   controller: emailController,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(labelText: 'Email Address', labelStyle: TextStyle(color: Colors.white38)),
+                  style: TextStyle(color: context.textPrimary),
+                  decoration: InputDecoration(labelText: 'Email Address', labelStyle: TextStyle(color: context.textMuted)),
                 ),
                 TextField(
                   controller: passController,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(labelText: 'Password Setup', labelStyle: TextStyle(color: Colors.white38)),
+                  style: TextStyle(color: context.textPrimary),
+                  decoration: InputDecoration(labelText: 'Password Setup', labelStyle: TextStyle(color: context.textMuted)),
                 ),
               ],
             ),
           ),
           actions: [
-            TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Cancel')),
+            TextButton(onPressed: () => Navigator.pop(ctx), child: Text('Cancel')),
             ElevatedButton(
               onPressed: () async {
                 if (idController.text.isEmpty || nameController.text.isEmpty || passController.text.isEmpty) return;
@@ -1536,7 +1537,7 @@ class _AccountantDirectoryTabState extends State<AccountantDirectoryTab> {
                   passController.text,
                 );
               },
-              child: const Text('Create'),
+              child: Text('Create'),
             ),
           ],
         );
@@ -1615,43 +1616,43 @@ class _AccountantPerformanceTabState extends State<AccountantPerformanceTab> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Accountant Leaderboard & Performance Console',
-              style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
-          const SizedBox(height: 16),
+              style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold)),
+          SizedBox(height: 16),
           Expanded(
             child: _isLoading
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : _performance.isEmpty
-                    ? Center(child: Text('No performance metrics available.', style: TextStyle(color: Colors.white38)))
+                    ? Center(child: Text('No performance metrics available.', style: TextStyle(color: context.textMuted)))
                     : ListView.builder(
                         itemCount: _performance.length,
                         itemBuilder: (ctx, index) {
                           final perf = _performance[index];
                           return Card(
-                            color: const Color(0xFF0F172A),
-                            margin: const EdgeInsets.only(bottom: 12),
+                            color: context.bgColor,
+                            margin: EdgeInsets.only(bottom: 12),
                             child: Padding(
-                              padding: const EdgeInsets.all(16),
+                              padding: EdgeInsets.all(16),
                               child: Row(
                                 children: [
                                   Text('#${perf['monthlyRanking']}',
                                       style: GoogleFonts.poppins(color: Colors.amberAccent, fontSize: 18, fontWeight: FontWeight.bold)),
-                                  const SizedBox(width: 16),
+                                  SizedBox(width: 16),
                                   Expanded(
                                     flex: 3,
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text(perf['name'] ?? '', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold)),
-                                        Text('Satisfactory Score: ${perf['studentSatisfactionScore']}%', style: const TextStyle(color: Colors.white38, fontSize: 11)),
+                                        Text(perf['name'] ?? '', style: GoogleFonts.poppins(color: context.textPrimary, fontWeight: FontWeight.bold)),
+                                        Text('Satisfactory Score: ${perf['studentSatisfactionScore']}%', style: TextStyle(color: context.textMuted, fontSize: 11)),
                                       ],
                                     ),
                                   ),
@@ -1660,8 +1661,8 @@ class _AccountantPerformanceTabState extends State<AccountantPerformanceTab> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text('Receipts: ${perf['receiptsGenerated']}', style: const TextStyle(color: Colors.white70, fontSize: 12)),
-                                        Text('Refunds: ${perf['refundsProcessed']}', style: const TextStyle(color: Colors.white38, fontSize: 11)),
+                                        Text('Receipts: ${perf['receiptsGenerated']}', style: TextStyle(color: context.textSecondary, fontSize: 12)),
+                                        Text('Refunds: ${perf['refundsProcessed']}', style: TextStyle(color: context.textMuted, fontSize: 11)),
                                       ],
                                     ),
                                   ),
@@ -1670,8 +1671,8 @@ class _AccountantPerformanceTabState extends State<AccountantPerformanceTab> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text('Tasks Pending: ${perf['pendingTasks']}', style: const TextStyle(color: Colors.orangeAccent, fontSize: 12)),
-                                        Text('Avg Process: ${perf['averageProcessingTimeMins']} mins', style: const TextStyle(color: Colors.white38, fontSize: 11)),
+                                        Text('Tasks Pending: ${perf['pendingTasks']}', style: TextStyle(color: Colors.orangeAccent, fontSize: 12)),
+                                        Text('Avg Process: ${perf['averageProcessingTimeMins']} mins', style: TextStyle(color: context.textMuted, fontSize: 11)),
                                       ],
                                     ),
                                   ),
@@ -1735,45 +1736,45 @@ class _WorkAssignmentsTabState extends State<WorkAssignmentsTab> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Accountant Work Assignments', style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+              Text('Accountant Work Assignments', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold)),
               ElevatedButton.icon(
                 onPressed: _openAssignTaskDialog,
-                icon: const Icon(Icons.add_task),
-                label: const Text('Assign Task'),
+                icon: Icon(Icons.add_task),
+                label: Text('Assign Task'),
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16),
           Expanded(
             child: _isLoading
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : _assignments.isEmpty
-                    ? Center(child: Text('No active work assignments.', style: TextStyle(color: Colors.white38)))
+                    ? Center(child: Text('No active work assignments.', style: TextStyle(color: context.textMuted)))
                     : ListView.builder(
                         itemCount: _assignments.length,
                         itemBuilder: (ctx, index) {
                           final a = _assignments[index];
                           return Card(
-                            color: const Color(0xFF0F172A),
-                            margin: const EdgeInsets.only(bottom: 12),
+                            color: context.bgColor,
+                            margin: EdgeInsets.only(bottom: 12),
                             child: ListTile(
-                              title: Text(a['assignmentType'] ?? '', style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
-                              subtitle: Text('Department: ${a['department']} • Assignee: ${a['accountantName']} (${a['accountantId']})', style: const TextStyle(fontSize: 11)),
+                              title: Text(a['assignmentType'] ?? '', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold)),
+                              subtitle: Text('Department: ${a['department']} • Assignee: ${a['accountantName']} (${a['accountantId']})', style: TextStyle(fontSize: 11)),
                               trailing: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                 decoration: BoxDecoration(color: Colors.green.withOpacity(0.15), borderRadius: BorderRadius.circular(4)),
-                                child: Text(a['status'] ?? '', style: const TextStyle(color: Colors.greenAccent, fontSize: 10, fontWeight: FontWeight.bold)),
+                                child: Text(a['status'] ?? '', style: TextStyle(color: Colors.greenAccent, fontSize: 10, fontWeight: FontWeight.bold)),
                               ),
                             ),
                           );
@@ -1794,37 +1795,37 @@ class _WorkAssignmentsTabState extends State<WorkAssignmentsTab> {
       context: context,
       builder: (ctx) {
         return AlertDialog(
-          backgroundColor: const Color(0xFF1E293B),
-          title: Text('Assign Task to Accountant', style: GoogleFonts.poppins(color: Colors.white)),
+          backgroundColor: context.cardColor,
+          title: Text('Assign Task to Accountant', style: GoogleFonts.poppins(color: context.textPrimary)),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: accIdController,
-                style: const TextStyle(color: Colors.white),
-                decoration: const InputDecoration(
+                style: TextStyle(color: context.textPrimary),
+                decoration: InputDecoration(
                   labelText: 'Accountant Employee ID',
                   hintText: 'e.g. acc-01',
-                  labelStyle: TextStyle(color: Colors.white38),
+                  labelStyle: TextStyle(color: context.textMuted),
                 ),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
               DropdownButtonFormField<String>(
                 value: type,
-                dropdownColor: const Color(0xFF1E293B),
-                style: const TextStyle(color: Colors.white),
-                decoration: const InputDecoration(labelText: 'Assignment Type'),
+                dropdownColor: context.cardColor,
+                style: TextStyle(color: context.textPrimary),
+                decoration: InputDecoration(labelText: 'Assignment Type'),
                 items: ['Fee Collection', 'Refund Processing', 'Scholarship Verification', 'Hostel Fees', 'Transport Fees']
                     .map((val) => DropdownMenuItem(value: val, child: Text(val)))
                     .toList(),
                 onChanged: (val) => type = val!,
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
               DropdownButtonFormField<String>(
                 value: dept,
-                dropdownColor: const Color(0xFF1E293B),
-                style: const TextStyle(color: Colors.white),
-                decoration: const InputDecoration(labelText: 'Branch/Department'),
+                dropdownColor: context.cardColor,
+                style: TextStyle(color: context.textPrimary),
+                decoration: InputDecoration(labelText: 'Branch/Department'),
                 items: ['All', 'Computer Engineering', 'Electronics & Communication Engineering', 'Mechanical Engineering', 'Civil Engineering']
                     .map((val) => DropdownMenuItem(value: val, child: Text(val)))
                     .toList(),
@@ -1833,14 +1834,14 @@ class _WorkAssignmentsTabState extends State<WorkAssignmentsTab> {
             ],
           ),
           actions: [
-            TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Cancel')),
+            TextButton(onPressed: () => Navigator.pop(ctx), child: Text('Cancel')),
             ElevatedButton(
               onPressed: () async {
                 if (accIdController.text.isEmpty) return;
                 Navigator.pop(ctx);
                 _assignTask(accIdController.text, type, dept);
               },
-              child: const Text('Assign'),
+              child: Text('Assign'),
             ),
           ],
         );
@@ -1916,46 +1917,46 @@ class _DefaultersListTabState extends State<DefaultersListTab> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Defaulter Management Center', style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+              Text('Defaulter Management Center', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold)),
               ElevatedButton.icon(
                 onPressed: _sendBulkReminders,
-                icon: const Icon(Icons.notifications_active),
-                label: const Text('Send Bulk Reminders'),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.orange, foregroundColor: Colors.white),
+                icon: Icon(Icons.notifications_active),
+                label: Text('Send Bulk Reminders'),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.orange, foregroundColor: context.textPrimary),
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16),
           Expanded(
             child: _isLoading
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : _defaulters.isEmpty
-                    ? Center(child: Text('No due defaulters outstanding.', style: TextStyle(color: Colors.white38)))
+                    ? Center(child: Text('No due defaulters outstanding.', style: TextStyle(color: context.textMuted)))
                     : Column(
                         children: [
                           Container(
-                            color: const Color(0xFF0F172A).withOpacity(0.4),
+                            color: context.bgColor.withOpacity(0.4),
                             height: 44,
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            child: const Row(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            child: Row(
                               children: [
-                                Expanded(flex: 2, child: Text('Student ID', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 3, child: Text('Name', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 2, child: Text('Department', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 2, child: Text('Pending amount', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 2, child: Text('Due Date', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                                Expanded(flex: 2, child: Text('Days Overdue', style: TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Student ID', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 3, child: Text('Name', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Department', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Pending amount', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Due Date', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                                Expanded(flex: 2, child: Text('Days Overdue', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
                                 SizedBox(width: 80),
                               ],
                             ),
@@ -1967,23 +1968,23 @@ class _DefaultersListTabState extends State<DefaultersListTab> {
                                 final d = _defaulters[idx];
                                 return Container(
                                   height: 48,
-                                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                                  decoration: const BoxDecoration(
-                                    border: Border(bottom: BorderSide(color: Colors.white10, width: 0.5)),
+                                  padding: EdgeInsets.symmetric(horizontal: 20),
+                                  decoration: BoxDecoration(
+                                    border: Border(bottom: BorderSide(color: context.borderColor, width: 0.5)),
                                   ),
                                   child: Row(
                                     children: [
-                                      Expanded(flex: 2, child: Text(d['studentId'] ?? '', style: const TextStyle(color: Colors.white70, fontSize: 12))),
-                                      Expanded(flex: 3, child: Text(d['studentName'] ?? '', style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold))),
-                                      Expanded(flex: 2, child: Text(d['department'] ?? '', style: const TextStyle(color: Colors.white38, fontSize: 11))),
-                                      Expanded(flex: 2, child: Text("₹${NumberFormat('#,###').format(d['pendingAmount'] ?? 0)}", style: const TextStyle(color: Colors.redAccent, fontSize: 12, fontWeight: FontWeight.bold))),
-                                      Expanded(flex: 2, child: Text(d['lastPaymentDate']?.substring(0,10) ?? '2026-06-01', style: const TextStyle(color: Colors.white38, fontSize: 11))),
+                                      Expanded(flex: 2, child: Text(d['studentId'] ?? '', style: TextStyle(color: context.textSecondary, fontSize: 12))),
+                                      Expanded(flex: 3, child: Text(d['studentName'] ?? '', style: TextStyle(color: context.textPrimary, fontSize: 12, fontWeight: FontWeight.bold))),
+                                      Expanded(flex: 2, child: Text(d['department'] ?? '', style: TextStyle(color: context.textMuted, fontSize: 11))),
+                                      Expanded(flex: 2, child: Text("₹${NumberFormat('#,###').format(d['pendingAmount'] ?? 0)}", style: TextStyle(color: Colors.redAccent, fontSize: 12, fontWeight: FontWeight.bold))),
+                                      Expanded(flex: 2, child: Text(d['lastPaymentDate']?.substring(0,10) ?? '2026-06-01', style: TextStyle(color: context.textMuted, fontSize: 11))),
                                       Expanded(flex: 2, child: Text('14 Days', style: GoogleFonts.poppins(color: Colors.red, fontSize: 12, fontWeight: FontWeight.bold))),
                                       SizedBox(
                                         width: 80,
                                         child: TextButton(
                                           onPressed: () => _sendIndividualReminder(d['studentName']),
-                                          child: const Text('Remind', style: TextStyle(color: Colors.amberAccent, fontSize: 12)),
+                                          child: Text('Remind', style: TextStyle(color: Colors.amberAccent, fontSize: 12)),
                                         ),
                                       ),
                                     ],
@@ -2031,32 +2032,32 @@ class _ScholarshipTabState extends State<ScholarshipTab> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Scholarship Pipeline Management', style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
-          const SizedBox(height: 16),
+          Text('Scholarship Pipeline Management', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold)),
+          SizedBox(height: 16),
           Expanded(
             child: ListView.builder(
               itemCount: _scholarships.length,
               itemBuilder: (ctx, index) {
                 final sch = _scholarships[index];
                 return Card(
-                  color: const Color(0xFF0F172A),
-                  margin: const EdgeInsets.only(bottom: 12),
+                  color: context.bgColor,
+                  margin: EdgeInsets.only(bottom: 12),
                   child: ListTile(
-                    title: Text(sch['name'], style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
-                    subtitle: Text('${sch['type']} • Amount: ₹${NumberFormat('#,###').format(sch['amount'])}', style: const TextStyle(fontSize: 11)),
+                    title: Text(sch['name'], style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold)),
+                    subtitle: Text('${sch['type']} • Amount: ₹${NumberFormat('#,###').format(sch['amount'])}', style: TextStyle(fontSize: 11)),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
                             color: (sch['status'] == 'Verified' ? Colors.green : Colors.orange).withOpacity(0.15),
                             borderRadius: BorderRadius.circular(4),
@@ -2064,7 +2065,7 @@ class _ScholarshipTabState extends State<ScholarshipTab> {
                           child: Text(sch['status'], style: TextStyle(color: sch['status'] == 'Verified' ? Colors.greenAccent : Colors.orangeAccent, fontSize: 10, fontWeight: FontWeight.bold)),
                         ),
                         if (sch['status'] != 'Verified') ...[
-                          const SizedBox(width: 12),
+                          SizedBox(width: 12),
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
@@ -2072,8 +2073,8 @@ class _ScholarshipTabState extends State<ScholarshipTab> {
                               });
                               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Scholarship application verified.')));
                             },
-                            style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: Colors.white),
-                            child: const Text('Verify', style: TextStyle(fontSize: 12)),
+                            style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: context.textPrimary),
+                            child: Text('Verify', style: TextStyle(fontSize: 12)),
                           ),
                         ]
                       ],
@@ -2157,22 +2158,22 @@ class _RefundRequestsTabState extends State<RefundRequestsTab> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Refund & Fee Workflow Approval Engine',
-              style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
-          const SizedBox(height: 16),
+              style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold)),
+          SizedBox(height: 16),
           Expanded(
             child: _isLoading
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : _workflows.isEmpty
-                    ? Center(child: Text('No pending workflow approvals found.', style: TextStyle(color: Colors.white38)))
+                    ? Center(child: Text('No pending workflow approvals found.', style: TextStyle(color: context.textMuted)))
                     : ListView.builder(
                         itemCount: _workflows.length,
                         itemBuilder: (ctx, index) {
@@ -2182,10 +2183,10 @@ class _RefundRequestsTabState extends State<RefundRequestsTab> {
                           final isRejected = status == 'Rejected';
 
                           return Card(
-                            color: const Color(0xFF0F172A),
-                            margin: const EdgeInsets.only(bottom: 12),
+                            color: context.bgColor,
+                            margin: EdgeInsets.only(bottom: 12),
                             child: Padding(
-                              padding: const EdgeInsets.all(16),
+                              padding: EdgeInsets.all(16),
                               child: Row(
                                 children: [
                                   Expanded(
@@ -2193,8 +2194,8 @@ class _RefundRequestsTabState extends State<RefundRequestsTab> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text('${w['operationType']} - ${w['reason']}', style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
-                                        Text('Creator: ${w['createdByName']} • Affected: ${w['studentCount']} students', style: const TextStyle(color: Colors.white38, fontSize: 11)),
+                                        Text('${w['operationType']} - ${w['reason']}', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold)),
+                                        Text('Creator: ${w['createdByName']} • Affected: ${w['studentCount']} students', style: TextStyle(color: context.textMuted, fontSize: 11)),
                                       ],
                                     ),
                                   ),
@@ -2203,7 +2204,7 @@ class _RefundRequestsTabState extends State<RefundRequestsTab> {
                                     child: Text('Diff: ₹${NumberFormat('#,###').format(w['totalDifference'])}', style: GoogleFonts.poppins(color: Colors.redAccent, fontSize: 13, fontWeight: FontWeight.bold)),
                                   ),
                                   Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                     decoration: BoxDecoration(
                                       color: (isApproved ? Colors.green : (isRejected ? Colors.red : Colors.orange)).withOpacity(0.15),
                                       borderRadius: BorderRadius.circular(4),
@@ -2211,16 +2212,16 @@ class _RefundRequestsTabState extends State<RefundRequestsTab> {
                                     child: Text(status, style: TextStyle(color: isApproved ? Colors.greenAccent : (isRejected ? Colors.redAccent : Colors.orangeAccent), fontSize: 10, fontWeight: FontWeight.bold)),
                                   ),
                                   if (!isApproved && !isRejected) ...[
-                                    const SizedBox(width: 16),
+                                    SizedBox(width: 16),
                                     TextButton(
                                       onPressed: () => _takeAction(w['id'], 'REJECT', 'Rejected via desktop panel'),
-                                      child: const Text('Reject', style: TextStyle(color: Colors.redAccent, fontSize: 12)),
+                                      child: Text('Reject', style: TextStyle(color: Colors.redAccent, fontSize: 12)),
                                     ),
-                                    const SizedBox(width: 8),
+                                    SizedBox(width: 8),
                                     ElevatedButton(
                                       onPressed: () => _takeAction(w['id'], 'APPROVE', ''),
-                                      style: ElevatedButton.styleFrom(backgroundColor: Colors.green, foregroundColor: Colors.white),
-                                      child: const Text('Approve', style: TextStyle(fontSize: 12)),
+                                      style: ElevatedButton.styleFrom(backgroundColor: Colors.green, foregroundColor: context.textPrimary),
+                                      child: Text('Approve', style: TextStyle(fontSize: 12)),
                                     ),
                                   ]
                                 ],
@@ -2345,92 +2346,92 @@ class _BulkAdjustmentsTabState extends State<BulkAdjustmentsTab> {
       child: ListView(
         children: [
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: const Color(0xFF1E293B),
+              color: context.cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.white10),
+              border: Border.all(color: context.borderColor),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Bulk Fee Adjustments Configuration',
-                    style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 16),
+                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold)),
+                SizedBox(height: 16),
                 Row(
                   children: [
                     Expanded(
                       child: DropdownButtonFormField<String>(
                         value: _scope,
-                        dropdownColor: const Color(0xFF1E293B),
-                        style: const TextStyle(color: Colors.white),
-                        decoration: const InputDecoration(labelText: 'Adjustment Scope'),
+                        dropdownColor: context.cardColor,
+                        style: TextStyle(color: context.textPrimary),
+                        decoration: InputDecoration(labelText: 'Adjustment Scope'),
                         items: _scopes.map((s) => DropdownMenuItem(value: s, child: Text(s))).toList(),
                         onChanged: (val) => setState(() => _scope = val!),
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    SizedBox(width: 12),
                     Expanded(
                       child: TextFormField(
                         controller: _targetValueController,
-                        style: const TextStyle(color: Colors.white),
-                        decoration: const InputDecoration(
+                        style: TextStyle(color: context.textPrimary),
+                        decoration: InputDecoration(
                           labelText: 'Scope Value Target',
                           hintText: 'e.g. Computer Engineering',
-                          hintStyle: TextStyle(color: Colors.white24),
+                          hintStyle: TextStyle(color: context.textMuted2),
                         ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12),
                 Row(
                   children: [
                     Expanded(
                       child: DropdownButtonFormField<String>(
                         value: _operationType,
-                        dropdownColor: const Color(0xFF1E293B),
-                        style: const TextStyle(color: Colors.white),
-                        decoration: const InputDecoration(labelText: 'Operation Type'),
+                        dropdownColor: context.cardColor,
+                        style: TextStyle(color: context.textPrimary),
+                        decoration: InputDecoration(labelText: 'Operation Type'),
                         items: _operations.map((o) => DropdownMenuItem(value: o, child: Text(o))).toList(),
                         onChanged: (val) => setState(() => _operationType = val!),
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    SizedBox(width: 12),
                     Expanded(
                       child: DropdownButtonFormField<String>(
                         value: _category,
-                        dropdownColor: const Color(0xFF1E293B),
-                        style: const TextStyle(color: Colors.white),
-                        decoration: const InputDecoration(labelText: 'Fee Category'),
+                        dropdownColor: context.cardColor,
+                        style: TextStyle(color: context.textPrimary),
+                        decoration: InputDecoration(labelText: 'Fee Category'),
                         items: _categories.map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(),
                         onChanged: (val) => setState(() => _category = val!),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12),
                 Row(
                   children: [
                     Expanded(
                       child: TextFormField(
                         controller: _amountController,
-                        style: const TextStyle(color: Colors.white),
+                        style: TextStyle(color: context.textPrimary),
                         keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           labelText: 'Amount Impact (₹)',
                           hintText: 'e.g. 5000',
-                          hintStyle: TextStyle(color: Colors.white24),
+                          hintStyle: TextStyle(color: context.textMuted2),
                         ),
                         validator: (val) => val == null || double.tryParse(val) == null ? 'Invalid number' : null,
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    SizedBox(width: 12),
                     Expanded(
                       child: TextFormField(
                         controller: _reasonController,
-                        style: const TextStyle(color: Colors.white),
-                        decoration: const InputDecoration(
+                        style: TextStyle(color: context.textPrimary),
+                        decoration: InputDecoration(
                           labelText: 'Adjustment Reason Description',
                         ),
                         validator: (val) => val == null || val.isEmpty ? 'Reason required' : null,
@@ -2438,20 +2439,20 @@ class _BulkAdjustmentsTabState extends State<BulkAdjustmentsTab> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
                 Row(
                   children: [
                     ElevatedButton(
                       onPressed: _isLoading ? null : _previewBulk,
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: Colors.white),
-                      child: const Text('Preview Impact'),
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: context.textPrimary),
+                      child: Text('Preview Impact'),
                     ),
                     if (_previewData != null) ...[
-                      const SizedBox(width: 12),
+                      SizedBox(width: 12),
                       ElevatedButton(
                         onPressed: _isLoading ? null : _submitBulk,
-                        style: ElevatedButton.styleFrom(backgroundColor: Colors.green, foregroundColor: Colors.white),
-                        child: const Text('Submit for Approval'),
+                        style: ElevatedButton.styleFrom(backgroundColor: Colors.green, foregroundColor: context.textPrimary),
+                        child: Text('Submit for Approval'),
                       ),
                     ]
                   ],
@@ -2460,11 +2461,11 @@ class _BulkAdjustmentsTabState extends State<BulkAdjustmentsTab> {
             ),
           ),
           if (_previewData != null) ...[
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
             Container(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: const Color(0xFF1E293B),
+                color: context.cardColor,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: Colors.green.withOpacity(0.3)),
               ),
@@ -2472,10 +2473,10 @@ class _BulkAdjustmentsTabState extends State<BulkAdjustmentsTab> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Adjustment Impact Report', style: GoogleFonts.poppins(color: Colors.greenAccent, fontSize: 13, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 10),
-                  Text('Students Affected: ${_previewData!['affectedStudents']}', style: const TextStyle(color: Colors.white70, fontSize: 12)),
-                  Text('Current Demand: ₹${NumberFormat('#,###').format(_previewData!['currentTotalAmount'])}', style: const TextStyle(color: Colors.white70, fontSize: 12)),
-                  Text('Post-Impact Demand: ₹${NumberFormat('#,###').format(_previewData!['updatedTotalAmount'])}', style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                  SizedBox(height: 10),
+                  Text('Students Affected: ${_previewData!['affectedStudents']}', style: TextStyle(color: context.textSecondary, fontSize: 12)),
+                  Text('Current Demand: ₹${NumberFormat('#,###').format(_previewData!['currentTotalAmount'])}', style: TextStyle(color: context.textSecondary, fontSize: 12)),
+                  Text('Post-Impact Demand: ₹${NumberFormat('#,###').format(_previewData!['updatedTotalAmount'])}', style: TextStyle(color: context.textSecondary, fontSize: 12)),
                   Text('Difference: ₹${NumberFormat('#,###').format(_previewData!['difference'])}', style: TextStyle(color: _previewData!['difference'] >= 0 ? Colors.greenAccent : Colors.redAccent, fontSize: 12, fontWeight: FontWeight.bold)),
                 ],
               ),
@@ -2527,31 +2528,31 @@ class _AuditTrailsTabState extends State<AuditTrailsTab> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Compliance & Chronological Audit Trails (Read-Only Logs)',
-              style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
-          const SizedBox(height: 16),
+              style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold)),
+          SizedBox(height: 16),
           Expanded(
             child: _isLoading
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : _logs.isEmpty
-                    ? Center(child: Text('No audit entries recorded.', style: TextStyle(color: Colors.white38)))
+                    ? Center(child: Text('No audit entries recorded.', style: TextStyle(color: context.textMuted)))
                     : ListView.builder(
                         itemCount: _logs.length,
                         itemBuilder: (ctx, idx) {
                           final log = _logs[idx];
                           return Card(
-                            color: const Color(0xFF0F172A),
-                            margin: const EdgeInsets.only(bottom: 10),
+                            color: context.bgColor,
+                            margin: EdgeInsets.only(bottom: 10),
                             child: Padding(
-                              padding: const EdgeInsets.all(14),
+                              padding: EdgeInsets.all(14),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -2560,14 +2561,14 @@ class _AuditTrailsTabState extends State<AuditTrailsTab> {
                                     children: [
                                       Text('${log['operationType']} - ${log['status']}',
                                           style: GoogleFonts.poppins(color: log['status'] == 'Approved' ? Colors.greenAccent : Colors.orangeAccent, fontSize: 12, fontWeight: FontWeight.bold)),
-                                      Text(log['timestamp']?.substring(0, 19).replaceFirst('T', ' ') ?? '', style: const TextStyle(color: Colors.white38, fontSize: 10)),
+                                      Text(log['timestamp']?.substring(0, 19).replaceFirst('T', ' ') ?? '', style: TextStyle(color: context.textMuted, fontSize: 10)),
                                     ],
                                   ),
-                                  const SizedBox(height: 8),
-                                  Text(log['reason'] ?? '', style: const TextStyle(color: Colors.white70, fontSize: 12)),
-                                  const SizedBox(height: 4),
+                                  SizedBox(height: 8),
+                                  Text(log['reason'] ?? '', style: TextStyle(color: context.textSecondary, fontSize: 12)),
+                                  SizedBox(height: 4),
                                   Text('Created By: ${log['createdByName']} ${log['approvedByName'] != null ? "• Approved By: ${log['approvedByName']}" : ""}',
-                                      style: const TextStyle(color: Colors.white38, fontSize: 10)),
+                                      style: TextStyle(color: context.textMuted, fontSize: 10)),
                                 ],
                               ),
                             ),
@@ -2661,7 +2662,7 @@ class LineChartPainter extends CustomPainter {
       final label = data[i]['label']?.toString() ?? '';
       textPainter.text = TextSpan(
         text: label.length > 5 ? label.substring(0, 5) : label,
-        style: const TextStyle(color: Colors.white38, fontSize: 8),
+        style: TextStyle(color: isDark ? Colors.white38 : const Color(0xFF64748B), fontSize: 8),
       );
       textPainter.layout();
       textPainter.paint(canvas, Offset(p.dx - textPainter.width / 2, size.height - 15));
@@ -2728,7 +2729,7 @@ class BarChartPainter extends CustomPainter {
       final label = data[i]['label']?.toString() ?? '';
       textPainter.text = TextSpan(
         text: label.length > 5 ? '${label.substring(0, 4)}..' : label,
-        style: const TextStyle(color: Colors.white38, fontSize: 8),
+        style: TextStyle(color: isDark ? Colors.white38 : const Color(0xFF64748B), fontSize: 8),
       );
       textPainter.layout();
       textPainter.paint(canvas, Offset(x + (barWidth - textPainter.width) / 2, size.height - 15));
@@ -2791,3 +2792,4 @@ Color _getChartColor(int index) {
   ];
   return colors[index % colors.length];
 }
+

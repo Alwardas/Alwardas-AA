@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import '../../../theme/theme_extensions.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
 
@@ -167,8 +168,8 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF0F172A),
-      padding: const EdgeInsets.all(30),
+      color: context.bgColor,
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -181,32 +182,32 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
                 children: [
                   Text(
                     'Department Issues Help Desk',
-                    style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     'Monitor, assign, comment, and resolve issues reported by students and faculty in your branch',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   ),
                 ],
               ),
               ElevatedButton.icon(
                 onPressed: _fetchIssues,
-                icon: const Icon(Icons.refresh, size: 16),
+                icon: Icon(Icons.refresh, size: 16),
                 label: Text('Refresh', style: GoogleFonts.poppins(fontSize: 12)),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF1E293B),
-                  foregroundColor: Colors.white,
+                  backgroundColor: context.cardColor,
+                  foregroundColor: context.textPrimary,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Main split layout
           Expanded(
             child: _isLoading
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : _issues.isEmpty
                     ? _buildEmptyState()
                     : Row(
@@ -217,14 +218,14 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
                             flex: 2,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: const Color(0xFF1E293B),
+                                color: context.cardColor,
                                 borderRadius: BorderRadius.circular(16),
-                                border: Border.all(color: Colors.white10),
+                                border: Border.all(color: context.borderColor),
                               ),
                               child: ListView.separated(
-                                padding: const EdgeInsets.all(20),
+                                padding: EdgeInsets.all(20),
                                 itemCount: _issues.length,
-                                separatorBuilder: (context, index) => const Divider(color: Colors.white10, height: 1),
+                                separatorBuilder: (context, index) => Divider(color: context.borderColor, height: 1),
                                 itemBuilder: (context, index) {
                                   final issue = _issues[index];
                                   final isSelected = _selectedIssue != null &&
@@ -240,7 +241,7 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
                                     onTap: () => _selectIssue(issue),
                                     borderRadius: BorderRadius.circular(10),
                                     child: Container(
-                                      padding: const EdgeInsets.all(14),
+                                      padding: EdgeInsets.all(14),
                                       decoration: BoxDecoration(
                                         color: isSelected ? Colors.white.withOpacity(0.05) : Colors.transparent,
                                         borderRadius: BorderRadius.circular(10),
@@ -255,7 +256,7 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
                                               Container(
-                                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                                 decoration: BoxDecoration(
                                                   color: _getPriorityColor(priority).withOpacity(0.1),
                                                   borderRadius: BorderRadius.circular(6),
@@ -271,24 +272,24 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
                                               ),
                                               Text(
                                                 dateStr,
-                                                style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11),
+                                                style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
                                               ),
                                             ],
                                           ),
-                                          const SizedBox(height: 10),
+                                          SizedBox(height: 10),
                                           Text(
                                             issue['title'] ?? '',
                                             style: GoogleFonts.poppins(
-                                                color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+                                                color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold),
                                           ),
-                                          const SizedBox(height: 6),
+                                          SizedBox(height: 6),
                                           Text(
                                             issue['description'] ?? '',
                                             maxLines: 2,
                                             overflow: TextOverflow.ellipsis,
-                                            style: GoogleFonts.poppins(color: Colors.white60, fontSize: 12),
+                                            style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12),
                                           ),
-                                          const SizedBox(height: 12),
+                                          SizedBox(height: 12),
                                           Row(
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
@@ -297,7 +298,7 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
                                                 style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 11),
                                               ),
                                               Container(
-                                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                                                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                                                 decoration: BoxDecoration(
                                                   color: _getStatusColor(status).withOpacity(0.1),
                                                   borderRadius: BorderRadius.circular(12),
@@ -321,13 +322,13 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
                               ),
                             ),
                           ),
-                          const SizedBox(width: 20),
+                          SizedBox(width: 20),
 
                           // Right Pane: Selected Issue Details
                           Expanded(
                             flex: 3,
                             child: _selectedIssue == null
-                                ? const Center(child: Text("Select an issue to view details", style: TextStyle(color: Colors.white38)))
+                                ? Center(child: Text("Select an issue to view details", style: TextStyle(color: context.textMuted)))
                                 : _buildDetailsPane(),
                           ),
                         ],
@@ -347,11 +348,11 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
 
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.all(24),
+      padding: EdgeInsets.all(24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -362,59 +363,59 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
               Expanded(
                 child: Text(
                   _selectedIssue['title'] ?? '',
-                  style: GoogleFonts.poppins(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),
               PopupMenuButton<String>(
-                color: const Color(0xFF1E293B),
-                icon: const Icon(Icons.more_vert, color: Colors.white60),
+                color: context.cardColor,
+                icon: Icon(Icons.more_vert, color: context.textSecondary),
                 onSelected: _updateStatus,
                 itemBuilder: (context) => [
-                  const PopupMenuItem(value: 'Open', child: Text('Mark as Open', style: TextStyle(color: Colors.white))),
-                  const PopupMenuItem(value: 'In Progress', child: Text('Mark as In Progress', style: TextStyle(color: Colors.white))),
-                  const PopupMenuItem(value: 'Resolved', child: Text('Mark as Resolved', style: TextStyle(color: Colors.greenAccent))),
-                  const PopupMenuItem(value: 'Closed', child: Text('Mark as Closed', style: TextStyle(color: Colors.white38))),
+                  PopupMenuItem(value: 'Open', child: Text('Mark as Open', style: TextStyle(color: context.textPrimary))),
+                  PopupMenuItem(value: 'In Progress', child: Text('Mark as In Progress', style: TextStyle(color: context.textPrimary))),
+                  PopupMenuItem(value: 'Resolved', child: Text('Mark as Resolved', style: TextStyle(color: Colors.greenAccent))),
+                  PopupMenuItem(value: 'Closed', child: Text('Mark as Closed', style: TextStyle(color: context.textMuted))),
                 ],
               ),
             ],
           ),
-          const SizedBox(height: 6),
+          SizedBox(height: 6),
           Row(
             children: [
               Text(
                 "Category: ${_selectedIssue['category'] ?? 'General'} | Priority: $priority | Status: $status",
-                style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11),
+                style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
               ),
             ],
           ),
-          const Divider(color: Colors.white10, height: 24),
+          Divider(color: context.borderColor, height: 24),
 
           // Description
           Text(
             "Description",
-            style: GoogleFonts.poppins(color: Colors.white70, fontSize: 13, fontWeight: FontWeight.bold),
+            style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           Text(
             _selectedIssue['description'] ?? '',
-            style: GoogleFonts.poppins(color: Colors.white60, fontSize: 13, height: 1.4),
+            style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13, height: 1.4),
           ),
-          const Divider(color: Colors.white10, height: 24),
+          Divider(color: context.borderColor, height: 24),
 
           // Comments List Section
           Text(
             "Discussion / Comments Thread",
-            style: GoogleFonts.poppins(color: Colors.white70, fontSize: 13, fontWeight: FontWeight.bold),
+            style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 12),
+          SizedBox(height: 12),
           Expanded(
             child: _isLoadingComments
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : _comments.isEmpty
                     ? Center(
                         child: Text(
                           "No comments added yet. Start the conversation below.",
-                          style: GoogleFonts.poppins(color: Colors.white24, fontSize: 12),
+                          style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 12),
                         ),
                       )
                     : ListView.builder(
@@ -428,12 +429,12 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
                               : 'Recent';
 
                           return Container(
-                            margin: const EdgeInsets.only(bottom: 10),
-                            padding: const EdgeInsets.all(12),
+                            margin: EdgeInsets.only(bottom: 10),
+                            padding: EdgeInsets.all(12),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF0F172A),
+                              color: context.bgColor,
                               borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: Colors.white10),
+                              border: Border.all(color: context.borderColor),
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -448,14 +449,14 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
                                     ),
                                     Text(
                                       cTime,
-                                      style: GoogleFonts.poppins(color: Colors.white24, fontSize: 10),
+                                      style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 10),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 6),
+                                SizedBox(height: 6),
                                 Text(
                                   text,
-                                  style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12),
+                                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12),
                                 ),
                               ],
                             ),
@@ -463,7 +464,7 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
                         },
                       ),
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16),
 
           // Comment Input
           Row(
@@ -471,26 +472,26 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
               Expanded(
                 child: TextField(
                   controller: _commentController,
-                  style: const TextStyle(color: Colors.white, fontSize: 13),
+                  style: TextStyle(color: context.textPrimary, fontSize: 13),
                   decoration: InputDecoration(
                     hintText: "Add official response or comment...",
-                    hintStyle: const TextStyle(color: Colors.white24, fontSize: 13),
+                    hintStyle: TextStyle(color: context.textMuted2, fontSize: 13),
                     filled: true,
-                    fillColor: const Color(0xFF0F172A),
+                    fillColor: context.bgColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none,
                     ),
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   ),
                 ),
               ),
-              const SizedBox(width: 12),
+              SizedBox(width: 12),
               IconButton(
                 onPressed: _submitComment,
-                icon: const Icon(Icons.send, color: Colors.blueAccent),
+                icon: Icon(Icons.send, color: Colors.blueAccent),
                 padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(),
+                constraints: BoxConstraints(),
               ),
             ],
           ),
@@ -504,14 +505,15 @@ class _DesktopHodIssuesViewState extends State<DesktopHodIssuesView> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.report_problem_outlined, size: 64, color: Colors.white24),
-          const SizedBox(height: 20),
+          Icon(Icons.report_problem_outlined, size: 64, color: context.textMuted2),
+          SizedBox(height: 20),
           Text(
             "No issues reported in your department.",
-            style: GoogleFonts.poppins(color: Colors.white38, fontSize: 16),
+            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 16),
           ),
         ],
       ),
     );
   }
 }
+

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../theme/theme_extensions.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
 
@@ -90,11 +91,11 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
         return StatefulBuilder(
           builder: (context, setModalState) {
             return AlertDialog(
-              backgroundColor: const Color(0xFF1E293B),
+              backgroundColor: context.cardColor,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
               title: Text(
                 "Assign Slot: Period P$periodIndex",
-                style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold),
+                style: GoogleFonts.poppins(color: context.textPrimary, fontWeight: FontWeight.bold),
               ),
               content: Container(
                 width: 450,
@@ -104,57 +105,57 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
                   children: [
                     Text(
                       "Class: $className | Day: $_selectedDay",
-                      style: GoogleFonts.poppins(color: Colors.white60, fontSize: 13),
+                      style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
 
                     // Subject Input
                     Text(
                       "Subject Name",
-                      style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12, fontWeight: FontWeight.bold),
+                      style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 8),
+                    SizedBox(height: 8),
                     TextField(
                       controller: subjectController,
-                      style: const TextStyle(color: Colors.white),
+                      style: TextStyle(color: context.textPrimary),
                       decoration: InputDecoration(
                         hintText: "e.g. Data Structures",
-                        hintStyle: const TextStyle(color: Colors.white24),
+                        hintStyle: TextStyle(color: context.textMuted2),
                         filled: true,
-                        fillColor: const Color(0xFF0F172A),
+                        fillColor: context.bgColor,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide.none,
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
 
                     // Faculty Selection
                     Text(
                       "Assign Faculty Member",
-                      style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12, fontWeight: FontWeight.bold),
+                      style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 8),
+                    SizedBox(height: 8),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      padding: EdgeInsets.symmetric(horizontal: 12),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF0F172A),
+                        color: context.bgColor,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton<String>(
                           value: selectedFacultyId,
-                          dropdownColor: const Color(0xFF1E293B),
+                          dropdownColor: context.cardColor,
                           isExpanded: true,
-                          hint: const Text("Select Faculty", style: TextStyle(color: Colors.white24)),
-                          icon: const Icon(Icons.keyboard_arrow_down, color: Colors.blueAccent),
+                          hint: Text("Select Faculty", style: TextStyle(color: context.textMuted2)),
+                          icon: Icon(Icons.keyboard_arrow_down, color: Colors.blueAccent),
                           items: _allStaff.map((staff) {
                             return DropdownMenuItem<String>(
                               value: staff['id']?.toString() ?? staff['login_id']?.toString(),
                               child: Text(
                                 "${staff['name']} (${staff['role']})",
-                                style: const TextStyle(color: Colors.white, fontSize: 13),
+                                style: TextStyle(color: context.textPrimary, fontSize: 13),
                               ),
                             );
                           }).toList(),
@@ -179,7 +180,7 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
                   ),
                 TextButton(
                   onPressed: () => Navigator.pop(context),
-                  child: Text("Cancel", style: GoogleFonts.poppins(color: Colors.white38)),
+                  child: Text("Cancel", style: GoogleFonts.poppins(color: context.textMuted)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -193,7 +194,7 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueAccent,
-                    foregroundColor: Colors.white,
+                    foregroundColor: context.textPrimary,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                   ),
                   child: Text("Save", style: GoogleFonts.poppins()),
@@ -263,8 +264,8 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
     final allRows = [..._rows, ..._labRows];
 
     return Container(
-      color: const Color(0xFF0F172A),
-      padding: const EdgeInsets.all(30),
+      color: context.bgColor,
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -277,31 +278,31 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
                 children: [
                   Text(
                     'Department Master Timetable',
-                    style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     'View and schedule period assignments and resolve faculty conflicts for your branch',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   ),
                 ],
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Day Selection row
           Row(
             children: _days.map((day) {
               final isSelected = day == _selectedDay;
               return Padding(
-                padding: const EdgeInsets.only(right: 12),
+                padding: EdgeInsets.only(right: 12),
                 child: ChoiceChip(
                   label: Text(day),
                   selected: isSelected,
                   selectedColor: Colors.blueAccent,
-                  backgroundColor: const Color(0xFF1E293B),
+                  backgroundColor: context.cardColor,
                   labelStyle: GoogleFonts.poppins(
-                    color: isSelected ? Colors.white : Colors.white70,
+                    color: isSelected ? context.textPrimary : context.textSecondary,
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                     fontSize: 13,
                   ),
@@ -317,7 +318,7 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
               );
             }).toList(),
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
 
           // Clash Warnings
           if (_clashes.isNotEmpty) _buildClashWarning(),
@@ -325,33 +326,33 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
           // Table / Schedule Grid
           Expanded(
             child: _isLoading || _isSaving
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : allRows.isEmpty
                     ? _buildEmptyState()
                     : SingleChildScrollView(
                         scrollDirection: Axis.vertical,
-                        physics: const BouncingScrollPhysics(),
+                        physics: BouncingScrollPhysics(),
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: const Color(0xFF1E293B),
+                            color: context.cardColor,
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: Colors.white10),
+                            border: Border.all(color: context.borderColor),
                           ),
                           child: DataTable(
                             columnSpacing: 20,
                             horizontalMargin: 20,
-                            headingRowColor: WidgetStateProperty.all(const Color(0xFF0F172A).withOpacity(0.4)),
+                            headingRowColor: WidgetStateProperty.all(context.bgColor.withOpacity(0.4)),
                             columns: [
                               DataColumn(
                                   label: Text('Class / Lab',
-                                      style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold))),
+                                      style: GoogleFonts.poppins(color: context.textPrimary, fontWeight: FontWeight.bold))),
                               ...List.generate(
                                   8,
                                   (i) => DataColumn(
                                       label: Text('P${i + 1}',
                                           style: GoogleFonts.poppins(
-                                              color: Colors.white, fontWeight: FontWeight.bold)))),
+                                              color: context.textPrimary, fontWeight: FontWeight.bold)))),
                             ],
                             rows: allRows.map((row) {
                               final String className = row['className'] ?? '';
@@ -361,7 +362,7 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
                                   DataCell(
                                     Text(
                                       className,
-                                      style: GoogleFonts.poppins(color: Colors.white70, fontWeight: FontWeight.bold, fontSize: 13),
+                                      style: GoogleFonts.poppins(color: context.textSecondary, fontWeight: FontWeight.bold, fontSize: 13),
                                     ),
                                   ),
                                   ...List.generate(8, (i) {
@@ -389,7 +390,7 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
     if (p == null) {
       return Center(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
           decoration: BoxDecoration(
             color: Colors.white.withOpacity(0.02),
             borderRadius: BorderRadius.circular(6),
@@ -397,15 +398,15 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
           ),
           child: Text(
             "-",
-            style: GoogleFonts.poppins(color: Colors.white24, fontSize: 12),
+            style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 12),
           ),
         ),
       );
     }
 
     return Container(
-      padding: const EdgeInsets.all(6),
-      margin: const EdgeInsets.symmetric(vertical: 4),
+      padding: EdgeInsets.all(6),
+      margin: EdgeInsets.symmetric(vertical: 4),
       decoration: BoxDecoration(
         color: Colors.blueAccent.withOpacity(0.1),
         borderRadius: BorderRadius.circular(8),
@@ -419,13 +420,13 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
             p['subject'] ?? 'Unknown',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 11),
+            style: GoogleFonts.poppins(color: context.textPrimary, fontWeight: FontWeight.bold, fontSize: 11),
           ),
           Text(
             p['facultyName'] ?? 'N/A',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.poppins(color: Colors.white38, fontSize: 9),
+            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 9),
           ),
         ],
       ),
@@ -434,8 +435,8 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
 
   Widget _buildClashWarning() {
     return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      padding: const EdgeInsets.all(16),
+      margin: EdgeInsets.only(bottom: 20),
+      padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.redAccent.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
@@ -446,18 +447,18 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
         children: [
           Row(
             children: [
-              const Icon(Icons.warning_amber_rounded, color: Colors.redAccent, size: 20),
-              const SizedBox(width: 8),
+              Icon(Icons.warning_amber_rounded, color: Colors.redAccent, size: 20),
+              SizedBox(width: 8),
               Text(
                 "Active Faculty Schedule Conflicts",
                 style: GoogleFonts.poppins(color: Colors.redAccent, fontWeight: FontWeight.bold, fontSize: 14),
               ),
             ],
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           ..._clashes.map((c) {
             return Padding(
-              padding: const EdgeInsets.only(bottom: 4),
+              padding: EdgeInsets.only(bottom: 4),
               child: Text(
                 "• ${c['facultyName']} is double-assigned to ${c['classes']?.join(', ')} in Period P${c['periodIndex']}",
                 style: GoogleFonts.poppins(color: Colors.redAccent.withOpacity(0.8), fontSize: 12),
@@ -474,14 +475,15 @@ class _DesktopHodTimetableViewState extends State<DesktopHodTimetableView> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.schedule, size: 64, color: Colors.white24),
-          const SizedBox(height: 20),
+          Icon(Icons.schedule, size: 64, color: context.textMuted2),
+          SizedBox(height: 20),
           Text(
             "No master timetable available for $_selectedDay",
-            style: GoogleFonts.poppins(color: Colors.white38, fontSize: 16),
+            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 16),
           ),
         ],
       ),
     );
   }
 }
+

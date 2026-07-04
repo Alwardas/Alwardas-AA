@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import '../../../theme/theme_extensions.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
 
@@ -54,7 +55,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return const Center(child: CircularProgressIndicator(color: Colors.blueAccent));
+      return Center(child: CircularProgressIndicator(color: Colors.blueAccent));
     }
 
     if (_isFinanceRole) {
@@ -78,8 +79,8 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
     final List<dynamic> deptData = _financeStats?['departmentCollection'] ?? [];
 
     return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.all(30),
+      physics: BouncingScrollPhysics(),
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -93,35 +94,35 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
                   Text(
                     'Financial & Accounts Dashboard',
                     style: GoogleFonts.poppins(
-                      color: Colors.white,
+                      color: context.textPrimary,
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     'Real-time collection reports, fee demands, and reminders log',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 13),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 13),
                   ),
                 ],
               ),
               ElevatedButton.icon(
                 onPressed: _loadDashboardData,
-                icon: const Icon(Icons.refresh, size: 16),
+                icon: Icon(Icons.refresh, size: 16),
                 label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF1E293B),
-                  foregroundColor: Colors.white,
+                  backgroundColor: context.cardColor,
+                  foregroundColor: context.textPrimary,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 30),
+          SizedBox(height: 30),
 
           // KPI Cards Grid (Finance Specific)
           GridView.count(
             shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
             crossAxisCount: 4,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20,
@@ -137,7 +138,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               _buildKpiCard('Pending Refunds', '3 Requests', Icons.assignment_return_outlined, Colors.pinkAccent),
             ],
           ),
-          const SizedBox(height: 30),
+          SizedBox(height: 30),
 
           // Charts & Analytics Segment
           Row(
@@ -149,27 +150,27 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
                 child: Container(
                   height: 380,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF1E293B),
+                    color: context.cardColor,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: Colors.white10),
+                    border: Border.all(color: context.borderColor),
                   ),
-                  padding: const EdgeInsets.all(24),
+                  padding: EdgeInsets.all(24),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Monthly Collection Trend',
-                        style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(height: 4),
-                      Text('Historical and forecast fee collections', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
-                      const SizedBox(height: 24),
+                      SizedBox(height: 4),
+                      Text('Historical and forecast fee collections', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+                      SizedBox(height: 24),
                       Expanded(child: _buildFinanceLineChart(monthlyData)),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(width: 20),
+              SizedBox(width: 20),
 
               // Fee Collection by Branch (Bar Chart)
               Expanded(
@@ -177,21 +178,21 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
                 child: Container(
                   height: 380,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF1E293B),
+                    color: context.cardColor,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: Colors.white10),
+                    border: Border.all(color: context.borderColor),
                   ),
-                  padding: const EdgeInsets.all(24),
+                  padding: EdgeInsets.all(24),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Revenue Collection by Department',
-                        style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(height: 4),
-                      Text('Comparison of collected fees per engineering division', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
-                      const SizedBox(height: 24),
+                      SizedBox(height: 4),
+                      Text('Comparison of collected fees per engineering division', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+                      SizedBox(height: 24),
                       Expanded(child: _buildFinanceBarChart(deptData)),
                     ],
                   ),
@@ -199,33 +200,33 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               ),
             ],
           ),
-          const SizedBox(height: 30),
+          SizedBox(height: 30),
 
           // Recent Activity Panel (Finance Specific)
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              color: const Color(0xFF1E293B),
+              color: context.cardColor,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.white10),
+              border: Border.all(color: context.borderColor),
             ),
-            padding: const EdgeInsets.all(24),
+            padding: EdgeInsets.all(24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Recent Financial Stream',
-                  style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: 16),
                 _buildActivityRow('Fee Payment', 'Student ADM2026101 paid ₹25,000 semester fees online.', '3 mins ago', Icons.payment, Colors.greenAccent),
-                const Divider(color: Colors.white10, height: 1),
+                Divider(color: context.borderColor, height: 1),
                 _buildActivityRow('Fee Payment', 'Student ECE2026402 paid ₹48,000 tuition fees.', '25 mins ago', Icons.payment, Colors.greenAccent),
-                const Divider(color: Colors.white10, height: 1),
+                Divider(color: context.borderColor, height: 1),
                 _buildActivityRow('Scholarship Approved', 'Dr. B. R. Ambedkar scheme adjustment of ₹15,000 applied for Student EEE2026305.', '1 hour ago', Icons.card_membership, Colors.blueAccent),
-                const Divider(color: Colors.white10, height: 1),
+                Divider(color: context.borderColor, height: 1),
                 _buildActivityRow('Refund Initiated', 'Refund of caution deposit ₹5,000 initiated for Student CSE2022099.', '3 hours ago', Icons.assignment_return_outlined, Colors.purpleAccent),
-                const Divider(color: Colors.white10, height: 1),
+                Divider(color: context.borderColor, height: 1),
                 _buildActivityRow('Fee Reminder Sent', 'Automatic due reminder notifications sent to 12 overdue students.', '5 hours ago', Icons.notifications_active, Colors.orangeAccent),
               ],
             ),
@@ -237,8 +238,8 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
 
   Widget _buildGenericDashboard() {
     return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.all(30),
+      physics: BouncingScrollPhysics(),
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -252,35 +253,35 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
                   Text(
                     'Administrative Overview',
                     style: GoogleFonts.poppins(
-                      color: Colors.white,
+                      color: context.textPrimary,
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     'Real-time metrics for campus analytics and activities',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 13),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 13),
                   ),
                 ],
               ),
               ElevatedButton.icon(
                 onPressed: _loadDashboardData,
-                icon: const Icon(Icons.refresh, size: 16),
+                icon: Icon(Icons.refresh, size: 16),
                 label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF1E293B),
-                  foregroundColor: Colors.white,
+                  backgroundColor: context.cardColor,
+                  foregroundColor: context.textPrimary,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 30),
+          SizedBox(height: 30),
 
           // KPI Cards Grid
           GridView.count(
             shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
             crossAxisCount: 4,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20,
@@ -296,7 +297,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               _buildKpiCard('Active Complaints', '4', Icons.report_problem_outlined, Colors.amberAccent),
             ],
           ),
-          const SizedBox(height: 30),
+          SizedBox(height: 30),
 
           // Charts & Analytics Segment
           Row(
@@ -308,27 +309,27 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
                 child: Container(
                   height: 380,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF1E293B),
+                    color: context.cardColor,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: Colors.white10),
+                    border: Border.all(color: context.borderColor),
                   ),
-                  padding: const EdgeInsets.all(24),
+                  padding: EdgeInsets.all(24),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Monthly Attendance Trend',
-                        style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(height: 4),
-                      Text('Percentage of student attendance over last 6 months', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
-                      const SizedBox(height: 24),
+                      SizedBox(height: 4),
+                      Text('Percentage of student attendance over last 6 months', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+                      SizedBox(height: 24),
                       Expanded(child: _buildGenericLineChart()),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(width: 20),
+              SizedBox(width: 20),
 
               // Fee Collection by Branch (Bar Chart)
               Expanded(
@@ -336,21 +337,21 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
                 child: Container(
                   height: 380,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF1E293B),
+                    color: context.cardColor,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: Colors.white10),
+                    border: Border.all(color: context.borderColor),
                   ),
-                  padding: const EdgeInsets.all(24),
+                  padding: EdgeInsets.all(24),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Fee Collection by Branch (Lakhs)',
-                        style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(height: 4),
-                      Text('Comparing target vs. collected fees per engineering division', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
-                      const SizedBox(height: 24),
+                      SizedBox(height: 4),
+                      Text('Comparing target vs. collected fees per engineering division', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+                      SizedBox(height: 24),
                       Expanded(child: _buildGenericBarChart()),
                     ],
                   ),
@@ -358,31 +359,31 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               ),
             ],
           ),
-          const SizedBox(height: 30),
+          SizedBox(height: 30),
 
           // Recent Activity Panel
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              color: const Color(0xFF1E293B),
+              color: context.cardColor,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.white10),
+              border: Border.all(color: context.borderColor),
             ),
-            padding: const EdgeInsets.all(24),
+            padding: EdgeInsets.all(24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Recent Activity Stream',
-                  style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: 16),
                 _buildActivityRow('Fee Payment', 'Student ADM2026101 paid ₹25,000 semester fees online.', '3 mins ago', Icons.payment, Colors.greenAccent),
-                const Divider(color: Colors.white10, height: 1),
+                Divider(color: context.borderColor, height: 1),
                 _buildActivityRow('Leave Request', 'Leave request submitted by Dr. V. Rama Rao (HOD - CSE).', '15 mins ago', Icons.leave_bags_at_home, Colors.orangeAccent),
-                const Divider(color: Colors.white10, height: 1),
+                Divider(color: context.borderColor, height: 1),
                 _buildActivityRow('System Update', 'Database optimizer index scheduled run completed.', '1 hour ago', Icons.sync_lock, Colors.blueAccent),
-                const Divider(color: Colors.white10, height: 1),
+                Divider(color: context.borderColor, height: 1),
                 _buildActivityRow('Placement Log', '5 new students added to the TCS recruitment drive.', '3 hours ago', Icons.star, Colors.pinkAccent),
               ],
             ),
@@ -395,11 +396,11 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
   Widget _buildKpiCard(String title, String value, IconData icon, Color color) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
+        color: context.cardColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -410,20 +411,20 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                  style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
                 Text(
                   value,
-                  style: GoogleFonts.poppins(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: color.withOpacity(0.1),
               borderRadius: BorderRadius.circular(12),
@@ -437,29 +438,29 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
 
   Widget _buildActivityRow(String title, String desc, String time, IconData icon, Color color) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 14),
+      padding: EdgeInsets.symmetric(vertical: 14),
       child: Row(
         children: [
           Container(
-            padding: const EdgeInsets.all(8),
+            padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: color.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, color: color, size: 18),
           ),
-          const SizedBox(width: 16),
+          SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w600)),
-                const SizedBox(height: 2),
-                Text(desc, style: GoogleFonts.poppins(color: Colors.white60, fontSize: 12)),
+                Text(title, style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.w600)),
+                SizedBox(height: 2),
+                Text(desc, style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12)),
               ],
             ),
           ),
-          Text(time, style: GoogleFonts.poppins(color: Colors.white24, fontSize: 11)),
+          Text(time, style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 11)),
         ],
       ),
     );
@@ -494,13 +495,13 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
             sideTitles: SideTitles(
               showTitles: true,
               getTitlesWidget: (value, meta) {
-                if (value == 0) return const Text('');
+                if (value == 0) return Text('');
                 if (value >= 1000000) {
-                  return Text('${(value / 1000000).toStringAsFixed(1)}M', style: const TextStyle(color: Colors.white38, fontSize: 10));
+                  return Text('${(value / 1000000).toStringAsFixed(1)}M', style: TextStyle(color: context.textMuted, fontSize: 10));
                 } else if (value >= 1000) {
-                  return Text('${(value / 1000).toStringAsFixed(0)}K', style: const TextStyle(color: Colors.white38, fontSize: 10));
+                  return Text('${(value / 1000).toStringAsFixed(0)}K', style: TextStyle(color: context.textMuted, fontSize: 10));
                 }
-                return Text('${value.toInt()}', style: const TextStyle(color: Colors.white38, fontSize: 10));
+                return Text('${value.toInt()}', style: TextStyle(color: context.textMuted, fontSize: 10));
               },
               reservedSize: 38,
             ),
@@ -512,11 +513,11 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
                 final idx = value.toInt();
                 if (idx >= 0 && idx < monthlyData.length) {
                   return Padding(
-                    padding: const EdgeInsets.only(top: 4),
-                    child: Text(monthlyData[idx]['label']?.toString().split(' ').first ?? '', style: const TextStyle(color: Colors.white38, fontSize: 10)),
+                    padding: EdgeInsets.only(top: 4),
+                    child: Text(monthlyData[idx]['label']?.toString().split(' ').first ?? '', style: TextStyle(color: context.textMuted, fontSize: 10)),
                   );
                 }
-                return const Text('');
+                return Text('');
               },
             ),
           ),
@@ -584,13 +585,13 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
             sideTitles: SideTitles(
               showTitles: true,
               getTitlesWidget: (value, meta) {
-                if (value == 0) return const Text('');
+                if (value == 0) return Text('');
                 if (value >= 1000000) {
-                  return Text('${(value / 1000000).toStringAsFixed(1)}M', style: const TextStyle(color: Colors.white38, fontSize: 10));
+                  return Text('${(value / 1000000).toStringAsFixed(1)}M', style: TextStyle(color: context.textMuted, fontSize: 10));
                 } else if (value >= 1000) {
-                  return Text('${(value / 1000).toStringAsFixed(0)}K', style: const TextStyle(color: Colors.white38, fontSize: 10));
+                  return Text('${(value / 1000).toStringAsFixed(0)}K', style: TextStyle(color: context.textMuted, fontSize: 10));
                 }
-                return Text('${value.toInt()}', style: const TextStyle(color: Colors.white38, fontSize: 10));
+                return Text('${value.toInt()}', style: TextStyle(color: context.textMuted, fontSize: 10));
               },
               reservedSize: 38,
             ),
@@ -604,11 +605,11 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
                   final label = deptData[idx]['label']?.toString() ?? '';
                   final shortLabel = label.length > 8 ? label.substring(0, 8) + '..' : label;
                   return Padding(
-                    padding: const EdgeInsets.only(top: 4),
-                    child: Text(shortLabel, style: const TextStyle(color: Colors.white38, fontSize: 10)),
+                    padding: EdgeInsets.only(top: 4),
+                    child: Text(shortLabel, style: TextStyle(color: context.textMuted, fontSize: 10)),
                   );
                 }
-                return const Text('');
+                return Text('');
               },
             ),
           ),
@@ -630,7 +631,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
             sideTitles: SideTitles(
               showTitles: true,
               getTitlesWidget: (value, meta) {
-                return Text('${value.toInt()}%', style: const TextStyle(color: Colors.white38, fontSize: 10));
+                return Text('${value.toInt()}%', style: TextStyle(color: context.textMuted, fontSize: 10));
               },
               reservedSize: 32,
             ),
@@ -641,9 +642,9 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               getTitlesWidget: (value, meta) {
                 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
                 if (value.toInt() >= 0 && value.toInt() < months.length) {
-                  return Text(months[value.toInt()], style: const TextStyle(color: Colors.white38, fontSize: 10));
+                  return Text(months[value.toInt()], style: TextStyle(color: context.textMuted, fontSize: 10));
                 }
-                return const Text('');
+                return Text('');
               },
             ),
           ),
@@ -655,7 +656,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
         maxY: 100,
         lineBarsData: [
           LineChartBarData(
-            spots: const [
+            spots: [
               FlSpot(0, 92),
               FlSpot(1, 95),
               FlSpot(2, 94),
@@ -706,7 +707,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
             sideTitles: SideTitles(
               showTitles: true,
               getTitlesWidget: (value, meta) {
-                return Text('${value.toInt()}L', style: const TextStyle(color: Colors.white38, fontSize: 10));
+                return Text('${value.toInt()}L', style: TextStyle(color: context.textMuted, fontSize: 10));
               },
               reservedSize: 28,
             ),
@@ -717,9 +718,9 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               getTitlesWidget: (value, meta) {
                 const branches = ['CSE', 'ECE', 'EEE', 'MECH'];
                 if (value.toInt() >= 0 && value.toInt() < branches.length) {
-                  return Text(branches[value.toInt()], style: const TextStyle(color: Colors.white38, fontSize: 10));
+                  return Text(branches[value.toInt()], style: TextStyle(color: context.textMuted, fontSize: 10));
                 }
-                return const Text('');
+                return Text('');
               },
             ),
           ),
@@ -729,3 +730,4 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
     );
   }
 }
+

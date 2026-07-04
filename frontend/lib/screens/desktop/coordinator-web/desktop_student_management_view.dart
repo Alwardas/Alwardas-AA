@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/providers/desktop_providers.dart';
+import '../../../theme/theme_extensions.dart';
 
 class DesktopStudentManagementView extends ConsumerStatefulWidget {
   final Map<String, dynamic> userData;
@@ -150,15 +151,15 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
             child: Container(
               width: 460,
               height: double.infinity,
-              decoration: const BoxDecoration(
-                color: Color(0xFF1E293B),
-                border: Border(left: BorderSide(color: Colors.white10)),
+              decoration: BoxDecoration(
+                color: context.cardColor,
+                border: Border(left: BorderSide(color: context.borderColor)),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   bottomLeft: Radius.circular(20),
                 ),
               ),
-              padding: const EdgeInsets.all(35),
+              padding: EdgeInsets.all(35),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -168,15 +169,15 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                       children: [
                         Text(
                           'Student Profile Details',
-                          style: GoogleFonts.poppins(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         IconButton(
-                          icon: const Icon(Icons.close, color: Colors.white60),
+                          icon: Icon(Icons.close, color: context.textSecondary),
                           onPressed: () => Navigator.pop(context),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 30),
+                    SizedBox(height: 30),
 
                     // Avatar block
                     Center(
@@ -185,21 +186,21 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                           CircleAvatar(
                             radius: 45,
                             backgroundColor: Colors.blueAccent.withOpacity(0.15),
-                            child: const Icon(Icons.person, size: 45, color: Colors.blueAccent),
+                            child: Icon(Icons.person, size: 45, color: Colors.blueAccent),
                           ),
-                          const SizedBox(height: 16),
+                          SizedBox(height: 16),
                           Text(
                             student['full_name'] ?? 'John Doe',
-                            style: GoogleFonts.poppins(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                            style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           Text(
                             student['student_id'] ?? 'ADM2026000',
-                            style: GoogleFonts.poppins(color: Colors.white38, fontSize: 13),
+                            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 13),
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(height: 40),
+                    SizedBox(height: 40),
 
                     // Detail blocks
                     _buildDrawerSection('Academic Placement', [
@@ -208,13 +209,13 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                       _buildDrawerField('Section', student['section'] ?? 'A'),
                       _buildDrawerField('Admission Year', (student['admission_year'] ?? 2024).toString()),
                     ]),
-                    const SizedBox(height: 24),
+                    SizedBox(height: 24),
                     _buildDrawerSection('Status Metrics', [
                       _buildDrawerField('Academic Status', student['status'] ?? 'Active'),
                       _buildDrawerField('Current Attendance %', '94.8%'),
                       _buildDrawerField('Fee Account Status', 'Paid'),
                     ]),
-                    const SizedBox(height: 24),
+                    SizedBox(height: 24),
                     _buildDrawerSection('Guardian Details', [
                       _buildDrawerField('Father\'s Name', 'Ramu Swamy'),
                       _buildDrawerField('Contact Phone', '+91 9876543210'),
@@ -244,15 +245,15 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title, style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 13, fontWeight: FontWeight.bold)),
-        const SizedBox(height: 12),
+        SizedBox(height: 12),
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: const Color(0xFF0F172A),
+            color: context.bgColor,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: Colors.white10),
+            border: Border.all(color: context.borderColor),
           ),
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.all(16),
           child: Column(children: children),
         ),
       ],
@@ -261,12 +262,12 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
 
   Widget _buildDrawerField(String label, String val) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6),
+      padding: EdgeInsets.symmetric(vertical: 6),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label, style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12)),
-          Text(val, style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12, fontWeight: FontWeight.w500)),
+          Text(label, style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12)),
+          Text(val, style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.w500)),
         ],
       ),
     );
@@ -275,8 +276,8 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF0F172A),
-      padding: const EdgeInsets.all(30),
+      color: context.bgColor,
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -289,11 +290,11 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                 children: [
                   Text(
                     'Student Directory',
-                    style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     'Manage user placement, admissions verification, and profiling',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   ),
                 ],
               ),
@@ -301,24 +302,24 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                 children: [
                   ElevatedButton.icon(
                     onPressed: () {},
-                    icon: const Icon(Icons.arrow_downward, size: 16),
+                    icon: Icon(Icons.arrow_downward, size: 16),
                     label: Text('Export Excel', style: GoogleFonts.poppins(fontSize: 12)),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF1E293B),
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                      backgroundColor: context.cardColor,
+                      foregroundColor: context.textPrimary,
+                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12),
                   ElevatedButton.icon(
                     onPressed: () {},
-                    icon: const Icon(Icons.add, size: 16),
+                    icon: Icon(Icons.add, size: 16),
                     label: Text('Bulk Operations', style: GoogleFonts.poppins(fontSize: 12)),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF3b5998),
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                      backgroundColor: Color(0xFF3b5998),
+                      foregroundColor: context.textPrimary,
+                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                     ),
                   ),
@@ -326,16 +327,16 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Filters Card
           Container(
             decoration: BoxDecoration(
-              color: const Color(0xFF1E293B),
+              color: context.cardColor,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: Colors.white10),
+              border: Border.all(color: context.borderColor),
             ),
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
             child: Row(
               children: [
                 // Search Input
@@ -344,15 +345,15 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                   child: Container(
                     height: 42,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF0F172A),
+                      color: context.bgColor,
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.white10),
+                      border: Border.all(color: context.borderColor),
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    padding: EdgeInsets.symmetric(horizontal: 12),
                     child: Row(
                       children: [
-                        const Icon(Icons.search, color: Colors.white38, size: 18),
-                        const SizedBox(width: 8),
+                        Icon(Icons.search, color: context.textMuted, size: 18),
+                        SizedBox(width: 8),
                         Expanded(
                           child: TextField(
                             onChanged: (val) {
@@ -361,10 +362,10 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                                 _applyFilters();
                               });
                             },
-                            style: const TextStyle(color: Colors.white, fontSize: 13),
+                            style: TextStyle(color: context.textPrimary, fontSize: 13),
                             decoration: InputDecoration(
                               hintText: 'Search by ID or name...',
-                              hintStyle: GoogleFonts.poppins(color: Colors.white24),
+                              hintStyle: GoogleFonts.poppins(color: context.textMuted2),
                               border: InputBorder.none,
                               isDense: true,
                             ),
@@ -374,7 +375,7 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                     ),
                   ),
                 ),
-                const SizedBox(width: 16),
+                SizedBox(width: 16),
 
                 // Branch dropdown
                 _buildDropdownFilter('Branch', _selectedBranch, [
@@ -390,7 +391,7 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                     _applyFilters();
                   });
                 }),
-                const SizedBox(width: 16),
+                SizedBox(width: 16),
 
                 // Year dropdown
                 _buildDropdownFilter('Year', _selectedYear, ['All', '1st Year', '2nd Year', '3rd Year', '4th Year'], (val) {
@@ -399,7 +400,7 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                     _applyFilters();
                   });
                 }),
-                const SizedBox(width: 16),
+                SizedBox(width: 16),
 
                 // Section dropdown
                 _buildDropdownFilter('Section', _selectedSection, ['All', 'A', 'B', 'C'], (val) {
@@ -408,7 +409,7 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                     _applyFilters();
                   });
                 }),
-                const SizedBox(width: 16),
+                SizedBox(width: 16),
 
                 // Status dropdown
                 _buildDropdownFilter('Status', _selectedStatus, ['All', 'Active', 'Pending'], (val) {
@@ -420,17 +421,17 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
               ],
             ),
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Students List Table View
           Expanded(
             child: _isLoading
-                ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                 : Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFF1E293B),
+                      color: context.cardColor,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: Colors.white10),
+                      border: Border.all(color: context.borderColor),
                     ),
                     clipBehavior: Clip.antiAlias,
                     child: Column(
@@ -438,8 +439,8 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                         // Column Titles
                         Container(
                           height: 48,
-                          color: const Color(0xFF0F172A).withOpacity(0.4),
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          color: context.bgColor.withOpacity(0.4),
+                          padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Row(
                             children: [
                               Checkbox(
@@ -454,17 +455,17 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                                   });
                                 },
                               ),
-                              const SizedBox(width: 10),
+                              SizedBox(width: 10),
                               Expanded(flex: 2, child: _buildSortHeader('ID', 'id')),
                               Expanded(flex: 3, child: _buildSortHeader('Name', 'name')),
                               Expanded(flex: 4, child: _buildSortHeader('Branch / Department', 'branch')),
                               Expanded(flex: 1, child: _buildSortHeader('Section', 'section')),
                               Expanded(flex: 2, child: _buildSortHeader('Status', 'status')),
-                              const SizedBox(width: 50), // spacer for actions
+                              SizedBox(width: 50), // spacer for actions
                             ],
                           ),
                         ),
-                        const Divider(color: Colors.white10, height: 1),
+                        Divider(color: context.borderColor, height: 1),
 
                         // Table Body Rows
                         Expanded(
@@ -472,7 +473,7 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                               ? Center(
                                   child: Text(
                                     'No students found matching filters.',
-                                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 13),
+                                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 13),
                                   ),
                                 )
                               : ListView.builder(
@@ -490,9 +491,9 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                                       onTap: () => _showDetailsDrawer(context, student),
                                       child: Container(
                                         height: 52,
-                                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                                        decoration: const BoxDecoration(
-                                          border: Border(bottom: BorderSide(color: Colors.white10, width: 0.5)),
+                                        padding: EdgeInsets.symmetric(horizontal: 20),
+                                        decoration: BoxDecoration(
+                                          border: Border(bottom: BorderSide(color: context.borderColor, width: 0.5)),
                                         ),
                                         child: Row(
                                           children: [
@@ -508,29 +509,29 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                                                 });
                                               },
                                             ),
-                                            const SizedBox(width: 10),
+                                            SizedBox(width: 10),
                                             Expanded(
                                               flex: 2,
-                                              child: Text(id, style: GoogleFonts.poppins(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w600)),
+                                              child: Text(id, style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12, fontWeight: FontWeight.w600)),
                                             ),
                                             Expanded(
                                               flex: 3,
-                                              child: Text(name, style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12, fontWeight: FontWeight.bold)),
+                                              child: Text(name, style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold)),
                                             ),
                                             Expanded(
                                               flex: 4,
-                                              child: Text(branch, style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12)),
+                                              child: Text(branch, style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12)),
                                             ),
                                             Expanded(
                                               flex: 1,
-                                              child: Text(section, style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12)),
+                                              child: Text(section, style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12)),
                                             ),
                                             Expanded(
                                               flex: 2,
                                               child: Row(
                                                 children: [
                                                   Container(
-                                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                                     decoration: BoxDecoration(
                                                       color: (status == 'Active' ? Colors.green : Colors.orange).withOpacity(0.15),
                                                       borderRadius: BorderRadius.circular(4),
@@ -548,7 +549,7 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
                                               ),
                                             ),
                                             IconButton(
-                                              icon: const Icon(Icons.keyboard_arrow_right, color: Colors.white38, size: 18),
+                                              icon: Icon(Icons.keyboard_arrow_right, color: context.textMuted, size: 18),
                                               onPressed: () => _showDetailsDrawer(context, student),
                                             ),
                                           ],
@@ -574,9 +575,9 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(label, style: GoogleFonts.poppins(color: Colors.white60, fontSize: 12, fontWeight: FontWeight.bold)),
+          Text(label, style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold)),
           if (isCurrent) ...[
-            const SizedBox(width: 4),
+            SizedBox(width: 4),
             Icon(_isAscending ? Icons.arrow_upward : Icons.arrow_downward, color: Colors.blueAccent, size: 12),
           ],
         ],
@@ -588,16 +589,16 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
     return Container(
       height: 42,
       decoration: BoxDecoration(
-        color: const Color(0xFF0F172A),
+        color: context.bgColor,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: context.borderColor),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      padding: EdgeInsets.symmetric(horizontal: 12),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
           value: val,
-          dropdownColor: const Color(0xFF1E293B),
-          style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12),
+          dropdownColor: context.cardColor,
+          style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12),
           onChanged: onChanged,
           items: options.map<DropdownMenuItem<String>>((String value) {
             return DropdownMenuItem<String>(
@@ -610,3 +611,4 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
     );
   }
 }
+

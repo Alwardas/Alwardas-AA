@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../theme/theme_extensions.dart';
 
 class DesktopAuditLogsView extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -20,49 +21,49 @@ class _DesktopAuditLogsViewState extends State<DesktopAuditLogsView> {
     ];
 
     return Container(
-      color: const Color(0xFF0F172A),
-      padding: const EdgeInsets.all(30),
+      color: context.bgColor,
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Security Audit Trails & Change Logs',
-            style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+            style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 20, fontWeight: FontWeight.bold),
           ),
           Text(
             'Chronological system activity log capturing data mutations and administrative actions',
-            style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Audit Table
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                color: const Color(0xFF1E293B),
+                color: context.cardColor,
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: Colors.white10),
+                border: Border.all(color: context.borderColor),
               ),
               clipBehavior: Clip.antiAlias,
               child: Column(
                 children: [
                   Container(
-                    color: const Color(0xFF0F172A).withOpacity(0.4),
+                    color: context.bgColor.withOpacity(0.4),
                     height: 44,
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
                       children: [
-                        Expanded(flex: 2, child: Text('User / Actor', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                        Expanded(flex: 1, child: Text('Role', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                        Expanded(flex: 3, child: Text('Action Performed', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                        Expanded(flex: 2, child: Text('Previous Value', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                        Expanded(flex: 2, child: Text('New Value', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                        Expanded(flex: 2, child: Text('Timestamp', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
-                        Expanded(flex: 2, child: Text('IP Address', style: const TextStyle(color: Colors.white38, fontSize: 11, fontWeight: FontWeight.bold))),
+                        Expanded(flex: 2, child: Text('User / Actor', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                        Expanded(flex: 1, child: Text('Role', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                        Expanded(flex: 3, child: Text('Action Performed', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                        Expanded(flex: 2, child: Text('Previous Value', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                        Expanded(flex: 2, child: Text('New Value', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                        Expanded(flex: 2, child: Text('Timestamp', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
+                        Expanded(flex: 2, child: Text('IP Address', style: TextStyle(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold))),
                       ],
                     ),
                   ),
-                  const Divider(color: Colors.white10, height: 1),
+                  Divider(color: context.borderColor, height: 1),
                   Expanded(
                     child: ListView.builder(
                       itemCount: logs.length,
@@ -70,19 +71,19 @@ class _DesktopAuditLogsViewState extends State<DesktopAuditLogsView> {
                         final item = logs[index];
                         return Container(
                           height: 52,
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          decoration: const BoxDecoration(
-                            border: Border(bottom: BorderSide(color: Colors.white10, width: 0.5)),
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          decoration: BoxDecoration(
+                            border: Border(bottom: BorderSide(color: context.borderColor, width: 0.5)),
                           ),
                           child: Row(
                             children: [
-                              Expanded(flex: 2, child: Text(item['user'], style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12, fontWeight: FontWeight.bold))),
-                              Expanded(flex: 1, child: Text(item['role'], style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12))),
-                              Expanded(flex: 3, child: Text(item['action'], style: GoogleFonts.poppins(color: Colors.white, fontSize: 12))),
-                              Expanded(flex: 2, child: Text(item['prev'], style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12))),
+                              Expanded(flex: 2, child: Text(item['user'], style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold))),
+                              Expanded(flex: 1, child: Text(item['role'], style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12))),
+                              Expanded(flex: 3, child: Text(item['action'], style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12))),
+                              Expanded(flex: 2, child: Text(item['prev'], style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12))),
                               Expanded(flex: 2, child: Text(item['new'], style: GoogleFonts.poppins(color: Colors.greenAccent, fontSize: 12, fontWeight: FontWeight.w500))),
-                              Expanded(flex: 2, child: Text(item['time'], style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11))),
-                              Expanded(flex: 2, child: Text(item['ip'], style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11))),
+                              Expanded(flex: 2, child: Text(item['time'], style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11))),
+                              Expanded(flex: 2, child: Text(item['ip'], style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11))),
                             ],
                           ),
                         );
@@ -98,3 +99,4 @@ class _DesktopAuditLogsViewState extends State<DesktopAuditLogsView> {
     );
   }
 }
+

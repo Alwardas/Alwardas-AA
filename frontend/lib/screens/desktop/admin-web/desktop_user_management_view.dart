@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../theme/theme_extensions.dart';
 
 class DesktopUserManagementView extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -34,8 +35,8 @@ class _DesktopUserManagementViewState extends State<DesktopUserManagementView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF0F172A),
-      padding: const EdgeInsets.all(30),
+      color: context.bgColor,
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -48,17 +49,17 @@ class _DesktopUserManagementViewState extends State<DesktopUserManagementView> {
                 children: [
                   Text(
                     'User Management & Role Access Control (RBAC)',
-                    style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     'Approve user registration requests and adjust role permissions matrix',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   ),
                 ],
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Main split
           Expanded(
@@ -70,11 +71,11 @@ class _DesktopUserManagementViewState extends State<DesktopUserManagementView> {
                   flex: 3,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFF1E293B),
+                      color: context.cardColor,
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: Colors.white10),
+                      border: Border.all(color: context.borderColor),
                     ),
-                    padding: const EdgeInsets.all(24),
+                    padding: EdgeInsets.all(24),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -83,21 +84,21 @@ class _DesktopUserManagementViewState extends State<DesktopUserManagementView> {
                           children: [
                             Text(
                               'Permissions Matrix Configurations',
-                              style: GoogleFonts.poppins(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+                              style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 15, fontWeight: FontWeight.bold),
                             ),
                             Container(
                               height: 38,
-                              padding: const EdgeInsets.symmetric(horizontal: 10),
+                              padding: EdgeInsets.symmetric(horizontal: 10),
                               decoration: BoxDecoration(
-                                color: const Color(0xFF0F172A),
+                                color: context.bgColor,
                                 borderRadius: BorderRadius.circular(8),
-                                border: Border.all(color: Colors.white10),
+                                border: Border.all(color: context.borderColor),
                               ),
                               child: DropdownButtonHideUnderline(
                                 child: DropdownButton<String>(
                                   value: _selectedRole,
-                                  dropdownColor: const Color(0xFF1E293B),
-                                  style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12),
+                                  dropdownColor: context.cardColor,
+                                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12),
                                   onChanged: (val) {
                                     setState(() => _selectedRole = val!);
                                   },
@@ -112,37 +113,37 @@ class _DesktopUserManagementViewState extends State<DesktopUserManagementView> {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 24),
+                        SizedBox(height: 24),
                         Expanded(child: _buildPermissionsMatrix()),
                       ],
                     ),
                   ),
                 ),
-                const SizedBox(width: 20),
+                SizedBox(width: 20),
 
                 // 2. Pending Approvals list
                 Expanded(
                   flex: 2,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFF1E293B),
+                      color: context.cardColor,
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: Colors.white10),
+                      border: Border.all(color: context.borderColor),
                     ),
-                    padding: const EdgeInsets.all(24),
+                    padding: EdgeInsets.all(24),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Pending Registration Approvals',
-                          style: GoogleFonts.poppins(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 15, fontWeight: FontWeight.bold),
                         ),
-                        const SizedBox(height: 4),
+                        SizedBox(height: 4),
                         Text(
                           'Verify institution affiliation before activation',
-                          style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11),
+                          style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
                         ),
-                        const SizedBox(height: 20),
+                        SizedBox(height: 20),
                         Expanded(child: _buildPendingApprovalsList()),
                       ],
                     ),
@@ -161,7 +162,7 @@ class _DesktopUserManagementViewState extends State<DesktopUserManagementView> {
       children: _permissions.keys.map((category) {
         final subPerms = _permissions[category]!;
         return Padding(
-          padding: const EdgeInsets.only(bottom: 20),
+          padding: EdgeInsets.only(bottom: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -169,24 +170,24 @@ class _DesktopUserManagementViewState extends State<DesktopUserManagementView> {
                 category,
                 style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 13, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               Wrap(
                 spacing: 12,
                 runSpacing: 12,
                 children: subPerms.map((perm) {
                   return Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFF0F172A),
+                      color: context.bgColor,
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.white10),
+                      border: Border.all(color: context.borderColor),
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(perm, style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12)),
-                        const SizedBox(width: 10),
-                        const Icon(Icons.check_circle, color: Colors.greenAccent, size: 16),
+                        Text(perm, style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12)),
+                        SizedBox(width: 10),
+                        Icon(Icons.check_circle, color: Colors.greenAccent, size: 16),
                       ],
                     ),
                   );
@@ -210,30 +211,30 @@ class _DesktopUserManagementViewState extends State<DesktopUserManagementView> {
       itemBuilder: (context, index) {
         final item = pending[index];
         return Card(
-          color: const Color(0xFF0F172A),
-          margin: const EdgeInsets.only(bottom: 12),
+          color: context.bgColor,
+          margin: EdgeInsets.only(bottom: 12),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Padding(
-            padding: const EdgeInsets.all(14),
+            padding: EdgeInsets.all(14),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(item['name'], style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
-                Text('${item['id']} • ${item['role']}', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
-                const SizedBox(height: 12),
+                Text(item['name'], style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold)),
+                Text('${item['id']} • ${item['role']}', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+                SizedBox(height: 12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    TextButton(onPressed: () {}, child: const Text('Reject', style: TextStyle(color: Colors.redAccent, fontSize: 12))),
-                    const SizedBox(width: 8),
+                    TextButton(onPressed: () {}, child: Text('Reject', style: TextStyle(color: Colors.redAccent, fontSize: 12))),
+                    SizedBox(width: 8),
                     ElevatedButton(
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text('User ${item['name']} approved. Login credentials activated.')),
                         );
                       },
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: Colors.white),
-                      child: const Text('Approve', style: TextStyle(fontSize: 12)),
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: context.textPrimary),
+                      child: Text('Approve', style: TextStyle(fontSize: 12)),
                     ),
                   ],
                 ),
@@ -245,3 +246,4 @@ class _DesktopUserManagementViewState extends State<DesktopUserManagementView> {
     );
   }
 }
+

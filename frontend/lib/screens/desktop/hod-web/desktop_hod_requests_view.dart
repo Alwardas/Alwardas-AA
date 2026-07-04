@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../theme/theme_extensions.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
 import '../../../widgets/parent_requests_viewer.dart';
@@ -216,8 +217,8 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF0F172A),
-      padding: const EdgeInsets.all(30),
+      color: context.bgColor,
+      padding: EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -230,11 +231,11 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
                 children: [
                   Text(
                     'Administrative Approvals Portal',
-                    style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     'Approve and manage faculty signups, course subject requests, and student leave submissions',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   ),
                 ],
               ),
@@ -243,9 +244,9 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
                 isScrollable: true,
                 indicatorColor: Colors.blueAccent,
                 labelColor: Colors.blueAccent,
-                unselectedLabelColor: Colors.white38,
+                unselectedLabelColor: context.textMuted,
                 labelStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold),
-                tabs: const [
+                tabs: [
                   Tab(text: "Faculty Signups"),
                   Tab(text: "Subject Requests"),
                   Tab(text: "Parent Requests"),
@@ -253,7 +254,7 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Main Tab Content Area
           Expanded(
@@ -262,14 +263,14 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
               children: [
                 // Tab 1: Faculty Signups Grid
                 _loadingSignups
-                    ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                    ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                     : _facultySignups.isEmpty
                         ? _buildEmptyState(Icons.person_add_disabled_outlined, "No pending signups")
                         : _buildSignupsGrid(),
 
                 // Tab 2: Faculty Subject Requests Grid
                 _loadingRequests
-                    ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                    ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
                     : _facultyRequests.isEmpty
                         ? _buildEmptyState(Icons.assignment_turned_in_outlined, "No pending requests")
                         : _buildRequestsGrid(),
@@ -289,11 +290,11 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 64, color: Colors.white24),
-          const SizedBox(height: 20),
+          Icon(icon, size: 64, color: context.textMuted2),
+          SizedBox(height: 20),
           Text(
             message,
-            style: GoogleFonts.poppins(color: Colors.white38, fontSize: 16),
+            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 16),
           ),
         ],
       ),
@@ -302,7 +303,7 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
 
   Widget _buildSignupsGrid() {
     return GridView.builder(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         crossAxisSpacing: 20,
@@ -313,11 +314,11 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
       itemBuilder: (context, index) {
         final u = _facultySignups[index];
         return Container(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: const Color(0xFF1E293B),
+            color: context.cardColor,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Colors.white10),
+            border: Border.all(color: context.borderColor),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.15),
@@ -333,7 +334,7 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: Colors.blueAccent.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(8),
@@ -345,20 +346,20 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
                   ),
                   Text(
                     u['login_id'] ?? '',
-                    style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               Text(
                 u['full_name'] ?? 'Unknown',
-                style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
               ),
               Text(
                 "Branch: ${u['branch'] ?? 'N/A'}",
-                style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+                style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
               ),
-              const Spacer(),
+              Spacer(),
               Row(
                 children: [
                   Expanded(
@@ -366,19 +367,19 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
                       onPressed: () => _handleSignupAction(u['id'], 'REJECT'),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: Colors.redAccent,
-                        side: const BorderSide(color: Colors.redAccent),
+                        side: BorderSide(color: Colors.redAccent),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ),
                       child: Text('Reject', style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () => _handleSignupAction(u['id'], 'APPROVE'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.green,
-                        foregroundColor: Colors.white,
+                        foregroundColor: context.textPrimary,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ),
                       child: Text('Approve', style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
@@ -395,7 +396,7 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
 
   Widget _buildRequestsGrid() {
     return GridView.builder(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         crossAxisSpacing: 20,
@@ -408,11 +409,11 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
         bool isApproved = r['status'] == 'APPROVED';
 
         return Container(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: const Color(0xFF1E293B),
+            color: context.cardColor,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Colors.white10),
+            border: Border.all(color: context.borderColor),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.15),
@@ -428,7 +429,7 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: Colors.amberAccent.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(8),
@@ -439,20 +440,20 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
                     ),
                   ),
                   if (isApproved)
-                    const Icon(Icons.check_circle_outline, color: Colors.green, size: 20),
+                    Icon(Icons.check_circle_outline, color: Colors.green, size: 20),
                 ],
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               Text(
                 r['faculty_name'] ?? 'Faculty',
-                style: GoogleFonts.poppins(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+                style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 15, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4),
               Text(
                 r['subject_name'] ?? 'Subject',
                 style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              const Spacer(),
+              Spacer(),
               if (!isApproved)
                 Row(
                   children: [
@@ -461,19 +462,19 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
                         onPressed: () => _handleAction(r['id'], 'REJECT'),
                         style: OutlinedButton.styleFrom(
                           foregroundColor: Colors.redAccent,
-                          side: const BorderSide(color: Colors.redAccent),
+                          side: BorderSide(color: Colors.redAccent),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                         ),
                         child: Text('Reject', style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    SizedBox(width: 12),
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () => _handleAction(r['id'], 'APPROVE'),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green,
-                          foregroundColor: Colors.white,
+                          foregroundColor: context.textPrimary,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                         ),
                         child: Text('Approve', style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
@@ -484,7 +485,7 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
               else
                 Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding: EdgeInsets.symmetric(vertical: 10),
                   decoration: BoxDecoration(
                     color: Colors.green.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(10),
@@ -501,3 +502,4 @@ class _DesktopHodRequestsViewState extends State<DesktopHodRequestsView> with Si
     );
   }
 }
+

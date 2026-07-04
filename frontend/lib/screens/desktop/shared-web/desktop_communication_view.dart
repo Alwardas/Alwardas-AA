@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../theme/theme_extensions.dart';
 
 class DesktopCommunicationView extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -51,38 +52,38 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF0F172A),
+      color: context.bgColor,
       child: Row(
         children: [
           // Left Sidebar Pane: Conversations and Request flow
           Container(
             width: 340,
-            decoration: const BoxDecoration(
-              border: Border(right: BorderSide(color: Colors.white10)),
+            decoration: BoxDecoration(
+              border: Border(right: BorderSide(color: context.borderColor)),
             ),
             child: Column(
               children: [
                 // ERP ID Lookup bar
                 Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: EdgeInsets.all(20),
                   child: Container(
                     height: 40,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF1E293B),
+                      color: context.cardColor,
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.white10),
+                      border: Border.all(color: context.borderColor),
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    padding: EdgeInsets.symmetric(horizontal: 12),
                     child: Row(
                       children: [
-                        const Icon(Icons.person_search, color: Colors.white38, size: 18),
-                        const SizedBox(width: 8),
+                        Icon(Icons.person_search, color: context.textMuted, size: 18),
+                        SizedBox(width: 8),
                         Expanded(
                           child: TextField(
-                            style: const TextStyle(color: Colors.white, fontSize: 13),
+                            style: TextStyle(color: context.textPrimary, fontSize: 13),
                             decoration: InputDecoration(
                               hintText: 'Search ERP ID...',
-                              hintStyle: GoogleFonts.poppins(color: Colors.white24),
+                              hintStyle: GoogleFonts.poppins(color: context.textMuted2),
                               border: InputBorder.none,
                               isDense: true,
                             ),
@@ -97,11 +98,11 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
                 TabBar(
                   controller: _tabController,
                   labelColor: Colors.blueAccent,
-                  unselectedLabelColor: Colors.white38,
+                  unselectedLabelColor: context.textMuted,
                   indicatorColor: Colors.blueAccent,
-                  dividerColor: Colors.white10,
+                  dividerColor: context.borderColor,
                   labelStyle: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.bold),
-                  tabs: const [
+                  tabs: [
                     Tab(text: 'Conversations'),
                     Tab(text: 'Chat Requests'),
                   ],
@@ -130,10 +131,10 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
                       // Active chat header
                       Container(
                         height: 70,
-                        decoration: const BoxDecoration(
-                          border: Border(bottom: BorderSide(color: Colors.white10)),
+                        decoration: BoxDecoration(
+                          border: Border(bottom: BorderSide(color: context.borderColor)),
                         ),
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        padding: EdgeInsets.symmetric(horizontal: 24),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -141,20 +142,20 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
                               children: [
                                 CircleAvatar(
                                   backgroundColor: Colors.blueAccent.withOpacity(0.2),
-                                  child: const Icon(Icons.person, color: Colors.blueAccent),
+                                  child: Icon(Icons.person, color: Colors.blueAccent),
                                 ),
-                                const SizedBox(width: 14),
+                                SizedBox(width: 14),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       _selectedChat!['name'],
-                                      style: GoogleFonts.poppins(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+                                      style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold),
                                     ),
                                     Text(
                                       _selectedChat!['role'] ?? 'Staff',
-                                      style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11),
+                                      style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
                                     ),
                                   ],
                                 ),
@@ -162,9 +163,9 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
                             ),
                             Row(
                               children: [
-                                IconButton(icon: const Icon(Icons.phone_outlined, color: Colors.white60), onPressed: () {}),
-                                const SizedBox(width: 8),
-                                IconButton(icon: const Icon(Icons.videocam_outlined, color: Colors.white60), onPressed: () {}),
+                                IconButton(icon: Icon(Icons.phone_outlined, color: context.textSecondary), onPressed: () {}),
+                                SizedBox(width: 8),
+                                IconButton(icon: Icon(Icons.videocam_outlined, color: context.textSecondary), onPressed: () {}),
                               ],
                             ),
                           ],
@@ -174,7 +175,7 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
                       // Messages Stream list
                       Expanded(
                         child: ListView.builder(
-                          padding: const EdgeInsets.all(24),
+                          padding: EdgeInsets.all(24),
                           itemCount: _messages.length,
                           itemBuilder: (context, index) {
                             final msg = _messages[index];
@@ -183,11 +184,11 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
                             return Align(
                               alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
                               child: Container(
-                                margin: const EdgeInsets.only(bottom: 16),
-                                constraints: const BoxConstraints(maxWidth: 500),
-                                padding: const EdgeInsets.all(14),
+                                margin: EdgeInsets.only(bottom: 16),
+                                constraints: BoxConstraints(maxWidth: 500),
+                                padding: EdgeInsets.all(14),
                                 decoration: BoxDecoration(
-                                  color: isMe ? const Color(0xFF3b5998) : const Color(0xFF1E293B),
+                                  color: isMe ? Color(0xFF3b5998) : context.cardColor,
                                   borderRadius: BorderRadius.only(
                                     topLeft: const Radius.circular(12),
                                     topRight: const Radius.circular(12),
@@ -200,12 +201,12 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
                                   children: [
                                     Text(
                                       msg['text'],
-                                      style: GoogleFonts.poppins(color: Colors.white, fontSize: 13),
+                                      style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13),
                                     ),
-                                    const SizedBox(height: 6),
+                                    SizedBox(height: 6),
                                     Text(
                                       msg['time'],
-                                      style: GoogleFonts.poppins(color: Colors.white38, fontSize: 10),
+                                      style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10),
                                     ),
                                   ],
                                 ),
@@ -218,29 +219,29 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
                       // Message Composer
                       Container(
                         height: 70,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        decoration: const BoxDecoration(
-                          border: Border(top: BorderSide(color: Colors.white10)),
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        decoration: BoxDecoration(
+                          border: Border(top: BorderSide(color: context.borderColor)),
                         ),
                         child: Row(
                           children: [
-                            IconButton(icon: const Icon(Icons.attach_file, color: Colors.white60), onPressed: () {}),
-                            const SizedBox(width: 12),
+                            IconButton(icon: Icon(Icons.attach_file, color: context.textSecondary), onPressed: () {}),
+                            SizedBox(width: 12),
                             Expanded(
                               child: TextField(
                                 controller: _messageController,
-                                style: const TextStyle(color: Colors.white, fontSize: 13),
+                                style: TextStyle(color: context.textPrimary, fontSize: 13),
                                 decoration: InputDecoration(
                                   hintText: 'Type your message...',
-                                  hintStyle: GoogleFonts.poppins(color: Colors.white24),
+                                  hintStyle: GoogleFonts.poppins(color: context.textMuted2),
                                   border: InputBorder.none,
                                 ),
                                 onSubmitted: (_) => _sendMessage(),
                               ),
                             ),
-                            const SizedBox(width: 12),
+                            SizedBox(width: 12),
                             IconButton(
-                              icon: const Icon(Icons.send, color: Colors.blueAccent),
+                              icon: Icon(Icons.send, color: Colors.blueAccent),
                               onPressed: _sendMessage,
                             ),
                           ],
@@ -260,15 +261,15 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.chat_outlined, color: Colors.blueAccent.withOpacity(0.2), size: 80),
-          const SizedBox(height: 16),
+          SizedBox(height: 16),
           Text(
             'Secure Campus Messaging',
-            style: GoogleFonts.poppins(color: Colors.white60, fontSize: 16, fontWeight: FontWeight.bold),
+            style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 16, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 4),
+          SizedBox(height: 4),
           Text(
             'Lookup an ERP ID or select an active accepted conversation to chat securely.',
-            style: GoogleFonts.poppins(color: Colors.white38, fontSize: 12),
+            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
           ),
         ],
       ),
@@ -293,14 +294,14 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
               _selectedChat = chat;
             });
           },
-          tileColor: isSelected ? const Color(0xFF1E293B) : Colors.transparent,
+          tileColor: isSelected ? context.cardColor : Colors.transparent,
           leading: CircleAvatar(
             backgroundColor: Colors.blueAccent.withOpacity(0.15),
-            child: const Icon(Icons.person, color: Colors.blueAccent),
+            child: Icon(Icons.person, color: Colors.blueAccent),
           ),
-          title: Text(chat['name'], style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
-          subtitle: Text(chat['lastMsg'], style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11), overflow: TextOverflow.ellipsis),
-          trailing: Text(chat['time'], style: GoogleFonts.poppins(color: Colors.white24, fontSize: 10)),
+          title: Text(chat['name'], style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold)),
+          subtitle: Text(chat['lastMsg'], style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11), overflow: TextOverflow.ellipsis),
+          trailing: Text(chat['time'], style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 10)),
         );
       },
     );
@@ -316,30 +317,30 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
       itemBuilder: (context, index) {
         final req = incomingRequests[index];
         return Card(
-          color: const Color(0xFF1E293B),
-          margin: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          color: context.cardColor,
+          margin: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Padding(
-            padding: const EdgeInsets.all(14),
+            padding: EdgeInsets.all(14),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(req['name'], style: GoogleFonts.poppins(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
-                Text('${req['role']} • Incoming Chat Request', style: GoogleFonts.poppins(color: Colors.white38, fontSize: 11)),
-                const SizedBox(height: 12),
+                Text(req['name'], style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold)),
+                Text('${req['role']} • Incoming Chat Request', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+                SizedBox(height: 12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    TextButton(onPressed: () {}, child: const Text('Reject', style: TextStyle(color: Colors.redAccent, fontSize: 12))),
-                    const SizedBox(width: 8),
+                    TextButton(onPressed: () {}, child: Text('Reject', style: TextStyle(color: Colors.redAccent, fontSize: 12))),
+                    SizedBox(width: 8),
                     ElevatedButton(
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text('Chat request from ${req['name']} accepted.')),
                         );
                       },
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: Colors.white),
-                      child: const Text('Accept', style: TextStyle(fontSize: 12)),
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent, foregroundColor: context.textPrimary),
+                      child: Text('Accept', style: TextStyle(fontSize: 12)),
                     ),
                   ],
                 ),
@@ -351,3 +352,4 @@ class _DesktopCommunicationViewState extends State<DesktopCommunicationView> wit
     );
   }
 }
+
