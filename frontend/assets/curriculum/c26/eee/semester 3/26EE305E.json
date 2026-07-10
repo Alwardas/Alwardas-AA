@@ -3,148 +3,344 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "Graphical symbols, couplings, and Guarding systems",
             "totalPeriods": 9,
             "topics": [
                 {
-                    "topic": "Draw the standard symbols of electrical components and fixtures",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ee305e-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Draw the standard symbols of electrical components and fixtures",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw sectional elevation and end views of a Protected type and Unprotected type shaft couplings",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ee305e-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Draw sectional elevation and end views of a Protected type and Unprotected type shaft couplings",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw the views of the guarding systems in the following cases. (i) Telephone lines under power lines (ii) H.V. line over L.V. line crossing (iii) H.V. Line over L.V. line on same supports (iv) H.V. Line crossing over railway lines. 2. DC machines",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ee305e-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Draw the views of the guarding systems in the following cases. (i) Telephone lines under power lines (ii) H.V. line over L.V. line crossing (iii) H.V. Line over L.V. line on same supports (iv) H.V. Line crossing over railway lines. 2. DC machines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-1.4",
+                    "sno": "1.4",
+                    "topic": "Deep dive into Draw the standard symbols of electrical components and fixtures",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-1.5",
+                    "sno": "1.5",
+                    "topic": "Deep dive into Draw sectional elevation and end views of a Protected type and Unprotected type shaft couplings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-1.6",
+                    "sno": "1.6",
+                    "topic": "Deep dive into Draw the views of the guarding systems in the following cases. (i) Telephone lines under power lines (ii) H.V. line over L.V. line crossing (iii) H.V. Line over L.V. line on same supports (iv) H.V. Line crossing over railway lines. 2. DC machines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-1.7",
+                    "sno": "1.7",
+                    "topic": "Problem solving & practice on Draw the standard symbols of electrical components and fixtures",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-1.8",
+                    "sno": "1.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee305e-1.9",
+                    "sno": "1.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 9,
+            "title": "D.C. Machines",
+            "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "Draw the assembled sectional views of Pole and Field coils",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ee305e-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Draw the assembled sectional views of Pole and Field coils",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw the half sectional end view of armature of DC machine with the given data",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee305e-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Draw the half sectional end view of armature of DC machine with the given data",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw the half sectional end view of commutator of DC Machine with the given data",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee305e-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Draw the half sectional end view of commutator of DC Machine with the given data",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw the Half sectional End view and Elevation of a D.C machine with the given data. 3. Induction Motors",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee305e-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Draw the Half sectional End view and Elevation of a D.C machine with the given data. 3. Induction Motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-2.5",
+                    "sno": "2.5",
+                    "topic": "Deep dive into Draw the assembled sectional views of Pole and Field coils",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-2.6",
+                    "sno": "2.6",
+                    "topic": "Deep dive into Draw the half sectional end view of armature of DC machine with the given data",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-2.7",
+                    "sno": "2.7",
+                    "topic": "Deep dive into Draw the half sectional end view of commutator of DC Machine with the given data",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into Draw the Half sectional End view and Elevation of a D.C machine with the given data. 3. Induction Motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-2.9",
+                    "sno": "2.9",
+                    "topic": "Problem solving & practice on Draw the assembled sectional views of Pole and Field coils",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-2.10",
+                    "sno": "2.10",
+                    "topic": "Problem solving & practice on Draw the half sectional end view of armature of DC machine with the given data",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-2.11",
+                    "sno": "2.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee305e-2.12",
+                    "sno": "2.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 9,
+            "title": "Induction Motors",
+            "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "Draw the Half - sectional end view and elevation of an assembled 3-phase squirrel cage induction motor from the given data",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee305e-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Draw the Half - sectional end view and elevation of an assembled 3-phase squirrel cage induction motor from the given data",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw the Half - sectional end view and elevation of an assembled 3-phase slip ring induction motor from the given data. 4. Transformers",
-                    "period": 4,
-                    "type": "theory",
                     "id": "26ee305e-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Draw the Half - sectional end view and elevation of an assembled 3-phase slip ring induction motor from the given data. 4. Transformers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-3.3",
+                    "sno": "3.3",
+                    "topic": "Deep dive into Draw the Half - sectional end view and elevation of an assembled 3-phase squirrel cage induction motor from the given data",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-3.4",
+                    "sno": "3.4",
+                    "topic": "Deep dive into Draw the Half - sectional end view and elevation of an assembled 3-phase slip ring induction motor from the given data. 4. Transformers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-3.5",
+                    "sno": "3.5",
+                    "topic": "Problem solving & practice on Draw the Half - sectional end view and elevation of an assembled 3-phase squirrel cage induction motor from the given data",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-3.6",
+                    "sno": "3.6",
+                    "topic": "Problem solving & practice on Draw the Half - sectional end view and elevation of an assembled 3-phase slip ring induction motor from the given data. 4. Transformers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-3.7",
+                    "sno": "3.7",
+                    "topic": "Practical applications of Draw the Half - sectional end view and elevation of an assembled 3-phase squirrel cage induction motor from the given data",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-3.8",
+                    "sno": "3.8",
+                    "topic": "Practical applications of Draw the Half - sectional end view and elevation of an assembled 3-phase slip ring induction motor from the given data. 4. Transformers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-3.9",
+                    "sno": "3.9",
+                    "topic": "Practical applications of Draw the Half - sectional end view and elevation of an assembled 3-phase squirrel cage induction motor from the given data",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-3.10",
+                    "sno": "3.10",
+                    "topic": "Practical applications of Draw the Half - sectional end view and elevation of an assembled 3-phase slip ring induction motor from the given data. 4. Transformers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-3.11",
+                    "sno": "3.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee305e-3.12",
+                    "sno": "3.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 9,
+            "title": "Transformers",
+            "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
-                    "period": 9,
-                    "type": "theory",
                     "id": "26ee305e-4.1",
-                    "sno": "4.1"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "topic": "Introduction to Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee305e-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee305e-5.2",
-                    "sno": "5.2"
-                },
-                {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee305e-5.3",
-                    "sno": "5.3"
-                },
-                {
-                    "topic": "Detailed analysis of primary components",
+                    "sno": "4.1",
+                    "topic": "Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee305e-5.4",
-                    "sno": "5.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
+                    "id": "26ee305e-4.2",
+                    "sno": "4.2",
+                    "topic": "Deep dive into Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee305e-5.5",
-                    "sno": "5.5"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "id": "26ee305e-4.3",
+                    "sno": "4.3",
+                    "topic": "Problem solving & practice on Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee305e-5.6",
-                    "sno": "5.6"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-4.4",
+                    "sno": "4.4",
+                    "topic": "Practical applications of Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-4.5",
+                    "sno": "4.5",
+                    "topic": "Practical applications of Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-4.6",
+                    "sno": "4.6",
+                    "topic": "Practical applications of Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-4.7",
+                    "sno": "4.7",
+                    "topic": "Practical applications of Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-4.8",
+                    "sno": "4.8",
+                    "topic": "Practical applications of Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-4.9",
+                    "sno": "4.9",
+                    "topic": "Practical applications of Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-4.10",
+                    "sno": "4.10",
+                    "topic": "Practical applications of Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee305e-4.11",
+                    "sno": "4.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee305e-4.12",
+                    "sno": "4.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

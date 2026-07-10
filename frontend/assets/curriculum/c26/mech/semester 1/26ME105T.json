@@ -3,106 +3,1296 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Statics",
-            "totalPeriods": 30,
+            "title": "STATICS",
+            "totalPeriods": 36,
             "topics": [
                 {
-                    "topic": "STATICS",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26me105t-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "Explain the importance of Engineering Mechanics in real world",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26me105t-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "STATICS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the concept of force",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Explain the importance of Engineering Mechanics in real world",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classify the system of forces",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Explain the concept of force",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the system of forces a) Co-planar and Non-coplanar, b) Parallel and Non-Parallel, c) Like and Unlike d) Concurrent and Non-concurrent",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Classify the system of forces",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "ExplainCompositionandResolutionofforcesandresultantofconcurrentcoplanarforces",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Explain the system of forces a) Co-planar and Non-coplanar, b) Parallel and Non-Parallel, c) Like and Unlike d) Concurrent and Non-concurrent",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State(a)parallelogram law(b)triangle law (c)polygon law of forces(d)Lami\u2019s theorem",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "ExplainCompositionandResolutionofforcesandresultantofconcurrentcoplanarforces",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Problems on parallelogram law and Lami\u2019s theorem",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.7",
-                    "sno": "1.7"
+                    "sno": "1.7",
+                    "topic": "State(a)parallelogram law(b)triangle law (c)polygon law of forces(d)Lami\u2019s theorem",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the concept of equilibrium",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.8",
-                    "sno": "1.8"
+                    "sno": "1.8",
+                    "topic": "Problems on parallelogram law and Lami\u2019s theorem",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the conditions of equilibrium of a body acted upon by a number of co-planar forces",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.9",
-                    "sno": "1.9"
+                    "sno": "1.9",
+                    "topic": "Explain the concept of equilibrium",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Solve the problems on equilibrium of a body subjected to number of concurrent coplanar forces using Lami\u2019s theorm and equilibrium equations",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.10",
-                    "sno": "1.10"
+                    "sno": "1.10",
+                    "topic": "State the conditions of equilibrium of a body acted upon by a number of co-planar forces",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain moment of force and couple",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.11",
-                    "sno": "1.11"
+                    "sno": "1.11",
+                    "topic": "Solve the problems on equilibrium of a body subjected to number of concurrent coplanar forces using Lami\u2019s theorm and equilibrium equations",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State Varignon\u2019s theorem",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me105t-1.12",
-                    "sno": "1.12"
+                    "sno": "1.12",
+                    "topic": "Explain moment of force and couple",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me105t-1.13",
+                    "sno": "1.13",
+                    "topic": "State Varignon\u2019s theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.14",
+                    "sno": "1.14",
                     "topic": "STATICS Importance of engineering mechanics in engineering - Definition of force and its specifications - System of forces \u2013Principle of transmissibility-Composition and Resolution of force - Resultant - Equilibrant, Statement of parallelogram law of forces, triangle law of forces, polygon law of forces - Numerical problems related to the above. Equilibrium - Condition for equilibrium of a rigid body subjected to number of coplanar concurrent forces \u2013Surface and Support reactions, Free body diagrams Lami\u2019s theorm -Numerical Problems. Moment of force and moment of couple \u2013 Statement of Varignon\u2019s Principle",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me105t-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into STATICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into Explain the importance of Engineering Mechanics in real world",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.17",
+                    "sno": "1.17",
+                    "topic": "Deep dive into Explain the concept of force",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Classify the system of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Explain the system of forces a) Co-planar and Non-coplanar, b) Parallel and Non-Parallel, c) Like and Unlike d) Concurrent and Non-concurrent",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into ExplainCompositionandResolutionofforcesandresultantofconcurrentcoplanarforces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into State(a)parallelogram law(b)triangle law (c)polygon law of forces(d)Lami\u2019s theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into Problems on parallelogram law and Lami\u2019s theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.23",
+                    "sno": "1.23",
+                    "topic": "Deep dive into Explain the concept of equilibrium",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.24",
+                    "sno": "1.24",
+                    "topic": "Deep dive into State the conditions of equilibrium of a body acted upon by a number of co-planar forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.25",
+                    "sno": "1.25",
+                    "topic": "Deep dive into Solve the problems on equilibrium of a body subjected to number of concurrent coplanar forces using Lami\u2019s theorm and equilibrium equations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.26",
+                    "sno": "1.26",
+                    "topic": "Deep dive into Explain moment of force and couple",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.27",
+                    "sno": "1.27",
+                    "topic": "Deep dive into State Varignon\u2019s theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.28",
+                    "sno": "1.28",
+                    "topic": "Deep dive into STATICS Importance of engineering mechanics in engineering - Definition of force and its specifications - System of forces \u2013Principle of transmissibility-Composition and Resolution of force - Resultant - Equilibrant, Statement of parallelogram law of forces, triangle law of forces, polygon law of forces - Numerical problems related to the above. Equilibrium - Condition for equilibrium of a rigid body subjected to number of coplanar concurrent forces \u2013Surface and Support reactions, Free body diagrams Lami\u2019s theorm -Numerical Problems. Moment of force and moment of couple \u2013 Statement of Varignon\u2019s Principle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.29",
+                    "sno": "1.29",
+                    "topic": "Problem solving & practice on STATICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.30",
+                    "sno": "1.30",
+                    "topic": "Problem solving & practice on Explain the importance of Engineering Mechanics in real world",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.31",
+                    "sno": "1.31",
+                    "topic": "Problem solving & practice on Explain the concept of force",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.32",
+                    "sno": "1.32",
+                    "topic": "Problem solving & practice on Classify the system of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.33",
+                    "sno": "1.33",
+                    "topic": "Problem solving & practice on Explain the system of forces a) Co-planar and Non-coplanar, b) Parallel and Non-Parallel, c) Like and Unlike d) Concurrent and Non-concurrent",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.34",
+                    "sno": "1.34",
+                    "topic": "Problem solving & practice on ExplainCompositionandResolutionofforcesandresultantofconcurrentcoplanarforces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-1.35",
+                    "sno": "1.35",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me105t-1.36",
+                    "sno": "1.36",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "FRICTION",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "id": "26me105t-2.1",
+                    "sno": "2.1",
+                    "topic": "FRICTION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.2",
+                    "sno": "2.2",
+                    "topic": "Explain the concept of friction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.3",
+                    "sno": "2.3",
+                    "topic": "State the laws of friction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.4",
+                    "sno": "2.4",
+                    "topic": "Define i) angle of friction ii)angle of repose",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.5",
+                    "sno": "2.5",
+                    "topic": "Identify the machine members in which friction is desirable",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.6",
+                    "sno": "2.6",
+                    "topic": "Resolve the forces acting on bodies moving on horizontal plane",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.7",
+                    "sno": "2.7",
+                    "topic": "Resolve the forces acting on bodies moving up on an inclined plane when the force applied i s (a) parallel to the plane(b) Parallel to the base",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.8",
+                    "sno": "2.8",
+                    "topic": "Resolve the forces acting on bodies moving down on an inclined plane when the force applied is (a) parallel to the plane(b) Parallel to the base",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.9",
+                    "sno": "2.9",
+                    "topic": "Solve the related numerical problems of the above cases",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.10",
+                    "sno": "2.10",
+                    "topic": "Solve problems on friction in screw jack",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.11",
+                    "sno": "2.11",
+                    "topic": "FRICTION Concept of Friction \u2013 Advantages and Disadvantages of friction \u2013 Friction in Engineering applications \u2013 Types of friction - Definition of static friction, dynamic friction - Laws of solid and dynamic friction \u2013 Terminology of friction: Coefficient of friction, Angle of friction and Angle of repose. Derivation of the expression for the force to be applied on a body moving on (i)Horizontal Plane (i)inclined plane moving upward and downwards. Screw friction; Numerical problems on the above cases",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.12",
+                    "sno": "2.12",
+                    "topic": "Deep dive into FRICTION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.13",
+                    "sno": "2.13",
+                    "topic": "Deep dive into Explain the concept of friction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.14",
+                    "sno": "2.14",
+                    "topic": "Deep dive into State the laws of friction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.15",
+                    "sno": "2.15",
+                    "topic": "Deep dive into Define i) angle of friction ii)angle of repose",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.16",
+                    "sno": "2.16",
+                    "topic": "Deep dive into Identify the machine members in which friction is desirable",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.17",
+                    "sno": "2.17",
+                    "topic": "Deep dive into Resolve the forces acting on bodies moving on horizontal plane",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.18",
+                    "sno": "2.18",
+                    "topic": "Deep dive into Resolve the forces acting on bodies moving up on an inclined plane when the force applied i s (a) parallel to the plane(b) Parallel to the base",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.19",
+                    "sno": "2.19",
+                    "topic": "Deep dive into Resolve the forces acting on bodies moving down on an inclined plane when the force applied is (a) parallel to the plane(b) Parallel to the base",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.20",
+                    "sno": "2.20",
+                    "topic": "Deep dive into Solve the related numerical problems of the above cases",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.21",
+                    "sno": "2.21",
+                    "topic": "Deep dive into Solve problems on friction in screw jack",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.22",
+                    "sno": "2.22",
+                    "topic": "Deep dive into FRICTION Concept of Friction \u2013 Advantages and Disadvantages of friction \u2013 Friction in Engineering applications \u2013 Types of friction - Definition of static friction, dynamic friction - Laws of solid and dynamic friction \u2013 Terminology of friction: Coefficient of friction, Angle of friction and Angle of repose. Derivation of the expression for the force to be applied on a body moving on (i)Horizontal Plane (i)inclined plane moving upward and downwards. Screw friction; Numerical problems on the above cases",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.23",
+                    "sno": "2.23",
+                    "topic": "Problem solving & practice on FRICTION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.24",
+                    "sno": "2.24",
+                    "topic": "Problem solving & practice on Explain the concept of friction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.25",
+                    "sno": "2.25",
+                    "topic": "Problem solving & practice on State the laws of friction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.26",
+                    "sno": "2.26",
+                    "topic": "Problem solving & practice on Define i) angle of friction ii)angle of repose",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.27",
+                    "sno": "2.27",
+                    "topic": "Problem solving & practice on Identify the machine members in which friction is desirable",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.28",
+                    "sno": "2.28",
+                    "topic": "Problem solving & practice on Resolve the forces acting on bodies moving on horizontal plane",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.29",
+                    "sno": "2.29",
+                    "topic": "Problem solving & practice on Resolve the forces acting on bodies moving up on an inclined plane when the force applied i s (a) parallel to the plane(b) Parallel to the base",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.30",
+                    "sno": "2.30",
+                    "topic": "Problem solving & practice on Resolve the forces acting on bodies moving down on an inclined plane when the force applied is (a) parallel to the plane(b) Parallel to the base",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.31",
+                    "sno": "2.31",
+                    "topic": "Problem solving & practice on Solve the related numerical problems of the above cases",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.32",
+                    "sno": "2.32",
+                    "topic": "Problem solving & practice on Solve problems on friction in screw jack",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.33",
+                    "sno": "2.33",
+                    "topic": "Problem solving & practice on FRICTION Concept of Friction \u2013 Advantages and Disadvantages of friction \u2013 Friction in Engineering applications \u2013 Types of friction - Definition of static friction, dynamic friction - Laws of solid and dynamic friction \u2013 Terminology of friction: Coefficient of friction, Angle of friction and Angle of repose. Derivation of the expression for the force to be applied on a body moving on (i)Horizontal Plane (i)inclined plane moving upward and downwards. Screw friction; Numerical problems on the above cases",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.34",
+                    "sno": "2.34",
+                    "topic": "Practical applications of FRICTION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-2.35",
+                    "sno": "2.35",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me105t-2.36",
+                    "sno": "2.36",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "GEOMETRICAL PROPERTIES OF SECTIONS",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "id": "26me105t-3.1",
+                    "sno": "3.1",
+                    "topic": "GEOMETRICAL PROPERTIES OF SECTIONS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.2",
+                    "sno": "3.2",
+                    "topic": "Define the terms i)centre of gravity ii)centre of mass and (iii) centroid",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.3",
+                    "sno": "3.3",
+                    "topic": "Write the differences among centre of gravity and centroid",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.4",
+                    "sno": "3.4",
+                    "topic": "State the need for finding the centroid and centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.5",
+                    "sno": "3.5",
+                    "topic": "Explain the method of determining the centroid by \u2018Method of moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.6",
+                    "sno": "3.6",
+                    "topic": "Determine the position of centroid of standard sections like -T, L, I, Z and Channel section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.7",
+                    "sno": "3.7",
+                    "topic": "Explain the meaning of the terms i)Moment of Inertia ii) Polar Moment of Inertia iii) Radius of gyration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.8",
+                    "sno": "3.8",
+                    "topic": "State the necessity of finding Moment of Inertia for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.9",
+                    "sno": "3.9",
+                    "topic": "Statements of (a)Parallel axes theorem and (b)Perpendicular axes theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.10",
+                    "sno": "3.10",
+                    "topic": "GEOMETRICAL PROPERTIES OF SECTIONS Geometric Properties of Sections \u2013 Definition of the terms centre of gravity, Centre of mass and centroid\u2013 Position of centroids of the plane geometrical figures such as square, rectangle, triangle, semi-circle(formulae only without derivations ) \u2013Problems to determine the Centroid of T - Section, L-Section I-section, Z-section and Channel sections only. Definitions of Centroidal Axes and Axis of symmetry - Moment of Inertia and Radius of Gyration \u2013 Statements only for (i) Parallel axes theorem and (i) Perpendicular axes theorem - Moment of Inertia of lamina of rectangle, circle, triangle sections - Calculation of Moment of Inertia of T - Section, L-Section (Equal& unequal lengths), I-section, Z-section and Channel sections only",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.11",
+                    "sno": "3.11",
+                    "topic": "Deep dive into GEOMETRICAL PROPERTIES OF SECTIONS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.12",
+                    "sno": "3.12",
+                    "topic": "Deep dive into Define the terms i)centre of gravity ii)centre of mass and (iii) centroid",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.13",
+                    "sno": "3.13",
+                    "topic": "Deep dive into Write the differences among centre of gravity and centroid",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.14",
+                    "sno": "3.14",
+                    "topic": "Deep dive into State the need for finding the centroid and centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.15",
+                    "sno": "3.15",
+                    "topic": "Deep dive into Explain the method of determining the centroid by \u2018Method of moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.16",
+                    "sno": "3.16",
+                    "topic": "Deep dive into Determine the position of centroid of standard sections like -T, L, I, Z and Channel section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.17",
+                    "sno": "3.17",
+                    "topic": "Deep dive into Explain the meaning of the terms i)Moment of Inertia ii) Polar Moment of Inertia iii) Radius of gyration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into State the necessity of finding Moment of Inertia for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.19",
+                    "sno": "3.19",
+                    "topic": "Deep dive into Statements of (a)Parallel axes theorem and (b)Perpendicular axes theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.20",
+                    "sno": "3.20",
+                    "topic": "Deep dive into GEOMETRICAL PROPERTIES OF SECTIONS Geometric Properties of Sections \u2013 Definition of the terms centre of gravity, Centre of mass and centroid\u2013 Position of centroids of the plane geometrical figures such as square, rectangle, triangle, semi-circle(formulae only without derivations ) \u2013Problems to determine the Centroid of T - Section, L-Section I-section, Z-section and Channel sections only. Definitions of Centroidal Axes and Axis of symmetry - Moment of Inertia and Radius of Gyration \u2013 Statements only for (i) Parallel axes theorem and (i) Perpendicular axes theorem - Moment of Inertia of lamina of rectangle, circle, triangle sections - Calculation of Moment of Inertia of T - Section, L-Section (Equal& unequal lengths), I-section, Z-section and Channel sections only",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.21",
+                    "sno": "3.21",
+                    "topic": "Problem solving & practice on GEOMETRICAL PROPERTIES OF SECTIONS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.22",
+                    "sno": "3.22",
+                    "topic": "Problem solving & practice on Define the terms i)centre of gravity ii)centre of mass and (iii) centroid",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.23",
+                    "sno": "3.23",
+                    "topic": "Problem solving & practice on Write the differences among centre of gravity and centroid",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.24",
+                    "sno": "3.24",
+                    "topic": "Problem solving & practice on State the need for finding the centroid and centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.25",
+                    "sno": "3.25",
+                    "topic": "Problem solving & practice on Explain the method of determining the centroid by \u2018Method of moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.26",
+                    "sno": "3.26",
+                    "topic": "Problem solving & practice on Determine the position of centroid of standard sections like -T, L, I, Z and Channel section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.27",
+                    "sno": "3.27",
+                    "topic": "Problem solving & practice on Explain the meaning of the terms i)Moment of Inertia ii) Polar Moment of Inertia iii) Radius of gyration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.28",
+                    "sno": "3.28",
+                    "topic": "Problem solving & practice on State the necessity of finding Moment of Inertia for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.29",
+                    "sno": "3.29",
+                    "topic": "Problem solving & practice on Statements of (a)Parallel axes theorem and (b)Perpendicular axes theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.30",
+                    "sno": "3.30",
+                    "topic": "Problem solving & practice on GEOMETRICAL PROPERTIES OF SECTIONS Geometric Properties of Sections \u2013 Definition of the terms centre of gravity, Centre of mass and centroid\u2013 Position of centroids of the plane geometrical figures such as square, rectangle, triangle, semi-circle(formulae only without derivations ) \u2013Problems to determine the Centroid of T - Section, L-Section I-section, Z-section and Channel sections only. Definitions of Centroidal Axes and Axis of symmetry - Moment of Inertia and Radius of Gyration \u2013 Statements only for (i) Parallel axes theorem and (i) Perpendicular axes theorem - Moment of Inertia of lamina of rectangle, circle, triangle sections - Calculation of Moment of Inertia of T - Section, L-Section (Equal& unequal lengths), I-section, Z-section and Channel sections only",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.31",
+                    "sno": "3.31",
+                    "topic": "Practical applications of GEOMETRICAL PROPERTIES OF SECTIONS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.32",
+                    "sno": "3.32",
+                    "topic": "Practical applications of Define the terms i)centre of gravity ii)centre of mass and (iii) centroid",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.33",
+                    "sno": "3.33",
+                    "topic": "Practical applications of Write the differences among centre of gravity and centroid",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.34",
+                    "sno": "3.34",
+                    "topic": "Practical applications of State the need for finding the centroid and centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-3.35",
+                    "sno": "3.35",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me105t-3.36",
+                    "sno": "3.36",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "DYNAMICS",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "id": "26me105t-4.1",
+                    "sno": "4.1",
+                    "topic": "DYNAMICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.2",
+                    "sno": "4.2",
+                    "topic": "Define the terms Kinematics and Kinetics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.3",
+                    "sno": "4.3",
+                    "topic": "Classify the types of motion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.4",
+                    "sno": "4.4",
+                    "topic": "Define the terms displacement, velocity and acceleration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.5",
+                    "sno": "4.5",
+                    "topic": "Write equations of motion(without derivation)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.6",
+                    "sno": "4.6",
+                    "topic": "Solve the problems related to the rectilinear motion of a particle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.7",
+                    "sno": "4.7",
+                    "topic": "Define energy and momentum",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.8",
+                    "sno": "4.8",
+                    "topic": "State Newton\u2019s laws of motion with expressions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.9",
+                    "sno": "4.9",
+                    "topic": "State the law of conservation of energy",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.10",
+                    "sno": "4.10",
+                    "topic": "Explain the Work- Energy principle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.11",
+                    "sno": "4.11",
+                    "topic": "State law of conservation of momentum",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.12",
+                    "sno": "4.12",
+                    "topic": "Explain the Impulse\u2013Momentum equation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.13",
+                    "sno": "4.13",
+                    "topic": "Solve problems using the above principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.14",
+                    "sno": "4.14",
+                    "topic": "Explain rotary motion and terms involved in rotary motion of a particle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.15",
+                    "sno": "4.15",
+                    "topic": "Write the equations of rotary motion of a particle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.16",
+                    "sno": "4.16",
+                    "topic": "Differentiate centripetal force and centrifugal force",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.17",
+                    "sno": "4.17",
+                    "topic": "Solve simple problems on rotary motion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.18",
+                    "sno": "4.18",
+                    "topic": "Describe simple harmonic motion with engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.19",
+                    "sno": "4.19",
+                    "topic": "Define the terms related to SHM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.20",
+                    "sno": "4.20",
+                    "topic": "Solve simple problems on simple harmonic motion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.21",
+                    "sno": "4.21",
+                    "topic": "DYNAMICS Definition and classification of Dynamics. Kinematics: Definition \u2013 Classification of motion - definition of displacement, time, velocity and acceleration \u2013 Equations of motion(without derivation)-Pr oblems related to the rectilinear motion of a particle. Kinetics: Definition \u2013 Momentum \u2013 Newton\u2019s Laws of motion- Statements and applications- Law of conservation of energy - Work-Energy principle \u2013 Law of conservation of momentum-Impulse\u2013 momentum equation-Problems on the above principles. Rotary motion of particle - laws of rotary motion \u2013 Terms involved in rotary motion \u2013 Differentiate centripetal and centrifugal forces- Simple problems. Simple Harmonic Motion: Definition \u2013 Characteristics - Terms of SHM such as frequency, time period, amplitude - Simple problems on SHM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.22",
+                    "sno": "4.22",
+                    "topic": "Deep dive into DYNAMICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.23",
+                    "sno": "4.23",
+                    "topic": "Deep dive into Define the terms Kinematics and Kinetics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.24",
+                    "sno": "4.24",
+                    "topic": "Deep dive into Classify the types of motion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.25",
+                    "sno": "4.25",
+                    "topic": "Deep dive into Define the terms displacement, velocity and acceleration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.26",
+                    "sno": "4.26",
+                    "topic": "Deep dive into Write equations of motion(without derivation)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.27",
+                    "sno": "4.27",
+                    "topic": "Deep dive into Solve the problems related to the rectilinear motion of a particle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.28",
+                    "sno": "4.28",
+                    "topic": "Deep dive into Define energy and momentum",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.29",
+                    "sno": "4.29",
+                    "topic": "Deep dive into State Newton\u2019s laws of motion with expressions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.30",
+                    "sno": "4.30",
+                    "topic": "Deep dive into State the law of conservation of energy",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.31",
+                    "sno": "4.31",
+                    "topic": "Deep dive into Explain the Work- Energy principle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.32",
+                    "sno": "4.32",
+                    "topic": "Deep dive into State law of conservation of momentum",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.33",
+                    "sno": "4.33",
+                    "topic": "Deep dive into Explain the Impulse\u2013Momentum equation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.34",
+                    "sno": "4.34",
+                    "topic": "Deep dive into Solve problems using the above principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-4.35",
+                    "sno": "4.35",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me105t-4.36",
+                    "sno": "4.36",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "SIMPLE MECHANISMS AND SIMPLE MACHINES",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "id": "26me105t-5.1",
+                    "sno": "5.1",
+                    "topic": "SIMPLE MECHANISMS AND SIMPLE MACHINES A) Simple Mechanisms",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.2",
+                    "sno": "5.2",
+                    "topic": "Define the terms i)kinematic link ii)kinematic pair iii)Kinematic chain iv)Mechanism v)Machine vi)Structure vii) inversion of mechanism",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.3",
+                    "sno": "5.3",
+                    "topic": "Write classification of kinematic pairs on different criteria",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.4",
+                    "sno": "5.4",
+                    "topic": "Explain the working principle of Quadratic cycle chain",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.5",
+                    "sno": "5.5",
+                    "topic": "Explain the important inversions of Quadric cycle chain with legible sketches",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.6",
+                    "sno": "5.6",
+                    "topic": "Explain the working principle of Slider Crank mechanism",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.7",
+                    "sno": "5.7",
+                    "topic": "Explain the important inversions of Slider Crank mechanism with legible sketches. B) Simple Machines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.8",
+                    "sno": "5.8",
+                    "topic": "Define the important terms related to Simple Machines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.9",
+                    "sno": "5.9",
+                    "topic": "Illustrate the use of three classes of simple lever",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.10",
+                    "sno": "5.10",
+                    "topic": "Explain the working and write mathematical expressions for the velocity ratio of i)Wheel & Axle, Differential Wheel and Axle ii)Pulleys iii) Worm & Worm wheel iv)Winch crabs v) Screw jack vi)Rack & Pinion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.11",
+                    "sno": "5.11",
+                    "topic": "Calculate the efficiency of the given machine",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.12",
+                    "sno": "5.12",
+                    "topic": "Calculate the effort required to raise and lower the load on screw jack under given conditions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.13",
+                    "sno": "5.13",
+                    "topic": "Explain Law of simple machine",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.14",
+                    "sno": "5.14",
+                    "topic": "Explain the conditions for self-locking",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.15",
+                    "sno": "5.15",
+                    "topic": "State the conditions for reversibility",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.16",
+                    "sno": "5.16",
+                    "topic": "SIMPLE MECHANISMS AND SIMPLE MACHINES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.17",
+                    "sno": "5.17",
+                    "topic": "Simple Mechanisms Define the terms kinematic link, kinematic pair, Kinematic Chain, Mechanism, Machine, Structure and inversion - classification of kinematic pairs on different criteria \u2013 nature of contact, relative motion and type of closure \u2013 Quadric cycle chain - Inversions of Quadric cycle chain: Beam engine, Coupling rod of a locomotive and Watt\u2019s straight line mechanism -Slider Crank Mechanism- Inversions of Slider Crank Chain",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.18",
+                    "sno": "5.18",
+                    "topic": "Simple Machines Definition of Simple Machine and uses of simple machines \u2013 Terminology such as Load, effort, Mechanical advantage, Velocity Ratio and Efficiency \u2013 Expressions for Velocity Ratio in case of levers, three systems of pulleys, Wheel and Axle, Differential wheel and axle, Worm and Worm wheel, Rack and Pinion, Winch Crabs, & Screw jack (Derivations omitted) - Simple problems on the above simple machines - Importance of Law of Simple Machine \u2013 Conditions for reversibility and self-locking of a machine. REFERENCEBOOKS 1 Engineering Mechanics Singer B.S. Publications 2 Engineering Mechanics K.L. Kumar TMH 3 Engineering Mechanics Timoshenko MGH 4 Mechanics of Solids S.S.BHAVIKATTI New Age 5 Engineering Mechanics SBTET Table specifying the scope of syllabus to be covered for Unit Test-I , II & III. 26ME105T :: ENGINEERING MECHANICS Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 2.8 Unit Test \u2013 II From 3.1 to 4.12 Unit Test \u2013 III From 4.13 to 5.12",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.19",
+                    "sno": "5.19",
+                    "topic": "Deep dive into SIMPLE MECHANISMS AND SIMPLE MACHINES A) Simple Mechanisms",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.20",
+                    "sno": "5.20",
+                    "topic": "Deep dive into Define the terms i)kinematic link ii)kinematic pair iii)Kinematic chain iv)Mechanism v)Machine vi)Structure vii) inversion of mechanism",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.21",
+                    "sno": "5.21",
+                    "topic": "Deep dive into Write classification of kinematic pairs on different criteria",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.22",
+                    "sno": "5.22",
+                    "topic": "Deep dive into Explain the working principle of Quadratic cycle chain",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.23",
+                    "sno": "5.23",
+                    "topic": "Deep dive into Explain the important inversions of Quadric cycle chain with legible sketches",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.24",
+                    "sno": "5.24",
+                    "topic": "Deep dive into Explain the working principle of Slider Crank mechanism",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.25",
+                    "sno": "5.25",
+                    "topic": "Deep dive into Explain the important inversions of Slider Crank mechanism with legible sketches. B) Simple Machines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.26",
+                    "sno": "5.26",
+                    "topic": "Deep dive into Define the important terms related to Simple Machines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.27",
+                    "sno": "5.27",
+                    "topic": "Deep dive into Illustrate the use of three classes of simple lever",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.28",
+                    "sno": "5.28",
+                    "topic": "Deep dive into Explain the working and write mathematical expressions for the velocity ratio of i)Wheel & Axle, Differential Wheel and Axle ii)Pulleys iii) Worm & Worm wheel iv)Winch crabs v) Screw jack vi)Rack & Pinion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.29",
+                    "sno": "5.29",
+                    "topic": "Deep dive into Calculate the efficiency of the given machine",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.30",
+                    "sno": "5.30",
+                    "topic": "Deep dive into Calculate the effort required to raise and lower the load on screw jack under given conditions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.31",
+                    "sno": "5.31",
+                    "topic": "Deep dive into Explain Law of simple machine",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.32",
+                    "sno": "5.32",
+                    "topic": "Deep dive into Explain the conditions for self-locking",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.33",
+                    "sno": "5.33",
+                    "topic": "Deep dive into State the conditions for reversibility",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.34",
+                    "sno": "5.34",
+                    "topic": "Deep dive into SIMPLE MECHANISMS AND SIMPLE MACHINES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me105t-5.35",
+                    "sno": "5.35",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me105t-5.36",
+                    "sno": "5.36",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

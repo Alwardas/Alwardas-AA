@@ -3,379 +3,673 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 18,
+            "title": "INTRODUCTION",
+            "totalPeriods": 15,
             "topics": [
                 {
+                    "id": "26me308d-1.1",
+                    "sno": "1.1",
                     "topic": "INTRODUCTION",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Importance of Machine Drawing and Production Drawing",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-1.1",
-                    "sno": "1.1"
-                },
-                {
-                    "topic": "Brief revision of 1st and 3rd angle projections",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me308d-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Importance of Machine Drawing and Production Drawing",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-1.3",
+                    "sno": "1.3",
+                    "topic": "Brief revision of 1st and 3rd angle projections",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-1.4",
+                    "sno": "1.4",
                     "topic": "Understand the concepts of Orthographic projections and Sectional views",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-1.1",
-                    "sno": "1.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-1.5",
+                    "sno": "1.5",
                     "topic": "Differentiate between machine drawing and production drawing",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-1.2",
-                    "sno": "1.2"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-1.6",
+                    "sno": "1.6",
                     "topic": "Explain abbreviations for materials, draughting abbreviations",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-1.3",
-                    "sno": "1.3"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-1.7",
+                    "sno": "1.7",
                     "topic": "State the factors that govern the preparation of a production drawing",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-1.4",
-                    "sno": "1.4"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-1.8",
+                    "sno": "1.8",
                     "topic": "Identify the components of a production drawing",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-1.5",
-                    "sno": "1.5"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-1.9",
+                    "sno": "1.9",
                     "topic": "Systems of fits-problems relating Hole basis and Shaft basis system and schematic diagrams- Select dimensions from B.I.S",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-1.1",
-                    "sno": "1.1"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-1.10",
+                    "sno": "1.10",
                     "topic": "Tables to obtain clearance, transition, and interference fit for a given set of mating parts",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-1.2",
-                    "sno": "1.2"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-1.11",
+                    "sno": "1.11",
                     "topic": "Selection of fits and tolerances from B.I.S. tables",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-1.3",
-                    "sno": "1.3"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-1.12",
+                    "sno": "1.12",
                     "topic": "Indicate fits on the drawings",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-1.4",
-                    "sno": "1.4"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Introduction and indication of form and position tolerances on drawings",
+                    "id": "26me308d-1.13",
+                    "sno": "1.13",
+                    "topic": "Introduction and indication of form and position tolerances on drawings; INTRODUCTION Drawing Sheet Sizes, drawing sheet layout, Titl e block, Stan...",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-1.5",
-                    "sno": "1.5"
+                    "type": "practical"
                 },
                 {
-                    "topic": "INTRODUCTION Drawing Sheet Sizes, drawing sheet layout, Titl e block, Standard abbreviations - Conventional representation of materials and machine components, method of indication notes on drawings, Importance of Machine Drawing, Brief revision of 1st and 3rd angle projections, Understand the concepts of Orthographic projections and Sectional views",
+                    "id": "26me308d-1.14",
+                    "sno": "1.14",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-1.0",
-                    "sno": "1.0"
+                    "type": "revision"
+                },
+                {
+                    "id": "26me308d-1.15",
+                    "sno": "1.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 18,
+            "title": "FASTENING DEVICES",
+            "totalPeriods": 15,
             "topics": [
                 {
-                    "topic": "FASTENING DEVICES",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26me308d-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Draw the standard thread profiles",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26me308d-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "FASTENING DEVICES",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Draw bolted connections to standard proportions",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26me308d-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Draw the standard thread profiles",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Draw different types of keys and cotters and Riveted Joints",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26me308d-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Draw bolted connections to standard proportions",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-2.4",
+                    "sno": "2.4",
+                    "topic": "Draw different types of keys and cotters and Riveted Joints",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-2.5",
+                    "sno": "2.5",
                     "topic": "FASTENING DEVICES Temporary and Permanent fastenings and their areas of application-thread nomenclature, forms of screw thread profiles, Bolts and Nuts: Specification of bolts and nuts, Different types of bolted joints (like usin g through bolts, studs, screws, eyebolt etc.,) in different applications. Purpose of lock nuts and their Types, Keys and cot ters: Types of keys and cotters. Riveted Joints- types",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26me308d-2.0",
-                    "sno": "2.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-2.6",
+                    "sno": "2.6",
+                    "topic": "Deep dive into FASTENING DEVICES",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-2.7",
+                    "sno": "2.7",
+                    "topic": "Deep dive into Draw the standard thread profiles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into Draw bolted connections to standard proportions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-2.9",
+                    "sno": "2.9",
+                    "topic": "Deep dive into Draw different types of keys and cotters and Riveted Joints",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-2.10",
+                    "sno": "2.10",
+                    "topic": "Deep dive into FASTENING DEVICES Temporary and Permanent fastenings and their areas of application-thread nomenclature, forms of screw thread profiles, Bolts and Nuts: Specification of bolts and nuts, Different types of bolted joints (like usin g through bolts, studs, screws, eyebolt etc.,) in different applications. Purpose of lock nuts and their Types, Keys and cot ters: Types of keys and cotters. Riveted Joints- types",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-2.11",
+                    "sno": "2.11",
+                    "topic": "Problem solving & practice on FASTENING DEVICES",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-2.12",
+                    "sno": "2.12",
+                    "topic": "Problem solving & practice on Draw the standard thread profiles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-2.13",
+                    "sno": "2.13",
+                    "topic": "Problem solving & practice on Draw bolted connections to standard proportions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-2.14",
+                    "sno": "2.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me308d-2.15",
+                    "sno": "2.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 18,
+            "title": "WELDING AND PIPING LAYOUTS AND JOINTS",
+            "totalPeriods": 15,
             "topics": [
                 {
+                    "id": "26me308d-3.1",
+                    "sno": "3.1",
                     "topic": "WELDING AND PIPING LAYOUTS AND JOINTS",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-3.0",
-                    "sno": "3.0"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Identify the common components of a piping layout",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Identify the conventional symbols used for the various components of piping layout",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me308d-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Identify the common components of a piping layout",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Prepare single-line and double-line diagrams of piping layouts",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me308d-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Identify the conventional symbols used for the various components of piping layout",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Identify the different types of welds and their symbolic representation as per B.I.S., SP- 46 2003",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me308d-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Prepare single-line and double-line diagrams of piping layouts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Identify the elements of the welding symbol and their standard location on the symbol",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me308d-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Identify the different types of welds and their symbolic representation as per B.I.S., SP- 46 2003",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-3.6",
+                    "sno": "3.6",
+                    "topic": "Identify the elements of the welding symbol and their standard location on the symbol",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-3.7",
+                    "sno": "3.7",
                     "topic": "Explain Symbols indicating surface texture",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-3.1",
-                    "sno": "3.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-3.8",
+                    "sno": "3.8",
                     "topic": "Surface roughness obtainable from various manufacturing processes, recommended surface roughness on mechanical components",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-3.2",
-                    "sno": "3.2"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-3.9",
+                    "sno": "3.9",
                     "topic": "Symbols representing direction of lay",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-3.3",
-                    "sno": "3.3"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-3.10",
+                    "sno": "3.10",
                     "topic": "Heat treatment and surface treatment symbols used on drawings",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-3.4",
-                    "sno": "3.4"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-3.11",
+                    "sno": "3.11",
                     "topic": "WELDING AND PIPING LAYOUTS AND JOINTS Pipes and tubes. Classification-Components of pipe layout. Screw fitting Unions: Screwed ground and flanged, Valves: Gate valve, angle valve, check valve, Various conventional symbols used for the above components. Different types of welded Joints - basic symbols including sectional representation as per table of I.S. standards - Elements of welding symbol and their standard location, the symbol as per IS standards reference Code, arrow head, weld symbol, supplementary symbol, dimensions of welds, method of welding process, special reference. Supplementary symbols",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-3.0",
-                    "sno": "3.0"
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-3.12",
+                    "sno": "3.12",
+                    "topic": "Deep dive into WELDING AND PIPING LAYOUTS AND JOINTS",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-3.13",
+                    "sno": "3.13",
+                    "topic": "Deep dive into Identify the common components of a piping layout",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-3.14",
+                    "sno": "3.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me308d-3.15",
+                    "sno": "3.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
+            "title": "FITS, TOLERANCES &ENGINEERING MATERIALS",
+            "totalPeriods": 15,
             "topics": [
                 {
+                    "id": "26me308d-4.1",
+                    "sno": "4.1",
                     "topic": "Limits, Fits & Tolerances 3",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-4.1",
-                    "sno": "4.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-4.2",
+                    "sno": "4.2",
                     "topic": "Geometrical Tolerances 3",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-4.2",
-                    "sno": "4.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Surface finish 3",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me308d-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Surface finish 3",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-4.4",
+                    "sno": "4.4",
                     "topic": "FITS, TOLERANCES &ENGINEERING MATERIALS",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-4.0",
-                    "sno": "4.0"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-4.5",
+                    "sno": "4.5",
                     "topic": "Limits, Fits & Tolerances",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-4.1",
-                    "sno": "4.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-4.6",
+                    "sno": "4.6",
                     "topic": "Importance of geometrical tolerances & indicating geometrical tolerances on the drawing",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-4.2",
-                    "sno": "4.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-4.7",
+                    "sno": "4.7",
                     "topic": "Surface finish",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-4.3",
-                    "sno": "4.3"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-4.8",
+                    "sno": "4.8",
                     "topic": "Specification of materials and Standard Components",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-4.4",
-                    "sno": "4.4"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-4.9",
+                    "sno": "4.9",
                     "topic": "Identify the materials of various components",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-4.1",
-                    "sno": "4.1"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-4.10",
+                    "sno": "4.10",
                     "topic": "Specify the Raw materials as per Commercial/ BIS Standards",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-4.2",
-                    "sno": "4.2"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-4.11",
+                    "sno": "4.11",
                     "topic": "Identify the standard part that can be procured directly from the market and specify the part as per Commercial/ BIS Standards",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-4.3",
-                    "sno": "4.3"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-4.12",
+                    "sno": "4.12",
                     "topic": "FITS, TOLERANCES & ENGINEERING MATERIALS Limits, allowance and fits -definitions- Select dimension from standards to give different type of fit for a given mating parts, Types of fits - problems relating Hole basis and Shaft basis system and schematic diagrams - Select dimensions from B. I. S. Tables to obtain clearance, transition and interference fit for a given set of mating parts, Select ion of fits and tolerances from B. I. S. tables, Indicate fits on the drawings. Indication of geometrical tolerance on the drawing, indication of feature controlled, form and position tolerances on drawings, Surface roughness terminology- surface roughness values, surface roughness obtainable from various manufacturing processes, recommended surface roughness on mechanical components. Materials of the parts of the assembly -size of the part, estimation of the Raw material required for a component and specification. Standard components: Parts like bolts, nuts, and Bearings, etc",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me308d-4.0",
-                    "sno": "4.0"
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-4.13",
+                    "sno": "4.13",
+                    "topic": "Deep dive into Limits, Fits & Tolerances 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-4.14",
+                    "sno": "4.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me308d-4.15",
+                    "sno": "4.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
+            "title": "ASSEMBLY AND DETAILED PART DRAWING",
+            "totalPeriods": 15,
             "topics": [
                 {
-                    "topic": "ASSEMBLY AND DETAILED PART DRAWING",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26me308d-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "Indicate the sequence of the production",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26me308d-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "ASSEMBLY AND DETAILED PART DRAWING",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "List the sequence of steps for preparing the assembly drawing",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26me308d-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Indicate the sequence of the production",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Prepare the list of parts",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26me308d-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "List the sequence of steps for preparing the assembly drawing",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Prepare the assembly drawing for the given components drawing",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me308d-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Prepare the list of parts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Prepare the relevant views of the parts of the assembly drawing",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me308d-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Prepare the assembly drawing for the given components drawing",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me308d-5.6",
+                    "sno": "5.6",
+                    "topic": "Prepare the relevant views of the parts of the assembly drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-5.7",
+                    "sno": "5.7",
                     "topic": "ASSEMBLY AND DETAILED PART DRAWING Need and functions of assembly and detailed drawings. Steps in preparing assembly drawings. Bill of materials and parts list. Exercises in preparing assembly drawings of commonly available engineering components. Indicate the sequence of the production, specify the relevant tools to obtain the accuracy and finish. Indicate the suitable equipment, specify the type of measuring instruments to be used to check the prescribed accuracy, and specify of standard components. Prepare Assembly and detailed part drawings of the machine components of the following machine parts: Draw only the front view and top view (Full Section / Half Section with dimensions, including the Bill of materials, of the machine elements in the Drawing Sheet. Knuckle Joint Flanged Coupling Stuffing Box Cross head Eccentric Foot Step bearing Plummer Block Screw Jack Lathe Tool post",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me308d-5.0",
-                    "sno": "5.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-5.8",
+                    "sno": "5.8",
+                    "topic": "Deep dive into ASSEMBLY AND DETAILED PART DRAWING",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-5.9",
+                    "sno": "5.9",
+                    "topic": "Deep dive into Indicate the sequence of the production",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-5.10",
+                    "sno": "5.10",
+                    "topic": "Deep dive into List the sequence of steps for preparing the assembly drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-5.11",
+                    "sno": "5.11",
+                    "topic": "Deep dive into Prepare the list of parts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-5.12",
+                    "sno": "5.12",
+                    "topic": "Deep dive into Prepare the assembly drawing for the given components drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-5.13",
+                    "sno": "5.13",
+                    "topic": "Deep dive into Prepare the relevant views of the parts of the assembly drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-5.14",
+                    "sno": "5.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me308d-5.15",
+                    "sno": "5.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "CAD MODELLING",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "26me308d-6.1",
+                    "sno": "6.1",
+                    "topic": "CAD MODELLING",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.2",
+                    "sno": "6.2",
+                    "topic": "CAD MODELLING Parametric CAD software (in any one of the above -mentioned software) \u2013 sketch \u2013entities: line \u2013 circle \u2013 arc \u2013 ellipse \u2013 polygon \u2013 text \u2013 dimensions \u2013sketch tools \u2013 fillet \u2013 chamfer \u2013 offset \u2013 trim \u2013 extend \u2013 mirror \u2013 rotate \u2013 block. Part modelling\u2013 reference planes \u2013 reference point \u2013 reference axes \u2013 coordinate system. Parametric CAD software \u2013 extrude \u2013 revolve \u2013 sweep \u2013 helix and spiral \u2013 shell \u2013 draft \u2013 wrap \u2013 intersect \u2013 holes \u2013 patterns. Assembly \u2013 approaches \u2013 mate \u2013 coincident \u2013 sub assembly \u2013rebuild \u2013 isolate. Drawing views\u2013Save \u2013 Plot \u2013 model view \u2013 exploded view \u2013 projected view \u2013 section view \u2013 import\u2013 export \u2013 Appearance \u2013 rendering. COMPUTER AIDED DRAFTING (CAD) Detailed drawings of any five of the above machine parts shall be given to students to create both part drawings and assembly drawings in CAD software, generate solid models, and take printouts REFERENCE BOOK 1. Engineering Drawing by A.C. Parkinson. 2. Machine Drawing by N.D. Bhat. 3. Machine Drawing by R.B. Gupta. 4. Machine Drawing by N.Siddeswar, Kannaih, Sastri. (MGH Publishers) 5. IS 696 \u2013 1972-Code of Practice for General Engg. Drawing & B.I.S Code\u2013 SP. 46. IS696\u2013 1988-IS Code on fits and tolerances. 6. K.L. Narayana, P. Kannaiah, & K. Venkata Reddy \u201c A Textbook of Machine Drawing\u201d 7. R.K. Jain, Engineering Metrology, 2016 Khanna Publications 8. Machine Drawing by G.R Nagpal 9. Production Drawing by K.L. Narayana, P. Kannaiah, & K. Venkata Reddy Assessment: Formative Assessment: 40 Marks 20 Marks: Based on the sheets submitted by the students. 20 Marks: Awarded after conducting unit tests on CAD modelling. Summative Assessment: 60 Marks Part A: Four questions from Part A of the curriculum (4 \u00d7 5 = 20 Marks). Part B: One question to be answered out of two options: (1 \u00d7 40 = 40 Marks). Option 1: Assembly Drawing Option 2: Part Drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.3",
+                    "sno": "6.3",
+                    "topic": "Deep dive into CAD MODELLING",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.4",
+                    "sno": "6.4",
+                    "topic": "Deep dive into CAD MODELLING Parametric CAD software (in any one of the above -mentioned software) \u2013 sketch \u2013entities: line \u2013 circle \u2013 arc \u2013 ellipse \u2013 polygon \u2013 text \u2013 dimensions \u2013sketch tools \u2013 fillet \u2013 chamfer \u2013 offset \u2013 trim \u2013 extend \u2013 mirror \u2013 rotate \u2013 block. Part modelling\u2013 reference planes \u2013 reference point \u2013 reference axes \u2013 coordinate system. Parametric CAD software \u2013 extrude \u2013 revolve \u2013 sweep \u2013 helix and spiral \u2013 shell \u2013 draft \u2013 wrap \u2013 intersect \u2013 holes \u2013 patterns. Assembly \u2013 approaches \u2013 mate \u2013 coincident \u2013 sub assembly \u2013rebuild \u2013 isolate. Drawing views\u2013Save \u2013 Plot \u2013 model view \u2013 exploded view \u2013 projected view \u2013 section view \u2013 import\u2013 export \u2013 Appearance \u2013 rendering. COMPUTER AIDED DRAFTING (CAD) Detailed drawings of any five of the above machine parts shall be given to students to create both part drawings and assembly drawings in CAD software, generate solid models, and take printouts REFERENCE BOOK 1. Engineering Drawing by A.C. Parkinson. 2. Machine Drawing by N.D. Bhat. 3. Machine Drawing by R.B. Gupta. 4. Machine Drawing by N.Siddeswar, Kannaih, Sastri. (MGH Publishers) 5. IS 696 \u2013 1972-Code of Practice for General Engg. Drawing & B.I.S Code\u2013 SP. 46. IS696\u2013 1988-IS Code on fits and tolerances. 6. K.L. Narayana, P. Kannaiah, & K. Venkata Reddy \u201c A Textbook of Machine Drawing\u201d 7. R.K. Jain, Engineering Metrology, 2016 Khanna Publications 8. Machine Drawing by G.R Nagpal 9. Production Drawing by K.L. Narayana, P. Kannaiah, & K. Venkata Reddy Assessment: Formative Assessment: 40 Marks 20 Marks: Based on the sheets submitted by the students. 20 Marks: Awarded after conducting unit tests on CAD modelling. Summative Assessment: 60 Marks Part A: Four questions from Part A of the curriculum (4 \u00d7 5 = 20 Marks). Part B: One question to be answered out of two options: (1 \u00d7 40 = 40 Marks). Option 1: Assembly Drawing Option 2: Part Drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.5",
+                    "sno": "6.5",
+                    "topic": "Problem solving & practice on CAD MODELLING",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.6",
+                    "sno": "6.6",
+                    "topic": "Problem solving & practice on CAD MODELLING Parametric CAD software (in any one of the above -mentioned software) \u2013 sketch \u2013entities: line \u2013 circle \u2013 arc \u2013 ellipse \u2013 polygon \u2013 text \u2013 dimensions \u2013sketch tools \u2013 fillet \u2013 chamfer \u2013 offset \u2013 trim \u2013 extend \u2013 mirror \u2013 rotate \u2013 block. Part modelling\u2013 reference planes \u2013 reference point \u2013 reference axes \u2013 coordinate system. Parametric CAD software \u2013 extrude \u2013 revolve \u2013 sweep \u2013 helix and spiral \u2013 shell \u2013 draft \u2013 wrap \u2013 intersect \u2013 holes \u2013 patterns. Assembly \u2013 approaches \u2013 mate \u2013 coincident \u2013 sub assembly \u2013rebuild \u2013 isolate. Drawing views\u2013Save \u2013 Plot \u2013 model view \u2013 exploded view \u2013 projected view \u2013 section view \u2013 import\u2013 export \u2013 Appearance \u2013 rendering. COMPUTER AIDED DRAFTING (CAD) Detailed drawings of any five of the above machine parts shall be given to students to create both part drawings and assembly drawings in CAD software, generate solid models, and take printouts REFERENCE BOOK 1. Engineering Drawing by A.C. Parkinson. 2. Machine Drawing by N.D. Bhat. 3. Machine Drawing by R.B. Gupta. 4. Machine Drawing by N.Siddeswar, Kannaih, Sastri. (MGH Publishers) 5. IS 696 \u2013 1972-Code of Practice for General Engg. Drawing & B.I.S Code\u2013 SP. 46. IS696\u2013 1988-IS Code on fits and tolerances. 6. K.L. Narayana, P. Kannaiah, & K. Venkata Reddy \u201c A Textbook of Machine Drawing\u201d 7. R.K. Jain, Engineering Metrology, 2016 Khanna Publications 8. Machine Drawing by G.R Nagpal 9. Production Drawing by K.L. Narayana, P. Kannaiah, & K. Venkata Reddy Assessment: Formative Assessment: 40 Marks 20 Marks: Based on the sheets submitted by the students. 20 Marks: Awarded after conducting unit tests on CAD modelling. Summative Assessment: 60 Marks Part A: Four questions from Part A of the curriculum (4 \u00d7 5 = 20 Marks). Part B: One question to be answered out of two options: (1 \u00d7 40 = 40 Marks). Option 1: Assembly Drawing Option 2: Part Drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.7",
+                    "sno": "6.7",
+                    "topic": "Practical applications of CAD MODELLING",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.8",
+                    "sno": "6.8",
+                    "topic": "Practical applications of CAD MODELLING Parametric CAD software (in any one of the above -mentioned software) \u2013 sketch \u2013entities: line \u2013 circle \u2013 arc \u2013 ellipse \u2013 polygon \u2013 text \u2013 dimensions \u2013sketch tools \u2013 fillet \u2013 chamfer \u2013 offset \u2013 trim \u2013 extend \u2013 mirror \u2013 rotate \u2013 block. Part modelling\u2013 reference planes \u2013 reference point \u2013 reference axes \u2013 coordinate system. Parametric CAD software \u2013 extrude \u2013 revolve \u2013 sweep \u2013 helix and spiral \u2013 shell \u2013 draft \u2013 wrap \u2013 intersect \u2013 holes \u2013 patterns. Assembly \u2013 approaches \u2013 mate \u2013 coincident \u2013 sub assembly \u2013rebuild \u2013 isolate. Drawing views\u2013Save \u2013 Plot \u2013 model view \u2013 exploded view \u2013 projected view \u2013 section view \u2013 import\u2013 export \u2013 Appearance \u2013 rendering. COMPUTER AIDED DRAFTING (CAD) Detailed drawings of any five of the above machine parts shall be given to students to create both part drawings and assembly drawings in CAD software, generate solid models, and take printouts REFERENCE BOOK 1. Engineering Drawing by A.C. Parkinson. 2. Machine Drawing by N.D. Bhat. 3. Machine Drawing by R.B. Gupta. 4. Machine Drawing by N.Siddeswar, Kannaih, Sastri. (MGH Publishers) 5. IS 696 \u2013 1972-Code of Practice for General Engg. Drawing & B.I.S Code\u2013 SP. 46. IS696\u2013 1988-IS Code on fits and tolerances. 6. K.L. Narayana, P. Kannaiah, & K. Venkata Reddy \u201c A Textbook of Machine Drawing\u201d 7. R.K. Jain, Engineering Metrology, 2016 Khanna Publications 8. Machine Drawing by G.R Nagpal 9. Production Drawing by K.L. Narayana, P. Kannaiah, & K. Venkata Reddy Assessment: Formative Assessment: 40 Marks 20 Marks: Based on the sheets submitted by the students. 20 Marks: Awarded after conducting unit tests on CAD modelling. Summative Assessment: 60 Marks Part A: Four questions from Part A of the curriculum (4 \u00d7 5 = 20 Marks). Part B: One question to be answered out of two options: (1 \u00d7 40 = 40 Marks). Option 1: Assembly Drawing Option 2: Part Drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.9",
+                    "sno": "6.9",
+                    "topic": "Practical applications of CAD MODELLING",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.10",
+                    "sno": "6.10",
+                    "topic": "Practical applications of CAD MODELLING Parametric CAD software (in any one of the above -mentioned software) \u2013 sketch \u2013entities: line \u2013 circle \u2013 arc \u2013 ellipse \u2013 polygon \u2013 text \u2013 dimensions \u2013sketch tools \u2013 fillet \u2013 chamfer \u2013 offset \u2013 trim \u2013 extend \u2013 mirror \u2013 rotate \u2013 block. Part modelling\u2013 reference planes \u2013 reference point \u2013 reference axes \u2013 coordinate system. Parametric CAD software \u2013 extrude \u2013 revolve \u2013 sweep \u2013 helix and spiral \u2013 shell \u2013 draft \u2013 wrap \u2013 intersect \u2013 holes \u2013 patterns. Assembly \u2013 approaches \u2013 mate \u2013 coincident \u2013 sub assembly \u2013rebuild \u2013 isolate. Drawing views\u2013Save \u2013 Plot \u2013 model view \u2013 exploded view \u2013 projected view \u2013 section view \u2013 import\u2013 export \u2013 Appearance \u2013 rendering. COMPUTER AIDED DRAFTING (CAD) Detailed drawings of any five of the above machine parts shall be given to students to create both part drawings and assembly drawings in CAD software, generate solid models, and take printouts REFERENCE BOOK 1. Engineering Drawing by A.C. Parkinson. 2. Machine Drawing by N.D. Bhat. 3. Machine Drawing by R.B. Gupta. 4. Machine Drawing by N.Siddeswar, Kannaih, Sastri. (MGH Publishers) 5. IS 696 \u2013 1972-Code of Practice for General Engg. Drawing & B.I.S Code\u2013 SP. 46. IS696\u2013 1988-IS Code on fits and tolerances. 6. K.L. Narayana, P. Kannaiah, & K. Venkata Reddy \u201c A Textbook of Machine Drawing\u201d 7. R.K. Jain, Engineering Metrology, 2016 Khanna Publications 8. Machine Drawing by G.R Nagpal 9. Production Drawing by K.L. Narayana, P. Kannaiah, & K. Venkata Reddy Assessment: Formative Assessment: 40 Marks 20 Marks: Based on the sheets submitted by the students. 20 Marks: Awarded after conducting unit tests on CAD modelling. Summative Assessment: 60 Marks Part A: Four questions from Part A of the curriculum (4 \u00d7 5 = 20 Marks). Part B: One question to be answered out of two options: (1 \u00d7 40 = 40 Marks). Option 1: Assembly Drawing Option 2: Part Drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.11",
+                    "sno": "6.11",
+                    "topic": "Practical applications of CAD MODELLING",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.12",
+                    "sno": "6.12",
+                    "topic": "Practical applications of CAD MODELLING Parametric CAD software (in any one of the above -mentioned software) \u2013 sketch \u2013entities: line \u2013 circle \u2013 arc \u2013 ellipse \u2013 polygon \u2013 text \u2013 dimensions \u2013sketch tools \u2013 fillet \u2013 chamfer \u2013 offset \u2013 trim \u2013 extend \u2013 mirror \u2013 rotate \u2013 block. Part modelling\u2013 reference planes \u2013 reference point \u2013 reference axes \u2013 coordinate system. Parametric CAD software \u2013 extrude \u2013 revolve \u2013 sweep \u2013 helix and spiral \u2013 shell \u2013 draft \u2013 wrap \u2013 intersect \u2013 holes \u2013 patterns. Assembly \u2013 approaches \u2013 mate \u2013 coincident \u2013 sub assembly \u2013rebuild \u2013 isolate. Drawing views\u2013Save \u2013 Plot \u2013 model view \u2013 exploded view \u2013 projected view \u2013 section view \u2013 import\u2013 export \u2013 Appearance \u2013 rendering. COMPUTER AIDED DRAFTING (CAD) Detailed drawings of any five of the above machine parts shall be given to students to create both part drawings and assembly drawings in CAD software, generate solid models, and take printouts REFERENCE BOOK 1. Engineering Drawing by A.C. Parkinson. 2. Machine Drawing by N.D. Bhat. 3. Machine Drawing by R.B. Gupta. 4. Machine Drawing by N.Siddeswar, Kannaih, Sastri. (MGH Publishers) 5. IS 696 \u2013 1972-Code of Practice for General Engg. Drawing & B.I.S Code\u2013 SP. 46. IS696\u2013 1988-IS Code on fits and tolerances. 6. K.L. Narayana, P. Kannaiah, & K. Venkata Reddy \u201c A Textbook of Machine Drawing\u201d 7. R.K. Jain, Engineering Metrology, 2016 Khanna Publications 8. Machine Drawing by G.R Nagpal 9. Production Drawing by K.L. Narayana, P. Kannaiah, & K. Venkata Reddy Assessment: Formative Assessment: 40 Marks 20 Marks: Based on the sheets submitted by the students. 20 Marks: Awarded after conducting unit tests on CAD modelling. Summative Assessment: 60 Marks Part A: Four questions from Part A of the curriculum (4 \u00d7 5 = 20 Marks). Part B: One question to be answered out of two options: (1 \u00d7 40 = 40 Marks). Option 1: Assembly Drawing Option 2: Part Drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.13",
+                    "sno": "6.13",
+                    "topic": "Practical applications of CAD MODELLING",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me308d-6.14",
+                    "sno": "6.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me308d-6.15",
+                    "sno": "6.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

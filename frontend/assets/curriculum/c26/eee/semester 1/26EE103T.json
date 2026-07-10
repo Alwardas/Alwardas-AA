@@ -2,107 +2,653 @@
     "regulation": "C26",
     "units": [
         {
-            "unitNo": 5,
-            "title": "ector, position vector,",
-            "totalPeriods": 90,
+            "unitNo": 1,
+            "title": "Units and Measurements",
+            "totalPeriods": 69,
             "topics": [
                 {
-                    "topic": "Define work done; Mention its SI unit",
-                    "period": 7,
-                    "type": "theory",
-                    "id": "26ee103t-5.1",
-                    "sno": "5.1"
+                    "id": "26ee103t-1.1",
+                    "sno": "1.1",
+                    "topic": "Introduction to Units and Measurements",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define power; Mention its SI unit",
-                    "period": 7,
-                    "type": "theory",
-                    "id": "26ee103t-5.2",
-                    "sno": "5.2"
+                    "id": "26ee103t-1.2",
+                    "sno": "1.2",
+                    "topic": "Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define energy; Mention its SI unit",
-                    "period": 7,
-                    "type": "theory",
-                    "id": "26ee103t-5.3",
-                    "sno": "5.3"
+                    "id": "26ee103t-1.3",
+                    "sno": "1.3",
+                    "topic": "Explain the concept of units in measurement",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List various forms of energy",
-                    "period": 7,
-                    "type": "theory",
-                    "id": "26ee103t-5.4",
-                    "sno": "5.4"
+                    "id": "26ee103t-1.4",
+                    "sno": "1.4",
+                    "topic": "Define the term 'unit'",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define potential energy; Give examples and derive its equation",
-                    "period": 7,
-                    "type": "theory",
-                    "id": "26ee103t-5.5",
-                    "sno": "5.5"
+                    "id": "26ee103t-1.5",
+                    "sno": "1.5",
+                    "topic": "Define fundamental units and derived units",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define kinetic energy; Give examples and derive its equation",
-                    "period": 7,
-                    "type": "theory",
-                    "id": "26ee103t-5.6",
-                    "sno": "5.6"
+                    "id": "26ee103t-1.6",
+                    "sno": "1.6",
+                    "topic": "State the SI units of fundamental quantities along with their symbols",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive the relationship between kinetic energy and linear momentum",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee103t-5.7",
-                    "sno": "5.7"
+                    "id": "26ee103t-1.7",
+                    "sno": "1.7",
+                    "topic": "State the common multiples and submultiples used in the SI system",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the law of conservation of energy; Give any two examples",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee103t-5.8",
-                    "sno": "5.8"
+                    "id": "26ee103t-1.8",
+                    "sno": "1.8",
+                    "topic": "State the rules for writing SI units",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State Boyle\u2019s law; Write its equation",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee103t-5.9",
-                    "sno": "5.9"
+                    "id": "26ee103t-1.9",
+                    "sno": "1.9",
+                    "topic": "State the advantages of using SI units",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State Charles\u2019s volume law; Write its equation",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee103t-5.10",
-                    "sno": "5.10"
+                    "id": "26ee103t-1.10",
+                    "sno": "1.10",
+                    "topic": "Differentiate between direct and indirect measurements",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State Charles\u2019s pressure law; Write its equation",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee103t-5.11",
-                    "sno": "5.11"
+                    "id": "26ee103t-1.11",
+                    "sno": "1.11",
+                    "topic": "Define accuracy and least count in the context of measurement",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define an Ideal gas",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee103t-5.12",
-                    "sno": "5.12"
+                    "id": "26ee103t-1.12",
+                    "sno": "1.12",
+                    "topic": "Define error in measurement",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive the ideal gas equation (PV = nRT)",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee103t-5.13",
-                    "sno": "5.13"
+                    "id": "26ee103t-1.13",
+                    "sno": "1.13",
+                    "topic": "Define absolute, relative and percentage errors and state their respective  \n        formulae",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Solve numerical problems on (i) Work done (ii) Potential energy (iii) Kinetic energy (iv) Relation between K.E. and momentum (v) Gas laws 6 CONCEPTS OF ACOUSTICS",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee103t-5.14",
-                    "sno": "5.14"
+                    "id": "26ee103t-1.14",
+                    "sno": "1.14",
+                    "topic": "Solve numerical problems on errors in measurements. \n \n2 ELEMENTS OF VECTORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into Introduction to Units and Measurements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.17",
+                    "sno": "1.17",
+                    "topic": "Deep dive into Explain the concept of units in measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Define the term 'unit'",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Define fundamental units and derived units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into State the SI units of fundamental quantities along with their symbols",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into State the common multiples and submultiples used in the SI system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into State the rules for writing SI units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.23",
+                    "sno": "1.23",
+                    "topic": "Deep dive into State the advantages of using SI units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.24",
+                    "sno": "1.24",
+                    "topic": "Deep dive into Differentiate between direct and indirect measurements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.25",
+                    "sno": "1.25",
+                    "topic": "Deep dive into Define accuracy and least count in the context of measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.26",
+                    "sno": "1.26",
+                    "topic": "Deep dive into Define error in measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.27",
+                    "sno": "1.27",
+                    "topic": "Deep dive into Define absolute, relative and percentage errors and state their respective  \n        formulae",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.28",
+                    "sno": "1.28",
+                    "topic": "Deep dive into Solve numerical problems on errors in measurements. \n \n2 ELEMENTS OF VECTORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.29",
+                    "sno": "1.29",
+                    "topic": "Problem solving & practice on Introduction to Units and Measurements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.30",
+                    "sno": "1.30",
+                    "topic": "Problem solving & practice on Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.31",
+                    "sno": "1.31",
+                    "topic": "Problem solving & practice on Explain the concept of units in measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.32",
+                    "sno": "1.32",
+                    "topic": "Problem solving & practice on Define the term 'unit'",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.33",
+                    "sno": "1.33",
+                    "topic": "Problem solving & practice on Define fundamental units and derived units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.34",
+                    "sno": "1.34",
+                    "topic": "Problem solving & practice on State the SI units of fundamental quantities along with their symbols",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.35",
+                    "sno": "1.35",
+                    "topic": "Problem solving & practice on State the common multiples and submultiples used in the SI system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.36",
+                    "sno": "1.36",
+                    "topic": "Problem solving & practice on State the rules for writing SI units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.37",
+                    "sno": "1.37",
+                    "topic": "Problem solving & practice on State the advantages of using SI units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.38",
+                    "sno": "1.38",
+                    "topic": "Problem solving & practice on Differentiate between direct and indirect measurements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.39",
+                    "sno": "1.39",
+                    "topic": "Problem solving & practice on Define accuracy and least count in the context of measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.40",
+                    "sno": "1.40",
+                    "topic": "Problem solving & practice on Define error in measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.41",
+                    "sno": "1.41",
+                    "topic": "Problem solving & practice on Define absolute, relative and percentage errors and state their respective  \n        formulae",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.42",
+                    "sno": "1.42",
+                    "topic": "Problem solving & practice on Solve numerical problems on errors in measurements. \n \n2 ELEMENTS OF VECTORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.43",
+                    "sno": "1.43",
+                    "topic": "Practical applications of Introduction to Units and Measurements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.44",
+                    "sno": "1.44",
+                    "topic": "Practical applications of Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.45",
+                    "sno": "1.45",
+                    "topic": "Practical applications of Explain the concept of units in measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.46",
+                    "sno": "1.46",
+                    "topic": "Practical applications of Define the term 'unit'",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.47",
+                    "sno": "1.47",
+                    "topic": "Practical applications of Define fundamental units and derived units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.48",
+                    "sno": "1.48",
+                    "topic": "Practical applications of State the SI units of fundamental quantities along with their symbols",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.49",
+                    "sno": "1.49",
+                    "topic": "Practical applications of State the common multiples and submultiples used in the SI system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.50",
+                    "sno": "1.50",
+                    "topic": "Practical applications of State the rules for writing SI units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.51",
+                    "sno": "1.51",
+                    "topic": "Practical applications of State the advantages of using SI units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.52",
+                    "sno": "1.52",
+                    "topic": "Practical applications of Differentiate between direct and indirect measurements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.53",
+                    "sno": "1.53",
+                    "topic": "Practical applications of Define accuracy and least count in the context of measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.54",
+                    "sno": "1.54",
+                    "topic": "Practical applications of Define error in measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.55",
+                    "sno": "1.55",
+                    "topic": "Practical applications of Define absolute, relative and percentage errors and state their respective  \n        formulae",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.56",
+                    "sno": "1.56",
+                    "topic": "Practical applications of Solve numerical problems on errors in measurements. \n \n2 ELEMENTS OF VECTORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.57",
+                    "sno": "1.57",
+                    "topic": "Practical applications of Introduction to Units and Measurements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.58",
+                    "sno": "1.58",
+                    "topic": "Practical applications of Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.59",
+                    "sno": "1.59",
+                    "topic": "Practical applications of Explain the concept of units in measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.60",
+                    "sno": "1.60",
+                    "topic": "Practical applications of Define the term 'unit'",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.61",
+                    "sno": "1.61",
+                    "topic": "Practical applications of Define fundamental units and derived units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.62",
+                    "sno": "1.62",
+                    "topic": "Practical applications of State the SI units of fundamental quantities along with their symbols",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.63",
+                    "sno": "1.63",
+                    "topic": "Practical applications of State the common multiples and submultiples used in the SI system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.64",
+                    "sno": "1.64",
+                    "topic": "Practical applications of State the rules for writing SI units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.65",
+                    "sno": "1.65",
+                    "topic": "Practical applications of State the advantages of using SI units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.66",
+                    "sno": "1.66",
+                    "topic": "Practical applications of Differentiate between direct and indirect measurements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.67",
+                    "sno": "1.67",
+                    "topic": "Practical applications of Define accuracy and least count in the context of measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-1.68",
+                    "sno": "1.68",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee103t-1.69",
+                    "sno": "1.69",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Elements of Vectors",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "id": "26ee103t-2.1",
+                    "sno": "2.1",
+                    "topic": "Explain the concept of vectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-2.2",
+                    "sno": "2.2",
+                    "topic": "Define scalar and vector quantities with relevant examples for each; Represent a vector geometrically",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-2.3",
+                    "sno": "2.3",
+                    "topic": "Define equal vectors, negative vector, unit vector, position vector, co-initial vectors, co-planar vectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-2.4",
+                    "sno": "2.4",
+                    "topic": "Resolve a given vector into its rectangular components; State and explain the triangle law of addition of vectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-2.5",
+                    "sno": "2.5",
+                    "topic": "State the parallelogram law of addition of vectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-2.6",
+                    "sno": "2.6",
+                    "topic": "Derive the expressions for the magnitude and direction of the resultant vector using the parallelogram law; Illustrate applications of the parallel...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-2.7",
+                    "sno": "2.7",
+                    "topic": "Define dot product (scalar product) of two vectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-2.8",
+                    "sno": "2.8",
+                    "topic": "Explain (i) work done (ii) power as examples of dot product; Define cross product (vector product) of two vectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-2.9",
+                    "sno": "2.9",
+                    "topic": "Explain (i) linear velocity (ii) torque as examples of cross product; Solve numerical problems on (i) resolution of vectors (ii) the parallelogram ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-2.10",
+                    "sno": "2.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee103t-2.11",
+                    "sno": "2.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Mechanics",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ee103t-3.1",
+                    "sno": "3.1",
+                    "topic": "Define linear momentum; Mention its SI unit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-3.2",
+                    "sno": "3.2",
+                    "topic": "Define force. Mention its SI unit; Define torque. Mention its SI unit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-3.3",
+                    "sno": "3.3",
+                    "topic": "Define concurrent forces, co-planar forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-3.4",
+                    "sno": "3.4",
+                    "topic": "State and explain Lami\u2019s theorem; State equations of motion of a body moving in a straight line with uniform acceleration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-3.5",
+                    "sno": "3.5",
+                    "topic": "Define projectile. Give examples; Derive the equation for the path of an oblique projectile",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-3.6",
+                    "sno": "3.6",
+                    "topic": "Define periodic motion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-3.7",
+                    "sno": "3.7",
+                    "topic": "Define Ideal Simple pendulum; Write formula for the time period of a simple pendulum",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-3.8",
+                    "sno": "3.8",
+                    "topic": "Solve numerical problems on equations of motion and simple pendulum. 4 FUNDAMENTALS OF ASTRODYNAMICS; Unit test - 2 From 4.1 to 6.15 Unit test - 3 ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee103t-3.10",
+                    "sno": "3.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

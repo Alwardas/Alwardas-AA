@@ -3,267 +3,365 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "INTRODUCTION",
             "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26ce504e-1.1",
+                    "sno": "1.1",
                     "topic": "INTRODUCTION",
-                    "period": 9,
-                    "type": "theory",
-                    "id": "26ce504e-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-1.2",
+                    "sno": "1.2",
+                    "topic": "Deep dive into INTRODUCTION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-1.3",
+                    "sno": "1.3",
+                    "topic": "Problem solving & practice on INTRODUCTION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-1.4",
+                    "sno": "1.4",
+                    "topic": "Practical applications of INTRODUCTION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-1.5",
+                    "sno": "1.5",
+                    "topic": "Practical applications of INTRODUCTION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-1.6",
+                    "sno": "1.6",
+                    "topic": "Practical applications of INTRODUCTION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-1.7",
+                    "sno": "1.7",
+                    "topic": "Practical applications of INTRODUCTION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-1.8",
+                    "sno": "1.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce504e-1.9",
+                    "sno": "1.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 9,
+            "title": "ORGANIZATIONAL ASPECTS",
+            "totalPeriods": 6,
             "topics": [
                 {
+                    "id": "26ce504e-2.1",
+                    "sno": "2.1",
                     "topic": "ORGANIZATIONAL ASPECTS",
-                    "period": 9,
-                    "type": "theory",
-                    "id": "26ce504e-2.0",
-                    "sno": "2.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-2.2",
+                    "sno": "2.2",
+                    "topic": "Deep dive into ORGANIZATIONAL ASPECTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-2.3",
+                    "sno": "2.3",
+                    "topic": "Problem solving & practice on ORGANIZATIONAL ASPECTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-2.4",
+                    "sno": "2.4",
+                    "topic": "Practical applications of ORGANIZATIONAL ASPECTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-2.5",
+                    "sno": "2.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce504e-2.6",
+                    "sno": "2.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 9,
+            "title": "MANAGEMENT TOOLS",
+            "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "MANAGEMENT TOOLS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ce504e-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "Define CPM and PERT",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "MANAGEMENT TOOLS; Define CPM and PERT",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the advantages of CPM and PERT",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "State the advantages of CPM and PERT; Explain the use of bar chart and its limitations",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the use of bar chart and its limitations",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Prepare Network diagram using basic rules of network formation; Calculate Project duration using CPM network",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Prepare Network diagram using basic rules of network formation",
+                    "id": "26ce504e-3.4",
+                    "sno": "3.4",
+                    "topic": "State the limitations of CPM; Distinguish between CPM and PERT",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26ce504e-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Calculate Project duration using CPM network ",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-3.6",
-                    "sno": "3.6"
-                },
-                {
-                    "topic": "State the limitations of CPM",
+                    "sno": "3.6",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-3.7",
-                    "sno": "3.7"
-                },
-                {
-                    "topic": "Distinguish between CPM and PERT",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-3.8",
-                    "sno": "3.8"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 9,
+            "title": "CONTRACT, TENDERS AND ARBITRATION",
+            "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "CONTRACT, TENDERS AND ARBITRATION",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Define contract, State the contents of a contract document, and explain different contract systems available for construction works",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "CONTRACT, TENDERS AND ARBITRATION; Define contract, State the contents of a contract document, and explain different contract systems available for...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the merits and limitations of each of the contract systems, List the general conditions of contract for a civil engineering construction project",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Define tender, Explain the need for calling of tenders, List the steps involved in fixing up agency through tender system; Draft a tender notice fo...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define tender, Explain the need for calling of tenders, List the steps involved in fixing up agency through tender system",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Prepare a comparative statement; Explain the method of selecting a contractor from the tenders, List out the conditions of contract agreements; Def...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draft a tender notice for a work, Prepare tender documents",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "Define the terms Dispute and Arbitration, Explain the scope for disputes in a construction industry; State the need for arbitration, List the quali...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the need of earnest money and security deposits",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Prepare a comparative statement",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-4.6",
-                    "sno": "4.6"
-                },
-                {
-                    "topic": "Explain the method of selecting a contractor from the tenders, List out the conditions of contract agreements",
+                    "sno": "4.6",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-4.7",
-                    "sno": "4.7"
-                },
-                {
-                    "topic": "Define E-procurement. Know about portals for e-procurement",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-4.8",
-                    "sno": "4.8"
-                },
-                {
-                    "topic": "Define the terms Dispute and Arbitration, Explain the scope for disputes in a construction industry",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-4.9",
-                    "sno": "4.9"
-                },
-                {
-                    "topic": "State the need for arbitration, List the qualifications of an arbitrator, List the advantages of arbitration",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-4.10",
-                    "sno": "4.10"
-                },
-                {
-                    "topic": "Define insolvency. Consequences of insolvency in construction industry",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-4.11",
-                    "sno": "4.11"
-                },
-                {
-                    "topic": "Unit Test \u2013 II From 4.5 to 7.2",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-4.4",
-                    "sno": "4.4"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 9,
+            "title": "MANAGEMENT OF RESOURCES IN CONSTRUCTION",
+            "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "MANAGEMENT OF RESOURCES IN CONSTRUCTION",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "Explain the scope of materials management, Classify the common building materials based on the procurement, Explain different Stages of materials management",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "MANAGEMENT OF RESOURCES IN CONSTRUCTION; Explain the scope of materials management, Classify the common building materials based on the procurement...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the points to be observed in the storage of perishable and non - perishable store materials, Explain the terms Indent, Invoice and Bin card, Explain the importance of verification of stores",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Explain the points to be observed in the storage of perishable and non - perishable store materials, Explain the terms Indent, Invoice and Bin card...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the need for mechanization, Explain the need for optimum utilization of plant and equipment, Explain the financial impact of mechanization",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Explain the importance of training of operators; Explain the need for overhauling or replacement",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain about the preventive maintenance of plant and equipment",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "State the importance of finance as a resource; Explain the different stages at which cost control can be achieved; Explain the financial control at...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the importance of training of operators",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Explain the need for overhauling or replacement",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce504e-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "ENTREPRENEURSHIP",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26ce504e-6.1",
+                    "sno": "6.1",
+                    "topic": "ENTREPRENEURSHIP; Define 1. Entrepreneur and 2. Entrepreneurship",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the importance of finance as a resource",
+                    "id": "26ce504e-6.2",
+                    "sno": "6.2",
+                    "topic": "Outline the concepts of entrepreneurship; State the role of entrepreneur in economic development",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-5.8",
-                    "sno": "5.8"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the different stages at which cost control can be achieved",
+                    "id": "26ce504e-6.3",
+                    "sno": "6.3",
+                    "topic": "List the characteristics of an entrepreneur; Evaluate the risks and rewards of an entrepreneur",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-5.9",
-                    "sno": "5.9"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the financial control at head office level and site level",
+                    "id": "26ce504e-6.4",
+                    "sno": "6.4",
+                    "topic": "State the role of financial institutions in entrepreneurial development; State various policies of state and central governments aimed to encourage...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce504e-5.10",
-                    "sno": "5.10"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-6.5",
+                    "sno": "6.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce504e-6.6",
+                    "sno": "6.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "HUMAN RELATIONS AND PROFESSIONAL ETHICS",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26ce504e-7.1",
+                    "sno": "7.1",
+                    "topic": "HUMAN RELATIONS AND PROFESSIONAL ETHICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-7.2",
+                    "sno": "7.2",
+                    "topic": "State role of Human relations and Performance in organization",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-7.3",
+                    "sno": "7.3",
+                    "topic": "Deep dive into HUMAN RELATIONS AND PROFESSIONAL ETHICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-7.4",
+                    "sno": "7.4",
+                    "topic": "Deep dive into State role of Human relations and Performance in organization",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-7.5",
+                    "sno": "7.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce504e-7.6",
+                    "sno": "7.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

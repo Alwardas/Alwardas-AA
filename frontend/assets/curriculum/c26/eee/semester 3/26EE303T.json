@@ -2,128 +2,653 @@
     "regulation": "C26",
     "units": [
         {
-            "unitNo": 3,
-            "title": "Probability & Statistics",
-            "totalPeriods": 90,
+            "unitNo": 1,
+            "title": "Applications of Definite Integrals",
+            "totalPeriods": 30,
             "topics": [
                 {
+                    "id": "26ee303t-1.1",
+                    "sno": "1.1",
+                    "topic": "State ideal voltage source and ideal current source, practical voltage and current sources",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.2",
+                    "sno": "1.2",
+                    "topic": "Explain Source transformation technique",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.3",
+                    "sno": "1.3",
+                    "topic": "Solve simple problems on Source transformation technique",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.4",
+                    "sno": "1.4",
+                    "topic": "State Superposition theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.5",
+                    "sno": "1.5",
+                    "topic": "State the steps involved in solving superposition theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.6",
+                    "sno": "1.6",
+                    "topic": "Solve simple problems on superposition theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.7",
+                    "sno": "1.7",
+                    "topic": "StateThevenin's theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.8",
+                    "sno": "1.8",
+                    "topic": "State the steps for finding VTh and RTh",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.9",
+                    "sno": "1.9",
+                    "topic": "Solve simple Problems on Thevenin's theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.10",
+                    "sno": "1.10",
+                    "topic": "State Norton's theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.11",
+                    "sno": "1.11",
+                    "topic": "State the steps for finding IN and RN",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.12",
+                    "sno": "1.12",
+                    "topic": "Solve simple Problems on Norton's theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.13",
+                    "sno": "1.13",
+                    "topic": "State Maximum Power Transfer Theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.14",
+                    "sno": "1.14",
+                    "topic": "Derive conditions for maximum power transfer to a load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.15",
+                    "sno": "1.15",
+                    "topic": "State Reciprocity theorem Unit 2: AC Fundamentals, Single Phase AC Circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.16",
+                    "sno": "1.16",
+                    "topic": "Find the area bounded by a curve and axes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.17",
+                    "sno": "1.17",
+                    "topic": "Determine the volumes of solids of revolution along the x-axis",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.18",
+                    "sno": "1.18",
+                    "topic": "Obtain the Mean and R.M.S values of simple functions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.19",
+                    "sno": "1.19",
+                    "topic": "Solve the problems of areas using Numerical Integration. Unit-II C.O.2 Solve first-order and first- degree differential equations and second- order homogeneous and non-homogeneous linear differential equations. L.O.2.1 Define a Differential equation, its order and degree",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into State ideal voltage source and ideal current source, practical voltage and current sources",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into Explain Source transformation technique",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into Solve simple problems on Source transformation technique",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.23",
+                    "sno": "1.23",
+                    "topic": "Deep dive into State Superposition theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.24",
+                    "sno": "1.24",
+                    "topic": "Deep dive into State the steps involved in solving superposition theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.25",
+                    "sno": "1.25",
+                    "topic": "Deep dive into Solve simple problems on superposition theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.26",
+                    "sno": "1.26",
+                    "topic": "Deep dive into StateThevenin's theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.27",
+                    "sno": "1.27",
+                    "topic": "Deep dive into State the steps for finding VTh and RTh",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.28",
+                    "sno": "1.28",
+                    "topic": "Deep dive into Solve simple Problems on Thevenin's theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-1.29",
+                    "sno": "1.29",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee303t-1.30",
+                    "sno": "1.30",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Differential Equations",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "26ee303t-2.1",
+                    "sno": "2.1",
+                    "topic": "Advantages of AC over DC",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.2",
+                    "sno": "2.2",
+                    "topic": "Define amplitude, instantaneous va lue, peak value, peak -to-peak value, average value, RMS value, form factor, peak factor. Periodic Time, Frequen...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.3",
+                    "sno": "2.3",
+                    "topic": "Obtain relation between frequency, speed and no of poles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.4",
+                    "sno": "2.4",
+                    "topic": "Explain the concepts of Phase -and-Phase-Difference: Leading, laggin g, in -phase concepts; Mathematical representation of AC Quantities as v=Vmsin...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.5",
+                    "sno": "2.5",
+                    "topic": "Solve simple problems on above",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.6",
+                    "sno": "2.6",
+                    "topic": "Understand j-operator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.7",
+                    "sno": "2.7",
+                    "topic": "Convert polar quantities into rectangular quantities and Vice -versa. Solve simple problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.8",
+                    "sno": "2.8",
+                    "topic": "Obtain voltage -current relationships with phasor diagrams for Resistance(R) in in AC circuits; Obtain voltage -current relationships with phasor d...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.9",
+                    "sno": "2.9",
+                    "topic": "Define inductive reactance XL",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.10",
+                    "sno": "2.10",
+                    "topic": "Obtain voltage -current relation ships with phasor diagrams for Capacitance (C) in AC Circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.11",
+                    "sno": "2.11",
+                    "topic": "Define capacitive reactance Xc",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.12",
+                    "sno": "2.12",
+                    "topic": "State Power in AC Circuits as Instantaneous Power, Average Power (Active Power (P)), Reactive Power (Q) , Apparent Power (S); Draw Power Triangle a...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.13",
+                    "sno": "2.13",
+                    "topic": "Define Power factor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.14",
+                    "sno": "2.14",
+                    "topic": "State its significance as lagging and leading power factor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.15",
+                    "sno": "2.15",
+                    "topic": "Understand the concepts of impedance, power, and power factor in R -L, R-C, and R-L-C series AC circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.16",
+                    "sno": "2.16",
+                    "topic": "Apply appropriate formulas and methods to calculate impedance, current, voltage drops, power, and power factor for R-L, R-C, and R-L-C series AC ci...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.17",
+                    "sno": "2.17",
+                    "topic": "Solve related problems on R-L, R-C, and R-L-C series AC circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.18",
+                    "sno": "2.18",
+                    "topic": "Analyze the characteristics of series R -L-C resonant circuits, including resonant frequency, Q-factor, and bandwidth, and solve related problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.19",
+                    "sno": "2.19",
+                    "topic": "State the Concept of Admittance (Y), Conductance (G) and Susceptance (B)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.20",
+                    "sno": "2.20",
+                    "topic": "Apply appropriate formu las and methods to calculate impedance, Current division, power, and power factor for parallel R-L, and R-C AC circuits; Co...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.21",
+                    "sno": "2.21",
+                    "topic": "Solve problems on parallel R-L, and R-C AC circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.22",
+                    "sno": "2.22",
+                    "topic": "Analyze the characteristics of resonant parallel circuit., including resonant frequency, Q-factor, and bandwidth Resonance. Unit 3: Polyphase Circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.23",
+                    "sno": "2.23",
+                    "topic": "Find order and degree of a given differential equation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.24",
+                    "sno": "2.24",
+                    "topic": "Form a differential equation by eliminating arbitrary constants; Solve the first order and first degree differential equations by variables separab...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.25",
+                    "sno": "2.25",
+                    "topic": "Solve linear differential equation of the form PQdy ydx \uf02b\uf03d , where P and Q are functions of x only or constants. Syllabus for Unit test-I completed",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.26",
+                    "sno": "2.26",
+                    "topic": "Solve Differential equations of the type (aD2 +bD + c) y = 0 where a (\u2260 0), b, and c are real numbers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.27",
+                    "sno": "2.27",
+                    "topic": "Define complementary function, particular integral and general solution of a non-homogeneous linear differential equation of second order with cons...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.28",
+                    "sno": "2.28",
+                    "topic": "Describe the method of solving f(D)y= \ud835\udc52\ud835\udc4e\ud835\udc65 , where f(D) is a polynomial of second order. Unit-III C.O. 3 Apply various probability and statistical t...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-2.29",
+                    "sno": "2.29",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee303t-2.30",
+                    "sno": "2.30",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Probability and Statistics",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "26ee303t-3.1",
+                    "sno": "3.1",
                     "topic": "Define phase sequence and a balanced system related to polyphase circuits",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee303t-3.2",
-                    "sno": "3.2"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee303t-3.2",
+                    "sno": "3.2",
                     "topic": "Explain the relationships between line and phase values of voltages and currents for both balanced Star (Y) and Delta (\u0394) connected systems",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee303t-3.3",
-                    "sno": "3.3"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee303t-3.3",
+                    "sno": "3.3",
                     "topic": "Calculate the power in balanced three-phase loads for both Star (Y) and Delta (\u0394) connections",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee303t-3.4",
-                    "sno": "3.4"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee303t-3.4",
+                    "sno": "3.4",
                     "topic": "Differentiate between Star (Y) and Delta (\u0394) connection configurations based on their voltage, current, and power characteristics",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee303t-3.6",
-                    "sno": "3.6"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the basic principle of the two-wattmeter method for measuring three-phase power",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ee303t-3.7",
-                    "sno": "3.7"
-                },
-                {
-                    "topic": "State addition theorem of probability for two mutually exclusive and exhaustive events",
-                    "period": 5,
-                    "type": "theory",
-                    "id": "26ee303t-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Solve simple problems on addition theorem",
-                    "period": 5,
-                    "type": "theory",
-                    "id": "26ee303t-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Explain conditional event and conditional probability",
-                    "period": 5,
-                    "type": "theory",
-                    "id": "26ee303t-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "Solve simple problems on conditional probability",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee303t-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Explain the basic principle of the two-wattmeter method for measuring three-phase power",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain dependent, independent events and state multiplication theorem",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee303t-3.6",
-                    "sno": "3.6"
+                    "sno": "3.6",
+                    "topic": "State addition theorem of probability for two mutually exclusive and exhaustive events",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Solve simple problems on multiplication theorem",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee303t-3.7",
-                    "sno": "3.7"
+                    "sno": "3.7",
+                    "topic": "Solve simple problems on addition theorem",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Recall the measures of central tendency",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee303t-3.8",
-                    "sno": "3.8"
+                    "sno": "3.8",
+                    "topic": "Explain conditional event and conditional probability",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the significance of measures of dispersion to determine the degree of heterogeneity of the data",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee303t-3.9",
-                    "sno": "3.9"
+                    "sno": "3.9",
+                    "topic": "Solve simple problems on conditional probability",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Find the measures of dispersion, Range, Mean Deviation and Standard Deviation for ungrouped data",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee303t-3.10",
-                    "sno": "3.10"
+                    "sno": "3.10",
+                    "topic": "Explain dependent, independent events and state multiplication theorem",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the merits and demerits of these measures of dispersion",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee303t-3.11",
-                    "sno": "3.11"
+                    "sno": "3.11",
+                    "topic": "Solve simple problems on multiplication theorem",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain bivariate data",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee303t-3.12",
-                    "sno": "3.12"
+                    "sno": "3.12",
+                    "topic": "Recall the measures of central tendency",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the concept of covariance and correlation between two variables",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee303t-3.13",
-                    "sno": "3.13"
+                    "sno": "3.13",
+                    "topic": "Explain the significance of measures of dispersion to determine the degree of heterogeneity of the data",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.14",
+                    "sno": "3.14",
+                    "topic": "Find the measures of dispersion, Range, Mean Deviation and Standard Deviation for ungrouped data",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.15",
+                    "sno": "3.15",
+                    "topic": "Explain the merits and demerits of these measures of dispersion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.16",
+                    "sno": "3.16",
+                    "topic": "Explain bivariate data",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.17",
+                    "sno": "3.17",
+                    "topic": "Explain the concept of covariance and correlation between two variables",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into Define phase sequence and a balanced system related to polyphase circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.19",
+                    "sno": "3.19",
+                    "topic": "Deep dive into Explain the relationships between line and phase values of voltages and currents for both balanced Star (Y) and Delta (\u0394) connected systems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.20",
+                    "sno": "3.20",
+                    "topic": "Deep dive into Calculate the power in balanced three-phase loads for both Star (Y) and Delta (\u0394) connections",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.21",
+                    "sno": "3.21",
+                    "topic": "Deep dive into Differentiate between Star (Y) and Delta (\u0394) connection configurations based on their voltage, current, and power characteristics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.22",
+                    "sno": "3.22",
+                    "topic": "Deep dive into Explain the basic principle of the two-wattmeter method for measuring three-phase power",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.23",
+                    "sno": "3.23",
+                    "topic": "Deep dive into State addition theorem of probability for two mutually exclusive and exhaustive events",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.24",
+                    "sno": "3.24",
+                    "topic": "Deep dive into Solve simple problems on addition theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.25",
+                    "sno": "3.25",
+                    "topic": "Deep dive into Explain conditional event and conditional probability",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.26",
+                    "sno": "3.26",
+                    "topic": "Deep dive into Solve simple problems on conditional probability",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.27",
+                    "sno": "3.27",
+                    "topic": "Deep dive into Explain dependent, independent events and state multiplication theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.28",
+                    "sno": "3.28",
+                    "topic": "Deep dive into Solve simple problems on multiplication theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-3.29",
+                    "sno": "3.29",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee303t-3.30",
+                    "sno": "3.30",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

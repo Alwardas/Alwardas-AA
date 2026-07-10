@@ -3,491 +3,344 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 9,
+            "title": "Wiring Systems",
+            "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "Mention the use of wires, cables, Types of Installations and wiring Accessories. 1. 2 Explain (i) Surface conduit system (ii) Concealed wiring system",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee306e-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Mention the use of wires, cables, Types of Installations and wiring Accessories. 1. 2 Explain (i) Surface conduit system (ii) Concealed wiring syst...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State merits and demerits of (i) Surface conduit system (ii) Concealed wiring system",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.3",
-                    "sno": "1.3"
-                },
-                {
-                    "topic": "List different types of knife switches",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.4",
-                    "sno": "1.4"
-                },
-                {
-                    "topic": "List MCB types with specifications and mention their applications (MCCB, ELCB AND RCCB)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.5",
-                    "sno": "1.5"
-                },
-                {
-                    "topic": "List different types of fuses and specify the materials used",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.6",
-                    "sno": "1.6"
-                },
-                {
-                    "topic": "List different ratings of fuses and state their applications",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.7",
-                    "sno": "1.7"
-                },
-                {
-                    "topic": "State the reasons for not using fuse in Neutral wire. 2. Estimation of Lighting and Power Loads",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.8",
-                    "sno": "1.8"
-                },
-                {
-                    "topic": "Introduction",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.1",
-                    "sno": "1.1"
-                },
-                {
-                    "topic": "Energy Crisis and Environmental concerns",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee306e-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "List different ratings of fuses and state their applications; State the reasons for not using fuse in Neutral wire. 2. Estimation of Lighting and P...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classification of energy sources: renewable vs non-renewable",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee306e-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Overview of global and Indian renewable energy potential; Activity1: Videos on global warming; Activity2: Discussion on Impact of fossil fuels 2. S...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Importance of renewable energy in Sustainable development",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee306e-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "List different types of Solar collectors; State Solar photovoltaic (PV) systems \u2013 types of panels, components; State Advantages and limitations of ...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Overview of global and Indian renewable energy potential",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee306e-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Activity1: Videos on global warming",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee306e-1.6",
-                    "sno": "1.6"
-                },
-                {
-                    "topic": "Activity2: Discussion on Impact of fossil fuels 2. Solar Energy",
+                    "sno": "1.6",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.7",
-                    "sno": "1.7"
-                },
-                {
-                    "topic": "Introduction",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.24",
-                    "sno": "1.24"
-                },
-                {
-                    "topic": "Define Solar radiation \u2013 concepts and measurements",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.25",
-                    "sno": "1.25"
-                },
-                {
-                    "topic": "List different types of Solar collectors",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.26",
-                    "sno": "1.26"
-                },
-                {
-                    "topic": "State Solar photovoltaic (PV) systems \u2013 types of panels, components",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.27",
-                    "sno": "1.27"
-                },
-                {
-                    "topic": "State Advantages and limitations of Photovoltaic systems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.28",
-                    "sno": "1.28"
-                },
-                {
-                    "topic": "State the recent trends in solar systems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.29",
-                    "sno": "1.29"
-                },
-                {
-                    "topic": "Activity1: Case Study: Solar parks in India",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.30",
-                    "sno": "1.30"
-                },
-                {
-                    "topic": "Activity2: Site visiting of nearest solar power plant 3. Wind Energy",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-1.31",
-                    "sno": "1.31"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 9,
+            "title": "Estimation of Lighting and Power Loads",
+            "totalPeriods": 16,
             "topics": [
                 {
-                    "topic": "Define service mains and explain different types of service mains",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee306e-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Define service mains and explain different types of service mains",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee306e-2.2",
+                    "sno": "2.2",
                     "topic": "List the electrical material used in wiring the service mains",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee306e-2.3",
+                    "sno": "2.3",
                     "topic": "List the schedule of rates used in preparing estimate for house wiring and service mains",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-2.3",
-                    "sno": "2.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee306e-2.4",
+                    "sno": "2.4",
                     "topic": "Estimate the material requirement with cost for (i) PVC conduit wiring and (ii) PVC casing Capping wiring for the given plan of a building",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-2.4",
-                    "sno": "2.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee306e-2.5",
+                    "sno": "2.5",
                     "topic": "Draw the wiring layout for a big office building, workshop/ Electrical Laboratory",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-2.5",
-                    "sno": "2.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee306e-2.6",
+                    "sno": "2.6",
                     "topic": "Prepare the estimate of the materials for the complete installation of machines in a work Shop / laboratory as per standard practice",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-2.6",
-                    "sno": "2.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee306e-2.7",
+                    "sno": "2.7",
                     "topic": "Select the type of wiring and service mains used for the irrigation pump set",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-2.7",
-                    "sno": "2.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee306e-2.8",
+                    "sno": "2.8",
                     "topic": "Prepare an estimate for electrifying an irrigation pump set scheme. 3. Estimation of OH Lines and Earthing systems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-2.8",
-                    "sno": "2.8"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee306e-2.9",
+                    "sno": "2.9",
+                    "topic": "Deep dive into Define service mains and explain different types of service mains",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee306e-2.10",
+                    "sno": "2.10",
+                    "topic": "Deep dive into List the electrical material used in wiring the service mains",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee306e-2.11",
+                    "sno": "2.11",
+                    "topic": "Deep dive into List the schedule of rates used in preparing estimate for house wiring and service mains",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee306e-2.12",
+                    "sno": "2.12",
+                    "topic": "Deep dive into Estimate the material requirement with cost for (i) PVC conduit wiring and (ii) PVC casing Capping wiring for the given plan of a building",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee306e-2.13",
+                    "sno": "2.13",
+                    "topic": "Deep dive into Draw the wiring layout for a big office building, workshop/ Electrical Laboratory",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee306e-2.14",
+                    "sno": "2.14",
+                    "topic": "Deep dive into Prepare the estimate of the materials for the complete installation of machines in a work Shop / laboratory as per standard practice",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee306e-2.15",
+                    "sno": "2.15",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee306e-2.16",
+                    "sno": "2.16",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 9,
+            "title": "Estimation of OH Lines and Earthing systems",
+            "totalPeriods": 13,
             "topics": [
                 {
+                    "id": "26ee306e-3.1",
+                    "sno": "3.1",
                     "topic": "Select the type of insulators to be used for over headlines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee306e-3.2",
+                    "sno": "3.2",
                     "topic": "Select the type, size and number of cross arms required for the over headline",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26ee306e-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Estimate the quantity of all materials required for given 11 kV and 400V overhead lines",
+                    "sno": "3.3",
+                    "topic": "Estimate the quantity of all materials required for given 11 kV and 400V overhead lines; Draw and estimate the quantity of materials required for p...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.5",
-                    "sno": "3.5"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw and estimate the quantity of materials required for plinth and Pole Mounted Transformer substations",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.6",
-                    "sno": "3.6"
-                },
-                {
+                    "id": "26ee306e-3.4",
+                    "sno": "3.4",
                     "topic": "State the purpose of Earthing and mention its types that are normally used",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.7",
-                    "sno": "3.7"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Select the suitable type of Earthing for a given installation",
+                    "id": "26ee306e-3.5",
+                    "sno": "3.5",
+                    "topic": "Select the suitable type of Earthing for a given installation; Draw and Estimate the materials required for pipe and plate earthing. 4. Departmenta...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.8",
-                    "sno": "3.8"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw and Estimate the materials required for pipe and plate earthing. 4. Departmental Tests",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.9",
-                    "sno": "3.9"
-                },
-                {
+                    "id": "26ee306e-3.6",
+                    "sno": "3.6",
                     "topic": "Introduction",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Basics of wind \u2013 speed, direction, measurement",
+                    "id": "26ee306e-3.7",
+                    "sno": "3.7",
+                    "topic": "Basics of wind \u2013 speed, direction, measurement; Define Wind energy conversion systems and list different types of wind turbines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.2",
-                    "sno": "3.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Wind energy conversion systems and list different types of wind turbines",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.3",
-                    "sno": "3.3"
-                },
-                {
+                    "id": "26ee306e-3.8",
+                    "sno": "3.8",
                     "topic": "State site selection for wind farms",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.4",
-                    "sno": "3.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Comparison of Grid \u2013 connected and standalone wind systems",
+                    "id": "26ee306e-3.9",
+                    "sno": "3.9",
+                    "topic": "Comparison of Grid \u2013 connected and standalone wind systems; State Challenges, Advantages and Limitations of wind farms",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.5",
-                    "sno": "3.5"
+                    "type": "theory"
                 },
                 {
-                    "topic": "State Challenges, Advantages and Limitations of wind farms",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.6",
-                    "sno": "3.6"
-                },
-                {
+                    "id": "26ee306e-3.10",
+                    "sno": "3.10",
                     "topic": "Activity1: Video on How wind turbines work",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.7",
-                    "sno": "3.7"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Activity2: Site visiting of nearest wind power plant 4. Biomass Power",
+                    "id": "26ee306e-3.11",
+                    "sno": "3.11",
+                    "topic": "Activity2: Site visiting of nearest wind power plant 4. Biomass Power; FA-2 From 3.4 to 5.5",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.8",
-                    "sno": "3.8"
+                    "type": "theory"
                 },
                 {
-                    "topic": "FA-2 From 3.4 to 5.5",
+                    "id": "26ee306e-3.12",
+                    "sno": "3.12",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-3.3",
-                    "sno": "3.3"
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee306e-3.13",
+                    "sno": "3.13",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 9,
+            "title": "Departmental Tests",
+            "totalPeriods": 10,
             "topics": [
                 {
+                    "id": "26ee306e-4.1",
+                    "sno": "4.1",
                     "topic": "Specify insulation resistance desirable for a given electrical installation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-4.1",
-                    "sno": "4.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Specify the value of earth resistance to be maintained for a given electrical Installation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee306e-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Specify the value of earth resistance to be maintained for a given electrical Installation; List different tests to be conducted before energizing ...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List different tests to be conducted before energizing a newly constructed electrical installation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee306e-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Describe the test procedure for continuity of wiring in an electrical installation; Explain the procedure for conducting insulation test of domesti...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the test procedure for continuity of wiring in an electrical installation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee306e-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "Explain the Survey of load particulars in a village for (i) Domestic (ii) industrial (iii) agricultural loads; Estimate the quantity of materials r...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the procedure for conducting insulation test of domestic wiring",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee306e-4.5",
-                    "sno": "4.5"
-                },
-                {
-                    "topic": "Explain the Survey of load particulars in a village for (i) Domestic (ii) industrial (iii) agricultural loads",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-4.6",
-                    "sno": "4.6"
-                },
-                {
-                    "topic": "Estimate the quantity of materials required for the erection of distribution lines and 11 kV feeder",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-4.7",
-                    "sno": "4.7"
-                },
-                {
+                    "sno": "4.5",
                     "topic": "Calculate the capacity of a transformer required assuming suitable diversity factor",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee306e-4.6",
+                    "sno": "4.6",
+                    "topic": "State Biomass conversion technologies; State the operation of biomass power plant",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee306e-4.7",
+                    "sno": "4.7",
+                    "topic": "State Environmental and economic benefits; State Government policies and incentives of biomass plant",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
                     "id": "26ee306e-4.8",
-                    "sno": "4.8"
-                },
-                {
-                    "topic": "State Biomass conversion technologies",
+                    "sno": "4.8",
+                    "topic": "Activity1: Video on working of biomass plant; Activity2: Biomass usage in rural India 5. Other Energy Sources",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-4.14",
-                    "sno": "4.14"
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the operation of biomass power plant",
+                    "id": "26ee306e-4.9",
+                    "sno": "4.9",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-4.15",
-                    "sno": "4.15"
+                    "type": "revision"
                 },
                 {
-                    "topic": "State Environmental and economic benefits",
+                    "id": "26ee306e-4.10",
+                    "sno": "4.10",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-4.16",
-                    "sno": "4.16"
-                },
-                {
-                    "topic": "State Government policies and incentives of biomass plant",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-4.17",
-                    "sno": "4.17"
-                },
-                {
-                    "topic": "Activity1: Video on working of biomass plant",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-4.18",
-                    "sno": "4.18"
-                },
-                {
-                    "topic": "Activity2: Biomass usage in rural India 5. Other Energy Sources",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-4.19",
-                    "sno": "4.19"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "topic": "Define hydro power and list different types of hydro power plants",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee306e-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "State Geothermal energy \u2013 principles, plants, Challenges",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee306e-5.2",
-                    "sno": "5.2"
-                },
-                {
-                    "topic": "State Tidal and wave energy \u2013 concepts, technologies",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee306e-5.3",
-                    "sno": "5.3"
-                },
-                {
-                    "topic": "State Hydrogen and fuel cells- basics, applications",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee306e-5.4",
-                    "sno": "5.4"
-                },
-                {
-                    "topic": "Activity1: Group Presentation on each source",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee306e-5.5",
-                    "sno": "5.5"
+                    "type": "assessment"
                 }
             ]
         }

@@ -3,218 +3,456 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "INTRODUCTION TO PYTHON PROGRAMMING",
             "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "INTRODUCTION TO PYTHON PROGRAMMING",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me106a-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "Understand the evolution, versatility and popularity of Python language",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me106a-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "INTRODUCTION TO PYTHON PROGRAMMING",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List Python features",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me106a-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Understand the evolution, versatility and popularity of Python language",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe Python Integrated Development and Learning Environment (IDLE)",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me106a-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "List Python features",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Applications of Python",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me106a-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Describe Python Integrated Development and Learning Environment (IDLE)",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-1.5",
+                    "sno": "1.5",
+                    "topic": "Explain Applications of Python",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-1.6",
+                    "sno": "1.6",
                     "topic": "Compare with other programming languages",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-1.7",
+                    "sno": "1.7",
                     "topic": "INTRODUCTION TO PYTHON PROGRAMMING History of Python, Introduction to Python and installation, Explain Applications of Python. Comparison with other programming languages (e.g., MATLAB, C++ - Brief overview of why Python is suitable for beginners and engineering tasks). Motivation for Computing",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-1.0",
-                    "sno": "1.0"
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-1.8",
+                    "sno": "1.8",
+                    "topic": "Deep dive into INTRODUCTION TO PYTHON PROGRAMMING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-1.9",
+                    "sno": "1.9",
+                    "topic": "Deep dive into Understand the evolution, versatility and popularity of Python language",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-1.10",
+                    "sno": "1.10",
+                    "topic": "Deep dive into List Python features",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-1.11",
+                    "sno": "1.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me106a-1.12",
+                    "sno": "1.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "PYTHON FUNDAMENTALS",
             "totalPeriods": 12,
             "topics": [
                 {
+                    "id": "26me106a-2.1",
+                    "sno": "2.1",
                     "topic": "PYTHON FUNDAMENTALS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me106a-2.0",
-                    "sno": "2.0"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-2.2",
+                    "sno": "2.2",
                     "topic": "Explain Identifiers, Keywords, Indentation and Variables",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-2.1",
-                    "sno": "2.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-2.3",
+                    "sno": "2.3",
                     "topic": "Explain various datatypes (Int, float, Boolean, string, and list)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-2.4",
+                    "sno": "2.4",
                     "topic": "Explain declaration, initialization of variables",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-2.3",
-                    "sno": "2.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-2.5",
+                    "sno": "2.5",
                     "topic": "Explain Input and Output statements",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-2.4",
-                    "sno": "2.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-2.6",
+                    "sno": "2.6",
                     "topic": "Explain formatted input output",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-2.5",
-                    "sno": "2.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-2.7",
+                    "sno": "2.7",
                     "topic": "Explain the usage of comments",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-2.6",
-                    "sno": "2.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-2.8",
+                    "sno": "2.8",
                     "topic": "Explain various Operators",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-2.7",
-                    "sno": "2.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-2.9",
+                    "sno": "2.9",
                     "topic": "Explain Boolean values",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-2.8",
-                    "sno": "2.8"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Give the Steps in developing a simple python program and execution",
+                    "id": "26me106a-2.10",
+                    "sno": "2.10",
+                    "topic": "Give the Steps in developing a simple python program and execution; PYTHON FUNDAMENTALS Basic syntax: comments, variables. Data types (integers, fl...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-2.9",
-                    "sno": "2.9"
+                    "type": "theory"
                 },
                 {
-                    "topic": "PYTHON FUNDAMENTALS Basic syntax: comments, variables. Data types (integers, floats, strings, booleans). Operators: Arithmetic, Assignment, Comparison. Logical-Input and Output functions (print(), input())",
+                    "id": "26me106a-2.11",
+                    "sno": "2.11",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me106a-2.0",
-                    "sno": "2.0"
+                    "type": "revision"
+                },
+                {
+                    "id": "26me106a-2.12",
+                    "sno": "2.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "CONTROL FLOW",
             "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "CONTROL FLOW",
-                    "period": 4,
-                    "type": "theory",
-                    "id": "26me106a-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "Explain various Control Flow constructs (a)If (b)If-Else (c)If-Elif-Else",
-                    "period": 4,
-                    "type": "theory",
                     "id": "26me106a-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "CONTROL FLOW",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-3.2",
+                    "sno": "3.2",
+                    "topic": "Explain various Control Flow constructs (a)If (b)If-Else (c)If-Elif-Else",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-3.3",
+                    "sno": "3.3",
                     "topic": "CONTROL FLOW If...Else Statements - Conditions and logic , Comparison Operators - >, <, ==, !=, etc., Logical Operators - and, or, not ,Nested Conditions & Elif - More complex decision trees",
-                    "period": 4,
-                    "type": "theory",
-                    "id": "26me106a-3.0",
-                    "sno": "3.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-3.4",
+                    "sno": "3.4",
+                    "topic": "Deep dive into CONTROL FLOW",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-3.5",
+                    "sno": "3.5",
+                    "topic": "Deep dive into Explain various Control Flow constructs (a)If (b)If-Else (c)If-Elif-Else",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-3.6",
+                    "sno": "3.6",
+                    "topic": "Deep dive into CONTROL FLOW If...Else Statements - Conditions and logic , Comparison Operators - >, <, ==, !=, etc., Logical Operators - and, or, not ,Nested Conditions & Elif - More complex decision trees",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-3.7",
+                    "sno": "3.7",
+                    "topic": "Problem solving & practice on CONTROL FLOW",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-3.8",
+                    "sno": "3.8",
+                    "topic": "Problem solving & practice on Explain various Control Flow constructs (a)If (b)If-Else (c)If-Elif-Else",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-3.9",
+                    "sno": "3.9",
+                    "topic": "Problem solving & practice on CONTROL FLOW If...Else Statements - Conditions and logic , Comparison Operators - >, <, ==, !=, etc., Logical Operators - and, or, not ,Nested Conditions & Elif - More complex decision trees",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-3.10",
+                    "sno": "3.10",
+                    "topic": "Practical applications of CONTROL FLOW",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-3.11",
+                    "sno": "3.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me106a-3.12",
+                    "sno": "3.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "LOOPS",
             "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "LOOPS",
-                    "period": 4,
-                    "type": "theory",
-                    "id": "26me106a-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Explain various Loop Statements. a) for Loop b) while loop c) Break d) Continue e) Pass",
-                    "period": 4,
-                    "type": "theory",
                     "id": "26me106a-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "LOOPS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-4.2",
+                    "sno": "4.2",
+                    "topic": "Explain various Loop Statements. a) for Loop b) while loop c) Break d) Continue e) Pass",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-4.3",
+                    "sno": "4.3",
                     "topic": "LOOPS While Loops - Repeat until something stops, For Loops - Loop through numbers or items, Break, continue and pass",
-                    "period": 4,
-                    "type": "theory",
-                    "id": "26me106a-4.0",
-                    "sno": "4.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-4.4",
+                    "sno": "4.4",
+                    "topic": "Deep dive into LOOPS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-4.5",
+                    "sno": "4.5",
+                    "topic": "Deep dive into Explain various Loop Statements. a) for Loop b) while loop c) Break d) Continue e) Pass",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-4.6",
+                    "sno": "4.6",
+                    "topic": "Deep dive into LOOPS While Loops - Repeat until something stops, For Loops - Loop through numbers or items, Break, continue and pass",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-4.7",
+                    "sno": "4.7",
+                    "topic": "Problem solving & practice on LOOPS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-4.8",
+                    "sno": "4.8",
+                    "topic": "Problem solving & practice on Explain various Loop Statements. a) for Loop b) while loop c) Break d) Continue e) Pass",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-4.9",
+                    "sno": "4.9",
+                    "topic": "Problem solving & practice on LOOPS While Loops - Repeat until something stops, For Loops - Loop through numbers or items, Break, continue and pass",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-4.10",
+                    "sno": "4.10",
+                    "topic": "Practical applications of LOOPS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-4.11",
+                    "sno": "4.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me106a-4.12",
+                    "sno": "4.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "PRACTICE SIMPLE PROGRAMMES",
             "totalPeriods": 12,
             "topics": [
                 {
+                    "id": "26me106a-5.1",
+                    "sno": "5.1",
                     "topic": "PRACTICE SIMPLE PROGRAMMES",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26me106a-5.0",
-                    "sno": "5.0"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me106a-5.2",
+                    "sno": "5.2",
                     "topic": "PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first \u201cn\u201d natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26me106a-5.0",
-                    "sno": "5.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.3",
+                    "sno": "5.3",
+                    "topic": "Deep dive into PRACTICE SIMPLE PROGRAMMES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.4",
+                    "sno": "5.4",
+                    "topic": "Deep dive into PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first \u201cn\u201d natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.5",
+                    "sno": "5.5",
+                    "topic": "Problem solving & practice on PRACTICE SIMPLE PROGRAMMES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.6",
+                    "sno": "5.6",
+                    "topic": "Problem solving & practice on PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first \u201cn\u201d natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.7",
+                    "sno": "5.7",
+                    "topic": "Practical applications of PRACTICE SIMPLE PROGRAMMES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.8",
+                    "sno": "5.8",
+                    "topic": "Practical applications of PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first \u201cn\u201d natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.9",
+                    "sno": "5.9",
+                    "topic": "Practical applications of PRACTICE SIMPLE PROGRAMMES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.10",
+                    "sno": "5.10",
+                    "topic": "Practical applications of PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first \u201cn\u201d natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.11",
+                    "sno": "5.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me106a-5.12",
+                    "sno": "5.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

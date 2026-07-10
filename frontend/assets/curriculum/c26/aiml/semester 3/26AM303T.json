@@ -3,491 +3,666 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "Introduction to operating systems",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Introduction to operating systems",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26am303t-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "Define an operating system",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Introduction to operating systems",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Discuss history of operating system",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Define an operating system",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Distinguish spooling and buffering",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Discuss history of operating system",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the concepts",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Distinguish spooling and buffering",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Differentiate between distributed and real time systems",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Explain the concepts",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-1.6",
+                    "sno": "1.6",
+                    "topic": "Differentiate between distributed and real time systems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-1.7",
+                    "sno": "1.7",
                     "topic": "Describe multiprocessor systems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-1.6",
-                    "sno": "1.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-1.8",
+                    "sno": "1.8",
                     "topic": "Describe the operating system components",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-1.7",
-                    "sno": "1.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-1.9",
+                    "sno": "1.9",
                     "topic": "Discuss operating system services",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-1.8",
-                    "sno": "1.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-1.10",
+                    "sno": "1.10",
                     "topic": "Define system call with an example",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-1.9",
-                    "sno": "1.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-1.11",
+                    "sno": "1.11",
                     "topic": "List and explain different types of system calls",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-1.10",
-                    "sno": "1.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-1.12",
+                    "sno": "1.12",
                     "topic": "Define single user, multi user operating system structure",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-1.11",
-                    "sno": "1.11"
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-1.13",
+                    "sno": "1.13",
+                    "topic": "Deep dive into Introduction to operating systems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-1.14",
+                    "sno": "1.14",
+                    "topic": "Deep dive into Define an operating system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into Discuss history of operating system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into Distinguish spooling and buffering",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-1.17",
+                    "sno": "1.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am303t-1.18",
+                    "sno": "1.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "Process management",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Process management",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26am303t-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Define process and process control block",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Process management",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain process state diagram",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Define process and process control block",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe process creation and termination",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Explain process state diagram",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Discuss the relation between processes",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Describe process creation and termination",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-2.5",
+                    "sno": "2.5",
+                    "topic": "Discuss the relation between processes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-2.6",
+                    "sno": "2.6",
                     "topic": "Define Thread and describe multithreading",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-2.5",
-                    "sno": "2.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-2.7",
+                    "sno": "2.7",
                     "topic": "Explain scheduling concepts",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-2.6",
-                    "sno": "2.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-2.8",
+                    "sno": "2.8",
                     "topic": "Describe scheduling queues and schedulers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-2.7",
-                    "sno": "2.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-2.9",
+                    "sno": "2.9",
                     "topic": "Explain CPU scheduling and scheduling criteria",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-2.8",
-                    "sno": "2.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-2.10",
+                    "sno": "2.10",
                     "topic": "Explain various scheduling algorithms",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-2.9",
-                    "sno": "2.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-2.11",
+                    "sno": "2.11",
                     "topic": "FCFS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-2.1",
-                    "sno": "2.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-2.12",
+                    "sno": "2.12",
                     "topic": "SSTF",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-2.13",
+                    "sno": "2.13",
                     "topic": "SCAN",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-2.3",
-                    "sno": "2.3"
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-2.14",
+                    "sno": "2.14",
+                    "topic": "Deep dive into Process management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-2.15",
+                    "sno": "2.15",
+                    "topic": "Deep dive into Define process and process control block",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-2.16",
+                    "sno": "2.16",
+                    "topic": "Deep dive into Explain process state diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-2.17",
+                    "sno": "2.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am303t-2.18",
+                    "sno": "2.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "Synchronization & Deadlocks",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Synchronization & Deadlocks",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26am303t-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "Describe semaphores",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Synchronization & Deadlocks",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain semaphores to solve Producer consumer problem",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Describe semaphores",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain semaphores to solve Readers Writers Problem",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Explain semaphores to solve Producer consumer problem",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain inter process communication 135",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Explain semaphores to solve Readers Writers Problem",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Deadlock",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Explain inter process communication 135",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-3.6",
+                    "sno": "3.6",
+                    "topic": "Define Deadlock",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-3.7",
+                    "sno": "3.7",
                     "topic": "State the necessary conditions for arising deadlocks",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-3.8",
+                    "sno": "3.8",
                     "topic": "State various techniques for deadlock prevention",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-3.7",
-                    "sno": "3.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-3.9",
+                    "sno": "3.9",
                     "topic": "Discuss Deadlock Detection and Avoidance strategies",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-3.8",
-                    "sno": "3.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-3.10",
+                    "sno": "3.10",
                     "topic": "Describe the process of recovering from deadlock",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-3.9",
-                    "sno": "3.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-3.11",
+                    "sno": "3.11",
                     "topic": "Explain Dining philosopher\u2019s problem",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-3.10",
-                    "sno": "3.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-3.12",
+                    "sno": "3.12",
                     "topic": "Unit test-2 From 3.4 to 5.7",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-3.3",
-                    "sno": "3.3"
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-3.13",
+                    "sno": "3.13",
+                    "topic": "Deep dive into Synchronization & Deadlocks",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-3.14",
+                    "sno": "3.14",
+                    "topic": "Deep dive into Describe semaphores",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-3.15",
+                    "sno": "3.15",
+                    "topic": "Deep dive into Explain semaphores to solve Producer consumer problem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-3.16",
+                    "sno": "3.16",
+                    "topic": "Deep dive into Explain semaphores to solve Readers Writers Problem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-3.17",
+                    "sno": "3.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am303t-3.18",
+                    "sno": "3.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "Memory management",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26am303t-4.1",
+                    "sno": "4.1",
                     "topic": "Multiprogramming",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.1",
-                    "sno": "4.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-4.2",
+                    "sno": "4.2",
                     "topic": "Timesharing Systems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.2",
-                    "sno": "4.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-4.3",
+                    "sno": "4.3",
                     "topic": "Distributed Systems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.3",
-                    "sno": "4.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Real time systems",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am303t-4.4",
-                    "sno": "4.4"
-                },
-                {
-                    "topic": "Memory management",
+                    "sno": "4.4",
+                    "topic": "Real time systems; Memory management",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.0",
-                    "sno": "4.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-4.5",
+                    "sno": "4.5",
                     "topic": "Describe briefly address binding, dynamic loading, dynamic linking",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.1",
-                    "sno": "4.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-4.6",
+                    "sno": "4.6",
                     "topic": "Define overlays",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.2",
-                    "sno": "4.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-4.7",
+                    "sno": "4.7",
                     "topic": "Describe swapping",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.3",
-                    "sno": "4.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain single partition allocation",
+                    "id": "26am303t-4.8",
+                    "sno": "4.8",
+                    "topic": "Explain single partition allocation; Explain multiple partition allocation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.4",
-                    "sno": "4.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain multiple partition allocation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.5",
-                    "sno": "4.5"
-                },
-                {
+                    "id": "26am303t-4.9",
+                    "sno": "4.9",
                     "topic": "Explain the concept of fragmentation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.6",
-                    "sno": "4.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-4.10",
+                    "sno": "4.10",
                     "topic": "Explain paging concept",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.7",
-                    "sno": "4.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-4.11",
+                    "sno": "4.11",
                     "topic": "Explain how logical address is translated into physical address",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.8",
-                    "sno": "4.8"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain segmentation and segmentation with paging",
+                    "id": "26am303t-4.12",
+                    "sno": "4.12",
+                    "topic": "Explain segmentation and segmentation with paging; Define virtual memory techniques",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.9",
-                    "sno": "4.9"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define virtual memory techniques",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.10",
-                    "sno": "4.10"
-                },
-                {
+                    "id": "26am303t-4.13",
+                    "sno": "4.13",
                     "topic": "Explain demand paging",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.11",
-                    "sno": "4.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-4.14",
+                    "sno": "4.14",
                     "topic": "Describe page replacement",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.12",
-                    "sno": "4.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-4.15",
+                    "sno": "4.15",
                     "topic": "Discuss page replacement algorithms",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.13",
-                    "sno": "4.13"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the concept of thrashing",
+                    "id": "26am303t-4.16",
+                    "sno": "4.16",
+                    "topic": "Describe the concept of thrashing; Explain working set model and page fault frequency",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.14",
-                    "sno": "4.14"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain working set model and page fault frequency",
+                    "id": "26am303t-4.17",
+                    "sno": "4.17",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am303t-4.15",
-                    "sno": "4.15"
+                    "type": "revision"
+                },
+                {
+                    "id": "26am303t-4.18",
+                    "sno": "4.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "Disk scheduling and File management",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Disk scheduling and File management",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26am303t-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "List and explain various disk performance parameters",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26am303t-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Disk scheduling and File management",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Disk scheduling policies",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "List and explain various disk performance parameters",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define file management",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Disk scheduling policies",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List and explain various file operations",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Define file management",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List and explain various access methods",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26am303t-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "List and explain various file operations",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-5.6",
+                    "sno": "5.6",
+                    "topic": "List and explain various access methods",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-5.7",
+                    "sno": "5.7",
                     "topic": "List and explain various allocation methods",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26am303t-5.6",
-                    "sno": "5.6"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26am303t-5.8",
+                    "sno": "5.8",
                     "topic": "List and explain directory structure",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26am303t-5.6",
-                    "sno": "5.6"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-5.9",
+                    "sno": "5.9",
+                    "topic": "Deep dive into Disk scheduling and File management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-5.10",
+                    "sno": "5.10",
+                    "topic": "Deep dive into List and explain various disk performance parameters",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-5.11",
+                    "sno": "5.11",
+                    "topic": "Deep dive into Disk scheduling policies",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-5.12",
+                    "sno": "5.12",
+                    "topic": "Deep dive into Define file management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-5.13",
+                    "sno": "5.13",
+                    "topic": "Deep dive into List and explain various file operations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-5.14",
+                    "sno": "5.14",
+                    "topic": "Deep dive into List and explain various access methods",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-5.15",
+                    "sno": "5.15",
+                    "topic": "Deep dive into List and explain various allocation methods",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-5.16",
+                    "sno": "5.16",
+                    "topic": "Deep dive into List and explain directory structure",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am303t-5.17",
+                    "sno": "5.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am303t-5.18",
+                    "sno": "5.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

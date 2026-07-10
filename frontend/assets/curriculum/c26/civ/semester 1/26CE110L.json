@@ -3,71 +3,421 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 9,
+            "title": "Practice volumetric measurements (using pipettes, measuring jars",
+            "totalPeriods": 3,
             "topics": [
                 {
+                    "id": "26ce110l-1.1",
+                    "sno": "1.1",
                     "topic": "Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
-                    "period": 9,
-                    "type": "practical",
-                    "id": "26ce110l-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-1.2",
+                    "sno": "1.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-1.3",
+                    "sno": "1.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 9,
+            "title": "Identify the chemical compounds and solutions by senses.",
+            "totalPeriods": 3,
             "topics": [
                 {
+                    "id": "26ce110l-2.1",
+                    "sno": "2.1",
                     "topic": "Identify the chemical compounds and solutions by senses",
-                    "period": 9,
-                    "type": "practical",
-                    "id": "26ce110l-2.0",
-                    "sno": "2.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-2.2",
+                    "sno": "2.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-2.3",
+                    "sno": "2.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 9,
+            "title": "Practice making standard Na2CO3 solutions.",
+            "totalPeriods": 3,
             "topics": [
                 {
+                    "id": "26ce110l-3.1",
+                    "sno": "3.1",
                     "topic": "Practice making standard Na2CO3 solutions",
-                    "period": 9,
-                    "type": "practical",
-                    "id": "26ce110l-3.0",
-                    "sno": "3.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.2",
+                    "sno": "3.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-3.3",
+                    "sno": "3.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 9,
+            "title": "Conduct titrations adopting standard procedures and using standard",
+            "totalPeriods": 3,
             "topics": [
                 {
+                    "id": "26ce110l-4.1",
+                    "sno": "4.1",
                     "topic": "Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
-                    "period": 9,
-                    "type": "practical",
-                    "id": "26ce110l-4.0",
-                    "sno": "4.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.2",
+                    "sno": "4.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-4.3",
+                    "sno": "4.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 9,
+            "title": "Conduct titrations adopting standard procedures to determine the",
+            "totalPeriods": 3,
             "topics": [
                 {
+                    "id": "26ce110l-5.1",
+                    "sno": "5.1",
                     "topic": "Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
-                    "period": 9,
-                    "type": "practical",
-                    "id": "26ce110l-5.0",
-                    "sno": "5.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.2",
+                    "sno": "5.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-5.3",
+                    "sno": "5.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Conduct titrations adopting standard procedures and using standard",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce110l-6.1",
+                    "sno": "6.1",
+                    "topic": "Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.2",
+                    "sno": "6.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-6.3",
+                    "sno": "6.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Conduct titrations adopting standard procedures to determine the total",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce110l-7.1",
+                    "sno": "7.1",
+                    "topic": "Introduction to Unit 7 concepts; Detailed analysis of Unit 7 methodologies; Practical application and standard setups for Unit 7; Review of core im...",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-7.2",
+                    "sno": "7.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-7.3",
+                    "sno": "7.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Conduct titrations adopting standard procedures to determine the",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce110l-8.1",
+                    "sno": "8.1",
+                    "topic": "Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-8.2",
+                    "sno": "8.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-8.3",
+                    "sno": "8.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 9,
+            "title": "Conduct the test on given samples of water / solutions (like soft drinks",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce110l-9.1",
+                    "sno": "9.1",
+                    "topic": "Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-9.2",
+                    "sno": "9.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-9.3",
+                    "sno": "9.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 10,
+            "title": "Carry out the electrolysis process to estimate the amount of Copper",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce110l-10.1",
+                    "sno": "10.1",
+                    "topic": "Carry out the electrolysis process to estimate the amount of Copper deposited on an object",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-10.2",
+                    "sno": "10.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-10.3",
+                    "sno": "10.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 11,
+            "title": "Conduct the test on given samples of solutions (coloured and non-coloured)",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce110l-11.1",
+                    "sno": "11.1",
+                    "topic": "Conduct the test on given samples of solutions (coloured and non-coloured) to determine their turbidity in NTU",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-11.2",
+                    "sno": "11.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-11.3",
+                    "sno": "11.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 12,
+            "title": "Understand the construction and working principle of a Galvanic cell and",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce110l-12.1",
+                    "sno": "12.1",
+                    "topic": "Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-12.2",
+                    "sno": "12.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-12.3",
+                    "sno": "12.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 13,
+            "title": "Understand the process of polymerization by preparing Bakelite, a",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce110l-13.1",
+                    "sno": "13.1",
+                    "topic": "Understand the process of polymerization by preparing Bakelite, a thermosetting polymer and study its formation through a condensation reaction",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-13.2",
+                    "sno": "13.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-13.3",
+                    "sno": "13.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 14,
+            "title": "Collect water sample from nearby water body and test for any two",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce110l-14.1",
+                    "sno": "14.1",
+                    "topic": "Collect water sample from nearby water body and test for any two parameters",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-14.2",
+                    "sno": "14.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-14.3",
+                    "sno": "14.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 15,
+            "title": "Collect water sample from nearby sewage/industrial effluent and test for",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce110l-15.1",
+                    "sno": "15.1",
+                    "topic": "Introduction to Unit 15 concepts; Detailed analysis of Unit 15 methodologies; Practical application and standard setups for Unit 15; Review of core...",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-15.2",
+                    "sno": "15.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce110l-15.3",
+                    "sno": "15.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

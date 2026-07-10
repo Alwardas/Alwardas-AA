@@ -3,148 +3,344 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Image formation",
-            "totalPeriods": 9,
+            "title": "Image Formation",
+            "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "Image Formation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "What is computervision?",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am404e-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Image Formation; What is computervision?",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the History of computer vision",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am404e-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Explain the History of computer vision; Geometric primitives and transformations",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Geometric primitives and transformations",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am404e-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Photometric image formation; The digital camera",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Photometric image formation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am404e-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Explain pixel transforms; Explain Color transforms",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "The digital camera",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am404e-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Describe Compositing and matting; Explain Histogram equalization",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain pixel transforms",
+                    "id": "26am404e-1.6",
+                    "sno": "1.6",
+                    "topic": "Explain Feature detectors; Explain feature descriptors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Color transforms",
+                    "id": "26am404e-1.7",
+                    "sno": "1.7",
+                    "topic": "Describe feature matching; Explain Large-scale matching and retrieval",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe Compositing and matting",
+                    "id": "26am404e-1.8",
+                    "sno": "1.8",
+                    "topic": "Explain feature tracking; Explain 2D alignment using least squares",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Histogram equalization",
+                    "id": "26am404e-1.9",
+                    "sno": "1.9",
+                    "topic": "Explain Iterative algorithms; Describe Robust least squares and RANSAC",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Feature detectors",
+                    "id": "26am404e-1.10",
+                    "sno": "1.10",
+                    "topic": "Describe 3D alignment; Uni ttest-2 From 4.1.2 to 5.3",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain feature descriptors",
+                    "id": "26am404e-1.11",
+                    "sno": "1.11",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.2",
-                    "sno": "1.2"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Describe feature matching",
+                    "id": "26am404e-1.12",
+                    "sno": "1.12",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.3",
-                    "sno": "1.3"
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Image Processing",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "id": "26am404e-2.1",
+                    "sno": "2.1",
+                    "topic": "Image Processing",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Large-scale matching and retrieval",
+                    "id": "26am404e-2.2",
+                    "sno": "2.2",
+                    "topic": "Point Operators",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain feature tracking",
+                    "id": "26am404e-2.3",
+                    "sno": "2.3",
+                    "topic": "Linear Filtering; Explain Separable filtering",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain 2D alignment using least squares",
+                    "id": "26am404e-2.4",
+                    "sno": "2.4",
+                    "topic": "Describe Band-pass and steerable filters",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Iterative algorithms",
+                    "id": "26am404e-2.5",
+                    "sno": "2.5",
+                    "topic": "More neighbourhood operators",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe Robust least squares and RANSAC",
+                    "id": "26am404e-2.6",
+                    "sno": "2.6",
+                    "topic": "Describe Edge detection; Explain contour detection",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe 3D alignment",
+                    "id": "26am404e-2.7",
+                    "sno": "2.7",
+                    "topic": "Describe Parametric motion models",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Uni ttest-2 From 4.1.2 to 5.3",
+                    "id": "26am404e-2.8",
+                    "sno": "2.8",
+                    "topic": "Explain Rotational panoramas",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am404e-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-2.9",
+                    "sno": "2.9",
+                    "topic": "Describe Gapclosing; Explain Cylindrical and spherical coordinates",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-2.10",
+                    "sno": "2.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am404e-2.11",
+                    "sno": "2.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Recognition",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "id": "26am404e-3.1",
+                    "sno": "3.1",
+                    "topic": "Explain 2D transformations; Explain 3D transformations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-3.2",
+                    "sno": "3.2",
+                    "topic": "Explain 3D rotations; Explain 3D to 2D projections; Describe Lens distortions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-3.3",
+                    "sno": "3.3",
+                    "topic": "Explain Nonlinear filtering; Describe Bilateral filtering",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-3.4",
+                    "sno": "3.4",
+                    "topic": "Explain Binary image processing; Recognition; Define recognition",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-3.5",
+                    "sno": "3.5",
+                    "topic": "Explain Instance recognition; Describe Image classification",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-3.6",
+                    "sno": "3.6",
+                    "topic": "Explain Feature-based methods; Explain Deep networks; Describe Face recognition",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-3.7",
+                    "sno": "3.7",
+                    "topic": "Object detection; Semantic segmentation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-3.8",
+                    "sno": "3.8",
+                    "topic": "Explain Video understanding; Describe Vision and language; Explain Snakes and scissors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-3.9",
+                    "sno": "3.9",
+                    "topic": "Describe level sets; Describe Bundle adjustment; Describe parallax removal",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-3.10",
+                    "sno": "3.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am404e-3.11",
+                    "sno": "3.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Image Alignment and Stitching",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "id": "26am404e-5.1",
+                    "sno": "5.1",
+                    "topic": "Describe Sampling and aliasing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-5.2",
+                    "sno": "5.2",
+                    "topic": "Explain Color",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-5.3",
+                    "sno": "5.3",
+                    "topic": "Explain Compression",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-5.4",
+                    "sno": "5.4",
+                    "topic": "Explain Instance segmentation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-5.5",
+                    "sno": "5.5",
+                    "topic": "Describe Panoptic segmentation 198",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-5.6",
+                    "sno": "5.6",
+                    "topic": "Explain Pose estimation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-5.7",
+                    "sno": "5.7",
+                    "topic": "Image Alignment and Stitching",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-5.8",
+                    "sno": "5.8",
+                    "topic": "Pairwise alignment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-5.9",
+                    "sno": "5.9",
+                    "topic": "Image stitching; Global Alignment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26am404e-5.10",
+                    "sno": "5.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am404e-5.11",
+                    "sno": "5.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

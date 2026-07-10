@@ -2,114 +2,688 @@
     "regulation": "C26",
     "units": [
         {
-            "unitNo": 5,
-            "title": "ector, position vector,",
-            "totalPeriods": 90,
+            "unitNo": 1,
+            "title": "Units and Measurements",
+            "totalPeriods": 13,
             "topics": [
                 {
-                    "topic": "ENERGY AND THERMAL PHYSICS",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26cm103t-5.0",
-                    "sno": "5.0"
+                    "id": "26cm103t-1.1",
+                    "sno": "1.1",
+                    "topic": "Units and Measurements",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define work done; Mention its SI unit",
-                    "period": 6,
-                    "type": "theory",
+                    "id": "26cm103t-1.2",
+                    "sno": "1.2",
+                    "topic": "Introduction to Units and Measurements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-1.3",
+                    "sno": "1.3",
+                    "topic": "Define the terms: a) Physical quantity b) Fundamental physical quantities and c) Derived physical quantities; Explain the concept of units in measu...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-1.4",
+                    "sno": "1.4",
+                    "topic": "Define the term 'unit'",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-1.5",
+                    "sno": "1.5",
+                    "topic": "Define fundamental units and derived units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-1.6",
+                    "sno": "1.6",
+                    "topic": "State the SI units of fundamental quantities along with their symbols; State the common multiples and submultiples used in the SI system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-1.7",
+                    "sno": "1.7",
+                    "topic": "State the rules for writing SI units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-1.8",
+                    "sno": "1.8",
+                    "topic": "State the advantages of using SI units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-1.9",
+                    "sno": "1.9",
+                    "topic": "Differentiate between direct and indirect measurements; Define accuracy and least count in the context of measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-1.10",
+                    "sno": "1.10",
+                    "topic": "Define error in measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-1.11",
+                    "sno": "1.11",
+                    "topic": "Define absolute, relative and percentage errors and state their respective formulae; Solve numerical problems on errors in measurements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-1.12",
+                    "sno": "1.12",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm103t-1.13",
+                    "sno": "1.13",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "ELEMENTS OF VECTORS",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "id": "26cm103t-2.1",
+                    "sno": "2.1",
+                    "topic": "ELEMENTS OF VECTORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-2.2",
+                    "sno": "2.2",
+                    "topic": "Explain the concept of vectors; Define scalar and vector quantities with relevant examples for each",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-2.3",
+                    "sno": "2.3",
+                    "topic": "Represent a vector geometrically; Define equal vectors, negative vector, unit vector, position vector, co-initial vectors, co-planar vectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-2.4",
+                    "sno": "2.4",
+                    "topic": "Resolve a given vector into its rectangular components",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-2.5",
+                    "sno": "2.5",
+                    "topic": "State and explain the triangle law of addition of vectors; State the parallelogram law of addition of vectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-2.6",
+                    "sno": "2.6",
+                    "topic": "Derive the expressions for the magnitude and direction of the resultant vector using the parallelogram law; Illustrate applications of the parallel...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-2.7",
+                    "sno": "2.7",
+                    "topic": "Define dot product (scalar product) of two vectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-2.8",
+                    "sno": "2.8",
+                    "topic": "Explain (i) work done (ii) power as examples of dot product; Define cross product (vector product) of two vectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-2.9",
+                    "sno": "2.9",
+                    "topic": "Explain (i) linear velocity (ii) torque as examples of cross product; Solve numerical problems on (i) resolution of vectors (ii) the parallelogram ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-2.10",
+                    "sno": "2.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm103t-2.11",
+                    "sno": "2.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "MECHANICS",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "id": "26cm103t-3.1",
+                    "sno": "3.1",
+                    "topic": "MECHANICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-3.2",
+                    "sno": "3.2",
+                    "topic": "Define linear momentum; Mention its SI unit; Define force. Mention its SI unit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-3.3",
+                    "sno": "3.3",
+                    "topic": "Define torque. Mention its SI unit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-3.4",
+                    "sno": "3.4",
+                    "topic": "Define concurrent forces, co-planar forces; State and explain Lami\u2019s theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-3.5",
+                    "sno": "3.5",
+                    "topic": "State equations of motion of a body moving in a straight line with uniform acceleration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-3.6",
+                    "sno": "3.6",
+                    "topic": "Define projectile. Give examples; Derive the equation for the path of an oblique projectile",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-3.7",
+                    "sno": "3.7",
+                    "topic": "Define periodic motion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-3.8",
+                    "sno": "3.8",
+                    "topic": "Define Ideal Simple pendulum; Write formula for the time period of a simple pendulum",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-3.9",
+                    "sno": "3.9",
+                    "topic": "Solve numerical problems on equations of motion and simple pendulum; Unit test - 2 From 4.1 to 6.15 Unit test - 3 From 7.1 to 8.12 CURRICULUM \u20132026...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-3.10",
+                    "sno": "3.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm103t-3.11",
+                    "sno": "3.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "FUNDAMENTALS OF ASTRODYNAMICS",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "id": "26cm103t-4.1",
+                    "sno": "4.1",
+                    "topic": "FUNDAMENTALS OF ASTRODYNAMICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-4.2",
+                    "sno": "4.2",
+                    "topic": "Define acceleration due to gravity (g); Mention its SI unit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-4.3",
+                    "sno": "4.3",
+                    "topic": "State and explain Newton\u2019s universal law of gravitation; Define universal gravitational constant (G) and mention its value in SI unit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-4.4",
+                    "sno": "4.4",
+                    "topic": "Derive the relationship between acceleration due to gravity (g) and the universal gravitational constant (G)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-4.5",
+                    "sno": "4.5",
+                    "topic": "State and explain Kepler\u2019s laws of planetary motion; Define orbital velocity and state its formula",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-4.6",
+                    "sno": "4.6",
+                    "topic": "Define escape velocity and state its formula",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-4.7",
+                    "sno": "4.7",
+                    "topic": "Derive the relationship between escape velocity and orbital velocity; Define the term 'satellite'",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-4.8",
+                    "sno": "4.8",
+                    "topic": "Define natural and artificial satellites. Give examples for each",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-4.9",
+                    "sno": "4.9",
+                    "topic": "Mention the applications of artificial satellites; Solve numerical problems on (i) Newton\u2019s law of gravitation (ii) orbital velocity (iii) escape v...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-4.10",
+                    "sno": "4.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm103t-4.11",
+                    "sno": "4.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "ENERGY AND THERMAL PHYSICS",
+            "totalPeriods": 11,
+            "topics": [
+                {
                     "id": "26cm103t-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "ENERGY AND THERMAL PHYSICS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define power; Mention its SI unit",
-                    "period": 6,
-                    "type": "theory",
                     "id": "26cm103t-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Define work done; Mention its SI unit; Define power; Mention its SI unit",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define energy; Mention its SI unit",
-                    "period": 6,
-                    "type": "theory",
                     "id": "26cm103t-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Define energy; Mention its SI unit; List various forms of energy",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List various forms of energy",
-                    "period": 6,
-                    "type": "theory",
                     "id": "26cm103t-5.4",
-                    "sno": "5.4"
-                },
-                {
+                    "sno": "5.4",
                     "topic": "Define potential energy; Give examples and derive its equation",
-                    "period": 6,
-                    "type": "theory",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
                     "id": "26cm103t-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Define kinetic energy; Give examples and derive its equation; Derive the relationship between kinetic energy and linear momentum",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define kinetic energy; Give examples and derive its equation",
-                    "period": 6,
-                    "type": "theory",
                     "id": "26cm103t-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "State the law of conservation of energy; Give any two examples; State Boyle\u2019s law; Write its equation",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive the relationship between kinetic energy and linear momentum",
-                    "period": 6,
-                    "type": "theory",
                     "id": "26cm103t-5.7",
-                    "sno": "5.7"
-                },
-                {
-                    "topic": "State the law of conservation of energy; Give any two examples",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26cm103t-5.8",
-                    "sno": "5.8"
-                },
-                {
-                    "topic": "State Boyle\u2019s law; Write its equation",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26cm103t-5.9",
-                    "sno": "5.9"
-                },
-                {
+                    "sno": "5.7",
                     "topic": "State Charles\u2019s volume law; Write its equation",
-                    "period": 6,
-                    "type": "theory",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-5.8",
+                    "sno": "5.8",
+                    "topic": "State Charles\u2019s pressure law; Write its equation; Define an Ideal gas",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-5.9",
+                    "sno": "5.9",
+                    "topic": "Derive the ideal gas equation (PV = nRT); Solve numerical problems on (i) Work done (ii) Potential energy (iii) Kinetic energy (iv) Relation betwee...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
                     "id": "26cm103t-5.10",
-                    "sno": "5.10"
+                    "sno": "5.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "State Charles\u2019s pressure law; Write its equation",
-                    "period": 6,
-                    "type": "theory",
                     "id": "26cm103t-5.11",
-                    "sno": "5.11"
+                    "sno": "5.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "CONCEPTS OF ACOUSTICS",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "id": "26cm103t-6.1",
+                    "sno": "6.1",
+                    "topic": "CONCEPTS OF ACOUSTICS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define an Ideal gas",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26cm103t-5.12",
-                    "sno": "5.12"
+                    "id": "26cm103t-6.2",
+                    "sno": "6.2",
+                    "topic": "Define longitudinal waves. Give examples; Define transverse waves. Give examples",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive the ideal gas equation (PV = nRT)",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26cm103t-5.13",
-                    "sno": "5.13"
+                    "id": "26cm103t-6.3",
+                    "sno": "6.3",
+                    "topic": "Define sound. Mention SI unit for intensity of sound; Define musical sound",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Solve numerical problems on (i) Work done (ii) Potential energy (iii) Kinetic energy (iv) Relation between K.E. and momentum (v) Gas laws",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26cm103t-5.14",
-                    "sno": "5.14"
+                    "id": "26cm103t-6.4",
+                    "sno": "6.4",
+                    "topic": "Define noise; Distinguish between musical sound and noise",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-6.5",
+                    "sno": "6.5",
+                    "topic": "Define noise pollution",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-6.6",
+                    "sno": "6.6",
+                    "topic": "Explain the sources of noise pollution; Explain the effects of noise pollution",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-6.7",
+                    "sno": "6.7",
+                    "topic": "Explain methods of minimizing noise pollution; Explain the concept of echo",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-6.8",
+                    "sno": "6.8",
+                    "topic": "Mention the applications of echo; Define reverberation and reverberation time",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-6.9",
+                    "sno": "6.9",
+                    "topic": "Write Sabine\u2019s formula and name the parameters in it; Solve numerical problems on echo",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-6.10",
+                    "sno": "6.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm103t-6.11",
+                    "sno": "6.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Electricity and Magnetism",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "id": "26cm103t-7.1",
+                    "sno": "7.1",
+                    "topic": "Electricity and Magnetism",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-7.2",
+                    "sno": "7.2",
+                    "topic": "State and explain Ohm\u2019s law; Define electrical resistance; Mention its SI unit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-7.3",
+                    "sno": "7.3",
+                    "topic": "Define specific resistance (resistivity);Mention its SI unit; State and explain Kirchhoff\u2019s Current Law",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-7.4",
+                    "sno": "7.4",
+                    "topic": "State and explain Kirchhoff\u2019s Voltage Law; Derive an expression for the balancing condition of Wheatstone\u2019s bridge with neat diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-7.5",
+                    "sno": "7.5",
+                    "topic": "Explain the concept of magnetic field",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-7.6",
+                    "sno": "7.6",
+                    "topic": "Define uniform and non-uniform magnetic fields; Define magnetic pole strength; Mention its SI unit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-7.7",
+                    "sno": "7.7",
+                    "topic": "Define magnetic moment; Mention its SI unit; Define magnetic lines of force",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-7.8",
+                    "sno": "7.8",
+                    "topic": "Write the properties of magnetic lines of force; State Coulomb\u2019s inverse square law of magnetism. Write its equation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-7.9",
+                    "sno": "7.9",
+                    "topic": "Derive the expression for the moment of couple acting on a bar magnet placed in a uniform magnetic field; Solve numerical problems on (i) Ohm\u2019s law...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-7.10",
+                    "sno": "7.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm103t-7.11",
+                    "sno": "7.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Modern Physics",
+            "totalPeriods": 11,
+            "topics": [
+                {
+                    "id": "26cm103t-8.1",
+                    "sno": "8.1",
+                    "topic": "Modern Physics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-8.2",
+                    "sno": "8.2",
+                    "topic": "State and explain photoelectric effect",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-8.3",
+                    "sno": "8.3",
+                    "topic": "Write Einstein\u2019s photoelectric equation and name the terms in it",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-8.4",
+                    "sno": "8.4",
+                    "topic": "Explain the working of a photoelectric cell",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-8.5",
+                    "sno": "8.5",
+                    "topic": "List the applications of the photoelectric cell; Define critical angle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-8.6",
+                    "sno": "8.6",
+                    "topic": "Define optical fiber; Explain the principle and working of an optical fiber",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-8.7",
+                    "sno": "8.7",
+                    "topic": "List the applications of optical fiber",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-8.8",
+                    "sno": "8.8",
+                    "topic": "Define Superconductor and superconductivity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-8.9",
+                    "sno": "8.9",
+                    "topic": "List the applications of superconductors; Define Nanotechnology and Nano materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm103t-8.10",
+                    "sno": "8.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm103t-8.11",
+                    "sno": "8.11",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

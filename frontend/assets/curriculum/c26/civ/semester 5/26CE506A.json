@@ -3,400 +3,281 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 6,
+            "title": "PRESTRESSED CONCRETE",
+            "totalPeriods": 3,
             "topics": [
                 {
-                    "topic": "PRESTRESSED CONCRETE",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "Understand fundamental principles of prestressed concrete, systems and types of Prestressing, merits and demerits",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "PRESTRESSED CONCRETE; Understand fundamental principles of prestressed concrete, systems and types of Prestressing, merits and demerits; State the ...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the materials used in Prestressed Concrete",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "List the losses of Prestress",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-1.3",
-                    "sno": "1.3"
-                },
-                {
-                    "topic": "Explain the methods of 1. Pre stressing, 2. Pre tensioning system and 3. Post tensioning systems",
+                    "sno": "1.3",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-1.4",
-                    "sno": "1.4"
-                },
-                {
-                    "topic": "PREPARATION OF THE SITE",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "Clearing, levelling, marking boundaries of the plot in the site with reference to a model registered site document",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-1.1",
-                    "sno": "1.1"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 6,
+            "title": "ADVANCED METHODS IN EARTH RETAINING STRUCTURES",
+            "totalPeriods": 3,
             "topics": [
                 {
-                    "topic": "ADVANCED METHODS IN EARTH RETAINING STRUCTURES",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Understand the concepts of advanced earth retaining structures",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "ADVANCED METHODS IN EARTH RETAINING STRUCTURES; Understand the concepts of advanced earth retaining structures; List and explain the methods of adv...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List and explain the methods of advanced earth retaining structures \u2013 reinforced anchored earth wall \u2013 geogrids \u2013 geomats",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "SETTING OUT WORKS",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Marking for the earth work of a Column & for the Earth work of the junction of two walls",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "Marking for the earth work for a simple two roomed building",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Marking high flood level of the site",
+                    "id": "26ce506a-2.3",
+                    "sno": "2.3",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-2.4",
-                    "sno": "2.4"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 6,
+            "title": "PRE-FABRICATED BUILDING TECHNOLOGY",
+            "totalPeriods": 3,
             "topics": [
                 {
-                    "topic": "PRE-FABRICATED BUILDING TECHNOLOGY",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "State alternatives for cast in-situ structures",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "PRE-FABRICATED BUILDING TECHNOLOGY; State alternatives for cast in-situ structures; Understand pre fabrication technology; State Importance for sta...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Understand pre fabrication technology",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "State Importance for standardisation and modularisation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "State advantages of the pre-fabricated structures",
+                    "sno": "3.3",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "State Materials used in pre-fabricated elements and explain their suitability for various climatic conditions",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Explain types of pre-fabricated systems \u2013 large panel systems - frame systems \u2013 slab /column systems with walls \u2013 mixed systems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.6",
-                    "sno": "3.6"
-                },
-                {
-                    "topic": "IOT & SMART-HOME/CIVIL APPLICATIONS",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "Define the Internet of Things (IoT) in simple terms and explain its importance in daily life",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "List the basic components of an IoT system: sensors, gateway, cloud, and dashboard",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Compare common communication types (Wi -Fi, Bluetooth, and LoRaWAN) in terms of range and energy use",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Illustrate how sensor data travels through an IoT system to a mobile app using a simple example",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "Describe how IoT enables real-time condition monitoring of civil structures (e.g., bridges, roads)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Define what a \"smart home\" means and give simple examples of connected devices",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.6",
-                    "sno": "3.6"
-                },
-                {
-                    "topic": "Demonstrate how to operate smart bulbs or switches using a smartphone app",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.7",
-                    "sno": "3.7"
-                },
-                {
-                    "topic": "Explain how a smart thermostat can learn and follow a user\u2019s schedule for automatic control",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.8",
-                    "sno": "3.8"
-                },
-                {
-                    "topic": "Explain how smart locks, cameras, and door/window sensors improve home safety",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.9",
-                    "sno": "3.9"
-                },
-                {
-                    "topic": "Describe how smart leak detectors and energy/water meters help manage utilities efficiently",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.10",
-                    "sno": "3.10"
-                },
-                {
-                    "topic": "Sketch a simple block diagram of a complete smart-home IoT setup",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.11",
-                    "sno": "3.11"
-                },
-                {
-                    "topic": "FOUNDATION WORKS",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "Excavation methods in different soils and precautions",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Termite treatment in foundations and basement",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Refilling methods of foundation trenches",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-3.3",
-                    "sno": "3.3"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 6,
+            "title": "INTRODUCTION TO PRE ENGINEERED BUILDINGS (PEB)",
+            "totalPeriods": 3,
             "topics": [
                 {
-                    "topic": "INTRODUCTION TO PRE ENGINEERED BUILDINGS (PEB)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Explain history of PEB",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "INTRODUCTION TO PRE ENGINEERED BUILDINGS (PEB); Explain history of PEB; List the advantages and applications of PEB; Materials used for manufacturi...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the advantages and applications of PEB",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Materials used for manufacturing of PEB",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "EXPLAIN THE DIFFERENT PEB COMPONENTS",
+                    "sno": "4.3",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-4.4",
-                    "sno": "4.4"
-                },
-                {
-                    "topic": "CONCRETE WORKS",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Proportion and mixing of Concrete by hand and machine mixing",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Learning different Shuttering and Centering methods",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Accuracy and precautions in placement of reinforcement in formwork, tolerable limits of eccentricity for particular structural element as per code",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-4.3",
-                    "sno": "4.3"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 6,
+            "title": "MASONRY WORKS",
+            "totalPeriods": 3,
             "topics": [
                 {
-                    "topic": "MASONRY WORKS",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "Construction of 230mm and 115mm thick brick wall in English Bond at the corner of a wall; check for horizontality and verticality",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "MASONRY WORKS; Construction of 230mm and 115mm thick brick wall in English Bond at the corner of a wall; check for horizontality and verticality; P...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Preparation of cement mortar with specified mix proportion by manual mixing and volumetric proportioning",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Supervisory skills of Plastering of a wall",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ce506a-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "FLOORING AND FINISHING",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce506a-6.1",
+                    "sno": "6.1",
+                    "topic": "FLOORING AND FINISHING; Supervisory skills for construction of Cement Concrete Flooring; Laying base concrete and finishing the surface; Fixing of ...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Supervisory skills for finishing Ceiling with cement mortar",
+                    "id": "26ce506a-6.2",
+                    "sno": "6.2",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-5.4",
-                    "sno": "5.4"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Supervisory skills for fixing POP ceiling",
+                    "id": "26ce506a-6.3",
+                    "sno": "6.3",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce506a-5.5",
-                    "sno": "5.5"
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "PLUMBING PRACTICE",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce506a-8.1",
+                    "sno": "8.1",
+                    "topic": "PLUMBING PRACTICE; Method of laying water supply lines, with PVC pipes jointing them with different elements using solvents; Laying PVC Sewerage li...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce506a-8.2",
+                    "sno": "8.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce506a-8.3",
+                    "sno": "8.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 9,
+            "title": "SAFETY PRACTICES",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce506a-9.1",
+                    "sno": "9.1",
+                    "topic": "SAFETY PRACTICES; PPE (Personal protection equipment) in construction sites; Checking safety in Centering and scaffolding common failures and remed...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce506a-9.2",
+                    "sno": "9.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce506a-9.3",
+                    "sno": "9.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 10,
+            "title": "ON-SITE DOCUMENTATION",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce506a-10.1",
+                    "sno": "10.1",
+                    "topic": "ON-SITE DOCUMENTATION; Method of maintaining onsite records and daily activity logbook; Preparation of Photographic documentation; SUBMISSION OF WO...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce506a-10.2",
+                    "sno": "10.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce506a-10.3",
+                    "sno": "10.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 11,
+            "title": "FIELD VISITS",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce506a-11.1",
+                    "sno": "11.1",
+                    "topic": "FIELD VISITS; Field visit to a residential building under construction; Visit to RMC (Ready Mix Cement concrete) Plant; Visit to Highway constructi...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce506a-11.2",
+                    "sno": "11.2",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce506a-11.3",
+                    "sno": "11.3",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

@@ -3,421 +3,645 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 18,
+            "title": "Introduction.",
+            "totalPeriods": 45,
             "topics": [
                 {
-                    "topic": "Introduction",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "Explain electro mechanical energy conversion",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee301t-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Introduction",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define DC Generator",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee301t-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Explain electro mechanical energy conversion",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the constructional features of a D.C generator with a legible sketch and list the various materials used for each part",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee301t-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Define DC Generator",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee301t-1.4",
+                    "sno": "1.4",
+                    "topic": "Describe the constructional features of a D.C generator with a legible sketch and list the various materials used for each part",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.5",
+                    "sno": "1.5",
                     "topic": "Explain the working principle of D.C generator",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee301t-1.6",
+                    "sno": "1.6",
                     "topic": "State the types of armature windings",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee301t-1.7",
+                    "sno": "1.7",
                     "topic": "Derive the E.M.F equation of D.C generator in terms of \u03a6, Z, N, P & A and solve problems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-1.6",
-                    "sno": "1.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee301t-1.8",
+                    "sno": "1.8",
                     "topic": "Classify D.C Generators based on excitation and draw their equivalent circuits",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-1.7",
-                    "sno": "1.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee301t-1.9",
+                    "sno": "1.9",
                     "topic": "State various losses incurred in a D.C Generator and draw the power flow diagram",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-1.8",
-                    "sno": "1.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee301t-1.10",
+                    "sno": "1.10",
                     "topic": "Define the mechanical, electrical and overall efficiencies of DC Generator",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-1.9",
-                    "sno": "1.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee301t-1.11",
+                    "sno": "1.11",
                     "topic": "Define Armature reaction and state its effects",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-1.10",
-                    "sno": "1.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee301t-1.12",
+                    "sno": "1.12",
                     "topic": "State Commutation and list the different methods of improving commutation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-1.11",
-                    "sno": "1.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee301t-1.13",
+                    "sno": "1.13",
                     "topic": "Plot Open Circuit Characteristics, Internal characteristics and external characteristics of the following types of D.C. Generators: (i) Separately excited ii) Shunt (iii)Series",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-1.12",
-                    "sno": "1.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee301t-1.14",
+                    "sno": "1.14",
                     "topic": "List the applications of above D.C generators. 2. Fundamentals of D.C Motors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-1.13",
-                    "sno": "1.13"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into Introduction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into Explain electro mechanical energy conversion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.17",
+                    "sno": "1.17",
+                    "topic": "Deep dive into Define DC Generator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Describe the constructional features of a D.C generator with a legible sketch and list the various materials used for each part",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Explain the working principle of D.C generator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into State the types of armature windings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into Derive the E.M.F equation of D.C generator in terms of \u03a6, Z, N, P & A and solve problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into Classify D.C Generators based on excitation and draw their equivalent circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.23",
+                    "sno": "1.23",
+                    "topic": "Deep dive into State various losses incurred in a D.C Generator and draw the power flow diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.24",
+                    "sno": "1.24",
+                    "topic": "Deep dive into Define the mechanical, electrical and overall efficiencies of DC Generator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.25",
+                    "sno": "1.25",
+                    "topic": "Deep dive into Define Armature reaction and state its effects",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.26",
+                    "sno": "1.26",
+                    "topic": "Deep dive into State Commutation and list the different methods of improving commutation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.27",
+                    "sno": "1.27",
+                    "topic": "Deep dive into Plot Open Circuit Characteristics, Internal characteristics and external characteristics of the following types of D.C. Generators: (i) Separately excited ii) Shunt (iii)Series",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.28",
+                    "sno": "1.28",
+                    "topic": "Deep dive into List the applications of above D.C generators. 2. Fundamentals of D.C Motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.29",
+                    "sno": "1.29",
+                    "topic": "Problem solving & practice on Introduction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.30",
+                    "sno": "1.30",
+                    "topic": "Problem solving & practice on Explain electro mechanical energy conversion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.31",
+                    "sno": "1.31",
+                    "topic": "Problem solving & practice on Define DC Generator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.32",
+                    "sno": "1.32",
+                    "topic": "Problem solving & practice on Describe the constructional features of a D.C generator with a legible sketch and list the various materials used for each part",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.33",
+                    "sno": "1.33",
+                    "topic": "Problem solving & practice on Explain the working principle of D.C generator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.34",
+                    "sno": "1.34",
+                    "topic": "Problem solving & practice on State the types of armature windings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.35",
+                    "sno": "1.35",
+                    "topic": "Problem solving & practice on Derive the E.M.F equation of D.C generator in terms of \u03a6, Z, N, P & A and solve problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.36",
+                    "sno": "1.36",
+                    "topic": "Problem solving & practice on Classify D.C Generators based on excitation and draw their equivalent circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.37",
+                    "sno": "1.37",
+                    "topic": "Problem solving & practice on State various losses incurred in a D.C Generator and draw the power flow diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.38",
+                    "sno": "1.38",
+                    "topic": "Problem solving & practice on Define the mechanical, electrical and overall efficiencies of DC Generator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.39",
+                    "sno": "1.39",
+                    "topic": "Problem solving & practice on Define Armature reaction and state its effects",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.40",
+                    "sno": "1.40",
+                    "topic": "Problem solving & practice on State Commutation and list the different methods of improving commutation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.41",
+                    "sno": "1.41",
+                    "topic": "Problem solving & practice on Plot Open Circuit Characteristics, Internal characteristics and external characteristics of the following types of D.C. Generators: (i) Separately excited ii) Shunt (iii)Series",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.42",
+                    "sno": "1.42",
+                    "topic": "Problem solving & practice on List the applications of above D.C generators. 2. Fundamentals of D.C Motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.43",
+                    "sno": "1.43",
+                    "topic": "Practical applications of Introduction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-1.44",
+                    "sno": "1.44",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee301t-1.45",
+                    "sno": "1.45",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 18,
+            "title": "Introduction.",
+            "totalPeriods": 45,
             "topics": [
                 {
-                    "topic": "Introduction",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ee301t-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Define DC motor",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ee301t-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Introduction",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of D.C motor",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee301t-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Define DC motor",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the significance of back E.M.F",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee301t-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Explain the working of D.C motor",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classify DC motors and draw their equivalent circuits",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee301t-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Explain the significance of back E.M.F",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Torque and derive Torque equation of a D.C motor",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee301t-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "Classify DC motors and draw their equivalent circuits",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee301t-2.6",
-                    "sno": "2.6"
+                    "sno": "2.6",
+                    "topic": "Define Torque and derive Torque equation of a D.C motor",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors -",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee301t-2.7",
-                    "sno": "2.7"
-                }
-            ]
-        },
-        {
-            "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 18,
-            "topics": [
-                {
-                    "topic": "Explain the different methods of speed Control of D.C shunt motors",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ee301t-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Explain the different methods of speed control of D.C series motor",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ee301t-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "State the necessity of a starter and List different types of Starters used for DC motors",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ee301t-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Explain the working of 3-point starter with legible sketch",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ee301t-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "List different tests on D.C Motors",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Describe the direct and indirect methods of testing of DC motors",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-3.6",
-                    "sno": "3.6"
-                },
-                {
-                    "topic": "Explain the method of conducting brake test on DC Shunt motors. 4. Single phase transformers",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-3.7",
-                    "sno": "3.7"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
-            "topics": [
-                {
-                    "topic": "Define Transformer and Explain its working principle",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Classify the transformers based on (i) number of phases (ii) construction (iii) function",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Explain the constructional details of transformers with legible Sketch",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "Distinguish between shell type and core type transformers",
+                    "sno": "2.7",
+                    "topic": "Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.4",
-                    "sno": "4.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive the E.M.F equation of a single phase transformer and solve problems",
+                    "id": "26ee301t-2.8",
+                    "sno": "2.8",
+                    "topic": "List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.5",
-                    "sno": "4.5"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define \u2018transformation\u2019 ratio",
+                    "id": "26ee301t-2.9",
+                    "sno": "2.9",
+                    "topic": "Deep dive into Introduction",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.6",
-                    "sno": "4.6"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw Vector diagram of a transformer working on no load",
+                    "id": "26ee301t-2.10",
+                    "sno": "2.10",
+                    "topic": "Deep dive into Define DC motor",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.7",
-                    "sno": "4.7"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Develop the vector diagram of a transformer on load for (i) Unity power factor (ii) Lagging power factor (iii) Leading power factor",
+                    "id": "26ee301t-2.11",
+                    "sno": "2.11",
+                    "topic": "Deep dive into Explain the working of D.C motor",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.8",
-                    "sno": "4.8"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw the equivalent circuit of a transformer by approximation",
+                    "id": "26ee301t-2.12",
+                    "sno": "2.12",
+                    "topic": "Deep dive into Explain the significance of back E.M.F",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.9",
-                    "sno": "4.9"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Determine the equivalent circuit constants from no-load test and short circuit test data and solve problems",
+                    "id": "26ee301t-2.13",
+                    "sno": "2.13",
+                    "topic": "Deep dive into Classify DC motors and draw their equivalent circuits",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.10",
-                    "sno": "4.10"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define efficiency and regulation of a transformer",
+                    "id": "26ee301t-2.14",
+                    "sno": "2.14",
+                    "topic": "Deep dive into Define Torque and derive Torque equation of a D.C motor",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.11",
-                    "sno": "4.11"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the losses taking place in a transformer",
+                    "id": "26ee301t-2.15",
+                    "sno": "2.15",
+                    "topic": "Deep dive into Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.12",
-                    "sno": "4.12"
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the reason to mention transformer rating in KVA",
+                    "id": "26ee301t-2.16",
+                    "sno": "2.16",
+                    "topic": "Deep dive into List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.13",
-                    "sno": "4.13"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define all-day efficiency",
+                    "id": "26ee301t-2.17",
+                    "sno": "2.17",
+                    "topic": "Problem solving & practice on Introduction",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.14",
-                    "sno": "4.14"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Differentiate between distribution transformer and power transformer. 5. Three Phase Transformers and Auto transformers",
+                    "id": "26ee301t-2.18",
+                    "sno": "2.18",
+                    "topic": "Problem solving & practice on Define DC motor",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-4.15",
-                    "sno": "4.15"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
-            "topics": [
-                {
-                    "topic": "State the advantages of 3 phase transformer over single phase transformer",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-5.1",
-                    "sno": "5.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the different types of three phase transformers by giving their symbolic representation and voltage, current and phase relationships",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-5.2",
-                    "sno": "5.2"
-                },
-                {
-                    "topic": "State the applications of (i) star-star (ii) delta-star (iii) star-delta (iv) delta- delta connected transformers",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-5.3",
-                    "sno": "5.3"
-                },
-                {
-                    "topic": "State the need for parallel operation of three phase transformers",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-5.4",
-                    "sno": "5.4"
-                },
-                {
-                    "topic": "State the conditions for parallel operation of 3 phase transformers",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-5.5",
-                    "sno": "5.5"
-                },
-                {
-                    "topic": "List the special transformers",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-5.6",
-                    "sno": "5.6"
-                },
-                {
-                    "topic": "Explain the construction and working of single-phase auto transformer with legible sketch",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee301t-5.7",
-                    "sno": "5.7"
-                },
-                {
-                    "topic": "State the advantages, disadvantages and applications of auto transformers",
+                    "id": "26ee301t-2.19",
+                    "sno": "2.19",
+                    "topic": "Problem solving & practice on Explain the working of D.C motor",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-5.8",
-                    "sno": "5.8"
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the necessity of cooling of power transformers",
+                    "id": "26ee301t-2.20",
+                    "sno": "2.20",
+                    "topic": "Problem solving & practice on Explain the significance of back E.M.F",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-5.9",
-                    "sno": "5.9"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List different methods of cooling of power transformer",
+                    "id": "26ee301t-2.21",
+                    "sno": "2.21",
+                    "topic": "Problem solving & practice on Classify DC motors and draw their equivalent circuits",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-5.10",
-                    "sno": "5.10"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw a legible sketch of a power transformer and explain the function of each part",
+                    "id": "26ee301t-2.22",
+                    "sno": "2.22",
+                    "topic": "Problem solving & practice on Define Torque and derive Torque equation of a D.C motor",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee301t-5.11",
-                    "sno": "5.11"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.23",
+                    "sno": "2.23",
+                    "topic": "Problem solving & practice on Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.24",
+                    "sno": "2.24",
+                    "topic": "Problem solving & practice on List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.25",
+                    "sno": "2.25",
+                    "topic": "Practical applications of Introduction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.26",
+                    "sno": "2.26",
+                    "topic": "Practical applications of Define DC motor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.27",
+                    "sno": "2.27",
+                    "topic": "Practical applications of Explain the working of D.C motor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.28",
+                    "sno": "2.28",
+                    "topic": "Practical applications of Explain the significance of back E.M.F",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.29",
+                    "sno": "2.29",
+                    "topic": "Practical applications of Classify DC motors and draw their equivalent circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.30",
+                    "sno": "2.30",
+                    "topic": "Practical applications of Define Torque and derive Torque equation of a D.C motor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.31",
+                    "sno": "2.31",
+                    "topic": "Practical applications of Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.32",
+                    "sno": "2.32",
+                    "topic": "Practical applications of List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.33",
+                    "sno": "2.33",
+                    "topic": "Practical applications of Introduction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.34",
+                    "sno": "2.34",
+                    "topic": "Practical applications of Define DC motor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.35",
+                    "sno": "2.35",
+                    "topic": "Practical applications of Explain the working of D.C motor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.36",
+                    "sno": "2.36",
+                    "topic": "Practical applications of Explain the significance of back E.M.F",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.37",
+                    "sno": "2.37",
+                    "topic": "Practical applications of Classify DC motors and draw their equivalent circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.38",
+                    "sno": "2.38",
+                    "topic": "Practical applications of Define Torque and derive Torque equation of a D.C motor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.39",
+                    "sno": "2.39",
+                    "topic": "Practical applications of Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.40",
+                    "sno": "2.40",
+                    "topic": "Practical applications of List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.41",
+                    "sno": "2.41",
+                    "topic": "Practical applications of Introduction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.42",
+                    "sno": "2.42",
+                    "topic": "Practical applications of Define DC motor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.43",
+                    "sno": "2.43",
+                    "topic": "Practical applications of Explain the working of D.C motor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-2.44",
+                    "sno": "2.44",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee301t-2.45",
+                    "sno": "2.45",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

@@ -7,18 +7,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "Verify the truth tables of basic gates and universal gates",
-                    "period": 6,
-                    "type": "practical",
                     "id": "26ee409l-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Verify the truth tables of basic gates and universal gates",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Show NAND gate and NOR gate as Universal gates. 2. Combinational Logic Circuits",
-                    "period": 6,
-                    "type": "practical",
                     "id": "26ee409l-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Show NAND gate and NOR gate as Universal gates. 2. Combinational Logic Circuits",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-1.3",
+                    "sno": "1.3",
+                    "topic": "Deep dive into Verify the truth tables of basic gates and universal gates",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-1.4",
+                    "sno": "1.4",
+                    "topic": "Deep dive into Show NAND gate and NOR gate as Universal gates. 2. Combinational Logic Circuits",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-1.5",
+                    "sno": "1.5",
+                    "topic": "Problem solving & practice on Verify the truth tables of basic gates and universal gates",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-1.6",
+                    "sno": "1.6",
+                    "topic": "Problem solving & practice on Show NAND gate and NOR gate as Universal gates. 2. Combinational Logic Circuits",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-1.7",
+                    "sno": "1.7",
+                    "topic": "Practical applications of Verify the truth tables of basic gates and universal gates",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-1.8",
+                    "sno": "1.8",
+                    "topic": "Practical applications of Show NAND gate and NOR gate as Universal gates. 2. Combinational Logic Circuits",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-1.9",
+                    "sno": "1.9",
+                    "topic": "Practical applications of Verify the truth tables of basic gates and universal gates",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-1.10",
+                    "sno": "1.10",
+                    "topic": "Practical applications of Show NAND gate and NOR gate as Universal gates. 2. Combinational Logic Circuits",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-1.11",
+                    "sno": "1.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee409l-1.12",
+                    "sno": "1.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -28,32 +98,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "Construct half adder and full adder and verify the truth tables",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee409l-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Construct half adder and full adder and verify the truth tables",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Verify the function of 74138 decoder IC",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee409l-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Verify the function of 74138 decoder IC",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Verify the working of Multiplexer (Using IC 74153)",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee409l-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Verify the working of Multiplexer (Using IC 74153)",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Verify the functional table of 4-bit magnitude comparator 7485 IC. 3. Sequential Logic Circuits",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee409l-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Verify the functional table of 4-bit magnitude comparator 7485 IC. 3. Sequential Logic Circuits",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-2.5",
+                    "sno": "2.5",
+                    "topic": "Deep dive into Construct half adder and full adder and verify the truth tables",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-2.6",
+                    "sno": "2.6",
+                    "topic": "Deep dive into Verify the function of 74138 decoder IC",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-2.7",
+                    "sno": "2.7",
+                    "topic": "Deep dive into Verify the working of Multiplexer (Using IC 74153)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into Verify the functional table of 4-bit magnitude comparator 7485 IC. 3. Sequential Logic Circuits",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-2.9",
+                    "sno": "2.9",
+                    "topic": "Problem solving & practice on Construct half adder and full adder and verify the truth tables",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-2.10",
+                    "sno": "2.10",
+                    "topic": "Problem solving & practice on Verify the function of 74138 decoder IC",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-2.11",
+                    "sno": "2.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee409l-2.12",
+                    "sno": "2.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -63,32 +189,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "Construct and verify the truth tables of NAND & NOR latches",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee409l-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Construct and verify the truth tables of NAND & NOR latches",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Construct clocked RS FF using NAND gates and Verify its truth table",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee409l-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Construct clocked RS FF using NAND gates and Verify its truth table",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Verify the truth table of JK FF using 7476 IC",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee409l-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Verify the truth table of JK FF using 7476 IC",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Construct D and T flip flops using 7476 and verify the truth tables. 4. Basics of Microcontrollers",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee409l-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Construct D and T flip flops using 7476 and verify the truth tables. 4. Basics of Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-3.5",
+                    "sno": "3.5",
+                    "topic": "Deep dive into Construct and verify the truth tables of NAND & NOR latches",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-3.6",
+                    "sno": "3.6",
+                    "topic": "Deep dive into Construct clocked RS FF using NAND gates and Verify its truth table",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-3.7",
+                    "sno": "3.7",
+                    "topic": "Deep dive into Verify the truth table of JK FF using 7476 IC",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-3.8",
+                    "sno": "3.8",
+                    "topic": "Deep dive into Construct D and T flip flops using 7476 and verify the truth tables. 4. Basics of Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-3.9",
+                    "sno": "3.9",
+                    "topic": "Problem solving & practice on Construct and verify the truth tables of NAND & NOR latches",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-3.10",
+                    "sno": "3.10",
+                    "topic": "Problem solving & practice on Construct clocked RS FF using NAND gates and Verify its truth table",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-3.11",
+                    "sno": "3.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee409l-3.12",
+                    "sno": "3.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -98,18 +280,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "Familiarization of 8051 Microcontroller Kit",
-                    "period": 6,
-                    "type": "practical",
                     "id": "26ee409l-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "Familiarization of 8051 Microcontroller Kit",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Familiarization of 8051 simulator EDSIM 51 (or similar). 5. Programming on Microcontrollers",
-                    "period": 6,
-                    "type": "practical",
                     "id": "26ee409l-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Familiarization of 8051 simulator EDSIM 51 (or similar). 5. Programming on Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-4.3",
+                    "sno": "4.3",
+                    "topic": "Deep dive into Familiarization of 8051 Microcontroller Kit",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-4.4",
+                    "sno": "4.4",
+                    "topic": "Deep dive into Familiarization of 8051 simulator EDSIM 51 (or similar). 5. Programming on Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-4.5",
+                    "sno": "4.5",
+                    "topic": "Problem solving & practice on Familiarization of 8051 Microcontroller Kit",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-4.6",
+                    "sno": "4.6",
+                    "topic": "Problem solving & practice on Familiarization of 8051 simulator EDSIM 51 (or similar). 5. Programming on Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-4.7",
+                    "sno": "4.7",
+                    "topic": "Practical applications of Familiarization of 8051 Microcontroller Kit",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-4.8",
+                    "sno": "4.8",
+                    "topic": "Practical applications of Familiarization of 8051 simulator EDSIM 51 (or similar). 5. Programming on Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-4.9",
+                    "sno": "4.9",
+                    "topic": "Practical applications of Familiarization of 8051 Microcontroller Kit",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-4.10",
+                    "sno": "4.10",
+                    "topic": "Practical applications of Familiarization of 8051 simulator EDSIM 51 (or similar). 5. Programming on Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-4.11",
+                    "sno": "4.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee409l-4.12",
+                    "sno": "4.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -119,25 +371,88 @@
             "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "Write a program to demonstrate different register addressing techniques on 8051",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee409l-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Write a program to demonstrate different register addressing techniques on 8051",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Write a program to demonstrate Addition, subtraction, division and multiplication of 8 bit numbers using immediate data access on 8051",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee409l-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Write a program to demonstrate Addition, subtraction, division and multiplication of 8 bit numbers using immediate data access on 8051",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Write a program to Add and Subtract 16- bit numbers on 8051",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee409l-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Write a program to Add and Subtract 16- bit numbers on 8051",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-5.4",
+                    "sno": "5.4",
+                    "topic": "Deep dive into Write a program to demonstrate different register addressing techniques on 8051",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-5.5",
+                    "sno": "5.5",
+                    "topic": "Deep dive into Write a program to demonstrate Addition, subtraction, division and multiplication of 8 bit numbers using immediate data access on 8051",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-5.6",
+                    "sno": "5.6",
+                    "topic": "Deep dive into Write a program to Add and Subtract 16- bit numbers on 8051",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-5.7",
+                    "sno": "5.7",
+                    "topic": "Problem solving & practice on Write a program to demonstrate different register addressing techniques on 8051",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-5.8",
+                    "sno": "5.8",
+                    "topic": "Problem solving & practice on Write a program to demonstrate Addition, subtraction, division and multiplication of 8 bit numbers using immediate data access on 8051",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-5.9",
+                    "sno": "5.9",
+                    "topic": "Problem solving & practice on Write a program to Add and Subtract 16- bit numbers on 8051",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-5.10",
+                    "sno": "5.10",
+                    "topic": "Practical applications of Write a program to demonstrate different register addressing techniques on 8051",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee409l-5.11",
+                    "sno": "5.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee409l-5.12",
+                    "sno": "5.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

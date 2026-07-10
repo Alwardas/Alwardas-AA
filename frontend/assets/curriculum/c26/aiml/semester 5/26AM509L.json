@@ -7,46 +7,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Introduction to Introduction & Fundamentals",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Introduction & Fundamentals",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Deep dive into Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Introduction & Fundamentals",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.7",
+                    "sno": "1.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.8",
+                    "sno": "1.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.9",
+                    "sno": "1.9",
+                    "topic": "Problem solving & practice on Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.10",
+                    "sno": "1.10",
+                    "topic": "Problem solving & practice on Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.11",
+                    "sno": "1.11",
+                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.12",
+                    "sno": "1.12",
+                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.13",
+                    "sno": "1.13",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.14",
+                    "sno": "1.14",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.15",
+                    "sno": "1.15",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.16",
+                    "sno": "1.16",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-1.17",
+                    "sno": "1.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am509l-1.18",
+                    "sno": "1.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -56,46 +140,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Introduction to Core Concepts & Principles",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Core Concepts & Principles",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Practical application and standard setups for Unit 2",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "Deep dive into Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Core Concepts & Principles",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-2.6",
-                    "sno": "2.6"
+                    "sno": "2.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.7",
+                    "sno": "2.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.9",
+                    "sno": "2.9",
+                    "topic": "Problem solving & practice on Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.10",
+                    "sno": "2.10",
+                    "topic": "Problem solving & practice on Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.11",
+                    "sno": "2.11",
+                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.12",
+                    "sno": "2.12",
+                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.13",
+                    "sno": "2.13",
+                    "topic": "Practical applications of Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.14",
+                    "sno": "2.14",
+                    "topic": "Practical applications of Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.15",
+                    "sno": "2.15",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.16",
+                    "sno": "2.16",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-2.17",
+                    "sno": "2.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am509l-2.18",
+                    "sno": "2.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -105,46 +273,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Introduction to System Design & Methodology",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Introduction to Unit 3 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of System Design & Methodology",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Detailed analysis of Unit 3 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Practical application and standard setups for Unit 3",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Deep dive into Introduction to Unit 3 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of System Design & Methodology",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-3.6",
-                    "sno": "3.6"
+                    "sno": "3.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 3 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.7",
+                    "sno": "3.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.8",
+                    "sno": "3.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.9",
+                    "sno": "3.9",
+                    "topic": "Problem solving & practice on Introduction to Unit 3 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.10",
+                    "sno": "3.10",
+                    "topic": "Problem solving & practice on Detailed analysis of Unit 3 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.11",
+                    "sno": "3.11",
+                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.12",
+                    "sno": "3.12",
+                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.13",
+                    "sno": "3.13",
+                    "topic": "Practical applications of Introduction to Unit 3 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.14",
+                    "sno": "3.14",
+                    "topic": "Practical applications of Detailed analysis of Unit 3 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.15",
+                    "sno": "3.15",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.16",
+                    "sno": "3.16",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-3.17",
+                    "sno": "3.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am509l-3.18",
+                    "sno": "3.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -154,53 +406,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26am509l-4.1",
+                    "sno": "4.1",
                     "topic": "Provision for Improvement Improvement is allowed only after he / she has completed all the courses from First Year to Final semester of the Diploma. a) Improvement is allowed in any 4 (Four) courses of the Diploma Programme. b) The student can avail the improvement chance only once and it must be taken within the two examinations immediately following the completion of their Diploma. However, the duration including Improvement examination shall not exceed FIVE years from the year of first admission. c) No improvement is allowed in Practical / Lab Courses or Project work or Industrial Training assessment. However, improvement in drawing Course(s) is allowed. d) If improvement is not achieved, the marks obtained in the previous Examinations hold good. e) Improvement is not allowed in respect of the candidates who are punished under Mal-Practice in any examination. f) Examination fee for improvement shall be paid as per the notification issued by State Board of Technical Education and Training from time to time. g) All the candidates who wish to appear for improvement of performance shall deposit the original Marks Memos of all the years / Semesters including Consolidated Marks Memo(CMM) and also original Diploma Certificate to the Board. If there is improvement in performance of the current examination, the revised Memorandum of marks including CMM and Original Diploma Certificate will be issued, else the submitted originals will be returned. 19",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26am509l-4.11",
-                    "sno": "4.11"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26am509l-4.2",
+                    "sno": "4.2",
                     "topic": "Rules of Promotion: i. A candidate shall be permitted to appear for first year examination provided he / she has 75% attendance (which can be condoned on medical grounds up to 10%) i.e. attendance after condonation on medical grounds should not be less than 65% and has to pay the examination fee. ii. A candidate shall be promoted to 3 rd semester if he/she puts in the required percentage of attendance in the first year and pays the examination fee. A candidate who could not pay the first -year examination fee has to pay the promotion fee as prescribed by State Board of Technical Education and Training, AP from time to time before commencement of 3rd semester. iii. A candidate shall be promoted to 4th semester provided he/she puts the required percentage of attendance in the 3 rd semester and paid the examination fee. A candidate, who could not pay the 3 rd semester exam fee, has to pay the promotion fee as prescribed by State Board of Technical Education and Training AP from time to time before commencement of 4th semester. A candidate is eligible to appear for the 4 th semester examination if he/she puts the required percentage of attendance in the 4 th semester and pays the examination fee. iv A candidate shall be promoted to 5th semester provided he / she puts the required percentage of attendance in the 4 th semester and pays the examination fee. A candidate, who could not pay the 4 th semester examination fee, has to pay the promotion fee as prescribed by State Board of Technical Education and Training from time to time before commencement of 5 th semester. A candidate is eligible to appear for the 5th semester examination if he/she puts the required percentage of attendance in the 5th semester and pays the examination fee. v A candidate shall be sent to Industrial Training/6 th semester provided he/she puts in the required percentage of attendance in the 5 th semester and pays the examination fee /promotion fee as prescribed by SBTET. A candidate is eligible to appear for Industrial Training assessment (Seminar/Viva -Voce) only if he/ she puts the required 20 percentage of attendance, i.e., 90% in the 6 th semester Industrial Training and pays the examination fee. vi Industrial Training shall be treated as the 6th semester, irrespective of whether the training is undertaken during the 5th or 6th semester. For IVC & ITI Lateral Entry students: i) A candidate shall be permitted to appear for Third semester examination provided he/she puts in 75% attendance (which can be condoned on medical grounds up to 10%) and pays the examination fee for third semester. ii) A candidate shall be promoted to 4 th semester provided he/she puts the required percentage of attendance in the 3rd semester and pays the examination fee. A candidate who could not pay the 3rd semester exam fee, has to pay the promotion fee as prescribed by SBTET, A.P from time to time before commencement of 4th semester. A candidate is eligible to appear for the 4 th semester examination if he/she puts the required percentage of attendance in the 4 th semester and pays the examination fee. iii) A candidate shall be promoted to 5 th semester provided he / she put the required percentage of attendance in the 4th semester and pays the examination fee. A candidate, who could not pay the 4th semester examination fee, has to pay the promotion fee as prescribed by State Board of Technical Education and Training from time to time before commencement of 5 th semester. A candidate is eligible to appear for the 5th semester examination if he/she puts the required percentage of attendance in the 5th semester and pays the examination fee. iv) A candidate shall be sent to Industrial Training/VI semester provided he/she puts in the required percentage of attendance in the 5th semester and pays the examination fee /promotion fee as prescribed by SBTET. A candidate is eligible to appear for Industrial Training assessment (Seminar/Viva -Voce) only if he / she puts the required percentage of attendance, i.e., 90% in the 6 th semester Industrial Training and pays the examination fee. 21",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26am509l-4.12",
-                    "sno": "4.12"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26am509l-4.3",
+                    "sno": "4.3",
                     "topic": "Student Performance Evaluation Successful candidates shall be awarded the Diploma under the following CGPA. CGPA secured Division CGPA \u2265 7.5 First Class with Distinction (who completed Diploma within 3 years)",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26am509l-4.13",
-                    "sno": "4.13"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26am509l-4.4",
+                    "sno": "4.4",
                     "topic": "Examination Fee Schedule Examination fees are as per the notifications issued by the State Board of Technical Education and Training (SBTET), Andhra Pradesh, from time to time",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26am509l-4.14",
-                    "sno": "4.14"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26am509l-4.5",
+                    "sno": "4.5",
                     "topic": "Issue of Memorandum of Marks All candidates who appear for the Summative Assessment will be issued memorandum of marks without any payment of fee. However, candidates who lose the original memorandum of marks have to pay the prescribed fee to the Secretary, State Board of Technical Education and Training, A.P. for each duplicate memo. After successful completion of all courses, Consolidated Memorandum of Marks will be issued",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26am509l-4.16",
-                    "sno": "4.16"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26am509l-4.6",
+                    "sno": "4.6",
                     "topic": "Eligibility for Award of Diploma A candidate is eligible for the Diploma if: i) They have pursued the course for not less than 3 years and not more 25 than 6 years. ii) Students must complete all the required courses. Those who fail to fulfil the requirements within the maximum permissible period shall forfeit their seat and will not be eligible for readmission For IVC & ITI Lateral Entry students: i) They must pursue the course for not less than 2 years and not more than 4 years. ii)They must complete all required courses. Failure to meet the requirements within the maximum permissible period shall result in forfeiture of the seat, and the student will not be eligible for readmission. Note: As and when a new curriculum is introduced in future, existing curriculum students under C -26 scheme shall write their backlog courses if any in the new curriculum equivalent courses decided by the SBTET, AP",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26am509l-4.18",
-                    "sno": "4.18"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26am509l-4.7",
+                    "sno": "4.7",
                     "topic": "Malpractice Cases: If any candidate resorts to Malpractice during examinations, he / she shall be booked and the punishment shall be awarded as per SBTET,AP rules and regulations in vogue",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26am509l-4.19",
-                    "sno": "4.19"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-4.8",
+                    "sno": "4.8",
+                    "topic": "Deep dive into Provision for Improvement Improvement is allowed only after he / she has completed all the courses from First Year to Final semester of the Diploma. a) Improvement is allowed in any 4 (Four) courses of the Diploma Programme. b) The student can avail the improvement chance only once and it must be taken within the two examinations immediately following the completion of their Diploma. However, the duration including Improvement examination shall not exceed FIVE years from the year of first admission. c) No improvement is allowed in Practical / Lab Courses or Project work or Industrial Training assessment. However, improvement in drawing Course(s) is allowed. d) If improvement is not achieved, the marks obtained in the previous Examinations hold good. e) Improvement is not allowed in respect of the candidates who are punished under Mal-Practice in any examination. f) Examination fee for improvement shall be paid as per the notification issued by State Board of Technical Education and Training from time to time. g) All the candidates who wish to appear for improvement of performance shall deposit the original Marks Memos of all the years / Semesters including Consolidated Marks Memo(CMM) and also original Diploma Certificate to the Board. If there is improvement in performance of the current examination, the revised Memorandum of marks including CMM and Original Diploma Certificate will be issued, else the submitted originals will be returned. 19",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-4.9",
+                    "sno": "4.9",
+                    "topic": "Deep dive into Rules of Promotion: i. A candidate shall be permitted to appear for first year examination provided he / she has 75% attendance (which can be condoned on medical grounds up to 10%) i.e. attendance after condonation on medical grounds should not be less than 65% and has to pay the examination fee. ii. A candidate shall be promoted to 3 rd semester if he/she puts in the required percentage of attendance in the first year and pays the examination fee. A candidate who could not pay the first -year examination fee has to pay the promotion fee as prescribed by State Board of Technical Education and Training, AP from time to time before commencement of 3rd semester. iii. A candidate shall be promoted to 4th semester provided he/she puts the required percentage of attendance in the 3 rd semester and paid the examination fee. A candidate, who could not pay the 3 rd semester exam fee, has to pay the promotion fee as prescribed by State Board of Technical Education and Training AP from time to time before commencement of 4th semester. A candidate is eligible to appear for the 4 th semester examination if he/she puts the required percentage of attendance in the 4 th semester and pays the examination fee. iv A candidate shall be promoted to 5th semester provided he / she puts the required percentage of attendance in the 4 th semester and pays the examination fee. A candidate, who could not pay the 4 th semester examination fee, has to pay the promotion fee as prescribed by State Board of Technical Education and Training from time to time before commencement of 5 th semester. A candidate is eligible to appear for the 5th semester examination if he/she puts the required percentage of attendance in the 5th semester and pays the examination fee. v A candidate shall be sent to Industrial Training/6 th semester provided he/she puts in the required percentage of attendance in the 5 th semester and pays the examination fee /promotion fee as prescribed by SBTET. A candidate is eligible to appear for Industrial Training assessment (Seminar/Viva -Voce) only if he/ she puts the required 20 percentage of attendance, i.e., 90% in the 6 th semester Industrial Training and pays the examination fee. vi Industrial Training shall be treated as the 6th semester, irrespective of whether the training is undertaken during the 5th or 6th semester. For IVC & ITI Lateral Entry students: i) A candidate shall be permitted to appear for Third semester examination provided he/she puts in 75% attendance (which can be condoned on medical grounds up to 10%) and pays the examination fee for third semester. ii) A candidate shall be promoted to 4 th semester provided he/she puts the required percentage of attendance in the 3rd semester and pays the examination fee. A candidate who could not pay the 3rd semester exam fee, has to pay the promotion fee as prescribed by SBTET, A.P from time to time before commencement of 4th semester. A candidate is eligible to appear for the 4 th semester examination if he/she puts the required percentage of attendance in the 4 th semester and pays the examination fee. iii) A candidate shall be promoted to 5 th semester provided he / she put the required percentage of attendance in the 4th semester and pays the examination fee. A candidate, who could not pay the 4th semester examination fee, has to pay the promotion fee as prescribed by State Board of Technical Education and Training from time to time before commencement of 5 th semester. A candidate is eligible to appear for the 5th semester examination if he/she puts the required percentage of attendance in the 5th semester and pays the examination fee. iv) A candidate shall be sent to Industrial Training/VI semester provided he/she puts in the required percentage of attendance in the 5th semester and pays the examination fee /promotion fee as prescribed by SBTET. A candidate is eligible to appear for Industrial Training assessment (Seminar/Viva -Voce) only if he / she puts the required percentage of attendance, i.e., 90% in the 6 th semester Industrial Training and pays the examination fee. 21",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-4.10",
+                    "sno": "4.10",
+                    "topic": "Deep dive into Student Performance Evaluation Successful candidates shall be awarded the Diploma under the following CGPA. CGPA secured Division CGPA \u2265 7.5 First Class with Distinction (who completed Diploma within 3 years)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-4.11",
+                    "sno": "4.11",
+                    "topic": "Deep dive into Examination Fee Schedule Examination fees are as per the notifications issued by the State Board of Technical Education and Training (SBTET), Andhra Pradesh, from time to time",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-4.12",
+                    "sno": "4.12",
+                    "topic": "Deep dive into Issue of Memorandum of Marks All candidates who appear for the Summative Assessment will be issued memorandum of marks without any payment of fee. However, candidates who lose the original memorandum of marks have to pay the prescribed fee to the Secretary, State Board of Technical Education and Training, A.P. for each duplicate memo. After successful completion of all courses, Consolidated Memorandum of Marks will be issued",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-4.13",
+                    "sno": "4.13",
+                    "topic": "Deep dive into Eligibility for Award of Diploma A candidate is eligible for the Diploma if: i) They have pursued the course for not less than 3 years and not more 25 than 6 years. ii) Students must complete all the required courses. Those who fail to fulfil the requirements within the maximum permissible period shall forfeit their seat and will not be eligible for readmission For IVC & ITI Lateral Entry students: i) They must pursue the course for not less than 2 years and not more than 4 years. ii)They must complete all required courses. Failure to meet the requirements within the maximum permissible period shall result in forfeiture of the seat, and the student will not be eligible for readmission. Note: As and when a new curriculum is introduced in future, existing curriculum students under C -26 scheme shall write their backlog courses if any in the new curriculum equivalent courses decided by the SBTET, AP",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-4.14",
+                    "sno": "4.14",
+                    "topic": "Deep dive into Malpractice Cases: If any candidate resorts to Malpractice during examinations, he / she shall be booked and the punishment shall be awarded as per SBTET,AP rules and regulations in vogue",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-4.15",
+                    "sno": "4.15",
+                    "topic": "Problem solving & practice on Provision for Improvement Improvement is allowed only after he / she has completed all the courses from First Year to Final semester of the Diploma. a) Improvement is allowed in any 4 (Four) courses of the Diploma Programme. b) The student can avail the improvement chance only once and it must be taken within the two examinations immediately following the completion of their Diploma. However, the duration including Improvement examination shall not exceed FIVE years from the year of first admission. c) No improvement is allowed in Practical / Lab Courses or Project work or Industrial Training assessment. However, improvement in drawing Course(s) is allowed. d) If improvement is not achieved, the marks obtained in the previous Examinations hold good. e) Improvement is not allowed in respect of the candidates who are punished under Mal-Practice in any examination. f) Examination fee for improvement shall be paid as per the notification issued by State Board of Technical Education and Training from time to time. g) All the candidates who wish to appear for improvement of performance shall deposit the original Marks Memos of all the years / Semesters including Consolidated Marks Memo(CMM) and also original Diploma Certificate to the Board. If there is improvement in performance of the current examination, the revised Memorandum of marks including CMM and Original Diploma Certificate will be issued, else the submitted originals will be returned. 19",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-4.16",
+                    "sno": "4.16",
+                    "topic": "Problem solving & practice on Rules of Promotion: i. A candidate shall be permitted to appear for first year examination provided he / she has 75% attendance (which can be condoned on medical grounds up to 10%) i.e. attendance after condonation on medical grounds should not be less than 65% and has to pay the examination fee. ii. A candidate shall be promoted to 3 rd semester if he/she puts in the required percentage of attendance in the first year and pays the examination fee. A candidate who could not pay the first -year examination fee has to pay the promotion fee as prescribed by State Board of Technical Education and Training, AP from time to time before commencement of 3rd semester. iii. A candidate shall be promoted to 4th semester provided he/she puts the required percentage of attendance in the 3 rd semester and paid the examination fee. A candidate, who could not pay the 3 rd semester exam fee, has to pay the promotion fee as prescribed by State Board of Technical Education and Training AP from time to time before commencement of 4th semester. A candidate is eligible to appear for the 4 th semester examination if he/she puts the required percentage of attendance in the 4 th semester and pays the examination fee. iv A candidate shall be promoted to 5th semester provided he / she puts the required percentage of attendance in the 4 th semester and pays the examination fee. A candidate, who could not pay the 4 th semester examination fee, has to pay the promotion fee as prescribed by State Board of Technical Education and Training from time to time before commencement of 5 th semester. A candidate is eligible to appear for the 5th semester examination if he/she puts the required percentage of attendance in the 5th semester and pays the examination fee. v A candidate shall be sent to Industrial Training/6 th semester provided he/she puts in the required percentage of attendance in the 5 th semester and pays the examination fee /promotion fee as prescribed by SBTET. A candidate is eligible to appear for Industrial Training assessment (Seminar/Viva -Voce) only if he/ she puts the required 20 percentage of attendance, i.e., 90% in the 6 th semester Industrial Training and pays the examination fee. vi Industrial Training shall be treated as the 6th semester, irrespective of whether the training is undertaken during the 5th or 6th semester. For IVC & ITI Lateral Entry students: i) A candidate shall be permitted to appear for Third semester examination provided he/she puts in 75% attendance (which can be condoned on medical grounds up to 10%) and pays the examination fee for third semester. ii) A candidate shall be promoted to 4 th semester provided he/she puts the required percentage of attendance in the 3rd semester and pays the examination fee. A candidate who could not pay the 3rd semester exam fee, has to pay the promotion fee as prescribed by SBTET, A.P from time to time before commencement of 4th semester. A candidate is eligible to appear for the 4 th semester examination if he/she puts the required percentage of attendance in the 4 th semester and pays the examination fee. iii) A candidate shall be promoted to 5 th semester provided he / she put the required percentage of attendance in the 4th semester and pays the examination fee. A candidate, who could not pay the 4th semester examination fee, has to pay the promotion fee as prescribed by State Board of Technical Education and Training from time to time before commencement of 5 th semester. A candidate is eligible to appear for the 5th semester examination if he/she puts the required percentage of attendance in the 5th semester and pays the examination fee. iv) A candidate shall be sent to Industrial Training/VI semester provided he/she puts in the required percentage of attendance in the 5th semester and pays the examination fee /promotion fee as prescribed by SBTET. A candidate is eligible to appear for Industrial Training assessment (Seminar/Viva -Voce) only if he / she puts the required percentage of attendance, i.e., 90% in the 6 th semester Industrial Training and pays the examination fee. 21",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-4.17",
+                    "sno": "4.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am509l-4.18",
+                    "sno": "4.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -210,46 +539,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Introduction to Best Practices & Case Studies",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Introduction to Unit 5 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Detailed analysis of Unit 5 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Practical application and standard setups for Unit 5",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Deep dive into Introduction to Unit 5 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26am509l-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 5 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.7",
+                    "sno": "5.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 5",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.8",
+                    "sno": "5.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.9",
+                    "sno": "5.9",
+                    "topic": "Problem solving & practice on Introduction to Unit 5 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.10",
+                    "sno": "5.10",
+                    "topic": "Problem solving & practice on Detailed analysis of Unit 5 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.11",
+                    "sno": "5.11",
+                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 5",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.12",
+                    "sno": "5.12",
+                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.13",
+                    "sno": "5.13",
+                    "topic": "Practical applications of Introduction to Unit 5 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.14",
+                    "sno": "5.14",
+                    "topic": "Practical applications of Detailed analysis of Unit 5 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.15",
+                    "sno": "5.15",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 5",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.16",
+                    "sno": "5.16",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am509l-5.17",
+                    "sno": "5.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am509l-5.18",
+                    "sno": "5.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

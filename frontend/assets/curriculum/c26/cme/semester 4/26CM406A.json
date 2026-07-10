@@ -3,330 +3,231 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 6,
+            "title": "Identify and analyze network-related issues in LAN/WAN environments.",
+            "totalPeriods": 29,
             "topics": [
                 {
+                    "id": "26cm406a-1.1",
+                    "sno": "1.1",
                     "topic": "Fundamentals of troubleshooting?",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26cm406a-1.2",
+                    "sno": "1.2",
                     "topic": "What is trouble shooting?",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26cm406a-1.3",
+                    "sno": "1.3",
                     "topic": "Types of Maintenance: Preventive & Corrective Maintenance",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26cm406a-1.4",
+                    "sno": "1.4",
                     "topic": "Various approaches to Troubleshooting",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26cm406a-1.5",
+                    "sno": "1.5",
                     "topic": "Key Steps in Network Troubleshooting",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Common network faults: Cable issues, NIC failure, switch/router faults",
+                    "id": "26cm406a-1.6",
+                    "sno": "1.6",
+                    "topic": "Common network faults:   \n   Cable issues, NIC failure, switch/router faults",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Types of errors: Link down, IP conflict, DNS resolution error",
+                    "id": "26cm406a-1.7",
+                    "sno": "1.7",
+                    "topic": "Types of errors: \nLink down, IP conflict, DNS resolution error",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26cm406a-1.8",
+                    "sno": "1.8",
                     "topic": "Importance of logs and reporting",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Service Desk Process: Basic ticket lifecycle \u2013 Ticket creation, classification, assignment, resolution, closure Unit 2: Troubleshooting Tools and Commands",
+                    "id": "26cm406a-1.9",
+                    "sno": "1.9",
+                    "topic": "Service Desk Process: \nBasic ticket lifecycle \u2013 Ticket creation, classification, assignment, \nresolution, closure \n \nUnit 2: Troubleshooting Tools and Commands",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26cm406a-1.10",
+                    "sno": "1.10",
                     "topic": "Bad cables",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26cm406a-1.11",
+                    "sno": "1.11",
                     "topic": "Loose connectors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26cm406a-1.12",
+                    "sno": "1.12",
                     "topic": "Improper crimping",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.13",
+                    "sno": "1.13",
+                    "topic": "Deep dive into Fundamentals of troubleshooting?",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.14",
+                    "sno": "1.14",
+                    "topic": "Deep dive into What is trouble shooting?",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into Types of Maintenance: Preventive & Corrective Maintenance",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into Various approaches to Troubleshooting",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.17",
+                    "sno": "1.17",
+                    "topic": "Deep dive into Key Steps in Network Troubleshooting",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Common network faults:   \n   Cable issues, NIC failure, switch/router faults",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Types of errors: \nLink down, IP conflict, DNS resolution error",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into Importance of logs and reporting",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into Service Desk Process: \nBasic ticket lifecycle \u2013 Ticket creation, classification, assignment, \nresolution, closure \n \nUnit 2: Troubleshooting Tools and Commands",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into Bad cables",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.23",
+                    "sno": "1.23",
+                    "topic": "Deep dive into Loose connectors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.24",
+                    "sno": "1.24",
+                    "topic": "Deep dive into Improper crimping",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.25",
+                    "sno": "1.25",
+                    "topic": "Problem solving & practice on Fundamentals of troubleshooting?",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.26",
+                    "sno": "1.26",
+                    "topic": "Problem solving & practice on What is trouble shooting?",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.27",
+                    "sno": "1.27",
+                    "topic": "Problem solving & practice on Types of Maintenance: Preventive & Corrective Maintenance",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-1.28",
+                    "sno": "1.28",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm406a-1.29",
+                    "sno": "1.29",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 6,
-            "topics": [
-                {
-                    "topic": "OS-level tools: ping, tracert / traceroute, ipconfig / ifconfig, netstat, nslookup, arp, route",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "Graphical tools: Wireshark, Advanced IP Scanner, Cisco Packet Tracer",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Hardware tools: Cable tester, Loopback plug, Crimping tools",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "Hands-on activities:",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-2.4",
-                    "sno": "2.4"
-                },
-                {
-                    "topic": "Assign static/dynamic Ips",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "Addressing mis configurations (e.g., IP conflicts, subnet errors, VLAN issues)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-2.4",
-                    "sno": "2.4"
-                }
-            ]
+            "title": "Understand error types in hardware and software components of networks.",
+            "totalPeriods": 0,
+            "topics": []
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 6,
+            "title": "Use diagnostic tools and commands to resolve common network problems. COURSE OUTCOMES(Cos) At the end of the course, the student shall able to",
+            "totalPeriods": 1,
             "topics": [
                 {
-                    "topic": "Top-Down Approach",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm406a-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Bottom-up Approach",
+                    "sno": "3.1",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Divide and Conquer",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Follow the Path",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "Spot the difference",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Wired LAN issues:",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "LAN setup:",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Diagnosing Common Network Faults",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Loss of network connectivity",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Packet analysis: Use Wireshark to capture and examine packets (e.g., ARP, ICMP, DNS)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "Wireless network problems:",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Wireless troubleshooting activities:",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-3.6",
-                    "sno": "3.6"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 6,
-            "topics": [
-                {
-                    "topic": "Introduction to Advanced Applications & Operations",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-4.4",
-                    "sno": "4.4"
-                },
-                {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-4.5",
-                    "sno": "4.5"
-                },
-                {
-                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-4.6",
-                    "sno": "4.6"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 6,
-            "topics": [
-                {
-                    "topic": "Introduction to Best Practices & Case Studies",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-5.2",
-                    "sno": "5.2"
-                },
-                {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-5.3",
-                    "sno": "5.3"
-                },
-                {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-5.4",
-                    "sno": "5.4"
-                },
-                {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-5.5",
-                    "sno": "5.5"
-                },
-                {
-                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm406a-5.6",
-                    "sno": "5.6"
+                    "type": "assessment"
                 }
             ]
         }

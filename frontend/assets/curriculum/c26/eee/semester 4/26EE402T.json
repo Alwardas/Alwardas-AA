@@ -7,172 +7,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26ee402t-1.1",
+                    "sno": "1.1",
                     "topic": "Know the different sources of energy and classify them into Renewable energy sources and non-Renewable energy sources",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "State working principle of Thermal power plant",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee402t-1.2",
-                    "sno": "1.2"
-                },
-                {
-                    "topic": "State the factors required for selection of site for Thermal power plant",
+                    "sno": "1.2",
+                    "topic": "State working principle of Thermal power plant; State the factors required for selection of site for Thermal power plant",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-1.3",
+                    "sno": "1.3",
                     "topic": "Draw the detailed line diagram of a condensing type thermal power station and explain the working of each component of thermal power station",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the advantages of (i) Pulverisation (ii) Cooling towers",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee402t-1.4",
-                    "sno": "1.4"
-                },
-                {
-                    "topic": "State the causes of pollution and methods to control them",
+                    "sno": "1.4",
+                    "topic": "State the advantages of (i) Pulverisation (ii) Cooling towers; State the causes of pollution and methods to control them",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-1.5",
+                    "sno": "1.5",
                     "topic": "State the advantages and disadvantages of Thermal power plants",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26ee402t-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "State the principle of working of Hydro power station; State the factors required for selection of site for Hydro power station",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the principle of working of Hydro power station",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee402t-1.7",
-                    "sno": "1.7"
-                },
-                {
-                    "topic": "State the factors required for selection of site for Hydro power station",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.8",
-                    "sno": "1.8"
-                },
-                {
+                    "sno": "1.7",
                     "topic": "Explain Hydrograph",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-1.8",
+                    "sno": "1.8",
+                    "topic": "Define hydraulic terms i) Head ii)Flow rate(discharge); Write water power equation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
                     "id": "26ee402t-1.9",
-                    "sno": "1.9"
-                },
-                {
-                    "topic": "Define hydraulic terms i) Head ii)Flow rate(discharge)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.10",
-                    "sno": "1.10"
-                },
-                {
-                    "topic": "Write water power equation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.11",
-                    "sno": "1.11"
-                },
-                {
+                    "sno": "1.9",
                     "topic": "Classify the Hydro Electric Plants based upon head, duty, location and hydraulic considerations",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.12",
-                    "sno": "1.12"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain with layout diagram working of i) High Head ii) Medium Head iii) Low Head Power stations",
+                    "id": "26ee402t-1.10",
+                    "sno": "1.10",
+                    "topic": "Explain with layout diagram working of i) High Head ii) Medium Head iii) Low Head Power stations; Explain the Function of (i) Surge Tank ii) Foreba...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.13",
-                    "sno": "1.13"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the Function of (i) Surge Tank ii) Forebay iii) Spill gates",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.14",
-                    "sno": "1.14"
-                },
-                {
+                    "id": "26ee402t-1.11",
+                    "sno": "1.11",
                     "topic": "State the advantages and disadvantages of hydroelectric power station",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.15",
-                    "sno": "1.15"
+                    "type": "theory"
                 },
                 {
-                    "topic": "State merits and risks involved in using nuclear energy",
+                    "id": "26ee402t-1.12",
+                    "sno": "1.12",
+                    "topic": "State merits and risks involved in using nuclear energy; List out the nuclear fuels",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.16",
-                    "sno": "1.16"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List out the nuclear fuels",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.17",
-                    "sno": "1.17"
-                },
-                {
+                    "id": "26ee402t-1.13",
+                    "sno": "1.13",
                     "topic": "Explain fission and fusion reactions",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.18",
-                    "sno": "1.18"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain sustained chain reaction",
+                    "id": "26ee402t-1.14",
+                    "sno": "1.14",
+                    "topic": "Explain sustained chain reaction; Explain the working of a moderate type nuclear power station with a block diagram",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.19",
-                    "sno": "1.19"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of a moderate type nuclear power station with a block diagram",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.20",
-                    "sno": "1.20"
-                },
-                {
+                    "id": "26ee402t-1.15",
+                    "sno": "1.15",
                     "topic": "Explain the need and working of coolant, reflector, and control rods. Mention the materials used for them",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.21",
-                    "sno": "1.21"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the types of Reactors used in Nuclear Power Station",
+                    "id": "26ee402t-1.16",
+                    "sno": "1.16",
+                    "topic": "List the types of Reactors used in Nuclear Power Station; Explain the principle of working of gas power station with the help of schematic diagram ...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.22",
-                    "sno": "1.22"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the principle of working of gas power station with the help of schematic diagram and mention its merits and demerits. 2. Renewable energy sources of power generation",
+                    "id": "26ee402t-1.17",
+                    "sno": "1.17",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-1.23",
-                    "sno": "1.23"
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee402t-1.18",
+                    "sno": "1.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -182,32 +140,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "State necessity of developing Renewable energy methods of power generation",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee402t-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "State necessity of developing Renewable energy methods of power generation",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the method of power generation by (i) Solar Power plant(ii) Tidal Power plant. (iii) Wind Power plant (iv) Biomass Power plant (v)Geo thermal Power plant",
-                    "period": 5,
-                    "type": "theory",
                     "id": "26ee402t-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Describe the method of power generation by (i) Solar Power plant(ii) Tidal Power plant. (iii) Wind Power plant (iv) Biomass Power plant (v)Geo thermal Power plant",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Differentiate between Renewable energy sources and Non-renewable energy sources",
-                    "period": 4,
-                    "type": "theory",
                     "id": "26ee402t-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Differentiate between Renewable energy sources and Non-renewable energy sources",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Appreciate the need of energy conservation and its methods. 3. Integrated Operation and Economics of Power Stations",
-                    "period": 4,
-                    "type": "theory",
                     "id": "26ee402t-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Appreciate the need of energy conservation and its methods. 3. Integrated Operation and Economics of Power Stations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.5",
+                    "sno": "2.5",
+                    "topic": "Deep dive into State necessity of developing Renewable energy methods of power generation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.6",
+                    "sno": "2.6",
+                    "topic": "Deep dive into Describe the method of power generation by (i) Solar Power plant(ii) Tidal Power plant. (iii) Wind Power plant (iv) Biomass Power plant (v)Geo thermal Power plant",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.7",
+                    "sno": "2.7",
+                    "topic": "Deep dive into Differentiate between Renewable energy sources and Non-renewable energy sources",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into Appreciate the need of energy conservation and its methods. 3. Integrated Operation and Economics of Power Stations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.9",
+                    "sno": "2.9",
+                    "topic": "Problem solving & practice on State necessity of developing Renewable energy methods of power generation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.10",
+                    "sno": "2.10",
+                    "topic": "Problem solving & practice on Describe the method of power generation by (i) Solar Power plant(ii) Tidal Power plant. (iii) Wind Power plant (iv) Biomass Power plant (v)Geo thermal Power plant",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.11",
+                    "sno": "2.11",
+                    "topic": "Problem solving & practice on Differentiate between Renewable energy sources and Non-renewable energy sources",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.12",
+                    "sno": "2.12",
+                    "topic": "Problem solving & practice on Appreciate the need of energy conservation and its methods. 3. Integrated Operation and Economics of Power Stations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.13",
+                    "sno": "2.13",
+                    "topic": "Practical applications of State necessity of developing Renewable energy methods of power generation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.14",
+                    "sno": "2.14",
+                    "topic": "Practical applications of Describe the method of power generation by (i) Solar Power plant(ii) Tidal Power plant. (iii) Wind Power plant (iv) Biomass Power plant (v)Geo thermal Power plant",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.15",
+                    "sno": "2.15",
+                    "topic": "Practical applications of Differentiate between Renewable energy sources and Non-renewable energy sources",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.16",
+                    "sno": "2.16",
+                    "topic": "Practical applications of Appreciate the need of energy conservation and its methods. 3. Integrated Operation and Economics of Power Stations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-2.17",
+                    "sno": "2.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee402t-2.18",
+                    "sno": "2.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -217,95 +273,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "State the need for integrated operation of power plants and list the merits of it",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "State the need for integrated operation of power plants and list the merits of it",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Differentiate between isolated operation and integrated operation of power stations",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Differentiate between isolated operation and integrated operation of power stations",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Understand the concept of load dispatching and its process",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Understand the concept of load dispatching and its process",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the various charges and expenses in power station and classify them as fixed and running",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "List the various charges and expenses in power station and classify them as fixed and running",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define the terms load curve, connected load, Maximum demand, Demand factor, load factor, diversity factor, capacity factor and plant use factor",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Define the terms load curve, connected load, Maximum demand, Demand factor, load factor, diversity factor, capacity factor and plant use factor",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-3.6",
+                    "sno": "3.6",
                     "topic": "State the cost of generation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-3.7",
+                    "sno": "3.7",
                     "topic": "Stat the effects of load factor and diversity factor on cost of generation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-3.7",
-                    "sno": "3.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-3.8",
+                    "sno": "3.8",
                     "topic": "Solve problems on Load curve",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-3.8",
-                    "sno": "3.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-3.9",
+                    "sno": "3.9",
                     "topic": "Explain various types of consumer tariffs and compare them",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-3.9",
-                    "sno": "3.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-3.10",
+                    "sno": "3.10",
                     "topic": "List the causes of low power factor",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-3.10",
-                    "sno": "3.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-3.11",
+                    "sno": "3.11",
                     "topic": "State the effects of power factor (p.f.) on electricity charges",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-3.11",
-                    "sno": "3.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-3.12",
+                    "sno": "3.12",
                     "topic": "List the methods to improve Power factor",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-3.12",
-                    "sno": "3.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-3.13",
+                    "sno": "3.13",
                     "topic": "Explain the Following methods to improve the Power factor. i) Static capacitor ii) Synchronous condensers iii) Phase Advancers 4. Switchgear and Protection",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-3.13",
-                    "sno": "3.13"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-3.14",
+                    "sno": "3.14",
+                    "topic": "Deep dive into State the need for integrated operation of power plants and list the merits of it",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-3.15",
+                    "sno": "3.15",
+                    "topic": "Deep dive into Differentiate between isolated operation and integrated operation of power stations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-3.16",
+                    "sno": "3.16",
+                    "topic": "Deep dive into Understand the concept of load dispatching and its process",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-3.17",
+                    "sno": "3.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee402t-3.18",
+                    "sno": "3.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -315,109 +406,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Define faults and list types of faults in power systems",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "Define faults and list types of faults in power systems",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define and classify switch gear",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Define and classify switch gear",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define isolators, air break switches and their uses",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Define isolators, air break switches and their uses",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.4",
+                    "sno": "4.4",
                     "topic": "Explain the phenomenon of arc",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.4",
-                    "sno": "4.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.5",
+                    "sno": "4.5",
                     "topic": "List the methods of arc quenching",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.5",
-                    "sno": "4.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.6",
+                    "sno": "4.6",
                     "topic": "Define relay and State the basic requirements of relays",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.6",
-                    "sno": "4.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.7",
+                    "sno": "4.7",
                     "topic": "Classify the relays based upon (i) Principle of operation (ii)Time of operation(iii)Duty",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.7",
-                    "sno": "4.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.8",
+                    "sno": "4.8",
                     "topic": "Define current setting and time setting",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.8",
-                    "sno": "4.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.9",
+                    "sno": "4.9",
                     "topic": "State the applications of (i) Induction type over current relay (ii) Directional over current induction type relay (iii) Distance relay (iv)Differential Relay",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.9",
-                    "sno": "4.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.10",
+                    "sno": "4.10",
                     "topic": "Define Circuit breakers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.10",
-                    "sno": "4.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.11",
+                    "sno": "4.11",
                     "topic": "Classify the circuit breakers based upon medium of arc quenching",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.11",
-                    "sno": "4.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.12",
+                    "sno": "4.12",
                     "topic": "State the principle of M.O.C.B and explain its working",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.11",
-                    "sno": "4.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.13",
+                    "sno": "4.13",
                     "topic": "State properties of SF6 gas and explain the working of SF6 circuit breaker",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.12",
-                    "sno": "4.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.14",
+                    "sno": "4.14",
                     "topic": "Explain working principle of Vacuum circuit breaker (V.C.B)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.13",
-                    "sno": "4.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-4.15",
+                    "sno": "4.15",
                     "topic": "Define current limiting reactors and state their importance. 5. Lightning arresters, Protection of Alternators and Transformers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-4.14",
-                    "sno": "4.14"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-4.16",
+                    "sno": "4.16",
+                    "topic": "Deep dive into Define faults and list types of faults in power systems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-4.17",
+                    "sno": "4.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee402t-4.18",
+                    "sno": "4.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -427,74 +539,130 @@
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Define surge",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Define surge",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the types of surges",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "List the types of surges",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Give reasons for the cause of surges",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Give reasons for the cause of surges",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the scheme of surge protection with diagram",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Explain the scheme of surge protection with diagram",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Lightning arresters",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Define Lightning arresters",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the types of lightning arresters or surge diverters",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee402t-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "Explain the types of lightning arresters or surge diverters",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-5.7",
+                    "sno": "5.7",
                     "topic": "Explain the construction and working of following types of lightning arresters. i) Valve type ii) Thyrite type",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee402t-5.7",
-                    "sno": "5.7"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-5.8",
+                    "sno": "5.8",
                     "topic": "List the probable faults in Stator and rotor of Alternator",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee402t-5.7",
-                    "sno": "5.7"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-5.9",
+                    "sno": "5.9",
                     "topic": "Explain the differential protection for alternator stator",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-5.8",
-                    "sno": "5.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee402t-5.10",
+                    "sno": "5.10",
                     "topic": "List the possible faults and their types in a transformer",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee402t-5.9",
-                    "sno": "5.9"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-5.11",
+                    "sno": "5.11",
+                    "topic": "Deep dive into Define surge",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-5.12",
+                    "sno": "5.12",
+                    "topic": "Deep dive into List the types of surges",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-5.13",
+                    "sno": "5.13",
+                    "topic": "Deep dive into Give reasons for the cause of surges",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-5.14",
+                    "sno": "5.14",
+                    "topic": "Deep dive into Explain the scheme of surge protection with diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-5.15",
+                    "sno": "5.15",
+                    "topic": "Deep dive into Define Lightning arresters",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-5.16",
+                    "sno": "5.16",
+                    "topic": "Deep dive into Explain the types of lightning arresters or surge diverters",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-5.17",
+                    "sno": "5.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee402t-5.18",
+                    "sno": "5.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

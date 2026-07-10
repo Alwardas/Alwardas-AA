@@ -3,281 +3,351 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "INTRODUCTION TO ADVANCED MATERIALS",
             "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26me306e-1.1",
+                    "sno": "1.1",
                     "topic": "INTRODUCTION TO ADVANCED MATERIALS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-1.0",
-                    "sno": "1.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-1.2",
+                    "sno": "1.2",
                     "topic": "Define advanced materials and Classify the advanced materials",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-1.3",
+                    "sno": "1.3",
                     "topic": "Explain the need and importance of advanced materials in mechanical engineering",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Compare the advanced materials with conventional materials",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-1.3",
-                    "sno": "1.3"
-                },
-                {
-                    "topic": "Explain the Mechanical Properties of advanced materials",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me306e-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Compare the advanced materials with conventional materials; Explain the Mechanical Properties of advanced materials",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-1.5",
+                    "sno": "1.5",
                     "topic": "Explain the thermal Properties of advanced materials",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-1.6",
+                    "sno": "1.6",
                     "topic": "Explain the Electrical Properties of advanced materials",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-1.6",
-                    "sno": "1.6"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the Magnetic Properties of advanced materials",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me306e-1.7",
-                    "sno": "1.7"
+                    "sno": "1.7",
+                    "topic": "Explain the Magnetic Properties of advanced materials; INTRODUCTION TO ADVANCED MATERIALS Definition and classification of advanced materials -Need...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "INTRODUCTION TO ADVANCED MATERIALS Definition and classification of advanced materials -Need and importance in mechanical engineering-Comparison with conventional materials -Properties: Mechanical, Thermal, Electrical, and Magnetic",
+                    "id": "26me306e-1.8",
+                    "sno": "1.8",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-1.0",
-                    "sno": "1.0"
+                    "type": "revision"
+                },
+                {
+                    "id": "26me306e-1.9",
+                    "sno": "1.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "COMPOSITE MATERIALS",
             "totalPeriods": 9,
             "topics": [
                 {
-                    "topic": "COMPOSITE MATERIALS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me306e-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Define composite Materials",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me306e-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "COMPOSITE MATERIALS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-2.2",
+                    "sno": "2.2",
+                    "topic": "Define composite Materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-2.3",
+                    "sno": "2.3",
                     "topic": "Classify the composite materials like Particle -reinforced, Fiber-reinforced, Structural- Matrix materials: Polymer, Metal, Ceramic",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-2.4",
+                    "sno": "2.4",
                     "topic": "Explain the various Fabrication methods of composites like Hand lay-up, Compression moulding, Pultrusion",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-2.3",
-                    "sno": "2.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-2.5",
+                    "sno": "2.5",
                     "topic": "Explain the applications of composite materials in automotive, aerospace, and construction",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-2.4",
-                    "sno": "2.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-2.6",
+                    "sno": "2.6",
                     "topic": "State the Advantages and Disadvantages of Composite Materials",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-2.5",
-                    "sno": "2.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-2.7",
+                    "sno": "2.7",
                     "topic": "COMPOSITE MATERIALS Definition and types: Particle -reinforced, Fiber -reinforced, Structural -Matrix mat erials: Polymer, Metal, Ceramic. Fabrication methods: Hand lay -up, Compression moulding, Pultrusion - Applications in automotive, aerospace, and construction",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-2.0",
-                    "sno": "2.0"
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-2.8",
+                    "sno": "2.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me306e-2.9",
+                    "sno": "2.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "SMART MATERIALS",
             "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26me306e-3.1",
+                    "sno": "3.1",
                     "topic": "SMART MATERIALS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-3.0",
-                    "sno": "3.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-3.2",
+                    "sno": "3.2",
                     "topic": "Define Smart Materials",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain different types of smart materials like Shape Memory Alloys (SMA), Piezoelectric materials, Magnetostrictive materials, Electro-rheological fluids",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Explain Working principle and applications of smart materials in actuators, sensors, robotics",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me306e-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Define Superalloys",
+                    "sno": "3.3",
+                    "topic": "Explain different types of smart materials like Shape Memory Alloys (SMA), Piezoelectric materials, Magnetostrictive materials, Electro-rheological...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-3.4",
-                    "sno": "3.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-3.4",
+                    "sno": "3.4",
+                    "topic": "Explain Working principle and applications of smart materials in actuators, sensors, robotics; Define Superalloys",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-3.5",
+                    "sno": "3.5",
                     "topic": "Explain the properties and applications of super alloys",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-3.5",
-                    "sno": "3.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-3.6",
+                    "sno": "3.6",
                     "topic": "Explain the engineering ceramics and their properties (Alumina, Silicon carbide)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain about High-performance polymers: PTFE, PEEK-Thermal barrier coatings and corrosion-resistant materials",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me306e-3.7",
-                    "sno": "3.7"
+                    "sno": "3.7",
+                    "topic": "Explain about High-performance polymers: PTFE, PEEK-Thermal barrier coatings and corrosion-resistant materials; SMART MATERIALS Introduction to sma...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "SMART MATERIALS Introduction to smart materials: Types: Shape Memory Alloys (SMA), Piezoelectric materials, Magnetostrictive materials, Electro -rheological fluids -Working principle and applications in actuators, sensors, robotics. High-Performance Materials -Superalloys: Properties and applications -Engineering ceramics and their properties (Alumina, Silicon carbide) -High-performance polymers: PTFE, PEEK-Thermal barrier coatings and corrosion-resistant materials",
+                    "id": "26me306e-3.8",
+                    "sno": "3.8",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-3.0",
-                    "sno": "3.0"
+                    "type": "revision"
+                },
+                {
+                    "id": "26me306e-3.9",
+                    "sno": "3.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "ADVANCED MATERIAL TESTING & CHARACTERIZATION",
             "totalPeriods": 9,
             "topics": [
                 {
-                    "topic": "ADVANCED MATERIAL TESTING & CHARACTERIZATION",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me306e-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Differentiate destructive and non-destructive testing",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me306e-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "ADVANCED MATERIAL TESTING & CHARACTERIZATION",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the procedure for Non-destructive tests like Ultrasonic, Radiography, Magnetic particle testing",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me306e-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Differentiate destructive and non-destructive testing",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-4.3",
+                    "sno": "4.3",
+                    "topic": "Explain the procedure for Non-destructive tests like Ultrasonic, Radiography, Magnetic particle testing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-4.4",
+                    "sno": "4.4",
                     "topic": "Explain the procedure for Microstructure analysis using Optical microscope",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-4.3",
-                    "sno": "4.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-4.5",
+                    "sno": "4.5",
                     "topic": "Explain the procedure for Mechanical testing: Hardness, Tensile and Impact",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-4.4",
-                    "sno": "4.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-4.6",
+                    "sno": "4.6",
                     "topic": "ADVANCED MATERIAL TESTING & CHARACTERIZATION Non-destructive testing (NDT): Ultrasonic, Radiography, Magnetic particle testing - Microstructure analysis: Optical microscopy -Mechanical testing: Hardness, Tensile, Impact",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me306e-4.0",
-                    "sno": "4.0"
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-4.7",
+                    "sno": "4.7",
+                    "topic": "Deep dive into ADVANCED MATERIAL TESTING & CHARACTERIZATION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-4.8",
+                    "sno": "4.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me306e-4.9",
+                    "sno": "4.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "NANO MATERIALS",
             "totalPeriods": 9,
             "topics": [
                 {
-                    "topic": "NANO MATERIALS",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26me306e-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "Explain the properties of nanomaterials",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me306e-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "NANO MATERIALS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the Synthesis techniques like Chemical vapor deposition (CVD), Ball milling",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me306e-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Explain the properties of nanomaterials",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me306e-5.3",
+                    "sno": "5.3",
+                    "topic": "Explain the Synthesis techniques like Chemical vapor deposition (CVD), Ball milling",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-5.4",
+                    "sno": "5.4",
                     "topic": "NANO MATERIALS Basics of nanotechnology -Properties of nanomaterials -Synthesis techniques: Chemical vapor deposition (CVD), Ball milling-Applications in coatings, lubricants and electronics. REFERENCE BOOKS 1. Materials Science and Engineering \u2013 William D. Callister 2. Engineering Materials \u2013 R.K. Rajput 3. Composite Materials \u2013 Krishan K. Chawla 4. Introduction to Nanotechnology \u2013 Charles P. Poole Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.3 Unit Test \u2013 II From 3.4 to 5.3",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me306e-5.0",
-                    "sno": "5.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-5.5",
+                    "sno": "5.5",
+                    "topic": "Deep dive into NANO MATERIALS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-5.6",
+                    "sno": "5.6",
+                    "topic": "Deep dive into Explain the properties of nanomaterials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-5.7",
+                    "sno": "5.7",
+                    "topic": "Deep dive into Explain the Synthesis techniques like Chemical vapor deposition (CVD), Ball milling",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-5.8",
+                    "sno": "5.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me306e-5.9",
+                    "sno": "5.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

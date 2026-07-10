@@ -3,246 +3,449 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 12,
+            "title": "Linux Installation and user management",
+            "totalPeriods": 8,
             "topics": [
                 {
-                    "topic": "Introduction to Introduction & Fundamentals",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Introduction & Fundamentals",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Deep dive into Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Introduction & Fundamentals",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-1.7",
+                    "sno": "1.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm310l-1.8",
+                    "sno": "1.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 12,
+            "title": "LINUX commands",
+            "totalPeriods": 24,
             "topics": [
                 {
-                    "topic": "Introduction to Core Concepts & Principles",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Core Concepts & Principles",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Practical application and standard setups for Unit 2",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "Deep dive into Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Core Concepts & Principles",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-2.6",
-                    "sno": "2.6"
+                    "sno": "2.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.7",
+                    "sno": "2.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.9",
+                    "sno": "2.9",
+                    "topic": "Problem solving & practice on Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.10",
+                    "sno": "2.10",
+                    "topic": "Problem solving & practice on Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.11",
+                    "sno": "2.11",
+                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.12",
+                    "sno": "2.12",
+                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.13",
+                    "sno": "2.13",
+                    "topic": "Practical applications of Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.14",
+                    "sno": "2.14",
+                    "topic": "Practical applications of Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.15",
+                    "sno": "2.15",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.16",
+                    "sno": "2.16",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.17",
+                    "sno": "2.17",
+                    "topic": "Practical applications of Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.18",
+                    "sno": "2.18",
+                    "topic": "Practical applications of Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.19",
+                    "sno": "2.19",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.20",
+                    "sno": "2.20",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.21",
+                    "sno": "2.21",
+                    "topic": "Practical applications of Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.22",
+                    "sno": "2.22",
+                    "topic": "Practical applications of Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-2.23",
+                    "sno": "2.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm310l-2.24",
+                    "sno": "2.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 12,
+            "title": "LINUX editors",
+            "totalPeriods": 4,
             "topics": [
                 {
-                    "topic": "Introduction to System Design & Methodology",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Introduction to Unit 3 concepts; Detailed analysis of Unit 3 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of System Design & Methodology",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Practical application and standard setups for Unit 3; Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm310l-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Review, troubleshooting, and summary of System Design & Methodology",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm310l-3.6",
-                    "sno": "3.6"
+                    "sno": "3.4",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 12,
+            "title": "LINUX Shell Programs",
+            "totalPeriods": 24,
             "topics": [
                 {
-                    "topic": "Introduction to Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Practical application and standard setups for Unit 4",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Deep dive into Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm310l-4.6",
-                    "sno": "4.6"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 12,
-            "topics": [
-                {
-                    "topic": "Introduction to Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm310l-5.1",
-                    "sno": "5.1"
+                    "sno": "4.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm310l-5.2",
-                    "sno": "5.2"
+                    "id": "26cm310l-4.7",
+                    "sno": "4.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 4",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm310l-5.3",
-                    "sno": "5.3"
+                    "id": "26cm310l-4.8",
+                    "sno": "4.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm310l-5.4",
-                    "sno": "5.4"
+                    "id": "26cm310l-4.9",
+                    "sno": "4.9",
+                    "topic": "Problem solving & practice on Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm310l-5.5",
-                    "sno": "5.5"
+                    "id": "26cm310l-4.10",
+                    "sno": "4.10",
+                    "topic": "Problem solving & practice on Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm310l-5.6",
-                    "sno": "5.6"
+                    "id": "26cm310l-4.11",
+                    "sno": "4.11",
+                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.12",
+                    "sno": "4.12",
+                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.13",
+                    "sno": "4.13",
+                    "topic": "Practical applications of Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.14",
+                    "sno": "4.14",
+                    "topic": "Practical applications of Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.15",
+                    "sno": "4.15",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.16",
+                    "sno": "4.16",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.17",
+                    "sno": "4.17",
+                    "topic": "Practical applications of Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.18",
+                    "sno": "4.18",
+                    "topic": "Practical applications of Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.19",
+                    "sno": "4.19",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.20",
+                    "sno": "4.20",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.21",
+                    "sno": "4.21",
+                    "topic": "Practical applications of Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.22",
+                    "sno": "4.22",
+                    "topic": "Practical applications of Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-4.23",
+                    "sno": "4.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm310l-4.24",
+                    "sno": "4.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

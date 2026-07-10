@@ -3,512 +3,666 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 18,
+            "title": "Semiconductor devices and PCBs",
+            "totalPeriods": 25,
             "topics": [
                 {
+                    "id": "26ee302t-1.1",
+                    "sno": "1.1",
                     "topic": "Explain the formation of transistor",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.2",
+                    "sno": "1.2",
                     "topic": "Draw the circuit symbol of transistor (NPN, PNP)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.3",
+                    "sno": "1.3",
                     "topic": "Explain the working of PNP and NPN Transistors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.4",
+                    "sno": "1.4",
                     "topic": "Draw the different transistor configurations",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.5",
+                    "sno": "1.5",
                     "topic": "Sketch the input/output characteristics of CB, CE and CC configurations",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.6",
+                    "sno": "1.6",
                     "topic": "Identify the cut off, saturation and active regions in output characteristics of CB , CE and CC Configurations",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.6",
-                    "sno": "1.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.7",
+                    "sno": "1.7",
                     "topic": "Classify Field Effect Transistors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.7",
-                    "sno": "1.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.8",
+                    "sno": "1.8",
                     "topic": "Describe the construction and principle of operation of n channel JFET",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.8",
-                    "sno": "1.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.9",
+                    "sno": "1.9",
                     "topic": "Draw and explain the drain characteristics of JFET",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.9",
-                    "sno": "1.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.10",
+                    "sno": "1.10",
                     "topic": "List the advantages of JFET over BJT",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.10",
-                    "sno": "1.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.11",
+                    "sno": "1.11",
                     "topic": "Explain the construction & working of N Channel Enhancement type MOSFET",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.11",
-                    "sno": "1.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.12",
+                    "sno": "1.12",
                     "topic": "Draw the Drain Characteristics of N channel depletion MOSFET",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.12",
-                    "sno": "1.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.13",
+                    "sno": "1.13",
                     "topic": "Compare JFET and MOSFET",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.13",
-                    "sno": "1.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.14",
+                    "sno": "1.14",
                     "topic": "Explain the need of PCB in electronic equipment",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.14",
-                    "sno": "1.14"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.15",
+                    "sno": "1.15",
                     "topic": "Classify PCBs and list the types of laminates used in PCBs",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.15",
-                    "sno": "1.15"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.16",
+                    "sno": "1.16",
                     "topic": "List the methods of transferring layout on to the copper clad sheet",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.16",
-                    "sno": "1.16"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.17",
+                    "sno": "1.17",
                     "topic": "List the materials used in screen-printing",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.17",
-                    "sno": "1.17"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.18",
+                    "sno": "1.18",
                     "topic": "List the steps involved in screen-printing for making PCBs",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.18",
-                    "sno": "1.18"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.19",
+                    "sno": "1.19",
                     "topic": "Describe the methods of etching, cleaning and drilling of PCB",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.19",
-                    "sno": "1.19"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.20",
+                    "sno": "1.20",
                     "topic": "Describe the steps involved in making double-sided PCB",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.20",
-                    "sno": "1.20"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.21",
+                    "sno": "1.21",
                     "topic": "Explain Surface Mount Technology and its uses",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.21",
-                    "sno": "1.21"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.22",
+                    "sno": "1.22",
                     "topic": "List the materials used in soldering",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.22",
-                    "sno": "1.22"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-1.23",
+                    "sno": "1.23",
                     "topic": "List the soldering methods of PCBs. 2. Power Supplies",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-1.23",
-                    "sno": "1.23"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-1.24",
+                    "sno": "1.24",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee302t-1.25",
+                    "sno": "1.25",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 18,
+            "title": "Power Supplies",
+            "totalPeriods": 15,
             "topics": [
                 {
-                    "topic": "Define Rectifier",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Define Rectifier",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working and draw the circuit diagrams and waveforms of: a) Half Wave Rectifier (b) Full Wave Rectifier (c) Bridge Rectifier",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Explain the working and draw the circuit diagrams and waveforms of: a) Half Wave Rectifier (b) Full Wave Rectifier (c) Bridge Rectifier",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the need of filter in power supplies",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "State the need of filter in power supplies",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the different types of filters used in power supplies",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "List the different types of filters used in power supplies",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain working of a RC, CRC, CLC filters used for full wave rectifier",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "Explain working of a RC, CRC, CLC filters used for full wave rectifier",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define voltage regulator",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-2.6",
-                    "sno": "2.6"
+                    "sno": "2.6",
+                    "topic": "Define voltage regulator",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of Zener diode as a Voltage regulator in a power supply",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-2.7",
-                    "sno": "2.7"
+                    "sno": "2.7",
+                    "topic": "Explain the working of Zener diode as a Voltage regulator in a power supply",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-2.8",
+                    "sno": "2.8",
                     "topic": "Explain the working of voltage regulated power supply",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-2.8",
-                    "sno": "2.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-2.9",
+                    "sno": "2.9",
                     "topic": "List the types of IC regulators",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-2.9",
-                    "sno": "2.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-2.10",
+                    "sno": "2.10",
                     "topic": "Give the advantages of IC regulators",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-2.10",
-                    "sno": "2.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-2.11",
+                    "sno": "2.11",
                     "topic": "Explain the operation of adjustable voltage regulator 3 Amplifiers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-2.11",
-                    "sno": "2.11"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-2.12",
+                    "sno": "2.12",
+                    "topic": "Deep dive into Define Rectifier",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-2.13",
+                    "sno": "2.13",
+                    "topic": "Deep dive into Explain the working and draw the circuit diagrams and waveforms of: a) Half Wave Rectifier (b) Full Wave Rectifier (c) Bridge Rectifier",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-2.14",
+                    "sno": "2.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee302t-2.15",
+                    "sno": "2.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 18,
+            "title": "Amplifiers",
+            "totalPeriods": 15,
             "topics": [
                 {
-                    "topic": "Define an Amplifier",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Define an Amplifier",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the operation of transistor as an amplifier",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Explain the operation of transistor as an amplifier",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the applications of amplifiers",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "List the applications of amplifiers",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the different types of coupling methods in amplifiers",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "List the different types of coupling methods in amplifiers",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working and frequency response curves of RC coupled amplifier with neat circuit diagram",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Explain the working and frequency response curves of RC coupled amplifier with neat circuit diagram",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of two stage transformer coupled amplifier with circuit diagram",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-3.6",
-                    "sno": "3.6"
+                    "sno": "3.6",
+                    "topic": "Explain the working of two stage transformer coupled amplifier with circuit diagram",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-3.7",
+                    "sno": "3.7",
                     "topic": "State the need of negative feedback",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-3.8",
+                    "sno": "3.8",
                     "topic": "Explain the negative feedback amplifier with block diagram",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-3.7",
-                    "sno": "3.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-3.9",
+                    "sno": "3.9",
                     "topic": "Explain the need of power amplifier",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-3.8",
-                    "sno": "3.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-3.10",
+                    "sno": "3.10",
                     "topic": "Explain the working of class-A, Class-B, Class-C and Class-AB amplifier with waveforms",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-3.9",
-                    "sno": "3.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-3.11",
+                    "sno": "3.11",
                     "topic": "Explain the working of class-B push-pull amplifier 4 Oscillators and A/D & D/A Converters",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-3.10",
-                    "sno": "3.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-3.12",
+                    "sno": "3.12",
                     "topic": "Unit Test-II From 3.8 to 5.10",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-3.7",
-                    "sno": "3.7"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-3.13",
+                    "sno": "3.13",
+                    "topic": "Deep dive into Define an Amplifier",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-3.14",
+                    "sno": "3.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee302t-3.15",
+                    "sno": "3.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
+            "title": "Oscillators and A/D &D/A converters",
+            "totalPeriods": 20,
             "topics": [
                 {
-                    "topic": "Define Oscillator and classify different types of oscillators",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "Define Oscillator and classify different types of oscillators",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the conditions required for sustained oscillations",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "State the conditions required for sustained oscillations",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the need of (a) AF Oscillator (b) RF Oscillator (c) Square Wave Oscillator",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "State the need of (a) AF Oscillator (b) RF Oscillator (c) Square Wave Oscillator",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw the circuit diagram and explain the working of RC Phase Shift Oscillator",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "Draw the circuit diagram and explain the working of RC Phase Shift Oscillator",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw the circuit diagram and explain the working of Colpitts\u2019s Oscillator",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Draw the circuit diagram and explain the working of Colpitts\u2019s Oscillator",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw the circuit diagram and explain the working of Crystal Oscillator",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-4.6",
-                    "sno": "4.6"
+                    "sno": "4.6",
+                    "topic": "Draw the circuit diagram and explain the working of Crystal Oscillator",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-4.7",
+                    "sno": "4.7",
                     "topic": "List the applications of oscillators",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-4.7",
-                    "sno": "4.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-4.8",
+                    "sno": "4.8",
                     "topic": "State the need for A/D and D/A conversion",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-4.8",
-                    "sno": "4.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-4.9",
+                    "sno": "4.9",
                     "topic": "Explain D/A conversion using R-2R Ladder network",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-4.9",
-                    "sno": "4.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-4.10",
+                    "sno": "4.10",
                     "topic": "Explain A/D conversion using conversion method",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-4.10",
-                    "sno": "4.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-4.11",
+                    "sno": "4.11",
                     "topic": "Explain A/D Conversion using successive approximation method",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-4.11",
-                    "sno": "4.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-4.12",
+                    "sno": "4.12",
                     "topic": "List IC numbers of any three ADC\u2019s and DAC\u2019s 5 Linear Integrated Circuits",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-4.12",
-                    "sno": "4.12"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-4.13",
+                    "sno": "4.13",
+                    "topic": "Deep dive into Define Oscillator and classify different types of oscillators",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-4.14",
+                    "sno": "4.14",
+                    "topic": "Deep dive into State the conditions required for sustained oscillations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-4.15",
+                    "sno": "4.15",
+                    "topic": "Deep dive into State the need of (a) AF Oscillator (b) RF Oscillator (c) Square Wave Oscillator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-4.16",
+                    "sno": "4.16",
+                    "topic": "Deep dive into Draw the circuit diagram and explain the working of RC Phase Shift Oscillator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-4.17",
+                    "sno": "4.17",
+                    "topic": "Deep dive into Draw the circuit diagram and explain the working of Colpitts\u2019s Oscillator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-4.18",
+                    "sno": "4.18",
+                    "topic": "Deep dive into Draw the circuit diagram and explain the working of Crystal Oscillator",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-4.19",
+                    "sno": "4.19",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee302t-4.20",
+                    "sno": "4.20",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
+            "title": "Linear Integrated Circuits",
+            "totalPeriods": 15,
             "topics": [
                 {
-                    "topic": "Define Integrated Circuit",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Define Integrated Circuit",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the advantages of Integrated Circuits over Discrete Circuits",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "List the advantages of Integrated Circuits over Discrete Circuits",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the operation of Differential Amplifier",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Explain the operation of Differential Amplifier",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the characteristics of an Ideal Operational Amplifier",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "List the characteristics of an Ideal Operational Amplifier",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of Operational Amplifier",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Explain the working of Operational Amplifier",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of Op-Amp Inverting Amplifier",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "Explain the working of Op-Amp Inverting Amplifier",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of Op-Amp non-Inverting Amplifier",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-5.7",
-                    "sno": "5.7"
+                    "sno": "5.7",
+                    "topic": "Explain the working of Op-Amp non-Inverting Amplifier",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the concept of virtual ground",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ee302t-5.8",
-                    "sno": "5.8"
+                    "sno": "5.8",
+                    "topic": "State the concept of virtual ground",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-5.9",
+                    "sno": "5.9",
                     "topic": "Explain the Operational Amplifier as a) Summer (b) Integrator (c) Differentiator (d) Inverter",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-5.9",
-                    "sno": "5.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee302t-5.10",
+                    "sno": "5.10",
                     "topic": "Draw the Pin Diagram of 741 IC and state its important specifications and function of each pin",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee302t-5.10",
-                    "sno": "5.10"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-5.11",
+                    "sno": "5.11",
+                    "topic": "Deep dive into Define Integrated Circuit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-5.12",
+                    "sno": "5.12",
+                    "topic": "Deep dive into List the advantages of Integrated Circuits over Discrete Circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-5.13",
+                    "sno": "5.13",
+                    "topic": "Deep dive into Explain the operation of Differential Amplifier",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee302t-5.14",
+                    "sno": "5.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee302t-5.15",
+                    "sno": "5.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

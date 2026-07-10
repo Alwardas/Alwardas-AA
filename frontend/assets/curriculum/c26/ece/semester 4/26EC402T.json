@@ -3,596 +3,659 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 18,
+            "title": "TRANSMISSION LINES AND WAVE PROPAGATION",
+            "totalPeriods": 24,
             "topics": [
                 {
+                    "id": "26ec402t-1.1",
+                    "sno": "1.1",
                     "topic": "TRANSMISSION LINES AND WAVE PROPAGATION",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.0",
-                    "sno": "1.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.2",
+                    "sno": "1.2",
                     "topic": "List different types of transmission lines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.3",
+                    "sno": "1.3",
                     "topic": "Draw the electrical equivalent of transmission line",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.4",
+                    "sno": "1.4",
                     "topic": "Write the transmission line equations and give their significance",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.5",
+                    "sno": "1.5",
                     "topic": "Define the primary and secondary constants of a transmission line",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.6",
+                    "sno": "1.6",
                     "topic": "Explain the significance of characteristic impedance and Propagation constant of a transmission line",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.7",
+                    "sno": "1.7",
                     "topic": "Derive the relation between Characteristic impedance, open circuit impedance and short circuit impedance of a transmission line",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.6",
-                    "sno": "1.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.8",
+                    "sno": "1.8",
                     "topic": "Define reflection coefficient and standing wave ratio and give the relation between them",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.7",
-                    "sno": "1.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.9",
+                    "sno": "1.9",
                     "topic": "Explain the concept of Reflection, Refraction and diffraction of EM waves",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.8",
-                    "sno": "1.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.10",
+                    "sno": "1.10",
                     "topic": "Explain the effect of refraction on wavefronts of an EM wave in the atmosphere (Tilting of wavefront)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.9",
-                    "sno": "1.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.11",
+                    "sno": "1.11",
                     "topic": "Explain the Ground wave propagation with the equation for electric field at a distant place",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.10",
-                    "sno": "1.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.12",
+                    "sno": "1.12",
                     "topic": "List the applications and limitations of ground wave propagation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.11",
-                    "sno": "1.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.13",
+                    "sno": "1.13",
                     "topic": "Classify different layers of ionosphere and briefly explain them",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.12",
-                    "sno": "1.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.14",
+                    "sno": "1.14",
                     "topic": "Explain the ionospheric wave (sky wave) propagation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.13",
-                    "sno": "1.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.15",
+                    "sno": "1.15",
                     "topic": "Define the terms i) Critical Frequency ii) MUF iii) Skip Distance iv) Skip Zone",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.14",
-                    "sno": "1.14"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.16",
+                    "sno": "1.16",
                     "topic": "Explain the difference between Actual height and Virtual height of an Ionosphere",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.15",
-                    "sno": "1.15"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.17",
+                    "sno": "1.17",
                     "topic": "Explain Space wave (tropospheric wave) propagation and factors affecting space wave propagation (LOS)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.16",
-                    "sno": "1.16"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.18",
+                    "sno": "1.18",
                     "topic": "Explain the reason for formation of duct layer and explain about Duct propagation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.17",
-                    "sno": "1.17"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-1.19",
+                    "sno": "1.19",
                     "topic": "Explain about Tropospheric Scatter Propagation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-1.18",
-                    "sno": "1.18"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into TRANSMISSION LINES AND WAVE PROPAGATION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into List different types of transmission lines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into Draw the electrical equivalent of transmission line",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-1.23",
+                    "sno": "1.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec402t-1.24",
+                    "sno": "1.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 18,
+            "title": "ANTENNAS",
+            "totalPeriods": 22,
             "topics": [
                 {
-                    "topic": "ANTENNAS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec402t-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Explain radiation mechanism of an antenna from transmission line theory",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec402t-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "ANTENNAS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the following parameters of antenna i. Radiation pattern ii. Front-to -back ratio iii. Directive gain iv. Directivity v. Power gain vi. Beamwidth vii. Bandwidth viii. Antenna resistance: Radiation and Loss Resistance ix. Antenna efficiency x. Antenna aperture (Effective area) xi. Antenna polarization",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec402t-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Explain radiation mechanism of an antenna from transmission line theory",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.3",
+                    "sno": "2.3",
+                    "topic": "State the following parameters of antenna i. Radiation pattern ii. Front-to -back ratio iii. Directive gain iv. Directivity v. Power gain vi. Beamwidth vii. Bandwidth viii. Antenna resistance: Radiation and Loss Resistance ix. Antenna efficiency x. Antenna aperture (Effective area) xi. Antenna polarization",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-2.4",
+                    "sno": "2.4",
                     "topic": "Explain Isotropic radiator",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.3",
-                    "sno": "2.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.5",
+                    "sno": "2.5",
                     "topic": "Classify antennas based on i) Radiation pattern ii) Frequency range",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.4",
-                    "sno": "2.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.6",
+                    "sno": "2.6",
                     "topic": "Explain the function of dipole and folded dipole antennas and give their applications",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.5",
-                    "sno": "2.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.7",
+                    "sno": "2.7",
                     "topic": "List different microwave antennas",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.6",
-                    "sno": "2.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.8",
+                    "sno": "2.8",
                     "topic": "Explain different horn antennas and give its applications",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.7",
-                    "sno": "2.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.9",
+                    "sno": "2.9",
                     "topic": "Explain the construction and working principle of Parabolic Dish antenna",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.8",
-                    "sno": "2.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.10",
+                    "sno": "2.10",
                     "topic": "State the need of antenna arrays",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.9",
-                    "sno": "2.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.11",
+                    "sno": "2.11",
                     "topic": "Explain about end-fire array and broadside array",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.10",
-                    "sno": "2.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.12",
+                    "sno": "2.12",
                     "topic": "State the need for smart antennas",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.11",
-                    "sno": "2.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.13",
+                    "sno": "2.13",
                     "topic": "List the main types of smart antennas (Switched beam and Adaptive array)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.12",
-                    "sno": "2.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.14",
+                    "sno": "2.14",
                     "topic": "Explain the working principle of smart antennas",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.13",
-                    "sno": "2.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-2.15",
+                    "sno": "2.15",
                     "topic": "List the applications and advantages of smart antennas",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-2.14",
-                    "sno": "2.14"
-                }
-            ]
-        },
-        {
-            "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 18,
-            "topics": [
-                {
-                    "topic": "Define microwave frequencies",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the different microwave frequency bands and their applications",
+                    "id": "26ec402t-2.16",
+                    "sno": "2.16",
+                    "topic": "Deep dive into ANTENNAS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.2",
-                    "sno": "3.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the function of waveguides and classify them",
+                    "id": "26ec402t-2.17",
+                    "sno": "2.17",
+                    "topic": "Deep dive into Explain radiation mechanism of an antenna from transmission line theory",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.3",
-                    "sno": "3.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the concept of wave propagation in rectangular waveguide",
+                    "id": "26ec402t-2.18",
+                    "sno": "2.18",
+                    "topic": "Deep dive into State the following parameters of antenna i. Radiation pattern ii. Front-to -back ratio iii. Directive gain iv. Directivity v. Power gain vi. Beamwidth vii. Bandwidth viii. Antenna resistance: Radiation and Loss Resistance ix. Antenna efficiency x. Antenna aperture (Effective area) xi. Antenna polarization",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.4",
-                    "sno": "3.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain why TEM mode does not exist in a waveguide?",
+                    "id": "26ec402t-2.19",
+                    "sno": "2.19",
+                    "topic": "Deep dive into Explain Isotropic radiator",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.5",
-                    "sno": "3.5"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define TE (Transverse Electric) Mode and TM (Transverse Magnetic) Mode",
+                    "id": "26ec402t-2.20",
+                    "sno": "2.20",
+                    "topic": "Deep dive into Classify antennas based on i) Radiation pattern ii) Frequency range",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define the terms: i) dominant mode, ii) cut-off wavelength, iii) cut-off frequency iv) phase velocity and v) group velocity related to waveguides",
+                    "id": "26ec402t-2.21",
+                    "sno": "2.21",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.7",
-                    "sno": "3.7"
+                    "type": "revision"
                 },
                 {
-                    "topic": "List different Microwave passive devices",
+                    "id": "26ec402t-2.22",
+                    "sno": "2.22",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.8",
-                    "sno": "3.8"
-                },
-                {
-                    "topic": "State the uses of T-junctions: i) E-Plane Tee, ii) H-Plane Tee& iii) Hybrid Tee",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.9",
-                    "sno": "3.9"
-                },
-                {
-                    "topic": "State the uses of i) Microwave Bends ii) Microwave tapers iii) Microwave Twist",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.10",
-                    "sno": "3.10"
-                },
-                {
-                    "topic": "Mention the use of i) Microwave Isolator ii) Microwave circulator",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.11",
-                    "sno": "3.11"
-                },
-                {
-                    "topic": "Explain the construction and working of Reflex Klystron oscillator",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.12",
-                    "sno": "3.12"
-                },
-                {
-                    "topic": "Explain the construction and working of Magnetron oscillator",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.13",
-                    "sno": "3.13"
-                },
-                {
-                    "topic": "Explain the construction and working of Travelling Wave Tube amplifier",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.14",
-                    "sno": "3.14"
-                },
-                {
-                    "topic": "List the applications of microwave tubes",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.15",
-                    "sno": "3.15"
-                },
-                {
-                    "topic": "List different microwave solid state devices",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.16",
-                    "sno": "3.16"
-                },
-                {
-                    "topic": "Explain the construction and working of Gunn diode",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.17",
-                    "sno": "3.17"
-                },
-                {
-                    "topic": "Explain the construction and working IMPATT diode",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.18",
-                    "sno": "3.18"
-                },
-                {
-                    "topic": "Unit Test-II From 3.8 to 5.12",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-3.7",
-                    "sno": "3.7"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
+            "title": "RADARS",
+            "totalPeriods": 22,
             "topics": [
                 {
-                    "topic": "RADARS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec402t-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "State the basic working principle of a RADAR",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec402t-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "RADARS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive the free space RADAR range equation",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec402t-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "State the basic working principle of a RADAR",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the factors affecting range of a RADAR",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec402t-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Derive the free space RADAR range equation",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-4.4",
+                    "sno": "4.4",
+                    "topic": "Explain the factors affecting range of a RADAR",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-4.5",
+                    "sno": "4.5",
                     "topic": "Classify RADARs",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-4.4",
-                    "sno": "4.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-4.6",
+                    "sno": "4.6",
                     "topic": "Draw the block diagram of a pulse RADAR and explain the function of each block",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-4.5",
-                    "sno": "4.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-4.7",
+                    "sno": "4.7",
                     "topic": "State the major advantages & disadvantages of a pulsed RADAR system",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-4.6",
-                    "sno": "4.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-4.8",
+                    "sno": "4.8",
                     "topic": "State the need of duplexer",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-4.7",
-                    "sno": "4.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-4.9",
+                    "sno": "4.9",
                     "topic": "List the various displays used in RADAR",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-4.8",
-                    "sno": "4.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-4.10",
+                    "sno": "4.10",
                     "topic": "Explain the Doppler Effect",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-4.9",
-                    "sno": "4.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-4.11",
+                    "sno": "4.11",
                     "topic": "Draw and explain the block diagram of continuous wave (CW) RADAR",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-4.10",
-                    "sno": "4.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-4.12",
+                    "sno": "4.12",
                     "topic": "Draw and explain the moving target indicating (MTI) RADAR",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-4.11",
-                    "sno": "4.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-4.13",
+                    "sno": "4.13",
                     "topic": "Briefly explain the concept of blind speeds and write its formula",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-4.12",
-                    "sno": "4.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-4.14",
+                    "sno": "4.14",
                     "topic": "List the applications of RADARs",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-4.13",
-                    "sno": "4.13"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-4.15",
+                    "sno": "4.15",
+                    "topic": "Deep dive into RADARS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-4.16",
+                    "sno": "4.16",
+                    "topic": "Deep dive into State the basic working principle of a RADAR",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-4.17",
+                    "sno": "4.17",
+                    "topic": "Deep dive into Derive the free space RADAR range equation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-4.18",
+                    "sno": "4.18",
+                    "topic": "Deep dive into Explain the factors affecting range of a RADAR",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-4.19",
+                    "sno": "4.19",
+                    "topic": "Deep dive into Classify RADARs",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-4.20",
+                    "sno": "4.20",
+                    "topic": "Deep dive into Draw the block diagram of a pulse RADAR and explain the function of each block",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-4.21",
+                    "sno": "4.21",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec402t-4.22",
+                    "sno": "4.22",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
+            "title": "SATELLITE COMMUNICATION SYSTEM",
+            "totalPeriods": 22,
             "topics": [
                 {
-                    "topic": "SATELLITE COMMUNICATION SYSTEM",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec402t-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "State the need for satellite communication",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec402t-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "SATELLITE COMMUNICATION SYSTEM",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the advantages of satellite communication system over terrestrial communication system",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec402t-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "State the need for satellite communication",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain uplink and down link frequencies",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec402t-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "List the advantages of satellite communication system over terrestrial communication system",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List various types of satellites (LEOs, MEOs and GEOs)",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec402t-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Explain uplink and down link frequencies",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-5.5",
+                    "sno": "5.5",
+                    "topic": "List various types of satellites (LEOs, MEOs and GEOs)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-5.6",
+                    "sno": "5.6",
                     "topic": "List the advantages of Geosynchronous satellites",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-5.5",
-                    "sno": "5.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-5.7",
+                    "sno": "5.7",
                     "topic": "Draw and explain block diagram of a Satellite on board",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-5.6",
-                    "sno": "5.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-5.8",
+                    "sno": "5.8",
                     "topic": "Draw the block diagram of earth station and explain each block",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-5.7",
-                    "sno": "5.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-5.9",
+                    "sno": "5.9",
                     "topic": "List the functions of the satellite transponder",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-5.8",
-                    "sno": "5.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-5.10",
+                    "sno": "5.10",
                     "topic": "Mention different types of satellite transponders",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-5.9",
-                    "sno": "5.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-5.11",
+                    "sno": "5.11",
                     "topic": "Explain regenerative transponder with block diagram",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-5.10",
-                    "sno": "5.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-5.12",
+                    "sno": "5.12",
                     "topic": "List different frequency bands used for satellite communication systems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-5.11",
-                    "sno": "5.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec402t-5.13",
+                    "sno": "5.13",
                     "topic": "Explain the application of satellite in GPS (Global Position System) with suitable diagram",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec402t-5.12",
-                    "sno": "5.12"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-5.14",
+                    "sno": "5.14",
+                    "topic": "Deep dive into SATELLITE COMMUNICATION SYSTEM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-5.15",
+                    "sno": "5.15",
+                    "topic": "Deep dive into State the need for satellite communication",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-5.16",
+                    "sno": "5.16",
+                    "topic": "Deep dive into List the advantages of satellite communication system over terrestrial communication system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-5.17",
+                    "sno": "5.17",
+                    "topic": "Deep dive into Explain uplink and down link frequencies",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-5.18",
+                    "sno": "5.18",
+                    "topic": "Deep dive into List various types of satellites (LEOs, MEOs and GEOs)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-5.19",
+                    "sno": "5.19",
+                    "topic": "Deep dive into List the advantages of Geosynchronous satellites",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-5.20",
+                    "sno": "5.20",
+                    "topic": "Deep dive into Draw and explain block diagram of a Satellite on board",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-5.21",
+                    "sno": "5.21",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec402t-5.22",
+                    "sno": "5.22",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

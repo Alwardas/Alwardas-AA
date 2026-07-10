@@ -3,715 +3,344 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 9,
+            "title": "Basic Concepts of Automation",
+            "totalPeriods": 12,
             "topics": [
                 {
-                    "topic": "Basic Concepts of Automation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "Define Automation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Basic Concepts of Automation; Define Automation",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Discuss the Evolution of Automation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Discuss the Evolution of Automation; Explain the need for Automation",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the need for Automation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Explain different types of Automation (Fixed, Programmable and Flexible); Explain the challenges in implementation of Automation",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain different types of Automation (Fixed, Programmable and Flexible)",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Describe the social implications of Industrial Automation on Employment and skill Changes; List the basic components of an Automation system (i) Se...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the challenges in implementation of Automation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "List the application of Automation in Industry; Explain the importance of control Engineering in day-to-day life and industry; Explain the concept ...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the social implications of Industrial Automation on Employment and skill Changes",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Classify and identify the main components of an I.C. Engine; Explain the working principle of a four-stroke engine with a suitable illustration",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the basic components of an Automation system (i) Sensors (Input devices) (ii) Actuators (Output Devices) (iii) Controllers (Processing Devices) (iv) Human Machine-Interface",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-1.7",
-                    "sno": "1.7"
+                    "sno": "1.7",
+                    "topic": "Identify different pollutants produced by IC engine vehicles (ICEVs) and describe their effects on human health; Define an Electric Vehicle (EV) an...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the application of Automation in Industry",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-1.8",
-                    "sno": "1.8"
+                    "sno": "1.8",
+                    "topic": "List the advantages and disadvantages of electric vehicles; Compare Battery Electric Vehicles (BEVs) with conventional vehicles based on their desi...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the importance of control Engineering in day-to-day life and industry",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-1.9",
-                    "sno": "1.9"
+                    "sno": "1.9",
+                    "topic": "Draw and explain the major components of an electric vehicle block diagram. 2. Types of Electric Vehicles; Discuss the importance and relevance of ...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the concept of control systems used in Automobiles, Speed control of AC and DC motor, Water level Controller",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-1.10",
-                    "sno": "1.10"
+                    "sno": "1.10",
+                    "topic": "Explain the architecture of an IoT system; List and describe components of an IoT system (sensors, microcontrollers, actuators); State the advantag...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classify and identify the main components of an I.C. Engine",
+                    "id": "26ee404e-1.11",
+                    "sno": "1.11",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.1",
-                    "sno": "1.1"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Explain the working principle of a four-stroke engine with a suitable illustration",
+                    "id": "26ee404e-1.12",
+                    "sno": "1.12",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.2",
-                    "sno": "1.2"
-                },
-                {
-                    "topic": "Identify different pollutants produced by IC engine vehicles (ICEVs) and describe their effects on human health",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.3",
-                    "sno": "1.3"
-                },
-                {
-                    "topic": "Define an Electric Vehicle (EV) and explain the current need for electric vehicles",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.4",
-                    "sno": "1.4"
-                },
-                {
-                    "topic": "List the advantages and disadvantages of electric vehicles",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.5",
-                    "sno": "1.5"
-                },
-                {
-                    "topic": "Compare Battery Electric Vehicles (BEVs) with conventional vehicles based on their design and operation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.6",
-                    "sno": "1.6"
-                },
-                {
-                    "topic": "Draw and explain the major components of an electric vehicle block diagram. 2. Types of Electric Vehicles",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.7",
-                    "sno": "1.7"
-                },
-                {
-                    "topic": "Discuss the importance and relevance of IoT in industry 4.0",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.1",
-                    "sno": "1.1"
-                },
-                {
-                    "topic": "Explain the architecture of an IoT system",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.2",
-                    "sno": "1.2"
-                },
-                {
-                    "topic": "List and describe components of an IoT system (sensors, microcontrollers, actuators)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.3",
-                    "sno": "1.3"
-                },
-                {
-                    "topic": "State the advantages and challenges of using IoT in electrical systems. Unit 2: IoT Hardware Components",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-1.4",
-                    "sno": "1.4"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 9,
+            "title": "Sensors and Actuators",
+            "totalPeriods": 11,
             "topics": [
                 {
-                    "topic": "Sensors and Actuators",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Define Sensor and Actuators",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Sensors and Actuators; Define Sensor and Actuators",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List various types of sensors and actuators",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "List various types of sensors and actuators; Classify sensors and actuators; Explain the operating principles of temperature, pressure, proximity a...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classify sensors and actuators",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Explain the following characteristics of sensors. 1. Accuracy 2. Precision 3. Sensitivity 4. Resolution 5. Linearity and range; Explain the functio...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the operating principles of temperature, pressure, proximity and light sensors",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "State the applications of sensors and actuators in automation, robotics and control systems; Explain the working of AC and DC Solenoids; Explain th...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the following characteristics of sensors. 1. Accuracy 2. Precision 3. Sensitivity 4. Resolution 5. Linearity and range",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "Classify electric vehicles according to their source of power (BEV, HEV, PHEV, and FCEV); Explain the working principle of a Battery Electric Vehic...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the functions and operations of the following actuators. 1. Electric motors 2. Solenoids 3. Hydraulic 4. Pneumatic 5. Transducers",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-2.6",
-                    "sno": "2.6"
+                    "sno": "2.6",
+                    "topic": "Explain the working principle of a Hybrid Electric Vehicle (HEV) with a neat block diagram; Classify hybrid vehicles based on their power train con...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the applications of sensors and actuators in automation, robotics and control systems",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-2.7",
-                    "sno": "2.7"
+                    "sno": "2.7",
+                    "topic": "Explain the working principle of a Fuel Cell Electric Vehicle (FCEV) with a neat block diagram; Compare the different types of Electric Vehicles (B...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of AC and DC Solenoids",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-2.8",
-                    "sno": "2.8"
+                    "sno": "2.8",
+                    "topic": "Describe the impacts of EVs/HEVs on the power grid, environment, and economy. 3. Energy Storage Systems, Charging Technologies for EVs; Identify ty...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of Thermal relay, Latching relay, Electromagnetic relay, Solid state relay and Reed Relay",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-2.9",
-                    "sno": "2.9"
+                    "sno": "2.9",
+                    "topic": "Compare microcontrollers: Arduino, NodeMCU, ESP32; Illustrate sensor\u2013controller interfacing with a legible block diagram; Discuss the role of embed...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classify electric vehicles according to their source of power (BEV, HEV, PHEV, and FCEV)",
+                    "id": "26ee404e-2.10",
+                    "sno": "2.10",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.1",
-                    "sno": "2.1"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Explain the working principle of a Battery Electric Vehicle (BEV) with a neat block diagram",
+                    "id": "26ee404e-2.11",
+                    "sno": "2.11",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Explain the working principle of a Hybrid Electric Vehicle (HEV) with a neat block diagram",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "Classify hybrid vehicles based on their power train configurations",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.4",
-                    "sno": "2.4"
-                },
-                {
-                    "topic": "Explain the working principle of a Plug-in Hybrid Electric Vehicle (PHEV) with a neat block diagram",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.5",
-                    "sno": "2.5"
-                },
-                {
-                    "topic": "Explain the working principle of a Fuel Cell Electric Vehicle (FCEV) with a neat block diagram",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.6",
-                    "sno": "2.6"
-                },
-                {
-                    "topic": "Compare the different types of Electric Vehicles (BEV, HEV, PHEV, FCEV) based on key characteristics",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.7",
-                    "sno": "2.7"
-                },
-                {
-                    "topic": "Describe the impacts of EVs/HEVs on the power grid, environment, and economy. 3. Energy Storage Systems, Charging Technologies for EVs",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.8",
-                    "sno": "2.8"
-                },
-                {
-                    "topic": "Identify types of sensors & actuators used in electrical applications",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "Explain the role of sensors & actuators in IoT systems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Compare microcontrollers: Arduino, NodeMCU, ESP32",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "Illustrate sensor\u2013controller interfacing with a legible block diagram",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.4",
-                    "sno": "2.4"
-                },
-                {
-                    "topic": "Discuss the role of embedded systems in IoT devices. Unit 3: Communication Protocols in IoT",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-2.5",
-                    "sno": "2.5"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 9,
+            "title": "PLC",
+            "totalPeriods": 11,
             "topics": [
                 {
-                    "topic": "Define Programmable Logic Controller (PLC) and state the advantages of PLC",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Define Programmable Logic Controller (PLC) and state the advantages of PLC; Explain the different parts of PLC by drawing the Block diagram and sta...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the different parts of PLC by drawing the Block diagram and state the purpose of each part",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "State the applications of PLC; Explain Ladder diagram; Explain contacts and coils used in PLC",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the applications of PLC",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Draw ladder diagrams for (i) AND gate (ii) OR gate (iii) NOT gate (iv) NAND gate (iv) NOR gate (iv) X-OR gate; Explain the following Timers and cou...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Ladder diagram",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Explain PLC Instruction set; Explain ladder diagrams for following (i) DOL starter and STAR-DELTA starter (ii) Stair case lighting (iii) Water leve...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain contacts and coils used in PLC",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Define key terms related to batteries, including Battery Capacity, Specific Energy Density, State of Charge, and Cycle Life; List the main requirem...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw ladder diagrams for (i) AND gate (ii) OR gate (iii) NOT gate (iv) NAND gate (iv) NOR gate (iv) X-OR gate",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.6",
-                    "sno": "3.6"
+                    "sno": "3.6",
+                    "topic": "List the advantages and disadvantages of alternative energy storage devices such as Ultra capacitors and Fuel Cells; List the basic requirements fo...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the following Timers and counters used in PLC (i) T ON (ii) T OFF (iii) Retentive timer (iv) CTU (v) CTD",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.7",
-                    "sno": "3.7"
+                    "sno": "3.7",
+                    "topic": "State the principles of Inductive (Wireless) charging in Electric Vehicles; Describe the Concept of V2G (Vehicle to Grid) Technology; State the nee...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw ladder diagrams using Timers and counters",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.8",
-                    "sno": "3.8"
+                    "sno": "3.8",
+                    "topic": "Explain the major components and functions of a Battery Management System (BMS) using a block diagram. 4. Electric Motor Technologies and Braking s...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain PLC Instruction set",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.9",
-                    "sno": "3.9"
+                    "sno": "3.9",
+                    "topic": "Discuss Zigbee and LoRa protocols with use cases; Explain the MQTT protocol and its applications in data transmission; Compare MQTT,Zigbee ,LoRa an...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain ladder diagrams for following (i) DOL starter and STAR-DELTA starter (ii) Stair case lighting (iii) Water level control (iv) Temperature Controller",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.10",
-                    "sno": "3.10"
+                    "sno": "3.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Classify electrochemical cells as primary and secondary cells",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Define key terms related to batteries, including Battery Capacity, Specific Energy Density, State of Charge, and Cycle Life",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "List the main requirements for Electric Vehicle (EV) batteries, emphasizing safety and energy density",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Explain the working principle of Lithium-Ion (Li-Ion) battery systems with neat sketches",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "List the advantages and disadvantages of alternative energy storage devices such as Ultra capacitors and Fuel Cells",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "List the basic requirements for EV charging systems, focusing on safety, reliability and standardization",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.6",
-                    "sno": "3.6"
-                },
-                {
-                    "topic": "State the principles of Constant Voltage, Constant Current and Trickle Charging methods",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.7",
-                    "sno": "3.7"
-                },
-                {
-                    "topic": "State the principles of Inductive (Wireless) charging in Electric Vehicles",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.8",
-                    "sno": "3.8"
-                },
-                {
-                    "topic": "Describe the Concept of V2G (Vehicle to Grid) Technology",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.9",
-                    "sno": "3.9"
-                },
-                {
-                    "topic": "State the need for a Battery Management System (BMS) in electric vehicles",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.10",
-                    "sno": "3.10"
-                },
-                {
-                    "topic": "Explain the major components and functions of a Battery Management System (BMS) using a block diagram. 4. Electric Motor Technologies and Braking systems in EVs",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-3.11",
-                    "sno": "3.11"
-                },
-                {
-                    "topic": "Explain the need for communication in IoT systems",
+                    "sno": "3.11",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Describe Bluetooth and Wi-Fi communication technologies",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Discuss Zigbee and LoRa protocols with use cases",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Explain the MQTT protocol and its applications in data transmission",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "Compare MQTT,Zigbee ,LoRa and Modbus protocols used in electrical IoT systems. Unit 4: Applications of IoT in Electrical Systems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-3.5",
-                    "sno": "3.5"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 9,
+            "title": "SCADA",
+            "totalPeriods": 11,
             "topics": [
                 {
-                    "topic": "SCADA",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Explain the need of data acquisition",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "SCADA; Explain the need of data acquisition",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the advantages of supervisory control",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "State the advantages of supervisory control; List the software\u2019s used for SCADA and explain them",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the software\u2019s used for SCADA and explain them",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "State various communication methods used in SCADA; Describe the fundamental role of electric motors in Electric Vehicle (EV) propulsion; State the ...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State various communication methods used in SCADA",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "State the types of motors used in Electric Vehicles; Explain the construction, working principle, and characteristics of Brushless DC (BLDC) Motors",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the fundamental role of electric motors in Electric Vehicle (EV) propulsion",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "State the key requirements of traction motors for EV applications, including high torque, speed control, and efficiency",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "State the types of motors used in Electric Vehicles",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "Explain the construction, working principle, and characteristics of Brushless DC (BLDC) Motors",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.4",
-                    "sno": "4.4"
-                },
-                {
-                    "topic": "Explain the construction, working principle, and characteristics of Permanent Magnet Synchronous Motors (PMSM)",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Explain the construction, working principle, and characteristics of Permanent Magnet Synchronous Motors (PMSM); Classify the motor configurations u...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classify the motor configurations used in Electric Vehicles",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.6",
-                    "sno": "4.6"
+                    "sno": "4.6",
+                    "topic": "List the advantages of electric braking over conventional friction braking systems in Electric Vehicles; List the different methods of electric bra...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the different types of braking applied to electric motors in general",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.7",
-                    "sno": "4.7"
+                    "sno": "4.7",
+                    "topic": "Explain the Plugging, Rheostatic and Regenerative braking methods for DC Shunt motors with braking current and torque equations; Solve basic proble...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the advantages of electric braking over conventional friction braking systems in Electric Vehicles",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.8",
-                    "sno": "4.8"
+                    "sno": "4.8",
+                    "topic": "Describe the role of IoT in smart grid development; Discuss energy management systems using IoT",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the different methods of electric braking",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.9",
-                    "sno": "4.9"
+                    "sno": "4.9",
+                    "topic": "Explain the use of IoT in electrical fault detection and predictive maintenance; Explain the home automation using IoT; List advantages of IoT inte...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the Plugging, Rheostatic and Regenerative braking methods for DC Shunt motors with braking current and torque equations",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.10",
-                    "sno": "4.10"
+                    "sno": "4.10",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Solve basic problems related to electric braking systems",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee404e-4.11",
-                    "sno": "4.11"
-                },
-                {
-                    "topic": "Explain IoT applications in smart metering",
+                    "sno": "4.11",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Describe the role of IoT in smart grid development",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Discuss energy management systems using IoT",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "Explain the use of IoT in electrical fault detection and predictive maintenance",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.4",
-                    "sno": "4.4"
-                },
-                {
-                    "topic": "Explain the home automation using IoT",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.5",
-                    "sno": "4.5"
-                },
-                {
-                    "topic": "List advantages of IoT integration in electrical automation. Unit 5: Practical Exposure and Case Studies",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ee404e-4.6",
-                    "sno": "4.6"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "topic": "Fire and Gas Leak Detection System for Substations using sensors, ESP32 & Cloud",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ee404e-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "Smart Home Energy Automation System using sensors, ESP32 & Cloud",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee404e-5.2",
-                    "sno": "5.2"
-                },
-                {
-                    "topic": "Collect and visualize Dustbin data (garbage monitoring) on a dashboard using sensors, ESP32 & Cloud",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee404e-5.3",
-                    "sno": "5.3"
-                },
-                {
-                    "topic": "Real-Time Monitoring of Substation Equipment like(Transformer, Circuit Breaker, Battery, Busbar) using sensors ,ESP32 & Cloud",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ee404e-5.4",
-                    "sno": "5.4"
+                    "type": "assessment"
                 }
             ]
         }

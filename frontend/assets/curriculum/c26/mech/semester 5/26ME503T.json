@@ -3,589 +3,666 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "INTRODUCTION TO INDUSTIAL AUTOMATION",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26me503t-1.1",
+                    "sno": "1.1",
                     "topic": "INTRODUCTION TO INDUSTIAL AUTOMATION",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me503t-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.2",
+                    "sno": "1.2",
                     "topic": "Define Industrial Automation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.3",
+                    "sno": "1.3",
                     "topic": "State the reasons for implementation of Automated Systems in Manufacturing Industries",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Understand concisely the Features of Industrial Revolutions from First Industrial Revolution to Fourth Industrial Revolution (Industry1.0 to Industry 4.0.)",
+                    "id": "26me503t-1.4",
+                    "sno": "1.4",
+                    "topic": "Understand concisely the Features of Industrial Revolutions from First Industrial Revolution to Fourth Industrial Revolution (Industry1.0 to Indust...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.5",
+                    "sno": "1.5",
                     "topic": "Understand the concept and systems integrated with Industry 4.0 or Smart Manufacturing",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.6",
+                    "sno": "1.6",
                     "topic": "Evolution of Industry 4.0 in India",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.7",
+                    "sno": "1.7",
                     "topic": "List the Advantages, Disadvantages and Benefits of Industry 4.0",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.6",
-                    "sno": "1.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.8",
+                    "sno": "1.8",
                     "topic": "Define Internet of Things (IoT)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.7",
-                    "sno": "1.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.9",
+                    "sno": "1.9",
                     "topic": "Explain the functions of Key Components of IoT",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.8",
-                    "sno": "1.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.10",
+                    "sno": "1.10",
                     "topic": "List Advantages, Disadvantages and Applications of IoT",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.9",
-                    "sno": "1.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.11",
+                    "sno": "1.11",
                     "topic": "Define Cloud computing",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.10",
-                    "sno": "1.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.12",
+                    "sno": "1.12",
                     "topic": "List the key components of Cloud computing",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.11",
-                    "sno": "1.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.13",
+                    "sno": "1.13",
                     "topic": "Define Industry Internet of Things (IIoT)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.12",
-                    "sno": "1.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.14",
+                    "sno": "1.14",
                     "topic": "State the Difference between IoT and IIoT",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.13",
-                    "sno": "1.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-1.15",
+                    "sno": "1.15",
                     "topic": "Explain IIoT Key Technologies",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.14",
-                    "sno": "1.14"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Advantages and Applications of IIoT",
+                    "id": "26me503t-1.16",
+                    "sno": "1.16",
+                    "topic": "Advantages and Applications of IIoT; INTRODUCTION TO INDUSTRIAL AUTOMATION Industry \u2013 Automation \u2013 Reasons for implementation of Automated Systems ...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.15",
-                    "sno": "1.15"
+                    "type": "theory"
                 },
                 {
-                    "topic": "INTRODUCTION TO INDUSTRIAL AUTOMATION Industry \u2013 Automation \u2013 Reasons for implementation of Automated Systems in Manufacturing Industries \u2013 Types of Automation \u2013 Features of Industrial Revolutions from First Industrial Revolution to Fourth Industrial Revolution (Industry 1.0 to Industry 4.0.) Concept of Industry 4.0 or Smart Manufacturing \u2013 Systems integrated in Industry 4.0 \u2013 Certification \u2013 Effect of Industry 4.0 on Society \u2013 Industry 4.0 in India \u2013 Advantages and Disadvantages of Industry 4.0 \u2013 Benefits of Industry 4.0. Internet of Things (IoT) : Definition \u2013 History - Examples IoT devices \u2013Functions of Key Components of IoT - Advantages and Disadvantages of IoT \u2013 Applications of IoT. Cloud Computing \u2013 Key components of Cloud Computing. Industry Internet of Things (IIoT): Concept of IoT in Manufacturing Industries - Definition of IIoT\u2013 Difference between IoT and IIoT - Features and Benefits of IIoT \u2013 Working of IIoT \u2013 Industries using IIoT ",
+                    "id": "26me503t-1.17",
+                    "sno": "1.17",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-1.0",
-                    "sno": "1.0"
+                    "type": "revision"
+                },
+                {
+                    "id": "26me503t-1.18",
+                    "sno": "1.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "COMPUTER INTEGRATED MANUFACTURING SYSTEMS",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26me503t-2.1",
+                    "sno": "2.1",
                     "topic": "COMPUTER INTEGRATED MANUFACTURING SYSTEMS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.0",
-                    "sno": "2.0"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Computer Aided Design and Computer Aided Manufacturing:",
+                    "id": "26me503t-2.2",
+                    "sno": "2.2",
+                    "topic": "Define Computer Aided Design and Computer Aided Manufacturing",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.1",
-                    "sno": "2.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-2.3",
+                    "sno": "2.3",
                     "topic": "List Benefits of CAD and CAM",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define NC System and explain basic components of NC system",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "Define CNC system and explain the functions of basic components of CNC system",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me503t-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Define NC System and explain basic components of NC system; Define CNC system and explain the functions of basic components of CNC system",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-2.5",
+                    "sno": "2.5",
                     "topic": "Define DNC system and explain the functions of basic components of DNC system",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.5",
-                    "sno": "2.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-2.6",
+                    "sno": "2.6",
                     "topic": "Differentiate among NC, CNC, DNC systems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.6",
-                    "sno": "2.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-2.7",
+                    "sno": "2.7",
                     "topic": "Describe the layout and Functions of Principal components of Flexible Manufacturing System",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.7",
-                    "sno": "2.7"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Write Advantages and Applications of Flexible Manufacturing System",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me503t-2.8",
-                    "sno": "2.8"
-                },
-                {
-                    "topic": "Define Computer Integrated Manufacturing system and explain the basic components of CIMS",
+                    "sno": "2.8",
+                    "topic": "Write Advantages and Applications of Flexible Manufacturing System; Define Computer Integrated Manufacturing system and explain the basic component...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.9",
-                    "sno": "2.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-2.9",
+                    "sno": "2.9",
                     "topic": "Classification of CNC Machines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.10",
-                    "sno": "2.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-2.10",
+                    "sno": "2.10",
                     "topic": "Explain the construction and working principle of CNC Turning Centre",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.11",
-                    "sno": "2.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-2.11",
+                    "sno": "2.11",
                     "topic": "Explain the construction and working principle of CNC Machining Centre",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26me503t-2.12",
-                    "sno": "2.12"
+                    "sno": "2.12",
+                    "topic": "Write the Advantages, disadvantages and applications of CNC machines; Define Material handling system in CIMS environment",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Write the Advantages, disadvantages and applications of CNC machines",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me503t-2.13",
-                    "sno": "2.13"
-                },
-                {
-                    "topic": "Define Material handling system in CIMS environment",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.14",
-                    "sno": "2.14"
-                },
-                {
+                    "sno": "2.13",
                     "topic": "List functions of Material Handling Systems in CIMS environment",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.15",
-                    "sno": "2.15"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-2.14",
+                    "sno": "2.14",
                     "topic": "Define Automated Guided Vehicle system and explain working principle of AGV",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.16",
-                    "sno": "2.16"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-2.15",
+                    "sno": "2.15",
                     "topic": "List and explain various types of AGVs",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-2.16",
+                    "sno": "2.16",
+                    "topic": "Explain Automatic storage and retrieval systems (AS/RS); COMPUTER INTEGRATED MANUFACTURING SYSTEMS Computer Aided Design: Definition of CAD \u2013 CAD A...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
                     "id": "26me503t-2.17",
-                    "sno": "2.17"
+                    "sno": "2.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Explain Automatic storage and retrieval systems (AS/RS)",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me503t-2.18",
-                    "sno": "2.18"
-                },
-                {
-                    "topic": "COMPUTER INTEGRATED MANUFACTURING SYSTEMS Computer Aided Design: Definition of CAD \u2013 CAD Activities \u2013CAD Software Packages. NC, CNC AND DNC SYSTEMS: NC system definition and explanation of components of NC system \u2013 CNC system definition and explanation of functions of components of CNC system - DNC system definition and explanation of functions of components of DNC system \u2013 Comparison of NC, CNC and DNC systems. Computer Aided Manufacturing: Definition of CAM - Functions of CAM \u2013 Group Technology- Functions of Principal components of Flexible Manufacturing System \u2013 Advantages and Applications of Flexible Manufacturing System. Computer Integrated Manufacturing Systems: Integration of CAD and CAM - Definition of CIMS \u2013 CIMS Hardware and Software \u2013 Components of CIMS -Functions of components of CIMS - Benefits of CIMS. Computer Numerical Control Machines : Classification of NC Machines \u2013 Specification of CNC machines - construction and working principle of CNC Turning Centre - Construction and working principle of CNC Machining Centre - Advantages, disadvantages and applications of CNC machines. Components of CNC machine: Functions of Slide ways, recirculation ball screw Automatic Tool Changer and Tool Magazine, transducers - encoders. Material Handling Systems in CIM: Material handling system in CIMS environment - Functions of Material Handling Systems in CIMS environment - Automated Guided Vehicle system and explain working principle of AGV- Explanation various types of AGVs - Automatic storage and retrieval systems (AS/RS) - Working principle \u2013Types \u2013 Applications",
+                    "sno": "2.18",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-2.0",
-                    "sno": "2.0"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "CNC PROGRAMMING",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26me503t-3.1",
+                    "sno": "3.1",
                     "topic": "CNC PROGRAMMING",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.0",
-                    "sno": "3.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.2",
+                    "sno": "3.2",
                     "topic": "Define Part Programming and List types of Part Programming",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.3",
+                    "sno": "3.3",
                     "topic": "Explain the steps involved in Manual Part Programming",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.2",
-                    "sno": "3.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.4",
+                    "sno": "3.4",
                     "topic": "Define Co-ordinate system and explain absolute and incremental Co-ordinate systems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.3",
-                    "sno": "3.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.5",
+                    "sno": "3.5",
                     "topic": "Define Machine co-ordinating system (MCS) and Work piece co-ordinating System (WCS) with respect to NC or CNC machine tools",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.4",
-                    "sno": "3.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.6",
+                    "sno": "3.6",
                     "topic": "Define NC word and list types of NC words",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.5",
-                    "sno": "3.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.7",
+                    "sno": "3.7",
                     "topic": "Write different preparatory functions (G-codes) and miscellaneous functions (M-Codes) in Part Programming",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Program format",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.7",
-                    "sno": "3.7"
-                },
-                {
-                    "topic": "List types of Program formats and explain word address format",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me503t-3.8",
-                    "sno": "3.8"
+                    "sno": "3.8",
+                    "topic": "Define Program format; List types of Program formats and explain word address format",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.9",
+                    "sno": "3.9",
                     "topic": "Explain linear interpolation and Circular interpolation with illustrations",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.9",
-                    "sno": "3.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.10",
+                    "sno": "3.10",
                     "topic": "Write simple Turning programs for the given component",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.10",
-                    "sno": "3.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.11",
+                    "sno": "3.11",
                     "topic": "Define Computer aided part programming",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.11",
-                    "sno": "3.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.12",
+                    "sno": "3.12",
                     "topic": "Explain the concept and steps involved in Computer Aided Part Programming (CAPP)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.12",
-                    "sno": "3.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.13",
+                    "sno": "3.13",
                     "topic": "List advantages of CAPP . Differentiate between Manual and Computer aided Part Programming",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.13",
-                    "sno": "3.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.14",
+                    "sno": "3.14",
                     "topic": "List various Computer Aided Part Programming Languages",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.14",
-                    "sno": "3.14"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-3.15",
+                    "sno": "3.15",
                     "topic": "Explain various statements involved in writing part program using APT language",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.15",
-                    "sno": "3.15"
+                    "type": "theory"
                 },
                 {
-                    "topic": "CNC PART PROGRAMMING NC Part Programming \u2013 Definition and Meaning - Types of Part Programming. Manual Part Programming : Introduction, Definition, Steps involved in Manual Part Programming - NC Co-ordinate system - absolute and incremental NC Co-ordinate systems - Machine co-ordinating system (MCS) and Work piece co-ordinating System (WCS) with respect to NC or CNC machine tools- Datum points, Machine zero, Work zero, and Tool zero - Reference points \u2013 Explanation of Co-ordinate axis system followed in NC or CNC Machine tools - NC word and types of NC words - different preparatory functions (G -codes) and miscellaneous functions (M-Codes) used in Part Programming - Program format - types of Program formats and explanation of word address format \u2013 explanation of linear interpolation and Circular interpolation with illustrations - Simple Turning programs for the given component using linear and circular interpolations. Computer Aided Part Programming (CAPP): Definition, concept and Steps involved in CAPP- Advantages of CAPP \u2013 CAPP Languages- Concept of APT language- various statements involved in writing Part program using APT. Commercially available GUI based CAPP programming languages \u2013 comparison between manual and Computer aided part programming",
+                    "id": "26me503t-3.16",
+                    "sno": "3.16",
+                    "topic": "CNC PART PROGRAMMING NC Part Programming \u2013 Definition and Meaning - Types of Part Programming. Manual Part Programming : Introduction, Definition, ...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-3.0",
-                    "sno": "3.0"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Unit Test \u2013 II From 4.1 to 5.12 REFERENCE BOOKS 1. Automation, Production Systems, and Computer-Integrated Manufacturing - Mikell P. Groover 2. Computer aided Design and Manufacturing \u2013 Mikell P Groover 3. CAD/CAM Theory and Practice- Ibrahim Zeid 4. CAD/CAM Principles and applications \u2013 P. N. Rao",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me503t-3.17",
-                    "sno": "3.17"
+                    "sno": "3.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me503t-3.18",
+                    "sno": "3.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "INDUSTRIAL ROBOTICS& FLUID POWER SYSTEMS",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26me503t-4.1",
+                    "sno": "4.1",
                     "topic": "INDUSTRIAL ROBOTICS& FLUID POWER SYSTEMS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me503t-4.0",
-                    "sno": "4.0"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the Necessity of Robots in Industries",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Explain the Necessity of Robots in Industries",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the classification of Robots",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Explain the classification of Robots",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.4",
+                    "sno": "4.4",
                     "topic": "List and explain the basic components of an Industrial Robot",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.4",
-                    "sno": "4.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.5",
+                    "sno": "4.5",
                     "topic": "Explain degrees of freedom of a robot",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.5",
-                    "sno": "4.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.6",
+                    "sno": "4.6",
                     "topic": "List Robot programming methods and Languages",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.6",
-                    "sno": "4.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.7",
+                    "sno": "4.7",
                     "topic": "Write Advantages, Disadvantages and Industrial applications of Robots",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.7",
-                    "sno": "4.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.8",
+                    "sno": "4.8",
                     "topic": "Explain the Importance of Fluid power systems in the design and construction of Industrial robots",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.8",
-                    "sno": "4.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.9",
+                    "sno": "4.9",
                     "topic": "Understand the concept and definition of Fluid Power system",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.8",
-                    "sno": "4.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.10",
+                    "sno": "4.10",
                     "topic": "List the Advantages and applications of Pneumatic power systems in CIM environment",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.9",
-                    "sno": "4.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.11",
+                    "sno": "4.11",
                     "topic": "Know the basic components of Pneumatic Power Systems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.9",
-                    "sno": "4.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.12",
+                    "sno": "4.12",
                     "topic": "Explain the working of Components Filter, Regulator and Lubricator",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.10",
-                    "sno": "4.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.13",
+                    "sno": "4.13",
                     "topic": "Explain the working of Direction Control Valves (DCV), Flow control Valves (FCV) and Pressure Control Valves (PCV)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.11",
-                    "sno": "4.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.14",
+                    "sno": "4.14",
                     "topic": "Explain the principle and working of Pneumatic Circuits for single acting and double acting cylinders",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.13",
-                    "sno": "4.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me503t-4.15",
+                    "sno": "4.15",
                     "topic": "INDUSTRIAL ROBOTICS& FLUID POWER SYSTEMS Industrial Robotics: Definition of Robotics and Robot \u2013 Necessity of Robots in Industries - Characteristics - Classification of Robots: Based on Physical configuration, Type of Power Source, Control Systems and Type of Application - Work envelope, Work Volume and Pay Load Capacity \u2013 Brief Layout of an industrial robot - Description of Robot Components: Manipulator, End effector, Driving system, Controllers, Sensors and Grippers \u2013 Degrees of freedom: Pitch, Yaw, Roll \u2013 Robot programming methods and Languages - Advantages , Disadvantages and Industrial applications of Robots. Fluid Power Systems: Necessity of Fluid power systems in the design and construction of Industrial robots Definition and concept of Fluid Power \u2013 advantages of Pneumatic power - Basic components of Pneumatic Power System -Principle and working of Filter, Regulator and Lubricator \u2013 working principle of Direction Control Valves (DCV), Flow control Valves (FCV) and Pressure Control Valves (PCV) \u2013 Types of Actuators used in Pneumatic power systems \u2013 Pneumatic Circuit for control of Single and double acting cylinders",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me503t-4.0",
-                    "sno": "4.0"
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-4.16",
+                    "sno": "4.16",
+                    "topic": "Deep dive into INDUSTRIAL ROBOTICS& FLUID POWER SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-4.17",
+                    "sno": "4.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me503t-4.18",
+                    "sno": "4.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "3D PRINTING (or) ADDITIVE MANUFACTURING",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Explain the concept, principal and need of Additive Manufacturing",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Explain the concept, principal and need of Additive Manufacturing",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Rapid Prototyping and 3D Printing",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Define Rapid Prototyping and 3D Printing",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Compare Additive manufacturing with CNC Machining",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Compare Additive manufacturing with CNC Machining",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explanation of Steps in the 3D Printing Process with a Flow chart",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Explanation of Steps in the 3D Printing Process with a Flow chart",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List seven types of 3D Printing Technologies or Processes with examples",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "List seven types of 3D Printing Technologies or Processes with examples",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Write Advantages, Limitations and Applications of 3D Printing",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "Write Advantages, Limitations and Applications of 3D Printing",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain SLA 3D Printing Process",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-5.7",
-                    "sno": "5.7"
+                    "sno": "5.7",
+                    "topic": "Explain SLA 3D Printing Process",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain FDM 3D Printing Process",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-5.8",
-                    "sno": "5.8"
+                    "sno": "5.8",
+                    "topic": "Explain FDM 3D Printing Process",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Selective Laser Sintering (SLS) Process",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me503t-5.9",
-                    "sno": "5.9"
+                    "sno": "5.9",
+                    "topic": "Explain Selective Laser Sintering (SLS) Process",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-5.10",
+                    "sno": "5.10",
+                    "topic": "Deep dive into Explain the concept, principal and need of Additive Manufacturing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-5.11",
+                    "sno": "5.11",
+                    "topic": "Deep dive into Define Rapid Prototyping and 3D Printing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-5.12",
+                    "sno": "5.12",
+                    "topic": "Deep dive into Compare Additive manufacturing with CNC Machining",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-5.13",
+                    "sno": "5.13",
+                    "topic": "Deep dive into Explanation of Steps in the 3D Printing Process with a Flow chart",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-5.14",
+                    "sno": "5.14",
+                    "topic": "Deep dive into List seven types of 3D Printing Technologies or Processes with examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-5.15",
+                    "sno": "5.15",
+                    "topic": "Deep dive into Write Advantages, Limitations and Applications of 3D Printing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-5.16",
+                    "sno": "5.16",
+                    "topic": "Deep dive into Explain SLA 3D Printing Process",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-5.17",
+                    "sno": "5.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me503t-5.18",
+                    "sno": "5.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

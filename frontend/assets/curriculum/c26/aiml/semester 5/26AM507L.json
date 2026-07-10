@@ -3,211 +3,456 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 12,
+            "title": "Introduction to Natural Language Processing",
+            "totalPeriods": 10,
             "topics": [
                 {
-                    "topic": "Introduction to Introduction & Fundamentals",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Introduction & Fundamentals",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Deep dive into Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Introduction & Fundamentals",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-1.7",
+                    "sno": "1.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-1.8",
+                    "sno": "1.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-1.9",
+                    "sno": "1.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am507l-1.10",
+                    "sno": "1.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 12,
+            "title": "Word Level Analysis",
+            "totalPeriods": 10,
             "topics": [
                 {
+                    "id": "26am507l-2.1",
+                    "sno": "2.1",
                     "topic": "KEY COMPETENCIES Exp . No . Name of the experime nt Objectives Key Competencies 1 Installatio n of NLTK In python Learns Installation of Anaconda. \u2022 Know the Installation of Anaconda IDE. \u2022 Open your terminal, runpip install NLTK . Write python in the command prompt so python Interactive Shell is ready to execute your code/Script. \u2022 Import NLTK Learns Installation of NLTK. 2 Tokeniz e by word of word tokenize() method to split a sentence into tokens or words. \u2022 Import word tokenize from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 3 Tokeniz e by Senten ce Usage of senttokenize () method to split a document or paragraph into sentences. \u2022 Import senttokenize from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 4 Finding minimum number of edits (operat ions) required to convert \u201cstr1\u201d into \u201cstr2\u201d Perform minimum number of edits (operations) required to convert \u201cstr1\u201d into \u201cstr2\u201d. \u2022 Save str1 and str2. \u2022 Compare the strings. \u2022 Count the no of edits required. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 5 Part of Speech Taggin g with Stop words Stop word scan be filtered from the text to be processed. \u2022 Import word tokenize from NLTK \u2022 Import stopwords from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 6 Binning method for data smoothi ng Learn sdata smoothing by using binning methods. \u2022 Know smoothing by bin means \u2022 Know smoothing by bin median \u2022 Know smoothing by binboundary \u2022 Import numpy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 7 N-Gram languag e modelin g in Natural Language Processi ng To understand and implement N-gram models (unigram, bigram, and trigram) for text preprocessing in Natural Language Processing (NATURAL LANGUAGE PROCESSING). \u2022 Import nltk \u2022 Use word tokenize. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 8 Basic tree bank structure implement a tion on Learns to search for a given key in moderate time (quicker than Linked Listand slower than arrays). \u2022 Import Tree bank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 9 Creating Shallow Tree Learns to keep the highest level sub trees \u2022 Import shallowtree from transforms. \u2022 Import Treebank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 10 Fibonacci numbers usin g dynamic programmi ng Learns to perform recursion Fn=Fn-1+ Fn-2 \u2022 Import math \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 11 Correct () function Learns to get the corrected words if anysentence have spelling mistakes \u2022 Import TextBlob from textblob. \u2022 Use correct() method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 12 Chunki ng Process Learns on the process of taking individual piecesofinformatio n and grouping them into larger units \u2022 importwordtokenizefromNLTK \u2022 UseRegexpParsermethodof NLTK. \u2022 Edit and save the program \u2022 Checkforthesyntaxerrorsand clear the errors \u2022 Runtheprogramandcheckforthe output. 13 Chinki ng Process Learn store move a chunk from a chunk. \u2022 import wordtokenize from NLTK \u2022 Use RegexpParser method of NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 14 Named Entity Recogniti on(NER) using spaCy To identify and extract named entities such as person names, locations, dates, organizations, etc., from a text using spaCy. \u2022 Import spacy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output 15 Sentiment Analysis using Text Blob To perform sentiment analysis on textual data using the TextBlob Python library \u2022 Use text blob function. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output 16 Impleme ntation of Dictionar y and Thesauru s Function s Using WordNet In Python To understand the role of Word Net as a lexical database for English in Natural LanguageProcessi ng (NATURAL LANGUAGE PROCESSING). \u2022 Working with the NLTK library in Python. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 17 Lemmatizi ng Process Learns the process of grouping together the inflected forms of a word so they can be analyzed as a single item. \u2022 Import WordNetLemmatizer from NLTK . \u2022 Use lemmatizes method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 18 Stemming Process Learns the process of producing morphological variants of a root/base word. There are mainly two errors in stemming \u2022 over-stemming under-stemming \u2022 Import word to kenize from NLTK. \u2022 Import Porter Stemmer from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the Errors 7. Run the program and check for the output. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS Unit Test Learning outcomes to be covered Unit test-1 From to 9 Unit test-2 From 10 to 18",
-                    "period": 12,
-                    "type": "practical",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
                     "id": "26am507l-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Deep dive into KEY COMPETENCIES Exp . No . Name of the experime nt Objectives Key Competencies 1 Installatio n of NLTK In python Learns Installation of Anaconda. \u2022 Know the Installation of Anaconda IDE. \u2022 Open your terminal, runpip install NLTK . Write python in the command prompt so python Interactive Shell is ready to execute your code/Script. \u2022 Import NLTK Learns Installation of NLTK. 2 Tokeniz e by word of word tokenize() method to split a sentence into tokens or words. \u2022 Import word tokenize from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 3 Tokeniz e by Senten ce Usage of senttokenize () method to split a document or paragraph into sentences. \u2022 Import senttokenize from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 4 Finding minimum number of edits (operat ions) required to convert \u201cstr1\u201d into \u201cstr2\u201d Perform minimum number of edits (operations) required to convert \u201cstr1\u201d into \u201cstr2\u201d. \u2022 Save str1 and str2. \u2022 Compare the strings. \u2022 Count the no of edits required. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 5 Part of Speech Taggin g with Stop words Stop word scan be filtered from the text to be processed. \u2022 Import word tokenize from NLTK \u2022 Import stopwords from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 6 Binning method for data smoothi ng Learn sdata smoothing by using binning methods. \u2022 Know smoothing by bin means \u2022 Know smoothing by bin median \u2022 Know smoothing by binboundary \u2022 Import numpy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 7 N-Gram languag e modelin g in Natural Language Processi ng To understand and implement N-gram models (unigram, bigram, and trigram) for text preprocessing in Natural Language Processing (NATURAL LANGUAGE PROCESSING). \u2022 Import nltk \u2022 Use word tokenize. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 8 Basic tree bank structure implement a tion on Learns to search for a given key in moderate time (quicker than Linked Listand slower than arrays). \u2022 Import Tree bank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 9 Creating Shallow Tree Learns to keep the highest level sub trees \u2022 Import shallowtree from transforms. \u2022 Import Treebank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 10 Fibonacci numbers usin g dynamic programmi ng Learns to perform recursion Fn=Fn-1+ Fn-2 \u2022 Import math \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 11 Correct () function Learns to get the corrected words if anysentence have spelling mistakes \u2022 Import TextBlob from textblob. \u2022 Use correct() method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 12 Chunki ng Process Learns on the process of taking individual piecesofinformatio n and grouping them into larger units \u2022 importwordtokenizefromNLTK \u2022 UseRegexpParsermethodof NLTK. \u2022 Edit and save the program \u2022 Checkforthesyntaxerrorsand clear the errors \u2022 Runtheprogramandcheckforthe output. 13 Chinki ng Process Learn store move a chunk from a chunk. \u2022 import wordtokenize from NLTK \u2022 Use RegexpParser method of NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 14 Named Entity Recogniti on(NER) using spaCy To identify and extract named entities such as person names, locations, dates, organizations, etc., from a text using spaCy. \u2022 Import spacy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output 15 Sentiment Analysis using Text Blob To perform sentiment analysis on textual data using the TextBlob Python library \u2022 Use text blob function. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output 16 Impleme ntation of Dictionar y and Thesauru s Function s Using WordNet In Python To understand the role of Word Net as a lexical database for English in Natural LanguageProcessi ng (NATURAL LANGUAGE PROCESSING). \u2022 Working with the NLTK library in Python. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 17 Lemmatizi ng Process Learns the process of grouping together the inflected forms of a word so they can be analyzed as a single item. \u2022 Import WordNetLemmatizer from NLTK . \u2022 Use lemmatizes method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 18 Stemming Process Learns the process of producing morphological variants of a root/base word. There are mainly two errors in stemming \u2022 over-stemming under-stemming \u2022 Import word to kenize from NLTK. \u2022 Import Porter Stemmer from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the Errors 7. Run the program and check for the output. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS Unit Test Learning outcomes to be covered Unit test-1 From to 9 Unit test-2 From 10 to 18",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-2.3",
+                    "sno": "2.3",
+                    "topic": "Problem solving & practice on KEY COMPETENCIES Exp . No . Name of the experime nt Objectives Key Competencies 1 Installatio n of NLTK In python Learns Installation of Anaconda. \u2022 Know the Installation of Anaconda IDE. \u2022 Open your terminal, runpip install NLTK . Write python in the command prompt so python Interactive Shell is ready to execute your code/Script. \u2022 Import NLTK Learns Installation of NLTK. 2 Tokeniz e by word of word tokenize() method to split a sentence into tokens or words. \u2022 Import word tokenize from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 3 Tokeniz e by Senten ce Usage of senttokenize () method to split a document or paragraph into sentences. \u2022 Import senttokenize from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 4 Finding minimum number of edits (operat ions) required to convert \u201cstr1\u201d into \u201cstr2\u201d Perform minimum number of edits (operations) required to convert \u201cstr1\u201d into \u201cstr2\u201d. \u2022 Save str1 and str2. \u2022 Compare the strings. \u2022 Count the no of edits required. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 5 Part of Speech Taggin g with Stop words Stop word scan be filtered from the text to be processed. \u2022 Import word tokenize from NLTK \u2022 Import stopwords from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 6 Binning method for data smoothi ng Learn sdata smoothing by using binning methods. \u2022 Know smoothing by bin means \u2022 Know smoothing by bin median \u2022 Know smoothing by binboundary \u2022 Import numpy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 7 N-Gram languag e modelin g in Natural Language Processi ng To understand and implement N-gram models (unigram, bigram, and trigram) for text preprocessing in Natural Language Processing (NATURAL LANGUAGE PROCESSING). \u2022 Import nltk \u2022 Use word tokenize. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 8 Basic tree bank structure implement a tion on Learns to search for a given key in moderate time (quicker than Linked Listand slower than arrays). \u2022 Import Tree bank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 9 Creating Shallow Tree Learns to keep the highest level sub trees \u2022 Import shallowtree from transforms. \u2022 Import Treebank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 10 Fibonacci numbers usin g dynamic programmi ng Learns to perform recursion Fn=Fn-1+ Fn-2 \u2022 Import math \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 11 Correct () function Learns to get the corrected words if anysentence have spelling mistakes \u2022 Import TextBlob from textblob. \u2022 Use correct() method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 12 Chunki ng Process Learns on the process of taking individual piecesofinformatio n and grouping them into larger units \u2022 importwordtokenizefromNLTK \u2022 UseRegexpParsermethodof NLTK. \u2022 Edit and save the program \u2022 Checkforthesyntaxerrorsand clear the errors \u2022 Runtheprogramandcheckforthe output. 13 Chinki ng Process Learn store move a chunk from a chunk. \u2022 import wordtokenize from NLTK \u2022 Use RegexpParser method of NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 14 Named Entity Recogniti on(NER) using spaCy To identify and extract named entities such as person names, locations, dates, organizations, etc., from a text using spaCy. \u2022 Import spacy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output 15 Sentiment Analysis using Text Blob To perform sentiment analysis on textual data using the TextBlob Python library \u2022 Use text blob function. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output 16 Impleme ntation of Dictionar y and Thesauru s Function s Using WordNet In Python To understand the role of Word Net as a lexical database for English in Natural LanguageProcessi ng (NATURAL LANGUAGE PROCESSING). \u2022 Working with the NLTK library in Python. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 17 Lemmatizi ng Process Learns the process of grouping together the inflected forms of a word so they can be analyzed as a single item. \u2022 Import WordNetLemmatizer from NLTK . \u2022 Use lemmatizes method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 18 Stemming Process Learns the process of producing morphological variants of a root/base word. There are mainly two errors in stemming \u2022 over-stemming under-stemming \u2022 Import word to kenize from NLTK. \u2022 Import Porter Stemmer from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the Errors 7. Run the program and check for the output. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS Unit Test Learning outcomes to be covered Unit test-1 From to 9 Unit test-2 From 10 to 18",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-2.4",
+                    "sno": "2.4",
+                    "topic": "Practical applications of KEY COMPETENCIES Exp . No . Name of the experime nt Objectives Key Competencies 1 Installatio n of NLTK In python Learns Installation of Anaconda. \u2022 Know the Installation of Anaconda IDE. \u2022 Open your terminal, runpip install NLTK . Write python in the command prompt so python Interactive Shell is ready to execute your code/Script. \u2022 Import NLTK Learns Installation of NLTK. 2 Tokeniz e by word of word tokenize() method to split a sentence into tokens or words. \u2022 Import word tokenize from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 3 Tokeniz e by Senten ce Usage of senttokenize () method to split a document or paragraph into sentences. \u2022 Import senttokenize from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 4 Finding minimum number of edits (operat ions) required to convert \u201cstr1\u201d into \u201cstr2\u201d Perform minimum number of edits (operations) required to convert \u201cstr1\u201d into \u201cstr2\u201d. \u2022 Save str1 and str2. \u2022 Compare the strings. \u2022 Count the no of edits required. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 5 Part of Speech Taggin g with Stop words Stop word scan be filtered from the text to be processed. \u2022 Import word tokenize from NLTK \u2022 Import stopwords from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 6 Binning method for data smoothi ng Learn sdata smoothing by using binning methods. \u2022 Know smoothing by bin means \u2022 Know smoothing by bin median \u2022 Know smoothing by binboundary \u2022 Import numpy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 7 N-Gram languag e modelin g in Natural Language Processi ng To understand and implement N-gram models (unigram, bigram, and trigram) for text preprocessing in Natural Language Processing (NATURAL LANGUAGE PROCESSING). \u2022 Import nltk \u2022 Use word tokenize. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 8 Basic tree bank structure implement a tion on Learns to search for a given key in moderate time (quicker than Linked Listand slower than arrays). \u2022 Import Tree bank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 9 Creating Shallow Tree Learns to keep the highest level sub trees \u2022 Import shallowtree from transforms. \u2022 Import Treebank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 10 Fibonacci numbers usin g dynamic programmi ng Learns to perform recursion Fn=Fn-1+ Fn-2 \u2022 Import math \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 11 Correct () function Learns to get the corrected words if anysentence have spelling mistakes \u2022 Import TextBlob from textblob. \u2022 Use correct() method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 12 Chunki ng Process Learns on the process of taking individual piecesofinformatio n and grouping them into larger units \u2022 importwordtokenizefromNLTK \u2022 UseRegexpParsermethodof NLTK. \u2022 Edit and save the program \u2022 Checkforthesyntaxerrorsand clear the errors \u2022 Runtheprogramandcheckforthe output. 13 Chinki ng Process Learn store move a chunk from a chunk. \u2022 import wordtokenize from NLTK \u2022 Use RegexpParser method of NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 14 Named Entity Recogniti on(NER) using spaCy To identify and extract named entities such as person names, locations, dates, organizations, etc., from a text using spaCy. \u2022 Import spacy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output 15 Sentiment Analysis using Text Blob To perform sentiment analysis on textual data using the TextBlob Python library \u2022 Use text blob function. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output 16 Impleme ntation of Dictionar y and Thesauru s Function s Using WordNet In Python To understand the role of Word Net as a lexical database for English in Natural LanguageProcessi ng (NATURAL LANGUAGE PROCESSING). \u2022 Working with the NLTK library in Python. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 17 Lemmatizi ng Process Learns the process of grouping together the inflected forms of a word so they can be analyzed as a single item. \u2022 Import WordNetLemmatizer from NLTK . \u2022 Use lemmatizes method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 18 Stemming Process Learns the process of producing morphological variants of a root/base word. There are mainly two errors in stemming \u2022 over-stemming under-stemming \u2022 Import word to kenize from NLTK. \u2022 Import Porter Stemmer from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the Errors 7. Run the program and check for the output. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS Unit Test Learning outcomes to be covered Unit test-1 From to 9 Unit test-2 From 10 to 18",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-2.5",
+                    "sno": "2.5",
+                    "topic": "Practical applications of KEY COMPETENCIES Exp . No . Name of the experime nt Objectives Key Competencies 1 Installatio n of NLTK In python Learns Installation of Anaconda. \u2022 Know the Installation of Anaconda IDE. \u2022 Open your terminal, runpip install NLTK . Write python in the command prompt so python Interactive Shell is ready to execute your code/Script. \u2022 Import NLTK Learns Installation of NLTK. 2 Tokeniz e by word of word tokenize() method to split a sentence into tokens or words. \u2022 Import word tokenize from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 3 Tokeniz e by Senten ce Usage of senttokenize () method to split a document or paragraph into sentences. \u2022 Import senttokenize from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 4 Finding minimum number of edits (operat ions) required to convert \u201cstr1\u201d into \u201cstr2\u201d Perform minimum number of edits (operations) required to convert \u201cstr1\u201d into \u201cstr2\u201d. \u2022 Save str1 and str2. \u2022 Compare the strings. \u2022 Count the no of edits required. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 5 Part of Speech Taggin g with Stop words Stop word scan be filtered from the text to be processed. \u2022 Import word tokenize from NLTK \u2022 Import stopwords from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 6 Binning method for data smoothi ng Learn sdata smoothing by using binning methods. \u2022 Know smoothing by bin means \u2022 Know smoothing by bin median \u2022 Know smoothing by binboundary \u2022 Import numpy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 7 N-Gram languag e modelin g in Natural Language Processi ng To understand and implement N-gram models (unigram, bigram, and trigram) for text preprocessing in Natural Language Processing (NATURAL LANGUAGE PROCESSING). \u2022 Import nltk \u2022 Use word tokenize. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 8 Basic tree bank structure implement a tion on Learns to search for a given key in moderate time (quicker than Linked Listand slower than arrays). \u2022 Import Tree bank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 9 Creating Shallow Tree Learns to keep the highest level sub trees \u2022 Import shallowtree from transforms. \u2022 Import Treebank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 10 Fibonacci numbers usin g dynamic programmi ng Learns to perform recursion Fn=Fn-1+ Fn-2 \u2022 Import math \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 11 Correct () function Learns to get the corrected words if anysentence have spelling mistakes \u2022 Import TextBlob from textblob. \u2022 Use correct() method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 12 Chunki ng Process Learns on the process of taking individual piecesofinformatio n and grouping them into larger units \u2022 importwordtokenizefromNLTK \u2022 UseRegexpParsermethodof NLTK. \u2022 Edit and save the program \u2022 Checkforthesyntaxerrorsand clear the errors \u2022 Runtheprogramandcheckforthe output. 13 Chinki ng Process Learn store move a chunk from a chunk. \u2022 import wordtokenize from NLTK \u2022 Use RegexpParser method of NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 14 Named Entity Recogniti on(NER) using spaCy To identify and extract named entities such as person names, locations, dates, organizations, etc., from a text using spaCy. \u2022 Import spacy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output 15 Sentiment Analysis using Text Blob To perform sentiment analysis on textual data using the TextBlob Python library \u2022 Use text blob function. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output 16 Impleme ntation of Dictionar y and Thesauru s Function s Using WordNet In Python To understand the role of Word Net as a lexical database for English in Natural LanguageProcessi ng (NATURAL LANGUAGE PROCESSING). \u2022 Working with the NLTK library in Python. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 17 Lemmatizi ng Process Learns the process of grouping together the inflected forms of a word so they can be analyzed as a single item. \u2022 Import WordNetLemmatizer from NLTK . \u2022 Use lemmatizes method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 18 Stemming Process Learns the process of producing morphological variants of a root/base word. There are mainly two errors in stemming \u2022 over-stemming under-stemming \u2022 Import word to kenize from NLTK. \u2022 Import Porter Stemmer from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the Errors 7. Run the program and check for the output. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS Unit Test Learning outcomes to be covered Unit test-1 From to 9 Unit test-2 From 10 to 18",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-2.6",
+                    "sno": "2.6",
+                    "topic": "Practical applications of KEY COMPETENCIES Exp . No . Name of the experime nt Objectives Key Competencies 1 Installatio n of NLTK In python Learns Installation of Anaconda. \u2022 Know the Installation of Anaconda IDE. \u2022 Open your terminal, runpip install NLTK . Write python in the command prompt so python Interactive Shell is ready to execute your code/Script. \u2022 Import NLTK Learns Installation of NLTK. 2 Tokeniz e by word of word tokenize() method to split a sentence into tokens or words. \u2022 Import word tokenize from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 3 Tokeniz e by Senten ce Usage of senttokenize () method to split a document or paragraph into sentences. \u2022 Import senttokenize from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 4 Finding minimum number of edits (operat ions) required to convert \u201cstr1\u201d into \u201cstr2\u201d Perform minimum number of edits (operations) required to convert \u201cstr1\u201d into \u201cstr2\u201d. \u2022 Save str1 and str2. \u2022 Compare the strings. \u2022 Count the no of edits required. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 5 Part of Speech Taggin g with Stop words Stop word scan be filtered from the text to be processed. \u2022 Import word tokenize from NLTK \u2022 Import stopwords from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 6 Binning method for data smoothi ng Learn sdata smoothing by using binning methods. \u2022 Know smoothing by bin means \u2022 Know smoothing by bin median \u2022 Know smoothing by binboundary \u2022 Import numpy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 7 N-Gram languag e modelin g in Natural Language Processi ng To understand and implement N-gram models (unigram, bigram, and trigram) for text preprocessing in Natural Language Processing (NATURAL LANGUAGE PROCESSING). \u2022 Import nltk \u2022 Use word tokenize. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 8 Basic tree bank structure implement a tion on Learns to search for a given key in moderate time (quicker than Linked Listand slower than arrays). \u2022 Import Tree bank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 9 Creating Shallow Tree Learns to keep the highest level sub trees \u2022 Import shallowtree from transforms. \u2022 Import Treebank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 10 Fibonacci numbers usin g dynamic programmi ng Learns to perform recursion Fn=Fn-1+ Fn-2 \u2022 Import math \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 11 Correct () function Learns to get the corrected words if anysentence have spelling mistakes \u2022 Import TextBlob from textblob. \u2022 Use correct() method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 12 Chunki ng Process Learns on the process of taking individual piecesofinformatio n and grouping them into larger units \u2022 importwordtokenizefromNLTK \u2022 UseRegexpParsermethodof NLTK. \u2022 Edit and save the program \u2022 Checkforthesyntaxerrorsand clear the errors \u2022 Runtheprogramandcheckforthe output. 13 Chinki ng Process Learn store move a chunk from a chunk. \u2022 import wordtokenize from NLTK \u2022 Use RegexpParser method of NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 14 Named Entity Recogniti on(NER) using spaCy To identify and extract named entities such as person names, locations, dates, organizations, etc., from a text using spaCy. \u2022 Import spacy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output 15 Sentiment Analysis using Text Blob To perform sentiment analysis on textual data using the TextBlob Python library \u2022 Use text blob function. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output 16 Impleme ntation of Dictionar y and Thesauru s Function s Using WordNet In Python To understand the role of Word Net as a lexical database for English in Natural LanguageProcessi ng (NATURAL LANGUAGE PROCESSING). \u2022 Working with the NLTK library in Python. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 17 Lemmatizi ng Process Learns the process of grouping together the inflected forms of a word so they can be analyzed as a single item. \u2022 Import WordNetLemmatizer from NLTK . \u2022 Use lemmatizes method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 18 Stemming Process Learns the process of producing morphological variants of a root/base word. There are mainly two errors in stemming \u2022 over-stemming under-stemming \u2022 Import word to kenize from NLTK. \u2022 Import Porter Stemmer from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the Errors 7. Run the program and check for the output. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS Unit Test Learning outcomes to be covered Unit test-1 From to 9 Unit test-2 From 10 to 18",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-2.7",
+                    "sno": "2.7",
+                    "topic": "Practical applications of KEY COMPETENCIES Exp . No . Name of the experime nt Objectives Key Competencies 1 Installatio n of NLTK In python Learns Installation of Anaconda. \u2022 Know the Installation of Anaconda IDE. \u2022 Open your terminal, runpip install NLTK . Write python in the command prompt so python Interactive Shell is ready to execute your code/Script. \u2022 Import NLTK Learns Installation of NLTK. 2 Tokeniz e by word of word tokenize() method to split a sentence into tokens or words. \u2022 Import word tokenize from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 3 Tokeniz e by Senten ce Usage of senttokenize () method to split a document or paragraph into sentences. \u2022 Import senttokenize from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 4 Finding minimum number of edits (operat ions) required to convert \u201cstr1\u201d into \u201cstr2\u201d Perform minimum number of edits (operations) required to convert \u201cstr1\u201d into \u201cstr2\u201d. \u2022 Save str1 and str2. \u2022 Compare the strings. \u2022 Count the no of edits required. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 5 Part of Speech Taggin g with Stop words Stop word scan be filtered from the text to be processed. \u2022 Import word tokenize from NLTK \u2022 Import stopwords from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 6 Binning method for data smoothi ng Learn sdata smoothing by using binning methods. \u2022 Know smoothing by bin means \u2022 Know smoothing by bin median \u2022 Know smoothing by binboundary \u2022 Import numpy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 7 N-Gram languag e modelin g in Natural Language Processi ng To understand and implement N-gram models (unigram, bigram, and trigram) for text preprocessing in Natural Language Processing (NATURAL LANGUAGE PROCESSING). \u2022 Import nltk \u2022 Use word tokenize. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 8 Basic tree bank structure implement a tion on Learns to search for a given key in moderate time (quicker than Linked Listand slower than arrays). \u2022 Import Tree bank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 9 Creating Shallow Tree Learns to keep the highest level sub trees \u2022 Import shallowtree from transforms. \u2022 Import Treebank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 10 Fibonacci numbers usin g dynamic programmi ng Learns to perform recursion Fn=Fn-1+ Fn-2 \u2022 Import math \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 11 Correct () function Learns to get the corrected words if anysentence have spelling mistakes \u2022 Import TextBlob from textblob. \u2022 Use correct() method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 12 Chunki ng Process Learns on the process of taking individual piecesofinformatio n and grouping them into larger units \u2022 importwordtokenizefromNLTK \u2022 UseRegexpParsermethodof NLTK. \u2022 Edit and save the program \u2022 Checkforthesyntaxerrorsand clear the errors \u2022 Runtheprogramandcheckforthe output. 13 Chinki ng Process Learn store move a chunk from a chunk. \u2022 import wordtokenize from NLTK \u2022 Use RegexpParser method of NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 14 Named Entity Recogniti on(NER) using spaCy To identify and extract named entities such as person names, locations, dates, organizations, etc., from a text using spaCy. \u2022 Import spacy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output 15 Sentiment Analysis using Text Blob To perform sentiment analysis on textual data using the TextBlob Python library \u2022 Use text blob function. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output 16 Impleme ntation of Dictionar y and Thesauru s Function s Using WordNet In Python To understand the role of Word Net as a lexical database for English in Natural LanguageProcessi ng (NATURAL LANGUAGE PROCESSING). \u2022 Working with the NLTK library in Python. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 17 Lemmatizi ng Process Learns the process of grouping together the inflected forms of a word so they can be analyzed as a single item. \u2022 Import WordNetLemmatizer from NLTK . \u2022 Use lemmatizes method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 18 Stemming Process Learns the process of producing morphological variants of a root/base word. There are mainly two errors in stemming \u2022 over-stemming under-stemming \u2022 Import word to kenize from NLTK. \u2022 Import Porter Stemmer from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the Errors 7. Run the program and check for the output. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS Unit Test Learning outcomes to be covered Unit test-1 From to 9 Unit test-2 From 10 to 18",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-2.8",
+                    "sno": "2.8",
+                    "topic": "Practical applications of KEY COMPETENCIES Exp . No . Name of the experime nt Objectives Key Competencies 1 Installatio n of NLTK In python Learns Installation of Anaconda. \u2022 Know the Installation of Anaconda IDE. \u2022 Open your terminal, runpip install NLTK . Write python in the command prompt so python Interactive Shell is ready to execute your code/Script. \u2022 Import NLTK Learns Installation of NLTK. 2 Tokeniz e by word of word tokenize() method to split a sentence into tokens or words. \u2022 Import word tokenize from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 3 Tokeniz e by Senten ce Usage of senttokenize () method to split a document or paragraph into sentences. \u2022 Import senttokenize from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 4 Finding minimum number of edits (operat ions) required to convert \u201cstr1\u201d into \u201cstr2\u201d Perform minimum number of edits (operations) required to convert \u201cstr1\u201d into \u201cstr2\u201d. \u2022 Save str1 and str2. \u2022 Compare the strings. \u2022 Count the no of edits required. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 5 Part of Speech Taggin g with Stop words Stop word scan be filtered from the text to be processed. \u2022 Import word tokenize from NLTK \u2022 Import stopwords from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 6 Binning method for data smoothi ng Learn sdata smoothing by using binning methods. \u2022 Know smoothing by bin means \u2022 Know smoothing by bin median \u2022 Know smoothing by binboundary \u2022 Import numpy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 7 N-Gram languag e modelin g in Natural Language Processi ng To understand and implement N-gram models (unigram, bigram, and trigram) for text preprocessing in Natural Language Processing (NATURAL LANGUAGE PROCESSING). \u2022 Import nltk \u2022 Use word tokenize. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 8 Basic tree bank structure implement a tion on Learns to search for a given key in moderate time (quicker than Linked Listand slower than arrays). \u2022 Import Tree bank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 9 Creating Shallow Tree Learns to keep the highest level sub trees \u2022 Import shallowtree from transforms. \u2022 Import Treebank from NLTK \u2022 Import Tree from NLTK \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 10 Fibonacci numbers usin g dynamic programmi ng Learns to perform recursion Fn=Fn-1+ Fn-2 \u2022 Import math \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 11 Correct () function Learns to get the corrected words if anysentence have spelling mistakes \u2022 Import TextBlob from textblob. \u2022 Use correct() method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 12 Chunki ng Process Learns on the process of taking individual piecesofinformatio n and grouping them into larger units \u2022 importwordtokenizefromNLTK \u2022 UseRegexpParsermethodof NLTK. \u2022 Edit and save the program \u2022 Checkforthesyntaxerrorsand clear the errors \u2022 Runtheprogramandcheckforthe output. 13 Chinki ng Process Learn store move a chunk from a chunk. \u2022 import wordtokenize from NLTK \u2022 Use RegexpParser method of NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 14 Named Entity Recogniti on(NER) using spaCy To identify and extract named entities such as person names, locations, dates, organizations, etc., from a text using spaCy. \u2022 Import spacy. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output 15 Sentiment Analysis using Text Blob To perform sentiment analysis on textual data using the TextBlob Python library \u2022 Use text blob function. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output 16 Impleme ntation of Dictionar y and Thesauru s Function s Using WordNet In Python To understand the role of Word Net as a lexical database for English in Natural LanguageProcessi ng (NATURAL LANGUAGE PROCESSING). \u2022 Working with the NLTK library in Python. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors. \u2022 Run the program and check for the output. 17 Lemmatizi ng Process Learns the process of grouping together the inflected forms of a word so they can be analyzed as a single item. \u2022 Import WordNetLemmatizer from NLTK . \u2022 Use lemmatizes method. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the errors \u2022 Run the program and check for the output. 18 Stemming Process Learns the process of producing morphological variants of a root/base word. There are mainly two errors in stemming \u2022 over-stemming under-stemming \u2022 Import word to kenize from NLTK. \u2022 Import Porter Stemmer from NLTK. \u2022 Edit and save the program \u2022 Check for the syntax errors and clear the Errors 7. Run the program and check for the output. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS Unit Test Learning outcomes to be covered Unit test-1 From to 9 Unit test-2 From 10 to 18",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-2.9",
+                    "sno": "2.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am507l-2.10",
+                    "sno": "2.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 12,
+            "title": "Syntactic Analysis",
+            "totalPeriods": 10,
             "topics": [
                 {
-                    "topic": "Introduction to System Design & Methodology",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Introduction to Unit 3 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of System Design & Methodology",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Detailed analysis of Unit 3 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Practical application and standard setups for Unit 3",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Deep dive into Introduction to Unit 3 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of System Design & Methodology",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-3.6",
-                    "sno": "3.6"
+                    "sno": "3.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 3 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-3.7",
+                    "sno": "3.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-3.8",
+                    "sno": "3.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am507l-3.10",
+                    "sno": "3.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 12,
+            "title": "Semantics and Pragmatics",
+            "totalPeriods": 15,
             "topics": [
                 {
-                    "topic": "Introduction to Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Practical application and standard setups for Unit 4",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Deep dive into Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-4.6",
-                    "sno": "4.6"
+                    "sno": "4.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-4.7",
+                    "sno": "4.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-4.8",
+                    "sno": "4.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-4.9",
+                    "sno": "4.9",
+                    "topic": "Problem solving & practice on Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-4.10",
+                    "sno": "4.10",
+                    "topic": "Problem solving & practice on Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-4.11",
+                    "sno": "4.11",
+                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-4.12",
+                    "sno": "4.12",
+                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-4.13",
+                    "sno": "4.13",
+                    "topic": "Practical applications of Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-4.14",
+                    "sno": "4.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am507l-4.15",
+                    "sno": "4.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 12,
+            "title": "Discourse Analysis and Lexical Resources",
+            "totalPeriods": 15,
             "topics": [
                 {
-                    "topic": "Introduction to Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Introduction to Unit 5 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Detailed analysis of Unit 5 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Practical application and standard setups for Unit 5",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Deep dive into Introduction to Unit 5 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26am507l-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 5 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-5.7",
+                    "sno": "5.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 5",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-5.8",
+                    "sno": "5.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-5.9",
+                    "sno": "5.9",
+                    "topic": "Problem solving & practice on Introduction to Unit 5 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-5.10",
+                    "sno": "5.10",
+                    "topic": "Problem solving & practice on Detailed analysis of Unit 5 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-5.11",
+                    "sno": "5.11",
+                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 5",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-5.12",
+                    "sno": "5.12",
+                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-5.13",
+                    "sno": "5.13",
+                    "topic": "Practical applications of Introduction to Unit 5 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am507l-5.14",
+                    "sno": "5.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am507l-5.15",
+                    "sno": "5.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

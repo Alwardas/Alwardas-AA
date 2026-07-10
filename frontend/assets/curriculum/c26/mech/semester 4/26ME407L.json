@@ -3,687 +3,673 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 18,
+            "title": "Conduct an experiment to determine the flash and fire point of a given sample of fuel using given",
+            "totalPeriods": 15,
             "topics": [
                 {
-                    "topic": "Conduct an experiment to determine the flash and fire point of a given sample of fuel using given apparatus",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me407l-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "Place the oil cup in the apparatus",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me407l-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Conduct an experiment to determine the flash and fire point of a given sample of fuel using given apparatus",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fill the water in water bath through funnel",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me407l-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Place the oil cup in the apparatus",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-1.3",
+                    "sno": "1.3",
+                    "topic": "Fill the water in water bath through funnel",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-1.4",
+                    "sno": "1.4",
                     "topic": "Fill the oil in the oil cup up to the gauge mark",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.3",
-                    "sno": "1.3"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-1.5",
+                    "sno": "1.5",
                     "topic": "Operate the shutter for opening and closing",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.4",
-                    "sno": "1.4"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-1.6",
+                    "sno": "1.6",
                     "topic": "Connect the equipment to the power supply",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.5",
-                    "sno": "1.5"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Operate the shutter lid to observe vapours",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.6",
-                    "sno": "1.6"
-                },
-                {
-                    "topic": "Operate the stirrer",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-1.7",
-                    "sno": "1.7"
+                    "sno": "1.7",
+                    "topic": "Operate the shutter lid to observe vapours; Operate the stirrer",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-1.8",
+                    "sno": "1.8",
                     "topic": "Apply the test flame",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.8",
-                    "sno": "1.8"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-1.9",
+                    "sno": "1.9",
                     "topic": "Identify the colour change of the flame",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.9",
-                    "sno": "1.9"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-1.10",
+                    "sno": "1.10",
                     "topic": "Record the two temperatures of flash and fire point",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.10",
-                    "sno": "1.10"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-1.11",
+                    "sno": "1.11",
                     "topic": "Verification Of Bernoulli\u2019s Theorem",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.0",
-                    "sno": "1.0"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-1.12",
+                    "sno": "1.12",
                     "topic": "State Bernoulli\u2019s theorem",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.1",
-                    "sno": "1.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Identify the apparatus required",
+                    "id": "26me407l-1.13",
+                    "sno": "1.13",
+                    "topic": "Identify the apparatus required; Explain the Test procedure to verify Bernoulli\u2019s experiment",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.2",
-                    "sno": "1.2"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain the Test procedure to verify Bernoulli\u2019s experiment",
+                    "id": "26me407l-1.14",
+                    "sno": "1.14",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-1.3",
-                    "sno": "1.3"
+                    "type": "revision"
+                },
+                {
+                    "id": "26me407l-1.15",
+                    "sno": "1.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 18,
+            "title": "Conduct an experiment to determine viscosity of a given sample of oil using given apparatus",
+            "totalPeriods": 15,
             "topics": [
                 {
+                    "id": "26me407l-2.1",
+                    "sno": "2.1",
                     "topic": "Conduct an experiment to determine viscosity of a given sample of oil using given apparatus",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.0",
-                    "sno": "2.0"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-2.2",
+                    "sno": "2.2",
                     "topic": "Move and place the collecting flask",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.1",
-                    "sno": "2.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Insert the thermometer and hydrometer in the device",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Fill the oil in the oil cup up to the gauge mark",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Insert the thermometer and hydrometer in the device; Fill the oil in the oil cup up to the gauge mark",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-2.4",
+                    "sno": "2.4",
                     "topic": "Operate the regulator to vary the temperature",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.4",
-                    "sno": "2.4"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Stir the water to get the uniform temperature",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-2.5",
-                    "sno": "2.5"
-                },
-                {
-                    "topic": "Record temperature using thermometer",
+                    "sno": "2.5",
+                    "topic": "Stir the water to get the uniform temperature; Record temperature using thermometer",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.6",
-                    "sno": "2.6"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-2.6",
+                    "sno": "2.6",
                     "topic": "Open and close the ball valve",
                     "period": 1,
-                    "type": "practical",
+                    "type": "practical"
+                },
+                {
                     "id": "26me407l-2.7",
-                    "sno": "2.7"
+                    "sno": "2.7",
+                    "topic": "Collect 50 ml of oil in the collecting flask; Record the time taken to collect 50 ml using stop watch",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Collect 50 ml of oil in the collecting flask",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-2.8",
-                    "sno": "2.8"
-                },
-                {
-                    "topic": "Record the time taken to collect 50 ml using stop watch",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.9",
-                    "sno": "2.9"
-                },
-                {
+                    "sno": "2.8",
                     "topic": "Record the readings systematically",
                     "period": 1,
-                    "type": "practical",
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-2.9",
+                    "sno": "2.9",
+                    "topic": "Calculate the Viscosity; Plot the related graphs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
                     "id": "26me407l-2.10",
-                    "sno": "2.10"
-                },
-                {
-                    "topic": "Calculate the Viscosity",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.11",
-                    "sno": "2.11"
-                },
-                {
-                    "topic": "Plot the related graphs",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.12",
-                    "sno": "2.12"
-                },
-                {
+                    "sno": "2.10",
                     "topic": "Determination of Cd of Venturimeter",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.0",
-                    "sno": "2.0"
+                    "type": "practical"
                 },
                 {
-                    "topic": "State the practical applications of venturimeter",
+                    "id": "26me407l-2.11",
+                    "sno": "2.11",
+                    "topic": "State the practical applications of venturimeter; Record the manometric head readings from U-tube manometer",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.1",
-                    "sno": "2.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Record the manometric head readings from U-tube manometer",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.2",
-                    "sno": "2.2"
-                },
-                {
+                    "id": "26me407l-2.12",
+                    "sno": "2.12",
                     "topic": "Record the time taken for collecting volume of fluid by varying the discharge",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.3",
-                    "sno": "2.3"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Calculate the areas of the pipe and throat of the given venturimeter",
+                    "id": "26me407l-2.13",
+                    "sno": "2.13",
+                    "topic": "Calculate the areas of the pipe and throat of the given venturimeter; Calculate coefficient of discharge of venturimeter",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.4",
-                    "sno": "2.4"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Calculate coefficient of discharge of venturimeter",
+                    "id": "26me407l-2.14",
+                    "sno": "2.14",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-2.5",
-                    "sno": "2.5"
+                    "type": "revision"
+                },
+                {
+                    "id": "26me407l-2.15",
+                    "sno": "2.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 18,
+            "title": "Conduct an experiment to draw the valve and port timing diagrams",
+            "totalPeriods": 15,
             "topics": [
                 {
+                    "id": "26me407l-3.1",
+                    "sno": "3.1",
                     "topic": "Conduct an experiment to draw the valve and port timing diagrams",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.0",
-                    "sno": "3.0"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-3.2",
+                    "sno": "3.2",
                     "topic": "Place the spirit level, metal tape and piece of chalk near the engine",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.1",
-                    "sno": "3.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Erase the previous chalk marks on the flywheel",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Apply lubrication in the piston and valve mechanism",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Erase the previous chalk marks on the flywheel; Apply lubrication in the piston and valve mechanism",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-3.4",
+                    "sno": "3.4",
                     "topic": "Fix the graduated disc to the crank shaft",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.4",
-                    "sno": "3.4"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Adjust the pointer to zero position of graduated disc",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Mark the TDC and BDC on the disc using the Dial gauge",
+                    "sno": "3.5",
+                    "topic": "Adjust the pointer to zero position of graduated disc; Mark the TDC and BDC on the disc using the Dial gauge",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.6",
-                    "sno": "3.6"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-3.6",
+                    "sno": "3.6",
                     "topic": "Mark the operations (Suction, Compression, Ignition, Expansion and Exhaust)",
                     "period": 1,
-                    "type": "practical",
+                    "type": "practical"
+                },
+                {
                     "id": "26me407l-3.7",
-                    "sno": "3.7"
+                    "sno": "3.7",
+                    "topic": "Measure the circumference of flywheel; Locate exact position of inlet valve/port opening and inlet valve/port closing by inserting feeler gauge bet...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Measure the circumference of flywheel",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-3.8",
-                    "sno": "3.8"
-                },
-                {
-                    "topic": "Locate exact position of inlet valve/port opening and inlet valve/port closing by inserting feeler gauge between inlet roller and cam",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.9",
-                    "sno": "3.9"
-                },
-                {
+                    "sno": "3.8",
                     "topic": "Find exact position of Ignition starting and ignition tripping",
                     "period": 1,
-                    "type": "practical",
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-3.9",
+                    "sno": "3.9",
+                    "topic": "Locate exact position of exhaust valve/port opening and exhaust valve/ port closing by inserting feeler gauge between outlet roller and cam; Measur...",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
                     "id": "26me407l-3.10",
-                    "sno": "3.10"
-                },
-                {
-                    "topic": "Locate exact position of exhaust valve/port opening and exhaust valve/ port closing by inserting feeler gauge between outlet roller and cam",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.11",
-                    "sno": "3.11"
-                },
-                {
-                    "topic": "Measure the circumferential distances between the valve/port opening, closing, ignition starting and ignition tripping with respect to the TDC and BDC",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.12",
-                    "sno": "3.12"
-                },
-                {
+                    "sno": "3.10",
                     "topic": "Determination of loss of head due to friction in a given pipe",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.0",
-                    "sno": "3.0"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Measure the length of the given pipe",
+                    "id": "26me407l-3.11",
+                    "sno": "3.11",
+                    "topic": "Measure the length of the given pipe; Record the pressure head readings from U-tube manometer",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.1",
-                    "sno": "3.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Record the pressure head readings from U-tube manometer",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.2",
-                    "sno": "3.2"
-                },
-                {
+                    "id": "26me407l-3.12",
+                    "sno": "3.12",
                     "topic": "Record the time taken for collecting volume of fluid by varying the discharge",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.3",
-                    "sno": "3.3"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Calculate the loss of head through the pipe",
+                    "id": "26me407l-3.13",
+                    "sno": "3.13",
+                    "topic": "Calculate the loss of head through the pipe; Calculate the friction factor",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.4",
-                    "sno": "3.4"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Calculate the friction factor",
+                    "id": "26me407l-3.14",
+                    "sno": "3.14",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-3.5",
-                    "sno": "3.5"
+                    "type": "revision"
+                },
+                {
+                    "id": "26me407l-3.15",
+                    "sno": "3.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
+            "title": "Conduct an experiment to determine the performance parameters",
+            "totalPeriods": 15,
             "topics": [
                 {
+                    "id": "26me407l-4.1",
+                    "sno": "4.1",
                     "topic": "Conduct an experiment to determine the performance parameters",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.0",
-                    "sno": "4.0"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-4.2",
+                    "sno": "4.2",
                     "topic": "Apply lubricant between the mating parts of the engine",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.1",
-                    "sno": "4.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Check the fuel oil supply line Place the thermometers at required positions Circulating the cooling water through the engine jacket before starting engine and after shutting down the engine",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Start the engine using decompression lever",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Check the fuel oil supply line Place the thermometers at required positions Circulating the cooling water through the engine jacket before starting...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-4.4",
+                    "sno": "4.4",
                     "topic": "Run the engine for a certain period of time before loading",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.4",
-                    "sno": "4.4"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Measure speed of the engine with tachometer",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-4.5",
-                    "sno": "4.5"
-                },
-                {
-                    "topic": "Adjust spark timing in case of SI engine",
+                    "sno": "4.5",
+                    "topic": "Measure speed of the engine with tachometer; Adjust spark timing in case of SI engine",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.6",
-                    "sno": "4.6"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-4.6",
+                    "sno": "4.6",
                     "topic": "Adjust the throttle valve to control the fuel supply in case of CI engine",
                     "period": 1,
-                    "type": "practical",
+                    "type": "practical"
+                },
+                {
                     "id": "26me407l-4.7",
-                    "sno": "4.7"
+                    "sno": "4.7",
+                    "topic": "Apply the load; Record brake load, speed of rotation (RPM) and the rate of fuel consumption",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Apply the load",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-4.8",
-                    "sno": "4.8"
-                },
-                {
-                    "topic": "Record brake load, speed of rotation (RPM) and the rate of fuel consumption",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.9",
-                    "sno": "4.9"
-                },
-                {
+                    "sno": "4.8",
                     "topic": "Remove the load",
                     "period": 1,
-                    "type": "practical",
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-4.9",
+                    "sno": "4.9",
+                    "topic": "Determination of Power required and Efficiency of Centrifugal Pump; Identify the components of centrifugal pump",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
                     "id": "26me407l-4.10",
-                    "sno": "4.10"
-                },
-                {
-                    "topic": "Determination of Power required and Efficiency of Centrifugal Pump",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Identify the components of centrifugal pump",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.1",
-                    "sno": "4.1"
-                },
-                {
+                    "sno": "4.10",
                     "topic": "Record the suction and delivery pressures from pressure gauges",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.2",
-                    "sno": "4.2"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Record the time taken for collecting the volume of fluid",
+                    "id": "26me407l-4.11",
+                    "sno": "4.11",
+                    "topic": "Record the time taken for collecting the volume of fluid; Record the energy meter readings and calculate input power",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.3",
-                    "sno": "4.3"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Record the energy meter readings and calculate input power",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.4",
-                    "sno": "4.4"
-                },
-                {
+                    "id": "26me407l-4.12",
+                    "sno": "4.12",
                     "topic": "Calculate the power input",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.5",
-                    "sno": "4.5"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Calculate the efficiency",
+                    "id": "26me407l-4.13",
+                    "sno": "4.13",
+                    "topic": "Calculate the efficiency; Draw characterstic curves",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.6",
-                    "sno": "4.6"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Draw characterstic curves",
+                    "id": "26me407l-4.14",
+                    "sno": "4.14",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-4.7",
-                    "sno": "4.7"
+                    "type": "revision"
+                },
+                {
+                    "id": "26me407l-4.15",
+                    "sno": "4.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
+            "title": "Conduct an experiment to find the performance on a multi cylinder engine",
+            "totalPeriods": 15,
             "topics": [
                 {
+                    "id": "26me407l-5.1",
+                    "sno": "5.1",
                     "topic": "Conduct an experiment to find the performance on a multi cylinder engine",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.0",
-                    "sno": "5.0"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Apply lubricant between the mating parts of the engine",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "Check the fuel oil supply line",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Apply lubricant between the mating parts of the engine; Check the fuel oil supply line",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me407l-5.3",
+                    "sno": "5.3",
                     "topic": "Place the thermometers at required positions",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.3",
-                    "sno": "5.3"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Circulating the cooling water through the engine jacket before starting engine and after shutting down the engine",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Circulating the cooling water through the engine jacket before starting engine and after shutting down the engine; Start the engine using decompres...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Start the engine using decompression lever",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Run the engine for a certain period of time before loading; Measure speed of the engine with tachometer",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Run the engine for a certain period of time before loading",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-5.6",
-                    "sno": "5.6"
-                },
-                {
-                    "topic": "Measure speed of the engine with tachometer",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.7",
-                    "sno": "5.7"
-                },
-                {
+                    "sno": "5.6",
                     "topic": "Apply the load",
                     "period": 1,
-                    "type": "practical",
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-5.7",
+                    "sno": "5.7",
+                    "topic": "Record brake load, speed of rotation (RPM), the rate of fuel consumption; Cut off the first cylinder",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
                     "id": "26me407l-5.8",
-                    "sno": "5.8"
-                },
-                {
+                    "sno": "5.8",
                     "topic": "Record brake load, speed of rotation (RPM), the rate of fuel consumption",
                     "period": 1,
-                    "type": "practical",
+                    "type": "practical"
+                },
+                {
                     "id": "26me407l-5.9",
-                    "sno": "5.9"
+                    "sno": "5.9",
+                    "topic": "Repeat the above operations for all the cylinders; Determination of of Power required and Efficiency of Reciprocating Pump",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Cut off the first cylinder",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-5.10",
-                    "sno": "5.10"
+                    "sno": "5.10",
+                    "topic": "Identify the components of reciprocating pump; Record the suction and delivery pressures from pressure gauges",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Record brake load, speed of rotation (RPM), the rate of fuel consumption",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26me407l-5.11",
-                    "sno": "5.11"
-                },
-                {
-                    "topic": "Repeat the above operations for all the cylinders",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.12",
-                    "sno": "5.12"
-                },
-                {
-                    "topic": "Determination of of Power required and Efficiency of Reciprocating Pump",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "Identify the components of reciprocating pump",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "Record the suction and delivery pressures from pressure gauges",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.2",
-                    "sno": "5.2"
-                },
-                {
+                    "sno": "5.11",
                     "topic": "Record the time taken for collecting the discharge",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.3",
-                    "sno": "5.3"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Record the energy meter readings and calculate input power",
+                    "id": "26me407l-5.12",
+                    "sno": "5.12",
+                    "topic": "Record the energy meter readings and calculate input power; Calculate the power input",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.4",
-                    "sno": "5.4"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Calculate the power input",
+                    "id": "26me407l-5.13",
+                    "sno": "5.13",
+                    "topic": "Calculate the efficiency; Draw characterstic curves",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.5",
-                    "sno": "5.5"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Calculate the efficiency",
+                    "id": "26me407l-5.14",
+                    "sno": "5.14",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.6",
-                    "sno": "5.6"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Draw characterstic curves",
+                    "id": "26me407l-5.15",
+                    "sno": "5.15",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me407l-5.7",
-                    "sno": "5.7"
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Conduct performance test on Air compressor",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "26me407l-6.1",
+                    "sno": "6.1",
+                    "topic": "Conduct performance test on Air compressor",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.2",
+                    "sno": "6.2",
+                    "topic": "Check the lubricating oil level in the crank case",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.3",
+                    "sno": "6.3",
+                    "topic": "Opening and closing of storage outlet valve",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.4",
+                    "sno": "6.4",
+                    "topic": "Checking orifice and its diaphragm condition",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.5",
+                    "sno": "6.5",
+                    "topic": "Fill water in U-tube manometer; Check function and usage of tachometer",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.6",
+                    "sno": "6.6",
+                    "topic": "Check function and usage of stop watch",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.7",
+                    "sno": "6.7",
+                    "topic": "Record time taken for 10 revolutions of energy meter disc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.8",
+                    "sno": "6.8",
+                    "topic": "Record compressor speed (RPM) using tachometer",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.9",
+                    "sno": "6.9",
+                    "topic": "Record manometer readings; Determination of Power and Efficiency of Pelton Wheel",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.10",
+                    "sno": "6.10",
+                    "topic": "Identify the components of Pelton wheel",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.11",
+                    "sno": "6.11",
+                    "topic": "Start turbine by switching on jet of water slowly",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.12",
+                    "sno": "6.12",
+                    "topic": "Apply load steadily",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.13",
+                    "sno": "6.13",
+                    "topic": "Record load, speed; Calculate brake power and efficiency of turbine",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me407l-6.14",
+                    "sno": "6.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me407l-6.15",
+                    "sno": "6.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

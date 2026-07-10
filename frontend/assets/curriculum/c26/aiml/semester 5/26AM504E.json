@@ -3,484 +3,351 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "Introduction to Data Science",
             "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26am504e-1.1",
+                    "sno": "1.1",
                     "topic": "Introduction to Data Science",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-1.0",
-                    "sno": "1.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am504e-1.2",
+                    "sno": "1.2",
                     "topic": "Applications of Data Science",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-1.6",
-                    "sno": "1.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am504e-1.3",
+                    "sno": "1.3",
                     "topic": "Relationship between Data Science, Data Analytics, and Machine Learning",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-1.7",
-                    "sno": "1.7"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Skills Required in Data Science (i) Understand the Fundamentals of Data Science (ii) Apply data collection, cleaning, and preprocessing techniques using tools (iii) Understand, visualize, and explore data using descriptive statistics and visualize insights with plots (histograms, box plots, scatter plots). (iv) Understand basicMachine Learning Concepts (v) Explore Big Data and Cloud Technologies and Address Ethical Considerations",
+                    "id": "26am504e-1.4",
+                    "sno": "1.4",
+                    "topic": "Skills Required in Data Science (i) Understand the Fundamentals of Data Science (ii) Apply data collection, cleaning, and preprocessing techniques ...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-1.8",
-                    "sno": "1.8"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Mean,Median,Mode",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-1.1",
-                    "sno": "1.1"
-                },
-                {
+                    "id": "26am504e-1.5",
+                    "sno": "1.5",
                     "topic": "Range,Variance,StandardDeviation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am504e-1.6",
+                    "sno": "1.6",
                     "topic": "Definition of Machine Learning",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Importance and real-world applications",
+                    "id": "26am504e-1.7",
+                    "sno": "1.7",
+                    "topic": "Importance and real-world applications; Definition, Importance",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Definition, Importance",
+                    "id": "26am504e-1.8",
+                    "sno": "1.8",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-1.1",
-                    "sno": "1.1"
+                    "type": "revision"
+                },
+                {
+                    "id": "26am504e-1.9",
+                    "sno": "1.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "Data Collection and Preprocessing",
             "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26am504e-2.1",
+                    "sno": "2.1",
                     "topic": "Data Collection and Preprocessing",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26am504e-2.0",
-                    "sno": "2.0"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26am504e-2.2",
+                    "sno": "2.2",
                     "topic": "Data Collection Techniques-(APIs,CSV,Excel,SQL)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-2.1",
-                    "sno": "2.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am504e-2.3",
+                    "sno": "2.3",
                     "topic": "Reading Datausing pandas-(CSV,Excel) 2 .3 Handling Missing Data",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am504e-2.4",
+                    "sno": "2.4",
                     "topic": "Data Cleaning Techniques",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-2.4",
-                    "sno": "2.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am504e-2.5",
+                    "sno": "2.5",
                     "topic": "Handling Duplicates in Data",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-2.5",
-                    "sno": "2.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26am504e-2.6",
+                    "sno": "2.6",
                     "topic": "Detecting and Removing Outliers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-2.6",
-                    "sno": "2.6"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Feature Scaling: Normalization and Standardization",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-2.7",
-                    "sno": "2.7"
+                    "sno": "2.7",
+                    "topic": "Feature Scaling: Normalization and Standardization; Data Encoding: One-Hot, Label Encoding",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Data Encoding: One-Hot, Label Encoding",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-2.8",
-                    "sno": "2.8"
+                    "sno": "2.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am504e-2.9",
+                    "sno": "2.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "Data Analysis and Visualization",
             "totalPeriods": 9,
             "topics": [
                 {
-                    "topic": "Removing Missing Data",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Removing Missing Data; Filling Missing Values",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Filling Missing Values",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Forward Fill/Backward Fill; Data Analysis and Visualization; Understanding Data with Descriptive Statistics",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Forward Fill/Backward Fill",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Data Distributions and Outliers; Data Visualization",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Data Analysis and Visualization",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "Understanding Data with Descriptive Statistics",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Data Distributions and Outliers",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Data Visualization",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Introduction to Visualization Tools (Matplotlib,Seaborn, Pandas Plotting\u2013with comparisons)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Common Plots:Histogram, BoxPlot,Scatter Plot",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Correlation and Covariance Define Correlation and Covariance",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Introduction to Visualization Tools (Matplotlib,Seaborn, Pandas Plotting\u2013with comparisons); Common Plots:Histogram, BoxPlot,Scatter Plot; Correlati...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "EDA (Exploratory Data Analysis)",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "EDA (Exploratory Data Analysis); Supervised",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Supervised",
+                    "id": "26am504e-3.6",
+                    "sno": "3.6",
+                    "topic": "Unsupervised Learning; Reinforcemen tLearning; Hadoop (HDFS,MapReduce)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Unsupervised Learning",
+                    "id": "26am504e-3.7",
+                    "sno": "3.7",
+                    "topic": "Apache Sparkbasics; NoSQL:MongoDB,Cassandra; Unit test-2 From 3.3.2 to 5.5",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.2",
-                    "sno": "3.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Reinforcemen tLearning",
+                    "id": "26am504e-3.8",
+                    "sno": "3.8",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.3",
-                    "sno": "3.3"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Hadoop (HDFS,MapReduce)",
+                    "id": "26am504e-3.9",
+                    "sno": "3.9",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Apache Sparkbasics",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "NoSQL:MongoDB,Cassandra",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Unit test-2 From 3.3.2 to 5.5",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-3.1",
-                    "sno": "3.1"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "Introduction to Machine Learning",
             "totalPeriods": 9,
             "topics": [
                 {
-                    "topic": "Data Scientist",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "Data Scientist; Data Analyst",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Data Analyst",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Data Engineer; Applications in DataScience",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Data Engineer",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Introduction to Machine Learning; Introduction to Machine Learning; Difference between Data Science, ML,andAI",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Applications in DataScience",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Introduction to Machine Learning",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Introduction to Machine Learning",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Difference between Data Science, ML,andAI",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Types of Machine Learning",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "Data set splitting",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "Types of Machine Learning; Data set splitting",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Training Set and Testing Set",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Importance of splitting data correctly",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Supervised Learning:",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Training Set and Testing Set; Importance of splitting data correctly; Supervised Learning",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Unsupervised Learning",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-4.6",
-                    "sno": "4.6"
+                    "sno": "4.6",
+                    "topic": "Unsupervised Learning; Model Evaluation:Accuracy, ConfusionMatrix",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Model Evaluation:Accuracy, ConfusionMatrix",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-4.7",
-                    "sno": "4.7"
+                    "sno": "4.7",
+                    "topic": "Definition,Importance; List Cloud Tools for DataScience; Applications of Cloud Computing in DataScience",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Definition,Importance",
+                    "id": "26am504e-4.8",
+                    "sno": "4.8",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-4.1",
-                    "sno": "4.1"
+                    "type": "revision"
                 },
                 {
-                    "topic": "List Cloud Tools for DataScience",
+                    "id": "26am504e-4.9",
+                    "sno": "4.9",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Applications of Cloud Computing in DataScience",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-4.3",
-                    "sno": "4.3"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "Introduction to Big Data and Cloud in Data Science",
             "totalPeriods": 9,
             "topics": [
                 {
-                    "topic": "Structured,",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Structured",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Semi-structured,",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Semi-structured; Unstructured",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Unstructured",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Compare Structured,Semi-Structured and Unstructured types of data; Core Components of Exploratory Data Analysis",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Compare Structured,Semi-Structured and Unstructured types of data",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26am504e-5.4",
-                    "sno": "5.4"
-                },
-                {
-                    "topic": "Core Components of Exploratory Data Analysis",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-5.1",
-                    "sno": "5.1"
-                },
-                {
+                    "sno": "5.4",
                     "topic": "Benefits of EDA in Data Science",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-5.2",
-                    "sno": "5.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Linear Regression",
+                    "id": "26am504e-5.5",
+                    "sno": "5.5",
+                    "topic": "Linear Regression; Introduction to Big Data and Cloud in Data Science",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-5.2",
-                    "sno": "5.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Introduction to Big Data and Cloud in Data Science",
+                    "id": "26am504e-5.6",
+                    "sno": "5.6",
+                    "topic": "Introduction to Big Data; Big Data Ecosystem\u2013(Storage,Processing,Analysis)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-5.0",
-                    "sno": "5.0"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Introduction to Big Data",
+                    "id": "26am504e-5.7",
+                    "sno": "5.7",
+                    "topic": "Technologies in Big Data; Introduction to Cloud Computing",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-5.1",
-                    "sno": "5.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Big Data Ecosystem\u2013(Storage,Processing,Analysis)",
+                    "id": "26am504e-5.8",
+                    "sno": "5.8",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-5.2",
-                    "sno": "5.2"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Technologies in Big Data",
+                    "id": "26am504e-5.9",
+                    "sno": "5.9",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-5.3",
-                    "sno": "5.3"
-                },
-                {
-                    "topic": "Introduction to Cloud Computing",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26am504e-5.4",
-                    "sno": "5.4"
+                    "type": "assessment"
                 }
             ]
         }

@@ -3,337 +3,1275 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 36,
+            "title": "Projects involving Design, Development, Assembly, Performance Analysis or Case Studies in core",
+            "totalPeriods": 90,
             "topics": [
                 {
-                    "topic": "Generate and develop innovative ideas based on electrical and electronics engineering principles",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee509p-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Generate and develop innovative ideas based on electrical and electronics engineering principles",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Identify, define and analyze engineering problems related to the project",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee509p-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Identify, define and analyze engineering problems related to the project",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Gather and interpret relevant technical information from various sources",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee509p-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Gather and interpret relevant technical information from various sources",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Evaluate alternative solutions or design approaches",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee509p-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Evaluate alternative solutions or design approaches",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Apply appropriate engineering concepts to develop and implement the project",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee509p-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Apply appropriate engineering concepts to develop and implement the project",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Use laboratory equipment, hardware, software and simulation tools proficiently",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee509p-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Use laboratory equipment, hardware, software and simulation tools proficiently",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Demonstrate skills in measurement, testing and troubleshooting",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee509p-1.7",
-                    "sno": "1.7"
+                    "sno": "1.7",
+                    "topic": "Demonstrate skills in measurement, testing and troubleshooting",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Interpret results effectively and draw valid technical conclusions",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee509p-1.8",
-                    "sno": "1.8"
+                    "sno": "1.8",
+                    "topic": "Interpret results effectively and draw valid technical conclusions",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Demonstrate innovative thinking and entrepreneurial approach in developing project solutions 2. Communication and Reporting:",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee509p-1.9",
-                    "sno": "1.9"
+                    "sno": "1.9",
+                    "topic": "Demonstrate innovative thinking and entrepreneurial approach in developing project solutions 2. Communication and Reporting",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ee509p-1.10",
+                    "sno": "1.10",
                     "topic": "Projects involving Design, Development, Assembly, Performance Analysis or Case Studies in core and emerging areas of Electrical and Electronics Engineering",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.11",
+                    "sno": "1.11",
+                    "topic": "Deep dive into Generate and develop innovative ideas based on electrical and electronics engineering principles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.12",
+                    "sno": "1.12",
+                    "topic": "Deep dive into Identify, define and analyze engineering problems related to the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.13",
+                    "sno": "1.13",
+                    "topic": "Deep dive into Gather and interpret relevant technical information from various sources",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.14",
+                    "sno": "1.14",
+                    "topic": "Deep dive into Evaluate alternative solutions or design approaches",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into Apply appropriate engineering concepts to develop and implement the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into Use laboratory equipment, hardware, software and simulation tools proficiently",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.17",
+                    "sno": "1.17",
+                    "topic": "Deep dive into Demonstrate skills in measurement, testing and troubleshooting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Interpret results effectively and draw valid technical conclusions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Demonstrate innovative thinking and entrepreneurial approach in developing project solutions 2. Communication and Reporting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into Projects involving Design, Development, Assembly, Performance Analysis or Case Studies in core and emerging areas of Electrical and Electronics Engineering",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.21",
+                    "sno": "1.21",
+                    "topic": "Problem solving & practice on Generate and develop innovative ideas based on electrical and electronics engineering principles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.22",
+                    "sno": "1.22",
+                    "topic": "Problem solving & practice on Identify, define and analyze engineering problems related to the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.23",
+                    "sno": "1.23",
+                    "topic": "Problem solving & practice on Gather and interpret relevant technical information from various sources",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.24",
+                    "sno": "1.24",
+                    "topic": "Problem solving & practice on Evaluate alternative solutions or design approaches",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.25",
+                    "sno": "1.25",
+                    "topic": "Problem solving & practice on Apply appropriate engineering concepts to develop and implement the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.26",
+                    "sno": "1.26",
+                    "topic": "Problem solving & practice on Use laboratory equipment, hardware, software and simulation tools proficiently",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.27",
+                    "sno": "1.27",
+                    "topic": "Problem solving & practice on Demonstrate skills in measurement, testing and troubleshooting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.28",
+                    "sno": "1.28",
+                    "topic": "Problem solving & practice on Interpret results effectively and draw valid technical conclusions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.29",
+                    "sno": "1.29",
+                    "topic": "Problem solving & practice on Demonstrate innovative thinking and entrepreneurial approach in developing project solutions 2. Communication and Reporting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.30",
+                    "sno": "1.30",
+                    "topic": "Problem solving & practice on Projects involving Design, Development, Assembly, Performance Analysis or Case Studies in core and emerging areas of Electrical and Electronics Engineering",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.31",
+                    "sno": "1.31",
+                    "topic": "Practical applications of Generate and develop innovative ideas based on electrical and electronics engineering principles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.32",
+                    "sno": "1.32",
+                    "topic": "Practical applications of Identify, define and analyze engineering problems related to the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.33",
+                    "sno": "1.33",
+                    "topic": "Practical applications of Gather and interpret relevant technical information from various sources",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.34",
+                    "sno": "1.34",
+                    "topic": "Practical applications of Evaluate alternative solutions or design approaches",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.35",
+                    "sno": "1.35",
+                    "topic": "Practical applications of Apply appropriate engineering concepts to develop and implement the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.36",
+                    "sno": "1.36",
+                    "topic": "Practical applications of Use laboratory equipment, hardware, software and simulation tools proficiently",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.37",
+                    "sno": "1.37",
+                    "topic": "Practical applications of Demonstrate skills in measurement, testing and troubleshooting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.38",
+                    "sno": "1.38",
+                    "topic": "Practical applications of Interpret results effectively and draw valid technical conclusions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.39",
+                    "sno": "1.39",
+                    "topic": "Practical applications of Demonstrate innovative thinking and entrepreneurial approach in developing project solutions 2. Communication and Reporting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.40",
+                    "sno": "1.40",
+                    "topic": "Practical applications of Projects involving Design, Development, Assembly, Performance Analysis or Case Studies in core and emerging areas of Electrical and Electronics Engineering",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.41",
+                    "sno": "1.41",
+                    "topic": "Practical applications of Generate and develop innovative ideas based on electrical and electronics engineering principles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.42",
+                    "sno": "1.42",
+                    "topic": "Practical applications of Identify, define and analyze engineering problems related to the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.43",
+                    "sno": "1.43",
+                    "topic": "Practical applications of Gather and interpret relevant technical information from various sources",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.44",
+                    "sno": "1.44",
+                    "topic": "Practical applications of Evaluate alternative solutions or design approaches",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.45",
+                    "sno": "1.45",
+                    "topic": "Practical applications of Apply appropriate engineering concepts to develop and implement the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.46",
+                    "sno": "1.46",
+                    "topic": "Practical applications of Use laboratory equipment, hardware, software and simulation tools proficiently",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.47",
+                    "sno": "1.47",
+                    "topic": "Practical applications of Demonstrate skills in measurement, testing and troubleshooting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.48",
+                    "sno": "1.48",
+                    "topic": "Practical applications of Interpret results effectively and draw valid technical conclusions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.49",
+                    "sno": "1.49",
+                    "topic": "Practical applications of Demonstrate innovative thinking and entrepreneurial approach in developing project solutions 2. Communication and Reporting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.50",
+                    "sno": "1.50",
+                    "topic": "Practical applications of Projects involving Design, Development, Assembly, Performance Analysis or Case Studies in core and emerging areas of Electrical and Electronics Engineering",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.51",
+                    "sno": "1.51",
+                    "topic": "Practical applications of Generate and develop innovative ideas based on electrical and electronics engineering principles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.52",
+                    "sno": "1.52",
+                    "topic": "Practical applications of Identify, define and analyze engineering problems related to the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.53",
+                    "sno": "1.53",
+                    "topic": "Practical applications of Gather and interpret relevant technical information from various sources",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.54",
+                    "sno": "1.54",
+                    "topic": "Practical applications of Evaluate alternative solutions or design approaches",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.55",
+                    "sno": "1.55",
+                    "topic": "Practical applications of Apply appropriate engineering concepts to develop and implement the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.56",
+                    "sno": "1.56",
+                    "topic": "Practical applications of Use laboratory equipment, hardware, software and simulation tools proficiently",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.57",
+                    "sno": "1.57",
+                    "topic": "Practical applications of Demonstrate skills in measurement, testing and troubleshooting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.58",
+                    "sno": "1.58",
+                    "topic": "Practical applications of Interpret results effectively and draw valid technical conclusions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.59",
+                    "sno": "1.59",
+                    "topic": "Practical applications of Demonstrate innovative thinking and entrepreneurial approach in developing project solutions 2. Communication and Reporting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.60",
+                    "sno": "1.60",
+                    "topic": "Practical applications of Projects involving Design, Development, Assembly, Performance Analysis or Case Studies in core and emerging areas of Electrical and Electronics Engineering",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.61",
+                    "sno": "1.61",
+                    "topic": "Practical applications of Generate and develop innovative ideas based on electrical and electronics engineering principles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.62",
+                    "sno": "1.62",
+                    "topic": "Practical applications of Identify, define and analyze engineering problems related to the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.63",
+                    "sno": "1.63",
+                    "topic": "Practical applications of Gather and interpret relevant technical information from various sources",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.64",
+                    "sno": "1.64",
+                    "topic": "Practical applications of Evaluate alternative solutions or design approaches",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.65",
+                    "sno": "1.65",
+                    "topic": "Practical applications of Apply appropriate engineering concepts to develop and implement the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.66",
+                    "sno": "1.66",
+                    "topic": "Practical applications of Use laboratory equipment, hardware, software and simulation tools proficiently",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.67",
+                    "sno": "1.67",
+                    "topic": "Practical applications of Demonstrate skills in measurement, testing and troubleshooting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.68",
+                    "sno": "1.68",
+                    "topic": "Practical applications of Interpret results effectively and draw valid technical conclusions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.69",
+                    "sno": "1.69",
+                    "topic": "Practical applications of Demonstrate innovative thinking and entrepreneurial approach in developing project solutions 2. Communication and Reporting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.70",
+                    "sno": "1.70",
+                    "topic": "Practical applications of Projects involving Design, Development, Assembly, Performance Analysis or Case Studies in core and emerging areas of Electrical and Electronics Engineering",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.71",
+                    "sno": "1.71",
+                    "topic": "Practical applications of Generate and develop innovative ideas based on electrical and electronics engineering principles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.72",
+                    "sno": "1.72",
+                    "topic": "Practical applications of Identify, define and analyze engineering problems related to the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.73",
+                    "sno": "1.73",
+                    "topic": "Practical applications of Gather and interpret relevant technical information from various sources",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.74",
+                    "sno": "1.74",
+                    "topic": "Practical applications of Evaluate alternative solutions or design approaches",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.75",
+                    "sno": "1.75",
+                    "topic": "Practical applications of Apply appropriate engineering concepts to develop and implement the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.76",
+                    "sno": "1.76",
+                    "topic": "Practical applications of Use laboratory equipment, hardware, software and simulation tools proficiently",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.77",
+                    "sno": "1.77",
+                    "topic": "Practical applications of Demonstrate skills in measurement, testing and troubleshooting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.78",
+                    "sno": "1.78",
+                    "topic": "Practical applications of Interpret results effectively and draw valid technical conclusions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.79",
+                    "sno": "1.79",
+                    "topic": "Practical applications of Demonstrate innovative thinking and entrepreneurial approach in developing project solutions 2. Communication and Reporting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.80",
+                    "sno": "1.80",
+                    "topic": "Practical applications of Projects involving Design, Development, Assembly, Performance Analysis or Case Studies in core and emerging areas of Electrical and Electronics Engineering",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.81",
+                    "sno": "1.81",
+                    "topic": "Practical applications of Generate and develop innovative ideas based on electrical and electronics engineering principles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.82",
+                    "sno": "1.82",
+                    "topic": "Practical applications of Identify, define and analyze engineering problems related to the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.83",
+                    "sno": "1.83",
+                    "topic": "Practical applications of Gather and interpret relevant technical information from various sources",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.84",
+                    "sno": "1.84",
+                    "topic": "Practical applications of Evaluate alternative solutions or design approaches",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.85",
+                    "sno": "1.85",
+                    "topic": "Practical applications of Apply appropriate engineering concepts to develop and implement the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.86",
+                    "sno": "1.86",
+                    "topic": "Practical applications of Use laboratory equipment, hardware, software and simulation tools proficiently",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.87",
+                    "sno": "1.87",
+                    "topic": "Practical applications of Demonstrate skills in measurement, testing and troubleshooting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.88",
+                    "sno": "1.88",
+                    "topic": "Practical applications of Interpret results effectively and draw valid technical conclusions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-1.89",
+                    "sno": "1.89",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee509p-1.90",
+                    "sno": "1.90",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 36,
+            "title": "Core and emerging areas include",
+            "totalPeriods": 90,
             "topics": [
                 {
+                    "id": "26ee509p-2.1",
+                    "sno": "2.1",
                     "topic": "Communicate technical ideas and project outcomes clearly through oral and written forms",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-2.1",
-                    "sno": "2.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ee509p-2.2",
+                    "sno": "2.2",
                     "topic": "Present project content in a structured, logical and coherent manner",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-2.2",
-                    "sno": "2.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ee509p-2.3",
+                    "sno": "2.3",
                     "topic": "Prepare professional technical reports and documentation",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-2.3",
-                    "sno": "2.3"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ee509p-2.4",
+                    "sno": "2.4",
                     "topic": "Use appropriate digital tools (e.g., PowerPoint, simulation demos) for effective presentations",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-2.4",
-                    "sno": "2.4"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Communicate project outcomes effectively to academic, industry, and societal audiences. 218 3. Teamwork and Leadership:",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee509p-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "Communicate project outcomes effectively to academic, industry, and societal audiences. 218 3. Teamwork and Leadership",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core and emerging areas include:",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Renewable Energy Systems (e.g., solar/wind micro-projects)",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "IoT-based Electrical Monitoring and Smart Control",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Automation using PLCs, Arduino or Microcontrollers",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "Power Electronics Applications (converters, inverters, drives)",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-2.4",
-                    "sno": "2.4"
-                },
-                {
-                    "topic": "Electrical Safety and Energy Auditing",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee509p-2.5",
-                    "sno": "2.5"
-                },
-                {
-                    "topic": "Any other innovative project relevant to electrical and electronics engineering. 219",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee509p-2.6",
-                    "sno": "2.6"
-                }
-            ]
-        },
-        {
-            "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 36,
-            "topics": [
-                {
-                    "topic": "Work collaboratively as part of a team to achieve project objectives",
-                    "period": 8,
-                    "type": "practical",
-                    "id": "26ee509p-3.1",
-                    "sno": "3.1"
+                    "sno": "2.6",
+                    "topic": "Core and emerging areas include",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Share, discuss, and refine ideas with team members",
-                    "period": 7,
-                    "type": "practical",
-                    "id": "26ee509p-3.2",
-                    "sno": "3.2"
+                    "id": "26ee509p-2.7",
+                    "sno": "2.7",
+                    "topic": "Renewable Energy Systems (e.g., solar/wind micro-projects)",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Coordinate tasks, roles and responsibilities effectively",
-                    "period": 7,
-                    "type": "practical",
-                    "id": "26ee509p-3.3",
-                    "sno": "3.3"
+                    "id": "26ee509p-2.8",
+                    "sno": "2.8",
+                    "topic": "IoT-based Electrical Monitoring and Smart Control",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Resolve team conflicts constructively and support team decisions",
-                    "period": 7,
-                    "type": "practical",
-                    "id": "26ee509p-3.4",
-                    "sno": "3.4"
+                    "id": "26ee509p-2.9",
+                    "sno": "2.9",
+                    "topic": "Automation using PLCs, Arduino or Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Exhibit leadership qualities, when required, in organizing and managing project work. 4. Independent and Lifelong Learning:",
-                    "period": 7,
-                    "type": "practical",
-                    "id": "26ee509p-3.5",
-                    "sno": "3.5"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 36,
-            "topics": [
-                {
-                    "topic": "Demonstrate initiative and self-direction in carrying out project work",
-                    "period": 5,
-                    "type": "practical",
-                    "id": "26ee509p-4.1",
-                    "sno": "4.1"
+                    "id": "26ee509p-2.10",
+                    "sno": "2.10",
+                    "topic": "Power Electronics Applications (converters, inverters, drives)",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Learn and adapt from sources beyond the prescribed syllabus",
-                    "period": 5,
-                    "type": "practical",
-                    "id": "26ee509p-4.2",
-                    "sno": "4.2"
+                    "id": "26ee509p-2.11",
+                    "sno": "2.11",
+                    "topic": "Electrical Safety and Energy Auditing",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Analyze and reflect on project performance to identify improvements",
-                    "period": 5,
-                    "type": "practical",
-                    "id": "26ee509p-4.3",
-                    "sno": "4.3"
+                    "id": "26ee509p-2.12",
+                    "sno": "2.12",
+                    "topic": "Any other innovative project relevant to electrical and electronics engineering. 219",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Compare multiple approaches to determine the most sustainable and effective solution",
-                    "period": 5,
-                    "type": "practical",
-                    "id": "26ee509p-4.4",
-                    "sno": "4.4"
+                    "id": "26ee509p-2.13",
+                    "sno": "2.13",
+                    "topic": "Deep dive into Communicate technical ideas and project outcomes clearly through oral and written forms",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Manage time and resources efficiently during the execution of the project",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26ee509p-4.5",
-                    "sno": "4.5"
+                    "id": "26ee509p-2.14",
+                    "sno": "2.14",
+                    "topic": "Deep dive into Present project content in a structured, logical and coherent manner",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Maintain systematic documentation of project processes and results",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26ee509p-4.6",
-                    "sno": "4.6"
+                    "id": "26ee509p-2.15",
+                    "sno": "2.15",
+                    "topic": "Deep dive into Prepare professional technical reports and documentation",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Adapt to challenges and unforeseen situations during the project lifecycle",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26ee509p-4.7",
-                    "sno": "4.7"
+                    "id": "26ee509p-2.16",
+                    "sno": "2.16",
+                    "topic": "Deep dive into Use appropriate digital tools (e.g., PowerPoint, simulation demos) for effective presentations",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explore and adopt emerging technologies, software, and standards relevant to project work. 5. Ethics and Social Responsibility:",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26ee509p-4.8",
-                    "sno": "4.8"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 36,
-            "topics": [
-                {
-                    "topic": "Show respect to classmates, faculty, team members and others involved",
-                    "period": 5,
-                    "type": "practical",
-                    "id": "26ee509p-5.1",
-                    "sno": "5.1"
+                    "id": "26ee509p-2.17",
+                    "sno": "2.17",
+                    "topic": "Deep dive into Communicate project outcomes effectively to academic, industry, and societal audiences. 218 3. Teamwork and Leadership",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Follow ethical practices in communication, documentation and teamwork",
-                    "period": 5,
-                    "type": "practical",
-                    "id": "26ee509p-5.2",
-                    "sno": "5.2"
+                    "id": "26ee509p-2.18",
+                    "sno": "2.18",
+                    "topic": "Deep dive into Core and emerging areas include",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Understand and adhere to safety, health, and environmental regulations",
-                    "period": 5,
-                    "type": "practical",
-                    "id": "26ee509p-5.3",
-                    "sno": "5.3"
+                    "id": "26ee509p-2.19",
+                    "sno": "2.19",
+                    "topic": "Deep dive into Renewable Energy Systems (e.g., solar/wind micro-projects)",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Recognize and manage the constraints of limited resources responsibly",
-                    "period": 5,
-                    "type": "practical",
-                    "id": "26ee509p-5.4",
-                    "sno": "5.4"
+                    "id": "26ee509p-2.20",
+                    "sno": "2.20",
+                    "topic": "Deep dive into IoT-based Electrical Monitoring and Smart Control",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Develop and apply sustainable engineering practices",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26ee509p-5.5",
-                    "sno": "5.5"
+                    "id": "26ee509p-2.21",
+                    "sno": "2.21",
+                    "topic": "Deep dive into Automation using PLCs, Arduino or Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Avoid plagiarism and give due credit to others' contributions",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26ee509p-5.6",
-                    "sno": "5.6"
+                    "id": "26ee509p-2.22",
+                    "sno": "2.22",
+                    "topic": "Deep dive into Power Electronics Applications (converters, inverters, drives)",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Evaluate the social and environmental impact of the project outcomes",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26ee509p-5.7",
-                    "sno": "5.7"
+                    "id": "26ee509p-2.23",
+                    "sno": "2.23",
+                    "topic": "Deep dive into Electrical Safety and Energy Auditing",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practice intellectual honesty by ensuring originality and respecting IPR (Intellectual Property Rights)",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26ee509p-5.8",
-                    "sno": "5.8"
+                    "id": "26ee509p-2.24",
+                    "sno": "2.24",
+                    "topic": "Deep dive into Any other innovative project relevant to electrical and electronics engineering. 219",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.25",
+                    "sno": "2.25",
+                    "topic": "Problem solving & practice on Communicate technical ideas and project outcomes clearly through oral and written forms",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.26",
+                    "sno": "2.26",
+                    "topic": "Problem solving & practice on Present project content in a structured, logical and coherent manner",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.27",
+                    "sno": "2.27",
+                    "topic": "Problem solving & practice on Prepare professional technical reports and documentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.28",
+                    "sno": "2.28",
+                    "topic": "Problem solving & practice on Use appropriate digital tools (e.g., PowerPoint, simulation demos) for effective presentations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.29",
+                    "sno": "2.29",
+                    "topic": "Problem solving & practice on Communicate project outcomes effectively to academic, industry, and societal audiences. 218 3. Teamwork and Leadership",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.30",
+                    "sno": "2.30",
+                    "topic": "Problem solving & practice on Core and emerging areas include",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.31",
+                    "sno": "2.31",
+                    "topic": "Problem solving & practice on Renewable Energy Systems (e.g., solar/wind micro-projects)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.32",
+                    "sno": "2.32",
+                    "topic": "Problem solving & practice on IoT-based Electrical Monitoring and Smart Control",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.33",
+                    "sno": "2.33",
+                    "topic": "Problem solving & practice on Automation using PLCs, Arduino or Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.34",
+                    "sno": "2.34",
+                    "topic": "Problem solving & practice on Power Electronics Applications (converters, inverters, drives)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.35",
+                    "sno": "2.35",
+                    "topic": "Problem solving & practice on Electrical Safety and Energy Auditing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.36",
+                    "sno": "2.36",
+                    "topic": "Problem solving & practice on Any other innovative project relevant to electrical and electronics engineering. 219",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.37",
+                    "sno": "2.37",
+                    "topic": "Practical applications of Communicate technical ideas and project outcomes clearly through oral and written forms",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.38",
+                    "sno": "2.38",
+                    "topic": "Practical applications of Present project content in a structured, logical and coherent manner",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.39",
+                    "sno": "2.39",
+                    "topic": "Practical applications of Prepare professional technical reports and documentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.40",
+                    "sno": "2.40",
+                    "topic": "Practical applications of Use appropriate digital tools (e.g., PowerPoint, simulation demos) for effective presentations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.41",
+                    "sno": "2.41",
+                    "topic": "Practical applications of Communicate project outcomes effectively to academic, industry, and societal audiences. 218 3. Teamwork and Leadership",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.42",
+                    "sno": "2.42",
+                    "topic": "Practical applications of Core and emerging areas include",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.43",
+                    "sno": "2.43",
+                    "topic": "Practical applications of Renewable Energy Systems (e.g., solar/wind micro-projects)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.44",
+                    "sno": "2.44",
+                    "topic": "Practical applications of IoT-based Electrical Monitoring and Smart Control",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.45",
+                    "sno": "2.45",
+                    "topic": "Practical applications of Automation using PLCs, Arduino or Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.46",
+                    "sno": "2.46",
+                    "topic": "Practical applications of Power Electronics Applications (converters, inverters, drives)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.47",
+                    "sno": "2.47",
+                    "topic": "Practical applications of Electrical Safety and Energy Auditing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.48",
+                    "sno": "2.48",
+                    "topic": "Practical applications of Any other innovative project relevant to electrical and electronics engineering. 219",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.49",
+                    "sno": "2.49",
+                    "topic": "Practical applications of Communicate technical ideas and project outcomes clearly through oral and written forms",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.50",
+                    "sno": "2.50",
+                    "topic": "Practical applications of Present project content in a structured, logical and coherent manner",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.51",
+                    "sno": "2.51",
+                    "topic": "Practical applications of Prepare professional technical reports and documentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.52",
+                    "sno": "2.52",
+                    "topic": "Practical applications of Use appropriate digital tools (e.g., PowerPoint, simulation demos) for effective presentations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.53",
+                    "sno": "2.53",
+                    "topic": "Practical applications of Communicate project outcomes effectively to academic, industry, and societal audiences. 218 3. Teamwork and Leadership",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.54",
+                    "sno": "2.54",
+                    "topic": "Practical applications of Core and emerging areas include",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.55",
+                    "sno": "2.55",
+                    "topic": "Practical applications of Renewable Energy Systems (e.g., solar/wind micro-projects)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.56",
+                    "sno": "2.56",
+                    "topic": "Practical applications of IoT-based Electrical Monitoring and Smart Control",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.57",
+                    "sno": "2.57",
+                    "topic": "Practical applications of Automation using PLCs, Arduino or Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.58",
+                    "sno": "2.58",
+                    "topic": "Practical applications of Power Electronics Applications (converters, inverters, drives)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.59",
+                    "sno": "2.59",
+                    "topic": "Practical applications of Electrical Safety and Energy Auditing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.60",
+                    "sno": "2.60",
+                    "topic": "Practical applications of Any other innovative project relevant to electrical and electronics engineering. 219",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.61",
+                    "sno": "2.61",
+                    "topic": "Practical applications of Communicate technical ideas and project outcomes clearly through oral and written forms",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.62",
+                    "sno": "2.62",
+                    "topic": "Practical applications of Present project content in a structured, logical and coherent manner",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.63",
+                    "sno": "2.63",
+                    "topic": "Practical applications of Prepare professional technical reports and documentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.64",
+                    "sno": "2.64",
+                    "topic": "Practical applications of Use appropriate digital tools (e.g., PowerPoint, simulation demos) for effective presentations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.65",
+                    "sno": "2.65",
+                    "topic": "Practical applications of Communicate project outcomes effectively to academic, industry, and societal audiences. 218 3. Teamwork and Leadership",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.66",
+                    "sno": "2.66",
+                    "topic": "Practical applications of Core and emerging areas include",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.67",
+                    "sno": "2.67",
+                    "topic": "Practical applications of Renewable Energy Systems (e.g., solar/wind micro-projects)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.68",
+                    "sno": "2.68",
+                    "topic": "Practical applications of IoT-based Electrical Monitoring and Smart Control",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.69",
+                    "sno": "2.69",
+                    "topic": "Practical applications of Automation using PLCs, Arduino or Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.70",
+                    "sno": "2.70",
+                    "topic": "Practical applications of Power Electronics Applications (converters, inverters, drives)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.71",
+                    "sno": "2.71",
+                    "topic": "Practical applications of Electrical Safety and Energy Auditing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.72",
+                    "sno": "2.72",
+                    "topic": "Practical applications of Any other innovative project relevant to electrical and electronics engineering. 219",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.73",
+                    "sno": "2.73",
+                    "topic": "Practical applications of Communicate technical ideas and project outcomes clearly through oral and written forms",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.74",
+                    "sno": "2.74",
+                    "topic": "Practical applications of Present project content in a structured, logical and coherent manner",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.75",
+                    "sno": "2.75",
+                    "topic": "Practical applications of Prepare professional technical reports and documentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.76",
+                    "sno": "2.76",
+                    "topic": "Practical applications of Use appropriate digital tools (e.g., PowerPoint, simulation demos) for effective presentations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.77",
+                    "sno": "2.77",
+                    "topic": "Practical applications of Communicate project outcomes effectively to academic, industry, and societal audiences. 218 3. Teamwork and Leadership",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.78",
+                    "sno": "2.78",
+                    "topic": "Practical applications of Core and emerging areas include",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.79",
+                    "sno": "2.79",
+                    "topic": "Practical applications of Renewable Energy Systems (e.g., solar/wind micro-projects)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.80",
+                    "sno": "2.80",
+                    "topic": "Practical applications of IoT-based Electrical Monitoring and Smart Control",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.81",
+                    "sno": "2.81",
+                    "topic": "Practical applications of Automation using PLCs, Arduino or Microcontrollers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.82",
+                    "sno": "2.82",
+                    "topic": "Practical applications of Power Electronics Applications (converters, inverters, drives)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.83",
+                    "sno": "2.83",
+                    "topic": "Practical applications of Electrical Safety and Energy Auditing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.84",
+                    "sno": "2.84",
+                    "topic": "Practical applications of Any other innovative project relevant to electrical and electronics engineering. 219",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.85",
+                    "sno": "2.85",
+                    "topic": "Practical applications of Communicate technical ideas and project outcomes clearly through oral and written forms",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.86",
+                    "sno": "2.86",
+                    "topic": "Practical applications of Present project content in a structured, logical and coherent manner",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.87",
+                    "sno": "2.87",
+                    "topic": "Practical applications of Prepare professional technical reports and documentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.88",
+                    "sno": "2.88",
+                    "topic": "Practical applications of Use appropriate digital tools (e.g., PowerPoint, simulation demos) for effective presentations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee509p-2.89",
+                    "sno": "2.89",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee509p-2.90",
+                    "sno": "2.90",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

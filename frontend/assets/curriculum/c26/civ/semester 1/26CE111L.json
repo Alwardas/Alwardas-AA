@@ -2,359 +2,1073 @@
     "regulation": "C26",
     "units": [
         {
-            "unitNo": 3,
-            "title": "Probability & Statistics",
-            "totalPeriods": 150,
+            "unitNo": 1,
+            "title": "Applications of Definite Integrals",
+            "totalPeriods": 50,
             "topics": [
                 {
-                    "topic": "Define levelling and list the types of levelling instruments, Define the terms - Datum or Datum plane, Reduced level, Level surface, Horizontal surface, Vertical line and Station, Mean Sea level, and Benchmark",
-                    "period": 3,
-                    "type": "practical",
+                    "id": "26ce111l-1.1",
+                    "sno": "1.1",
+                    "topic": "State the concept and purpose of surveying",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.2",
+                    "sno": "1.2",
+                    "topic": "Classify different types of surveys",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.3",
+                    "sno": "1.3",
+                    "topic": "State the fundamental principles of surveying",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.4",
+                    "sno": "1.4",
+                    "topic": "List different instruments used in chain surveying and explain their functions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.5",
+                    "sno": "1.5",
+                    "topic": "Define ranging and explain methods of ranging a line",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.6",
+                    "sno": "1.6",
+                    "topic": "Describe in detail the method of setting out right angles with cross staff and optical square",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.7",
+                    "sno": "1.7",
+                    "topic": "Explain field work procedure in chain survey and method of recording field observations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.8",
+                    "sno": "1.8",
+                    "topic": "Calculate the areas of irregular boundaries using the average ordinate rule, the trapezoidal rule and Simpson\u2019s rule",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.9",
+                    "sno": "1.9",
+                    "topic": "Practice unfolding and folding a chain",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.10",
+                    "sno": "1.10",
+                    "topic": "Perform direct ranging on level ground and measure the distance between two given stations and record the measurements in the field book",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.11",
+                    "sno": "1.11",
+                    "topic": "Set out a right angle to a given chain line by using chain only",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.12",
+                    "sno": "1.12",
+                    "topic": "Perform triangulation survey of a given area with chain and cross staff and record all necessary details",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.13",
+                    "sno": "1.13",
+                    "topic": "Calculate the area bounded by the given points by chain triangulation and compare the result with the area calculated from plotting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.14",
+                    "sno": "1.14",
+                    "topic": "Calculate the area bounded by the given points by chain and Cross staff and compare the result with the area calculated from plotting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.15",
+                    "sno": "1.15",
+                    "topic": "Calculate the areas of irregular boundaries using the average ordinate rule, trapezoidal rule and Simpson\u2019s rule",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.16",
+                    "sno": "1.16",
+                    "topic": "Conventional signs in surveying",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.17",
+                    "sno": "1.17",
+                    "topic": "Plotting of land surveys \u2013 chain and cross-staff surveying \u2013 calculation of areas",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.18",
+                    "sno": "1.18",
+                    "topic": "Plotting of chain triangulation, surveying of small areas around buildings",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.19",
+                    "sno": "1.19",
+                    "topic": "Chain traversing of an area bounded by more than three stations. 9. COMPASS SURVEY",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.20",
+                    "sno": "1.20",
+                    "topic": "Note: The gaps in CO-PO mapping will be met by one or more appropriate activities from the following: (i) Assignments (ii) Tutorials (iii) Seminars (iv) Guest lectures (v) Group discussions (vi) Quiz (vii) Industrial visits (viii) Tech fests (ix) Mini project works (x) Library visits, etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.21",
+                    "sno": "1.21",
+                    "topic": "Practice unfolding and folding a chain. Ex 1.2 Perform direct ranging on level ground and measure the distance between two given stations and record the measurements in the field book. Ex 1.3 Set out a right angle to a given chain line by using chain only. Ex 1.4 Perform triangulation survey of a given area with chain and cross staff and record all necessary details. Ex 1.5 Calculate the area bounded by the given points by chain triangulation and compare the result with the area calculated from plotting. Ex 1.6 Calculate the area bounded by the given points by chain and Cross staff compare the result with the area calculated from plotting. Ex.1.7 Carry out chain traversing to survey an area bounded by more than three stations and plot the Survey from field book measurements. 2 Field Exercises in Compass Surveying Ex 2.1 Identify the parts of a prismatic Compass Ex 2.2 Set up the compass at a station and carry out temporary adjustments. Ex 2.3 Take bearings of two points from instrument station and calculate the included angle. Ex 2.4 Perform an open traverse with Compass and Chain. Ex 2.5 Perform a closed traverse with compass and chain. 3 Field Exercises in Levelling Ex 3.1 Identify the component parts of a dumpy level or Auto level and Study different types of levelling staves. Ex 3.2 Perform temporary adjustments of a dumpy level or Auto level for taking observations and practice taking staff readings and recording them in level field book. Ex 3.3 Take staff readings for differential levelling and compute the difference in elevation between two stations (take invert levels also). Ex 3.4 Conduct profile levelling along a route and compute the RLs at various stations. Ex 3.5 Conduct profile levelling by taking cross sections across a route and compute the reduced levels at various stations. Ex 3.6 Conduct profile levelling along a route by taking readings along both longitudinal sections and cross sections and compute the reduced levels. Ex 3.7 Conduct block levelling for the given area. Ex 3.8 Locate the contour points by Radial method in the field",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.22",
+                    "sno": "1.22",
+                    "topic": "Define simple / pure bending",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.23",
+                    "sno": "1.23",
+                    "topic": "Explain the process of simple bending and Define Neutral layer ,Neutral axis and Radius of curvature",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.24",
+                    "sno": "1.24",
+                    "topic": "List the assumptions made in the theory of simple bending and derive the bending equation for simple bending",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.25",
+                    "sno": "1.25",
+                    "topic": "Define Bending stress and Moment of resistance",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.26",
+                    "sno": "1.26",
+                    "topic": "Explain and Sketch bending stress distribution across the depth of the beam for standard cross section",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.27",
+                    "sno": "1.27",
+                    "topic": "Define Modulus of section and Flexural rigidity and derive the formula for section modulus of Square section, Rectangular section and Circular section for solid sections only",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.28",
+                    "sno": "1.28",
+                    "topic": "Solve problems on theory of simple bending for Symmetrical and Unsymmetrical sections to calculate Moment of Resistance, Load carrying Capacity and Dimensions of cross section",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.29",
+                    "sno": "1.29",
+                    "topic": "State formula for calculation of Shear Stress in any layer of a cross section (Derivation of formulae not required) and Draw shear stress distribution across rectangular section, Solid circular section, I section and T section",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.30",
+                    "sno": "1.30",
+                    "topic": "Determine shear stress at any layer and draw shear stress distribution diagram across rectangular section and I-section",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.31",
+                    "sno": "1.31",
+                    "topic": "Determine the maximum shear stress in circular, rectangular and square sections (Derivation of formulae not required) 2. DEFLECTION OF BEAMS",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.32",
+                    "sno": "1.32",
+                    "topic": "Explain the term fluid and give an example",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.33",
+                    "sno": "1.33",
+                    "topic": "Distinguish between solids & fluids",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.34",
+                    "sno": "1.34",
+                    "topic": "Differentiate ideal and real fluids",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.35",
+                    "sno": "1.35",
+                    "topic": "Define the terms - Mass density, Specific weight, Specific gravity, Specific volume, Cohesion, Adhesion, Surface tension, Capillarity, Compressibility, Viscosity and Vapour pressure",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.36",
+                    "sno": "1.36",
+                    "topic": "State formulae of dynamic viscosity, surface tension of water drop & soap bubble and capillarity rise/depression with simple problems. 2. FLUID PRESSURE AND ITS MEASUREMENT",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.37",
+                    "sno": "1.37",
+                    "topic": "Find the area bounded by a curve and axes",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.38",
+                    "sno": "1.38",
+                    "topic": "Determine the volumes of solids of revolution along the x-axis",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.39",
+                    "sno": "1.39",
+                    "topic": "Obtain the Mean and R.M.S values of simple functions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.40",
+                    "sno": "1.40",
+                    "topic": "Solve the problems of areas using Numerical Integration. Unit-II C.O.2 Solve first -order and first - degree differential equations and second - order homogeneous and non-homogeneous linear differential equations. L.O.2.1 Define a Differential equation, its order and degree",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.41",
+                    "sno": "1.41",
+                    "topic": "Deep dive into State the concept and purpose of surveying",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.42",
+                    "sno": "1.42",
+                    "topic": "Deep dive into Classify different types of surveys",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.43",
+                    "sno": "1.43",
+                    "topic": "Deep dive into State the fundamental principles of surveying",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.44",
+                    "sno": "1.44",
+                    "topic": "Deep dive into List different instruments used in chain surveying and explain their functions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.45",
+                    "sno": "1.45",
+                    "topic": "Deep dive into Define ranging and explain methods of ranging a line",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.46",
+                    "sno": "1.46",
+                    "topic": "Deep dive into Describe in detail the method of setting out right angles with cross staff and optical square",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.47",
+                    "sno": "1.47",
+                    "topic": "Deep dive into Explain field work procedure in chain survey and method of recording field observations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.48",
+                    "sno": "1.48",
+                    "topic": "Deep dive into Calculate the areas of irregular boundaries using the average ordinate rule, the trapezoidal rule and Simpson\u2019s rule",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-1.49",
+                    "sno": "1.49",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce111l-1.50",
+                    "sno": "1.50",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Differential Equations",
+            "totalPeriods": 50,
+            "topics": [
+                {
+                    "id": "26ce111l-2.1",
+                    "sno": "2.1",
+                    "topic": "State the purpose and principles of compass surveying",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.2",
+                    "sno": "2.2",
+                    "topic": "Define -Whole Circle Bearing, Quadrantal Bearing, True Meridian, Magnetic Meridian, True Bearing, Magnetic Bearing, Dip, Declination and Local Attraction",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.3",
+                    "sno": "2.3",
+                    "topic": "Convert Whole Circle Bearing in to Quadrantal Bearing and vice versa",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.4",
+                    "sno": "2.4",
+                    "topic": "Explain Local Attraction and its effects",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.5",
+                    "sno": "2.5",
+                    "topic": "Compute the included angles and true bearings of lines in a compass traverse",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.6",
+                    "sno": "2.6",
+                    "topic": "Explain errors in compass surveying. PRACTICE",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.7",
+                    "sno": "2.7",
+                    "topic": "Identify the parts of a Prismatic Compass",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.8",
+                    "sno": "2.8",
+                    "topic": "Set up the compass at a station and carry out temporary adjustments",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.9",
+                    "sno": "2.9",
+                    "topic": "Take bearings of two points from the instrument station and calculate the included angle",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.10",
+                    "sno": "2.10",
+                    "topic": "Perform an open traverse using a compass and chain",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.11",
+                    "sno": "2.11",
+                    "topic": "Perform a closed traverse using a compass and chain",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.12",
+                    "sno": "2.12",
+                    "topic": "Plotting of open traverse by compass surveying and locating details",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.13",
+                    "sno": "2.13",
+                    "topic": "Compass survey by method of radiation- calculation of area. 10. LEVELLING",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.14",
+                    "sno": "2.14",
+                    "topic": "Draw the deflected shapes of simply supported, cantilever and fixed beams and Define -Elastic curve, slope and Deflection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.15",
+                    "sno": "2.15",
+                    "topic": "Derive relation between slope, deflection and radius of curvature",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.16",
+                    "sno": "2.16",
+                    "topic": "Derive the equations for maximum slope and deflection by double integration method for: a) Cantilever beams with point loads and uniformly distributed loads b) Simply supported beams with central point load or uniformly distributed load throughout",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.17",
+                    "sno": "2.17",
+                    "topic": "Calculate the maximum slope and deflection in simply supported and cantilever beams using the above formulae",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.18",
+                    "sno": "2.18",
+                    "topic": "Explain Macaulay\u2019s method (for Simply supported beams) to find the slope and deflections",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.19",
+                    "sno": "2.19",
+                    "topic": "Compute the maximum slope and deflection for Simply Supported beam carrying point loads and uniformly distributed loads by Macaulay\u2019s method",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.20",
+                    "sno": "2.20",
+                    "topic": "Explain the moment area method for slope and deflection and Define Mohr\u2019s theorem-I and Mohr\u2019s theorem-II",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.21",
+                    "sno": "2.21",
+                    "topic": "Derive formulae for maximum slope and deflection of standard cases by moment area method",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.22",
+                    "sno": "2.22",
+                    "topic": "Compute the maximum slope and deflections for Cantilever and Simply Supported Beams by Mohr\u2019s theorem -I and Mohr\u2019s theorem -II (moment area method) 3. COLUMNS AND STRUTS",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.23",
+                    "sno": "2.23",
+                    "topic": "Define the terms: Atmospheric pressure, Gauge pressure and Absolute pressure",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.24",
+                    "sno": "2.24",
+                    "topic": "State the relation between the above three pressures",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.25",
+                    "sno": "2.25",
+                    "topic": "Describe the following pressure measuring instruments: Piezometers, U -tube manometers, Differential manometers and mechanical gauges",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.26",
+                    "sno": "2.26",
+                    "topic": "Calculate the pressure of a flowing fluid given the readings on Piezometers, simple manometers, differential U -Tube and inverted U -Tube differential manometers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.27",
+                    "sno": "2.27",
+                    "topic": "List the practical applications of plane surfaces (No numerical problems) 3. FLOW OF FLUIDS",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.28",
+                    "sno": "2.28",
+                    "topic": "Note: The gaps in CO-PO mapping will be met by one or more appropriate activities from the following: (i) Assignments (ii) Tutorials (iii) Seminars (iv) Guest lectures (v) Group discussions (vi) Quiz (vii) Industrial visits (viii) Tech fests (ix) Mini project works (x) Library visits etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.29",
+                    "sno": "2.29",
+                    "topic": "Find order and degree of a given differential equation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.30",
+                    "sno": "2.30",
+                    "topic": "Form a differential equation by eliminating arbitrary constants",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.31",
+                    "sno": "2.31",
+                    "topic": "Solve the first order and first degree differential equations by variables separable method",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.32",
+                    "sno": "2.32",
+                    "topic": "Solve linear differential equation of the form PQdy ydx += , where P and Q are functions of x only or constants. Syllabus for Unit test-I completed",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.33",
+                    "sno": "2.33",
+                    "topic": "Solve Differential equations of the type (aD2 +bD + c) y = 0 where a (\u2260 0), b, and c are real numbers",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.34",
+                    "sno": "2.34",
+                    "topic": "Define complementary function, particular integral and general solution of a non -homogeneous linear differential equation of second order with constant coefficients",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.35",
+                    "sno": "2.35",
+                    "topic": "Describe the method of solving f(D)y= \ud835\udc52\ud835\udc4e\ud835\udc65, where f(D) is a polynomial of second order. Unit-III C.O. 3 Apply various probability and statistical techniques for data analysis. L.O.3.1 Recall the basic probability principles",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.36",
+                    "sno": "2.36",
+                    "topic": "Unit Test-II From L.O 2.6 to L.O 3.14",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.37",
+                    "sno": "2.37",
+                    "topic": "Deep dive into State the purpose and principles of compass surveying",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.38",
+                    "sno": "2.38",
+                    "topic": "Deep dive into Define -Whole Circle Bearing, Quadrantal Bearing, True Meridian, Magnetic Meridian, True Bearing, Magnetic Bearing, Dip, Declination and Local Attraction",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.39",
+                    "sno": "2.39",
+                    "topic": "Deep dive into Convert Whole Circle Bearing in to Quadrantal Bearing and vice versa",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.40",
+                    "sno": "2.40",
+                    "topic": "Deep dive into Explain Local Attraction and its effects",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.41",
+                    "sno": "2.41",
+                    "topic": "Deep dive into Compute the included angles and true bearings of lines in a compass traverse",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.42",
+                    "sno": "2.42",
+                    "topic": "Deep dive into Explain errors in compass surveying. PRACTICE",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.43",
+                    "sno": "2.43",
+                    "topic": "Deep dive into Identify the parts of a Prismatic Compass",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.44",
+                    "sno": "2.44",
+                    "topic": "Deep dive into Set up the compass at a station and carry out temporary adjustments",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.45",
+                    "sno": "2.45",
+                    "topic": "Deep dive into Take bearings of two points from the instrument station and calculate the included angle",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.46",
+                    "sno": "2.46",
+                    "topic": "Deep dive into Perform an open traverse using a compass and chain",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.47",
+                    "sno": "2.47",
+                    "topic": "Deep dive into Perform a closed traverse using a compass and chain",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.48",
+                    "sno": "2.48",
+                    "topic": "Deep dive into Plotting of open traverse by compass surveying and locating details",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce111l-2.49",
+                    "sno": "2.49",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce111l-2.50",
+                    "sno": "2.50",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Probability and Statistics",
+            "totalPeriods": 50,
+            "topics": [
+                {
                     "id": "26ce111l-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Define levelling and list the types of levelling instruments, Define the terms - Datum or Datum plane, Reduced level, Level surface, Horizontal sur...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "List the component parts of a Dumpy level and their functions, explain the steps involved in temporary adjustments of a dumpy level, Define Back sight, Fore sight, Intermediate sight, and Change Point",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ce111l-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "List the component parts of a Dumpy level and their functions, explain the steps involved in temporary adjustments of a dumpy level, Define Back si...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "List different types of levelling staves, tabulate the levelling field data, state methods of calculating reducing levels. Compare height of instrument and Rise and fall methods. Compute reduced levels by Height of instrument and Rise and fall methods and apply check",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ce111l-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "List different types of levelling staves, tabulate the levelling field data, state methods of calculating reducing levels. Compare height of instru...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.4",
+                    "sno": "3.4",
                     "topic": "List the different types of Levelling and describe in detail the Profile levelling",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.4",
-                    "sno": "3.4"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "State the Errors in levelling and the precautions to be taken to prevent errors in levelling. Explain the effect of Errors due to Curvature, Refraction and Combined error (No Problems)",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ce111l-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "State the Errors in levelling and the precautions to be taken to prevent errors in levelling. Explain the effect of Errors due to Curvature, Refrac...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.6",
+                    "sno": "3.6",
                     "topic": "List the fundamental lines of a dumpy level and state the relationships between them",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.6",
-                    "sno": "3.6"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Define Contour, Contour interval and Horizontal equivalent. List the characteristics and uses of contours, explain different methods of contouring and interpolation of contours",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ce111l-3.7",
-                    "sno": "3.7"
+                    "sno": "3.7",
+                    "topic": "Define Contour, Contour interval and Horizontal equivalent. List the characteristics and uses of contours, explain different methods of contouring ...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.8",
+                    "sno": "3.8",
                     "topic": "Identify the component parts of a Dumpy level or Auto level and study different types of levelling staves",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.8",
-                    "sno": "3.8"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Perform the temporary adjustments of a dumpy level or Auto level for taking observations and practice taking staff readings and recording them in the level field book",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ce111l-3.9",
-                    "sno": "3.9"
+                    "sno": "3.9",
+                    "topic": "Perform the temporary adjustments of a dumpy level or Auto level for taking observations and practice taking staff readings and recording them in t...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.10",
+                    "sno": "3.10",
                     "topic": "Take staff readings for differential levelling and compute the difference in elevation between two stations (take invert levels also)",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.10",
-                    "sno": "3.10"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.11",
+                    "sno": "3.11",
                     "topic": "Conduct the profile levelling along a route and compute the RLs at various stations",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.11",
-                    "sno": "3.11"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.12",
+                    "sno": "3.12",
                     "topic": "Conduct the profile levelling by taking cross sections across a route and compute the RLs at various stations",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.12",
-                    "sno": "3.12"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.13",
+                    "sno": "3.13",
                     "topic": "Conduct profile levelling along a route by taking readings along both longitudinal sections and cross sections and compute the reduced levels",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.13",
-                    "sno": "3.13"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Conduct block levelling for the given area",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ce111l-3.14",
-                    "sno": "3.14"
+                    "sno": "3.14",
+                    "topic": "Conduct block levelling for the given area",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Locate the contour points by Radial method in the field",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ce111l-3.15",
-                    "sno": "3.15"
+                    "sno": "3.15",
+                    "topic": "Locate the contour points by Radial method in the field",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Plotting of longitudinal sections and cross sections",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ce111l-3.16",
-                    "sno": "3.16"
+                    "sno": "3.16",
+                    "topic": "Plotting of longitudinal sections and cross sections",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Plotting of contours by Block levelling",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ce111l-3.17",
-                    "sno": "3.17"
+                    "sno": "3.17",
+                    "topic": "Plotting of contours by Block levelling",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.18",
+                    "sno": "3.18",
                     "topic": "Define: i) Compression member ii) Axial Loading iii) eccentric loading",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.1",
-                    "sno": "3.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.19",
+                    "sno": "3.19",
                     "topic": "Define: i) Buckling/Critical/Crippling Load ii) Actual length iii) Least radius of gyration iv) Safe load v) Factor of safety",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.2",
-                    "sno": "3.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.20",
+                    "sno": "3.20",
                     "topic": "List types of compression members",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.3",
-                    "sno": "3.3"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.21",
+                    "sno": "3.21",
                     "topic": "Calculate least radius of gyration for solid circular, square and rectangular sections",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.4",
-                    "sno": "3.4"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.22",
+                    "sno": "3.22",
                     "topic": "List different end conditions used for a column",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.5",
-                    "sno": "3.5"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.23",
+                    "sno": "3.23",
                     "topic": "Define i) Effective/equivalent length ii) Slenderness ratio",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.6",
-                    "sno": "3.6"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "List the effective lengths of columns for different end conditions, Calculate the slenderness ratio for a given column/strut and Classify columns based on slenderness ratio or length and lateral dimensions, Distinguish between Long and short columns",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.7",
-                    "sno": "3.7"
+                    "id": "26ce111l-3.24",
+                    "sno": "3.24",
+                    "topic": "List the effective lengths of columns for different end conditions, Calculate the slenderness ratio for a given column/strut and Classify columns b...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "State Euler\u2019s formula for crippling load of a column/strut (derivation not required) Calculate crippling and safe loads on a column/strut with simple section using Euler\u2019s formula",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.8",
-                    "sno": "3.8"
+                    "id": "26ce111l-3.25",
+                    "sno": "3.25",
+                    "topic": "Explain the Rankine\u2019s formula for short and long columns a nd calculate crippling or safe loads on a column/strut with simple sections using Rankin...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain the Rankine\u2019s formula for short and long columns a nd calculate crippling or safe loads on a column/strut with simple sections using Rankine\u2019s formula. 4. DAMS AND RETAINING WALLS",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.9",
-                    "sno": "3.9"
-                },
-                {
+                    "id": "26ce111l-3.26",
+                    "sno": "3.26",
                     "topic": "State the different types of flow of liquids",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.1",
-                    "sno": "3.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.27",
+                    "sno": "3.27",
                     "topic": "Define: i) Steady flow and Unsteady flow ii) Uniform flow and Non-uniform flow, iii) Laminar flow and Turbulent flow",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.2",
-                    "sno": "3.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.28",
+                    "sno": "3.28",
                     "topic": "Distinguish between different types of flow of liquids",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.3",
-                    "sno": "3.3"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.29",
+                    "sno": "3.29",
                     "topic": "Define discharge, State units of discharge",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.4",
-                    "sno": "3.4"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.30",
+                    "sno": "3.30",
                     "topic": "State one dimensional continuity equation",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.5",
-                    "sno": "3.5"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.31",
+                    "sno": "3.31",
                     "topic": "Calculate the discharge/velocity at a section of flowing liquid in pipe for the given conditions",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.6",
-                    "sno": "3.6"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.32",
+                    "sno": "3.32",
                     "topic": "Explain the following energies of liquid in motion 1. Datum head, 2. Pressure head and 3. Velocity head",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.7",
-                    "sno": "3.7"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.33",
+                    "sno": "3.33",
                     "topic": "List the limitations of Bernoulli\u2019s theorem",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.9",
-                    "sno": "3.9"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.34",
+                    "sno": "3.34",
                     "topic": "Compute the pressure/velocity at a section of flowing liquid in pipe for the given conditions using Bernoulli\u2019s equation",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.10",
-                    "sno": "3.10"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.35",
+                    "sno": "3.35",
                     "topic": "List three practical applications of Bernoulli\u2019s theorem",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.11",
-                    "sno": "3.11"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.36",
+                    "sno": "3.36",
                     "topic": "Describe the working principle of i) Venturi meter, ii) Orifice meter and iii) Pitot tube",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.12",
-                    "sno": "3.12"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "State the formulae to calculate the actual discharge of flowing liquid through Venturi meter and Orifice meter and calculate the actual discharge of flowing liquid through Venturi meter and Orifice meter. 4. FLOW THROUGH ORIFICE AND MOUTH PIECES",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.13",
-                    "sno": "3.13"
+                    "id": "26ce111l-3.37",
+                    "sno": "3.37",
+                    "topic": "State the formulae to calculate the actual discharge of flowing liquid through Venturi meter and Orifice meter and calculate the actual discharge o...",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.38",
+                    "sno": "3.38",
                     "topic": "State addition theorem of probability for two mutually exclusive and exhaustive events",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.2",
-                    "sno": "3.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.39",
+                    "sno": "3.39",
                     "topic": "Solve simple problems on addition theorem",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.3",
-                    "sno": "3.3"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.40",
+                    "sno": "3.40",
                     "topic": "Explain conditional event and conditional probability",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.4",
-                    "sno": "3.4"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.41",
+                    "sno": "3.41",
                     "topic": "Solve simple problems on conditional probability",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.5",
-                    "sno": "3.5"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.42",
+                    "sno": "3.42",
                     "topic": "Explain dependent, independent events and state multiplication theorem",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.6",
-                    "sno": "3.6"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.43",
+                    "sno": "3.43",
                     "topic": "Solve simple problems on multiplication theorem",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.7",
-                    "sno": "3.7"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.44",
+                    "sno": "3.44",
                     "topic": "Recall the measures of central tendency",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.8",
-                    "sno": "3.8"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.45",
+                    "sno": "3.45",
                     "topic": "Explain the significance of measures of dispersion to determine the degree of heterogeneity of the data",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.9",
-                    "sno": "3.9"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.46",
+                    "sno": "3.46",
                     "topic": "Find the measures of dispersion, Range, Mean Deviation and Standard Deviation for ungrouped data",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.10",
-                    "sno": "3.10"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce111l-3.47",
+                    "sno": "3.47",
                     "topic": "Explain the merits and demerits of these measures of dispersion",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.11",
-                    "sno": "3.11"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain bivariate data",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.12",
-                    "sno": "3.12"
+                    "id": "26ce111l-3.48",
+                    "sno": "3.48",
+                    "topic": "Explain bivariate data; Explain the concept of covariance and correlation between two variables",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain the concept of covariance and correlation between two variables",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ce111l-3.13",
-                    "sno": "3.13"
+                    "id": "26ce111l-3.49",
+                    "sno": "3.49",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce111l-3.50",
+                    "sno": "3.50",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

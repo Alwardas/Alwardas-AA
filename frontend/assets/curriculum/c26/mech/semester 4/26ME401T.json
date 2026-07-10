@@ -2,555 +2,646 @@
     "regulation": "C26",
     "units": [
         {
-            "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 18,
-            "topics": [
-                {
-                    "topic": "Define fluid",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-1.1",
-                    "sno": "1.1"
-                },
-                {
-                    "topic": "Classify fluids",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.2",
-                    "sno": "1.2"
-                },
-                {
-                    "topic": "Define fluid mechanics",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.3",
-                    "sno": "1.3"
-                },
-                {
-                    "topic": "Classify fluid mechanics",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.4",
-                    "sno": "1.4"
-                },
-                {
-                    "topic": "Define statics, kinematics and dynamics",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.5",
-                    "sno": "1.5"
-                },
-                {
-                    "topic": "Define (i) Density (ii)Specific volume (iii)Specific weight (iv) Specific gravity (v)Surface tension (vi)Capillarity (vii)Compressibility (viii) Bulk modulus and solve simple problems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.6",
-                    "sno": "1.6"
-                },
-                {
-                    "topic": "Define viscosity",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.7",
-                    "sno": "1.7"
-                },
-                {
-                    "topic": "State Newton\u2019s law of Viscosity",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.8",
-                    "sno": "1.8"
-                },
-                {
-                    "topic": "Define dynamic viscosity, kinematics viscosity and state their units",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.9",
-                    "sno": "1.9"
-                },
-                {
-                    "topic": "Variation of viscosity with temperature",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.10",
-                    "sno": "1.10"
-                },
-                {
-                    "topic": "Define fluid pressure and its units",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.11",
-                    "sno": "1.11"
-                },
-                {
-                    "topic": "Finding the Fluid pressure at a point",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.12",
-                    "sno": "1.12"
-                },
-                {
-                    "topic": "State Pascal\u2019s law",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.13",
-                    "sno": "1.13"
-                },
-                {
-                    "topic": "Explain the difference between absolute pressure, atmospheric pressure, gauge pressure And vacuum pressure",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.14",
-                    "sno": "1.14"
-                },
-                {
-                    "topic": "Classify pressure measuring instruments with examples",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.15",
-                    "sno": "1.15"
-                },
-                {
-                    "topic": "Explain Piezometer, simple and differential U-Tube manometers with sketches and Solve Simple problems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.16",
-                    "sno": "1.16"
-                },
-                {
-                    "topic": "Explain the construction and working of Bourdontube pressure gauge",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-1.17",
-                    "sno": "1.17"
-                }
-            ]
-        },
-        {
-            "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 18,
-            "topics": [
-                {
-                    "topic": "Define fluid kinematics and dynamics",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "State the types of fluid flow",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Define (i) steady flow and unsteady flow (ii)uniform flow and non-uniform flow (iii)one, two and three dimensional flow (iv) rotational and irrotational flow (v) laminar and turbulent flow (vi) compressible and incompressible flows",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-2.4",
-                    "sno": "2.4"
-                },
-                {
-                    "topic": "Define rate of flow or discharge",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-2.5",
-                    "sno": "2.5"
-                },
-                {
-                    "topic": "State law of continuity and explain continuity equation and Solve simple problems on discharge and law of continuity",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-2.6",
-                    "sno": "2.6"
-                },
-                {
-                    "topic": "List and explain various types of heads of liquid in motion",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-2.7",
-                    "sno": "2.7"
-                },
-                {
-                    "topic": "State the assumptions and limitations of Bernoulli\u2019s theorem",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-2.8",
-                    "sno": "2.8"
-                },
-                {
-                    "topic": "State Bernoulli\u2019s theorem",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-2.9",
-                    "sno": "2.9"
-                },
-                {
-                    "topic": "Write Bernoulli\u2019s equation (without proof) and solve simple problems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-2.10",
-                    "sno": "2.10"
-                },
-                {
-                    "topic": "List the practical applications of Bernoulli\u2019s theorem",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-2.11",
-                    "sno": "2.11"
-                },
-                {
-                    "topic": "Explain working principle of Pitot tube meter",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-2.12",
-                    "sno": "2.12"
-                },
-                {
-                    "topic": "Explain working principle of venturi meter",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-2.12",
-                    "sno": "2.12"
-                },
-                {
-                    "topic": "Explain working principle of Orifice meter",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-2.13",
-                    "sno": "2.13"
-                }
-            ]
-        },
-        {
-            "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 18,
-            "topics": [
-                {
-                    "topic": "Define and classify the loss of energy in pipes",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Define loss of head in pipes due to friction (major energy losses)",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "State the Darcy- Weisbach\u2019s formula (without proof) and solve simple Problems",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "State Chezy\u2019s equation for frictional losses solve simple Problems",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "List out the minor energy losses in pipe along with formulae",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Explain the function of siphon and give reason for limiting the height of the pipes",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-3.7",
-                    "sno": "3.7"
-                },
-                {
-                    "topic": "Explain Pipes in series, pipes in parallel and concept of equivalent pipe with applications and solve simple Problems",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-3.8",
-                    "sno": "3.8"
-                },
-                {
-                    "topic": "State the condition for maximum transmission of power and maximum efficiency(without proof)",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-3.9",
-                    "sno": "3.9"
-                },
-                {
-                    "topic": "Solve simple problems on Power Transmission",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-3.10",
-                    "sno": "3.10"
-                },
-                {
-                    "topic": "Unit Test \u2013 II From 4.1 to 5.27",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-3.10",
-                    "sno": "3.10"
-                }
-            ]
-        },
-        {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
+            "title": "DESCRIBE THE CONCEPT OF IMPACT OF JETS ON PLATE IN VARIOUS CONDITIONS",
+            "totalPeriods": 45,
             "topics": [
                 {
-                    "topic": "DESCRIBE THE CONCEPT OF IMPACT OF JETS ON PLATE IN VARIOUS CONDITIONS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me401t-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Derive an expression for the force of jet exerted on a fixed flat plate held normal to the jet",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me401t-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "DESCRIBE THE CONCEPT OF IMPACT OF JETS ON PLATE IN VARIOUS CONDITIONS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive an expression for the force of jet exerted on a fixed flat plate held inclined to the jet",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me401t-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Derive an expression for the force of jet exerted on a fixed flat plate held normal to the jet",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive an expression for the force of jet exerted on a fixed curved plate strikes at center",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me401t-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Derive an expression for the force of jet exerted on a fixed flat plate held inclined to the jet",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive an expression for the force of jet exerted on a moving flat plate held normal to the jet",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me401t-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "Derive an expression for the force of jet exerted on a fixed curved plate strikes at center",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive an expression for the force of jet exerted on a moving flat plate held inclined to the jet",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me401t-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Derive an expression for the force of jet exerted on a moving flat plate held normal to the jet",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive an expression for the force of jet exerted on series of flat plates fixed on the rim of wheel",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me401t-4.6",
-                    "sno": "4.6"
+                    "sno": "4.6",
+                    "topic": "Derive an expression for the force of jet exerted on a moving flat plate held inclined to the jet",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Derive an expression for the force of jet exerted on series of radial curved vanes",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me401t-4.7",
-                    "sno": "4.7"
+                    "sno": "4.7",
+                    "topic": "Derive an expression for the force of jet exerted on series of flat plates fixed on the rim of wheel",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain power and efficiency of jet for all the above with formulae and solve the problems",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me401t-4.8",
-                    "sno": "4.8"
+                    "sno": "4.8",
+                    "topic": "Derive an expression for the force of jet exerted on series of radial curved vanes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.9",
+                    "sno": "4.9",
+                    "topic": "Explain power and efficiency of jet for all the above with formulae and solve the problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.10",
+                    "sno": "4.10",
+                    "topic": "Deep dive into DESCRIBE THE CONCEPT OF IMPACT OF JETS ON PLATE IN VARIOUS CONDITIONS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.11",
+                    "sno": "4.11",
+                    "topic": "Deep dive into Derive an expression for the force of jet exerted on a fixed flat plate held normal to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.12",
+                    "sno": "4.12",
+                    "topic": "Deep dive into Derive an expression for the force of jet exerted on a fixed flat plate held inclined to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.13",
+                    "sno": "4.13",
+                    "topic": "Deep dive into Derive an expression for the force of jet exerted on a fixed curved plate strikes at center",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.14",
+                    "sno": "4.14",
+                    "topic": "Deep dive into Derive an expression for the force of jet exerted on a moving flat plate held normal to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.15",
+                    "sno": "4.15",
+                    "topic": "Deep dive into Derive an expression for the force of jet exerted on a moving flat plate held inclined to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.16",
+                    "sno": "4.16",
+                    "topic": "Deep dive into Derive an expression for the force of jet exerted on series of flat plates fixed on the rim of wheel",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.17",
+                    "sno": "4.17",
+                    "topic": "Deep dive into Derive an expression for the force of jet exerted on series of radial curved vanes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.18",
+                    "sno": "4.18",
+                    "topic": "Deep dive into Explain power and efficiency of jet for all the above with formulae and solve the problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.19",
+                    "sno": "4.19",
+                    "topic": "Problem solving & practice on DESCRIBE THE CONCEPT OF IMPACT OF JETS ON PLATE IN VARIOUS CONDITIONS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.20",
+                    "sno": "4.20",
+                    "topic": "Problem solving & practice on Derive an expression for the force of jet exerted on a fixed flat plate held normal to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.21",
+                    "sno": "4.21",
+                    "topic": "Problem solving & practice on Derive an expression for the force of jet exerted on a fixed flat plate held inclined to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.22",
+                    "sno": "4.22",
+                    "topic": "Problem solving & practice on Derive an expression for the force of jet exerted on a fixed curved plate strikes at center",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.23",
+                    "sno": "4.23",
+                    "topic": "Problem solving & practice on Derive an expression for the force of jet exerted on a moving flat plate held normal to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.24",
+                    "sno": "4.24",
+                    "topic": "Problem solving & practice on Derive an expression for the force of jet exerted on a moving flat plate held inclined to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.25",
+                    "sno": "4.25",
+                    "topic": "Problem solving & practice on Derive an expression for the force of jet exerted on series of flat plates fixed on the rim of wheel",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.26",
+                    "sno": "4.26",
+                    "topic": "Problem solving & practice on Derive an expression for the force of jet exerted on series of radial curved vanes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.27",
+                    "sno": "4.27",
+                    "topic": "Problem solving & practice on Explain power and efficiency of jet for all the above with formulae and solve the problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.28",
+                    "sno": "4.28",
+                    "topic": "Practical applications of DESCRIBE THE CONCEPT OF IMPACT OF JETS ON PLATE IN VARIOUS CONDITIONS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.29",
+                    "sno": "4.29",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on a fixed flat plate held normal to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.30",
+                    "sno": "4.30",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on a fixed flat plate held inclined to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.31",
+                    "sno": "4.31",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on a fixed curved plate strikes at center",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.32",
+                    "sno": "4.32",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on a moving flat plate held normal to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.33",
+                    "sno": "4.33",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on a moving flat plate held inclined to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.34",
+                    "sno": "4.34",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on series of flat plates fixed on the rim of wheel",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.35",
+                    "sno": "4.35",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on series of radial curved vanes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.36",
+                    "sno": "4.36",
+                    "topic": "Practical applications of Explain power and efficiency of jet for all the above with formulae and solve the problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.37",
+                    "sno": "4.37",
+                    "topic": "Practical applications of DESCRIBE THE CONCEPT OF IMPACT OF JETS ON PLATE IN VARIOUS CONDITIONS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.38",
+                    "sno": "4.38",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on a fixed flat plate held normal to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.39",
+                    "sno": "4.39",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on a fixed flat plate held inclined to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.40",
+                    "sno": "4.40",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on a fixed curved plate strikes at center",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.41",
+                    "sno": "4.41",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on a moving flat plate held normal to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.42",
+                    "sno": "4.42",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on a moving flat plate held inclined to the jet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.43",
+                    "sno": "4.43",
+                    "topic": "Practical applications of Derive an expression for the force of jet exerted on series of flat plates fixed on the rim of wheel",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-4.44",
+                    "sno": "4.44",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me401t-4.45",
+                    "sno": "4.45",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
+            "title": "UNDERSTAND THE WORKING OF HYDRAULIC MACHINES",
+            "totalPeriods": 45,
             "topics": [
                 {
+                    "id": "26me401t-5.1",
+                    "sno": "5.1",
                     "topic": "UNDERSTAND THE WORKING OF HYDRAULIC MACHINES",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.0",
-                    "sno": "5.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.2",
+                    "sno": "5.2",
                     "topic": "State the importance of water turbines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.1",
-                    "sno": "5.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.3",
+                    "sno": "5.3",
                     "topic": "Explain the schematic layout of Hydraulic Power plant",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.2",
-                    "sno": "5.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.4",
+                    "sno": "5.4",
                     "topic": "Definition and classifications of turbines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.3",
-                    "sno": "5.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.5",
+                    "sno": "5.5",
                     "topic": "Definitions of heads and efficiencies of turbine",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.4",
-                    "sno": "5.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.6",
+                    "sno": "5.6",
                     "topic": "Explain the construction details and working of pelton wheel",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.5",
-                    "sno": "5.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.7",
+                    "sno": "5.7",
                     "topic": "Write down the formulae for work done and efficiency of pelton wheel",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.6",
-                    "sno": "5.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.8",
+                    "sno": "5.8",
                     "topic": "Explain the construction details and working of Francis turbine",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.7",
-                    "sno": "5.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.9",
+                    "sno": "5.9",
                     "topic": "Explain the construction details and working of Kaplan turbine",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.9",
-                    "sno": "5.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.10",
+                    "sno": "5.10",
                     "topic": "Solve the problems on water turbines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.11",
-                    "sno": "5.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.11",
+                    "sno": "5.11",
                     "topic": "Define the hydraulic pump and explain its function",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.12",
-                    "sno": "5.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.12",
+                    "sno": "5.12",
                     "topic": "Classify the hydraulic pumps",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.13",
-                    "sno": "5.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.13",
+                    "sno": "5.13",
                     "topic": "Explain the principle of operation of reciprocating pumps",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.14",
-                    "sno": "5.14"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.14",
+                    "sno": "5.14",
                     "topic": "Describe the constructional details of single acting pump and double acting pump",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.15",
-                    "sno": "5.15"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.15",
+                    "sno": "5.15",
                     "topic": "Explain the slip in the reciprocating pump",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.16",
-                    "sno": "5.16"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.16",
+                    "sno": "5.16",
                     "topic": "Explain the principle of air vessel with respect to reciprocating pump",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.17",
-                    "sno": "5.17"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.17",
+                    "sno": "5.17",
                     "topic": "Explain the constructional details of centrifugal pump",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.18",
-                    "sno": "5.18"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.18",
+                    "sno": "5.18",
                     "topic": "Compare the centrifugal pump with a reciprocating pump",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.19",
-                    "sno": "5.19"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.19",
+                    "sno": "5.19",
                     "topic": "Explain the working of multi-stage pumps with a legible sketch (Series and parallel)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.20",
-                    "sno": "5.20"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.20",
+                    "sno": "5.20",
                     "topic": "Explain the importance of priming in centrifugal pump",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.21",
-                    "sno": "5.21"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.21",
+                    "sno": "5.21",
                     "topic": "Explain the phenomenon of cavitation and state its effect",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.22",
-                    "sno": "5.22"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.22",
+                    "sno": "5.22",
                     "topic": "Write the expressions for static and manometric head of centrifugal pump",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.23",
-                    "sno": "5.23"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.23",
+                    "sno": "5.23",
                     "topic": "Write the formula for work done by the impeller of centrifugal pump",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.24",
-                    "sno": "5.24"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.24",
+                    "sno": "5.24",
                     "topic": "Explain the various losses and efficiencies of a centrifugal pump",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me401t-5.25",
-                    "sno": "5.25"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me401t-5.25",
+                    "sno": "5.25",
                     "topic": "Solve simple problems on centrifugal pumps",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26me401t-5.26",
-                    "sno": "5.26"
+                    "sno": "5.26",
+                    "topic": "Deep dive into UNDERSTAND THE WORKING OF HYDRAULIC MACHINES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.27",
+                    "sno": "5.27",
+                    "topic": "Deep dive into State the importance of water turbines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.28",
+                    "sno": "5.28",
+                    "topic": "Deep dive into Explain the schematic layout of Hydraulic Power plant",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.29",
+                    "sno": "5.29",
+                    "topic": "Deep dive into Definition and classifications of turbines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.30",
+                    "sno": "5.30",
+                    "topic": "Deep dive into Definitions of heads and efficiencies of turbine",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.31",
+                    "sno": "5.31",
+                    "topic": "Deep dive into Explain the construction details and working of pelton wheel",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.32",
+                    "sno": "5.32",
+                    "topic": "Deep dive into Write down the formulae for work done and efficiency of pelton wheel",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.33",
+                    "sno": "5.33",
+                    "topic": "Deep dive into Explain the construction details and working of Francis turbine",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.34",
+                    "sno": "5.34",
+                    "topic": "Deep dive into Explain the construction details and working of Kaplan turbine",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.35",
+                    "sno": "5.35",
+                    "topic": "Deep dive into Solve the problems on water turbines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.36",
+                    "sno": "5.36",
+                    "topic": "Deep dive into Define the hydraulic pump and explain its function",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.37",
+                    "sno": "5.37",
+                    "topic": "Deep dive into Classify the hydraulic pumps",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.38",
+                    "sno": "5.38",
+                    "topic": "Deep dive into Explain the principle of operation of reciprocating pumps",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.39",
+                    "sno": "5.39",
+                    "topic": "Deep dive into Describe the constructional details of single acting pump and double acting pump",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.40",
+                    "sno": "5.40",
+                    "topic": "Deep dive into Explain the slip in the reciprocating pump",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.41",
+                    "sno": "5.41",
+                    "topic": "Deep dive into Explain the principle of air vessel with respect to reciprocating pump",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.42",
+                    "sno": "5.42",
+                    "topic": "Deep dive into Explain the constructional details of centrifugal pump",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.43",
+                    "sno": "5.43",
+                    "topic": "Deep dive into Compare the centrifugal pump with a reciprocating pump",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me401t-5.44",
+                    "sno": "5.44",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me401t-5.45",
+                    "sno": "5.45",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

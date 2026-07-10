@@ -3,1394 +3,666 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "Basics of Software Engineering Designs & Life Cycle Models",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Basics of Software Engineering Designs & Life Cycle Models",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "Know the Evolution and Impact of the Software Engineering",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Basics of Software Engineering Designs & Life Cycle Models; Know the Evolution and Impact of the Software Engineering",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know the evolution of software engineering as an Art to an Engineering Discipline",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.1",
-                    "sno": "1.1"
-                },
-                {
-                    "topic": "Know how software engineering is a solution to the Software Crisis?",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Know the evolution of software engineering as an Art to an Engineering Discipline; Know how software engineering is a solution to the Software Crisis?",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know the difference between Programs and Software Products",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.2",
-                    "sno": "1.2"
-                },
-                {
-                    "topic": "Understand the evolution of Software Engineering Design",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Know the difference between Programs and Software Products; Understand the evolution of Software Engineering Design",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the Software Life Cycle Models",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Explain the Software Life Cycle Models; Explain Software Engineering ethics and the responsibilities of software professionals; List the Job Respon...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Software Engineering ethics and the responsibilities of software professionals",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Identify skills necessary for Software Management; List the characteristics of good software design",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the Job Responsibilities of a Software Project Manager",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.1",
-                    "sno": "1.1"
-                },
-                {
-                    "topic": "Identify skills necessary for Software Management",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.2",
-                    "sno": "1.2"
-                },
-                {
-                    "topic": "List the characteristics of good software design",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.1",
-                    "sno": "1.1"
-                },
-                {
-                    "topic": "What is Cohesion and Coupling",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.2",
-                    "sno": "1.2"
-                },
-                {
-                    "topic": "Define Software Testing and its purpose",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.1",
-                    "sno": "1.1"
-                },
-                {
-                    "topic": "Differentiate Verification and Validation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.2",
-                    "sno": "1.2"
-                },
-                {
-                    "topic": "List and Describe common Test Case Design techniques",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.3",
-                    "sno": "1.3"
-                },
-                {
-                    "topic": "Compare Testing in the Large and Testing in the Small",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.4",
-                    "sno": "1.4"
-                },
-                {
-                    "topic": "Explain Unit Testing with suitable examples",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.5",
-                    "sno": "1.5"
-                },
-                {
-                    "topic": "Explain Black box Testing techniques",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "What is Cohesion and Coupling; Define Software Testing and its purpose",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain White Box Testing techniques",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-1.7",
-                    "sno": "1.7"
+                    "sno": "1.7",
+                    "topic": "Differentiate Verification and Validation; List and Describe common Test Case Design techniques",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List various Software Testing tools",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-1.8",
-                    "sno": "1.8"
+                    "sno": "1.8",
+                    "topic": "Compare Testing in the Large and Testing in the Small; Explain Unit Testing with suitable examples; Explain Black box Testing techniques",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the Role of Testing in Agile and DevOps environment",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-1.9",
-                    "sno": "1.9"
+                    "sno": "1.9",
+                    "topic": "Explain White Box Testing techniques; List various Software Testing tools",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Android Basics, Android Anatomy",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "List the mobile phone generations",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.1",
-                    "sno": "1.1"
-                },
-                {
-                    "topic": "Define Smart phone",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.2",
-                    "sno": "1.2"
-                },
-                {
-                    "topic": "Explain the Android Architecture",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.3",
-                    "sno": "1.3"
-                },
-                {
-                    "topic": "Describe Android versions",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.4",
-                    "sno": "1.4"
-                },
-                {
-                    "topic": "List Features of Android",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.5",
-                    "sno": "1.5"
-                },
-                {
-                    "topic": "Explain installation of Android SDK Tools",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.6",
-                    "sno": "1.6"
-                },
-                {
-                    "topic": "Explain creation of Android Virtual Devices(AVD)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.7",
-                    "sno": "1.7"
-                },
-                {
-                    "topic": "Explain Anatomy of Android Application",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.8",
-                    "sno": "1.8"
-                },
-                {
-                    "topic": "Explain Creation of \u201cHello World\u201d Android Application",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.9",
-                    "sno": "1.9"
-                },
-                {
-                    "topic": "Explain procedure for Deploying Android app on USB connected Android device",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-1.10",
-                    "sno": "1.10"
+                    "sno": "1.10",
+                    "topic": "Describe the Role of Testing in Agile and DevOps environment; Android Basics, Android Anatomy",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Activities",
+                    "id": "26cm502t-1.11",
+                    "sno": "1.11",
+                    "topic": "List the mobile phone generations; Define Smart phone",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Services",
+                    "id": "26cm502t-1.12",
+                    "sno": "1.12",
+                    "topic": "Explain the Android Architecture; Describe Android versions; List Features of Android",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Content providers",
+                    "id": "26cm502t-1.13",
+                    "sno": "1.13",
+                    "topic": "Explain installation of Android SDK Tools; Explain creation of Android Virtual Devices(AVD)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Broadcast Receivers",
+                    "id": "26cm502t-1.14",
+                    "sno": "1.14",
+                    "topic": "Explain Anatomy of Android Application; Explain Creation of \u201cHello World\u201d Android Application",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-1.15",
+                    "sno": "1.15",
+                    "topic": "Explain procedure for Deploying Android app on USB connected Android device; Activities",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-1.16",
+                    "sno": "1.16",
+                    "topic": "Services; Content providers; Broadcast Receivers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-1.17",
+                    "sno": "1.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm502t-1.18",
+                    "sno": "1.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "Software Project Management",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Software Project Management",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Know about Software Project Manager",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Software Project Management; Know about Software Project Manager",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Software Project Planning",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Explain Software Project Planning; Explain the components of SPMP document",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the components of SPMP document",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Know the Metrics for Project Size Estimation; Know about Project Estimation Techniques",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know the Metrics for Project Size Estimation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "List Staffing Level Estimates; Understand the Basics of Agile Project Management using SCRUM",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know about Project Estimation Techniques",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "Know about Scheduling; Explain the process of Staffing in a Software Project Management",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List Staffing Level Estimates",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.6",
-                    "sno": "2.6"
+                    "sno": "2.6",
+                    "topic": "List the Attributes of a Successful Software Engineer; Explain the Risk Mnagement; Describe the Purpose and importance of SRS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Understand the Basics of Agile Project Management using SCRUM",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.7",
-                    "sno": "2.7"
+                    "sno": "2.7",
+                    "topic": "Summarize IEEE 830 standard; Define Cohesion and Coupling",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know about Scheduling",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.8",
-                    "sno": "2.8"
+                    "sno": "2.8",
+                    "topic": "Classify and compare types of Cohesion; Classify and compare types of Coupling",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the process of Staffing in a Software Project Management",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.9",
-                    "sno": "2.9"
+                    "sno": "2.9",
+                    "topic": "Explain Function-Oriented Design; Explain Object-Oriented Design",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the Attributes of a Successful Software Engineer",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.10",
-                    "sno": "2.10"
+                    "sno": "2.10",
+                    "topic": "Compare Function-Oriented and Object-Oriented Design; Describe Service-Oriented Design",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the Risk Mnagement",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-2.11",
-                    "sno": "2.11"
+                    "sno": "2.11",
+                    "topic": "Describe User Guidance and Online Help; Differentiate Mode Based vs Modeless Interface; Compare Graphical vs Text-Based User Interface",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the Purpose and importance of SRS",
+                    "id": "26cm502t-2.12",
+                    "sno": "2.12",
+                    "topic": "Explain Debugging Approaches; List standard Debugging Guidelines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.1",
-                    "sno": "2.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Summarize IEEE 830 standard",
+                    "id": "26cm502t-2.13",
+                    "sno": "2.13",
+                    "topic": "Components, Activity Life Cycle, Intents; Explain Android application components",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Cohesion and Coupling",
+                    "id": "26cm502t-2.14",
+                    "sno": "2.14",
+                    "topic": "Describe Activity life cycle; Define intents",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.1",
-                    "sno": "2.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classify and compare types of Cohesion",
+                    "id": "26cm502t-2.15",
+                    "sno": "2.15",
+                    "topic": "Explain Fragments; Explain the creation of Android application that switches between Activities",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classify and compare types of Coupling",
+                    "id": "26cm502t-2.16",
+                    "sno": "2.16",
+                    "topic": "List different storage options; Explain Internal file Storage; Explain External file Storage",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.3",
-                    "sno": "2.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Function-Oriented Design",
+                    "id": "26cm502t-2.17",
+                    "sno": "2.17",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.1",
-                    "sno": "2.1"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Explain Object-Oriented Design",
+                    "id": "26cm502t-2.18",
+                    "sno": "2.18",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Compare Function-Oriented and Object-Oriented Design",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "Describe Service-Oriented Design",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.4",
-                    "sno": "2.4"
-                },
-                {
-                    "topic": "Describe User Guidance and Online Help",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "Differentiate Mode Based vs Modeless Interface",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "Compare Graphical vs Text-Based User Interface",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Explain Debugging Approaches",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "List standard Debugging Guidelines",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Components, Activity Life Cycle, Intents",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Explain Android application components",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "Describe Activity life cycle",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Define intents",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "Explain Fragments",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.4",
-                    "sno": "2.4"
-                },
-                {
-                    "topic": "Explain the creation of Android application that switches between Activities",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.5",
-                    "sno": "2.5"
-                },
-                {
-                    "topic": "List different storage options",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "Explain Internal file Storage",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Explain External file Storage",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-2.3",
-                    "sno": "2.3"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "Requirement Analysis and Specifications",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Know about Early Computer Programming",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Know about Early Computer Programming; Know about High Level Language Programming",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know about High Level Language Programming",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "What is control Flow-Based design; What is Data Structure oriented design; What is Data Flow-oriented design",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "What is control Flow-Based design",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "What is Object Oriented design; Know about Model Driven Architecture; Know about DevOps based Design",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "What is Data Structure oriented design",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Know about Low-code/No-code Development; Requirement Analysis and Specifications; Explain Requirements Gathering and Analysis",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "What is Data Flow-oriented design",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Explain Software Requirement Specifications; Explain Functional Requirements and Use Cases; Define Functional Requirements",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "What is Object Oriented design",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-3.6",
-                    "sno": "3.6"
+                    "sno": "3.6",
+                    "topic": "Describe procedure to Identify requirements using scenario-based use cases; Explain how to document functional requirements; Explain requirements T...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know about Model Driven Architecture",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-3.7",
-                    "sno": "3.7"
+                    "sno": "3.7",
+                    "topic": "List Characteristics of a Good SRS Document; Give Examples of Poor SRS Document; Explain the typical Organization of the SRS Document",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know about DevOps based Design",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-3.8",
-                    "sno": "3.8"
+                    "sno": "3.8",
+                    "topic": "Develop an SRS for an ATM or Library System; List the Characteristics of a good User Interface; Understand the Basic Concepts of user interface design",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know about Low-code/No-code Development",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-3.9",
-                    "sno": "3.9"
+                    "sno": "3.9",
+                    "topic": "Know the Types of User Interface; Describe Command Language Based Interface; Describe Menu Based Interface",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Requirement Analysis and Specifications",
+                    "id": "26cm502t-3.10",
+                    "sno": "3.10",
+                    "topic": "Describe Direct Manipulation Interfaces; Know about Static Analysis Tools; Know about Dynamic Analysis Tools",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.0",
-                    "sno": "3.0"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Requirements Gathering and Analysis",
+                    "id": "26cm502t-3.11",
+                    "sno": "3.11",
+                    "topic": "Exploring Intent objects; List the Intent types; Linking activities using intents",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Software Requirement Specifications",
+                    "id": "26cm502t-3.12",
+                    "sno": "3.12",
+                    "topic": "Android \u2013 User Interface; List types of User Interface layouts; Explain User Interface Designing Layouts",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.2",
-                    "sno": "3.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Functional Requirements and Use Cases",
+                    "id": "26cm502t-3.13",
+                    "sno": "3.13",
+                    "topic": "Define User Interface Controls; List User Interface Controls; Describe the need of Event Handling",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.3",
-                    "sno": "3.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Functional Requirements",
+                    "id": "26cm502t-3.14",
+                    "sno": "3.14",
+                    "topic": "Explain Android Event Handling; Explain the usage of User Interface Controls; Explain development of Android App using above user Interface Controls",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe procedure to Identify requirements using scenario-based use cases",
+                    "id": "26cm502t-3.15",
+                    "sno": "3.15",
+                    "topic": "Options Menus; Context Menus; Popup Menus",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.2",
-                    "sno": "3.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain how to document functional requirements",
+                    "id": "26cm502t-3.16",
+                    "sno": "3.16",
+                    "topic": "Importance of Content providers; Explain Content Providers; Unit test-2 4.1 to 5.7",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.3",
-                    "sno": "3.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain requirements Traceability and Construct a Traceability matrix",
+                    "id": "26cm502t-3.17",
+                    "sno": "3.17",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.4",
-                    "sno": "3.4"
+                    "type": "revision"
                 },
                 {
-                    "topic": "List Characteristics of a Good SRS Document",
+                    "id": "26cm502t-3.18",
+                    "sno": "3.18",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Give Examples of Poor SRS Document",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.6",
-                    "sno": "3.6"
-                },
-                {
-                    "topic": "Explain the typical Organization of the SRS Document",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.7",
-                    "sno": "3.7"
-                },
-                {
-                    "topic": "Develop an SRS for an ATM or Library System",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.8",
-                    "sno": "3.8"
-                },
-                {
-                    "topic": "List the Characteristics of a good User Interface",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Understand the Basic Concepts of user interface design",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Know the Types of User Interface",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Describe Command Language Based Interface",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Describe Menu Based Interface",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Describe Direct Manipulation Interfaces",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Know about Static Analysis Tools",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Know about Dynamic Analysis Tools",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Exploring Intent objects",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "List the Intent types",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Linking activities using intents",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Android \u2013 User Interface",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "List types of User Interface layouts",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Explain User Interface Designing Layouts",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Define User Interface Controls",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "List User Interface Controls",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "Describe the need of Event Handling",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Explain Android Event Handling",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.6",
-                    "sno": "3.6"
-                },
-                {
-                    "topic": "Explain the usage of User Interface Controls",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.7",
-                    "sno": "3.7"
-                },
-                {
-                    "topic": "Explain development of Android App using above user Interface Controls",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.8",
-                    "sno": "3.8"
-                },
-                {
-                    "topic": "Options Menus",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Context Menus",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Popup Menus",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Importance of Content providers",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Explain Content Providers",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Unit test-2 4.1 to 5.7",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-3.8",
-                    "sno": "3.8"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "Principles of Software Design, Coding",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Explain Classical Waterfall Model",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "Explain Classical Waterfall Model; Explain Iterative Waterfall Model; Explain Prototyping Model",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Iterative Waterfall Model",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Explain Evolutionary Model; Explain Spiral Model; Know about AGILE Development Model- principles and Life Cycle",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Prototyping Model",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Compare different Life Cycle Models; Describe Lines of Code (LOC); Describe Function Point Metric",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Evolutionary Model",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "Principles of Software Design, Coding; Know the Software Design Concepts; Know about Software Design Approaches",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Spiral Model",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Understand User Interface Design; Understand Unified Modeling Language; Define UML and its purpose in Software Engineering",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know about AGILE Development Model- principles and Life Cycle",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.6",
-                    "sno": "4.6"
+                    "sno": "4.6",
+                    "topic": "Explain the importance of UML in Object oriented Design; List and Explain Building blocks of UML; List different symbols used in UML notation",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Compare different Life Cycle Models",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.7",
-                    "sno": "4.7"
+                    "sno": "4.7",
+                    "topic": "Classify and list standard UML diagrams; Know about Class Diagrams; Know about Use case diagram",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe Lines of Code (LOC)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Describe Function Point Metric",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Principles of Software Design, Coding",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Know the Software Design Concepts",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Know about Software Design Approaches",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Understand User Interface Design",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "Understand Unified Modeling Language",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.4",
-                    "sno": "4.4"
-                },
-                {
-                    "topic": "Define UML and its purpose in Software Engineering",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Explain the importance of UML in Object oriented Design",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "List and Explain Building blocks of UML",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "List different symbols used in UML notation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.4",
-                    "sno": "4.4"
-                },
-                {
-                    "topic": "Classify and list standard UML diagrams",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.5",
-                    "sno": "4.5"
-                },
-                {
-                    "topic": "Know about Class Diagrams",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.6",
-                    "sno": "4.6"
-                },
-                {
-                    "topic": "Know about Use case diagram",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.7",
-                    "sno": "4.7"
-                },
-                {
-                    "topic": "Understand Interaction diagrams",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.8",
-                    "sno": "4.8"
+                    "sno": "4.8",
+                    "topic": "Understand Interaction diagrams; Know the Concept of Software Coding; Fragment Implementation",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know the Concept of Software Coding",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.5",
-                    "sno": "4.5"
-                },
-                {
-                    "topic": "Fragment Implementation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Finding Fragments",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Adding, Removing, and Replacing Fragments",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "Finding Activity Using Fragment",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.4",
-                    "sno": "4.4"
-                },
-                {
-                    "topic": "Android Advanced Concepts",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "State the purpose of Menus",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "List various types of Menus",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Explain Menus",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "Explain Images",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.4",
-                    "sno": "4.4"
-                },
-                {
-                    "topic": "Image Button",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Image Switcher",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Image View",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "Describe Alert Dialog",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.5",
-                    "sno": "4.5"
-                },
-                {
-                    "topic": "Explain Alarm Manager",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.6",
-                    "sno": "4.6"
-                },
-                {
-                    "topic": "Compose the procedure for SMS sending",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.7",
-                    "sno": "4.7"
-                },
-                {
-                    "topic": "Explain procedure for E-mail sending",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.8",
-                    "sno": "4.8"
-                },
-                {
-                    "topic": "Explain Media Player Class",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.9",
-                    "sno": "4.9"
+                    "sno": "4.9",
+                    "topic": "Finding Fragments; Adding, Removing, and Replacing Fragments; Finding Activity Using Fragment",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Telephony Manager",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.10",
-                    "sno": "4.10"
+                    "sno": "4.10",
+                    "topic": "Android Advanced Concepts; State the purpose of Menus; List various types of Menus",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the procedure of using Camera",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.11",
-                    "sno": "4.11"
+                    "sno": "4.11",
+                    "topic": "Explain Menus; Explain Images; Image Button",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the procedure of Recording Video",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.12",
-                    "sno": "4.12"
+                    "sno": "4.12",
+                    "topic": "Image Switcher; Image View; Describe Alert Dialog",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Home Screen Widgets",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.13",
-                    "sno": "4.13"
+                    "sno": "4.13",
+                    "topic": "Explain Alarm Manager; Compose the procedure for SMS sending; Explain procedure for E-mail sending",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the collection View Widgets",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-4.14",
-                    "sno": "4.14"
+                    "sno": "4.14",
+                    "topic": "Explain Media Player Class; Explain Telephony Manager; Explain the procedure of using Camera",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Schema",
+                    "id": "26cm502t-4.15",
+                    "sno": "4.15",
+                    "topic": "Describe the procedure of Recording Video; Explain Home Screen Widgets; Describe the collection View Widgets",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.1",
-                    "sno": "4.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Contract class",
+                    "id": "26cm502t-4.16",
+                    "sno": "4.16",
+                    "topic": "Define Schema; Define Contract class; List the Database Operations; Explain SQLite DataBase",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.2",
-                    "sno": "4.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the Database Operations",
+                    "id": "26cm502t-4.17",
+                    "sno": "4.17",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.3",
-                    "sno": "4.3"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Explain SQLite DataBase",
+                    "id": "26cm502t-4.18",
+                    "sno": "4.18",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-4.4",
-                    "sno": "4.4"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "Testing, Debugging, Reliability, Quality Management & Maintenance",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26cm502t-5.1",
+                    "sno": "5.1",
                     "topic": "What is Empirical Estimation Technique",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.1",
-                    "sno": "5.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "What is Heuristic Estimation Technique",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "What is Heuristic Estimation Technique; Explain Coding Standards",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Coding Standards",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "Discuss Coding guidelines",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.2",
-                    "sno": "5.2"
-                },
-                {
-                    "topic": "Explain the process of Code Review",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Discuss Coding guidelines; Explain the process of Code Review",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26cm502t-5.4",
+                    "sno": "5.4",
                     "topic": "Describe Code Walkthroughs",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.4",
-                    "sno": "5.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Code Inspection",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Explain Code Inspection; Define Clean Room Testing",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define Clean Room Testing",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "Explain the importance of Software Documentation; Testing, Debugging, Reliability, Quality Management & Maintenance",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the importance of Software Documentation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26cm502t-5.7",
-                    "sno": "5.7"
-                },
-                {
-                    "topic": "Testing, Debugging, Reliability, Quality Management & Maintenance",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.0",
-                    "sno": "5.0"
-                },
-                {
+                    "sno": "5.7",
                     "topic": "Understand Testing",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.1",
-                    "sno": "5.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know about Debugging",
+                    "id": "26cm502t-5.8",
+                    "sno": "5.8",
+                    "topic": "Know about Debugging; Explain Program Analysis Tools",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.2",
-                    "sno": "5.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Program Analysis Tools",
+                    "id": "26cm502t-5.9",
+                    "sno": "5.9",
+                    "topic": "Explain the purpose and process of Integration Testing; Apply System Testing techniques to check the overall working of the software",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.3",
-                    "sno": "5.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the purpose and process of Integration Testing",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.4",
-                    "sno": "5.4"
-                },
-                {
-                    "topic": "Apply System Testing techniques to check the overall working of the software",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.5",
-                    "sno": "5.5"
-                },
-                {
+                    "id": "26cm502t-5.10",
+                    "sno": "5.10",
                     "topic": "Apply Performance Testing to check how fast and stable the software runs",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.6",
-                    "sno": "5.6"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the role of Artificial Intelligence in Software Testing",
+                    "id": "26cm502t-5.11",
+                    "sno": "5.11",
+                    "topic": "Explain the role of Artificial Intelligence in Software Testing; Understand the basics of Object-Oriented Testing and its techniques",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.7",
-                    "sno": "5.7"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Understand the basics of Object-Oriented Testing and its techniques",
+                    "id": "26cm502t-5.12",
+                    "sno": "5.12",
+                    "topic": "Understand the concept of Software Reliability; Explain Software Quality Management systems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.8",
-                    "sno": "5.8"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Understand the concept of Software Reliability",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.9",
-                    "sno": "5.9"
-                },
-                {
-                    "topic": "Explain Software Quality Management systems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.10",
-                    "sno": "5.10"
-                },
-                {
+                    "id": "26cm502t-5.13",
+                    "sno": "5.13",
                     "topic": "Define persistent data storage",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.1",
-                    "sno": "5.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Understanding of Android storage system",
+                    "id": "26cm502t-5.14",
+                    "sno": "5.14",
+                    "topic": "Understanding of Android storage system; Know about Content Providers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.2",
-                    "sno": "5.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Know about Content Providers",
+                    "id": "26cm502t-5.15",
+                    "sno": "5.15",
+                    "topic": "Understand SQLite Database; Explain the Database Operations with an example database",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.3",
-                    "sno": "5.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Understand SQLite Database",
+                    "id": "26cm502t-5.16",
+                    "sno": "5.16",
+                    "topic": "Explain the procedure for publishing of an Android Application; Explain the procedure for Deploying APK files CO-PO/PSO Matrix 3=strongly mapped,2=...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.4",
-                    "sno": "5.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the Database Operations with an example database",
+                    "id": "26cm502t-5.17",
+                    "sno": "5.17",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.5",
-                    "sno": "5.5"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Explain the procedure for publishing of an Android Application",
+                    "id": "26cm502t-5.18",
+                    "sno": "5.18",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.6",
-                    "sno": "5.6"
-                },
-                {
-                    "topic": "Explain the procedure for Deploying APK files CO-PO/PSO Matrix 3=strongly mapped,2=moderately mapped,1=slightly mapped",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26cm502t-5.7",
-                    "sno": "5.7"
+                    "type": "assessment"
                 }
             ]
         }

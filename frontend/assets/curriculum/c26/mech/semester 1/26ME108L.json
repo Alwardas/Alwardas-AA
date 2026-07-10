@@ -3,519 +3,848 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 24,
+            "title": "INTROCTION & CARPENTRY",
+            "totalPeriods": 120,
             "topics": [
                 {
+                    "id": "26me108l-1.1",
+                    "sno": "1.1",
                     "topic": "Identify various carpentry tools",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-1.1",
-                    "sno": "1.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me108l-1.2",
+                    "sno": "1.2",
                     "topic": "Distinguish between marking tools, measuring tools and cutting tools",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-1.2",
-                    "sno": "1.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me108l-1.3",
+                    "sno": "1.3",
                     "topic": "List work holding devices",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-1.3",
-                    "sno": "1.3"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain wood working processes viz., sawing, chiselling and planning",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me108l-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Explain wood working processes viz., sawing, chiselling and planning",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me108l-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain the working of wood working machines. Practical:",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26me108l-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Explain the working of wood working machines. Practical",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "INTROCTION & CARPENTRY Introduction Methods of manufacturing processes - casting, forming, metal removal processes, joining processes, surface finishing processes, basic workshop processes - carpentry, fitting, hand forging, machine forging, sheet metal work, cold and hot working of metals. Carpentry Theory (The equipment will be demonstrated and explained in the lab.): Marking & measuring tools: scales, rules, , flexible measuring rule (tape), straight edge, try square, bevel square, combination square, marking knife, marking gauge, mortise gauge, cutting gauge, wing compass, trammel, divider, spirit level, plum bob, specifications- uses. Cutting Tools: Saws: ripsaw, cross cut saw (hand saw), panel saw, tenon or back saw, dovetail saw, bow saw, coping saw, compass saw, pad or keyhole saw, specifications & uses. Chisels: Firmer chisel, bevelled edge firmer chisel, parting chisel, mortise chisel, inside and outside gauges, specifications and uses. Planes: Jack plane (wooden jack plane, metal jack plane. Striking tools: Hammers - Warrington hammer, claw hammer, mallet, Specifications & uses. Holding devices:Bench vice, bench stop, bench hold fast, sash cramp (bar cramp) G - cramp, Hand screw, specifications & uses. Carpentry Processes :Marking, measuring, sawing, chiselling, planning, grooving, Rebating. Carpentry joints: Halving Joint, mortise and tenon joint, butt joint. dowel joint, tongue & groove joint, screw & slot joint, dovetail joint, corner joint. Wood working machines: Wood working lathe (wood turning lathe), circular saw, band saw, wood planer, sanding machine, belt sander, spindle sander, disc sander and grinder, specifications and uses. Practicals:",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-1.0",
-                    "sno": "1.0"
+                    "id": "26me108l-1.7",
+                    "sno": "1.7",
+                    "topic": "INTROCTION & CARPENTRY Introduction Methods of manufacturing processes - casting, forming, metal removal processes, joining processes, surface finishing processes, basic workshop processes - carpentry, fitting, hand forging, machine forging, sheet metal work, cold and hot working of metals. Carpentry Theory (The equipment will be demonstrated and explained in the lab.): Marking & measuring tools: scales, rules, , flexible measuring rule (tape), straight edge, try square, bevel square, combination square, marking knife, marking gauge, mortise gauge, cutting gauge, wing compass, trammel, divider, spirit level, plum bob, specifications- uses. Cutting Tools: Saws: ripsaw, cross cut saw (hand saw), panel saw, tenon or back saw, dovetail saw, bow saw, coping saw, compass saw, pad or keyhole saw, specifications & uses. Chisels: Firmer chisel, bevelled edge firmer chisel, parting chisel, mortise chisel, inside and outside gauges, specifications and uses. Planes: Jack plane (wooden jack plane, metal jack plane. Striking tools: Hammers - Warrington hammer, claw hammer, mallet, Specifications & uses. Holding devices:Bench vice, bench stop, bench hold fast, sash cramp (bar cramp) G - cramp, Hand screw, specifications & uses. Carpentry Processes :Marking, measuring, sawing, chiselling, planning, grooving, Rebating. Carpentry joints: Halving Joint, mortise and tenon joint, butt joint. dowel joint, tongue & groove joint, screw & slot joint, dovetail joint, corner joint. Wood working machines: Wood working lathe (wood turning lathe), circular saw, band saw, wood planer, sanding machine, belt sander, spindle sander, disc sander and grinder, specifications and uses. Practicals",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me108l-1.8",
+                    "sno": "1.8",
                     "topic": "Cutting of wood with hand saw",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-1.1",
-                    "sno": "1.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me108l-1.9",
+                    "sno": "1.9",
                     "topic": "Planning of wood",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-1.2",
-                    "sno": "1.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me108l-1.10",
+                    "sno": "1.10",
                     "topic": "Planning and chiselling of wood",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-1.3",
-                    "sno": "1.3"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26me108l-1.11",
+                    "sno": "1.11",
                     "topic": "Preparation of dovetail joint",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-1.4",
-                    "sno": "1.4"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me108l-1.12",
+                    "sno": "1.12",
                     "topic": "Mortise and tenon joint",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-1.5",
-                    "sno": "1.5"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me108l-1.13",
+                    "sno": "1.13",
                     "topic": "Wood turning on a lathe",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-1.6",
-                    "sno": "1.6"
+                    "type": "practical"
                 },
                 {
+                    "id": "26me108l-1.14",
+                    "sno": "1.14",
                     "topic": "Preparation of one household article",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-1.7",
-                    "sno": "1.7"
-                }
-            ]
-        },
-        {
-            "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 24,
-            "topics": [
-                {
-                    "topic": "List various fitting tools",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-2.1",
-                    "sno": "2.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Distinguish between marking and measuring tools",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "List cutting tools",
+                    "id": "26me108l-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into Identify various carpentry tools",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.3",
-                    "sno": "2.3"
+                    "type": "practical"
                 },
                 {
-                    "topic": "List various work holding devices",
+                    "id": "26me108l-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into Distinguish between marking tools, measuring tools and cutting tools",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.4",
-                    "sno": "2.4"
+                    "type": "practical"
                 },
                 {
-                    "topic": "List various checking and measuring instruments",
+                    "id": "26me108l-1.17",
+                    "sno": "1.17",
+                    "topic": "Deep dive into List work holding devices",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.5",
-                    "sno": "2.5"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain fitting operations such as marking, sawing, chipping, filing, grinding, drilling and tapping with legible sketch",
+                    "id": "26me108l-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Explain wood working processes viz., sawing, chiselling and planning",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.6",
-                    "sno": "2.6"
+                    "type": "practical"
                 },
                 {
-                    "topic": "State the working principle of drilling",
+                    "id": "26me108l-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.7",
-                    "sno": "2.7"
+                    "type": "practical"
                 },
                 {
-                    "topic": "List two types of drilling machines",
+                    "id": "26me108l-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into Explain the working of wood working machines. Practical",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.8",
-                    "sno": "2.8"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Describe the Sensitive drilling machine with line diagram",
+                    "id": "26me108l-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into INTROCTION & CARPENTRY Introduction Methods of manufacturing processes - casting, forming, metal removal processes, joining processes, surface finishing processes, basic workshop processes - carpentry, fitting, hand forging, machine forging, sheet metal work, cold and hot working of metals. Carpentry Theory (The equipment will be demonstrated and explained in the lab.): Marking & measuring tools: scales, rules, , flexible measuring rule (tape), straight edge, try square, bevel square, combination square, marking knife, marking gauge, mortise gauge, cutting gauge, wing compass, trammel, divider, spirit level, plum bob, specifications- uses. Cutting Tools: Saws: ripsaw, cross cut saw (hand saw), panel saw, tenon or back saw, dovetail saw, bow saw, coping saw, compass saw, pad or keyhole saw, specifications & uses. Chisels: Firmer chisel, bevelled edge firmer chisel, parting chisel, mortise chisel, inside and outside gauges, specifications and uses. Planes: Jack plane (wooden jack plane, metal jack plane. Striking tools: Hammers - Warrington hammer, claw hammer, mallet, Specifications & uses. Holding devices:Bench vice, bench stop, bench hold fast, sash cramp (bar cramp) G - cramp, Hand screw, specifications & uses. Carpentry Processes :Marking, measuring, sawing, chiselling, planning, grooving, Rebating. Carpentry joints: Halving Joint, mortise and tenon joint, butt joint. dowel joint, tongue & groove joint, screw & slot joint, dovetail joint, corner joint. Wood working machines: Wood working lathe (wood turning lathe), circular saw, band saw, wood planer, sanding machine, belt sander, spindle sander, disc sander and grinder, specifications and uses. Practicals",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.9",
-                    "sno": "2.9"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Describe the radial drilling machine with line diagram",
+                    "id": "26me108l-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into Cutting of wood with hand saw",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.10",
-                    "sno": "2.10"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Mention the specifications of drilling machine",
+                    "id": "26me108l-1.23",
+                    "sno": "1.23",
+                    "topic": "Deep dive into Planning of wood",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.11",
-                    "sno": "2.11"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain the nomenclature of the drill bit",
+                    "id": "26me108l-1.24",
+                    "sno": "1.24",
+                    "topic": "Deep dive into Planning and chiselling of wood",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.12",
-                    "sno": "2.12"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Sketch the geometry of twist drill",
+                    "id": "26me108l-1.25",
+                    "sno": "1.25",
+                    "topic": "Deep dive into Preparation of dovetail joint",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.13",
-                    "sno": "2.13"
+                    "type": "practical"
                 },
                 {
-                    "topic": "List the functions of twist drill elements",
+                    "id": "26me108l-1.26",
+                    "sno": "1.26",
+                    "topic": "Deep dive into Mortise and tenon joint",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.14",
-                    "sno": "2.14"
+                    "type": "practical"
                 },
                 {
-                    "topic": "List different operations on drilling machine",
+                    "id": "26me108l-1.27",
+                    "sno": "1.27",
+                    "topic": "Deep dive into Wood turning on a lathe",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.15",
-                    "sno": "2.15"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Differentiate between jigs and fixtures",
+                    "id": "26me108l-1.28",
+                    "sno": "1.28",
+                    "topic": "Deep dive into Preparation of one household article",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.16",
-                    "sno": "2.16"
+                    "type": "practical"
                 },
                 {
-                    "topic": "List different types of Jigs and fixtures Practical:",
+                    "id": "26me108l-1.29",
+                    "sno": "1.29",
+                    "topic": "Problem solving & practice on Identify various carpentry tools",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.17",
-                    "sno": "2.17"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Marking and chipping on Mild \u2013 steel flat 12 mm thick",
+                    "id": "26me108l-1.30",
+                    "sno": "1.30",
+                    "topic": "Problem solving & practice on Distinguish between marking tools, measuring tools and cutting tools",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.1",
-                    "sno": "2.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Cutting with hack saw, M.S. Flats of 6 mm thick",
+                    "id": "26me108l-1.31",
+                    "sno": "1.31",
+                    "topic": "Problem solving & practice on List work holding devices",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.2",
-                    "sno": "2.2"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Drilling, chamfering on a MS flat of 12 mm thick",
+                    "id": "26me108l-1.32",
+                    "sno": "1.32",
+                    "topic": "Problem solving & practice on Explain wood working processes viz., sawing, chiselling and planning",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.3",
-                    "sno": "2.3"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Tapping and Dieing on a MS flat of 12 mm thick",
+                    "id": "26me108l-1.33",
+                    "sno": "1.33",
+                    "topic": "Problem solving & practice on Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.4",
-                    "sno": "2.4"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Assembling of two pieces, Matching by filing (6 mm thick M.S. Plate)",
+                    "id": "26me108l-1.34",
+                    "sno": "1.34",
+                    "topic": "Problem solving & practice on Explain the working of wood working machines. Practical",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-2.5",
-                    "sno": "2.5"
-                }
-            ]
-        },
-        {
-            "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 24,
-            "topics": [
-                {
-                    "topic": "List various tools used in black-smithy",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.1",
-                    "sno": "3.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "List equipment used in a forging shop",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Explain the important smithy operations",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Explain the working principle of machine forging",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "Explain machine forging operations such as upsetting, drawing down and punching with legible sketch",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Explain the working principle of forging press with legible sketch",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.6",
-                    "sno": "3.6"
-                },
-                {
-                    "topic": "List the forging defects. Practical:",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.7",
-                    "sno": "3.7"
-                },
-                {
-                    "topic": "Conversion of round to square",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Conversion of round to Hexagon",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Preparation of chisel from round rod",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Preparation of ring and hook from M.S. round",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "Preparation of a hexagonal bolt and nut",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-3.5",
-                    "sno": "3.5"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 24,
-            "topics": [
-                {
-                    "topic": "List various marking tools in sheet metal work",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "List various stakes",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "List various measuring tools used in sheet metal work",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "List various sheet metal joints",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-4.4",
-                    "sno": "4.4"
-                },
-                {
-                    "topic": "Describe sheet metal operations such as shearing, bending drawing and squeezing",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-4.5",
-                    "sno": "4.5"
-                },
-                {
-                    "topic": "Differentiate between riveting, soldering & brazing. Practical:",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-4.6",
-                    "sno": "4.6"
-                },
-                {
-                    "topic": "Preparation of a rectangular open type tray",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-4.9",
-                    "sno": "4.9"
-                },
-                {
-                    "topic": "Preparation of funnel",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-4.12",
-                    "sno": "4.12"
-                },
-                {
-                    "topic": "Practice on cutting of sheet",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26me108l-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Formation of joints like grooved joints, locked groove joint",
+                    "id": "26me108l-1.35",
+                    "sno": "1.35",
+                    "topic": "Problem solving & practice on INTROCTION & CARPENTRY Introduction Methods of manufacturing processes - casting, forming, metal removal processes, joining processes, surface finishing processes, basic workshop processes - carpentry, fitting, hand forging, machine forging, sheet metal work, cold and hot working of metals. Carpentry Theory (The equipment will be demonstrated and explained in the lab.): Marking & measuring tools: scales, rules, , flexible measuring rule (tape), straight edge, try square, bevel square, combination square, marking knife, marking gauge, mortise gauge, cutting gauge, wing compass, trammel, divider, spirit level, plum bob, specifications- uses. Cutting Tools: Saws: ripsaw, cross cut saw (hand saw), panel saw, tenon or back saw, dovetail saw, bow saw, coping saw, compass saw, pad or keyhole saw, specifications & uses. Chisels: Firmer chisel, bevelled edge firmer chisel, parting chisel, mortise chisel, inside and outside gauges, specifications and uses. Planes: Jack plane (wooden jack plane, metal jack plane. Striking tools: Hammers - Warrington hammer, claw hammer, mallet, Specifications & uses. Holding devices:Bench vice, bench stop, bench hold fast, sash cramp (bar cramp) G - cramp, Hand screw, specifications & uses. Carpentry Processes :Marking, measuring, sawing, chiselling, planning, grooving, Rebating. Carpentry joints: Halving Joint, mortise and tenon joint, butt joint. dowel joint, tongue & groove joint, screw & slot joint, dovetail joint, corner joint. Wood working machines: Wood working lathe (wood turning lathe), circular saw, band saw, wood planer, sanding machine, belt sander, spindle sander, disc sander and grinder, specifications and uses. Practicals",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-4.2",
-                    "sno": "4.2"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Preparation of a rectangular open type tray",
+                    "id": "26me108l-1.36",
+                    "sno": "1.36",
+                    "topic": "Problem solving & practice on Cutting of wood with hand saw",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-4.3",
-                    "sno": "4.3"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Preparation of hollow cylinder",
+                    "id": "26me108l-1.37",
+                    "sno": "1.37",
+                    "topic": "Problem solving & practice on Planning of wood",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-4.4",
-                    "sno": "4.4"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Preparation of pipe elbow",
+                    "id": "26me108l-1.38",
+                    "sno": "1.38",
+                    "topic": "Problem solving & practice on Planning and chiselling of wood",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-4.5",
-                    "sno": "4.5"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Preparation of funnel",
+                    "id": "26me108l-1.39",
+                    "sno": "1.39",
+                    "topic": "Problem solving & practice on Preparation of dovetail joint",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-4.6",
-                    "sno": "4.6"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Preparation of utility articles such as dustpan, kerosene hand pump. REFERENCEBOOKS 1. Production Technology by Jain & Gupta (Khanna Publishers) 2. Elementary Workshop Technology by Hazra Chowdary& Bhattacharya (Media Promoters) 3. Manufacturing Technology(Vol I) by P NRao (Mc Graw Hill) 4. Workshop Technology Vol I & II by Raghuvamshi 5. Workshop Technology by R.S. Khurmi & J.K.Gupta",
+                    "id": "26me108l-1.40",
+                    "sno": "1.40",
+                    "topic": "Problem solving & practice on Mortise and tenon joint",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26me108l-4.7",
-                    "sno": "4.7"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 24,
-            "topics": [
-                {
-                    "topic": "Introduction to Best Practices & Case Studies",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26me108l-5.1",
-                    "sno": "5.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26me108l-5.2",
-                    "sno": "5.2"
+                    "id": "26me108l-1.41",
+                    "sno": "1.41",
+                    "topic": "Problem solving & practice on Wood turning on a lathe",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26me108l-5.3",
-                    "sno": "5.3"
+                    "id": "26me108l-1.42",
+                    "sno": "1.42",
+                    "topic": "Problem solving & practice on Preparation of one household article",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26me108l-5.4",
-                    "sno": "5.4"
+                    "id": "26me108l-1.43",
+                    "sno": "1.43",
+                    "topic": "Practical applications of Identify various carpentry tools",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26me108l-5.5",
-                    "sno": "5.5"
+                    "id": "26me108l-1.44",
+                    "sno": "1.44",
+                    "topic": "Practical applications of Distinguish between marking tools, measuring tools and cutting tools",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26me108l-5.6",
-                    "sno": "5.6"
+                    "id": "26me108l-1.45",
+                    "sno": "1.45",
+                    "topic": "Practical applications of List work holding devices",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.46",
+                    "sno": "1.46",
+                    "topic": "Practical applications of Explain wood working processes viz., sawing, chiselling and planning",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.47",
+                    "sno": "1.47",
+                    "topic": "Practical applications of Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.48",
+                    "sno": "1.48",
+                    "topic": "Practical applications of Explain the working of wood working machines. Practical",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.49",
+                    "sno": "1.49",
+                    "topic": "Practical applications of INTROCTION & CARPENTRY Introduction Methods of manufacturing processes - casting, forming, metal removal processes, joining processes, surface finishing processes, basic workshop processes - carpentry, fitting, hand forging, machine forging, sheet metal work, cold and hot working of metals. Carpentry Theory (The equipment will be demonstrated and explained in the lab.): Marking & measuring tools: scales, rules, , flexible measuring rule (tape), straight edge, try square, bevel square, combination square, marking knife, marking gauge, mortise gauge, cutting gauge, wing compass, trammel, divider, spirit level, plum bob, specifications- uses. Cutting Tools: Saws: ripsaw, cross cut saw (hand saw), panel saw, tenon or back saw, dovetail saw, bow saw, coping saw, compass saw, pad or keyhole saw, specifications & uses. Chisels: Firmer chisel, bevelled edge firmer chisel, parting chisel, mortise chisel, inside and outside gauges, specifications and uses. Planes: Jack plane (wooden jack plane, metal jack plane. Striking tools: Hammers - Warrington hammer, claw hammer, mallet, Specifications & uses. Holding devices:Bench vice, bench stop, bench hold fast, sash cramp (bar cramp) G - cramp, Hand screw, specifications & uses. Carpentry Processes :Marking, measuring, sawing, chiselling, planning, grooving, Rebating. Carpentry joints: Halving Joint, mortise and tenon joint, butt joint. dowel joint, tongue & groove joint, screw & slot joint, dovetail joint, corner joint. Wood working machines: Wood working lathe (wood turning lathe), circular saw, band saw, wood planer, sanding machine, belt sander, spindle sander, disc sander and grinder, specifications and uses. Practicals",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.50",
+                    "sno": "1.50",
+                    "topic": "Practical applications of Cutting of wood with hand saw",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.51",
+                    "sno": "1.51",
+                    "topic": "Practical applications of Planning of wood",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.52",
+                    "sno": "1.52",
+                    "topic": "Practical applications of Planning and chiselling of wood",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.53",
+                    "sno": "1.53",
+                    "topic": "Practical applications of Preparation of dovetail joint",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.54",
+                    "sno": "1.54",
+                    "topic": "Practical applications of Mortise and tenon joint",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.55",
+                    "sno": "1.55",
+                    "topic": "Practical applications of Wood turning on a lathe",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.56",
+                    "sno": "1.56",
+                    "topic": "Practical applications of Preparation of one household article",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.57",
+                    "sno": "1.57",
+                    "topic": "Practical applications of Identify various carpentry tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.58",
+                    "sno": "1.58",
+                    "topic": "Practical applications of Distinguish between marking tools, measuring tools and cutting tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.59",
+                    "sno": "1.59",
+                    "topic": "Practical applications of List work holding devices",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.60",
+                    "sno": "1.60",
+                    "topic": "Practical applications of Explain wood working processes viz., sawing, chiselling and planning",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.61",
+                    "sno": "1.61",
+                    "topic": "Practical applications of Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.62",
+                    "sno": "1.62",
+                    "topic": "Practical applications of Explain the working of wood working machines. Practical",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.63",
+                    "sno": "1.63",
+                    "topic": "Practical applications of INTROCTION & CARPENTRY Introduction Methods of manufacturing processes - casting, forming, metal removal processes, joining processes, surface finishing processes, basic workshop processes - carpentry, fitting, hand forging, machine forging, sheet metal work, cold and hot working of metals. Carpentry Theory (The equipment will be demonstrated and explained in the lab.): Marking & measuring tools: scales, rules, , flexible measuring rule (tape), straight edge, try square, bevel square, combination square, marking knife, marking gauge, mortise gauge, cutting gauge, wing compass, trammel, divider, spirit level, plum bob, specifications- uses. Cutting Tools: Saws: ripsaw, cross cut saw (hand saw), panel saw, tenon or back saw, dovetail saw, bow saw, coping saw, compass saw, pad or keyhole saw, specifications & uses. Chisels: Firmer chisel, bevelled edge firmer chisel, parting chisel, mortise chisel, inside and outside gauges, specifications and uses. Planes: Jack plane (wooden jack plane, metal jack plane. Striking tools: Hammers - Warrington hammer, claw hammer, mallet, Specifications & uses. Holding devices:Bench vice, bench stop, bench hold fast, sash cramp (bar cramp) G - cramp, Hand screw, specifications & uses. Carpentry Processes :Marking, measuring, sawing, chiselling, planning, grooving, Rebating. Carpentry joints: Halving Joint, mortise and tenon joint, butt joint. dowel joint, tongue & groove joint, screw & slot joint, dovetail joint, corner joint. Wood working machines: Wood working lathe (wood turning lathe), circular saw, band saw, wood planer, sanding machine, belt sander, spindle sander, disc sander and grinder, specifications and uses. Practicals",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.64",
+                    "sno": "1.64",
+                    "topic": "Practical applications of Cutting of wood with hand saw",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.65",
+                    "sno": "1.65",
+                    "topic": "Practical applications of Planning of wood",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.66",
+                    "sno": "1.66",
+                    "topic": "Practical applications of Planning and chiselling of wood",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.67",
+                    "sno": "1.67",
+                    "topic": "Practical applications of Preparation of dovetail joint",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.68",
+                    "sno": "1.68",
+                    "topic": "Practical applications of Mortise and tenon joint",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.69",
+                    "sno": "1.69",
+                    "topic": "Practical applications of Wood turning on a lathe",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.70",
+                    "sno": "1.70",
+                    "topic": "Practical applications of Preparation of one household article",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.71",
+                    "sno": "1.71",
+                    "topic": "Practical applications of Identify various carpentry tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.72",
+                    "sno": "1.72",
+                    "topic": "Practical applications of Distinguish between marking tools, measuring tools and cutting tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.73",
+                    "sno": "1.73",
+                    "topic": "Practical applications of List work holding devices",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.74",
+                    "sno": "1.74",
+                    "topic": "Practical applications of Explain wood working processes viz., sawing, chiselling and planning",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.75",
+                    "sno": "1.75",
+                    "topic": "Practical applications of Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.76",
+                    "sno": "1.76",
+                    "topic": "Practical applications of Explain the working of wood working machines. Practical",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.77",
+                    "sno": "1.77",
+                    "topic": "Practical applications of INTROCTION & CARPENTRY Introduction Methods of manufacturing processes - casting, forming, metal removal processes, joining processes, surface finishing processes, basic workshop processes - carpentry, fitting, hand forging, machine forging, sheet metal work, cold and hot working of metals. Carpentry Theory (The equipment will be demonstrated and explained in the lab.): Marking & measuring tools: scales, rules, , flexible measuring rule (tape), straight edge, try square, bevel square, combination square, marking knife, marking gauge, mortise gauge, cutting gauge, wing compass, trammel, divider, spirit level, plum bob, specifications- uses. Cutting Tools: Saws: ripsaw, cross cut saw (hand saw), panel saw, tenon or back saw, dovetail saw, bow saw, coping saw, compass saw, pad or keyhole saw, specifications & uses. Chisels: Firmer chisel, bevelled edge firmer chisel, parting chisel, mortise chisel, inside and outside gauges, specifications and uses. Planes: Jack plane (wooden jack plane, metal jack plane. Striking tools: Hammers - Warrington hammer, claw hammer, mallet, Specifications & uses. Holding devices:Bench vice, bench stop, bench hold fast, sash cramp (bar cramp) G - cramp, Hand screw, specifications & uses. Carpentry Processes :Marking, measuring, sawing, chiselling, planning, grooving, Rebating. Carpentry joints: Halving Joint, mortise and tenon joint, butt joint. dowel joint, tongue & groove joint, screw & slot joint, dovetail joint, corner joint. Wood working machines: Wood working lathe (wood turning lathe), circular saw, band saw, wood planer, sanding machine, belt sander, spindle sander, disc sander and grinder, specifications and uses. Practicals",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.78",
+                    "sno": "1.78",
+                    "topic": "Practical applications of Cutting of wood with hand saw",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.79",
+                    "sno": "1.79",
+                    "topic": "Practical applications of Planning of wood",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.80",
+                    "sno": "1.80",
+                    "topic": "Practical applications of Planning and chiselling of wood",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.81",
+                    "sno": "1.81",
+                    "topic": "Practical applications of Preparation of dovetail joint",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.82",
+                    "sno": "1.82",
+                    "topic": "Practical applications of Mortise and tenon joint",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.83",
+                    "sno": "1.83",
+                    "topic": "Practical applications of Wood turning on a lathe",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.84",
+                    "sno": "1.84",
+                    "topic": "Practical applications of Preparation of one household article",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.85",
+                    "sno": "1.85",
+                    "topic": "Practical applications of Identify various carpentry tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.86",
+                    "sno": "1.86",
+                    "topic": "Practical applications of Distinguish between marking tools, measuring tools and cutting tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.87",
+                    "sno": "1.87",
+                    "topic": "Practical applications of List work holding devices",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.88",
+                    "sno": "1.88",
+                    "topic": "Practical applications of Explain wood working processes viz., sawing, chiselling and planning",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.89",
+                    "sno": "1.89",
+                    "topic": "Practical applications of Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.90",
+                    "sno": "1.90",
+                    "topic": "Practical applications of Explain the working of wood working machines. Practical",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.91",
+                    "sno": "1.91",
+                    "topic": "Practical applications of INTROCTION & CARPENTRY Introduction Methods of manufacturing processes - casting, forming, metal removal processes, joining processes, surface finishing processes, basic workshop processes - carpentry, fitting, hand forging, machine forging, sheet metal work, cold and hot working of metals. Carpentry Theory (The equipment will be demonstrated and explained in the lab.): Marking & measuring tools: scales, rules, , flexible measuring rule (tape), straight edge, try square, bevel square, combination square, marking knife, marking gauge, mortise gauge, cutting gauge, wing compass, trammel, divider, spirit level, plum bob, specifications- uses. Cutting Tools: Saws: ripsaw, cross cut saw (hand saw), panel saw, tenon or back saw, dovetail saw, bow saw, coping saw, compass saw, pad or keyhole saw, specifications & uses. Chisels: Firmer chisel, bevelled edge firmer chisel, parting chisel, mortise chisel, inside and outside gauges, specifications and uses. Planes: Jack plane (wooden jack plane, metal jack plane. Striking tools: Hammers - Warrington hammer, claw hammer, mallet, Specifications & uses. Holding devices:Bench vice, bench stop, bench hold fast, sash cramp (bar cramp) G - cramp, Hand screw, specifications & uses. Carpentry Processes :Marking, measuring, sawing, chiselling, planning, grooving, Rebating. Carpentry joints: Halving Joint, mortise and tenon joint, butt joint. dowel joint, tongue & groove joint, screw & slot joint, dovetail joint, corner joint. Wood working machines: Wood working lathe (wood turning lathe), circular saw, band saw, wood planer, sanding machine, belt sander, spindle sander, disc sander and grinder, specifications and uses. Practicals",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.92",
+                    "sno": "1.92",
+                    "topic": "Practical applications of Cutting of wood with hand saw",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.93",
+                    "sno": "1.93",
+                    "topic": "Practical applications of Planning of wood",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.94",
+                    "sno": "1.94",
+                    "topic": "Practical applications of Planning and chiselling of wood",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.95",
+                    "sno": "1.95",
+                    "topic": "Practical applications of Preparation of dovetail joint",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.96",
+                    "sno": "1.96",
+                    "topic": "Practical applications of Mortise and tenon joint",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.97",
+                    "sno": "1.97",
+                    "topic": "Practical applications of Wood turning on a lathe",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.98",
+                    "sno": "1.98",
+                    "topic": "Practical applications of Preparation of one household article",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.99",
+                    "sno": "1.99",
+                    "topic": "Practical applications of Identify various carpentry tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.100",
+                    "sno": "1.100",
+                    "topic": "Practical applications of Distinguish between marking tools, measuring tools and cutting tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.101",
+                    "sno": "1.101",
+                    "topic": "Practical applications of List work holding devices",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.102",
+                    "sno": "1.102",
+                    "topic": "Practical applications of Explain wood working processes viz., sawing, chiselling and planning",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.103",
+                    "sno": "1.103",
+                    "topic": "Practical applications of Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.104",
+                    "sno": "1.104",
+                    "topic": "Practical applications of Explain the working of wood working machines. Practical",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.105",
+                    "sno": "1.105",
+                    "topic": "Practical applications of INTROCTION & CARPENTRY Introduction Methods of manufacturing processes - casting, forming, metal removal processes, joining processes, surface finishing processes, basic workshop processes - carpentry, fitting, hand forging, machine forging, sheet metal work, cold and hot working of metals. Carpentry Theory (The equipment will be demonstrated and explained in the lab.): Marking & measuring tools: scales, rules, , flexible measuring rule (tape), straight edge, try square, bevel square, combination square, marking knife, marking gauge, mortise gauge, cutting gauge, wing compass, trammel, divider, spirit level, plum bob, specifications- uses. Cutting Tools: Saws: ripsaw, cross cut saw (hand saw), panel saw, tenon or back saw, dovetail saw, bow saw, coping saw, compass saw, pad or keyhole saw, specifications & uses. Chisels: Firmer chisel, bevelled edge firmer chisel, parting chisel, mortise chisel, inside and outside gauges, specifications and uses. Planes: Jack plane (wooden jack plane, metal jack plane. Striking tools: Hammers - Warrington hammer, claw hammer, mallet, Specifications & uses. Holding devices:Bench vice, bench stop, bench hold fast, sash cramp (bar cramp) G - cramp, Hand screw, specifications & uses. Carpentry Processes :Marking, measuring, sawing, chiselling, planning, grooving, Rebating. Carpentry joints: Halving Joint, mortise and tenon joint, butt joint. dowel joint, tongue & groove joint, screw & slot joint, dovetail joint, corner joint. Wood working machines: Wood working lathe (wood turning lathe), circular saw, band saw, wood planer, sanding machine, belt sander, spindle sander, disc sander and grinder, specifications and uses. Practicals",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.106",
+                    "sno": "1.106",
+                    "topic": "Practical applications of Cutting of wood with hand saw",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.107",
+                    "sno": "1.107",
+                    "topic": "Practical applications of Planning of wood",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.108",
+                    "sno": "1.108",
+                    "topic": "Practical applications of Planning and chiselling of wood",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.109",
+                    "sno": "1.109",
+                    "topic": "Practical applications of Preparation of dovetail joint",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.110",
+                    "sno": "1.110",
+                    "topic": "Practical applications of Mortise and tenon joint",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.111",
+                    "sno": "1.111",
+                    "topic": "Practical applications of Wood turning on a lathe",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.112",
+                    "sno": "1.112",
+                    "topic": "Practical applications of Preparation of one household article",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.113",
+                    "sno": "1.113",
+                    "topic": "Practical applications of Identify various carpentry tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.114",
+                    "sno": "1.114",
+                    "topic": "Practical applications of Distinguish between marking tools, measuring tools and cutting tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.115",
+                    "sno": "1.115",
+                    "topic": "Practical applications of List work holding devices",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.116",
+                    "sno": "1.116",
+                    "topic": "Practical applications of Explain wood working processes viz., sawing, chiselling and planning",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.117",
+                    "sno": "1.117",
+                    "topic": "Practical applications of Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.118",
+                    "sno": "1.118",
+                    "topic": "Practical applications of Explain the working of wood working machines. Practical",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me108l-1.119",
+                    "sno": "1.119",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me108l-1.120",
+                    "sno": "1.120",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

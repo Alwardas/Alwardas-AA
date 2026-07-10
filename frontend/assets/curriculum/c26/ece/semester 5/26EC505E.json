@@ -2,207 +2,28 @@
     "regulation": "C26",
     "units": [
         {
-            "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 0,
-            "topics": [
-                {
-                    "topic": "Introduction to Introduction & Fundamentals",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-1.1",
-                    "sno": "1.1"
-                },
-                {
-                    "topic": "Fundamental concepts and definitions of Introduction & Fundamentals",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-1.2",
-                    "sno": "1.2"
-                },
-                {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-1.3",
-                    "sno": "1.3"
-                },
-                {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-1.4",
-                    "sno": "1.4"
-                },
-                {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-1.5",
-                    "sno": "1.5"
-                },
-                {
-                    "topic": "Review, troubleshooting, and summary of Introduction & Fundamentals",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-1.6",
-                    "sno": "1.6"
-                }
-            ]
-        },
-        {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "COMMUNICATION STADARDS AND REAL TIME OPERATING SYSTEM",
             "totalPeriods": 0,
-            "topics": [
-                {
-                    "topic": "COMMUNICATION STADARDS AND REAL TIME OPERATING SYSTEM",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Explain about SPI, I2C, UART communication protocols",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "Compare general OS and RTOS",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "List three Types of RTOS",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "List the features of RTOS",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-2.4",
-                    "sno": "2.4"
-                },
-                {
-                    "topic": "Explain Real Time Operating System",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-2.5",
-                    "sno": "2.5"
-                },
-                {
-                    "topic": "Explain Tasks, Process and Threads",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-2.6",
-                    "sno": "2.6"
-                },
-                {
-                    "topic": "Explain task management and scheduling",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-2.7",
-                    "sno": "2.7"
-                },
-                {
-                    "topic": "Explain interrupt handling",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-2.8",
-                    "sno": "2.8"
-                }
-            ]
+            "topics": []
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "ARM CORTEX M3 ARCHITECTURE",
             "totalPeriods": 0,
-            "topics": [
-                {
-                    "topic": "ARM CORTEX M3 ARCHITECTURE",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-3.0",
-                    "sno": "3.0"
-                }
-            ]
+            "topics": []
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "ARM - INSTRUCTION SET AND PROGRAMMING",
             "totalPeriods": 0,
-            "topics": [
-                {
-                    "topic": "ARM - INSTRUCTION SET AND PROGRAMMING",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-4.0",
-                    "sno": "4.0"
-                }
-            ]
+            "topics": []
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "ARM INTERFACING",
             "totalPeriods": 0,
-            "topics": [
-                {
-                    "topic": "ARM INTERFACING",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "Explain about GPIO interfacing of ARM cortex M3",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "Explain about ADC and DAC interfacing and their usage and applications (Voltage measurement, sinewave generation)",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-5.2",
-                    "sno": "5.2"
-                },
-                {
-                    "topic": "Explain about ARM peripherals: i) Timer ii) Watchdog timer iii) Sys Tick iv) PWM v)Internal RTC",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-5.3",
-                    "sno": "5.3"
-                },
-                {
-                    "topic": "Explain about Interfacing LEDs and switches of ARM cortex M3",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-5.4",
-                    "sno": "5.4"
-                },
-                {
-                    "topic": "Explain about interfacing seven segment display of ARM cortex M3",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-5.5",
-                    "sno": "5.5"
-                },
-                {
-                    "topic": "Explain about keypad interfacing of ARM cortex M3",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec505e-5.6",
-                    "sno": "5.6"
-                }
-            ]
+            "topics": []
         }
     ],
     "totalPeriods": 0,

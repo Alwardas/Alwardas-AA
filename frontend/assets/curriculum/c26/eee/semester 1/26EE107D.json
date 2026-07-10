@@ -3,225 +3,876 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "Use of Drawing Instruments, Free Hand Lettering and Dimensioning Practice",
             "totalPeriods": 24,
             "topics": [
                 {
-                    "topic": "Use of Drawing Instruments, Free Hand Lettering and Dimensioning Practice",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee107d-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "State the importance of drawing as an engineering communication medium",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee107d-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Use of Drawing Instruments, Free Hand Lettering and Dimensioning Practice",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Select the correct instruments to draw the different lines / curves",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee107d-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "State the importance of drawing as an engineering communication medium",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Use correct grade of pencil and other instruments to draw different types of lines and for different purposes",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee107d-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Select the correct instruments to draw the different lines / curves",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Identify the steps to be taken to keep the drawing clean and tidy",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee107d-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Use correct grade of pencil and other instruments to draw different types of lines and for different purposes",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Write titles using vertical and slopping (inclined) lettering and numerals of 7mm, 10mm and 14mm height",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee107d-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Identify the steps to be taken to keep the drawing clean and tidy",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26ee107d-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Write titles using vertical and slopping (inclined) lettering and numerals of 7mm, 10mm and 14mm height",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Dimension a given drawing using standard notations and desired system of dimensioning",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26ee107d-1.7",
-                    "sno": "1.7"
+                    "sno": "1.7",
+                    "topic": "Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ee107d-1.8",
+                    "sno": "1.8",
+                    "topic": "Dimension a given drawing using standard notations and desired system of dimensioning",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.9",
+                    "sno": "1.9",
                     "topic": "Use of Drawing Instruments, Free Hand Lettering and Dimensioning Practice Explanation of the scope and objectives of the subject of Engineering Drawing . Its importance as a graphic communication -Need for preparing drawing as per standards \u2013 SP-46 \u20131988 \u2013 Mention B.I.S - Role of drawing in -engineering education - Basic Tools, tools for drawing \u2013 Mentioning of names under each classification and their brief description -Scales: Recommended scales reduced & enlarged -Lines: Types of lines, selection of line thickness - Selection of Pencils -Sheet Sizes: A0, A1, A2, A3, A4, A5, Layout of drawing sheets in respect of A0, A1, A3 sizes, Sizes of the Title block and its contents - Care and maintenance of Drawing Sheet, Importance of lettering \u2013 Types of lettering -Guide Lines for Lettering Practicing of letters & numbers of given sizes (7mm, 10mm and 14mm) -Advantages of single stroke or simple style of lettering - Use of lettering stencils- Purpose of engineering Drawing, Need of B.I.S code in dimensioning -Shape description of an Engineering object -Definition of Dimensioning size description -Location of features, surface finish, fully dimensioned Drawing -Notations or tools of dimensioni ng, dimension line extension line, leader line, arrows, symbols, number and notes, rules to be observed in the use of above tools -Placing dimensions: Aligned system and unidirectional system ( SP -46-1988)- Arrangement of dimensions Chain, parallel, combine d progressive, and dimensioning by co -ordinate methods-The rules for dimensioning standard, features \u201cCircles (holes) arcs, angles, tapers, chamfers, and dimension of narrow spaces",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ee107d-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.10",
+                    "sno": "1.10",
+                    "topic": "Deep dive into Use of Drawing Instruments, Free Hand Lettering and Dimensioning Practice",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.11",
+                    "sno": "1.11",
+                    "topic": "Deep dive into State the importance of drawing as an engineering communication medium",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.12",
+                    "sno": "1.12",
+                    "topic": "Deep dive into Select the correct instruments to draw the different lines / curves",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.13",
+                    "sno": "1.13",
+                    "topic": "Deep dive into Use correct grade of pencil and other instruments to draw different types of lines and for different purposes",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.14",
+                    "sno": "1.14",
+                    "topic": "Deep dive into Identify the steps to be taken to keep the drawing clean and tidy",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into Write titles using vertical and slopping (inclined) lettering and numerals of 7mm, 10mm and 14mm height",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.17",
+                    "sno": "1.17",
+                    "topic": "Deep dive into Dimension a given drawing using standard notations and desired system of dimensioning",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Use of Drawing Instruments, Free Hand Lettering and Dimensioning Practice Explanation of the scope and objectives of the subject of Engineering Drawing . Its importance as a graphic communication -Need for preparing drawing as per standards \u2013 SP-46 \u20131988 \u2013 Mention B.I.S - Role of drawing in -engineering education - Basic Tools, tools for drawing \u2013 Mentioning of names under each classification and their brief description -Scales: Recommended scales reduced & enlarged -Lines: Types of lines, selection of line thickness - Selection of Pencils -Sheet Sizes: A0, A1, A2, A3, A4, A5, Layout of drawing sheets in respect of A0, A1, A3 sizes, Sizes of the Title block and its contents - Care and maintenance of Drawing Sheet, Importance of lettering \u2013 Types of lettering -Guide Lines for Lettering Practicing of letters & numbers of given sizes (7mm, 10mm and 14mm) -Advantages of single stroke or simple style of lettering - Use of lettering stencils- Purpose of engineering Drawing, Need of B.I.S code in dimensioning -Shape description of an Engineering object -Definition of Dimensioning size description -Location of features, surface finish, fully dimensioned Drawing -Notations or tools of dimensioni ng, dimension line extension line, leader line, arrows, symbols, number and notes, rules to be observed in the use of above tools -Placing dimensions: Aligned system and unidirectional system ( SP -46-1988)- Arrangement of dimensions Chain, parallel, combine d progressive, and dimensioning by co -ordinate methods-The rules for dimensioning standard, features \u201cCircles (holes) arcs, angles, tapers, chamfers, and dimension of narrow spaces",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.19",
+                    "sno": "1.19",
+                    "topic": "Problem solving & practice on Use of Drawing Instruments, Free Hand Lettering and Dimensioning Practice",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.20",
+                    "sno": "1.20",
+                    "topic": "Problem solving & practice on State the importance of drawing as an engineering communication medium",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.21",
+                    "sno": "1.21",
+                    "topic": "Problem solving & practice on Select the correct instruments to draw the different lines / curves",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.22",
+                    "sno": "1.22",
+                    "topic": "Problem solving & practice on Use correct grade of pencil and other instruments to draw different types of lines and for different purposes",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-1.23",
+                    "sno": "1.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee107d-1.24",
+                    "sno": "1.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "Principles of Geometric Constructions",
             "totalPeriods": 24,
             "topics": [
                 {
-                    "topic": "Principles of Geometric Constructions",
-                    "period": 5,
-                    "type": "practical",
-                    "id": "26ee107d-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "Practice the basic geometric constructions like i) dividing a line into equal parts i) Exterior and interior tangents to the given two circles ii) Tangent arcs to two given lines and arcs",
-                    "period": 5,
-                    "type": "practical",
                     "id": "26ee107d-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Principles of Geometric Constructions",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Draw any regular polygon using general method when i) side length is given i) Inscribing circle radius is given ii) describing circle radius is given",
-                    "period": 5,
-                    "type": "practical",
                     "id": "26ee107d-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Practice the basic geometric constructions like i) dividing a line into equal parts i) Exterior and interior tangents to the given two circles ii) Tangent arcs to two given lines and arcs",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Draw the engineering curves like i) involute ii) cycloid",
-                    "period": 5,
-                    "type": "practical",
                     "id": "26ee107d-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Draw any regular polygon using general method when i) side length is given i) Inscribing circle radius is given ii) describing circle radius is given",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ee107d-2.4",
+                    "sno": "2.4",
+                    "topic": "Draw the engineering curves like i) involute ii) cycloid",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.5",
+                    "sno": "2.5",
                     "topic": "Geometric Constructions Division of a straight line into given number of equal parts \u2013Drawing interior and exterior tangents to two circles of given radii and centre distance -Drawing tangent arc of given radius to touch two lines inclined at given angle (acute, right and obtuse angles), Tangent arc of given radius touching a circle or an arc and a given line, Tangent arcs of radius R, touching two given circles internally and externally-Construction of any regular polygon by general method for given side length, inscribing circle radius and describing/superscripting circle ra dius - Involute, Cycloid, explanations as locus of a moving point, their engineering application, viz., Gear tooth profile, screw threads, springs etc. \u2013 their construction",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26ee107d-2.0",
-                    "sno": "2.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.6",
+                    "sno": "2.6",
+                    "topic": "Deep dive into Principles of Geometric Constructions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.7",
+                    "sno": "2.7",
+                    "topic": "Deep dive into Practice the basic geometric constructions like i) dividing a line into equal parts i) Exterior and interior tangents to the given two circles ii) Tangent arcs to two given lines and arcs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into Draw any regular polygon using general method when i) side length is given i) Inscribing circle radius is given ii) describing circle radius is given",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.9",
+                    "sno": "2.9",
+                    "topic": "Deep dive into Draw the engineering curves like i) involute ii) cycloid",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.10",
+                    "sno": "2.10",
+                    "topic": "Deep dive into Geometric Constructions Division of a straight line into given number of equal parts \u2013Drawing interior and exterior tangents to two circles of given radii and centre distance -Drawing tangent arc of given radius to touch two lines inclined at given angle (acute, right and obtuse angles), Tangent arc of given radius touching a circle or an arc and a given line, Tangent arcs of radius R, touching two given circles internally and externally-Construction of any regular polygon by general method for given side length, inscribing circle radius and describing/superscripting circle ra dius - Involute, Cycloid, explanations as locus of a moving point, their engineering application, viz., Gear tooth profile, screw threads, springs etc. \u2013 their construction",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.11",
+                    "sno": "2.11",
+                    "topic": "Problem solving & practice on Principles of Geometric Constructions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.12",
+                    "sno": "2.12",
+                    "topic": "Problem solving & practice on Practice the basic geometric constructions like i) dividing a line into equal parts i) Exterior and interior tangents to the given two circles ii) Tangent arcs to two given lines and arcs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.13",
+                    "sno": "2.13",
+                    "topic": "Problem solving & practice on Draw any regular polygon using general method when i) side length is given i) Inscribing circle radius is given ii) describing circle radius is given",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.14",
+                    "sno": "2.14",
+                    "topic": "Problem solving & practice on Draw the engineering curves like i) involute ii) cycloid",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.15",
+                    "sno": "2.15",
+                    "topic": "Problem solving & practice on Geometric Constructions Division of a straight line into given number of equal parts \u2013Drawing interior and exterior tangents to two circles of given radii and centre distance -Drawing tangent arc of given radius to touch two lines inclined at given angle (acute, right and obtuse angles), Tangent arc of given radius touching a circle or an arc and a given line, Tangent arcs of radius R, touching two given circles internally and externally-Construction of any regular polygon by general method for given side length, inscribing circle radius and describing/superscripting circle ra dius - Involute, Cycloid, explanations as locus of a moving point, their engineering application, viz., Gear tooth profile, screw threads, springs etc. \u2013 their construction",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.16",
+                    "sno": "2.16",
+                    "topic": "Practical applications of Principles of Geometric Constructions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.17",
+                    "sno": "2.17",
+                    "topic": "Practical applications of Practice the basic geometric constructions like i) dividing a line into equal parts i) Exterior and interior tangents to the given two circles ii) Tangent arcs to two given lines and arcs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.18",
+                    "sno": "2.18",
+                    "topic": "Practical applications of Draw any regular polygon using general method when i) side length is given i) Inscribing circle radius is given ii) describing circle radius is given",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.19",
+                    "sno": "2.19",
+                    "topic": "Practical applications of Draw the engineering curves like i) involute ii) cycloid",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.20",
+                    "sno": "2.20",
+                    "topic": "Practical applications of Geometric Constructions Division of a straight line into given number of equal parts \u2013Drawing interior and exterior tangents to two circles of given radii and centre distance -Drawing tangent arc of given radius to touch two lines inclined at given angle (acute, right and obtuse angles), Tangent arc of given radius touching a circle or an arc and a given line, Tangent arcs of radius R, touching two given circles internally and externally-Construction of any regular polygon by general method for given side length, inscribing circle radius and describing/superscripting circle ra dius - Involute, Cycloid, explanations as locus of a moving point, their engineering application, viz., Gear tooth profile, screw threads, springs etc. \u2013 their construction",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.21",
+                    "sno": "2.21",
+                    "topic": "Practical applications of Principles of Geometric Constructions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.22",
+                    "sno": "2.22",
+                    "topic": "Practical applications of Practice the basic geometric constructions like i) dividing a line into equal parts i) Exterior and interior tangents to the given two circles ii) Tangent arcs to two given lines and arcs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-2.23",
+                    "sno": "2.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee107d-2.24",
+                    "sno": "2.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "Projections of points, lines, planes and solids (All in first quadrant only)",
             "totalPeriods": 24,
             "topics": [
                 {
-                    "topic": "Projections of points, lines, planes and solids (All in first quadrant only)",
-                    "period": 4,
-                    "type": "practical",
-                    "id": "26ee107d-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "Explain the basic principles of the orthographic projections",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee107d-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Projections of points, lines, planes and solids (All in first quadrant only)",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Visualise and draw the projection of a point with respect to reference planes (HP & VP)",
-                    "period": 4,
-                    "type": "practical",
                     "id": "26ee107d-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Explain the basic principles of the orthographic projections",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Visualise and draw the projections of straight lines with respect to two reference Planes (up to lines parallel to one plane and inclined to other plane)",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee107d-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Visualise and draw the projection of a point with respect to reference planes (HP & VP)",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Visualise and draw the projections of planes (up to planes perpendicular to one plane and inclined to other plane)",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee107d-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Visualise and draw the projections of straight lines with respect to two reference Planes (up to lines parallel to one plane and inclined to other plane)",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Visualise and draw the projections of regular solids like Prisms, Pyramids, Cylinder, Cone (up to axis of solids parallel to one plane and inclined to other plane)",
-                    "period": 3,
-                    "type": "practical",
                     "id": "26ee107d-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Visualise and draw the projections of planes (up to planes perpendicular to one plane and inclined to other plane)",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ee107d-3.6",
+                    "sno": "3.6",
+                    "topic": "Visualise and draw the projections of regular solids like Prisms, Pyramids, Cylinder, Cone (up to axis of solids parallel to one plane and inclined to other plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.7",
+                    "sno": "3.7",
                     "topic": "Projection of points, lines and planes and Solids (All in first quadrant only) Classification of projections, Observer, Object, Projectors, Projection, Reference Planes, Reference Line, Various angles of projections \u2013Differences between first angle and third angle projections. Projections of points -Projections of straight line \u2013(a) Parallel to both the planes, (b)Perpendicular to one of the planes and (c) Inclined to one plane and parallel to other planes -Projections of regular planes-(a) Plane parallel to one of the reference planes, (b) Plane perpendicular to HP and inclined to VP and vice versa- Projections of regular solids- (a) Axis perpendicular to one of the planes, (b) Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 3,
-                    "type": "practical",
-                    "id": "26ee107d-3.0",
-                    "sno": "3.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.8",
+                    "sno": "3.8",
+                    "topic": "Deep dive into Projections of points, lines, planes and solids (All in first quadrant only)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.9",
+                    "sno": "3.9",
+                    "topic": "Deep dive into Explain the basic principles of the orthographic projections",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.10",
+                    "sno": "3.10",
+                    "topic": "Deep dive into Visualise and draw the projection of a point with respect to reference planes (HP & VP)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.11",
+                    "sno": "3.11",
+                    "topic": "Deep dive into Visualise and draw the projections of straight lines with respect to two reference Planes (up to lines parallel to one plane and inclined to other plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.12",
+                    "sno": "3.12",
+                    "topic": "Deep dive into Visualise and draw the projections of planes (up to planes perpendicular to one plane and inclined to other plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.13",
+                    "sno": "3.13",
+                    "topic": "Deep dive into Visualise and draw the projections of regular solids like Prisms, Pyramids, Cylinder, Cone (up to axis of solids parallel to one plane and inclined to other plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.14",
+                    "sno": "3.14",
+                    "topic": "Deep dive into Projection of points, lines and planes and Solids (All in first quadrant only) Classification of projections, Observer, Object, Projectors, Projection, Reference Planes, Reference Line, Various angles of projections \u2013Differences between first angle and third angle projections. Projections of points -Projections of straight line \u2013(a) Parallel to both the planes, (b)Perpendicular to one of the planes and (c) Inclined to one plane and parallel to other planes -Projections of regular planes-(a) Plane parallel to one of the reference planes, (b) Plane perpendicular to HP and inclined to VP and vice versa- Projections of regular solids- (a) Axis perpendicular to one of the planes, (b) Axis parallel to VP and inclined to HP and vice versa",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.15",
+                    "sno": "3.15",
+                    "topic": "Problem solving & practice on Projections of points, lines, planes and solids (All in first quadrant only)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.16",
+                    "sno": "3.16",
+                    "topic": "Problem solving & practice on Explain the basic principles of the orthographic projections",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.17",
+                    "sno": "3.17",
+                    "topic": "Problem solving & practice on Visualise and draw the projection of a point with respect to reference planes (HP & VP)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.18",
+                    "sno": "3.18",
+                    "topic": "Problem solving & practice on Visualise and draw the projections of straight lines with respect to two reference Planes (up to lines parallel to one plane and inclined to other plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.19",
+                    "sno": "3.19",
+                    "topic": "Problem solving & practice on Visualise and draw the projections of planes (up to planes perpendicular to one plane and inclined to other plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.20",
+                    "sno": "3.20",
+                    "topic": "Problem solving & practice on Visualise and draw the projections of regular solids like Prisms, Pyramids, Cylinder, Cone (up to axis of solids parallel to one plane and inclined to other plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.21",
+                    "sno": "3.21",
+                    "topic": "Problem solving & practice on Projection of points, lines and planes and Solids (All in first quadrant only) Classification of projections, Observer, Object, Projectors, Projection, Reference Planes, Reference Line, Various angles of projections \u2013Differences between first angle and third angle projections. Projections of points -Projections of straight line \u2013(a) Parallel to both the planes, (b)Perpendicular to one of the planes and (c) Inclined to one plane and parallel to other planes -Projections of regular planes-(a) Plane parallel to one of the reference planes, (b) Plane perpendicular to HP and inclined to VP and vice versa- Projections of regular solids- (a) Axis perpendicular to one of the planes, (b) Axis parallel to VP and inclined to HP and vice versa",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.22",
+                    "sno": "3.22",
+                    "topic": "Practical applications of Projections of points, lines, planes and solids (All in first quadrant only)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-3.23",
+                    "sno": "3.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee107d-3.24",
+                    "sno": "3.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "Sectional Views",
             "totalPeriods": 24,
             "topics": [
                 {
-                    "topic": "Sectional Views",
-                    "period": 6,
-                    "type": "practical",
-                    "id": "26ee107d-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Identify the need to draw sectional views",
-                    "period": 6,
-                    "type": "practical",
                     "id": "26ee107d-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "Sectional Views",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Draw sectional views of regular solids by applying the principles of hatching",
-                    "period": 6,
-                    "type": "practical",
                     "id": "26ee107d-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Identify the need to draw sectional views",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ee107d-4.3",
+                    "sno": "4.3",
+                    "topic": "Draw sectional views of regular solids by applying the principles of hatching",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.4",
+                    "sno": "4.4",
                     "topic": "Sectional Views Need for drawing sectional views \u2013 what is a sectional view - Hatching \u2013 Section of regular solids inclined to one plane and parallel to other plane",
-                    "period": 6,
-                    "type": "practical",
-                    "id": "26ee107d-4.0",
-                    "sno": "4.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.5",
+                    "sno": "4.5",
+                    "topic": "Deep dive into Sectional Views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.6",
+                    "sno": "4.6",
+                    "topic": "Deep dive into Identify the need to draw sectional views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.7",
+                    "sno": "4.7",
+                    "topic": "Deep dive into Draw sectional views of regular solids by applying the principles of hatching",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.8",
+                    "sno": "4.8",
+                    "topic": "Deep dive into Sectional Views Need for drawing sectional views \u2013 what is a sectional view - Hatching \u2013 Section of regular solids inclined to one plane and parallel to other plane",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.9",
+                    "sno": "4.9",
+                    "topic": "Problem solving & practice on Sectional Views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.10",
+                    "sno": "4.10",
+                    "topic": "Problem solving & practice on Identify the need to draw sectional views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.11",
+                    "sno": "4.11",
+                    "topic": "Problem solving & practice on Draw sectional views of regular solids by applying the principles of hatching",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.12",
+                    "sno": "4.12",
+                    "topic": "Problem solving & practice on Sectional Views Need for drawing sectional views \u2013 what is a sectional view - Hatching \u2013 Section of regular solids inclined to one plane and parallel to other plane",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.13",
+                    "sno": "4.13",
+                    "topic": "Practical applications of Sectional Views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.14",
+                    "sno": "4.14",
+                    "topic": "Practical applications of Identify the need to draw sectional views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.15",
+                    "sno": "4.15",
+                    "topic": "Practical applications of Draw sectional views of regular solids by applying the principles of hatching",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.16",
+                    "sno": "4.16",
+                    "topic": "Practical applications of Sectional Views Need for drawing sectional views \u2013 what is a sectional view - Hatching \u2013 Section of regular solids inclined to one plane and parallel to other plane",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.17",
+                    "sno": "4.17",
+                    "topic": "Practical applications of Sectional Views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.18",
+                    "sno": "4.18",
+                    "topic": "Practical applications of Identify the need to draw sectional views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.19",
+                    "sno": "4.19",
+                    "topic": "Practical applications of Draw sectional views of regular solids by applying the principles of hatching",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.20",
+                    "sno": "4.20",
+                    "topic": "Practical applications of Sectional Views Need for drawing sectional views \u2013 what is a sectional view - Hatching \u2013 Section of regular solids inclined to one plane and parallel to other plane",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.21",
+                    "sno": "4.21",
+                    "topic": "Practical applications of Sectional Views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.22",
+                    "sno": "4.22",
+                    "topic": "Practical applications of Identify the need to draw sectional views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-4.23",
+                    "sno": "4.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee107d-4.24",
+                    "sno": "4.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "Orthographic projection",
             "totalPeriods": 24,
             "topics": [
                 {
+                    "id": "26ee107d-5.1",
+                    "sno": "5.1",
                     "topic": "Orthographic projection",
-                    "period": 12,
-                    "type": "practical",
-                    "id": "26ee107d-5.0",
-                    "sno": "5.0"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ee107d-5.2",
+                    "sno": "5.2",
                     "topic": "Draw the orthographic views of an object from its pictorial drawing",
-                    "period": 12,
-                    "type": "practical",
-                    "id": "26ee107d-5.1",
-                    "sno": "5.1"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.3",
+                    "sno": "5.3",
+                    "topic": "Deep dive into Orthographic projection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.4",
+                    "sno": "5.4",
+                    "topic": "Deep dive into Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.5",
+                    "sno": "5.5",
+                    "topic": "Problem solving & practice on Orthographic projection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.6",
+                    "sno": "5.6",
+                    "topic": "Problem solving & practice on Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.7",
+                    "sno": "5.7",
+                    "topic": "Practical applications of Orthographic projection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.8",
+                    "sno": "5.8",
+                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.9",
+                    "sno": "5.9",
+                    "topic": "Practical applications of Orthographic projection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.10",
+                    "sno": "5.10",
+                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.11",
+                    "sno": "5.11",
+                    "topic": "Practical applications of Orthographic projection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.12",
+                    "sno": "5.12",
+                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.13",
+                    "sno": "5.13",
+                    "topic": "Practical applications of Orthographic projection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.14",
+                    "sno": "5.14",
+                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.15",
+                    "sno": "5.15",
+                    "topic": "Practical applications of Orthographic projection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.16",
+                    "sno": "5.16",
+                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.17",
+                    "sno": "5.17",
+                    "topic": "Practical applications of Orthographic projection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.18",
+                    "sno": "5.18",
+                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.19",
+                    "sno": "5.19",
+                    "topic": "Practical applications of Orthographic projection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.20",
+                    "sno": "5.20",
+                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.21",
+                    "sno": "5.21",
+                    "topic": "Practical applications of Orthographic projection",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.22",
+                    "sno": "5.22",
+                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ee107d-5.23",
+                    "sno": "5.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee107d-5.24",
+                    "sno": "5.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

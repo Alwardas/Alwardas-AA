@@ -2,107 +2,667 @@
     "regulation": "C26",
     "units": [
         {
-            "unitNo": 1,
-            "title": "Work Study",
-            "totalPeriods": 20,
+            "unitNo": 2,
+            "title": "PLANT ENGINEERING AND COSTING.",
+            "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "Define Production, Productivity, Work study, Method Study and Work Measurement",
-                    "period": 2,
-                    "type": "theory",
+                    "id": "26me501t-2.1",
+                    "sno": "2.1",
+                    "topic": "PLANT ENGINEERING AND COSTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.2",
+                    "sno": "2.2",
+                    "topic": "PLANT ENGINEERING AND COSTING. Plant Engineering: Plant \u2013 Selection of site for an industry \u2013 Plant layout \u2013 Types: process, product and fixed position layouts \u2013Importance of Plant maintenance \u2013 Preventive, Predictive and corrective maintenance - Principles of material handling equipment. Costing: Estimation versus Costing - Elements of cost \u2013 Components of cost - Procedure for estimation of selling price of the given product - Numerical Problems Depreciation: Definition \u2013 Causes and methods of depreciation - Simple problems on calculation of depreciation Fund by 1) Straight Line method 2) Sinking Fund Method and 3) Sum of Years\u2019 Digits method",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.3",
+                    "sno": "2.3",
+                    "topic": "Deep dive into PLANT ENGINEERING AND COSTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.4",
+                    "sno": "2.4",
+                    "topic": "Deep dive into PLANT ENGINEERING AND COSTING. Plant Engineering: Plant \u2013 Selection of site for an industry \u2013 Plant layout \u2013 Types: process, product and fixed position layouts \u2013Importance of Plant maintenance \u2013 Preventive, Predictive and corrective maintenance - Principles of material handling equipment. Costing: Estimation versus Costing - Elements of cost \u2013 Components of cost - Procedure for estimation of selling price of the given product - Numerical Problems Depreciation: Definition \u2013 Causes and methods of depreciation - Simple problems on calculation of depreciation Fund by 1) Straight Line method 2) Sinking Fund Method and 3) Sum of Years\u2019 Digits method",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.5",
+                    "sno": "2.5",
+                    "topic": "Problem solving & practice on PLANT ENGINEERING AND COSTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.6",
+                    "sno": "2.6",
+                    "topic": "Problem solving & practice on PLANT ENGINEERING AND COSTING. Plant Engineering: Plant \u2013 Selection of site for an industry \u2013 Plant layout \u2013 Types: process, product and fixed position layouts \u2013Importance of Plant maintenance \u2013 Preventive, Predictive and corrective maintenance - Principles of material handling equipment. Costing: Estimation versus Costing - Elements of cost \u2013 Components of cost - Procedure for estimation of selling price of the given product - Numerical Problems Depreciation: Definition \u2013 Causes and methods of depreciation - Simple problems on calculation of depreciation Fund by 1) Straight Line method 2) Sinking Fund Method and 3) Sum of Years\u2019 Digits method",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.7",
+                    "sno": "2.7",
+                    "topic": "Practical applications of PLANT ENGINEERING AND COSTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.8",
+                    "sno": "2.8",
+                    "topic": "Practical applications of PLANT ENGINEERING AND COSTING. Plant Engineering: Plant \u2013 Selection of site for an industry \u2013 Plant layout \u2013 Types: process, product and fixed position layouts \u2013Importance of Plant maintenance \u2013 Preventive, Predictive and corrective maintenance - Principles of material handling equipment. Costing: Estimation versus Costing - Elements of cost \u2013 Components of cost - Procedure for estimation of selling price of the given product - Numerical Problems Depreciation: Definition \u2013 Causes and methods of depreciation - Simple problems on calculation of depreciation Fund by 1) Straight Line method 2) Sinking Fund Method and 3) Sum of Years\u2019 Digits method",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.9",
+                    "sno": "2.9",
+                    "topic": "Practical applications of PLANT ENGINEERING AND COSTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.10",
+                    "sno": "2.10",
+                    "topic": "Practical applications of PLANT ENGINEERING AND COSTING. Plant Engineering: Plant \u2013 Selection of site for an industry \u2013 Plant layout \u2013 Types: process, product and fixed position layouts \u2013Importance of Plant maintenance \u2013 Preventive, Predictive and corrective maintenance - Principles of material handling equipment. Costing: Estimation versus Costing - Elements of cost \u2013 Components of cost - Procedure for estimation of selling price of the given product - Numerical Problems Depreciation: Definition \u2013 Causes and methods of depreciation - Simple problems on calculation of depreciation Fund by 1) Straight Line method 2) Sinking Fund Method and 3) Sum of Years\u2019 Digits method",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.11",
+                    "sno": "2.11",
+                    "topic": "Practical applications of PLANT ENGINEERING AND COSTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.12",
+                    "sno": "2.12",
+                    "topic": "Practical applications of PLANT ENGINEERING AND COSTING. Plant Engineering: Plant \u2013 Selection of site for an industry \u2013 Plant layout \u2013 Types: process, product and fixed position layouts \u2013Importance of Plant maintenance \u2013 Preventive, Predictive and corrective maintenance - Principles of material handling equipment. Costing: Estimation versus Costing - Elements of cost \u2013 Components of cost - Procedure for estimation of selling price of the given product - Numerical Problems Depreciation: Definition \u2013 Causes and methods of depreciation - Simple problems on calculation of depreciation Fund by 1) Straight Line method 2) Sinking Fund Method and 3) Sum of Years\u2019 Digits method",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.13",
+                    "sno": "2.13",
+                    "topic": "Practical applications of PLANT ENGINEERING AND COSTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.14",
+                    "sno": "2.14",
+                    "topic": "Practical applications of PLANT ENGINEERING AND COSTING. Plant Engineering: Plant \u2013 Selection of site for an industry \u2013 Plant layout \u2013 Types: process, product and fixed position layouts \u2013Importance of Plant maintenance \u2013 Preventive, Predictive and corrective maintenance - Principles of material handling equipment. Costing: Estimation versus Costing - Elements of cost \u2013 Components of cost - Procedure for estimation of selling price of the given product - Numerical Problems Depreciation: Definition \u2013 Causes and methods of depreciation - Simple problems on calculation of depreciation Fund by 1) Straight Line method 2) Sinking Fund Method and 3) Sum of Years\u2019 Digits method",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.15",
+                    "sno": "2.15",
+                    "topic": "Practical applications of PLANT ENGINEERING AND COSTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.16",
+                    "sno": "2.16",
+                    "topic": "Practical applications of PLANT ENGINEERING AND COSTING. Plant Engineering: Plant \u2013 Selection of site for an industry \u2013 Plant layout \u2013 Types: process, product and fixed position layouts \u2013Importance of Plant maintenance \u2013 Preventive, Predictive and corrective maintenance - Principles of material handling equipment. Costing: Estimation versus Costing - Elements of cost \u2013 Components of cost - Procedure for estimation of selling price of the given product - Numerical Problems Depreciation: Definition \u2013 Causes and methods of depreciation - Simple problems on calculation of depreciation Fund by 1) Straight Line method 2) Sinking Fund Method and 3) Sum of Years\u2019 Digits method",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-2.17",
+                    "sno": "2.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me501t-2.18",
+                    "sno": "2.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "PRINCIPLES OF MANAGEMENT AND ORGANIZATION STRUCTURE",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "26me501t-3.1",
+                    "sno": "3.1",
+                    "topic": "PRINCIPLES OF MANAGEMENT AND ORGANIZATION STRUCTURE",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.2",
+                    "sno": "3.2",
+                    "topic": "Define Industry, Commerce and Trade",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.3",
+                    "sno": "3.3",
+                    "topic": "Know the need for management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.4",
+                    "sno": "3.4",
+                    "topic": "Understand functions of Management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.5",
+                    "sno": "3.5",
+                    "topic": "List the principle of scientific management by F.W. Taylor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.6",
+                    "sno": "3.6",
+                    "topic": "List the principle of modern management by Henri Fayol",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.7",
+                    "sno": "3.7",
+                    "topic": "Define organization structure",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.8",
+                    "sno": "3.8",
+                    "topic": "Explain line, staff and line & staff organization structures",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.9",
+                    "sno": "3.9",
+                    "topic": "PRINCIPLES OF MANAGEMENT AND ORGANIZATION STRUCTURE Introduction: Industry, Commerce and Trade; Definition of management; Functions of management; Principles of Scientific Management by F.W. Taylor - Principles of Modern Management by Henri Fayol; Levels of management - Managerial skills - Management Information Systems: Objectives and Characteristics. Organization Types: Line, Staff and Line & Staff Organizations, their advantages, limitations and applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.10",
+                    "sno": "3.10",
+                    "topic": "Deep dive into PRINCIPLES OF MANAGEMENT AND ORGANIZATION STRUCTURE",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.11",
+                    "sno": "3.11",
+                    "topic": "Deep dive into Define Industry, Commerce and Trade",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.12",
+                    "sno": "3.12",
+                    "topic": "Deep dive into Know the need for management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.13",
+                    "sno": "3.13",
+                    "topic": "Deep dive into Understand functions of Management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.14",
+                    "sno": "3.14",
+                    "topic": "Deep dive into List the principle of scientific management by F.W. Taylor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.15",
+                    "sno": "3.15",
+                    "topic": "Deep dive into List the principle of modern management by Henri Fayol",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.16",
+                    "sno": "3.16",
+                    "topic": "Deep dive into Define organization structure",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-3.17",
+                    "sno": "3.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me501t-3.18",
+                    "sno": "3.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "PRODUCTION MANAGEMENT",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "26me501t-4.1",
+                    "sno": "4.1",
+                    "topic": "PRODUCTION MANAGEMENT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.2",
+                    "sno": "4.2",
+                    "topic": "Define Production, Planning and Control",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.3",
+                    "sno": "4.3",
+                    "topic": "Explain Mass production, Batch production and Job order production",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.4",
+                    "sno": "4.4",
+                    "topic": "Define the terms Routing, Scheduling and Dispatching",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.5",
+                    "sno": "4.5",
+                    "topic": "List applications of network diagrams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.6",
+                    "sno": "4.6",
+                    "topic": "Draw PERT and CPM Network Diagrams \u2013 Simple Problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.7",
+                    "sno": "4.7",
+                    "topic": "Know the functions of Materials Management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.8",
+                    "sno": "4.8",
+                    "topic": "Explain ABC analysis of Inventory",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.9",
+                    "sno": "4.9",
+                    "topic": "Explain the concept of Economic Ordering Quantity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.10",
+                    "sno": "4.10",
+                    "topic": "Explain the meaning of Supply chain management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.11",
+                    "sno": "4.11",
+                    "topic": "Write processes of Supply Chain Management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.12",
+                    "sno": "4.12",
+                    "topic": "List various SAP modules",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.13",
+                    "sno": "4.13",
+                    "topic": "List the functions of Purchase Department",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.14",
+                    "sno": "4.14",
+                    "topic": "Write functions of Stores Department",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.15",
+                    "sno": "4.15",
+                    "topic": "PRODUCTION MANAGEMENT Production, Planning and Control \u2013 Types of Production - Routing, Scheduling and Dispatching - PERT and CPM Network Diagrams \u2013 Applications \u2013Calculate Project Duration and identify the critical path of the Project \u2013 Simple Problems; Functions of Materials Management - ABC analysis of Inventory. - Economic ordering quantity- Meaning of Supply Chain Management \u2013 Processes of Supply Chain Management \u2013List various SAP modules - Functions of Purchase Department - Purchasing Procedure -Functions of Stores Department \u2013 Bin Card",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.16",
+                    "sno": "4.16",
+                    "topic": "Deep dive into PRODUCTION MANAGEMENT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-4.17",
+                    "sno": "4.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me501t-4.18",
+                    "sno": "4.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "INDUSTRIAL SAFETY AND ENGINEERING ETHICS",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "26me501t-5.1",
+                    "sno": "5.1",
+                    "topic": "INDUSTRIAL SAFETY AND ENGINEERING ETHICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.2",
+                    "sno": "5.2",
+                    "topic": "Comprehend the importance of safety at Workplace",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.3",
+                    "sno": "5.3",
+                    "topic": "List Different hazards in the industry",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.4",
+                    "sno": "5.4",
+                    "topic": "State the causes of accidents, costs of accidents and their prevention",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.5",
+                    "sno": "5.5",
+                    "topic": "Definition of Engineering Ethics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.6",
+                    "sno": "5.6",
+                    "topic": "Understand Core qualities of Professional Engineers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.7",
+                    "sno": "5.7",
+                    "topic": "Explain Different types of Ethics in Engineering",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.8",
+                    "sno": "5.8",
+                    "topic": "List Activities of Corporate Social Responsibility (CSR)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.9",
+                    "sno": "5.9",
+                    "topic": "State the need of Human values in engineering fields",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.10",
+                    "sno": "5.10",
+                    "topic": "INDUSTRIAL SAFETY AND ENGINEERING ETHICS Industrial Safety: The importance of safety at Workplace -Hazards and accidents - Different hazards in the industry -The causes of accidents and prevention of accidents - Direct and indirect cost of accidents. Engineering Ethics: Definition \u2013 Classification of Engineering Ethics - Personal and Business ethics \u2013Value based ethics - Environmental ethics - Activities of Corporate Social Responsibility (CSR). Human values Morals \u2013 Values \u2013Character, Caring, Courage, Cooperation, Commitment, Empathy, Honesty, Integrity, Respect for others, Sharing, Service learning - Salient features of Code on Wages, 2019 REFERENCE BOOKS 1.Work study \u2013 by Ralph Banes. 2.Work study \u2013 by I.L.O. 3. Industrial Engineering & Management Science - by T.R. Banga 4. Industrial Engineering and Management-by O.P. Khanna 5. Production Management-by Buffa. 6. Engineering Economics and Management Science-by Banga & Sharma. 7. Personnel Management by Flippo. 8. Production and Operations Management\u2013S.N.C hary Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II 26ME501T : Industrial Engineering and Management Unit Test Learning Outcomes to be covered Unit Test \u2013 I 1.1 \u2013 2.13 Unit Test \u2013 II 3.1 \u2013 5.9",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.11",
+                    "sno": "5.11",
+                    "topic": "Deep dive into INDUSTRIAL SAFETY AND ENGINEERING ETHICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.12",
+                    "sno": "5.12",
+                    "topic": "Deep dive into Comprehend the importance of safety at Workplace",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.13",
+                    "sno": "5.13",
+                    "topic": "Deep dive into List Different hazards in the industry",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.14",
+                    "sno": "5.14",
+                    "topic": "Deep dive into State the causes of accidents, costs of accidents and their prevention",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.15",
+                    "sno": "5.15",
+                    "topic": "Deep dive into Definition of Engineering Ethics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.16",
+                    "sno": "5.16",
+                    "topic": "Deep dive into Understand Core qualities of Professional Engineers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-5.17",
+                    "sno": "5.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me501t-5.18",
+                    "sno": "5.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 1,
+            "title": "WORK STUDY",
+            "totalPeriods": 18,
+            "topics": [
+                {
                     "id": "26me501t-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Define Production, Productivity, Work study, Method Study and Work Measurement",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State objectives of Work study, Method Study and Work Measurement",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me501t-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "State objectives of Work study, Method Study and Work Measurement",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the Steps: Define, Record, Critical Examination, Develop, and Install and maintain for conduct of method study to increase the productivity",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me501t-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Explain the Steps: Define, Record, Critical Examination, Develop, and Install and maintain for conduct of method study to increase the productivity",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain process chart symbols with examples",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me501t-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Explain process chart symbols with examples",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the use of flow diagram and string diagram",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me501t-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Explain the use of flow diagram and string diagram",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain Cycle graph and Chrono cycle graph",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me501t-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Explain Cycle graph and Chrono cycle graph",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me501t-1.7",
+                    "sno": "1.7",
                     "topic": "Identify various therbligs used in micro motion study and construct SIMO chart",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me501t-1.7",
-                    "sno": "1.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me501t-1.8",
+                    "sno": "1.8",
                     "topic": "Explain Time study Procedure by using a stop watch",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me501t-1.8",
-                    "sno": "1.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me501t-1.9",
+                    "sno": "1.9",
                     "topic": "Compute the standard time for an operation by adding its constituent elements",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me501t-1.9",
-                    "sno": "1.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me501t-1.10",
+                    "sno": "1.10",
                     "topic": "Explain the procedure of Predetermined Motion Time Standards (PMTS)",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me501t-1.10",
-                    "sno": "1.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me501t-1.11",
+                    "sno": "1.11",
                     "topic": "Explain the method of conducting work sampling",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me501t-1.11",
-                    "sno": "1.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me501t-1.12",
+                    "sno": "1.12",
                     "topic": "State the terms involved in wage systems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me501t-1.12",
-                    "sno": "1.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me501t-1.13",
+                    "sno": "1.13",
                     "topic": "List different incentive plans and solve simple numerical problems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me501t-1.13",
-                    "sno": "1.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me501t-1.14",
+                    "sno": "1.14",
                     "topic": "WORK STUDY Industrial Engineering: Definition of Production and productivity; Work Study: Definition, objectives of work study. Method Study: Definition, objectives, procedure of conducting method study. Process chart symbols \u2013 Explanation with Operation process chart, Flow process chart and Two-handed process charts only - Uses of flow diagram and string diagram. Micro-motion study: Therbligs \u2013 Simo chart \u2013 Cycle graph and Chronocycle graph Work Measurement or Time study: Definition, objectives - Work measurement techniques. Time Study: Procedure by using a stop watch to measure the standard time - Constituents of standard time: Observed time - Normal time- rating factor- allowances. Standard data method - Determination of standard time by using Predetermined Motion Time Standards (PMTS) - Determination of standard time by using work sampling. Wage and Incentive plans: Definitions of wage, nominal wage, real wage, living wage, minimum wage, fair wage - Incentives and types - List different incentive plans - Halsey, Rowan and Emerson efficiency plans, solve simple numerical problems",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me501t-1.0",
-                    "sno": "1.0"
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into Define Production, Productivity, Work study, Method Study and Work Measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into State objectives of Work study, Method Study and Work Measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me501t-1.17",
+                    "sno": "1.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me501t-1.18",
+                    "sno": "1.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

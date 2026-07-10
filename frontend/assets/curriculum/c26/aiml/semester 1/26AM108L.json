@@ -3,71 +3,932 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 24,
+            "title": "Practice volumetric measurements (using pipettes, measuring jars, volumetric",
+            "totalPeriods": 12,
             "topics": [
                 {
+                    "id": "26am108l-1.1",
+                    "sno": "1.1",
                     "topic": "Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
-                    "period": 24,
-                    "type": "practical",
-                    "id": "26am108l-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-1.2",
+                    "sno": "1.2",
+                    "topic": "Deep dive into Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-1.3",
+                    "sno": "1.3",
+                    "topic": "Problem solving & practice on Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-1.4",
+                    "sno": "1.4",
+                    "topic": "Practical applications of Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-1.5",
+                    "sno": "1.5",
+                    "topic": "Practical applications of Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-1.6",
+                    "sno": "1.6",
+                    "topic": "Practical applications of Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-1.7",
+                    "sno": "1.7",
+                    "topic": "Practical applications of Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-1.8",
+                    "sno": "1.8",
+                    "topic": "Practical applications of Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-1.9",
+                    "sno": "1.9",
+                    "topic": "Practical applications of Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-1.10",
+                    "sno": "1.10",
+                    "topic": "Practical applications of Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-1.11",
+                    "sno": "1.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-1.12",
+                    "sno": "1.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 24,
+            "title": "Identify the chemical compounds and solutions by senses.",
+            "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26am108l-2.1",
+                    "sno": "2.1",
                     "topic": "Identify the chemical compounds and solutions by senses",
-                    "period": 24,
-                    "type": "practical",
-                    "id": "26am108l-2.0",
-                    "sno": "2.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-2.2",
+                    "sno": "2.2",
+                    "topic": "Deep dive into Identify the chemical compounds and solutions by senses",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-2.3",
+                    "sno": "2.3",
+                    "topic": "Problem solving & practice on Identify the chemical compounds and solutions by senses",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-2.4",
+                    "sno": "2.4",
+                    "topic": "Practical applications of Identify the chemical compounds and solutions by senses",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-2.5",
+                    "sno": "2.5",
+                    "topic": "Practical applications of Identify the chemical compounds and solutions by senses",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-2.6",
+                    "sno": "2.6",
+                    "topic": "Practical applications of Identify the chemical compounds and solutions by senses",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-2.7",
+                    "sno": "2.7",
+                    "topic": "Practical applications of Identify the chemical compounds and solutions by senses",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-2.8",
+                    "sno": "2.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-2.9",
+                    "sno": "2.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 24,
+            "title": "Practice making standard Na2CO3 solutions.",
+            "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26am108l-3.1",
+                    "sno": "3.1",
                     "topic": "Practice making standard Na2CO3 solutions",
-                    "period": 24,
-                    "type": "practical",
-                    "id": "26am108l-3.0",
-                    "sno": "3.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-3.2",
+                    "sno": "3.2",
+                    "topic": "Deep dive into Practice making standard Na2CO3 solutions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-3.3",
+                    "sno": "3.3",
+                    "topic": "Problem solving & practice on Practice making standard Na2CO3 solutions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-3.4",
+                    "sno": "3.4",
+                    "topic": "Practical applications of Practice making standard Na2CO3 solutions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-3.5",
+                    "sno": "3.5",
+                    "topic": "Practical applications of Practice making standard Na2CO3 solutions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-3.6",
+                    "sno": "3.6",
+                    "topic": "Practical applications of Practice making standard Na2CO3 solutions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-3.7",
+                    "sno": "3.7",
+                    "topic": "Practical applications of Practice making standard Na2CO3 solutions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-3.8",
+                    "sno": "3.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-3.9",
+                    "sno": "3.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 24,
+            "title": "Conduct titrations adopting standard procedures and using standard NaOH",
+            "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26am108l-4.1",
+                    "sno": "4.1",
                     "topic": "Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
-                    "period": 24,
-                    "type": "practical",
-                    "id": "26am108l-4.0",
-                    "sno": "4.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-4.2",
+                    "sno": "4.2",
+                    "topic": "Deep dive into Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-4.3",
+                    "sno": "4.3",
+                    "topic": "Problem solving & practice on Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-4.4",
+                    "sno": "4.4",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-4.5",
+                    "sno": "4.5",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-4.6",
+                    "sno": "4.6",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-4.7",
+                    "sno": "4.7",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-4.8",
+                    "sno": "4.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-4.9",
+                    "sno": "4.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 24,
+            "title": "Conduct titrations adopting standard procedures to determine the alkalinity of",
+            "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26am108l-5.1",
+                    "sno": "5.1",
                     "topic": "Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
-                    "period": 24,
-                    "type": "practical",
-                    "id": "26am108l-5.0",
-                    "sno": "5.0"
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-5.2",
+                    "sno": "5.2",
+                    "topic": "Deep dive into Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-5.3",
+                    "sno": "5.3",
+                    "topic": "Problem solving & practice on Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-5.4",
+                    "sno": "5.4",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-5.5",
+                    "sno": "5.5",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-5.6",
+                    "sno": "5.6",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-5.7",
+                    "sno": "5.7",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-5.8",
+                    "sno": "5.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-5.9",
+                    "sno": "5.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Conduct titrations adopting standard procedures and using standard KMnO4",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26am108l-6.1",
+                    "sno": "6.1",
+                    "topic": "Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt. 101",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-6.2",
+                    "sno": "6.2",
+                    "topic": "Deep dive into Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt. 101",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-6.3",
+                    "sno": "6.3",
+                    "topic": "Problem solving & practice on Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt. 101",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-6.4",
+                    "sno": "6.4",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt. 101",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-6.5",
+                    "sno": "6.5",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt. 101",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-6.6",
+                    "sno": "6.6",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt. 101",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-6.7",
+                    "sno": "6.7",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt. 101",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-6.8",
+                    "sno": "6.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-6.9",
+                    "sno": "6.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Conduct titrations adopting standard procedures to determine the total",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26am108l-7.1",
+                    "sno": "7.1",
+                    "topic": "Introduction to Unit 7 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-7.2",
+                    "sno": "7.2",
+                    "topic": "Detailed analysis of Unit 7 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-7.3",
+                    "sno": "7.3",
+                    "topic": "Practical application and standard setups for Unit 7",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-7.4",
+                    "sno": "7.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-7.5",
+                    "sno": "7.5",
+                    "topic": "Deep dive into Introduction to Unit 7 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-7.6",
+                    "sno": "7.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 7 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-7.7",
+                    "sno": "7.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 7",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-7.8",
+                    "sno": "7.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-7.9",
+                    "sno": "7.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Conduct titrations adopting standard procedures to determine the chlorides",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26am108l-8.1",
+                    "sno": "8.1",
+                    "topic": "Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-8.2",
+                    "sno": "8.2",
+                    "topic": "Deep dive into Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-8.3",
+                    "sno": "8.3",
+                    "topic": "Problem solving & practice on Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-8.4",
+                    "sno": "8.4",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-8.5",
+                    "sno": "8.5",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-8.6",
+                    "sno": "8.6",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-8.7",
+                    "sno": "8.7",
+                    "topic": "Practical applications of Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-8.8",
+                    "sno": "8.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-8.9",
+                    "sno": "8.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 9,
+            "title": "Conduct the test on given samples of water / solutions (like soft drinks, sewage",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26am108l-9.1",
+                    "sno": "9.1",
+                    "topic": "Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-9.2",
+                    "sno": "9.2",
+                    "topic": "Deep dive into Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-9.3",
+                    "sno": "9.3",
+                    "topic": "Problem solving & practice on Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-9.4",
+                    "sno": "9.4",
+                    "topic": "Practical applications of Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-9.5",
+                    "sno": "9.5",
+                    "topic": "Practical applications of Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-9.6",
+                    "sno": "9.6",
+                    "topic": "Practical applications of Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-9.7",
+                    "sno": "9.7",
+                    "topic": "Practical applications of Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-9.8",
+                    "sno": "9.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-9.9",
+                    "sno": "9.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 10,
+            "title": "Demonstrate the electrolysis process of Copper deposited on an object.",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26am108l-10.1",
+                    "sno": "10.1",
+                    "topic": "Demonstrate the electrolysis process of Copper deposited on an object",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-10.2",
+                    "sno": "10.2",
+                    "topic": "Deep dive into Demonstrate the electrolysis process of Copper deposited on an object",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-10.3",
+                    "sno": "10.3",
+                    "topic": "Problem solving & practice on Demonstrate the electrolysis process of Copper deposited on an object",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-10.4",
+                    "sno": "10.4",
+                    "topic": "Practical applications of Demonstrate the electrolysis process of Copper deposited on an object",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-10.5",
+                    "sno": "10.5",
+                    "topic": "Practical applications of Demonstrate the electrolysis process of Copper deposited on an object",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-10.6",
+                    "sno": "10.6",
+                    "topic": "Practical applications of Demonstrate the electrolysis process of Copper deposited on an object",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-10.7",
+                    "sno": "10.7",
+                    "topic": "Practical applications of Demonstrate the electrolysis process of Copper deposited on an object",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-10.8",
+                    "sno": "10.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-10.9",
+                    "sno": "10.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 11,
+            "title": "Understand the construction and working principle of a Galvanic cell and",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26am108l-11.1",
+                    "sno": "11.1",
+                    "topic": "Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-11.2",
+                    "sno": "11.2",
+                    "topic": "Deep dive into Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-11.3",
+                    "sno": "11.3",
+                    "topic": "Problem solving & practice on Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-11.4",
+                    "sno": "11.4",
+                    "topic": "Practical applications of Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-11.5",
+                    "sno": "11.5",
+                    "topic": "Practical applications of Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-11.6",
+                    "sno": "11.6",
+                    "topic": "Practical applications of Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-11.7",
+                    "sno": "11.7",
+                    "topic": "Practical applications of Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-11.8",
+                    "sno": "11.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-11.9",
+                    "sno": "11.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 12,
+            "title": "Collect water sample from nearby water body and test for any two parameters.[",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26am108l-12.1",
+                    "sno": "12.1",
+                    "topic": "Collect water sample from nearby water body and test for any two parameters.[ Parameters \u2013 Alkalinity, Hardness, Chloride and pH]",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-12.2",
+                    "sno": "12.2",
+                    "topic": "Deep dive into Collect water sample from nearby water body and test for any two parameters.[ Parameters \u2013 Alkalinity, Hardness, Chloride and pH]",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-12.3",
+                    "sno": "12.3",
+                    "topic": "Problem solving & practice on Collect water sample from nearby water body and test for any two parameters.[ Parameters \u2013 Alkalinity, Hardness, Chloride and pH]",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-12.4",
+                    "sno": "12.4",
+                    "topic": "Practical applications of Collect water sample from nearby water body and test for any two parameters.[ Parameters \u2013 Alkalinity, Hardness, Chloride and pH]",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-12.5",
+                    "sno": "12.5",
+                    "topic": "Practical applications of Collect water sample from nearby water body and test for any two parameters.[ Parameters \u2013 Alkalinity, Hardness, Chloride and pH]",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-12.6",
+                    "sno": "12.6",
+                    "topic": "Practical applications of Collect water sample from nearby water body and test for any two parameters.[ Parameters \u2013 Alkalinity, Hardness, Chloride and pH]",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-12.7",
+                    "sno": "12.7",
+                    "topic": "Practical applications of Collect water sample from nearby water body and test for any two parameters.[ Parameters \u2013 Alkalinity, Hardness, Chloride and pH]",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-12.8",
+                    "sno": "12.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-12.9",
+                    "sno": "12.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 13,
+            "title": "Collect water sample from nearby sewage/industrial effluent and test for any two",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26am108l-13.1",
+                    "sno": "13.1",
+                    "topic": "Introduction to Unit 13 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-13.2",
+                    "sno": "13.2",
+                    "topic": "Detailed analysis of Unit 13 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-13.3",
+                    "sno": "13.3",
+                    "topic": "Practical application and standard setups for Unit 13",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-13.4",
+                    "sno": "13.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-13.5",
+                    "sno": "13.5",
+                    "topic": "Deep dive into Introduction to Unit 13 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-13.6",
+                    "sno": "13.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 13 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-13.7",
+                    "sno": "13.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 13",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26am108l-13.8",
+                    "sno": "13.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26am108l-13.9",
+                    "sno": "13.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

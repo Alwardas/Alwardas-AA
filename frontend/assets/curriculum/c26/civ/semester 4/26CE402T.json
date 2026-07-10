@@ -3,57 +3,771 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Basics of Estimation",
-            "totalPeriods": 8,
+            "title": "BASICS OF ESTIMATION",
+            "totalPeriods": 21,
             "topics": [
                 {
+                    "id": "26ce402t-1.1",
+                    "sno": "1.1",
                     "topic": "BASICS OF ESTIMATION",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ce402t-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce402t-1.2",
+                    "sno": "1.2",
                     "topic": "State the purpose of estimation and costing",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce402t-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce402t-1.3",
+                    "sno": "1.3",
                     "topic": "State the units of measurements, data and payment for different items of work and materials",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce402t-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce402t-1.4",
+                    "sno": "1.4",
                     "topic": "Explain the approximate and detailed methods of estimation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce402t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce402t-1.5",
+                    "sno": "1.5",
                     "topic": "Explain and write down the specifications for various items of work in building construction",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce402t-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce402t-1.6",
+                    "sno": "1.6",
                     "topic": "BASICS OF ESTIMATION Definition of estimate and its importance \u2013 units of measurements and units of payment of items of work \u2013 earthwork, brickwork, DPC, concrete and RCC works, painting, flooring, plastering, pointing, whitewash, distempering, woodwork \u2013 types of estimates \u2013 approximate and detailed methods - data required for preparation of an estimate \u2013 standard data \u2013 scheduled rates \u2013 lead statements \u2013 specifications",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce402t-1.0",
-                    "sno": "1.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce402t-1.7",
+                    "sno": "1.7",
                     "topic": "DETAILED ESTIMATES OF CIVIL WORKS buildings \u2013 methods of estimation \u2013 long wall and short wall method \u2013 centre line method. estimation of quantities for a building-estimation of earthwork in irrigation channels and roads - estimation of quantities for bituminous and concrete roads estimation of quantities for water tank (OHSR) and septic tank with soak pit",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce402t-1.0",
-                    "sno": "1.0"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.8",
+                    "sno": "1.8",
+                    "topic": "Deep dive into BASICS OF ESTIMATION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.9",
+                    "sno": "1.9",
+                    "topic": "Deep dive into State the purpose of estimation and costing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.10",
+                    "sno": "1.10",
+                    "topic": "Deep dive into State the units of measurements, data and payment for different items of work and materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.11",
+                    "sno": "1.11",
+                    "topic": "Deep dive into Explain the approximate and detailed methods of estimation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.12",
+                    "sno": "1.12",
+                    "topic": "Deep dive into Explain and write down the specifications for various items of work in building construction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.13",
+                    "sno": "1.13",
+                    "topic": "Deep dive into BASICS OF ESTIMATION Definition of estimate and its importance \u2013 units of measurements and units of payment of items of work \u2013 earthwork, brickwork, DPC, concrete and RCC works, painting, flooring, plastering, pointing, whitewash, distempering, woodwork \u2013 types of estimates \u2013 approximate and detailed methods - data required for preparation of an estimate \u2013 standard data \u2013 scheduled rates \u2013 lead statements \u2013 specifications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.14",
+                    "sno": "1.14",
+                    "topic": "Deep dive into DETAILED ESTIMATES OF CIVIL WORKS buildings \u2013 methods of estimation \u2013 long wall and short wall method \u2013 centre line method. estimation of quantities for a building-estimation of earthwork in irrigation channels and roads - estimation of quantities for bituminous and concrete roads estimation of quantities for water tank (OHSR) and septic tank with soak pit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.15",
+                    "sno": "1.15",
+                    "topic": "Problem solving & practice on BASICS OF ESTIMATION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.16",
+                    "sno": "1.16",
+                    "topic": "Problem solving & practice on State the purpose of estimation and costing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.17",
+                    "sno": "1.17",
+                    "topic": "Problem solving & practice on State the units of measurements, data and payment for different items of work and materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.18",
+                    "sno": "1.18",
+                    "topic": "Problem solving & practice on Explain the approximate and detailed methods of estimation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.19",
+                    "sno": "1.19",
+                    "topic": "Problem solving & practice on Explain and write down the specifications for various items of work in building construction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-1.20",
+                    "sno": "1.20",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce402t-1.21",
+                    "sno": "1.21",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "DETAILED ESTIMATE OF CIVIL WORKS",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "id": "26ce402t-2.1",
+                    "sno": "2.1",
+                    "topic": "DETAILED ESTIMATE OF CIVIL WORKS Prepare the detailed estimates for various Civil infrastructure works from the given drawings, specifications and site conditions viz",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.2",
+                    "sno": "2.2",
+                    "topic": "Residential buildings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.3",
+                    "sno": "2.3",
+                    "topic": "Irrigation works",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.4",
+                    "sno": "2.4",
+                    "topic": "Pavements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.5",
+                    "sno": "2.5",
+                    "topic": "Public health buildings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.6",
+                    "sno": "2.6",
+                    "topic": "Unit Test \u2013 II From 3.1 to 5.4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.7",
+                    "sno": "2.7",
+                    "topic": "Deep dive into DETAILED ESTIMATE OF CIVIL WORKS Prepare the detailed estimates for various Civil infrastructure works from the given drawings, specifications and site conditions viz",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into Residential buildings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.9",
+                    "sno": "2.9",
+                    "topic": "Deep dive into Irrigation works",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.10",
+                    "sno": "2.10",
+                    "topic": "Deep dive into Pavements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.11",
+                    "sno": "2.11",
+                    "topic": "Deep dive into Public health buildings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.12",
+                    "sno": "2.12",
+                    "topic": "Deep dive into Unit Test \u2013 II From 3.1 to 5.4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.13",
+                    "sno": "2.13",
+                    "topic": "Problem solving & practice on DETAILED ESTIMATE OF CIVIL WORKS Prepare the detailed estimates for various Civil infrastructure works from the given drawings, specifications and site conditions viz",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.14",
+                    "sno": "2.14",
+                    "topic": "Problem solving & practice on Residential buildings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.15",
+                    "sno": "2.15",
+                    "topic": "Problem solving & practice on Irrigation works",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.16",
+                    "sno": "2.16",
+                    "topic": "Problem solving & practice on Pavements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.17",
+                    "sno": "2.17",
+                    "topic": "Problem solving & practice on Public health buildings",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.18",
+                    "sno": "2.18",
+                    "topic": "Problem solving & practice on Unit Test \u2013 II From 3.1 to 5.4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.19",
+                    "sno": "2.19",
+                    "topic": "Practical applications of DETAILED ESTIMATE OF CIVIL WORKS Prepare the detailed estimates for various Civil infrastructure works from the given drawings, specifications and site conditions viz",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-2.20",
+                    "sno": "2.20",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce402t-2.21",
+                    "sno": "2.21",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "id": "26ce402t-3.1",
+                    "sno": "3.1",
+                    "topic": "ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.2",
+                    "sno": "3.2",
+                    "topic": "Explain the procedure to estimate the quantity of steel in a RCC work providing covers as per IS 456",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.3",
+                    "sno": "3.3",
+                    "topic": "ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES cover for reinforcement as per is 456 \u2013 standard hooks and cranks of reinforcement bars \u2013 estimation of steel quantity in footing, column, beam, lintel and slab \u2013 estimation of steel in trusses \u2013 preparation of bar bending schedule",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.4",
+                    "sno": "3.4",
+                    "topic": "Deep dive into ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.5",
+                    "sno": "3.5",
+                    "topic": "Deep dive into Explain the procedure to estimate the quantity of steel in a RCC work providing covers as per IS 456",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.6",
+                    "sno": "3.6",
+                    "topic": "Deep dive into ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES cover for reinforcement as per is 456 \u2013 standard hooks and cranks of reinforcement bars \u2013 estimation of steel quantity in footing, column, beam, lintel and slab \u2013 estimation of steel in trusses \u2013 preparation of bar bending schedule",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.7",
+                    "sno": "3.7",
+                    "topic": "Problem solving & practice on ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.8",
+                    "sno": "3.8",
+                    "topic": "Problem solving & practice on Explain the procedure to estimate the quantity of steel in a RCC work providing covers as per IS 456",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.9",
+                    "sno": "3.9",
+                    "topic": "Problem solving & practice on ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES cover for reinforcement as per is 456 \u2013 standard hooks and cranks of reinforcement bars \u2013 estimation of steel quantity in footing, column, beam, lintel and slab \u2013 estimation of steel in trusses \u2013 preparation of bar bending schedule",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.10",
+                    "sno": "3.10",
+                    "topic": "Practical applications of ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.11",
+                    "sno": "3.11",
+                    "topic": "Practical applications of Explain the procedure to estimate the quantity of steel in a RCC work providing covers as per IS 456",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.12",
+                    "sno": "3.12",
+                    "topic": "Practical applications of ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES cover for reinforcement as per is 456 \u2013 standard hooks and cranks of reinforcement bars \u2013 estimation of steel quantity in footing, column, beam, lintel and slab \u2013 estimation of steel in trusses \u2013 preparation of bar bending schedule",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.13",
+                    "sno": "3.13",
+                    "topic": "Practical applications of ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.14",
+                    "sno": "3.14",
+                    "topic": "Practical applications of Explain the procedure to estimate the quantity of steel in a RCC work providing covers as per IS 456",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.15",
+                    "sno": "3.15",
+                    "topic": "Practical applications of ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES cover for reinforcement as per is 456 \u2013 standard hooks and cranks of reinforcement bars \u2013 estimation of steel quantity in footing, column, beam, lintel and slab \u2013 estimation of steel in trusses \u2013 preparation of bar bending schedule",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.16",
+                    "sno": "3.16",
+                    "topic": "Practical applications of ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.17",
+                    "sno": "3.17",
+                    "topic": "Practical applications of Explain the procedure to estimate the quantity of steel in a RCC work providing covers as per IS 456",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.18",
+                    "sno": "3.18",
+                    "topic": "Practical applications of ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES cover for reinforcement as per is 456 \u2013 standard hooks and cranks of reinforcement bars \u2013 estimation of steel quantity in footing, column, beam, lintel and slab \u2013 estimation of steel in trusses \u2013 preparation of bar bending schedule",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.19",
+                    "sno": "3.19",
+                    "topic": "Practical applications of ESTIMATION OF STEEL QUANTITY IN RCC WORKS AND TRUSSES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-3.20",
+                    "sno": "3.20",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce402t-3.21",
+                    "sno": "3.21",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "RATE ANALYSIS OF CIVIL WORKS",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "id": "26ce402t-4.1",
+                    "sno": "4.1",
+                    "topic": "RATE ANALYSIS OF CIVIL WORKS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.2",
+                    "sno": "4.2",
+                    "topic": "Explain the purpose of rate analysis",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.3",
+                    "sno": "4.3",
+                    "topic": "State the importance of Standard data book and Standard schedule of rates",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.4",
+                    "sno": "4.4",
+                    "topic": "Prepare the lead statement for different materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.5",
+                    "sno": "4.5",
+                    "topic": "Prepare the data sheet for finished items of work using standard data and SSR",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.6",
+                    "sno": "4.6",
+                    "topic": "RATE ANALYSIS OF CIVIL WORKS Factors affecting the analysis of rates \u2013 lead statement \u2013 standard data \u2013 standard schedule of rates \u2013 analysis of unit rates of building works and roads",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.7",
+                    "sno": "4.7",
+                    "topic": "Deep dive into RATE ANALYSIS OF CIVIL WORKS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.8",
+                    "sno": "4.8",
+                    "topic": "Deep dive into Explain the purpose of rate analysis",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.9",
+                    "sno": "4.9",
+                    "topic": "Deep dive into State the importance of Standard data book and Standard schedule of rates",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.10",
+                    "sno": "4.10",
+                    "topic": "Deep dive into Prepare the lead statement for different materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.11",
+                    "sno": "4.11",
+                    "topic": "Deep dive into Prepare the data sheet for finished items of work using standard data and SSR",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.12",
+                    "sno": "4.12",
+                    "topic": "Deep dive into RATE ANALYSIS OF CIVIL WORKS Factors affecting the analysis of rates \u2013 lead statement \u2013 standard data \u2013 standard schedule of rates \u2013 analysis of unit rates of building works and roads",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.13",
+                    "sno": "4.13",
+                    "topic": "Problem solving & practice on RATE ANALYSIS OF CIVIL WORKS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.14",
+                    "sno": "4.14",
+                    "topic": "Problem solving & practice on Explain the purpose of rate analysis",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.15",
+                    "sno": "4.15",
+                    "topic": "Problem solving & practice on State the importance of Standard data book and Standard schedule of rates",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.16",
+                    "sno": "4.16",
+                    "topic": "Problem solving & practice on Prepare the lead statement for different materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.17",
+                    "sno": "4.17",
+                    "topic": "Problem solving & practice on Prepare the data sheet for finished items of work using standard data and SSR",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.18",
+                    "sno": "4.18",
+                    "topic": "Problem solving & practice on RATE ANALYSIS OF CIVIL WORKS Factors affecting the analysis of rates \u2013 lead statement \u2013 standard data \u2013 standard schedule of rates \u2013 analysis of unit rates of building works and roads",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.19",
+                    "sno": "4.19",
+                    "topic": "Practical applications of RATE ANALYSIS OF CIVIL WORKS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-4.20",
+                    "sno": "4.20",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce402t-4.21",
+                    "sno": "4.21",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "VALUATION OF PROPERTY",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "id": "26ce402t-5.1",
+                    "sno": "5.1",
+                    "topic": "VALUATION OF PROPERTY",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.2",
+                    "sno": "5.2",
+                    "topic": "State the need for valuation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.3",
+                    "sno": "5.3",
+                    "topic": "Define the various terms used in valuation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.4",
+                    "sno": "5.4",
+                    "topic": "Explain the methods of valuation of a building and apply them",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.5",
+                    "sno": "5.5",
+                    "topic": "Deep dive into VALUATION OF PROPERTY",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.6",
+                    "sno": "5.6",
+                    "topic": "Deep dive into State the need for valuation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.7",
+                    "sno": "5.7",
+                    "topic": "Deep dive into Define the various terms used in valuation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.8",
+                    "sno": "5.8",
+                    "topic": "Deep dive into Explain the methods of valuation of a building and apply them",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.9",
+                    "sno": "5.9",
+                    "topic": "Problem solving & practice on VALUATION OF PROPERTY",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.10",
+                    "sno": "5.10",
+                    "topic": "Problem solving & practice on State the need for valuation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.11",
+                    "sno": "5.11",
+                    "topic": "Problem solving & practice on Define the various terms used in valuation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.12",
+                    "sno": "5.12",
+                    "topic": "Problem solving & practice on Explain the methods of valuation of a building and apply them",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.13",
+                    "sno": "5.13",
+                    "topic": "Practical applications of VALUATION OF PROPERTY",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.14",
+                    "sno": "5.14",
+                    "topic": "Practical applications of State the need for valuation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.15",
+                    "sno": "5.15",
+                    "topic": "Practical applications of Define the various terms used in valuation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.16",
+                    "sno": "5.16",
+                    "topic": "Practical applications of Explain the methods of valuation of a building and apply them",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.17",
+                    "sno": "5.17",
+                    "topic": "Practical applications of VALUATION OF PROPERTY",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.18",
+                    "sno": "5.18",
+                    "topic": "Practical applications of State the need for valuation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.19",
+                    "sno": "5.19",
+                    "topic": "Practical applications of Define the various terms used in valuation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce402t-5.20",
+                    "sno": "5.20",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce402t-5.21",
+                    "sno": "5.21",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

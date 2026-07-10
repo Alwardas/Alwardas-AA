@@ -3,393 +3,351 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "INTRODUCTION TO MECHATRONICS AND SENSORS",
             "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26me504e-1.1",
+                    "sno": "1.1",
                     "topic": "INTRODUCTION TO MECHATRONICS AND SENSORS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me504e-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-1.2",
+                    "sno": "1.2",
                     "topic": "Define mechatronics",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-1.3",
+                    "sno": "1.3",
                     "topic": "List the advantages and applications of mechatronics",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-1.4",
+                    "sno": "1.4",
                     "topic": "List the components used in a mechatronics system",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-1.5",
+                    "sno": "1.5",
                     "topic": "Define a sensor and classify them with examples",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-1.6",
+                    "sno": "1.6",
                     "topic": "Differentiate between Analog and Digital sensors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the various types of sensors used in mechatronics systems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-1.6",
-                    "sno": "1.6"
-                },
-                {
-                    "topic": "Evaluate the advantages and disadvantages of using mechatronic systems in manufacturing",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-1.7",
-                    "sno": "1.7"
+                    "sno": "1.7",
+                    "topic": "Explain the various types of sensors used in mechatronics systems; Evaluate the advantages and disadvantages of using mechatronic systems in manufa...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me504e-1.8",
+                    "sno": "1.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me504e-1.9",
+                    "sno": "1.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "ACTUATORS AND SIGNAL CONDITIONING",
             "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26me504e-2.1",
+                    "sno": "2.1",
                     "topic": "ACTUATORS AND SIGNAL CONDITIONING",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-2.0",
-                    "sno": "2.0"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define actuators and signal conditioning",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "List out different types of actuators",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Define actuators and signal conditioning; List out different types of actuators",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List out various components of actuators",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "List the advantages and disadvantages of actuators",
+                    "sno": "2.3",
+                    "topic": "List out various components of actuators; List the advantages and disadvantages of actuators",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-2.4",
-                    "sno": "2.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-2.4",
+                    "sno": "2.4",
                     "topic": "Explain the working principle of electric, hydraulic, and pneumatic actuators",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26me504e-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "Identify the differences between various actuator types in terms of speed, force, and application; Identify the suitability of an actuator type for...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Identify the differences between various actuator types in terms of speed, force, and application",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-2.6",
-                    "sno": "2.6"
+                    "sno": "2.6",
+                    "topic": "Explain the working of solenoids and relays; List out various components of signal conditioning",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Identify the suitability of an actuator type for a specific industrial task",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-2.7",
-                    "sno": "2.7"
+                    "sno": "2.7",
+                    "topic": "Understand the functions of basic signal conditioning components; Describe the need for signal conditioning in sensor-based systems",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of solenoids and relays",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-2.8",
-                    "sno": "2.8"
+                    "sno": "2.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "List out various components of signal conditioning",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-2.9",
-                    "sno": "2.9"
-                },
-                {
-                    "topic": "Understand the functions of basic signal conditioning components",
+                    "sno": "2.9",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-2.10",
-                    "sno": "2.10"
-                },
-                {
-                    "topic": "Describe the need for signal conditioning in sensor-based systems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-2.11",
-                    "sno": "2.11"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "DIGITAL ELECTRONICS AND MICROCONTROLLERS",
             "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26me504e-3.1",
+                    "sno": "3.1",
                     "topic": "DIGITAL ELECTRONICS AND MICROCONTROLLERS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-3.0",
-                    "sno": "3.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-3.2",
+                    "sno": "3.2",
                     "topic": "Define key terms such as logic gates, flip-flops, microcontroller, register, and ALU",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the basic logic gates",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Explain the operation of combinational and sequential logic circuits",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "List the basic logic gates; Explain the operation of combinational and sequential logic circuits",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-3.4",
+                    "sno": "3.4",
                     "topic": "Describe how microcontrollers differ from microprocessors",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-3.4",
-                    "sno": "3.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the features of the 8051 microcontrollers",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-3.5",
-                    "sno": "3.5"
-                },
-                {
-                    "topic": "Interpret timing diagrams of digital circuits and instruction cycles of a microcontroller",
+                    "sno": "3.5",
+                    "topic": "List the features of the 8051 microcontrollers; Interpret timing diagrams of digital circuits and instruction cycles of a microcontroller",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-3.6",
+                    "sno": "3.6",
                     "topic": "Apply Boolean algebra to simplify logic expressions and design logic circuits",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26me504e-3.7",
-                    "sno": "3.7"
+                    "sno": "3.7",
+                    "topic": "List the Interface input/output devices (e.g., LEDs, switches, LCD) with a microcontroller; Compare the functions of different types of memory (RAM...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the Interface input/output devices (e.g., LEDs, switches, LCD) with a microcontroller",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-3.8",
-                    "sno": "3.8"
+                    "sno": "3.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Compare the functions of different types of memory (RAM, ROM, EEPROM) in microcontrollers",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-3.9",
-                    "sno": "3.9"
+                    "sno": "3.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "SYSTEM MODELLING AND CONTROL SYSTEMS",
             "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26me504e-4.1",
+                    "sno": "4.1",
                     "topic": "SYSTEM MODELLING AND CONTROL SYSTEMS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-4.0",
-                    "sno": "4.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-4.2",
+                    "sno": "4.2",
                     "topic": "Define terms such as system, model, transfer function, open-loop, closed-loop, stability, and feedback",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-4.1",
-                    "sno": "4.1"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List out the components of control systems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Identify different types of control systems (e.g., open-loop, closed-loop)",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "List out the components of control systems; Identify different types of control systems (e.g., open-loop, closed-loop)",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-4.4",
+                    "sno": "4.4",
                     "topic": "Explain the procedure of modelling in control system design",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-4.4",
-                    "sno": "4.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List out the types of control strategies (P, PI, PID)",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-4.5",
-                    "sno": "4.5"
-                },
-                {
-                    "topic": "Describe the behaviour of first- and second-order systems using time-domain analysis",
+                    "sno": "4.5",
+                    "topic": "List out the types of control strategies (P, PI, PID); Describe the behaviour of first- and second-order systems using time-domain analysis",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-4.6",
-                    "sno": "4.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-4.6",
+                    "sno": "4.6",
                     "topic": "Construct block diagram models for mechanical, electrical, or electromechanical systems",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26me504e-4.7",
-                    "sno": "4.7"
+                    "sno": "4.7",
+                    "topic": "Use MATLAB or similar tools to simulate control system responses; Compare the performance of open-loop vs. closed-loop control systems",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Use MATLAB or similar tools to simulate control system responses",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-4.8",
-                    "sno": "4.8"
+                    "sno": "4.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Compare the performance of open-loop vs. closed-loop control systems",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-4.9",
-                    "sno": "4.9"
+                    "sno": "4.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "PROGRAMMABLE LOGIC CONTROLLERS (PLCS) AND MECHATRONICS SYSTEM DESIGN",
             "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26me504e-5.1",
+                    "sno": "5.1",
                     "topic": "PROGRAMMABLE LOGIC CONTROLLERS (PLCS) AND MECHATRONICS SYSTEM DESIGN",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-5.0",
-                    "sno": "5.0"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define key terms such as PLC, ladder logic, I/O modules, and scan cycle",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "List various components used in mechatronic systems (sensors, actuators, controllers, interfaces)",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Define key terms such as PLC, ladder logic, I/O modules, and scan cycle; List various components used in mechatronic systems (sensors, actuators, c...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-5.3",
+                    "sno": "5.3",
                     "topic": "Identify different types of PLCs and programming languages (e.g., Ladder Diagram, Function Block, Structured Text",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-5.3",
-                    "sno": "5.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working principle of a PLC and its role in automation",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-5.4",
-                    "sno": "5.4"
-                },
-                {
-                    "topic": "Describe how different mechatronic subsystems interact within a complete system",
+                    "sno": "5.4",
+                    "topic": "Explain the working principle of a PLC and its role in automation; Describe how different mechatronic subsystems interact within a complete system",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-5.5",
-                    "sno": "5.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me504e-5.5",
+                    "sno": "5.5",
                     "topic": "Illustrate the structure of a PLC-based control system with input/output interactions",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26me504e-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "Develop basic ladder logic programs to perform simple automation tasks (e.g., motor start/stop, light control); Interface sensors and actuators wit...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Develop basic ladder logic programs to perform simple automation tasks (e.g., motor start/stop, light control)",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-5.7",
-                    "sno": "5.7"
+                    "sno": "5.7",
+                    "topic": "Break down a mechatronic system into mechanical, electrical, and software subsystems; Evaluate the performance and reliability of a PLC-controlled ...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Interface sensors and actuators with a PLC in a controlled process",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-5.8",
-                    "sno": "5.8"
+                    "sno": "5.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Break down a mechatronic system into mechanical, electrical, and software subsystems",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me504e-5.9",
-                    "sno": "5.9"
-                },
-                {
-                    "topic": "Evaluate the performance and reliability of a PLC-controlled system under different conditions",
+                    "sno": "5.9",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me504e-5.10",
-                    "sno": "5.10"
+                    "type": "assessment"
                 }
             ]
         }

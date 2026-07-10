@@ -3,24 +3,33 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "mpulse, unit step, Ramp, Exponential signals",
+            "title": "Mathematical Overview (Integrations)",
             "totalPeriods": 0,
-            "topics": [
-                {
-                    "topic": "Note: The gaps in CO-PO mapping will be met by one or more appropriate activities from the following: (i) Assignments (ii) Tutorials (iii) seminars (iv) Guest lecturers (v) Group discussions (vi) Quiz (vii) Industrial visits (viii) Tech fests (ix) Mini project works(x) Library visits etc",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec305e-1.5",
-                    "sno": "1.5"
-                },
-                {
-                    "topic": "Mathematical Overview (Integrations) Indefinite integrals: Indefinite integrals and properties, standard integral formulas, methods of evaluation of integrations, simple problems, Definite Integrals: Definite Integrals and their Properties and simple problems",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec305e-1.0",
-                    "sno": "1.0"
-                }
-            ]
+            "topics": []
+        },
+        {
+            "unitNo": 2,
+            "title": "Continuous time signals",
+            "totalPeriods": 0,
+            "topics": []
+        },
+        {
+            "unitNo": 3,
+            "title": "LTI Systems and Laplace Transforms",
+            "totalPeriods": 0,
+            "topics": []
+        },
+        {
+            "unitNo": 4,
+            "title": "Fourier analysis of Continuous time signals",
+            "totalPeriods": 0,
+            "topics": []
+        },
+        {
+            "unitNo": 5,
+            "title": "Sampling and Quantization",
+            "totalPeriods": 0,
+            "topics": []
         }
     ],
     "totalPeriods": 0,

@@ -3,484 +3,666 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "INTERNAL COMBUSTION ENGINES",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26me402t-1.1",
+                    "sno": "1.1",
                     "topic": "INTERNAL COMBUSTION ENGINES",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.0",
-                    "sno": "1.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.2",
+                    "sno": "1.2",
                     "topic": "Define \u201cHeat Engine\u201d and classify heat engines based on the location of combustion",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.3",
+                    "sno": "1.3",
                     "topic": "Classify Internal Combustion Engines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.4",
+                    "sno": "1.4",
                     "topic": "Describe the working of four-stroke petrol and diesel engines with line diagrams",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.5",
+                    "sno": "1.5",
                     "topic": "Describe the working of two-stroke petrol engine with line diagrams",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Compare two stroke engines with four stroke engines",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.5",
-                    "sno": "1.5"
-                },
-                {
-                    "topic": "Describe the working of fuel system of diesel engine with a line diagram",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me402t-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Compare two stroke engines with four stroke engines; Describe the working of fuel system of diesel engine with a line diagram",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.7",
+                    "sno": "1.7",
                     "topic": "Describe the working of fuel system of petrol engine with a line diagram",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.7",
-                    "sno": "1.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.8",
+                    "sno": "1.8",
                     "topic": "Describe the working of Zenith carburetor with a neat sketch",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.8",
-                    "sno": "1.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.9",
+                    "sno": "1.9",
                     "topic": "Explain different methods of cooling systems of I.C engines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.9",
-                    "sno": "1.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.10",
+                    "sno": "1.10",
                     "topic": "Explain different methods of Ignition systems of IC engine",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.10",
-                    "sno": "1.10"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain different methods of lubricating systems in I.C. engines",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me402t-1.11",
-                    "sno": "1.11"
-                },
-                {
-                    "topic": "Explain different methods of governing of I.C. engines",
+                    "sno": "1.11",
+                    "topic": "Explain different methods of lubricating systems in I.C. engines; Explain different methods of governing of I.C. engines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.12",
-                    "sno": "1.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.12",
+                    "sno": "1.12",
                     "topic": "State and briefly explain recent advances in IC engines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.13",
-                    "sno": "1.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.13",
+                    "sno": "1.13",
                     "topic": "State the objectives of testing of I.C engines",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.14",
-                    "sno": "1.14"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.14",
+                    "sno": "1.14",
                     "topic": "List performance parameters of an IC engine",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-1.15",
-                    "sno": "1.15"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-1.15",
+                    "sno": "1.15",
                     "topic": "Write the mathematical formulae for the performance parameters of an I.C engine",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26me402t-1.16",
-                    "sno": "1.16"
+                    "sno": "1.16",
+                    "topic": "Solve simple problems on various performance parameters; Draw the layout of automobile transmission system and mention function of each component",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Solve simple problems on various performance parameters",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me402t-1.17",
-                    "sno": "1.17"
+                    "sno": "1.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Draw the layout of automobile transmission system and mention function of each component",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me402t-1.18",
-                    "sno": "1.18"
+                    "sno": "1.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "AIR COMPRESSORS",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26me402t-2.1",
+                    "sno": "2.1",
                     "topic": "AIR COMPRESSORS",
-                    "period": 18,
-                    "type": "theory",
-                    "id": "26me402t-2.0",
-                    "sno": "2.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.2",
+                    "sno": "2.2",
+                    "topic": "Deep dive into AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.3",
+                    "sno": "2.3",
+                    "topic": "Problem solving & practice on AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.4",
+                    "sno": "2.4",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.5",
+                    "sno": "2.5",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.6",
+                    "sno": "2.6",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.7",
+                    "sno": "2.7",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.8",
+                    "sno": "2.8",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.9",
+                    "sno": "2.9",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.10",
+                    "sno": "2.10",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.11",
+                    "sno": "2.11",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.12",
+                    "sno": "2.12",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.13",
+                    "sno": "2.13",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.14",
+                    "sno": "2.14",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.15",
+                    "sno": "2.15",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.16",
+                    "sno": "2.16",
+                    "topic": "Practical applications of AIR COMPRESSORS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-2.17",
+                    "sno": "2.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me402t-2.18",
+                    "sno": "2.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "POWER PLANTS",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26me402t-3.1",
+                    "sno": "3.1",
                     "topic": "POWER PLANTS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.0",
-                    "sno": "3.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-3.2",
+                    "sno": "3.2",
                     "topic": "Describe the functions of elements of a thermal power plant",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-3.3",
+                    "sno": "3.3",
                     "topic": "State the functions of a boiler",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.2",
-                    "sno": "3.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classify the boilers",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Distinguish between water-tube and fire-tube boilers",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me402t-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Classify the boilers; Distinguish between water-tube and fire-tube boilers",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-3.5",
+                    "sno": "3.5",
                     "topic": "State the need of high pressure modern boilers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.5",
-                    "sno": "3.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-3.6",
+                    "sno": "3.6",
                     "topic": "Explain the working principle of Lamont and Benson Boilers with legible sketches",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-3.7",
+                    "sno": "3.7",
                     "topic": "State the function of the mountings such as pressure gauge, water level indicator, safety valve, fusible plug, blow down cock and stop valve",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.7",
-                    "sno": "3.7"
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the function of the accessories such as feed pump, air preheater, economizer, super heater, steam traps and steam separators",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me402t-3.8",
-                    "sno": "3.8"
+                    "sno": "3.8",
+                    "topic": "State the function of the accessories such as feed pump, air preheater, economizer, super heater, steam traps and steam separators; Explain the Flo...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the Flow of steam through nozzle",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me402t-3.9",
-                    "sno": "3.9"
-                },
-                {
-                    "topic": "Write the expression and calculate Velocity of steam at the exit of nozzle in terms of heat drop analytically and by using Mollier chart ( simple problems)",
+                    "sno": "3.9",
+                    "topic": "Write the expression and calculate Velocity of steam at the exit of nozzle in terms of heat drop analytically and by using Mollier chart ( simple p...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.10",
-                    "sno": "3.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-3.10",
+                    "sno": "3.10",
                     "topic": "Explain the principle of working of a steam turbine",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.11",
-                    "sno": "3.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-3.11",
+                    "sno": "3.11",
                     "topic": "Classify the turbines with examples",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26me402t-3.12",
-                    "sno": "3.12"
+                    "sno": "3.12",
+                    "topic": "Explain the principle of working of a simple De-Laval turbine with a line diagram; Explain the working principle of Parson\u2019s Reaction turbine with ...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the principle of working of a simple De-Laval turbine with a line diagram",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me402t-3.13",
-                    "sno": "3.13"
-                },
-                {
-                    "topic": "Explain the working principle of Parson\u2019s Reaction turbine with a line diagram",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.14",
-                    "sno": "3.14"
-                },
-                {
+                    "sno": "3.13",
                     "topic": "State the function of Steam Condensers and give classification of steam condensers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.15",
-                    "sno": "3.15"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-3.14",
+                    "sno": "3.14",
                     "topic": "Describe working of nuclear reactor",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.16",
-                    "sno": "3.16"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-3.15",
+                    "sno": "3.15",
                     "topic": "Explain with the help of legible sketches the working principles of PWR and BWR",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-3.16",
+                    "sno": "3.16",
+                    "topic": "Compare nuclear power plants with thermal power plants; POWER PLANTS Thermal Power Plants: Functions of the elements of a Thermal Power Plant \u2013 Adv...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
                     "id": "26me402t-3.17",
-                    "sno": "3.17"
+                    "sno": "3.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Compare nuclear power plants with thermal power plants",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26me402t-3.18",
-                    "sno": "3.18"
-                },
-                {
-                    "topic": "POWER PLANTS Thermal Power Plants: Functions of the elements of a Thermal Power Plant \u2013 Advantages and Disadvantages of thermal power plants. Definition of steam boiler - Functions and Classification of steam boilers \u2013 Examples - Comparison of water tube and fire tube boilers. Modern high pressure boilers \u2013Examples \u2013 Advantages - Working Principle of Lamont and Benson boilers with line diagrams. Boiler Mountings: Functions of pressure gauge, water level indicator, fusible plug, blow down cock, stop valve, safety valves. Boiler accessories: Functions of feed pump, economiser, super heater and air pre-heater, steam trap and steam separator Steam Turbines. Flow of steam through nozzle - Velocity of steam at the exit of nozzle in terms of heat drop by analytical and Mollier diagram Steam Turbines: Classification of - Working principle of a simple De -Laval turbine - Working principle of a Parson\u2019s Reaction turbine - Difference between Impulse & Reaction turbines. Steam Condensers : Functions \u2013 Elements of condensing plant - Classification of condensers. Nuclear Power Plants: Nuclear fuels \u2013fissile and fertile fuels \u2013 Nuclear fission and fusion \u2013 Working of Nuclear reactor \u2013 Working principle of pressurized water reactor \u2013 Working principle of boiling water reactor \u2013 Advantages and Disadvantages of nuclear power plants",
+                    "sno": "3.18",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-3.0",
-                    "sno": "3.0"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "GAS TURBINES & JET PROPULSIONS.",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "GAS TURBINES & JET PROPULSIONS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me402t-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Define and classify the gas turbines",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me402t-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "GAS TURBINES & JET PROPULSIONS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Differentiate the gas turbines with the I.C. engines",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me402t-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Define and classify the gas turbines",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State the advantages and limitations of gas turbine",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me402t-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Differentiate the gas turbines with the I.C. engines",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the working of an open cycle constant pressure type gas turbine with a line diagram",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me402t-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "State the advantages and limitations of gas turbine",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe the working of a closed cycle constant pressure type gas turbine with a line diagram",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me402t-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Describe the working of an open cycle constant pressure type gas turbine with a line diagram",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-4.6",
+                    "sno": "4.6",
+                    "topic": "Describe the working of a closed cycle constant pressure type gas turbine with a line diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-4.7",
+                    "sno": "4.7",
                     "topic": "Explain the concept of jet propulsion",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-4.6",
-                    "sno": "4.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-4.8",
+                    "sno": "4.8",
                     "topic": "Describe the principle of operation of Ram jet engine with a line diagram",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-4.7",
-                    "sno": "4.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-4.9",
+                    "sno": "4.9",
                     "topic": "Describe the principle of operation of Turbo- jet engine with a line diagram",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-4.8",
-                    "sno": "4.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-4.10",
+                    "sno": "4.10",
                     "topic": "State the applications of jet engine",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-4.9",
-                    "sno": "4.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-4.11",
+                    "sno": "4.11",
                     "topic": "Describe the working of a rocket engine with a line sketch",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-4.10",
-                    "sno": "4.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-4.12",
+                    "sno": "4.12",
                     "topic": "List the fuels used in Gas turbines and jet propulsion",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-4.11",
-                    "sno": "4.11"
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-4.13",
+                    "sno": "4.13",
+                    "topic": "Deep dive into GAS TURBINES & JET PROPULSIONS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-4.14",
+                    "sno": "4.14",
+                    "topic": "Deep dive into Define and classify the gas turbines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-4.15",
+                    "sno": "4.15",
+                    "topic": "Deep dive into Differentiate the gas turbines with the I.C. engines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-4.16",
+                    "sno": "4.16",
+                    "topic": "Deep dive into State the advantages and limitations of gas turbine",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-4.17",
+                    "sno": "4.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me402t-4.18",
+                    "sno": "4.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "REFRIGERATION AND AIR CONDITIONS",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "REFRIGERATION AND AIR CONDITIONS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26me402t-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "Define the term \u2018Refrigeration\u2019",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me402t-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "REFRIGERATION AND AIR CONDITIONS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List different methods of refrigeration and applications",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me402t-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Define the term \u2018Refrigeration\u2019",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define the terms \u2018Ton of Refrigeration, Coefficient of Performance",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me402t-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "List different methods of refrigeration and applications",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe main components and Principle of working of a vapour compression refrigeration system",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me402t-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Define the terms \u2018Ton of Refrigeration, Coefficient of Performance",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain vapour compression refrigeration system with the help of p-V, T-s and p-H diagrams",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26me402t-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Describe main components and Principle of working of a vapour compression refrigeration system",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-5.6",
+                    "sno": "5.6",
+                    "topic": "Explain vapour compression refrigeration system with the help of p-V, T-s and p-H diagrams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-5.7",
+                    "sno": "5.7",
                     "topic": "Describe the Principle of working of Ammonia vapour absorption refrigeration system",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-5.6",
-                    "sno": "5.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-5.8",
+                    "sno": "5.8",
                     "topic": "Define Refrigerant and Classify refrigerants with examples",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-5.7",
-                    "sno": "5.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-5.9",
+                    "sno": "5.9",
                     "topic": "List out propertiesof refrigerants",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-5.8",
-                    "sno": "5.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-5.10",
+                    "sno": "5.10",
                     "topic": "Define air conditioning. List the applications of air conditioning",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-5.9",
-                    "sno": "5.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-5.11",
+                    "sno": "5.11",
                     "topic": "Explain Air conditioning as applied to human comfort",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-5.10",
-                    "sno": "5.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26me402t-5.12",
+                    "sno": "5.12",
                     "topic": "Explain the features of Psychrometric chart",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26me402t-5.12",
-                    "sno": "5.12"
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-5.13",
+                    "sno": "5.13",
+                    "topic": "Deep dive into REFRIGERATION AND AIR CONDITIONS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-5.14",
+                    "sno": "5.14",
+                    "topic": "Deep dive into Define the term \u2018Refrigeration\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-5.15",
+                    "sno": "5.15",
+                    "topic": "Deep dive into List different methods of refrigeration and applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-5.16",
+                    "sno": "5.16",
+                    "topic": "Deep dive into Define the terms \u2018Ton of Refrigeration, Coefficient of Performance",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-5.17",
+                    "sno": "5.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me402t-5.18",
+                    "sno": "5.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

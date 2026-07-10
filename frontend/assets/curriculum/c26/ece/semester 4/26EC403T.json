@@ -3,463 +3,666 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "POWER ELECTRONIC DEVICES",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "POWER ELECTRONIC DEVICES",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec403t-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "List different thyristor family devices",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "POWER ELECTRONIC DEVICES",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Sketch the ISI circuit symbols of SCR, SCS, SBS, SUS, DIAC, TRIAC and GTO SCR",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "List different thyristor family devices",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the construction and working of SCR and its VI Characteristics",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Sketch the ISI circuit symbols of SCR, SCS, SBS, SUS, DIAC, TRIAC and GTO SCR",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-1.4",
+                    "sno": "1.4",
+                    "topic": "Explain the construction and working of SCR and its VI Characteristics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-1.5",
+                    "sno": "1.5",
                     "topic": "Mention the ratings of SCR",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-1.6",
+                    "sno": "1.6",
                     "topic": "Explain the construction and working of GTO SCR",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-1.7",
+                    "sno": "1.7",
                     "topic": "Explain construction and working of DIAC & TRIAC",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-1.6",
-                    "sno": "1.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-1.8",
+                    "sno": "1.8",
                     "topic": "Explain Volt-ampere characteristics of DIAC & TRIAC",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-1.7",
-                    "sno": "1.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-1.9",
+                    "sno": "1.9",
                     "topic": "Compare the features of SUS, SBS, SCS & LASCR",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-1.8",
-                    "sno": "1.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-1.10",
+                    "sno": "1.10",
                     "topic": "Explain the construction and working of UJT",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-1.9",
-                    "sno": "1.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-1.11",
+                    "sno": "1.11",
                     "topic": "Define intrinsic stand-off ratio and Negative Resistance Region of UJT",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-1.10",
-                    "sno": "1.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-1.12",
+                    "sno": "1.12",
                     "topic": "Explain SCR triggering using UJT",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-1.11",
-                    "sno": "1.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-1.13",
+                    "sno": "1.13",
                     "topic": "Explain about speed control of DC motor using SCR",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-1.12",
-                    "sno": "1.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-1.14",
+                    "sno": "1.14",
                     "topic": "List the applications of DIAC, TRIAC & SCR",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-1.13",
-                    "sno": "1.13"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into POWER ELECTRONIC DEVICES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into List different thyristor family devices",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-1.17",
+                    "sno": "1.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec403t-1.18",
+                    "sno": "1.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "INVERTERS, SMPS, UPS& BATTERY MANAGEMENT",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26ec403t-2.1",
+                    "sno": "2.1",
                     "topic": "INVERTERS, SMPS, UPS& BATTERY MANAGEMENT",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.0",
-                    "sno": "2.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-2.2",
+                    "sno": "2.2",
                     "topic": "State the need for inverters",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.1",
-                    "sno": "2.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-2.3",
+                    "sno": "2.3",
                     "topic": "State the principle of operation of inverter",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of MOSFET based Inverter circuit",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "Explain Voltage control of inverter using PWM",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec403t-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Explain the working of MOSFET based Inverter circuit; Explain Voltage control of inverter using PWM",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-2.5",
+                    "sno": "2.5",
                     "topic": "List the applications of inverters",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.5",
-                    "sno": "2.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-2.6",
+                    "sno": "2.6",
                     "topic": "Explain the working of SMPS with block diagram",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.6",
-                    "sno": "2.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-2.7",
+                    "sno": "2.7",
                     "topic": "List the applications of SMPS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.7",
-                    "sno": "2.7"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the working of Off Line UPS and Online UPS",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec403t-2.8",
-                    "sno": "2.8"
-                },
-                {
-                    "topic": "List the applications of UPS",
+                    "sno": "2.8",
+                    "topic": "Explain the working of Off Line UPS and Online UPS; List the applications of UPS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.9",
-                    "sno": "2.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-2.9",
+                    "sno": "2.9",
                     "topic": "List various Batteries used in Industries and e-vehicles",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.10",
-                    "sno": "2.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-2.10",
+                    "sno": "2.10",
                     "topic": "State the importance of Battery Management",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.11",
-                    "sno": "2.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-2.11",
+                    "sno": "2.11",
                     "topic": "Explain about the Battery management concepts used in e-vehicles",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26ec403t-2.12",
-                    "sno": "2.12"
+                    "sno": "2.12",
+                    "topic": "List various methods used for charging for Battery; Understand the charging circuit for Battery",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List various methods used for charging for Battery",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec403t-2.13",
-                    "sno": "2.13"
-                },
-                {
-                    "topic": "Understand the charging circuit for Battery",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.14",
-                    "sno": "2.14"
-                },
-                {
+                    "sno": "2.13",
                     "topic": "Understand the various stages of charging Battery",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.15",
-                    "sno": "2.15"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-2.14",
+                    "sno": "2.14",
                     "topic": "Understand the concept of short circuit protection of Battery",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.16",
-                    "sno": "2.16"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-2.15",
+                    "sno": "2.15",
                     "topic": "Understand the concept of Overload protection of Battery",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-2.16",
+                    "sno": "2.16",
+                    "topic": "Understand the concept of deep Discharge protection of Battery; Understand the concept of Over Heat protection of Battery",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
                     "id": "26ec403t-2.17",
-                    "sno": "2.17"
+                    "sno": "2.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Understand the concept of deep Discharge protection of Battery",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec403t-2.18",
-                    "sno": "2.18"
-                },
-                {
-                    "topic": "Understand the concept of Over Heat protection of Battery",
+                    "sno": "2.18",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-2.19",
-                    "sno": "2.19"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "TRANSDUCERS & TIMERS",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "TRANSDUCERS & TIMERS",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec403t-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "Define the term transducer",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "TRANSDUCERS & TIMERS",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Classify different electrical/electronic transducers on the basis of principle of operation and applications",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Define the term transducer",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.3",
+                    "sno": "3.3",
+                    "topic": "Classify different electrical/electronic transducers on the basis of principle of operation and applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-3.4",
+                    "sno": "3.4",
                     "topic": "List different Resistive, Inductive and Capacitive transducers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.3",
-                    "sno": "3.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.5",
+                    "sno": "3.5",
                     "topic": "Explain the working principle, construction and applications of resistance strain gauge",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.4",
-                    "sno": "3.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.6",
+                    "sno": "3.6",
                     "topic": "Explain the working principle, construction and applications of potentiometric transducer",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.5",
-                    "sno": "3.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.7",
+                    "sno": "3.7",
                     "topic": "Explain the construction and working of LVDT",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.8",
+                    "sno": "3.8",
                     "topic": "State the concept of piezo-electric effect",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.7",
-                    "sno": "3.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.9",
+                    "sno": "3.9",
                     "topic": "Explain the construction and working of Piezo-electric transducer",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.8",
-                    "sno": "3.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.10",
+                    "sno": "3.10",
                     "topic": "Explain the construction and working of Thermocouple transducer",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.9",
-                    "sno": "3.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.11",
+                    "sno": "3.11",
                     "topic": "Explain the working principle of Accelerometer",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.10",
-                    "sno": "3.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.12",
+                    "sno": "3.12",
                     "topic": "Draw the pin diagram of 555 IC and state the function of each pin",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.11",
-                    "sno": "3.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.13",
+                    "sno": "3.13",
                     "topic": "Draw the internal block diagram of 555 IC and explain the function of each block",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.12",
-                    "sno": "3.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.14",
+                    "sno": "3.14",
                     "topic": "Draw the circuit of an Astable multi-vibrator using 555 IC and explain its working",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.13",
-                    "sno": "3.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-3.15",
+                    "sno": "3.15",
                     "topic": "Unit Test-II From 3.6 to 5.12",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-3.5",
-                    "sno": "3.5"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-3.16",
+                    "sno": "3.16",
+                    "topic": "Deep dive into TRANSDUCERS & TIMERS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-3.17",
+                    "sno": "3.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec403t-3.18",
+                    "sno": "3.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "OPTO-ELECTRONIC DEVICES",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "OPTO-ELECTRONIC DEVICES:",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec403t-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "Explain the principle of LDR and list the applications of LDR",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "OPTO-ELECTRONIC DEVICES",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the structure, working principle and characteristics of LED",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Explain the principle of LDR and list the applications of LDR",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the applications of LED",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Explain the structure, working principle and characteristics of LED",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the structure, operation and characteristics of photo diode",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "List the applications of LED",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the structure, operation and characteristics of photo transistor",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Explain the structure, operation and characteristics of photo diode",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the applications of photo diode and photo transistor",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec403t-4.6",
-                    "sno": "4.6"
+                    "sno": "4.6",
+                    "topic": "Explain the structure, operation and characteristics of photo transistor",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-4.7",
+                    "sno": "4.7",
+                    "topic": "List the applications of photo diode and photo transistor",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-4.8",
+                    "sno": "4.8",
                     "topic": "Explain the working of opto-coupler",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-4.7",
-                    "sno": "4.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-4.9",
+                    "sno": "4.9",
                     "topic": "List the applications of opto-couplers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-4.8",
-                    "sno": "4.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-4.10",
+                    "sno": "4.10",
                     "topic": "Explain the working principle of LCD",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-4.9",
-                    "sno": "4.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec403t-4.11",
+                    "sno": "4.11",
                     "topic": "List the applications of LCD",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec403t-4.10",
-                    "sno": "4.10"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-4.12",
+                    "sno": "4.12",
+                    "topic": "Deep dive into OPTO-ELECTRONIC DEVICES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-4.13",
+                    "sno": "4.13",
+                    "topic": "Deep dive into Explain the principle of LDR and list the applications of LDR",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-4.14",
+                    "sno": "4.14",
+                    "topic": "Deep dive into Explain the structure, working principle and characteristics of LED",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-4.15",
+                    "sno": "4.15",
+                    "topic": "Deep dive into List the applications of LED",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-4.16",
+                    "sno": "4.16",
+                    "topic": "Deep dive into Explain the structure, operation and characteristics of photo diode",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-4.17",
+                    "sno": "4.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec403t-4.18",
+                    "sno": "4.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "CONTROL SYSTEMS",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26ec403t-5.1",
+                    "sno": "5.1",
                     "topic": "CONTROL SYSTEMS",
-                    "period": 18,
-                    "type": "theory",
-                    "id": "26ec403t-5.0",
-                    "sno": "5.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.2",
+                    "sno": "5.2",
+                    "topic": "Deep dive into CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.3",
+                    "sno": "5.3",
+                    "topic": "Problem solving & practice on CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.4",
+                    "sno": "5.4",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.5",
+                    "sno": "5.5",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.6",
+                    "sno": "5.6",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.7",
+                    "sno": "5.7",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.8",
+                    "sno": "5.8",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.9",
+                    "sno": "5.9",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.10",
+                    "sno": "5.10",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.11",
+                    "sno": "5.11",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.12",
+                    "sno": "5.12",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.13",
+                    "sno": "5.13",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.14",
+                    "sno": "5.14",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.15",
+                    "sno": "5.15",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.16",
+                    "sno": "5.16",
+                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-5.17",
+                    "sno": "5.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec403t-5.18",
+                    "sno": "5.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

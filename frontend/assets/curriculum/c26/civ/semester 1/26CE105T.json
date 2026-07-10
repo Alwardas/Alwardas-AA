@@ -3,71 +3,1065 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction",
-            "totalPeriods": 4,
+            "title": "Define Mechanics and Engineering Mechanics",
+            "totalPeriods": 75,
             "topics": [
                 {
+                    "id": "26ce105t-1.1",
+                    "sno": "1.1",
                     "topic": "Define Mechanics and Engineering Mechanics",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce105t-1.0",
-                    "sno": "1.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce105t-1.2",
+                    "sno": "1.2",
                     "topic": "State the applications of Engineering Mechanics",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce105t-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce105t-1.3",
+                    "sno": "1.3",
                     "topic": "State the branches of Engineering Mechanics",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce105t-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce105t-1.4",
+                    "sno": "1.4",
                     "topic": "Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce105t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce105t-1.5",
+                    "sno": "1.5",
                     "topic": "List the systems of measurements and Units",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce105t-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce105t-1.6",
+                    "sno": "1.6",
                     "topic": "List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce105t-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce105t-1.7",
+                    "sno": "1.7",
                     "topic": "Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce105t-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce105t-1.8",
+                    "sno": "1.8",
                     "topic": "Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce105t-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce105t-1.9",
+                    "sno": "1.9",
                     "topic": "Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ce105t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.10",
+                    "sno": "1.10",
+                    "topic": "Deep dive into Define Mechanics and Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.11",
+                    "sno": "1.11",
+                    "topic": "Deep dive into State the applications of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.12",
+                    "sno": "1.12",
+                    "topic": "Deep dive into State the branches of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.13",
+                    "sno": "1.13",
+                    "topic": "Deep dive into Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.14",
+                    "sno": "1.14",
+                    "topic": "Deep dive into List the systems of measurements and Units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.17",
+                    "sno": "1.17",
+                    "topic": "Deep dive into Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.19",
+                    "sno": "1.19",
+                    "topic": "Problem solving & practice on Define Mechanics and Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.20",
+                    "sno": "1.20",
+                    "topic": "Problem solving & practice on State the applications of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.21",
+                    "sno": "1.21",
+                    "topic": "Problem solving & practice on State the branches of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.22",
+                    "sno": "1.22",
+                    "topic": "Problem solving & practice on Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.23",
+                    "sno": "1.23",
+                    "topic": "Problem solving & practice on List the systems of measurements and Units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.24",
+                    "sno": "1.24",
+                    "topic": "Problem solving & practice on List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.25",
+                    "sno": "1.25",
+                    "topic": "Problem solving & practice on Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.26",
+                    "sno": "1.26",
+                    "topic": "Problem solving & practice on Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.27",
+                    "sno": "1.27",
+                    "topic": "Problem solving & practice on Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.28",
+                    "sno": "1.28",
+                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.29",
+                    "sno": "1.29",
+                    "topic": "Practical applications of State the applications of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.30",
+                    "sno": "1.30",
+                    "topic": "Practical applications of State the branches of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.31",
+                    "sno": "1.31",
+                    "topic": "Practical applications of Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.32",
+                    "sno": "1.32",
+                    "topic": "Practical applications of List the systems of measurements and Units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.33",
+                    "sno": "1.33",
+                    "topic": "Practical applications of List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.34",
+                    "sno": "1.34",
+                    "topic": "Practical applications of Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.35",
+                    "sno": "1.35",
+                    "topic": "Practical applications of Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.36",
+                    "sno": "1.36",
+                    "topic": "Practical applications of Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.37",
+                    "sno": "1.37",
+                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.38",
+                    "sno": "1.38",
+                    "topic": "Practical applications of State the applications of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.39",
+                    "sno": "1.39",
+                    "topic": "Practical applications of State the branches of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.40",
+                    "sno": "1.40",
+                    "topic": "Practical applications of Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.41",
+                    "sno": "1.41",
+                    "topic": "Practical applications of List the systems of measurements and Units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.42",
+                    "sno": "1.42",
+                    "topic": "Practical applications of List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.43",
+                    "sno": "1.43",
+                    "topic": "Practical applications of Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.44",
+                    "sno": "1.44",
+                    "topic": "Practical applications of Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.45",
+                    "sno": "1.45",
+                    "topic": "Practical applications of Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.46",
+                    "sno": "1.46",
+                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.47",
+                    "sno": "1.47",
+                    "topic": "Practical applications of State the applications of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.48",
+                    "sno": "1.48",
+                    "topic": "Practical applications of State the branches of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.49",
+                    "sno": "1.49",
+                    "topic": "Practical applications of Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.50",
+                    "sno": "1.50",
+                    "topic": "Practical applications of List the systems of measurements and Units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.51",
+                    "sno": "1.51",
+                    "topic": "Practical applications of List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.52",
+                    "sno": "1.52",
+                    "topic": "Practical applications of Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.53",
+                    "sno": "1.53",
+                    "topic": "Practical applications of Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.54",
+                    "sno": "1.54",
+                    "topic": "Practical applications of Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.55",
+                    "sno": "1.55",
+                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.56",
+                    "sno": "1.56",
+                    "topic": "Practical applications of State the applications of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.57",
+                    "sno": "1.57",
+                    "topic": "Practical applications of State the branches of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.58",
+                    "sno": "1.58",
+                    "topic": "Practical applications of Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.59",
+                    "sno": "1.59",
+                    "topic": "Practical applications of List the systems of measurements and Units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.60",
+                    "sno": "1.60",
+                    "topic": "Practical applications of List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.61",
+                    "sno": "1.61",
+                    "topic": "Practical applications of Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.62",
+                    "sno": "1.62",
+                    "topic": "Practical applications of Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.63",
+                    "sno": "1.63",
+                    "topic": "Practical applications of Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.64",
+                    "sno": "1.64",
+                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.65",
+                    "sno": "1.65",
+                    "topic": "Practical applications of State the applications of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.66",
+                    "sno": "1.66",
+                    "topic": "Practical applications of State the branches of Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.67",
+                    "sno": "1.67",
+                    "topic": "Practical applications of Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.68",
+                    "sno": "1.68",
+                    "topic": "Practical applications of List the systems of measurements and Units",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.69",
+                    "sno": "1.69",
+                    "topic": "Practical applications of List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.70",
+                    "sno": "1.70",
+                    "topic": "Practical applications of Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.71",
+                    "sno": "1.71",
+                    "topic": "Practical applications of Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.72",
+                    "sno": "1.72",
+                    "topic": "Practical applications of Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.73",
+                    "sno": "1.73",
+                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-1.74",
+                    "sno": "1.74",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce105t-1.75",
+                    "sno": "1.75",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Define Centroid and Centre of gravity",
+            "totalPeriods": 75,
+            "topics": [
+                {
+                    "id": "26ce105t-3.1",
+                    "sno": "3.1",
+                    "topic": "Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.2",
+                    "sno": "3.2",
+                    "topic": "Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.3",
+                    "sno": "3.3",
+                    "topic": "Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.4",
+                    "sno": "3.4",
+                    "topic": "State the need for finding the Centroid and Centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.5",
+                    "sno": "3.5",
+                    "topic": "Calculate the positions of Centroid for simple plane figures from first principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.6",
+                    "sno": "3.6",
+                    "topic": "Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.7",
+                    "sno": "3.7",
+                    "topic": "Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.8",
+                    "sno": "3.8",
+                    "topic": "Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.9",
+                    "sno": "3.9",
+                    "topic": "Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.10",
+                    "sno": "3.10",
+                    "topic": "Deep dive into Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.11",
+                    "sno": "3.11",
+                    "topic": "Deep dive into Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.12",
+                    "sno": "3.12",
+                    "topic": "Deep dive into Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.13",
+                    "sno": "3.13",
+                    "topic": "Deep dive into State the need for finding the Centroid and Centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.14",
+                    "sno": "3.14",
+                    "topic": "Deep dive into Calculate the positions of Centroid for simple plane figures from first principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.15",
+                    "sno": "3.15",
+                    "topic": "Deep dive into Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.16",
+                    "sno": "3.16",
+                    "topic": "Deep dive into Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.17",
+                    "sno": "3.17",
+                    "topic": "Deep dive into Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.19",
+                    "sno": "3.19",
+                    "topic": "Problem solving & practice on Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.20",
+                    "sno": "3.20",
+                    "topic": "Problem solving & practice on Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.21",
+                    "sno": "3.21",
+                    "topic": "Problem solving & practice on Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.22",
+                    "sno": "3.22",
+                    "topic": "Problem solving & practice on State the need for finding the Centroid and Centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.23",
+                    "sno": "3.23",
+                    "topic": "Problem solving & practice on Calculate the positions of Centroid for simple plane figures from first principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.24",
+                    "sno": "3.24",
+                    "topic": "Problem solving & practice on Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.25",
+                    "sno": "3.25",
+                    "topic": "Problem solving & practice on Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.26",
+                    "sno": "3.26",
+                    "topic": "Problem solving & practice on Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.27",
+                    "sno": "3.27",
+                    "topic": "Problem solving & practice on Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.28",
+                    "sno": "3.28",
+                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.29",
+                    "sno": "3.29",
+                    "topic": "Practical applications of Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.30",
+                    "sno": "3.30",
+                    "topic": "Practical applications of Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.31",
+                    "sno": "3.31",
+                    "topic": "Practical applications of State the need for finding the Centroid and Centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.32",
+                    "sno": "3.32",
+                    "topic": "Practical applications of Calculate the positions of Centroid for simple plane figures from first principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.33",
+                    "sno": "3.33",
+                    "topic": "Practical applications of Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.34",
+                    "sno": "3.34",
+                    "topic": "Practical applications of Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.35",
+                    "sno": "3.35",
+                    "topic": "Practical applications of Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.36",
+                    "sno": "3.36",
+                    "topic": "Practical applications of Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.37",
+                    "sno": "3.37",
+                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.38",
+                    "sno": "3.38",
+                    "topic": "Practical applications of Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.39",
+                    "sno": "3.39",
+                    "topic": "Practical applications of Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.40",
+                    "sno": "3.40",
+                    "topic": "Practical applications of State the need for finding the Centroid and Centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.41",
+                    "sno": "3.41",
+                    "topic": "Practical applications of Calculate the positions of Centroid for simple plane figures from first principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.42",
+                    "sno": "3.42",
+                    "topic": "Practical applications of Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.43",
+                    "sno": "3.43",
+                    "topic": "Practical applications of Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.44",
+                    "sno": "3.44",
+                    "topic": "Practical applications of Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.45",
+                    "sno": "3.45",
+                    "topic": "Practical applications of Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.46",
+                    "sno": "3.46",
+                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.47",
+                    "sno": "3.47",
+                    "topic": "Practical applications of Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.48",
+                    "sno": "3.48",
+                    "topic": "Practical applications of Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.49",
+                    "sno": "3.49",
+                    "topic": "Practical applications of State the need for finding the Centroid and Centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.50",
+                    "sno": "3.50",
+                    "topic": "Practical applications of Calculate the positions of Centroid for simple plane figures from first principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.51",
+                    "sno": "3.51",
+                    "topic": "Practical applications of Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.52",
+                    "sno": "3.52",
+                    "topic": "Practical applications of Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.53",
+                    "sno": "3.53",
+                    "topic": "Practical applications of Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.54",
+                    "sno": "3.54",
+                    "topic": "Practical applications of Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.55",
+                    "sno": "3.55",
+                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.56",
+                    "sno": "3.56",
+                    "topic": "Practical applications of Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.57",
+                    "sno": "3.57",
+                    "topic": "Practical applications of Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.58",
+                    "sno": "3.58",
+                    "topic": "Practical applications of State the need for finding the Centroid and Centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.59",
+                    "sno": "3.59",
+                    "topic": "Practical applications of Calculate the positions of Centroid for simple plane figures from first principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.60",
+                    "sno": "3.60",
+                    "topic": "Practical applications of Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.61",
+                    "sno": "3.61",
+                    "topic": "Practical applications of Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.62",
+                    "sno": "3.62",
+                    "topic": "Practical applications of Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.63",
+                    "sno": "3.63",
+                    "topic": "Practical applications of Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.64",
+                    "sno": "3.64",
+                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.65",
+                    "sno": "3.65",
+                    "topic": "Practical applications of Define Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.66",
+                    "sno": "3.66",
+                    "topic": "Practical applications of Distinguish between Centroid and Centre of gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.67",
+                    "sno": "3.67",
+                    "topic": "Practical applications of State the need for finding the Centroid and Centre of gravity for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.68",
+                    "sno": "3.68",
+                    "topic": "Practical applications of Calculate the positions of Centroid for simple plane figures from first principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.69",
+                    "sno": "3.69",
+                    "topic": "Practical applications of Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.70",
+                    "sno": "3.70",
+                    "topic": "Practical applications of Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.71",
+                    "sno": "3.71",
+                    "topic": "Practical applications of Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.72",
+                    "sno": "3.72",
+                    "topic": "Practical applications of Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.73",
+                    "sno": "3.73",
+                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-3.74",
+                    "sno": "3.74",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce105t-3.75",
+                    "sno": "3.75",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

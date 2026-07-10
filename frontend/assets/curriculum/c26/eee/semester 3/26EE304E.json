@@ -3,78 +3,351 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Partial Fractions",
-            "totalPeriods": 6,
+            "title": "Algebra",
+            "totalPeriods": 9,
             "topics": [
                 {
+                    "id": "26ee304e-1.1",
+                    "sno": "1.1",
                     "topic": "Define rational, proper and improper fractions of polynomials",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee304e-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ee304e-1.2",
+                    "sno": "1.2",
                     "topic": "Explain the procedure of resolving proper fractions of the type () ( )( ) fx ax b cx d\uf02b\uf02b",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee304e-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define a matrix and order of a matrix",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee304e-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Define a matrix and order of a matrix; State various types of matrices with examples (emphasis on 3 rd order square matrices)",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "State various types of matrices with examples (emphasis on 3 rd order square matrices)",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee304e-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Compute sum, difference, scalar multiplication and product of matrices. Illustrate the properties of these operations such as commutative, associat...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Compute sum, difference, scalar multiplication and product of matrices. Illustrate the properties of these operations such as commutative, associative and distributive properties with examples and counter examples",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee304e-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Define the transpose of a matrix and state its properties \u2013 examples; Define symmetric and skew -symmetric matrices with examples. Resolve a square...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define the transpose of a matrix and state its properties \u2013 examples",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee304e-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Define determinant of a square matrix; minor, co -factor of an element of a 3x3 square matrix with examples. Expand the determinant of a 3x3 matrix...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define symmetric and skew -symmetric matrices with examples. Resolve a square matrix into a sum of symmetric and skew-symmetric matrices with examples",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee304e-1.7",
-                    "sno": "1.7"
+                    "sno": "1.7",
+                    "topic": "Distinguish singular and non -singular matrices. Define multiplicative inverse of a matrix and list properties of adjoint and inverse. Compute adjo...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Define determinant of a square matrix; minor, co -factor of an element of a 3x3 square matrix with examples. Expand the determinant of a 3x3 matrix using Laplace expansion formula. State and apply the properties of determinants to solve simple problems",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee304e-1.8",
-                    "sno": "1.8"
+                    "sno": "1.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Distinguish singular and non -singular matrices. Define multiplicative inverse of a matrix and list properties of adjoint and inverse. Compute adjoint and multiplicative inverse of a square matrix",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ee304e-1.9",
-                    "sno": "1.9"
+                    "sno": "1.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Trigonometry",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26ee304e-2.1",
+                    "sno": "2.1",
+                    "topic": "Recall the trigonometric ratios and their values at specified angles; Draw graphs of trigonometric functions - Explain periodicity of trigonometric...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Solve a system of three linear equations in three unknowns using Cramer\u2019s rule",
+                    "id": "26ee304e-2.2",
+                    "sno": "2.2",
+                    "topic": "Give simple examples on compound angles to derive the values of s in150,cos150 , sin750, cos750 , tan 150 , tan750 etc; Derive identities like sin(...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ee304e-1.10",
-                    "sno": "1.10"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-2.3",
+                    "sno": "2.3",
+                    "topic": "Derive the formulae of multiple angles 2A, 3A etc., and sub-multiple angle A/2 in terms of angle A of trigonometric functions; Derive useful allied...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-2.4",
+                    "sno": "2.4",
+                    "topic": "Solve problems by applying these formulae to sum or difference or product of two terms. Syllabus for Unit test-I completed; Explain the concept of ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-2.5",
+                    "sno": "2.5",
+                    "topic": "Derive relations between inverse trigonometric funct ions so that the given inverse trigonometric function can be expressed in terms of other inver...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-2.6",
+                    "sno": "2.6",
+                    "topic": "State sine rule, cosine rule, tangent rule and projection rule and solve a triangle using these formulae; List various formulae for area of a trian...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-2.7",
+                    "sno": "2.7",
+                    "topic": "Define arithmetic operations on complex numbers with examples; Represent the complex number in various forms like mod ulus-amplitude (polar) form a...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-2.8",
+                    "sno": "2.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee304e-2.9",
+                    "sno": "2.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Co-ordinate Geometry",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26ee304e-3.1",
+                    "sno": "3.1",
+                    "topic": "Write different forms of a straight line \u2013 general form, point -slope form, slope- intercept form, two -point form, intercept form and normal form ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-3.2",
+                    "sno": "3.2",
+                    "topic": "Find distance of a point from a line, acute angle between two lines, intersection of two non-parallel lines and distance between two parallel lines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-3.3",
+                    "sno": "3.3",
+                    "topic": "Define locus of a point and circle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-3.4",
+                    "sno": "3.4",
+                    "topic": "Write the general equation of a circle and find its centre and radius",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-3.5",
+                    "sno": "3.5",
+                    "topic": "Find the equation of a circle, given (i) centre and radius, (ii)two ends of the diameter(iii) three non collinear points of type (0,0) (a,0), (0, b)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-3.6",
+                    "sno": "3.6",
+                    "topic": "Define a conic - Explain the terms focus, directrix, eccentricity, axes and latus - rectum of a conic",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-3.7",
+                    "sno": "3.7",
+                    "topic": "Find the equation of a conic when focus, directrix and eccentricity are given; Describe the properties of Parabola 2 4.y ax\uf03d",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-3.8",
+                    "sno": "3.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee304e-3.9",
+                    "sno": "3.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Differential Calculus",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26ee304e-4.1",
+                    "sno": "4.1",
+                    "topic": "Explain the concept of limit and meaning of lim ( ) xa f x l \uf0ae \uf03d and state the properties of limits; Evaluate the limits of the type ()lim ()xa fx gx\uf0ae",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-4.2",
+                    "sno": "4.2",
+                    "topic": "State the Standard limits lim , nn xa xa xa\uf0ae \uf02d \uf02d 0 sinlim , x x x\uf0ae 0 tanlim , x x x\uf0ae 0 1lim , x x a x\uf0ae \uf02d 0 1lim , x x e x\uf0ae \uf02d (without proof) and so...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-4.3",
+                    "sno": "4.3",
+                    "topic": "State the concept of derivative of a function y = f(x) \u2013 definition, first principle as 0 ( ) ( )lim h f x h f x h\uf0ae \uf02b\uf02d and also write sta ndard not...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-4.4",
+                    "sno": "4.4",
+                    "topic": "Find the derivatives of standard algebraic, logarithmic, exponential and trigonometric functions using the first principle; Find the derivatives of...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-4.5",
+                    "sno": "4.5",
+                    "topic": "Explain the method of differentiation of a function of a function (Chain rule) with illustrative examples; Explain the method of differentiation of...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-4.6",
+                    "sno": "4.6",
+                    "topic": "Explain the procedure for finding the derivatives of implicit functions with examples; Explain the need of taking logarithms for differentiating so...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-4.7",
+                    "sno": "4.7",
+                    "topic": "Explain the concept of finding the second order derivatives with examples; Define maximum and minimum values of a function and find the maximum and...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-4.8",
+                    "sno": "4.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee304e-4.9",
+                    "sno": "4.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Integral Calculus",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26ee304e-5.1",
+                    "sno": "5.1",
+                    "topic": "Explain the concept of Indefinite integral as an anti-derivative",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-5.2",
+                    "sno": "5.2",
+                    "topic": "Use Bernoulli\u2019s rule to evaluate the integrals of the form \uf0f2 vdxu",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-5.3",
+                    "sno": "5.3",
+                    "topic": "Deep dive into Explain the concept of Indefinite integral as an anti-derivative",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-5.4",
+                    "sno": "5.4",
+                    "topic": "Deep dive into Use Bernoulli\u2019s rule to evaluate the integrals of the form \uf0f2 vdxu",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-5.5",
+                    "sno": "5.5",
+                    "topic": "Problem solving & practice on Explain the concept of Indefinite integral as an anti-derivative",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-5.6",
+                    "sno": "5.6",
+                    "topic": "Problem solving & practice on Use Bernoulli\u2019s rule to evaluate the integrals of the form \uf0f2 vdxu",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-5.7",
+                    "sno": "5.7",
+                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee304e-5.8",
+                    "sno": "5.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee304e-5.9",
+                    "sno": "5.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

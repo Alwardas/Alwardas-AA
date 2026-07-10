@@ -3,71 +3,246 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "Getting Started with Python",
             "totalPeriods": 6,
             "topics": [
                 {
+                    "id": "26ce406a-1.1",
+                    "sno": "1.1",
                     "topic": "Getting Started with Python INSTALLATION OF PYTHON IN WINDOWS, KEYWORDS, IDENTIFIERS, VARIABLES, COMMENTS, EVERYTHING IS AN OBJECT. DATA TYPES, OPERATORS, EXPRESSIONS, STATEMENT, INPUT AND OUTPUT, TYPE CONVERSION AND DEBUGGING",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ce406a-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-1.2",
+                    "sno": "1.2",
+                    "topic": "Deep dive into Getting Started with Python INSTALLATION OF PYTHON IN WINDOWS, KEYWORDS, IDENTIFIERS, VARIABLES, COMMENTS, EVERYTHING IS AN OBJECT. DATA TYPES, OPERATORS, EXPRESSIONS, STATEMENT, INPUT AND OUTPUT, TYPE CONVERSION AND DEBUGGING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-1.3",
+                    "sno": "1.3",
+                    "topic": "Problem solving & practice on Getting Started with Python INSTALLATION OF PYTHON IN WINDOWS, KEYWORDS, IDENTIFIERS, VARIABLES, COMMENTS, EVERYTHING IS AN OBJECT. DATA TYPES, OPERATORS, EXPRESSIONS, STATEMENT, INPUT AND OUTPUT, TYPE CONVERSION AND DEBUGGING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-1.4",
+                    "sno": "1.4",
+                    "topic": "Practical applications of Getting Started with Python INSTALLATION OF PYTHON IN WINDOWS, KEYWORDS, IDENTIFIERS, VARIABLES, COMMENTS, EVERYTHING IS AN OBJECT. DATA TYPES, OPERATORS, EXPRESSIONS, STATEMENT, INPUT AND OUTPUT, TYPE CONVERSION AND DEBUGGING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-1.5",
+                    "sno": "1.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce406a-1.6",
+                    "sno": "1.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "Control Statement and Functions",
             "totalPeriods": 6,
             "topics": [
                 {
+                    "id": "26ce406a-2.1",
+                    "sno": "2.1",
                     "topic": "Control Statement and Functions Conditional blocks using if, if..else and if ..elif..else, nested if, while loop, for loop, pass, continue and break statements , Built in functions, function definition and calling, return statement",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ce406a-2.0",
-                    "sno": "2.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-2.2",
+                    "sno": "2.2",
+                    "topic": "Deep dive into Control Statement and Functions Conditional blocks using if, if..else and if ..elif..else, nested if, while loop, for loop, pass, continue and break statements , Built in functions, function definition and calling, return statement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-2.3",
+                    "sno": "2.3",
+                    "topic": "Problem solving & practice on Control Statement and Functions Conditional blocks using if, if..else and if ..elif..else, nested if, while loop, for loop, pass, continue and break statements , Built in functions, function definition and calling, return statement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-2.4",
+                    "sno": "2.4",
+                    "topic": "Practical applications of Control Statement and Functions Conditional blocks using if, if..else and if ..elif..else, nested if, while loop, for loop, pass, continue and break statements , Built in functions, function definition and calling, return statement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-2.5",
+                    "sno": "2.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce406a-2.6",
+                    "sno": "2.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "Lists, Tuples and Dictionaries",
             "totalPeriods": 6,
             "topics": [
                 {
+                    "id": "26ce406a-3.1",
+                    "sno": "3.1",
                     "topic": "Lists, Tuples and Dictionaries CREATING AND ACCESSING \u2013 LISTS, TUPLES AND DICTIONARIES",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ce406a-3.0",
-                    "sno": "3.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-3.2",
+                    "sno": "3.2",
+                    "topic": "Deep dive into Lists, Tuples and Dictionaries CREATING AND ACCESSING \u2013 LISTS, TUPLES AND DICTIONARIES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-3.3",
+                    "sno": "3.3",
+                    "topic": "Problem solving & practice on Lists, Tuples and Dictionaries CREATING AND ACCESSING \u2013 LISTS, TUPLES AND DICTIONARIES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-3.4",
+                    "sno": "3.4",
+                    "topic": "Practical applications of Lists, Tuples and Dictionaries CREATING AND ACCESSING \u2013 LISTS, TUPLES AND DICTIONARIES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-3.5",
+                    "sno": "3.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce406a-3.6",
+                    "sno": "3.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "Files:  Creating and reading a .txt and .csv files",
             "totalPeriods": 6,
             "topics": [
                 {
+                    "id": "26ce406a-4.1",
+                    "sno": "4.1",
                     "topic": "Files: Creating and reading a .txt and .csv files Introduction to Python libraries and tools for Civil Engineers NUMPY, SCIPY, PANDA AND MATPLOTLIB",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ce406a-4.0",
-                    "sno": "4.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-4.2",
+                    "sno": "4.2",
+                    "topic": "Deep dive into Files: Creating and reading a .txt and .csv files Introduction to Python libraries and tools for Civil Engineers NUMPY, SCIPY, PANDA AND MATPLOTLIB",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-4.3",
+                    "sno": "4.3",
+                    "topic": "Problem solving & practice on Files: Creating and reading a .txt and .csv files Introduction to Python libraries and tools for Civil Engineers NUMPY, SCIPY, PANDA AND MATPLOTLIB",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-4.4",
+                    "sno": "4.4",
+                    "topic": "Practical applications of Files: Creating and reading a .txt and .csv files Introduction to Python libraries and tools for Civil Engineers NUMPY, SCIPY, PANDA AND MATPLOTLIB",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-4.5",
+                    "sno": "4.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce406a-4.6",
+                    "sno": "4.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "Applications of Python Programming in Civil Engineering",
             "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "Applications of Python Programming in Civil Engineering Area and volume calculator for various shapes, Plotting and cross section FROM SURVEY DATA, QUANTITY CALCULATOR FOR WALL, SLAB, FOOTING,",
-                    "period": 6,
-                    "type": "theory",
-                    "id": "26ce406a-5.0",
-                    "sno": "5.0"
+                    "id": "26ce406a-5.1",
+                    "sno": "5.1",
+                    "topic": "Applications of Python Programming in Civil Engineering Area and volume calculator for various shapes, Plotting and cross section FROM SURVEY DATA, QUANTITY CALCULATOR FOR WALL, SLAB, FOOTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-5.2",
+                    "sno": "5.2",
+                    "topic": "Deep dive into Applications of Python Programming in Civil Engineering Area and volume calculator for various shapes, Plotting and cross section FROM SURVEY DATA, QUANTITY CALCULATOR FOR WALL, SLAB, FOOTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-5.3",
+                    "sno": "5.3",
+                    "topic": "Problem solving & practice on Applications of Python Programming in Civil Engineering Area and volume calculator for various shapes, Plotting and cross section FROM SURVEY DATA, QUANTITY CALCULATOR FOR WALL, SLAB, FOOTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-5.4",
+                    "sno": "5.4",
+                    "topic": "Practical applications of Applications of Python Programming in Civil Engineering Area and volume calculator for various shapes, Plotting and cross section FROM SURVEY DATA, QUANTITY CALCULATOR FOR WALL, SLAB, FOOTING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce406a-5.5",
+                    "sno": "5.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce406a-5.6",
+                    "sno": "5.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

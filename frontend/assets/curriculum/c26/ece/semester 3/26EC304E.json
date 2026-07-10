@@ -3,323 +3,337 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 9,
+            "title": "Applications of Definite Integrals",
+            "totalPeriods": 15,
             "topics": [
                 {
-                    "topic": "Apply definite integrals in engineering applications",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec304e-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "Find the area bounded by a curve and axes",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec304e-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Apply definite integrals in engineering applications",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Determine the volumes of solids of revolution along the x-axis",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec304e-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Find the area bounded by a curve and axes",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Obtain the Mean and R.M.S values of simple functions",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec304e-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Determine the volumes of solids of revolution along the x-axis",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-1.4",
+                    "sno": "1.4",
+                    "topic": "Obtain the Mean and R.M.S values of simple functions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-1.5",
+                    "sno": "1.5",
                     "topic": "Solve the problems of areas using Numerical Integration",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-1.6",
+                    "sno": "1.6",
+                    "topic": "Deep dive into Apply definite integrals in engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-1.7",
+                    "sno": "1.7",
+                    "topic": "Deep dive into Find the area bounded by a curve and axes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-1.8",
+                    "sno": "1.8",
+                    "topic": "Deep dive into Determine the volumes of solids of revolution along the x-axis",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-1.9",
+                    "sno": "1.9",
+                    "topic": "Deep dive into Obtain the Mean and R.M.S values of simple functions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-1.10",
+                    "sno": "1.10",
+                    "topic": "Deep dive into Solve the problems of areas using Numerical Integration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-1.11",
+                    "sno": "1.11",
+                    "topic": "Problem solving & practice on Apply definite integrals in engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-1.12",
+                    "sno": "1.12",
+                    "topic": "Problem solving & practice on Find the area bounded by a curve and axes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-1.13",
+                    "sno": "1.13",
+                    "topic": "Problem solving & practice on Determine the volumes of solids of revolution along the x-axis",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-1.14",
+                    "sno": "1.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec304e-1.15",
+                    "sno": "1.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 9,
+            "title": "Differential Equations",
+            "totalPeriods": 15,
             "topics": [
                 {
+                    "id": "26ec304e-2.1",
+                    "sno": "2.1",
                     "topic": "Solve first-order and first- degree differential equations and second- order homogeneous and non-homogeneous linear differential equations",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-2.0",
-                    "sno": "2.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-2.2",
+                    "sno": "2.2",
                     "topic": "Define a Differential equation, its order and degree",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-2.1",
-                    "sno": "2.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-2.3",
+                    "sno": "2.3",
                     "topic": "Find order and degree of a given differential equation",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-2.4",
+                    "sno": "2.4",
                     "topic": "Form a differential equation by eliminating arbitrary constants",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-2.3",
-                    "sno": "2.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-2.5",
+                    "sno": "2.5",
                     "topic": "Solve the first order and first degree differential equations by variables separable method",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-2.4",
-                    "sno": "2.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-2.6",
+                    "sno": "2.6",
                     "topic": "Solve linear differential equation of the form PQdy ydx += , where P and Q are functions of x only or constants. Syllabus for Unit test-I completed",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-2.5",
-                    "sno": "2.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-2.7",
+                    "sno": "2.7",
                     "topic": "Solve Differential equations of the type (aD2 +bD + c) y = 0 where a (\u2260 0), b, and c are real numbers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-2.6",
-                    "sno": "2.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-2.8",
+                    "sno": "2.8",
                     "topic": "Define complementary function, particular integral and general solution of a non-homogeneous linear differential equation of second order with constant coefficients",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-2.7",
-                    "sno": "2.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-2.9",
+                    "sno": "2.9",
                     "topic": "Describe the method of solving f(D)y= \ud835\udc52\ud835\udc4e\ud835\udc65, where f(D) is a polynomial of second order",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-2.8",
-                    "sno": "2.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-2.10",
+                    "sno": "2.10",
                     "topic": "Unit Test-II From L.O 2.6 to L.O 3.14",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-2.5",
-                    "sno": "2.5"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-2.11",
+                    "sno": "2.11",
+                    "topic": "Deep dive into Solve first-order and first- degree differential equations and second- order homogeneous and non-homogeneous linear differential equations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-2.12",
+                    "sno": "2.12",
+                    "topic": "Deep dive into Define a Differential equation, its order and degree",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-2.13",
+                    "sno": "2.13",
+                    "topic": "Deep dive into Find order and degree of a given differential equation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec304e-2.14",
+                    "sno": "2.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec304e-2.15",
+                    "sno": "2.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 9,
+            "title": "Probability and Statistics",
+            "totalPeriods": 15,
             "topics": [
                 {
+                    "id": "26ec304e-3.1",
+                    "sno": "3.1",
                     "topic": "Apply various probability and statistical techniques for data analysis",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.0",
-                    "sno": "3.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.2",
+                    "sno": "3.2",
                     "topic": "Recall the basic probability principles",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.3",
+                    "sno": "3.3",
                     "topic": "State addition theorem of probability for two mutually exclusive and exhaustive events",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.2",
-                    "sno": "3.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.4",
+                    "sno": "3.4",
                     "topic": "Solve simple problems on addition theorem",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.3",
-                    "sno": "3.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.5",
+                    "sno": "3.5",
                     "topic": "Explain conditional event and conditional probability",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.4",
-                    "sno": "3.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.6",
+                    "sno": "3.6",
                     "topic": "Solve simple problems on conditional probability",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.5",
-                    "sno": "3.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.7",
+                    "sno": "3.7",
                     "topic": "Explain dependent, independent events and state multiplication theorem",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.8",
+                    "sno": "3.8",
                     "topic": "Solve simple problems on multiplication theorem",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.7",
-                    "sno": "3.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.9",
+                    "sno": "3.9",
                     "topic": "Recall the measures of central tendency",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.8",
-                    "sno": "3.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.10",
+                    "sno": "3.10",
                     "topic": "Explain the significance of measures of dispersion to determine the degree of heterogeneity of the data",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.9",
-                    "sno": "3.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.11",
+                    "sno": "3.11",
                     "topic": "Find the measures of dispersion, Range, Mean Deviation and Standard Deviation for ungrouped data",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.10",
-                    "sno": "3.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec304e-3.12",
+                    "sno": "3.12",
                     "topic": "Explain the merits and demerits of these measures of dispersion",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.11",
-                    "sno": "3.11"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain bivariate data",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-3.12",
-                    "sno": "3.12"
-                },
-                {
-                    "topic": "Explain the concept of covariance and correlation between two variables",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec304e-3.13",
-                    "sno": "3.13"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "topic": "Introduction to Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec304e-4.1",
-                    "sno": "4.1"
-                },
-                {
-                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec304e-4.2",
-                    "sno": "4.2"
-                },
-                {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec304e-4.3",
-                    "sno": "4.3"
-                },
-                {
-                    "topic": "Detailed analysis of primary components",
+                    "sno": "3.13",
+                    "topic": "Explain bivariate data; Explain the concept of covariance and correlation between two variables",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-4.4",
-                    "sno": "4.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
+                    "id": "26ec304e-3.14",
+                    "sno": "3.14",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-4.5",
-                    "sno": "4.5"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
+                    "id": "26ec304e-3.15",
+                    "sno": "3.15",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-4.6",
-                    "sno": "4.6"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "topic": "Introduction to Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec304e-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec304e-5.2",
-                    "sno": "5.2"
-                },
-                {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec304e-5.3",
-                    "sno": "5.3"
-                },
-                {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-5.4",
-                    "sno": "5.4"
-                },
-                {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-5.5",
-                    "sno": "5.5"
-                },
-                {
-                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec304e-5.6",
-                    "sno": "5.6"
+                    "type": "assessment"
                 }
             ]
         }

@@ -3,652 +3,666 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "ARCHITECTURE OF MICROCONTROLLER 8051",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26ec401t-1.1",
+                    "sno": "1.1",
                     "topic": "ARCHITECTURE OF MICROCONTROLLER 8051",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec401t-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.2",
+                    "sno": "1.2",
                     "topic": "List the features of microcontrollers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.1",
-                    "sno": "1.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.3",
+                    "sno": "1.3",
                     "topic": "Compare microprocessors and microcontrollers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.2",
-                    "sno": "1.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.4",
+                    "sno": "1.4",
                     "topic": "State the details of 8051 microcontroller family chips",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.3",
-                    "sno": "1.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.5",
+                    "sno": "1.5",
                     "topic": "Draw the functional block diagram of 8051 microcontroller and state the function of each block",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.4",
-                    "sno": "1.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.6",
+                    "sno": "1.6",
                     "topic": "Draw the pin diagram of 8051 microcontroller and specify the purpose of each pin",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.5",
-                    "sno": "1.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.7",
+                    "sno": "1.7",
                     "topic": "Explain the internal memory organization of 8051 with suitable diagram",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.6",
-                    "sno": "1.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.8",
+                    "sno": "1.8",
                     "topic": "Explain the external memory organization of 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.7",
-                    "sno": "1.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.9",
+                    "sno": "1.9",
                     "topic": "List various special function registers of 8051 and state their functions",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.8",
-                    "sno": "1.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.10",
+                    "sno": "1.10",
                     "topic": "Explain PSW register of 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.9",
-                    "sno": "1.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.11",
+                    "sno": "1.11",
                     "topic": "Explain the SFRs associated with timer/counters of 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.10",
-                    "sno": "1.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.12",
+                    "sno": "1.12",
                     "topic": "Explain the modes of operations of counters & timers in 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.11",
-                    "sno": "1.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.13",
+                    "sno": "1.13",
                     "topic": "List the interrupts of 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.12",
-                    "sno": "1.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.14",
+                    "sno": "1.14",
                     "topic": "Explain the SFRs associated with interrupts of 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.13",
-                    "sno": "1.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-1.15",
+                    "sno": "1.15",
                     "topic": "Explain the SFRs associated with serial communication of 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.14",
-                    "sno": "1.14"
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the modes of operation of serial communication with 8051",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-1.15",
-                    "sno": "1.15"
-                },
-                {
-                    "topic": "Describe various I/O ports of 8051",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-1.16",
-                    "sno": "1.16"
+                    "sno": "1.16",
+                    "topic": "List the modes of operation of serial communication with 8051; Describe various I/O ports of 8051",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec401t-1.17",
+                    "sno": "1.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec401t-1.18",
+                    "sno": "1.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "INSTRUCTION SET OF 8051 MICRO CONTROLLERS",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26ec401t-2.1",
+                    "sno": "2.1",
                     "topic": "INSTRUCTION SET OF 8051 MICRO CONTROLLERS",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.0",
-                    "sno": "2.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.2",
+                    "sno": "2.2",
                     "topic": "State the need for an instruction set",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.1",
-                    "sno": "2.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.3",
+                    "sno": "2.3",
                     "topic": "Mention the instruction format of 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.2",
-                    "sno": "2.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.4",
+                    "sno": "2.4",
                     "topic": "State the terms operation code, operand and illustrate these terms by writing an instruction",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.3",
-                    "sno": "2.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.5",
+                    "sno": "2.5",
                     "topic": "Define fetch cycle, execution cycle and instruction cycle",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.4",
-                    "sno": "2.4"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Distinguish between machine cycle and T-state",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.5",
-                    "sno": "2.5"
-                },
-                {
-                    "topic": "Define the terms machine language, assembly language, and mnemonics",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-2.6",
-                    "sno": "2.6"
+                    "sno": "2.6",
+                    "topic": "Distinguish between machine cycle and T-state; Define the terms machine language, assembly language, and mnemonics",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.7",
+                    "sno": "2.7",
                     "topic": "Classify the 8051 instructions into one byte, two byte and three-byte instructions",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.7",
-                    "sno": "2.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.8",
+                    "sno": "2.8",
                     "topic": "Classify the 8051 instructions based on their function",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.8",
-                    "sno": "2.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.9",
+                    "sno": "2.9",
                     "topic": "List the various addressing modes of 8051and explain them with examples",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.9",
-                    "sno": "2.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.10",
+                    "sno": "2.10",
                     "topic": "Explain various data transfer group of instructions of 8051 with examples",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.10",
-                    "sno": "2.10"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain various arithmetic instructions of 8051",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-2.11",
-                    "sno": "2.11"
-                },
-                {
-                    "topic": "State the effect of arithmetic operations on flags of 8051 with examples",
+                    "sno": "2.11",
+                    "topic": "Explain various arithmetic instructions of 8051; State the effect of arithmetic operations on flags of 8051 with examples",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.12",
-                    "sno": "2.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.12",
+                    "sno": "2.12",
                     "topic": "Explain the logic instructions and recognize the flags that are set or reset for given data conditions",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.13",
-                    "sno": "2.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.13",
+                    "sno": "2.13",
                     "topic": "List various bit manipulation instructions of 8051 and illustrate with examples",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.14",
-                    "sno": "2.14"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.14",
+                    "sno": "2.14",
                     "topic": "Explain unconditional jump instructions of 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-2.15",
-                    "sno": "2.15"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-2.15",
+                    "sno": "2.15",
                     "topic": "Explain conditional jump instructions of 8051",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26ec401t-2.16",
-                    "sno": "2.16"
+                    "sno": "2.16",
+                    "topic": "Explain CALL and RET instructions of 8051; State the use of NOP instruction of 8051",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain CALL and RET instructions of 8051",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-2.17",
-                    "sno": "2.17"
+                    "sno": "2.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "State the use of NOP instruction of 8051",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-2.18",
-                    "sno": "2.18"
+                    "sno": "2.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "8051 PROGRAMMING CONCEPTS USING ASSEMBLY LANGUAGE",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26ec401t-3.1",
+                    "sno": "3.1",
                     "topic": "List the various symbols used in drawing flow charts",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.1",
-                    "sno": "3.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-3.2",
+                    "sno": "3.2",
                     "topic": "Write programs in 8051 assembly language to illustrate the application of data copy instructions",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.2",
-                    "sno": "3.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-3.3",
+                    "sno": "3.3",
                     "topic": "Write programs in 8051 assembly language to perform single byte and double byte addition and subtraction",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.3",
-                    "sno": "3.3"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Write programs in 8051 assembly language which use jump instructions",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-3.4",
-                    "sno": "3.4"
-                },
-                {
-                    "topic": "Write a delay subroutine to introduce time delay of given time period (in milliseconds) without using 8051 internal timers",
+                    "sno": "3.4",
+                    "topic": "Write programs in 8051 assembly language which use jump instructions; Write a delay subroutine to introduce time delay of given time period (in mil...",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.5",
-                    "sno": "3.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-3.5",
+                    "sno": "3.5",
                     "topic": "Write a program to introduce time delay of given time period (in milliseconds) using 8051 internal timers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.6",
-                    "sno": "3.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-3.6",
+                    "sno": "3.6",
                     "topic": "Define a subroutine and state its use",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.7",
-                    "sno": "3.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-3.7",
+                    "sno": "3.7",
                     "topic": "Explain the sequence of program when subroutine is called and executed",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
                     "id": "26ec401t-3.8",
-                    "sno": "3.8"
+                    "sno": "3.8",
+                    "topic": "Explain information exchange between the program counter and the stack and identification of stack pointer register when a subroutine is called and...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain information exchange between the program counter and the stack and identification of stack pointer register when a subroutine is called and executed",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-3.9",
-                    "sno": "3.9"
-                },
-                {
-                    "topic": "Illustrate PUSH, POP instructions with an example",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.10",
-                    "sno": "3.10"
-                },
-                {
+                    "sno": "3.9",
                     "topic": "Define the term debugging a program",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.11",
-                    "sno": "3.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-3.10",
+                    "sno": "3.10",
                     "topic": "Explain the principles of single step and break point debugging techniques LAB ACTIVITIES",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.12",
-                    "sno": "3.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-3.11",
+                    "sno": "3.11",
                     "topic": "Write and Execute an ALP to perform Block move \u2013 10bytes of data from 0X30 -0X39 to 0X40- 0X49",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec401t-3.12",
+                    "sno": "3.12",
+                    "topic": "Write and Execute an ALP to perform Block exchange \u2013 10bytes of data between 0X30-0X39 to 0X40-0X49; Write and Execute an ALP to perform: Addition,...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
                     "id": "26ec401t-3.13",
-                    "sno": "3.13"
-                },
-                {
-                    "topic": "Write and Execute an ALP to perform Block exchange \u2013 10bytes of data between 0X30-0X39 to 0X40-0X49",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.14",
-                    "sno": "3.14"
-                },
-                {
-                    "topic": "Write and Execute an ALP to perform: Addition, subtraction, division and multiplication of two8-bit numbers",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.15",
-                    "sno": "3.15"
-                },
-                {
+                    "sno": "3.13",
                     "topic": "Write and Execute an ALP to perform addition of two16-bit numbers",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.16",
-                    "sno": "3.16"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-3.14",
+                    "sno": "3.14",
                     "topic": "Write and Execute an ALP to perform subtraction of two16-bit numbers",
                     "period": 1,
-                    "type": "theory",
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec401t-3.15",
+                    "sno": "3.15",
+                    "topic": "Write and Execute an ALP to the find Smallest/Largest number in 10bytes of data stored from 0X30 to 0X39 and store the result in the next location ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec401t-3.16",
+                    "sno": "3.16",
+                    "topic": "Write and Execute an ALP to find the 2\u2019s complement of given 8-bit number; Unit Test-II From 3.5 to 5.14",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
                     "id": "26ec401t-3.17",
-                    "sno": "3.17"
+                    "sno": "3.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Write and Execute an ALP to the find Smallest/Largest number in 10bytes of data stored from 0X30 to 0X39 and store the result in the next location i.e., 0X3A",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-3.18",
-                    "sno": "3.18"
-                },
-                {
-                    "topic": "Write and Execute an ALP to find the 2\u2019s complement of given 8-bit number",
+                    "sno": "3.18",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.19",
-                    "sno": "3.19"
-                },
-                {
-                    "topic": "Unit Test-II From 3.5 to 5.14",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-3.4",
-                    "sno": "3.4"
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "INTERFACING SIMPLE I/O DEVICES",
             "totalPeriods": 18,
             "topics": [
                 {
+                    "id": "26ec401t-4.1",
+                    "sno": "4.1",
                     "topic": "INTERFACING SIMPLE I/O DEVICES",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.0",
-                    "sno": "4.0"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.2",
+                    "sno": "4.2",
                     "topic": "Explain the Interfacing concepts of push button switches and LEDs with 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.1",
-                    "sno": "4.1"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.3",
+                    "sno": "4.3",
                     "topic": "Draw a diagram to connect an LED to a port pin and write an8051 -assembly language program to blink it with a given time delay",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.2",
-                    "sno": "4.2"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.4",
+                    "sno": "4.4",
                     "topic": "Interface a common cathode/anode seven segment display with 8051 and write a program to display a given decimal number",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.3",
-                    "sno": "4.3"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.5",
+                    "sno": "4.5",
                     "topic": "State the functions of pins of 16\u00d72 LCD module",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.4",
-                    "sno": "4.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.6",
+                    "sno": "4.6",
                     "topic": "List the instruction command codes for programming 16\u00d72 LCD module",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.5",
-                    "sno": "4.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.7",
+                    "sno": "4.7",
                     "topic": "Explain Interfacing of 16\u00d72 LCD module to 8051",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.6",
-                    "sno": "4.6"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Describe key bouncing problem and de-bouncing solutions",
-                    "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.7",
-                    "sno": "4.7"
-                },
-                {
-                    "topic": "Write a program to make an LED connected to port pin P1.5, light up for specific time on pressing a switch connected to port pin P2.3",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-4.8",
-                    "sno": "4.8"
+                    "sno": "4.8",
+                    "topic": "Describe key bouncing problem and de-bouncing solutions; Write a program to make an LED connected to port pin P1.5, light up for specific time on p...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.9",
+                    "sno": "4.9",
                     "topic": "Write a Program to make an LED connected to pinP1.7 to blink at a specific rate",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.9",
-                    "sno": "4.9"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Draw the Interface circuit to interface a 7segment LED display with 8051 microcontroller and write a program to display a given decimal digit LAB ACTIVITIES",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-4.10",
-                    "sno": "4.10"
+                    "sno": "4.10",
+                    "topic": "Draw the Interface circuit to interface a 7segment LED display with 8051 microcontroller and write a program to display a given decimal digit LAB A...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.11",
+                    "sno": "4.11",
                     "topic": "Execute a program to make an LED connected to port pin P1.5, light up for specific time on pressing a switch connected to port pin P2.3",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.11",
-                    "sno": "4.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.12",
+                    "sno": "4.12",
                     "topic": "Execute a Program to make an LED connected to pinP1.7 to blink at a specific rate",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.12",
-                    "sno": "4.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.13",
+                    "sno": "4.13",
                     "topic": "Interface a 7segment LED display with 8051 microcontroller and write and execute a program to display a given decimal digit",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.13",
-                    "sno": "4.13"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.14",
+                    "sno": "4.14",
                     "topic": "Interface a small DC motor with 8051 and write a program to rotate the motor in clockwise/anti clockwise direction",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.14",
-                    "sno": "4.14"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-4.15",
+                    "sno": "4.15",
                     "topic": "Interface a 4x4 Matrix Key Board and 16x2 LCD with 8051 and write and execute program to display key pressed on LCD display",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-4.15",
-                    "sno": "4.15"
+                    "type": "theory"
                 },
                 {
-                    "topic": "Interface stepper motor with 8051 and write and execute a program to run the motor continuously",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-4.16",
-                    "sno": "4.16"
+                    "sno": "4.16",
+                    "topic": "Interface stepper motor with 8051 and write and execute a program to run the motor continuously; Interface 8051 with Relay to drive a lamp and writ...",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Interface 8051 with Relay to drive a lamp and write and execute program to switch ON/OFF the lamp when a switch is ON/OFF",
-                    "period": 1,
-                    "type": "theory",
                     "id": "26ec401t-4.17",
-                    "sno": "4.17"
+                    "sno": "4.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec401t-4.18",
+                    "sno": "4.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "PROGRAMMING USING EMBEDDED C",
             "totalPeriods": 18,
             "topics": [
                 {
-                    "topic": "PROGRAMMING USING EMBEDDED C",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ec401t-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "List the differences between C and Embedded C",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec401t-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "PROGRAMMING USING EMBEDDED C",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "List the reasons for writing programs in Embedded C",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec401t-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "List the differences between C and Embedded C",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "Explain the C data types for 8051",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ec401t-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "List the reasons for writing programs in Embedded C",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-5.4",
+                    "sno": "5.4",
+                    "topic": "Explain the C data types for 8051",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec401t-5.5",
+                    "sno": "5.5",
                     "topic": "Write an 8051 C program to store the data in the accumulator",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-5.4",
-                    "sno": "5.4"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-5.6",
+                    "sno": "5.6",
                     "topic": "Write a program to load three numbers into Accumulator and send them to port 1",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-5.5",
-                    "sno": "5.5"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-5.7",
+                    "sno": "5.7",
                     "topic": "Write an 8051 C program to send values 00 \u2013 FF to port P1",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-5.6",
-                    "sno": "5.6"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-5.8",
+                    "sno": "5.8",
                     "topic": "Write an 8051 C program to toggle all the bits of P1 continuously",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-5.7",
-                    "sno": "5.7"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-5.9",
+                    "sno": "5.9",
                     "topic": "Write an 8051 C program to toggle bits of P1 ports continuously with 250 ms",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-5.8",
-                    "sno": "5.8"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-5.10",
+                    "sno": "5.10",
                     "topic": "Write an 8051 C program to toggle all the bits of port P1 continuously with some delay in between. Use Timer 0, in 16-bit mode to generate the delay. LAB ACTIVITIES",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-5.9",
-                    "sno": "5.9"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-5.11",
+                    "sno": "5.11",
                     "topic": "Execute an 8051 C program to send values 00 \u2013 FF to port P1",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-5.10",
-                    "sno": "5.10"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-5.12",
+                    "sno": "5.12",
                     "topic": "Execute an 8051 C program to toggle all the bits of port P1 continuously",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-5.11",
-                    "sno": "5.11"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-5.13",
+                    "sno": "5.13",
                     "topic": "Execute an 8051 C program to toggle bits of port P1 continuously with 250 ms delay",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-5.12",
-                    "sno": "5.12"
+                    "type": "theory"
                 },
                 {
+                    "id": "26ec401t-5.14",
+                    "sno": "5.14",
                     "topic": "Execute a C program for 8051 to transfer the letter \u2018A\u2019 serially at 9600 baud continuously. Using 8-bit data and 1 stop bit",
                     "period": 1,
-                    "type": "theory",
-                    "id": "26ec401t-5.13",
-                    "sno": "5.13"
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec401t-5.15",
+                    "sno": "5.15",
+                    "topic": "Deep dive into PROGRAMMING USING EMBEDDED C",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec401t-5.16",
+                    "sno": "5.16",
+                    "topic": "Deep dive into List the differences between C and Embedded C",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec401t-5.17",
+                    "sno": "5.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec401t-5.18",
+                    "sno": "5.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

@@ -3,281 +3,428 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 12,
+            "title": "26CE601I \u2022 Practical training  in Industry \u2022 Training Report Preparation Report Preparation: Title Page, Certificate, Acknowledgements, Abstract, Contents (Introduction of Industry/Organization, Organization structure, Duties of different officers in the organization, List of works undertaken by organization,  Procedures adopted, M -book recording at various stages of construction, Procurement of Material, Labour & Equipment, Skills Acquired, Conclusions, Charts, Diagrams, Plans etc.,  pertaining to organization, Literature. Six Months COURSE OBJECTIVES Upon completion of the course the student shall be able to (i) Expose to real time working environment (ii) Enhance knowledge and skills already learnt in the institution (iii) Acquire new skills of measuring, supervising and recording civil engineering works. (iv) Develop qualities like team & work culture, integrity, responsibility and self- confidence. COURSE OUTCOMES",
+            "totalPeriods": 60,
             "topics": [
                 {
-                    "topic": "Identifies different works to be carried out in the Project",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26ce509p-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Identifies different works to be carried out in the Project",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce509p-1.2",
+                    "sno": "1.2",
                     "topic": "Collects data relevant to the project",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26ce509p-1.2",
-                    "sno": "1.2"
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce509p-1.3",
+                    "sno": "1.3",
                     "topic": "Carries out Site Surveys",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26ce509p-1.3",
-                    "sno": "1.3"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Selects the most efficient method from the available choices based on preliminary investigation",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ce509p-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Selects the most efficient method from the available choices based on \npreliminary investigation",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce509p-1.5",
+                    "sno": "1.5",
                     "topic": "Designs the required elements of the project as per standard practices",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26ce509p-1.5",
-                    "sno": "1.5"
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce509p-1.6",
+                    "sno": "1.6",
                     "topic": "Prepares working drawings for the project",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26ce509p-1.6",
-                    "sno": "1.6"
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce509p-1.7",
+                    "sno": "1.7",
                     "topic": "Estimates the cost of project, men, materials and equipment required",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26ce509p-1.7",
-                    "sno": "1.7"
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce509p-1.8",
+                    "sno": "1.8",
                     "topic": "Prepares schedule of time and sequence of operations",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26ce509p-1.8",
-                    "sno": "1.8"
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce509p-1.9",
+                    "sno": "1.9",
                     "topic": "Prepares project report",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26ce509p-1.9",
-                    "sno": "1.9"
+                    "type": "practical"
                 },
                 {
+                    "id": "26ce509p-1.10",
+                    "sno": "1.10",
                     "topic": "Prepares C.P.M. Chart",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26ce509p-1.10",
-                    "sno": "1.10"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Collects the requirements to start a Small Enterprise/Industry under Self Employment Scheme",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ce509p-1.11",
-                    "sno": "1.11"
-                }
-            ]
-        },
-        {
-            "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 12,
-            "topics": [
-                {
-                    "topic": "Introduction to Core Concepts & Principles",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-2.1",
-                    "sno": "2.1"
+                    "sno": "1.11",
+                    "topic": "Collects the requirements to start a Small Enterprise/Industry under Self \nEmployment Scheme",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Core Concepts & Principles",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-2.2",
-                    "sno": "2.2"
+                    "id": "26ce509p-1.12",
+                    "sno": "1.12",
+                    "topic": "Prepares the chart or model for each project. \nUpon completion of the course the student shall be able to \n(i) Provide with the opportunity to synthesise knowledge from various areas of \nlearning and critically and creatively apply it to real life situations.  \n(ii) Enable to acquire skills like collaboration, communication and independent \nlearning to prepare them for lifelong learning and the challenges ahead. \nCO1 Acquires collaborative skills through working in a team to achieve \ncommon goals. \nCO2 Reviews and evaluates the available literature on the chosen problem \nand formulates the methodology to solve the identified problem. \nCO3 \nAcquires the ability to make links across different areas of knowledge \nand to generate, develop and evaluate ideas and information so as to \napply these skills to the project task. \nCO4 \nAcquires the skills to communicate effectively and to present ideas \nclearly and coherently to specific audience in both the written and oral \nforms. \nCO5 Learns on own, reflects on their learning and takes appropriate actions \nto improve it and prepares and presents project report \nCO-PO MAPPING         \nCO / PO PO1 PO2 PO3 PO4 PO5 PO6 PO7 PSO1 PSO2 PSO3 \nCO1 3    1 1 1 2 3 2 \nCO2 3 3  2  1  2 3 2 \nCO3 3 3 3 1 1   2 3 2 \nCO4 2 2    1 1 2 3 2 \nCO5 2 2    1 1 2 3 2 \n Average 2.6 2.5 3 1.5 1 1 1 2 3 2 \n                          \nNote : The gaps in CO-PO mapping will be met by one or  more appropriate activities \nfrom the following: (i)Assignments (ii) Tutorials (iii) Seminars (iv) Guest lectures (v) \nGroup discussions  (vi) Quiz (vii) Industrial visits  (viii) Tech fests  (ix) Mini project \nworks (x) Library visits ..etc",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-2.3",
-                    "sno": "2.3"
+                    "id": "26ce509p-1.13",
+                    "sno": "1.13",
+                    "topic": "Deep dive into Identifies different works to be carried out in the Project",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-2.4",
-                    "sno": "2.4"
+                    "id": "26ce509p-1.14",
+                    "sno": "1.14",
+                    "topic": "Deep dive into Collects data relevant to the project",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-2.5",
-                    "sno": "2.5"
+                    "id": "26ce509p-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into Carries out Site Surveys",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Core Concepts & Principles",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-2.6",
-                    "sno": "2.6"
-                }
-            ]
-        },
-        {
-            "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 12,
-            "topics": [
-                {
-                    "topic": "Introduction to System Design & Methodology",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-3.1",
-                    "sno": "3.1"
+                    "id": "26ce509p-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into Selects the most efficient method from the available choices based on \npreliminary investigation",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of System Design & Methodology",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-3.2",
-                    "sno": "3.2"
+                    "id": "26ce509p-1.17",
+                    "sno": "1.17",
+                    "topic": "Deep dive into Designs the required elements of the project as per standard practices",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-3.3",
-                    "sno": "3.3"
+                    "id": "26ce509p-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Prepares working drawings for the project",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-3.4",
-                    "sno": "3.4"
+                    "id": "26ce509p-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Estimates the cost of project, men, materials and equipment required",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-3.5",
-                    "sno": "3.5"
+                    "id": "26ce509p-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into Prepares schedule of time and sequence of operations",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of System Design & Methodology",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-3.6",
-                    "sno": "3.6"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 12,
-            "topics": [
-                {
-                    "topic": "Introduction to Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-4.1",
-                    "sno": "4.1"
+                    "id": "26ce509p-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into Prepares project report",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-4.2",
-                    "sno": "4.2"
+                    "id": "26ce509p-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into Prepares C.P.M. Chart",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-4.3",
-                    "sno": "4.3"
+                    "id": "26ce509p-1.23",
+                    "sno": "1.23",
+                    "topic": "Deep dive into Collects the requirements to start a Small Enterprise/Industry under Self \nEmployment Scheme",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-4.4",
-                    "sno": "4.4"
+                    "id": "26ce509p-1.24",
+                    "sno": "1.24",
+                    "topic": "Deep dive into Prepares the chart or model for each project. \nUpon completion of the course the student shall be able to \n(i) Provide with the opportunity to synthesise knowledge from various areas of \nlearning and critically and creatively apply it to real life situations.  \n(ii) Enable to acquire skills like collaboration, communication and independent \nlearning to prepare them for lifelong learning and the challenges ahead. \nCO1 Acquires collaborative skills through working in a team to achieve \ncommon goals. \nCO2 Reviews and evaluates the available literature on the chosen problem \nand formulates the methodology to solve the identified problem. \nCO3 \nAcquires the ability to make links across different areas of knowledge \nand to generate, develop and evaluate ideas and information so as to \napply these skills to the project task. \nCO4 \nAcquires the skills to communicate effectively and to present ideas \nclearly and coherently to specific audience in both the written and oral \nforms. \nCO5 Learns on own, reflects on their learning and takes appropriate actions \nto improve it and prepares and presents project report \nCO-PO MAPPING         \nCO / PO PO1 PO2 PO3 PO4 PO5 PO6 PO7 PSO1 PSO2 PSO3 \nCO1 3    1 1 1 2 3 2 \nCO2 3 3  2  1  2 3 2 \nCO3 3 3 3 1 1   2 3 2 \nCO4 2 2    1 1 2 3 2 \nCO5 2 2    1 1 2 3 2 \n Average 2.6 2.5 3 1.5 1 1 1 2 3 2 \n                          \nNote : The gaps in CO-PO mapping will be met by one or  more appropriate activities \nfrom the following: (i)Assignments (ii) Tutorials (iii) Seminars (iv) Guest lectures (v) \nGroup discussions  (vi) Quiz (vii) Industrial visits  (viii) Tech fests  (ix) Mini project \nworks (x) Library visits ..etc",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-4.5",
-                    "sno": "4.5"
+                    "id": "26ce509p-1.25",
+                    "sno": "1.25",
+                    "topic": "Problem solving & practice on Identifies different works to be carried out in the Project",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-4.6",
-                    "sno": "4.6"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 12,
-            "topics": [
-                {
-                    "topic": "Introduction to Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-5.1",
-                    "sno": "5.1"
+                    "id": "26ce509p-1.26",
+                    "sno": "1.26",
+                    "topic": "Problem solving & practice on Collects data relevant to the project",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-5.2",
-                    "sno": "5.2"
+                    "id": "26ce509p-1.27",
+                    "sno": "1.27",
+                    "topic": "Problem solving & practice on Carries out Site Surveys",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-5.3",
-                    "sno": "5.3"
+                    "id": "26ce509p-1.28",
+                    "sno": "1.28",
+                    "topic": "Problem solving & practice on Selects the most efficient method from the available choices based on \npreliminary investigation",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-5.4",
-                    "sno": "5.4"
+                    "id": "26ce509p-1.29",
+                    "sno": "1.29",
+                    "topic": "Problem solving & practice on Designs the required elements of the project as per standard practices",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-5.5",
-                    "sno": "5.5"
+                    "id": "26ce509p-1.30",
+                    "sno": "1.30",
+                    "topic": "Problem solving & practice on Prepares working drawings for the project",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26ce509p-5.6",
-                    "sno": "5.6"
+                    "id": "26ce509p-1.31",
+                    "sno": "1.31",
+                    "topic": "Problem solving & practice on Estimates the cost of project, men, materials and equipment required",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.32",
+                    "sno": "1.32",
+                    "topic": "Problem solving & practice on Prepares schedule of time and sequence of operations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.33",
+                    "sno": "1.33",
+                    "topic": "Problem solving & practice on Prepares project report",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.34",
+                    "sno": "1.34",
+                    "topic": "Problem solving & practice on Prepares C.P.M. Chart",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.35",
+                    "sno": "1.35",
+                    "topic": "Problem solving & practice on Collects the requirements to start a Small Enterprise/Industry under Self \nEmployment Scheme",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.36",
+                    "sno": "1.36",
+                    "topic": "Problem solving & practice on Prepares the chart or model for each project. \nUpon completion of the course the student shall be able to \n(i) Provide with the opportunity to synthesise knowledge from various areas of \nlearning and critically and creatively apply it to real life situations.  \n(ii) Enable to acquire skills like collaboration, communication and independent \nlearning to prepare them for lifelong learning and the challenges ahead. \nCO1 Acquires collaborative skills through working in a team to achieve \ncommon goals. \nCO2 Reviews and evaluates the available literature on the chosen problem \nand formulates the methodology to solve the identified problem. \nCO3 \nAcquires the ability to make links across different areas of knowledge \nand to generate, develop and evaluate ideas and information so as to \napply these skills to the project task. \nCO4 \nAcquires the skills to communicate effectively and to present ideas \nclearly and coherently to specific audience in both the written and oral \nforms. \nCO5 Learns on own, reflects on their learning and takes appropriate actions \nto improve it and prepares and presents project report \nCO-PO MAPPING         \nCO / PO PO1 PO2 PO3 PO4 PO5 PO6 PO7 PSO1 PSO2 PSO3 \nCO1 3    1 1 1 2 3 2 \nCO2 3 3  2  1  2 3 2 \nCO3 3 3 3 1 1   2 3 2 \nCO4 2 2    1 1 2 3 2 \nCO5 2 2    1 1 2 3 2 \n Average 2.6 2.5 3 1.5 1 1 1 2 3 2 \n                          \nNote : The gaps in CO-PO mapping will be met by one or  more appropriate activities \nfrom the following: (i)Assignments (ii) Tutorials (iii) Seminars (iv) Guest lectures (v) \nGroup discussions  (vi) Quiz (vii) Industrial visits  (viii) Tech fests  (ix) Mini project \nworks (x) Library visits ..etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.37",
+                    "sno": "1.37",
+                    "topic": "Practical applications of Identifies different works to be carried out in the Project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.38",
+                    "sno": "1.38",
+                    "topic": "Practical applications of Collects data relevant to the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.39",
+                    "sno": "1.39",
+                    "topic": "Practical applications of Carries out Site Surveys",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.40",
+                    "sno": "1.40",
+                    "topic": "Practical applications of Selects the most efficient method from the available choices based on \npreliminary investigation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.41",
+                    "sno": "1.41",
+                    "topic": "Practical applications of Designs the required elements of the project as per standard practices",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.42",
+                    "sno": "1.42",
+                    "topic": "Practical applications of Prepares working drawings for the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.43",
+                    "sno": "1.43",
+                    "topic": "Practical applications of Estimates the cost of project, men, materials and equipment required",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.44",
+                    "sno": "1.44",
+                    "topic": "Practical applications of Prepares schedule of time and sequence of operations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.45",
+                    "sno": "1.45",
+                    "topic": "Practical applications of Prepares project report",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.46",
+                    "sno": "1.46",
+                    "topic": "Practical applications of Prepares C.P.M. Chart",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.47",
+                    "sno": "1.47",
+                    "topic": "Practical applications of Collects the requirements to start a Small Enterprise/Industry under Self \nEmployment Scheme",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.48",
+                    "sno": "1.48",
+                    "topic": "Practical applications of Prepares the chart or model for each project. \nUpon completion of the course the student shall be able to \n(i) Provide with the opportunity to synthesise knowledge from various areas of \nlearning and critically and creatively apply it to real life situations.  \n(ii) Enable to acquire skills like collaboration, communication and independent \nlearning to prepare them for lifelong learning and the challenges ahead. \nCO1 Acquires collaborative skills through working in a team to achieve \ncommon goals. \nCO2 Reviews and evaluates the available literature on the chosen problem \nand formulates the methodology to solve the identified problem. \nCO3 \nAcquires the ability to make links across different areas of knowledge \nand to generate, develop and evaluate ideas and information so as to \napply these skills to the project task. \nCO4 \nAcquires the skills to communicate effectively and to present ideas \nclearly and coherently to specific audience in both the written and oral \nforms. \nCO5 Learns on own, reflects on their learning and takes appropriate actions \nto improve it and prepares and presents project report \nCO-PO MAPPING         \nCO / PO PO1 PO2 PO3 PO4 PO5 PO6 PO7 PSO1 PSO2 PSO3 \nCO1 3    1 1 1 2 3 2 \nCO2 3 3  2  1  2 3 2 \nCO3 3 3 3 1 1   2 3 2 \nCO4 2 2    1 1 2 3 2 \nCO5 2 2    1 1 2 3 2 \n Average 2.6 2.5 3 1.5 1 1 1 2 3 2 \n                          \nNote : The gaps in CO-PO mapping will be met by one or  more appropriate activities \nfrom the following: (i)Assignments (ii) Tutorials (iii) Seminars (iv) Guest lectures (v) \nGroup discussions  (vi) Quiz (vii) Industrial visits  (viii) Tech fests  (ix) Mini project \nworks (x) Library visits ..etc",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.49",
+                    "sno": "1.49",
+                    "topic": "Practical applications of Identifies different works to be carried out in the Project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.50",
+                    "sno": "1.50",
+                    "topic": "Practical applications of Collects data relevant to the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.51",
+                    "sno": "1.51",
+                    "topic": "Practical applications of Carries out Site Surveys",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.52",
+                    "sno": "1.52",
+                    "topic": "Practical applications of Selects the most efficient method from the available choices based on \npreliminary investigation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.53",
+                    "sno": "1.53",
+                    "topic": "Practical applications of Designs the required elements of the project as per standard practices",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.54",
+                    "sno": "1.54",
+                    "topic": "Practical applications of Prepares working drawings for the project",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.55",
+                    "sno": "1.55",
+                    "topic": "Practical applications of Estimates the cost of project, men, materials and equipment required",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.56",
+                    "sno": "1.56",
+                    "topic": "Practical applications of Prepares schedule of time and sequence of operations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.57",
+                    "sno": "1.57",
+                    "topic": "Practical applications of Prepares project report",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.58",
+                    "sno": "1.58",
+                    "topic": "Practical applications of Prepares C.P.M. Chart",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce509p-1.59",
+                    "sno": "1.59",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce509p-1.60",
+                    "sno": "1.60",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

@@ -3,281 +3,694 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 18,
+            "title": "EXPLORING ENGLISH",
+            "totalPeriods": 10,
             "topics": [
                 {
-                    "topic": "EXPLORING ENGLISH",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ce101t-1.0",
-                    "sno": "1.0"
-                },
-                {
-                    "topic": "To read and comprehend simple sentences in a short passage",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "EXPLORING ENGLISH",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To apply certain rules of spelling, correct the misspelt words and use dictionary to enrich vocabulary",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "To read and comprehend simple sentences in a short passage",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To identify various parts of speech suitable to context and use articles & prepositions accurately",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "To apply certain rules of spelling, correct the misspelt words and use dictionary to enrich vocabulary",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To describe a given situation/ picture using simple sentences",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ce101t-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "To identify various parts of speech suitable to context and use articles & prepositions accurately",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To value the importance of English for employability",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ce101t-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "To describe a given situation/ picture using simple sentences",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce101t-1.6",
+                    "sno": "1.6",
+                    "topic": "To value the importance of English for employability",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-1.7",
+                    "sno": "1.7",
                     "topic": "EXPLORING ENGLISH Reading \u2013 Roleplay \u2013 Picture Interpretation \u2013 Sounds and Spellings \u2013 Parts of Speech \u2013 Articles and Prepositions",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ce101t-1.0",
-                    "sno": "1.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-1.8",
+                    "sno": "1.8",
+                    "topic": "Deep dive into EXPLORING ENGLISH",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-1.9",
+                    "sno": "1.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce101t-1.10",
+                    "sno": "1.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 18,
+            "title": "THE BETTER YOU!",
+            "totalPeriods": 10,
             "topics": [
                 {
-                    "topic": "THE BETTER YOU!",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ce101t-2.0",
-                    "sno": "2.0"
-                },
-                {
-                    "topic": "To read and comprehend formal and informal conversations",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "THE BETTER YOU!",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To use words suitable to the context in spoken and written communication",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "To read and comprehend formal and informal conversations",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To use the appropriate forms of verbs",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "To use words suitable to the context in spoken and written communication",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To engage in conversations in both formal and informal contexts",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ce101t-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "To use the appropriate forms of verbs",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To demonstrate positive attitude in personal and academic spheres",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ce101t-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "To engage in conversations in both formal and informal contexts",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce101t-2.6",
+                    "sno": "2.6",
+                    "topic": "To demonstrate positive attitude in personal and academic spheres",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-2.7",
+                    "sno": "2.7",
                     "topic": "THE BETTER YOU! Reading \u2013 Dialogue Writing \u2013 Synonyms and Antonyms \u2013 Word order \u2013 Verbs",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ce101t-2.0",
-                    "sno": "2.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into THE BETTER YOU!",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-2.9",
+                    "sno": "2.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce101t-2.10",
+                    "sno": "2.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 18,
+            "title": "DRIVE TO DESTINY",
+            "totalPeriods": 10,
             "topics": [
                 {
-                    "topic": "DRIVE TO DESTINY",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ce101t-3.0",
-                    "sno": "3.0"
-                },
-                {
-                    "topic": "To read and comprehend paragraphs for specific and general information, and distinguish different types of paragraphs",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "DRIVE TO DESTINY",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To distinguish word pairs and use them contextually. 3. 3 To frame sentences with proper subject-verb agreement",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "To read and comprehend paragraphs for specific and general information, and distinguish different types of paragraphs",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To describe actions using appropriate tense",
-                    "period": 3,
-                    "type": "theory",
+                    "id": "26ce101t-3.3",
+                    "sno": "3.3",
+                    "topic": "To distinguish word pairs and use them contextually. 3. 3 To frame sentences with proper subject-verb agreement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
                     "id": "26ce101t-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "To describe actions using appropriate tense",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce101t-3.5",
+                    "sno": "3.5",
                     "topic": "To set and achieve academic and personal goals",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ce101t-3.5",
-                    "sno": "3.5"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce101t-3.6",
+                    "sno": "3.6",
                     "topic": "DRIVE TO DESTINY Reading \u2013 Paragraph Writing \u2013 Homophones, Homonyms, Homographs \u2013 Concord \u2013 Tenses",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ce101t-3.0",
-                    "sno": "3.0"
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce101t-3.7",
+                    "sno": "3.7",
                     "topic": "Unit Test \u2013 2 From 4.1 to. 6.5 Unit Test \u2013 3 From 7.1 to 9.5",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ce101t-3.5",
-                    "sno": "3.5"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-3.8",
+                    "sno": "3.8",
+                    "topic": "Deep dive into DRIVE TO DESTINY",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce101t-3.10",
+                    "sno": "3.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
+            "title": "RENEW, REWIRE & RESOLVE",
+            "totalPeriods": 10,
             "topics": [
                 {
-                    "topic": "RENEW, REWIRE & RESOLVE",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ce101t-4.0",
-                    "sno": "4.0"
-                },
-                {
-                    "topic": "To read and comprehend the content and structure of e -mails for different purposes",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "RENEW, REWIRE & RESOLVE",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To recognize the root words and use appropriate affixes contextually",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "To read and comprehend the content and structure of e -mails for different purposes",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To use various kinds of sentences for different communicative situations. CO1 CE101.1 Learn and apply various English grammatical concepts to communicate in academic, professional, personal, and social contexts. CO2 CE101.2 Use appropriate vocabulary in academic, professional, and in business correspondence and on social media platforms. CO3 CE101.3 Listen and understand, read and comprehend different forms of academic, professional, and general listening and reading materials. CO4 CE101.4 Communicate effectively and fluently in oral and written forms in various life situations. CO5 CE101.5 Display scientific temper and universal human values technology for holistic development and harmonious living through demeanour and communication",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "To recognize the root words and use appropriate affixes contextually",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To draft E-mails for academic and professional purposes",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ce101t-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "To use various kinds of sentences for different communicative situations. CO1 CE101.1 Learn and apply various English grammatical concepts to communicate in academic, professional, personal, and social contexts. CO2 CE101.2 Use appropriate vocabulary in academic, professional, and in business correspondence and on social media platforms. CO3 CE101.3 Listen and understand, read and comprehend different forms of academic, professional, and general listening and reading materials. CO4 CE101.4 Communicate effectively and fluently in oral and written forms in various life situations. CO5 CE101.5 Display scientific temper and universal human values technology for holistic development and harmonious living through demeanour and communication",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To apply the skills of critical thinking and creativity in solving problems",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ce101t-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "To draft E-mails for academic and professional purposes",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce101t-4.6",
+                    "sno": "4.6",
+                    "topic": "To apply the skills of critical thinking and creativity in solving problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-4.7",
+                    "sno": "4.7",
                     "topic": "RENEW, REWIRE & RESOLVE Reading \u2013 E-mail Writing \u2013 Roots, Affixes \u2013 Kinds of Sentences",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ce101t-4.0",
-                    "sno": "4.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-4.8",
+                    "sno": "4.8",
+                    "topic": "Deep dive into RENEW, REWIRE & RESOLVE",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-4.9",
+                    "sno": "4.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce101t-4.10",
+                    "sno": "4.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
+            "title": "Brains & Bots",
+            "totalPeriods": 10,
             "topics": [
                 {
-                    "topic": "Brains & Bots",
-                    "period": 3,
-                    "type": "theory",
-                    "id": "26ce101t-5.0",
-                    "sno": "5.0"
-                },
-                {
-                    "topic": "To read and comprehend the description of a process with sequence markers",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Brains & Bots",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To communicate using phrasal verbs intelligibly",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "To read and comprehend the description of a process with sequence markers",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To use active and passive voice appropriately",
-                    "period": 3,
-                    "type": "theory",
                     "id": "26ce101t-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "To communicate using phrasal verbs intelligibly",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To describe processes and procedures using appropriate sentence forms",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ce101t-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "To use active and passive voice appropriately",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "topic": "To appraise the importance and use of robotics and artificial intelligence in human life",
-                    "period": 2,
-                    "type": "theory",
                     "id": "26ce101t-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "To describe processes and procedures using appropriate sentence forms",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
+                    "id": "26ce101t-5.6",
+                    "sno": "5.6",
+                    "topic": "To appraise the importance and use of robotics and artificial intelligence in human life",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-5.7",
+                    "sno": "5.7",
                     "topic": "BRAINS & BOTS Reading \u2013 Describing Process \u2013 Phrasal Verbs \u2013 Voice",
-                    "period": 2,
-                    "type": "theory",
-                    "id": "26ce101t-5.0",
-                    "sno": "5.0"
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-5.8",
+                    "sno": "5.8",
+                    "topic": "Deep dive into Brains & Bots",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-5.9",
+                    "sno": "5.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce101t-5.10",
+                    "sno": "5.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "THE BLUE PLANET: MEND OR END!",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ce101t-6.1",
+                    "sno": "6.1",
+                    "topic": "THE BLUE PLANET: MEND OR END!",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-6.2",
+                    "sno": "6.2",
+                    "topic": "To read and comprehend the content, structure and purpose of formal and informal letters",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-6.3",
+                    "sno": "6.3",
+                    "topic": "To describe using appropriate forms of adjectives",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-6.4",
+                    "sno": "6.4",
+                    "topic": "To substitute phrases or clauses with a single word",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-6.5",
+                    "sno": "6.5",
+                    "topic": "To draft personal and professional letters",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-6.6",
+                    "sno": "6.6",
+                    "topic": "To realise the importance of environmental protection and ensure sustainability",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-6.7",
+                    "sno": "6.7",
+                    "topic": "THE BLUE PLANET: MEND OR END! Reading \u2013 Letter Writing \u2013 One-word Substitutes \u2013 Degrees of Comparison",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-6.8",
+                    "sno": "6.8",
+                    "topic": "Deep dive into THE BLUE PLANET: MEND OR END!",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-6.9",
+                    "sno": "6.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce101t-6.10",
+                    "sno": "6.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "ONE WORLD - ONE DREAM",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ce101t-7.1",
+                    "sno": "7.1",
+                    "topic": "ONE WORLD - ONE DREAM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-7.2",
+                    "sno": "7.2",
+                    "topic": "To read and comprehend essay and analyse its features",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-7.3",
+                    "sno": "7.3",
+                    "topic": "To identify and create shortened forms of words or phrases",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-7.4",
+                    "sno": "7.4",
+                    "topic": "To report the expressions of the speaker to a third person with necessary grammatical changes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-7.5",
+                    "sno": "7.5",
+                    "topic": "To draft well-organized essays for academic and professional purposes",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-7.6",
+                    "sno": "7.6",
+                    "topic": "To appraise the importance of inclusivity in the society",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-7.7",
+                    "sno": "7.7",
+                    "topic": "ONE WORLD - ONE DREAM Reading \u2013 Essay Writing \u2013 Abbreviations & Acronyms \u2013 Reported Speech",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-7.8",
+                    "sno": "7.8",
+                    "topic": "Deep dive into ONE WORLD - ONE DREAM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-7.9",
+                    "sno": "7.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce101t-7.10",
+                    "sno": "7.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "THE NET NORMS",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ce101t-8.1",
+                    "sno": "8.1",
+                    "topic": "THE NET NORMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-8.2",
+                    "sno": "8.2",
+                    "topic": "To comprehend and analyse the given text for making notes and summarising",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-8.3",
+                    "sno": "8.3",
+                    "topic": "To use contemporary language in informal communication",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-8.4",
+                    "sno": "8.4",
+                    "topic": "To split or combine ideas using conjunctions for effective communication",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-8.5",
+                    "sno": "8.5",
+                    "topic": "To make notes of textual information and summarize the information",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-8.6",
+                    "sno": "8.6",
+                    "topic": "To demonstrate ideal behaviour on the internet",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-8.7",
+                    "sno": "8.7",
+                    "topic": "THE NET NORMS Reading \u2013 Note making & Summarising \u2013 Gen-Z Vocabulary \u2013 Synthesis of Sentences",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-8.8",
+                    "sno": "8.8",
+                    "topic": "Deep dive into THE NET NORMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-8.9",
+                    "sno": "8.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce101t-8.10",
+                    "sno": "8.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 9,
+            "title": "MANAGING MOODS & MOMENTS",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ce101t-9.1",
+                    "sno": "9.1",
+                    "topic": "MANAGING MOODS & MOMENTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-9.2",
+                    "sno": "9.2",
+                    "topic": "To read and comprehend different types of reports",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-9.3",
+                    "sno": "9.3",
+                    "topic": "To analyse and evaluate grammatical errors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-9.4",
+                    "sno": "9.4",
+                    "topic": "To use words and phrases in sentences of your own",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-9.5",
+                    "sno": "9.5",
+                    "topic": "To draft organized and comprehensive reports on experiments, events, visits and incidents",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-9.6",
+                    "sno": "9.6",
+                    "topic": "MANAGING MOODS & MOMENTS Reading \u2013 Report Writing \u2013 Usage \u2013 Error Analysis The text book \u201cEnglish Essentials\u201d (A Textbook of English for I Year Engineering Diploma Courses - by SBTET, AP) is the prescribed text for this course. It comprises various language inputs and activities addressing the Learning outcomes specified in each unit. Every unit will have six major components: Listening, Speaking, Reading, Writing, Vocabulary, Grammar. The activities will be designed as Individual, Pair and Group activities to facilitate self and peer learning",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-9.7",
+                    "sno": "9.7",
+                    "topic": "Deep dive into MANAGING MOODS & MOMENTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-9.8",
+                    "sno": "9.8",
+                    "topic": "Deep dive into To read and comprehend different types of reports",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce101t-9.9",
+                    "sno": "9.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce101t-9.10",
+                    "sno": "9.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

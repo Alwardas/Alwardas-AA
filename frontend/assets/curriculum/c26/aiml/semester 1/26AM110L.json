@@ -7,46 +7,46 @@
             "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "Introduction to Introduction & Fundamentals",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Introduction & Fundamentals",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Introduction & Fundamentals",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -56,46 +56,46 @@
             "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "Introduction to Core Concepts & Principles",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Introduction to Unit 2 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Core Concepts & Principles",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "Detailed analysis of Unit 2 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Practical application and standard setups for Unit 2",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Core Concepts & Principles",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-2.6",
-                    "sno": "2.6"
+                    "sno": "2.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -105,46 +105,46 @@
             "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "Introduction to System Design & Methodology",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Introduction to Unit 3 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of System Design & Methodology",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Detailed analysis of Unit 3 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Practical application and standard setups for Unit 3",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of System Design & Methodology",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-3.6",
-                    "sno": "3.6"
+                    "sno": "3.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -154,46 +154,46 @@
             "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "Introduction to Advanced Applications & Operations",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Practical application and standard setups for Unit 4",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-4.6",
-                    "sno": "4.6"
+                    "sno": "4.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -203,46 +203,46 @@
             "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "Introduction to Best Practices & Case Studies",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Introduction to Unit 5 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Detailed analysis of Unit 5 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Practical application and standard setups for Unit 5",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26am110l-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

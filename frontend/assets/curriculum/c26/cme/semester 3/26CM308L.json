@@ -3,442 +3,659 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 18,
+            "title": "Introduction to Object Oriented Programming(OO P)",
+            "totalPeriods": 35,
             "topics": [
                 {
-                    "topic": "Define OOP",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-1.1",
-                    "sno": "1.1"
+                    "sno": "1.1",
+                    "topic": "Define OOP",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Differentiate between procedural oriented programming (POP) and object-oriented programming (OOP)",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-1.2",
-                    "sno": "1.2"
+                    "sno": "1.2",
+                    "topic": "Differentiate between procedural oriented programming (POP) and \nobject-oriented   \n           programming (OOP)",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "List and Explain the core principles of OOP",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-1.3",
-                    "sno": "1.3"
+                    "sno": "1.3",
+                    "topic": "List and Explain  the  core principles of OOP",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "State the importance of Data Abstraction and Encapsulation",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-1.4",
-                    "sno": "1.4"
+                    "sno": "1.4",
+                    "topic": "State the  importance of Data Abstraction and  Encapsulation",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Describe Inheritance and Polymorphism",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-1.5",
-                    "sno": "1.5"
+                    "sno": "1.5",
+                    "topic": "Describe  Inheritance and Polymorphism",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Define Class and Object in Python",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-1.6",
-                    "sno": "1.6"
+                    "sno": "1.6",
+                    "topic": "Define   Class and   Object  in Python",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Know the creation of classes in Python",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26cm308l-1.7",
-                    "sno": "1.7"
+                    "sno": "1.7",
+                    "topic": "Know the creation of    classes in Python",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Know the creation of objects (instances) in Python",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26cm308l-1.8",
-                    "sno": "1.8"
+                    "sno": "1.8",
+                    "topic": "Know the  creation of   objects (instances)  in Python",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "State the importance of __init__ method (constructor) and self",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26cm308l-1.9",
-                    "sno": "1.9"
+                    "sno": "1.9",
+                    "topic": "State the importance of  __init__ method (constructor) and self",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain Method Overloading ",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26cm308l-1.10",
-                    "sno": "1.10"
+                    "sno": "1.10",
+                    "topic": "Explain  Method Overloading",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explian Method Overriding ",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26cm308l-1.11",
-                    "sno": "1.11"
+                    "sno": "1.11",
+                    "topic": "Explian  Method Overriding",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain various types of inheritance. 2. Introduction to Data Structures",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26cm308l-1.12",
-                    "sno": "1.12"
+                    "sno": "1.12",
+                    "topic": "Explain various types of inheritance. \n      2. Introduction to Data Structures",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.13",
+                    "sno": "1.13",
+                    "topic": "Deep dive into Define OOP",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.14",
+                    "sno": "1.14",
+                    "topic": "Deep dive into Differentiate between procedural oriented programming (POP) and \nobject-oriented   \n           programming (OOP)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.15",
+                    "sno": "1.15",
+                    "topic": "Deep dive into List and Explain  the  core principles of OOP",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.16",
+                    "sno": "1.16",
+                    "topic": "Deep dive into State the  importance of Data Abstraction and  Encapsulation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.17",
+                    "sno": "1.17",
+                    "topic": "Deep dive into Describe  Inheritance and Polymorphism",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Define   Class and   Object  in Python",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Know the creation of    classes in Python",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into Know the  creation of   objects (instances)  in Python",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into State the importance of  __init__ method (constructor) and self",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into Explain  Method Overloading",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.23",
+                    "sno": "1.23",
+                    "topic": "Deep dive into Explian  Method Overriding",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.24",
+                    "sno": "1.24",
+                    "topic": "Deep dive into Explain various types of inheritance. \n      2. Introduction to Data Structures",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.25",
+                    "sno": "1.25",
+                    "topic": "Problem solving & practice on Define OOP",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.26",
+                    "sno": "1.26",
+                    "topic": "Problem solving & practice on Differentiate between procedural oriented programming (POP) and \nobject-oriented   \n           programming (OOP)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.27",
+                    "sno": "1.27",
+                    "topic": "Problem solving & practice on List and Explain  the  core principles of OOP",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.28",
+                    "sno": "1.28",
+                    "topic": "Problem solving & practice on State the  importance of Data Abstraction and  Encapsulation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.29",
+                    "sno": "1.29",
+                    "topic": "Problem solving & practice on Describe  Inheritance and Polymorphism",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.30",
+                    "sno": "1.30",
+                    "topic": "Problem solving & practice on Define   Class and   Object  in Python",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.31",
+                    "sno": "1.31",
+                    "topic": "Problem solving & practice on Know the creation of    classes in Python",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.32",
+                    "sno": "1.32",
+                    "topic": "Problem solving & practice on Know the  creation of   objects (instances)  in Python",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.33",
+                    "sno": "1.33",
+                    "topic": "Problem solving & practice on State the importance of  __init__ method (constructor) and self",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-1.34",
+                    "sno": "1.34",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm308l-1.35",
+                    "sno": "1.35",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 18,
+            "title": "Introduction to Data Structures",
+            "totalPeriods": 20,
             "topics": [
                 {
-                    "topic": "Define Data structure",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-2.1",
-                    "sno": "2.1"
+                    "sno": "2.1",
+                    "topic": "Define Data structure",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "List various types of Data Structures",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-2.2",
-                    "sno": "2.2"
+                    "sno": "2.2",
+                    "topic": "List various types of Data Structures",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain Linear Data Structures",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-2.3",
-                    "sno": "2.3"
+                    "sno": "2.3",
+                    "topic": "Explain Linear Data Structures",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain Non-Linear Data Structures",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-2.4",
-                    "sno": "2.4"
+                    "sno": "2.4",
+                    "topic": "Explain Non-Linear Data Structures",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Know about Time and Space complexities",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-2.5",
-                    "sno": "2.5"
+                    "sno": "2.5",
+                    "topic": "Know about Time and Space complexities",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "List and Explain Abstract Data Types",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-2.6",
-                    "sno": "2.6"
+                    "sno": "2.6",
+                    "topic": "List and Explain Abstract Data Types",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-2.7",
+                    "sno": "2.7",
                     "topic": "List and Explain Built-in data structures",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-2.7",
-                    "sno": "2.7"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-2.8",
+                    "sno": "2.8",
                     "topic": "Various Sorting Techniques",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-2.8",
-                    "sno": "2.8"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-2.9",
+                    "sno": "2.9",
                     "topic": "Various Searching Techniques",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-2.9",
-                    "sno": "2.9"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-2.10",
+                    "sno": "2.10",
                     "topic": "Creation",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-2.1",
-                    "sno": "2.1"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-2.11",
+                    "sno": "2.11",
                     "topic": "Perform insertion, deletion and traverse operations",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-2.2",
-                    "sno": "2.2"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-2.12",
+                    "sno": "2.12",
                     "topic": "Perform search and replace an element",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-2.3",
-                    "sno": "2.3"
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.13",
+                    "sno": "2.13",
+                    "topic": "Deep dive into Define Data structure",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.14",
+                    "sno": "2.14",
+                    "topic": "Deep dive into List various types of Data Structures",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.15",
+                    "sno": "2.15",
+                    "topic": "Deep dive into Explain Linear Data Structures",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.16",
+                    "sno": "2.16",
+                    "topic": "Deep dive into Explain Non-Linear Data Structures",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.17",
+                    "sno": "2.17",
+                    "topic": "Deep dive into Know about Time and Space complexities",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.18",
+                    "sno": "2.18",
+                    "topic": "Deep dive into List and Explain Abstract Data Types",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.19",
+                    "sno": "2.19",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm308l-2.20",
+                    "sno": "2.20",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 18,
+            "title": "Linear Data structure-Linked lists",
+            "totalPeriods": 20,
             "topics": [
                 {
+                    "id": "26cm308l-3.1",
+                    "sno": "3.1",
                     "topic": "Explain arrays in Python",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-3.1",
-                    "sno": "3.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-3.2",
+                    "sno": "3.2",
                     "topic": "Explain the following for Singly Linked List",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-3.2",
-                    "sno": "3.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-3.3",
+                    "sno": "3.3",
                     "topic": "Explain the following for Doubly Linked List",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-3.3",
-                    "sno": "3.3"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Creation",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-3.1",
-                    "sno": "3.1"
-                },
-                {
-                    "topic": "Perform insertion, deletion, and traverse operations",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-3.2",
-                    "sno": "3.2"
-                },
-                {
-                    "topic": "Perform search and replace an element",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-3.3",
-                    "sno": "3.3"
-                },
-                {
-                    "topic": "Explain the following for Singly Circular List",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Creation",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Explain the following for Doubly Circular List",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Perform insertion, deletion, and traverse operations",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-3.6",
+                    "sno": "3.6",
+                    "topic": "Perform search and replace an element",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.7",
+                    "sno": "3.7",
+                    "topic": "Explain the following for Singly Circular List",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.8",
+                    "sno": "3.8",
+                    "topic": "Explain the following for Doubly Circular List",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.9",
+                    "sno": "3.9",
                     "topic": "Differentiate between arrays and linked lists. 4. Linear Data Structures-Stacks",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-3.6",
-                    "sno": "3.6"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-3.10",
+                    "sno": "3.10",
                     "topic": "Unit test-2 From 3.4 to 5.8.8",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-3.3",
-                    "sno": "3.3"
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.11",
+                    "sno": "3.11",
+                    "topic": "Deep dive into Explain arrays in Python",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.12",
+                    "sno": "3.12",
+                    "topic": "Deep dive into Explain the following for Singly Linked List",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.13",
+                    "sno": "3.13",
+                    "topic": "Deep dive into Explain the following for Doubly Linked List",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.14",
+                    "sno": "3.14",
+                    "topic": "Deep dive into Creation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.15",
+                    "sno": "3.15",
+                    "topic": "Deep dive into Perform insertion, deletion, and traverse operations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.16",
+                    "sno": "3.16",
+                    "topic": "Deep dive into Perform search and replace an element",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.17",
+                    "sno": "3.17",
+                    "topic": "Deep dive into Explain the following for Singly Circular List",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into Explain the following for Doubly Circular List",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-3.19",
+                    "sno": "3.19",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm308l-3.20",
+                    "sno": "3.20",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
+            "title": "Linear Data structure \u2013Stacks",
+            "totalPeriods": 15,
             "topics": [
                 {
+                    "id": "26cm308l-4.1",
+                    "sno": "4.1",
                     "topic": "Creation",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-4.1",
-                    "sno": "4.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.2",
+                    "sno": "4.2",
                     "topic": "Perform insertion, deletion, and traverse operations",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-4.2",
-                    "sno": "4.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Perform search and replace an element",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26cm308l-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Perform search and replace an element",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.4",
+                    "sno": "4.4",
                     "topic": "Define Stack",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-4.1",
-                    "sno": "4.1"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.5",
+                    "sno": "4.5",
                     "topic": "Explain the push, pop and display operations of a Stack",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-4.2",
-                    "sno": "4.2"
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.6",
+                    "sno": "4.6",
                     "topic": "Explain implementation of a Stack using built-in functions in python",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-4.2",
-                    "sno": "4.2"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.7",
+                    "sno": "4.7",
                     "topic": "Explain implementation of a Stack without using built-in functions",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-4.3",
-                    "sno": "4.3"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.8",
+                    "sno": "4.8",
                     "topic": "Explain Linked List implementation of a Stack with various operations",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-4.4",
-                    "sno": "4.4"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.9",
+                    "sno": "4.9",
                     "topic": "List the applications of Stacks",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-4.5",
-                    "sno": "4.5"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.10",
+                    "sno": "4.10",
                     "topic": "Convert Infix expression to Postfix expression",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-4.6",
-                    "sno": "4.6"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.11",
+                    "sno": "4.11",
                     "topic": "Explain the steps for Conversion of Infix expression to Postfix expression with program",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-4.7",
-                    "sno": "4.7"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.12",
+                    "sno": "4.12",
                     "topic": "Explain the steps for Evaluating Postfix expression with program",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-4.8",
-                    "sno": "4.8"
+                    "type": "practical"
                 },
                 {
+                    "id": "26cm308l-4.13",
+                    "sno": "4.13",
                     "topic": "Evaluate Postfix expression 5. Queues and Trees",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-4.9",
-                    "sno": "4.9"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
-            "topics": [
-                {
-                    "topic": "Creation",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-5.1",
-                    "sno": "5.1"
+                    "type": "practical"
                 },
                 {
-                    "topic": "Perform insertion, deletion and traverse operations",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-5.2",
-                    "sno": "5.2"
-                },
-                {
-                    "topic": "Perform search and replace an element",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-5.3",
-                    "sno": "5.3"
-                },
-                {
-                    "topic": "Define Queue",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-5.1",
-                    "sno": "5.1"
-                },
-                {
-                    "topic": "Explain the insertion, deletion and display operations on Queues",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-5.2",
-                    "sno": "5.2"
-                },
-                {
-                    "topic": "Explain the implementation of a Queue using built-in functions in python",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-5.3",
-                    "sno": "5.3"
-                },
-                {
-                    "topic": "Explain the implementation of a Queue without using built-in functions",
-                    "period": 2,
-                    "type": "practical",
-                    "id": "26cm308l-5.4",
-                    "sno": "5.4"
-                },
-                {
-                    "topic": "Explain Linked List implementation of a Queue with various operations",
+                    "id": "26cm308l-4.14",
+                    "sno": "4.14",
+                    "topic": "Revision",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-5.5",
-                    "sno": "5.5"
+                    "type": "revision"
                 },
                 {
-                    "topic": "Explain the implementation of a Circular Queue",
+                    "id": "26cm308l-4.15",
+                    "sno": "4.15",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-5.6",
-                    "sno": "5.6"
-                },
-                {
-                    "topic": "List the application of Queues",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-5.7",
-                    "sno": "5.7"
-                },
-                {
-                    "topic": "Non Linear Data Structures-Trees:",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26cm308l-5.8",
-                    "sno": "5.8"
+                    "type": "assessment"
                 }
             ]
         }

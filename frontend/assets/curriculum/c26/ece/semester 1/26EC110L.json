@@ -2,51 +2,450 @@
     "regulation": "C26",
     "units": [
         {
+            "unitNo": 1,
+            "title": "Computer hardware and Software Basics",
+            "totalPeriods": 61,
+            "topics": [
+                {
+                    "id": "26ec110l-1.1",
+                    "sno": "1.1",
+                    "topic": "Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.2",
+                    "sno": "1.2",
+                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.3",
+                    "sno": "1.3",
+                    "topic": "Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.4",
+                    "sno": "1.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.5",
+                    "sno": "1.5",
+                    "topic": "Deep dive into Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.6",
+                    "sno": "1.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.7",
+                    "sno": "1.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.8",
+                    "sno": "1.8",
+                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.9",
+                    "sno": "1.9",
+                    "topic": "Problem solving & practice on Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.10",
+                    "sno": "1.10",
+                    "topic": "Problem solving & practice on Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.11",
+                    "sno": "1.11",
+                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.12",
+                    "sno": "1.12",
+                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.13",
+                    "sno": "1.13",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.14",
+                    "sno": "1.14",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.15",
+                    "sno": "1.15",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.16",
+                    "sno": "1.16",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.17",
+                    "sno": "1.17",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.18",
+                    "sno": "1.18",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.19",
+                    "sno": "1.19",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.20",
+                    "sno": "1.20",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.21",
+                    "sno": "1.21",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.22",
+                    "sno": "1.22",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.23",
+                    "sno": "1.23",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.24",
+                    "sno": "1.24",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.25",
+                    "sno": "1.25",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.26",
+                    "sno": "1.26",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.27",
+                    "sno": "1.27",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.28",
+                    "sno": "1.28",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.29",
+                    "sno": "1.29",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.30",
+                    "sno": "1.30",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.31",
+                    "sno": "1.31",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.32",
+                    "sno": "1.32",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.33",
+                    "sno": "1.33",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.34",
+                    "sno": "1.34",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.35",
+                    "sno": "1.35",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.36",
+                    "sno": "1.36",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.37",
+                    "sno": "1.37",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.38",
+                    "sno": "1.38",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.39",
+                    "sno": "1.39",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.40",
+                    "sno": "1.40",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.41",
+                    "sno": "1.41",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.42",
+                    "sno": "1.42",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.43",
+                    "sno": "1.43",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.44",
+                    "sno": "1.44",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.45",
+                    "sno": "1.45",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.46",
+                    "sno": "1.46",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.47",
+                    "sno": "1.47",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.48",
+                    "sno": "1.48",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.49",
+                    "sno": "1.49",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.50",
+                    "sno": "1.50",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.51",
+                    "sno": "1.51",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.52",
+                    "sno": "1.52",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.53",
+                    "sno": "1.53",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.54",
+                    "sno": "1.54",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.55",
+                    "sno": "1.55",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.56",
+                    "sno": "1.56",
+                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.57",
+                    "sno": "1.57",
+                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.58",
+                    "sno": "1.58",
+                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.59",
+                    "sno": "1.59",
+                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-1.60",
+                    "sno": "1.60",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec110l-1.61",
+                    "sno": "1.61",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
             "unitNo": 2,
             "title": "Windows Operating System",
             "totalPeriods": 1,
             "topics": [
                 {
-                    "topic": "Introduction to Windows Operating System",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-2.1",
-                    "sno": "2.1"
-                },
-                {
-                    "topic": "Fundamental concepts and definitions of Windows Operating System",
+                    "sno": "2.1",
+                    "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
-                    "type": "practical",
-                    "id": "26ec110l-2.2",
-                    "sno": "2.2"
-                },
-                {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26ec110l-2.3",
-                    "sno": "2.3"
-                },
-                {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26ec110l-2.4",
-                    "sno": "2.4"
-                },
-                {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26ec110l-2.5",
-                    "sno": "2.5"
-                },
-                {
-                    "topic": "Review, troubleshooting, and summary of Windows Operating System",
-                    "period": 1,
-                    "type": "practical",
-                    "id": "26ec110l-2.6",
-                    "sno": "2.6"
+                    "type": "assessment"
                 }
             ]
         },
@@ -56,46 +455,46 @@
             "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "Introduction to MS Word",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-3.1",
-                    "sno": "3.1"
+                    "sno": "3.1",
+                    "topic": "Introduction to Unit 3 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of MS Word",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-3.2",
-                    "sno": "3.2"
+                    "sno": "3.2",
+                    "topic": "Detailed analysis of Unit 3 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-3.3",
-                    "sno": "3.3"
+                    "sno": "3.3",
+                    "topic": "Practical application and standard setups for Unit 3",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-3.4",
-                    "sno": "3.4"
+                    "sno": "3.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-3.5",
-                    "sno": "3.5"
+                    "sno": "3.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of MS Word",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-3.6",
-                    "sno": "3.6"
+                    "sno": "3.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -105,46 +504,53 @@
             "totalPeriods": 7,
             "topics": [
                 {
-                    "topic": "Introduction to MS Excel",
-                    "period": 2,
-                    "type": "practical",
                     "id": "26ec110l-4.1",
-                    "sno": "4.1"
+                    "sno": "4.1",
+                    "topic": "Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of MS Excel",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-4.2",
-                    "sno": "4.2"
+                    "sno": "4.2",
+                    "topic": "Detailed analysis of Unit 4 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-4.3",
-                    "sno": "4.3"
+                    "sno": "4.3",
+                    "topic": "Practical application and standard setups for Unit 4",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-4.4",
-                    "sno": "4.4"
+                    "sno": "4.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-4.5",
-                    "sno": "4.5"
+                    "sno": "4.5",
+                    "topic": "Deep dive into Introduction to Unit 4 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of MS Excel",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-4.6",
-                    "sno": "4.6"
+                    "sno": "4.6",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec110l-4.7",
+                    "sno": "4.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
@@ -154,46 +560,116 @@
             "totalPeriods": 6,
             "topics": [
                 {
-                    "topic": "Introduction to MS Power Point",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-5.1",
-                    "sno": "5.1"
+                    "sno": "5.1",
+                    "topic": "Introduction to Unit 5 concepts",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Fundamental concepts and definitions of MS Power Point",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-5.2",
-                    "sno": "5.2"
+                    "sno": "5.2",
+                    "topic": "Detailed analysis of Unit 5 methodologies",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Core methodologies and workflow implementation",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-5.3",
-                    "sno": "5.3"
+                    "sno": "5.3",
+                    "topic": "Practical application and standard setups for Unit 5",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Detailed analysis of primary components",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-5.4",
-                    "sno": "5.4"
+                    "sno": "5.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
                 },
                 {
-                    "topic": "Practical exercises and standard configuration",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-5.5",
-                    "sno": "5.5"
+                    "sno": "5.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
                 },
                 {
-                    "topic": "Review, troubleshooting, and summary of MS Power Point",
-                    "period": 1,
-                    "type": "practical",
                     "id": "26ec110l-5.6",
-                    "sno": "5.6"
+                    "sno": "5.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "AI ,ML& Quantum computing Tools",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26ec110l-6.1",
+                    "sno": "6.1",
+                    "topic": "Introduction to Unit 6 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-6.2",
+                    "sno": "6.2",
+                    "topic": "Detailed analysis of Unit 6 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-6.3",
+                    "sno": "6.3",
+                    "topic": "Practical application and standard setups for Unit 6",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-6.4",
+                    "sno": "6.4",
+                    "topic": "Review of core implementations and exercises",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-6.5",
+                    "sno": "6.5",
+                    "topic": "Deep dive into Introduction to Unit 6 concepts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-6.6",
+                    "sno": "6.6",
+                    "topic": "Deep dive into Detailed analysis of Unit 6 methodologies",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-6.7",
+                    "sno": "6.7",
+                    "topic": "Deep dive into Practical application and standard setups for Unit 6",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec110l-6.8",
+                    "sno": "6.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec110l-6.9",
+                    "sno": "6.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }
