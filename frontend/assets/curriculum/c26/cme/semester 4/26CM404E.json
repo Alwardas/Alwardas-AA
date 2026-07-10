@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM404E",
+    "subjectName": "CYBER SECURITY",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -344,9 +348,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26CM404E",
-    "semester": 4,
-    "subjectName": "CYBER SECURITY"
+    ]
 }

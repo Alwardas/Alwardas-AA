@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM407L",
+    "subjectName": "WEB TECHNOLOGIES LAB",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -560,9 +564,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26CM407L",
-    "semester": 4,
-    "subjectName": "WEB TECHNOLOGIES LAB"
+    ]
 }

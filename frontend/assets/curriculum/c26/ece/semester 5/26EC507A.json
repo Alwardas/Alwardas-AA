@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC507A",
+    "subjectName": "Emerging Technologies in Electronics and Communication Engineering",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 30,
     "units": [
         {
             "unitNo": 1,
@@ -225,9 +229,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 30,
-    "subjectCode": "26EC507A",
-    "semester": 5,
-    "subjectName": "Emerging Technologies in Electronics and Communication Engineering"
+    ]
 }

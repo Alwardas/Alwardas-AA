@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM305E",
+    "subjectName": "DIGITAL ELECTRONICS",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 0,
     "units": [
         {
             "unitNo": 1,
@@ -31,9 +35,5 @@
             "totalPeriods": 0,
             "topics": []
         }
-    ],
-    "totalPeriods": 0,
-    "subjectCode": "26CM305E",
-    "semester": 3,
-    "subjectName": "DIGITAL ELECTRONICS"
+    ]
 }

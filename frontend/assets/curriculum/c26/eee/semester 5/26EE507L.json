@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE507L",
+    "subjectName": "Power Electronics & PLC Laboratory",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EE507L",
-    "semester": 5,
-    "subjectName": "Power Electronics & PLC Laboratory"
+    ]
 }

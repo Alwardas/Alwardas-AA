@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC405E",
+    "subjectName": "Digital Signal Processing",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 0,
     "units": [
         {
             "unitNo": 1,
@@ -301,9 +305,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 0,
-    "subjectCode": "26EC405E",
-    "semester": 4,
-    "subjectName": "Digital Signal Processing"
+    ]
 }

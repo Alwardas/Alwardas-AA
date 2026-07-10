@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM509P",
+    "subjectName": "PROJECT WORK",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26CM509P",
-    "semester": 5,
-    "subjectName": "PROJECT WORK"
+    ]
 }

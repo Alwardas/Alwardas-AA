@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE401T",
+    "subjectName": "Design and Detailing of R.C. Structures",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -680,9 +684,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26CE401T",
-    "semester": 4,
-    "subjectName": "Design and Detailing of R.C. Structures"
+    ]
 }

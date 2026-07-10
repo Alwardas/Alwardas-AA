@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC105T",
+    "subjectName": "Basic Electronics",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 180,
     "units": [
         {
             "unitNo": 1,
@@ -1317,9 +1321,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 180,
-    "subjectCode": "26EC105T",
-    "semester": 1,
-    "subjectName": "Basic Electronics"
+    ]
 }

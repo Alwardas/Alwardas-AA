@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE104T",
+    "subjectName": "Engineering Chemistry and Environmental studies",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -687,9 +691,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26CE104T",
-    "semester": 1,
-    "subjectName": "Engineering Chemistry and Environmental studies"
+    ]
 }

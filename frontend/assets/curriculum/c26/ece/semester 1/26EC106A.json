@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC106A",
+    "subjectName": "Electronic CAD",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -477,9 +481,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26EC106A",
-    "semester": 1,
-    "subjectName": "Electronic CAD"
+    ]
 }

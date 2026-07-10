@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME507L",
+    "subjectName": "CAM LAB",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 105,
     "units": [
         {
             "unitNo": 1,
@@ -841,9 +845,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 105,
-    "subjectCode": "26ME507L",
-    "semester": 5,
-    "subjectName": "CAM LAB"
+    ]
 }

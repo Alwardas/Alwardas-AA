@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC506S",
+    "subjectName": "Swayam Course in Emerging Technologies with",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 0,
     "units": [
         {
             "unitNo": 1,
@@ -31,9 +35,5 @@
             "totalPeriods": 0,
             "topics": []
         }
-    ],
-    "totalPeriods": 0,
-    "subjectCode": "26EC506S",
-    "semester": 5,
-    "subjectName": "Swayam Course in Emerging Technologies with"
+    ]
 }

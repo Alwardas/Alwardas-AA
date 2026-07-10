@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM108L",
+    "subjectName": "COMPUTER HARDWARE LAB",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 120,
     "units": [
         {
             "unitNo": 1,
@@ -913,9 +917,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 120,
-    "subjectCode": "26CM108L",
-    "semester": 1,
-    "subjectName": "COMPUTER HARDWARE LAB"
+    ]
 }

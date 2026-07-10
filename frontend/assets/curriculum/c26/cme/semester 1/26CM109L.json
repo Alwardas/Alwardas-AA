@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM109L",
+    "subjectName": "PHYSICS AND CHEMISTRY LAB",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -736,9 +740,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26CM109L",
-    "semester": 1,
-    "subjectName": "PHYSICS AND CHEMISTRY LAB"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC301T",
+    "subjectName": "Electronic Circuits",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EC301T",
-    "semester": 3,
-    "subjectName": "Electronic Circuits"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE409L",
+    "subjectName": "Digital Electronics & Micro Controllers Laboratory",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -456,9 +460,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26EE409L",
-    "semester": 4,
-    "subjectName": "Digital Electronics & Micro Controllers Laboratory"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC404E",
+    "subjectName": "Medical Electronics",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 0,
     "units": [
         {
             "unitNo": 1,
@@ -31,9 +35,5 @@
             "totalPeriods": 0,
             "topics": []
         }
-    ],
-    "totalPeriods": 0,
-    "subjectCode": "26EC404E",
-    "semester": 4,
-    "subjectName": "Medical Electronics"
+    ]
 }

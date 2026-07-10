@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE507L",
+    "subjectName": "Field Practice",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 105,
     "units": [
         {
             "unitNo": 1,
@@ -764,9 +768,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 105,
-    "subjectCode": "26CE507L",
-    "semester": 5,
-    "subjectName": "Field Practice"
+    ]
 }

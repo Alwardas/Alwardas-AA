@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26AM302T",
+    "subjectName": "Database Management Systems",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26AM302T",
-    "semester": 3,
-    "subjectName": "Database Management Systems"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE108D",
+    "subjectName": "Engineering Graphics and CAD",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 180,
     "units": [
         {
             "unitNo": 1,
@@ -1268,9 +1272,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 180,
-    "subjectCode": "26CE108D",
-    "semester": 1,
-    "subjectName": "Engineering Graphics and CAD"
+    ]
 }

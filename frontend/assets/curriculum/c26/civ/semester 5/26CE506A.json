@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE506A",
+    "subjectName": "Advanced Civil Engineering Technologies",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 30,
     "units": [
         {
             "unitNo": 1,
@@ -281,9 +285,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 30,
-    "subjectCode": "26CE506A",
-    "semester": 5,
-    "subjectName": "Advanced Civil Engineering Technologies"
+    ]
 }

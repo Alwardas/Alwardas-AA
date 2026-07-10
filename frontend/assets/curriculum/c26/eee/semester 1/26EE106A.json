@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE106A",
+    "subjectName": "Electrical Safety Practices",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 150,
     "units": [
         {
             "unitNo": 1,
@@ -1086,9 +1090,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 150,
-    "subjectCode": "26EE106A",
-    "semester": 1,
-    "subjectName": "Electrical Safety Practices"
+    ]
 }

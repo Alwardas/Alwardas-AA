@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE501T",
+    "subjectName": "Electrical Utilisation & Traction",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EE501T",
-    "semester": 5,
-    "subjectName": "Electrical Utilisation & Traction"
+    ]
 }

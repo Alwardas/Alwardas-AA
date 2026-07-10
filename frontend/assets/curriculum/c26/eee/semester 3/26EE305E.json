@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE305E",
+    "subjectName": "Electrical Engineering Drawing",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -344,9 +348,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26EE305E",
-    "semester": 3,
-    "subjectName": "Electrical Engineering Drawing"
+    ]
 }

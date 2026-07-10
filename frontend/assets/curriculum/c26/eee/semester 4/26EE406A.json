@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE406A",
+    "subjectName": "Internet of Things in EEE",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 120,
     "units": [
         {
             "unitNo": 1,
@@ -876,9 +880,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 120,
-    "subjectCode": "26EE406A",
-    "semester": 4,
-    "subjectName": "Internet of Things in EEE"
+    ]
 }

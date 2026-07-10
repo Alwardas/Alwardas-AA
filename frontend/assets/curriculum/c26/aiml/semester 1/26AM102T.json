@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26AM102T",
+    "subjectName": "Engineering Mathematics-I",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 180,
     "units": [
         {
             "unitNo": 1,
@@ -1296,9 +1300,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 180,
-    "subjectCode": "26AM102T",
-    "semester": 1,
-    "subjectName": "Engineering Mathematics-I"
+    ]
 }

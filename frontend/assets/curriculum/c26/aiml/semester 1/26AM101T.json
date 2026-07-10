@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26AM101T",
+    "subjectName": "English Essentials",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26AM101T",
-    "semester": 1,
-    "subjectName": "English Essentials"
+    ]
 }

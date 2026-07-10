@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE502T",
+    "subjectName": "Water Supply and Sanitary Engineering",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -645,9 +649,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26CE502T",
-    "semester": 5,
-    "subjectName": "Water Supply and Sanitary Engineering"
+    ]
 }

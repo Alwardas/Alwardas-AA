@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME406A",
+    "subjectName": "Artificial Intelligence & Machine Learning",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 30,
     "units": [
         {
             "unitNo": 1,
@@ -239,9 +243,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 30,
-    "subjectCode": "26ME406A",
-    "semester": 4,
-    "subjectName": "Artificial Intelligence & Machine Learning"
+    ]
 }

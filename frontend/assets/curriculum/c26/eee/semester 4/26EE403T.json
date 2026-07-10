@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE403T",
+    "subjectName": "Digital Electronics & Micro Controllers",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EE403T",
-    "semester": 4,
-    "subjectName": "Digital Electronics & Micro Controllers"
+    ]
 }

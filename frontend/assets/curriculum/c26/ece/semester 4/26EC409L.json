@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC409L",
+    "subjectName": "Industrial Electronics Lab",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -652,9 +656,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EC409L",
-    "semester": 4,
-    "subjectName": "Industrial Electronics Lab"
+    ]
 }

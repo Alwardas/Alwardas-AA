@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC410L",
+    "subjectName": "IOT and Sensors Lab",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -659,9 +663,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EC410L",
-    "semester": 4,
-    "subjectName": "IOT and Sensors Lab"
+    ]
 }

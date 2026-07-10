@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE501T",
+    "subjectName": "Steel Structures",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -680,9 +684,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26CE501T",
-    "semester": 5,
-    "subjectName": "Steel Structures"
+    ]
 }

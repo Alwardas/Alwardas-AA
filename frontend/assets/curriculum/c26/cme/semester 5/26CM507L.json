@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM507L",
+    "subjectName": "ANDROID PROGRAMMIN G LAB",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -456,9 +460,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26CM507L",
-    "semester": 5,
-    "subjectName": "ANDROID PROGRAMMIN G LAB"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM506A",
+    "subjectName": "UI / UX DESIGN",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 30,
     "units": [
         {
             "unitNo": 1,
@@ -232,9 +236,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 30,
-    "subjectCode": "26CM506A",
-    "semester": 5,
-    "subjectName": "UI / UX DESIGN"
+    ]
 }

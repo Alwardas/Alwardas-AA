@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE504E",
+    "subjectName": "Construction Management & Entrepreneurship",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -365,9 +369,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26CE504E",
-    "semester": 5,
-    "subjectName": "Construction Management & Entrepreneurship"
+    ]
 }

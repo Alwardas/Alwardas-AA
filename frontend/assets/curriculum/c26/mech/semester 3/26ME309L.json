@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME309L",
+    "subjectName": "Material Testing Lab",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -372,9 +376,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26ME309L",
-    "semester": 3,
-    "subjectName": "Material Testing Lab"
+    ]
 }

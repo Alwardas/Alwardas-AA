@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE405E",
+    "subjectName": "Electrical Vehicle Technology",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -351,9 +355,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26EE405E",
-    "semester": 4,
-    "subjectName": "Electrical Vehicle Technology"
+    ]
 }

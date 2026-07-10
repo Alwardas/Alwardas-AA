@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE105T",
+    "subjectName": "Basic Electrical & Electronics Engineering",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 180,
     "units": [
         {
             "unitNo": 1,
@@ -1296,9 +1300,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 180,
-    "subjectCode": "26EE105T",
-    "semester": 1,
-    "subjectName": "Basic Electrical & Electronics Engineering"
+    ]
 }

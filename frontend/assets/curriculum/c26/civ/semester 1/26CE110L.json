@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE110L",
+    "subjectName": "Chemistry Lab",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -421,9 +425,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26CE110L",
-    "semester": 1,
-    "subjectName": "Chemistry Lab"
+    ]
 }

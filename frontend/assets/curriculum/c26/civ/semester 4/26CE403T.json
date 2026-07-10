@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE403T",
+    "subjectName": "Irrigation Engineering",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 75,
     "units": [
         {
             "unitNo": 1,
@@ -575,9 +579,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 75,
-    "subjectCode": "26CE403T",
-    "semester": 4,
-    "subjectName": "Irrigation Engineering"
+    ]
 }

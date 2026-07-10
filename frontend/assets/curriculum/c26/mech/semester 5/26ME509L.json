@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME509L",
+    "subjectName": "Training cum Production Workshop",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 75,
     "units": [
         {
             "unitNo": 1,
@@ -561,9 +565,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 75,
-    "subjectCode": "26ME509L",
-    "semester": 5,
-    "subjectName": "Training cum Production Workshop"
+    ]
 }

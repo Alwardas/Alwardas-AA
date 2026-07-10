@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC505E",
+    "subjectName": "Embedded Systems",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 0,
     "units": [
         {
             "unitNo": 2,
@@ -25,9 +29,5 @@
             "totalPeriods": 0,
             "topics": []
         }
-    ],
-    "totalPeriods": 0,
-    "subjectCode": "26EC505E",
-    "semester": 5,
-    "subjectName": "Embedded Systems"
+    ]
 }

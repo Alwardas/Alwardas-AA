@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26AM503T",
+    "subjectName": "Natural Language Processing",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26AM503T",
-    "semester": 5,
-    "subjectName": "Natural Language Processing"
+    ]
 }

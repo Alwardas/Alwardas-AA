@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE506A",
+    "subjectName": "Smart Grid Technology",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 120,
     "units": [
         {
             "unitNo": 1,
@@ -876,9 +880,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 120,
-    "subjectCode": "26EE506A",
-    "semester": 5,
-    "subjectName": "Smart Grid Technology"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE107L",
+    "subjectName": "COMPUTER & DIGITAL SKILLS LAB",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -673,9 +677,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26CE107L",
-    "semester": 1,
-    "subjectName": "COMPUTER & DIGITAL SKILLS LAB"
+    ]
 }

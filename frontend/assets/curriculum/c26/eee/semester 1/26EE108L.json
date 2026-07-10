@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE108L",
+    "subjectName": "Basic Electrical & Electronics workshop",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 180,
     "units": [
         {
             "unitNo": 1,
@@ -1289,9 +1293,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 180,
-    "subjectCode": "26EE108L",
-    "semester": 1,
-    "subjectName": "Basic Electrical & Electronics workshop"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME310L",
+    "subjectName": "Manufacturing and Metrology Lab",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 105,
     "units": [
         {
             "unitNo": 4,
@@ -743,9 +747,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 105,
-    "subjectCode": "26ME310L",
-    "semester": 3,
-    "subjectName": "Manufacturing and Metrology Lab"
+    ]
 }

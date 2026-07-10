@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM107L",
+    "subjectName": "PYTHON PROGRAMMING LAB",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 180,
     "units": [
         {
             "unitNo": 1,
@@ -1303,9 +1307,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 180,
-    "subjectCode": "26CM107L",
-    "semester": 1,
-    "subjectName": "PYTHON PROGRAMMING LAB"
+    ]
 }

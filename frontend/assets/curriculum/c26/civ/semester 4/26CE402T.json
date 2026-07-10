@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE402T",
+    "subjectName": "Estimation, Costing and Valuation",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 105,
     "units": [
         {
             "unitNo": 1,
@@ -771,9 +775,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 105,
-    "subjectCode": "26CE402T",
-    "semester": 4,
-    "subjectName": "Estimation, Costing and Valuation"
+    ]
 }

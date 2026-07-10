@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME504E",
+    "subjectName": "Mechatronics",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -351,9 +355,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26ME504E",
-    "semester": 5,
-    "subjectName": "Mechatronics"
+    ]
 }

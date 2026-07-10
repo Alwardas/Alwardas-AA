@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME307A",
+    "subjectName": "Basic Electrical Engineering",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 30,
     "units": [
         {
             "unitNo": 1,
@@ -239,9 +243,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 30,
-    "subjectCode": "26ME307A",
-    "semester": 3,
-    "subjectName": "Basic Electrical Engineering"
+    ]
 }

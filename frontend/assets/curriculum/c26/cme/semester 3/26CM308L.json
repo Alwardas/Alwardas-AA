@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM308L",
+    "subjectName": "DATA STRUCTURES THROUGH PYTHON LAB",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -659,9 +663,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26CM308L",
-    "semester": 3,
-    "subjectName": "DATA STRUCTURES THROUGH PYTHON LAB"
+    ]
 }

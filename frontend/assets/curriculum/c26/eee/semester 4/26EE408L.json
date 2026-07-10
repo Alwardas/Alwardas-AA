@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE408L",
+    "subjectName": "Communication & Employability skills Laboratory",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -456,9 +460,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26EE408L",
-    "semester": 4,
-    "subjectName": "Communication & Employability skills Laboratory"
+    ]
 }

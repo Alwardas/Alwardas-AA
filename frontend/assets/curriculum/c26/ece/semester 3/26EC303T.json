@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC303T",
+    "subjectName": "Digital Electronics",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EC303T",
-    "semester": 3,
-    "subjectName": "Digital Electronics"
+    ]
 }

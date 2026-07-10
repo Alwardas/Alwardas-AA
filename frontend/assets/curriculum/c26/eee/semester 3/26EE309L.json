@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE309L",
+    "subjectName": "Programming in \"C\" Laboratory",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EE309L",
-    "semester": 3,
-    "subjectName": "Programming in \"C\" Laboratory"
+    ]
 }

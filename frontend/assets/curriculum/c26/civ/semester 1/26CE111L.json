@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE111L",
+    "subjectName": "Surveying Practice-I",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 150,
     "units": [
         {
             "unitNo": 1,
@@ -1072,9 +1076,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 150,
-    "subjectCode": "26CE111L",
-    "semester": 1,
-    "subjectName": "Surveying Practice-I"
+    ]
 }

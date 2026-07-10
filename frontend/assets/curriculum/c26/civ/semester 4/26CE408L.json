@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE408L",
+    "subjectName": "Communications & Employability skills",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -491,9 +495,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26CE408L",
-    "semester": 4,
-    "subjectName": "Communications & Employability skills"
+    ]
 }

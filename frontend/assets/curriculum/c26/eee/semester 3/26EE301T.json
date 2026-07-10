@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE301T",
+    "subjectName": "Electrical Machines",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -645,9 +649,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EE301T",
-    "semester": 3,
-    "subjectName": "Electrical Machines"
+    ]
 }

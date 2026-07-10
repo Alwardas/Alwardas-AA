@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME401T",
+    "subjectName": "Fluid Mechanics & Hydraulic Machinery",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 4,
@@ -645,9 +649,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26ME401T",
-    "semester": 4,
-    "subjectName": "Fluid Mechanics & Hydraulic Machinery"
+    ]
 }

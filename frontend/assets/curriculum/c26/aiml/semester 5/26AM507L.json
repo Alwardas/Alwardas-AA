@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26AM507L",
+    "subjectName": "NATURAL LANGUAGE PROCESSING using Python Lab",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -456,9 +460,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26AM507L",
-    "semester": 5,
-    "subjectName": "NATURAL LANGUAGE PROCESSING using Python Lab"
+    ]
 }

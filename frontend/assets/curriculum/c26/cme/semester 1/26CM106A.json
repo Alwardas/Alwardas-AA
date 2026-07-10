@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM106A",
+    "subjectName": "CODING FUNDAMENTALS",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -456,9 +460,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26CM106A",
-    "semester": 1,
-    "subjectName": "CODING FUNDAMENTALS"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE503T",
+    "subjectName": "Transportation Engineering",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 75,
     "units": [
         {
             "unitNo": 1,
@@ -533,9 +537,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 75,
-    "subjectCode": "26CE503T",
-    "semester": 5,
-    "subjectName": "Transportation Engineering"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM406A",
+    "subjectName": "TROUBLESHOOTING OF COMPUTER NETWORKS",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 30,
     "units": [
         {
             "unitNo": 1,
@@ -231,9 +235,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 30,
-    "subjectCode": "26CM406A",
-    "semester": 4,
-    "subjectName": "TROUBLESHOOTING OF COMPUTER NETWORKS"
+    ]
 }

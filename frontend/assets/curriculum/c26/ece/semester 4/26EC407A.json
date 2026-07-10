@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC407A",
+    "subjectName": "Artificial Intelligence",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 30,
     "units": [
         {
             "unitNo": 1,
@@ -246,9 +250,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 30,
-    "subjectCode": "26EC407A",
-    "semester": 4,
-    "subjectName": "Artificial Intelligence"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM101T",
+    "subjectName": "ENGLISH COMMUNICATION",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -694,9 +698,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26CM101T",
-    "semester": 1,
-    "subjectName": "ENGLISH COMMUNICATION"
+    ]
 }

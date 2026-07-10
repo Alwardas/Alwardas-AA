@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM307A",
+    "subjectName": "MULTIMEDIA",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 30,
     "units": [
         {
             "unitNo": 1,
@@ -232,9 +236,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 30,
-    "subjectCode": "26CM307A",
-    "semester": 3,
-    "subjectName": "MULTIMEDIA"
+    ]
 }

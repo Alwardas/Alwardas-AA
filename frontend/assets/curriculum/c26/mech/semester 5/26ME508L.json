@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME508L",
+    "subjectName": "Refrigeration & Air Conditioning Lab (Practicum)",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 9,
@@ -428,9 +432,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26ME508L",
-    "semester": 5,
-    "subjectName": "Refrigeration & Air Conditioning Lab (Practicum)"
+    ]
 }

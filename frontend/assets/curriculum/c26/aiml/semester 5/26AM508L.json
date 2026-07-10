@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26AM508L",
+    "subjectName": "Machine Learning Lab",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -659,9 +663,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26AM508L",
-    "semester": 5,
-    "subjectName": "Machine Learning Lab"
+    ]
 }

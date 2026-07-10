@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM301T",
+    "subjectName": "DATA STRUCTURES THROUGH PYTHON",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -666,9 +670,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26CM301T",
-    "semester": 3,
-    "subjectName": "DATA STRUCTURES THROUGH PYTHON"
+    ]
 }

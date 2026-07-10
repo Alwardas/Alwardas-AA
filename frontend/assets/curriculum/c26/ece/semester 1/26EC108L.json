@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC108L",
+    "subjectName": "Basic Electronics Lab",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 120,
     "units": [
         {
             "unitNo": 1,
@@ -876,9 +880,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 120,
-    "subjectCode": "26EC108L",
-    "semester": 1,
-    "subjectName": "Basic Electronics Lab"
+    ]
 }

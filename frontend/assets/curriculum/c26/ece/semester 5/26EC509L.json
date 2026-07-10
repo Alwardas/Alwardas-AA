@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC509L",
+    "subjectName": "DLD Through Verilog HDL",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -645,9 +649,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EC509L",
-    "semester": 5,
-    "subjectName": "DLD Through Verilog HDL"
+    ]
 }

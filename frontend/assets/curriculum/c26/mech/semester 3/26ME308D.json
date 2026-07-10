@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME308D",
+    "subjectName": "Production drawing And Modelling",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -673,9 +677,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26ME308D",
-    "semester": 3,
-    "subjectName": "Production drawing And Modelling"
+    ]
 }

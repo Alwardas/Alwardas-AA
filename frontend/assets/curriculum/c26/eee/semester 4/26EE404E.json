@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE404E",
+    "subjectName": "Industrial Automation",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -344,9 +348,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26EE404E",
-    "semester": 4,
-    "subjectName": "Industrial Automation"
+    ]
 }

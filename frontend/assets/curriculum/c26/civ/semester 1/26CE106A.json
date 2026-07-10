@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE106A",
+    "subjectName": "Innovative Technologies in Civil Engineering",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -456,9 +460,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26CE106A",
-    "semester": 1,
-    "subjectName": "Innovative Technologies in Civil Engineering"
+    ]
 }

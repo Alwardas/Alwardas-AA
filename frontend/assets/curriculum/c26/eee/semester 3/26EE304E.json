@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EE304E",
+    "subjectName": "Engineering Mathematics",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -351,9 +355,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26EE304E",
-    "semester": 3,
-    "subjectName": "Engineering Mathematics"
+    ]
 }

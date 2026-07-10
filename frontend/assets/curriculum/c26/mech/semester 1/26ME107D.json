@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME107D",
+    "subjectName": "Engineering Graphics",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 180,
     "units": [
         {
             "unitNo": 1,
@@ -1331,9 +1335,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 180,
-    "subjectCode": "26ME107D",
-    "semester": 1,
-    "subjectName": "Engineering Graphics"
+    ]
 }

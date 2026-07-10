@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26ME506A",
+    "subjectName": "Basics of Aerospace Engineering",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 30,
     "units": [
         {
             "unitNo": 2,
@@ -225,9 +229,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 30,
-    "subjectCode": "26ME506A",
-    "semester": 5,
-    "subjectName": "Basics of Aerospace Engineering"
+    ]
 }

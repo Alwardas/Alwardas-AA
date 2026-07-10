@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC508L",
+    "subjectName": "Data Communication and Computer Networks Lab",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -677,9 +681,5 @@
             "totalPeriods": 0,
             "topics": []
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EC508L",
-    "semester": 5,
-    "subjectName": "Data Communication and Computer Networks Lab"
+    ]
 }

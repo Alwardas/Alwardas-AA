@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26AM401T",
+    "subjectName": "Web Technologies",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -659,9 +663,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26AM401T",
-    "semester": 4,
-    "subjectName": "Web Technologies"
+    ]
 }

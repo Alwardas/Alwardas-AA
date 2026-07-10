@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC309L",
+    "subjectName": "Analog and Digital Communication Systems Lab",
     "regulation": "C26",
+    "semester": 3,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -456,9 +460,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 60,
-    "subjectCode": "26EC309L",
-    "semester": 3,
-    "subjectName": "Analog and Digital Communication Systems Lab"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26EC110L",
+    "subjectName": "Computer and Digital Skills",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -673,9 +677,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 90,
-    "subjectCode": "26EC110L",
-    "semester": 1,
-    "subjectName": "Computer and Digital Skills"
+    ]
 }

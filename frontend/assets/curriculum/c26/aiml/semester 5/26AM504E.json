@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26AM504E",
+    "subjectName": "Data Science",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -351,9 +355,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26AM504E",
-    "semester": 5,
-    "subjectName": "Data Science"
+    ]
 }

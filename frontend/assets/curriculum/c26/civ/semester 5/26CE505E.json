@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE505E",
+    "subjectName": "Geotechnical Engineering",
     "regulation": "C26",
+    "semester": 5,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 2,
@@ -344,9 +348,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 45,
-    "subjectCode": "26CE505E",
-    "semester": 5,
-    "subjectName": "Geotechnical Engineering"
+    ]
 }

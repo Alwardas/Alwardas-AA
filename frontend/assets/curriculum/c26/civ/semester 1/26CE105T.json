@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CE105T",
+    "subjectName": "Engineering Mechanics",
     "regulation": "C26",
+    "semester": 1,
+    "totalPeriods": 150,
     "units": [
         {
             "unitNo": 1,
@@ -1065,9 +1069,5 @@
                 }
             ]
         }
-    ],
-    "totalPeriods": 150,
-    "subjectCode": "26CE105T",
-    "semester": 1,
-    "subjectName": "Engineering Mechanics"
+    ]
 }

@@ -1,5 +1,9 @@
 {
+    "subjectCode": "26CM405E",
+    "subjectName": "CLOUD COMPUTING",
     "regulation": "C26",
+    "semester": 4,
+    "totalPeriods": 0,
     "units": [
         {
             "unitNo": 4,
@@ -7,9 +11,5 @@
             "totalPeriods": 0,
             "topics": []
         }
-    ],
-    "totalPeriods": 0,
-    "subjectCode": "26CM405E",
-    "semester": 4,
-    "subjectName": "CLOUD COMPUTING"
+    ]
 }
