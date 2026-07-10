@@ -1,6 +1,252 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "topic": "Perform mould preparation for Flange Coupling \u27a2 Write the sand moulding procedures in foundry. \u27a2 Prepare a mould sand mix. \u27a2 Identify various tools used in foundry shop. \u27a2 Select moulding boxes \u27a2 Prepare a mould ready for casting with proper provision for runners, risers and gates \u27a2 Locate the cope over the drag without any mismatch",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Perform mould preparation for Split Bearing \u27a2 Write the sand moulding procedures in foundry. \u27a2 Prepare a mould sand mix. \u27a2 Identify various tools used in foundry shop. \u27a2 Select moulding boxes. \u27a2 Prepare a mould ready for casting with proper provision for runners, risers and gates \u27a2 Locate the cope over the drag without any mismatch",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Solid bearing",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Flange coupling",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Split bearing",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Connecting rod",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me310l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "V \u2013 Pulley",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me310l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Gear pulley 2. Turning",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me310l-1.6",
+                    "sno": "1.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "topic": "Perform Facing Operations \u27a2 Select proper tool to perform the job. \u27a2 Perform job setting \u27a2 Perform tool setting \u27a2 Centre the job by dial gauge \u27a2 Select the suitable speed for different operations \u27a2 Practice facing operation on a lathe machine \u27a2 Use measuring instruments for taking dimensions",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Perform Plain Turning Operations \u27a2 Select proper tool to perform the job. \u27a2 Centre the job by dial gauge \u27a2 Select the suitable speed for different operations \u27a2 Practice plain turning operation on a lathe machine \u27a2 Use measuring instruments for taking dimensions",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Facing",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Plain Turning",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Step Turning",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Taper Turning",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me310l-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Turning Collars",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me310l-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Knurling 3. Welding",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me310l-2.6",
+                    "sno": "2.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "topic": "Perform Lap Joint \u27a2 Perform Edge preparation \u27a2 Arrange the work pieces for lap joint \u27a2 Attach clamps on work pieces and grounding \u27a2 Select the correct rod and amperage range for the work you are attempting. Rod Angle (lead angle). \u27a2 Hold the electrode at suitable angle and distance with respect to the work piece to maintain the arc \u27a2 Perform Arc welding \u27a2 Identify the weld bead shape",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26me310l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Layout of Beads",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me310l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Lap joints",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me310l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Butt joints",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me310l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "T- joint 4. METROLOGY",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me310l-3.4",
+                    "sno": "3.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "topic": "Combination square, universal bevel protractor, sine bar",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26me310l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Vernier height gauge, Vernier depth gauge, micrometer",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26me310l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Tool Makers Microscope",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26me310l-4.4",
+                    "sno": "4.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me310l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me310l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me310l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me310l-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 105,
     "subjectCode": "26ME310L",
     "semester": 3,

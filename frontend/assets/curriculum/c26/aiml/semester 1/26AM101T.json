@@ -1,6 +1,105 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 3,
+            "title": "Co-ordinate Geometry",
+            "totalPeriods": 90,
+            "topics": [
+                {
+                    "topic": "Drive To Destiny",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "To read and comprehend paragraphs for specific and general information, and distinguish different types of paragraphs",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "To distinguish word pairs and use them contextually. CO1 AM101.1 Learn and apply various English grammatical concepts to communicate in academic, professional, personal, and social contexts. CO2 AM101.2 Use appropriate vocabulary in academic, professional and business correspondence, and on social media platforms. CO3 AM101 .3 Listen/read and comprehend diverse academic, professional, and general listening and reading materials. CO4 AM101 .4 Communicate effectively and fluently in oral and written forms in various life situations. CO5 AM101 .5 Display scientific temper and universal human values; adopt technology for holistic development and harmonious living through one's demeanour and communication. 38 3. 3 To frame sentences with proper subject-verb agreement",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "To describe actions using appropriate tenses",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "To set and achieve academic and personal goals",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Drive to Destiny Reading \u2013 Paragraph Writing \u2013 Homophones, Homonyms, Homographs \u2013 Concord \u2013 Tenses",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Find distance of a point from a line, acute angle between two lines, intersectionof two non -parallel lines and distance between two parallel lines",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Define locus of a point and circle",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Write the general equation of a circle and find its centre and radius",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Find the equation of a circle, given (i) centre and radius, (ii)two ends of the diameter(iii) three non collinear points of type (0,0),( ,0),(0, ).ab",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Define a conic - Explain the terms focus, directrix, eccentricity, axes and latus-rectum of a conic",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Find the equation of a conic when focus, directrix and eccentricity are given",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26am101t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Describe the properties of Parabola 2 4.y ax= C.O.4 Evaluate the limits and derivatives of various functions. L.O. 4.1 Explain the concept of limit and meaning of lim ( ) xa f x l \u2192 = and state the properties of limits",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26am101t-3.8",
+                    "sno": "3.8"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26AM101T",
     "semester": 1,

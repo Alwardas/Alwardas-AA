@@ -1,6 +1,553 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "BASICS OF AUTOMOBILE ENGINEERING",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Define Automobile",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Know the history of Automobiles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Know the developments of Automobile vehicles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "State the recent trends in Automobile vehicles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain the constructional details of different types of Inlet and exhaust manifolds",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "State the requirements for good manifold design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Explain the constructional details of different types of air cleaners",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State the necessity of Mufflers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "List different types of Mufflers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "State the necessity of Emission norms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "List different types of emission norms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Basics of Automobile Engineering Definition & History of Automobile \u2013 Know the developments of Automobile vehicles \u2013 State the recent trends in Automobile vehicles \u2013 Explain the constructional details of different types of Inlet and exhaust manifolds \u2013 State the requirements for good manifold design \u2013Explain the constructional details of different types of air cleaners \u2013State the necessity of Mufflers, List different types of Mufflers \u2013 Emission norms BS IV, BS VI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "AUTOMOBILE TRANSMISSION SYSTEMS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "State the purpose of automobile transmission system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Draw the layout of automobile transmission system and explain",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "List the elements of transmission system of a vehicle",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "State the function of clutch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "List different types of clutches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain the principles of operation of the clutch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Draw the line diagram and explain the working clutches Single plate, Multi plate, DCT, Torque converter and CVT",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "State the function of gearbox",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "List different types of gearboxes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Explain the principles and operation of sliding mesh, Constant mesh and Synchromesh with number of speeds",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "State the function of propeller shaft and universal joints",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "List various components of front axle assembly",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "List various components of rear axle assembly",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "State loads acting on the rear axles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "List different types of rear axles and Explain semi floating, three quarter floating and fully floating rear axles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "State the necessity of differential unit and explain the working principle of differential",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.16",
+                    "sno": "2.16"
+                },
+                {
+                    "topic": "State the purpose of the four-wheel drive and explain the working principle of four- wheel drive",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.17",
+                    "sno": "2.17"
+                },
+                {
+                    "topic": "AUTOMOBILE TRANSMISSION SYSTEMS Purpose of automobile transmission system \u2013 layout of automobile transmission system \u2013 elements of transmission system \u2013 Working principle of Clutch, functions and types of clutches, , Working of Single and multi -plate clutches with line diagrams \u2013 Functions and types gear box, Working of Sliding mesh, Constant mesh and synchromesh Gear boxes with line diagrams. State the function of propeller shaft and universal joints,\u2013List various components of front axle assembly \u2013Various components of rear axle assembly, State loads acting on the rear axles, different types of rear axles and Explanation of semi floating, three quarter floating and fully floating rear axles \u2013 Necessity of differential unit and explanation of the working principle of differential. \u2013 Purpose of the four-wheel drive and working principle of four-wheel drive",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "AUTOMOBILE CHASIS & BODY ENGINEERING",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "State the functions of chassis frame",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Draw the layout of the chassis",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "List the components of chassis frame",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "List different types of chassis frames",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Know what is steering system and types of Steering systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain Ackermann steering gear mechanism and Davis steering gear mechanism",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Know various terms of Steering geometry\u2013camber, King-pin inclination, Caster, Toe- in,Toe-out, Combined inclination and Scrub radius",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Know ECU Controlled Power Assisted Steering & Electronic Power Assisted Steering-",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "State the functions and requirements of automobile brakes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "List different types of brakes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Draw the layout of hydraulic and pneumatic braking systems and explain",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Know suspension system and its functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "List various suspension systems used in present Automobiles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Describe power windows and Central locking system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "State the importance of automobile safety",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.15",
+                    "sno": "3.15"
+                },
+                {
+                    "topic": "List various tests to check safety of automobile body",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.16",
+                    "sno": "3.16"
+                },
+                {
+                    "topic": "AUTOMOBILE CHASIS & BODY ENGINEERING Chassis frame-layout of the chassis frame and its main components-functions of the frame- types of chassis frames - - Know what is steering system and types of Steering systems, working of Ackermann steering gear mechanism and Davis steering gear mechanism, various terms of Steering geometry \u2013camber, King -pin inclination, Caster, Toe-in, Toe -out, Combined inclination and Scrub radius ECU(Electronic control Unit) Controlled Power Assisted Steering & Electronic Power Assisted Steering- Functions and requirement s of automobile brakes, different types of brakes \u2013 Mechanical, Hydraulic, Pneumatic, Electric brakes - Working of hydraulic brakes with line diagrams - Suspension system and its functions, various suspension systems used in present Automobiles \u2013 Describe power windows and Central locking system \u2013 State the importance of automobile safety - List various tests to check safety of automobile body",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION TO ELECTRIC AND ELECTRIC HYBRID VEHICLES & ENERGY STORAGE",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Describe the history of electric and electric hybrid vehicles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Describe the Social and environmental importance of Electric and Electric Hybrid vehicles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain basic components of Electric and Electric Hybrid vehicles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "What is Energy Storage & list the requirements of energy storage",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the working principle of Nickel and Lithium based batteries",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "What is fuel and list the types of fuel cells",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "State the characteristics of fuel cells",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "State the applications of fuel cells",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Explain Hybridization of Energy storage and battery management and safety",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "INTRODUCTION TO ELECTRIC AND ELECTRIC HYBRID VEHICLES & ENERGY STORAGE History of electric and electric hybrid vehicles \u2013 Social and environmental importance of Electric and Electric Hybrid vehicles \u2013 Basic components of Electric and Electric Hybrid vehicles \u2013 Explanation of concept Energy Storage requirements of energy storage \u2013 Explanation of the working principle of Nickel and Lithium based batteries \u2013 Concept Fuel cell, types of fuel cells, characteristics of fuel cells and the applications of fuel cells \u2013 Explanation of Hybridization of Energy storage- battery management and safety",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "DRIVE TRAIN & ELECTRIC PROPULSION",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Know what is Hybrid Electric drive train and various types of Hybrid Electric drive trains",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain working principle of Series hybrid, parallel hybrid, series-parallel and complex drive trains",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain torque coupling parallel and speed coupling parallel hybrid electric drive",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "List out advantages of parallel hybrid drive train",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Describe plug in hybrid electric vehicle drive",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Describe transmission system used in EV/EHV",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain the principle and operation of permanent magnet brushless dc motor drive",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain the principle and operation of switch reluctance motor drive",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Explain methods of control of motors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Explain configuration of drives",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "DRIVE TRAIN & ELECTRIC PROPULSION Hybrid Electric drive train \u2013 a) Series hybrid b) parallel hybrid c) series \u2013 parallel d) complex drive train \u2013 torque coupling parallel hybrid electric drive \u2013 speed coupling parallel hybrid electric drive - advantages of parallel hybrid drive train \u2013 transmission for EV/EHV. DC motor drives \u2013permanent magnet brushless dc motor drive (principle and operation) \u2013 switch reluctance motor drive (SRM)\u2013 control of motor and configuration of drives. REFERENCE BOOKS 1. Heat Engine -by Pandya and Shah \u2013 Charotar Publishing House 2. Automobile Engineering Vol\u2013I&II- by Kirpal Singh 3. Automobile Engineering \u2013 by G.B.S. Narang \u2013 Khanna Publishers 4. Automobile Engineering \u2013 by R.B. Gupta\u2013Standard Publishers 5. Automobile mechanics \u2013 by William Chrouse\u2013McGraw Hill Education. 6. Automotive Chassis-P.M.Heldt. 7. An introduction to Automobile Engineering-N.R.Khatawate 8. Automobile Engineering-by Banga and Nathun Singh 9. Automobile mechanics-by William Chrouse 10. Vehicular Electric Power Systems\u2013MehrdadEhsani,YiminGao CRC Press2003 11. Electric and Hybrid Vehicles\u2013 I.HusainCRCPress2003 Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test\u2013I 1.1 to 3.16 Unit Test\u2013II 4.1to 5.8",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me405e-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26ME405E",
     "semester": 4,

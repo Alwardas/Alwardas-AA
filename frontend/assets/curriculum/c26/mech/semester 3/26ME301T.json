@@ -1,6 +1,315 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "SIMPLE STRESSES AND STRAINS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Classify various loads",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Differentiate rigid body from the deformable body",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain the Mechanical properties of Metals",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the concept of stress and strain",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Draw the stress \u2013 strain diagrams for ductile and brittle materials subjected to tensile forces",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me301t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Define elastic constants and Poisson\u2019s ratio",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me301t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Write the expression relating the elastic constants and Poisson\u2019s ratio",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me301t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Numerical problems related to the above cases",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me301t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Calculate the stresses and strains in bars of uniform and varying cross \u2013 sections subjected to end forces only",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me301t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Define composite bar",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me301t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Define thermal stresses",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me301t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Calculate the thermal stresses in uniform bars",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me301t-1.12",
+                    "sno": "1.12"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "STRAIN ENERGY",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26me301t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Understand the concept of strain energy and define the terms related to it",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26me301t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Write the expressions for the stresses developed in bars subjected to Gradual, Sudden and Impact loads",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26me301t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Calculate the Maximum stresses and strain energy stored in the bars subjected to above loads",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26me301t-2.3",
+                    "sno": "2.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "SHEAR FORCE AND BENDING MOMENT DIAGRAMS",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me301t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "State the concept of beams",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me301t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Classify beams based on supports",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me301t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Define the shear force and bending moment in beams",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me301t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Calculate the Shear Force and Bending Moment in Cantilever, Simply Supported beams subjected to Concentrated, UDL and combined loads. Draw their variation along the length of the beams",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Numerical problems related to the above cases",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Unit Test \u2013 II From 3.5 to 5.9",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-3.4",
+                    "sno": "3.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "THEORY OF SIMPLE BENDING AND DEFLECTION OF BEAMS",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me301t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define a) Neutral layer, b) Neutral Axis, c) Radius of curvature d) Moment of Resistance, e) Bending stress f) Moment of Inertia g) Section Modulus f) Flexural Rigidity",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me301t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Write the expression for the Bending Moment (Flexural Formula) by stating the assumptions",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me301t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Calculate the bending stresses in beams of various cross-sections",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me301t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Define the slope and deflection of beam",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me301t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Write the expressions for slope and deflection in cantilever and simply supported beams for standard cases. Numerical problems related to the above cases",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me301t-4.5",
+                    "sno": "4.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "TORSION IN SHAFTS AND SPRINGS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Define shaft and write expression for the Torsion equation by stating the assumptions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Calculate the dimensions of the solid and hollow circular shafts subjected to torsion and also check them for rigidity",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Compare the strength and weight of the solid and hollow shafts for the given conditions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Numerical problems related to the above cases",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Function of spring",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Types and applications of springs",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Define the terms related to closed coil helical spring",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "State the formulae for the stress and deflection of closed coil helical spring",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me301t-5.8",
+                    "sno": "5.8"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26ME301T",
     "semester": 3,

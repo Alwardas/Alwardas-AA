@@ -1,6 +1,378 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION TO ENGINEERING MATERIALS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Classify the engineering materials as metals, non-metals, and composites",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List the Constituents in composites and types of reinforcements",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List the various engineering materials and their applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "State the importance of various Engineering Materials used in Mechanical processes/industries",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Define the following Properties. i) Tensile, compressive and shear strength ii) Ductility iii) Hardness iv) Toughness v) Brittleness vi) Impact strength vii) Fatigue and viii) Creep Resistance",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain the composition, properties and applications of Cast Iron \u2013Grey, White, Malleable, and Spheroidal",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "State the basis of classification of plain carbon steels",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "List out any five applications of above steels. Describe the need for alloying the steel with other elements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "State the composition, properties, and industrial applications of alloy steels",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Identify the need for non-ferrous metals and their alloys in engineering applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Describe the properties and applications of \u2013Copper, Aluminium, Tin, Zinc, Lead, Nickel, Magnesium and Chromium",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Write the composition, properties and industrial application of Copper and Aluminium alloys",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "List the properties of bearing metal",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "INTRODUCTION TO ENGINEERING MATERIALS Classification of engineering materials \u2013 Metals (ferrous, non -ferrous), non -metals (polymers, ceramics), Composites (Metal matrix composites, polymer matrix composites, ceramic matrix composites, Nano composites). Constituents in composites (matrix, reinforcement), Different types of reinforcements. A few Mechanical Engineering Materials, Importance of their study with applications. Various mechanical properties of engineering materials \u2013 Tensile strength, Compressive strength, Ductility, Malleability, Hardness, Toughness, Brittleness, Impact strength, Fatigue, Creep resistance Classification of Cast Iron \u2013 Grey, White, Malleable, Spheroidal \u2013 Composition, properties and applications. Plain Carbon Steels: Effect of carbon in steels, Soft, Mild, Medium and High carbon and also their properties and applications. Alloy Steels: Nickel Steels, Chromium steels, 18/8 stainless steel, High Speed Steels, Manganese Steel. Properties and uses of Copper, Aluminium, Tin, Zinc, Lead, Nickel, Magnesium and Chromium alloys, Copper and Aluminium alloys - Properties of bearing metals, Babbit metals",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "PRODUCTION LATHES",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me303t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "State a)The working principle of lathe machine b) The specifications of lathe machine",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me303t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "List a) The six types of lathe machines b) List any three work holding devices",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me303t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Describe the working of Lathe with legible sketch",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me303t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain a) The procedure for Turning, Facing , taper turning, thread cutting, knurling, forming, drilling, boring, reaming, key way cutting operations on Lathe machine. b) The methods of taper turning on lathe machine",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Calculate included angle for taper turning. 3. SHAPER, SLOTTER, AND PLANNER",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "LATHE AND LATHE WORK Working Principle of Lathe - types of Lathes - Engine lathe \u2013 construction details and specifications. Nomenclature of single point cutting tool, geometry, tool signature, functions of tool angles. General and special operations \u2013 (Turning, facing, taper turning, thread cutting, knurling, forming, drilling, boring, reaming, key way cutting.) Methods of taper turning \u2013 explanation. Lathe accessories viz., work holding devices and tool holding devices",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Describe a) The construction and working principle of shaper with legible sketch. b) The construction and working principle of slotter with legible sketch. c) The construction and working principle of planer with legible sketch",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26me303t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List the operations performed on shaper, slotter, and planer",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26me303t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "State a) The specifications of shaper. b) The specifications of slotter. c) The specifications of planer",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26me303t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain a) The principle of quick-return mechanism as applied to shaper and Planer. b) Crank & slotted lever mechanism for obtaining the quick-return motion. c) Whit worth mechanism for obtaining the quick-return motion. 4. FOUNDRY",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me303t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "SHAPING, SLOTTING, AND PLANNING Introduction to shaper, slotter, planer. Constructional details and specifications of shaper, slotter and planer. Operations on these machines. Tools and materials. Driving mechanisms - quick return arrangement - crank & slotted lever mechanism, whit worth mechanism",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me303t-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "State (a) List various advantages of casting over other processes (b) limitations of the casting process",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me303t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "List hand moulding tools",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me303t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Mention the various properties of good moulding sand and types of moulding sands",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me303t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "List various types of patterns",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me303t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Describe the casting process with legible sketch and Identify various a Casting defects",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain (a) the Principle and application of die casting (b) Principle and application of hot chamber and cold chamber die casting (c) Principle and application of centrifugal casting (d) Principle and application of CO2 process (e) Principle and application of investment casting 5. GRINDING AND FINISHING PROCESSES",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "FOUNDRY Introduction: Evolution of foundry as a manufacturing process, advantages and limitations of casting over other manufacturing processes. Foundry equipment: Hand moulding tools: shovel, riddle, rammers, trowels, slicks, lifter, strike-off bar, sprue pin bellow, swab, gate cutter, mallet, vent rod, draw spike, rapping plate or lifting plate, pouring weight, gagger, clamps, spirit level, moulding boxes, snap box & flash box. Sands: Properties of moulding sand - porosity, flowability, collapsibility, adhesiveness, cohesiveness and refractoriness. Types of moulding sand: green sand, dry sand, loam sand, facing sand, backing sand, parting sand, core sand, system sand their ingredients and uses. Various types of patterns Casting: green sand and dry sand moulding, cement bonded moulding, shell moulding , ceramic moulding, defects in castings and their remedies. Special casting processes: (Principles and applications only) die casting \u2013 hot chamber and cold chamber, centrifugal casting, CO2 process, investment casting",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the principle of metal removal by grinding",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain the working of Cylindrical and Centreless grinding machines",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List types of abrasives with examples",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "List the types of bonds used in the grinding wheel",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me303t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain the standard marking system of a grinding wheel",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "List the uses of different work-holding devices",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain (a) Balancing (b) Dressing (c) Truing of the grinding wheel",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain a) Honing, Lapping, Super finishing processes b) The principle of hot dipping processes, namely: Galvanising, c) tin coating, Parkerizing and Anodising",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Describe a) The principle of Electro\u2013plating with a legible sketch. b) The processes of various organic coatings",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "List six various organic coatings",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "State a) The principles of metal spraying. b) The features of wire process and powder process",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Select the appropriate process for surface roughness of a given application",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "State the principle and types of jig boring",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "GRINDING MACHINES Principle of Grinding \u2013 Abrasives: Natural and Artificial - Types of Bonds and Applications \u2013 Grit, Grade and Structure of wheels - Standard marking systems of grinding wheel \u2013 Selection of grinding wheel. Grinding machines classification and applications \u2013 Specifications - Principle of operation of Cylindrical grinder and Centreless grinder - Advantages & Limitations of centreless grinding - Work holding devices - Balancing of grinding wheels \u2013 Dressing and Truing of grind wheels. Finishing Processes: Finishing by grinding: Honing, Lapping, Super finishing. Electroplating \u2013 Basic principles \u2013 Plating metals \u2013 applications. Hot dipping: Galvanizing, Tin coating, Parkerising, Anodizing. Metal spraying: wire process, powder process an d applications. Organic coatings: Oil-based, Lacquer based paints, Enamels, Bituminous paints, rubber base coating. Jig Boring : Introduction to jig boring - Types of jig boring machines Broaching: Principle of Broaching- Types of Broaching Machines REFERENCE BOOKS 1. Elements of Work Shop Technology vol.I&II by Hazra Choudry 2. Manufacturing Technology(volume-1) by PN Rao(Tata Mc Graw Hill) 3. Production Technology - R.C. Patel 4. Production Technology - Jain & Gupta. 5. Material Science and Engineering Raghavan PHI Publishers 6. Introduction to Physical Metallurgy Avner Tata McGraw Hill Publishers 7. Material science and metallurgy O P Khanna Dhanpati Rai Publishers Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.2 Unit Test \u2013 II From 3.3 to 5.14",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me303t-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26ME303T",
     "semester": 3,

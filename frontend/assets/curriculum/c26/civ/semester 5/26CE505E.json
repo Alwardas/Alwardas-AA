@@ -1,6 +1,42 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 2,
+            "title": "Classification of soils",
+            "totalPeriods": 5,
+            "topics": [
+                {
+                    "topic": "CLASSIFICATION OF SOILS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce505e-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "States the different systems of classification of soils",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce505e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explains the textural classification of soils with a neat sketch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce505e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "I.S. classification of soils",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce505e-2.3",
+                    "sno": "2.3"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26CE505E",
     "semester": 5,

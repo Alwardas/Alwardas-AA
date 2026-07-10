@@ -1,6 +1,532 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Concepts of DBMS &RDBMS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Define Database Management System (DBMS)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List the advantages of DBMS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain Database Abstraction, Data Independence",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Define Instance and Schema",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain Data Models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Define Database languages DDL, DML, TCL",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Explain Database Administrator, Users and Database System Architecture with diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Define Entity, Entity sets, Relationship, Relationship sets, Super Key , Candidate Key and Primary Key, Foreign Key",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Explain Mapping Cardinalities",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "List the symbols used in ER model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Know The Entity-Relationship Model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Reduce the ER-diagrams to tables",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Explain Generalization, Specialization & Aggregation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Explain Functional Dependencies, Normalizations\u2013 1 NF, 2 NF and 3NF",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "List features of NOSQL",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Compare RDBMS and NoSQL",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List the Advantages and Disadvantages of NoSQL",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Know about the ACID and BASE system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Compare ACID and BASE properties",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "NoSQL types",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-1.6",
+                    "sno": "1.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Concepts of SQL",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Explain SQL and benefits of SQL",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain literals & different data types like character, number, long, date, raw and long raw etc",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Illustrate the comments within SQL Statement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain SQL Operators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Describe Data Definition Language commands CREATE, ALTER and DROP",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain integrity constraints through creating a table and altering table",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Describe Data Manipulation Language commands INSERT, UPDATE and DELETE",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Explain SELECT statement with WHERE, ORDER BY, GROUP BY and HAVING clauses with examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "List and explain singlerow(Number, character, date and conversion) functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "List and Explain group functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Explain Transaction Control Commands COMMIT, SAVEPOINT, ROLLBACK, GRANT, and REVOKE",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Explain Subqueries with examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Explain Joins (Equi Join, Non-Equi Joins, Inner Join, Outer Join, cross join and Self join) with syntax and examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "What is MongoDB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "List the advantages of MongoDB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the Creation, Dropping of Collection in MongoDB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain the creation and Dropping of Database in MongoDB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain the Datatypes of MongoDB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-2.5",
+                    "sno": "2.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "PL/SQL",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am302t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Explain PL/SQL Block structure",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am302t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List the features of PL/SQL",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am302t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the data types of PL/SQL",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am302t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Declaration of variables",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain PL/SQL tables and user defined records",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain Input/Output statements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain decision making statements and illustrate",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain looping statements and illustrate",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Define procedure and function 130",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Describe the advantages of subprograms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Explain handling procedures and functions with example programs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Explain the parameter modes in PL/SQL with examples (in , out and in out)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Unit test-2 From 3.6 to 5.2.5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-3.5",
+                    "sno": "3.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Advanced PL/SQL and Exception Handling",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am302t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define cursor",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am302t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Classify cursors",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am302t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain implicit cursor with example",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am302t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain explicit cursors with example",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am302t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Define trigger",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "List Advantages of triggers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain database triggers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Define the term Exception handling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "List the advantages of Exception handling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "List various types of Exception handling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Illustrate built-in Exceptions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Illustrate User defined Exceptions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am302t-4.12",
+                    "sno": "4.12"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Concepts of NoSQL & MongoDB",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26am302t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "No SQL",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26am302t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "MongoDB",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26am302t-5.2",
+                    "sno": "5.2"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26AM302T",
     "semester": 3,

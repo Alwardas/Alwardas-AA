@@ -1,6 +1,385 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Importance of Machine Drawing and Production Drawing",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Brief revision of 1st and 3rd angle projections",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Understand the concepts of Orthographic projections and Sectional views",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Differentiate between machine drawing and production drawing",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain abbreviations for materials, draughting abbreviations",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "State the factors that govern the preparation of a production drawing",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Identify the components of a production drawing",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Systems of fits-problems relating Hole basis and Shaft basis system and schematic diagrams- Select dimensions from B.I.S",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Tables to obtain clearance, transition, and interference fit for a given set of mating parts",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Selection of fits and tolerances from B.I.S. tables",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Indicate fits on the drawings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Introduction and indication of form and position tolerances on drawings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "INTRODUCTION Drawing Sheet Sizes, drawing sheet layout, Titl e block, Standard abbreviations - Conventional representation of materials and machine components, method of indication notes on drawings, Importance of Machine Drawing, Brief revision of 1st and 3rd angle projections, Understand the concepts of Orthographic projections and Sectional views",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "FASTENING DEVICES",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me308d-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Draw the standard thread profiles",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me308d-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Draw bolted connections to standard proportions",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me308d-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Draw different types of keys and cotters and Riveted Joints",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me308d-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "FASTENING DEVICES Temporary and Permanent fastenings and their areas of application-thread nomenclature, forms of screw thread profiles, Bolts and Nuts: Specification of bolts and nuts, Different types of bolted joints (like usin g through bolts, studs, screws, eyebolt etc.,) in different applications. Purpose of lock nuts and their Types, Keys and cot ters: Types of keys and cotters. Riveted Joints- types",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me308d-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "WELDING AND PIPING LAYOUTS AND JOINTS",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Identify the common components of a piping layout",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Identify the conventional symbols used for the various components of piping layout",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Prepare single-line and double-line diagrams of piping layouts",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Identify the different types of welds and their symbolic representation as per B.I.S., SP- 46 2003",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Identify the elements of the welding symbol and their standard location on the symbol",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain Symbols indicating surface texture",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Surface roughness obtainable from various manufacturing processes, recommended surface roughness on mechanical components",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Symbols representing direction of lay",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Heat treatment and surface treatment symbols used on drawings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "WELDING AND PIPING LAYOUTS AND JOINTS Pipes and tubes. Classification-Components of pipe layout. Screw fitting Unions: Screwed ground and flanged, Valves: Gate valve, angle valve, check valve, Various conventional symbols used for the above components. Different types of welded Joints - basic symbols including sectional representation as per table of I.S. standards - Elements of welding symbol and their standard location, the symbol as per IS standards reference Code, arrow head, weld symbol, supplementary symbol, dimensions of welds, method of welding process, special reference. Supplementary symbols",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Limits, Fits & Tolerances 3",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Geometrical Tolerances 3",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Surface finish 3",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "FITS, TOLERANCES &ENGINEERING MATERIALS",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Limits, Fits & Tolerances",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Importance of geometrical tolerances & indicating geometrical tolerances on the drawing",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Surface finish",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Specification of materials and Standard Components",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Identify the materials of various components",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Specify the Raw materials as per Commercial/ BIS Standards",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Identify the standard part that can be procured directly from the market and specify the part as per Commercial/ BIS Standards",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "FITS, TOLERANCES & ENGINEERING MATERIALS Limits, allowance and fits -definitions- Select dimension from standards to give different type of fit for a given mating parts, Types of fits - problems relating Hole basis and Shaft basis system and schematic diagrams - Select dimensions from B. I. S. Tables to obtain clearance, transition and interference fit for a given set of mating parts, Select ion of fits and tolerances from B. I. S. tables, Indicate fits on the drawings. Indication of geometrical tolerance on the drawing, indication of feature controlled, form and position tolerances on drawings, Surface roughness terminology- surface roughness values, surface roughness obtainable from various manufacturing processes, recommended surface roughness on mechanical components. Materials of the parts of the assembly -size of the part, estimation of the Raw material required for a component and specification. Standard components: Parts like bolts, nuts, and Bearings, etc",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me308d-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "ASSEMBLY AND DETAILED PART DRAWING",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me308d-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Indicate the sequence of the production",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me308d-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "List the sequence of steps for preparing the assembly drawing",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me308d-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Prepare the list of parts",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me308d-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Prepare the assembly drawing for the given components drawing",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Prepare the relevant views of the parts of the assembly drawing",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "ASSEMBLY AND DETAILED PART DRAWING Need and functions of assembly and detailed drawings. Steps in preparing assembly drawings. Bill of materials and parts list. Exercises in preparing assembly drawings of commonly available engineering components. Indicate the sequence of the production, specify the relevant tools to obtain the accuracy and finish. Indicate the suitable equipment, specify the type of measuring instruments to be used to check the prescribed accuracy, and specify of standard components. Prepare Assembly and detailed part drawings of the machine components of the following machine parts: Draw only the front view and top view (Full Section / Half Section with dimensions, including the Bill of materials, of the machine elements in the Drawing Sheet. Knuckle Joint Flanged Coupling Stuffing Box Cross head Eccentric Foot Step bearing Plummer Block Screw Jack Lathe Tool post",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me308d-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26ME308D",
     "semester": 3,

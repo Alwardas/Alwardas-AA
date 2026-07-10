@@ -1,6 +1,147 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Verify the truth tables of basic gates and universal gates",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee409l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Show NAND gate and NOR gate as Universal gates. 2. Combinational Logic Circuits",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee409l-1.2",
+                    "sno": "1.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Construct half adder and full adder and verify the truth tables",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee409l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Verify the function of 74138 decoder IC",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee409l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Verify the working of Multiplexer (Using IC 74153)",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee409l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Verify the functional table of 4-bit magnitude comparator 7485 IC. 3. Sequential Logic Circuits",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee409l-2.4",
+                    "sno": "2.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Construct and verify the truth tables of NAND & NOR latches",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee409l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Construct clocked RS FF using NAND gates and Verify its truth table",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee409l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Verify the truth table of JK FF using 7476 IC",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee409l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Construct D and T flip flops using 7476 and verify the truth tables. 4. Basics of Microcontrollers",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee409l-3.4",
+                    "sno": "3.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Familiarization of 8051 Microcontroller Kit",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee409l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Familiarization of 8051 simulator EDSIM 51 (or similar). 5. Programming on Microcontrollers",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee409l-4.2",
+                    "sno": "4.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Write a program to demonstrate different register addressing techniques on 8051",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee409l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Write a program to demonstrate Addition, subtraction, division and multiplication of 8 bit numbers using immediate data access on 8051",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee409l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Write a program to Add and Subtract 16- bit numbers on 8051",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee409l-5.3",
+                    "sno": "5.3"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 60,
     "subjectCode": "26EE409L",
     "semester": 4,

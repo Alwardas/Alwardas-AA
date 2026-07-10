@@ -1,6 +1,266 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Introduction to Introduction & Fundamentals",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Introduction & Fundamentals",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Introduction & Fundamentals",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-1.6",
+                    "sno": "1.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "AIRCRAFT STRUCTURES & MATERIALS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Identify the various parts of an aircraft",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Identify control surfaces and structural elements of air craft",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the functions of main parts of air craft such as fuselage, empennage, ribs, spars, stringers etc",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Describe the purpose of landing gear",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Identify important properties of aerospace materials and list out materials used for different air craft parts",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-2.5",
+                    "sno": "2.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "AIRCRAFT SYSTEMS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Define various electrical terms used in air craft",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Identify main components of aircraft electrical systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the procedure of electrical power generation, storage and distribution in air craft",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Identify various components of hydraulic systems and fuel systems and mention their purpose",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain the operation of hydraulic systems and fuel systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Identify the functions of flight control systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "List the main components and explain purpose and operation of air conditioning system and pressurization systems of air craft",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-3.7",
+                    "sno": "3.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Introduction to Advanced Applications & Operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-4.6",
+                    "sno": "4.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me506a-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 30,
     "subjectCode": "26ME506A",
     "semester": 5,

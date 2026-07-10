@@ -1,6 +1,266 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Introduction to Pattern Recognition",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "What is Pattern Recognition?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Applications in real life",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain Supervised vs.Unsupervised Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain Python basics&NumPy Basics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Display simple patterns (e.g.,shapes)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Identify image,text,audio datat ypes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Introduction to Pattern Recognition Introduction to Pattern Recognition-Applications:Face,handwriting, speech recognition- Supervised vs. Unsupervised Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Data Representation and Feature Extraction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Define data and types of data",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Features and Feature Vectors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Define Shape, Color,Size,Edges",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain how to Load & display image using OpenCV",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "What is a color histogram in image processing, edges (Canny) and why is it useful?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Data Representation and Feature Extraction Types of data:Images,text, sound- What is a feature, Importance of feature extraction- Feature vector and pattern classes- Examples: Edges, shape, size, color",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Classifiers and Statistical Methods",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "What is Bayes\u2019Theorem and how does it work?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "What does the digits dataset in Scikit-learn represent, and how is its tructured?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Define classifier",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "What is a decision tree classifier used for?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "What is meant by visualizing classification results?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Classifiers and Statistical Methods Bayes \u2019Theorem (conceptual)-Introduction to Classifiers-Decision Trees (concept only)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Clustering and Dimensionality Reduction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define K-Means & how to apply K-Means on simple dataset",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "What is Hierarchical Clustering and How Does It Work?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "What is PCA(Principal Component Analysis)?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Why is PCA used in machine learning?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Clustering and Dimensionality Reduction Clustering-K-Means and Hierarchical Clustering (overview) -Principal Component Analysis (PCA \u2013 concept only)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Applications and Case Studies",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am506a-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Explain the Usecases:Face,fingerprint,image, medical",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am506a-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain how to face detection using Haarcascades(OpenCV)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Applications and Case Studies Real-world classification examples-Applications:Face, fingerprint,andmedical image recognition REFERENCES 1) Pattern Recognition and ImageAnalysis\u2013Earl Gose, Richard Johnsonbaugh, Steve Jost 2) Introduction to Pattern Recognition\u2013Arindam Chaudhuri 3) Fundamentals of Digital Image Processing\u2013Rafael C.Gonzalez& RichardE.Woods 4) Pattern Recognition\u2013 S.Theodoridis (selected hapters) 5) Pattern Recognition\u2013 S.Theodoridis &K. Koutroumbas (K-NN, Decision Trees, and Naive Bayes with statistical background.) 6) Artificial Intelligence and Machine Learning\u2013P.S.Grover",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am506a-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 30,
     "subjectCode": "26AM506A",
     "semester": 5,

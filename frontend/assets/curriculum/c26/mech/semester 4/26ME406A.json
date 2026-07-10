@@ -1,6 +1,287 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION TO ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me406a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Understand and explain the basic concepts and evolution of Artificial Intelligence and Machine Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Identify the role and potential of AI/ML in the context of mechanical engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Distinguish AI from related fields like data science and automation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "INTRODUCTION TO ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING Definition and scope of Artificial Intelligence and Machine Learning, Differences and relationships with Data Science, Importance and role of AI/ML in Mechanical Engineering, History and evolution of AI, Basic components of AI and human vs computer intelli gence, dispelling common myths of AI/ML. Knowledge representation, reasoning, and problem solving, concepts of learning, planning, perception, and manipulation, symbolic and statistical approaches to AI. Introduction to machine learning types viz., Supervised learning, Unsupervised learning, Reinforcement learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "DATA PREPARATION AND FEATURE ENGINEERING",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Describe different data collection and acquisition techniques used in mechanical systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Perform data pre processing tasks such as cleaning, normalization, and transformation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Prepare real-world engineering data for machine learning processing and analysis",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Understand the importance of feature selection and extraction in machine learning models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Apply techniques like PCA and ICA to reduce dimensionality in mechanical system datasets",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Identify and select relevant features that improve model performance",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "DATA PREPARATION AND FEATURE ENGINEERING Data acquisition, preprocessing, and cleaning, feature extraction methods Statistical features, Principal Component Analysis (PCA), feature selection methods viz., ranking, entropy reduction, information gain, exhaustive, greedy methods. Application of fea ture extraction in mechanical engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "MACHINE LEARNING ALGORITHMS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Differentiate between supervised and unsupervised learning strategies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Implement basic ML algorithms such as Linear Regression, Decision Trees, Na\u00efve Bayes, K-Means, etc",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Evaluate and choose appropriate algorithms such as SVM, Random Forest, KNM for different mechanical engineering use cases (e.g., fault detection, quality prediction)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Describe the architecture and functioning of an Artificial Neural Network (ANN)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Understand the basics of deep learning with CNNs and how they are used in image-based diagnosis for mechanical components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Apply basic Fuzzy Logic and Neuro -Fuzzy systems to solve control and classification problems in mechanical systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "MACHINE LEARNING ALGORITHMS Classification of ML algorithms viz.,Decision Tree, Naive Bayes, SVM, Random Forest, KNN for defect detection, condition monitoring. Linear/Logistic Regression, SVR for Performance prediction, thermal analysis.K -Means, Hierarchical clustering for grouping of faults or materials. Fundamentals of ANNs and Deep Learning. Basics of reinforcement Learning for control systems in robotics and autonomous vehicles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "INTEGRATION WITH MECHANICAL ENGINEERING",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Outline the stages of building and validating a machine learning model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Use performance evaluation metrics (like accuracy, precision, recall, etc.) to assess model efficiency",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Apply software tools like Python or MATLAB to develop and test basic ML models with engineering datasets",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Apply AIML knowledge to solve real -life mechanical engineering problems through case studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Design and execute small -scale AI -based projects (e.g., predictive maintenance of machines, energy optimization)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Collaborate in teams to document and present project outcomes effectively",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "INTEGRATION WITH MECHANICAL ENGINEERING AI in design and optimization of mechanical systems, AI for autonomous systems (vehicles, robotics), Predictive maintenance and fault diagnosis, Quality control and defect detection, energy optimization using AI/ML methods. Case studies for Structural anal ysis, production quality, process improvement. Software Tools viz., Python programming basics for ML, Introduction to libraries like NumPy, scikit-learn, pandas and No-code AI tools for practical projects",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me406a-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 30,
     "subjectCode": "26ME406A",
     "semester": 4,

@@ -1,6 +1,63 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Basics of Estimation",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "topic": "BASICS OF ESTIMATION",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce402t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "State the purpose of estimation and costing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce402t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "State the units of measurements, data and payment for different items of work and materials",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce402t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain the approximate and detailed methods of estimation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce402t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain and write down the specifications for various items of work in building construction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce402t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "BASICS OF ESTIMATION Definition of estimate and its importance \u2013 units of measurements and units of payment of items of work \u2013 earthwork, brickwork, DPC, concrete and RCC works, painting, flooring, plastering, pointing, whitewash, distempering, woodwork \u2013 types of estimates \u2013 approximate and detailed methods - data required for preparation of an estimate \u2013 standard data \u2013 scheduled rates \u2013 lead statements \u2013 specifications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce402t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "DETAILED ESTIMATES OF CIVIL WORKS buildings \u2013 methods of estimation \u2013 long wall and short wall method \u2013 centre line method. estimation of quantities for a building-estimation of earthwork in irrigation channels and roads - estimation of quantities for bituminous and concrete roads estimation of quantities for water tank (OHSR) and septic tank with soak pit",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce402t-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 105,
     "subjectCode": "26CE402T",
     "semester": 4,

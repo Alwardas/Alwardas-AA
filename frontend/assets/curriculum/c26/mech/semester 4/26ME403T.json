@@ -1,6 +1,308 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "PRODUCTION OF IRON AND STEEL",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me403t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Name the various raw materials required for production of iron",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me403t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Describe the method of producing Pig Iron in Blast furnace",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me403t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Describe the puddling furnace to produce wrought iron",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me403t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the process of manufacturing cast iron in Cupola",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Describe the manufacturing of steel by Bessemer process, L.D. process, Open Hearth and Electric Process",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "PRODUCTION OF IRON AND STEEL Raw materials, iron ores, Lime stone , Manufacturing of pig iron from blast furnace. Wrought iron by pudding furnace. Cast Iron from cupola. Production of steel by Bessemer, L.D. process; Open hearth and Electric processes",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "HEAT TREATMENT OF STEEL",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me403t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Explain the cooling curves of pure metal",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me403t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Mention the allotropic forms of pure iron with temperatures and their crystal structures",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Draw the iron carbon equilibrium diagram, identify various structures of the iron carbon system",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "State the importance of heat treatment for steels",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain Annealing, Normalising, Hardening and Tempering",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain use of case hardening processes like; carburizing, nitriding and Cyaniding",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "HEAT TREATMENT OF STEEL Cooling curve for pure metal. Allotropic forms of pure Iron. Iron carbon equilibrium diagram. Importance of heat treatment. Heat treatment processes \u2013 annealing, normalizing, hardening, tempering, carburizing, nitriding and cyaniding",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "MILLING MACHINES AND GEAR MAKING PROCESSES",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Explain the working principle of a Milling machine",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain the constructional details and Principle of operation of Column and knee type and Universal milling machines with legible sketches",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "State the purpose and list the methods of indexing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "List different types of milling cutters and their applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "State the functions of different tool holding devices",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "State the functions of different work holding devices",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain various milling operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "List specifications of milling machines",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "List key aspects of gear Nomeneclature",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "List methods of producing gears",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Describe the method of gear manufacturing by Gear shaping",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Describe the method of gear generation by Gear hobbing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Explain various gear finishing operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "MILLING MACHINES AND GEAR GENERATING PROCESSES Definition - Types of Milling machines: Constructional details and Principle of operation of Column and knee type and Universal milling machines - Specification of milling machines \u2013 Purpose of indexing \u2013 Methods of indexing - Work holding and Tool holdin g devices \u2013 Types of milling cutters \u2013 Cutter materials - Milling Operations :Face Milling, Plain Milling, Side Milling, Straddle Milling and Gang Milling. Definition of Gear \u2013 Gear nomenclature - Methods of manufacturing of gears \u2013 Gear generating processes: Principle of operation of Gear Shaping and Gear hobbing \u2013 Gear materials - Gear finishing processes: Burnishing, Shaving, Honing, Lapping and Super finishing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me403t-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "WELDING",
+                    "period": 18,
+                    "type": "theory",
+                    "id": "26me403t-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "NON CONVENTIONAL MACHINING PROCESSES",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me403t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Distinguish between nonconventional machining processes and conventional methods",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me403t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "State the relative advantages and applications of nonconventional machining processes",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me403t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Describe Ultrasonic machining (USM) Process with advantages and disadvantages",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me403t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Describe Electrical Discharge Machining (EDM) Process with advantages and disadvantages",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Describe of Abrasive jet machining (AJM) with advantages and disadvantages",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "NON CONVENTIONAL MACHINING PROCESSES Introduction \u2013 Comparison with Conventional machining processes \u2013 Methods of Nonconventional Machining Processes \u2013 Applications. Description of Ultrasonic machining (USM) Process - advantages \u2013 disadvantages. Description of Electrical Discharge Machining ( EDM) Process \u2013 advantages \u2013 disadvantages. Description of Abrasive jet machining - advantages \u2013 disadvantages. Description of Laser beam machining - advantages \u2013 disadvantages. REFERENCE BOOKS 1. Material Science and Engineering - Raghavan PHI Publishers 2. Introduction to Physical Metallurgy - Avner Tata McGraw Hill Publishers 3. Material science and metallurgy - O P Khanna Dhanpati Rai Publishers 4. Manufacturing Technology - P N Rao (MGH Publishers) 5. Production Technology - R.C.Patel 6. Production Technology - Jain & Gupta. Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.10 Unit Test \u2013 II From 3.11 to 5.6",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me403t-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26ME403T",
     "semester": 4,

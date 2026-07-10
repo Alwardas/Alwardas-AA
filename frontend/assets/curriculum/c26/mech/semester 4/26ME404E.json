@@ -1,6 +1,385 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "FUNDAMENTALS OF REFRIGERATION",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me404e-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Define the term \u2018Refrigeration\u2019",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List different methods of refrigeration with applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Define the term \u2018Ton of Refrigeration\u2019. Give the value in S.I units",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Define the term \u2018Coefficient of Performance\u2019",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain Carnot refrigeration cycle by plotting it on p-V and T-s diagrams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain thermodynamic processes involved in air refrigeration cycle working on bell coleman cycle",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "FUNDAMENTALS OF REFRIGERATION Introduction \u2013 Definition and meaning of refrigeration -Methods of refrigeration \u2013 unit of refrigeration \u2013 Refrigeration effect \u2013 Coefficient of Performance \u2013 Power required Capacity of the refrigerating system-Simple problems Working of Carnot refrigeration System - Thermodynamic analysis of Carnot refrigeration cycle on p-V and T-s diagrams. Air Refrigeration System: Explanation of Thermodynamic Processes of Bell -Coleman Cycle with p-V and T- s diagrams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "VAPOUR COMPRESSION AND VAPOUR ABSORPTION REFRIGERATION SYATEM",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Describe main components and Principle of working of a vapour compression refrigeration system with flash chamber and accumulator",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain theoretical vapour compression refrigeration system with the help of p-V, T- s and p-H diagrams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Calculate COP of ideal vapour compression refrigeration Cycle when the vapour is dry and saturated at the beginning and end of compression without undercooling - Simple problems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Define Refrigerant and Classify refrigerants with examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain properties of various refrigerants",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "List out various refrigerants used",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Describe main components and Principle of working of Ammonia vapour absorption refrigeration system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Describe the working of Electrolux refrigerator with the help of a legible sketch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Describe the working of a solar powered vapour absorption refrigeration system with the help of a legible sketch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "VAPOUR COMPRESSION & VAPOUR ABSORPTION REFRIGERATION SYSTEM Compression Refrigeration System: Functions of components and working principal of simple vapour compression refrigeration system with flash chamber and accumulator \u2013 Explanation of thermodynamic processes and Write expression for COP of vapour compression refrigeration cycle with the help of T-s & p-H diagrams \u2013 COP of theoretical vapour compression refrigeration system \u2013 Simple problems. Wet and dry compression \u2013Effect of under cooling and super heating on COP. Refrigerants : Refrigerants \u2013 Classification - Primary and secondary refrigerants with examples \u2013 Selection of refrigerants \u2013 Thermal, Physical, Chemical, Safety and Environmental properties of ideal refrigerant \u2013List the various refrigerants like Ammonia, Carbon di-oxide, Freon-12, Freon-22, Brine solutions, R-32, R-410a, R-134a and HFOs. Vapour Absorption Refrigeration System: Functions of components and working principal of vapour absorption refrigeration system \u2013 Working of Electrolux refrigerator and Solar powered vapour absorption refrigeration systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "REFRIGERATION EQUIPMENT & APPLICATIONS OF REFRIGERATION",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "State the functions of Refrigeration equipment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List out different types of compressors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain principle of working of Hermetically sealed compressor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain principle of working of vane type rotary compressor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "List out different types of condensers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Describe shell and coil condensers with the help of legible sketches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Describe evaporative condensers with the help of legible sketches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "List out different types of evaporators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Explain the flood",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Explain the working of expansion devices such as capillary tube, thermostatic expansion valve, automatic expansion valve with the help of legible sketches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Describe the working of a domestic refrigerator with the help of a legible sketch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Describe the working of an ice plant with the help of a legible sketch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Describe the working of a water cooler with the help of a legible sketch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "REFRIGERATION EQUIPMENT AND APPLICATION Refrigeration Equipment Equipment used in Refrigeration systems; Compressors \u2013 types of compressors \u2013 Working of Hermetically sealed compressor \u2013 Working of vane type rotary compressor. Condensers \u2013 types of condensers \u2013 Working of Air cooled, Water cooled and Evaporative type condensers. Evaporators \u2013 types of evaporators \u2013 Working principle of flooded type evaporators. Expansion devices \u2013 types of expansion devices \u2013 Working principle of capillary tube, thermostatic expansion device, automatic expansion valve with neat sketches. Applications of Refrigeration: Working of Domestic refrigerator, Ice plant and Water cooler with neat sketches. AIR CONDITIONING",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "AIR CONDITIONING & PSYCHROMETRY",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me404e-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define air conditioning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "List modern applications of air conditioning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain Air conditioning as applied to human comfort",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Define Psychrometry- Define the terms :humidity, Relative humidity, dew point, DBT & WBT, Absolute humidity, humidity ratio",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the features of Psychrometric chart",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Simple problems by using Psychrometric chart and mathematical formulae a. List and explain various Psychrometric processes with the help of Psychrometric chart. b. Define cooling load and List the components involved in computation of cooling load",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Define heating load and List the components involved in computation of heating load",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-4.9",
+                    "sno": "4.9"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "AIR CONDTIONING EQUIPMENT & APPLICATIONS OF AIR CONDITIONING",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me404e-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "State the functions of air conditioning equipment viz,. fans, ducts, filters, dust collectors, heating and cooling coils",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me404e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain various air distribution systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Describe the working of a window air \u2013 conditioner with a neat sketch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Illustrate the working of summer air conditioning system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Illustrate the working of winter air conditioning system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "AIR CONDITIONING EQUIPMENT & APPLICATIONS Air Conditioning Equipment: Functions of Air Conditioning equipment such as fans, supply ducts, outlets, return outlets, ducts, Grills, dampers, registers, humidifiers, dehumidifiers, Heating and cooling coils, Filters and dust collectors. Working of Air distribution Systems: Radial perimeter, loop perimeter and extended plenum systems. Applications of Air conditioning: Describe the working of Window air conditioner \u2013 Describe the working of Summer and Winter air conditioning systems \u2013 Working Principle of Split type, Central AC systems. REFERENCE BOOKS 1. Arora C P, Refrigeration and Air Conditioning, 2009, MGH Publishers 2. P N Ananthanarayana, Basic Refrigeration and Air conditioning, 2013, MGH Publishers 3. John Tomczyk, Troubleshooting and Servicing Modern Air Conditioning and Refrigeration Systems, 1995, Esco Press Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.5 Unit Test \u2013 II From 3.6 to 5.6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me404e-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26ME404E",
     "semester": 4,

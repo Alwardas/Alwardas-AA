@@ -1,6 +1,497 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Introduction to python programming",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Recite history of Python",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List Python features",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List and Explain Applications of Python",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain Python Integrated Development and Learning Environment (IDLE)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain process of Running Python Scripts",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain Identifiers, Keywords, Indentation & Variables",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "List and explain various data types",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Explain declaration& initialization of variables",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Explain Input and Output statements",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain formatted input output",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "State the usage of comments",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "List and explain various Operators",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Explain Boolean values",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Explain Operator precedence rules",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "State the purpose of modules",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-1.15",
+                    "sno": "1.15"
+                },
+                {
+                    "topic": "Define functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am105t-1.16",
+                    "sno": "1.16"
+                },
+                {
+                    "topic": "List types of functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am105t-1.17",
+                    "sno": "1.17"
+                },
+                {
+                    "topic": "List and Explain Built-in Functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am105t-1.18",
+                    "sno": "1.18"
+                },
+                {
+                    "topic": "Explain the Steps in Developing a simple python program and execution",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am105t-1.19",
+                    "sno": "1.19"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Control Flow and Loop Statements",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26am105t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "List and explain various Control Flow constructs",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26am105t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "List and explain various Loop Statements",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26am105t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "For Loop",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26am105t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Use break, continue & pass statements",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26am105t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Implement the python programs using control structures",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26am105t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Unit test-2 From 2.2 to 3.13 Unit test-3 From 4.1 to 5.15",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26am105t-2.1",
+                    "sno": "2.1"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Functions and Arrays",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Give introduction to functions",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Use Function Arguments: Default arguments, Keyword arguments, Variable Length arguments, Anonymous Functions & Return Statement",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "List and explain Scope of variables",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain creation of modules",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain importing of modules",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain PythonVariables:Namespace and scoping",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain Python Packages",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "List and Explain Strings: String slices, immutability",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "List and Explain String functions and methods",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Explain about String module",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Explain about Python Arrays",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Explain accessing of elements in an Array",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Explain Array methods. 67",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-3.13",
+                    "sno": "3.13"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Built-in DataStructures",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Explain Python Lists",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Describe Basic List Operations",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain List Slices",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain List methods",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain List raversing",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain mutability",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain aliasing",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Explain Cloning of lists",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Explain List comprehension",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Tuples",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Dictionaries",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Explain Sets",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am105t-4.12",
+                    "sno": "4.12"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Python Libraries, File Handling& Exception Handling",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26am105t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Give introduction to python library",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26am105t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Import modules in a python program",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26am105t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Use Python standard library\u2019s functions and modules",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Turtle, Random, Datetime, CSV, Numpy& Pandas",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Create Python library",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Give introduction to Files",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain opening and closing Files",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain reading and writing Files",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Use Standard Input, Output and error streams",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Explain exception handling",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am105t-5.10",
+                    "sno": "5.10"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 180,
     "subjectCode": "26AM105T",
     "semester": 1,

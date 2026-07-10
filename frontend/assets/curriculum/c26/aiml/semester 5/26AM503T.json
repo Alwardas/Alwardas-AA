@@ -1,6 +1,490 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION TO NATURAL LANGUAGE PROCESSING",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Describe the Origins and challenges of Natural Language Processing",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Classification of Language Modeling",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Describe the role of Regular Expressions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Define Finite-State Automata",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain Finite automata with output-Moore and Mealy machines",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Applications of Finite-State Automata",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Write the usages of transition diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State the importance of English Morphology",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Explain Transducers for lexicon and rules",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "State the importance of Tokenization",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Explain Detecting and Correcting Spelling Errors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Describe Minimum Edit Distance",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-1.12",
+                    "sno": "1.12"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain Grammar-based LM",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "ExplainS tatistical LM",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "WORD LEVEL ANALYSIS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Define N-grams",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain Unsmoothed and Smoothed N-grams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Describe the Usages of Unsmoothed and Smoothed N-grams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Analyze N-grams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Describe Interpolation and Backoff-Word Classes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain Part-of-Speech Tagging",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Differentiate Rule-based stochastic and Transformation-basedtagging",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Identify the Issues in PoS tagging",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Explain Hidden Markov model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Explain Maximum Entropymodels",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Compare Hidden Markov and Maximum Entropymodels. 239",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-2.11",
+                    "sno": "2.11"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "SYNTACTICAL NALYSIS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Define Context-Free Grammar",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Define Grammar rules for English",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "ClassifyTree banks",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain Normal Forms for grammar",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "State the importance of Dependency Grammar",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Describe the process of Syntactic Parsing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the problem of Ambiguity",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain DynamicProgramming parsing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Explain Probabilistic CYK algorithm",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Describe Probabilistic Lexicalized CFGs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Describe the Unification of feature structures",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Unit test-2 From 3.7 to 5.7",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-3.6",
+                    "sno": "3.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain Chomsky normal form",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain Greibachnormalf orm",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain procedure for converting CFG TO Chomsky normal form",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "SEMANTICS AND PRAGMATICS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Identify text representation techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain the First-OrderLogic",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Classify Description Logics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Describe Syntax-Driven Semantic analysis approach",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "State the need of Semantic attachments",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Define Word Senses",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain the Relations between Words and Senses",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Describe Thematic Roles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Define Selectional restrictions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Explain the process of Word Sense Disambiguation using Supervised",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Identify the importance of Dictionary & Thesaurus",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am503t-4.11",
+                    "sno": "4.11"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "DISCOURSE ANALYSIS AND LEXICAL RESOURCES",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Describe the procedure of Discourse segmentation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Applications of Discourse Analysis",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Define Coherence",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain Anaphora Resolution using Hobbs and Centering Algorithm",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "State the importance of Coreference Resolution",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Explain Porter Stemmer algorithm",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Describe Lemmatizer",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain the corpus",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am503t-5.8",
+                    "sno": "5.8"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26AM503T",
     "semester": 5,

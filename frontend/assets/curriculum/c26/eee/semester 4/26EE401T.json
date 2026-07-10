@@ -1,6 +1,322 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Principle of Production of Rotating Magnetic Field in 3-phaseSystem",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain the construction of Induction motor- slip ring and squirrel cage",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Compare Slip ring & Squirrel cage Induction motors",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "State the working principle of 3 phase induction motor",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "State relations for effect of slip on rotor parameters",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Derive the expression relating to TORQUE, POWER and SLIP and solve simple problems",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Draw Torque \u2013 Slip curves",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee401t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State the Starters used for different ratings of induction motors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee401t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Explain the working of the following starters with the help of circuit diagram. (i) D.O.L. starter (ii) Star/Delta Starter (iii) Auto \u2013 Transformer starter (iv) Rotor resistance starter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee401t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain the speed control of inductor motors by (i) Frequency changing method (ii) Pole changing method (iii) Injecting voltage in rotor circuit",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee401t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "State the advantages of induction motors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee401t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "List the applications of induction motors. 2. Single-Phase Induction Motor and Special A.C motors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee401t-1.12",
+                    "sno": "1.12"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "List the types of 1- phase motors",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee401t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain why a Single-phase Induction motor is not a Self-starting motor",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee401t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the working principle of 1 \u2013 phase Induction motor",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain the working of the following 1-phase induction motors with legible sketch (i) Split phase motor (ii) capacitor start motor (iii) shaded pole motor",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain the working of the universal motor",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain the working of Stepper motor and list different types",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain the working of Servo motor",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "List the applications of single-phase induction motors and special A.C. Motors. 3. Alternators",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-2.8",
+                    "sno": "2.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the working principle of Alternators",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Describe the Constructional details of Alternators with legible sketch",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Classify the Alternators based on rotor construction",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "State the advantage of Stationary Armature",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Define Chording and Distribution factor",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Derive EMF equation of an alternator taking into account distribution factor and pitch factor and solve problems",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "State the need for an exciter in an Alternator and list various types of exciters",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Define the term synchronous impedance and state its effects on operation of an alternator",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee401t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Define voltage regulation of an alternator",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee401t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "List the different methods of finding the regulation of alternator. 4. Parallel operation of Alternators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee401t-3.10",
+                    "sno": "3.10"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the necessity for parallel operation of alternators",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee401t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "State the conditions for synchronisation",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee401t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain the procedure of synchronisation by using two bright and one dark lamp method",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee401t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain the procedure of synchronisation by using synchro scope methods. 5. Synchronous motors",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee401t-4.4",
+                    "sno": "4.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the working principle of synchronous motors",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee401t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain synchronous motor with i) no load and ii) load",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee401t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain \u2018V\u2019 and inverted \u2018V\u2019 curves with neat sketch",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee401t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain how a Synchronous motor can be used as a Synchronous condenser for improving power factor",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee401t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain the phenomenon of HUNTING and how HUNTING can be prevented",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee401t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "List the applications of synchronous motor",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee401t-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26EE401T",
     "semester": 4,

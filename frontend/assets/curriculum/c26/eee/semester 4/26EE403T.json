@@ -1,6 +1,546 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain Binary, Octal, Hexadecimal number systems and compare them with Decimal system",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Perform binary addition, subtraction, Multiplication and Division",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain about BCD",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Write 1\u2018s complement and 2\u2018s complement numbers for a given binary number",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Perform subtraction of binary numbers in 2\u2018s complement method",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain the importance of parity Bit",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "State different postulates and De-Morgan\u2018s theorems in Boolean algebra",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Explain AND, OR, NOT, NAND, NOR and EX-OR gates with truth table",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Realize AND, OR, NOT operations using NAND, NOR gates",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain K-map (up to 3-variable)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Minimize the Boolean expression using K-maps",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Minimize the Boolean expression using Boolean laws",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Classify digital logic families",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Give IC numbers for different digital Logic gates",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "List the important characteristics of Digital ICs of different logic families",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.15",
+                    "sno": "1.15"
+                },
+                {
+                    "topic": "Explain the working Principle of CMOS technology with diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.16",
+                    "sno": "1.16"
+                },
+                {
+                    "topic": "Explain the working Principle of CMOS NAND and CMOS NOR gates with diagram. 2. Combinational Logic Circuits",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-1.17",
+                    "sno": "1.17"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Give the concept of combinational logic circuits",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Draw the Half adder circuit and verify its functionality using truth table",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Realize a Half-adder using NAND gates and NOR gates",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Draw the full adder circuit and explain its operation with truth table",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Realize full-adder using two Half-adders and an OR \u2013 gate and write truth table",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain 4-bit parallel adder",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain 4-bit serial adder",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Draw and explain the operation of 4 X 1 Multiplexers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Draw and explain the operation of 1 to 4 demultiplexer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Draw and explain 3 X 8 decoder",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "List any three applications of multiplexers and decoders",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Draw and explain One-bit digital comparator. 3. Sequential Logic Circuits",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-2.12",
+                    "sno": "2.12"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Give the idea of Sequential logic circuits",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain NAND and NOR latches with truth tables",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "State the necessity of clock and give the concept of level clocking and edge triggering,",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Draw and explain clocked SR flip flop with preset and clear inputs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Construct level clocked JK flip flop using S-R flip-flop and explain with truth table",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Write the truth tables of edge triggered D and T flip flops and draw their symbols",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "List the applications of flip flops",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Define modulus of a counter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Define Synchronous counter and Asynchronous counter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Explain 4-bit synchronous counter with diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Explain 4-bit Asynchronous counter with diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Differentiate between Synchronous counter and Asynchronous counter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "State the need for a Register and list the types of registers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Draw and explain the working of 4- bit shift left and shift right registers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "State memory read operation, write operation, access time, memory capacity, address lines and word length",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.15",
+                    "sno": "3.15"
+                },
+                {
+                    "topic": "Distinguish between (a) EEPROM and UVEPROM (b) static RAM and dynamic RAM 4. Micro controller",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.16",
+                    "sno": "3.16"
+                },
+                {
+                    "topic": "Unit Test-2 4.1 to 5.19",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-3.16",
+                    "sno": "3.16"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "State the need of Micro controllers",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee403t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "List the three commonly used Commercial Microcontroller Device families",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee403t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Draw the block diagram of a microcontroller and explain the function of each block",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain the register structure of 8051",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the functions of various special function registers",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Draw the pin diagram of 8051 micro controller and specify the purpose of each pin",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain internal memory, external memory and ports of 8051",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "List the interrupts in 8051. 5. Instruction set and Programming",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee403t-4.8",
+                    "sno": "4.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "State the need for an instruction set",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain the instruction format of 8051",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain fetch cycle, execution cycle and instruction cycle",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Define the terms machine language, assembly language, and mnemonics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Differentiate between machine level and assembly level programming",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "List the major groups in the instruction set along with examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain the terms operation code, operand and illustrate these terms by writing an instruction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain the addressing modes of 8051",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Explain data transfer instructions of 8051",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Explain the arithmetic instructions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Explain the logic instructions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Explain unconditional and conditional jump instructions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Define subroutine and explain its use",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Write program to perform (i) Single byte & Multi byte addition (ii) Summing-up of given N numbers (iii) Multiplication of two 8-bit numbers using MUL instruction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Explain interfacing of stepper motor with 8051 micro controller",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.15",
+                    "sno": "5.15"
+                },
+                {
+                    "topic": "List various advanced microcontrollers used in Electrical engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.16",
+                    "sno": "5.16"
+                },
+                {
+                    "topic": "List electrical engineering application of microcontrollers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.17",
+                    "sno": "5.17"
+                },
+                {
+                    "topic": "Explain how microcontrollers helps in power monitoring of electrical devices",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee403t-5.18",
+                    "sno": "5.18"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26EE403T",
     "semester": 4,

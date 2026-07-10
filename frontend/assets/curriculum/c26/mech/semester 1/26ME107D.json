@@ -1,6 +1,189 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "State the importance of drawing as an engineering communication Medium State the necessity of B.I.S. Code of practice for Engineering Drawing",
+                    "period": 12,
+                    "type": "practical",
+                    "id": "26me107d-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain the linkages between Engineering drawing and other subjects of Mechanical Engineering",
+                    "period": 12,
+                    "type": "practical",
+                    "id": "26me107d-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "B.I.S SPECIFICATIONS SHOULD INVARIABLY BE FOLLOWED IN ALL THE TOPICS A-3 Size Drawing Sheets are to be used for all Drawing Practice Exercises. The importance of Engineering Drawing Explanation of the scope and objectives of the subject of Engineering Drawing Its importance as a graphic communication -Need for preparing drawing as per standards \u2013 SP-46 \u20131988 \u2013Mention B.I.S \u2013 Role of drawing in-engineering education\u2013Link between Engineering drawing and other subjects of study",
+                    "period": 12,
+                    "type": "practical",
+                    "id": "26me107d-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Select the correct instruments to draw the different lines /curves",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26me107d-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Use correct grade of pencil to draw different types of lines and for different purposes",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26me107d-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Select and use appropriate scales for a given application",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26me107d-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Identify different drawing sheet sizes as per I.S. and Standard Lay-outs",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26me107d-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Prepare Title block as per B.I.S. Specifications",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26me107d-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Identify the steps to be taken to keep the drawing clean and tidy. DrawingPlate1: Use of engineering Drawing Instruments",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26me107d-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "ENGINEERING DRAWING INSTRUMENTS Classifications: Basic Tools, tools for drawing straight lines, tools for curved lines, tools for measuring distances and special tools like mini drafter & drafting machine \u2013 Mentioning of names under each classification and their brief description -Scales: Recommended scales reduced & enlarged -Lines: Types of lines, selection of line thickness - Selection of Pencils -Sheet Sizes: A0, A1, A2, A3, A4, A5, Layout of drawing sheets in respect of A0, A1, A3 sizes, Sizes of the Title block and its contents -Care and maintenance of Drawing Sheet,",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26me107d-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Write titles using vertical lettering and numerals of 7mm, 10mm and14mm height",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26me107d-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Write titles using sloping lettering and numerals of7mm, 10mm and14mm height",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26me107d-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Select suitable sizes of lettering for different layouts and applications Drawingplate2:Exercises on Free hand lettering and numbering",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26me107d-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "FREE HAND LETTERING AND NUMBERING Importance of lettering \u2013 Types of lettering -Guide Lines for Lettering Practicing of letters & numbers of given sizes ( 7 mm, 10 mm and 14 mm) Advantages of single stroke or simple style of lettering-Use of lettering stencils",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26me107d-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
+                    "period": 12,
+                    "type": "practical",
+                    "id": "26me107d-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Dimension a given drawing using standard notations and desired system of dimensioning. DrawingPlate3:ExercisesonDimensioningPractice",
+                    "period": 12,
+                    "type": "practical",
+                    "id": "26me107d-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "DIMENSIONING PRACTICE Purpose of engineering Drawing, Need of B.I.S code in dimensioning -Shape description of an Engineering object -Definition of Dimensioning size description -Location of features, surface finish, fully dimensioned Drawing -Notations or tools of dimensioni ng, dimension line extension line, leader line, arrows, symbols, number and notes, rules to be observed in the use of above tools -Placing dimensions: Aligned system and uni -directional system ( SP -46-1988)-Arrangement of dimensions Chain, parallel, combined progressive, and dimensioning by co-ordinate methods-The rules for dimensioning standard, features \u201cCircles(holes)arcs, angles, tapers, chamfers, and dimension of narrow spaces",
+                    "period": 12,
+                    "type": "practical",
+                    "id": "26me107d-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Practice the basic geometric constructions like i)dividing a line into equal parts ii)exterior and interior tangents to the given two circles iii)tangent arcs to two given lines and arcs",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26me107d-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Draw any regular polygon using general method when i) side length is given ii)inscribing circle radius is given iii) describing circle radius is given",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26me107d-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Draw the conics using general and special methods,",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26me107d-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "GEOMETRIC CONSTRUCTIONS Division of a line: to divide a straight line into given number of equal parts Construction of tangent lines: to draw interior and exterior tangents to two circles of given radii and centre distance Construction of tangent arcs: I. To draw tangent arc of given radius to touch two lines inclined at given angle (acute, right and obtuse angles). II. Tangent arc of given radius touching a circle or an arc and a given line. Tangent arcs of radius R, touching two given circles internally and externally. Construction of polygon: construction of any regular polygon by general method for given side length, inscribing circle radius and describing /superscribing circle radius Conics: Explanation of Ellipse, Parabola, Hyperbola, as sections of a double cone and a loci of a moving point, Eccentricity of above curves\u2013Their Engg. Applications viz., Projectiles, General Curves: Involute, Cycloid and Helix, explanations as locus of a moving point, their engineering application, viz., Gear tooth profile, screw threads, springs etc.\u2013their construction",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26me107d-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 180,
     "subjectCode": "26ME107D",
     "semester": 1,

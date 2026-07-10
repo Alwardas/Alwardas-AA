@@ -1,6 +1,154 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Draw the standard symbols of electrical components and fixtures",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee305e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Draw sectional elevation and end views of a Protected type and Unprotected type shaft couplings",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee305e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Draw the views of the guarding systems in the following cases. (i) Telephone lines under power lines (ii) H.V. line over L.V. line crossing (iii) H.V. Line over L.V. line on same supports (iv) H.V. Line crossing over railway lines. 2. DC machines",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee305e-1.3",
+                    "sno": "1.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Draw the assembled sectional views of Pole and Field coils",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee305e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Draw the half sectional end view of armature of DC machine with the given data",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee305e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Draw the half sectional end view of commutator of DC Machine with the given data",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee305e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Draw the Half sectional End view and Elevation of a D.C machine with the given data. 3. Induction Motors",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee305e-2.4",
+                    "sno": "2.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Draw the Half - sectional end view and elevation of an assembled 3-phase squirrel cage induction motor from the given data",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee305e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Draw the Half - sectional end view and elevation of an assembled 3-phase slip ring induction motor from the given data. 4. Transformers",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee305e-3.2",
+                    "sno": "3.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Draw different plan and elevational views of core stepping sections (one, two, three and four stepped cores) of a Transformer",
+                    "period": 9,
+                    "type": "theory",
+                    "id": "26ee305e-4.1",
+                    "sno": "4.1"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee305e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee305e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee305e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee305e-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee305e-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee305e-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26EE305E",
     "semester": 3,

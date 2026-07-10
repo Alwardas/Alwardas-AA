@@ -1,6 +1,882 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Basics of Software Engineering Designs & Life Cycle Models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Know the Evolution and Impact of the Software Engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Know the evolution of software engineering as an Art to an Engineering Discipline",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Know how software engineering is a solution to the Software Crisis?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Know the difference between Programs and Software Products",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Understand the evolution of Software Engineering Design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the Software Life Cycle Models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain Software Engineering ethics and the responsibilities of software professionals",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "List the Job Responsibilities of a Software Project Manager",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Identify skills necessary for Software Management models. CO2 AM502.2 Apply Software Project Management principles to plan, estimate, schedule and manage risks CO3 AM502.3 Develop a SRS document by identifying and organizing functional and non-functional requirements for a given software problem CO4 AM502.4 Apply software design principles, UML modeling, and coding standards to develop maintainable software. CO5 AM502.5 Apply software testing techniques and quality metrics to evaluate software reliability and performance. 233",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List the characteristics of good software design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "What is Cohesion and Coupling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Define Software Testing and its purpose",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Differentiate Verification and Validation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List and Describe common Test Case Design techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Compare Testing in the Large and Testing in the Small",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain Unit Testing with suitable examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain Black box Testing techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Explain White Box Testing techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "List various Software Testing tools",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Describe the Role of Testing in Agile and DevOps environment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-1.9",
+                    "sno": "1.9"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Software Project Management",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Know about Software Project Manager",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain Software Project Planning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the components of SPMP document",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Know theMetrics for Project Size Estimation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Know about Project Estimation Techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "List Staffing Level Estimates",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Understand the Basics of Agile Project Management using SCRUM",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Know about Scheduling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Explain the process of Staffing in a Software Project Management",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "List the Attributes of a Successful Software Engineer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Explain the Risk Management",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Describe the Purpose and importance of SRS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Summarize IEEE 830 standard",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Define Cohesion and Coupling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Classify and compare types of Cohesion",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Classify and compare types of Coupling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain Function-Oriented Design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain Object-Oriented Design 234",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Compare Function-Oriented and Object-Oriented Design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Describe Service-Oriented Design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Describe User Guidance and Online Help",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Differentiate Mode Based vs Modeless Interface",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Compare Graphical vs Text-Based User Interface",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain Debugging Approaches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "List standard Debugging Guidelines",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-2.2",
+                    "sno": "2.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Know about Early Computer Programming",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Know about High Level Language Programming",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "What is control Flow-Based design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "What is Data Structure oriented design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "What is Data Flow-oriented design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "What is Object Oriented design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Know about Model Driven Architecture",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Know about DevOps based Design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Know about Low-code/No-code Development",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Requirement Analysis and Specifications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Explain Requirements Gathering and Analysis",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain Software Requirement Specifications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain Functional Requirements and Use Cases",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Define Functional Requirements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Describe procedure to Identify requirements using scenario-based use cases",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain how to document functional requirements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain requirements Traceability and Construct a Traceability matrix",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "List Characteristics of a Good SRS Document",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Give Examples of Poor SRS Document",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the typical Organization of the SRS Document",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Develop an SRS for an ATM or Library System",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "List the Characteristics of a good User Interface",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Understand the Basic Concepts of user interface design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Know the Types of User Interface",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Describe Command Language Based Interface",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Describe Menu Based Interface",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Describe Direct Manipulation Interfaces",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Know about Static Analysis Tools",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Know about Dynamic Analysis Tools",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Unit test-2 From4.1 to 5.11",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-3.8",
+                    "sno": "3.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain Classical Waterfall Model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain Iterative Waterfall Model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain Prototyping Model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain Evolutionary Model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain Spiral Model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Know about AGILE Development Model- principles and Life Cycle",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Compare different Life Cycle Models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Describe Lines of Code (LOC)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Describe Function Point Metric",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Principles of Software Design, Coding",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Know the Software Design Concepts",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Know about Software Design Approaches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Understand User Interface Design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Understand Unified Modeling Language",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Define UML and its purpose in Software Engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain the importance of UML in Object oriented Design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "List and Explain Building blocks of UML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "List different symbols used in UML notation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Classify and list standard UML diagrams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Know about Class Diagrams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Know about Use case diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Understand Interaction diagrams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-4.8",
+                    "sno": "4.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "What is Empirical Estimation Technique",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "What is Heuristic Estimation Technique",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain Coding Standards",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Discuss Coding guidelines",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain the process of Code Review",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Describe Code Walkthroughs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain Code Inspection",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Define Clean Room Testing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain the importance of Software Documentation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Testing, Debugging, Reliability, Quality Management & Maintenance",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Understand Testing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Know about Debugging 235",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain Program Analysis Tools",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain the purpose and process of Integration Testing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Apply System Testing techniques to check the overall working of the software",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Apply Performance Testing to check how fast and stable the software runs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain the role of Artificial Intelligence in Software Testing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Understand the basics of Object-Oriented Testing and its techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Understand the concept of Software Reliability",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Explain Software Quality Management systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Explain SEI Capability Maturity Model (CMM) and its levels CO-PO/PSO MAPPING 3=strongly mapped,2=moderately mapped,1=slightly mapped",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am502t-5.11",
+                    "sno": "5.11"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26AM502T",
     "semester": 5,

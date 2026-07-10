@@ -1,6 +1,609 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION TO PYTHON AND BASIC DATA TYPES",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Explain the basic features, simplicity, and applications of Python programming",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Justify why Python is widely used for general-purpose, high-level programming",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Demonstrate basic arithmetic operations such as addition, subtraction, multiplication, division, modulus, exponentiation, and floor division using Python operators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Illustrate the use of the print() function to display messages or outputs in Python",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Define built-in data types in Python such as int, float, str, bool, and complex",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Identify string elements and subparts using indexing and slicing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Apply built -in string methods like lower(), upper(), strip(), replace(), and split() for text manipulation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Explain the use of the underscore _ in the Python interactive shell to access the last evaluated result",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Demonstrate type casting using int(), float(), str(), and bool() functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Use relational operators (==, !=, >, <, >=, <=) to compare values and return Boolean results",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Construct a set using the set data type to store unique, unordered elements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Apply the id() function to retrieve the memory address of a variable",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-1.12",
+                    "sno": "1.12"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "LISTS, TUPLES, DICTIONARIES AND OPERATIONS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Define the list data type and state its properties such as ordered, mutable, and ability to store mixed data types",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Demonstrate how to use list methods like append(), insert(), and copy() for list manipulation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Apply list methods like count() and index() to find occurrences and positions of elements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Illustrate how to delete list elements using remove(), pop(), and del statement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Use the extend() method to add multiple elements from another iterable to a list",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Apply methods such as sort(), min(), max(), clear(), and reverse() to modify and retrieve data from lists",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain the characteristics of the tuple data type and how it differs from lists",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "List commonly used dictionary methods such as copy(), clear(), and get()",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Use methods like keys(), values(), and pop() to access and remove dictionary items",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Construct a dictionary by combining two lists using the zip() function and dict() constructor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Add new key-value pairs to an existing dictionary using assignment operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Access multiple values under a single key using lists or other collections in a dictionary",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Access data from nested dictionaries and retrieve inner values",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Create a new dictionary using the fromkeys() method with default values",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Demonstrate the use of popitem() to remove the last inserted key-value pair",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "Apply the setdefault() method to fetch or insert a key with a default value",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.16",
+                    "sno": "2.16"
+                },
+                {
+                    "topic": "Combine dictionaries using the update() method to merge key-value pairs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-2.17",
+                    "sno": "2.17"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "OPERATORS, INPUT/OUTPUT, AND CONTROL STRUCTURES",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Use the range() function to generate sequences of numbers for iteration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Demonstrate the use of the assignment operator = to store values in variables",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Apply compound assignment operators like +=, -=, *=, /= for updating variable values",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain the usage of logical operators and, or, and not to form complex conditions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Illustrate bitwise logical operations using &, |, ^, ~, <<, and >> on integers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Convert numbers between binary, octal, decimal, and hexadecimal systems using built-in functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Apply the bitwise complement operator ~ to invert bits of an integer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Use built-in mathematical functions (like sqrt(), pow(), round(), sin(), etc.) from the math module",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Demonstrate accepting input from the user using the input() function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Convert string input to numeric data types using int() along with input()",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Evaluate expressions entered by the user using eval() and input() together",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Use the sys.argv list to retrieve command-line arguments in a Python script",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Construct decision-making logic using if, elif, and else statements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Develop loop structures using while loops to repeat execution based on a condition",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Write for loops to iterate over sequences such as lists, strings, or ranges",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.15",
+                    "sno": "3.15"
+                },
+                {
+                    "topic": "Apply break and continue statements to control loop execution flow",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.16",
+                    "sno": "3.16"
+                },
+                {
+                    "topic": "Use for loops with range() to iterate over a series of numbers with defined steps",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.17",
+                    "sno": "3.17"
+                },
+                {
+                    "topic": "Develop logic using for loops and conditionals to identify even and odd numbers within a range",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.18",
+                    "sno": "3.18"
+                },
+                {
+                    "topic": "Unit Test-II From 3.9 to 5.19",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-3.8",
+                    "sno": "3.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "FUNCTIONS AND ARGUMENT HANDLING",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define a function and illustrate how to call it in a Python program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Pass arguments to a function to supply input values during execution",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Return multiple values from a function using tuples, lists, or dictionaries",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain Python's argument passing mechanism (pass-by-object-reference)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Pass a list as an argument to a function and perform operations like accessing or modifying elements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Construct functions that accept a variable number of arguments using *args",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Develop functions that accept keyword variable-length arguments using **kwargs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Display the dictionary of **kwargs items inside a function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Declare global variables that can be accessed and modified inside and outside functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Differentiate between local and global scope in a function context",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-4.10",
+                    "sno": "4.10"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "ARRAYS AND NUMPY LIBRARY",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Access and print individual elements of an array using indexing or iteration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Create copies of arrays using slicing or the copy() function to avoid modifying the original",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Accept multiple values from the user and store them in an array using input functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Construct arrays using NumPy\u2019s array() function for efficient numerical data handling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Generate evenly spaced arrays using NumPy\u2019s linspace(), arange(), and logspace() functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Initialize arrays filled with zeros or ones using NumPy\u2019s zeros () and ones () functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Perform element-wise arithmetic operations (addition, subtraction, multiplication, division) on NumPy arrays",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Apply mathematical operations like square root, exponentiation, and scalar addition to all elements in a NumPy array",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Concatenate arrays using NumPy functions to merge multiple arrays into one",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Copy elements from one array to another using slicing or NumPy's copy() method",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Create a shallow copy using the view() method where changes reflect in both arrays",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Create a deep copy using the copy() method where changes do not affect the original",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Construct and manipulate multidimensional arrays (2D or higher) using NumPy",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Flatten multidimensional arrays into 1D using flatten() or ravel()",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Reshape 1D arrays into multi-dimensional arrays using reshape() by specifying dimensions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.15",
+                    "sno": "5.15"
+                },
+                {
+                    "topic": "Use array.ndim, array.view(), and array.copy() to inspect and manipulate array dimensions and copies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.16",
+                    "sno": "5.16"
+                },
+                {
+                    "topic": "Convert 1D or 2D arrays into matrices using NumPy\u2019s matrix() function or structured 2D arrays",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.17",
+                    "sno": "5.17"
+                },
+                {
+                    "topic": "Extract diagonal elements and find minimum and maximum values in matrices using diagonal(), min(), and max() functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec406e-5.18",
+                    "sno": "5.18"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 0,
     "subjectCode": "26EC406E",
     "semester": 4,

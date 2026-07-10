@@ -1,6 +1,574 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Define Industry, Commerce (Trade) and Business",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "State the need for Management",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "State the functions of Management",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the principles of scientific management",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Differentiate: i) management and administration. ii) Supervisory, middle and top level management",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain the line, staff and Functional organization structures",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "State motivation theories",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Explain Maslow\u2019s Hierarchy of needs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "List out different leadership models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain the trait theory of leadership and behavioural theory of Leadership",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Explain the process of decision making",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Explain the process of recruitment and selection",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Explain assessment of Human Resources requirements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "State the necessity of Employee participation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Explain different types of Business ownerships and compare them",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.15",
+                    "sno": "1.15"
+                },
+                {
+                    "topic": "Define social responsibilities and Corporate social responsibility. 2. Electronic Product design and Development stages",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-1.16",
+                    "sno": "1.16"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the concept of product development with a block diagram",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Classify different types of Electronic Products",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the Techno Commercial Feasibility of a product",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain customer requirements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain R&D prototype Assessment of reliability",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain factors for reliability of equipment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain quality considerations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "List the reasons for failure of an electronic product",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Explain Bathtub curve",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Explain the concept of ergonomic and aesthetic considerations of pilot production",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Explain Product packaging and storage",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Estimate power supply requirements of an electronic product",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "List two types of power supply protection devices",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Define noise reduction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Explain grounding, shielding and guarding techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "Explain Thermal management. 3. Electronic Product testing & documentation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-2.16",
+                    "sno": "2.16"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "State the importance of product testing and Environmental testing",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain Dry heat testing, Vibration testing, random testing and Bump testing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain Temperature extreme testing for linear and step stress profiles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain Vibration & temperature cycling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain EMI and EMC compliance testing standardization",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain UL and CE Certification of industrial electronic products",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "State the importance of documentation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "List different types of documentation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Explain different types of documents",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "List rules for preparation of effective document",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Explain about PCB documentation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Explain about Assembly and fabrication related documentation for Laminate grade",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Explain about the preparation a manual document",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Explain about the details of service manual",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Explain about test report/manuals",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.15",
+                    "sno": "3.15"
+                },
+                {
+                    "topic": "Explain about product documentation, Bill of materials, Production test specifications. 4. Entrepreneurship Development",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.16",
+                    "sno": "3.16"
+                },
+                {
+                    "topic": "Unit Test-II From 3.7 to 5.13",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-3.6",
+                    "sno": "3.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Define the word entrepreneur",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain the requirements of an entrepreneur",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "State the role of entrepreneurs in promoting Small Scale Industries",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain the details of self-employment schemes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "List the financial assistance programmes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "List out the organisations that help an entrepreneur",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain the use of EDP Programmes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Explain the concept of make in India, zero defect and zero effect",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Explain the importance for start-ups and incubators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "State need of MSMEs in the economic development of the nation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "State the Functions and objectives of MSMEs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Explain the procedure to start an enterprise under MSME",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "List the benefits of MSME registration in India",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "State importance of feasibility study in project management",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Explain the steps involved in Preparing feasibility study report 5. Industrial Safety and E-waste management",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-4.15",
+                    "sno": "4.15"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "State the importance of safety in the industry",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain the principles of 5\u2019S safety system",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain the major hazards which may arise from the use of electrical equipment",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain the precautions to be taken to prevent accidents while using Machines",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain method of first aid treatment for someone suffering from electric shock",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "State general electrical safety rules",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec501t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Draw the various electrical safety symbols and state their meaning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain the causes of Fire and fire accidents in industry",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "List 4 types of Portable fire extinguishers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Define E-waste and list the sources of E-waste",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Explain the environmental risks of E-waste",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "State the need for E-waste management",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec501t-5.12",
+                    "sno": "5.12"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26EC501T",
     "semester": 5,

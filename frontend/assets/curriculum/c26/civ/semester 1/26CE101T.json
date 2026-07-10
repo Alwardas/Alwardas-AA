@@ -1,6 +1,287 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "EXPLORING ENGLISH",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "To read and comprehend simple sentences in a short passage",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "To apply certain rules of spelling, correct the misspelt words and use dictionary to enrich vocabulary",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "To identify various parts of speech suitable to context and use articles & prepositions accurately",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "To describe a given situation/ picture using simple sentences",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "To value the importance of English for employability",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "EXPLORING ENGLISH Reading \u2013 Roleplay \u2013 Picture Interpretation \u2013 Sounds and Spellings \u2013 Parts of Speech \u2013 Articles and Prepositions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "THE BETTER YOU!",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "To read and comprehend formal and informal conversations",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "To use words suitable to the context in spoken and written communication",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "To use the appropriate forms of verbs",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "To engage in conversations in both formal and informal contexts",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "To demonstrate positive attitude in personal and academic spheres",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "THE BETTER YOU! Reading \u2013 Dialogue Writing \u2013 Synonyms and Antonyms \u2013 Word order \u2013 Verbs",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "DRIVE TO DESTINY",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "To read and comprehend paragraphs for specific and general information, and distinguish different types of paragraphs",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "To distinguish word pairs and use them contextually. 3. 3 To frame sentences with proper subject-verb agreement",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "To describe actions using appropriate tense",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "To set and achieve academic and personal goals",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "DRIVE TO DESTINY Reading \u2013 Paragraph Writing \u2013 Homophones, Homonyms, Homographs \u2013 Concord \u2013 Tenses",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Unit Test \u2013 2 From 4.1 to. 6.5 Unit Test \u2013 3 From 7.1 to 9.5",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-3.5",
+                    "sno": "3.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "RENEW, REWIRE & RESOLVE",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "To read and comprehend the content and structure of e -mails for different purposes",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "To recognize the root words and use appropriate affixes contextually",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "To use various kinds of sentences for different communicative situations. CO1 CE101.1 Learn and apply various English grammatical concepts to communicate in academic, professional, personal, and social contexts. CO2 CE101.2 Use appropriate vocabulary in academic, professional, and in business correspondence and on social media platforms. CO3 CE101.3 Listen and understand, read and comprehend different forms of academic, professional, and general listening and reading materials. CO4 CE101.4 Communicate effectively and fluently in oral and written forms in various life situations. CO5 CE101.5 Display scientific temper and universal human values technology for holistic development and harmonious living through demeanour and communication",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "To draft E-mails for academic and professional purposes",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "To apply the skills of critical thinking and creativity in solving problems",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "RENEW, REWIRE & RESOLVE Reading \u2013 E-mail Writing \u2013 Roots, Affixes \u2013 Kinds of Sentences",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Brains & Bots",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "To read and comprehend the description of a process with sequence markers",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "To communicate using phrasal verbs intelligibly",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "To use active and passive voice appropriately",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce101t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "To describe processes and procedures using appropriate sentence forms",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "To appraise the importance and use of robotics and artificial intelligence in human life",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "BRAINS & BOTS Reading \u2013 Describing Process \u2013 Phrasal Verbs \u2013 Voice",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce101t-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26CE101T",
     "semester": 1,

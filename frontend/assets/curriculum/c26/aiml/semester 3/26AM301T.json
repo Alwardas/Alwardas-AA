@@ -1,6 +1,448 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Define OOP",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Differentiate between Procedural Oriented Programming (POP) and Object- Oriented Programming (OOP)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List and Explain the core principles of OOP",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "State the importance of Data Abstraction and Encapsulation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Describe Inheritance and Polymorphism",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Define Class and Object in Python",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Know the creation of classes in Python",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Know the creation of objects (instances) in Python",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "State the importance of __init__ method (constructor) and self",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain Method Overloading",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Explain Method Overriding",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Explain various types of inheritance 2. Introduction to Data Structures",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-1.12",
+                    "sno": "1.12"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Define Data structure",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "List various types of Data Structures",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain Linear Data Structures",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain Non-Linear Data Structures",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Know about Time and Space complexities",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "List and Explain Abstract Data Types",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "List and Explain Built-in data structures",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Various Sorting Techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Various Searching Techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Creation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Perform insertion, deletion and traverse operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Perform search and replace an element",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain implementation of a Stack using built-in functions in python",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain implementation of a Stack without using built-in functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-2.2",
+                    "sno": "2.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain arrays in Python",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain the following for Singly Linked List",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the following for Doubly Linked List",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Creation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Perform insertion, deletion, and traverse operations",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Perform search and replace an element",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain the following for Singly Circular List",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain the following for Doubly Circular List",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Differentiate between arrays and linked lists. 4. Linear Data Structures-Stacks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Unit test-2 From 3.4 to 5.8.8",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-3.3",
+                    "sno": "3.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Creation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Perform insertion, deletion, and traverse operations",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Perform search and replace an element",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Define Stack",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain the push, pop and display operations of a Stack",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain Linked List implementation of a Stack with various operations",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "List the applications of Stacks",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Convert Infix expression to Postfix expression",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain the steps for Conversion of Infix expression to Postfix expression with program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain the steps for Evaluating Postfix expression with program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Evaluate Postfix expression 5. Queues and Trees",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-4.8",
+                    "sno": "4.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Creation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Perform insertion, deletion and traverse operations",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Perform search and replace an element",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Define Queue",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain the insertion, deletion and display operations on Queues",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain the implementation of a Queue using built-in functions in python",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain the implementation of a Queue without using built-in functions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am301t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain Linked List implementation of a Queue with various operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Explain the implementation of a Circular Queue",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "List the application of Queues",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Non-Linear Data Structures-Trees:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am301t-5.8",
+                    "sno": "5.8"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26AM301T",
     "semester": 3,

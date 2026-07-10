@@ -1,6 +1,231 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "CULVERTS",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26ce407l-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26ce407l-1.1",
+                    "sno": "1.1"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "PUBLIC HEALTH ENGINEERING WORKS",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Label the component parts of given Public health engineering structures",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Draw the sectional elevation, plan and cross section of Public health Engineering works viz., septic tank, sanitary block, overhead tank, from the set of given specifications",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Septic tank with details of connections to a dispersion trench/soak pit",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Sanitary block for a public building",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "R.C.C. rectangular/square overhead tank 3 IRRIGATION ENGINEERING DRAWINGS BY USING CAD",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-2.3",
+                    "sno": "2.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "IRRIGATION ENGINEERING STRUCTURES BY USING CAD",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Label the component parts of given Irrigation Engineering structures from the given drawings",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Draw the sectional elevation, plan and cross section of different Irrigation engineering structures from the set of given specifications",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Earthen bunds (a) Homogeneous type (b) Zoned embankment type (c) Diaphragm type",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Tank surplus weir with splayed wing walls",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Canal regulator",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-3.3",
+                    "sno": "3.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "STRUCTURAL ENGINEERING DRAWINGS BY USING CAD",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Draw the longitudinal section and cross sections of singly reinforced simply supported beam, prepare schedule of reinforcement and quantity of steel for singly reinforced simply supported beam",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Draw the plan and longitudinal section of one-way slab showing reinforcement details, prepare schedule of reinforcement and quantity of steel for one-way slab showing reinforcement details",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Draw the details of column and square footing (plan and sectional elevation)",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "STRUCTURAL ENGINEERING DRAWINGS BY USING CAD",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ce407l-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "One way slab \u2013 plan \u2013 cross section \u2013 longitudinal section \u2013 schedule of reinforcement",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ce407l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Column with square footing \u2013 plan -sectional elevation \u2013 schedule of reinforcement",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ce407l-4.3",
+                    "sno": "4.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce407l-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26CE407L",
     "semester": 4,

@@ -1,6 +1,497 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "topic": "NATURE AND SCOPE OF IRRIGATION",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Define Irrigation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "State the necessity of irrigation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List advantages and disadvantages of irrigation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "State different types of irrigation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Distinguish between 1. Perennial and inundation irrigation, 2. Flow and Lift irrigation 3. Storage and Direct irrigation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "State soil-water plant relationship",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Describe the following irrigation methods: 1.Border irrigation, 2. Check basin irrigation, 3. Furrow irrigation, 4. Sprinkler irrigation and 5. Drip irrigation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State Principal crops in India and their seasons and explain Kharif crops and Rabi Crops",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Define the following terms: 1. Duty 2. Delta 3. Base period 4. Crop period",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain different methods of expressing duty",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "State the relationship between duty and delta",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Explain the factors affecting duty",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "State the duty figures for principal crops and solve simple problems on duty",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "NATURE AND SCOPE OF IRRIGATION ENGINEERING Definitions- Necessity of irrigation - Advantages and disadvantages - Perennial and Inundation irrigation - Flow and Lift irrigation-Direct and Storage irrigation- Methods of Irrigation - Principal crops - Kharif and Rabi crops -Dry and wet crops - Definition of duty, delta, base period, and crop period, Duty -different methods of expressing duty -base period -relationship between duty and delta - factors affecting duty \u2013 Requirements for preci se statement of duty - Duty figures for principal crops-simple problems on duty",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "topic": "ELEMENTS OF HYDROLOGY",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Describe Hydrological cycle",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain the term Precipitation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "State different types of rain gauges and explain the method of measurement of rainfall using Simon\u2019s Rain gauge and Float type automatic recording rain gauge",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain precautions in setting and maintenance of rain gauges. State uses of rain fall records",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Define the following: 1. Catchment, 2. Intercepted catchment, CO1 CE403.1 Explain various methods of irrigation. CO2 CE403.2 Describe the (i) Elements of Hydrology (ii) Diversion and storage head works. CO3 CE403.3 Analyse different types of failures of dams in construction CO4 CE403.4 Discuss the alignment of canals, cross drainage works and their maintenance CO5 CE403.5 Describe 1.Soil erosion 2. Water logging 3. River Training Works and Watershed Management 3. Free catchment and 4. Combined catchment area",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "State the characteristics of 1. Good catchment, 2. Average catchment and 3. Bad catchment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain the term Run-off and factors affecting runoff",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Explain methods of estimating runoff and solve the problems on estimating run- off",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Understand the term maximum flood discharge and explain various methods of determining maximum flood discharge from rain fall records",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "State Ryve\u2019s and Dicken\u2019s Formulae and solve simple problems on estimating maximum flood discharge",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "ELEMENTS OF HYDROLOGY Precipitation \u2013 Types of rain gauges \u2013 Simon\u2019s rain gauge - Float type automatic - recording gauge \u2013 precautions in setting and maintenance \u2013 rain fall records \u2013 Hydrological cycle -Catchment basin in catchment area - Free catchment - combined catchment - Intercepted catchment \u2013 Run- off - Factors affecting run- off - Nature of catchment, run off coefficient - Methods of estimating run off - Empirical formulae Maximum flood discharge - Methods of determining maximum flood discharge from rainfall records, Ryve\u2019s and Dicken\u2019s formulae, H.F.L \u2013 Simple problems on M.F.D",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "topic": "HEAD WORKS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Classify the head works and State the suitability of different types of head works under different conditions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "State the factors for selecting suitable site for diversion head works",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Describe the component parts of Diversion works with sketch",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Distinguish between barrages and Weirs",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Describe head regulator and scouring sluice with sketch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Describe flood banks and other protective works",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Define the terms: Percolation, Percolation gradient, Uplift, scour and uplift pressure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain the effects of percolation on irrigation works",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "HEAD WORKS Classification of head works - Storage and diversion, head works - their suitability under different conditions - Suitable site for diversion works - General layout of diversion works-brief description of component parts of diversion works, brief description of component parts of a weir - Barrages and Weirs. Head Regulator- scouring sluice-flood banks and other protective works. Percolation -Percolation gradient-uplift pressures - Effect of percolation on irrigation works",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "topic": "GRAVITY DAMS AND EARTH DAMS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Distinguish between Rigid dams and Non-rigid dams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "State factors influencing selection of site for reservoirs and dams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Define the terms: Full reservoir level, Maximum water level, Top bund level, Dead storage,Live storage, Free board, Gravity dam and Spillway",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain the causes of failure of gravity dams and their remedies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Draw the elementary profile of a gravity dam for a given height and draw the practical profile of a low dam",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain uplift pressure and explain need for drainage galleries with sketches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain construction and contraction joints with sketches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "State need and types of grouting of foundations and explain the method of grouting of foundations in gravity dams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "State different types of spillways and their suitability and draw sketches",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "State the situations in which earth dams are suitable",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "State the three types of earth dams with sketches of typical cross sections",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Explain causes of failure of earthen dams and their precautions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Explain drainage arrangements in earth dams with a neat sketch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Explain the maintenance of earth dams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "GRAVITY DAMS AND EARTH DAMS Dams - Rigid and non-rigid dams - main gravity dams-failures of gravity dams and remedial measures - elementary profile \u2013 limiting height of dam - low dam and high dam - free board and top width \u2013 Practical profiles of low dam - uplift pressure - drainage gallery - Contraction joints - Grouting of foundations \u2013 spillways. Earth dams \u2013 situations suitable for Earth Dams - Types of earth dams - Causes of failure of earth dams and precautions -drainage arrangements - Construction details of earth dams - breaching sections - breach filling - Maintenance of earth dams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Unit Test-II From 5.1 to 7.11",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-4.14",
+                    "sno": "4.14"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "topic": "DISTRIBUTION WORKS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "State the Classification of canals",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "State the different methods of canal alignment and the situations in which each is suitable",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Sketch typical cross sections of canals in cutting, embankment and Partial cutting",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce403t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Explain balanced depth of cutting and its necessity",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "State the need for canal lining and State advantages and disadvantages of canal linings",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain different types of canal linings",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Explain the maintenance required for canals and their regulation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "State need for cross drainage works and State different types of cross masonry works (cross regulator, drainage & communication) and their objectives",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Describe the following with sketches 1. Aqueduct, 2. Super passage, 3. Under tunnel, siphon, 4. Level crossing and 5. Inlet and outlet",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "DISTRIBUTION WORKS Canals-classification-different methods of canal alignment -typical cross section of canal in cutting, embankment, partial cutting and embankment \u2013 Berms - standard dimensions - balancing depth of cutting - canal lining - Necessity - types \u2013 Maintenance of canals. Cross drainage works - Necessity \u2013 General description of aqueducts \u2013 Super passage \u2013 Under tunnel - siphon level crossing- Inlet and outlet",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce403t-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 75,
     "subjectCode": "26CE403T",
     "semester": 4,

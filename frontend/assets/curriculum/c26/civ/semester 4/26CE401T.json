@@ -1,6 +1,420 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION TO R.C.C",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Differentiate Cement concrete and Reinforced cement concrete. List the advantages and disadvantages of R.C.C",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List the materials used in R.C.C. and their functions in R.C.C. State the reasons for using steel as reinforcement",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List the different codes used in R.C.C. List the Loads to be considered in the design of R.C. elements",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "State the different grades of concrete. Differentiate the nominal mix concrete and design mix concrete",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Write the equations of tensile strength and modulus of elasticity of concrete as per IS 456 \u2013 2000. State properties of concrete viz., Poisson\u2019s ratio, Creep, Shrinkage, Workability and Unit weight",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "List different types of steel used in RC structures. State modulus of elasticity and unit weight of steel",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "State different methods of designing R.C. elements. State the differences between the Working stress method and Limit state method of design of R.C. elements",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "INTRODUCTION TO R.C.C Introduction - advantages and disadvantages of R.C.C - Loads to be considered in the design of RC elements - Introduction to I.S Codes -Different grades of concrete\u2014 Nominal Mix \u2013 Design Mix \u2013 differences-different methods of design of RC elements",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "PHILOSOPHY OF LIMIT STATE DESIGN",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Define Limit State. State different limit states",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Distinguish \u2018strength\u2019 and \u2018service ability\u2019 limit states",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "List different IS: 456 \u2013 2000 code provisions for Limit state method of design",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Define characteristic strength of materials and characteristic loads",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain the role of partial safety factors in limit state design",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Define Design strength of materials and Design loads",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "State the assumptions made in the limit state design",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "PHILOSOPHY OF LIMIT STATE DESIGN Codes of practice of R.C.C design - Characteristic compressive strength - Modulus of elasticity of concrete - Strength and serviceability limit states - Characteristic strength of materials and characteristic loads - Partial safety factors - Design strength of materials and design loads - Assumptions made in the limit state design",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "ANALYSIS AND DESIGN OF RECTANGULAR BEAMS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Sketch stress and strain diagrams for a singly reinforced rectangular beam indicating appropriate stress and strain values in compression zone and tension zone of the beam, also the strain value at the junction of parabolic and rectangular stress blocks. C alculate the depth of rectangular and parabolic stress blocks",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain \u2013 why the over reinforced sections are not recommended? Calculate the maximum depth of neutral axis. Calculate the limiting value of moment of resistance with respect to concrete and steel. Calculate the limiting percentage of steel",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "State the general design requirements for beams in limit state design as per IS 456 \u2013 2000 (Effective span, limiting stiffness, minimum tension reinforcement, maximum tension reinforcement, maximum compression reinforcement, spacing of main bars, Cover to reinforcement, side face reinforcement.)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Calculate the depth of neutral axis for a given section and decide whether the section is balanced or under reinforced or over reinforced and calculate the moment of resistance for the respective case. Calculate the area of steel for a given beam with given cross section and loading",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Design a singly reinforced beam as per IS 456 \u2013 2000 for flexure only with the given grade of steel and concrete and check the designed beam for deflection as per IS 456 \u2013 2000",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the effect of shear on beam. Explain the shear stress distribution across a homogeneous section and reinforced concrete section with sketches. Explain the design shear strength and maximum shear stress in different grades of concrete as per IS 456 \u2013 2000. Explain the need for shear reinforcement and different forms of shear reinforcement provided in beams. Explain the critical section for shear",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Calculate the shear strength of concrete, shear resistance of vertical stirrups, shear resistance of bent up bars as per IS 456 \u2013 2000. State the minimum shear reinforcement and maximum spacing of shear reinforcement as per IS 456 \u2013 2000. Calculate the nominal shear stress, shear resisted by bent up bars and spacing of vertical stirrups",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Design the shear reinforcement for beams. Design a singly reinforced beam as per IS 456 \u2013 2000 with the given grade of steel and concrete and check the designed beam for shear and deflection as per IS 456 \u2013 2000 and design the shear reinforcement as per 456 \u2013 2000",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "State the situations which require doubly reinforced beams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Determine the moment of resistance for a given doubly reinforced section (given d\u2019/d \u2013 fsc values)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Calculate the allowable working load on singly reinforced beam",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Calculate the development length of bars in compression, tension, and the curtailment position for main tension bars. State the importance of anchorage values of reinforcement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Design a singly and doubly reinforced simply supported rectangular beams for the given grades of materials, span and loading for flexure including shear design with the curtailment of reinforcements and check for the deflection using simplified approach of the code",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "ANALYSIS AND DESIGN OF RECTANGULAR BEAMS Stress-strain diagram of singly reinforced R.C.C. beam - Depth of neutral axis, lever arm \u2013 M.R of Singly reinforced rectangular section \u2013 Balanced, under and over reinforced sections - Critical percentage of steel - Calculation of moment of resistance of the given section - Design of singly reinforced rectangular beam for the given load as per IS 456-2000 - Doubly reinforced sections \u2013 Necessity \u2013 use - Shear in singly reinforced beams - Nominal shear stress - Permissible shear stress - Methods of providing shear reinforcement in the form of vertical stirrups - combination of vertical stirrups and bent up bars - Code provisions for spacing of stirrups and minimum shear reinforcement (no derivation of equations) - Development of bond stress in reinforcing bars - Design bond stress - Development length \u2013 Bond and anchorage concepts and their importance - Curtailment of tension reinforcement - Simple problems on development length - Design of simply supported singly and doubly reinforced rectangular beams for flexure including shear and check for deflection using stiffness criteria - Use of design aids (SP-16)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "DESIGN OF SLABS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Distinguish one-way slabs and two-way slabs",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "List the types of slabs based on support conditions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain the general design requirements of slabs as per IS 456 \u2013 2000",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain the functions of distribution steel in slabs",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Sketch the general reinforcement details for a 1) One-way simply supported slab 2) Two way simply supported slab 3) One-way continuous slab 4) Cantilever slab continuous over a support",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain the edge strip and middle strip of a two-way slab",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Sketch the general reinforcement details for a continuous two -way slab for its edge strip and middle strip using straight bars and bent up bars",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Design one-way slab for given grades of materials, loads and span for flexure and check for shear and deflection",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Explain Load distribution in two-way slabs. Design two-way slab with different end conditions for flexure using B.M coefficients. Calculate the area of torsional reinforcement in the restrained slabs. Check the deflection using simplified approach of stiffness criteria",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "DESIGN OF SLABS Slabs as structural and functional members - One way and two way slabs - Minimum reinforcement and maximum spacing of reinforcement concrete cover - Stiffness criterion- stiffness ratios for simply supported, cantilever and continuous slabs - One way and two way slabs with various end conditions as per I.S:456 code - Design of one-way slab for flexure and shear for the given grades of concrete, steel, span and loading - Check for deflection using simplified approach of stiffness criteria - Design of two -way slabs with different end conditions, using B.M coefficients for the unrestrained and restrained conditions as per code - Design of torsion reinforcement for the restrained slabs - Deflection check using stiffness criteria",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Unit Test \u2013 II From 5.1 to 7.6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce401t-4.9",
+                    "sno": "4.9"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "ANALYSIS OF T-BEAMS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Distinguish T- beam and L- beam",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "List the advantages of a T- beam",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Write formula for effective width of flange of a T - beam and L- beam as per IS 456 \u2013 2000",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Calculate the effective width of flange of an isolated T- beam as per IS 456 \u2013 2000",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Describe the three cases of determining Neutral axis depth of T-beams with sketches and notations",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Calculate the depth of neutral axis and moment of resistance of the given T - section using the expressions given in the code",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "State the minimum and maximum reinforcement in T- beams as per 456 \u2013 2000",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "DESIGN OF T-BEAM Conditions needed for design of a beam as T-Section \u2013 Advantages - Code provisions for effective flange width - Three cases of T- beams - Neutral axis, lever arm and moment of resistance for under reinforced, balanced sections using the equations given in the code (no derivations of equations) - Calculation of the moment of resistance of T- section using the equations given in the code - Use of design aids (SP16)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce401t-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26CE401T",
     "semester": 4,

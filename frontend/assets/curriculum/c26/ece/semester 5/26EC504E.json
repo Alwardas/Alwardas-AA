@@ -1,6 +1,119 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Introduction to PLC Identify the specified parts of PLC -Functions of PLC Parts -Identify different programming devices types -Differentiate different types of PLCs -redundancy concept of PLC",
+                    "period": 9,
+                    "type": "theory",
+                    "id": "26ec504e-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "PLC Hardware Discrete Ac input -DC input modules - Analog input modules - Discrete Ac output-DC output modules - Analog output modules -relay-isolated output modules",
+                    "period": 9,
+                    "type": "theory",
+                    "id": "26ec504e-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "PLC Programming and applications I/O addressing modes of PLC -instruction set of PLC -Elements of different programming language used to program PLC-Develop PLC Ladder program for given industrial application",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ec504e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Unit Test-II From 3.3 to 5.6",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ec504e-3.2",
+                    "sno": "3.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Introduction to SCADA Applications of SCADA -block diagram of SCADA \u2014SCADA configuration - Differentiate between SCADA and PLC",
+                    "period": 9,
+                    "type": "theory",
+                    "id": "26ec504e-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Explain the interfacing of SCADA with PLC: i) Connection diagram ii) Object linking and embedding for process control (OPC) Architecture",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec504e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain the Steps for creating SCADA screen for simple object",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec504e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain the Steps for linking SCADA object",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec504e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain the concept of Tag, types of Tags and addressing of Tags",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec504e-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain Alarm generation and trend types",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec504e-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "SCADA interfacing and applications. Interfacing of SCADA with PLC \u2014steps required for creating SCADA screen - Concept of tag and types of tags-Block diagram of SCADA system for Industrial applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec504e-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26EC504E",
     "semester": 5,

@@ -1,6 +1,497 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Basics of Data Communication: Components, Data Representation, Data Flow: Simplex, Half-Duplex and Duplex",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Analog and Digital Signals, Periodic and Non-Periodic Signals",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Define Sine Wave characteristics: Amplitude, Frequency, Phase, Wavelength",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Digital Signal concepts: Bit-rate and Bit-length",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Define Transmission Impairment \u2013 Attenuation, Distortion and Noise",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Define Performance - Bandwidth, Throughput, Latency, Jitter (Basic concepts only)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Identify various Transmission Modes \u2013 Parallel and Serial Transmission, Asynchronous and Synchronous Transmission",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Overview and classification of networks: LAN, MAN, WAN, PAN",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.15",
+                    "sno": "1.15"
+                },
+                {
+                    "topic": "State the need and benefits of Networking",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.16",
+                    "sno": "1.16"
+                },
+                {
+                    "topic": "Importance of Network standards and communication models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.17",
+                    "sno": "1.17"
+                },
+                {
+                    "topic": "Explain OSI Model: architecture and functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.18",
+                    "sno": "1.18"
+                },
+                {
+                    "topic": "Explain TCP/IP Model: architecture and functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.19",
+                    "sno": "1.19"
+                },
+                {
+                    "topic": "Comparison of OSI and TCP/IP models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.20",
+                    "sno": "1.20"
+                },
+                {
+                    "topic": "Explain various network Topologies: Bus, Ring, Star, Mesh, Hybrid \u2013 with advantages/disadvantages",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.21",
+                    "sno": "1.21"
+                },
+                {
+                    "topic": "Network Hardware: Repeater, Hub, Switch, Router, NIC, Modem, Gateway",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.22",
+                    "sno": "1.22"
+                },
+                {
+                    "topic": "Wireless Technologies: Wi-Fi and Bluetooth Unit 2: Physical and Data Link Layer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.23",
+                    "sno": "1.23"
+                },
+                {
+                    "topic": "Role of Session Layer in the OSI model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Session establishment, maintenance, and termination",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Define basic security principles (CIA triad)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Firewalls: types, configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Intrusion Detection Systems (IDS) \u2013 basic idea",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-1.3",
+                    "sno": "1.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Network Layer",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Transport Layer",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Role of Presentation Layer in the OSI model",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Data formatting, encryption/decryption-Private Key & Public Key",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Cryptography and compression",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Discuss the principles and uses of Virtual Private Networks (VPNs)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain the key features and applications of Delay Tolerant Networks (DTN)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explore the role of Sensor Networks in intelligent applications",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Describe Vehicular Networks, and their role in intelligent transport systems",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-2.4",
+                    "sno": "2.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Physical Layer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Data Link Layer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Introduction to Network Addressing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List and describe the Components of IP Address",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "List and explain IP Address Classes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Define subnet and describe the necessity of sub-netting",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Illustrate sub-netting and Subnet mask calculations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain sub-netting with a simple example",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "List the advantages and disadvantages of sub netting",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Describe the Internet Protocol Addressing: IPv4 and IPv6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "State the need for IPv6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Explain about Classful addressing and classless addressing in IPv4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Describe Internet protocol version-6 (IPv6) addressing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Routing: Static vs. Dynamic Routing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "List the functions of Router",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "HTTP \u2013 Hypertext Transfer Protocol",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "FTP \u2013 File Transfer Protocol",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "SMTP \u2013 Simple Mail Transfer Protocol",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "DNS \u2013 Domain Name System",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Telnet \u2013 Remote login protocol",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Unit test-2 From 3.2 to 5. 2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-3.1",
+                    "sno": "3.1"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Transport Layer Services",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Addressing: Port Numbers",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Connection establishment (3-way handshake) and connection release",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Flow Control, Error Control \u2013 Sliding window",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the features of UDP",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "TCP and UDP: differences Unit 4: Session, Presentation & Application Layers Concepts",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm403t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain the functions of Session Layer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain the functions of Presentation Layer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Application Layer Protocols: Purpose and working principles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Address Resolution & Configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "DHCP \u2013 Dynamic Host Configuration Protocol (Dynamic IP assignment)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "ARP / RARP \u2013 Address Resolution Protocol and Reverse ARP (IP-to-MAC and MAC-to-IP mapping) Unit 5: Network Security and Emerging Concepts",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm403t-4.2",
+                    "sno": "4.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain about Network Security",
+                    "period": 9,
+                    "type": "theory",
+                    "id": "26cm403t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Overview of Emerging Concepts",
+                    "period": 9,
+                    "type": "theory",
+                    "id": "26cm403t-5.2",
+                    "sno": "5.2"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26CM403T",
     "semester": 4,

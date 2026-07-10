@@ -1,6 +1,595 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION TO ARTIFICIAL NEURAL NETWORK",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Define Neural Networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Understanding the biological neuron",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain Model of Artificial neural network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Describe Types of activation Functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain Architectures of Neural Network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain Learning process in Artificial neural network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Understand Taxonomy of neural networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Discuss real life applications of Neural networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Perceptron",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Perceptron Learning rule",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Perceptron Function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Inputs of a perceptron",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Activation functions of a perceptron",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Output of Perceptron",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Perceptron decision function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Introduction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Hopfield Network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "BiDirectionalA ssociative memory 249",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Introduction To Artificial Neural Networks Fundamentals Of Neural Networks \u2013 Model of Artificial Neuron \u2013 Activation functions - Neural Network Architectures \u2013 Learning process in ARTIFICIAL NEURAL NETWORK \u2013 Taxonomy Of Neural Network Architectures \u2013 Applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "FEED FORWARD NEURAL NETWORKS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Explain perceptron",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Analyze Training Algorithms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Discrete",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Continuous",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "List Limitations of Perceptron Model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain Credit Assignment problem",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Analyze Back propogation Algorithm",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Feed Forward Neural Networks Introduction toperceptron \u2013Training Algorithms - Perceptron\u2013 Limitationsof the Perceptron\u2013 Model- Credit Assignment Problem\u2013Back propagation (BP) Algorithm",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "Identity function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Threshold/step function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Rectified linear unit function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Sigmoid function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Hyperbolic tangent function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "OTHER ARTIFICIAL NEURAL NETWORK ARCHITECTURES",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Explain Associative Memory",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List the Applications of Associative memory",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain Adaptive Resonance Theory (ART)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "ART1",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "ART2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Applications of ART",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain Competition based artificial neural network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Temporal/sequential Relationships",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Spatial relationships",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Vanishing gradient",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Over fitting",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Other Artificial Neural Network Architectures Associative Memory\u2013Exponential BAM\u2013Adaptive Resonance Theory-ART1\u2013 ART2\u2013Applications\u2013Neural Networks Based On Competition",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "Single layer feed forward network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Multilayer feed forward network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Recurrent network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Kohonen self-organizing maps",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Counter propagation network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "DEEP LEARNING",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define Deep learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "List the Applications of Deep learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Discuss Issues in Feed forward Networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Describe Deep learning networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Convolution neural networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Recurrent neural networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Long short term memory networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Support vector Machines",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain Convolution Neural network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Hopfield network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Elmann etwork",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Jordan network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Deep Learning Overview-Applications of deep learning-issues in feed forward networks- Deeplearning networks- Convolutional Neural Network- Applications of CNN",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "Generalized Delta Rule",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Derivation of Back propogation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Summarization of back propogation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Convolution neural network design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Training Convolution neural network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Limitations of Convolution neural network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "RECURRENT NEURAL NET WORK",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Define recurrent neural networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Distinguish Feed forward neural networks andr ecurrent neural networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List the Applications of Recurrent neural networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain the Structure of RECURRENT NEURAL NETWORK",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain Limitations of RECURRENTL NEURAL NETWORK",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Recurren Tneural Networks Introduction-Feed forward neural networks Vs Recurrent neural networks- Applications of Recurrent neural networks, Structures of Recurrent Neural Network- Limitations of RECURRENTL NEURAL NETWORK REFERENCES 1. Machine learning, pearson -- Saikat Dutt, Subramanian chandramouli, Amitkumar Das 2. Machine Intelligence, Notionpress\u2014Sureshsamudrala 3. FundamentalsofNeuralnetworks LaureneFausett 4. Charu C.Aggarwal \u201cNeural Networks and Deep learning\u201d Springer International Publishing,2018 5. SatishKumar,\u201c Neural Networks, A Classroom Approach\u201d,Tata McGraw-Hill, 2007 6. Simon Haykin,\u201cNeural Networks, A Comprehensive Foundation\u201d, 2nd Edition, Addison Wesley Longman, 2001. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS Unit Test Learning outcomes to be covered Unit test-1 From 1.1 to 3.3.1 Unit test-2 From 3.3.2 to 5.6",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am505e-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 0,
     "subjectCode": "26AM505E",
     "semester": 5,

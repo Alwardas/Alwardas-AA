@@ -1,6 +1,504 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "BIOMEDICAL SUBSYSTEM AND BIO ELECTRIC POTENTIALS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Describe various subsystems of human body",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Describe the characteristics of human cell",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Define resting potential and acting potential",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Draw the waveform of acting potential and explain",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Draw and explain bioelectric signal waveform",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain the electrical potentials generated in brain, heart and muscle",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "List the components of medical instrumentation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "BIOMEDICAL SYSTEM AND BIO ELECTRIC POTENTIALS Human body as one system \u2013sub systems -man-Instrument System -Human Cell-Origin of bio -electric potential and propagation of action potential -resting potential-typical waveform of action potential -bio electric signal waveform - period and voltage range",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "Mention the different types of amplifiers used in biomedical instrumentation and statetheir function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "State the need for a bio-potential electrode",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Distinguish between electrode and transducer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain the electrode-electrolyte interface",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Classify the Bio-potential electrodes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Draw and analyze Electro Cardio Gram waveform",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain various lead configurations used in ECG recording",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "List the types of various electrodes used in ECG recording",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Draw the block diagram of ECG recorder and explain",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Draw and analyze Electro Encephalogram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "List the types of various electrodes used in EEG recording",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Explain the working of EEG machine with a block diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Draw and explain Electromyogram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Mention various electrodes used in EMG measurements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Explain the working of EMG system with block diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "BIO-POTENTIAL ELECTRODES AND BIO-MEDICAL RECORDERS List of types of amplifiers used in biomedical instrumentation - bio-potential electrode-need-Distinguish between electrode and transducer -electrode- electrolyte interface -types-Basics of ECG --ECG waveform -Electrodes for ECG - ECG system blocks and working -Treadmill Test-Basics of EEG -Electrodes for EEG-EEG system blocks and working - -The muscle action - EMG waveform - electrodes used in EMG measurements-EMG system block diagram-working",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "HUMAN ASSIST DEVICES",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Know muscle simulators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "State the need for a Defibrillator",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Classify Defibrillators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain the working principle of DC & AC Defibrillators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "List the advantages of DC Defibrillators over AC Defibrillators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "List the precautions to be taken while handling defibrillators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the defibrillator analyser",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "State the need of a Cardiac Pacemaker",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Classify Pacemakers on various aspects",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Mention the modes of operation of Pace maker and explain its working",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Describe Diathermy",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Explain short wave and Ultrasonic Diathermy",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "State the use of respirators and ventilator",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "HUMAN ASSIST DEVICES Muscle Simulators-Defibrillator-classification- DC & AC Defibrillators - advantages of DC Defibrillators - Defibrillator analyzer - Cardiac Pacemaker - types of Pace makers -modes of operation of Pace makers \u2013Diathermy- short wave and Ultrasonic Diathermy- respirators and ventilators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Unit Test-II From 4.1 to 5.14",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-3.13",
+                    "sno": "3.13"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "UNDERSTAND WORKING AND APPLICATIONS OF IMAGING SYSTEMS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "List the different types of Biomedical imaging systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Describe the function of X-ray unit",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "List the applications of X-ray machine",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "List the features of portable X-ray machine",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Describe Radiography",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Describe the method for Computerized Tomography (CT)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Describe the working of ultrasound diagnostic system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Describe the working of Magnetic Resonance Imaging",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "List the applications of MRI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "State the need of PET scan",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "IMAGING SYSTEMS Types of imaging systems -X-rays-function, Applications -portable X -ray machine-features- Radiography- Computerized Tomography - ultrasound diagnostic system working - Magnetic Resonance Imaging -working, applications- need of PET scan",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "UNDERSTAND PATIENT MONITORING SYSTEMS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "State the principle of Biotelemetry",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain patient monitoring in ICU and draw the system of arrangement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Draw information transfer system and explain",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "List the common remote patient monitoring devices",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Know the medical features of smart watch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Explain the principle of measuring the blood pressure and heart beat using smart watch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "State the use of glucometer and mention its uses",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain the principle of Pulse Oximeter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Explain the physiological effects of electrical current",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Mention effects of macro and micro shock",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Mention preventive measures to reduce shock hazards",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "PATIENT MONITORING SYSTEMS Biotelemetry- Intensive Care and Patient monitoring in ICU - system arrangement- information transfer system \u2013remote patient monitoring devices - smart watch -features, measurement of blood pressure and heart beat - glucometer-uses-pulse oximeter - physiological effects of electrical current - major and minor shock -preventive measures to reduce shock hazards - maintaining safe environment- telemedicine",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec404e-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 0,
     "subjectCode": "26EC404E",
     "semester": 4,

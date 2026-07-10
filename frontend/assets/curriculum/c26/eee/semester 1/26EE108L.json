@@ -1,6 +1,266 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Introduction to Introduction & Fundamentals",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Introduction & Fundamentals",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Introduction & Fundamentals",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-1.6",
+                    "sno": "1.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "To prepare a Straight joint/Married joint using a 7/20 Al. Cable \u25cf Identify the size of thecable \u25cf Perform splicing of Insulationproperly. \u25cf Perform Straight joint/Marriedjoint",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee108l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "To prepare a T joint using a 7/20 Al. Cable \u25cf Insert the leads of the wires properly as per the sketches. \u25cf Twist the wiresproperly",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee108l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "To prepare a Western union joint using a single strand Al. Cable \u25cf Overlap the two wiresproperly \u25cf Twist the binding wiresproperly",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee108l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "To prepare a Pig tail joint using a single strand Copper Cable \u25cf Place the wires inV-shape. \u25cf Twist the wires in clock wisedirection",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee108l-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "To control one lamp by one 1- way switch with PVC surface conduit wiring system \u25cf Draw wiringdiagram \u25cf Identify the size of cable, PVC pipe, type of1-way switch and lampholder. \u25cf Make Connections as per WiringDiagram",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee108l-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "To control two lamps by two 1- way switches with PVC surface conduit wiring system \u25cf Draw wiringdiagram \u25cf Handle the screw driver, electrician Knife, line tester to fix the PVC pipe using saddles and junctionboxes. \u25cf Select colour and length of wire for phase and neutral \u25cf Switch on the supply after making of the connections",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee108l-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "To control one lamp and 2/3 pin socket by two1-way switches with PVC surface conduit wiring system \u25cf Connect 2/3 pin socket properly with respect to phase, neutral andearth. \u25cf Connect phase wire throughswitches",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee108l-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Stair-case wiring \u25cf Select two 2-wayswitches \u25cf Connect 2- way switches as per circuitdiagram. \u25cf Test with 1-phase, 230V, 50 Hz supply to the circuit connected through ICDPswitch",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee108l-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Go-down wiring scheme \u25cf Draw wiringdiagram \u25cf Connect the circuit as per thediagram. \u25cf Observe sequence of operation ofswitches \u25cf Test with 1 -phase,230 V,50 Hz supply to the circuit, neutral wire to the bottom point of the 1- way switch and phase to the first point of lamp holder",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ee108l-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Series-Parallel connection \u25cf Select colour and length of wire for phase and neutral. \u25cf Make connections as per wiringdiagram. \u25cf Draw wire through PVC pipeproperly \u25cf Observe glow intensity of lamps for series and parallelconnections",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ee108l-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Control two sub circuits through Energymeter,MCB\u2019sandtwo1- way switches \u25cf Draw wiringdiagram. \u25cf Identify the size of cable,1-way switch, PVC pipe, MCB, capacity of Inverter andSocket \u25cf Read the specifications of MCB, capacity of Inverter andSocket \u25cf Make connections as per wiringdiagram. \u25cf Draw wire through PVC pipeproperly. \u25cf Connect supply to Inverter through MCBproperly. \u25cf Select appropriate socket with switchcontrol. \u25cf Make earth wire connections for requiredpoints",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ee108l-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Prepare switch board with star delta starter, MCB, Pilot lamps for 3 phase motor \u25cf Select the size of cable, PVC pipe, star-delta starter, MCB and lampholder \u25cf Make connections as per wiringdiagram. \u25cf Draw wire through PVC pipeproperly. \u25cf Draw wire of the 3-phase to the motor through star- delta starter. \u25cf Test with 3-phase, 415 V, 50 Hz supply to the circuit connected through ICDPswitch. \u25cf Test by changing any two phases of inputsupply",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ee108l-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Wiring practice of fluorescent lamp \u25cf Make connections as per wiringdiagram. \u25cf Connect top point and bottom point of the choke to tube lightproperly. \u25cf Note the importance and working ofstarter",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ee108l-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Connect computer by main switch board with a miniature circuit breaker. \u25cf Draw wiringdiagram. \u25cf Identify the size of cable, 1-way switch, PVC pipe, MCB andSockets \u25cf Read the specifications of MCB andSockets \u25cf Make connections as per wiringdiagram. \u25cf Connect supply to Computer through MCB properly. \u25cf Select appropriate sockets with 1-way switch control. \u25cf Make earth wire connections for requirepoints",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ee108l-2.14",
+                    "sno": "2.14"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Testing and repair of domestic appliances \u25cf Inspect the appliancevisually. \u25cf Check for anydiscrepancies. \u25cf Perform the disassemblingoperation \u25cf Test the inner parts for anyfaults \u25cf Rectify the faults if any. \u25cf Replace the parts ifnecessary. \u25cf Perform theassembling. \u25cf Test theDomestic appliance for proper functioning",
+                    "period": 36,
+                    "type": "practical",
+                    "id": "26ee108l-3.1",
+                    "sno": "3.1"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Familiarize with resistance colour coding \u25cf Able to identify and calculate the resistor values by using colour coding",
+                    "period": 8,
+                    "type": "practical",
+                    "id": "26ee108l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Measurement of Resistance and Capacitance. \u25cf Able to measure the resistance and capacitance by using Multimeter",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ee108l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "To Familiarise various soldering tools and components \u25cf Identifying Soldering gun, flux, lead",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ee108l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "VI Characteristics of Semiconductor Devices \u2022 Understand the connection patterns in bread board \u2022 Identify diode,the correct rating of voltage sources and meters \u2022 Connection of circuit diagram on bread board with proper input sources and meters \u2022 Interpreting the responses of the various semiconductor devices. \u2022 Connection of devices with exact ratings as per circuit diagram in bread board \u2022 Ability to plot the VI characteristics of various semiconductor devices(PNjunction diode,Zener diode, photo diode, LDR) and to plot input/output characteristics of NPN transistor in CE configuration \u25cf",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ee108l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "To solder simple electronic circuits on PCB \u25cf Draw the layout of circuit \u25cf Carefully Soldering the circuit on PCB. Note: 1. Every student has to bring insulated tool kit and follow the general safety precautions throughout the lab sessions 2. Should not touch the live terminals",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ee108l-4.5",
+                    "sno": "4.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ee108l-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 180,
     "subjectCode": "26EE108L",
     "semester": 1,

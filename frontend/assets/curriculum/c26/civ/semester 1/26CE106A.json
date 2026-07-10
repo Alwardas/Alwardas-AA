@@ -1,6 +1,329 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Define civil engineering and state its importance in shaping the built environment",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce106a-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List the five core domains of civil engineering: Structures, Transportation, Water Resources, Geotechnical, and Geomatics",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce106a-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Identify basic engineering tasks in a project lifecycle such as site investigation, planning, design, estimation, construction, monitoring, and maintenance",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "List key emerging technologies relevant to civil engineering, including Artificial Intelligence (AI), Internet of Things (IoT), 3D Printing, and Robotics",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain the significance of innovation in solving real -world civil engineering problems using suitable examples. 2. AI IN CIVIL ENGINEERING",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-1.5",
+                    "sno": "1.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Define artificial intelligence in simple terms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Identify the basic types of AI systems (rule -based systems, machine learning, and deep learning) with simple examples relevant to civil engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "List commonly used general -purpose AI tools and describe their typical uses: (Google Gemini, Amazon Alexa, Microsoft Copilot, Apple Siri)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "List AI tools commonly used in civil engineering and explain their basic purpose: (ChatGPT, SketchPro AI, PlanFinder.ai, AutoDraw)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "List two everyday examples of AI applications (e.g., voice assistants, recommendation systems)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain the three-step AI workflow: data \u2192 pattern \u2192 advice",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Describe how AI tools can help find weak spots in buildings",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Describe how AI can detect cracks in bridge photos",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Describe how AI can predict peak traffic times on a road",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Describe how AI can forecast rising water levels in a river",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Demonstrate an AI-driven colour transformation of a 2D elevation drawing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Demonstrate how AI can generate a simple 3D view from a 2D plan. 3. 3D PRINTING IN CONSTRUCTION",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-2.12",
+                    "sno": "2.12"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Define 3D printing and compare it with traditional construction methods in simple terms",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List commonly used 3D printing materials in construction, such as plastic filaments and printable concrete",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain how 3D printing works using the concept of building an object layer by layer",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Describe the basic idea of \u201cslicing\u201d a 3D model before printing",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Identify simple design rules needed for 3D printing, like avoiding big overhangs or using supports",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Outline the full process of 3D printing a small construction part (from design \u2192 slicing \u2192 printing \u2192 curing)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Create a paper -based model to simulate how layers build up a 3D -printed structure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "List at least two beginner-friendly 3D printing software tools or platforms 4. ROBOTICS & AUTOMATION IN CONSTRUCTION",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-3.8",
+                    "sno": "3.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Define a robot and name its basic parts (frame, sensors, actuators, controller)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain how a robot works using a simple control loop: Sense \u2192 Think \u2192 Act, with the help of a basic diagram",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Identify common robots used in construction, such as bricklaying robots, rebar- tying robots, and drones",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Describe what a proximity sensor and a limit switch do in a robot system",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain how a motor (servo or DC) helps the robot move or perform actions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Discuss one main advantage (like higher speed or better accuracy) and one challenge (like high cost or rough site conditions) of using robots at construction sites",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Draw a basic block diagram of a motorized wheelbarrow with labels for sensors, motors, and other key parts",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Suggest a simple tool or machine that uses automation (like a power -assisted trolley) to make work easier on a construction site. 5. INNOVATION SHOWCASE & INTELLECTUAL PROPERTY",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-4.8",
+                    "sno": "4.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Define what \u201cinnovation\u201d means in simple terms and its importance in solving real-life problems",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Use the SCAMPER method (Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Rearrange) to come up with new or improved ideas for simple civil-engineering elements",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Draw a neat and clear sketch of an idea that can be used for making a model",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Build a small model or prototype using simple materials like cardboard or foam boards",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce106a-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "List the materials needed and steps to be followed for making the prototype",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Create a poster or display board showing the problem, their idea, and how it helps",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Present the idea and model to classmates in a short and clear explanation (project pitch)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain the basics of intellectual property: what a patent is and how it differs from design registration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce106a-5.8",
+                    "sno": "5.8"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 60,
     "subjectCode": "26CE106A",
     "semester": 1,

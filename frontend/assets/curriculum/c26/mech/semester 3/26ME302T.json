@@ -1,6 +1,98 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 5,
+            "title": "olume of the Given Fuels.",
+            "totalPeriods": 90,
+            "topics": [
+                {
+                    "topic": "FUELS AND COMBUSTION",
+                    "period": 8,
+                    "type": "theory",
+                    "id": "26me302t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Define the Terms Fuel and Classify Fuels with Examples",
+                    "period": 8,
+                    "type": "theory",
+                    "id": "26me302t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "State the Advantages, Disadvantages and Applications of Commonly Used Solid, Liquid And Gaseous Fuels",
+                    "period": 8,
+                    "type": "theory",
+                    "id": "26me302t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Compare Solid, Liquid and Gaseous Fuels",
+                    "period": 8,
+                    "type": "theory",
+                    "id": "26me302t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Define the Term Calorific Value of a Fuel",
+                    "period": 8,
+                    "type": "theory",
+                    "id": "26me302t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Define Higher Calorific and Lower Calorific Values of Fuel with Units",
+                    "period": 8,
+                    "type": "theory",
+                    "id": "26me302t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Solve Simple Problems on Calculating the Higher Calorific Value of a Fuel and Then Lower Calorific Value of the Fuel by Using Dulong\u2019s Formula",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me302t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Describe Bomb Calorimeter for the Determination of Calorific Value of the Solid and Liquid Fuels",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me302t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Describe Junker\u2019s Gas Calorimeter for the Determination of Calorific Value of Gaseous Fuel",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me302t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Define Combustion, Reactants and Products of Combustion",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me302t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Write Chemical Equations for the Combustion of Unit Mass/Unit Volume of the Given Fuels",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me302t-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "FUELS AND COMBUSTION Fuels: Definition Of Fuel \u2013 Renewable Energy Sources And Non-Renewable Energy Sources Of Fuels-Classifications Of Fuels As Solid, Liquid And Gaseous Fuels With Examples \u2013 Merits, Limitations And Applications Of The Above Fuels - Calorific Value Of Fuels \u2013 Higher And Lower Calorific Values \u2013 Dulong\u2019s Formula \u2013 Simple Problems \u2013 Determination Of Calorific Values Of Solid And Liquid Fuels By Using Bomb calorimeter and Gaseous Fuels By Using Junker\u2019s Gas Calorimeter. (Description Only). Combustion: Definition Of Combustion- Write Combustion Chemical Equations For The Combustion Of Carbon, Hydrogen, Sulphur, Methane And Ethane \u2013 Calculation Of Minimum Air Required For Complete Combustion Of Fuel On Mass Basis And Volume Basis \u2013 Simple Problems \u2013 Need Of Excess Air. REFERENCE BOOKS 1. Engineering Thermodynamics, P. K. Nag, McGraw Hill Education Publishers 2. Thermodynamics, 2004, C. P. Arora, McGraw Hill Education Publishers 3. Thermal Engineering - J.K.Guptha and R. S. Khurmi, S. Chand& Company Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Out comes to be covered Unit Test \u2013I From 1.1 to 3.4 Unit Test \u2013II From 3.5 to 5.11",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me302t-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26ME302T",
     "semester": 3,

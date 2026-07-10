@@ -1,6 +1,343 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Introduction to Cyber Security",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Define cyber security and explain its fundamental principles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List and explain different layers of security",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Classify and list various types of Cyber Attacks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain different web-based attacks such as phishing, SQL injection, and cross-site scripting",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain system-based attacks such as malware, ransomware, and DoS/DDoS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Define and differentiate between vulnerability, threat, and harmful acts with examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Describe internet Governance \u2013 Challenges and Constraints",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Define Computer Criminals and CIA Triad (Confidentiality, Integrity, Availability)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Identify the motives of attackers (financial, political, hacktivism, espionage)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain types of Attacks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "What is Security Policy and explain different policies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-1.11",
+                    "sno": "1.11"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Cyberspace and the law & Cyber forensics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Define cyberspace and explain its characteristics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Describe global and national cyber security regulations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Discuss NIST compliance and its relevance to cyber security standards",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain National Cyber Security Policy of India \u2013 objectives, strategies, and limitations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Define the term Cyber Forensics and Digital Forensics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain the need for computer forensics in cybercrime investigation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain different approaches for analysis of email Forensics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Discuss different tools of email forensics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Describe life cycle of digital Forensics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "List different types of Forensics Investigations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Discuss different challenges faced in computer forensic investigations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Unit test-2 From 2.6 to 4.5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-2.5",
+                    "sno": "2.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Cybercrime in Mobile and Wireless Devices",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm404e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "List different Mobile and Wireless devices",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm404e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Describe current trends in mobility and connected devices",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Discuss Security Challenges specific to mobile devices, such as OS vulnerabilities and unsecured communication",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Describe Registry and configuration Settings for Mobile Devices",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Describe different types of attacks on mobile/cell phones (SIM cloning, malware, network spoofing, SMS phishing)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Describe Organizational mobile security Policies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-3.6",
+                    "sno": "3.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Privacy Issues: Basic Data Privacy Concepts",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm404e-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Explain various types of data privacy attacks such as identity theft and surveillance",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm404e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Discuss Data linking and profiling with examples",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm404e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain various Privacy policies and their specifications",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm404e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Describe privacy policy languages and their applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-4.4",
+                    "sno": "4.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm404e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm404e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm404e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm404e-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26CM404E",
     "semester": 4,

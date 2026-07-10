@@ -1,6 +1,133 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 3,
+            "title": "Probability & Statistics",
+            "totalPeriods": 90,
+            "topics": [
+                {
+                    "topic": "Define phase sequence and a balanced system related to polyphase circuits",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26ee303t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the relationships between line and phase values of voltages and currents for both balanced Star (Y) and Delta (\u0394) connected systems",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26ee303t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Calculate the power in balanced three-phase loads for both Star (Y) and Delta (\u0394) connections",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26ee303t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Differentiate between Star (Y) and Delta (\u0394) connection configurations based on their voltage, current, and power characteristics",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26ee303t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the basic principle of the two-wattmeter method for measuring three-phase power",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26ee303t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "State addition theorem of probability for two mutually exclusive and exhaustive events",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Solve simple problems on addition theorem",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain conditional event and conditional probability",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Solve simple problems on conditional probability",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain dependent, independent events and state multiplication theorem",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Solve simple problems on multiplication theorem",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Recall the measures of central tendency",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Explain the significance of measures of dispersion to determine the degree of heterogeneity of the data",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Find the measures of dispersion, Range, Mean Deviation and Standard Deviation for ungrouped data",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Explain the merits and demerits of these measures of dispersion",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Explain bivariate data",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Explain the concept of covariance and correlation between two variables",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee303t-3.13",
+                    "sno": "3.13"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26EE303T",
     "semester": 3,

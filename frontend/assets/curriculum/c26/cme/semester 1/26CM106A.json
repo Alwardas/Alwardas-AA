@@ -1,6 +1,189 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Fundamentals of Digital Computer",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26cm106a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Fundamentals of Digital Computer Computer, Hardware, Software, Firmware, High Level Language, Low Level Language - Block diagram of a digital computer, Clock speed and word length, Functional blocks of a CPU: ALU and Control unit, classification of computer memory, generations & classification of computers, binary number system",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26cm106a-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Implement Programming Methodology",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26cm106a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Programming Methodology. Steps involved in problem solving \u2013 Define an algorithm , Program - Characteristics of algorithm - Differentiate between program and algorithm- Steps involved in algorithm development - Differentiate algorithm and flowchart - Algorithms for simple problems - Symbols used in flowcharts -Flowcharts for simple problems",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26cm106a-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Introduction to coding",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm106a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "List Examples of sequential execution, selection and iteration",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm106a-3.20",
+                    "sno": "3.20"
+                },
+                {
+                    "topic": "Define bug",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm106a-3.21",
+                    "sno": "3.21"
+                },
+                {
+                    "topic": "Introduction to coding Need for coding \u2013 correlate coding with real life examples - pseudo code \u2013 process of writing pseudo code \u2013 Define Variables - naming of variables-Different data types in variables- operations on variables \u2013Different types of logical operators and their functions i.e AND , OR and NOT \u2013 combining logical AND , OR and NOT operators - different types of relational operators -Different types of control statements if, if-else - Nested control statements - loops in coding-increment loops- decrement loops \u2013 entry criteria-exit criteria-break statement-continue statement-sequential execution, selection and iteration-Define bug",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm106a-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Fun with functions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm106a-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define functions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm106a-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Examples of functions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm106a-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "List Advantages using functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm106a-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "State different function parameters",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm106a-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "State about returning a value in a function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm106a-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Define an event",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm106a-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "List different event handlers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm106a-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Fun with functions Functions-examples-user defined and built-in functions- Different function parameters-returning a value in a function - Events- Event Handlers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm106a-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Understanding arrays and collections",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm106a-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "List various types of arrays with examples",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm106a-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain the process of iterating over collections",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm106a-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Understanding arrays and collections Collections-Arrays \u2013 examples for arrays and collections-Process of iterating over collections- Modifying collections. REFERENCE BOOKS 1. Information Technology - Curtin. 2. Computer Science Theory & Application - E. Balaguruswamy, B. Sushila 3. Introduction to Computers (Special Indian Edition) - Peter Norton 4. How to solve it by computer-R.G.Dromey-Pearson Education 5.introduction to coding-class VI,VII,VIII,IX,X by cbse academic https://cbseacademic.nic.in/web_material/codeingDS/classVI_Coding_Student_Handbook.pdf",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm106a-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 60,
     "subjectCode": "26CM106A",
     "semester": 1,

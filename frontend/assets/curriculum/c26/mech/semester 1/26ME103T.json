@@ -1,6 +1,112 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 5,
+            "title": "ector, position vector,",
+            "totalPeriods": 90,
+            "topics": [
+                {
+                    "topic": "Define work done; Mention its SI unit",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me103t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Define power; Mention its SI unit",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me103t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Define energy; Mention its SI unit",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me103t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "List various forms of energy",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me103t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Define potential energy; Give examples and derive its equation",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me103t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Define kinetic energy; Give examples and derive its equation",
+                    "period": 7,
+                    "type": "theory",
+                    "id": "26me103t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Derive the relationship between kinetic energy and linear momentum",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26me103t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "State the law of conservation of energy; Give any two examples",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26me103t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "State Boyle\u2019s law; Write its equation",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26me103t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "State Charles\u2019s volume law; Write its equation",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26me103t-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "State Charles\u2019s pressure law; Write its equation",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26me103t-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Define an Ideal gas",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26me103t-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Derive the ideal gas equation (PV = nRT)",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26me103t-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Solve numerical problems on (i) Work done (ii) Potential energy (iii) Kinetic energy (iv) Relation between K.E. and momentum (v) Gas laws 6 CONCEPTS OF ACOUSTICS",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26me103t-5.14",
+                    "sno": "5.14"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26ME103T",
     "semester": 1,

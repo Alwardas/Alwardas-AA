@@ -1,6 +1,581 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction to Machine Learning",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Define Human Learning",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Define Machine Learning",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "State the Need of Machine Learning",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain Types of Machine Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Compare Supervised, Unsupervised and Reinforcement Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Define the Basic Terminology-Model, Algorithm, Training data, Test data, Features and Labels Prediction, Target, Output",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Explain the Importance and Applications of ML in real-world Domains (health care, finance,etc.)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "List the Tools used for Machine Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "List the Advantages and Disadvantages of Machine Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Relation between AI,ML, and Deep Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Explain Work flow of aM achine Learning Project",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Types of Classification Models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Types of Unsupervised Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-1.1",
+                    "sno": "1.1"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Discuss the data modeling",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Types of data",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Based on Data Format/Structure",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Based on Label",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Based on Data Type",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Structure of the data",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Discuss Data Quality and Remediation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain the data Pre-processing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain Dimensionality reduction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Describe learning of the data model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Selecting a model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Training a model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Model Representation and Interpretability",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-2.10",
+                    "sno": "2.10"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the Basic Concepts of Probability",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Importance of Statistical Tools in Machine Learning",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Concept of Probability",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Random Variable",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Discrete Distributions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Continuous Distributions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Sampling Distributions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain Hypothesis Testing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Types of Hypothesis Tests",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Explain Baye\u201fs theorem",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Explain the Bayes Classifiers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Partition-Based Clustering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Hierarchical Clustering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Density-Based Clustering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Model-Based and Grid-Based Clustering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Unit test-2 From 3.6 to 5.9",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-3.5",
+                    "sno": "3.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Supervised Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Unsupervised Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Semi-supervised Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Reinforcement learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Discrete and Continuous Random Variables",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Importance of Random Variables in ML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "ProbabilityDensityFunction(PDF) and ProbabilityMassFunction(PMF)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Classification Model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Describe the Classification Learning Steps",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Analyze the Classification Algorithms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain Working of k-Nearest Neighbor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Applications of k-Nearest Neighbor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Logistic Regression",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Decision tree",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain Working of Random Forest",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Support vector Machines",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Regression",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Evaluate Performance of Supervised Learning Models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "List the applications of Supervised Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Elbow Method",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Limitations of K-Means",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-4.2",
+                    "sno": "4.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Common Discrete Distributions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Characteristics of Discrete Distributions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Applications in Machine Learning",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain the concept of Logistic Regression",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Applications of Logistic Regression",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am403t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Introduction to Unsupervised Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Compare Supervised and Unsupervised Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain Different Types of Clustering Techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "K-Means Clustering Algorithms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Applications of k-Medoids",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Differences between k-Medoids and k-Means",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Hierarchical Clustering Algorithm",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain Apriori Algorithm",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am403t-5.8",
+                    "sno": "5.8"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26AM403T",
     "semester": 4,

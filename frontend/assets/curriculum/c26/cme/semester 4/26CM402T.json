@@ -1,6 +1,469 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Object oriented programming concepts and Basics of java and over loading",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Know about object-oriented programming",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Compare procedure-oriented programming and object-oriented programming",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List and explain features of object-oriented programming",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Importance of Java in Internet programming",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain features of Java. Define Byte codes of Java, JVM",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain data types, scope and life time of variables, comment statements in Java",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Describe conversion and casting features",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Apply one-dimensional and two\u2013dimensional arrays give example programs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Illustrates usage of conditional and iteration statements of Java with an example program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Describe usage of jump statements, break, and continue statements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Describe how to create classes and objects",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Demonstrate Usage of new operator and methods",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Explain usage of constructors with an example programs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Apply method overloading and construction overloading in applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Describe usage of \u2018this\u2019 pointer with example",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.15",
+                    "sno": "1.15"
+                },
+                {
+                    "topic": "Usage of command-line arguments",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-1.16",
+                    "sno": "1.16"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Concepts of inheritance, overriding, Interfaces, Packages and I/O Streams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Explain about string class with methods",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain implementation of inheritance with an example program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Illustrate how to implement multilevel inheritance with an example program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain method overriding and usage of super keyword",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Describe concept of Interfaces",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Define an Interface. Differences between abstract classes and interface",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain how to implement interfaces with sample program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Define a package. Explain the concept of class path",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Describe concept of Access protection",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Illustrate the mechanism of importing packages",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Give simple application to design packages with sample programs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "List different types of I/O streams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Explain how to read and write data through console input and output streams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Explain DataInputStream and DataOutputStreams with example",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "Explain various file access operation by using File-streams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "Explain sample programs on above streams",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.16",
+                    "sno": "2.16"
+                },
+                {
+                    "topic": "List",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-2.1",
+                    "sno": "2.1"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Collection classes and Exception Handling",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm402t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "What is collection frame work and Hierarchy of collection frame work",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm402t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List Collection Interfaces and explain the following with examples",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "How to access a Collection via an Iterator?",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Describe sources of errors. Types of exceptions Checked & Unchecked",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Apply following key words to handling exceptions through sample programs",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain concept of multi-catch statements with example",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Unit test-2 From 3.5 to 5.10",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-3.4",
+                    "sno": "3.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Describe multi-threading",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm402t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain Thread life cycle and states",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26cm402t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain how to Creating single thread with example program",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain how to Creating multi thread with example program",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Illustrate thread priorities in multiple threads with an example",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Describe the concept of synchronization with example program",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Describe AWT classes. Component class methods",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Working with Color Font classes",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-4.8",
+                    "sno": "4.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Event Handling and Swings",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Describe Types of Events and Demonstrate event handling mechanism",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "List and explain different event classes",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List and explain event listener interfaces",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Demonstrate handling mouse events with sample program",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Demonstrate handling keyboard events with sample program",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Swing Hierarchy",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "MVC (Model-View-Controller) pattern in Swing",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm402t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain following Containers in swings with example programs JFrame, JPanel, JDialog",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Explain following Controls with example programs: JButton JLabel, JTextField JPasswordField, JCheckBox JRadioButton, JComboBox, JList",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm402t-5.9",
+                    "sno": "5.9"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26CM402T",
     "semester": 4,

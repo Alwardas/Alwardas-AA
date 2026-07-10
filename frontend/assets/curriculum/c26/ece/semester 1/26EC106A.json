@@ -1,6 +1,497 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Introduction to Electronic CAD Tools",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Introduction to Electronic CAD tools such as TinkerCAD/EveryCircuit/PSPICE/OrCAD/ProteUs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Familiarize the circuit design environment of tools such as TinkerCAD/EveryCircuit/PSPICE, OrCAD/ProteUs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Identify various electronic components, devices, AC and DC power sources, signal generators, CRO, Voltmeter, Ammeter available in the Electronic CAD Tools",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Familiarize with setting of component parameters as per the component value",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Introduction to Electronic CAD Tools Introduction to Electronic CAD tools such as TinkerCAD /EveryCircuit/PSPICE/OrCAD and Proteus \u2013 Familiarization with the circuit design environment in different tools \u2013 Identification of electronic components and devices including resistors, capacitors, AC and DC power sources, signal generators, CRO, voltmeter, and ammeter \u2013 Setting and adjusting component parameters as per required values for circuit design and simulation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Basic Electrical Circuit",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Equivalent resistance of Resistors connected in series",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Equivalent resistance of Resistors connected in parallel",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Voltage division rule",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Current division rule Experiment.No Name of the Experiment 1 Construct a series resistive network to calculate the equivalent resistance 2 Construct a parallel resistive network to calculate the equivalent resistance 3 Construct a resistive network to verify voltage division rule 4 Construct a resistive network to verify current division rule",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Basic Electrical Circuit : Equivalent resistance of Resistors connected in series & parallel -Voltage division rule -Current division rule",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Safety precautions and cleaning a) Identify safety symbols and interpret what they mean with the help of their colour and shape b) Practice and follow preventive safety rules to avoid electrical accidents. c) Select fire extinguishers according to the type of the fire and operate the fire extinguisher to extinguish the fire. d) Practice the disposal procedure of waste materials",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Basic Circuit Simulation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Usage of basic components Resistor, Battery, LED, Switch in TinkerCAD",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Series and Parallel Circuits using EveryCircuit",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Ohm\u2019s Law Verification using EveryCircuit tool",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Comparison of circuit simulation tools TinkerCAD, EveryCircuit, PSPICE, OrCAD",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "LED control with push button using TinkerCAD",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Buzzer control with switch using TinkerCAD",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "LDR Based Night Light Simulation using TinkerCAD",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Battery level indicator using multiple LEDs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Continuity tester using buzzer and probes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Basic Circuit Simulation Usage of basic components such as resistor, battery, LED, and switch in TinkerCAD \u2013 Designing and analyzing series and parallel circuits using EveryCircuit Tool \u2013 Verification of Ohm\u2019s Law through using EveryCircuit Tool \u2013 Comparison of circuit simulation tools TinkerCAD, EveryCircuit, PSPICE, and OrCAD \u2013 Practical circuit simulations including LED control with push button, buzzer control with switch, LDR-based night light, battery level indicator using LEDs, and continuity tester using buzzer and probes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Mesh current and Node voltage Analysis",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Define the terms: branch, node, junction and loop in circuits",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Determine the number of mesh equations required to solve the given Network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Write the mesh current equations for a given network and arrange them in matrix form",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Solve the mesh currents using Cramer\u2019s rule",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Determine the number of node voltage equations for a given network",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Write the node voltage equations for a given network and arrange them in matrix form",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Solve the node voltages using Cramer\u2019s rule Experiment No Name of the Experiment 1 Construct a resistive network for a DC Source to find the loop currents , current in and voltage across each component using Mesh current Analysis for two loop & three loop networks 2 Construct a resistive network for a DC Source to find the loop currents , current in and voltage across each component using Node voltage Analysis for two loop & three loop networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Mesh current and Node voltage analysis : Define: branch, node, junction, loop - Mesh current equations \u2013 Solve problems - Node voltage equations -simple problems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Identify different Electronic Components and devices a) Identify the components, and its terminals, and test : i) Colour coded resistors, different fixed and variable type resistors, different Inductors- different types of capacitors: ceramic, disc, paper, mica, gang etc. ii) Different SMD resistors, SMD inductors, SMD capacitors iii) Diodes, Transistors, JFETs, MOSFETs iv) Relays, Switches \u2013SPST, SPDT, DPST, DPDT- Toggle-Push button \u2013Rotary-Slider \u2013Thumb Wheel v) Diode, transistor & IC\u2019s SMD packages (SOT, PLCC), vi) Different LEDs-Red LED, Blue LED, Green LED, Bi colour LED, Infrared LED, different sizes and forms, their specifications b) Familiarise with i) Bread Board ii) Bridge rectifier as a device iii) DC to DC (Ex: 12V to 5V) converter as a device Iv) Programmable Regulated power supply",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "PCB Design Basics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Drawing simple schematic using PCB Wizard & KiCad",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Converting schematic to layout using PCB Wizard & KiCad",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Component placement & footprint selection",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Manual and Auto Routing using KiCad",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Design rules and clearance checking",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Gerber File Generation using KiCad",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Practice and review of PCB layouts",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Network Theorems:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "State Thevenin\u2019s theorem",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Apply the above theorems to solve networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "State Norton\u2019s theorem",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Apply the above theorems to solve networks",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "State superposition theorem",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Solve simple problems using superposition theorem",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "State Maximum power transfer theorem for DC & AC circuits",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Solve simple problems using maximum power transfer theorem",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "State the importance of impedance matching. Experiment No Name of the Experiment 1 Construct a resistive network to calculate the current through a load using Thevenin\u2019s theorem for two different circuits 2 Construct a resistive network to calculate the current through a load using Norton\u2019s theorem for two different circuits 3 Construct a resistive network to verify super position theorem for two different circuits 4 Construct a resistive circuit to find the maximum power delivered to a load using Maximum power transfer theorem for two different circuits",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Soldering practice and Preparation of PCB a) Familiarise with Temperature controlled Soldering Station. b) Technique of using soldering iron, Soldering different components and ICs. c) Soldering components on to general purpose PCB as per the given circuit diagram. d) Technique of de-soldering using de-soldering pump and wick. e) Draw PCB for simple circuits and etch them on to a copper clad sheet. f) Preparing PCB for the given circuit",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Resonance in RLC Circuits",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ec106a-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Explain the concept of resonance in RLC series circuit",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ec106a-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Study of different measuring Instruments and Electronic equipment a) Study of AC/DC voltmeter, AC/DC ammeter, ohm meter,analog multimeter, digital multi meter. b) Study of RPS unit, CRO, Function Generator using their manuals and familiarise with the operation of each equipment. c) i)Measure Resistance using multimeter and compare with the calculated value using the colour code. ii) Measure L and C using digital LCR meter and compare with the calculated value using the code",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ec106a-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Filters & Attenuators",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec106a-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Define the terms: neper, decibel, characteristic impedance, propagation constant and Attenuation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec106a-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Define the terms: filter, LPF, HPF, BPF and BSF",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec106a-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Draw the characteristic curves for the above filters",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Give the expression for fc for constant K-LPF,HPF",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "List the disadvantages of constant K filters",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "State the function of attenuator circuit and list different types of attenuators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain T & \u03c0 type attenuators with circuit diagram Experiment.No Name of the Experiment 1 Construct a RC Low pass filter and draw its amplitude response 2 Construct a RC High pass filter and draw its amplitude response 3 Design & Construct a simple T -type attenuator circuit and find the attenuation at the output 4 Design & Construct a simple \u03c0 -type attenuator circuit and find the attenuation at the output",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Filters and attenuator: Define Neper, Decibel, Characteristic Impedance, Propagation Constant, Attenuation-Define filter, LPF, HPF, BPF, BSF- characteristic curves of filters - constant K-LPF, HPF-disadvantages \u2013Function of attenuator - T& \u03c0 attenuators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec106a-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 60,
     "subjectCode": "26EC106A",
     "semester": 1,

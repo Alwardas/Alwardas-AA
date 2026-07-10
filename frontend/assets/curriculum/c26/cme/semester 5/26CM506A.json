@@ -1,6 +1,189 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Foundations of UI/UX and Human-Centered Design",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm506a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Theory Learning Outcomes (TLOs): 1. Define UI and UX and distinguish between them 2. Describe the principles of human-centered design 3. Explain usability heuristics and accessibility guidelines 4. Understand user persona development and empathy mapping",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm506a-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Practical Learning Outcomes (PLOs): 1. Create a user persona using Canva or Figma 2. Perform a heuristic evaluation of a common website 3. Use Draw.io to develop an empathy map for a sample app 4. Conduct a short peer feedback session on usability Free Tools: Figma, Canva, Draw.io, Google Forms",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm506a-1.2",
+                    "sno": "1.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "UI/UX Design Process \u2013 User Flows and Wireframes",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm506a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Theory Learning Outcomes (TLOs): 1. List the key stages of the UI/UX design process 2. Describe how to create user flows and wireframes 3. Explain the difference between low- and high-fidelity wireframes 4. Understand the basics of information architecture and card sorting",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm506a-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Practical Learning Outcomes (PLOs): 1. Create a low-fidelity wireframe in Figma 2. Design a user flow using Lucidchart or Draw.io 3. Perform a card sorting activity using OptimalSort (free trial) or paper-based methods 4. Build a basic sitemap using GlooMaps Free Tools: Figma, Draw.io, Lucidchart, GlooMaps, Miro (free for small teams)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm506a-2.2",
+                    "sno": "2.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Prototyping and Usability Testing",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm506a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Theory Learning Outcomes (TLOs): 1. Explain the purpose of prototyping and usability testing 2. Describe different levels of prototypes (paper, digital, interactive) 3. Define key usability metrics 4. Understand how to collect and analyze user feedback",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm506a-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Practical Learning Outcomes (PLOs): 1. Create an interactive prototype using Figma\u2019s Prototyping Tool 2. Conduct a basic usability test with peers and document findings 3. Collect feedback using Google Forms and summarize user insights 4. Perform accessibility testing using WAVE browser extension Free Tools: Figma, Google Forms, WAVE, OBS Studio (for usability recordings)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm506a-3.2",
+                    "sno": "3.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Introduction to Advanced Applications & Operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-4.6",
+                    "sno": "4.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm506a-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 30,
     "subjectCode": "26CM506A",
     "semester": 5,

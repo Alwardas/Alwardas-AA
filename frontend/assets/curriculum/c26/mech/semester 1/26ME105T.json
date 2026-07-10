@@ -1,6 +1,112 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Statics",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "topic": "STATICS",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me105t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Explain the importance of Engineering Mechanics in real world",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me105t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain the concept of force",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Classify the system of forces",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the system of forces a) Co-planar and Non-coplanar, b) Parallel and Non-Parallel, c) Like and Unlike d) Concurrent and Non-concurrent",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "ExplainCompositionandResolutionofforcesandresultantofconcurrentcoplanarforces",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "State(a)parallelogram law(b)triangle law (c)polygon law of forces(d)Lami\u2019s theorem",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Problems on parallelogram law and Lami\u2019s theorem",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Explain the concept of equilibrium",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "State the conditions of equilibrium of a body acted upon by a number of co-planar forces",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Solve the problems on equilibrium of a body subjected to number of concurrent coplanar forces using Lami\u2019s theorm and equilibrium equations",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Explain moment of force and couple",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "State Varignon\u2019s theorem",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "STATICS Importance of engineering mechanics in engineering - Definition of force and its specifications - System of forces \u2013Principle of transmissibility-Composition and Resolution of force - Resultant - Equilibrant, Statement of parallelogram law of forces, triangle law of forces, polygon law of forces - Numerical problems related to the above. Equilibrium - Condition for equilibrium of a rigid body subjected to number of coplanar concurrent forces \u2013Surface and Support reactions, Free body diagrams Lami\u2019s theorm -Numerical Problems. Moment of force and moment of couple \u2013 Statement of Varignon\u2019s Principle",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me105t-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 180,
     "subjectCode": "26ME105T",
     "semester": 1,

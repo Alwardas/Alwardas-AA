@@ -1,6 +1,805 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "List different Thyristor family devices",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Draw the ISI circuit symbols for each device",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Describe constructional details of SCR",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the Operation of SCR",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain the Volt\u2013Ampere characteristics of SCR with the help of a diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Mention the ratings of SCR",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Describe how SCR can be protected against overvoltage , over current, di/dt & dv/dt",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Give the advantages of SCR as a switch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "List ten applications of SCR",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain the construction of MOSFET",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Explain the input and output characteristics of MOSFET",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Explain the construction of IGBT",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Explain the input and output characteristics of IGBT",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Explain the Volt-ampere characteristics of DIAC under forward/ reverse bias",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Explain the Volt-ampere characteristics of TRIAC under forward/ reverse bias",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.15",
+                    "sno": "1.15"
+                },
+                {
+                    "topic": "State the necessity of Commutation in SCR\u2019s",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.16",
+                    "sno": "1.16"
+                },
+                {
+                    "topic": "List various commutation methods of SCR",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.17",
+                    "sno": "1.17"
+                },
+                {
+                    "topic": "Introduction about wide band gap semi conductors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.18",
+                    "sno": "1.18"
+                },
+                {
+                    "topic": "List various wide band gap semiconductors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.19",
+                    "sno": "1.19"
+                },
+                {
+                    "topic": "List applications of wide band gap semiconductors. 2. Converters",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.20",
+                    "sno": "1.20"
+                },
+                {
+                    "topic": "Introduction to Artificial Intelligence and AI Models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Definition of Artificial Intelligence (AI)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain the Evolution of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List Features & Goals of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "List Differences between AI, Machine Learning (ML) and Deep Learning (DL)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "List Different types of AI models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Differentiate AI and Human intelligence",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Explain the Impact of AI on various industries i.e. Health Care, BFSI, Entertainment and Administration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "List Different AI tools in the market and their use",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Define Sensor and Explain the Role of Sensors in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "List Types of Sensors and their applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Explain the process of data collection using sensors interfaced with Arduino or Raspberry Pi",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-1.11",
+                    "sno": "1.11"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Classify converters",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain the working of single-phase half wave controlled converter with R load",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the working of single-phase half wave controlled converter with R-L load",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain the working of single phase full wave controlled bridge converter with Rload",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain the working of single phase full wave controlled bridge converter with R- L load",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Understand need for freewheeling diode",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain the operation of a single -phase full-wave controlled converter feeding an R -L load with a freewheeling diode",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Explain the working of three-phase half wave controlled converter with resistive load",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Explain the working of three phase full wave controlled converter with resistive load. 3. AC voltage controllers and Choppers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Basics of Machine Learning (ML) and Role of Data",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Definition of Data",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "List types of Data",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "List the Importance of Data in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "List different types of Data Collection method",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Definition of ML (Basic ideas using simple examples)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Importance of ML in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Application of ML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "List Learning methods",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Explain different Learning methods",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "List Simple ML Algorithms and their significance use in ML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-2.10",
+                    "sno": "2.10"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the working of single phase AC voltage controller with resistive load",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the working of three phase AC voltage controller with resistive load",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Compare AC voltage controller with transformer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "List the applications of AC voltage controller",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Define chopper",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the working principle of chopper",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain the different control modes of chopper",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Explain the operation of buck converter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Explain the operation of boost converter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Explain the operation of buck-boost converter. 4. Inverters",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "AI applications in Electrical and Electronics Engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "List the AI applications in Electrical and Electronics Engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain the Role of AI &ML in Smart systems and Automation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the Role of AI &ML in Smart Grids and Power System Optimization",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "State any two benefits of predictive maintenance for electrical equipment using AI and ML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain the Role of AI &ML in Predictive Maintenance for Electrical Equipment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain the Role of AI &ML in Embedded systems and IoT",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the Role of AI &ML in Renewable energy forecasting",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain the Role of AI &ML in Fault Detection and Diagnosis in power systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "List any three uses of AI in automated electronic design automation (EDA) for electronics engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Explain the Role of AI &ML in Automated Electronic Design Automation (EDA)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Explain the Role of AI &ML in Battery Management Systems 198",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-3.11",
+                    "sno": "3.11"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Define inverter 194",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Classify inverters",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Define Pulse Width Modulation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "List various Pulse Width Modulation Techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain about single, multiple and sinusoidal PWM Techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain the working of series inverter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain the working of parallel inverter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Explain the working of single-phase bridge inverter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Explain the working of three-phase bridge inverter in 1200 conduction mode",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Explain the working of three-phase bridge inverter in 1800 conduction mode",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "State the advantages of MOSFET based inverters over SCR based inverters",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "List applications of Inverters. 5 Applications of Power Electronic Circuits",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Ethics in AI, Future Scope of AI and Career awareness in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Explain Bias and Fairness in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Specify the Privacy concerns of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Essential Government regulations on use of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Mention the drawbacks of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the social implications of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Elucidate the Importance of development in responsible AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "List the Future applications and advancements in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-4.7",
+                    "sno": "4.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "List applications of power electronic circuits",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee503t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Mention the factors affecting the speed of DC Motors",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee503t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain the speed control of separately excited DC motor using converter",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee503t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain the speed control of separately excited DC motor using chopper",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain the speed control of PMDC motor using converter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "List the factors affecting speed of the AC Motors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain the speed control of induction motor by using AC voltage controller",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Explain the speed control of induction motor by using converter and inverter (V/F control)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "List the various power disturbances in power supplies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Describe about the devices used to suppress the spikes in supply system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Explain the working of UPS with block diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Describe an Electric Vehicle (EV) Charging Station with a neat block diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Explain a Power Factor Improvement Circuit using SCR with the help of a diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Explain a Solar-Based Battery Charger Circuit using DC -DC Converters with a suitab le block diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.14",
+                    "sno": "5.14"
+                },
+                {
+                    "topic": "Describe the Role of Power Electronics in Automation Systems with relevant examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee503t-5.15",
+                    "sno": "5.15"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26EE503T",
     "semester": 5,

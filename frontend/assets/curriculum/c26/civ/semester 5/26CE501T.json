@@ -1,6 +1,399 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "FUNDAMENTALS OF LIMIT STATE DESIGN OF STEEL STRUCTURES",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "State common types of steel structures, their merits and demerits",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List the loads considered in the design of steel structures as per I.S:875- 1987 and describe them",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Understand the code of practice I.S. 800-2007",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "List physical and mechanical properties of structural steel",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Sketch different types of rolled steel sections and explain its classification based on their cross sections",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "List types of elements",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Explain the concept of Limit State Design, define \u2018limit state\u2019 and state the types",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Define Characteristic action, Design action and Design strength",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "State the partial safety factor values for loads in limit state of strength and serviceability and for materials in limit state",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "State the deflection limits for Simply supported beam, Cantilever beam and Purlins",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-1.10",
+                    "sno": "1.10"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "DESIGN OF FILLET WELDED JOINTS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "State different types of joints",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Differentiate the welded joints and Riveted joints",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Sketch the different forms of welded joints",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain the features of a fillet welded joint",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "State stresses in welds as per I.S.800-2007",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "State formula for design strength of a fillet welded joint",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Calculate the design strength of a fillet welded joint",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Design a fillet welded joint for a single angle and double angle sections",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-2.8",
+                    "sno": "2.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "DESIGN OF TENSION MEMBERS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Define \u2018 tie\u2019",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "State the applications of tension members",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Sketch different forms of tension members and understand their behaviour of tension members",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "State and describe different modes of failures of tension members with sketches",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "State the maximum values of effective slenderness ratios as per code",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Determine the net effective area of single angle section connected to a gusset plate by welding",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Determine the design strength due to yielding of gross section, rupture of critical section and block shear failure of a single angle section connected by welding",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Understand design procedure of tension members. Design a single angle tension member connected by welding only",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Unit Test \u2013 II From 4.1 to 7.5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-3.8",
+                    "sno": "3.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "DESIGN OF COMPRESSION MEMBERS, COLUMNS AND COLUMN BASES",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Understand, State and sketch different types of compression members (like column, strut)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Sketch different forms of compression members and understand their behaviour and state the classification of cross sections",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Define the terms 1. Least radius of gyration and 2. Slenderness Ratio and distinguish between actual length and effective length and also state effective lengths to be used for different end conditions",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Understand buckling class of cross section based on Imperfection factor, stress reduction factor and column buckling curves and state maximum values of effective slenderness ratios as per code",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Understand the design compressive stress for different column buckling Classes, Determine the design strength of compression members",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Understand design procedure of compression members and design of columns with I sections and built-up channel sections",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Understand design details , effective sectional area , codal provisions for angle struts and design single angle and double angle struts",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Understand codal provisions of lacing and battening systems for built -up columns",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Design a slab base along with a cement concrete pedestal and also design the welded connection",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-4.9",
+                    "sno": "4.9"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "DESIGN OF STEEL BEAMS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Understand the concept of limit state design of beams , Define the terms: Elastic moment of resistance, Plastic moment of resistance, Elastic section modulus, Plastic section modulus and Shape factor",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Determine the shape factor values for rectangular, Tee and I-sections",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Understand the behaviour of steel beams, Classify beams based on lateral restraint of compression flange",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Determine the design strength in bending (flexure) and in shear for laterally supported beams and list the factors affecting lateral stability and influence of type of loading",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Distinguish between web buckling and web crippling and understand the failure of beams by flexural yielding and list the types of failure of beams by flexural yielding",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Understand laterally supported beam, holes in tension zone, shear lag effects and design bending strength",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce501t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Understand laterally unsupported beam, lateral torsional buckling of beams (theoretical concept only \u2013 no problems) and explain effective length of compression flanges",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Understand concept of shear in beams and resistance to shear buckling., shear buckling design methods like Simple post critical method and Tension field method and also understand the design of simple beams with solid webs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Understand component parts of plate girders with sketches and describe different types of Stiffeners with their suitability",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Design laterally supported simply supported beam considering all codal requirements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce501t-5.10",
+                    "sno": "5.10"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26CE501T",
     "semester": 5,

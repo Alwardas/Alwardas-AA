@@ -1,6 +1,525 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 24,
+            "topics": [
+                {
+                    "topic": "Identify various carpentry tools",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Distinguish between marking tools, measuring tools and cutting tools",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List work holding devices",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain wood working processes viz., sawing, chiselling and planning",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain the use of carpentry joints such as lap joint, dovetail joint, mortise and tenon joint with legible sketch",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain the working of wood working machines. Practical:",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "INTROCTION & CARPENTRY Introduction Methods of manufacturing processes - casting, forming, metal removal processes, joining processes, surface finishing processes, basic workshop processes - carpentry, fitting, hand forging, machine forging, sheet metal work, cold and hot working of metals. Carpentry Theory (The equipment will be demonstrated and explained in the lab.): Marking & measuring tools: scales, rules, , flexible measuring rule (tape), straight edge, try square, bevel square, combination square, marking knife, marking gauge, mortise gauge, cutting gauge, wing compass, trammel, divider, spirit level, plum bob, specifications- uses. Cutting Tools: Saws: ripsaw, cross cut saw (hand saw), panel saw, tenon or back saw, dovetail saw, bow saw, coping saw, compass saw, pad or keyhole saw, specifications & uses. Chisels: Firmer chisel, bevelled edge firmer chisel, parting chisel, mortise chisel, inside and outside gauges, specifications and uses. Planes: Jack plane (wooden jack plane, metal jack plane. Striking tools: Hammers - Warrington hammer, claw hammer, mallet, Specifications & uses. Holding devices:Bench vice, bench stop, bench hold fast, sash cramp (bar cramp) G - cramp, Hand screw, specifications & uses. Carpentry Processes :Marking, measuring, sawing, chiselling, planning, grooving, Rebating. Carpentry joints: Halving Joint, mortise and tenon joint, butt joint. dowel joint, tongue & groove joint, screw & slot joint, dovetail joint, corner joint. Wood working machines: Wood working lathe (wood turning lathe), circular saw, band saw, wood planer, sanding machine, belt sander, spindle sander, disc sander and grinder, specifications and uses. Practicals:",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Cutting of wood with hand saw",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Planning of wood",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Planning and chiselling of wood",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Preparation of dovetail joint",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Mortise and tenon joint",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Wood turning on a lathe",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Preparation of one household article",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-1.7",
+                    "sno": "1.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 24,
+            "topics": [
+                {
+                    "topic": "List various fitting tools",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Distinguish between marking and measuring tools",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "List cutting tools",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "List various work holding devices",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "List various checking and measuring instruments",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Explain fitting operations such as marking, sawing, chipping, filing, grinding, drilling and tapping with legible sketch",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "State the working principle of drilling",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "List two types of drilling machines",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Describe the Sensitive drilling machine with line diagram",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Describe the radial drilling machine with line diagram",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Mention the specifications of drilling machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Explain the nomenclature of the drill bit",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Sketch the geometry of twist drill",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "List the functions of twist drill elements",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "List different operations on drilling machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "Differentiate between jigs and fixtures",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.16",
+                    "sno": "2.16"
+                },
+                {
+                    "topic": "List different types of Jigs and fixtures Practical:",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.17",
+                    "sno": "2.17"
+                },
+                {
+                    "topic": "Marking and chipping on Mild \u2013 steel flat 12 mm thick",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Cutting with hack saw, M.S. Flats of 6 mm thick",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Drilling, chamfering on a MS flat of 12 mm thick",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Tapping and Dieing on a MS flat of 12 mm thick",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Assembling of two pieces, Matching by filing (6 mm thick M.S. Plate)",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-2.5",
+                    "sno": "2.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 24,
+            "topics": [
+                {
+                    "topic": "List various tools used in black-smithy",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List equipment used in a forging shop",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the important smithy operations",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain the working principle of machine forging",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain machine forging operations such as upsetting, drawing down and punching with legible sketch",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain the working principle of forging press with legible sketch",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "List the forging defects. Practical:",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Conversion of round to square",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Conversion of round to Hexagon",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Preparation of chisel from round rod",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Preparation of ring and hook from M.S. round",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Preparation of a hexagonal bolt and nut",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-3.5",
+                    "sno": "3.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 24,
+            "topics": [
+                {
+                    "topic": "List various marking tools in sheet metal work",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "List various stakes",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "List various measuring tools used in sheet metal work",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "List various sheet metal joints",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Describe sheet metal operations such as shearing, bending drawing and squeezing",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Differentiate between riveting, soldering & brazing. Practical:",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Preparation of a rectangular open type tray",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Preparation of funnel",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Practice on cutting of sheet",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me108l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Formation of joints like grooved joints, locked groove joint",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Preparation of a rectangular open type tray",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Preparation of hollow cylinder",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Preparation of pipe elbow",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Preparation of funnel",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Preparation of utility articles such as dustpan, kerosene hand pump. REFERENCEBOOKS 1. Production Technology by Jain & Gupta (Khanna Publishers) 2. Elementary Workshop Technology by Hazra Chowdary& Bhattacharya (Media Promoters) 3. Manufacturing Technology(Vol I) by P NRao (Mc Graw Hill) 4. Workshop Technology Vol I & II by Raghuvamshi 5. Workshop Technology by R.S. Khurmi & J.K.Gupta",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me108l-4.7",
+                    "sno": "4.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 24,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me108l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me108l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me108l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me108l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me108l-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me108l-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 120,
     "subjectCode": "26ME108L",
     "semester": 1,

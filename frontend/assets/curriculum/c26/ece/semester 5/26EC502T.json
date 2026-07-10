@@ -1,6 +1,679 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Overview of Fibre Optic Communication",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec502t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "State the advantages of fiber optic communication system over EM wave systems",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec502t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain about different windows of wavelengths used in Fiber Optic Communication",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain the structure of optical fibre",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the method of fiber drawing process",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Classify optical fibres based on refractive index profile",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "List the types of fibres based on core diameter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Define Single mode fibre (SMF) and multimode fibre (MMF)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Define Snell\u2019s law in optics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Explain principle of light wave propagation in OFC",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Define critical angle and derive the its formula",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Define acceptance angle and cone of acceptance",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Derive the formula for acceptance angle",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Define numerical aperture (NA)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Derive the expression for NA in terms of refractive indices of core and cladding. Lab Experiment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Demonstrate the procedure to measure NA of a fiber experimentally",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-1.15",
+                    "sno": "1.15"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Fibre Optic Components and Devices",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "List various fibre optic components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "State the need of splicing in optical fibres",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the experimental procedure to measure splice losses of a fiber",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "State the need for optical coupler/splitter",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "List two types of sources used in OFC",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "List the salient features of an optical source",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "List two types of detectors used in OFC",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "List the salient features of an optical detector",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "State the principle of LASER",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Explain the construction and working of LASER source (Fabry Perot Resonator Cavity)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Explain the construction and working of Avalench Photo Diode (Reach Through APD)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Draw the block diagram of fibre optic communication system and explain each block",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Explain intrinsic and extrinsic losses in optical fibres",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "Classify different types of dispersion losses occur in optical fibres",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.14",
+                    "sno": "2.14"
+                },
+                {
+                    "topic": "State the limitations of TDM in fiber optic communications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.15",
+                    "sno": "2.15"
+                },
+                {
+                    "topic": "State the need for WDM in fibre optic communication",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.16",
+                    "sno": "2.16"
+                },
+                {
+                    "topic": "Draw the block diagram of WDM system and explain",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.17",
+                    "sno": "2.17"
+                },
+                {
+                    "topic": "Draw the block diagram of DWDM system and explain. Lab Experiment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.18",
+                    "sno": "2.18"
+                },
+                {
+                    "topic": "Establish an experimental setup for a fiber optic analog link and verify",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.19",
+                    "sno": "2.19"
+                },
+                {
+                    "topic": "Establish an experimental setup for a fiber optic digital link and verify",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.20",
+                    "sno": "2.20"
+                },
+                {
+                    "topic": "Establish an experimental setup for a fiber optic voice link and verify",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.21",
+                    "sno": "2.21"
+                },
+                {
+                    "topic": "Perform an experiment to measure the attenuation of a fiber",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.22",
+                    "sno": "2.22"
+                },
+                {
+                    "topic": "Perform an experiment to measure the bending losses of a fiber",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-2.23",
+                    "sno": "2.23"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Cellular system design fundamentals",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "List the limitations of conventional mobile phone system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain the evolution of cellular mobile communication system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Draw the block diagram of a basic cellular system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Define the terms mobile station and base station",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "State the functions of Mobile Switching Centre (MSC)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Define forward and reverse channels in mobile communication",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Define voice and control channels in mobile communication",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Explain the process of call progress in a cellular telephone system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "State the need for hexagonal cell site",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Explain the concept of Frequency reuse",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Define the terms cell and cluster related to Mobile communications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Define Co-Channel Reuse ratio and obtain its relation with cluster size",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Explain the capacity of a cellular system and derive its expression",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Define Hand-off in mobile communication",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Explain the radio subsystem of analog cellular system (AMPS)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.15",
+                    "sno": "3.15"
+                },
+                {
+                    "topic": "List the drawbacks of analog cellular system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.16",
+                    "sno": "3.16"
+                },
+                {
+                    "topic": "Unit Test-II From 3.9 to 5.14",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-3.8",
+                    "sno": "3.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Digital Cellular Mobile System and Multiple access Techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "List the features of digital cellular system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain the frequency spectrum of Global system for mobile communication (GSM) system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain the architecture of GSM",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "List various interfaces in GSM architecture",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "List the service and security aspects of GSM",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain the authentication and encryption process used in GSM security",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "List the advantages of GSM",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "List the draw backs of GSM system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Distinguish between multiplexing and multiple access",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "State the need for multiple access techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "List the types of multiple access techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Explain FDMA and list its features",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Explain TDMA and list its features",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Explain the frame structure of a TDMA used in GSM",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Explain the concept of spread spectrum technique",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.15",
+                    "sno": "4.15"
+                },
+                {
+                    "topic": "Explain CDMA and list its features",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.16",
+                    "sno": "4.16"
+                },
+                {
+                    "topic": "Compare FDMA, TDMA and CDMA",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.17",
+                    "sno": "4.17"
+                },
+                {
+                    "topic": "Explain the concept of OFDM",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-4.18",
+                    "sno": "4.18"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Advanced Concepts in Digital Cellular Mobile system",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec502t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "List the features of GPRS and EDGE systems",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec502t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Compare the features of GSM, GPRS and EDGE systems",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec502t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List the salient features of 3G system",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ec502t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "List the advantages of 3G over earlier versions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain the architecture of 3G Cellular System (UMTS)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Explain briefly about soft-handoff and power control in CDMA",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Distinguish between hard-off and soft-hand-off",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "List the salient features of 4G Cellular system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Explain the VoLTE architecture of IP Multimedia Subsystem (IMS)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "List different IMS applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "List the salient features of 5G Cellular System",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Explain the architecture of 5G Cellular system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Explain about 5G NR technology",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec502t-5.13",
+                    "sno": "5.13"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26EC502T",
     "semester": 5,

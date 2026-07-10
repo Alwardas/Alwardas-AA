@@ -1,6 +1,427 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "Define cloud computing, including basic terminology",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Describe the history and evolution of cloud computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List the core features and principles of cloud computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Define and distinguish recent computing trends:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Identify the major cloud service providers currently in the market",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Enumerate challenges in cloud computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Summarize the advantages and disadvantages of cloud computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-1.7",
+                    "sno": "1.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "Trace the main eras of computing leading up to cloud computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain parallel computing:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Define parallel computing and its key concepts",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Describe hardware architecture for parallel processing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain approaches and levels of parallelism",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Understand distributed computing:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Identify technologies for distributed computing:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-2.4",
+                    "sno": "2.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "Define distributed computing and its general concepts",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List components and architectural styles (software and system) for distributed systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain models for inter-process communication",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Define virtualization and explain its importance",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Enumerate the characteristics of virtualization",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Classify and explain major virtualization techniques:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Machine Reference Model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Hardware Level Virtualization and its techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "OS Level Virtualization",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Programming Language Level Virtualization",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Application Level Virtualization",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Discuss the role of virtualization in enabling cloud computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Analyze the pros and cons of virtualization for organizations and users",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Recognize popular virtualization technologies:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Illustrate the working of cloud computing architectures",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "List and define the main cloud service models:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Compare and contrast IaaS, PaaS, and SaaS based on features and use cases",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Public Cloud: Definition, working, pros, and cons",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Private Cloud: Definition, working, pros, and cons",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Hybrid Cloud: Definition, working, pros, and cons",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Community Cloud: Definition, working, pros, and cons",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Unit test-2 3.4 to 4.5",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-3.3",
+                    "sno": "3.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "Cluster Computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Grid Computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Distributed Computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Utility Computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Remote Procedure Call (RPC)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Distributed Object Framework",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Service-Oriented Computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Cloud Deployment Models and Cloud Economics",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "List and define types of cloud deployment models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "State the purposes and use cases for each model",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Deep dive into:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Discuss the economics of cloud computing:",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Cost considerations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Operational versus capital expenditure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Scalability and business agility benefits",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Appreciate ongoing and emerging trends impacting cloud computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-4.5",
+                    "sno": "4.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 0,
+            "topics": [
+                {
+                    "topic": "Edge Computing, Serverless Computing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "AI and Machine Learning in the Cloud",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Cloud Security Innovations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm405e-5.3",
+                    "sno": "5.3"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 0,
     "subjectCode": "26CM405E",
     "semester": 4,

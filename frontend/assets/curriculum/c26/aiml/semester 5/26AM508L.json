@@ -1,6 +1,273 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Identify different works to be carried out in the Project",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26am508l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Collect data relevant to the project work",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26am508l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Carryout need survey",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26am508l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Select the most efficient method from the available choices based on preliminary investigation",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26am508l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Design the required elements of the project work as per standard practices",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26am508l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Prepare the working modules / equipment required for the project work",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26am508l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Estimate the cost of project, technological need, computer skills, materials and other equipment",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26am508l-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Prepare the plan and schedule of starting time and sequence of operations to be carried out at various stages of the project work in detail",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26am508l-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Prepare critical activities at various stages of the project work",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26am508l-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Test various conditions with different electrical input parameter if required",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26am508l-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Implement project work and record the results",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26am508l-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Draw Appropriate Conclusions",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26am508l-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Preparation of project report. 2. Communication",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26am508l-1.13",
+                    "sno": "1.13"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "KEY COMPETENCIES Exp . No. Name of the experiment Objectives Key Competencies 1 Exercise on installing python,scipy packages (a)Installation of python (b)Installing scipy packages using Anaconda a)observe the installation of the packages 2 Exercise on basic mathemati cal operations on data types (a) Write a program for implementing vectors and matrices (a) Compile the program and rectify the errors (b) Use numpy package (c) Execute the program (d) Observe the output for different data values 264 3 Exercise on creating , loading and saving .CSV file (a)Create a datafile in Excel (b)Save the file with .CSV extension (c)Load the .CSV file (a)Create and save the .CSV file (b)Loading of .CSV file (c)Compiling and executing the program (d)Observe the output 4 Write a program using pandas to merge two CSV files into a singleData Frameand save the result to a new CSV file (a)Create a datafile in Excel (b)Save the file with .CSV extension (c)Load the.CSV file (a)Create and save the .CSV file (b)Loading of .CSV file (c)Compiling and executing the program (d)Observe the output 5 Exercise on Calculation of mean , median, variance, standard deviation, quartiles ,inter quartiler ange. (a) Write a program to implement statistical calculations (b)Apply the program on appropriate data values (a) Identify the appropriate data values (b) Use Numpy package (c) Observe the errors (d) Correct the program and execute. 6 Exercise on basic plots Using mat plotlib for an example dataset (a) Write a program for implementing basic plots. (b) Apply the program on sample data set.. (a) Use Matplotlib package of python to generate basic plots (b) Execute the program on sample dataset (c) Observe the output 7 Exercise on data preprocessin g operations on a dataset. (a) Write a a program to handle outliers and missing values in the dataset (a)Identifying and removing outliers/ missing values (b)Test the program for a given dataset 8 Program to to predict a student\u2019s score based On the (a)program to predict as student\u2019s score based on the number of hours studied (b)use Simple Linear (a) Student data (b) Use Simple Linear Regression (c) Observe the output 265 number of hours studied using Simple Linear Regression Regression 9 Exercise on model training using Sk learn. (a) Write a program to train a model (a) Use SK learn package (b) Differentiating test dataset and training dataset using hold out method (c) Stabilizing the dataset using K- fold cross validation (d) Generating samples of given size from training data by boot strap sampling (e) Training the model (f) Observe the output 10 Exercise on Feature construction and feature extraction for a sample data set. (a) Write a program to implement feature construction (b) Write a program to implement feature extraction using PCA (a) Use Pandas package (b) Dummy coding the categorical variables (nominal) (c) Encoding categorical (ordinal) variables (d) Transforming numeric features to categorical features (e) Using PCA for feature extraction in a dataset. (f) Observe the output 11 Exercise on Feature Subset selection for a model data set. (a) Write a program to implement feature subset selection (a)Selecting a subset of features in a dataset to improve the performance (b)Observe the output 12 Write a program to implement the na\u00efve Bayesian classifier for a dataset (a)Write a program to implement na\u00efve Bayesian classifier algorithm. (a)Use SK Learn package (b)Importing a dataset (c)Applying na\u00efve Bayesian classifier to classify the dataset (d)Calculating the accuracy of the classifier (e)Analyzing the output 13 Write a program to implement k- Nearest Neighbour algorithm (a)Write a program to implement KNN Algorithm for supervised learning (a) Use SK Learn package (b) Importing a dataset (c) Applying KNN classifier to classify the dataset (d) Calculating the accuracy of the classifier (e) Analyzing the output 266 14 Implement decision tree Algorithmto classify a dataset a)write a program to implement decision tree algorithm (a) Importing a dataset (b) Applying decision tree classifier to classify the dataset (c) Calculating the accuracy of the classifier (d) Analyzing the output 15 Program to demonstrate the working of the decision tree based ID3 algorithm. a)Write a program to implement ID3 algorithm (a) Importing a dataset (b) Applying ID3 algorithm to classify the dataset (c) Calculating the accuracy of the classifier (d) Analyzing the output 16 program to implement K- Means Clustering algorithm for a sample data set (a) Write a program for K-Means clustering algorithm (a) Use SK learn package (b) Importing a dataset (c) Applying K-Means algorithm to cluster the dataset (d) Calculating the accuracy of the classifier (e) Analyzing the output 17 program to apply K- Means clustering to a customer dataset containing annual income and spending score, and plot the clusters using matplotlib (a) Write a program to apply K -Means clustering to a customer dataset containing annual income and spending score, and plot the clusters using matplotlib (a) Use SK Learn package (b) Importing a dataset (c) Apply K-Means clustering to a customer dataset (d) Analyzing the output 18 program to implement the SVM classifier for a sample training data set a)Write a program to implement the SVM classifier for a sample data set (a) Importing a dataset (b) Applying SVM algorithm to classify the dataset (c) Calculating the accuracy of the classifier (d) Analyzing the output 267 19 program to implement the simple linear regression algorithm (a) Write a aprogram to implement the linear regression algorithms (a) Importing a dataset (b) Applying linear regression algorithmt o classify the dataset (c) Calculating the accuracy of the classifier (d) Analyzing the output 20 program to implement single layer feed forward neural networks a) Write a program to implement single layer feed forward neural networks (a) Installing neuro lab package (b) Executing the program (c) Observe the output 21 Program to implement Multi layer feedf orward neural networks. (a) Write a program to implement multilayer feed forward network (a) Installing neurolab package ( b) Executing the program (c)Observe the output REFERENCES 1. Machine learning Pearson---Saikat Dutt,Subramanian Chandra mouli, Amit Kumar https://deepakdvallur.weebly.com/machine-learning-laboratory.html 2. https://github.com/DaNgLiN/ML-LAB-PROGRAM-vtu--15csl76 3. http://vtu.babivenu.in/wp-content/ uploads2019/08/CSE-7th-Sem- MACHINE-LEARNING-LABORATORY-csml1819.pdf 4. https://www.tutorialspoint.com/machine_learning_with_python/machine_learning_ with_python_tutor ial.pdf 5. WWW.Kaggle.comforDatasetsin.CSVformat TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS Unit Test Learning outcomes to be covered Unit test-1 From 1 to 10 Unit test-2 From 11 to 21 268 PROJECT WORK",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26am508l-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Communicate effectively",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26am508l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Present Ideas Clearly",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26am508l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Present Ideas Coherently",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26am508l-2.3",
+                    "sno": "2.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction to System Design & Methodology",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of System Design & Methodology",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of System Design & Methodology",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-3.6",
+                    "sno": "3.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction to Advanced Applications & Operations",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26am508l-4.6",
+                    "sno": "4.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Give respect and value to all classmates, educators, colleagues, and others",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26am508l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Understand the health, safety, and environmental impacts of their work",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26am508l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Recognize the constraints of limited resources",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26am508l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Develop sustainable products and processes that protect the health, safety, and prosperity of future generations",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26am508l-5.4",
+                    "sno": "5.4"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26AM508L",
     "semester": 5,

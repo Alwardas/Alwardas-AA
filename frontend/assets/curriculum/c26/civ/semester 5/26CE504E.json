@@ -1,6 +1,273 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION",
+                    "period": 9,
+                    "type": "theory",
+                    "id": "26ce504e-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "ORGANIZATIONAL ASPECTS",
+                    "period": 9,
+                    "type": "theory",
+                    "id": "26ce504e-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "MANAGEMENT TOOLS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce504e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Define CPM and PERT",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "State the advantages of CPM and PERT",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the use of bar chart and its limitations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Prepare Network diagram using basic rules of network formation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Calculate Project duration using CPM network ",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "State the limitations of CPM",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Distinguish between CPM and PERT",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-3.8",
+                    "sno": "3.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "CONTRACT, TENDERS AND ARBITRATION",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define contract, State the contents of a contract document, and explain different contract systems available for construction works",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "List the merits and limitations of each of the contract systems, List the general conditions of contract for a civil engineering construction project",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Define tender, Explain the need for calling of tenders, List the steps involved in fixing up agency through tender system",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Draft a tender notice for a work, Prepare tender documents",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the need of earnest money and security deposits",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Prepare a comparative statement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain the method of selecting a contractor from the tenders, List out the conditions of contract agreements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Define E-procurement. Know about portals for e-procurement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Define the terms Dispute and Arbitration, Explain the scope for disputes in a construction industry",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "State the need for arbitration, List the qualifications of an arbitrator, List the advantages of arbitration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Define insolvency. Consequences of insolvency in construction industry",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Unit Test \u2013 II From 4.5 to 7.2",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-4.4",
+                    "sno": "4.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "MANAGEMENT OF RESOURCES IN CONSTRUCTION",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Explain the scope of materials management, Classify the common building materials based on the procurement, Explain different Stages of materials management",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain the points to be observed in the storage of perishable and non - perishable store materials, Explain the terms Indent, Invoice and Bin card, Explain the importance of verification of stores",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain the need for mechanization, Explain the need for optimum utilization of plant and equipment, Explain the financial impact of mechanization",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain about the preventive maintenance of plant and equipment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain the importance of training of operators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Explain the need for overhauling or replacement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "State the importance of finance as a resource",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Explain the different stages at which cost control can be achieved",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Explain the financial control at head office level and site level",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce504e-5.10",
+                    "sno": "5.10"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26CE504E",
     "semester": 5,

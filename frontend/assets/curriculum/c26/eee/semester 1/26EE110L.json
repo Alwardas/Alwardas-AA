@@ -1,6 +1,56 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 3,
+            "title": "MS Word",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Introduction to MS Word",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ee110l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of MS Word",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ee110l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ee110l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ee110l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ee110l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of MS Word",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ee110l-3.6",
+                    "sno": "3.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26EE110L",
     "semester": 1,

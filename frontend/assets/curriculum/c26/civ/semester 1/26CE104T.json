@@ -1,6 +1,420 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Basic Concepts of Chemistry",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Explain the charge, mass of fundamental particles of an atom (electron, proton and neutron)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Understand the concept of Atomic number and Mass number",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Calculate the number of electrons, number of protons and number of neutrons in atoms, if Atomic number and Mass number are given",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the Postulates of Bohr\u2019s atomic theory and its limitations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain the values and significance of four Quantum numbers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Define Orbital of an atom and draw the shapes of s, p orbitals",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Distinguish between orbit and orbital",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Explain (i). Aufbau principle (ii). Hund\u2019s rule and (iii). Pauli\u2019s exclusion principle",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Write the Electronic configuration of elements up to Atomic number 20",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain the significance of chemical bonding",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Understand the concept of Octet rule",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Define Ionic bond and explain it in the formation of NaCl",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Define Covalent bond and explain it in the formation of H2, O2 & N2 molecules (Lewis Dot Method)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "List out the Properties of Ionic compounds and Covalent compounds and distinguish between their properties",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Understand the electronic concept of oxidation, reduction and redox reactions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-1.15",
+                    "sno": "1.15"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Solutions, Acids and Bases",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Define the terms: (i). Solution (ii). Solute and (iii). Solvent with examples",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Classify solutions based on physical state of solvent with examples",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Define the terms: (i). Atomic weight, (ii). Molecular weight, and (iii). Equivalent weight",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Calculate Molecular weight and Equivalent weight of the given Acids (HCl, H2SO4, H3PO4), Bases (NaOH, Ca(OH)2, Al(OH)3 and Salts (NaCl, Na2CO3, AlCl3)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Define Mole and solve numerical problems on Mole concept",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Define Molarity, Normality and solve numerical problems on Molarity and Normality. (a). Calculate the Molarity & Normality, if Weight of solute and Volume of solution are given. (b). Calculate the weight of solute, if Molarity or Normality with volume of solution are given",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain Arrhenius theory of Acids and Bases and give its limitations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Define pH and mention its Significance",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Define buffer solution and classify buffer solutions with examples. Give its applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Unit Test \u2013 2 From 3.1 to 5.10 Unit Test \u2013 3 From 6.1 to 8.10",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-2.9",
+                    "sno": "2.9"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Electrochemistry",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Define the terms (i). Conductor (ii). Semiconductor (iii). Insulator. (iv). Electrolyte (Strong and Weak) and (v). Non-electrolyte. Give two examples for each",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Define Electrolysis and Explain electrolysis by taking an example of molten NaCl",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "State the applications of electrolysis",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Understand Electrode potential and Standard reduction potential (SRP)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Define electrochemical series and state its significance",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Define Galvanic cell. Explain the construction and working of Galvanic cell",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Distinguish between electrolytic cell and galvanic cell",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Define battery and list the types of batteries with examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Explain the construction, working and applications of (i). Dry cell (Leclanch\u00e9 cell) and (ii). Lithium-ion battery",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-3.9",
+                    "sno": "3.9"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Corrosion",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce104t-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define the term corrosion",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce104t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "State the factors which influencing the rate of corrosion",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce104t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Describe the formation of (a). Composition cell (b). Stress cell and (c). Concentration cell during corrosion",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce104t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Define rusting of iron and explain the mechanism of rusting of iron",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce104t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the methods of prevention of corrosion by: (a). Protective Coatings (through flow chart with examples) and (b). Cathodic Protection Methods. ((i). Sacrificial Anode Process and (ii). Impressed Voltage Process)",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ce104t-4.5",
+                    "sno": "4.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Water Treatment",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Define soft water and hard water",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Define hardness of water and classify its types",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List out the salts that causing hardness of water (with Formulae)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "State the disadvantages of using hard water in industries",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Define Degree of hardness and units of hardness (mg/L and ppm)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Explain the method of softening of hard water by Ion exchange method (By indicative reactions)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce104t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain the concept of Reverse Osmosis in removing hardness of water",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "List out the applications and advantages of reverse osmosis technique",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "List out the essential qualities of drinking water/potable water",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Explain Municipal treatment of water for drinking purpose (only flow chart)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce104t-5.10",
+                    "sno": "5.10"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26CE104T",
     "semester": 1,

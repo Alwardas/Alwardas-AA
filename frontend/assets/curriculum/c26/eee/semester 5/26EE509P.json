@@ -1,6 +1,343 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Generate and develop innovative ideas based on electrical and electronics engineering principles",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Identify, define and analyze engineering problems related to the project",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Gather and interpret relevant technical information from various sources",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Evaluate alternative solutions or design approaches",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Apply appropriate engineering concepts to develop and implement the project",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Use laboratory equipment, hardware, software and simulation tools proficiently",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Demonstrate skills in measurement, testing and troubleshooting",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Interpret results effectively and draw valid technical conclusions",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Demonstrate innovative thinking and entrepreneurial approach in developing project solutions 2. Communication and Reporting:",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Projects involving Design, Development, Assembly, Performance Analysis or Case Studies in core and emerging areas of Electrical and Electronics Engineering",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Communicate technical ideas and project outcomes clearly through oral and written forms",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Present project content in a structured, logical and coherent manner",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Prepare professional technical reports and documentation",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Use appropriate digital tools (e.g., PowerPoint, simulation demos) for effective presentations",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Communicate project outcomes effectively to academic, industry, and societal audiences. 218 3. Teamwork and Leadership:",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Core and emerging areas include:",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Renewable Energy Systems (e.g., solar/wind micro-projects)",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "IoT-based Electrical Monitoring and Smart Control",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Automation using PLCs, Arduino or Microcontrollers",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Power Electronics Applications (converters, inverters, drives)",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Electrical Safety and Energy Auditing",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Any other innovative project relevant to electrical and electronics engineering. 219",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ee509p-2.6",
+                    "sno": "2.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Work collaboratively as part of a team to achieve project objectives",
+                    "period": 8,
+                    "type": "practical",
+                    "id": "26ee509p-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Share, discuss, and refine ideas with team members",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ee509p-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Coordinate tasks, roles and responsibilities effectively",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ee509p-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Resolve team conflicts constructively and support team decisions",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ee509p-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Exhibit leadership qualities, when required, in organizing and managing project work. 4. Independent and Lifelong Learning:",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ee509p-3.5",
+                    "sno": "3.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Demonstrate initiative and self-direction in carrying out project work",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ee509p-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Learn and adapt from sources beyond the prescribed syllabus",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ee509p-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Analyze and reflect on project performance to identify improvements",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ee509p-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Compare multiple approaches to determine the most sustainable and effective solution",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ee509p-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Manage time and resources efficiently during the execution of the project",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Maintain systematic documentation of project processes and results",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Adapt to challenges and unforeseen situations during the project lifecycle",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Explore and adopt emerging technologies, software, and standards relevant to project work. 5. Ethics and Social Responsibility:",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-4.8",
+                    "sno": "4.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Show respect to classmates, faculty, team members and others involved",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ee509p-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Follow ethical practices in communication, documentation and teamwork",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ee509p-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Understand and adhere to safety, health, and environmental regulations",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ee509p-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Recognize and manage the constraints of limited resources responsibly",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ee509p-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Develop and apply sustainable engineering practices",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Avoid plagiarism and give due credit to others' contributions",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Evaluate the social and environmental impact of the project outcomes",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Practice intellectual honesty by ensuring originality and respecting IPR (Intellectual Property Rights)",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ee509p-5.8",
+                    "sno": "5.8"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 180,
     "subjectCode": "26EE509P",
     "semester": 5,

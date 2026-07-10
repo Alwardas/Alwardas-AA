@@ -1,6 +1,343 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Select proper tool to perform the job",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Set the Job on Machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Select the speed for milling operation",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Practice T-slot cutting operation on a milling machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Use measuring instruments for checking dimensions",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Indexing methods explanation and application on milling machine Perform Spur gear cutting on milling machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Select milling cutter to perform the job",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Set the Job on Machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Index the job",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Select the speed for gear cutting operation",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Use measuring instruments for checking dimensions Perform helical gear cutting on milling machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Select milling cutter to perform the job",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Set the Job on Machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Index the job",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.15",
+                    "sno": "1.15"
+                },
+                {
+                    "topic": "Select the speed for helical gear cutting operation",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.16",
+                    "sno": "1.16"
+                },
+                {
+                    "topic": "Practice helical gear cutting operation on a milling machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.17",
+                    "sno": "1.17"
+                },
+                {
+                    "topic": "Use measuring instruments for checking dimensions 2. SLOTTER Perform keyway cutting on slotting machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.18",
+                    "sno": "1.18"
+                },
+                {
+                    "topic": "MILLING Perform T-slot cutting on milling machine Perform Spur gear cutting on milling machine Perform helical gear cutting on milling machine",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me409l-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Select cutter to perform the job",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Set the Job on Machine",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Select the speed for Slotting operation",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Practice slotting operation on a slotting",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Use measuring instruments for checking dimensions 3. SHAPER Perform keyway cutting on shaping machine",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "SLOTTER Perform keyway cutting on slotting machine",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Select cutter to perform the job",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Set the Job on Machine",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Select the speed for shaping operation CO4 26ME409L .4 Perform the operations on Grinding Machine CO5 26ME409L .5 Perform the operations on Oxy- Fuel Welding",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Practice key way cutting on a shaper",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Use measuring instruments for checking dimensions 4. GRINDING Perform surface grinding on rectangular block",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "SHAPER Perform keyway cutting on shaping machine",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the constructional features, working principles and safety aspect of Surface grinder",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain functional application of different levers, stoppers, adjustment Practice grinding operation",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Identify different lubrication points of surface grinder",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me409l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Identify lubricants and their usage for application in surface grinder",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me409l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Identify different work and tool holding devices and acquaint with functional application of each device",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me409l-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Mount the work and tool holding devices with required alignment and check for its functional usage to perform surface grinding operations",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me409l-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Observe safety procedure during mounting as per standard norms 5. Oxy- Fuel Welding",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me409l-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "GRINDING Perform surface grinding on rectangular block",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me409l-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Fundamentals of Oxy-Fuel Welding",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me409l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Introduction to welding and classification of welding processes",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me409l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Principles of oxy-fuel gas welding",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me409l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Fuel gases: Acetylene, LPG, Hydrogen \u2013 properties, selection, applications",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "OXY FUEL WELDING Assembly of gear, shaft and key",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26me409l-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26ME409L",
     "semester": 4,

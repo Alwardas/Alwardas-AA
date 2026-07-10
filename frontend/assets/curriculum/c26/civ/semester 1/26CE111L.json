@@ -1,6 +1,364 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 3,
+            "title": "Probability & Statistics",
+            "totalPeriods": 150,
+            "topics": [
+                {
+                    "topic": "Define levelling and list the types of levelling instruments, Define the terms - Datum or Datum plane, Reduced level, Level surface, Horizontal surface, Vertical line and Station, Mean Sea level, and Benchmark",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "List the component parts of a Dumpy level and their functions, explain the steps involved in temporary adjustments of a dumpy level, Define Back sight, Fore sight, Intermediate sight, and Change Point",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "List different types of levelling staves, tabulate the levelling field data, state methods of calculating reducing levels. Compare height of instrument and Rise and fall methods. Compute reduced levels by Height of instrument and Rise and fall methods and apply check",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "List the different types of Levelling and describe in detail the Profile levelling",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "State the Errors in levelling and the precautions to be taken to prevent errors in levelling. Explain the effect of Errors due to Curvature, Refraction and Combined error (No Problems)",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "List the fundamental lines of a dumpy level and state the relationships between them",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Define Contour, Contour interval and Horizontal equivalent. List the characteristics and uses of contours, explain different methods of contouring and interpolation of contours",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Identify the component parts of a Dumpy level or Auto level and study different types of levelling staves",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Perform the temporary adjustments of a dumpy level or Auto level for taking observations and practice taking staff readings and recording them in the level field book",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Take staff readings for differential levelling and compute the difference in elevation between two stations (take invert levels also)",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Conduct the profile levelling along a route and compute the RLs at various stations",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Conduct the profile levelling by taking cross sections across a route and compute the RLs at various stations",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Conduct profile levelling along a route by taking readings along both longitudinal sections and cross sections and compute the reduced levels",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "Conduct block levelling for the given area",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.14",
+                    "sno": "3.14"
+                },
+                {
+                    "topic": "Locate the contour points by Radial method in the field",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.15",
+                    "sno": "3.15"
+                },
+                {
+                    "topic": "Plotting of longitudinal sections and cross sections",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.16",
+                    "sno": "3.16"
+                },
+                {
+                    "topic": "Plotting of contours by Block levelling",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.17",
+                    "sno": "3.17"
+                },
+                {
+                    "topic": "Define: i) Compression member ii) Axial Loading iii) eccentric loading",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Define: i) Buckling/Critical/Crippling Load ii) Actual length iii) Least radius of gyration iv) Safe load v) Factor of safety",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "List types of compression members",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Calculate least radius of gyration for solid circular, square and rectangular sections",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "List different end conditions used for a column",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Define i) Effective/equivalent length ii) Slenderness ratio",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "List the effective lengths of columns for different end conditions, Calculate the slenderness ratio for a given column/strut and Classify columns based on slenderness ratio or length and lateral dimensions, Distinguish between Long and short columns",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "State Euler\u2019s formula for crippling load of a column/strut (derivation not required) Calculate crippling and safe loads on a column/strut with simple section using Euler\u2019s formula",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Explain the Rankine\u2019s formula for short and long columns a nd calculate crippling or safe loads on a column/strut with simple sections using Rankine\u2019s formula. 4. DAMS AND RETAINING WALLS",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "State the different types of flow of liquids",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Define: i) Steady flow and Unsteady flow ii) Uniform flow and Non-uniform flow, iii) Laminar flow and Turbulent flow",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Distinguish between different types of flow of liquids",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Define discharge, State units of discharge",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "State one dimensional continuity equation",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Calculate the discharge/velocity at a section of flowing liquid in pipe for the given conditions",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the following energies of liquid in motion 1. Datum head, 2. Pressure head and 3. Velocity head",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "List the limitations of Bernoulli\u2019s theorem",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Compute the pressure/velocity at a section of flowing liquid in pipe for the given conditions using Bernoulli\u2019s equation",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "List three practical applications of Bernoulli\u2019s theorem",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Describe the working principle of i) Venturi meter, ii) Orifice meter and iii) Pitot tube",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "State the formulae to calculate the actual discharge of flowing liquid through Venturi meter and Orifice meter and calculate the actual discharge of flowing liquid through Venturi meter and Orifice meter. 4. FLOW THROUGH ORIFICE AND MOUTH PIECES",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.13",
+                    "sno": "3.13"
+                },
+                {
+                    "topic": "State addition theorem of probability for two mutually exclusive and exhaustive events",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Solve simple problems on addition theorem",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain conditional event and conditional probability",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Solve simple problems on conditional probability",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Explain dependent, independent events and state multiplication theorem",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Solve simple problems on multiplication theorem",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Recall the measures of central tendency",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Explain the significance of measures of dispersion to determine the degree of heterogeneity of the data",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Find the measures of dispersion, Range, Mean Deviation and Standard Deviation for ungrouped data",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Explain the merits and demerits of these measures of dispersion",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Explain bivariate data",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.12",
+                    "sno": "3.12"
+                },
+                {
+                    "topic": "Explain the concept of covariance and correlation between two variables",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ce111l-3.13",
+                    "sno": "3.13"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 150,
     "subjectCode": "26CE111L",
     "semester": 1,

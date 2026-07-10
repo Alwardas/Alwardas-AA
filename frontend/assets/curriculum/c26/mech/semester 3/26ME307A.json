@@ -1,6 +1,140 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "ELECTRICAL ENGINEERING FUNDAMENTALS",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me307a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "ELECTRICAL ENGINEERING FUNDAMENTALS Concepts of voltage, current, resistance and power \u2013 Ohm\u2019s law and Kirchhoff\u2019s laws \u2013 Difference between DC supply and AC supply \u2013 Energy and calculation of electrical energy consumption in households \u2013 Applications of electricity in workshops such as ligh ting, welding and motors",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me307a-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "ELECTRICAL MACHINES",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me307a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "ELECTRICAL MACHINES Electrical machines and their uses \u2013 Need for transformers and their classification \u2013 Parts and applications of DC motors \u2013 Basic working and applications of induction motors \u2013 Electrical machines commonly used in fans, pumps, lathes and compressors",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me307a-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "ELECTRICAL MEASURING INSTRUMENTS",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me307a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "ELECTRICAL MEASURING INSTRUMENTS Purpose and circuit connection of ammeters \u2013 Purpose and circuit connection of voltmeters \u2013 Wattmeter and its use \u2013 Energy meter and its applications in homes, industries and workshops \u2013 Importance of measuring instruments in electrical maintenance and workshop practice",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me307a-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "ELECTRICAL SAFETY",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me307a-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "ELECTRICAL SAFETY Electrical hazards in homes and workshops \u2013 Safety rules and safety equipment \u2013 Need for earthing and different earthing systems \u2013 Fuse and circuit breakers with their functions \u2013 First aid steps in case of electric shock. REFERENCE BOOKS 1. V.K. Mehta, Rohit Mehta \u2013 Basic Electrical Engineering \u2013 S. Chand Publications 2. B.L. Theraja, A.K. Theraja \u2013 A Textbook of Electrical Technology (Vol. I & II) \u2013 S. Chand Publications 3. S. Rao \u2013 Testing, Commissioning, Operation and Maintenance of Electrical Equipment \u2013 Khanna Publishers 4. Surajit Das, Sunil S. Rao \u2013 Handbook on Electrical Safety \u2013 Khanna Publishers",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me307a-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me307a-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me307a-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me307a-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me307a-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me307a-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me307a-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 30,
     "subjectCode": "26ME307A",
     "semester": 3,

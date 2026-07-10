@@ -1,6 +1,245 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the character set, lexical conventions of Verilog like number specifications, identifiers, keywords, value set, nets, register, vector, integer, real and time registers",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Explain the expression, operator and operand",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain the different types of operators and their usage",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the port declaration rules",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain the module definition and its components in Verilog",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec509l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain the module instantiation, inference of a component",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec509l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Demonstrate the different levels of abstractions in Verilog II. Implementing logic gates using Gate Level and Data flow modelling Theory:",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec509l-1.7",
+                    "sno": "1.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the gate symbols, Truth tables, gate instantiations and syntaxes in Verilog",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ec509l-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Explain the rise delay, fall delay and turnoff delay in gate level modelling Lab Experiments on gate level modelling: 1. Implement Basic Logic Gates 2. Implement Universal gates and special gates (Ex-or and Ex-nor) 3. Implement Multi input Logic Gates Theory:",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ec509l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain assignment statements and types of delays in data flow modelling Lab Experiments on dataflow modelling: 1. Implement Basic Logic Gates 2. Implement Universal gates and special gates (Ex-or and Ex-nor) 3. Implement Multi input Logic Gates III. a) Combinational Circuits Theory:",
+                    "period": 6,
+                    "type": "practical",
+                    "id": "26ec509l-2.2",
+                    "sno": "2.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the usage of conditional/decision making statements (if, if -else, if- else-if)",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain the usage of multiway branching statements (case, casex, casez)",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the usage of Iterative statements (while, for, repeat, forever) Lab Experiments on dataflow modelling using above concepts: 1. Implement Adders (Half adder and Full Adder) 2. Implement Subtractors (Half Subtractor and Full Subtractor) 3. Implement 4-bit Parallel Adder 4. Implement Multiplexers (2:1, 4:1 and 8:1 MUX) 5. Implement Demultiplexers (1:2, 1:4 and 1:8 DEMUX) 6. Implement Decoders (1:2, 2:4 and 3:8 Decoder) 7. Implement Encoders (2:1, 4:2 and 8:3 encoder) 8. Implement Comparator (2-bit and 4-bit) 9. Implement 4-bit ALU b) Sequential Circuits using Behavioral modelling Theory:",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain the behavioral level programming concept structural procedures (initial and always statements)",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain the procedural assignments (Blocking and non-blocking assignments)",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec509l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Delay based timing control and event based timing control",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec509l-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the structure of stimulus module / test bench Lab Experiments on behavioral modelling using above concepts: 1. Implement NAND, NOR latch 2. Implement Flip Flops (JK- Flip Flop and SR-Flip flop) using edge triggering and level triggering 3. Implement Flip Flops (D- Flip Flop and T-Flip flop) using edge triggering and level triggering 4. Implement Shift Registers (SISO, SIPO) 5. Implement Shift Registers (PISO, PIPO) 6. Implement Counters (4-bit Synchronous counter and Decade counter) 7. Implement RAM and ROM Note: All the above programs should be simulated by using test benches. IV. Implement the following on FPGA board Theory:",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec509l-3.7",
+                    "sno": "3.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction to Advanced Applications & Operations",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-4.6",
+                    "sno": "4.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 3,
+                    "type": "practical",
+                    "id": "26ec509l-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26EC509L",
     "semester": 5,

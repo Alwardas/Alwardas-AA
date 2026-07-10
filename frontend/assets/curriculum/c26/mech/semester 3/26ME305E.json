@@ -1,6 +1,364 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "MEASURING INSTRUMENTS & THEIR CHARACTERISTICS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Define Metrology, Measurement and Standard of Measurement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain the Significance of Measurement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Classify and Explain the Methods of Measurement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Classify Type of errors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Describe Precision, Accuracy, Sensitivity, Hysteresis, Response Time, Repeatability, Calibration, Uncertainty of Measurement, and Interchangeability",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain standardization and standardize organizations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "List Measuring Instruments and Systems and explain their functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Select the appropriate Measuring Instruments for a given application",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Explain calibration of measuring instruments",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "List Types of Tachometers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain and illustrate the working principle of: \u27a2 Mechanical Tachometers \u2013 Revolution Counter and Timer, Slipping Clutch Tachometer. \u27a2 Electrical Tachometer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "MEASURING INSTRUMENTS & THEIR CHARACTERISTICS Definition of Metrology, Define Measurement, Standard of measurement, Explain the Significance of Measurement, Explain Methods of Measurement a. Direct and Indirect, b. Primary, Secondary, and Tertiary, c. Contact and Non -contact, Types of Errors - Controllable and Random Errors, Precision, accuracy, sensitivity, hysteresis, response time, repeatability, calibration, uncertainty of measurement, interchangeability, Standardization and standardizing organizations, Classify Instruments, List the Instruments an d Measuring Systems - Their Functions, Selection of Measuring Instruments, Calibration of measuring instruments",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "LINEAR AND ANGULAR MEASUREMENT Linear Measurement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Describe the construction features and use of Steel Rule, Calipers, Surface Plate, Angle Plate, V-block",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Describe the construction features and use of Vernier calipers, vernier height and depth gauges, micrometres",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain slip gauges, Cylinder bore gauges, feeler, wire gauges, Telescopic Gauge, Gauge Blocks. Checking flatness, roundness, and squareness Angular Measurement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Describe the construction features and use of instruments for angular measurements: bevel protector, sine bar, angle gauges",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "List Types of Thermometers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain Bimetallic Thermometer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain Thermocouple",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain Thermistor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Describe and Compare Pyrometers: Radiation and Optical",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "LINEAR AND ANGULAR MEASUREMENT Linear Measurement Construction features and use of instruments for non-precision linear measurement: steel rule, callipers, surface plate, angle plate, V -block, Construction features and use of instruments for precision measurements: vernier calipers, vernier height and dep th gauges, micrometers, Slip gauges, Indian standards of slip gauges, sets of slip gauges, use of slip gauges. Cylinder bore gauges, feeler, and wire gauges, Telescopic Gauge, Gauge Blocks. Checking flatness, roundness, and squareness. Angular Measurement - Construction features and use of instruments for angular measurements: bevel protector, sine bar, angle gauges. Opto -mechanical measurements for angular Measurement: Tool Maker\u2019s Microscope",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "DIMENSIONAL AND SURFACE METROLOGY",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me305e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Explain Limits, Fits, and Tolerances",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Define Terminology of Surface Roughness",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Illustrate the Concept of Primary Texture and Secondary Texture",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Analyze Factors Affecting Surface Finish",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Calculate CLA, RMS, and Ra Values",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Describe and Demonstrate Stylus Probe Instruments \u2013 Taylor Surface Talysurf",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "DIMENSIONAL AND SURFACE METROLOGY Limits, Fits, and Tolerance, Terminology of surface roughness, Concept of primary texture and secondary texture, Factors affecting surface finish, CLA, RMS, and Ra value, Principle and operation of stylus probe instruments. Taylor surface talysurf",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "TRANSDUCERS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define Transducer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Classify Transducers: Active & Passive, Analog & Digital",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain Mechanical Detector elements: Mass Sensing Elements, Thermal Detectors (basic idea only)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain Resistive, Piezoelectric, and Capacitive Transducers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Define Strain Gauges",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "List and Describe the Requirements of a Strain Gauge",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain Types of Strain Gauges",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "TRANSDUCERS Define Transducer, Classification of Transducers (Active & Passive, Analog & Digital), elastic and force balance transducers. Mechanical Detector Elements: Mass Sensing Elements, Thermal Detectors (basic idea only). Explain the Resistive Transducer, the Piezoelectric Transducer, and the Capacitive Transducer. Define Strain Gauges, List the requirements of a strain gauge, Explain the types of strain gauges: unbounded metal strain gauges, bonded metal wire strain gauges, bonded metal foil strain gauges, bonded semiconductor strain gauges",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "MEASUREMENT OF ANGULAR SPEED, TEMPERATURE, PRESSURE, AND FLOW",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me305e-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Measurement of angular speed",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me305e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Measurement of Temperature",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me305e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List Pressure Measurement Devices and Explain Bourdon Tube Pressure Gauge",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me305e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "MEASUREMENT OF ANGULAR SPEED, TEMPERATURE, PRESSURE, AND FLOW Measurement of angular speed: List the types of Tachometers, explain the working principle of the following Tachometers with a legible sketch: Mechanical Tachometers - Revolution counter and timer, slipping Clutch Tachometer. Electrical / electronic tachometers, Stroboscopes, Incrementa l and absolute encoders, Laser Doppler velocimeters / interferometers. Measurement of Temperature: List the types of thermometers, explain the Bimetallic thermometer, Thermocouples, thermistors, Bimetallic thermometers, Infrar ed pyrometers, and thermal cameras, Fiber optic temperature sensors, Calibration, range, linearization, and error sources. Explain Pyrometers-Radiation and Optical. Measurement of Pressure: List the Types of Pressure Measurement Devices. Explain the Bourdon tube Pressure gauge, Manometers, Elastic and force balance transducers, Strain gauge pressure cells, Piezoelectric, piezo resistive, and capacitive pressure sensors, High -pressure and low -pressure measurement techniques, Applications for mechanical and industrial systems. Measurement of Flow: List the Types of Flow meters- Explain Rota meters, hot wire anemometer (constant temp and constant Current), and an Ultrasonic flow meter REFERENCE BOOKS 1. Mechanical Measurements &Control -Dr.. D. S. Kumar (Metropolitan Book Co. Pvt.Ltd) 2. Mechanical & Industrial Measurements - R.K. Jain 3. Engineering Metrology and Measurements \u2013 N.V. Raghavendra & L. Krishnamurthy 4. A Textbook of Engineering Metrology \u2013 I.C. Gupta 5. Metrology and Measurement\u2013 Anand Bewoor & Vinay Kulkarni Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.3 Unit Test \u2013 II From 3.4 to 5.4",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me305e-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26ME305E",
     "semester": 3,

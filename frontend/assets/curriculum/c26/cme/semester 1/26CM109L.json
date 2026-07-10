@@ -1,6 +1,77 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "period": 18,
+                    "type": "practical",
+                    "id": "26cm109l-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Identify the chemical compounds and solutions by senses",
+                    "period": 18,
+                    "type": "practical",
+                    "id": "26cm109l-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Practice making standard Na2CO3 solutions",
+                    "period": 18,
+                    "type": "practical",
+                    "id": "26cm109l-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
+                    "period": 18,
+                    "type": "practical",
+                    "id": "26cm109l-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
+                    "period": 18,
+                    "type": "practical",
+                    "id": "26cm109l-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26CM109L",
     "semester": 1,

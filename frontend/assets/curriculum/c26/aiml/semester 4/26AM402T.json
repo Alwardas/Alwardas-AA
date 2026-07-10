@@ -1,6 +1,133 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction to PROLOG",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "State the need of PROLOG",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am402t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List the Key features of prolog",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List the facts and rules of PROLOG",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Describe how to install Prolog in Linux",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "List Advantages and Disadvantages of Prolog",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "State the Goals and terminology",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Explain Variables. 18 Explain Control Structures",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Illustrate the usage of Arithmetic operators",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "State the importance of Matching in PROLOG",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Explain Backtracking",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "List and explain th etype\u2019s of cuts",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Explain Recursion",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Define List",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Explain Lists with examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.15",
+                    "sno": "1.15"
+                },
+                {
+                    "topic": "Describe Dynamic databases",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.16",
+                    "sno": "1.16"
+                },
+                {
+                    "topic": "List and explain various Input/output operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.17",
+                    "sno": "1.17"
+                },
+                {
+                    "topic": "ListandexplainvariousInputandOutputStreams 2. PROBLEMS AND SEARCH METHODS IN AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am402t-1.18",
+                    "sno": "1.18"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26AM402T",
     "semester": 4,

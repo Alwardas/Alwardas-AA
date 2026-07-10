@@ -1,6 +1,112 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "ABC of Communication",
+                    "period": 12,
+                    "type": "practical",
+                    "id": "26ec408l-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Let's Learn to Listen",
+                    "period": 12,
+                    "type": "practical",
+                    "id": "26ec408l-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "I am",
+                    "period": 12,
+                    "type": "practical",
+                    "id": "26ec408l-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Let's Talk About\u2026",
+                    "period": 12,
+                    "type": "practical",
+                    "id": "26ec408l-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "topic": "Introduction to Best Practices & Case Studies",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec408l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Best Practices & Case Studies",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec408l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec408l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec408l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec408l-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Best Practices & Case Studies",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26ec408l-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 60,
     "subjectCode": "26EC408L",
     "semester": 4,

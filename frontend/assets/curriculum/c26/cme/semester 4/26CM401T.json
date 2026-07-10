@@ -1,6 +1,721 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Understand Principles of Effective Web Design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Basic web Terminology",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Describe Anatomy of web page",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Understand different Web page elements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Navigate through web pages",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Narrate steps in building web site",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Narrate steps in launching",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Narrate maintaining web site",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "HTML Introduction",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Describe the setting of tables",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Connecting to hyperlinks and Imaging",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Forms: Input Types, Elements, and Attributes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Basic Form Validation Techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Understand the difference between <div> and <span> tags",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Understand the level of styles inline, internal and external style sheets",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain ID and Class selectors in CSS",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain about Color and background properties",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain about Box properties like Border, position, margin, padding of elements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Understand the use of different CSS display properties to control how elements appear on a webpage",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Apply CSS positioning methods to place elements precisely on a webpage",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Use the float property to align elements (like images or boxes) to the left or right within a container",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Create flexible and responsive layouts using the Flexbox model to align and distribute space among items in a container",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Design complex webpage layouts using the CSS Grid system to create rows and columns easily",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Apply CSS styles to improve the appearance and usability of HTML forms and tables",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Enhance user experience by adding smooth visual effects using CSS transitions and basic animations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "What is AngularJS? Architecture, Advantages & Features",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List and Explain Angular JS Directives like ng-app,ng-init ,ng-model , ng-repeat",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain AngularJS Expressions like number, string, object, and array",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain AngularJS Filters like lowercase, uppercase, filter, orderby, currency",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Understand the architecture of a Web server",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List various web servers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Illustrate the various HTTP request types and their difference",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Compare the properties of IIS and Apache",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-1.4",
+                    "sno": "1.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction and Overview of HTML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Discuss the rules for designing a HTML document",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the structure of HTML document",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Define HTML element and Attribute",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Study the basic tags in HTML <html>, <head>, <title>, <body>",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Study the header tags <h1> to <h6>",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Discuss the Physical formatting tags <b>, <i>, <u>, <strike>, <sub>, <sup>, big>, <small>",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Discuss the Logical formatting tags <q>, <strong>, <cite>, <<ins>, <del>, <em>",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Discuss the <marquee> with attributes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "List Character entities",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Explain the List tags like <ul>, <ol>, <li>, <dl>, <menu> with attributes",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Illustrate about cascading style sheets",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Understand XML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the Purpose of XML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Describe how to organize data in the form of XML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the rules for designing XML document",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Understand the significance of Namespace",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "List the various applications of XML. 3. JavaScript",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "State the importance of PHP",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain how to combine HTML and PHP",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain how to access HTML, PHP documents from web servers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-2.3",
+                    "sno": "2.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Describe the tags <table>, <tr>, <td>, <th>,<tbody>, <thead>, <tfoot>, <colspan>, <rowspan>",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Types of scripting-JavaScript",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Differentiate between Client-side and Server-side scripting",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "List Client side and server side scripting languages",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Describe the features of Java Script",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Placing JavaScript code in HTML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Understand functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Form Handling in Java Script",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Illustrate Arrays",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Various Objects provided by JavaScript",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Describe events in java script. 4 Angular JS and JQuery",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "List Data types",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain Data types with examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain how to declare Variables and Constants",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Unit test-2 FROM 3.6 to 5.10",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-3.5",
+                    "sno": "3.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the link and imaging tags <a>, <img> with attributes",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Angular JS",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Define JQuery",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "List the features of JQuery",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "List JQuery plug ins",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the steps to include JQuery in Web Pages",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain JQuery Syntax with example program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Describe the JQuery Selectors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Accessing HTML elements by using Element Selectors, ID, Class Selectors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Explain the JQuery Document Ready Event",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Describe the JQuery Event handling methods",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Explain effects of JQuery like hide, show, fade In, fadeout, fade Toggle, fade To, SlideDown, SlideUp, Slide Toggle",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "Perform DOM manipulation using jQuery methods .html(), .text(),. val(), .append()",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "Implement event handling click, hover, and submit to create interactive web pages",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Integrate and utilize jQuery plugins to extend web functionality. 5 Web servers and PHP - Server-side scripting",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-4.14",
+                    "sno": "4.14"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Build web forms using various <form>, <input>, <button>, <label>, <select>, <options>, <textarea>, <legend> <fieldsets>with attributes",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Utilize form attributes (name, id, value, required, etc.) for data collection and usability",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Web servers:",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Fundamentals of PHP",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Data types, Variables and Constants",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26cm401t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "List and explain string manipulation functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Understand Arrays",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Explain types of arrays",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Design small programs using arrays",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain form handling in PHP",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Know how to access My SQL Database",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Cookies",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Sessions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26cm401t-5.9",
+                    "sno": "5.9"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26CM401T",
     "semester": 4,

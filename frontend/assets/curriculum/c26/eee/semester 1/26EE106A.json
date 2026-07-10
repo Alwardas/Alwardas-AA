@@ -1,6 +1,280 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "topic": "Define basic electrical terms such as Voltage, Current, Resistance, Power and Energy",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "State Ohm's Law and the Power Law",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Distinguish between Alternating Current (AC) and Direct Current (DC) electricity",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the concept of electric shock, arc flash and arc blast hazards",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Describe the physiological effects of electric current on the human body, including burns and fibrillation",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "List common causes of electrical accidents, including unsafe equipment and human error",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Understand the dangers of electrical fires and explosions. 2. Electrical Safety Regulations and Standards",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-1.7",
+                    "sno": "1.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "topic": "State the purpose and importance of national and international electrical safety standards (e.g., NEC, OSHA, IS, IEC)",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain the role of regulatory bodies and the legal implications of non-compliance in electrical safety",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Recognize and interpret electrical safety signs (danger, warning, caution), labels and tagging",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "List different types of Personal Protective Equipment (PPE) specifically designed for electrical work",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Explain the proper selection, inspection, care, and use of electrical PPE",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Understand the concept of arc flash ratings and categories for protective clothing",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Identify colour codes for electrical wiring and components. 3. Safe Work Practices and Procedures",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-2.7",
+                    "sno": "2.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "topic": "Explain the purpose and critical importance of Lockout/Tagout (LOTO) procedures",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Describe the six-step LOTO procedure for effective energy control",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Distinguish between working on de-energized and energized (live) circuits and when energized work is permissible",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "State the minimum approach distances (MAD) for energized conductors and equipment",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain the safe use, inspection, and maintenance of insulated electrical hand tools and portable equipment",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Describe immediate first aid actions and Cardiopulmonary Resuscitation (CPR) for electrical shock victims",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Understand the proper handling and testing of electrical instruments like mustimeters and insulation testers. 4. Electrical System Protection and Maintenance",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-3.7",
+                    "sno": "3.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "topic": "Classify different types of overcurrent protection devices, including fuses and various types of circuit breakers (MCB, MCCB, ACB)",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain the working principle and applications of Residual Current Devices (RCDs) / Ground Fault Circuit Interrupters (GFCIs)",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "State the purpose and fundamental importance of earthing/grounding systems for safety and fault current paths",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "List the key components of an earthing system and methods for testing earth resistance",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain the importance and benefits of preventive maintenance for electrical systems",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Describe common electrical maintenance activities such as cleaning, tightening connections, and lubrication",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Understand diagnostic techniques like thermography for identifying potential electrical issues. 5. Emergency Preparedness and Case Studies",
+                    "period": 4,
+                    "type": "theory",
+                    "id": "26ee106a-4.7",
+                    "sno": "4.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "topic": "Develop and implement effective emergency response plans for electrical incidents",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Classify different types of fire and identify appropriate fire extinguishers (especially Class C/E) for electrical fires",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Explain essential fire prevention strategies in electrical rooms and installations",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Describe the systematic steps involved in investigating electrical accidents",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Analyse real-world electrical accident scenarios to understand contributing factors",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Discuss key lessons learned from past electrical accidents to prevent recurrence",
+                    "period": 5,
+                    "type": "theory",
+                    "id": "26ee106a-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 150,
     "subjectCode": "26EE106A",
     "semester": 1,

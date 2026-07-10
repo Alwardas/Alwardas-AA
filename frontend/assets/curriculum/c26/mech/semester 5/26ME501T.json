@@ -1,6 +1,112 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Work Study",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "topic": "Define Production, Productivity, Work study, Method Study and Work Measurement",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me501t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "State objectives of Work study, Method Study and Work Measurement",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me501t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain the Steps: Define, Record, Critical Examination, Develop, and Install and maintain for conduct of method study to increase the productivity",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me501t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain process chart symbols with examples",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me501t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain the use of flow diagram and string diagram",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me501t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain Cycle graph and Chrono cycle graph",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me501t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Identify various therbligs used in micro motion study and construct SIMO chart",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me501t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Explain Time study Procedure by using a stop watch",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me501t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Compute the standard time for an operation by adding its constituent elements",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me501t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Explain the procedure of Predetermined Motion Time Standards (PMTS)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me501t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Explain the method of conducting work sampling",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me501t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "State the terms involved in wage systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me501t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "List different incentive plans and solve simple numerical problems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me501t-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "WORK STUDY Industrial Engineering: Definition of Production and productivity; Work Study: Definition, objectives of work study. Method Study: Definition, objectives, procedure of conducting method study. Process chart symbols \u2013 Explanation with Operation process chart, Flow process chart and Two-handed process charts only - Uses of flow diagram and string diagram. Micro-motion study: Therbligs \u2013 Simo chart \u2013 Cycle graph and Chronocycle graph Work Measurement or Time study: Definition, objectives - Work measurement techniques. Time Study: Procedure by using a stop watch to measure the standard time - Constituents of standard time: Observed time - Normal time- rating factor- allowances. Standard data method - Determination of standard time by using Predetermined Motion Time Standards (PMTS) - Determination of standard time by using work sampling. Wage and Incentive plans: Definitions of wage, nominal wage, real wage, living wage, minimum wage, fair wage - Incentives and types - List different incentive plans - Halsey, Rowan and Emerson efficiency plans, solve simple numerical problems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me501t-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26ME501T",
     "semester": 5,

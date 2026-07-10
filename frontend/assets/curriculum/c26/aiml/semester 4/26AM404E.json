@@ -1,6 +1,154 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Image formation",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Image Formation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "What is computervision?",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain the History of computer vision",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Geometric primitives and transformations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Photometric image formation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "The digital camera",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain pixel transforms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain Color transforms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Describe Compositing and matting",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain Histogram equalization",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain Feature detectors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain feature descriptors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Describe feature matching",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain Large-scale matching and retrieval",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Explain feature tracking",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Explain 2D alignment using least squares",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain Iterative algorithms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Describe Robust least squares and RANSAC",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Describe 3D alignment",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Uni ttest-2 From 4.1.2 to 5.3",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am404e-1.1",
+                    "sno": "1.1"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26AM404E",
     "semester": 4,

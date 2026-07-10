@@ -1,6 +1,329 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION TO ARTIFICIAL INTELLIGENCE",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Define Artificial Intelligence (AI)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain Evolution of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List Features of AI & Goals of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "List Differences between AI, Machine Learning (ML) and Deep Learning (DL)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "List Different types of AI models",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "List Differentiate AI and Human intelligence,",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Explain the Impact of AI on various industries i.e. Health Care, BFSI, Entertainment and Administration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "List Different AI tools in the market and their use",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-1.8",
+                    "sno": "1.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "EYES OF ARTIFICIAL INTELLIGENCE \u2013 SENSORS AND DATA",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Definition of Data",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "List types of Data",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "List Importance of Data in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "List different types of Data Collection methods",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Define Sensor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "List Types of Sensors and their applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain the Role of Sensors in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Simple practical on Collection of data using Arduino/Raspberry Pi with Sensors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-2.8",
+                    "sno": "2.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "BASICS OF MACHINE LEARNING (ML)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Define Machine Learning",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Importance of ML in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Application of ML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "List different Learning methods",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain different Learning methods",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "List Simple ML Algorithms and their significance use in ML",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-3.6",
+                    "sno": "3.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "AI APPLICATIONS IN ELECTRONICS AND COMMUNICATION ENGINEERING",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Interpret the Role of AI &ML in Smart systems and Automation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Interpret the Role of AI &ML in Signal processing and Analysis",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Interpret the Role of AI &ML in Communication systems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Interpret the Role of AI &ML in Embedded systems and IoT",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Interpret the Role of AI &ML in Biomedical engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Interpret the Role of AI &ML in Security and fraud detection",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Interpret the Role of AI &ML in Control systems & Robotics,",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Interpret the Role of AI &ML in VLSI and Chip Design",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-4.8",
+                    "sno": "4.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "ETHICS IN AI, FUTURE SCOPE OF AI AND CAREER AWARENESS IN AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Explain Bias and Fairness in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "List Privacy concerns of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List the essential Government regulations on use of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "List the drawbacks of AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "List the Importance of development of responsible AI,",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "List the Future applications and advancements in AI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec407a-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 30,
     "subjectCode": "26EC407A",
     "semester": 4,

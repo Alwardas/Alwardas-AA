@@ -1,6 +1,182 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION TO ADVANCED SURVEYING METHODS",
+                    "period": 9,
+                    "type": "theory",
+                    "id": "26ce404e-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Introduction to Core Concepts & Principles",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce404e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Core Concepts & Principles",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce404e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce404e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce404e-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce404e-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Core Concepts & Principles",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce404e-2.6",
+                    "sno": "2.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Unit Test \u2013 II From 3.3 to 5.5",
+                    "period": 9,
+                    "type": "theory",
+                    "id": "26ce404e-3.2",
+                    "sno": "3.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Introduction to Advanced Applications & Operations",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce404e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Advanced Applications & Operations",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce404e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce404e-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce404e-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce404e-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Advanced Applications & Operations",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce404e-4.6",
+                    "sno": "4.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Understand the basic concept of LiDAR Technology",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce404e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain the working principle of LiDAR technology",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce404e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List the different types of LiDAR systems and their components",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ce404e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Describe the methods of LiDAR data collection and processing",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce404e-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Compare LiDAR with traditional surveying techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce404e-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "State the applications of LiDAR in civil engineering",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ce404e-5.5",
+                    "sno": "5.5"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26CE404E",
     "semester": 4,

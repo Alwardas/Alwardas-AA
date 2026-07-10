@@ -1,6 +1,217 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "INTRODUCTION TO ADDITIVE MANUFACTURING",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me505e-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Explain the principles, history, and evolution of additive manufacturing",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Distinguish between additive, subtractive, and formative manufacturing processes",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "INTRODUCTION TO ADDITIVE MANUFACTURING Definition and evolution of additive manufacturing (AM), Distinction between AM and traditional (subtractive) manufacturing such as CNC machining, Steps in the AM process and workflow, from design to finished part Advantages, limitations, and scope of AM a cross industries",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "MATERIALS FOR AM AND CLASSIFICATION OF AM PROCESSES",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Describe the properties and uses of AM materials including polymers, metals, ceramics, and composite materials",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Select suitable materials for a given application or process based on mechanical, thermal, and chemical requirements",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Identify and describe the seven categories of AM processes as per ISO/ASTM standards",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me505e-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Compare the working principles, materials, advantages, and limitations of various AM technologies like FDM, SLA, SLS, SLM, DED, etc",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me505e-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "MATERIALS FOR AM AND CLASSIFICATION OF AM TECHNIQUES Materials for AM: Polymers viz., Thermoplastics (PLA, ABS, Nylon, TPU), thermosets. Metals and Alloys viz., Stainless steel, titanium, aluminium, etc. Ceramics, composites, and functionally graded materials (FGMs). Material properties, selection criteria, and their application in different AM processes. Classification of AM technologies viz., Vat Photopolymerization (e.g., Stereolithography/SLA), Material Jetting, Binder Jetting, Material Extrusion (e.g., Fused Deposition Modelling/FDM), Powder Bed Fusion (e.g., Selective Laser Sintering/SLS; Selective Laser Melting/SLM), Sheet Lamination (e.g., Laminated Object Manufacturing/LOM), Directed Energy Deposition (DED)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me505e-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "PROCESS MODELLING AND ENERGY SOURCES OF AM",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Understand how changes in process variables (layer thickness, scan speed, energy intensity, etc.) affect the temperature distribution, residual stresses, microstructure, and overall mechanical properties of printed parts",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain how different AM technologies use various energy sources (e.g., lasers, electron beams, thermal energy) to achieve material consolidation and how these influence the characteristics and applications of each process",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me505e-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Understand how AM constraints affect product design and development",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me505e-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Identify real-world applications across industries (aerospace, automotive, medical, consumer products, etc.)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me505e-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Understand the benefits and challenges of AM in industrial settings",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me505e-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "PROCESS MODELLING AND ENERGY SOURCES OF AM Process Modelling: Understanding process parameters and their impact (temperature, speed, layer thickness), Path planning and modelling in extrusion -based and photopolymerization systems, Data preparation: CAD to STL conversion, slicing, file handling. Energy sources: Fundamentals of laser, electron beam, and plasma energy sources Material consolidation mechanisms: Sintering, melting, curing, bonding Interaction of energy with material and resultant properties",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26me505e-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "DESIGN FOR ADDITIVE MANUFACTURING (DfAM)",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me505e-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Apply complex design strategies such as topology optimization, lattice structures, and mass customization",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Evaluate how AM constraints affect product design and development",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "DESIGN FOR ADDITIVE MANUFACTURING (DFAM) AND APPLICATIONS Design strategies unique to 3D printing (e.g., lattice structures, topology optimization), Support structures, part orientation, and post-processing requirements. Applications of AM:Industrial sectors: Aerospace, automotive, medical/dental, architecture, art, prototyping, tooling.Emerging research and development areas, Real-world case studies highlighting AM\u2019s benefits and challenges",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "POST-PROCESSING AND QUALITY ASSURANCE IN AM",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26me505e-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Identify various post-processing methods: surface finishing, heat treatment, and support removal",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Understand the need for quality control, testing, and standardization in AM components",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "POST-PROCESSING AND QUALITY ASSURANCE IN AM Surface finishing, heat treatment, and other post -build processes, Inspection and testing techniques for AM parts, Standards and quality certification in additive manufacturing. REFERENCES 1.The 3D printing hand book --------- Ben Redwood, Filemon Schoffer, Brian Garret. 2. Additive Manufacturing Technologies --------- Ian Gibson, David W Rosen, Brent Stucker. 3.Anintroductionto3Dprinting ----------------------- Victoria Zukas, Jonas A Zukas",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26me505e-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26ME505E",
     "semester": 5,

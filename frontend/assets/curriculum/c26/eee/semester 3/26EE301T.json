@@ -1,6 +1,427 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Explain electro mechanical energy conversion",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Define DC Generator",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Describe the constructional features of a D.C generator with a legible sketch and list the various materials used for each part",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the working principle of D.C generator",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "State the types of armature windings",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Derive the E.M.F equation of D.C generator in terms of \u03a6, Z, N, P & A and solve problems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Classify D.C Generators based on excitation and draw their equivalent circuits",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State various losses incurred in a D.C Generator and draw the power flow diagram",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Define the mechanical, electrical and overall efficiencies of DC Generator",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Define Armature reaction and state its effects",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "State Commutation and list the different methods of improving commutation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Plot Open Circuit Characteristics, Internal characteristics and external characteristics of the following types of D.C. Generators: (i) Separately excited ii) Shunt (iii)Series",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "List the applications of above D.C generators. 2. Fundamentals of D.C Motors",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-1.13",
+                    "sno": "1.13"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee301t-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Define DC motor",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee301t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain the working of D.C motor",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Explain the significance of back E.M.F",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Classify DC motors and draw their equivalent circuits",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Define Torque and derive Torque equation of a D.C motor",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors -",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-2.7",
+                    "sno": "2.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Explain the different methods of speed Control of D.C shunt motors",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee301t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain the different methods of speed control of D.C series motor",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee301t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "State the necessity of a starter and List different types of Starters used for DC motors",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee301t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain the working of 3-point starter with legible sketch",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26ee301t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "List different tests on D.C Motors",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Describe the direct and indirect methods of testing of DC motors",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain the method of conducting brake test on DC Shunt motors. 4. Single phase transformers",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-3.7",
+                    "sno": "3.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Define Transformer and Explain its working principle",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Classify the transformers based on (i) number of phases (ii) construction (iii) function",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Explain the constructional details of transformers with legible Sketch",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Distinguish between shell type and core type transformers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Derive the E.M.F equation of a single phase transformer and solve problems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Define \u2018transformation\u2019 ratio",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Draw Vector diagram of a transformer working on no load",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Develop the vector diagram of a transformer on load for (i) Unity power factor (ii) Lagging power factor (iii) Leading power factor",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.8",
+                    "sno": "4.8"
+                },
+                {
+                    "topic": "Draw the equivalent circuit of a transformer by approximation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.9",
+                    "sno": "4.9"
+                },
+                {
+                    "topic": "Determine the equivalent circuit constants from no-load test and short circuit test data and solve problems",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.10",
+                    "sno": "4.10"
+                },
+                {
+                    "topic": "Define efficiency and regulation of a transformer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.11",
+                    "sno": "4.11"
+                },
+                {
+                    "topic": "List the losses taking place in a transformer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.12",
+                    "sno": "4.12"
+                },
+                {
+                    "topic": "State the reason to mention transformer rating in KVA",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.13",
+                    "sno": "4.13"
+                },
+                {
+                    "topic": "Define all-day efficiency",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.14",
+                    "sno": "4.14"
+                },
+                {
+                    "topic": "Differentiate between distribution transformer and power transformer. 5. Three Phase Transformers and Auto transformers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-4.15",
+                    "sno": "4.15"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "State the advantages of 3 phase transformer over single phase transformer",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "List the different types of three phase transformers by giving their symbolic representation and voltage, current and phase relationships",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "State the applications of (i) star-star (ii) delta-star (iii) star-delta (iv) delta- delta connected transformers",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "State the need for parallel operation of three phase transformers",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "State the conditions for parallel operation of 3 phase transformers",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "List the special transformers",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain the construction and working of single-phase auto transformer with legible sketch",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26ee301t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "State the advantages, disadvantages and applications of auto transformers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "State the necessity of cooling of power transformers",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "List different methods of cooling of power transformer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Draw a legible sketch of a power transformer and explain the function of each part",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ee301t-5.11",
+                    "sno": "5.11"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26EE301T",
     "semester": 3,

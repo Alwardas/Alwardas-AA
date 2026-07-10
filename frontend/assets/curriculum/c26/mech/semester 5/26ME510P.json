@@ -1,6 +1,175 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "Introduction to Introduction & Fundamentals",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Fundamental concepts and definitions of Introduction & Fundamentals",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Core methodologies and workflow implementation",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Detailed analysis of primary components",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me510p-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Practical exercises and standard configuration",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me510p-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Review, troubleshooting, and summary of Introduction & Fundamentals",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me510p-1.6",
+                    "sno": "1.6"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "COMMUNICATION",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Communicate effectively",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Present Ideas Clearly",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Present Ideas Coherently",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Report writing",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me510p-2.4",
+                    "sno": "2.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "COLLABORATION",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26me510p-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Coordinate with team members",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26me510p-3.2",
+                    "sno": "3.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "INDEPENDENT LEARNING",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26me510p-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "topic": "ETHICS",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Give respect and value to all classmates, educators, colleagues, and others",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Understand the health, safety, and environmental impacts of their work",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Recognize the constraints of limited resources",
+                    "period": 2,
+                    "type": "practical",
+                    "id": "26me510p-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Develop sustainable products and processes that protect the health, safety, and prosperity of future generations",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26me510p-5.4",
+                    "sno": "5.4"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 45,
     "subjectCode": "26ME510P",
     "semester": 5,

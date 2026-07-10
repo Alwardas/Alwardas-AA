@@ -1,6 +1,77 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Getting Started with Python INSTALLATION OF PYTHON IN WINDOWS, KEYWORDS, IDENTIFIERS, VARIABLES, COMMENTS, EVERYTHING IS AN OBJECT. DATA TYPES, OPERATORS, EXPRESSIONS, STATEMENT, INPUT AND OUTPUT, TYPE CONVERSION AND DEBUGGING",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26ce406a-1.0",
+                    "sno": "1.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Control Statement and Functions Conditional blocks using if, if..else and if ..elif..else, nested if, while loop, for loop, pass, continue and break statements , Built in functions, function definition and calling, return statement",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26ce406a-2.0",
+                    "sno": "2.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Lists, Tuples and Dictionaries CREATING AND ACCESSING \u2013 LISTS, TUPLES AND DICTIONARIES",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26ce406a-3.0",
+                    "sno": "3.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Files: Creating and reading a .txt and .csv files Introduction to Python libraries and tools for Civil Engineers NUMPY, SCIPY, PANDA AND MATPLOTLIB",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26ce406a-4.0",
+                    "sno": "4.0"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Applications of Python Programming in Civil Engineering Area and volume calculator for various shapes, Plotting and cross section FROM SURVEY DATA, QUANTITY CALCULATOR FOR WALL, SLAB, FOOTING,",
+                    "period": 6,
+                    "type": "theory",
+                    "id": "26ce406a-5.0",
+                    "sno": "5.0"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 30,
     "subjectCode": "26CE406A",
     "semester": 4,

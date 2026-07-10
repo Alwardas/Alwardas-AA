@@ -1,6 +1,252 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "State the importance of drawing as an engineering communication medium",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ce108d-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "State the necessity of B. I. S. Code of practice for Engineering Drawing",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ce108d-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ce108d-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Select the correct instruments to draw the different lines / curves",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ce108d-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Use correct grade of pencil to draw different types of lines and for different purposes",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ce108d-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Select and use appropriate scales for a given application",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ce108d-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ce108d-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ce108d-1.7",
+                    "sno": "1.7"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Write titles using vertical lettering and numerals of 7mm and 10mm height",
+                    "period": 8,
+                    "type": "practical",
+                    "id": "26ce108d-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Write titles using sloping lettering and numerals of 7mm and 10mm height",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ce108d-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Select suitable sizes of lettering for different layouts and applications",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ce108d-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ce108d-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Dimension a given drawing using standard notations and desired system of dimensioning. Drawing Plate 1: Lettering Practice \u2013 Includes two exercises Drawing plate 2: Dimensioning Practice - Comprises 5 to 6 exercises 3. GEOMETRIC CONSTRUCTIONS",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ce108d-2.5",
+                    "sno": "2.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Practice the basic geometric constructions like i) Division of a line into number of equal parts ii) Construction of Exterior and interior tangents to two given circles iii) Drawing tangent arcs to two given lines and arcs",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26ce108d-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Draw any regular polygon using general method, when i) Given Side length ii) Inscribed in a circle (radius given), and iii) Circumscribed about a Circle (radius given)",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26ce108d-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Draw the conics using general and special methods",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26ce108d-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Identify the applications of the above constructions in engineering practice. Drawing Plate - 3: Problems on Geometrical Constructions up to Polygon Construction Drawing Plate - 4: Problems on Construction of Conic Sections 4. BASICS OF CAD IN CIVIL ENGINEERING",
+                    "period": 9,
+                    "type": "practical",
+                    "id": "26ce108d-3.4",
+                    "sno": "3.4"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Understand the general features of CAD, Hardware and Software requirements",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ce108d-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Knows Advantages of using CAD, Starting CAD, Understanding CAD",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ce108d-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Identify and understand the components of the CAD editor screen, including the Title Bar, Pull-down Menus, Dashboard, Standard Toolbar, Drawing Area, User Coordinate System (UCS), Command Prompt Area, and Status Bar",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ce108d-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Practice draw and modify commands in CAD using short cut keys. Commands- Command Entry Options using -Command Line, Menus (File, Edit, View, Insert, Format, Tools, Draw, Dimension, Modify, Window, Help) and Dialog Boxes. Using a wizard, using a template, starting from scratch",
+                    "period": 5,
+                    "type": "practical",
+                    "id": "26ce108d-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Practice Setting up limits, Object snap, Units, Paper space, Print, Plot Style Manager",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ce108d-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Draw CAD Basic Entities- Drawing Line, Arc, Circle, Rectangle and Polygons, and Ellipse using different Coordinate Systems such as, Absolute Cartesian Coordinates, Relative Cartesian Coordinates, Absolute Polar coordinates, and Relative Polar Coordinates",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ce108d-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Learn Direct distance entry and line command, picking coordinates on the screen and line command",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ce108d-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Practice Hatching, Dimensioning, Dimension Style, Point and Point Style and Text style \u2013Single Line Text and Multi Line Text Commands. Drawing Plate 5: Lettering and Dimensioning Exercises \u2013 Printed using AutoCAD Drawing Plate 6: Geometric Constructions up to Polygon Construction \u2013 Printed using AutoCAD Drawing Plate 7: Conic Constructions \u2013 Printed using AutoCAD 5. PROJECTIONS OF POINTS, LINES, PLANES & SOLIDS",
+                    "period": 4,
+                    "type": "practical",
+                    "id": "26ce108d-4.8",
+                    "sno": "4.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 36,
+            "topics": [
+                {
+                    "topic": "Explain the basic principles of the orthographic projections",
+                    "period": 8,
+                    "type": "practical",
+                    "id": "26ce108d-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Visualize and draw the projection of a point with respect to the two reference planes (Horizontal Plane and Vertical Plane)",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ce108d-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Visualize and draw the projections of straight lines with respect to the two reference Planes (up to lines parallel to one plane and inclined to another plane)",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ce108d-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Visualize and draw the projections of planes (up to planes perpendicular to one plane and inclined to the other plane)",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ce108d-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Visualize and draw the projections of solids (up to axis of solids parallel to one plane and inclined to the other plane) Drawing Plate 8: Exercises on Projections of Points, Lines, and Planes Drawing Plate 9: Exercises on Projections of Solids Drawing Plate 10: Projections of Planes and Solids \u2013 Printed using AutoCAD 6. SECTIONS OF SOLIDS",
+                    "period": 7,
+                    "type": "practical",
+                    "id": "26ce108d-5.5",
+                    "sno": "5.5"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 180,
     "subjectCode": "26CE108D",
     "semester": 1,

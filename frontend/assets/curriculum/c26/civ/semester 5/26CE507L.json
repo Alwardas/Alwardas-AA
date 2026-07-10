@@ -1,6 +1,1442 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "topic": "Identify and describe the ingredients of concrete and their roles in achieving desired properties",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Identify different types of cement and their uses",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Explain the physical properties and storage methods of cement",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Differentiate between natural and manufactured fine aggregates",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Interpret grading requirements and their impact on workability",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "List desirable properties of coarse aggregates",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Relate aggregate properties to strength and durability of concrete",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "State the role of water in hydration and setting of cement",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "List quality standards for mixing and curing water",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Define different types of admixtures (chemical and mineral)",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Explain the purpose and effects of admixtures on concrete behavior",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "Understand \u2018Grades\u2019 of concrete",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "State the grades of concrete recommended for different types of works 2. CONCRETE MIXING AND PLACEMENT METHODS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Explain the importance of building services",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "State the objectives of services in buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List different types of building services",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Select appropriate services for a particular type of building. 2. WATER SUPPLY AND SANITARY SYSTEMS IN BUILDINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Define the concept and explain the need for green buildings in the context of sustainable development",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "List and describe the basic features and principles that characterize a green building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Identify and differentiate among major green building rating systems such as LEED, IGBC, and GRIHA",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Explain the environmental, economic, and health benefits associated with green buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Discuss the merits and limitations of adopting green building technologies",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Recognize the contribution of buildings to global warming and the need for sustainable practices to mitigate climate impact. 2. ENERGY SOURCES & CARBON EMISSIONS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Sketch the conventional signs of Civil Engineering materials, Plumbing and Electrical fixtures",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Draw the cross section of load bearing wall and name all components below and above ground level",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Draw the cross section of an isolated column footing of a framed structure",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Draw the plan of one Brick wall and 1\u00bd brick wall meeting at corner showing alternative courses of header and stretchers in English bond",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Draw the following views of a fully panelled door and label the parts1. Elevation and 2. Sectional plan",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Draw the following views of fully panelled window and glazed window and label the parts.1. Elevation and 2. Sectional plan",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Draw the following views of flushed door and label the parts 1. Elevation and 2. Sectional plan",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Draw the elevation of the following trusses and label the parts with the given data (details of joints not required)1. King post truss and 2. Queen post truss 2. RESIDENTIAL BUILDINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Conventional signs for materials like bricks, stone, concrete, wood, glass, earth, steel and electrical fixtures like ceiling fan, bulb, main switch, bell push, buzzer, A.C motor, and water supply and sanitary fixtures like tap, wash basin, sink, W.C pan (Indian and European type), shower, flush tank, doors & window types",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Cross section of a load bearing wall showing all the components below and above the ground level",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Cross section of an isolated column footing in a framed structure",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Plan of one brick wall and 1\u00bd brick wall meeting at a corner showing odd and even courses in English bond",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Plan and Cross section of a Fully panelled door showing all the component parts",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Plan and Cross section of a Fully panelled window and glazed window showing all the component parts",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Plan and cross section of a flushed door showing all the component parts",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Elevation of King post and Queen post trusses with the given data (details of joints not required) 2. RESIDENTIAL BUILDINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Identify and describe the component parts and fundamental lines of a transit theodolite",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Understand and explain technical terms used in theodolite surveying such as face left/right, transiting, and swinging",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Perform temporary adjustments of the theodolite accurately",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Measure horizontal angles using repetition and reiteration methods",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Measure vertical angles and interpret the readings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Record and book field observations correctly in a field book",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Determine magnetic bearings, deflection angles, and direct angles",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Apply methods of extending a straight -line using theodolite: single/double transiting and fore sighting",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Identify and minimize errors in theodolite work",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Execute theodolite traversing using included angle, deflection angle and magnetic bearing methods",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.10",
+                    "sno": "1.10"
+                },
+                {
+                    "topic": "Perform checks for closed and open traverses",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.11",
+                    "sno": "1.11"
+                },
+                {
+                    "topic": "List the omitted measurements of a closed traverse and calculate the omitted measurements when Length and bearing of one side only are omitted",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.12",
+                    "sno": "1.12"
+                },
+                {
+                    "topic": "Compute latitude and departure, determine closing error, and calculate consecutive and independent coordinates",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.13",
+                    "sno": "1.13"
+                },
+                {
+                    "topic": "Determine the area of a closed traverse. 2. TRIGONOMETRIC LEVELLING",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.14",
+                    "sno": "1.14"
+                },
+                {
+                    "topic": "Identification of the component parts of a theodolite",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Performing temporary adjustment of theodolite",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Measurement of horizontal angle by repetition method and record the observations in the field book",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Measurement of horizontal angles by reiteration method and record the observations in the field book",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Measurement of Vertical angles and record the observations in the field book",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Measurement of the horizontal distance between two inaccessible points using theodolite",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Measurement of bearing of a survey line",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Conducting (i) Theodolite traversing (closed) (ii) Compute latitudes and departures and (iii) Calculate the area of traverse. 2. TRIGONOMETRIC LEVELLING",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-1.8",
+                    "sno": "1.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "topic": "Differentiate between volume and weight batching",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Understand the importance of accurate batching",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Describe the procedure for hand and machine mixing",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Evaluate effectiveness of each method",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Identify common concrete transport methods",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "State precautions during transportation",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain correct methods of placing concrete",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "List do\u2019s and don\u2019ts in placing",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "State the importance of compaction in concrete",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Describe types of vibrators and their use",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "List various curing methods and their applications",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.11",
+                    "sno": "2.11"
+                },
+                {
+                    "topic": "Understand the impact of curing on strength development",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.12",
+                    "sno": "2.12"
+                },
+                {
+                    "topic": "Explain the concept of ready-mix concrete and its advantages 3. CONCRETE TESTING AND QUALITY EVALUATION",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.13",
+                    "sno": "2.13"
+                },
+                {
+                    "topic": "State sources and quality of water",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain various components of internal water supply in buildings with layout",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Describe the working of storage and distribution systems",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Explain basic principles to be followed in the design of water supply layout for a building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "State the advantages of various pipe material used in water supply system in buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "List various sanitary fittings and plumbing traps",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Explain the principles of drainage and sewage removal",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Explain One-pipe and two-pipe drainage systems in buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.8",
+                    "sno": "2.8"
+                },
+                {
+                    "topic": "Explain the effectiveness of septic and soak pit design in rural/urban contexts",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.9",
+                    "sno": "2.9"
+                },
+                {
+                    "topic": "Explain the storm water management and rainwater harvesting systems in buildings 3. ELECTRICAL SERVICES AND LIGHTING IN BUILDINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.10",
+                    "sno": "2.10"
+                },
+                {
+                    "topic": "Differentiate between renewable and non -renewable energy sources with examples like solar, wind, and coal",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Explain the methods of utilizing solar energy in buildings, including active and passive solar heating and cooling concepts",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Identify the major sources of carbon emissions and suggest basic control measures",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Describe the concepts of carbon footprint, carbon credit, and their role in improving air quality",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Outline the basic working and significance of HVAC (Heating, Ventilation, and Air Conditioning) systems in energy-efficient buildings. 3. GREEN BUILDING MATERIALS & PLANNING",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Draw the following views of single storeyed load bearing type residential building from the given line diagram and set of specifications for a) One room with veranda b) one-bedroom house c) two-bedroom house 1. Plan 2. Section and 3. Elevation",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Draw the following views of single storied framed structure type residential building from the given line diagram and set of specifications for a) One - bedroom house b)Two-bedroom house 1. Plan, 2. Section and 3. Elevation",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Draw the site plan of a residential building as per local byelaws and NBC (National Building Code)",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Draw the following views of a dog legged staircase with given specifications. 1. Plan and 2. Section",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Draw the following views of two- storied residential building (framed Structure) from the given the line diagram and set of specifications. 1. Plans of first and second floors and 2. Elevation",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Understand the principles of Vaastu with Scientific approach in planning of a residential building. 3. PUBLIC BUILDINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Setbacks and orientation principles for planning residential buildings as per local bye laws and NBC",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Single storied two-bedroom load bearing residential building with site plan",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Single storied framed structure two-bedroom residential building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Two-storied residential building (framed structure type)",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Dog legged staircase",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Principles of Vaastu with Scientific approach 3. PUBLIC AND INDUSTRIAL BUILDINGS Draw the line diagrams only showing the functional requirements of",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Determine the Horizontal and Vertical Distance of an object whose base is accessible",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Determine the Horizontal and Vertical Distance of an object whose base is inaccessible and the two instrument stations and the object in the same vertical plane",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Determine the Horizontal and Vertical Distance of an object whose base is inaccessible and the two instrument stations and the object are not in the same vertical plane 3. TACHEOMETRY",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Determination of the Horizontal and Vertical Distance of an object whose base is accessible",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Determination of the Horizontal and Vertical Distance of an object whose base is inaccessible and the two instrument stations and the object in the same vertical plane",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Determination of the Horizontal and Vertical Distance of an object whose base is inaccessible and the two instrument stations and the object are not in the same vertical plane. 3. TACHEOMETRY",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-2.3",
+                    "sno": "2.3"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "topic": "Perform slump and compaction factor tests",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Interpret results to assess workability",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Prepare and test concrete specimens",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Interpret strength test results",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Understand basic principles of NDT methods",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Identify where and why NDT is used",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain durability-related parameters",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "State importance of low permeability in concrete",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Interpret acceptance criteria for concrete strength",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Apply criteria to judge test results. 4. TYPES OF CONCRETE",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "State various electrical services used in a building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Explain basic electrical layout and safety rules",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "State various technical terms and symbols for different electrical installations",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "State the requirements of a good electrical wiring",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "List the different types of electrical wirings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "State the objectives of electrical earthing",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Explain various types of earthing systems",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "State the requirements of good lighting in a building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Define the terms 1. Glare and 2. Day light factor",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "State the precautions to be taken to avoid glare in buildings. 4. MECHANICAL SERVICES AND HVAC SYSTEMS IN BUILDINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Identify and classify various renewable and recyclable materials used in green buildings, with relevant examples",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Describe energy -efficient and low -pollution construction materials such as green cement and smart materials",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain the advantages of using natural and locally available materials in sustainable construction",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Explain basic green planning concepts related to energy saving, waste management, and water reuse in building design",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Introduce simple eco-friendly building systems such as solar lighting, natural ventilation, and green plumbing solutions. 4. DESIGN OF GREEN BUILDINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Draw the plan of Rural hospital of 10 beds capacity",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Draw the plan of Hostel building for 50 students\u2019 capacity",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Draw the plan of Primary school building for 250 to 300 students\u2019 capacity",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Draw the plan and sectional elevation of lift provision in high raised buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Understand the provisions of Fire Safety in a building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Understand the provisions to be made for Physically challenged and aged people in a building. 4. WORKING DRAWINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Rural hospital of 10 beds capacity",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Hostel for 50 students",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Primary school of 250 to 300 students",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Provision of lift in a raised building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Provisions of fire safety in a building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Provisions to be made for Physically challenged and aged people in a building 4. WORKING DRAWINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Determine the Tacheometric constants \u2018K\u2019 and \u2018C\u2019",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Determine Horizontal Distance and Elevation by principle of stadia Tacheometry. 4. CURVES",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Determination of Tacheometric constants",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Determination of Horizontal distance and elevation by Stadia Tacheometry. 4. CURVES",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-3.2",
+                    "sno": "3.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "topic": "Differentiate between PCC, RCC, and PSC",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "State suitable applications for each",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Understand the following special concretes (a) Fiber Reinforced Concrete, (b) Fal-G-Concrete, (c) Light weight concrete, (d) High density concrete, (e) Polymer concrete and (f) Self Compacting concrete",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Understand concreting under special exposure conditions like (a) Under- water concreting, (b) Cold weather concreting, (c) Hot weather concreting and (d) Concreting in high rise buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Explain \u2018Micro concrete\u2019 and \u2018Shotcrete\u2019. 5. CONCRETE MIX PROPORTIONING AND DESIGN",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "State HVAC systems",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Explain various components of HVAC systems",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "State different types of Air conditioning systems used in a building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Explain the hot water supply distribution using solar water heating system",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "State different modes of vertical transportation systems in a building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Explain Lift and Escalator systems with layouts. 5. FIRE SAFETY AND BUILDING SECURITY SYSTEMS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Explain the concept of sustainable site selection and its importance in green building design",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Understand the process and significance of Life Cycle Assessment (LCA) in evaluating building sustainability",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "State the principles of sustainable development to the planning and design of buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Assess key design considerations such as energy and water usage, system reliability, indoor air quality, noise control, occupant comfort, and cost efficiency",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Identify and summarize recent advanced technologies and innovations used in green building design. 5. CONSTRUCTION AND MAINTENANCE OF GREEN BUILDINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Prepare a working drawing for the purpose of marking the width of foundation for the given plan of a building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Calculate the following for the given plan of a building 1. Plinth area, 2. Carpet area and 3. Floor area ratio/ Floor space Index",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Prepare a working drawing for electrical layout for a given residential building (Single storeyed two-bedroom building only)",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Prepare a working drawing for plan of a Lift Shaft 5. BUILDING DRAWINGS WITH AUTO CAD",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Working drawing for the purpose of marking from the given plan and width of foundation",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Calculate the following for the given plan of a building 1. Plinth area, 2. Carpet area and 3. Floor area ratio/ Floor space Index",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Working drawings for electrical layout for a given residential building (Single storeyed two bedroom building only)",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Prepare a working drawing for plan of a Lift Shaft 5. BUILDING DRAWINGS WITH AUTO CAD",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Sets out Simple Curve using Chain and Tape",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Setting out a simple curve by chain and tape method",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Setting out a simple curve by one Theodolite",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-4.2",
+                    "sno": "4.2"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "topic": "Differentiate between nominal and design mix",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "State typical ratios for nominal mixes",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List factors influencing mix design",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain effect of water-cement ratio",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Understand step-by-step IS method of mix design procedure",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "State the principles of fire protection in buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "State the causes of fire in buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "State different fire -resistant building materials to be used in building construction",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Explain Fire detection and Alarm systems",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Explain Fire extinguishers and sprinklers",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "State the need of Emergency exits and Escape routes in a building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Explain various types of security systems in buildings. 6. ACOUSTICS AND SOUND INSULATION IN BUILDINGS",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Describe various energy-efficient construction practices used in green building projects",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Explain the role of thermal insulation and natural lighting in improving building energy performance",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "List basic maintenance practices for ensuring the sustainability of green buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Compare the cost implications of green buildings versus conventional buildings",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Learn 2D and 3D AutoCAD Commands",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Practice drawing Plan, Elevation, section and site plan of one roomed building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Practice drawing Plan, Elevation, section and site plan of 2BHKbuilding",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Practice drawing Plan of a primary school building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Practice drawing Plan of a Rural Hospital",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Learn 2D and 3D AutoCAD Commands",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Plan, Elevation, section and site plan of 2BHK building introducing layers",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Plan of Primary school building",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Plan of Rural Hospital",
+                    "period": 1,
+                    "type": "practical",
+                    "id": "26ce507l-5.6",
+                    "sno": "5.6"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 105,
     "subjectCode": "26CE507L",
     "semester": 5,

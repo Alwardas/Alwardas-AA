@@ -1,6 +1,448 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Introduction to Drones Drone-its purpose - evolution of drones -Classify drones - applications of Drones-basic functional block diagram - functions of different subsystems of drones- roles of pitch, yaw, and roll in drone movement using electronic controls-common sensors used in drones -working of inertial sensors (IMU) and their integration with the flight controller - RF communication systems -drone control-rules and regulations related to the usage of Drones in India",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Rectifiers, Power supplies and Wave Shaping Circuits 1. Obtain output waveforms and measure DC o/p voltage, ripple voltage of a Half \u2013Wave rectifier with/ without filter at different loads and compare with that of theoretical values 2. Obtain output waveforms and measure DC o/p voltage, ripple voltage of a centre-tapped full wave rectifier with/ without filter at different loads and compare with that of theoretical values 3. Obtain output waveforms and measure DC o/p voltage, ripple voltage of a Bridge rectifier with/ without filter at different loads and compare with that of theoretical values 4. Obtain the voltage regulation characteristics of IC regulator (78XX,79XX,LM317) 5. Construct i)Positive Clipper ii)Negative Clipper iii)Double sided clipper using diodes and observe the waveforms 6. Construct Clamper circuit using diode and observe the waveforms",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "C Programming Basics THEORY",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-1.0",
+                    "sno": "1.0"
+                },
+                {
+                    "topic": "Give the basic structure of C program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "Mention the character set, keywords, datatypes and declaration& initialization of variables",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "List Assignment, Arithmetic, Relational, logical, bitwise logical, increment/decrement Operators supported by C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Mention printf () and scanf () functions with examples LAB ACTIVITIES",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Practice sample programs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-1.5",
+                    "sno": "1.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Familiarization with core drone hardware and communication systems Drone frame its structure and function -different motors and their role in generating lift and control-flight controller and its role - different batteries used in drones - power distribution boards (PDB) used in drones - Electronic Speed Controllers (ESCs) with motors - radio transmitters and receivers in drone operation- signal frequency and modulation in drone communication systems - the concept of line -of-sight control and signal range limitations in Drone communication systems - working of flight controller and ESC with receiver module- failsafe settings and signal loss handling mechanisms - different sensors and cameras -use of GPS modules. - role of the Inertial Measurement Unit (IMU) in stabilizing drone motion - function and application of LiDAR in altitude sensing and obstacle avoidance- differences between FPV, HD, thermal, and multispectral cameras used in drones",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Amplifiers and Oscillators 7. Plot the frequency response characteristics of a RC coupled Amplifier 8. Construct RC Phase shift oscillator and verify the effect of varying the RC component values and observe output waveforms on CRO 9. Implement Hartley oscillator and verify the effect of varying the tank circuit component values and observe output waveforms on CRO. 10. Implement Colpitt\u2019s oscillator and verify the effect of varying the tank circuit component values and observe output waveforms on CRO. 11. Construct Crystal oscillator and observe output waveforms on CRO",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Conditional Statements and Arrays THEORY",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.0",
+                    "sno": "2.0"
+                },
+                {
+                    "topic": "Describe the conditional expression",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "List the four conditional statements supported by C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Write the syntaxes of the following conditional statements and explain i. If ii. If.. else. iii. Nested if \u2026else",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Write the syntax of switch case statement and explain",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Write the syntaxes of the following iterative statements and explain iv. While v. do.. while vi. for LAB ACTIVITIES",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Write simple programs based on conditional statements. i) Write a program to find whether a given year is leap year or not ii) Write a program to find biggest of three numbers iii) Write a program to check whether a given number is even or odd by using bitwise logical operator iv) Write a program to check whether a given character is vowel or consonant by using switch case statement v) Write a program to perform arithmetic operations using switch case statement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Write programs based on iterative statements. i) Write a program to find sum of n natural numbers ii) Write a program to find sum of digits of a given number iii) Write a program to check whether a given number is Armstrong or not iv) Write a program to print fibonacci series using loops. v) Write a program to print even and odd numbers vi) Write a program to check whether a given number is prime number or not vii) Write a program to print prime numbers between two given numbers viii) Write a program to check whether a given number is PALINDROMEor not",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Write a C program to perform matrix addition/subtraction/Multiplication",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-2.9",
+                    "sno": "2.9"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Applications of Drones Use of drones in agriculture for crop monitoring, pesticide spraying -role of drones in aerial photography -support of drones in surveying and mapping - application of drones in emergency response - use of drones in package delivery systems, logistics and e -commerce- military and defence uses of drones - use of drones in smart cities for policing- future trends in drone applications",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Testing and obtaining characteristics of FETs and OP-AMPs 12. Obtain the Drain and mutual characteristics of N \u2013Channel JFET. 13. Obtain the Drain and mutual characteristics of N \u2013Channel MOSFET. 14. Implement and test 741 Op-Amp as a) Inverting amplifier, b) Non Inverting amplifier and c) Voltage follower (Buffer) \u2013 observe wave forms 15. Implement and test 741 Operation amplifier as a) summer b) Differentiator c) Integrator 16. Implement astable multivibrator using Op-Amp and observe output waveform on CRO 17. Implement RC-phase shift oscillator Circuit using Op-Amp and observe output waveform on CRO",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Strings, Functions & Pointers THEORY",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.0",
+                    "sno": "3.0"
+                },
+                {
+                    "topic": "Define String",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "State the use of function in C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Explain declaration of a function in program",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "State the use of return statement",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Explain passing of parameters to the function",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Define a pointer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Declare a pointer, assign a pointer, initialize a pointer",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Differentiate address and dereferencing operators. LAB ACTIVITIES",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Practice different string manipulation functions strcat(),strcmp(),strcpy() and strlen()",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Practice the operation of getchar(),getch(),getche() and putchar() functions",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.10",
+                    "sno": "3.10"
+                },
+                {
+                    "topic": "Practice simple programs on functions call techniques",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.11",
+                    "sno": "3.11"
+                },
+                {
+                    "topic": "Practice pointer arithmetic operations with examples",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-3.12",
+                    "sno": "3.12"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "Structures & unions THEORY",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-4.0",
+                    "sno": "4.0"
+                },
+                {
+                    "topic": "Define structure & union in C",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Differentiate between structure and union",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "State the function of pre-processor directives in C LAB ACTIVITIES",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Practice the method of declaring, initializing a structure variable and accessing of members of a structure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Practice a program to read & print a book database consisting of Title of book, author, no. of pages, price as fields",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Practice a program to find size of a structure",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Practice the programs with conditional pre-processor directives",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Practice the programs with Unconditional pre-processor directives",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-4.8",
+                    "sno": "4.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "topic": "MATLAB practice THEORY",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.0",
+                    "sno": "5.0"
+                },
+                {
+                    "topic": "Familiarize with basic structure of MATLAB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Distinguish between C & MATLAB LAB ACTIVITIES",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Practice the usage of i) Rows and column vectors creation ii) Ones, Rand, Zeros iii) linspace operator iv) clc,clear,who, whos commands v) long assignment vi) Format command vii) Elementwise multiplication, division, power operations viii) round, floor, ceil, abs, max, min, length, sort, sum, prod, mean, median, std commands xi) input command",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Practice the usage of i) Array indexing ii) Accessing array elements iii) Finding the number of elements in array iv) Adding array horizontally v) Equally spaced 1D array vi) Addition, subtraction and multiplication of matrices vii) Determinant of matrices, identity matrix",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Practice the programs with decision making statements :i) if\u2026end statement; ii) if..else..end statement iii) if..elseif\u2026else..endstatement used in MATLAB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Practice the programs with: i) while loop ii) for loop used in MATLAB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Practice plot commands such as: i) plot(x,y) ;ii) fplot() iii) title(); iv) xlabel(); v) ylabel(); vi) ezplot() vii) subplot() viii) bar() ix) pie() x) ezsurf() in MATLAB",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Practice plotting of line, exponential graph, parabola, circle, sinusoidal wave",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.8",
+                    "sno": "5.8"
+                },
+                {
+                    "topic": "Practice the plotting two exponential graphs using hold on command",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.9",
+                    "sno": "5.9"
+                },
+                {
+                    "topic": "Practice plotting 3 dimensional plots in MATLAB using plot3 command",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.10",
+                    "sno": "5.10"
+                },
+                {
+                    "topic": "Practice i) Finding roots, derivative of polynomial using MATLAB ii) Product, division of 2 polynomials using MATLAB iii) Finding approximate value of definite integral using quad command iv) Finding roots of nonlinear function using fzero",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.11",
+                    "sno": "5.11"
+                },
+                {
+                    "topic": "Practice i) Creating function file in MATLAB ii) Anonymous function in MATLAB iii) Symbolic function syms& subs",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.12",
+                    "sno": "5.12"
+                },
+                {
+                    "topic": "Practice the usage of : i) SIMULINK ii) GUI",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.13",
+                    "sno": "5.13"
+                },
+                {
+                    "topic": "Practice i) Capacitor charging and discharging simulation using Simulink ii) Half wave, Full wave rectifiers simulation using Simulink iii) Converting temperature from Celsius to Fahernheit using Simulink iv) Usage of hit crossing block in Simulink",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26ec307a-5.14",
+                    "sno": "5.14"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 30,
     "subjectCode": "26EC307A",
     "semester": 3,

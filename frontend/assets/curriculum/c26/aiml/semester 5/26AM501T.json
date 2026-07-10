@@ -1,6 +1,357 @@
 {
     "regulation": "C26",
-    "units": [],
+    "units": [
+        {
+            "unitNo": 1,
+            "title": "Introduction & Fundamentals",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction to classical vs quantum computing",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-1.1",
+                    "sno": "1.1"
+                },
+                {
+                    "topic": "History and evolution of quantum computing",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-1.2",
+                    "sno": "1.2"
+                },
+                {
+                    "topic": "Key differences between bits and qubits (conceptual view)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-1.3",
+                    "sno": "1.3"
+                },
+                {
+                    "topic": "Limitations of classical computing",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-1.4",
+                    "sno": "1.4"
+                },
+                {
+                    "topic": "Quantum computing advantages and challenges",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-1.5",
+                    "sno": "1.5"
+                },
+                {
+                    "topic": "Quantum computing terminology (conceptual glossary)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-1.6",
+                    "sno": "1.6"
+                },
+                {
+                    "topic": "Real-world applications overview",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-1.7",
+                    "sno": "1.7"
+                },
+                {
+                    "topic": "Major milestones in quantum computing",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-1.8",
+                    "sno": "1.8"
+                },
+                {
+                    "topic": "Overview of quantum hardware platforms (IBM, Google, etc.)",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am501t-1.9",
+                    "sno": "1.9"
+                },
+                {
+                    "topic": "Future prospects and trends in quantum technology. Chapter 2 \u2013 Qubits and Superposition",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am501t-1.10",
+                    "sno": "1.10"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Core Concepts & Principles",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Concept of a qubit",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-2.1",
+                    "sno": "2.1"
+                },
+                {
+                    "topic": "Physical representation of qubits (photons, electrons, etc.)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-2.2",
+                    "sno": "2.2"
+                },
+                {
+                    "topic": "Difference between 0/1 bits and qubits",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-2.3",
+                    "sno": "2.3"
+                },
+                {
+                    "topic": "Superposition explained using analogies",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-2.4",
+                    "sno": "2.4"
+                },
+                {
+                    "topic": "Measurement and its effect on qubits",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-2.5",
+                    "sno": "2.5"
+                },
+                {
+                    "topic": "Quantum state examples without equations",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-2.6",
+                    "sno": "2.6"
+                },
+                {
+                    "topic": "Quantum decoherence (basic understanding)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Examples of superposition in daily life",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-2.7",
+                    "sno": "2.7"
+                },
+                {
+                    "topic": "Role of superposition in computational speed-up. Chapter 3 \u2013 Quantum Gates and Circuits",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-2.9",
+                    "sno": "2.9"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "System Design & Methodology",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction to quantum logic gates",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-3.1",
+                    "sno": "3.1"
+                },
+                {
+                    "topic": "Single-qubit gates (X, Y, Z, H) \u2013 conceptual only",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-3.2",
+                    "sno": "3.2"
+                },
+                {
+                    "topic": "Multi-qubit gates (CNOT, SWAP) \u2013 conceptual only",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-3.3",
+                    "sno": "3.3"
+                },
+                {
+                    "topic": "Gate operations as transformations without math",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-3.4",
+                    "sno": "3.4"
+                },
+                {
+                    "topic": "Building a simple quantum circuit (conceptual). 229",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-3.5",
+                    "sno": "3.5"
+                },
+                {
+                    "topic": "Difference between classical and quantum logic gates",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-3.6",
+                    "sno": "3.6"
+                },
+                {
+                    "topic": "Quantum parallelism (idea only)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-3.7",
+                    "sno": "3.7"
+                },
+                {
+                    "topic": "Circuit representation diagrams (without equations)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-3.8",
+                    "sno": "3.8"
+                },
+                {
+                    "topic": "Practical examples of gate usage. Chapter 4 \u2013 Entanglement and Quantum Teleportation",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am501t-3.9",
+                    "sno": "3.9"
+                },
+                {
+                    "topic": "Unit test-2 From 3.6 to 5.9",
+                    "period": 1,
+                    "type": "theory",
+                    "id": "26am501t-3.5",
+                    "sno": "3.5"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Advanced Applications & Operations",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Concept of quantum entanglement",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am501t-4.1",
+                    "sno": "4.1"
+                },
+                {
+                    "topic": "Real-world analogies for entanglement",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am501t-4.2",
+                    "sno": "4.2"
+                },
+                {
+                    "topic": "Applications of entanglement in communication",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-4.3",
+                    "sno": "4.3"
+                },
+                {
+                    "topic": "Role of entanglement in secure communication",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-4.4",
+                    "sno": "4.4"
+                },
+                {
+                    "topic": "Quantum key distribution concept",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-4.5",
+                    "sno": "4.5"
+                },
+                {
+                    "topic": "Entanglement in quantum networks",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-4.6",
+                    "sno": "4.6"
+                },
+                {
+                    "topic": "Experimental demonstrations of teleportation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-4.7",
+                    "sno": "4.7"
+                },
+                {
+                    "topic": "Limitations and challenges of entanglement. Chapter 5 \u2013 Quantum Computing in AI & ML",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-4.8",
+                    "sno": "4.8"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Best Practices & Case Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "topic": "Introduction to AI & ML",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am501t-5.1",
+                    "sno": "5.1"
+                },
+                {
+                    "topic": "Why quantum computing can enhance AI & ML",
+                    "period": 3,
+                    "type": "theory",
+                    "id": "26am501t-5.2",
+                    "sno": "5.2"
+                },
+                {
+                    "topic": "Examples of quantum-enhanced machine learning",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-5.3",
+                    "sno": "5.3"
+                },
+                {
+                    "topic": "Concept of quantum data encoding (no math)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-5.4",
+                    "sno": "5.4"
+                },
+                {
+                    "topic": "Quantum pattern recognition (conceptual)",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-5.5",
+                    "sno": "5.5"
+                },
+                {
+                    "topic": "Quantum clustering \u2013 high-level explanation",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-5.6",
+                    "sno": "5.6"
+                },
+                {
+                    "topic": "Industries using quantum AI",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-5.7",
+                    "sno": "5.7"
+                },
+                {
+                    "topic": "Case studies of quantum ML applications",
+                    "period": 2,
+                    "type": "theory",
+                    "id": "26am501t-5.8",
+                    "sno": "5.8"
+                }
+            ]
+        }
+    ],
     "totalPeriods": 90,
     "subjectCode": "26AM501T",
     "semester": 5,
